@@ -9,8 +9,9 @@ The Dimensional Folding/Compression (DFC) framework answers a deeper question: *
 exist, and what is it made of?*
 
 DFC is the substrate interpretation that underlies the geometric model. It is explicitly less
-developed and more speculative — but it provides the mechanical intuition for why dimensions can
-"fold" or "compactify" in the first place.
+developed and more speculative — but it provides the mechanical intuition for how stable layered
+compression states arise from a continuous field, and why those states produce what we observe
+as forces, particles, and apparently geometric structure.
 
 ---
 
@@ -68,8 +69,8 @@ redistributed among:
 | Heat / entropy | Incoherent agitation of folding modes; S = k_B ln Ω(φ) |
 | Gauge symmetry | Redundancy in parameterizing internal folding orientation |
 | Horizon | Boundary where alignment propagation cannot keep pace with re-tiling |
-| Extra dimensions | Stable orthogonal buckling modes that became self-reinforcing |
-| Compactification | Closure of extra buckling modes into topologically stable loops |
+| Dimensional closure modes | Stable orthogonal buckling modes that became self-reinforcing loops |
+| Topological closure | Self-referential folding of a buckling mode back onto itself, producing a stable internal structure |
 
 ---
 
@@ -120,18 +121,19 @@ be smoothly destroyed.
 ## How DFC Connects to the 16D Model
 
 The 16D geometric model describes the *stable* configuration that the substrate has settled into.
-The twelve extra dimensions are not abstract — they are the specific closure topologies that the
-substrate formed when the compression reached certain critical values in the early universe.
+The twelve internal closure topologies are not abstract — they are the specific self-reinforcing
+loop structures that formed when compression reached critical thresholds in the early universe.
 
 In other words:
 - The universe started as a substrate undergoing compression
 - At various critical thresholds, buckling produced new stable modes
-- Some of those modes closed into loops (compactified)
-- The particular loops that formed — U(1), S³, SU(3) — are the extra dimensions we have
+- Some of those modes folded back onto themselves, forming topologically stable closed loops
+- The particular loops that formed — U(1), S³, SU(3) — are the internal force structures we observe
 
 Why those particular loops and not others? This is the deepest open question in the model. The
 current proposal is that U(1), S³, and SU(3) are the unique minimal stable closure configurations
-compatible with 4D spacetime, but this has not been rigorously derived.
+compatible with the emergence of the observed macroscopic structure, but this has not been
+rigorously derived.
 
 ---
 

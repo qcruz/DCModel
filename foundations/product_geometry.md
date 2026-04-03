@@ -109,14 +109,14 @@ beautifully confirmed (approximately) by experiment. If you don't have a simple 
 explain the convergence?"
 
 Answer: In this model, the three coupling constants are determined by the *sizes* of the three
-fibers. As you go to higher energies (shorter distances), you probe the compactification geometry
-more directly. The convergence is not towards a single coupling constant but towards a single
-**squashing parameter** — a dimensionless ratio that describes how much the internal geometry is
-deformed from its maximally symmetric configuration.
+force closure structures. As you go to higher energies (shorter distances), you probe the
+underlying closure geometry more directly. The convergence is not towards a single coupling
+constant but towards a single **squashing parameter** — a dimensionless ratio that describes how
+much the internal structure is deformed from its maximally symmetric configuration.
 
-At the compactification scale, all three effective couplings become functions of this single
-parameter. The observed convergence is real; its interpretation is geometric rather than group-
-theoretic.
+At the closure scale (the energy at which the folding structure was stabilized), all three
+effective couplings become functions of this single parameter. The observed convergence is real;
+its interpretation is geometric rather than group-theoretic.
 
 See `../equations/gauge_couplings.py` for the numerical implementation.
 

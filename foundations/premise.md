@@ -16,19 +16,20 @@ but the underlying mechanism that gives rise to time, causality, and irreversibi
 themselves. As dimensional capacity is steadily removed, structure cannot retrace prior
 states, establishing a natural arrow of time without requiring time to be fundamental.
 
-Physical phenomena arise from spatial and dynamical gradients in the rate and mode of this
-dimensional collapse. Where folding proceeds unevenly, residual structure redistributes
-laterally, producing effects that appear as motion, curvature, pressure, radiation, or
-expansion depending on the projection. General Relativity can be understood as the geometric
-description of nonuniform folding rates within spacetime, while thermodynamic behavior
-reflects the progressive smoothing of folding gradients as dimensional freedom is lost.
+Physical phenomena arise from gradients in the rate and mode of this compression. Where
+compression proceeds unevenly, residual structure redistributes laterally, producing effects
+that appear as motion, curvature, pressure, radiation, or expansion depending on the projection.
+General Relativity can be understood as the geometric description of nonuniform compression rates
+— the apparent geometry of spacetime is the shape those gradients take, not a pre-existing stage
+on which they occur. Thermodynamic behavior reflects the progressive smoothing of compression
+gradients as degrees of freedom are irreversibly lost.
 
-Not all degrees of freedom collapse uniformly. Certain lower-dimensional modes can become
+Not all degrees of freedom collapse uniformly. Certain lower-compression modes can become
 partially stabilized, persisting as propagating or oscillatory structures that are not fully
-constrained by spacetime locality. Light is interpreted as one such mode: a lower-dimensional
-propagation state relative to which massive objects — retaining higher-dimensional inertia —
-appear to move. Quantum phenomena similarly arise from stabilized or semi-decoupled modes
-whose behavior reflects incomplete integration into spacetime geometry, giving rise to
+anchored into the deeper compression layers. Light is one such mode: a lower-compression
+propagation state relative to which massive objects — retaining deeper compression anchoring
+(inertia) — appear to move. Quantum phenomena similarly arise from stabilized or semi-decoupled
+modes whose behavior reflects incomplete anchoring into the deeper layers, giving rise to
 nonlocal correlations and probabilistic outcomes.
 
 This framework does not replace or modify existing mathematical formalisms. The equations
@@ -36,6 +37,50 @@ of General Relativity, quantum mechanics, quantum field theory, and thermodynami
 intact and empirically validated. The contribution of the dimensional folding model is
 **explanatory rather than computational**: it proposes a single organizing mechanism that
 accounts for why these formalisms take the forms they do.
+
+---
+
+## Critical Vocabulary: What "Dimension" Does Not Mean
+
+The word "dimension" is used throughout this model in a precise, non-conventional sense.
+This requires explicit clarification, because the word carries strong conventional baggage.
+
+**"Dimension" does NOT mean:**
+- A spatial direction (x, y, z, or a fourth spatial axis)
+- A coordinate in a geometric manifold
+- A direction you could point in
+- "Extra dimensions" hidden inside spacetime (there is no pre-existing spacetime)
+- Time (time is not a dimension in this model — see below)
+
+**"Dimension" DOES mean:**
+- A degree of structural differentiation — a measure of how independently components
+  of a compressed energy field can vary or interact
+- A stable compression layer produced by a bifurcation event
+- A threshold in the folding process beyond which new modes of self-interaction become possible
+
+**The D-notation (D1, D2, D3, D4...) labels compression states, not geometric axes.**
+
+D3 does not mean "three-dimensional space." It labels the third stable compression layer —
+the regime in which localization and interaction-capable structure can persist. What we
+observe as "3D space" is what the D3 compression layer looks like from inside. The apparent
+three-directedness of space is an emergent property of the D3 localization mode, not a
+pre-existing container.
+
+**Time is not a dimension in this model.**
+
+Time is the bookkeeping of irreversible dimensional volume loss. It is not a coordinate, not
+a spatial direction, not a field, and not a geometric axis. It has a direction (the arrow of
+time) because compression is irreversible — but that direction is not a dimension through
+which anything moves. Saying "time is the fourth dimension" is a convenience of General
+Relativity's geometric language; this model provides the mechanism underneath: the
+relentless one-way loss of structural freedom.
+
+**Apparent geometry is emergent.**
+
+What appears as "space" — the intuition of separateness, location, and distance — emerges
+from the D3 compression layer's localization property. What appears as "time" emerges from
+the monotonic direction of compression. Neither is fundamental. Neither pre-exists. Both
+are patterns visible from inside a compressed energy field that is folding toward unity.
 
 ---
 
@@ -136,8 +181,9 @@ The lateral redistribution of structure along collapse gradients. Motion is not 
 displacement but a compensatory response to dimensional volume loss.
 
 **Spacetime Gravity (Emergent Gravity)**
-The macroscopic manifestation of uneven collapse gradients across D3 space. General
-Relativity describes the geometry of this redistribution but not its underlying cause.
+The macroscopic manifestation of uneven compression gradients across the D3 localization
+layer. General Relativity describes the geometry of this redistribution but not its
+underlying cause.
 
 **Time**
 The bookkeeping of irreversible dimensional volume loss. Time measures how much collapse

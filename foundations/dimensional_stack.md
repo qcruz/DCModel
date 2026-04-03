@@ -114,8 +114,8 @@ D2↔D3 boundary. Their "speed" is the intersection angle of that boundary, not 
 traversal velocity.
 
 **Neutrinos (~D3–4):** Extremely light, weakly interacting. Shallow anchoring means
-they barely stabilize in D3 space — they interact rarely because they are mostly still
-D2-like, only faintly committed to the interaction layer.
+they barely stabilize in the D3 localization layer — they interact rarely because they are
+mostly still D2-like, only faintly committed to the interaction regime.
 
 **Electrons (~D5):** Moderately anchored. Have rest mass (D4) and charge (inherited D2
 phase orientation embedded in D3 localization). The lightest massive, charged particle.
@@ -126,7 +126,7 @@ ratio (~207) reflects the ratio between local and global geometric scales at the
 respective depths. (See `mass_hierarchy.md`.)
 
 **Pions (~D7):** At the QCD transition depth. The point where color confinement locks
-in. Below this threshold, colored structures cannot propagate freely in D3 space.
+in. Below this threshold, colored structures cannot propagate freely through the D3 localization regime.
 
 **Baryons (~D8–9):** Three quarks locked together by deep confinement. The baryon is the
 stable knot configuration at the depth where three-body confinement becomes energetically
@@ -135,8 +135,8 @@ depth — connected to the SU(3) structure of the strong interaction.
 
 **Black holes (→∞):** Not a particle type but an attractor regime. Dimensional boundaries
 fail successively as depth increases without limit. Black holes are regions where the local
-dimensional stack has collapsed past D3 stabilization — the event horizon marks where D3
-can no longer persist.
+dimensional stack has collapsed past the D3 localization threshold — the event horizon marks
+where that stabilization can no longer persist.
 
 ---
 
