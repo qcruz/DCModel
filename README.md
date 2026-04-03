@@ -19,19 +19,48 @@ Those stable structures are what we observe as particles, forces, and fields.
 ## Repository Map
 
 ```
-WRITING_GUIDE.md    How to write phenomenon descriptions (read before contributing)
-foundations/        Core concepts, thought experiments, and structural arguments
-  introduction.md   Originating thought experiment, overview, string theory comparison
-  overview.md       The single starting point and core process
-  ...               (other foundations docs)
-equations/          Runnable Python modules — input data, get predictions
-phenomena/          Natural language explanations of physical observations
-  particle_physics/ Masses, forces, proton stability, generations, Higgs
-  cosmology/        Dark energy, expansion, inflation, early universe
-  quantum/          Entanglement, measurement, gauge structure
-comparisons/        This model vs. Standard Model, String Theory, GR, GUT
-archive/            Original source documents
-data/               Observational reference values (PDG, cosmological)
+WRITING_GUIDE.md          How to write phenomenon descriptions (read before contributing)
+
+foundations/              Core concepts, thought experiments, and structural arguments
+  introduction.md         Originating thought experiment, overview, string theory comparison
+  overview.md             The single starting point and core process
+  premise.md              Formal glossary — all canonical definitions
+  analogies.md            Seven canonical analogies for building intuition
+  formation.md            How dimensions are created by successive bifurcation
+  dimensional_emergence.md  Why dimensions emerge, not pre-exist
+  dimensional_stack.md    Provisional D1→D4+ layer ordering; particle spectrum table
+  mathematics.md          Mathematics as emergent grammar of folding invariants
+  product_geometry.md     Why force structures never unified (proton stability)
+  three_generations.md    Three generations from SU(3) fiber topology
+  higgs_geometry.md       Higgs mechanism as S³ squashing geometry
+  mass_hierarchy.md       Electron/muon mass ratio from geometric defect
+  substrate.md            Mathematical substrate framework (kink model, postulates)
+
+equations/                Runnable Python modules — input data, get predictions
+  constants.py            Physical constants (PDG 2024), particle masses, SM couplings
+  kink_model.py           Static kink solution — simplest stable topological closure
+  higgs_potential.py      S³ squashing geometry, gauge boson masses, Weinberg angle
+  mass_spectrum.py        Lepton mass predictions from dimple potential
+  gauge_couplings.py      Running couplings, squashing correction, pairwise crossings
+  proton_stability.py     Proton lifetime bounds, sphaleron rate, experiment comparison
+
+phenomena/                Natural language explanations of physical observations
+  particle_physics/
+    proton_stability.md   Why the proton cannot decay (product topology argument)
+  quantum/
+    quantum_mechanics.md  Superposition, collapse, entanglement, tunneling, uncertainty
+    interference.md       Wave interference as stationary field redistribution
+  gravity/
+    general_relativity.md Gravity as folding gradient and dimensional pressure
+  light/
+    light.md              Light as near-D2 mode; c as boundary slope, not velocity
+  thermodynamics/
+    thermodynamics.md     All four laws derived from folding mechanics
+    heat_and_conductivity.md  Heat, conduction, resistance, radiation unified
+
+comparisons/              This model vs. Standard Model, String Theory, GR, GUT
+archive/                  Original source documents
+data/                     Observational reference values (PDG, cosmological)
 ```
 
 ---
@@ -81,11 +110,15 @@ The model is in active development. Current priorities:
 - Three-generation derivation from SU(3) knot topology
 - Geometric origin of Higgs potential (qualitative)
 - Mass hierarchy mechanism (qualitative)
+- All four thermodynamic laws derived from folding mechanics
+- Gravity, light, QM, interference derived from folding framework
+- Mathematics reframed as emergent folding grammar (19-field ordered map)
 
 **In progress:**
 - Quantitative Higgs mass prediction from bifurcation scale
 - Neutrino mass spectrum from flavor knot structure
 - Coupling constant convergence via squashing parameter
+- Carnot efficiency formula derived from folding geometry (not ideal gas)
 
 **Open:**
 - Governing equation for the pre-bifurcation field
@@ -93,6 +126,10 @@ The model is in active development. Current priorities:
 - Why exactly 4 observable dimensions (3 space + 1 time)
 - Cosmological constant from compression budget
 - Dark matter candidates from stable intermediate knot modes
+- Derivation of E = hν from folding geometry (Planck relation)
+- Fluctuation theorems (Jarzynski, Crooks) from folding mechanics
+- Einstein field equations from dimensional folding gradient dynamics
+- Holographic entropy bound from closure capacity
 
 ---
 
@@ -100,14 +137,29 @@ The model is in active development. Current priorities:
 
 For someone new to the model, read in this order:
 
+**Conceptual foundations:**
 1. `foundations/introduction.md` — Thought experiment, overview, string theory comparison
 2. `foundations/overview.md` — The single starting point and core process
-3. `foundations/dimensional_emergence.md` — How dimensions are created by bifurcation
-4. `foundations/product_geometry.md` — Why force structures do not merge (proton stability)
-5. `foundations/three_generations.md` — Why exactly three families of matter
-6. `foundations/higgs_geometry.md` — Mass and symmetry breaking as field shape
-7. `foundations/mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
-8. `foundations/substrate.md` — The mathematical substrate framework (kink model)
+3. `foundations/premise.md` — Formal definitions of all terms (reference throughout)
+4. `foundations/analogies.md` — Seven canonical analogies for building intuition
+5. `foundations/dimensional_emergence.md` — How dimensions are created by bifurcation
+6. `foundations/formation.md` — D1→D4 buckling sequence; dimensional stack genesis
+7. `foundations/dimensional_stack.md` — Layer ordering and particle spectrum as valences
+8. `foundations/mathematics.md` — Why math is the residue of folding, not its substrate
+
+**Structural predictions:**
+9. `foundations/product_geometry.md` — Why force structures do not merge (proton stability)
+10. `foundations/three_generations.md` — Why exactly three families of matter
+11. `foundations/higgs_geometry.md` — Mass and symmetry breaking as field shape
+12. `foundations/mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
+13. `foundations/substrate.md` — The mathematical substrate framework (kink model)
+
+**Phenomena:**
+14. `phenomena/gravity/general_relativity.md` — Gravity as folding gradient
+15. `phenomena/light/light.md` — Light as near-D2 propagation mode
+16. `phenomena/thermodynamics/thermodynamics.md` — Four laws derived from folding
+17. `phenomena/quantum/quantum_mechanics.md` — QM as cross-dimensional structure behavior
+18. `phenomena/quantum/interference.md` — Interference as field redistribution
 
 ---
 
