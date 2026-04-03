@@ -19,14 +19,18 @@ Those stable structures are what we observe as particles, forces, and fields.
 ## Repository Map
 
 ```
-foundations/        Core postulates, geometry, and key structural choices
+WRITING_GUIDE.md    How to write phenomenon descriptions (read before contributing)
+foundations/        Core concepts, thought experiments, and structural arguments
+  introduction.md   Originating thought experiment, overview, string theory comparison
+  overview.md       The single starting point and core process
+  ...               (other foundations docs)
 equations/          Runnable Python modules — input data, get predictions
 phenomena/          Natural language explanations of physical observations
   particle_physics/ Masses, forces, proton stability, generations, Higgs
   cosmology/        Dark energy, expansion, inflation, early universe
   quantum/          Entanglement, measurement, gauge structure
 comparisons/        This model vs. Standard Model, String Theory, GR, GUT
-archive/            Original source documents (LaTeX and Markdown)
+archive/            Original source documents
 data/               Observational reference values (PDG, cosmological)
 ```
 
@@ -96,13 +100,14 @@ The model is in active development. Current priorities:
 
 For someone new to the model, read in this order:
 
-1. `foundations/overview.md` — The single starting point and core process
-2. `foundations/product_geometry.md` — Why force structures do not merge (proton stability)
-3. `foundations/dimensional_emergence.md` — How dimensions arise from compression events
-4. `foundations/three_generations.md` — Why exactly three families of matter
-5. `foundations/higgs_geometry.md` — Mass and symmetry breaking as field shape
-6. `foundations/mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
-7. `foundations/substrate.md` — The mathematical substrate framework
+1. `foundations/introduction.md` — Thought experiment, overview, string theory comparison
+2. `foundations/overview.md` — The single starting point and core process
+3. `foundations/dimensional_emergence.md` — How dimensions are created by bifurcation
+4. `foundations/product_geometry.md` — Why force structures do not merge (proton stability)
+5. `foundations/three_generations.md` — Why exactly three families of matter
+6. `foundations/higgs_geometry.md` — Mass and symmetry breaking as field shape
+7. `foundations/mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
+8. `foundations/substrate.md` — The mathematical substrate framework (kink model)
 
 ---
 
