@@ -26,6 +26,7 @@ foundations/              Core concepts, thought experiments, and structural arg
   overview.md             The single starting point and core process
   premise.md              Formal glossary — all canonical definitions
   analogies.md            Seven canonical analogies for building intuition
+  d1_mechanics.md         Concrete mechanical visualization of D1 compression and buckling
   formation.md            How dimensions are created by successive bifurcation
   dimensional_emergence.md  Why dimensions emerge, not pre-exist
   dimensional_stack.md    Provisional D1→D4+ layer ordering; particle spectrum table
@@ -142,24 +143,25 @@ For someone new to the model, read in this order:
 2. `foundations/overview.md` — The single starting point and core process
 3. `foundations/premise.md` — Formal definitions of all terms (reference throughout)
 4. `foundations/analogies.md` — Seven canonical analogies for building intuition
-5. `foundations/dimensional_emergence.md` — How dimensions are created by bifurcation
-6. `foundations/formation.md` — D1→D4 buckling sequence; dimensional stack genesis
-7. `foundations/dimensional_stack.md` — Layer ordering and particle spectrum as valences
-8. `foundations/mathematics.md` — Why math is the residue of folding, not its substrate
+5. `foundations/d1_mechanics.md` — Concrete mechanical picture of D1 compression and buckling
+6. `foundations/dimensional_emergence.md` — How dimensions are created by bifurcation
+7. `foundations/formation.md` — D1→D4 buckling sequence; dimensional stack genesis
+8. `foundations/dimensional_stack.md` — Layer ordering and particle spectrum as valences
+9. `foundations/mathematics.md` — Why math is the residue of folding, not its substrate
 
 **Structural predictions:**
-9. `foundations/product_geometry.md` — Why force structures do not merge (proton stability)
-10. `foundations/three_generations.md` — Why exactly three families of matter
-11. `foundations/higgs_geometry.md` — Mass and symmetry breaking as field shape
-12. `foundations/mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
-13. `foundations/substrate.md` — The mathematical substrate framework (kink model)
+10. `foundations/product_geometry.md` — Why force structures do not merge (proton stability)
+11. `foundations/three_generations.md` — Why exactly three families of matter
+12. `foundations/higgs_geometry.md` — Mass and symmetry breaking as field shape
+13. `foundations/mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
+14. `foundations/substrate.md` — The mathematical substrate framework (kink model)
 
 **Phenomena:**
-14. `phenomena/gravity/general_relativity.md` — Gravity as folding gradient
-15. `phenomena/light/light.md` — Light as near-D2 propagation mode
-16. `phenomena/thermodynamics/thermodynamics.md` — Four laws derived from folding
-17. `phenomena/quantum/quantum_mechanics.md` — QM as cross-dimensional structure behavior
-18. `phenomena/quantum/interference.md` — Interference as field redistribution
+15. `phenomena/gravity/general_relativity.md` — Gravity as folding gradient
+16. `phenomena/light/light.md` — Light as near-D2 propagation mode
+17. `phenomena/thermodynamics/thermodynamics.md` — Four laws derived from folding
+18. `phenomena/quantum/quantum_mechanics.md` — QM as cross-dimensional structure behavior
+19. `phenomena/quantum/interference.md` — Interference as field redistribution
 
 ---
 
