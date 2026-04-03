@@ -88,15 +88,23 @@ If no equation exists yet, note what would need to be derived.
 
 | Use this | Not this |
 |---|---|
-| folding gradient | spacetime curvature (in descriptive prose) |
-| dimensional closure / loss of DOF | entropy (in descriptive prose) |
-| lateral redistribution | dissipation |
-| bifurcation event | big bang (as a singular assumed event) |
-| folding instability | singularity |
-| dimensional localization | wavefunction collapse |
-| lower-dimensional mode | photon (when describing its dimensional character) |
+| dimensional folding / Dimensional Gravity (DG) | "a force" or "gravity" as fundamental |
+| D1 | "the singularity," "the origin," "the pre-universe state" |
+| dimensional volume | energy/content of a dimension |
+| vertical collapse | entropy (in mechanistic descriptions) |
+| lateral redistribution / retiling | dissipation, force exchange, motion (as fundamental) |
+| collapse gradient | spacetime curvature (in descriptive prose) |
+| dimensional boundary | brane, membrane, surface (string theory vocabulary) |
+| dimensional stack | extra dimensions, compactification |
+| buckling instability | Big Bang (as a singular one-off event) |
+| folding instability / dimensional boundary failure | singularity |
+| forced dimensional localization | wavefunction collapse |
+| near-pure D2 mode | photon (when describing its dimensional character) |
 | stable knot / bottleneck | particle (when describing its origin) |
-| retiling | force exchange (when describing the mechanism) |
+| boundary-alignment wave | gauge boson (when describing its mechanism) |
+| loss of representable structure | entropy increase (statistical sense) |
+| density of collapse events per unit time | temperature (when explaining mechanism) |
+| structural indeterminacy | randomness / quantum indeterminacy (when explaining origin) |
 
 ---
 
