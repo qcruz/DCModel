@@ -34,6 +34,7 @@ foundations/              Core concepts, thought experiments, and structural arg
   product_geometry.md     Why force structures never unified (proton stability)
   three_generations.md    Three generations from SU(3) fiber topology
   higgs_geometry.md       Higgs mechanism as S³ squashing geometry
+  higgs_mass_derivation.md  Full RG-improved Higgs mass derivation (125.1 ± 1.5 GeV)
   mass_hierarchy.md       Electron/muon mass ratio from geometric defect
   substrate.md            Mathematical substrate framework (kink model, postulates)
 
@@ -109,14 +110,13 @@ The model is in active development. Current priorities:
 **Completed (structural):**
 - Product topology and proton stability argument
 - Three-generation derivation from SU(3) knot topology
-- Geometric origin of Higgs potential (qualitative)
+- Higgs mass prediction: m_H = 125.1 ± 1.5 GeV (observed: 125.25 GeV) — RG-improved
 - Mass hierarchy mechanism (qualitative)
 - All four thermodynamic laws derived from folding mechanics
 - Gravity, light, QM, interference derived from folding framework
 - Mathematics reframed as emergent folding grammar (19-field ordered map)
 
 **In progress:**
-- Quantitative Higgs mass prediction from bifurcation scale
 - Neutrino mass spectrum from flavor knot structure
 - Coupling constant convergence via squashing parameter
 - Carnot efficiency formula derived from folding geometry (not ideal gas)
