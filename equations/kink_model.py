@@ -16,10 +16,10 @@ The model:
         E_kink = (4/3) c √(2α³/β)
 
 Usage:
-    python equations/dfc_toy_model.py
+    python equations/kink_model.py
 
     Or:
-        from equations.dfc_toy_model import kink_solution, kink_energy, KinkDynamics
+        from equations.kink_model   KinkDynamics
 """
 
 import math

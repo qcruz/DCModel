@@ -1,0 +1,80 @@
+%% PART 2: Foundational Postulates and Dictionary
+
+\section{Foundational postulates (with operational definitions)}
+\label{sec:postulates}
+
+\subsection{Substrate primacy}
+
+\textbf{Postulate 1 (Substrate):} Physical reality consists of a continuous substrate whose accessible degrees of freedom constitute what observers describe as ``dimensions.'' Coordinates are bookkeeping labels for emergent degrees of freedom, not a pre-existing container.
+
+\textit{Operational note:} ``Substrate'' is not claimed to be literal classical matter; it is a placeholder for whatever micro-structure makes geometry and discreteness jointly possible.
+
+\subsection{Asymptotic compression (clarified)}
+
+\textbf{Postulate 2 (Asymptotic compression):} The substrate admits a scalar compression state variable $\phi$ (or a small set of such variables) whose increase corresponds to reduced local configurational freedom. Dynamics bias the substrate toward higher $\phi$ (a lower-dimensional effective limit) but never reach a zero-degree-of-freedom state in finite time.
+
+\textit{Free parameters:} A characteristic length $\ell_c$ and timescale $\tau_c$ at which compression effects become dominant are left open. A natural consistency target is $\ell_c \sim \ell_P$ (Planck length) by dimensional analysis, but this draft does not assert that identification.
+
+\textit{Clarification of ``lower-dimensional'':} In DFC, ``lower-dimensional'' means fewer available orthogonal degrees of freedom (configurational directions) for the substrate—an intensive notion—rather than extra extensive spatial dimensions.
+
+\textit{Concrete example:} A 2D sheet under compression may buckle into the third dimension (gaining a degree of freedom) while its intrinsic ability to support independent variations decreases (losing configurational freedom). In DFC, ``compression toward lower dimension'' refers to this loss of configurational freedom—the intensive aspect—while buckling continually opens new extensive degrees of freedom to prevent collapse. The observable result is persistent 3D spatial structure despite ongoing compression.
+
+\subsection{Buckling instability (sharpened)}
+
+\textbf{Postulate 3 (Buckling):} When local compression exceeds a stability threshold (context-dependent), the substrate undergoes a buckling transition that opens new orthogonal degrees of freedom. Buckling occurs before divergence of any physically meaningful density-like quantity.
+
+\textit{Operational criterion (qualitative):} A region is ``buckling-prone'' when small perturbations to $\phi$ lower an effective free-energy-like functional by transferring compression into orthogonal modes.
+
+\subsection{Topological closure (sharpened)}
+
+\textbf{Postulate 4 (Closure):} A closure is a folding configuration supporting a persistent, localized compression store.
+
+\textit{Operational criterion (minimal):} A closure $C$ is stable if transport around any sufficiently small closed loop $\gamma$ inside its domain returns the substrate's compression state to itself up to gauge redundancy:
+\begin{equation}
+\oint_\gamma \delta\phi \approx 0 \quad \text{(closure stability condition; schematic).}
+\end{equation}
+This expresses that closure is not merely ``high compression,'' but a self-consistent folded configuration.
+
+\subsection{Compression budget (units/meaning)}
+
+\textbf{Postulate 5 (Budget conservation):} Define a compression budget $B$ as an extensive scalar bookkeeping quantity:
+\begin{equation}
+B \equiv \int_{\Sigma} \rho_B(\phi,\nabla\phi,\ldots)\, dV,
+\end{equation}
+with $\rho_B$ a model-dependent density functional. $B$ is intended to track how ``stored compression capacity'' is partitioned among closures (mass-like), coherent transport (radiation-like), and incoherent agitation (heat-like). 
+
+Dimensional analysis suggests $B$ should scale as [action] or [energy $\times$ time] to be consistent with quantum mechanics, or alternatively as [length $\times$ curvature] to align with gravitational coupling. In the toy model (\S\ref{sec:toymodel}), $B$ naturally emerges with dimensions of [energy], but a complete theory would need to specify how this quantity relates to $\hbar$, $c$, and $G$. For this draft, $B$ is treated as dimensionally consistent with energy while acknowledging that the precise identification remains open.
+
+\section{DFC interpretive dictionary (expanded mapping table)}
+\label{sec:dictionary}
+
+Table \ref{tab:dictionary} provides a compact mapping between standard physical concepts and their DFC interpretations. These are interpretive correspondences, not derivations.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Standard concept} & \textbf{DFC interpretation} \\
+\hline
+Mass $(m)$ & Stable localized closure storing budget $B$ \\
+\hline
+Energy density & Observable proxy for local budget density $\rho_B$ \\
+\hline
+Curvature & Irreducible misalignment of folding orientation after transport \\
+\hline
+Gravity & Coherent re-tiling / alignment field induced by closure density \\
+\hline
+Radiation & Coherent propagating redistribution of budget \\
+\hline
+Heat & Incoherent agitation of folding modes \\
+\hline
+Entropy $(S)$ & $\propto \ln \Omega(\phi)$, multiplicity of accessible fold configurations \\
+\hline
+Gauge symmetry & Redundancy in parameterizing internal folding orientation \\
+\hline
+Horizon & Boundary where alignment propagation cannot keep pace with re-tiling / buckling \\
+\hline
+\end{tabular}
+\caption{DFC interpretive mapping to standard physics quantities.}
+\label{tab:dictionary}
+\end{table}

@@ -1,0 +1,86 @@
+%% PART 6: Presentation Elements and Comparison Table
+
+\section{Presentation additions (figures and tables)}
+\label{sec:presentation}
+
+\subsection{Figure descriptions (schematic)}
+
+\textbf{Figure 1: Compression–Buckling Phase Diagram}
+
+Vertical axis: Compression intensity $C$ (arbitrary units)
+
+Horizontal axis: System ``temperature'' $T$ (agitation level)
+
+Three regions:
+\begin{itemize}
+\item Low $C$: Stable 3D substrate (normal spacetime)
+\item $C \approx C_{\text{crit}}$, low $T$: Buckling transition (new degrees of freedom open)
+\item $C \approx C_{\text{crit}}$, high $T$: Incoherent agitation (heat-dominated)
+\end{itemize}
+
+Arrows show trajectories: gravitational collapse moves vertically ($\uparrow C$), expansion moves diagonally ($\downarrow C$, $\uparrow T$).
+
+\textbf{Figure 2: Budget Partition Schematic}
+
+Energy/budget axis vs Configuration type
+
+Three bars:
+\begin{itemize}
+\item Stable closures (mass): localized, persistent, low multiplicity
+\item Coherent modes (radiation): directional, propagating, intermediate multiplicity
+\item Incoherent agitation (heat): isotropic, dispersed, high multiplicity
+\end{itemize}
+
+Include arrows showing transitions: coherent $\rightarrow$ incoherent (thermalization), closure $\rightarrow$ coherent (decay/radiation).
+
+\textbf{Figure 3: Dimensional Depth vs. Coordinate Dimension}
+
+2D plot with:
+\begin{itemize}
+\item X-axis: Coordinate dimension $d$ (observable spatial degrees of freedom)
+\item Y-axis: Dimensional depth $D$ (compression intensity, intensive)
+\end{itemize}
+
+Examples plotted:
+\begin{itemize}
+\item Normal matter: $d = 3$, moderate $D$
+\item Black hole interior: $d = 3$, very high $D$
+\item Radiation: $d = 3$, low $D$
+\item Primordial substrate: $d = 3$, very high $D$ with high instability
+\end{itemize}
+
+Include annotation: ``Depth is intensive (how compressed), dimension is extensive (how many directions)''
+
+\subsection{Comparative table (DFC vs. alternative approaches)}
+
+Table \ref{tab:comparison} compares DFC with related emergent spacetime programs.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|p{2.2cm}|p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+\textbf{Program} & \textbf{Primitive} & \textbf{How gravity emerges} & \textbf{How discreteness arises} & \textbf{DFC contrast} & \textbf{Testable prediction (if any)} \\
+\hline
+Entropic gravity \cite{verlinde2011} & entropy/ information & entropic force & not primary & DFC: compression mechanics primitive & Modified Newtonian dynamics in specific regimes \\
+\hline
+Jacobson thermodynamic GR \cite{jacobson1995} & horizon thermodynamics & equation of state & not primary & DFC: thermodynamics as compression redistribution & Universal horizon entropy relations \\
+\hline
+Entanglement–geometry \cite{vanraamsdonk2010,swingle2012} & entanglement & connectivity from entanglement & not primary & DFC: alignment/ closure mechanics primary & Specific area-law deviations for entanglement \\
+\hline
+Causal sets \cite{bombelli1987,sorkin2005} & discreteness/ order & emergent from order & fundamental & DFC: discreteness emergent from stability & Discreteness scale $\sim\ell_P$; Lorentz violation \\
+\hline
+DFC (this work) & compression substrate & coherent re-tiling & closure stability & See comparative notes above & Currently none (pre-formalization); future: closure spectrum, modified dispersion, information release timescales \\
+\hline
+\end{tabular}
+\caption{Comparison of DFC with related emergent spacetime approaches.}
+\label{tab:comparison}
+\end{table}
+
+\section{Conclusion}
+
+This revised draft strengthens DFC as an arXiv-appropriate conceptual physics submission by (i) tightening operational definitions of key mechanisms (compression budget, buckling, closure, depth), (ii) engaging major related research programs in emergent spacetime, thermodynamic gravity, entanglement–geometry, analog gravity, and causal sets, and (iii) providing a minimal toy mathematical model demonstrating how compression–buckling language can generate stable localized structures. 
+
+DFC remains explicitly incomplete: it does not yet derive GR/QM/gauge structure or yield quantitative predictions. Its intended value is as a constrained interpretive dictionary plus a concrete formalization route, with clear milestones required before any claim of explanatory sufficiency could be justified.
+
+Future work must prioritize deriving the emergence of complex amplitudes and the Schrödinger equation from substrate dynamics (critical priority), followed by establishing quantitative connections to Einstein's field equations and cosmological observations (high priority). Until these milestones are achieved, DFC serves primarily as a conceptual scaffold that may guide exploratory computational and analytical investigations into emergent spacetime physics.

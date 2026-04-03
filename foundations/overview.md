@@ -136,10 +136,10 @@ These are the central open problems. The documents in this repository track prog
 
 ## Reading Order
 
-1. This document (`00_overview.md`) — the big picture
-2. `01_product_geometry.md` — why the force structures do not merge (proton stability)
-3. `02_dimensional_emergence.md` — how dimensions arise from compression events
-4. `03_three_generations.md` — why exactly three families of matter
-5. `04_higgs_geometry.md` — mass and symmetry breaking as field shape
-6. `05_mass_hierarchy.md` — why the electron and muon have such different masses
-7. `06_dfc_substrate.md` — the mathematical substrate framework
+1. This document (`overview.md`) — the big picture
+2. `product_geometry.md` — why the force structures do not merge (proton stability)
+3. `dimensional_emergence.md` — how dimensions arise from compression events
+4. `three_generations.md` — why exactly three families of matter
+5. `higgs_geometry.md` — mass and symmetry breaking as field shape
+6. `mass_hierarchy.md` — why the electron and muon have such different masses
+7. `substrate.md` — the mathematical substrate framework

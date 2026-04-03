@@ -102,6 +102,6 @@ explanation.
 
 ## See Also
 
-- `../../foundations/01_product_geometry.md` — the structural reason no X,Y bosons exist
+- `../../foundations/product_geometry.md` — the structural reason no X,Y bosons exist
 - `../../equations/proton_stability.py` — lifetime calculations
 - `../../comparisons/vs_grand_unification.md` — detailed comparison with SU(5) and SO(10)

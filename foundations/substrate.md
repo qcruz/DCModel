@@ -2,8 +2,8 @@
 
 ## Relationship to the Main Model
 
-The Dimensional Folding Model (the 16D geometric model described in `00_overview.md` through
-`05_mass_hierarchy.md`) answers the question: *what is the geometry?*
+The Dimensional Folding Model (described in `overview.md` through `mass_hierarchy.md`) answers
+the question: *what is the structure?*
 
 The Dimensional Folding/Compression (DFC) framework answers a deeper question: *why does geometry
 exist, and what is it made of?*
@@ -157,7 +157,7 @@ compatible with 4D spacetime, but this has not been rigorously derived.
 ## Source Documents
 
 The DFC framework is documented in detail in:
-- `archive/Dimensional Folding as a Conceptual Substrate for Emergent Spacetime and Field Dynamics.md`
-- `archive/dfc_final_p1-7.txt` (LaTeX source, full paper draft)
+- `archive/dfc_paper_draft.md`
+- `archive/source_latex_p1-7.txt` (LaTeX source, full paper draft)
 
-See also `../equations/dfc_toy_model.py` for the kink solution implementation.
+See also `../equations/kink_model.py` for the kink solution implementation.

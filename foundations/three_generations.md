@@ -86,7 +86,7 @@ The right-copy SU(3) (flavor symmetry) is not exact — it is broken by the same
 that breaks the left-copy SU(3) (color) slightly, and by couplings to the electroweak sector.
 
 The pattern of mass ratios within each column of the generation table is addressed in
-`05_mass_hierarchy.md` — the geometric defect mechanism that explains why the electron is 207×
+`mass_hierarchy.md` — the geometric defect mechanism that explains why the electron is 207×
 lighter than the muon, and the muon 17× lighter than the tau.
 
 The ratios *between* columns (quarks vs. leptons) come from the mixing between the SU(3) flavor

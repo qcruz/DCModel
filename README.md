@@ -73,20 +73,22 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 The model is in active development. Current priorities:
 
 **Completed (structural):**
-- Product geometry and proton stability argument
-- Three-generation derivation from SU(3) fiber topology
+- Product topology and proton stability argument
+- Three-generation derivation from SU(3) knot topology
 - Geometric origin of Higgs potential (qualitative)
 - Mass hierarchy mechanism (qualitative)
 
 **In progress:**
-- Quantitative Higgs mass prediction from compactification scale
-- Neutrino mass spectrum from right-copy SU(3) flavor breaking
-- Coupling constant unification via squashing parameter
+- Quantitative Higgs mass prediction from bifurcation scale
+- Neutrino mass spectrum from flavor knot structure
+- Coupling constant convergence via squashing parameter
 
 **Open:**
-- Derivation of fermion mixing angles (CKM, PMNS) from geometry
-- Cosmological constant from compactification dynamics
-- Dark matter candidates from stable higher KK modes
+- Governing equation for the pre-bifurcation field
+- Derivation of U(1), SU(2), SU(3) topologies from compression dynamics
+- Why exactly 4 observable dimensions (3 space + 1 time)
+- Cosmological constant from compression budget
+- Dark matter candidates from stable intermediate knot modes
 
 ---
 
@@ -94,13 +96,13 @@ The model is in active development. Current priorities:
 
 For someone new to the model, read in this order:
 
-1. `foundations/00_overview.md` — The single starting point and core process
-2. `foundations/01_product_geometry.md` — Why force structures do not merge (proton stability)
-3. `foundations/02_dimensional_emergence.md` — How dimensions arise from compression events
-4. `foundations/03_three_generations.md` — Why exactly three families of matter
-5. `foundations/04_higgs_geometry.md` — Mass and symmetry breaking as field shape
-6. `foundations/05_mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
-7. `foundations/06_dfc_substrate.md` — The mathematical substrate framework
+1. `foundations/overview.md` — The single starting point and core process
+2. `foundations/product_geometry.md` — Why force structures do not merge (proton stability)
+3. `foundations/dimensional_emergence.md` — How dimensions arise from compression events
+4. `foundations/three_generations.md` — Why exactly three families of matter
+5. `foundations/higgs_geometry.md` — Mass and symmetry breaking as field shape
+6. `foundations/mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
+7. `foundations/substrate.md` — The mathematical substrate framework
 
 ---
 
