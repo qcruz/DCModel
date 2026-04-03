@@ -1,15 +1,18 @@
 # Dimensional Folding Model — Repository
 
-A theoretical physics model proposing that the Standard Model of particle physics is the observable
-signature of twelve compactified extra dimensions with a specific product geometry.
+A theoretical physics model proposing that all of physics — forces, particles, mass, spacetime
+itself — emerges from a single process: the compression and bifurcation of a near-1D unified
+energy field.
 
 ---
 
 ## Core Claim
 
-The universe has 16 dimensions. Four are the familiar spacetime. Twelve are compactified at scales
-~10^-35 m — a billion billion times smaller than a proton. Their topology and geometry determine
-every force, particle, and mass we observe.
+There is one thing. A fully interconnected energy field under compression toward a unified
+one-dimensional state. As compression approaches its limit, bifurcation events occur — local
+pockets collapse and eject energy, creating new dimensions. Repeated bifurcations produce
+increasingly complex ejections that self-interact, forming stable knots and bottlenecks.
+Those stable structures are what we observe as particles, forces, and fields.
 
 ---
 
@@ -91,25 +94,31 @@ The model is in active development. Current priorities:
 
 For someone new to the model, read in this order:
 
-1. `foundations/00_overview.md` — What the model is and isn't
-2. `foundations/01_product_geometry.md` — The most important structural choice
-3. `foundations/02_compactification.md` — The 16-dimensional setup
-4. `foundations/03_three_generations.md` — Why exactly three families
-5. `foundations/04_higgs_geometry.md` — The Higgs as shape
-6. `foundations/05_mass_hierarchy.md` — Electron vs. muon mass
-7. `foundations/06_dfc_substrate.md` — The deeper compression framework
+1. `foundations/00_overview.md` — The single starting point and core process
+2. `foundations/01_product_geometry.md` — Why force structures do not merge (proton stability)
+3. `foundations/02_dimensional_emergence.md` — How dimensions arise from compression events
+4. `foundations/03_three_generations.md` — Why exactly three families of matter
+5. `foundations/04_higgs_geometry.md` — Mass and symmetry breaking as field shape
+6. `foundations/05_mass_hierarchy.md` — Electron vs. muon mass from local vs. global geometry
+7. `foundations/06_dfc_substrate.md` — The mathematical substrate framework
 
 ---
 
 ## Relationship to Existing Theories
 
-This model is not a replacement for the Standard Model or General Relativity. It is a geometric
-interpretation that *reproduces* their structure from deeper principles. It is closest in spirit to
-Kaluza-Klein theory and string compactification, but differs in:
+This model is not a replacement for the Standard Model or General Relativity. It provides a
+generative substrate from which both emerge. It is not string theory, not loop quantum gravity,
+not Kaluza-Klein, not grand unification — all of those begin by assuming some pre-existing
+geometric structure. This model begins before geometry exists and builds it from compression
+dynamics.
 
-- Using a rigid product geometry rather than a Calabi-Yau manifold
-- Deriving the generation number topologically rather than from Hodge numbers
-- Treating the Higgs as a metric modulus rather than a fundamental scalar
-- Achieving coupling convergence through a squashing parameter rather than a single gauge coupling
+Key distinctions:
+- **vs. String theory:** No pre-existing spacetime; dimensions are not curled up, they are created
+- **vs. GUT (SU(5)/SO(10)):** No single broken symmetry; force structures emerge at different
+  bifurcation stages with different knot topologies — they were never "one force"
+- **vs. Kaluza-Klein:** No "extra" dimensions hidden inside larger ones; all dimensions are the
+  same kind of thing, differing only in their self-interaction character
+- **vs. LQG:** No pre-existing quantum geometry to discretize; discreteness emerges from
+  stable knot configurations in a continuous field
 
 See `comparisons/` for detailed side-by-side analyses.
