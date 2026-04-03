@@ -1,0 +1,85 @@
+%% PART 4: Interpretive Mapping to Standard Theories
+
+\section{Strengthened interpretive mapping (showing more ``work'' qualitatively)}
+\label{sec:mapping}
+
+\subsection{General Relativity (more specific mapping target)}
+
+DFC's ``re-tiling'' aims to correspond to the way stress–energy sources curvature in GR. The intended qualitative correspondence is:
+\begin{itemize}
+\item closure density $\rightarrow$ effective geometric response (curvature),
+\item alignment transport $\rightarrow$ connection/parallel transport structure,
+\item saturation thresholds $\rightarrow$ avoidance of singularities via instability.
+\end{itemize}
+
+A minimal post-diction target is that Schwarzschild-like behavior emerges as the scale where alignment propagation cannot keep up with the re-tiling demand induced by a closure, yielding an effective horizon. (This is positioned as an interpretive target; not derived here.)
+
+\subsection{Quantum mechanics (complex amplitudes as a gap, acknowledged)}
+
+DFC interprets superposition as an unresolved folding configuration constrained by boundary interactions. However, DFC in this draft does not explain:
+\begin{itemize}
+\item why amplitudes are complex,
+\item why dynamics take the Schrödinger form,
+\item how $\hbar$ enters.
+\end{itemize}
+
+These are listed explicitly as formalization requirements: any serious DFC model must show how a complex Hilbert-space structure emerges (or explain why it is assumed).
+
+\textit{Path toward resolution:} A promising direction would be to show that the phase of the compression field $\phi$ naturally complexifies when accounting for the full dynamical constraint structure, similar to how the WKB approximation generates complex phases from real action functionals. However, deriving the full Schrödinger equation would require:
+\begin{enumerate}
+\item identifying the configuration space over which path integrals are taken,
+\item showing how the compression budget couples to this path integral measure,
+\item deriving the specific $i\hbar \partial/\partial t$ operator structure from substrate dynamics.
+\end{enumerate}
+
+This is acknowledged as a critical gap that must be filled before DFC can claim to provide a substrate interpretation of quantum mechanics rather than merely a classical field analog.
+
+\subsection{Gauge theory (why specific groups is a gap, acknowledged)}
+
+Interpreting gauge fields as connection fields aligns with standard geometric views of gauge theory, but DFC presently does not explain:
+\begin{itemize}
+\item why the Standard Model gauge group is $SU(3)\times SU(2)\times U(1)$,
+\item why coupling constants take observed values,
+\item how chiral structure and anomalies are enforced.
+\end{itemize}
+
+These are treated as major limitations and placed in the ``must solve'' list.
+
+\section{Case studies (strengthened, with quantitative-style placeholders)}
+\label{sec:casestudies}
+
+\subsection{Non-singular collapse (with explicit threshold language)}
+
+Define a schematic compression measure $C$ (monotone in $\phi$). Then:
+
+\textbf{For $C < C_{\text{crit}}$:} Collapse can be accommodated by re-tiling within available degrees of freedom.
+
+\textbf{For $C \approx C_{\text{crit}}$:} An instability sets in; a characteristic buckling wavelength $\lambda_b$ becomes comparable to a local fold radius $r_f$, triggering transition into deeper folding modes.
+
+\textbf{For $C > C_{\text{crit}}$:} Further compression is redirected into non-singular buckling channels rather than diverging densities.
+
+This reframes ``singularity avoidance'' as a stability statement: divergence is pre-empted by a phase transition in substrate degrees of freedom.
+
+\textit{What happens to infalling matter?} In the DFC picture, matter (closures) approaching $C_{\text{crit}}$ experiences increasing interaction with the buckling substrate. Rather than concentrating to a point, the closure's stored budget gradually redistributes into deeper folding modes or leaks across the effective boundary where alignment can no longer propagate coherently. This suggests a resolution to the information paradox: information is not destroyed but transferred to substrate degrees of freedom that become accessible as the black hole evaporates. However, this mechanism is presently qualitative and requires formalization to make contact with Page curve calculations \cite{page1993}.
+
+\subsection{Third law of thermodynamics (explicit entropy form)}
+
+Let $\Omega(\phi)$ be the number of accessible configurations consistent with compression $\phi$. Then:
+\begin{equation}
+S = k_B \ln \Omega(\phi).
+\end{equation}
+
+The unattainability of $\Omega = 1$ (or a strict minimum) corresponds to the forbidden exact lower-dimensional limit.
+
+\subsection{Measurement as forced closure (precision increase)}
+
+Measurement is modeled as a boundary interaction that constrains admissible $\phi$-configurations until only a small basin of stable closure states remains dynamically accessible. DFC's interpretive claim is that ``collapse'' is not an extra postulate but the mechanical consequence of constrained stabilization under interactions.
+
+\subsection{Particle mass spectrum (new: explicit limitation)}
+
+DFC currently provides no mechanism for predicting the particle mass spectrum. At best, it suggests a structural analogy: masses correspond to stable closure classes. Any future DFC theory must:
+\begin{enumerate}
+\item classify closure topologies,
+\item map them to representation content,
+\item reproduce observed mass hierarchies and mixing.
+\end{enumerate}

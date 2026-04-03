@@ -1,0 +1,70 @@
+%% PART 3: Toy Model and Scale Hierarchy
+
+\section{Minimal mathematical toy model (illustrative formalization path)}
+\label{sec:toymodel}
+
+This section addresses the ``mathematical substance'' requirement while remaining explicitly toy and non-claiming. The point is to show that the compression–buckling–closure language can be expressed in standard dynamical terms.
+
+\subsection{1D compression field with buckling potential}
+
+Let $\phi(x,t)$ be a scalar ``compression field.'' Consider generic Klein–Gordon-type dynamics:
+\begin{equation}
+\frac{\partial^2\phi}{\partial t^2} = c^2 \frac{\partial^2\phi}{\partial x^2} - \frac{dV}{d\phi},
+\end{equation}
+with a symmetry-breaking (``buckling'') potential
+\begin{equation}
+V(\phi) = -\frac{\alpha}{2}\phi^2 + \frac{\beta}{4}\phi^4, \quad \alpha > 0,\; \beta > 0.
+\end{equation}
+
+\textit{Interpretation:}
+\begin{itemize}
+\item The negative quadratic term $(-\alpha/2)\phi^2$ encodes a drive toward nonzero compression (asymptotic bias away from $\phi = 0$).
+\item The quartic term $(+\beta/4)\phi^4$ prevents divergence by creating an energy cost for unbounded $\phi$.
+\item The system has degenerate minima at $\phi = \pm\sqrt{\alpha/\beta}$, representing two locally stable ``fold orientations.''
+\item The potential barrier height is $V(0) - V(\phi_{\min}) = \alpha^2/(4\beta)$, setting a characteristic energy scale for closure stability.
+\end{itemize}
+
+\subsection{Closure analogs as kink solutions}
+
+This model admits kink/domain-wall solutions interpolating between minima. In DFC language, these are stable localized configurations that persist and carry an associated conserved energy functional:
+\begin{equation}
+E[\phi] = \int dx\left(\frac{1}{2}\dot{\phi}^2 + \frac{1}{2}c^2(\partial_x\phi)^2 + V(\phi)\right).
+\end{equation}
+
+The static kink solution interpolating between the two vacuum states has the explicit form:
+\begin{equation}
+\phi_{\text{kink}}(x) = \sqrt{\frac{\alpha}{\beta}} \tanh\left(\frac{x - x_0}{\lambda}\right),
+\end{equation}
+where $\lambda = \sqrt{2c^2/\alpha}$ sets the kink width and $x_0$ is the kink center. The associated energy is:
+\begin{equation}
+E_{\text{kink}} = \frac{4}{3}c\sqrt{\frac{2\alpha^3}{\beta}},
+\end{equation}
+which is finite, localized, and topologically protected—the kink cannot continuously deform to the uniform vacuum $\phi = \pm\sqrt{\alpha/\beta}$ without passing through the unstable point $\phi = 0$.
+
+\textit{DFC interpretation:} Localized energy/structure of a kink is an analog of closure—a stable configuration storing ``budget'' that can move, interact, and radiate small perturbations.
+
+\subsection{Why this matters (and what it does not do)}
+
+This does not ``derive particles,'' gravity, or the Standard Model. It demonstrates only that:
+\begin{enumerate}
+\item ``Compression bias + buckling regularization'' naturally yields stable localized objects (closures).
+\item ``Radiation vs heat'' can be conceptualized as coherent excitations vs incoherent dispersal about such structures.
+\item The same language can be made operational in a minimal dynamical system.
+\end{enumerate}
+
+\section{Dimensional analysis and scale hierarchy}
+\label{sec:scales}
+
+DFC requires consistency with known characteristic scales, even if it does not predict them.
+
+\subsection{Candidate identification of a compression length}
+
+If compression becomes dynamically dominant below a length $\ell_c$, a conservative consistency anchor is $\ell_c \sim \ell_P$, since this is where quantum and gravitational effects are expected to jointly matter. This is a dimensional-consistency suggestion, not a claim.
+
+\subsection{Emergent hierarchy (qualitative)}
+
+\textbf{Planck regime ($\ell \sim \ell_P$):} Substrate micro-dynamics dominate. Buckling thresholds and closure formation rules operate. In the toy model, this corresponds to scales where $\lambda_{\text{kink}}$ (kink width) approaches $\ell_c$.
+
+\textbf{Atomic regime ($\ell \sim 10^{-10}$ m):} If stable closures manifest as particles, their effective sizes and interaction strengths would be determined by the specific closure topology and the way multiple closures modify each other's folding environment. DFC does not yet predict these scales but requires consistency with observed atomic structure.
+
+\textbf{Cosmological regime ($\ell \sim$ Gpc):} Global stress relief manifests as expansion. If the compression budget $B$ scales with the total spatial volume $V$ as $B \propto V^{1-\delta}$ for some $\delta > 0$, then stress accumulation naturally drives expansion. The relationship to the observed Hubble parameter $H(t)$ requires specifying how local compression density couples to the expansion rate—an open problem listed in \S\ref{sec:limits}.

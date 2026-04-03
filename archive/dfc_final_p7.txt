@@ -1,0 +1,124 @@
+%% PART 7: References and Appendices
+
+\begin{thebibliography}{99}
+
+\bibitem{verlinde2011}
+Verlinde, E. (2011). 
+``On the Origin of Gravity and the Laws of Newton.'' 
+\textit{Journal of High Energy Physics} \textbf{2011}, 29. 
+arXiv:1001.0785
+
+\bibitem{jacobson1995}
+Jacobson, T. (1995). 
+``Thermodynamics of Spacetime: The Einstein Equation of State.'' 
+\textit{Physical Review Letters} \textbf{75}, 1260. 
+arXiv:gr-qc/9504004
+
+\bibitem{vanraamsdonk2010}
+Van Raamsdonk, M. (2010). 
+``Building up spacetime with quantum entanglement.'' 
+\textit{General Relativity and Gravitation} \textbf{42}, 2323. 
+arXiv:1005.3035
+
+\bibitem{swingle2012}
+Swingle, B. (2012). 
+``Entanglement Renormalization and Holography.'' 
+\textit{Physical Review D} \textbf{86}, 065007. 
+arXiv:0905.1317
+
+\bibitem{bombelli1987}
+Bombelli, L., Lee, J., Meyer, D., \& Sorkin, R. D. (1987). 
+``Space-time as a causal set.'' 
+\textit{Physical Review Letters} \textbf{59}, 521.
+
+\bibitem{sorkin2005}
+Sorkin, R. D. (2005). 
+``Causal Sets: Discrete Gravity.'' 
+In \textit{Lectures on Quantum Gravity} (pp. 305-327). Springer. 
+arXiv:gr-qc/0309009
+
+\bibitem{barcelo2005}
+Barceló, C., Liberati, S., \& Visser, M. (2005). 
+``Analogue Gravity.'' 
+\textit{Living Reviews in Relativity} \textbf{8}, 12. 
+arXiv:gr-qc/0505065
+
+\bibitem{page1993}
+Page, D. N. (1993). 
+``Information in Black Hole Radiation.'' 
+\textit{Physical Review Letters} \textbf{71}, 3743. 
+arXiv:hep-th/9306083
+
+\bibitem{misner1973}
+Misner, C. W., Thorne, K. S., \& Wheeler, J. A. (1973). 
+\textit{Gravitation}. W. H. Freeman.
+
+\bibitem{wald1984}
+Wald, R. M. (1984). 
+\textit{General Relativity}. University of Chicago Press.
+
+\bibitem{rovelli2004}
+Rovelli, C. (2004). 
+\textit{Quantum Gravity}. Cambridge University Press.
+
+\bibitem{weinberg1995}
+Weinberg, S. (1995-2000). 
+\textit{The Quantum Theory of Fields, Vols. I–III}. Cambridge University Press.
+
+\bibitem{hawking1976}
+Hawking, S. W. (1976). 
+``Breakdown of Predictability in Gravitational Collapse.'' 
+\textit{Physical Review D} \textbf{14}, 2460.
+
+\end{thebibliography}
+
+\appendix
+
+\section{Glossary of DFC-specific terms}
+\label{app:glossary}
+
+\textbf{Compression field $\phi$:} Scalar (or minimal set) encoding local compression state.
+
+[Dimensionality: In the toy model, [$\phi$] = dimensionless; in a complete theory, potentially [length$^{-1}$] or [mass]]
+
+\textbf{Compression budget $B$:} Extensive bookkeeping quantity integrating a model-dependent density $\rho_B$.
+
+[Dimensionality: [energy] or [action/time], depending on formalization]
+
+\textbf{Buckling instability:} Transition opening orthogonal degrees of freedom when compression exceeds stability thresholds.
+
+[Threshold scale: $C_{\text{crit}}$, dimensionally similar to $\phi^2$]
+
+\textbf{Closure:} Stable localized folded configuration satisfying loop-consistency $\oint \delta\phi \approx 0$ (schematic).
+
+[Characteristic size: $\lambda_{\text{closure}} \sim \lambda_{\text{kink}}$ in toy model; potentially $\sim\ell_P$ in Planck regime]
+
+\textbf{Dimensional depth $D$:} Intensive measure of compression intensity/reduced configurational freedom (not an extra dimension).
+
+[Dimensionality: Could be defined as $D \equiv \log(\rho_B/\rho_{B,\text{vacuum}})$ making it dimensionless]
+
+\textbf{Re-tiling:} Coherent adjustment of local folding alignment induced by closure density (intended to map to curvature/connection).
+
+[Rate scale: $\partial_t(\text{alignment}) \sim \rho_{\text{closure}}$, analogous to how $\partial_t g_{\mu\nu} \sim T_{\mu\nu}$ in GR]
+
+\section{Speculative connection to information theory}
+\label{app:information}
+
+Several reviewers of preliminary versions noted parallels between DFC's compression budget and information-theoretic entropy. While DFC does not currently formalize this connection, we note the following suggestive correspondences:
+
+\textbf{1. Budget as information capacity:} If $B$ measures ``available configurational storage,'' it may relate to the Shannon entropy bound $S_{\text{info}} \leq A/(4\ell_P^2)$ for bounded regions (Bekenstein bound).
+
+\textbf{2. Closure stability as error correction:} Stable closures must maintain self-consistency under perturbations—analogous to quantum error-correcting codes that preserve information against noise.
+
+\textbf{3. Entanglement as shared folding identity:} If entangled states share deeper substrate layers, mutual information $I(A:B)$ might map to the overlap integral of their respective folding configurations.
+
+These connections remain purely conceptual. A formalized DFC would need to show whether:
+\begin{itemize}
+\item The compression budget $B$ is related to von Neumann entropy by a fixed conversion factor,
+\item Holographic entropy bounds emerge naturally from substrate mechanics,
+\item Quantum error correction structures appear in the stability conditions for closures.
+\end{itemize}
+
+We list this as a medium-priority research direction, contingent on first resolving the critical gaps around quantum mechanics (\S\ref{sec:limits}).
+
+\end{document}
