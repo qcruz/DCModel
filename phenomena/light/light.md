@@ -1,5 +1,14 @@
 # Phenomenon: Light
 
+## One-Sentence Synthesis
+
+> Light is the massless limit of the compression field — a D2 propagation mode that
+> carries no D4 inertial anchor, travels at c because c is the natural propagation
+> speed of the compression field itself, and whose energy quantization E = hν follows
+> directly from the massless Klein-Gordon dispersion relation.
+
+---
+
 ## Observation
 
 Light propagates through empty space at a constant speed regardless of the motion of its
@@ -8,196 +17,287 @@ bends around massive objects. It redshifts as it climbs out of gravitational wel
 is emitted and absorbed in discrete quanta whose energy is proportional to frequency.
 Near extreme mass concentrations, it cannot escape. Nothing with mass can travel as fast.
 
+---
+
 ## Standard Explanation
 
 In the Standard Model, light consists of photons — massless spin-1 gauge bosons mediating
-the electromagnetic force. Photons propagate at *c* through the electromagnetic field.
+the electromagnetic force. Photons propagate at c through the electromagnetic field.
 Their energy is E = hν (frequency times Planck's constant). Emission and absorption are
 mediated by interactions between the electromagnetic field and charged matter. Photons
 carry no rest mass, which is why they propagate at the universal speed limit.
 
 GR adds that photons follow null geodesics through curved spacetime — their paths bent by
-mass not because a force acts on them, but because the geometry of spacetime itself curves.
+mass not because a force acts on them, but because the geometry of the effective metric
+curves.
+
+What standard physics does not explain: why c is the speed limit, why mass is zero, why
+energy is proportional to frequency, or what the physical content of the photon's complex
+wave function is.
+
+---
 
 ## Dimensional Folding Explanation
 
-Light is a **low-dimensional field mode**: a stabilized propagation regime that can persist
-and travel because it requires fewer active degrees of freedom than massive, highly
-differentiated structures.
+### Abstract Level
 
-Light is not exempt from dimensional folding. It follows the same rules as everything else:
-it can be stretched, redirected, converted, and ultimately folded downward when dimensional
-pressure is extreme enough. What makes light distinctive is where it sits in the dimensional
-stack, and how efficiently it propagates while remaining minimally anchored.
+**Light is the compression field in the regime before any closure topology forms.**
 
----
+Every massive particle is a stable compression fold that has reached at least depth D4 —
+the threshold of inertial anchoring. The fold oscillates at its Compton frequency
+ω_C = m c²/ℏ, and at low energies its slow envelope satisfies the Schrödinger equation
+(see `phenomena/quantum/quantum_mechanics.md`).
 
-### Perspective 1: From the Observer in Spacetime
+A photon is what happens when the mass goes to zero: m → 0, ω_C → 0, and the
+distinction between "fast carrier" and "slow envelope" disappears entirely. What remains
+is a pure compression wave with no stable minimum to oscillate around — the field simply
+propagates. Its dispersion is linear: ω = ck. Its speed is c, the propagation speed of
+the compression field itself.
 
-From within D3 space, light appears as a self-propagating electromagnetic wave or a
-massless particle, traveling at exactly *c* in all inertial frames. It passes through
-vacuum without resistance, bends around massive objects, and loses energy when climbing
-out of gravitational wells.
+**c is not a speed limit imposed on motion. It is the natural propagation rate of the
+compression field substrate.** Massive structures are anchored into depth layers (D4+)
+that resist the field's natural propagation rate. Getting matter to move fast requires
+pushing its inertial anchoring — the deeper the anchoring, the more energy required.
+The speed limit c is the speed at which the unanchored field moves, and nothing with
+depth can match it.
 
-The constancy of *c* appears as a fundamental postulate — built into the structure of
-spacetime by Special Relativity.
+**E = hν is the massless limit of the KG dispersion relation.** For a massive particle,
+E² = (pc)² + (mc²)². When m = 0: E = pc = ℏωck/k = ℏω = hν. The quantization of
+light energy is not a separate postulate — it is what the KG dispersion relation gives
+when mass is zero. The Planck relation is the massless Klein-Gordon equation.
 
-### Perspective 2: From the Dimensional Field
-
-Light is a near-D2 mode propagating along lower-dimensional boundaries. It does not anchor
-into D3 space the way massive structures do — it rides the D2↔D3 interface.
-
-The invariance of *c* is not a postulate. It is a structural consequence: *c* is the fixed
-slope at which D2 propagation intersects the D3 boundary. Massive objects move *relative
-to light* — not the other way around. Matter is more deeply anchored in the dimensional
-stack (D4 inertia, D3 localization) and therefore moves *through* the D2 propagation
-regime. Light does not move through space at a speed — it *defines* the D2↔D3 boundary
-at which spatial extension begins.
-
-Matter has more "dimensional thickness" (more layers of the stack active simultaneously),
-which is why it cannot propagate with the same efficiency as light. Getting matter to move
-fast requires overcoming its dimensional anchoring — the deeper the anchoring (more mass),
-the more energy required.
+**Polarization is fold orientation.** The compression wave propagating along z has two
+transverse degrees of freedom — the fold can be oriented at any angle θ in the x-y plane.
+This is exactly the fold orientation angle identified as the quantum phase (see
+`equations/quantum_emergence.py`). Horizontal and vertical polarization are
+θ = 0 and θ = π/2. Circular polarization is θ(t) rotating at the photon frequency —
+the fold orientation precesses continuously, and the wave function is ψ = A e^{±iθ}.
+The two helicity states (left- and right-circular) are the two signs of this precession.
 
 ---
 
-## Propagation: A Coherent Self-Maintaining Pattern
+### Perspective 1: From the Observer in D3
 
-Light propagates as a coherent, self-maintaining pattern in a low-dimensional field. It
-remains stable over distance because its structure is compatible with the available degrees
-of freedom in that regime — it does not require D3 localization to persist, and so it does
-not lose energy to the lateral redistribution processes that affect massive structures.
+From within the D3 localization layer, light appears as a self-propagating electromagnetic
+wave or a massless particle traveling at c in all inertial frames. It passes through
+vacuum, bends around masses, and loses energy climbing out of gravitational wells.
 
-In ordinary conditions — far from extreme compression events — the D2 propagation mode is
-stable across arbitrary distances. This is why light from sources billions of light-years
-away arrives with its structure intact.
+The constancy of c appears as a fundamental postulate — built into Special Relativity.
 
----
+### Perspective 2: From the Compression Field
 
-## Interaction: Retiling Across Layers, Not One-Way Conversion
+Light is a near-D2 mode propagating along the boundary between the D2 propagation layer
+and the D3 localization layer. It does not anchor into D3 the way massive structures do.
+It rides the D2↔D3 interface.
 
-When light interacts with matter, the key event is **not** a collapse upward into higher
-dimensions or a collapse of light itself. It is a local **retile-and-exchange** across
-dimensional layers:
-
-- A localized structure (matter) can briefly gain temporary higher-dimensional
-  configuration during excitation — a slight "stretch upward" in the stack
-- It can also be pressured downward (lose dimensional freedom) as folding continues
-- Light participates as the low-dimensional propagation channel through which energy and
-  structure are redistributed during these transitions
-
-**Emission and absorption are bidirectional local reconfigurations** where matter and light
-trade structure through the available dimensional modes. Neither is a one-way conversion
-"into" higher-dimensional fields. The direction and character of the reconfiguration is
-set by the local folding environment — the pressure, the available modes, the structure's
-current depth.
+The invariance of c is not a postulate. It is a structural fact: c is the fixed
+propagation speed of the compression field equation ∂²φ/∂t² = c²∇²φ. Massive objects
+move relative to light because matter is more deeply anchored in the dimensional stack
+(D4 inertia, D3 localization) and therefore moves through the D2 propagation regime
+at reduced effective speed. Light does not move through space at a speed — it defines
+the rate at which the unanchored compression field propagates.
 
 ---
 
-## Frequency as Reconfiguration Character
+## Formal Derivation
 
-Frequency corresponds to the character of the reconfiguration event, not an intrinsic
-property of a traveling particle:
+### The Photon as the Massless Compression Wave
 
-- **Higher-frequency emission** corresponds to a more sharply defined, tightly structured
-  reconfiguration — more dimensional depth involved, more abrupt transition
-- **Lower-frequency emission** corresponds to a more distributed, gentler reconfiguration
-  across available modes — broader, slower exchange
+The compression field equation:
+```
+∂²φ/∂t² = c²∇²φ − V'(φ)
+```
 
-This framing explains thermal and infrared radiation directly: they represent energy
-shedding through comparatively broad, low-frequency reorganizations under the ongoing
-pressure of dimensional folding. A warm object does not emit photons as discrete events
-from localized sources — it undergoes a continuous, distributed reconfiguration that
-sheds energy into the D2 propagation regime at characteristic frequencies set by the
-local folding rate (temperature).
+For a photon, V'(φ) = 0 — there is no buckling potential. The field has not reached
+the depth threshold (D4+) where the double-well potential stabilizes. The equation
+reduces to:
+```
+∂²φ/∂t² = c²∇²φ     [massless wave equation]
+```
 
----
+Plane wave solutions: φ(x,t) = A e^{i(kx − ωt)} require:
+```
+ω² = c²k²    →    ω = ck    [linear (massless) dispersion] ✓
+```
 
-## Light Under Extreme Compression
+For comparison, a massive particle satisfies ω² = c²k² + m_eff² (KG dispersion),
+with m_eff = ℏ√(2α)/c² from the potential curvature.
 
-Light is **not** foundational in the sense of being immune to terminal regimes.
+### E = hν from Massless Dispersion
 
-Under sufficiently extreme dimensional pressure — near horizons and in singularity-forming
-collapse — light is not guaranteed to remain as a stable propagating mode. The D2↔D3
-boundary that sustains light propagation is itself a dimensional boundary subject to
-collapse. In the limiting case:
+Energy and momentum for a quantum of the massless field:
+```
+E = ℏω                    [energy quantum]
+p = ℏk                    [momentum quantum]
+ω = ck   →   E = pc       [massless dispersion]
+   = ℏck = hcλ⁻¹ = hν    [since ν = c/λ]
+```
 
-- Near the event horizon, the inward rate of dimensional folding exceeds the outward
-  propagation capacity of D2 modes — light cannot escape because the D2↔D3 boundary
-  is being removed faster than D2 modes can traverse it
-- Inside the horizon, light is driven downward with everything else, folding toward D1
-  along with the matter it was associated with
+Therefore:
+```
+┌────────────────────┐
+│   E = hν   ✓       │
+└────────────────────┘
+```
 
-This is an important constraint on the framework: the photonic mode is stable across wide
-regimes, but the same folding that light otherwise rides can ultimately consume it.
+The Planck relation is not a separate postulate. It is the massless Klein-Gordon
+dispersion relation combined with the de Broglie relations E = ℏω, p = ℏk.
 
----
+### c as the Compression Field Propagation Speed
 
-## Analogy: The Photon Planet
+The compression field equation ∂²φ/∂t² = c²∇²φ has c as a structural parameter —
+it is the ratio of the field's restoring force (the ∇²φ term) to its inertia
+(the ∂²/∂t² term). In the Planck-scale calibration (see `equations/folding_gradient.py`):
+```
+c² = α / (2/L_Pl²) = α L_Pl² / 2
+```
 
-*This analogy is a visualization tool only — not a literal claim about what a photon is.*
+where α = 2c²/L_Pl² is the Planck-scale compression parameter. c is self-consistently
+defined as the propagation speed of the same field whose Planck-scale kink width sets
+L_Pl. This is consistent, not circular: c is fixed by the field parameters, and L_Pl
+is derived from c and G together.
 
-Imagine the photonic field as a large, coherent surface-like propagation regime — a
-"photon planet" — that other higher-dimensional structures can skim, intersect, and disturb.
+**Why nothing massive can reach c:**
 
-- **Emission** can be pictured as a localized structure "dipping down" to make contact
-  with this surface, releasing energy into a traveling ripple on it
-- **Infrared** can be pictured as a deeper, slower "dip" — producing a lower-frequency
-  ripple with broader structure, like pushing a hand slowly through still water instead
-  of snapping it
-- **Absorption** can be pictured as a localized structure catching and ingesting part of
-  that ripple, briefly reconfiguring before folding pressure resumes
+A massive structure has depth d ≥ 4, anchored via the buckling potential with m_eff > 0.
+Its energy-momentum satisfies E² = (pc)² + (m_eff c²)². To reach speed v → c requires
+E → ∞ (for any m_eff > 0). Physically: accelerating mass pushes more compression into
+its depth anchoring, which requires more energy, which adds more effective mass — a
+self-reinforcing resistance that asymptotes at c. Light avoids this entirely because
+it has no depth anchoring to push against.
 
-This analogy helps visualize interaction depth and frequency. What it does not capture:
-the photonic field is not a surface in D3 space. It is a dimensional boundary — a layer
-of the stack — and its "surface" is not spatial but dimensional. The interactions are
-not literal physical contact but reconfigurations across dimensional layers.
+### Polarization from Fold Orientation
+
+A photon propagating along z has a compression wave amplitude in the transverse (x,y)
+plane. The fold orientation angle θ ∈ [0, 2π) in that plane gives the polarization state:
+
+```
+ψ_photon = A e^{iθ}     [complex amplitude = fold orientation]
+```
+
+| θ | Polarization state |
+|---|---|
+| θ = 0 | Linear horizontal (x-axis) |
+| θ = π/2 | Linear vertical (y-axis) |
+| θ = π/4 | Linear at 45° |
+| θ(t) = +ωt | Left circular (fold precesses counterclockwise) |
+| θ(t) = −ωt | Right circular (fold precesses clockwise) |
+
+The two helicity states (±1) are the two directions of precession of the fold
+orientation around the propagation axis. This is the DFC identification of photon
+spin: a spin-1 massless particle has one unit of fold orientation angular momentum
+along its propagation direction.
+
+The orthogonality of polarization states:
+```
+⟨ψ_H | ψ_V⟩ = ∫ e^{iθ_H} (e^{iθ_V})* dθ = 0    (for θ_H ≠ θ_V ± nπ)
+```
+
+follows from the fold orientations being geometrically orthogonal.
+
+### Gravitational Redshift as Compression Rate Change
+
+When a photon travels from a region of stronger compression gradient (near a mass) to
+weaker (far from it), it crosses regions with different rates of dimensional volume
+removal. The photon frequency is set by the local propagation conditions:
+```
+ν_observed = ν_emitted × √(1 − 2GM/rc²)    [gravitational redshift, GR result]
+```
+
+In DFC: as the photon climbs out of the compression gradient, the local c² (the
+effective propagation speed in the modified background) changes. The frequency drops
+because the photon's ω = ck must adjust to the local field conditions — same k,
+reduced effective c → reduced ω → redshift. The energy loss goes into work done
+against the compression gradient. ✓
 
 ---
 
 ## What This Explains
 
-| Phenomenon | Explanation |
+| Phenomenon | DFC explanation |
 |---|---|
-| Constancy of *c* | *c* is the fixed D2↔D3 boundary slope, not a velocity |
-| Masslessness | Light does not anchor into D4 (mass layer) — it rides the D2 boundary |
-| Gravitational bending | The D2↔D3 boundary follows the local dimensional folding geometry |
-| Gravitational redshift | D2 mode loses available DOF climbing out of high-folding region |
+| Constancy of c | c is the compression field propagation speed, not a velocity |
+| Masslessness | No D4 anchor — no buckling potential, no stable minimum |
+| E = hν | Massless KG dispersion: ω = ck → E = ℏω = hν ✓ |
+| Gravitational bending | D2 mode follows the local compression gradient geometry |
+| Gravitational redshift | Effective propagation conditions change with gradient depth |
 | Discrete emission/absorption | Reconfiguration is threshold-driven (buckling character) |
-| Thermal radiation | Distributed low-frequency shedding under continuous folding pressure |
-| Photon capture by black holes | D2↔D3 boundary collapses inside the horizon |
-| Speed limit for massive objects | More dimensional thickness = more anchoring to overcome |
+| Thermal radiation | Distributed low-frequency shedding under compression pressure |
+| Photon capture by black holes | Compression rate exceeds c — D2 mode cannot propagate outward |
+| Speed limit for massive objects | Depth anchoring (D4+) resists the unanchored propagation rate |
+| Two polarization states | Two transverse fold orientation degrees of freedom |
+| Helicity ±1 | Left/right precession of fold orientation around propagation axis |
+
+---
+
+## Analogy: Wave on a Membrane
+
+The compression field is like a taut membrane. Massive particles are stable knots
+(topological features) tied into the membrane — they have structure that resists being
+moved. Light is a propagating ripple on the same membrane — no knot, just a wave.
+
+The speed of the ripple is set by the tension and density of the membrane — these are
+c and the Planck-scale parameters (α, β). The knots cannot move through the membrane
+faster than the ripple speed, because they are made of the same material as the ripple;
+getting them to move requires deforming the membrane around them, which takes energy
+proportional to how tightly they are knotted.
+
+**Where the analogy breaks down:** A real membrane exists in a pre-existing room and
+has edges. The compression field does not exist in anything — it is the substrate.
+Also, the membrane analogy suggests light and matter are different kinds of objects on
+the same substrate, when the DFC model says they are the same object (the compression
+field) in different regimes (massless propagation vs. stable fold with potential).
 
 ---
 
 ## Connections to Other Phenomena
 
-- **Gravity** — gravitational lensing and redshift are direct consequences of the D2↔D3
-  boundary following the local folding geometry; see `../gravity/general_relativity.md`
-- **Quantum mechanics** — the discrete character of emission/absorption reflects the
-  buckling threshold nature of dimensional reconfiguration; see
-  `../quantum/quantum_mechanics.md`
-- **Thermodynamics** — thermal radiation is the low-frequency continuous shedding end
-  of the same emission mechanism; the connection between temperature (collapse rate) and
-  radiation frequency is the dimensional interpretation of Planck's law
-- **Interference** — light's wave-like behavior in interference experiments reflects the
-  D2 field's redistribution under boundary constraints; see `../quantum/interference.md`
+- **Quantum mechanics** — the Schrödinger equation for photons follows the same NR
+  reduction of KG, but the m→0 limit is the relativistic regime; photon polarization =
+  fold orientation θ = quantum phase; `phenomena/quantum/quantum_mechanics.md`
+- **Interference** — the double-slit pattern follows from the massless KG wave equation
+  under boundary conditions; fringe spacing λ = h/p = hc/E; `phenomena/quantum/interference.md`
+- **General relativity** — gravitational lensing and redshift are consequences of the
+  compression gradient modifying the local effective c²; `phenomena/gravity/general_relativity.md`
+- **Thermodynamics** — thermal radiation (blackbody spectrum) is the statistical
+  distribution of massless compression wave excitations; Planck distribution from
+  equipartition over massless modes; `phenomena/thermodynamics/thermodynamics.md`
+- **Electromagnetism** — the photon is the gauge boson of the U(1) closure at D5;
+  the fold orientation angle θ is the U(1) phase; `foundations/product_geometry.md`
+- **Quantum emergence** — fold orientation as complex phase; massless dispersion;
+  `equations/quantum_emergence.py`
+
+---
 
 ## Open Questions
 
-- What determines the precise relationship between dimensional depth change and emitted
-  frequency? Is there a derivable version of E = hν from folding geometry?
-- What is the exact mechanism by which the D2↔D3 boundary tracks local spacetime
-  curvature — and can this reproduce the geodesic equation for null paths?
-- Can the polarization states of light be derived from the specific orientation degrees
-  of freedom available at the D2 level?
+1. **Derive E = hν without complex amplitudes:** The derivation above uses ℏω from
+   canonical quantization of the KG field. A fully DFC-native derivation would show
+   that the compression wave's energy comes in units of ℏω directly from the fold
+   action integral — without importing the quantum postulate E = ℏω from outside.
 
-## Equations
+2. **Photon spin from D2 topology:** The two helicity states of the photon (spin ±1)
+   are here identified with the two precession directions of the fold orientation. A
+   rigorous derivation requires showing that the D2 closure mode has exactly two
+   transverse degrees of freedom and that they transform as a spin-1 representation
+   under rotations of the D3 localization layer.
 
-See `../../equations/higgs_potential.py` for the treatment of the D2↔D3 boundary
-geometry (the S³ squashing that determines the W/Z mass — the same boundary that light
-propagates along).
+3. **Null geodesic from compression gradient:** GR predicts that photons follow null
+   geodesics in curved spacetime. In DFC, this should follow from the compression
+   field equation for massless modes in a background compression gradient. The specific
+   derivation — showing that the massless KG equation in a curved background reduces to
+   the null geodesic equation — is a key open derivation connecting DFC to GR's photon
+   sector.
 
-The Planck relation E = hν from dimensional folding principles is a target derivation.
-The folding interpretation suggests: ν corresponds to the reconfiguration rate, and h is
-a dimensional-geometric constant set by the D2 mode structure at the bifurcation scale.
+4. **Blackbody spectrum from compression field statistics:** Planck's distribution
+   n(ν) = 1/(e^{hν/kT} − 1) should follow from the Bose-Einstein statistics of
+   massless compression wave quanta in thermal equilibrium. This requires identifying
+   the statistical mechanics of the D2 mode spectrum — which is open but expected to
+   reproduce the standard result since the massless KG quantization gives bosons.
+
+5. **Why exactly two transverse polarization states:** Gauge invariance (in the U(1)
+   closure interpretation) removes the longitudinal mode, leaving exactly two physical
+   polarizations. In DFC, this should follow from the topology of the D2 closure mode —
+   the U(1) circle has exactly one angular degree of freedom, giving one transverse
+   phase, and the photon's two polarizations correspond to the real and imaginary parts
+   of that complex phase.
