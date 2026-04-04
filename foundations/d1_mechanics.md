@@ -169,8 +169,8 @@ As the mobile region reaches the outer boundary:
 The region therefore:
 - Remains near the boundary
 - Migrates laterally along stress gradients
-- Finds preferred directions from slight anisotropies, curvature variations, or existing
-  fold-line networks
+- Propagates along directions defined by slight anisotropies, curvature variations, or
+  existing fold-line networks
 
 This is the origin of **lateral redistribution** — the compensatory sideways motion that
 produces observable structure. It is not imposed; it is the path of least resistance when

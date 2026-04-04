@@ -51,9 +51,9 @@ structural constant of the D2↔D3 boundary, not a velocity in space.
 - Supports scattering, absorption, and emission
 - Basis for classical spacetime descriptions
 
-**Interpretive role:** D3 allows propagated modes to anchor into interaction-capable
-structures. Without D3, a D2 mode can travel but cannot "be somewhere" in a way that
-other structures respond to. D3 is what makes contact possible.
+**Interpretive role:** D3 is the structure in which propagated modes anchor into
+interaction-capable configurations. Without D3, a D2 mode can travel but cannot "be
+somewhere" in a way that other structures respond to. D3 is what makes contact possible.
 
 ---
 
@@ -130,7 +130,7 @@ in. Below this threshold, colored structures cannot propagate freely through the
 
 **Baryons (~D8–9):** Three quarks locked together by deep confinement. The baryon is the
 stable knot configuration at the depth where three-body confinement becomes energetically
-preferred. The three-quark structure reflects the three-fold topology available at this
+energetically stable. The three-quark structure reflects the three-fold topology available at this
 depth — connected to the SU(3) structure of the strong interaction.
 
 **Black holes (→∞):** Not a particle type but an attractor regime. Dimensional boundaries

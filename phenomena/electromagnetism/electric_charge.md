@@ -152,8 +152,8 @@ each individual quark must carry charge ±1/3 or ±2/3.
 
 This is not a free choice. The consistency condition between the D5 and D7 closure
 topologies — specifically, the requirement that all gauge anomalies cancel (which is the
-quantum consistency of the theory) — forces quark charges to take values ±1/3, ±2/3
-and lepton charges to be 0, −1.
+quantum consistency of the theory) — constrains quark charges to ±1/3, ±2/3
+and lepton charges to 0, −1.
 
 The anomaly cancellation conditions for one generation are:
 ```
@@ -191,7 +191,7 @@ the total D5 winding of all quarks in a generation must equal the D5 winding of 
 paired lepton. Any departure would make the quantum gauge theory inconsistent
 (anomalous), which in DFC means the D5 and D7 closures could not coexist stably.
 
-*Deriving this from first principles in DFC — showing that the D5/D7 topology forces
+*Deriving this from first principles in DFC — showing that the D5/D7 topology produces
 anomaly-free charge assignments — is the key open derivation for this document.*
 
 ---
@@ -212,7 +212,7 @@ anomaly-free charge assignments — is the key open derivation for this document
 
 ## Connections to Other Phenomena
 
-- **Electromagnetism** — A_μ is the connection forced by local θ symmetry; charge is
+- **Electromagnetism** — A_μ is the connection arising from local θ symmetry; charge is
   the source of A_μ; `phenomena/electromagnetism/electromagnetism.md`
 - **Quarks** — fractional charges from D5/D7 consistency; `phenomena/particle_physics/particles/quarks.md`
 - **Electron** — unit charge, n = −1 at D5; `phenomena/particle_physics/particles/electron.md`

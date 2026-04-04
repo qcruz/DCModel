@@ -231,10 +231,12 @@ Decoherence rate:
 where λ_coupling is the system-environment coupling strength and ρ_env(E) is the
 environmental density of states at the relevant energy.
 
-**Preferred pointer basis:** The environment selects a preferred basis — the "pointer
-states" — which are the field configurations that are most stable under environmental
-compression. In DFC these are the energy eigenstates, because energy eigenstates have
-stationary phases and therefore couple least to the environment's phase-sensitive interactions.
+**Stable pointer basis:** The environment defines a stable basis — the "pointer
+states" — which are the field configurations most stable under environmental compression.
+In DFC these are the energy eigenstates, because energy eigenstates have stationary phases
+and therefore couple least to the environment's phase-sensitive interactions. (In standard
+QM literature this is called the "preferred pointer basis" or "einselection" — the DFC
+account replaces the selection language with a stability criterion.)
 
 **Standard QM name:** Decoherence / einselection / quantum-to-classical transition.
 
@@ -376,9 +378,9 @@ controlled environments, τ_dec can be seconds or longer.
    φ⁴ field — expressing the weak/strong measurement boundary in terms of α, β, and the
    coupling strength g.
 
-3. **Pointer basis selection mechanism:** Environmental decoherence selects pointer states.
-   In DFC, the claim is that energy eigenstates (stationary phases) are preferred because
-   they couple least to phase-sensitive environmental interactions. Deriving this precisely
+3. **Pointer basis stability mechanism:** Environmental decoherence establishes stable pointer
+   states. In DFC, the claim is that energy eigenstates (stationary phases) are the stable
+   configurations because they couple least to phase-sensitive environmental interactions. Deriving this precisely
    requires showing that the compression field's environmental interaction term commutes
    with the system Hamiltonian in the pointer basis — an open formal derivation.
 

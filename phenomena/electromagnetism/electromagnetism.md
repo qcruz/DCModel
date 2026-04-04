@@ -2,11 +2,11 @@
 
 ## One-Sentence Synthesis
 
-> Electromagnetism is the physics of the connection field that the D5 U(1) closure
-> forces into existence: when the fold orientation angle θ becomes a local symmetry
-> (independently defined at each point in space), a vector potential A_μ must exist to
-> compare phases between neighboring points, and Maxwell's equations are the minimal
-> self-consistent dynamics for that connection.
+> Electromagnetism is the physics of the connection field that arises from the D5 U(1)
+> closure: when the fold orientation angle θ is a local symmetry (independently defined
+> at each point in space), a vector potential A_μ exists as the mathematical object
+> required for comparing phases at neighboring points, and Maxwell's equations are the
+> minimal self-consistent dynamics for that connection.
 
 ---
 
@@ -168,10 +168,10 @@ A_μ A^μ → A_μ A^μ + (2/e) A^μ ∂_μ α + (1/e²)(∂_μ α)²  ≠  A_μ
 The mass term is not gauge-invariant. It would destroy the local phase symmetry — the
 very structure that requires A_μ to exist.
 
-In DFC: A_μ is massless because the fold orientation θ has no preferred value — no
-stable minimum like the Higgs field at D6. There is no "mass" for the phase connection
-because the phase itself is arbitrary. The masslessness is topological: U(1) is a circle
-with no preferred point.
+In DFC: A_μ is massless because the fold orientation θ has no geometrically distinguished
+value — no stable minimum like the Higgs field at D6. There is no "mass" for the phase
+connection because the phase itself is arbitrary. The masslessness is topological: U(1)
+is a circle — homogeneous, with no geometrically distinguished point.
 
 ### Why the Force Falls as 1/r²
 
@@ -261,8 +261,8 @@ No variable introduced without a reason. Each entry follows from the one above i
    subleading — connecting the Lagrangian to the compression field's expansion in powers
    of the field amplitude.
 
-3. **Non-Abelian extension to D6 and D7:** The same logic that forces A_μ at D5 forces
-   W_μ^a (a=1,2,3) at D6 and G_μ^a (a=1,...,8) at D7. Non-Abelian connections
+3. **Non-Abelian extension to D6 and D7:** The same local-symmetry structure that produces
+   A_μ at D5 produces W_μ^a (a=1,2,3) at D6 and G_μ^a (a=1,...,8) at D7. Non-Abelian connections
    self-interact (gluons attract gluons; W bosons attract W bosons) because the
    non-Abelian field strength F_μν^a = ∂_μA_ν^a − ∂_νA_μ^a + f^{abc}A_μ^bA_ν^c
    contains cubic and quartic terms in A. Deriving the self-coupling structure from the

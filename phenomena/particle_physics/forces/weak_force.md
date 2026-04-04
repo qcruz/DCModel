@@ -2,12 +2,13 @@
 
 ## One-Sentence Synthesis
 
-> The weak force is the gauge interaction of the D6 SU(2) closure — by the same logic
-> that forces A_μ at D5 and G_μ^a at D7, the independently-defined SU(2) orientation
-> at each spatial point forces three gauge fields W_μ^a into existence; but unlike the
-> other forces, D6 SU(2) is a chiral closure (S³ has a preferred orientation), so only
-> left-handed fermions couple to it, and the S³'s squashing away from perfect symmetry
-> gives the W and Z bosons their mass while leaving the photon massless.
+> The weak force is the gauge interaction of the D6 SU(2) closure — by the same
+> local-symmetry structure that produces A_μ at D5 and G_μ^a at D7, the independently-defined
+> SU(2) orientation at each spatial point produces three gauge fields W_μ^a; unlike the
+> other forces, D6 SU(2) is a chiral closure (S³ carries an intrinsic orientation defined
+> by the dimensional structure that creates it), so only left-handed fermions couple to it,
+> and the S³'s squashing away from perfect symmetry gives the W and Z bosons their mass
+> while leaving the photon massless.
 
 ---
 
@@ -58,22 +59,23 @@ The weak force arises by the exact mechanism as EM (D5) and the strong force (D7
 SU(2) has 3 generators (2² − 1 = 3), so three gauge fields are required — one connection
 field per generator. The D6 closure gives each fermion an **SU(2) orientation** in a
 2-dimensional complex space (a spinor direction). Because this orientation is independently
-defined at each point in space, a connection W_μ^a is forced into existence to allow
-comparison of SU(2) orientations at neighboring points.
+defined at each point in space, a connection W_μ^a exists — it is the mathematical object
+required for comparing SU(2) orientations at neighboring points.
 
-### Why D6 Is Chiral: S³ Has a Preferred Orientation
+### Why D6 Is Chiral: S³ Carries an Intrinsic Orientation
 
 This is the key structural difference of the weak force from all others.
 
 The group manifold of SU(2) is S³ — the 3-sphere. Compare:
-- U(1) group manifold is S¹ (a circle). S¹ has no preferred orientation: clockwise and
-  counterclockwise are related by a simple reflection.
+- U(1) group manifold is S¹ (a circle). S¹ is orientation-symmetric: clockwise and
+  counterclockwise are related by a simple reflection. No intrinsic chirality.
 - SU(2) group manifold is S³ (a 3-sphere). S³ is **chiral**: the two orientations of S³
-  (right-handed and left-handed) are not continuously related. S³ has a definite handedness.
+  (right-handed and left-handed) are not continuously related. S³ has a definite handedness
+  that cannot be removed by a continuous transformation.
 
 When the D6 closure creates an SU(2) topology at each spatial point, it does so with a
-definite chirality — a definite orientation of S³. This chirality is preserved throughout
-the closure geometry.
+single definite chirality — the orientation inherent to the dimensional structure that
+generates the D6 closure. This chirality is preserved throughout the closure geometry.
 
 **The physical consequence:** only fermions whose intrinsic spin is aligned with the S³
 orientation couple to the W_μ^a connection fields. These are the left-handed fermions
@@ -81,17 +83,17 @@ orientation couple to the W_μ^a connection fields. These are the left-handed fe
 fermions are aligned with the opposite S³ orientation — they see no W_μ^a connection.
 
 **In DFC terms:** parity violation is not a postulate — it is the structural consequence of
-the D6 closure having a preferred orientation. The chirality of S³ is why the weak force
-violates parity maximally.
+the D6 closure having a single intrinsic orientation. The chirality of S³ is why the weak
+force violates parity maximally.
 
-*The precise DFC derivation of why the D6 S³ closure has exactly one preferred chirality
+*The precise DFC derivation of why the D6 S³ closure has exactly one intrinsic chirality
 (rather than both, or neither) is an open problem — see Open Questions below.*
 
 ### Why the W and Z Bosons Are Massive
 
-In electromagnetism, the photon is massless because the U(1) circle has no preferred point
-— no stable minimum, so no mass term is permitted for A_μ. The photon's masslessness
-reflects the topological fact that S¹ is a homogeneous space.
+In electromagnetism, the photon is massless because the U(1) circle is homogeneous — no
+point is geometrically distinguished, so no stable minimum exists and no mass term is
+consistent with A_μ. The photon's masslessness reflects this topological uniformity of S¹.
 
 The S³ (SU(2) group manifold) at D6 is also homogeneous in its undistorted form — but it
 can be **squashed**: deformed from a perfectly round S³ to an ellipsoidal shape. When the
@@ -233,7 +235,7 @@ structure follows from the left-handed D6 chirality, and the rate matches to 0.1
 |---|---|
 | W, Z bosons carry the force | D6 SU(2) local symmetry → 3 connection fields W_μ^a |
 | Only 3 weak gauge bosons | SU(2) has 3 generators (2²−1=3) |
-| Parity violated maximally | S³ group manifold of D6 is chiral — preferred orientation |
+| Parity violated maximally | S³ group manifold of D6 is chiral — single intrinsic orientation |
 | Right-handed fermions don't couple | Aligned with opposite S³ orientation |
 | W, Z are massive (80–91 GeV) | S³ squashing (Higgs mechanism): ε ≠ 0 breaks SU(2)×U(1) |
 | Photon remains massless | Squashing preserves one U(1) rotation axis |
@@ -277,10 +279,11 @@ structure follows from the left-handed D6 chirality, and the rate matches to 0.1
 ## Open Questions
 
 1. **Formal derivation of D6 chirality:** The physical argument is that S³ is chiral (has
-   a preferred orientation), which forces the weak coupling to be left-handed. A formal DFC
-   derivation requires showing that the D6 S³ closure topology selects exactly one of the
-   two S³ orientations — and explaining why nature picks left rather than right. This would
-   derive parity violation from first principles rather than postulating SU(2)_L.
+   an intrinsic orientation defined by the D6 closure structure), producing the left-handed
+   coupling. A formal DFC derivation requires showing that the D6 S³ closure topology has
+   exactly one intrinsic chirality — and explaining why the dimensional structure generating
+   D6 results in the observed left handedness. This would derive parity violation from first
+   principles rather than postulating SU(2)_L.
 
 2. **Derive sin²θ_W from DFC geometry:** The Weinberg angle sin²θ_W ≈ 0.231 is a free
    parameter of the Standard Model (measured, not derived). In DFC, it should emerge from

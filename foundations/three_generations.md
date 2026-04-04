@@ -191,7 +191,7 @@ Calabi-Yau manifolds with χ = ±6 give 3 generations, but χ = 0, ±2, ±4, ±8
 valid choices — you must *select* a Calabi-Yau that happens to give three generations. The
 three is drawn from a landscape of possibilities, not forced by the construction.
 
-In this model, the three is not selected — it is forced by the mathematical structure of
+In this model, the three is not selected — it follows from the mathematical structure of
 SU(3) itself, which arises at D7 from the compression field dynamics. There is no landscape
 to choose from. The closure that forms at D7 is SU(3), and SU(3) has fundamental
 representation of dimension 3.

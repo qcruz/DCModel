@@ -3,7 +3,7 @@
 ## One-Sentence Synthesis
 
 > The strong force is the gauge interaction of the D7 SU(3) closure — arising by the
-> same local-symmetry logic that forces A_μ at D5 — but with the crucial difference
+> same local-symmetry structure that produces A_μ at D5 — but with the crucial difference
 > that SU(3) is non-Abelian: gluons carry color charge themselves and self-interact,
 > which concentrates field lines into flux tubes, makes the coupling grow with distance,
 > and confines color charge to color-neutral combinations.
@@ -58,7 +58,7 @@ of the seven Millennium Prize Problems.
 ### The Same Logic as Electromagnetism, at D7
 
 The strong force arises by the identical mechanism as electromagnetism — local gauge
-symmetry forced by independent closure events — but at depth D7 instead of D5:
+symmetry arising from independent closure events — but at depth D7 instead of D5:
 
 - At D5: local U(1) phase symmetry → requires 1 connection field A_μ → electromagnetism
 - At D7: local SU(3) color symmetry → requires 8 connection fields G_μ^a → strong force
@@ -66,8 +66,8 @@ symmetry forced by independent closure events — but at depth D7 instead of D5:
 The D7 SU(3) closure gives each quark a **color orientation** — a direction in the
 3-dimensional color space (red, green, or blue). Just as the fold orientation θ is
 independently defined at each point for D5, the color orientation is independently
-defined at each point for D7. This local SU(3) symmetry forces the 8 gluon fields
-G_μ^a (a = 1,...,8) into existence as the connection on the color bundle.
+defined at each point for D7. This local SU(3) symmetry structure produces 8 gluon fields
+G_μ^a (a = 1,...,8) as the connection on the color bundle.
 
 Eight gluons because SU(3) has 8 generators (3² − 1 = 8) — one connection field
 per generator.
@@ -89,8 +89,8 @@ U₁ × U₂ ≠ U₂ × U₁     [for non-Abelian group elements]
 ```
 
 The non-commutativity means that the parallel transport of a color orientation around
-a closed loop depends on the path taken — not just the endpoints. This forces the
-field strength to include a self-coupling term:
+a closed loop depends on the path taken — not just the endpoints. This produces a
+field strength that includes a self-coupling term:
 
 ```
 F_μν^a = ∂_μ G_ν^a − ∂_ν G_μ^a + g_s f^{abc} G_μ^b G_ν^c
