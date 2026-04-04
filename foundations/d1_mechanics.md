@@ -1,11 +1,46 @@
-# D1 — Compression, Buckling, and Bubbling
+# D1 — The Compressed Ground State
+
+## Living Document Notice
+
+> This document tracks the ongoing understanding of D1 as the model develops.
+> **Descriptions here are provisional.** Language, analogies, and characterizations
+> will be updated as the formal mathematics advances and each claim can be verified
+> against what the equations actually describe. Do not treat any section as final until
+> it is marked with a derivation reference.
+
+---
+
+## What D1 Is — Current Best Description
+
+D1 is not a point, an object, a field, or a singularity in any familiar sense.
+It is the regime of maximal compression — the state in which everything that will
+later differentiate into distinct structure, distinct forces, and distinct particles
+exists in a single undifferentiated state.
+
+The closest honest description: **D1 contains everything, everywhere, all at once** —
+not as a superposition of already-differentiated things, but as the precursor state from
+which differentiation has not yet happened. All the structure that emerges at D2 through
+D7 is latent in D1, but none of it is yet distinct.
+
+**What we cannot yet say:** Whether D1 is best described as an energy field, a condensate,
+a topological ground state, or something without a good existing analogy. That question
+must be answered by the math as it develops. The descriptions below are mechanically
+grounded visualizations — tools for reasoning — not definitive physical characterizations.
+
+**How the description evolves:** Each section below reflects the current level of
+mathematical development. As formal results are derived (compression field calibration,
+kink solutions, bifurcation analysis), the language will be updated to match what the
+equations actually say. Prior language that proves inconsistent will be retired, not
+preserved for historical reasons.
+
+---
 
 ## A Concrete Mechanical Visualization
 
-This document defines a precise mechanical visualization for D1, understood as the regime
-of extreme compression that precedes instability, buckling, and the generation of new
-structure. The goal is not metaphor but a mechanically coherent picture that can be
-reasoned about step-by-step and refined into formal models.
+The following sections define a mechanically coherent picture of D1 behavior — how it
+compresses, becomes unstable, buckles, and generates new structure. The goal is not
+metaphor but a picture that can be reasoned about step-by-step and tightened into formal
+models over time.
 
 ---
 
@@ -234,8 +269,31 @@ in which continued compression forces instability, reconfiguration, and the gene
 new structural pathways. Buckling replaces divergence. Structure emerges from the necessity
 of redistribution, not from imposed discreteness.
 
-This visualization provides a mechanically grounded foundation for further development
-without relying on metaphor or undefined primitives.
+---
+
+## What Is Established vs. What Remains Open
+
+| Claim | Status | Source |
+|---|---|---|
+| D1 is a regime of extreme compression, not a point | Established — definitional | `foundations/premise.md` |
+| Buckling occurs before any quantity diverges | Established — compression field V(φ) has finite barriers | `equations/kink_model.py` |
+| Buckling produces stable kink solutions (closures) | Established — φ₀ = ±√(α/β) from potential | `foundations/substrate.md` |
+| D1 is the undifferentiated precursor to all structure | Working description — consistent with the math so far | This document |
+| Specific nature of D1 (field, condensate, other) | **Open** — awaits nonlinear compression field analysis | — |
+| Whether D1 has internal degrees of freedom | **Open** — would appear in Planck-scale behavior | — |
+| Why compression in D1 generates exactly these bifurcations | **Open** — requires deriving the bifurcation sequence | `foundations/formation.md` |
+| Baryogenesis at D7 closure as asymmetry in D1 initial state | **Speculative** — consistent but not derived | `phenomena/particle_physics/proton_stability.md` |
+
+---
+
+## Update Log
+
+*Record significant revisions here as the math develops and earlier descriptions are
+verified, corrected, or retired.*
+
+| Date | Change | Reason |
+|---|---|---|
+| 2026-04-04 | Added living-document framing, "everything everywhere all at once" characterization, status table, update log | Explicit description of D1's fundamental nature needed as model matures |
 
 ---
 

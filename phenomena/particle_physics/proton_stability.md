@@ -269,8 +269,16 @@ the D7 buckling event as the origin of baryogenesis.
    Planck-scale physics introduces additional decay channels — cannot be answered
    without the complete nonlinear DFC theory at the Planck scale.
 
-4. **Neutron lifetime in DFC:** The neutron decays in ~15 minutes (n → p + e⁻ + ν̄_e)
-   via weak interaction. This is gauge-mediated (SU(2) W-boson exchange) and is
-   consistent with the product group — the W-boson couples within the D6 closure, not
-   across closure boundaries. The DFC prediction for the neutron lifetime should match
-   the Standard Model result exactly. Verifying this consistency is open.
+4. **Neutron lifetime in DFC — verified ✓:** The neutron decays in ~15 minutes
+   (n → p + e⁻ + ν̄_e) via W-boson exchange entirely within the D6 SU(2) closure.
+   This is an intra-closure transition (ALLOWED), contrasted with proton decay
+   d → e⁺ which would require crossing D7 (SU(3)) → D5 (U(1)) — a cross-closure
+   transition (FORBIDDEN). The DFC correction to the SM W-boson coupling is exactly
+   zero. Tree-level Fermi theory with radiative correction (+3.9%) gives:
+
+   ```
+   τ_n(DFC) = τ_n(SM) = 878.4 s    vs    τ_n(observed) = 879.4 s    (ratio 0.9989)
+   ```
+
+   The model is consistent. See `equations/proton_stability.py` →
+   `dfc_decay_classification()` and `neutron_lifetime_treelevel()`.

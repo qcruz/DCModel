@@ -359,6 +359,9 @@ The Schrödinger equation holds only in the linearized regime |δφ| ≪ φ₀.
   `equations/quantum_emergence.py`
 - **Cosmic expansion** — the same compression field governs both QM and cosmology;
   `phenomena/cosmology/cosmic_expansion.md`
+- **Measurement** — measurement as compression: projective, weak, Zeno, decoherence, and
+  QND each correspond to specific compression modes; the measurement problem resolved via
+  buckling threshold; `foundations/measurement.md`
 
 ---
 

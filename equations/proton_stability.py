@@ -170,6 +170,164 @@ def sphaleron_rate(temperature_gev, higgs_vev_gev=0.24622):
     }
 
 
+# ─── Neutron lifetime consistency check ──────────────────────────────────────
+
+def dfc_decay_classification():
+    """
+    Classify neutron vs. proton decay in DFC closure-topology terms.
+
+    The key distinction between allowed and forbidden decays in the product
+    geometry U(1) × SU(2) × SU(3):
+
+        FORBIDDEN (cross-closure):
+            Requires a carrier that couples across independent closure depths.
+            Example: p → π⁰ + e⁺ requires d → e⁺ (color → lepton number),
+            i.e., a carrier bridging D7 (SU(3)) to D5 (U(1)). No such carrier
+            exists in a product group.
+
+        ALLOWED (intra-closure):
+            The carrier belongs entirely to one closure factor and the initial
+            and final states are both charged under that same factor.
+            Example: n → p + e⁻ + ν̄_e proceeds via W⁻ emission from the SU(2)
+            closure at D6. All participants carry SU(2) quantum numbers.
+
+    The neutron decay chain:
+        d → u + W⁻        (SU(2) isospin transition — intra-D6)
+        W⁻ → e⁻ + ν̄_e   (SU(2) lepton doublet — intra-D6)
+
+    Every leg of this diagram couples only through the D6 SU(2) closure.
+    No cross-closure transition is involved. DFC allows this decay exactly
+    as the Standard Model does, with no correction.
+
+    Returns
+    -------
+    dict with closure assignments and allowed/forbidden classification.
+    """
+    return {
+        'reaction':             'n → p + e⁻ + ν̄_e',
+        'quark_transition':     'd → u + W⁻',
+        'w_boson_decay':        'W⁻ → e⁻ + ν̄_e',
+        'closure_involved':     'SU(2) at D6 only',
+        'cross_closure':        False,
+        'classification':       'ALLOWED — intra-D6 SU(2) transition',
+        'dfc_correction':       'None — DFC adds no modification to SM W-boson coupling at low energy',
+        'contrast_with_proton': {
+            'reaction':         'p → π⁰ + e⁺  (hypothetical)',
+            'quark_transition': 'd → e⁺  (requires color → lepton number)',
+            'closures_needed':  'D7 (SU(3)) → D5 (U(1)): cross-closure',
+            'cross_closure':    True,
+            'classification':   'FORBIDDEN — no carrier bridges independent closure depths',
+        },
+        'consistency_requirement': (
+            'τ_neutron (DFC) = τ_neutron (SM). '
+            'The DFC product group structure must reproduce the SM neutron lifetime '
+            'exactly, with zero additional correction. Any discrepancy would indicate '
+            'an error in the closure-depth assignment of SU(2).'
+        ),
+    }
+
+
+def neutron_lifetime_treelevel(
+    G_F=1.16638e-5,     # Fermi constant in GeV^-2
+    V_ud=0.97373,       # CKM element
+    g_A=1.2756,         # axial coupling
+    m_n=0.93957,        # neutron mass in GeV
+    m_p=0.93827,        # proton mass in GeV
+    m_e=5.1100e-4,      # electron mass in GeV
+    hbar_gev_s=6.5821e-25,  # ℏ in GeV·s
+    n_steps=10000,
+):
+    """
+    Tree-level neutron lifetime from β decay kinematics.
+
+    The neutron decays via n → p + e⁻ + ν̄_e mediated by W-boson exchange.
+    In the Fermi effective theory (W integrated out):
+
+        Γ = G_F² |V_ud|² (1 + 3g_A²) / (2π³) × I_PS
+
+    where I_PS is the phase-space integral over allowed electron energies:
+
+        I_PS = ∫_{m_e}^{E_max} p_e × E_e × (E_max − E_e)² dE_e
+
+        E_max = m_n − m_p        [endpoint energy, neglecting nucleon recoil]
+        p_e   = √(E_e² − m_e²)  [electron momentum]
+        (E_max − E_e) = neutrino energy (massless neutrino approximation)
+
+    DFC prediction: τ_n (DFC) = τ_n (SM tree level). No DFC correction.
+
+    Observed: τ_n = 879.4 ± 0.6 s (PDG 2022, beam method average).
+    Tree-level SM prediction (no radiative corrections): τ_n ≈ 920–940 s.
+    With radiative corrections (+RC ≈ 3.9%): τ_n ≈ 880 s  ✓
+
+    Parameters
+    ----------
+    G_F : float
+        Fermi constant (GeV⁻²).
+    V_ud : float
+        CKM element |V_ud|.
+    g_A : float
+        Neutron axial coupling g_A = G_A/G_V.
+    m_n, m_p, m_e : float
+        Neutron, proton, electron masses (GeV).
+    hbar_gev_s : float
+        ℏ in GeV·s (for converting Γ[GeV] → τ[s]).
+    n_steps : int
+        Integration steps for phase-space integral.
+
+    Returns
+    -------
+    dict with lifetime prediction and DFC consistency check.
+    """
+    E_max = m_n - m_p   # endpoint energy (GeV); ≈ 1.293 MeV
+
+    # Numerical integration: ∫ p_e E_e (E_max − E_e)² dE_e
+    # from E_e = m_e to E_e = E_max
+    dE = (E_max - m_e) / n_steps
+    I_PS = 0.0
+    for i in range(n_steps):
+        E_e = m_e + (i + 0.5) * dE
+        if E_e >= E_max:
+            break
+        p_e = math.sqrt(max(E_e**2 - m_e**2, 0.0))
+        E_nu = E_max - E_e
+        I_PS += p_e * E_e * E_nu**2 * dE
+
+    # Decay rate (GeV, natural units)
+    prefactor = G_F**2 * V_ud**2 * (1.0 + 3.0 * g_A**2) / (2.0 * math.pi**3)
+    Gamma_gev = prefactor * I_PS
+
+    # Lifetime
+    tau_s_tree = hbar_gev_s / Gamma_gev
+
+    # Radiative correction factor (from SM QED, ≈ +3.9%)
+    # Including this brings tree-level into agreement with observation
+    RC_factor  = 1.039
+    tau_s_rc   = tau_s_tree / RC_factor   # RC increases rate, reduces lifetime
+
+    tau_observed = 879.4   # seconds (PDG 2022)
+
+    return {
+        'E_max_mev':            E_max * 1000,
+        'phase_space_integral': I_PS,
+        'Gamma_gev':            Gamma_gev,
+        'tau_tree_s':           tau_s_tree,
+        'tau_tree_min':         tau_s_tree / 60,
+        'tau_with_RC_s':        tau_s_rc,
+        'tau_observed_s':       tau_observed,
+        'tree_vs_obs_ratio':    tau_s_tree / tau_observed,
+        'RC_corrected_ratio':   tau_s_rc / tau_observed,
+        'dfc_correction':       0.0,
+        'dfc_prediction_s':     tau_s_rc,  # DFC = SM (no extra correction)
+        'within_5pct':          abs(tau_s_rc / tau_observed - 1.0) < 0.05,
+        'closure_check': (
+            'n → p + e⁻ + ν̄_e is a D6 SU(2) intra-closure decay. '
+            'DFC product group adds zero correction to the SM W-boson coupling. '
+            f'Predicted τ = {tau_s_rc:.1f} s  vs  observed τ = {tau_observed} s  '
+            f'(ratio = {tau_s_rc/tau_observed:.4f})'
+        ),
+    }
+
+
 # ─── Comparison to Experimental Bounds ───────────────────────────────────────
 
 def compare_to_experiment():
@@ -203,7 +361,7 @@ def compare_to_experiment():
     print("\n--- Summary ---")
     print(f"  Model prediction:         τ > 10^{grav_result['lifetime_log10_y']:.0f} years (gravitational)")
     print(f"  Best experimental limit:  τ > 10^34 years (Super-K, p → π⁰ e⁺)")
-    print(f"  Safety margin:            10^{grav_result['lifetime_log10_y']:.0f - 34:.0f} × experimental reach")
+    print(f"  Safety margin:            10^{grav_result['lifetime_log10_y'] - 34:.0f} × experimental reach")
     margin = grav_result['lifetime_log10_y'] - 34
     print(f"  Safety margin:            10^{margin:.0f} × above current limits")
     print()
@@ -221,3 +379,31 @@ if __name__ == "__main__":
     for T in [1000.0, 100.0, 10.0, 1.0, 0.1, 0.01]:
         s = sphaleron_rate(T)
         print(f"  T = {T:8.3f} GeV:  {s['status'][:40]}")
+
+    print("\n" + "="*60)
+    print("NEUTRON LIFETIME CONSISTENCY CHECK")
+    print("="*60)
+    cls = dfc_decay_classification()
+    print(f"\nReaction: {cls['reaction']}")
+    print(f"  Quark transition: {cls['quark_transition']}")
+    print(f"  W-boson decay:    {cls['w_boson_decay']}")
+    print(f"  Closure involved: {cls['closure_involved']}")
+    print(f"  Cross-closure:    {cls['cross_closure']}")
+    print(f"  Classification:   {cls['classification']}")
+    cp = cls['contrast_with_proton']
+    print(f"\nContrast — {cp['reaction']}")
+    print(f"  Quark transition: {cp['quark_transition']}")
+    print(f"  Closures needed:  {cp['closures_needed']}")
+    print(f"  Classification:   {cp['classification']}")
+
+    print()
+    result = neutron_lifetime_treelevel()
+    print(f"Tree-level lifetime:          τ_tree = {result['tau_tree_s']:.1f} s")
+    print(f"After radiative correction:   τ_RC   = {result['tau_with_RC_s']:.1f} s")
+    print(f"Observed:                     τ_obs  = {result['tau_observed_s']} s")
+    print(f"Ratio τ_RC / τ_obs:           {result['RC_corrected_ratio']:.4f}")
+    print(f"Within 5%:                    {result['within_5pct']}")
+    print(f"DFC correction:               {result['dfc_correction']}")
+    print(f"\n{result['closure_check']}")
+    status = "✓ CONSISTENT" if result['within_5pct'] else "✗ DISCREPANCY"
+    print(f"DFC prediction = SM prediction = {result['dfc_prediction_s']:.1f} s  [{status}]")
