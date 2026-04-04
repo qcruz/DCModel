@@ -225,28 +225,191 @@ property of the folding pathway landscape.
 
 ---
 
+## Formal Equations
+
+### Entropy as Folding Configuration Count
+
+```
+S = k_B × ln(Ω_fold)
+```
+
+where Ω_fold is the number of distinct compression field configurations φ(x) that
+are macroscopically indistinguishable (same total energy, volume, compression budget).
+
+This is identical in form to Boltzmann's entropy. The DFC contribution is the
+physical identification of the microstates: they are configurations of the compression
+field at the sub-kink-width scale that produce the same macroscopic folding pattern.
+
+For a system of N independent sites, each with M available field values:
+```
+S = k_B × N × ln(M) × f_constraint
+```
+
+where f_constraint accounts for conservation laws (total compression budget, kink
+number). See `equations/entropy_production.py` → `configuration_count_from_field()`.
+
+### Temperature as Compression Agitation Density
+
+From the equipartition theorem applied to the compression field:
+```
+½ m_eff ⟨(∂φ/∂t)²⟩ = ½ k_B T
+→  T = m_eff × ⟨(∂φ/∂t)²⟩ / k_B
+```
+
+Temperature is the mean kinetic energy of compression field fluctuations around the
+stable minimum φ₀. A hotter region has more vigorous ∂φ/∂t oscillations — more
+frequent, stronger attempts to fold that do not successfully close.
+
+Inverse: the RMS compression agitation rate at temperature T:
+```
+⟨(∂φ/∂t)²⟩^(1/2) = √(k_B T / m_eff)
+```
+
+### Entropy Production Rate — Second Law Quantified
+
+When compression flows from a high-agitation region (temperature T_hot) to a
+low-agitation region (T_cold) at rate P (power in watts):
+```
+dS/dt = P × (1/T_cold − 1/T_hot) ≥ 0
+```
+
+This is always non-negative because T_hot > T_cold implies 1/T_cold > 1/T_hot.
+The equality dS/dt = 0 holds only for reversible (quasi-static) processes.
+
+In DFC: compression flowing into a lower-density region creates more accessible
+folding pathways than it removes from the higher-density region — Ω_fold can only
+increase. See `equations/entropy_production.py` → `entropy_production_rate()`.
+
+### Carnot Efficiency from Pathway Geometry
+
+The maximum fraction of heat convertible to work between reservoirs at T_hot and T_cold:
+```
+η_Carnot = 1 − T_cold / T_hot
+```
+
+In DFC: extracting work requires imposing alignment constraints on incoherent compression.
+Constraints inevitably reject a fraction T_cold/T_hot of the compression as heat.
+This fraction is set by the ratio of compression agitation densities — a geometric
+property of the folding pathway landscape, not an engineering limitation.
+
+The Carnot limit is sharp because:
+1. Alignment constraints select pathways compatible with the output mode
+2. All other pathways must be rejected to satisfy the constraint
+3. The rejected fraction is exactly the ratio of accessible configurations at T_cold vs T_hot
+
+### Arrow of Time as Ω_fold Monotonicity
+
+```
+Ω_fold(t₂) ≥ Ω_fold(t₁)   for t₂ > t₁
+```
+
+equivalently:
+```
+ΔS = k_B × ln(Ω_final / Ω_initial) ≥ 0
+```
+
+**Past** = the state with fewer accessible folding configurations.
+**Future** = the state with more.
+
+This is not assumed — it follows from the compression field dynamics: each compression
+event either eliminates local configurations (closing a fold) or disperses compression
+into more distributed pathways (opening more configurations globally). The net effect
+on Ω_fold is always non-negative.
+
+### Fluctuation Theorems
+
+The Jarzynski equality connects non-equilibrium work W to equilibrium free energy ΔF:
+```
+⟨exp(−W/k_BT)⟩ = exp(−ΔF/k_BT)
+```
+
+In DFC: W is the work done against compression gradients during a reconfiguration;
+ΔF is the difference in free compression budget between folding states. The equality
+holds because the compression field equation is microscopically time-reversible
+(∂²φ/∂t² = c²∇²φ − V'(φ) is symmetric under t → −t), even though the macroscopic
+entropy production is irreversible. Microscopic reversibility and macroscopic
+irreversibility coexist because the number of time-reversed trajectories is
+exponentially smaller than forward trajectories — Ω_fold selects the forward direction.
+
+See `equations/entropy_production.py` → `jarzynski_folding_analogue()`.
+
+### Bekenstein Bound
+
+The maximum entropy storable in a region of radius R containing energy E:
+```
+S ≤ 2πRE / ℏc     [Bekenstein bound]
+```
+
+In DFC: the bound follows from the finite number of independent compression field
+degrees of freedom within a spatial region of radius R. Each degree of freedom
+contributes at most one bit of entropy. The total number of independent modes within
+R is bounded by (R/L_Pl)² — the Planck area within R — giving S ≤ A/(4 ln 2) in
+Planck units. This is the holographic bound, and it saturates at the event horizon
+of a black hole (where all the compression budget within R is organized at the
+D3 boundary of the collapse region).
+
+---
+
+## Law-by-Law Summary
+
+| Law | Folding statement | Formal expression |
+|---|---|---|
+| Zeroth | Temperature exists because compression agitation equilibrates uniquely | T = m_eff⟨(∂φ/∂t)²⟩/k_B |
+| First | Compression budget is conserved — redistributed, not created | ΔU = Q − W (same form) |
+| Second | Escaped compression multiplies folding pathways irreversibly | dS/dt = P(1/T_c − 1/T_h) ≥ 0 |
+| Third | Perfect closure is forbidden (D1 asymptotic, never reached) | S → S_min > 0 as T → 0 |
+
+---
+
 ## Connections to Other Phenomena
 
 - **Heat and conductivity** — the physical mechanisms of heat flow and radiation;
-  see `heat_and_conductivity.md`
-- **Time** — the second law provides the arrow of time as a derived consequence of
-  folding degradation, not a postulate; see `../../foundations/premise.md`
+  `phenomena/thermodynamics/heat_and_conductivity.md`
+- **Time** — the second law provides the arrow of time as a derived consequence
+  of folding degradation; Ω_fold monotonically non-decreasing gives time its direction;
+  `foundations/premise.md`
 - **Quantum mechanics** — decoherence is the quantum manifestation of the second law:
-  higher-dimensional degrees of freedom irreversibly disperse into environmental
-  folding; see `../quantum/quantum_mechanics.md`
-- **Black holes** — black hole thermodynamics (Bekenstein-Hawking entropy, area theorem)
-  is the extreme-compression limit of these same laws; horizon area encodes dimensional
-  closure capacity; see `../gravity/general_relativity.md`
-- **Cosmology** — the thermodynamic evolution of the universe reflects the global
-  progression of dimensional folding toward lower-dimensional unity
+  fold orientation (quantum phase) becomes entangled with environmental folds and
+  Ω_fold increases as the pure state disperses; `phenomena/quantum/quantum_mechanics.md`
+- **General relativity** — black hole thermodynamics (Bekenstein-Hawking entropy,
+  area theorem) is the extreme-compression limit; the horizon area A encodes the
+  compression budget at the D3 collapse boundary; `phenomena/gravity/general_relativity.md`
+- **Cosmic expansion** — the thermodynamic arrow of time aligns with the cosmological
+  arrow: both point in the direction of increasing Ω_fold, which is also the direction
+  of increasing scale factor a(t); `phenomena/cosmology/cosmic_expansion.md`
+- **Entropy equations** — all formal implementations; `equations/entropy_production.py`
+
+---
 
 ## Open Questions
 
-- Can the Carnot efficiency formula be derived precisely from the folding geometry of
-  two compression reservoirs, without invoking the ideal gas or reversible cycle?
-- What is the dimensional folding description of a phase transition — the sharp
-  reorganization of folding pathways at a critical compression density?
-- Is there a folding-based derivation of the fluctuation theorems (Jarzynski, Crooks),
-  which extend the second law to small systems far from equilibrium?
-- Does the holographic entropy bound (Bekenstein: S ≤ A/4 in Planck units) follow
-  directly from the dimensional folding description of closure capacity?
+1. **Count Ω_fold directly from φ(x,t):** The identification S = k_B ln(Ω_fold) is
+   exact if Ω_fold correctly counts compression field microstates. Computing Ω_fold
+   explicitly from the field equation — deriving the microcanonical entropy from first
+   principles — requires a precise discretization of the compression field degrees of
+   freedom. This is the open connection between the DFC substrate and statistical
+   mechanics.
+
+2. **Phase transitions as critical compression density:** A phase transition (melting,
+   boiling, ferromagnetic ordering) is a sharp reorganization of folding pathways at a
+   critical value of T or P. In DFC, this should correspond to a bifurcation event in
+   the compression field — a new stable minimum appearing or disappearing in V_eff(φ).
+   The formal DFC description of phase transitions (and their universality classes) is
+   open.
+
+3. **Bekenstein bound from DFC first principles:** The bound S ≤ 2πRE/ℏc is argued
+   heuristically above from the Planck-area discretization. A rigorous derivation would
+   show that the compression field in a finite volume has at most (R/L_Pl)² independent
+   degrees of freedom, with each contributing k_B ln(2) maximum entropy.
+
+4. **Fluctuation theorems from compression field time-reversal:** The Jarzynski and
+   Crooks theorems are stated in terms of work and free energy. A DFC-native derivation
+   would show these follow from the time-reversal symmetry of the compression field
+   equation, with the asymmetry between forward and backward trajectories set by
+   exp(ΔS/k_B) = Ω_final/Ω_initial.
+
+5. **Black hole information from lower-dimensional transfer:** The DFC account suggests
+   information is not destroyed at singularities but transferred to D2/D1 modes as the
+   D3 layer collapses. This should appear thermodynamically as the entropy of Hawking
+   radiation equaling the entropy of the infalling matter — unitarity preserved through
+   dimensional transfer rather than spacetime evolution.
