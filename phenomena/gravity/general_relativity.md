@@ -1,5 +1,14 @@
 # Phenomenon: General Relativity and Gravity
 
+## One-Sentence Synthesis
+
+> Gravity is not a force and not simply a curvature of spacetime — it is the lateral
+> redistribution pattern that emerges in the D3 localization layer when stable
+> compression closures (masses) create local gradients in the rate at which
+> dimensional volume is being removed.
+
+---
+
 ## Observation
 
 Massive objects attract one another across empty space. Light bends around massive objects.
@@ -25,14 +34,18 @@ form of the field equations is what it is.
 
 ## Dimensional Folding Explanation
 
-Spacetime curvature is the geometric projection of uneven dimensional folding rates.
-The Einstein field equations remain fully valid. The dimensional folding model proposes
-an underlying causal interpretation for why curvature behaves as it does.
+The apparent geometry of spacetime is an emergent description of how the D3 localization
+layer re-tiles as compression proceeds nonuniformly. The Einstein field equations remain
+fully valid as a description of that geometry. What DFC adds is a causal mechanism for
+why mass-energy curves the effective geometry and why the specific form of the field
+equations is what it is.
 
-Rather than treating spacetime as fundamental, this model treats it as an emergent
-descriptive layer — a projection that captures how matter and energy redistribute when
-dimensional folding proceeds nonuniformly. What GR encodes geometrically as curvature is
-the spacetime-level expression of deeper dimensional gradients.
+A stable compression closure (a particle or mass) resists dimensional collapse. This
+resistance creates a localized gradient in the compression rate — the region around the
+mass is losing dimensional volume more slowly than the surrounding field. The surrounding
+structure must redistribute laterally to accommodate this gradient. That lateral
+redistribution pattern, observed from within the D3 localization layer, is what GR
+encodes as curvature of the metric.
 
 ---
 
@@ -196,37 +209,155 @@ all other structure must redistribute (geodesics, forces).
 
 ---
 
+## Formal Equations
+
+### Newtonian Limit: Folding Gradient Potential
+
+In the weak-field, slow-motion limit, the compression field produces a folding gradient
+potential Φ_fold satisfying:
+
+```
+∇²Φ_fold = 4π G_eff ρ_compression
+```
+
+where ρ_compression is the local compression budget density (energy density of stable
+closures). This is the DFC analogue of Poisson's equation for the gravitational
+potential. For a point mass M:
+
+```
+Φ_fold(r) = −G M / r         [Newtonian limit ✓]
+```
+
+The DFC identification is:
+- `ρ_compression` = mass-energy density (ρ_matter × c²) of stable closures
+- `G_eff = G_Newton` in the Newtonian regime — the connection between compression
+  budget density and folding gradient strength is calibrated by observation; its
+  derivation from the compression field parameters (α, β) is open
+
+### Gravity Enters Quantum Mechanics
+
+The same compression gradient that produces the Newtonian potential also enters the
+Schrödinger equation directly. From the quantum emergence derivation (see
+`equations/quantum_emergence.py`, `schrodinger_with_potential()`):
+
+```
+W(x) = compression curvature perturbation from a nearby mass M
+     = −2GM / (r c²)      [in the weak-field limit]
+
+V(x) = ℏ W(x) / (2 m_eff) = −G m_eff M / r     [gravitational potential in QM] ✓
+```
+
+This means gravity's appearance in the Schrödinger equation is not an additional
+assumption — it follows from the same mechanism as all other potentials. The
+compression gradient of a mass IS the W(x) perturbation that becomes the potential
+term. There is no separate "quantum gravity" regime at low energies; gravity and
+quantum mechanics share a common root in the compression field.
+
+### Einstein Field Equations: DFC Interpretation
+
+The Einstein field equations:
+```
+G_μν = (8πG / c⁴) T_μν
+```
+
+have the following DFC mapping (schematic — full derivation is the open problem):
+
+| GR quantity | DFC identification |
+|---|---|
+| T₀₀ (energy density) | ρ_B = compression budget density |
+| T₀ᵢ (energy flux) | J_B = compression budget current |
+| Tᵢⱼ (pressure/stress) | σᵢⱼ = compression stress tensor |
+| G_μν (Einstein tensor) | curvature of effective metric from Φ_fold gradients |
+| g_μν (metric) | emergent from compression field configuration |
+| G_Newton | to be derived from (α, β, c) of compression field |
+
+The coupling 8πG/c⁴ encodes the ratio between the compression budget perturbation
+and the geometric deformation it produces. Its derivation requires showing that the
+DFC field equation, in the appropriate weak-field limit, satisfies the Bianchi
+identity ∇_μ G^μν = 0.
+
+### Gravitational Waves: Compression Wave Dispersion
+
+Gravitational waves are propagating perturbations of the compression gradient field.
+From the compression field equation linearized around the stable minimum:
+
+```
+ω² = c²k² + 2α     [dispersion relation for compression perturbations]
+```
+
+In the high-k (short wavelength) limit:
+```
+v_group = c²k / √(c²k² + 2α) → c    as k → ∞
+```
+
+This gives massless propagation at c in the short-wavelength limit — consistent with
+observed gravitational wave speed (LIGO/Virgo: v_gw = c to 10⁻¹⁵). ✓
+
+The effective graviton mass is √(2α) in natural units. For consistency with GR, this
+must be ≪ the cosmological Hubble rate: m_graviton ≪ H₀ / c ≈ 10⁻³³ eV. This
+constrains α at cosmological scales: α ≪ H₀² / c².
+
+### Planck Scale as Compression Threshold
+
+The Planck length L_Pl = √(ℏG/c³) ≈ 1.6 × 10⁻³⁵ m sets the scale at which the
+compression field buckles — the minimum spatial scale of a stable fold transition.
+Identifying the kink width with the Planck length:
+
+```
+λ_kink = √(2c²/α) = L_Pl   →   α = 2c²/L_Pl² = 2c⁵/(ℏG)
+```
+
+This gives the Planck-scale compression field parameter α in terms of known constants
+and provides a self-consistency check for the full model calibration.
+
+See `equations/folding_gradient.py` for all numerical implementations.
+
+---
+
 ## Connections to Other Phenomena
 
-- **Time** — gravitational time dilation is the local slowing of dimensional circulation
-  in high-folding regions; see `../../foundations/premise.md` (time as bookkeeping of
-  collapse)
-- **Thermodynamics** — black hole entropy and the area theorem reflect the same mechanism
-  as entropy increase generally: irreversible loss of dimensional degrees of freedom
-- **Quantum mechanics** — singularities and the information paradox reflect the boundary
-  between regimes where D3 spacetime can and cannot describe what remains; see
-  `../quantum/quantum_mechanics.md`
-- **Cosmic expansion** — large-scale lateral redistribution as the global-scale
-  consequence of the same folding that produces gravity locally; see
-  `../cosmology/cosmic_expansion.md`
+- **Quantum mechanics** — gravity enters the Schrödinger equation as V(x) = Φ_fold(x);
+  no separate quantization needed at low energy; `phenomena/quantum/quantum_mechanics.md`
+- **Cosmic expansion** — the Friedmann equations are the cosmological-scale limit of the
+  same compression gradient dynamics; `phenomena/cosmology/cosmic_expansion.md`
+- **Thermodynamics** — black hole entropy and the area theorem reflect irreversible
+  compression budget loss; `phenomena/thermodynamics/thermodynamics.md`
+- **Time** — gravitational time dilation is the local change in the compression rate,
+  which changes the rate at which irreversible compression budget is consumed;
+  `foundations/premise.md`
+- **Quantum emergence** — the Schrödinger equation with gravitational potential;
+  `equations/quantum_emergence.py`
+- **Folding gradient equations** — Newtonian limit, GR tensor mapping, wave dispersion;
+  `equations/folding_gradient.py`
+
+---
 
 ## Open Questions
 
-- Can the Einstein field equations be formally derived from the dynamics of dimensional
-  folding gradients? What is the equation governing the collapse rate field?
-- What determines the coupling constant $G$? Is it derivable from the geometry of the
-  dimensional stack?
-- At what folding depth does the transition from D3 spacetime description to lower-
-  dimensional description occur? Is this the Planck scale, or something else?
-- Does the information paradox resolve cleanly in this model? The folding interpretation
-  suggests information is not destroyed but transferred to lower-dimensional modes —
-  but this needs to be made precise.
+1. **Derive G_Newton from (α, β, c):** The coupling between compression budget density
+   and folding gradient strength is currently calibrated from observation. Its derivation
+   from the compression field parameters is the highest-priority open problem in the
+   gravity sector.
 
-## Equations
+2. **Full nonlinear Einstein equations from DFC:** The Newtonian limit (Poisson equation)
+   is established schematically. The full nonlinear derivation requires showing that the
+   DFC field equation produces the Bianchi identity ∇_μ G^μν = 0 and correctly reproduces
+   light bending (1.75 arcsec around the Sun) and perihelion precession (43 arcsec/century
+   for Mercury).
 
-See `../../equations/gauge_couplings.py` for the running of coupling constants with
-scale — the dimensional analog of how folding rates vary with depth.
+3. **Planck scale cutoff:** The kink width identifies with the Planck length at
+   α = 2c⁵/(ℏG). At this scale, the linearized description (KG, Schrödinger) breaks down
+   and the full nonlinear compression field must be used. This is the DFC account of
+   the Planck scale — below it, the compression fold cannot form stably.
 
-Derivation of the Einstein field equations from dimensional folding dynamics is a
-high-priority open problem. See `../../foundations/substrate.md` for the current
-state of the mathematical substrate framework.
+4. **Information paradox:** The DFC account of black holes suggests information is not
+   destroyed at the singularity but transferred to lower-dimensional modes (D2 and D1)
+   as the D3 localization layer collapses. Making this precise — showing that the
+   compression budget is conserved through horizon formation and evaporation — requires
+   the full nonlinear theory.
+
+5. **Quantum gravity:** At energies approaching the Planck scale, the kink width shrinks
+   to the Planck length and the compression field perturbations are no longer small. The
+   NR approximation (Schrödinger) fails; the KG approximation (linearized) fails; the
+   full nonlinear compression field equation must be solved. This regime is where DFC
+   makes contact with quantum gravity — and it is fully open.
