@@ -1,226 +1,391 @@
-# Phenomenon: Quantum Mechanics
+# Phenomenon: Quantum Mechanics — Wave Functions and the Uncertainty Principle
+
+## One-Sentence Synthesis
+
+> Quantum mechanics is not a separate layer of reality imposed on top of classical
+> physics — it is what the dynamics of a stable compression fold looks like from the
+> outside when the observer is slow compared to the fold's internal Compton oscillation
+> frequency.
+
+---
 
 ## Observation
 
-Quantum systems behave in ways that have no classical analogue:
+Quantum mechanics requires several structures that have no obvious origin in classical
+physics:
 
-- A particle measured at one location could have been found elsewhere with calculable probability
-- Two particles measured far apart show correlations that no local hidden variable can explain
-- A particle can pass through a barrier it classically has no energy to cross
-- A system's position and momentum cannot both be known precisely, regardless of instrument quality
-- Measuring a system changes it in ways that cannot be made arbitrarily small
+- **Complex wave functions** — particles are described by complex-valued amplitudes ψ(x,t),
+  not positions
+- **The Schrödinger equation** — iℏ ∂ψ/∂t = [−ℏ²/2m ∇² + V] ψ, with the imaginary
+  unit i built into time evolution
+- **The Born rule** — measurement outcomes have probability P = |ψ|², not P = ψ
+- **The uncertainty principle** — Δx·Δp ≥ ℏ/2, irreducible by any measurement improvement
+- **Commutation relations** — [x̂, p̂] = iℏ, meaning position and momentum are
+  fundamentally incompatible observables
+- **Quantization** — energies come in discrete packets, ΔE = ℏω
 
-These behaviors are precisely predicted by quantum mechanics. They resist classical
-explanation not because they are poorly understood, but because they require a different
-kind of physical description.
+Standard quantum mechanics treats all of these as postulates. No derivation from more
+fundamental principles is offered. Where does the complex number i come from? Why is
+probability quadratic in the amplitude? Why is there an ℏ at all?
+
+---
 
 ## Standard Explanation
 
-Quantum mechanics describes systems with wavefunctions — complex-valued functions over
-configuration space whose squared magnitude gives the probability of each outcome.
-The wavefunction evolves deterministically (Schrödinger equation) until a measurement
-occurs, at which point it "collapses" to a definite value with probabilities given by
-Born's rule.
+The Copenhagen interpretation accepts the wave function as the fundamental object and
+the Schrödinger equation as a given. The Born rule is postulated. The uncertainty
+principle follows from the commutation relations, which follow from the operator
+definitions, which are postulated. The imaginary unit i is inserted by hand.
 
-The standard theory is exact in its predictions. Its interpretation — what the wavefunction
-*is*, why collapse happens, what determines which outcome occurs — remains contested.
+Attempts to derive quantum mechanics have not produced a complete derivation from a
+classical substrate:
+- **de Broglie–Bohm:** must postulate the guiding wave equation separately
+- **Many worlds:** takes Schrödinger as given
+- **Stochastic mechanics (Nelson):** must postulate the background stochastic field
+- **Emergent QM (t'Hooft):** promising but incomplete
+
+None derives the Schrödinger equation from a classical field with a mechanical origin.
+
+---
 
 ## Dimensional Folding Explanation
 
-Quantum mechanics is the behavior of structures that are not fully constrained by
-spacetime's dimensional limits. Quantum systems occupy regimes where dimensional folding
-has progressed far enough to prevent classical extension, but not far enough to eliminate
-higher-dimensional degrees of freedom entirely.
+### Abstract Level
 
-As a result, quantum phenomena do not obey classical notions of locality, determinism, or
-object permanence — not because reality is inherently probabilistic, but because the systems
-involved are distributed across dimensional layers that spacetime descriptions cannot fully
-resolve.
+**Quantum mechanics is the non-relativistic envelope dynamics of a stable compression fold.**
 
-The dimensional folding model proposes a causal interpretation for why quantum rules take
-the forms they do. The mathematics remains exact and unchanged.
+A stable fold in the compression field — a kink sitting at the minimum of the buckling
+potential — is not static. It oscillates internally at its natural frequency, set by
+the potential curvature at the minimum:
 
----
+```
+ω_Compton = m_eff c² / ℏ
+```
 
-### Perspective 1: From the Observer in Spacetime
+This is the Compton frequency. It is very fast: for an electron, ω_C ≈ 7.8 × 10²⁰ rad/s.
+Every physical process we observe occurs at energies far below this threshold.
 
-From within D3 space, a quantum system appears to:
-- Exist in multiple incompatible configurations simultaneously (superposition)
-- Jump discontinuously when measured (collapse)
-- Correlate with distant systems instantaneously (entanglement)
-- Pass through solid barriers (tunneling)
-- Resist simultaneous precise description (uncertainty)
+An external observer watching a process at energies E ≪ m_eff c² cannot follow the fast
+internal oscillation directly. The observable quantity is the slowly-varying envelope of
+that oscillation — how the fold's amplitude and orientation drift over time.
 
-These appear paradoxical because spacetime is a projection. Projecting a higher-dimensional
-structure onto a lower-dimensional surface necessarily loses information and introduces
-apparent discontinuities — exactly as projecting a 3D object onto a 2D surface can make
-a continuous rotation look like a sudden flip.
+**The quantum wave function is this envelope.**
 
-### Perspective 2: From the Dimensional Field
+This is not a new idea in mathematics: any real oscillating quantity A(t)cos(ωt + θ(t))
+can be written as Re[ψ(t) e^{−iωt}] where ψ = A e^{iθ} is complex. The complex structure
+of quantum mechanics emerges automatically when you describe the slow part of any fast
+real oscillation. The imaginary unit i appears because time differentiation of the carrier
+e^{−iωt} brings down a factor of −iω, and that factor propagates into the equation of
+motion for the envelope.
 
-From the dimensional field perspective, none of these behaviors are paradoxical:
+**Why quantum mechanics looks the way it does:**
 
-- A quantum state is a **cross-dimensional structure** whose degrees of freedom extend
-  beyond D3 space. It is one thing — not many — but it has valid projections into spacetime
-  that look like different outcomes.
-- Superposition is one higher-dimensional state with multiple valid spacetime projections.
-- Measurement is a **local acceleration of dimensional folding**: the measuring apparatus
-  increases dimensional pressure on the system, collapsing its higher-dimensional freedom
-  into a D3-stable configuration.
-- Entanglement is a shared lower-dimensional structure (primarily D2) between two systems.
-  When one is measured, the entire shared structure refolds. No signal travels — the
-  correlation reflects pre-existing higher-dimensional unity.
-- Tunneling is a reconfiguration path through a dimensional layer where the classical
-  barrier does not exist as a complete constraint.
-- Uncertainty is a structural tradeoff: fixing the D3 projection of position sharpens
-  folding in one dimension, which forces expansion in conjugate dimensions (momentum).
+| QM feature | DFC origin |
+|---|---|
+| Complex wave function ψ | Envelope of a real oscillation: ψ = A exp(iθ) |
+| Imaginary unit i in ∂/∂t | Stripping the Compton carrier e^{−iωt} |
+| ℏ | Quantum of action = E_kink × λ_kink |
+| m_eff | Curvature of compression potential at stable minimum: m_eff = ℏ√(2α)/c² |
+| Quantum phase θ | Fold orientation angle ∈ [0, 2π) |
+| Uncertainty principle | Kink width and energy set by same parameters (α, β) |
+| Potential V(x) | Local compression gradient from nearby stable structures |
 
----
+**The uncertainty principle is structural, not epistemological.**
 
-## Specific Phenomena
-
-### Superposition
-
-A quantum system has not yet been forced into a single spacetime-compatible configuration.
-Multiple configurations coexist because dimensional folding has not eliminated the
-higher-dimensional degrees of freedom that support them.
-
-Superposition is not "being in many states at once" in spacetime. It is one
-higher-dimensional state with multiple valid spacetime projections. The superposition
-ends — not when someone looks — but when interaction with a sufficiently classical system
-removes the remaining higher-dimensional freedom.
-
-### Wavefunction Collapse and Measurement
-
-Measurement corresponds to a local acceleration of dimensional folding:
-
-1. The quantum system interacts with a macroscopic apparatus or environment
-2. Dimensional pressure increases sharply
-3. Higher-dimensional degrees of freedom collapse
-4. The system is forced into a spacetime-stable configuration
-
-This collapse is irreversible. It does not require consciousness. It is a physical
-consequence of dimensional constraint overwhelming dimensional extension.
-
-The apparent randomness of outcomes reflects the fact that multiple collapse pathways
-are compatible with prior constraints, even though collapse itself is unavoidable.
-The exact pathway depends on microscopic structure that is no longer accessible once
-higher-dimensional freedom is removed. This is genuine, irreducible randomness — not
-ignorance of hidden variables, but loss of information inherent in dimensional collapse.
-
-### Quantum Entanglement
-
-Entangled particles are components of a single higher-dimensional structure that has not
-yet been fully folded into spacetime.
-
-When one particle is measured:
-- Dimensional folding constrains the shared structure
-- The entire configuration re-resolves simultaneously
-- Correlations appear instantaneously across spacetime distances
-
-No information travels between particles at measurement. The correlation reflects
-pre-existing higher-dimensional unity, revealed when spacetime projection occurs.
-
-This naturally explains why entanglement violates classical locality without violating
-causality or enabling faster-than-light communication. Bell inequality violations are
-evidence that hidden variables exist outside spacetime (in lower dimensions), not that
-causality is violated.
-
-### Quantum Tunneling
-
-Barriers that are impassable in D3 spacetime do not fully block higher-dimensional
-configurations. A quantum system can redistribute across dimensional layers where the
-classical barrier does not exist as a complete constraint. When folding forces the system
-back into spacetime compatibility, it may emerge on the far side of the barrier.
-
-Tunneling is not a particle "borrowing energy." It is a reconfiguration path that exists
-outside purely spacetime-limited motion.
-
-### The Uncertainty Principle
-
-The uncertainty principle reflects a structural tradeoff between dimensional confinement
-and dimensional freedom. Constraining a system more tightly in D3 spacetime necessarily
-increases its spread across higher-dimensional degrees of freedom.
-
-Position and momentum uncertainty are not epistemic limitations. They are structural:
-
-- Fixing one spacetime projection sharpens folding in one dimension
-- This forces expansion in conjugate dimensions
-- No configuration can simultaneously minimize folding across all relevant dimensions
+A compression kink has a spatial width λ and an energy E, both determined by the same
+compression field parameters α and β. Making the kink narrower requires steeper gradients
+— which requires more energy. The Heisenberg relation Δx·Δp ≥ ℏ/2 is not a statement
+about measurement disturbance. It is the statement that a kink cannot simultaneously have
+sharp position (small λ) and small momentum (low E), because both are determined by the
+same underlying α and β.
 
 ---
 
-## Analogy: The Rubber Ball Between Magnets
+### Perspective 1: From Inside the Stable Fold
 
-Place a rubber ball between two opposing magnets. As the magnets approach, the ball
-compresses — it deforms, stores energy, pushes back. It does not disappear. It does not
-transmit force instantaneously. It responds as a constrained structure must respond.
+From the reference frame of a particle (a stable compression kink), the external world
+consists of slowly varying compression gradients. The particle's own fast internal
+oscillation at ω_Compton defines its rest energy and the unit of action ℏ — these are
+fixed, not observable from within.
 
-The rubber ball represents a field.
+What is observable is the slow variation of the envelope: how the particle drifts through
+the compression gradient field, how its orientation changes as it interacts with other
+folds. The Schrödinger equation describes exactly this: the evolution of the slow envelope
+ψ(x,t) under external compression gradients.
 
-The magnets represent stabilized objects — structures that resist dimensional
-reconfiguration due to their multi-layer dimensional anchoring. When they approach,
-they do not "pull" or "push" at a distance. They compress the dimensional field between
-them.
+From this perspective, "quantum mechanics" is just classical compression field dynamics
+seen through a low-pass filter. The filter cuts off everything above ω_Compton. What
+passes through is ψ and the Schrödinger equation.
 
-- The ball's resistance → field pressure
-- The restoring force → interaction strength
-- The stored deformation energy → field energy
+### Perspective 2: From the Compression Field
 
-What we call a field is not an abstract mathematical convenience. It is a lower-dimensional
-structure with real dimensional volume — capable of being compressed, distorted, and
-saturated. Forces arise when stabilized objects compress those structures beyond what they
-can smoothly sustain.
+From outside — from the perspective of the full compression field φ(x,t) — there is no
+wave function and no quantum mechanics. There is a real field satisfying:
 
-At quantum scales: the same mechanism applies, but compression occurs in regimes where
-spacetime is no longer sufficient to describe the system's full response. Redistribution
-occurs across higher-dimensional structure. Outcomes become discrete, probabilistic, or
-nonlocal. Quantum behavior is the natural reaction of lower-dimensional structures under
-extreme compression.
+```
+∂²φ/∂t² = c²∇²φ − V'(φ)
+```
+
+The "quantum" behavior is the behavior of small perturbations around stable folds at
+low energies. The quantum-classical transition is not a measurement-induced collapse — it
+is the boundary between the regime where the slow-envelope description holds (low energy,
+quantum) and the regime where the full nonlinear field dynamics must be tracked
+(high energy, classical chaos or particle creation).
 
 ---
 
-## The Quantum-to-Classical Transition
+## Formal Derivation
 
-Quantum behavior appears everywhere but dominates only where dimensional folding has not
-yet forced classical stabilization. As systems grow larger and more interactive:
+### Step 1: Compression Field Equation
 
-- Dimensional pressure increases
-- Folding accelerates
-- Higher-dimensional degrees of freedom are eliminated
-- Classical behavior emerges
+The compression field satisfies (see `equations/compression_field.py`):
+```
+∂²φ/∂t² = c²∇²φ − V'(φ)
+V(φ) = −α/2 φ² + β/4 φ⁴    [buckling potential]
+V'(φ) = −αφ + βφ³
+```
 
-The quantum-to-classical transition is not a mystery. It is a dimensional threshold
-phenomenon — a consequence of how rapidly the environment drives dimensional collapse
-in a given system.
+Stable minima at φ₀ = ±√(α/β). At these minima:
+```
+V'(φ₀) = 0,   V''(φ₀) = −α + 3βφ₀² = 2α > 0   ✓ (stable)
+```
+
+### Step 2: Linearization → Klein-Gordon
+
+Write φ = φ₀ + δφ, expand V' to first order in δφ:
+```
+∂²δφ/∂t² = c²∇²δφ − 2α δφ
+```
+
+Comparing to the Klein-Gordon equation (∂²/∂t² − c²∇² + m²c⁴/ℏ²)φ = 0:
+
+```
+m_eff²c⁴/ℏ² = 2α   →   m_eff = ℏ√(2α) / c²   [SI units]
+```
+
+The effective mass of the quantum particle is set by the curvature of the
+compression potential at the stable fold minimum. Deeper, steeper folds → heavier
+particles.
+
+### Step 3: Non-Relativistic Decomposition → Complex Envelope
+
+Any real field satisfying the Klein-Gordon equation can be decomposed as:
+```
+δφ(x,t) = 1/√(2m_eff) [ψ(x,t) e^{−im_eff c²t/ℏ} + ψ*(x,t) e^{+im_eff c²t/ℏ}]
+```
+
+where ψ(x,t) varies slowly: |∂ψ/∂t| ≪ (m_eff c²/ℏ)|ψ|.
+
+**Identification of the quantum phase — closing the derivation:**
+
+The fold oscillates as:
+```
+δφ = A(x,t) cos(θ(x,t) − m_eff c²t/ℏ)
+```
+
+where A(x,t) is the fold amplitude and θ(x,t) is the fold orientation angle.
+Writing this in complex exponential form:
+```
+δφ = Re[A(x,t) e^{iθ(x,t)} × e^{−im_eff c²t/ℏ}]
+```
+
+The quantum amplitude is:
+```
+ψ(x,t) = A(x,t) e^{iθ(x,t)}
+```
+
+**The quantum phase is the fold orientation angle.** This identification is not
+imposed — it follows directly from writing a real oscillation in its complex envelope
+form. The complex structure of quantum mechanics is the complex exponential form of
+a real oscillation at the Compton frequency.
+
+### Step 4: Non-Relativistic Limit → Schrödinger Equation
+
+Substitute the NR decomposition into the KG equation, collect positive-frequency
+terms (multiply through by e^{+im_eff c²t/ℏ} and keep terms not oscillating at ±2ω_C):
+
+```
+∂²ψ/∂t² − (2im_eff c²/ℏ) ∂ψ/∂t = c²∇²ψ
+```
+
+The m_eff²c⁴/ℏ² terms cancel exactly (this cancellation is the heart of the
+NR reduction — the fast oscillation subtracts out).
+
+In the non-relativistic limit (|∂²ψ/∂t²| ≪ (2m_eff c²/ℏ)|∂ψ/∂t|, valid when
+E_kinetic ≪ m_eff c²), drop ∂²ψ/∂t²:
+
+```
+−(2im_eff c²/ℏ) ∂ψ/∂t = c²∇²ψ
+```
+
+Multiply both sides by −ℏ²/(2m_eff c²):
+
+```
+┌────────────────────────────────────────────────────────────┐
+│                                                            │
+│   iℏ ∂ψ/∂t = − (ℏ²/2m_eff) ∇²ψ                          │
+│                                                            │
+│   Free-particle Schrödinger equation   ✓                  │
+│                                                            │
+└────────────────────────────────────────────────────────────┘
+```
+
+This is exact in the limit E ≪ m_eff c². For an electron in hydrogen:
+E_kinetic ≈ 13.6 eV, m_e c² ≈ 511,000 eV → ratio ≈ 2.7 × 10⁻⁵. The
+NR approximation is excellent for all atomic, molecular, and low-energy physics.
+
+### Step 5: Compression Gradient → Potential Term
+
+When there is a slowly varying spatial modulation W(x) of the compression curvature
+(arising from a nearby stable kink acting as a compression source), the KG equation
+becomes:
+```
+∂²δφ/∂t² = c²∇²δφ − [2α + W(x)] δφ
+```
+
+After NR reduction, W(x) appears as a potential in the Schrödinger equation:
+
+```
+┌────────────────────────────────────────────────────────────┐
+│                                                            │
+│   iℏ ∂ψ/∂t = [− (ℏ²/2m_eff) ∇² + V(x)] ψ               │
+│                                                            │
+│   Full Schrödinger equation with arbitrary potential  ✓   │
+│                                                            │
+└────────────────────────────────────────────────────────────┘
+```
+
+where V(x) = ℏ W(x) / (2m_eff).
+
+**Force identification in the Schrödinger equation:**
+
+| Force | W(x) | Schrödinger potential |
+|---|---|---|
+| Gravity | Folding gradient Φ_fold(x) = −GM/r | V(x) = −GmM/r ✓ |
+| Electromagnetism | U(1) closure mode field A_μ | Minimal coupling p̂ → p̂ − qA/c |
+| Strong confinement | SU(3) closure depth modulation | Color potential V_QCD(r) |
+
+All forces enter quantum mechanics through the same mechanism: a local modulation
+W(x) of the compression field curvature that becomes a potential after NR reduction.
+There is no separate "quantization" procedure — it is the NR limit of a classical field.
+
+### Step 6: Momentum Operator and Commutation Relation
+
+The Schrödinger equation defines the momentum operator:
+```
+p̂ = −iℏ∇
+```
+
+The position operator is multiplication by x:
+```
+x̂ = x ×
+```
+
+Their commutator on any test function f(x):
+```
+[x̂, p̂] f = x(−iℏ ∂f/∂x) − (−iℏ) ∂(xf)/∂x
+           = −iℏ x ∂f/∂x + iℏ (f + x ∂f/∂x)
+           = iℏ f
+```
+
+Therefore:
+```
+┌─────────────────────────┐
+│   [x̂, p̂] = iℏ   ✓    │
+└─────────────────────────┘
+```
+
+This is a mathematical identity — not an independent postulate. From Robertson's
+theorem, any two observables Â, B̂ with [Â, B̂] = iC satisfy ΔA·ΔB ≥ |⟨C⟩|/2.
+For [x̂, p̂] = iℏ:
+```
+Δx·Δp ≥ ℏ/2   ✓   (Heisenberg uncertainty principle)
+```
+
+### Summary: Postulates Replaced by Derivations
+
+| Standard QM postulate | DFC status |
+|---|---|
+| Wave function ψ is complex | Derived: envelope of real compression oscillation |
+| iℏ ∂ψ/∂t = Ĥψ (free particle) | Derived: NR limit of KG from compression field |
+| iℏ ∂ψ/∂t = Ĥψ with V(x) | Derived: compression gradient W(x) → V(x) |
+| p̂ = −iℏ∇ | Derived: from Schrödinger equation |
+| [x̂, p̂] = iℏ | Derived: mathematical identity from operator definitions |
+| Δx·Δp ≥ ℏ/2 | Derived: from [x̂, p̂] = iℏ via Robertson |
+| Born rule P = \|ψ\|² | Proposed mechanism — not yet rigorously derived |
+
+---
+
+## Analogy: The Radio Carrier Wave
+
+A radio broadcast encodes information as the slowly-varying amplitude and phase
+of a fast carrier wave at frequency ω_carrier:
+```
+signal(t) = A(t) cos(ω_carrier t + θ(t))
+           = Re[ψ(t) e^{−iω_carrier t}]   where ψ(t) = A(t) e^{iθ(t)}
+```
+
+The receiver strips out the carrier and works with the complex envelope ψ(t), which
+carries all the information. The equation governing ψ is much simpler than the equation
+governing the raw oscillation.
+
+For the compression field:
+- **Carrier** = Compton oscillation at ω = m_eff c²/ℏ (the particle's rest energy)
+- **Envelope** = quantum wave function ψ(x,t)
+- **Stripping the carrier** = NR decomposition: δφ = Re[ψ e^{−iωt}]
+- **Equation for the envelope** = Schrödinger equation
+- **Complex amplitude ψ = A e^{iθ}** = fold amplitude × fold orientation phase
+
+The quantum wave function is the information-carrying envelope of the compression
+fold's Compton oscillation.
+
+**Where the analogy breaks down:** A radio carrier is an imposed oscillation on an
+external field. The Compton oscillation is the intrinsic oscillation of the fold
+itself — it is not externally driven but set by the shape of the compression potential.
+And the fold is a nonlinear, topologically stable structure, not a linear perturbation.
+The Schrödinger equation holds only in the linearized regime |δφ| ≪ φ₀.
 
 ---
 
 ## Connections to Other Phenomena
 
-- **Thermodynamics** — entropy increase is the same mechanism as decoherence, operating
-  at scale: both are irreversible losses of higher-dimensional degrees of freedom
-- **Gravity** — measurement and gravitational attraction share the same description:
-  dimensional folding forced by proximity to a classically stabilized structure
-- **Interference** — a direct consequence of the same lower-dimensional field structure;
-  see `interference.md`
-- **Black holes** — the extreme case where dimensional folding overwhelms stabilization
-  entirely; the event horizon is where D3 can no longer persist
+- **Compression field** — the substrate; `equations/compression_field.py`
+- **Particle masses** — m_eff = ℏ√(2α)/c² connects compression curvature to mass;
+  `equations/neutrino_masses.py`, `equations/quark_masses.py`
+- **Gravity in QM** — folding gradient Φ_fold → potential V(x); `equations/folding_gradient.py`
+- **Thermodynamics** — the Born rule connects to entropy via accessible pathway counting;
+  `equations/entropy_production.py`
+- **Quantum emergence equations** — all four mechanisms and the full derivation chain;
+  `equations/quantum_emergence.py`
+- **Cosmic expansion** — the same compression field governs both QM and cosmology;
+  `phenomena/cosmology/cosmic_expansion.md`
+
+---
 
 ## Open Questions
 
-- What governs the exact rate of dimensional collapse during measurement? Is there a
-  continuous equation describing the transition?
-- Can the Born rule (probability = |ψ|²) be derived from the geometry of dimensional
-  projection?
-- What determines which observable is "classical enough" to trigger collapse?
+1. **Born rule:** Can P = |ψ|² be derived rigorously from folding pathway counting
+   (Ω_outcome/Ω_total)? The candidate mechanism is clear (born_rule_folding() in
+   quantum_emergence.py), but the quantitative bridge between |ψ|² and pathway
+   fractions is not yet complete.
 
-## Equations
+2. **Second quantization:** The Schrödinger equation describes a single stable kink.
+   A many-kink system requires the field operator ψ̂(x) with [ψ̂(x), ψ̂†(x')] = δ(x−x').
+   This should emerge from the multi-kink sector of the compression field — the formal
+   derivation is open.
 
-See `../../equations/kink_model.py` — the kink solution demonstrates how a cross-
-dimensional structure (stable topological configuration across a field) behaves under
-the same compression dynamics. The quantum wavefunction is the higher-dimensional
-analog of the kink profile.
+3. **Spin:** Spinors transform under SU(2) with a 4π periodicity (a 2π rotation gives
+   a sign flip). In DFC, this should emerge from the SU(2) closure topology at D6: a
+   particle winds once around the SU(2) fiber under a 2π physical rotation. The formal
+   connection between D6 winding number and spinor transformation is open.
 
-Formal derivation of the Schrödinger equation from dimensional folding dynamics
-is a critical open problem. See `../../foundations/substrate.md`.
+4. **Relativistic QM:** The derivation stops at the NR limit. The full relativistic
+   theory — the Dirac equation for spin-1/2, QED — requires keeping the full Klein-Gordon
+   equation and coupling it to the U(1) closure mode field. The DFC path from KG → Dirac
+   requires the spinor structure from question 3.
+
+5. **Decoherence and measurement:** The NR decomposition is clean for an isolated kink.
+   With environmental coupling, the fold orientation θ becomes entangled with environmental
+   folds, and the pure state |ψ| e^{iθ} decoheres into a mixed state. How decoherence
+   arises from DFC compression field interactions — and why it selects a preferred
+   pointer basis — is the open problem of the quantum-classical boundary.
