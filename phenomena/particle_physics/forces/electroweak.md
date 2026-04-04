@@ -2,50 +2,273 @@
 
 ## One-Sentence Synthesis
 
-> *Placeholder — to be completed when the DFC account of D5/D6 closure relationship is formalized.*
+> Electroweak "unification" is not the reunion of a broken larger symmetry — it is the
+> coupled behavior of two independent, adjacent closures (D5 U(1)_Y and D6 SU(2)_L) that
+> share the same D3 localization layer; the Weinberg mixing angle θ_W parametrizes the
+> overlap geometry, the symmetry-breaking scale v ≈ 246 GeV is the D6 S³ squashing
+> parameter, and the observed photon is the specific linear combination of D5 and D6
+> components whose net mass term cancels.
 
 ---
 
 ## Observation
 
-Electromagnetism and the weak force are unified into a single electroweak theory at
-energies above ~100 GeV. Below this scale, the forces appear distinct: EM is long-range
-and massless; weak is short-range and massive. The unification is confirmed by the
-discovery of W, Z bosons and electroweak precision measurements at LEP and the Tevatron.
+Electromagnetism and the weak force appear as completely different phenomena at low energies:
+EM is infinite-range, parity-conserving, and mediated by a massless photon; the weak force
+is short-range, parity-violating, and mediated by massive W±, Z bosons.
+
+Above ~100 GeV, this distinction dissolves. Electroweak precision measurements (LEP, SLC)
+confirm that the four gauge bosons W⁺, W⁻, Z⁰, γ are all components of a single
+SU(2)_L × U(1)_Y gauge theory. The symmetry breaking that makes them look different below
+100 GeV is a consequence of the Higgs vacuum expectation value v ≈ 246 GeV.
+
+Confirmed predictions of the electroweak theory:
+- Neutral current interactions via Z exchange (first observed 1973, Gargamelle)
+- W± boson discovery at 80.4 GeV (UA1/UA2, 1983)
+- Z⁰ boson discovery at 91.2 GeV (UA1/UA2, 1983)
+- Electroweak precision at LEP: δm_W/m_W < 10⁻³, ρ parameter = 1.0002 ± 0.0003
 
 ---
 
 ## Standard Explanation
 
-Glashow-Salam-Weinberg model: SU(2)_L × U(1)_Y is spontaneously broken to U(1)_EM by
-the Higgs VEV. The four gauge bosons (W⁺, W⁻, W⁰, B) mix via the weak mixing angle θ_W
-to give W⁺, W⁻, Z, γ. The photon remains massless; the others acquire mass.
+Glashow-Salam-Weinberg model (GSW, 1967–1968): the gauge group SU(2)_L × U(1)_Y is
+spontaneously broken to U(1)_EM by the Higgs doublet VEV. Before breaking, there are
+four massless gauge bosons: W¹, W², W³ (SU(2)_L generators) and B (U(1)_Y generator).
+After breaking, they mix via the Weinberg angle θ_W:
+
+```
+W± = (W¹ ∓ iW²)/√2     [mass: m_W = g_W v/2 ≈ 80.4 GeV]
+Z⁰ = W³ cos θ_W − B sin θ_W    [mass: m_Z = m_W/cos θ_W ≈ 91.2 GeV]
+γ  = W³ sin θ_W + B cos θ_W    [massless]
+```
+
+The photon coupling e relates the two fundamental couplings g_W (SU(2)) and g' (U(1)_Y):
+```
+e = g_W sin θ_W = g' cos θ_W
+```
+
+The Standard Model takes sin²θ_W ≈ 0.231 as a measured input; it does not predict it.
 
 ---
 
 ## Dimensional Folding Explanation
 
-*Placeholder — DFC account to be developed.*
+### Not Unification — Adjacent Independent Closures
 
-**Expected DFC account:** U(1) at D5 and SU(2) at D6 are independent closures, yet they
-are adjacent depths in the compression stack. Electroweak "unification" is not unification
-into a single larger group — it is the correlated behavior of two adjacent, coupled closure
-events. The mixing angle θ_W parametrizes the D5/D6 coupling geometry.
+In conventional field theory, "electroweak unification" suggests the two forces were once
+a single force that split apart. This framing implies a larger group (SU(2)×U(1) or SU(5))
+that broke into pieces. The DFC account is different.
 
-**Key question:** Is there a DFC derivation of sin²θ_W ≈ 0.231?
+D5 (U(1)_Y) and D6 (SU(2)_L) are **independent** closures at adjacent depths in the
+compression stack. Neither is a fragment of the other. They arise from separate bifurcation
+events in the compression field at depths D5 and D6. The U(1) topology at D5 and the S³
+topology at D6 are topologically distinct structures — one cannot be continuously deformed
+into the other.
+
+What the electroweak theory identifies as "unification" is the coupling between these two
+adjacent independent closures. They are adjacent in the dimensional stack — D5 is the
+immediately preceding depth to D6 — and both propagate through the same D3 localization
+layer. This adjacency means their connection fields couple to the same fermion matter fields,
+producing a correlated low-energy phenomenology.
+
+**The DFC restatement:** SU(2)_L × U(1)_Y is not a unified group awaiting breaking — it
+is the direct product of two independent closure topologies at adjacent depths.
+
+### Why U(1)_Y Is Not U(1)_EM
+
+A subtlety: the D5 U(1) closure is **hypercharge** U(1)_Y, not the electromagnetic
+U(1)_EM that appears at low energy. The photon field γ is not the pure D5 gauge field B_μ
+— it is the combination:
+```
+A_μ(γ) = W_μ³ sin θ_W + B_μ cos θ_W
+```
+
+The electromagnetic U(1)_EM is a diagonal subgroup of SU(2)_L × U(1)_Y — it survives
+the D6 S³ squashing because it is the rotation axis aligned with the squashing direction
+(the one that costs no energy to rotate along). In DFC terms: the photon is the connection
+field for the combination of D6 and D5 degrees of freedom that remains massless after the
+D6 S³ is squashed.
+
+The electric charge Q is the generator of this surviving U(1)_EM. Its relation to the
+original D5 and D6 generators is the Gell-Mann–Nishijima formula:
+```
+Q = T₃ + Y/2
+```
+where T₃ is the third SU(2)_L generator (D6) and Y is the U(1)_Y charge (D5).
+
+This formula is the statement that the observed electromagnetic charge is a specific
+combination of D5 and D6 winding numbers — not a purely D5 quantity.
+
+### The Symmetry-Breaking Scale as D6 Geometry
+
+The scale v ≈ 246 GeV at which EM and weak appear unified versus distinct is the D6
+S³ squashing scale — the energy scale at which the S³ deformation ε becomes non-negligible.
+
+Above v (ε ≈ 0, S³ approximately round): the W bosons and B boson are effectively
+massless and indistinguishable — the full SU(2)_L × U(1)_Y structure is apparent.
+
+Below v (ε = ε₀, S³ squashed): the W⁺, W⁻, Z acquire masses of order g_W v ~ 80 GeV
+and decouple from low-energy processes. Only the photon (massless combination) remains
+active. The weak and electromagnetic forces look completely different.
+
+The transition at ~100 GeV is not a phase transition in the usual sense — it is the
+energy scale of the D6 S³ geometry, set by the competition between the squashing
+tendency (from D7 SU(3) pressure) and the S³ curvature resistance (see
+`foundations/higgs_geometry.md`).
+
+### The Weinberg Angle as D5/D6 Coupling Geometry
+
+The Weinberg angle θ_W parametrizes the relative coupling strengths of the D5 and D6
+connections to the fermion fields:
+```
+tan θ_W = g'/g_W     [ratio of U(1)_Y to SU(2)_L coupling]
+sin²θ_W ≈ 0.231
+```
+
+In DFC, g_W and g' are the coupling strengths of the D6 S³ and D5 S¹ closures to the
+D3 localization layer. The Weinberg angle is then the geometric angle between the D5 and
+D6 connection axes in the space of gauge couplings — reflecting the relative "weight" of
+each closure in the fermion covariant derivative.
+
+A DFC prediction would fix this ratio from the closure geometry — the relative winding
+densities or coupling scales of the D5 and D6 closures. This is currently an open problem
+(see Open Questions).
+
+---
+
+## Formal Equations
+
+### The Electroweak Covariant Derivative
+
+Fermions couple to both D5 (B_μ) and D6 (W_μ^a) connections:
+```
+D_μ = ∂_μ − ig_W (τ^a/2) W_μ^a − ig' (Y/2) B_μ
+
+where:
+  g_W = SU(2)_L coupling
+  g'  = U(1)_Y coupling
+  τ^a = Pauli matrices (SU(2) generators)
+  Y   = hypercharge (U(1)_Y charge of each fermion representation)
+```
+
+For left-handed lepton doublet (ν_L, e_L): Y = −1
+For left-handed quark doublet (u_L, d_L): Y = +1/3
+
+### Gauge Boson Mass Matrix
+
+After the D6 S³ squashes (Higgs VEV ⟨φ⟩ = (0, v/√2)):
+```
+Mass matrix for (W³, B):
+
+M² = (v²/4) × | g_W²        −g_W g'  |
+               | −g_W g'      g'²     |
+```
+
+Eigenvalues: m_Z² = (v²/4)(g_W² + g'²),  m_γ² = 0
+
+The zero eigenvalue is the photon — the combination of W³ and B that is orthogonal to
+the squashing direction. It remains massless exactly.
+
+### Mixing Angle and Physical Fields
+
+The mixing matrix is a 2×2 rotation by θ_W:
+```
+( Z  )   ( cos θ_W    −sin θ_W ) ( W³ )
+( γ  ) = ( sin θ_W     cos θ_W ) ( B  )
+
+where cos θ_W = g_W/√(g_W² + g'²),  sin θ_W = g'/√(g_W² + g'²)
+```
+
+The photon coupling to charged fermions:
+```
+e = g_W sin θ_W = g' cos θ_W     [ensures photon is massless and universally coupled]
+```
+
+### Gell-Mann–Nishijima Formula
+
+The electric charge of any particle from its D6 and D5 quantum numbers:
+```
+Q = T₃ + Y/2
+```
+
+Verification:
+| Particle | T₃ | Y   | Q = T₃ + Y/2 |
+|---|---|---|---|
+| u_L | +1/2 | +1/3 | +2/3 ✓ |
+| d_L | −1/2 | +1/3 | −1/3 ✓ |
+| ν_L | +1/2 | −1   | 0    ✓ |
+| e_L | −1/2 | −1   | −1   ✓ |
+
+### Precision Observables
+
+The ρ parameter tests the custodial SU(2) symmetry of the Higgs sector:
+```
+ρ = m_W² / (m_Z² cos²θ_W) = 1     [tree level, from SU(2) doublet Higgs]
+```
+
+Measured: ρ = 1.0002 ± 0.0003 (radiative corrections shift it slightly from 1). ✓
+
+At the Z pole (μ = m_Z), the precision measurements constrain:
+```
+sin²θ_W(m_Z) = 0.23122 ± 0.00003   [LEP/SLC combined]
+α_s(m_Z) = 0.1181 ± 0.0011
+```
+
+---
+
+## What This Explains
+
+| Observation | DFC mechanism |
+|---|---|
+| EM and weak appear unified above ~100 GeV | D6 S³ squashing scale v ≈ 246 GeV — below it, mass eigenstates split |
+| Four gauge bosons become W±, Z, γ | D5/D6 mixing via θ_W — rotation in (W³, B) space |
+| Photon is massless, W/Z massive | γ is the massless combination; W/Z lie along squashing directions |
+| Q = T₃ + Y/2 | Electric charge is combination of D6 (T₃) and D5 (Y) winding numbers |
+| ρ = 1 at tree level | Custodial symmetry of S³ squashing — exact SU(2) doublet structure |
+| sin²θ_W ≈ 0.231 | Ratio of D5/D6 coupling strengths (open: derive from geometry) |
 
 ---
 
 ## Connections to Other Phenomena
 
-- **Electromagnetism** — D5 U(1); `phenomena/electromagnetism/electromagnetism.md`
-- **Weak force** — D6 SU(2); `phenomena/particle_physics/forces/weak_force.md`
-- **Higgs geometry** — symmetry breaking at D6; `foundations/higgs_geometry.md`
-- **W/Z bosons** — `phenomena/particle_physics/particles/w_z_bosons.md`
+- **Electromagnetism** — D5 U(1)_Y; the photon is the surviving D5+D6 combination;
+  `phenomena/electromagnetism/electromagnetism.md`
+- **Weak force** — D6 SU(2)_L closure, chirality, W/Z mass;
+  `phenomena/particle_physics/forces/weak_force.md`
+- **Higgs geometry** — the S³ squashing mechanism; `foundations/higgs_geometry.md`
+- **Electric charge** — Q = T₃ + Y/2 from D5/D6 winding numbers;
+  `phenomena/electromagnetism/electric_charge.md`
+- **W/Z bosons** — mass eigenstates of D5/D6 mixing; `phenomena/particle_physics/particles/w_z_bosons.md`
+- **CP violation** — weak sector CKM mixing; `phenomena/particle_physics/cp_violation.md`
+- **Baryogenesis** — electroweak phase transition; `phenomena/cosmology/baryogenesis.md`
 
 ---
 
 ## Open Questions
 
-1. *Derive sin²θ_W from DFC D5/D6 closure geometry*
-2. *Explain why EM and weak become distinguishable below 100 GeV in DFC terms*
+1. **Derive sin²θ_W from D5/D6 closure geometry:** The Weinberg angle parametrizes the
+   ratio g'/g_W of the D5 hypercharge coupling to the D6 SU(2) coupling. In DFC, both
+   couplings should follow from the geometric properties of their respective closures —
+   winding density, closure scale, coupling to the D3 layer. Computing this ratio from
+   first principles would be the electroweak analogue of deriving α from D5 geometry
+   and α_s from D7 geometry.
+
+2. **Why U(1)_Y (not U(1)_EM) is the fundamental D5 closure:** The D5 gauge field that
+   appears directly in the Lagrangian is U(1)_Y (hypercharge), not U(1)_EM. The
+   electromagnetic photon is a derived combination of D5 and D6 fields. A DFC account
+   should explain why the fundamental D5 closure couples with hypercharge assignments
+   (Y ≠ Q) rather than directly to electric charge — and why the Gell-Mann–Nishijima
+   formula takes the specific form Q = T₃ + Y/2.
+
+3. **The electroweak phase transition in the early universe:** At temperatures above
+   ~100 GeV (early universe, t < 10⁻¹¹ s), the D6 S³ is unsquashed and the full
+   SU(2)_L × U(1)_Y symmetry is manifest. Below this temperature, the S³ squashes and
+   mass eigenstates form. In DFC, this is a transition in the D6 closure geometry — a
+   change in ε from 0 to ε₀. The order and character of this transition (first-order?
+   second-order? crossover?) determines whether electroweak baryogenesis is viable.
+
+4. **Why D5 and D6 are adjacent:** The dimensional stack places U(1) at D5 and SU(2) at
+   D6, making their coupling the electroweak interaction. A complete DFC account would
+   derive this ordering — why SU(2) arises one depth deeper than U(1) — from the
+   compression field dynamics rather than taking it as input.
