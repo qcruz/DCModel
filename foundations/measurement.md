@@ -63,6 +63,50 @@ The threshold itself is set by the compression field parameters α and β.
 
 ---
 
+## Measurement Is a Two-Way Interaction
+
+A measurement is not a one-way read. It is a mutual compression event: the measured
+system and the measuring apparatus interact, and **both receive irreversible changes
+to their state**.
+
+When the apparatus compresses the system field above the buckling threshold, the system
+field nucleates a kink — an irreversible localization. Simultaneously, the system field's
+compression acts back on the apparatus: the apparatus pointer is driven to a definite
+reading, which is also an irreversible state change. Neither party exits the interaction
+unchanged. The interaction leaves a permanent imprint on both.
+
+What distinguishes a **measurement** from a generic **interaction** is not the physics —
+both are mutual compression events — but the engineering of one party:
+
+> A measurement apparatus is a system specifically designed so that its irreversible
+> state change is:
+> 1. **Predictable** — the change it undergoes maps reliably and readably onto the
+>    state of the system being measured
+> 2. **Amplified** — a sub-kink-scale field change in the system is amplified into a
+>    macroscopic, stable change in the apparatus (pointer deflection, click, pixel)
+> 3. **Decoupled from its own prior state** — the apparatus resets between measurements
+>    so its reading reflects the current system state, not a history of interactions
+
+The measured system's state is not "extracted" passively. It is inferred from the
+apparatus's irreversible response. The apparatus is calibrated so that the pattern of
+its irreversible changes constitutes a legible sample of the other field.
+
+This framing has direct consequences:
+
+- **There is no zero-disturbance measurement.** Every measurement changes both parties.
+  The goal of measurement design is not to avoid disturbance but to make the apparatus's
+  disturbance informative and the system's disturbance controlled.
+- **Weak measurement is still mutual.** A sub-threshold interaction still changes both
+  fields — it just does not nucleate a kink in either. Information is partial; disturbance
+  is small but nonzero.
+- **Decoherence is uncontrolled mutual compression.** When the environment interacts with
+  a quantum system, the same mutual compression occurs — but the environment is not
+  engineered to produce a readable output. The system's state is imprinted on the
+  environment in a form that is inaccessible in practice, which is why decoherence feels
+  like information loss even though the compression is symmetric.
+
+---
+
 ## A Taxonomy of Measurement Types
 
 ### Type 1 — Projective (Strong) Measurement
@@ -241,10 +285,19 @@ dimensional stack. Measuring that observable is compressing the field in that di
 |---|---|---|
 | Position x | Spatial localization | D3 (localization layer) |
 | Momentum p | Mode wavenumber k | D2 (propagation layer) |
-| Energy E | Temporal frequency ω | Time dimension |
+| Energy E | Compression field oscillation rate ω | Frequency mode of the field† |
 | Spin / orientation | Fold orientation angle θ | D6 (SU(2) closure) |
 | Color charge | SU(3) winding number | D7 (strong closure) |
 | Photon number | D2 occupation mode | D5 (U(1) closure) |
+
+† **Note on energy and time:** Energy measurement selects a specific oscillation rate
+ω of the compression field — it forces the field into a stationary-phase (energy
+eigenstate) mode. Time is not a dimension in this framework; it is the axis along
+which irreversible compression events are recorded. Measuring energy does not compress
+the field in a temporal direction — it selects a mode whose phase is stationary with
+respect to that axis. The energy-time uncertainty relation ΔE·Δt ≥ ℏ/2 is therefore
+not a conjugate-variable relation between two field degrees of freedom (as Δx·Δp is),
+but a relation between oscillation rate precision and the duration required to resolve it.
 
 The Heisenberg uncertainty principle arises because position (D3 localization) and
 momentum (D2 mode purity) are competing compressions on the same field configuration:
