@@ -37,6 +37,7 @@ foundations/              Core concepts, thought experiments, and structural arg
   higgs_mass_derivation.md  Full RG-improved Higgs mass derivation (125.1 ± 1.5 GeV)
   mass_hierarchy.md       Electron/muon mass ratio from geometric defect
   substrate.md            Mathematical substrate framework (kink model, postulates)
+  embedding_geometry.md   Weinberg angle from equal-coupling initial conditions (Route 3B)
 
 equations/                Runnable Python modules — input data, get predictions
   constants.py            Physical constants (PDG 2024), particle masses, SM couplings
@@ -45,6 +46,7 @@ equations/                Runnable Python modules — input data, get prediction
   mass_spectrum.py        Lepton mass predictions from dimple potential
   gauge_couplings.py      Running couplings, squashing correction, pairwise crossings
   proton_stability.py     Proton lifetime bounds, sphaleron rate, experiment comparison
+  weinberg_angle_rg.py    sin²θ_W = 3/8 at closure scale → 0.231 via RG running (Route 3B)
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
@@ -105,7 +107,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~11%** (viability as a theory: ~27%; mathematical rigor: ~8%)
+**Current estimate: ~12%** (viability as a theory: ~27%; mathematical rigor: ~10%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
@@ -135,6 +137,7 @@ The model is in active development. Current priorities:
 - All four thermodynamic laws derived from folding mechanics
 - Gravity, light, QM, interference derived from folding framework
 - Mathematics reframed as emergent folding grammar (19-field ordered map)
+- Weinberg angle: sin²θ_W = 3/8 at closure scale → 0.231 via SM RG running (self-consistent, no new free parameters)
 
 **In progress:**
 - Neutrino mass spectrum from flavor knot structure
