@@ -89,7 +89,7 @@ Its mass is set by a combination of the global size and the curvature of the wal
 larger than the muon mass by another substantial factor.
 
 The exact prediction for the tau/muon ratio depends on the shape of the confining potential walls,
-which is determined by the SU(3) fiber geometry. This is currently under quantitative development.
+which is determined by the SU(3) D7 SU(3) closure geometry. This is currently under quantitative development.
 
 ---
 
@@ -114,7 +114,7 @@ extra dimension. Overlap with the Higgs (located on one brane) determines the ma
 
 ### This Model's Approach
 - **One geometric defect** (the dimple) generates the hierarchy for all three generations
-- The dimple is not added by hand — it emerges from the same SU(3) fiber squashing that generates
+- The dimple is not added by hand — it emerges from the same D7 SU(3) closure squashing that generates
   the flavor symmetry breaking
 - The number and type of modes is fixed by the quantum mechanics of the confining potential
 
@@ -132,7 +132,7 @@ in a qualitatively different way — the large SU(2) × U(1) coupling in its qua
 its wavefunction toward the dimple center rather than away from it.
 
 This is currently one of the key quantitative challenges: deriving the top/bottom mass ratio (≈ 40)
-from the fiber geometry without free parameters.
+from the D7 SU(3) closure geometry without free parameters.
 
 ---
 
