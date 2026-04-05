@@ -214,17 +214,6 @@ property of the folding pathway landscape.
 
 ---
 
-## Law-by-Law Summary
-
-| Law | Folding statement |
-|---|---|
-| Zeroth | Temperature exists because compression agitation equilibrates uniquely |
-| First | Energy is conserved because compression is redistributed, not created or destroyed |
-| Second | Entropy increases because escaped compression multiplies folding pathways irreversibly |
-| Third | Absolute zero is unreachable because perfect closure (true zero DOF) is forbidden |
-
----
-
 ## Formal Equations
 
 ### Entropy as Folding Configuration Count

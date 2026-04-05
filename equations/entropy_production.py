@@ -31,7 +31,7 @@ This module contains:
   - The arrow of time as a derived quantity
   - Fluctuation theorem analogues (Jarzynski, Crooks) in folding language
 
-STATUS: The qualitative derivation is complete (see foundations/thermodynamics.md).
+STATUS: The qualitative derivation is complete (see phenomena/thermodynamics/thermodynamics.md).
 The quantitative connection between Ω_fold and the compression field parameters
 is an open problem — specifically, how to count folding configurations from φ(x,t).
 
