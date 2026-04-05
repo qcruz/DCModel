@@ -251,6 +251,9 @@ the generation count:
   `equations/neutrino_masses.py`
 - **Proton stability** — product geometry forbids X/Y bosons and proton decay;
   `phenomena/particle_physics/proton_stability.md`
+- **Route 1 (Skyrme)** — topological soliton approach to spin quantum numbers;
+  the J=1/2 result from π₄(SU(2)) connects to why the three generation copies
+  are all spin-1/2; `foundations/route1_skyrme.md`
 
 ---
 

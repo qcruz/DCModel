@@ -109,7 +109,7 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~13.5%  (viability: ~29%, mathematical rigor: ~10%)
+Current estimate: ~14%  (viability: ~29.5%, mathematical rigor: ~10%)
 Key bottleneck: D-depth assignment mechanism; first-principles coupling constants; no S-matrix
 Next milestone that moves the needle: derive M_c(12) from substrate parameters (α, β, c); resolve Weinberg/Higgs scale tension
 ```
@@ -127,6 +127,7 @@ Next milestone that moves the needle: derive M_c(12) from substrate parameters (
 | 2026-04-05 | 24–25 | GW waves and black holes formalized; radioactive_decay and substrate audited; kink_model and weinberg_angle audited (label/overclaim fixes) | 28% | 10% | ~13% |
 | 2026-04-05 | 26 | Phase transitions formalized (V_eff bifurcations, EWSB crossover, QCD confinement, D-depth sequence); mass_generation and compression_field audited | 28.5% | 10% | ~13% |
 | 2026-04-05 | 27 | CMB formalized (Planck spectrum ✓, uniformity structural ✓, A_s OPEN); weak_force Weinberg angle updated to Route 3B result; entropy_production clean | 29% | 10% | ~13.5% |
+| 2026-04-05 | 28 | Route 1 exploration doc written (Skyrme/FR — J=1/2 verified, N-Δ splitting, Jackiw-Rebbi; comparison with Route 3B; F_π/e_sk derivation as shared bottleneck); three_generations and spin_zero_mode audited | 29.5% | 10% | ~14% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:

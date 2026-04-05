@@ -28,6 +28,11 @@ References:
   - Atiyah & Manton (1989), Phys. Lett. B222, 438  [profile approximation]
   - Jackiw & Rebbi (1976), Phys. Rev. D13, 3398     [zero modes from topology]
   - Adkins, Nappi & Witten (1983), Nucl. Phys. B228, 552  [collective quantization]
+
+Related documents:
+  - foundations/route1_skyrme.md   — Route 1 exploration: comparison with Route 3B,
+                                     what remains open (F_pi, e_sk from substrate)
+  - foundations/spin_emergence.md  — full derivation narrative (Paths A and B)
 """
 
 import numpy as np
