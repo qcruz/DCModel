@@ -145,9 +145,21 @@ small-scale structure, but not derived from first principles). H(z) evolution is
 0.2% of ΛCDM at all redshifts tested. Interesting as a structural account; predictions
 testable by DESI Year 5 and Euclid.
 
+**`higgs_potential.py`** — audited (2026-04-05). Findings:
+- m_H = 124.4 ± 3.7 GeV (observed 125.25 GeV, within 1σ) — semi-genuine. The result
+  uses λ₀ = 0.013 from SM vacuum stability analysis (Buttazzo et al. 2013) and SM RG
+  running. DFC contributes the identification M_c ≈ M_Planck and the S³ geometric origin
+  of the quartic suppression. This is a consistency identification, not ab initio derivation.
+- m_W = 80.19 GeV (0.23% low), m_Z = 91.46 GeV (0.30% high) — SM formulas with SM
+  inputs (g₂, sin²θ_W from data). These verify DFC reproduces SM, not independent predictions.
+- Weinberg angle: reverse-engineered — the required r_S3/r_U1 ratio is computed from the
+  observed sin²θ_W. The formula tan(θ_W) ≈ r_S3/r_U1 is schematic with exact relation TBD.
+- Vacuum stability: simplified top-only beta function gives ~10^3.8 GeV stability scale;
+  actual SM result is ~10^9 GeV; claimed DFC scale is M_c ~ 10^18 GeV. All three disagree.
+  This function is a placeholder. Module docstring and print output updated accordingly.
+
 **Remaining unreviewed modules:** `bifurcation.py`, `compression_field.py`,
-`gauge_couplings.py`, `higgs_potential.py`, `entropy_production.py`,
-`folding_gradient.py`, `quantum_emergence.py`, `constants.py`.
+`gauge_couplings.py`, `entropy_production.py`, `folding_gradient.py`, `constants.py`.
 
 ---
 
@@ -202,3 +214,4 @@ considerably and the model becomes a reformulation rather than a reduction.
 | 2026-04-04 | Initial document created from session review |
 | 2026-04-05 | Equation layer audit completed; tau mass failure documented; cosmology module results integrated |
 | 2026-04-05 | Formalized: electron.md, muon_tau.md, quarks.md; CLAUDE.md development cycle created; three_generations.md corrected (tau "prediction" relabeled as known failure; d_τ≈7.0 notation clarified; top quark depth corrected to D6 squashing threshold); quark_masses.py docstring corrected (D8-9 → D7; prediction scope clarified) |
+| 2026-04-05 | higgs_potential.py audited: Weinberg angle marked as reverse-engineered correspondence; vacuum stability formula documented as placeholder (top-only beta function underestimates scale); module docstring updated with full derivation status |

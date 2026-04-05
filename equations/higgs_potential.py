@@ -16,6 +16,25 @@ Result: m_H = 125.1 ± 1.5 GeV  (observed: 125.25 ± 0.17 GeV)
 The tree-level estimate (~91 GeV) was incorrect because it used λ_tree directly as the
 physical quartic without RG evolution. See foundations/higgs_mass_derivation.md.
 
+DERIVATION STATUS (important):
+  - m_H prediction: semi-genuine. DFC identifies M_c with M_Planck and assigns the
+    S³ geometry as the origin of λ₀ ≈ 0.013. But λ₀ = 0.013 is itself taken from the
+    SM vacuum stability analysis (Buttazzo et al. 2013) — it is the value of λ at M_Pl
+    for which SM RG evolution yields m_H ≈ 125 GeV. This is a consistency identification,
+    not an ab initio derivation. The RG running (Δλ = 0.116) is also SM-derived.
+
+  - W and Z masses: SM formulas m_W = (1/2)g₂v, m_Z = m_W/cos(θ_W) with SM inputs
+    for g₂ and sin²θ_W. These verify that DFC reproduces SM relationships, but are
+    not independent DFC predictions.
+
+  - Weinberg angle: NOT derived from DFC geometry. The main() section reverse-engineers
+    the required ratio from the observed sin²θ_W. The formula tan(θ_W) ≈ r_S³/r_U1 is
+    schematic with the exact relation TBD (see weinberg_angle_from_fibers docstring).
+
+  - Vacuum stability: the simplified top-only beta function in vacuum_stability() gives
+    a stability scale ~10^3.8 GeV, inconsistent with the actual SM result (~10^9 GeV)
+    and the claimed DFC scale M_c ~ 10^18 GeV. This function is a placeholder.
+
 Usage:
     python equations/higgs_potential.py
 
@@ -307,6 +326,11 @@ def weinberg_angle_from_fibers(r_u1, r_s3):
 
     tan(θ_W) ≈ g₁/g₂ ≈ R_S3 / R_U1  (schematic — exact relation TBD)
 
+    NOTE: The main() section does NOT derive r_S3/r_U1 from DFC geometry. It
+    reverse-engineers the required ratio from the observed sin²θ_W = 0.23122.
+    This function is a forward map (ratio → angle); the inverse map is what
+    main() uses. The Weinberg angle is a known correspondence, not a DFC prediction.
+
     Parameters
     ----------
     r_u1 : float
@@ -346,6 +370,14 @@ def vacuum_stability(
     this is a prediction: the stability boundary should coincide with M_c.
 
     Returns the scale (in GeV) where the effective quartic runs to zero.
+
+    NOTE: This implementation uses a simplified one-loop beta function keeping
+    only the top quark contribution (β ≈ -3y_t⁴/8π²). This omits the positive
+    gauge boson contributions that partially cancel the top loop. As a result,
+    this function underestimates the stability scale by several orders of magnitude.
+    The full SM calculation (Buttazzo et al. 2013) gives ~10^9-10^10 GeV.
+    This function is a placeholder and its output should not be used as a DFC
+    prediction until the full RG running is implemented.
     """
     # Initial quartic from observed Higgs mass
     lambda_0 = (m_higgs_mev**2) / (2 * vev_mev**2)
@@ -409,17 +441,20 @@ if __name__ == "__main__":
           f"ratio: {masses['m_Z_ratio']:.4f}")
     print(f"  ρ parameter:     {masses['rho_parameter']:.4f}  (expected: 1.0000)")
 
-    print("\n--- Weinberg Angle from Fiber Radii Ratio ---")
+    print("\n--- Weinberg Angle (correspondence, not derivation) ---")
     target_sin2 = 0.23122
     target_theta = math.asin(math.sqrt(target_sin2))
     required_ratio = math.tan(target_theta)
-    print(f"  Required r_S3/r_U1 ratio:   {required_ratio:.4f}")
-    print(f"  Gives sin²θ_W:              {target_sin2}")
+    print(f"  NOTE: r_S3/r_U1 ratio is REVERSE-ENGINEERED from observed sin²θ_W.")
+    print(f"  Required r_S3/r_U1 ratio:   {required_ratio:.4f}  [fitted to data]")
+    print(f"  Gives sin²θ_W:              {target_sin2}  [input, not output]")
     w = weinberg_angle_from_fibers(1.0, required_ratio)
-    print(f"  Verification sin²θ_W:       {w['sin2_weinberg_predicted']:.5f}")
+    print(f"  Verification sin²θ_W:       {w['sin2_weinberg_predicted']:.5f}  [circular]")
+    print(f"  Status: tan(θ_W) ≈ r_S3/r_U1 is schematic — exact DFC derivation TBD.")
 
     print("\n--- Vacuum Stability Boundary ---")
     stab = vacuum_stability()
-    print(f"  Stability scale:            10^{stab['stability_scale_log10']:.1f} GeV")
-    print(f"  Model prediction:           M_c (closure scale) ~ 10^18 GeV")
-    print(f"  {stab['model_prediction']}")
+    print(f"  Stability scale (simplified formula): 10^{stab['stability_scale_log10']:.1f} GeV")
+    print(f"  NOTE: This uses top-only beta function — underestimates scale by ~6 orders.")
+    print(f"  Full SM result (Buttazzo et al.): ~10^9 GeV.  DFC claim: M_c ~ 10^18 GeV.")
+    print(f"  Status: placeholder — not a reliable DFC prediction.")
