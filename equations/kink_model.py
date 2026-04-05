@@ -2,8 +2,10 @@
 DFC Toy Model: Kink solutions as mass analogs.
 
 Implements the 1D compression field dynamics from the Dimensional Folding/Compression
-(DFC) substrate framework. This is the mathematical foundation underlying the full
-16D geometric model.
+(DFC) substrate framework. This is the mathematical foundation for how stable, localized
+field configurations (closures) emerge from the substrate — the basis for all particle
+analogs in DFC. The substrate is one connected object; D-depth labels (D5, D6, D7, etc.)
+are provisional markers for emergent behaviors, not pre-existing geometric dimensions.
 
 The model:
     φ_tt = c² φ_xx - dV/dφ
