@@ -306,4 +306,4 @@ the coupling constant bottleneck:
 - **Three generations** — three depth anchoring levels at D6;
   `foundations/three_generations.md`
 - **Higgs boson** — the fluctuation of ε around its VEV;
-  `phenomena/particle_physics/particles/higgs_boson.md` *(placeholder)*
+  `phenomena/particle_physics/particles/higgs_boson.md`

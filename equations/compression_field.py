@@ -29,6 +29,11 @@ The compression budget:
     B = ∫ ρ_B dV    where ρ_B = ½(∂φ/∂t)² + ½c²(∇φ)² + V(φ)
     dB/dt = − ∮ J_B · dA   (conservation law — budget flows, doesn't vanish)
 
+Related documents:
+    foundations/substrate.md         — substrate postulates and five-postulate structure
+    phenomena/thermodynamics/phase_transitions.md — phase transitions as V_eff bifurcations
+    equations/kink_model.py          — 1D kink solutions (analytic)
+
 Usage:
     python equations/compression_field.py
 """
