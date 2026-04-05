@@ -215,11 +215,18 @@ def compression_wave_speed(alpha, beta, c=1.0):
     in the high-k limit propagate at c — consistent with observed gravitational
     wave speed.
 
+    IMPORTANT CAVEAT: These are perturbations of the scalar compression field φ.
+    They produce scalar (spin-0) waves. GR gravitational waves are tensor (spin-2)
+    perturbations with two polarization modes (+ and ×). The agreement in speed (c
+    in the high-k limit) does NOT imply agreement in polarizations. How DFC produces
+    the observed tensor polarizations from a scalar field is an unresolved structural
+    question — see Open Question 6 in phenomena/gravity/general_relativity.md.
+
     For massive perturbations (k small), there is a dispersion:
         v_group = c²k / √(c²k² + 2α) < c
 
-    This predicts graviton mass ~ √(2α) in natural units — should be zero (or
-    very small) to match GR. This constrains α at cosmological scales.
+    This predicts an effective graviton mass ~ √(2α) in natural units — should be zero
+    (or very small) to match GR. This constrains α at cosmological scales.
 
     Returns
     -------
@@ -286,4 +293,7 @@ if __name__ == "__main__":
     print(f"  4. Constrain graviton mass (m_eff_sq → 0 requires α << cosmological scale)")
     print(f"  5. Derive RG running of α from Planck scale to cosmological scale")
     print(f"     α_Pl ~ 7e86 s⁻² vs α_cosmo << H₀²/c² ~ 1e-72 s⁻²  (158 order gap)")
+    print(f"  6. Derive tensor GW polarizations from scalar DFC field")
+    print(f"     DFC φ⁴ produces scalar (spin-0) perturbations; GR requires tensor (spin-2)")
+    print(f"     Speed agreement (c at high-k) does not resolve polarization mismatch")
     print(f"  See: phenomena/gravity/general_relativity.md, foundations/substrate.md")

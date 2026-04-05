@@ -314,6 +314,24 @@ See `equations/folding_gradient.py` for all numerical implementations.
 
 ---
 
+## Consistency Checks
+
+| Property | DFC mechanism | Observed | Status |
+|---|---|---|---|
+| Newtonian limit | Compression gradient → Poisson equation → Φ = −GM/r | ✓ (all solar-system tests) | Structural ✓ |
+| Equivalence principle | Folding gradient acts on D3 structure uniformly — no "gravitational charge" | ✓ Eötvös tests to 10⁻¹⁴ | Structural ✓ |
+| Gravitational time dilation | Compression rate higher near mass → clocks run slower | ✓ Pound-Rebka, GPS (see time_dilation.md) | Derived ✓ |
+| Gravitational redshift | D2 modes lose energy climbing compression gradient | ✓ Pound-Rebka (z = 2.5 × 10⁻¹⁵) | Structural ✓ |
+| GW speed = c | KG dispersion: v_group → c at k ≫ √(2α)/c | ✓ LIGO GW170817 to 10⁻¹⁵ | Derived (high-k limit) ✓ |
+| Spatial flatness k = 0 | Uniform global compression → no preferred curvature | ✓ Planck Ω_total = 1.000 ± 0.004 | Structural ✓ |
+| Gravitational lensing | Light follows geodesics through re-tiled D3 | ✓ 1.75 arcsec (1919 eclipse) | Structural (not computed) |
+| Perihelion precession | Nonlinear compression gradient → GR corrections | ✓ 43 arcsec/century (Mercury) | Structural (not computed) |
+| G_Newton from (α, β, c) | Not yet derived | — | OPEN ✗ |
+| GW tensor polarizations (+ and ×) | Scalar φ field → scalar polarizations; tensor modes not shown | ✓ Tensor polarizations confirmed | OPEN ✗ |
+| Full nonlinear GR (Bianchi identity) | Newtonian limit established; nonlinear not derived | ✓ GR exact | OPEN (schematic) |
+
+---
+
 ## Connections to Other Phenomena
 
 - **Quantum mechanics** — gravity enters the Schrödinger equation as V(x) = Φ_fold(x);
