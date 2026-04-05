@@ -228,8 +228,10 @@ Setting this ratio to 1.08:
 w_Λ ≈ −1 + 0.007 = −0.993
 ```
 
-This is within current measurement uncertainty (−1.03 ± 0.03) and would be measurable
-with Stage IV dark energy experiments (DESI, Euclid, Roman).
+The Planck 2018 central value (w = −1.03) is on the phantom side (w < −1) while the DFC
+prediction (w = −0.993) is on the quintessence side (w > −1). The two are 1.25σ apart —
+consistent within errors but on opposite sides of the cosmological constant divide. Stage IV
+dark energy experiments (DESI, Euclid, Roman) with σ(w) ~ 0.01 will distinguish them.
 
 ### Deceleration Parameter
 
@@ -288,7 +290,7 @@ from below, not because space is pushing outward.
 ## Connections to Other Phenomena
 
 - **Thermodynamics** — Expansion is the cosmological limit of lateral redistribution
-  as entropy increases; see `../thermodynamics/thermodynamics.md`
+  as entropy increases; see `phenomena/thermodynamics/thermodynamics.md`
 - **General Relativity** — The Friedmann equations are derived from the GR field
   equations applied to FLRW symmetry; see `../gravity/general_relativity.md`
 - **Dark matter** — The matter content driving expansion includes stable intermediate-
