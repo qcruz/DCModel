@@ -629,7 +629,7 @@ def schrodinger_derivation_chain(alpha=1.0, beta=1.0, c=1.0, hbar=1.0):
         'open_problems': [
             'Second quantization: ψ → field operator ψ̂ (quantum field theory)',
             'Born rule: P = |ψ|² rigorously from folding pathway counting',
-            'Spin from SU(2) closure topology at D6',
+            'Spin-statistics: FR theorem establishes fermion exchange phase; 3+1D Jackiw-Rebbi generalization open (see spin_zero_mode.py)',
             'Yang-Mills gauge coupling from SU(2)/SU(3) closure modes',
             'Calibrate m_eff to physical particle masses via α, β at Planck scale',
         ],
