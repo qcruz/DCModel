@@ -637,7 +637,7 @@ def schrodinger_derivation_chain(alpha=1.0, beta=1.0, c=1.0, hbar=1.0):
         'open_problems': [
             'Second quantization: ψ → field operator ψ̂ (quantum field theory)',
             'Born rule: P = |ψ|² rigorously from folding pathway counting',
-            'Spin-statistics: FR theorem establishes fermion exchange phase; 3+1D Jackiw-Rebbi generalization open (see spin_zero_mode.py)',
+            'Spin-statistics: FR theorem establishes fermion exchange phase; D3+D4 apparent geometry Jackiw-Rebbi generalization open (see spin_zero_mode.py)',
             'Yang-Mills gauge coupling from SU(2)/SU(3) closure modes',
             'Calibrate m_eff to physical particle masses via α, β at Planck scale',
         ],
@@ -686,11 +686,15 @@ def schrodinger_target():
         'key_step':         'NR decomposition: δφ = Re[ψ e^{−im_eff t/ℏ}]',
         'complex_origin':   'ψ = A exp(iθ) where θ = fold orientation angle',
         'former_gap_closed': (
-            'The "missing step" (connecting fold orientation θ to quantum phase) '
-            'is resolved by the NR decomposition itself: any real field satisfying '
-            'KG has an envelope ψ = A exp(iθ) where θ is precisely the fold '
-            'orientation angle. The complex structure of QM is the slowly-varying '
-            'envelope of a real compression oscillation.'
+            'The NR decomposition of any real KG field gives ψ = A exp(iθ) where '
+            'θ is the phase of the complex envelope. The DFC interpretation — that '
+            'θ IS the fold orientation angle — is a physical identification, not '
+            'derived automatically from the decomposition. It is a testable claim: '
+            'if fold orientation is the quantum phase, then interference between '
+            'orientations should produce quantum-mechanical probabilities. This '
+            'identification makes the complex structure of QM a consequence of the '
+            'compression field geometry, but the step from "θ = fold orientation" '
+            'to "P = |ψ|²" (the Born rule) remains open.'
         ),
     }
 

@@ -45,7 +45,7 @@ internal geometry.
 The effective potential for ε (the shape parameter) is determined by two competing geometric
 effects:
 
-### Effect 1: Pressure from the SU(3) Fiber (Destabilizer)
+### Effect 1: Pressure from the D7 SU(3) Closure (Destabilizer)
 
 The SU(3) closure geometry (strong force) is also slightly squashed to break the right-copy flavor symmetry.
 This squashing propagates through their shared embedding in spacetime and exerts a "pressure" on
@@ -157,8 +157,8 @@ m_Z ≈ 91.2 GeV  ✓
 ```
 
 The ratio m_W / m_Z = cos(θ_W) is the **Weinberg angle**, which in this model is determined by the
-ratio of the radii of the U(1) and S³ closure geometrys. It is not a free parameter — it is the geometric
-mixing angle between the electromagnetic and weak force closure geometrys.
+ratio of the radii of the D5 U(1) and D6 S³ closure geometries. It is not a free parameter — it is the geometric
+mixing angle between the D5 electromagnetic and D6 weak closure geometries.
 
 ---
 

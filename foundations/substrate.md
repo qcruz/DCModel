@@ -118,17 +118,22 @@ be smoothly destroyed.
 
 ---
 
-## How DFC Connects to the 16D Model
+## How DFC Connects to the Observed Gauge Structure
 
-The 16D geometric model describes the *stable* configuration that the substrate has settled into.
-The twelve internal closure topologies are not abstract — they are the specific self-reinforcing
-loop structures that formed when compression reached critical thresholds in the early universe.
+The multi-depth closure structure describes the stable configuration that the substrate has settled
+into. The closure topologies — U(1), S³, SU(3) — are not abstract — they are the specific
+self-reinforcing loop structures that formed when compression reached critical thresholds in the
+early universe.
 
 In other words:
 - The universe started as a substrate undergoing compression
 - At various critical thresholds, buckling produced new stable modes
 - Some of those modes folded back onto themselves, forming topologically stable closed loops
 - The particular loops that formed — U(1), S³, SU(3) — are the internal force structures we observe
+
+**Important:** The D-depth labels (D5 = U(1), D6 = SU(2), D7 = SU(3)) are provisional markers
+for emergent closure behaviors, not layers in a pre-existing higher-dimensional space. Dimensions
+do not pre-exist; they emerge as new degrees of freedom open at each buckling threshold.
 
 Why those particular loops and not others? This is the deepest open question in the model. The
 current proposal is that U(1), S³, and SU(3) are the unique minimal stable closure configurations
