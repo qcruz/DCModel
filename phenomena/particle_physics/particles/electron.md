@@ -145,7 +145,7 @@ spinor representations independently of any D6 winding).
 
 The electron mass arises from the depth at which the kink is anchored. From
 `foundations/mass_hierarchy.md`, the lepton mass hierarchy corresponds to different
-zero modes of the effective potential at the D6 layer:
+zero modes of the effective potential near the D6 closure depth:
 
 - **Electron** (ground state): mass scale set by the dimple depth d in the D6 effective
   potential. The ground-state wave function samples only the bottom of the dimple.
@@ -248,8 +248,8 @@ y_e = m_e / v ≈ 2.9 × 10⁻⁶    [Yukawa = Mλ-over-v in DFC language]
    Computing g_Y from the D6 geometry is the fermion mass prediction problem.
 
 3. **The 3+1D Jackiw-Rebbi generalization.** The exact zero mode computed above is in
-   1+1D. The 3+1D case requires the kink background to be a 3+1D soliton (the Skyrmion
-   or D3+D4 kink) and the zero mode to be an L² spinor in R³. The BPST instanton result
+   1+1D. The full substrate case requires the kink background to be a soliton across the substrate's D3+D4 behavior (the Skyrmion
+   or D3+D4 kink) and the zero mode to be a normalizable spinor. The BPST instanton result
    (Step 2) gives this for the composite baryon; the elementary lepton analog in 3+1D
    is the open formal derivation in `foundations/spin_emergence.md`.
 

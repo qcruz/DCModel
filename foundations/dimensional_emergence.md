@@ -49,8 +49,8 @@ self-interaction. The energy from the ejection circles back on itself — the di
 into a tight, self-reinforcing loop. It does not propagate freely into a large, open direction.
 
 Later bifurcations, occurring in a field already structured by earlier events, produce ejections
-that can propagate further before self-interacting. These become the large-scale dimensions —
-the three spatial dimensions and time — that we observe directly.
+that can propagate further before self-interacting. These produce the substrate's large-scale
+behaviors — what appears as three spatial degrees of freedom and time.
 
 The result is a spectrum:
 
@@ -59,7 +59,7 @@ The result is a spectrum:
 | Tight self-interacting loops | Energy circulates without propagating | Appears as charge, spin, color — internal quantum numbers |
 | Semi-free propagating modes | Energy can travel but returns to origin | Appears as fields with range limits (weak force) |
 | Freely propagating modes | Energy propagates to arbitrary distance | Appears as long-range forces (gravity, electromagnetism) |
-| Large-scale unfurled directions | No self-interaction at accessible scales | Appears as three spatial dimensions and time |
+| Large-scale unfurled directions | No self-interaction at accessible scales | Appears as three apparent spatial degrees of freedom and time |
 
 The "large" vs. "small" distinction is not about size in any pre-existing space. It is about the
 **degree of self-interaction** of the energy in that dimension. High self-interaction = tight
@@ -102,7 +102,7 @@ Far beyond any current accelerator. But their existence is indirectly present in
 
 ## The Four Observable Dimensions
 
-Large-scale spatial dimensions and time emerge from later, lower-compression bifurcations —
+Large-scale apparent spatial degrees of freedom and time emerge from later, lower-compression bifurcations —
 events occurring in a field already structured by earlier events. These ejections can propagate
 through the already-structured field without immediately self-interacting.
 

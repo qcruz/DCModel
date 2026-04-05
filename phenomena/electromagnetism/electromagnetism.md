@@ -176,7 +176,7 @@ is a circle — homogeneous, with no geometrically distinguished point.
 ### Why the Force Falls as 1/r²
 
 The potential between two charges at separation r is determined by the propagator of the
-massless A_μ field. For a massless field in 3 spatial dimensions:
+massless A_μ field. For a massless field propagating through the substrate's three apparent spatial degrees of freedom:
 
 ```
 G(r) = 1/(4πr)     [Green's function of ∇² in 3D]
@@ -185,7 +185,7 @@ V(r) = q₁ q₂ / (4πε₀ r) = k q₁ q₂ / r     [Coulomb's law] ✓
 ```
 
 The 1/r dependence and 1/r² force is a direct consequence of the photon being massless
-and propagating in 3 spatial dimensions. If the photon had mass m, the potential would
+propagating through three apparent spatial degrees of freedom. If the photon had mass m, the potential would
 become the Yukawa form V(r) ∝ exp(−mr/ℏc)/r — exponentially suppressed beyond the
 Compton wavelength ℏc/m. The weak force (massive W/Z) behaves this way.
 

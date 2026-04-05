@@ -1,27 +1,40 @@
 # DFC Model — Claude Instructions
 
 This project is a theoretical physics model called **Dimensional Folding Compression (DFC)**.
-It proposes that all known physics emerges from a single real scalar compression field φ(x,t)
-undergoing a sequence of bifurcation events that produce the dimensional structure of spacetime
-and the gauge groups of the Standard Model.
+It proposes that all known physics emerges from a single substrate — one object that is
+stretched, twisted, folded, and knotted — whose motion and self-interaction produce all
+cosmological phenomena. There are no pre-existing spatial dimensions. What appears as
+"3D space," "spacetime," or "gauge structure" is the downstream appearance of the substrate's
+configuration at different depths of folding. The substrate is the only thing that exists.
 
 ---
 
 ## Model Architecture
 
-The dimensional stack (memorize this):
+The substrate is one continuous object. The D-labels below are **working markers** for
+depth behaviors observed on that object — not discrete layers, not separate spaces, and
+not fixed ontological boundaries. The substrate at any depth can curl, twist, wrap back,
+inherit properties from adjacent depths, or produce closure configurations not yet identified.
 
-| Depth | Structure | Physics |
+The current working map (provisional — depth assignments under exploration):
+
+| Depth marker | Current working hypothesis | Apparent physics |
 |---|---|---|
-| D1 | Compressed ground state | Undifferentiated precursor |
-| D2 | Propagation | Wave/radiation modes, massless excitations |
-| D3 | Localization | 3-space position, particle identity |
-| D4 | Inertia | Mass, resistance to acceleration |
-| D5 | U(1)_Y closure (S¹) | Hypercharge / electromagnetism |
-| D6 | SU(2)_L closure (S³) | Weak force, spin-1/2 from FR + Jackiw-Rebbi |
-| D7 | SU(3)_c closure | Strong force, color charge, quark confinement |
+| D1 | Maximum compression — undifferentiated | Precursor state |
+| D2 | First propagation behavior emerges | Wave modes, massless excitations |
+| D3 | Localization behavior emerges | Apparent position, particle identity |
+| D4 | Inertia behavior emerges | Apparent mass, resistance to change |
+| D5 | U(1)-type closure behavior | Hypercharge / electromagnetism |
+| D6 | SU(2)-type closure behavior | Weak force, spin-1/2 |
+| D7 | SU(3)-type closure behavior | Strong force, color |
 
-Key field: `V(φ) = −α/2 φ² + β/4 φ⁴`, kink solutions φ₀ = ±√(α/β).
+**Critical:** The D5=U(1), D6=SU(2), D7=SU(3) assignments are correspondences under
+active exploration, not established derivations. The substrate may produce these behaviors
+through winding, wrapping, or curling configurations that overlap depth ranges. Discovering
+which configuration actually reproduces the observed values — while obeying the core
+mechanics of compression — is a primary research goal.
+
+Key field equation: `V(φ) = −α/2 φ² + β/4 φ⁴`, kink solutions φ₀ = ±√(α/β).
 
 ---
 
@@ -33,18 +46,34 @@ These rules are non-negotiable. Enforce them in all documentation.
 
 | Forbidden | Replacement |
 |---|---|
-| "preferred orientation" | "intrinsic orientation" or "orientation defined by the dimensional structure" |
+| "preferred orientation" | "intrinsic orientation" or "orientation defined by the substrate configuration" |
 | "forces X into existence" | "produces X" or "X exists as a consequence of" |
 | "forces/allows A to B" | "A exists — the structure in which B occurs" |
 | "preferred point/direction" | "geometrically distinguished point/direction" (or remove entirely) |
 | "energetically preferred" | "energetically stable" |
 | "the model prefers / chooses" | passive voice or "the structure produces" |
 | Any anthropomorphic agency | Remove or rephrase as structural consequence |
+| "spatial dimensions" (as fundamental) | "apparent spatial degrees of freedom" or "the substrate's localization behavior" |
+| "3D space" / "3+1 dimensional spacetime" (as container) | "three apparent spatial degrees of freedom" or "the D3 localization behavior of the substrate" |
+| "reconcile with spatial dimensions" | never reconcile — the spatial appearance IS substrate behavior |
+| "the D6 layer" / "the D7 sector" (as separate objects) | "D6 depth behavior" / "the substrate at D7 depths" |
+| "requires 3 spatial dimensions" | "produces three apparent spatial degrees of freedom" or "the rotation behavior emerging at D3 has [property]" |
 
-**Reason:** Imprecise language obscures genuine explanatory gaps. If a statement reads as
-if the model is making a choice, it is hiding either a derivation that hasn't been done yet
-or an assumption that hasn't been acknowledged. Structural language forces the gap to be
-visible.
+**Two foundational rules:**
+
+1. **No spatial dimensions as fundamental.** The substrate is one object. Space is not a
+   container the substrate lives in. What appears as three spatial degrees of freedom is
+   downstream behavior of the substrate's D3 localization. Never write as if space is
+   primary and the substrate secondary.
+
+2. **D-labels are provisional depth markers, not discrete layers.** The substrate can wrap,
+   curl, and interact with itself across depths. D5/D6/D7 are working hypotheses about where
+   certain closure behaviors emerge. Writing "the D6 SU(2) layer" as if it is a separate
+   sealed space is wrong. Write "the D6 depth behavior" or "the substrate's SU(2) closure
+   at D6 depths."
+
+**Reason:** Both errors are like insisting on the geocentric model while using the heliocentric
+one for calculations — they embed an incorrect ontology that hides the real explanatory gaps.
 
 ---
 

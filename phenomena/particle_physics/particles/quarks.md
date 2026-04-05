@@ -148,7 +148,7 @@ localization space. More precisely:
 
 A single quark carries D7 winding in the fundamental representation (color triplet).
 For this D7 winding to exist as a stable D3 configuration, it must close — the
-winding must return to its starting value as we move around the kink in 3D space.
+winding must return to its starting value as we move around the kink in the substrate's D3 localization behavior.
 
 For an SU(3) color singlet (color-neutral combination), the D7 winding closes:
 ```
@@ -157,7 +157,7 @@ For an SU(3) color singlet (color-neutral combination), the D7 winding closes:
 ```
 
 For an isolated quark (color triplet, not neutral), the D7 winding cannot close in
-D3 — there is no direction in 3D space along which the SU(3) orientation returns to
+D3 — there is no configuration in the substrate's D3 localization behavior along which the SU(3) orientation returns to
 its starting value. The compression field at D3 does not support such an open
 boundary condition.
 

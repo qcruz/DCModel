@@ -242,6 +242,8 @@ the D7 buckling event as the origin of baryogenesis.
   `foundations/three_generations.md`
 - **Higgs geometry** — the SU(2) closure at D6 is the S³ geometry; independent of
   SU(3), consistent with proton stability; `foundations/higgs_geometry.md`
+- **Quarks** — D7 quark structure, fractional charge, confinement; `phenomena/particle_physics/particles/quarks.md`
+- **Radioactive decay** — beta decay as allowed intra-D6 transition vs. forbidden cross-closure decay; `phenomena/particle_physics/radioactive_decay.md`
 - **Closure topology** — the formal description of independent closure events;
   `equations/closure_topology.py`
 - **Proton stability equations** — all numerical calculations; `equations/proton_stability.py`

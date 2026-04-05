@@ -74,22 +74,35 @@ Therefore, exchanging two identical D6 fermion kinks multiplies the joint wavefu
 
 This is exactly the antisymmetry that produces the Pauli exclusion principle.
 
-### Why This Requires 3+1 Dimensions
+### Why the Rotation Behavior of the Substrate at D3 Has π₁ = Z₂
 
-The argument depends on the topology of 3D configuration space. In 3 spatial dimensions:
-- The rotation group SO(3) has fundamental group π₁(SO(3)) = Z₂
-- This Z₂ is the source of the distinction between fermions and bosons
-- A 2π rotation is non-trivially different from the identity (it requires 4π to return
-  completely, which is the "belt trick" or "Dirac scissors" demonstration)
+The substrate's D3 localization behavior produces three apparent spatial degrees of freedom.
+The rotation group of this behavior — the set of rotational symmetry operations on the
+substrate's D3 configuration — has the topological property:
 
-In 2+1 dimensions, the fundamental group of the rotation group is Z (not Z₂), giving
-anyons — particles with arbitrary exchange phase. In 1+1D there is no distinction.
+```
+π₁(SO(3)) = Z₂
+```
 
-**In DFC:** the D3+D4 localization layer is 3+1 dimensional Minkowski spacetime. The
-configuration space of the D6 kink in this 3+1D background has exactly the π₁ = Z₂
-structure required for the FR theorem to give a ±1 phase. The Pauli exclusion principle
-is a consequence of the dimensionality of D3 (three spatial dimensions) combined with
-the topology of the D6 SU(2) closure.
+This is a property of the substrate's rotation behavior, not a consequence of pre-existing
+space. The substrate is not "inside" 3D space — it produces what appears as three spatial
+degrees of freedom. The Z₂ fundamental group is the character of that behavior:
+- A 2π rotation in the substrate's D3 localization configuration is non-trivially different
+  from the identity (requires 4π to return completely — the "belt trick")
+- This Z₂ is what distinguishes fermion-like from boson-like exchange statistics
+
+If the substrate's localization behavior were to produce two apparent spatial degrees of
+freedom (2+1D appearance), the rotation group would be SO(2) with π₁(SO(2)) = Z (not Z₂),
+giving anyons — arbitrary exchange phases. This is relevant for condensed-matter substrate
+analogs, not the cosmological substrate.
+
+**In DFC:** the D6 SU(2) kink lives in the configuration space of the substrate at D3+D4
+depths. The rotation behavior of that configuration space has π₁ = Z₂ — the property that
+makes the 2π rotation loop non-contractible. The Pauli exclusion principle is a consequence
+of this Z₂ character of the substrate's D3 behavior combined with the D6 SU(2) closure
+topology. The phrase "three spatial dimensions" is shorthand for "the substrate's D3
+localization behavior produces three apparent spatial degrees of freedom with SO(3) rotation
+character." The spatial appearance is downstream; the substrate behavior is primary.
 
 ### Why Bosons Are Symmetric
 
@@ -180,7 +193,7 @@ If any two rows are equal (two particles in same state): det = 0
 | FR phase numerically verified | N = 1.00000 (error 2×10⁻¹¹) | consistent ✓ |
 | Gauge bosons are bosons | No D6 winding → phase +1 | photon, W, Z, g are bosons ✓ |
 | Higgs is boson | Scalar, no winding → phase +1 | Higgs spin-0 boson ✓ |
-| Requires 3+1D | π₁(SO(3)) = Z₂ only in 3 spatial dimensions | 3+1D spacetime ✓ |
+| Rotation behavior has π₁ = Z₂ | D3 substrate behavior produces SO(3) rotation character | substrate at D3 ✓ |
 | Spin-statistics connection | Kink topology determines both spin and statistics | unified in DFC ✓ |
 
 ---
@@ -195,9 +208,9 @@ If any two rows are equal (two particles in same state): det = 0
    closure topology. This closes the gap between the physical argument and the formal
    theorem.
 
-2. **Anyons and lower-dimensional DFC.** In 2+1 dimensions, π₁(SO(2)) = Z, allowing
-   arbitrary exchange phases (anyons). If DFC were realized in 2+1 dimensional D3 (two
-   spatial dimensions), anyonic statistics would emerge instead of strict Fermi/Bose.
+2. **Anyons and lower-dimensional substrate behavior.** If the substrate's D3 localization
+   behavior were to produce two apparent spatial degrees of freedom, the rotation group would
+   be SO(2) with π₁(SO(2)) = Z, giving anyonic statistics — arbitrary exchange phases.
    This has implications for condensed-matter analogs of DFC and for topological quantum
    computing (where anyons are a resource). Whether DFC predicts anyons in specific
    2D condensed-matter contexts is an open question.

@@ -678,7 +678,7 @@ The sequence of structural differentiation levels that emerge from progressive
 compression and bifurcation of the compression field:
 - D1: the compressed ground state — everything undifferentiated
 - D2: the propagation layer — light and massless waves
-- D3: the localization layer — what we experience as 3D space
+- D3: the localization behavior — produces what appears as three apparent spatial degrees of freedom
 - D4: the inertia layer — where mass and resistance to acceleration arise
 - D5: U(1) closure — electromagnetism
 - D6: SU(2) closure — weak force

@@ -249,12 +249,13 @@ the same D6 SU(2) closure topology.
 
 ## Open Questions
 
-1. **3+1D Jackiw-Rebbi generalization.** The zero mode derivation above is 1+1D. The
-   electron is a 3+1D object. The full 3+1D Jackiw-Rebbi derivation (using the kink as
-   a background in 3+1D Minkowski space) needs to reproduce a Dirac spinor with exactly
-   two degrees of freedom per spatial point. The index theorem argument (Atiyah-Singer,
-   Step 2–3 in spin_zero_mode.py) establishes this for composite baryons; the elementary
-   fermion case requires extending the 1+1D result to 3+1D.
+1. **Full substrate generalization of the Jackiw-Rebbi zero mode.** The zero mode derivation
+   above is 1+1D. The substrate's D3 localization behavior produces three apparent spatial
+   degrees of freedom. The full derivation needs to reproduce a Dirac spinor — a zero mode
+   with exactly two degrees of freedom per substrate localization point — in the substrate's
+   D3+D4 behavior. The index theorem argument (Atiyah-Singer, Steps 2–3 in spin_zero_mode.py)
+   establishes this for composite baryon-like structures; the elementary fermion case requires
+   extending the 1+1D result to the full D3+D4 substrate configuration.
 
 2. **Mass generation for the zero mode.** The Jackiw-Rebbi zero mode is massless in
    1+1D. The electron has mass m_e. The Higgs mechanism generates masses for fermions
