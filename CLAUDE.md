@@ -81,10 +81,40 @@ one for calculations — they embed an incorrect ontology that hides the real ex
 
 Repeat this cycle indefinitely:
 
+### Completeness Estimate (running)
+
+```
+Current estimate: ~10%  (viability: ~25%, mathematical rigor: ~8%)
+Key bottleneck: D-depth assignment mechanism; first-principles coupling constants; no S-matrix
+Next milestone that moves the needle: any single coupling constant derived from (α, β, c, geometry)
+```
+
+**Priority weighting for Step 1:** When choosing which phenomenon or foundation doc to work on,
+give preferential weight to those that connect to the three critical bottlenecks:
+
+1. **D-depth assignment mechanism** — why does U(1) emerge at D5, SU(2) at D6, SU(3) at D7?
+   Prefer docs that explore the substrate's self-interaction structure at these depths, the
+   winding/wrapping configurations that produce each closure, or alternative depth orderings.
+
+2. **First-principles coupling constants** — α_em, sin²θ_W, α_s, Yukawa couplings.
+   Prefer docs where a coupling constant might be derived from geometric parameters rather
+   than taken from experiment. Even partial progress here (e.g. the ratio of two couplings)
+   is high-value.
+
+3. **S-matrix / scattering amplitudes from the substrate** — no observable has yet been
+   computed from the field dynamics (only from imported equations). Prefer docs that
+   connect the substrate dynamics to actual measurable cross-sections or decay rates.
+
+These bottlenecks are the difference between a conceptual framework (~25% viable) and a
+predictive, mathematically rigorous theory (~80%+). All other work is valuable but secondary.
+
+---
+
 ### Step 1 — Add a New Phenomenon
 
 1. Identify a physics phenomenon not yet in `phenomena/` (or a placeholder needing content).
-   Choose one systematically or randomly from the list of unformalized docs.
+   Choose one systematically or randomly from the list of unformalized docs, with preferential
+   weight toward phenomena that connect to the three critical bottlenecks above.
 2. Write the **conceptual document** in `phenomena/` following the standard format:
    - One-Sentence Synthesis (DFC account, not a placeholder)
    - Observation (what is measured/observed)
