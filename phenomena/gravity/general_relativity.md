@@ -361,3 +361,14 @@ See `equations/folding_gradient.py` for all numerical implementations.
    NR approximation (Schrödinger) fails; the KG approximation (linearized) fails; the
    full nonlinear compression field equation must be solved. This regime is where DFC
    makes contact with quantum gravity — and it is fully open.
+
+6. **Gravitational wave polarization:** LIGO and Virgo have confirmed that gravitational
+   waves carry tensor (+ and ×) polarizations, consistent with spin-2 metric perturbations
+   in GR. The DFC compression field φ is a scalar, so perturbations of φ produce scalar
+   (spin-0) waves, not tensor waves. A purely scalar field theory cannot produce + and ×
+   polarizations from first principles. How the observed tensor polarizations emerge from
+   DFC — whether from coupling of the scalar field to the D3 metric structure, or from a
+   more complex mechanism — is an open structural question. Until this is resolved, the
+   gravitational wave dispersion relation (ω² = c²k² + 2α) should be read as describing
+   the speed of the DFC compression perturbation, not as a derivation of GR gravitational
+   wave polarizations.

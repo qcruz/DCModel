@@ -158,8 +158,15 @@ testable by DESI Year 5 and Euclid.
   actual SM result is ~10^9 GeV; claimed DFC scale is M_c ~ 10^18 GeV. All three disagree.
   This function is a placeholder. Module docstring and print output updated accordingly.
 
+**`folding_gradient.py`** — audited (2026-04-05). Module is well-organized and honest.
+Key finding: Planck-scale α (from kink width = L_Pl) is ~7×10⁸⁶ s⁻², while the
+gravitational wave cosmological constraint requires α ≪ H₀²/c² ≈ 10⁻⁷² s⁻² — a 158
+order of magnitude gap. Both α values are regime-specific effective values of the same
+running coupling; the DFC RG flow for α has not been computed. Documented as open
+problem 5 in the module. No deletions or corrections needed.
+
 **Remaining unreviewed modules:** `bifurcation.py`, `compression_field.py`,
-`gauge_couplings.py`, `entropy_production.py`, `folding_gradient.py`, `constants.py`.
+`gauge_couplings.py`, `entropy_production.py`, `constants.py`.
 
 ---
 
@@ -215,3 +222,4 @@ considerably and the model becomes a reformulation rather than a reduction.
 | 2026-04-05 | Equation layer audit completed; tau mass failure documented; cosmology module results integrated |
 | 2026-04-05 | Formalized: electron.md, muon_tau.md, quarks.md; CLAUDE.md development cycle created; three_generations.md corrected (tau "prediction" relabeled as known failure; d_τ≈7.0 notation clarified; top quark depth corrected to D6 squashing threshold); quark_masses.py docstring corrected (D8-9 → D7; prediction scope clarified) |
 | 2026-04-05 | higgs_potential.py audited: Weinberg angle marked as reverse-engineered correspondence; vacuum stability formula documented as placeholder (top-only beta function underestimates scale); module docstring updated with full derivation status |
+| 2026-04-05 | Cycle 4: quantum_tunneling.md formalized (WKB from KG evanescent modes, Gamow factor, Gamow peak for stellar fusion); general_relativity.md: added open question on GW tensor vs scalar polarization; folding_gradient.py: documented 158-order gap between Planck-scale α and cosmological α constraint |

@@ -18,6 +18,22 @@ The full nonlinear connection to the Einstein field equations is an open derivat
 This is the highest-priority open problem for making DFC quantitatively predictive
 in the strong-gravity regime.
 
+KNOWN SCALE TENSION: Two separate α values appear in this module:
+
+  1. Planck-scale α (from planck_scale_from_compression):
+     α_Pl = 2c²/L_Pl² ≈ 7×10⁸⁶ s⁻²  (SI)
+     This is α at the Planck-length kink-width identification.
+
+  2. Cosmological α constraint (from compression_wave_speed):
+     For graviton mass ≪ H₀/c ≈ 10⁻³³ eV, need α ≪ H₀²/c² ≈ 10⁻⁷² s⁻² (SI)
+
+These differ by ~158 orders of magnitude. They are not contradictory if α runs with
+scale — i.e., the effective compression parameter α(k) varies from α_Pl at Planck
+energies to α_cosmo at cosmological scales. This is analogous to running coupling
+constants in QFT. The DFC renormalization group flow for α has not been computed.
+Until it is, the two uses of α in this module should be understood as regime-specific
+effective values, not the same parameter. This is a known open problem.
+
 Central equation (weak-field, schematic):
 
     ∇²Φ_fold ≈ 4π G_eff ρ_compression
@@ -268,4 +284,6 @@ if __name__ == "__main__":
     print(f"  2. Show Bianchi identity from DFC field equation")
     print(f"  3. Reproduce light bending angle and perihelion precession from DFC")
     print(f"  4. Constrain graviton mass (m_eff_sq → 0 requires α << cosmological scale)")
+    print(f"  5. Derive RG running of α from Planck scale to cosmological scale")
+    print(f"     α_Pl ~ 7e86 s⁻² vs α_cosmo << H₀²/c² ~ 1e-72 s⁻²  (158 order gap)")
     print(f"  See: phenomena/gravity/general_relativity.md, foundations/substrate.md")
