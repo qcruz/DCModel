@@ -105,7 +105,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~10%** (viability as a theory: ~25%; mathematical rigor: ~8%)
+**Current estimate: ~11%** (viability as a theory: ~27%; mathematical rigor: ~8%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
@@ -119,7 +119,7 @@ The single most accessible step: deriving sin²θ_W = 0.231 from the R_U₁/R_S�
 geometry ratio. Moving any one of these three bottlenecks to "derived" would shift the
 estimate materially.
 
-*This estimate is updated in `CLAUDE.md` as the model develops.*
+*Updated after every push. Full history in `CLAUDE.md`.*
 
 ---
 

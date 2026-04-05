@@ -84,18 +84,31 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~10%  (viability: ~25%, mathematical rigor: ~8%)
+Current estimate: ~11%  (viability: ~27%, mathematical rigor: ~8%)
 Key bottleneck: D-depth assignment mechanism; first-principles coupling constants; no S-matrix
 Next milestone that moves the needle: any single coupling constant derived from (α, β, c, geometry)
 ```
 
-**After each cycle:** If the cycle produces a significant change — a new verified prediction,
-a resolved bottleneck, a major discovered failure, or a substantial structural clarification —
-update the estimate here and in `README.md`. What counts as significant: a new numerical
-match that wasn't previously derived, a coupling constant derived from substrate parameters,
-an S-matrix result, or discovery that a prior claim was wrong. Routine formalizations of
-placeholder docs that only add structural description (not new derivations) do not move the
-estimate.
+**Push history (viability / rigor / overall):**
+| Push | Cycles | Change | Viability | Rigor | Overall |
+|---|---|---|---|---|---|
+| Baseline | 1–13 | Initial formalization pass | 25% | 8% | ~10% |
+| 2026-04-05 | 14–18 | W/Z, Higgs, neutrinos, composite particles, gluons, spin | 26% | 8% | ~10% |
+| 2026-04-05 | 19 | Antimatter; measurement/closure_topology corrections | 26% | 8% | ~10% |
+| 2026-04-05 | 20 | Dark matter; Pauli exclusion, neutrino audit | 26.5% | 8% | ~10.5% |
+| 2026-04-05 | 21 | Dark energy (CC problem dissolved); GR table; GW polarization gap | 27% | 8% | ~11% |
+
+**After every push:** Update the estimate here and in `README.md` after every commit push,
+even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
+- **Viability** (~25% baseline): increases when new structural accounts are added, known
+  failures are resolved, or predictions are confirmed by data. Formalizing placeholder
+  docs adds small increments (~0.5% each for major phenomena).
+- **Mathematical rigor** (~8% baseline): increases only when actual derivations are
+  completed — a coupling constant from (α, β, c), an S-matrix result, a formal proof.
+  Structural descriptions and consistency checks do not move rigor.
+
+The overall estimate is the average of the two. Track the push-by-push history in the
+running record below the estimate block so progress is visible over time.
 
 **Priority weighting for Step 1:** When choosing which phenomenon or foundation doc to work on,
 give preferential weight to those that connect to the three critical bottlenecks:
