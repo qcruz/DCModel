@@ -274,8 +274,14 @@ if __name__ == "__main__":
 
     print(f"\n--- Parameter Scaling ---")
     print(f"  E_kink ∝ c × (α³/β)^(1/2):")
+    print(f"  λ_kink ∝ 1/√α   (higher α → sharper, heavier kink)")
     for scale in [0.5, 1.0, 2.0, 4.0]:
         E_scaled = kink_energy(alpha * scale, beta, c)
         lam_scaled = kink_width(alpha * scale, c)
-        print(f"    α={alpha*scale:.1f}: E={E_scaled:.4f}  λ={lam_scaled:.4f}  "
-              f"(α × {scale}: heavier and {'sharper' if scale > 1 else 'wider'} kink)")
+        if scale > 1.0:
+            desc = "heavier and sharper"
+        elif scale < 1.0:
+            desc = "lighter and wider"
+        else:
+            desc = "baseline"
+        print(f"    α={alpha*scale:.1f}: E={E_scaled:.4f}  λ={lam_scaled:.4f}  ({desc})")

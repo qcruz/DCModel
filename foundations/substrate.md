@@ -1,17 +1,16 @@
 # The DFC Substrate Framework
 
-## Relationship to the Main Model
+## What This Document Covers
 
-The Dimensional Folding Model (described in `overview.md` through `mass_hierarchy.md`) answers
-the question: *what is the structure?*
+This document describes the substrate — the one object that the entire model is about.
+Everything in `foundations/` and `phenomena/` is an account of how this substrate behaves
+at different compression depths.
 
-The Dimensional Folding/Compression (DFC) framework answers a deeper question: *why does geometry
-exist, and what is it made of?*
-
-DFC is the substrate interpretation that underlies the geometric model. It is explicitly less
-developed and more speculative — but it provides the mechanical intuition for how stable layered
-compression states arise from a continuous field, and why those states produce what we observe
-as forces, particles, and apparently geometric structure.
+The central questions addressed here:
+- What is the substrate?
+- What does it do, and why?
+- How do particles, forces, and geometry emerge from it?
+- What is mathematically established vs. still open?
 
 ---
 
@@ -126,10 +125,12 @@ self-reinforcing loop structures that formed when compression reached critical t
 early universe.
 
 In other words:
-- The universe started as a substrate undergoing compression
-- At various critical thresholds, buckling produced new stable modes
+- The substrate is one continuous object; it has always been compressing toward lower-dimensional
+  states — there is no "start"; what we call the Big Bang is the first observable buckling threshold
+- At various critical compression thresholds, buckling produced new stable modes
 - Some of those modes folded back onto themselves, forming topologically stable closed loops
-- The particular loops that formed — U(1), S³, SU(3) — are the internal force structures we observe
+- The particular loops that formed — U(1), S³, SU(3) — are the fold interaction regimes we observe
+  as forces; they were never three separate things, always fold interactions of one substrate
 
 **Important:** The D-depth labels (D5 = U(1), D6 = SU(2), D7 = SU(3)) are provisional markers
 for emergent closure behaviors, not layers in a pre-existing higher-dimensional space. Dimensions
@@ -152,7 +153,9 @@ rigorously derived.
 **High priority:**
 - Derive Einstein field equations as an effective description of substrate alignment dynamics
 - Derive cosmological expansion from global compression budget dynamics
-- Specify the substrate concretely (is it a field? a condensate? a spin network?)
+- Derive the form V(φ) = −α/2 φ² + β/4 φ⁴ from D1 compression dynamics — the double-well
+  potential is the minimal Lorentz-invariant scalar form with stable kinks, but it is
+  postulated, not derived from the near-D1 mechanics
 
 **Medium priority:**
 - Connect closure stability to quantum error correction (suggestive formal parallels)
