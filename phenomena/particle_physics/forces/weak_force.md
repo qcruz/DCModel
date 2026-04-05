@@ -285,11 +285,14 @@ structure follows from the left-handed D6 chirality, and the rate matches to 0.1
    D6 results in the observed left handedness. This would derive parity violation from first
    principles rather than postulating SU(2)_L.
 
-2. **Derive sin²θ_W from DFC geometry:** The Weinberg angle sin²θ_W ≈ 0.231 is a free
-   parameter of the Standard Model (measured, not derived). In DFC, it should emerge from
-   the geometry of the D5/D6 closure coupling — specifically, the ratio of U(1)_Y to
-   SU(2) connection strengths, which reflects how D5 and D6 overlap in the D3 localization
-   layer. This is a key quantitative prediction left open.
+2. **Weinberg angle (Route 3B — partially derived):** sin²θ_W = 0.231 is reproduced by
+   the equal-coupling initial condition (Route 3B, see `foundations/embedding_geometry.md`
+   and `equations/weinberg_angle_rg.py`). All gauge closures emerge from the same substrate
+   with the same kinetic coefficient → α₁ = α₂ at the D5/D6 formation scale M_c(12) ≈ 10^13 GeV
+   → sin²θ_W = 3/8 at M_c → SM running → 0.231 at M_Z (0.00% discrepancy). Remaining open
+   items: (a) derive M_c(12) from substrate parameters (α, β, c) rather than reading it from
+   SM running; (b) derive the 3/5 hypercharge normalization from D5 closure geometry rather
+   than borrowing it from SU(5) GUT embedding.
 
 3. **Derive the CKM matrix from DFC closure structure:** The CKM matrix parametrizes quark
    flavor mixing under weak transitions (d→u, s→c, b→t with off-diagonal amplitudes V_us,

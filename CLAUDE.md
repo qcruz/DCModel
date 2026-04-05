@@ -109,7 +109,7 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~13%  (viability: ~28.5%, mathematical rigor: ~10%)
+Current estimate: ~13.5%  (viability: ~29%, mathematical rigor: ~10%)
 Key bottleneck: D-depth assignment mechanism; first-principles coupling constants; no S-matrix
 Next milestone that moves the needle: derive M_c(12) from substrate parameters (α, β, c); resolve Weinberg/Higgs scale tension
 ```
@@ -126,6 +126,7 @@ Next milestone that moves the needle: derive M_c(12) from substrate parameters (
 | 2026-04-05 | 23 | Big Bang formalized (flatness/horizon dissolved structurally); product_geometry/gauge_couplings audited for Route 3B and ontological unity corrections | 27.5% | 10% | ~12.5% |
 | 2026-04-05 | 24–25 | GW waves and black holes formalized; radioactive_decay and substrate audited; kink_model and weinberg_angle audited (label/overclaim fixes) | 28% | 10% | ~13% |
 | 2026-04-05 | 26 | Phase transitions formalized (V_eff bifurcations, EWSB crossover, QCD confinement, D-depth sequence); mass_generation and compression_field audited | 28.5% | 10% | ~13% |
+| 2026-04-05 | 27 | CMB formalized (Planck spectrum ✓, uniformity structural ✓, A_s OPEN); weak_force Weinberg angle updated to Route 3B result; entropy_production clean | 29% | 10% | ~13.5% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
