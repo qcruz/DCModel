@@ -1,11 +1,17 @@
 # DFC Model — Claude Instructions
 
 This project is a theoretical physics model called **Dimensional Folding Compression (DFC)**.
-It proposes that all known physics emerges from a single substrate — one object that is
-stretched, twisted, folded, and knotted — whose motion and self-interaction produce all
-cosmological phenomena. There are no pre-existing spatial dimensions. What appears as
-"3D space," "spacetime," or "gauge structure" is the downstream appearance of the substrate's
-configuration at different depths of folding. The substrate is the only thing that exists.
+It proposes that all known physics emerges from one self-compressing object: a continuous
+field that pulls inward on itself, driving toward a near-1D state through compression and
+bifurcation, whose self-closing bifurcation events form the topological structures we observe
+as particles and forces. There are no pre-existing spatial dimensions, gauge groups, or
+separate forces. What appears as "3D space," "gauge structure," or "three distinct forces"
+is the downstream appearance of the substrate's fold topology at different compression depths.
+The substrate is the only thing that exists. Forces are not fragments of a broken symmetry —
+they are the interaction behaviors between different fold topologies of this one object.
+This is a deeper unity than gauge unification: the forces were never three separate things
+at any energy; they were always fold interactions of the same object, appearing topologically
+distinct because they closed at different compression thresholds.
 
 ---
 
@@ -59,7 +65,7 @@ These rules are non-negotiable. Enforce them in all documentation.
 | "the D6 layer" / "the D7 sector" (as separate objects) | "D6 depth behavior" / "the substrate at D7 depths" |
 | "requires 3 spatial dimensions" | "produces three apparent spatial degrees of freedom" or "the rotation behavior emerging at D3 has [property]" |
 
-**Two foundational rules:**
+**Three foundational rules:**
 
 1. **No spatial dimensions as fundamental.** The substrate is one object. Space is not a
    container the substrate lives in. What appears as three spatial degrees of freedom is
@@ -72,8 +78,27 @@ These rules are non-negotiable. Enforce them in all documentation.
    sealed space is wrong. Write "the D6 depth behavior" or "the substrate's SU(2) closure
    at D6 depths."
 
-**Reason:** Both errors are like insisting on the geocentric model while using the heliocentric
-one for calculations — they embed an incorrect ontology that hides the real explanatory gaps.
+3. **Forces are fold interactions of one object — never three separate things.**
+   The three forces (U(1), SU(2), SU(3)) are not fragments of a broken gauge symmetry.
+   They are interaction behaviors between different closure topologies of the same substrate.
+   Writing as if forces "were once unified and then separated" imports the GUT narrative,
+   which is wrong here. The correct framing: the forces were never separate — they are
+   always the same fold interactions, appearing topologically distinct because they closed
+   at different compression thresholds. "Unified" is permitted and correct when it refers
+   to the ontological unity of the substrate (one object). It is forbidden when it implies
+   gauge-group unification (three forces becoming one force at high energy).
+
+**Language table additions:**
+| Forbidden | Replacement |
+|---|---|
+| "the forces were unified at high energy" | "the forces are always fold interactions of one object; at high compression, their topological distinctions diminish" |
+| "the model has no force unification" | "the model has deeper unity than gauge unification: one object, not three forces that once merged" |
+| "unified force" (GUT sense) | "single substrate" or "one object" |
+| "the three forces" (as fundamentally separate) | "the three closure-topology interaction regimes" or "fold interactions at D5, D6, D7 depths" |
+
+**Reason:** All three errors embed an incorrect ontology — they make the substrate's downstream
+behaviors (space, separate forces, discrete layers) appear to be primary, hiding the real
+explanatory structure.
 
 ---
 

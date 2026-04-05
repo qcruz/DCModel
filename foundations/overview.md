@@ -3,12 +3,15 @@
 ## The Single Starting Point
 
 There is one thing. Not space, not particles, not fields in the conventional sense — one
-interconnected energy field in a state of near-total compression, approaching a unified
-one-dimensional state.
+continuous object, a field that pulls inward on itself. That self-attraction drives it
+toward a near-1D state through compression. This is not the starting state in a timeline;
+it is the fundamental character of the substrate: it is always pulling inward, and everything
+emerges from the consequences of that pull.
 
 This is the beginning of the model. Everything else — forces, particles, the apparent
 three-dimensionality of space, the number of matter families, the mass of the electron —
-follows from what happens to that field under compression.
+follows from what happens to that self-compressing field as it undergoes compression,
+bifurcation, and topological closure.
 
 ---
 
@@ -74,15 +77,25 @@ dimensions were created by the same process — they just emerged at different s
 different properties, and most of them stabilized in configurations too tightly self-interacting
 to propagate at observable scales.
 
-**Not grand unification.** GUT theories propose that the three forces were once one force that
-broke apart as the universe cooled. In this model, the forces are not fragments of a single
-broken symmetry — they are distinct families of knot behavior that emerged at different
-compression thresholds, each with its own characteristic topology.
+**Not grand unification.** GUT theories propose that the three forces were once one force
+(a unified gauge group like SU(5)) that broke apart as the universe cooled. In this model,
+the forces were never three separate forces at any energy — they are always the interaction
+behaviors between different fold topologies of one object. This is a more fundamental unity
+than any GUT proposes: GUT says "three forces merge into one at 10^15 GeV"; this model says
+"there is one object, and its fold interactions are what we call forces at every energy."
 
-**The actual unifying principle is the field itself and its compression dynamics.** Forces
-are not unified "at high energy" — they were never separate to begin with. What we call
-the three forces are three different regimes of behavior in the same compressed field,
-distinguished by the scale at which their characteristic knot structures form.
+No unification event is needed because no separation ever occurred. The apparent distinction
+between the electromagnetic, weak, and strong interactions is a distinction between closure
+topologies — between the U(1), SU(2), and SU(3) fold configurations that the substrate
+settled into at different compression thresholds. From the substrate's perspective, these
+are not three different things interacting; they are one object interacting with itself
+at different fold depths.
+
+**The actual unifying principle is the substrate itself.** The substrate is the only thing.
+Forces are not unified "at high energy" — they were never multiple things to begin with.
+What we call three forces are three topological regimes of self-interaction in one continuous
+self-compressing field, distinguished by the compression depth at which their characteristic
+closure structures formed.
 
 ---
 

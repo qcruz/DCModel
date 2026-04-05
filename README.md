@@ -1,18 +1,34 @@
 # Dimensional Folding Model — Repository
 
 A theoretical physics model proposing that all of physics — forces, particles, mass, spacetime
-itself — emerges from a single process: the compression and bifurcation of a near-1D unified
-energy field.
+itself — emerges from one self-compressing object: a continuous field that pulls inward on
+itself, approaches a near-1D state through compression and bifurcation, and whose
+self-closing bifurcation events produce the topological structures we observe as particles
+and forces.
+
+Forces are not fragments of a broken gauge symmetry. They are interaction behaviors between
+different fold topologies of this one object — never three separate things at any energy,
+always the same substrate appearing topologically distinct because its closures formed at
+different compression thresholds.
 
 ---
 
 ## Core Claim
 
-There is one thing. A fully interconnected energy field under compression toward a unified
-one-dimensional state. As compression approaches its limit, bifurcation events occur — local
-pockets collapse and eject energy, creating new dimensions. Repeated bifurcations produce
-increasingly complex ejections that self-interact, forming stable knots and bottlenecks.
-Those stable structures are what we observe as particles, forces, and fields.
+There is one thing. A continuous field that pulls inward on itself — this self-attraction
+is the fundamental driver. That inward pull drives the field toward a near-1D state through
+compression and bifurcation: when compression reaches a threshold, the field cannot compress
+further without opening a new degree of freedom, and that opening is a bifurcation.
+
+Bifurcations that close back on themselves — the field folding or wrapping back onto itself
+due to compression — form topological closures. Those closures are what we observe as
+particles, forces, and fields.
+
+The three forces are not fragments of a broken unified force. They are always the same one
+object's fold interactions, appearing as distinct force behaviors because their closures
+formed at different compression thresholds with different topologies. The unity of this model
+is deeper than gauge unification: there is one object, and its interactions with itself
+at different fold depths are what we call electricity, the weak force, and color.
 
 ---
 
@@ -197,12 +213,18 @@ geometric structure. This model begins before geometry exists and builds it from
 dynamics.
 
 Key distinctions:
-- **vs. String theory:** No pre-existing spacetime; dimensions are not curled up, they are created
-- **vs. GUT (SU(5)/SO(10)):** No single broken symmetry; force structures emerge at different
-  bifurcation stages with different knot topologies — they were never "one force"
-- **vs. Kaluza-Klein:** No "extra" dimensions hidden inside larger ones; all dimensions are the
-  same kind of thing, differing only in their self-interaction character
+- **vs. String theory:** No pre-existing spacetime; dimensions are not curled up, they are
+  created by bifurcation events in one self-compressing field.
+- **vs. GUT (SU(5)/SO(10)):** GUT says three forces were once one force (a unified gauge
+  group) that broke apart as the universe cooled. This model says the forces were never
+  three separate things at any energy — they are always fold interactions of one object at
+  different topological depths. This is a deeper unity, not a different route to the same
+  conclusion: the substrate never "splits into three forces"; it always was one object
+  whose fold interactions appear as three topological regimes.
+- **vs. Kaluza-Klein:** No "extra" dimensions hidden inside larger ones; all dimensions are
+  the same kind of thing — degrees of freedom opened by compression bifurcations — differing
+  only in their self-interaction character.
 - **vs. LQG:** No pre-existing quantum geometry to discretize; discreteness emerges from
-  stable knot configurations in a continuous field
+  stable topological closure configurations in a continuous self-compressing field.
 
 See `comparisons/` for detailed side-by-side analyses.

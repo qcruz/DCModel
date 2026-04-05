@@ -105,6 +105,19 @@ If no equation exists yet, note what would need to be derived.
 | loss of representable structure | entropy increase (statistical sense) |
 | density of collapse events per unit time | temperature (when explaining mechanism) |
 | structural indeterminacy | randomness / quantum indeterminacy (when explaining origin) |
+| "one object's fold interactions at D5/D6/D7 depths" | "three separate forces" (as fundamentally distinct things) |
+| "the substrate's self-attraction" or "the field's inward pull" | "an external compression force" or "applied pressure" |
+| "ontological unity" or "one object" | "unified force" or "force unification" (GUT sense) |
+| "fold interactions appearing as distinct at different topological depths" | "forces that were once one and then separated" |
+
+**Critical distinction — unity in this model vs. GUT unification:**
+- GUT: three forces were one force at high energy; they separated as the universe cooled.
+- This model: there is one object; what appear as three forces are always its fold
+  interactions at different topological depths. No separation ever occurred because there
+  was never a unified force group — only a unified object whose interactions appear distinct
+  based on closure topology.
+- When writing about force unity, always make clear which meaning is intended.
+  "One substrate" is always correct. "Unified forces" is forbidden (GUT connotation).
 
 ---
 

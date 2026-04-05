@@ -2,19 +2,31 @@
 
 ## Foundational Premise
 
-This framework begins from the assumption that dimensionality is not equivalent to space,
-but instead represents **degrees of structural differentiation** available to physical
-systems. A "dimension," in this sense, is not an additional spatial direction or hidden
-coordinate, but a measure of how independently components of reality can vary, interact,
-or remain distinct. Higher dimensionality corresponds to greater freedom of differentiation;
-lower dimensionality corresponds to greater constraint and unity.
+This framework begins from one primitive claim: there is a continuous field that **pulls
+inward on itself**. This self-attraction is not a force added to the field from outside —
+it is the field's fundamental character. Everything else follows from it.
 
-The central postulate is that the universe undergoes a continuous, monotonic, and
-irreversible reduction in dimensional freedom. This process — referred to here as
-**dimensional folding** (sometimes as **Dimensional Gravity**) — is not an event in time
-but the underlying mechanism that gives rise to time, causality, and irreversibility
-themselves. As dimensional capacity is steadily removed, structure cannot retrace prior
-states, establishing a natural arrow of time without requiring time to be fundamental.
+That inward pull drives the field toward lower-dimensional states — toward fewer degrees
+of structural differentiation. A "dimension," in this model, is not a spatial direction
+but a **degree of structural differentiation** available to the field at a given compression
+depth. Higher dimensionality corresponds to greater freedom of differentiation; lower
+dimensionality corresponds to greater constraint and unity. The field's behavior at any
+moment IS its dimensionality — all behavior is a consequence of which degrees of freedom
+remain available under compression.
+
+The field can never fully collapse to zero degrees of freedom because **bifurcation** occurs
+first: when compression reaches a critical threshold, the field cannot compress further
+without a new degree of freedom opening. This process — compression and bifurcation driving
+toward lower dimensionality — is referred to here as **dimensional folding** (sometimes
+**Dimensional Gravity**). It is not an event in time; it is the underlying mechanism that
+gives rise to time, causality, and irreversibility themselves.
+
+Bifurcations that close back on themselves — the field folding or wrapping due to compression
+until it meets itself — produce **topological closures**. These are not a separate mechanism:
+a closure is a bifurcation with a self-referential character. The topology of these closures
+is what we observe as particles and forces. Forces are interaction behaviors between different
+closure topologies of this one object — never three separate things, always one object whose
+fold interactions appear as distinct force behaviors at different compression depths.
 
 Physical phenomena arise from gradients in the rate and mode of this compression. Where
 compression proceeds unevenly, residual structure redistributes laterally, producing effects
@@ -86,8 +98,11 @@ are patterns visible from inside a compressed energy field that is folding towar
 
 ## Closing Synthesis
 
-> **All physical phenomena arise from the continuous removal of dimensional structure into
-> unity and the compensatory redistribution of what remains.**
+> **All physical phenomena arise from one self-compressing object: a field that pulls
+> inward on itself, drives toward unity through compression and bifurcation, and whose
+> self-closing bifurcation events — topological closures — produce the particles, forces,
+> and apparent geometry we observe. Forces are never three separate things; they are
+> always this one object's fold interactions at different topological depths.**
 
 ---
 
@@ -135,8 +150,10 @@ The process of becoming stable.
 The lack of instability.
 
 **Compression**
-The continuous cycle of stability to instability, repeating. The collapse of higher-
-dimensional space relative to a lower-dimensional point. Folding.
+The consequence of the field's self-attraction — its inward pull. The continuous reduction
+of available degrees of freedom as the field collapses higher-dimensional structure toward
+lower-dimensional states. The cycle of stability to instability, repeating. Compression
+is not a force applied to the field; it is what the field does to itself.
 
 **Buckling Instability**
 Expansion. True random. The equal-opposite state of folding. In D1, a Big Bang event.
@@ -271,21 +288,31 @@ reappearance beyond classically forbidden regions.
 
 ### VII. Forces and Gauge Structure
 
+**Critical framing:** The three forces are not three separate fundamental things that happen
+to interact. They are three topological regimes of self-interaction in one continuous object.
+The substrate pulls on itself; where it has closed at D5 depths, that self-interaction
+manifests as what we call electromagnetism; at D6 depths, as the weak interaction; at D7
+depths, as the strong interaction. The forces were never unified (in the GUT sense) and
+never separated — they are always one object's fold interactions, appearing distinct because
+their closure topologies differ.
+
 **Gauge Bosons**
-Propagating distortions in how internal dimensional alignments are stitched across space.
-They are not fundamental particles but boundary-alignment waves.
+Propagating distortions in how internal fold orientations are stitched across space.
+They are not fundamental particles but boundary-alignment waves — the substrate propagating
+a mismatch in how its closure orientations connect from point to point.
 
 **Electromagnetism**
-The dynamics of phase alignment at the D2↔D3 boundary. Electric charge is inherited D2
-phase orientation embedded in matter.
+The D5 closure topology's self-interaction regime. The dynamics of phase alignment at the
+D2↔D3 boundary. Electric charge is inherited D5 winding orientation embedded in matter.
 
 **Strong Interaction**
-Confined alignment dynamics within a deeper dimensional shell. Confinement arises because
-deeper layers cannot freely propagate in space.
+The D7 closure topology's self-interaction regime. Confined alignment dynamics within the
+D7 depth behavior. Confinement arises because the D7 closure structure cannot propagate
+freely to D3 depths — it is too deeply folded.
 
 **Weak Interaction**
-Stability-rewriting dynamics associated with chirality and partial dimensional
-destabilization.
+The D6 closure topology's self-interaction regime. Stability-rewriting dynamics associated
+with the chirality of the S³ closure and partial dimensional destabilization (squashing).
 
 ---
 
@@ -318,8 +345,13 @@ geometry.
 
 ### IX. Meta-Principles
 
+**Self-Attraction Is Primitive**
+The field pulls inward on itself. This is the most fundamental statement in the model.
+Compression, bifurcation, closure, and all observable physics are downstream of this one
+property. It is not explained by anything more primitive within the model.
+
 **No Fundamental Equilibrium**
-All states are metastable against collapse.
+All states are metastable against collapse. The inward pull never stops.
 
 **No True Rebound**
 What appear as rebounds are dispersion ripples caused by redistribution, not reversal of
@@ -327,7 +359,13 @@ collapse.
 
 **Hierarchy of Fundamentality**
 Lower dimensions (D1, D2) are more fundamental than higher ones (space, matter, forces).
+The self-attraction that drives compression is more fundamental than any of them.
 
-**Single Mechanism Unification**
-Gravity, heat, motion, radiation, quantum behavior, and entropy are all projections of one
-process: irreversible dimensional folding.
+**Ontological Unity (Deeper Than Gauge Unification)**
+There is one object. Forces are not unified at high energy — they were never multiple
+objects. Gravity, heat, motion, radiation, quantum behavior, entropy, and all three force
+regimes are projections of one self-compressing object's fold interactions.
+
+**Single Mechanism**
+Irreversible dimensional folding, driven by the substrate's self-attraction, is the one
+process underlying all observable phenomena.
