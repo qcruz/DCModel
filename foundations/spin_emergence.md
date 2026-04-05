@@ -223,7 +223,7 @@ This zero mode:
 **This zero mode is the elementary fermion.** Different values of the Yukawa coupling
 g_Y (or equivalently, different effective mass scales M) give different generations.
 The mass hierarchy electron → muon → tau corresponds to different effective Mλ values
-at the D6 layer, connected to the dimple potential structure in `foundations/mass_hierarchy.md`.
+at the D6 closure depth, connected to the dimple potential structure in `foundations/mass_hierarchy.md`.
 
 The normalizability condition in DFC parameters:
 ```

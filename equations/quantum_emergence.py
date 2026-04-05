@@ -191,10 +191,18 @@ def born_rule_folding(pathway_counts):
     if total == 0:
         return {'error': 'No accessible pathways'}
 
+    # NOTE: This function is CIRCULAR as currently implemented.
+    # It sets amplitude_sq = prob = Ω_i/Ω_total, which IS the Born rule — not a
+    # derivation of it. A genuine derivation would: (1) compute the pathway density
+    # Ω_i from the field dynamics independently of |ψ|², and (2) show that
+    # Ω_i/Ω_total = |ψ_i|² follows. The missing step is connecting the microscopic
+    # folding pathway count to the field amplitude squared without assuming the answer.
+    # STATUS: Illustrative placeholder, not a derivation.
+
     result = {}
     for outcome, count in pathway_counts.items():
         prob = count / total
-        amplitude_sq = prob
+        amplitude_sq = prob   # CIRCULAR: assigning Ω/Ω_total = |ψ|² by definition
         amplitude    = math.sqrt(amplitude_sq)
         result[outcome] = {
             'pathway_count': count,
@@ -207,7 +215,7 @@ def born_rule_folding(pathway_counts):
         'total_pathways':   total,
         'outcomes':         result,
         'normalization':    sum(v['probability'] for v in result.values()),
-        'interpretation':   'P(outcome) = Ω_outcome / Ω_total = |ψ|²',
+        'interpretation':   'P(outcome) = Ω_outcome / Ω_total [CIRCULAR — see NOTE above]',
     }
 
 
