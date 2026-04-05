@@ -4,6 +4,8 @@
 *Status: FR mechanism, index theorem, and Jackiw-Rebbi zero mode verified numerically.*
 *Four formal derivations remain open (see section below).*
 *See `equations/spin_zero_mode.py` for all numerical results.*
+*See `foundations/route1_skyrme.md` for a structured summary of all four verified results,
+the open problems, and the comparison with Route 3B (Weinberg angle).*
 
 ---
 
@@ -292,7 +294,7 @@ Assembling the two paths:
 
 | Property | Source in DFC |
 |---|---|
-| Spin-1/2 states exist | D4 spin structure: Clifford algebra Cl(3,1) on D3+D4 tangent bundle |
+| Spin-1/2 states exist | Clifford algebra Cl(3,1) from the substrate's D3+D4 localization behavior — spinor representations exist as a mathematical consequence |
 | Elementary fermion zero modes (e, q, ν) | Jackiw-Rebbi: exact zero mode ψ_0 ∝ cosh^{−Mλ}(x/λ) in φ⁴ kink |
 | Composite baryon zero modes (p, n) | Atiyah-Singer: index(D̸) = k for D6 winding k |
 | Fermionic exchange statistics | FR theorem: π₄(SU(2)) = Z₂, odd-winding kinks anticommute |
@@ -405,6 +407,8 @@ Four formal steps remain open, in order of priority:
    are sub-structure. In DFC, both quarks and leptons are described as kinks. The
    transition from "Skyrmion as composite baryon" to "elementary quark/lepton as D5/D7
    kink with D6 zero mode" needs to be formally connected.
+   See also the discussion in `foundations/route1_skyrme.md` (Open 2: right-handed fermion;
+   Open 4: three generations from D6 topology).
 
 4. **The Atiyah-Singer index on S³ vs S⁴.** The standard index theorem applies to
    even-dimensional manifolds. D6 is locally S³ (odd-dimensional). The correct

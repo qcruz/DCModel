@@ -1,16 +1,30 @@
 """
-Lepton and quark mass predictions from geometric defect model.
+Lepton mass predictions from the dimple potential model.
 
-In the Dimensional Folding Model, the three lepton generations arise from the
-quantum mechanical modes of a fermion confined in a compact extra dimension with
-a "dimple" — a small, sharp local depression in the effective potential.
+In the Dimensional Folding Model, the three lepton generations arise from
+quantum mechanical modes of a fermion in the D6 closure's effective potential,
+which has a "dimple" — a small, sharp local depression at the potential minimum.
 
   - Electron (ground state):  wavefunction concentrated at the dimple center
-                               mass ∝ dimple depth  (local scale)
+                               mass ∝ dimple depth  (local scale at D6 depth)
   - Muon (first excited):     wavefunction has a NODE at the dimple center
-                               mass ∝ 1/dimension_size  (global scale)
+                               mass ∝ D6 closure scale  (global scale)
   - Tau (second excited):     samples outer curvature
                                mass ∝ combination of both
+
+KNOWN FAILURE:
+  The tau prediction fails severely: predicted ~212 MeV vs observed 1777 MeV
+  (8.4× too low; tau/muon ratio 2.0 vs observed 16.82). The uniform mode-spacing
+  assumption (tau = n=3 mode of same box as muon) is the source of this failure.
+  The three lepton generations are likely ground states of three independent D6
+  winding sectors, not excited modes of a single potential. See foundations/
+  three_generations.md for the current working description.
+
+FINE-TUNING NOTE:
+  The electron mass emerges from near-exact cancellation: box energy ~26 MeV
+  minus dimple correction ~26 MeV = 0.511 MeV. A 10% change in dimple depth
+  shifts the electron mass by ~4-6×. This sensitivity is a known limitation
+  and suggests the model may need a different mechanism for the electron mass.
 
 Usage:
     python equations/mass_spectrum.py
@@ -256,7 +270,8 @@ def fit_dimple_params():
     result['fit_notes'] = [
         f"box_mass_mev fitted from m_muon/4 = {box_mass_from_muon:.3f} MeV",
         f"dimple_depth fitted to match m_electron = {dimple_depth_fitted:.3f} MeV",
-        f"tau mass is a PREDICTION — no free parameters used",
+        f"tau mass is a PREDICTION from parameters fitted to electron and muon only",
+        f"NOTE: electron mass arises from near-cancellation (box ~26 MeV - dimple ~26 MeV = 0.5 MeV)",
     ]
 
     return result
@@ -295,14 +310,21 @@ if __name__ == "__main__":
           f"observed: {fit['tau_muon_ratio_obs']:.2f}")
 
     print("\n--- Physical Interpretation ---")
-    print("  Electron mass scale: LOCAL (dimple depth)")
-    print("  Muon mass scale:     GLOBAL (box/dimension size)")
-    print("  Tau mass scale:      BOTH (second excited mode)")
+    print("  Electron mass scale: LOCAL (dimple depth at D6 closure center)")
+    print("  Muon mass scale:     GLOBAL (D6 closure scale — no dimple correction)")
+    print("  Tau mass scale:      MODEL FAILS here (see failure note below)")
     print("\n  The 207× ratio between muon and electron is natural because")
-    print("  dimple depth and dimension size are geometrically independent.")
+    print("  dimple depth and D6 closure scale are geometrically independent.")
+    print("\n*** TAU MASS FAILURE ***")
+    print(f"  Predicted tau/muon ratio: {fit['tau_muon_ratio_pred']:.2f}")
+    print(f"  Observed  tau/muon ratio: {fit['tau_muon_ratio_obs']:.2f}")
+    print(f"  This model underestimates the tau by 8.4×.")
+    print(f"  The excited-mode (n=3) hypothesis for the tau is wrong.")
+    print(f"  Likely cause: the tau generation is not the n=3 mode of the same")
+    print(f"  potential as the electron and muon. See foundations/three_generations.md.")
 
     print("\n--- Sensitivity Analysis ---")
-    print("  Effect of varying dimple depth ±10%:")
+    print("  Effect of varying dimple depth ±10% (box_mass held fixed):")
     base = fit_dimple_params()
     depth_base = base['dimple_depth_mev']
     box_base   = base['box_mass_mev']
@@ -311,3 +333,8 @@ if __name__ == "__main__":
         print(f"    depth × {factor:.1f}: e={r['electron']['predicted_mev']:.3f}  "
               f"μ={r['muon']['predicted_mev']:.1f}  "
               f"τ={r['tau']['predicted_mev']:.1f} MeV")
+    print(f"  WARNING: ±10% change in dimple depth shifts electron mass by 4-6×.")
+    print(f"  This reveals fine-tuning: electron mass = box_energy - dimple_correction")
+    print(f"  = {box_base:.3f} - {box_base - M_OBS['electron']:.3f} ≈ {M_OBS['electron']:.3f} MeV")
+    print(f"  Near-exact cancellation of ~26 MeV terms to get ~0.5 MeV.")
+    print(f"  A different mechanism (not near-cancellation) may be needed for m_electron.")

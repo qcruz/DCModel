@@ -24,22 +24,28 @@ The Standard Model offers no mechanism; it just measures them and inserts them.
 
 ## The Geometric Solution: A Dimple
 
-The extra dimension where fermions live has a **dimple** — a small, sharp depression in the
-effective potential, like a pinprick dent on an otherwise smooth surface.
+The D6 closure effective potential has a **dimple** — a small, sharp depression at its center,
+like a pinprick dent on an otherwise smooth surface.
 
-Think of it like this: imagine a smooth bowl (the confining extra dimension). Now press your
-fingernail into the very center, making a tiny dent. The bowl still has its large curved walls,
+Think of it like this: imagine a smooth bowl (the D6 closure potential well). Now press your
+fingernail into the very center, making a tiny dent. The well still has its large curved walls,
 but now there's also this small sharp dip at the center.
 
 ### The Electron: Living in the Dimple
 
-The electron is the lowest-energy (ground state) mode of the fermion wavefunction in the extra
-dimension. By quantum mechanics, the ground state wavefunction peaks at the energy minimum.
+The electron is the lowest-energy (ground state) mode of the fermion wavefunction in the D6
+closure potential. By quantum mechanics, the ground state wavefunction peaks at the energy minimum.
 
 **The electron's wavefunction is concentrated at the center of the dimple.**
 
-Its mass is set by the *depth* of the dimple — a local geometric property. A small dent = a light
-electron.
+Its mass is set by the *depth* of the dimple — a local geometric property at D6 depth. A small
+dent = a light electron.
+
+**Caveat (fine-tuning):** The actual mechanism involves near-cancellation. The ground-state box
+energy (~26 MeV) nearly cancels the dimple correction (~26 MeV), leaving the electron mass at
+~0.511 MeV. A 10% change in dimple depth shifts the predicted electron mass by 4-6×. This
+near-cancellation is a known limitation; the model requires that the D6 closure scale and dimple
+depth are very nearly equal in magnitude, which is not yet explained from first principles.
 
 ### The Muon: Avoiding the Dimple
 
@@ -50,8 +56,8 @@ peaks.
 **The muon's wavefunction is exactly zero at the center of the dimple.** The node sits right where
 the dimple is.
 
-The muon doesn't feel the dimple at all. It only feels the large curved walls of the confining
-space. Its mass is set by the *size* of the confining dimension — a global geometric property.
+The muon doesn't feel the dimple at all. It only feels the large curved walls of the D6 closure
+potential. Its mass is set by the *D6 closure scale* — a global property of the closure depth.
 
 ---
 
@@ -67,7 +73,7 @@ m_muon     ∝ 1 / size of dimension  (global feature, a scale R)
 
 The ratio m_muon / m_electron ∝ R / d.
 
-These two scales — the depth of a local dent and the size of a global space — are completely
+These two scales — the depth of a local dent and the D6 closure scale — are completely
 independent. There is no reason for them to be similar in magnitude. A factor of 207 between them
 is not fine-tuned; it is perfectly natural. Two random geometric scales generically differ by
 orders of magnitude.
@@ -83,13 +89,22 @@ parameters to come from the same source.
 
 ## The Tau and Higher Modes
 
-The tau is the second excited state. Its wavefunction has two nodes. It avoids both the dimple
-center AND it samples the very outer edge of the confining potential where the walls are steepest.
-Its mass is set by a combination of the global size and the curvature of the walls — generically
-larger than the muon mass by another substantial factor.
+The tau is the second excited state in the dimple potential picture. Its wavefunction has two nodes.
+It avoids both the dimple center AND samples the very outer edge of the potential where the walls
+are steepest. Its mass is set by a combination of the D6 closure scale and the curvature of the
+potential walls.
 
-The exact prediction for the tau/muon ratio depends on the shape of the confining potential walls,
-which is determined by the SU(3) D7 SU(3) closure geometry. This is currently under quantitative development.
+**Known failure:** The dimple potential model predicts tau/muon ratio = 2.00 (the n=3/n=2 box
+mode ratio from the pure box contribution). The observed ratio is 16.82. The model is 8.4× off for
+the tau mass (predicted ~212 MeV, observed 1777 MeV).
+
+The likely cause: the three lepton generations are not three excited modes of the same D6 potential
+well. They are more likely ground states of three independent D6 winding sectors (see
+`foundations/three_generations.md`). The mass ratios between generations would then depend on the
+geometric differences between D6 sectors — not on the simple n²-spacing of an excited mode series.
+The dimple model successfully explains the electron/muon ratio but does not predict the tau mass.
+
+See `equations/mass_spectrum.py` for the detailed calculation and failure documentation.
 
 ---
 
@@ -114,7 +129,7 @@ extra dimension. Overlap with the Higgs (located on one brane) determines the ma
 
 ### This Model's Approach
 - **One geometric defect** (the dimple) generates the hierarchy for all three generations
-- The dimple is not added by hand — it emerges from the same D7 SU(3) closure squashing that generates
+- The dimple is not added by hand — it emerges from the D7 SU(3) closure squashing that generates
   the flavor symmetry breaking
 - The number and type of modes is fixed by the quantum mechanics of the confining potential
 
@@ -140,6 +155,7 @@ from the D7 SU(3) closure geometry without free parameters.
 
 See `../equations/mass_spectrum.py` for:
 - Wavefunction calculation in the dimple potential
-- Electron, muon, tau mass predictions as functions of dimple depth d and dimension size R
+- Electron, muon, tau mass predictions as functions of dimple depth d and D6 closure scale R
 - Quark mass pattern predictions
 - Sensitivity analysis: how do masses change with d and R?
+- Documented tau failure (8.4×) and electron fine-tuning caveat

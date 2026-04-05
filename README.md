@@ -123,7 +123,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~14%** (viability as a theory: ~29.5%; mathematical rigor: ~10%)
+**Current estimate: ~14.5%** (viability as a theory: ~30%; mathematical rigor: ~10%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
@@ -135,7 +135,9 @@ is that it *derives* rather than *reconstructs* the Standard Model. Three bottle
 
 The next highest-value step: derive M_c(12) ≈ 10^13 GeV from substrate parameters (α, β, c)
 rather than reading it from observed SM running. Moving any bottleneck to "derived" shifts
-the estimate materially.
+the estimate materially. The d_depth_lagrangians framework (Cycle 29) establishes that
+M_c(D) = √(α_D/2) and maps the derivation sequence — what remains is deriving how α runs
+with compression depth from D1 to D5/D6/D7.
 
 *Updated after every push. Full history in `CLAUDE.md`.*
 

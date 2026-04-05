@@ -109,7 +109,7 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~14%  (viability: ~29.5%, mathematical rigor: ~10%)
+Current estimate: ~14.5%  (viability: ~30%, mathematical rigor: ~10%)
 Key bottleneck: D-depth assignment mechanism; first-principles coupling constants; no S-matrix
 Next milestone that moves the needle: derive M_c(12) from substrate parameters (α, β, c); resolve Weinberg/Higgs scale tension
 ```
@@ -128,6 +128,7 @@ Next milestone that moves the needle: derive M_c(12) from substrate parameters (
 | 2026-04-05 | 26 | Phase transitions formalized (V_eff bifurcations, EWSB crossover, QCD confinement, D-depth sequence); mass_generation and compression_field audited | 28.5% | 10% | ~13% |
 | 2026-04-05 | 27 | CMB formalized (Planck spectrum ✓, uniformity structural ✓, A_s OPEN); weak_force Weinberg angle updated to Route 3B result; entropy_production clean | 29% | 10% | ~13.5% |
 | 2026-04-05 | 28 | Route 1 exploration doc written (Skyrme/FR — J=1/2 verified, N-Δ splitting, Jackiw-Rebbi; comparison with Route 3B; F_π/e_sk derivation as shared bottleneck); three_generations and spin_zero_mode audited | 29.5% | 10% | ~14% |
+| 2026-04-05 | 29 | d_depth_lagrangians.md written (closure scale = √(α/2), effective gauge Lagrangians from DFC scalar, depth-running problem formalized, derivation sequence mapped); spin_emergence audited (cross-refs, language fixes); mass_spectrum.py audited (tau 8.4× failure prominently labeled, fine-tuning problem documented, "extra dimension" language removed); mass_hierarchy.md updated | 30% | 10% | ~14.5% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
