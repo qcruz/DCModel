@@ -126,12 +126,26 @@ d_e ≈ 5.0,  d_μ ≈ 6.0,  d_τ ≈ 7.0
 This gives the observed lepton mass ratios:
 ```
 m_μ / m_e ≈ exp(κ × 1.0) ≈ exp(5.33) ≈ 207  ✓  (observed: 207)
-m_τ / m_μ ≈ exp(κ × 1.0) ≈ exp(5.33) ≈ 207  ✓  (observed: 17 — see below)
+m_τ / m_μ ≈ exp(κ × 1.0) ≈ exp(5.33) ≈ 207  ✗  (observed: 16.82)
 ```
 
-The tau/muon ratio deviates from the pure exponential because the tau sits at D7, the same
-depth as the SU(3) closure threshold — its mass receives a correction from the strong
-coupling. This is a prediction of the model, not a parameter.
+The tau/muon ratio does not follow the uniform depth-spacing prediction. The depth
+spacing between electron and muon corresponds to Δ(ln m) = 5.33, but between muon
+and tau it is only Δ(ln m) = 2.82. The three lepton generations are NOT uniformly
+spaced in depth. This is a **known failure** of the uniform depth-spacing model.
+
+The physical source of this non-uniformity is not yet derived. The three lepton
+generations are likely ground states of three independent D6 winding sectors (see
+`foundations/spin_emergence.md`), not excited modes of a single potential. In that
+picture, the mass ratios depend on the geometric differences between D6 sectors —
+differences that are not constrained to be equal by the topology alone.
+
+**Important:** The depth assignments d_e ≈ 5.0, d_μ ≈ 6.0, d_τ ≈ 7.0 are a
+schematic parameterization only. The tau lepton does NOT have D7 color charge —
+it remains a D5+D6 closure. The depth subscripts here refer to effective coupling
+depth within the D6 structure, not to a literal D7 closure. This notation should
+be treated with care and is a provisional parameterization pending a more precise
+geometric account of the three D6 sectors.
 
 For the quark sector, the depth-per-generation spacing is smaller (κ_q ≈ 4.5–4.7), and
 the up/down isospin split within each generation comes from the asymmetric SU(2) squashing
@@ -139,8 +153,8 @@ at D6 (see `equations/quark_masses.py`).
 
 The **top quark anomaly** — that the top quark Yukawa coupling y_t ≈ 1 (dimensionless)
 while all other quarks have y ≪ 1 — is interpreted as the top quark sitting at the
-threshold of the Higgs closure at D5/D6. Its mass is set by the Higgs vacuum expectation
-value directly, not by further exponential suppression.
+threshold of the D6 S³ squashing scale (the Higgs VEV). Its mass is set by the D6
+geometry directly rather than by further exponential suppression from depth-anchoring.
 
 **Quantitative status:** See `equations/neutrino_masses.py` and `equations/quark_masses.py`
 for the current best numerical predictions.

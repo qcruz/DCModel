@@ -11,7 +11,7 @@
 three_generations, d1_mechanics, measurement, introduction, overview, premise, analogies,
 formation, dimensional_emergence, mathematics, mass_hierarchy.
 
-**Phenomena:** 43 documents — 18 formalized, 25 placeholders.
+**Phenomena:** 43 documents — 21 formalized, 22 placeholders.
 
 *Formalized:* special_relativity, electromagnetism, electric_charge, strong_force,
 weak_force, electroweak, interference, proton_stability, light, general_relativity,
@@ -107,12 +107,47 @@ Together ~95% of the universe's energy content. Both are placeholder documents.
 
 ---
 
-## Gaps in the Equation Layer
+## Equation Layer Audit (completed 2026-04-05)
 
-Several modules in `equations/` are unreviewed: `quark_masses.py`, `mass_spectrum.py`,
-`neutrino_masses.py`, `closure_topology.py`, `cosmology.py`. These may contain
-numerical results — predictions, verifications, or failures — not yet integrated into
-the documentation. This is a latent resource to be audited.
+**`proton_stability.py`** — verified. τ_n = 878.4 s vs 879.4 s (0.1% match).
+
+**`spin_zero_mode.py`** — verified. FR winding N = 1.00000; BPST zero mode normalizable;
+J_min = 1/2 confirmed; Jackiw-Rebbi residual rms ~ 10⁻⁶.
+
+**`quark_masses.py`** — partial. u, d, t, b masses are inputs; charm and strange are
+predictions. Both are 15% below observed (ratio 0.847). The depth-scaling exponent
+κ_q ≈ 4.5 is non-uniform (κ₁₂ ≠ κ₂₃), signaling that the top quark sits near the
+Higgs coupling threshold and breaks the uniform scaling assumption. Moderate discrepancy;
+model is structurally sound but under-constrained.
+
+**`mass_spectrum.py`** — **failed prediction for tau mass.** Uses a 1D box model:
+electron = dimple ground state, muon = first excited mode of global box. Tau is
+predicted as the second mode = 2 × muon ≈ 212 MeV. Observed: 1777 MeV (8.4× off).
+The simple linear mode-number scaling does not reproduce the three-generation structure.
+The dimple + global-scale two-parameter model from `foundations/mass_hierarchy.md`
+correctly gives m_μ/m_e = R/d ≈ 207 but does not yet predict m_τ. The tau mass is
+the outstanding failure in the lepton mass sector.
+
+**`neutrino_masses.py`** — partial. Gets Δm²₂₁ and Δm²₃₁ exactly right by design
+(the anchoring fraction f_ν is scanned to match). The depth spacing ratio Δd₃₁/Δd₂₁
+= 1.34 vs data 5.71 (2.6× off) — this ratio is a genuine prediction and is wrong.
+The absolute mass scale requires f_ν as a free parameter with no DFC derivation.
+
+**`closure_topology.py`** — descriptive/qualitative. Correctly identifies U(1), SU(2),
+SU(3) structures at D5, D6, D7. No numerical failures; the closure energy normalizations
+are illustrative rather than predictive.
+
+**`cosmology.py`** — largely consistent. H₀ predicted 67.26 vs 67.40 km/s/Mpc (0.2%
+match). w_Λ = −0.993 (DFC) vs −1.000 (ΛCDM); at the 1σ boundary of current Planck
+constraints. Hubble tension mapped to ε = 0.00732 (a testable departure from w = −1).
+Dark matter as D4–D5 kinks at ~35 keV (warm DM range — qualitatively consistent with
+small-scale structure, but not derived from first principles). H(z) evolution is within
+0.2% of ΛCDM at all redshifts tested. Interesting as a structural account; predictions
+testable by DESI Year 5 and Euclid.
+
+**Remaining unreviewed modules:** `bifurcation.py`, `compression_field.py`,
+`gauge_couplings.py`, `higgs_potential.py`, `entropy_production.py`,
+`folding_gradient.py`, `quantum_emergence.py`, `constants.py`.
 
 ---
 
@@ -165,3 +200,5 @@ considerably and the model becomes a reformulation rather than a reduction.
 | Date | Change |
 |---|---|
 | 2026-04-04 | Initial document created from session review |
+| 2026-04-05 | Equation layer audit completed; tau mass failure documented; cosmology module results integrated |
+| 2026-04-05 | Formalized: electron.md, muon_tau.md, quarks.md; CLAUDE.md development cycle created; three_generations.md corrected (tau "prediction" relabeled as known failure; d_τ≈7.0 notation clarified; top quark depth corrected to D6 squashing threshold); quark_masses.py docstring corrected (D8-9 → D7; prediction scope clarified) |

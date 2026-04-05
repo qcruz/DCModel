@@ -1,10 +1,9 @@
 """
 Quark masses from SU(3) confinement depth and isospin asymmetry.
 
-In the Dimensional Folding Model, quarks are confined structures at ~D8–9, where
-three-body SU(3) confinement locks in. Six quarks = three generations × two isospin
-states. Their masses span five orders of magnitude, which this model attributes to
-two separate geometric effects:
+In the Dimensional Folding Model, quarks are kinks that reach D7 — the SU(3) color
+closure. Six quarks = three generations × two isospin states. Their masses span five
+orders of magnitude, which this model attributes to two separate geometric effects:
 
   GENERATION HIERARCHY  (why charm >> up, top >> charm):
     Three generations correspond to progressively deeper anchoring into the SU(3)
@@ -29,10 +28,18 @@ Mass hierarchy (PDG 2024, GeV):
     Generation 3:  top   ~172.76   bottom  ~4.18
 
 Depth assignments (provisional):
-    Quark confinement begins at the QCD transition depth (~D7-8)
-    Generation 1 sits at d₁ ≈ 7.5
-    Generation 2 sits at d₂ ≈ 8.5
-    Generation 3 sits at d₃ ≈ 9.5
+    All quarks reach D7 (the SU(3) color closure). The three generations correspond
+    to three independent D7 winding sectors, not to progressively deeper closures.
+    The depth indices d₁, d₂, d₃ are a schematic parameterization of the coupling
+    strength differences between D7 sectors — they do not imply distinct depths D8, D9.
+
+Prediction scope:
+    This module fits: M0 (gen-1 scale), kappa_avg (average log-spacing), and r_ud
+    (up/down ratio) per generation — 5 parameters for 6 masses.
+    The charm/strange RATIO is taken from data (r_ud_gen2 is observed).
+    Only the charm/strange common SCALE is predicted (from M0 × exp(kappa_avg)).
+    The 15% systematic underestimate of both c and s reflects a common scale offset,
+    not independent prediction failures.
 
 Key open question: the top quark mass (~173 GeV) is anomalously close to the Higgs
 vev (246 GeV) — its Yukawa coupling y_t ≈ 1. In this model, this is interpreted as

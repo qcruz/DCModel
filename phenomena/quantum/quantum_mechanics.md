@@ -378,9 +378,12 @@ The Schrödinger equation holds only in the linearized regime |δφ| ≪ φ₀.
    derivation is open.
 
 3. **Spin:** Spinors transform under SU(2) with a 4π periodicity (a 2π rotation gives
-   a sign flip). In DFC, this should emerge from the SU(2) closure topology at D6: a
-   particle winds once around the SU(2) fiber under a 2π physical rotation. The formal
-   connection between D6 winding number and spinor transformation is open.
+   a sign flip). In DFC this is established by the Finkelstein-Rubinstein theorem applied
+   to the D6 SU(2) closure: π₄(SU(2)) = Z₂ means a 2π rotation of an odd-winding kink
+   traces a non-contractible loop → wavefunction phase −1. Confirmed numerically
+   (N = 1.00000, residual 2×10⁻¹¹). See `foundations/spin_emergence.md`. The remaining
+   open step is extending the Jackiw-Rebbi 1+1D result to a full 3+1D derivation for
+   elementary fermions (leptons, quarks) as distinct from composite Skyrmions.
 
 4. **Relativistic QM:** The derivation stops at the NR limit. The full relativistic
    theory — the Dirac equation for spin-1/2, QED — requires keeping the full Klein-Gordon
