@@ -26,7 +26,7 @@ What's unsatisfying about this:
 
 ## The Geometric Solution
 
-In this model, the Higgs is not a new field. It is the **shape** of the weak force fiber.
+In this model, the Higgs is not a new field. It is the **shape** of the weak force closure geometry.
 
 Specifically: **the Higgs is the degree to which the S³ (weak force sphere) is squashed from a
 perfectly round sphere into an ellipsoid.**
@@ -47,9 +47,9 @@ effects:
 
 ### Effect 1: Pressure from the SU(3) Fiber (Destabilizer)
 
-The SU(3) fiber (strong force) is also slightly squashed to break the right-copy flavor symmetry.
+The SU(3) closure geometry (strong force) is also slightly squashed to break the right-copy flavor symmetry.
 This squashing propagates through their shared embedding in spacetime and exerts a "pressure" on
-the S³ weak fiber, tending to push it away from ε = 0 (the symmetric point).
+the S³ weak closure geometry, tending to push it away from ε = 0 (the symmetric point).
 
 In the effective potential, this appears as a **negative mass-squared term**:
 
@@ -79,7 +79,7 @@ V(ε) = -μ² ε² + λ ε⁴
 ```
 
 This IS the Higgs potential. The Mexican hat shape is not assumed — it *emerges* from the
-competition between the SU(3) fiber's pressure and the S³'s resistance to deformation.
+competition between the SU(3) closure geometry's pressure and the S³'s resistance to deformation.
 
 The minimum (the vacuum expectation value) sits at:
 
@@ -128,8 +128,8 @@ and metastability? The effective Higgs quartic coupling runs to near-zero at aro
 This looks like a coincidence.
 
 In this model, it is not a coincidence. The tree-level geometric quartic is exactly zero at the
-closure scale (by symmetry of the modulus). The stability boundary IS the compactification
-scale — the point where the geometric modulus description takes over. The near-zero quartic at
+closure scale (by symmetry of the modulus). The stability boundary IS the closure scale —
+the point where the geometric modulus description takes over. The near-zero quartic at
 high energy is a direct signal of the underlying geometry.
 
 **This is a genuine prediction:** The scale at which the Higgs quartic coupling crosses zero should
@@ -157,8 +157,8 @@ m_Z ≈ 91.2 GeV  ✓
 ```
 
 The ratio m_W / m_Z = cos(θ_W) is the **Weinberg angle**, which in this model is determined by the
-ratio of the radii of the U(1) and S³ fibers. It is not a free parameter — it is the geometric
-mixing angle between the electromagnetic and weak force fibers.
+ratio of the radii of the U(1) and S³ closure geometrys. It is not a free parameter — it is the geometric
+mixing angle between the electromagnetic and weak force closure geometrys.
 
 ---
 
@@ -168,4 +168,4 @@ See `../equations/higgs_potential.py` for:
 - Numerical computation of V(ε) given μ and λ
 - Running of λ from closure scale to electroweak scale
 - W and Z mass predictions as functions of squashing parameter ε
-- Weinberg angle as a function of fiber radii ratio
+- Weinberg angle as a function of closure geometry radii ratio
