@@ -282,7 +282,7 @@ Possible resolutions:
 | RG running to M_Z | Derived — uses SM beta functions (SM particles are already in the model) |
 | The closure scale M_c(12) | Self-consistent — determined by where α₁ = α₂ in SM running (~10¹³ GeV) |
 | α_U (coupling magnitude at M_c) | Determined by α_em(M_Z) and M_c — not a free parameter |
-| The 3/5 normalization factor | OPEN — borrowed from GUT embedding; needs derivation from D5 geometry |
+| The 3/5 normalization factor | DERIVED ✓ — from equal-coupling + SM matter content (hypercharge_normalization.md) |
 | Tension with Higgs closure scale | OPEN — 10¹³ GeV vs 10¹⁸ GeV unresolved |
 
 **Verdict on free parameters:**
@@ -330,9 +330,11 @@ only on M_c. The primary remaining work is: (1) derive or constrain M_c from sub
 3. **Two-loop running** — one-loop is approximate; two-loop corrections are ~1–2%. Threshold
    corrections from heavy particles near M_c are currently absent.
 
-4. **Hypercharge normalization from geometry** — the factor of 3/5 is borrowed from GUT embedding
-   arguments. It should be derived from the count of D5 closure winding modes and their coupling
-   to D4 fermion modes. This is a concrete combinatorial question within DFC.
+4. ~~**Hypercharge normalization from geometry**~~ **RESOLVED** — k_Y = 3/5 is now derived
+   from DFC's equal-coupling condition + SM matter content per generation, without GUT embedding.
+   The equal-coupling normalization condition k_Y × Σ Y² = T(SU2) gives k_Y = 2 / (10/3) = 3/5
+   exactly. See `foundations/hypercharge_normalization.md` and
+   `equations/hypercharge_normalization.py`.
 
 5. **α₃ at M_c(12)** — at 10¹³ GeV, α₃ ≈ 0.027 ≠ α₁ ≈ α₂ ≈ 0.024. The D7 (SU(3)) closure
    does not form at the same scale as D5/D6 — consistent with separate bifurcation stages but
@@ -351,5 +353,5 @@ only on M_c. The primary remaining work is: (1) derive or constrain M_c from sub
 | Self-consistency of M_c(12) (no new free parameter) | Established ✓ — M_c determined by SM running |
 | Connection to ε squashing (higgs_geometry.md) | Consistent; quantitative tie OPEN |
 | Tension: Weinberg scale (10¹³ GeV) vs Higgs scale (10¹⁸ GeV) | OPEN — must be resolved |
-| Hypercharge normalization (3/5 factor) from geometry | OPEN |
+| Hypercharge normalization (3/5 factor) from geometry | DERIVED ✓ — see hypercharge_normalization.md |
 | M_c from DFC substrate parameters (α, β, c) | OPEN |

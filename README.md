@@ -123,7 +123,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~14.5%** (viability as a theory: ~30%; mathematical rigor: ~10%)
+**Current estimate: ~15.5%** (viability as a theory: ~31%; mathematical rigor: ~12%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established

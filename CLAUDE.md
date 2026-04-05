@@ -109,8 +109,8 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~14.5%  (viability: ~30%, mathematical rigor: ~10%)
-Key bottleneck: D-depth assignment mechanism; first-principles coupling constants; no S-matrix
+Current estimate: ~15.5%  (viability: ~31%, mathematical rigor: ~12%)
+Key bottleneck: D-depth assignment mechanism; M_c(12) from substrate parameters; no S-matrix
 Next milestone that moves the needle: derive M_c(12) from substrate parameters (α, β, c); resolve Weinberg/Higgs scale tension
 ```
 
@@ -129,6 +129,7 @@ Next milestone that moves the needle: derive M_c(12) from substrate parameters (
 | 2026-04-05 | 27 | CMB formalized (Planck spectrum ✓, uniformity structural ✓, A_s OPEN); weak_force Weinberg angle updated to Route 3B result; entropy_production clean | 29% | 10% | ~13.5% |
 | 2026-04-05 | 28 | Route 1 exploration doc written (Skyrme/FR — J=1/2 verified, N-Δ splitting, Jackiw-Rebbi; comparison with Route 3B; F_π/e_sk derivation as shared bottleneck); three_generations and spin_zero_mode audited | 29.5% | 10% | ~14% |
 | 2026-04-05 | 29 | d_depth_lagrangians.md written (closure scale = √(α/2), effective gauge Lagrangians from DFC scalar, depth-running problem formalized, derivation sequence mapped); spin_emergence audited (cross-refs, language fixes); mass_spectrum.py audited (tau 8.4× failure prominently labeled, fine-tuning problem documented, "extra dimension" language removed); mass_hierarchy.md updated | 30% | 10% | ~14.5% |
+| 2026-04-05 | 30 | k_Y = 3/5 DERIVED (not borrowed): from DFC equal-coupling + SM matter content Dynkin index matching; verified numerically; all anomaly conditions satisfied; sin²θ_W error +0.050%; Open Problem 4 in embedding_geometry.md resolved; hypercharge_normalization.md + .py new | 31% | 12% | ~15.5% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
@@ -263,7 +264,7 @@ Always maintain this distinction explicitly. The model's credibility depends on 
 **Correspondences (consistent but not derived):**
 - D5 ↔ U(1), D6 ↔ SU(2), D7 ↔ SU(3) assignments
 - V(φ) = −α/2 φ² + β/4 φ⁴ (postulated, not derived from D1)
-- Weinberg angle sin²θ_W ≈ 0.231 (Route 3B gives 0.231 from equal-coupling initial condition + SM running; the 3/5 hypercharge normalization is borrowed from GUT embedding, not derived from D5 geometry; M_c(12) from SM running, not substrate parameters)
+- Weinberg angle sin²θ_W ≈ 0.231 (Route 3B gives 0.231 from equal-coupling initial condition + SM running; k_Y = 3/5 now derived from Dynkin normalization condition on SM matter content — no GUT needed; M_c(12) from SM running, not substrate parameters — remaining open item)
 
 ---
 
