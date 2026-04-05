@@ -106,7 +106,7 @@ character." The spatial appearance is downstream; the substrate behavior is prim
 
 ### Why Bosons Are Symmetric
 
-Gauge bosons (photon, W, Z, gluons) are connection 1-forms on the D5/D6/D7 bundles.
+Gauge bosons (photon, W, Z, gluons) are connection 1-forms on the D5/D6/D7 closure structures.
 They are not kinks — they do not have D6 SU(2) winding. A 2π rotation of a gauge
 boson is trivially contractible. The exchange phase is +1. Bose-Einstein statistics
 follow.
@@ -187,14 +187,14 @@ If any two rows are equal (two particles in same state): det = 0
 
 ## Consistency Checks
 
-| Property | DFC | Observed |
-|---|---|---|
-| FR phase for N=1 D6 kink | (−1)^N = −1 | fermion exchange antisymmetry ✓ |
-| FR phase numerically verified | N = 1.00000 (error 2×10⁻¹¹) | consistent ✓ |
-| Gauge bosons are bosons | No D6 winding → phase +1 | photon, W, Z, g are bosons ✓ |
-| Higgs is boson | Scalar, no winding → phase +1 | Higgs spin-0 boson ✓ |
-| Rotation behavior has π₁ = Z₂ | D3 substrate behavior produces SO(3) rotation character | substrate at D3 ✓ |
-| Spin-statistics connection | Kink topology determines both spin and statistics | unified in DFC ✓ |
+| Property | DFC mechanism | Observed | Status |
+|---|---|---|---|
+| FR phase for N=1 D6 kink | (−1)^N = −1 | fermion exchange antisymmetry ✓ | Derived ✓ |
+| FR phase numerically verified | N = 1.00000 (error 2×10⁻¹¹) | consistent ✓ | Verified ✓ |
+| Gauge bosons are bosons | No D6 winding → phase +1 | photon, W, Z, g are bosons ✓ | Structural ✓ |
+| Higgs is boson | Scalar, no winding → phase +1 | Higgs spin-0 boson ✓ | Structural ✓ |
+| Rotation behavior has π₁ = Z₂ | D3 substrate behavior produces SO(3) rotation character | substrate at D3 ✓ | Structural ✓ |
+| Spin-statistics connection | Kink topology determines both spin and statistics | unified in DFC ✓ | Structural (rigorous proof open) |
 
 ---
 

@@ -16,9 +16,10 @@ at the shallow end of the dimensional stack — the same topological threefold s
 that produces three quark colors and three lepton generations, but accessed here at the
 D3↔D4 boundary rather than deep in the confinement regime.
 
-The neutrino mass scale is not a free parameter — it is set by:
-  (1) the D4 anchoring fraction f_ν relative to the electron
-  (2) the mass scale M_ref extracted from the lepton mass ratio
+The neutrino mass scale is currently a fit parameter — f_ν (the D4 anchoring fraction)
+is scanned to find values consistent with Planck + KATRIN bounds. A genuine first-principles
+derivation would compute f_ν from the substrate dynamics at the D3↔D4 boundary without
+using oscillation data as input. No such derivation exists yet.
 
 Observable predictions:
   - Three distinct neutrino masses m₁ < m₂ < m₃ (or inverted hierarchy)
@@ -375,8 +376,16 @@ if __name__ == "__main__":
         dd_atm   = winding_mode_depth_spacing(kappa, DM2_ATM,   m1_ev)
         print(f"  Solar splitting  (Δd₂₁): {dd_solar:.5f} depth units")
         print(f"  Atmospheric split(Δd₃₁): {dd_atm:.5f} depth units")
-        print(f"  Ratio Δd₃₁/Δd₂₁:        {dd_atm/dd_solar:.2f}  "
-              f"(data: {math.sqrt(DM2_ATM/DM2_SOLAR):.2f})")
+        ratio_dfc = dd_atm / dd_solar
+        # sqrt(DM2_ATM/DM2_SOLAR) = 5.71 is NOT the expected depth ratio.
+        # The depth ratio is: ln(1+DM2_ATM/m₁²) / ln(1+DM2_SOLAR/m₁²)
+        # which varies from ~1.34 (m₁→0) to ~5.7 (m₁→sqrt(Δm²₂₁)).
+        # DFC equal-spacing prediction (Δd₃₁/Δd₂₁ = 2) requires m₁ ≈ 1.57 meV.
+        # STATUS: the depth ratio is m₁-dependent; the 1.34 value at minimal m₁
+        # is NOT a failure — it simply reflects that m₁ is unconstrained from below.
+        print(f"  Ratio Δd₃₁/Δd₂₁:        {ratio_dfc:.2f}  "
+              f"[at m₁={m1_ev*1000:.4f} meV; varies 1.34–5.7 across consistent m₁ range]"
+              f"\n  DFC equal-winding prediction: ratio = 2 → m₁ ≈ 1.57 meV")
 
     print(f"\n--- Open Constraints ---")
     print(f"  Absolute mass scale:    requires first-principles derivation of f_ν")

@@ -130,8 +130,12 @@ the outstanding failure in the lepton mass sector.
 
 **`neutrino_masses.py`** — partial. Gets Δm²₂₁ and Δm²₃₁ exactly right by design
 (the anchoring fraction f_ν is scanned to match). The depth spacing ratio Δd₃₁/Δd₂₁
-= 1.34 vs data 5.71 (2.6× off) — this ratio is a genuine prediction and is wrong.
-The absolute mass scale requires f_ν as a free parameter with no DFC derivation.
+is NOT a fixed failure at 1.34: the ratio varies from 1.34 (at m₁→0) to ~5.7 (at
+m₁→sqrt(Δm²₂₁)) across the consistent m₁ range. Audited (Cycle 20): docstring overclaim
+"mass scale is not a free parameter" corrected (f_ν IS a free parameter); print comparison
+to sqrt(Δm²₃₁/Δm²₂₁)=5.71 was misleading (different quantity than depth ratio) — replaced
+with note on m₁ dependence and DFC equal-winding prediction (ratio = 2 at m₁≈1.57 meV).
+The absolute mass scale requires f_ν derivation from substrate dynamics — not yet done.
 
 **`closure_topology.py`** — descriptive/qualitative. Correctly identifies U(1), SU(2),
 SU(3) structures at D5, D6, D7. Bug found (2026-04-05 Cycle 19): closure_energy() for
@@ -263,4 +267,5 @@ considerably and the model becomes a reformulation rather than a reduction.
 | 2026-04-05 | Cycle 16: higgs_boson.md formalized (spin-0 from scalar ε, mass from S³ squashing + RG running, coupling ∝ mass structural, vacuum near-criticality explained, hierarchy problem via geometric protection, 4 open questions including VEV and λ₀ from substrate); higgs_geometry.md: fixed "SU(3) Fiber" header → "D7 SU(3) Closure", fixed "closure geometrys" plural → "closure geometries"; substrate.md: "16D model" section → DFC closure structure language with D-label clarification note; quantum_emergence.py: "3+1D Jackiw-Rebbi" → "D3+D4 apparent geometry"; fold orientation identification clarified as interpretation not derivation |
 | 2026-04-05 | Cycle 17: neutrinos.md formalized (sub-D4 fractional anchoring, quadratic seesaw suppression, 3 winding modes, PMNS mixing, Majorana prediction, 4× depth spacing discrepancy documented, oscillation formula, Majorana testable via ββ₀ν); README.md: added Mathematical Completeness Estimate section (~10%, viability ~25%, rigor ~8%) with three bottlenecks and most accessible next step |
 | 2026-04-05 | Cycle 18: composite_particles.md formalized (color-neutrality from D7 topology, proton mass 99% from QCD dynamics, pion as pseudo-Goldstone of chiral symmetry, R ratio = 3ΣQ² as color count confirmation, path to first S-matrix calc via qq→qq one-gluon exchange); dimensional_stack.md: D-label ambiguity made explicit (mass scale vs gauge structure dual usage = D-depth assignment problem); spin_zero_mode.py: "3+1D" → "D3+D4" language, three-generations link corrected |
+| 2026-04-05 | Cycle 20: dark_matter.md formalized (D4–D5 fractional-depth stable kinks, m_DM≈35 keV warm DM, no EM/color from not reaching D5, thermal overclosure problem documented honestly, Ω_DM not derived); pauli_exclusion.md audited (clean; "D5/D6/D7 bundles" → closure structures; Status column added to consistency table); neutrino_masses.py audited (docstring overclaim "mass scale not a free parameter" corrected; misleading sqrt(Δm²) comparison replaced with m₁-dependent depth ratio note and equal-winding prediction)
 | 2026-04-05 | Cycle 19: antimatter.md formalized (antikinks = opposite winding at each closure depth; CPT from V(φ)=V(−φ); kink-antikink collision → vacuum + radiation; three Sakharov conditions at D7; η_B ≠ 0 structural, value OPEN); measurement.md audited: "no measurement problem" overstated → "structurally addressed, several components open including Born rule"; Born rule in body text relabeled as structural identification not derivation; resolution table updated to match; closure_topology.py audited: closure_energy() Derrick's theorem bug documented (n≥3 has no energy minimum — R_stable is equipartition scale, not true minimum; topological protection is what stabilizes SU(2)/SU(3)); coupling convergence scale "10^18 GeV" corrected to ungrounded estimate |
