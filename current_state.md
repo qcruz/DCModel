@@ -175,7 +175,15 @@ couplings do NOT unify in the SM. The `squashing_correction()` function is an ex
 placeholder (returns None). Fixed: "fiber geometry" → "D6 closure geometry" (per language
 rules). No numerical predictions; value is organizational.
 
-**Remaining unreviewed modules:** `bifurcation.py`, `constants.py`.
+**`bifurcation.py`** — audited (2026-04-05). Module is structurally sound and explicitly
+documents open problems (threshold values C_n not derived from first principles; γ fit
+from two anchors; closed/open transition at D5 unexplained). Fixed: "3 spatial dimensions"
+→ "three apparent spatial degrees of freedom" in key_transition string. Added warning note
+about D-label ambiguity: particle mass scale assignments (D5=electron, D6=muon) vs. gauge
+structure assignments (D5=U(1), D6=SU(2)) use the same labels but may refer to different
+substrate behaviors. This ambiguity is a known open problem.
+
+**Remaining unreviewed modules:** `constants.py`.
 
 ---
 
@@ -236,3 +244,4 @@ considerably and the model becomes a reformulation rather than a reduction.
 | 2026-04-05 | Cycle 6: spin.md formalized (FR theorem, Jackiw-Rebbi, numerically verified results from spin_zero_mode.py); cosmic_expansion.md: clarified that DFC predicts w > −1 while Planck 2018 central value is w < −1 (1.25σ tension, distinguishable by DESI/Euclid); fixed relative path; compression_field.py: clean, no corrections |
 | 2026-04-05 | Language sweep (Cycles 6–7): removed "spatial dimensions" as fundamental from spin_emergence.md, dimensional_emergence.md, electromagnetism.md, quarks.md, electron.md, glossary.md, analogies.md; CLAUDE.md updated with extended forbidden phrases |
 | 2026-04-05 | Cycle 7: wave_particle_duality.md formalized (two-regime resolution, de Broglie from KG, buckling threshold, Born rule partial account, 4 open questions); analogies.md: rubber ball breakdown section corrected; gauge_couplings.py audited (organizational, squashing correction placeholder, "fiber" → "D6 closure geometry") |
+| 2026-04-05 | Cycle 8: entanglement.md formalized (global field correlation, singlet as winding constraint N_total=0, Bell violation from SU(2) spinor geometry, no-signaling from random buckling, Tsirelson bound open question); overview.md audited (clean); bifurcation.py audited (D-label ambiguity noted, spatial language fixed) |

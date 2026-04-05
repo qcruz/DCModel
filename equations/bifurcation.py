@@ -38,6 +38,13 @@ import math
 # Effective depth index and characteristic energy scale of each layer
 # These are provisional fits to the observed particle spectrum
 # (see foundations/dimensional_stack.md)
+#
+# NOTE ON D-LABEL AMBIGUITY: The gauge structure assignments (D5=U(1), D6=SU(2),
+# D7=SU(3)) and the particle mass scale assignments below use the same D-labels
+# but may refer to different behaviors on the continuous substrate. The table
+# below maps D-depth indices to particle mass scales; the closure/gauge
+# topology assignments are a separate (and not yet fully reconciled) mapping.
+# These assignments are working hypotheses, not derived results.
 
 DIMENSIONAL_LAYERS = {
     1: {'name': 'Unity/Compression',    'energy_scale_gev': None,       'description': 'D1 — maximal compression, no separable structure'},
@@ -233,8 +240,8 @@ def why_four_macroscopic_dimensions():
         'D7+':{'type': 'closed',   'macroscopic': False, 'reason': 'SU(3) closure — strong force topology'},
         'key_transition': (
             'D4→D5 is where open modes end and closed loops begin. '
-            'This is why we observe 3 spatial dimensions + time (from D2, D3, D4) '
-            'and not additional macroscopic spatial directions.'
+            'This is why we observe three apparent spatial degrees of freedom + time '
+            '(from D2, D3, D4 behaviors) and not additional macroscopic directions.'
         ),
         'open_question': (
             'Why does the closed/open transition occur precisely at D5? '
