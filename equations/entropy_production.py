@@ -12,13 +12,18 @@ Core identification:
 where Ω_fold = number of distinct folding configurations accessible to the system
 given its macroscopic state (energy, volume, compression budget).
 
-The second law is not assumed here — it is derived:
-    dΩ_fold/dt ≥ 0  always
+The second law is structurally motivated but not formally derived:
+    dΩ_fold/dt ≥ 0  (claimed, not yet proven from field dynamics)
 
-because each compression event either:
+The argument: each compression event either:
   (a) eliminates some closures (reducing local Ω) but disperses compression
       into more distributed pathways (increasing global Ω by more), or
   (b) creates new folding pathways directly through buckling events.
+
+STATUS: This argument is qualitative. A formal proof would require showing that
+the compression field equation φ_tt = c² φ_xx − V'(φ) generically produces
+monotonically non-decreasing folding configuration counts — an open problem
+in the nonlinear dynamics of the field.
 
 The arrow of time is the direction in which Ω_fold increases.
 Time's past is the configuration with fewer accessible folding paths.

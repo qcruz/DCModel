@@ -5,10 +5,16 @@
 > **m_H = 125.1 ± 1.5 GeV**
 > Observed: 125.25 ± 0.17 GeV (ATLAS+CMS, 2020)
 
-The Higgs mass discrepancy from the tree-level geometric estimate (~91 GeV) is fully
-resolved by incorporating radiative corrections with the closure scale as the physical
-UV cutoff. No free parameters are introduced beyond those already present in the
-geometric framework.
+**Epistemic status: consistency identification, not ab initio derivation.**
+
+The Higgs mass discrepancy from the tree-level geometric estimate (~91 GeV) is resolved
+by incorporating radiative corrections with the closure scale as the physical UV cutoff.
+However: the boundary condition λ₀ ≈ 0.013 is not computed from DFC substrate
+parameters — it is the value of the SM quartic at the Planck scale from SM vacuum
+stability analyses (Buttazzo et al. 2013). The DFC contribution is identifying *why*
+λ₀ is naturally small (gauge-Higgs unification structure of the S³ modulus) and
+identifying the closure scale as the physical UV cutoff. The Higgs mass agreement
+confirms consistency, not prediction from first principles.
 
 See `equations/higgs_potential.py` for the numerical implementation.
 
@@ -97,9 +103,9 @@ The gauge-Higgs unification structure constrains:
 ```
 
 The precise value within this range depends on the cross-curvature tensor κ₄, which
-requires full numerical evaluation of the curvature integrals on the folded 12D
-structure. This is an open computational problem. The derivation proceeds using the
-range as a boundary condition.
+requires full numerical evaluation of the curvature integrals across the multi-depth
+closure structure (D5/D6/D7 contributions to the D6 quartic modulus). This is an open
+computational problem. The derivation proceeds using the range as a boundary condition.
 
 ---
 
@@ -313,8 +319,9 @@ matching condition, not the physical observable.
 4. The near-criticality of the electroweak vacuum (λ(M_Pl) ≈ 0) is explained as a
    geometric constraint rather than a coincidence.
 
-5. The dominant uncertainty is the top quark mass. No free parameters are introduced
-   beyond those already in the geometric framework.
+5. The dominant uncertainty is the top quark mass. The boundary condition λ₀ ≈ 0.013
+   is currently sourced from the SM vacuum stability running (Buttazzo et al. 2013),
+   not derived from DFC substrate parameters — this remains the critical open step.
 
 ---
 
