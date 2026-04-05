@@ -181,8 +181,10 @@ exponential sensitivity of the transition rates to the relevant parameters:
 The half-life is the inverse of the decay rate; the rate involves the square of the
 overlap integral between initial and final kink configurations weighted by the
 available phase space. All three factors (phase space, matrix element, barrier
-penetration) are computed from the D3+D4+D5/D6/D7 structure of the system without
-new parameters.
+penetration) emerge from the D3+D4+D5/D6/D7 structure of the system. However, the
+numerical inputs — CKM elements, G_F from the D6 coupling, nuclear level energies —
+are taken from observation; the DFC contribution is the structural classification
+of which channels are allowed and why, not the ab initio computation of all rates.
 
 ---
 
@@ -222,16 +224,17 @@ Error                  = 0.11%  ✓
 
 ## Consistency Checks
 
-| Process | DFC mechanism | Status |
-|---|---|---|
-| Beta decay | Intra-D6 SU(2) quark-flavor transition via W | ✓ |
-| τ_n = 878.4 s | G_F² × phase space integral from D6 coupling | 0.11% match ✓ |
-| Proton stability | D7→D5 cross-closure forbidden (no proton decay) | ✓ |
-| Alpha decay | Gamow tunneling through D5 Coulomb + D7 nuclear potential | ✓ (qualitative) |
-| Gamma decay | D5 photon emission from D3+D4 nuclear level transition | ✓ |
-| Beta spectrum continuous | Three-body kinematics (neutrino carries variable energy) | ✓ |
-| Half-life range | Exponential sensitivity in Gamow factor / phase space | ✓ |
-| Alpha pre-formation | D7 multi-kink clustering probability — not yet derived | open |
+| Process | DFC mechanism | Observed | Status |
+|---|---|---|---|
+| Beta decay | Intra-D6 SU(2) quark-flavor transition via W | n → p e ν̄_e ✓ | Structural ✓ |
+| τ_n = 878.4 s | G_F² × phase space from D6 coupling (SM inputs for G_F, V_ud) | 879.4 s (PDG) | 0.11% match ✓ |
+| Proton stability | D7→D5 cross-closure forbidden (no proton decay) | τ_p > 1.6×10³⁴ yr | Structural ✓ |
+| Alpha decay | Gamow tunneling through D5 Coulomb + D7 nuclear potential | Geiger-Nuttall law ✓ | Structural ✓ |
+| Gamma decay | D5 photon emission from D3+D4 nuclear level transition | Discrete γ energies ✓ | Structural ✓ |
+| Beta spectrum shape | Three-body kinematics (neutrino carries variable energy) | Continuous spectrum ✓ | Inherited from SM |
+| Half-life range (50 orders) | Exponential sensitivity in Gamow factor / phase space | 10⁻²³ s to 10²⁰ yr | Structural ✓ |
+| Alpha pre-formation factor | D7 multi-kink clustering probability | P_α ~ 0.1–0.5 (nuclear models) | OPEN |
+| G_F from substrate (α, β, c) | D6 coupling from kink size — not derived | G_F = 1.166×10⁻⁵ GeV⁻² (PDG input) | OPEN |
 
 ---
 

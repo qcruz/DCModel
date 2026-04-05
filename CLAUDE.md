@@ -258,7 +258,7 @@ Always maintain this distinction explicitly. The model's credibility depends on 
 **Correspondences (consistent but not derived):**
 - D5 ↔ U(1), D6 ↔ SU(2), D7 ↔ SU(3) assignments
 - V(φ) = −α/2 φ² + β/4 φ⁴ (postulated, not derived from D1)
-- Weinberg angle sin²θ_W ≈ 0.231 (not derived from D5/D6 geometry)
+- Weinberg angle sin²θ_W ≈ 0.231 (Route 3B gives 0.231 from equal-coupling initial condition + SM running; the 3/5 hypercharge normalization is borrowed from GUT embedding, not derived from D5 geometry; M_c(12) from SM running, not substrate parameters)
 
 ---
 

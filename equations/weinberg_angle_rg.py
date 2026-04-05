@@ -250,18 +250,20 @@ if __name__ == "__main__":
     # --- comparison ---
     print(f"\n--- Reference Comparison ---")
     r_gut  = predict_sin2_theta_w(3e14)
-    r_susy = predict_sin2_theta_w(2e16)
+    r_16   = predict_sin2_theta_w(2e16)
     r_dfc  = predict_sin2_theta_w(1e18)
     r_12   = predict_sin2_theta_w(c12['M_c_12_GeV'])
-    print(f"  Non-SUSY SU(5) (M_c~3×10^14):  sin²θ_W = {r_gut['sin2_TW_pred']:.4f}  "
+    print(f"  Non-SUSY SU(5) (M_c~3×10^14, SM β):  sin²θ_W = {r_gut['sin2_TW_pred']:.4f}  "
           f"({r_gut['error_pct']:+.1f}%)")
-    print(f"  SUSY SU(5) (M_c~2×10^16):       sin²θ_W = {r_susy['sin2_TW_pred']:.4f}  "
-          f"({r_susy['error_pct']:+.1f}%)")
-    print(f"  DFC Higgs scale (M_c~10^18):     sin²θ_W = {r_dfc['sin2_TW_pred']:.4f}  "
+    print(f"  M_c~2×10^16 (SM β):                   sin²θ_W = {r_16['sin2_TW_pred']:.4f}  "
+          f"({r_16['error_pct']:+.1f}%)")
+    print(f"  NOTE: SUSY SU(5) uses different (SUSY) beta coefficients; ~0.231 match")
+    print(f"        at M_c~2×10^16 requires SUSY betas, NOT the SM betas used here.")
+    print(f"  DFC Higgs scale (M_c~10^18, SM β):    sin²θ_W = {r_dfc['sin2_TW_pred']:.4f}  "
           f"({r_dfc['error_pct']:+.1f}%)")
-    print(f"  DFC α₁=α₂ scale (M_c~10^13):    sin²θ_W = {r_12['sin2_TW_pred']:.4f}  "
+    print(f"  DFC α₁=α₂ scale (M_c~10^13, SM β):   sin²θ_W = {r_12['sin2_TW_pred']:.4f}  "
           f"({r_12['error_pct']:+.1f}%)")
-    print(f"  Observed:                                  {SIN2_TW_OBS:.4f}")
+    print(f"  Observed:                                        {SIN2_TW_OBS:.4f}")
 
     # --- key result ---
     print(f"\n--- Key Result ---")
