@@ -96,6 +96,18 @@ axis. A particle is not at a location — it is at a depth.
 The table below is **illustrative and non-final**. It maps effective dimensional valence
 to structural meaning to the physical phenomena associated with that depth.
 
+**CRITICAL NOTE — D-label ambiguity (open problem):** The depth assignments below use
+D-labels as particle mass scale indices (D5 = electron mass, D6 = muon mass, D7 = QCD
+onset). The same labels are used elsewhere in the model as gauge structure indices (D5 =
+U(1) electromagnetic closure, D6 = SU(2) weak closure, D7 = SU(3) color closure). These
+two uses may be consistent — the electron (D5 in both senses) is the lightest massive
+charged lepton and couples to U(1); the muon (D6 mass scale) couples to both U(1) and
+SU(2). But baryons (assigned D8-9 in the mass table below) contain quarks that reach D7
+for their color charge. Reconciling why quarks reach D7 for color yet form baryons at D8-9
+is the **D-depth assignment problem** — the first of the three critical bottlenecks
+identified in `CLAUDE.md`. The table below should be read as a working scaffold, not as
+resolved model output.
+
 | Effective Valence | Structural Meaning | Typical Phenomena |
 |---|---|---|
 | ~2 | Near-D2 propagation | EM radiation (photons) |
@@ -130,7 +142,7 @@ in. Below this threshold, colored structures cannot propagate freely through the
 
 **Baryons (~D8–9):** Three quarks locked together by deep confinement. The baryon is the
 stable knot configuration at the depth where three-body confinement becomes energetically
-energetically stable. The three-quark structure reflects the three-fold topology available at this
+stable. The three-quark structure reflects the three-fold topology available at this
 depth — connected to the SU(3) structure of the strong interaction.
 
 **Black holes (→∞):** Not a particle type but an attractor regime. Dimensional boundaries

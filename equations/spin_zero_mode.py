@@ -272,7 +272,7 @@ def jackiw_rebbi_zero_mode(x_arr, M_lam):
 
     This is the elementary fermion mechanism: the electron, quark, and lepton
     zero modes arise from the φ⁴ kink background via Jackiw-Rebbi, not from
-    the Skyrmion (3+1D composite baryon) mechanism. The composite Skyrmion
+    the Skyrmion (D3+D4 composite baryon) mechanism. The composite Skyrmion
     (Steps 1-3) and the elementary kink zero mode (Step 4) are complementary.
 
     Returns:
@@ -451,7 +451,7 @@ def run():
     print(f"    ──────────────────────────────────────────────────────────────")
     print(f"    → fermionic statistics (FR, composite kinks)")
     print(f"    → spin-1/2 zero mode (index theorem / Jackiw-Rebbi, elementary kinks)")
-    print(f"    → three generations (three zero-mode sectors from D6 topology)")
+    print(f"    → three generations (three D6 depth-anchoring levels — see three_generations.md)")
     print(f"    No independent spinor field introduced at any step.")
 
     return {
