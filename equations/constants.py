@@ -67,19 +67,20 @@ HIGGS_VEV = 246220.0           # MeV  (v = 246.22 GeV)
 # These are the geometric parameters of the Dimensional Folding Model.
 # Values marked ESTIMATE are order-of-magnitude; not yet precisely derived.
 
-# Compactification scale (energy)
-M_COMPACTIFICATION = 1.0e16    # MeV  (10^16 GeV, ESTIMATE — between GUT and Planck scale)
+# Closure scale — energy at which D5/D6/D7 closure behaviors formed (ESTIMATE)
+M_CLOSURE_SCALE = 1.0e16       # MeV  (10^16 GeV, ESTIMATE — between GUT and Planck scale)
+M_COMPACTIFICATION = M_CLOSURE_SCALE  # deprecated alias — use M_CLOSURE_SCALE
 
-# Fiber sizes (in meters, all order Planck length)
-R_U1  = 1.0e-34                # m    radius of U(1) electromagnetic circle (ESTIMATE)
-R_S3  = 1.0e-34                # m    radius of S³ weak force sphere (ESTIMATE)
-R_SU3 = 1.0e-34                # m    characteristic size of SU(3) fiber (ESTIMATE)
+# D5/D6/D7 closure geometry sizes (in meters, all order Planck length, ESTIMATES)
+R_U1  = 1.0e-34                # m    characteristic radius of D5 U(1) closure (ESTIMATE)
+R_S3  = 1.0e-34                # m    characteristic radius of D6 S³ closure (ESTIMATE)
+R_SU3 = 1.0e-34                # m    characteristic size of D7 SU(3) closure (ESTIMATE)
 
 # Squashing parameters (dimensionless, 0 = round, 1 = maximally deformed)
-# ε_W: S³ squashing → sets electroweak symmetry breaking
+# ε_W: D6 S³ squashing → sets electroweak symmetry breaking
 EPSILON_W = math.sqrt(WEINBERG_ANGLE_SIN2)     # ~0.481 (related to Weinberg angle)
 
-# η_F: SU(3) fiber squashing → sets flavor symmetry breaking scale
+# η_F: D7 SU(3) closure squashing → sets flavor symmetry breaking scale
 ETA_FLAVOR = 0.1               # ESTIMATE — to be constrained from quark masses
 
 # Dimple parameters for mass hierarchy
@@ -119,7 +120,7 @@ def print_summary():
     print()
 
     print("Model parameters:")
-    print(f"  Compactification scale: {M_COMPACTIFICATION:.1e} MeV = {M_COMPACTIFICATION/1e3:.1e} GeV")
+    print(f"  Closure scale:          {M_CLOSURE_SCALE:.1e} MeV = {M_CLOSURE_SCALE/1e3:.1e} GeV")
     print(f"  Weinberg angle sin²:    {WEINBERG_ANGLE_SIN2}")
     print(f"  S³ squashing ε_W:       {EPSILON_W:.4f}")
     print(f"  Top Yukawa:             {YUKAWA_TOP:.4f}")

@@ -183,7 +183,12 @@ about D-label ambiguity: particle mass scale assignments (D5=electron, D6=muon) 
 structure assignments (D5=U(1), D6=SU(2)) use the same labels but may refer to different
 substrate behaviors. This ambiguity is a known open problem.
 
-**Remaining unreviewed modules:** `constants.py`.
+**`constants.py`** — audited (2026-04-05). Fixed forbidden language: "Compactification scale"
+→ `M_CLOSURE_SCALE` (deprecated alias `M_COMPACTIFICATION` retained for backward compat);
+"Fiber sizes" comment and `SU(3) fiber squashing` → D5/D6/D7 closure geometry language.
+Values are all PDG 2024 or estimates; R_U1/R_S3/R_SU3 are all explicitly ESTIMATE.
+
+**All equation modules reviewed.** Audit complete.
 
 ---
 
@@ -245,3 +250,4 @@ considerably and the model becomes a reformulation rather than a reduction.
 | 2026-04-05 | Language sweep (Cycles 6–7): removed "spatial dimensions" as fundamental from spin_emergence.md, dimensional_emergence.md, electromagnetism.md, quarks.md, electron.md, glossary.md, analogies.md; CLAUDE.md updated with extended forbidden phrases |
 | 2026-04-05 | Cycle 7: wave_particle_duality.md formalized (two-regime resolution, de Broglie from KG, buckling threshold, Born rule partial account, 4 open questions); analogies.md: rubber ball breakdown section corrected; gauge_couplings.py audited (organizational, squashing correction placeholder, "fiber" → "D6 closure geometry") |
 | 2026-04-05 | Cycle 8: entanglement.md formalized (global field correlation, singlet as winding constraint N_total=0, Bell violation from SU(2) spinor geometry, no-signaling from random buckling, Tsirelson bound open question); overview.md audited (clean); bifurcation.py audited (D-label ambiguity noted, spatial language fixed) |
+| 2026-04-05 | Cycle 9: time_dilation.md formalized (velocity time dilation from Compton oscillation rate, gravitational time dilation from compression gradient, GPS quantitative check ✓, Pound-Rebka ✓); product_geometry.md: "fibers" → D5/D6 closure depth language; constants.py audited: "compactification" and "fiber" terminology replaced with closure language; equation module audit COMPLETE |

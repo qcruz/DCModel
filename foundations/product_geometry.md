@@ -73,8 +73,9 @@ Every version of simple group unification is in tension with proton decay experi
 tension gets worse with each new measurement.
 
 **In the product geometry, there are no X or Y bosons.** There is no force carrier that
-simultaneously lives in the color space AND the electromagnetic space. The two fibers are separate
-rooms. A quark physically cannot turn into a lepton through any gauge interaction — period.
+simultaneously participates in both the D7 SU(3) closure behavior AND the D5 U(1) closure
+behavior. The two closure depths are topologically independent. A quark physically cannot turn
+into a lepton through any gauge interaction — period.
 
 The proton is absolutely stable to all orders in perturbation theory.
 
