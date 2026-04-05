@@ -89,6 +89,14 @@ Key bottleneck: D-depth assignment mechanism; first-principles coupling constant
 Next milestone that moves the needle: any single coupling constant derived from (α, β, c, geometry)
 ```
 
+**After each cycle:** If the cycle produces a significant change — a new verified prediction,
+a resolved bottleneck, a major discovered failure, or a substantial structural clarification —
+update the estimate here and in `README.md`. What counts as significant: a new numerical
+match that wasn't previously derived, a coupling constant derived from substrate parameters,
+an S-matrix result, or discovery that a prior claim was wrong. Routine formalizations of
+placeholder docs that only add structural description (not new derivations) do not move the
+estimate.
+
 **Priority weighting for Step 1:** When choosing which phenomenon or foundation doc to work on,
 give preferential weight to those that connect to the three critical bottlenecks:
 
@@ -157,6 +165,8 @@ After any new document or any audit:
 1. Update `current_state.md` if a new strength, weakness, or audit result warrants it.
 2. Update `MEMORY.md` if any project-level facts have changed.
 3. Check whether any linked documents need updating.
+4. If the cycle produced a significant change (new verified prediction, resolved bottleneck,
+   major discovered failure), update the Completeness Estimate above and in `README.md`.
 
 Then return to Step 1.
 
