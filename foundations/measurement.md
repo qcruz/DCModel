@@ -7,10 +7,12 @@
 > Different types of measurement correspond to different modes of compression interaction,
 > each acting on a different layer or degree of freedom of the dimensional stack.
 
-There is no measurement problem in DFC. The apparent paradox of quantum mechanics —
-that a linear, reversible wave equation somehow produces irreversible definite outcomes —
+The measurement problem is structurally addressed in DFC — the apparent paradox of quantum
+mechanics (a linear, reversible wave equation producing irreversible definite outcomes)
 dissolves when measurement is recognized as a threshold-crossing event in the compression
 field, no different in kind from the buckling event that creates a particle from the vacuum.
+Several components remain open, most notably the formal derivation of the Born rule from
+kink nucleation statistics (see Open Questions).
 
 ---
 
@@ -123,10 +125,12 @@ The field nucleates a kink at x₀ and sheds the excess as radiation. The outcom
 determined by where the field amplitude first exceeded threshold — which depends on the
 local field configuration (|ψ(x)|²) at the moment of interaction.
 
-**DFC account of Born rule:** The rate of kink nucleation at position x is proportional
-to the local field energy density |φ(x)|² = |ψ(x)|². The first nucleation site is
-selected by which location crosses threshold first — a stochastic process biased by the
-local amplitude. This gives P(x) ∝ |ψ(x)|².
+**DFC account of Born rule (structural identification, not yet derived):** The rate of
+kink nucleation at position x is proportional to the local field energy density
+|φ(x)|² = |ψ(x)|². The first nucleation site is selected by which location crosses
+threshold first — a stochastic process biased by the local amplitude. This motivates
+P(x) ∝ |ψ(x)|², but a rigorous derivation from the first-passage statistics of the φ⁴
+nucleation problem remains open (see Open Question 1).
 
 **Standard QM name:** Wavefunction collapse / projective measurement.
 
@@ -270,7 +274,7 @@ without collapsing the conjugate.
 |---|---|
 | When does collapse occur? | When local field amplitude crosses the buckling threshold |
 | Why are outcomes definite? | Kink nucleation is a bifurcation — nonlinear systems have discrete attractors |
-| Why is probability |ψ|²? | Nucleation rate ∝ local field energy density (Born rule from field thermodynamics) |
+| Why is probability |ψ|²? | Nucleation rate ∝ local field energy density → P ∝ |ψ|² (structural identification; formal derivation open) |
 | What is an observer? | Any interaction that imposes a compression above threshold |
 | Why does decoherence select pointer states? | Environmental compression stabilizes energy eigenstates (stationary phases) |
 | Is collapse physical or epistemic? | Physical — it is a real field transition; but it is not fundamental — it is a threshold crossing |

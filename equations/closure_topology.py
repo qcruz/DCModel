@@ -126,13 +126,29 @@ def closure_energy(topology_dim, closure_radius, alpha, beta, c=1.0):
     # Compression energy: potential energy of deformed field ∝ α × V
     E_compression = alpha * closure_radius**2 * volume
 
-    # Stable radius (minimizes E_curvature + E_compression)
-    # d/dR [(c²/R²)R^n + α R^(n+2)] = 0
-    # → R_0 = (c²(n-2) / (α(n+2)))^(1/4)  for n > 2
+    # Stable radius estimate.
+    #
+    # IMPORTANT LIMITATION (Derrick's theorem): For topology_dim ≥ 3, both
+    # E_curvature = c² R^(n-2) and E_compression = α R^(n+2) are monotonically
+    # INCREASING with R. There is no classical energy minimum — dE/dR > 0 for
+    # all R > 0. This is an instance of Derrick's theorem: static solitons in
+    # φ⁴ theory do not exist for spatial dimension n ≥ 2 from energy balance alone.
+    #
+    # For n=1 (U(1)): E_curv ~ c²/R (decreasing), E_comp ~ α R³ (increasing)
+    # → genuine energy minimum at R ~ (c²/3α)^(1/4) ≈ c/√α (kink width). ✓
+    #
+    # For n ≥ 3 (SU(2), SU(3)): Both terms increase with R. The R_stable formula
+    # below gives the scale where the two terms are COMPARABLE (equipartition
+    # estimate), not a true energy minimum. Stability for SU(2)/SU(3) closures
+    # comes from topological protection, not energy minimization.
     if topology_dim > 2:
+        # Equipartition scale: E_curv(R*) ≈ E_comp(R*)
+        # c² R^(n-2) ≈ α R^(n+2)  →  R* = (c²/α)^(1/4)
+        # The (n-2)/(n+2) factor below is a shape correction; note this is NOT
+        # a minimum of E_total.
         R_stable = (c**2 * (topology_dim - 2) / (alpha * (topology_dim + 2)))**(0.25)
     else:
-        R_stable = c / math.sqrt(alpha)   # n=1: scale set by kink width
+        R_stable = c / math.sqrt(alpha)   # n=1: kink width (genuine minimum)
 
     E_total = E_curvature + E_compression
 
@@ -146,7 +162,9 @@ def closure_energy(topology_dim, closure_radius, alpha, beta, c=1.0):
         'topologically_protected': True,
         'note': ('Closure energy is topologically protected: cannot change '
                  'continuously. Discrete jumps require passing through the '
-                 'unstable (unwound) configuration.'),
+                 'unstable (unwound) configuration. WARNING: for dim >= 3, '
+                 'R_stable is an equipartition scale estimate, not a true energy '
+                 'minimum — see Derrick\'s theorem comment above.'),
     }
 
 
@@ -251,8 +269,10 @@ def product_structure_argument():
         'proton_decay': 'Forbidden — no X/Y bosons, no leptoquark operators',
         'coupling_unification': (
             'Couplings converge at the closure scale because all three closures '
-            'were formed at the same geometric scale (D_closure ≈ 10^18 GeV). '
-            'Convergence is real but reflects common origin, not simple group unification.'
+            'were formed at the same geometric scale (D_closure — exact value not '
+            'yet derived from DFC substrate parameters; SM running suggests '
+            '~10^15-10^16 GeV for coupling convergence). '
+            'Convergence reflects common origin, not simple group unification.'
         ),
         'GUT_distinction': (
             'SU(5), SO(10) unification requires G → SM breaking at GUT scale. '
