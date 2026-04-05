@@ -310,19 +310,18 @@ transmit force instantaneously. It responds as a constrained structure must resp
   with real dimensional volume, capable of being compressed and saturated.
 - Forces are not action at a distance. They arise when stabilized objects compress the
   dimensional field between them beyond what it can smoothly sustain.
-- Quantum behavior arises when this same compression occurs in regimes where D3 spacetime
-  is no longer sufficient to describe the field's full response — redistribution must
-  occur across higher-dimensional structure, producing discrete and nonlocal outcomes.
+- Quantum behavior arises when this same compression occurs in regimes where the substrate's
+  D3 localization behavior is no longer sufficient to describe the field's full response —
+  redistribution must occur across deeper substrate structure, producing discrete and nonlocal outcomes.
 
 **What it does not capture:**
-- The rubber ball is a 3D object responding in 3D space. The dimensional field responds
-  across dimensional layers, not spatial directions.
-- A rubber ball has a definite shape at all times. The dimensional field does not have
-  a fixed "shape" in spacetime — its configuration is only defined relative to the
-  dimensional boundaries constraining it.
+- The rubber ball is an object in a pre-existing container. The substrate has no container —
+  it responds across its own depth structure, not inside an external space.
+- A rubber ball has a definite shape at all times. The substrate's configuration is only
+  defined relative to the compression constraints acting on it — there is no external reference.
 
 **Core insight:**
-What we call "fields" are real, compressible dimensional structures. What we call "forces"
+What we call "fields" are real, compressible substrate structures. What we call "forces"
 arise when stabilized objects compress those structures beyond what they can smoothly
-sustain. Quantum effects emerge when compression occurs in regimes where spacetime is no
-longer sufficient to describe the system's response.
+sustain. Quantum effects emerge when compression occurs in regimes where the substrate's
+D3 localization behavior alone is no longer sufficient to describe the system's response.

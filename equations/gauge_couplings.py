@@ -8,6 +8,20 @@ parameter at the dimensional bifurcation scale.
 The convergence is real and measurable — it is not an artifact of the model.
 Its interpretation is geometric rather than group-theoretic.
 
+DERIVATION STATUS:
+- Running: SM one-loop beta functions with SM input couplings at M_Z.
+  DFC contributes only the interpretation of the high-energy meeting point.
+- Pairwise crossings: descriptive analysis of SM running. The three
+  couplings do NOT meet at a single point in the SM (this is a known
+  fact, not a DFC prediction). DFC claims the squashing correction
+  accounts for the residual misalignment.
+- squashing_correction(): PLACEHOLDER — the geometric derivation of
+  δ(1/α_i) from D6 S³ squashing has not been computed. The function
+  returns None for all corrections.
+- No novel numerical predictions in this module. Its value is
+  organizational: it shows where the unification problem stands and
+  where DFC's geometric correction must insert.
+
 Usage:
     python equations/gauge_couplings.py
 """
@@ -146,7 +160,7 @@ def squashing_correction(epsilon, scale_gev):
     """
     Correction to coupling running from the squashing geometry.
 
-    When the fiber geometry is squashed by parameter ε, the effective
+    When the D6 closure geometry is squashed by parameter ε, the effective
     coupling constants receive corrections proportional to ε² at the
     bifurcation scale.
 
@@ -155,7 +169,7 @@ def squashing_correction(epsilon, scale_gev):
     Parameters
     ----------
     epsilon : float
-        Squashing parameter (0 = round, 1 = maximally deformed).
+        Squashing parameter (0 = round S³, 1 = maximally deformed).
     scale_gev : float
         Scale at which to evaluate the correction.
 
@@ -164,7 +178,7 @@ def squashing_correction(epsilon, scale_gev):
     dict with corrections to each coupling.
     """
     # Schematic: δ(1/α_i) ~ c_i × ε² × ln(M_bif / scale)
-    # The coefficients c_i depend on the specific fiber geometry.
+    # The coefficients c_i depend on the specific D6 closure geometry.
     # To be derived from the full geometric calculation.
     return {
         'epsilon': epsilon,

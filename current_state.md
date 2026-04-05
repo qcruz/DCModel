@@ -169,7 +169,13 @@ problem 5 in the module. No deletions or corrections needed.
 perturbation spectrum, and buckling criterion correctly implemented. folding_rate_field()
 correctly labeled as schematic. No corrections needed.
 
-**Remaining unreviewed modules:** `bifurcation.py`, `gauge_couplings.py`, `constants.py`.
+**`gauge_couplings.py`** — audited (2026-04-05). Module is organizationally sound. SM one-loop
+running with SM inputs; pairwise crossing analysis correctly identifies that the three
+couplings do NOT unify in the SM. The `squashing_correction()` function is an explicit
+placeholder (returns None). Fixed: "fiber geometry" → "D6 closure geometry" (per language
+rules). No numerical predictions; value is organizational.
+
+**Remaining unreviewed modules:** `bifurcation.py`, `constants.py`.
 
 ---
 
@@ -228,3 +234,5 @@ considerably and the model becomes a reformulation rather than a reduction.
 | 2026-04-05 | Cycle 4: quantum_tunneling.md formalized (WKB from KG evanescent modes, Gamow factor, Gamow peak for stellar fusion); general_relativity.md: added open question on GW tensor vs scalar polarization; folding_gradient.py: documented 158-order gap between Planck-scale α and cosmological α constraint |
 | 2026-04-05 | Cycle 5: baryogenesis.md formalized (D7 closure satisfies all 3 Sakharov conditions, sphaleron B−L argument, Kibble-Zurek scale); thermodynamics.md: removed duplicate summary table; entropy_production.py: fixed wrong path reference in docstring |
 | 2026-04-05 | Cycle 6: spin.md formalized (FR theorem, Jackiw-Rebbi, numerically verified results from spin_zero_mode.py); cosmic_expansion.md: clarified that DFC predicts w > −1 while Planck 2018 central value is w < −1 (1.25σ tension, distinguishable by DESI/Euclid); fixed relative path; compression_field.py: clean, no corrections |
+| 2026-04-05 | Language sweep (Cycles 6–7): removed "spatial dimensions" as fundamental from spin_emergence.md, dimensional_emergence.md, electromagnetism.md, quarks.md, electron.md, glossary.md, analogies.md; CLAUDE.md updated with extended forbidden phrases |
+| 2026-04-05 | Cycle 7: wave_particle_duality.md formalized (two-regime resolution, de Broglie from KG, buckling threshold, Born rule partial account, 4 open questions); analogies.md: rubber ball breakdown section corrected; gauge_couplings.py audited (organizational, squashing correction placeholder, "fiber" → "D6 closure geometry") |
