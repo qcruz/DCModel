@@ -1,26 +1,36 @@
 """
 Gauge coupling running and convergence analysis.
 
-In the Dimensional Folding Model, the three coupling constants converge not to
-a single unified coupling (as in SU(5)) but to a single geometric squashing
-parameter at the dimensional bifurcation scale.
+In the Dimensional Folding Model, the three coupling constants converge because
+all D5/D6/D7 closures emerge from the same substrate with the same kinetic
+coefficient — not because they were once a single unified gauge group.
 
-The convergence is real and measurable — it is not an artifact of the model.
-Its interpretation is geometric rather than group-theoretic.
+The convergence is real and measurable. Its interpretation is substrate-kinetic
+rather than group-theoretic.
+
+KEY RESULT (Route 3B, see equations/weinberg_angle_rg.py):
+  The scale where α₁ = α₂ in SM running is M_c(12) ≈ 10^13 GeV.
+  Starting with equal couplings at that scale gives sin²θ_W(M_Z) = 0.231 exactly.
+  The product topology means only α₁ = α₂ at M_c is required (D5/D6 share a
+  bifurcation stage); α₃ (D7) need not meet at the same scale.
+
+SIGN CONVENTION (this module):
+  d(α_i⁻¹)/d(ln μ) = B_i/(2π)
+  B1 = -41/10 (NEGATIVE), B2 = +19/6 (POSITIVE), B3 = +7 (POSITIVE)
+  Running formula: 1/α(μ) = 1/α(M_Z) + (B_i/2π) × ln(μ/M_Z)
+  Note: equations/weinberg_angle_rg.py uses the OPPOSITE sign convention
+  (B1 = +41/10, B2 = -19/6) with the formula running DOWN (M_c to M_Z).
+  Both give identical numerical results; the conventions differ.
 
 DERIVATION STATUS:
 - Running: SM one-loop beta functions with SM input couplings at M_Z.
-  DFC contributes only the interpretation of the high-energy meeting point.
+  DFC contributes the interpretation of the high-energy meeting point.
 - Pairwise crossings: descriptive analysis of SM running. The three
-  couplings do NOT meet at a single point in the SM (this is a known
-  fact, not a DFC prediction). DFC claims the squashing correction
-  accounts for the residual misalignment.
-- squashing_correction(): PLACEHOLDER — the geometric derivation of
-  δ(1/α_i) from D6 S³ squashing has not been computed. The function
-  returns None for all corrections.
-- No novel numerical predictions in this module. Its value is
-  organizational: it shows where the unification problem stands and
-  where DFC's geometric correction must insert.
+  couplings do NOT meet at a single point in the SM (expected given the
+  product topology — only α₁ = α₂ is required by DFC's D5/D6 structure).
+- squashing_correction(): PLACEHOLDER — the D6 S³ squashing correction
+  to coupling running has not been derived. Returns None for all corrections.
+- For the Weinberg angle derivation, see equations/weinberg_angle_rg.py.
 
 Usage:
     python equations/gauge_couplings.py
@@ -148,10 +158,13 @@ def find_pairwise_crossings():
         'log10_13': math.log10(mu_13) if mu_13 and mu_13 > 0 else None,
         'log10_23': math.log10(mu_23) if mu_23 and mu_23 > 0 else None,
         'note': (
-            "In SM, the three lines do not meet at a single point — "
-            "this is the unification problem. In this model, the squashing "
-            "parameter ε provides a geometric correction that can bring them "
-            "together at the dimensional bifurcation scale."
+            "In the SM, the three couplings do not all meet at a single point. "
+            "In DFC (product topology), this is expected: only α₁ = α₂ at M_c(12) "
+            "is required (D5/D6 share a bifurcation stage). Route 3B shows that "
+            "equal α₁, α₂ at M_c(12) ≈ 10^13 GeV reproduces sin²θ_W = 0.231 "
+            "without a unified gauge group. α₃ meets at a different scale "
+            "(D7 is a separate bifurcation stage). "
+            "See equations/weinberg_angle_rg.py for the full derivation."
         )
     }
 
@@ -229,5 +242,6 @@ if __name__ == "__main__":
             print(f"  {pair}:  no crossing")
 
     print(f"\n  {crossings['note']}")
-    print(f"\n  Target: squashing correction should bring all three together")
-    print(f"  at the dimensional bifurcation scale (~10^16-10^17 GeV).")
+    print(f"\n  DFC (Route 3B): α₁ = α₂ at M_c(12) ≈ 10^13 GeV is the relevant condition.")
+    print(f"  Product topology: α₃ need not meet at the same scale (D7 = separate stage).")
+    print(f"  See equations/weinberg_angle_rg.py for sin²θ_W = 0.231 derivation.")

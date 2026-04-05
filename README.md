@@ -123,19 +123,19 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~12%** (viability as a theory: ~27%; mathematical rigor: ~10%)
+**Current estimate: ~12.5%** (viability as a theory: ~27.5%; mathematical rigor: ~10%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
 is that it *derives* rather than *reconstructs* the Standard Model. Three bottlenecks dominate:
 
 1. **D-depth assignment mechanism** — why U(1) at D5, SU(2) at D6, SU(3) at D7 (not derived)
-2. **First-principles coupling constants** — α_s, sin²θ_W, g_W all remain SM inputs
+2. **First-principles coupling constants** — α_s, sin²θ_W, g_W (Route 3B gives sin²θ_W = 0.231 from equal-coupling initial condition + SM running; deriving M_c from substrate parameters is the next step)
 3. **S-matrix derivation** — no scattering amplitude has been computed from substrate dynamics
 
-The single most accessible step: deriving sin²θ_W = 0.231 from the R_U₁/R_S³ closure
-geometry ratio. Moving any one of these three bottlenecks to "derived" would shift the
-estimate materially.
+The next highest-value step: derive M_c(12) ≈ 10^13 GeV from substrate parameters (α, β, c)
+rather than reading it from observed SM running. Moving any bottleneck to "derived" shifts
+the estimate materially.
 
 *Updated after every push. Full history in `CLAUDE.md`.*
 

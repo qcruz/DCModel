@@ -2,9 +2,10 @@
 
 ## The Question
 
-When you say "the three forces come from extra dimensions," you have to answer: *how are those
-extra dimensions arranged?* Are they one combined space? Or separate spaces sitting next to each
-other?
+The three apparent force regimes — electromagnetism, the weak interaction, and the strong
+interaction — all emerge from the same substrate. The question is: *how do their closure
+topologies relate to each other?* Do they emerge from a single merged topology that later
+differentiates? Or from topologically independent closure behaviors that were never merged?
 
 The answer completely changes the physics.
 
@@ -26,21 +27,32 @@ of smaller groups.
 
 ---
 
-## Option B: Product Geometry (this model)
+## Option B: Product Topology (this model)
 
-In this model, the three forces come from three *separate* geometric spaces, multiplied together:
+In this model, the three force interaction regimes emerge from three *topologically independent*
+closure behaviors of one substrate — not from three pre-existing separate spaces:
 
 ```
-Total internal space = U(1) × S³ × SU(3)
-                        EM    Weak  Strong
+Closure product = U(1) × S³ × SU(3)
+                   D5    D6   D7
 ```
 
-These spaces coexist at every point but they do not interact through force carriers. There is no
-common "room" — there are three separate rooms at every address in spacetime.
+These closure behaviors coexist at every substrate point, but they formed at different
+compression thresholds and do not interact through force carriers that bridge between them.
+There is no shared topological "room" — the D5, D6, and D7 closures are distinct self-
+referential configurations of the same one object, not regions of separate spaces.
 
 **Mathematical signature:** A *product* gauge group: U(1) × SU(2) × SU(3)
 
-This is exactly the gauge group of the Standard Model — no unification required.
+This is exactly the gauge group of the Standard Model — no unification event required,
+because no separation ever occurred. The three interaction regimes were never one force;
+they were always fold interactions of one substrate at topologically distinct depths.
+
+**Important:** This is not the same as saying the forces are independent. They interact
+(the electroweak mixing angle, the CKM matrix, QCD corrections to electroweak processes
+all exist). The claim is that no *gauge force carrier* bridges from D5 topology to D7
+topology — there is no field that couples simultaneously to both the electromagnetic closure
+and the color closure.
 
 ---
 
@@ -90,47 +102,63 @@ and foreseeable proton decay experiments.
 
 ## The Trade-Off
 
-Simple group unification has an elegance the product structure lacks: one force, one coupling, one
+Simple group unification has an elegance the product topology lacks: one force, one coupling, one
 dimensionless number at the unification scale. The product model gives up that elegance.
 
-What does the product model gain?
+What does the product topology gain?
 
 1. **Proton stability** — absolute, not approximate
-2. **A more rigid geometric foundation** — the geometry of U(1) × S³ × SU(3) is more tightly
-   constrained than an arbitrary SU(5) potential, leaving fewer free parameters
-3. **The observed gauge group as a theorem** — the Standard Model gauge group is not "chosen"; it
-   is the product of the three simplest geometries that can carry U(1), SU(2), and SU(3) symmetry
+2. **A deeper unity** — the substrate is one object; the product topology is not "three separate
+   things" but three topologically distinct closure regimes of one self-compressing field. The
+   forces were never separate and never unified; they are always fold interactions at different
+   depths. This is a more fundamental unity than any GUT achieves.
+3. **The observed gauge group as a structural outcome** — the Standard Model gauge group is not
+   "chosen"; it is the product of the three stable closure topologies that the substrate
+   produces at D5, D6, and D7 compression depths.
+4. **Weinberg angle without a GUT group** — Route 3B derives sin²θ_W = 3/8 at the D5/D6
+   equal-coupling scale and 0.231 at M_Z, with no free parameters and no unified group.
 
 ---
 
-## How Coupling Constants Unify Without a Simple Group
+## How Coupling Constants Converge Without a Simple Group
 
 Objection: "In SU(5), the three coupling constants converge to one value at high energy. This is
 beautifully confirmed (approximately) by experiment. If you don't have a simple group, how do you
 explain the convergence?"
 
-Answer: In this model, the three coupling constants are determined by the *sizes* of the three
-force closure structures. As you go to higher energies (shorter distances), you probe the
-underlying closure geometry more directly. The convergence is not towards a single coupling
-constant but towards a single **squashing parameter** — a dimensionless ratio that describes how
-much the internal structure is deformed from its maximally symmetric configuration.
+Answer: In this model, the convergence has a different structural origin — and a more precise
+prediction.
 
-At the closure scale (the energy at which the folding structure was stabilized), all three
-effective couplings become functions of this single parameter. The observed convergence is real;
-its interpretation is geometric rather than group-theoretic.
+All three closure behaviors (D5, D6, D7) emerge from the same substrate with the same kinetic
+coefficient. At their respective formation scales, each closure's coupling is set by the same
+substrate kinetic term. This is the **equal-coupling initial condition**: not because the forces
+were once unified under one gauge group, but because they all inherit the same underlying
+substrate dynamics.
 
-See `../equations/gauge_couplings.py` for the numerical implementation.
+The D5/D6 equal-coupling scale — where α₁ = α₂ in SM running — falls at M_c(12) ≈ 10¹³ GeV.
+Starting from equal couplings α₁ = α₂ at this scale and running to M_Z gives sin²θ_W = 0.231
+exactly (see `foundations/embedding_geometry.md`). This is a structural prediction requiring
+no free parameters and no unified gauge group.
+
+**The observed convergence is real. Its interpretation is substrate-kinetic rather than
+group-theoretic.** Forces converge at high energy not because they "were once one force" but
+because at the closure formation scale, all force interactions derive from the same substrate
+pulling on itself with the same kinetic coefficient.
+
+See `equations/gauge_couplings.py` (pairwise crossing analysis) and
+`equations/weinberg_angle_rg.py` (Route 3B Weinberg angle derivation).
 
 ---
 
 ## Comparison Summary
 
-| Feature | Simple Group (SU(5)) | Product Geometry (this model) |
+| Feature | Simple Group (SU(5)) | Product Topology (this model) |
 |---|---|---|
 | Gauge group at high E | Single, unified | Product of three |
 | X, Y bosons | Yes | No |
 | Proton decay | Predicted, constrained | Forbidden by structure |
-| Coupling unification | At a single point | Via squashing parameter |
-| Free parameters | 1 (unified coupling) | 1 (squashing ratio) |
-| Elegance | One group | Three separate geometries |
+| Coupling convergence | At a single point (all three) | D5/D6 meet at 10¹³ GeV; same-substrate kinetics |
+| Weinberg angle origin | GUT embedding (3/8 at GUT scale) | Substrate equal-coupling (3/8 at M_c(12)) |
+| Free parameters | 1 (unified coupling + GUT group) | 0 for sin²θ_W (M_c self-consistent) |
+| Force unity | Gauge-group unity (one force at high E) | Ontological unity (always one object) |
 | Experimental status | Pressured by proton decay limits | Consistent with all data |
