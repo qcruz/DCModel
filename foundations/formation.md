@@ -2,6 +2,13 @@
 
 *One perspective on how dimensional structure emerges from D1.*
 
+> **Note:** This document gives the conceptual picture of dimensional formation.
+> For the quantitative treatment of the bifurcation mechanism, see:
+> - `foundations/bifurcation_dynamics.md` — derives γ_D = (16/3)√β from kink mechanics;
+>   why spacetime bifurcations consume large compression budget
+> - `foundations/depth_running.md` — the two-scale depth-running model; D1→D5 hierarchy
+> - `foundations/d1_mechanics.md` — mechanical visualization of D1 compression and buckling
+
 ---
 
 ## Starting Point: D1
@@ -53,6 +60,11 @@ by its characteristic modes, symmetries, and constraints.
 
 Dimensions are therefore neither static nor arbitrary. They are **dynamically selected
 states of balance between unfolding and collapse**.
+
+Quantitatively, the compression budget consumed at each bifurcation is γ_D = (16/3)√β
+(derived in `foundations/bifurcation_dynamics.md`). The spacetime bifurcations (D1→D4)
+are "expensive" (γ_space ≈ 0.999 — nearly all compression budget per step), driving the
+factor of ~10^6 suppression from M_Pl to the electroweak closure scale M_c(D5).
 
 This means:
 - A dimension exists because its unfolding rate exactly matches the folding rate at that
@@ -120,6 +132,27 @@ this compressed origin state into progressively less constrained dimensional lay
 The hologram analogy is **not** meant to imply simulation or discreteness. It emphasizes
 that higher-dimensional structure can emerge from a lower-dimensional unity state without
 being locally contained within it. The projection is not spatial — it is structural.
+
+---
+
+## Closed vs. Open Modes: D1–D4 vs. D5+
+
+The bifurcation sequence produces two qualitatively different mode types:
+
+- **Open modes (D2–D4):** Each bifurcation opens a new propagating degree of freedom that
+  extends without limit. D2 produces massless propagation; D3 produces localization; D4
+  produces inertia. These are the modes whose large-scale extent appears as the three
+  apparent spatial degrees of freedom and the time dimension.
+
+- **Closed modes (D5+):** At higher compression depths, the substrate no longer opens
+  unbounded propagating modes. Instead, new degrees of freedom form self-closing loops —
+  compact topological configurations. These are what appear as internal particle properties
+  (charge, weak isospin, color). See `foundations/bifurcation_dynamics.md` for the physical
+  argument connecting this to the macroscopic coherence length L >> λ at D5+.
+
+The kink at each closure depth carries an internal fluctuation spectrum: a zero mode
+(translational degree of freedom) and a shape mode at ω_1 = (√3/2) m_σ. This shape mode
+is a parameter-free prediction of the φ⁴ substrate dynamics — see `foundations/kink_scattering.md`.
 
 ---
 

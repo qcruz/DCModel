@@ -55,6 +55,7 @@ foundations/              Core concepts, thought experiments, and structural arg
   substrate.md            Mathematical substrate framework (kink model, postulates)
   embedding_geometry.md   Weinberg angle from equal-coupling initial conditions (Route 3B)
   bifurcation_dynamics.md γ_D = (16/3)√β derived; β ≈ 0.035; Planck-length kink width; D-label disambiguation
+  kink_scattering.md      Shape mode ω₁ = (√3/2)m_σ (parameter-free); first S-matrix from substrate (Born)
 
 equations/                Runnable Python modules — input data, get predictions
   constants.py            Physical constants (PDG 2024), particle masses, SM couplings
@@ -65,6 +66,7 @@ equations/                Runnable Python modules — input data, get prediction
   proton_stability.py     Proton lifetime bounds, sphaleron rate, experiment comparison
   weinberg_angle_rg.py    sin²θ_W = 3/8 at closure scale → 0.231 via RG running (Route 3B)
   bifurcation_dynamics.py γ_D = (16/3)√β verified; β = 0.035; M_c(D5) reproduced exactly
+  kink_scattering.py      Pöschl-Teller spectrum; shape mode = 0.8660 m_σ; Born phase shift
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
@@ -125,7 +127,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~17%** (viability as a theory: ~32%; mathematical rigor: ~14%)
+**Current estimate: ~18%** (viability as a theory: ~32.5%; mathematical rigor: ~15.5%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established

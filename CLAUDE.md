@@ -109,9 +109,9 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~17%  (viability: ~32%, mathematical rigor: ~14%)
-Key bottleneck: D-depth assignment mechanism; derive β from pre-substrate principle; no S-matrix
-Next milestone: derive β ≈ 0.035 from first principles (closes γ_space derivation chain); confirm M_c(D7) ≈ 8×10^14 GeV from equal-coupling on α_s; resolve D-label scheme A/B unification
+Current estimate: ~18%  (viability: ~32.5%, mathematical rigor: ~15.5%)
+Key bottleneck: D-depth assignment mechanism; derive β from pre-substrate principle; Born-level S-matrix done, exact S-matrix and 3+1D extension open
+Next milestone: 3+1D kink scattering (Skyrme model); shape mode correspondence to observed particle splittings; derive β from pre-substrate principle
 ```
 
 **Push history (viability / rigor / overall):**
@@ -132,6 +132,7 @@ Next milestone: derive β ≈ 0.035 from first principles (closes γ_space deriv
 | 2026-04-05 | 30 | k_Y = 3/5 DERIVED (not borrowed): from DFC equal-coupling + SM matter content Dynkin index matching; verified numerically; all anomaly conditions satisfied; sin²θ_W error +0.050%; Open Problem 4 in embedding_geometry.md resolved; hypercharge_normalization.md + .py new | 31% | 12% | ~15.5% |
 | 2026-04-05 | 31 | Depth-running exploration: uniform γ falsified by co-crystallization; two-scale model (γ_space >> γ_weak≈0) self-consistent; M_c(D7) ≈ 8×10^14 GeV predicted from equal-coupling on α_s; depth-order ≠ energy-order structural finding; depth_running.md + .py new | 31.5% | 12.5% | ~16% |
 | 2026-04-05 | 32 | γ_D = (16/3)√β DERIVED from E_kink/E_total(λ) — all α,c dependence cancels; β ≈ 0.035 inferred; kink width at D1 = Planck length (self-consistent); D-label Scheme A/B ambiguity formally documented in bifurcation.py; bifurcation_dynamics.md + .py new | 32% | 14% | ~17% |
+| 2026-04-05 | 33 | First S-matrix from DFC substrate: shape mode ω₁ = (√3/2)m_σ parameter-free (Pöschl-Teller n=2 spectrum, exact); kink-antikink Born phase shift δ(k) = 4m_σ/(βk); Levinson consistency verified; kink_scattering.md + .py new; formation.md audited (added cross-refs + quantitative γ note) | 32.5% | 15.5% | ~18% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
