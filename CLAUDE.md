@@ -109,9 +109,9 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~15.5%  (viability: ~31%, mathematical rigor: ~12%)
-Key bottleneck: D-depth assignment mechanism; M_c(12) from substrate parameters; no S-matrix
-Next milestone that moves the needle: derive M_c(12) from substrate parameters (α, β, c); resolve Weinberg/Higgs scale tension
+Current estimate: ~16%  (viability: ~31.5%, mathematical rigor: ~12.5%)
+Key bottleneck: D-depth assignment mechanism; derive γ_space from (α, β, c); no S-matrix
+Next milestone: derive γ_space (compression budget per bifurcation) from substrate parameters; confirm M_c(D7) ≈ 8×10^14 GeV from equal-coupling on α_s
 ```
 
 **Push history (viability / rigor / overall):**
@@ -130,6 +130,7 @@ Next milestone that moves the needle: derive M_c(12) from substrate parameters (
 | 2026-04-05 | 28 | Route 1 exploration doc written (Skyrme/FR — J=1/2 verified, N-Δ splitting, Jackiw-Rebbi; comparison with Route 3B; F_π/e_sk derivation as shared bottleneck); three_generations and spin_zero_mode audited | 29.5% | 10% | ~14% |
 | 2026-04-05 | 29 | d_depth_lagrangians.md written (closure scale = √(α/2), effective gauge Lagrangians from DFC scalar, depth-running problem formalized, derivation sequence mapped); spin_emergence audited (cross-refs, language fixes); mass_spectrum.py audited (tau 8.4× failure prominently labeled, fine-tuning problem documented, "extra dimension" language removed); mass_hierarchy.md updated | 30% | 10% | ~14.5% |
 | 2026-04-05 | 30 | k_Y = 3/5 DERIVED (not borrowed): from DFC equal-coupling + SM matter content Dynkin index matching; verified numerically; all anomaly conditions satisfied; sin²θ_W error +0.050%; Open Problem 4 in embedding_geometry.md resolved; hypercharge_normalization.md + .py new | 31% | 12% | ~15.5% |
+| 2026-04-05 | 31 | Depth-running exploration: uniform γ falsified by co-crystallization; two-scale model (γ_space >> γ_weak≈0) self-consistent; M_c(D7) ≈ 8×10^14 GeV predicted from equal-coupling on α_s; depth-order ≠ energy-order structural finding; depth_running.md + .py new | 31.5% | 12.5% | ~16% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
