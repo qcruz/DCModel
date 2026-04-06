@@ -274,7 +274,7 @@ without collapsing the conjugate.
 |---|---|
 | When does collapse occur? | When local field amplitude crosses the buckling threshold |
 | Why are outcomes definite? | Kink nucleation is a bifurcation — nonlinear systems have discrete attractors |
-| Why is probability |ψ|²? | Nucleation rate ∝ local field energy density → P ∝ |ψ|² (structural identification; formal derivation open) |
+| Why is probability |ψ|²? | Spin: P(↑,n̂) = cos²(θ/2) DERIVED (Cycle 38) from SU(2) geometry + binary outcomes. Position: P(x) = \|ψ(x)\|² structural identification; formal derivation open |
 | What is an observer? | Any interaction that imposes a compression above threshold |
 | Why does decoherence select pointer states? | Environmental compression stabilizes energy eigenstates (stationary phases) |
 | Is collapse physical or epistemic? | Physical — it is a real field transition; but it is not fundamental — it is a threshold crossing |
@@ -287,14 +287,19 @@ without collapsing the conjugate.
 Each physical observable corresponds to a specific layer or degree of freedom in the
 dimensional stack. Measuring that observable is compressing the field in that direction:
 
-| Observable measured | Compression direction | Layer |
+| Observable measured | Compression direction | Layer (provisional — see depth_assignment.md) |
 |---|---|---|
-| Position x | Spatial localization | D3 (localization layer) |
-| Momentum p | Mode wavenumber k | D2 (propagation layer) |
+| Position x | Spatial localization | D3 (localization behavior) |
+| Momentum p | Mode wavenumber k | D2 (propagation behavior) |
 | Energy E | Compression field oscillation rate ω | Frequency mode of the field† |
-| Spin / orientation | Fold orientation angle θ | D6 (SU(2) closure) |
-| Color charge | SU(3) winding number | D7 (strong closure) |
-| Photon number | D2 occupation mode | D5 (U(1) closure) |
+| Spin / orientation | Fold orientation angle θ | D6 (SU(2) closure behavior) |
+| Color charge | SU(3) winding number | D7 (SU(3) closure behavior) |
+| Photon number | D2 occupation mode | D5 (U(1) closure behavior) |
+
+**Note on D-assignments:** The layer column uses the provisional depth markers D3–D7.
+These are working hypotheses about which depth behaviors correspond to which observables,
+not established derivations. See `foundations/depth_assignment.md` for the formal mapping
+problem and the Route B (Hopf fibration) candidate.
 
 † **Note on energy and time:** Energy measurement selects a specific oscillation rate
 ω of the compression field — it forces the field into a stationary-phase (energy
@@ -370,11 +375,15 @@ controlled environments, τ_dec can be seconds or longer.
 
 ## Open Questions
 
-1. **Born rule from nucleation statistics:** The identification P(x) ∝ |ψ(x)|² is
-   physically grounded (detection rate ∝ field energy density) but not formally derived
-   from the kink nucleation statistics of the φ⁴ potential. A rigorous derivation would
-   compute the first-passage time distribution for threshold crossing as a function of
-   local field amplitude and show it gives |ψ|².
+1. **Born rule from nucleation statistics (partially resolved):**
+   - **Spin case (Cycle 38, DERIVED):** P(↑, n̂) = cos²(θ/2) follows from SU(2) spinor
+     geometry + binary nucleation topology — no free parameters. See
+     `foundations/born_rule_derivation.md`.
+   - **Position case (OPEN):** The identification P(x) ∝ |ψ(x)|² requires showing
+     that the φ⁴ nucleation rate Γ(x) is proportional to |φ(x)|². This holds in the
+     quantum-noise-dominated regime (T_eff ~ V(0) − V(φ)), but a rigorous derivation
+     of the Kramers escape rate in DFC terms is needed. See
+     `foundations/kink_nucleation.md` Open Problem 1.
 
 2. **Threshold value from field parameters:** The buckling threshold is set by the potential
    V(φ) = −α/2 φ² + β/4 φ⁴. The precise condition for kink nucleation (as opposed to
@@ -401,3 +410,19 @@ controlled environments, τ_dec can be seconds or longer.
    through the same global field connectivity that produces entanglement. The causal
    structure of this propagation (and why it cannot be used to signal) requires
    development.
+
+---
+
+## Connections
+
+- `foundations/kink_nucleation.md` — two-sector topology proved; binary measurement outcomes;
+  nucleation rate argument for Born rule
+- `foundations/born_rule_derivation.md` — spin Born rule derived (Cycle 38); position rule open
+- `foundations/tsirelson_bound.md` — CHSH ≤ 2√2 proved from SU(2) structure and binary outcomes
+- `foundations/bell_hidden_variables.md` — Bell inequality as DFC substrate nonlocality;
+  no collapse conspiracy required
+- `foundations/substrate.md` — V(φ) = −α/2 φ² + β/4 φ⁴; kink solutions; Schrödinger derived
+- `foundations/depth_assignment.md` — D5/D6/D7 provisional assignments; Route B
+- `equations/quantum_emergence.py` — Schrödinger derivation; born_rule_spin() verified
+- `equations/bell_correlations.py` — E(a,b) = −cos(θ) and CHSH = 2√2 verified numerically
+- `phenomena/quantum/entanglement.md` — Bell resolution; Tsirelson chain closed

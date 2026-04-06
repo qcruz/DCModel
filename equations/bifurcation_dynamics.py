@@ -231,6 +231,25 @@ if __name__ == "__main__":
     print(f"  E_total at D1 in lambda: {E_total_D1:.4e} GeV")
     print(f"  Ratio E_kink/E_total = {E_kink_D1/E_total_D1:.6f}  [= gamma_space ✓]")
 
+    # --- Planck constant hierarchy: S_kink / hbar at each depth
+    print("\n--- Kink Action Hierarchy: S_kink / hbar at each depth ---")
+    print("  S_kink = (8/3) * alpha / sqrt(beta)  [natural units: S in units of hbar]")
+    print(f"  {'D':>4}  {'alpha (GeV^2)':>18}  {'S_kink / hbar':>16}  {'lambda (m)':>14}")
+    print(f"  {'-'*4}  {'-'*18}  {'-'*16}  {'-'*14}")
+    hbar_c_MeV_fm = 197.3     # MeV*fm
+    m_per_GeVinv = hbar_c_MeV_fm * 1e-15 / 1e3    # 1 GeV^-1 in meters
+    for row in depth_results:
+        alpha_d = row['alpha']
+        S_kink_over_hbar = (8.0/3.0) * alpha_d / math.sqrt(beta_inferred)
+        lambda_kink_m = math.sqrt(2.0 / alpha_d) * m_per_GeVinv
+        print(f"  D{row['D']:<3}  {alpha_d:>18.4e}  {S_kink_over_hbar:>16.4e}  {lambda_kink_m:>14.3e}")
+    S_kink_D1 = (8.0/3.0) * alpha_D1 / math.sqrt(beta_inferred)
+    print(f"\n  S_kink(D1) / hbar = {S_kink_D1:.3e}")
+    print(f"  S_kink(D5) / hbar = {(8.0/3.0) * depth_results[-1]['alpha'] / math.sqrt(beta_inferred):.3e}")
+    print(f"  Bifurcations to reach S_kink = hbar: ~{math.log10(S_kink_D1)/3:.1f}")
+    print(f"  NOTE: See foundations/planck_constant_derivation.md for interpretation.")
+    print(f"  The hierarchy S_kink/hbar = 4e39 is the DFC form of the hierarchy problem.")
+
     # --- Gauge co-crystallization (gamma -> 0)
     print("\n--- Why gamma -> 0 at D5/D6 Co-Crystallization ---")
     print(f"  At D5, the macroscopic coherence length L_macro >> lambda_D5.")
