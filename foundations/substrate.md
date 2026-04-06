@@ -145,10 +145,29 @@ rigorously derived.
 
 ## Open Problems in DFC
 
-**Critical (must solve for QM compatibility):**
-- How do complex amplitudes emerge from the substrate? DFC currently describes classical field
-  dynamics. The Schrödinger equation's complex structure (iℏ ∂/∂t) has no substrate derivation.
-- Where does ℏ come from? It must emerge from the characteristic scales of the substrate.
+**Derived (no longer open):**
+- **Schrödinger equation from substrate:** The free-particle Schrödinger equation, full Schrödinger
+  equation with potential, Heisenberg uncertainty, and [x̂,p̂]=iℏ are all derived from the
+  compression field via linearization + NR decomposition. See `equations/quantum_emergence.py`.
+  The quantum phase is identified as the fold orientation angle θ ∈ [0,2π). Status: DERIVED.
+- **Tsirelson bound from SU(2):** CHSH ≤ 2√2 proved from C²=4I⊗I−[A₁,A₂]⊗[B₁,B₂] and
+  SU(2) commutator norm ≤ 2. See `foundations/tsirelson_bound.md`. Status: PROVED.
+- **Binary measurement outcomes from topology:** The φ⁴ kink has exactly two topological
+  sectors (N=±1), and V''(0) = −α < 0 guarantees binary nucleation. See
+  `foundations/kink_nucleation.md`. Status: PROVED (topology + instability analysis).
+- **γ_D = (16/3)√β from substrate:** The compression fraction per spacetime bifurcation is
+  derived from E_kink/E_total — all α, c dependence cancels. β ≈ 0.035 inferred from
+  γ_space ≈ 0.999. See `foundations/bifurcation_dynamics.md`. Status: DERIVED.
+
+**Critical (must solve for full QM):**
+- **Born rule from nucleation statistics:** P = |ψ|² is identified with the nucleation rate
+  ∝ |φ|², but a rigorous derivation from φ⁴ first-passage statistics is open.
+  See `foundations/kink_nucleation.md` Open Problem 1 and `equations/quantum_emergence.py`.
+- **ℏ in SI units:** The formula ℏ ~ E_kink × λ = (8/3)c²√(α/β) is dimensionally correct
+  but requires (α, β, c) in SI units to give a number. The Planck-scale calibration is open.
+  See `equations/planck_constant.py`.
+- **Second quantization:** ψ → field operator ψ̂ (quantum field theory from substrate).
+  Not yet derived. See `equations/quantum_emergence.py` open problems.
 
 **High priority:**
 - Derive Einstein field equations as an effective description of substrate alignment dynamics
@@ -156,18 +175,25 @@ rigorously derived.
 - Derive the form V(φ) = −α/2 φ² + β/4 φ⁴ from D1 compression dynamics — the double-well
   potential is the minimal Lorentz-invariant scalar form with stable kinks, but it is
   postulated, not derived from the near-D1 mechanics
+- Derive β ≈ 0.035 from a pre-substrate principle (all four candidate routes fail currently;
+  see `equations/beta_substrate.py`)
 
 **Medium priority:**
 - Connect closure stability to quantum error correction (suggestive formal parallels)
-- Derive Bekenstein entropy bounds from compression budget
+- Derive Bekenstein entropy bounds from compression budget (`equations/holographic_entropy.py` — STUB)
 - Explain CP violation from DFC asymmetry principles
+- Derive coupling constants α_em, g_W, g_s from (α, β, c) (`equations/coupling_derivation.py` — 8.6× mismatch)
 
 ---
 
-## Source Documents
+## Key Cross-References
 
-The DFC framework is documented in detail in:
-- `archive/dfc_paper_draft.md`
-- `archive/source_latex_p1-7.txt` (LaTeX source, full paper draft)
-
-See also `../equations/kink_model.py` for the kink solution implementation.
+- `foundations/kink_nucleation.md` — two-sector topology; binary outcomes; Born rule open
+- `foundations/bifurcation_dynamics.md` — γ_D = (16/3)√β; β ≈ 0.035; kink width = Planck length
+- `foundations/kink_scattering.md` — Pöschl-Teller spectrum; shape mode ω₁ = (√3/2)m_σ
+- `foundations/bell_hidden_variables.md` — Bell Assumption 2 violated by D1/D2 connectivity
+- `foundations/tsirelson_bound.md` — CHSH ≤ 2√2 proved from SU(2) closure algebra
+- `foundations/measurement.md` — measurement as buckling threshold crossing
+- `equations/quantum_emergence.py` — Schrödinger equation derived; Born rule open
+- `equations/kink_model.py` — kink solution, energy, width (verified)
+- `equations/bell_correlations.py` — CHSH = 2√2 verified (error 4×10^-16)

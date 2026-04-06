@@ -17,11 +17,23 @@ The model:
     Kink energy (mass analog):
         E_kink = (4/3) c √(2α³/β)
 
+Key results:
+  - Stable vacua at φ₀ = ±√(α/β)
+  - Kink width λ = √(2c²/α)
+  - Kink energy E_kink = (4/3)c√(2α³/β)  [topologically protected]
+  - Barrier ΔV = α²/(4β)  [sector separation; ΔV/E_kink ≈ 0.71 at β=0.035]
+  - V''(0) = −α < 0 (saddle, unstable); V''(φ₀) = 2α > 0 (stable minimum)
+  - Two topological sectors: N=+1 (kink) and N=−1 (antikink); see kink_nucleation.md
+
+Key references:
+  foundations/substrate.md           — substrate postulates and kink interpretation
+  foundations/kink_nucleation.md     — two-sector topology; binary measurement outcomes
+  foundations/kink_scattering.md     — Pöschl-Teller spectrum; shape mode ω₁ = (√3/2)m_σ
+  foundations/bifurcation_dynamics.md — γ_D = (16/3)√β derived; β ≈ 0.035 inferred
+  equations/kink_scattering.py       — fluctuation spectrum (verified numerically)
+
 Usage:
     python equations/kink_model.py
-
-    Or:
-        from equations.kink_model   KinkDynamics
 """
 
 import math
@@ -256,14 +268,18 @@ if __name__ == "__main__":
     print(f"  Kink width λ = {lam:.4f}")
     print(f"  Kink energy  = {E:.4f}  (mass analog, finite, topologically protected)")
 
+    rho_vac = potential_energy(-math.sqrt(alpha/beta), alpha, beta)  # = -alpha^2/(4*beta)
+
     print(f"\n--- Field Profile (kink centered at x₀ = 0) ---")
-    print(f"  {'x':>8}  {'φ(x)':>10}  {'ρ(x)':>12}")
-    print(f"  {'-'*8}  {'-'*10}  {'-'*12}")
+    print(f"  Note: ρ(x) = absolute energy density; ρ_vac = {rho_vac:.4f} (vacuum baseline).")
+    print(f"  The kink energy E={E:.4f} = ∫(ρ(x) - ρ_vac) dx  [excess above vacuum].")
+    print(f"  {'x':>8}  {'φ(x)':>10}  {'ρ(x)':>12}  {'ρ−ρ_vac':>12}")
+    print(f"  {'-'*8}  {'-'*10}  {'-'*12}  {'-'*12}")
     for x in [-3*lam, -2*lam, -lam, 0, lam, 2*lam, 3*lam]:
         phi = kink_solution(x, 0, alpha, beta, c)
         grad = kink_gradient(x, 0, alpha, beta, c)
         rho = energy_density(phi, grad, alpha, beta, c)
-        print(f"  {x:8.4f}  {phi:10.6f}  {rho:12.6f}")
+        print(f"  {x:8.4f}  {phi:10.6f}  {rho:12.6f}  {rho - rho_vac:12.6f}")
 
     print(f"\n--- Physical Interpretation ---")
     print(f"  Kink = stable closure = particle (mass analog)")
