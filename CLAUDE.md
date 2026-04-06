@@ -109,9 +109,9 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~16%  (viability: ~31.5%, mathematical rigor: ~12.5%)
-Key bottleneck: D-depth assignment mechanism; derive γ_space from (α, β, c); no S-matrix
-Next milestone: derive γ_space (compression budget per bifurcation) from substrate parameters; confirm M_c(D7) ≈ 8×10^14 GeV from equal-coupling on α_s
+Current estimate: ~17%  (viability: ~32%, mathematical rigor: ~14%)
+Key bottleneck: D-depth assignment mechanism; derive β from pre-substrate principle; no S-matrix
+Next milestone: derive β ≈ 0.035 from first principles (closes γ_space derivation chain); confirm M_c(D7) ≈ 8×10^14 GeV from equal-coupling on α_s; resolve D-label scheme A/B unification
 ```
 
 **Push history (viability / rigor / overall):**
@@ -131,6 +131,7 @@ Next milestone: derive γ_space (compression budget per bifurcation) from substr
 | 2026-04-05 | 29 | d_depth_lagrangians.md written (closure scale = √(α/2), effective gauge Lagrangians from DFC scalar, depth-running problem formalized, derivation sequence mapped); spin_emergence audited (cross-refs, language fixes); mass_spectrum.py audited (tau 8.4× failure prominently labeled, fine-tuning problem documented, "extra dimension" language removed); mass_hierarchy.md updated | 30% | 10% | ~14.5% |
 | 2026-04-05 | 30 | k_Y = 3/5 DERIVED (not borrowed): from DFC equal-coupling + SM matter content Dynkin index matching; verified numerically; all anomaly conditions satisfied; sin²θ_W error +0.050%; Open Problem 4 in embedding_geometry.md resolved; hypercharge_normalization.md + .py new | 31% | 12% | ~15.5% |
 | 2026-04-05 | 31 | Depth-running exploration: uniform γ falsified by co-crystallization; two-scale model (γ_space >> γ_weak≈0) self-consistent; M_c(D7) ≈ 8×10^14 GeV predicted from equal-coupling on α_s; depth-order ≠ energy-order structural finding; depth_running.md + .py new | 31.5% | 12.5% | ~16% |
+| 2026-04-05 | 32 | γ_D = (16/3)√β DERIVED from E_kink/E_total(λ) — all α,c dependence cancels; β ≈ 0.035 inferred; kink width at D1 = Planck length (self-consistent); D-label Scheme A/B ambiguity formally documented in bifurcation.py; bifurcation_dynamics.md + .py new | 32% | 14% | ~17% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
@@ -264,7 +265,7 @@ Always maintain this distinction explicitly. The model's credibility depends on 
 
 **Correspondences (consistent but not derived):**
 - D5 ↔ U(1), D6 ↔ SU(2), D7 ↔ SU(3) assignments
-- V(φ) = −α/2 φ² + β/4 φ⁴ (postulated, not derived from D1)
+- V(φ) = −α/2 φ² + β/4 φ⁴ (postulated, not derived from D1); quartic coupling β ≈ 0.035 inferred from γ_space via γ = (16/3)√β
 - Weinberg angle sin²θ_W ≈ 0.231 (Route 3B gives 0.231 from equal-coupling initial condition + SM running; k_Y = 3/5 now derived from Dynkin normalization condition on SM matter content — no GUT needed; M_c(12) from SM running, not substrate parameters — remaining open item)
 
 ---

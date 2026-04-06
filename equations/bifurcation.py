@@ -39,12 +39,26 @@ import math
 # These are provisional fits to the observed particle spectrum
 # (see foundations/dimensional_stack.md)
 #
-# NOTE ON D-LABEL AMBIGUITY: The gauge structure assignments (D5=U(1), D6=SU(2),
-# D7=SU(3)) and the particle mass scale assignments below use the same D-labels
-# but may refer to different behaviors on the continuous substrate. The table
-# below maps D-depth indices to particle mass scales; the closure/gauge
-# topology assignments are a separate (and not yet fully reconciled) mapping.
-# These assignments are working hypotheses, not derived results.
+# NOTE ON D-LABEL AMBIGUITY (TWO INCOMPATIBLE SCHEMES):
+#
+# Scheme A (THIS FILE): D-labels index particle mass scales.
+#   D5 = electron (0.511 MeV), D6 = muon (105.7 MeV), D7 = LAMBDA_QCD (0.2 GeV)
+#   D10 = electroweak scale (246 GeV)
+#
+# Scheme B (equations/depth_running.py, Route 3B, all Weinberg angle work):
+#   D5 = U(1) gauge closure at M_c ~ 10^13 GeV
+#   D6 = SU(2) closure (co-crystallizes with D5)
+#   D7 = SU(3) closure at ~ 8 x 10^14 GeV
+#
+# These are DIFFERENT MAPPINGS of the same continuous substrate. Do NOT mix
+# D-labels from the two schemes. All quantitative predictions (Weinberg angle,
+# hypercharge normalization, depth-running) use Scheme B.
+#
+# The unification of both schemes — showing how Scheme B gauge closure thresholds
+# determine the Scheme A particle mass spectrum — is an open problem.
+# See foundations/bifurcation_dynamics.md for full discussion.
+#
+# The assignments below (Scheme A) are phenomenological working hypotheses.
 
 DIMENSIONAL_LAYERS = {
     1: {'name': 'Unity/Compression',    'energy_scale_gev': None,       'description': 'D1 — maximal compression, no separable structure'},
@@ -129,9 +143,18 @@ def fit_gamma_from_spectrum():
     """
     Fit the bifurcation growth rate γ from the observed particle energy spectrum.
 
-    Uses two anchor points:
+    Uses two anchor points (SCHEME A — particle mass scale D-labels):
       - D5 layer: electron mass ~ 5.11 × 10⁻⁴ GeV
-      - Closure scale: M_c ~ 10¹⁸ GeV
+      - Closure scale: M_c ~ 10¹⁸ GeV (Planck-scale anchor; D18 in Scheme A)
+
+    WARNING: This function uses SCHEME A D-labels (particle mass scales), which
+    are inconsistent with SCHEME B D-labels (gauge closure thresholds) used in
+    equations/depth_running.py and all Route 3B work. The "closure scale" here
+    at 10^18 GeV at D18 ≠ the Route 3B closure scale 10^13 GeV at D5 (Scheme B).
+    Do not use this function's gamma as input to the two-scale depth-running model.
+
+    For the physically derived gamma connecting to the substrate parameters, see:
+    equations/bifurcation_dynamics.py  (gamma = (16/3) * sqrt(beta))
 
     The ratio of thresholds over 13 bifurcation steps gives γ.
 
@@ -139,10 +162,10 @@ def fit_gamma_from_spectrum():
     -------
     dict with fitted parameters.
     """
-    n_electron = 4         # D5 = 4 bifurcations from D1
-    n_closure  = 17        # closure scale = ~17 bifurcations from D1
+    n_electron = 4         # D5 = 4 bifurcations from D1 (Scheme A)
+    n_closure  = 17        # closure scale = ~17 bifurcations from D1 (Scheme A)
     E_electron = 5.11e-4   # GeV
-    E_closure  = 1e18      # GeV
+    E_closure  = 1e18      # GeV  [Scheme A closure scale; NOT Route 3B M_c = 10^13 GeV]
 
     delta_n = n_closure - n_electron
     gamma = math.log(E_closure / E_electron) / delta_n

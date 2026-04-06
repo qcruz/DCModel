@@ -54,6 +54,7 @@ foundations/              Core concepts, thought experiments, and structural arg
   mass_hierarchy.md       Electron/muon mass ratio from geometric defect
   substrate.md            Mathematical substrate framework (kink model, postulates)
   embedding_geometry.md   Weinberg angle from equal-coupling initial conditions (Route 3B)
+  bifurcation_dynamics.md γ_D = (16/3)√β derived; β ≈ 0.035; Planck-length kink width; D-label disambiguation
 
 equations/                Runnable Python modules — input data, get predictions
   constants.py            Physical constants (PDG 2024), particle masses, SM couplings
@@ -63,6 +64,7 @@ equations/                Runnable Python modules — input data, get prediction
   gauge_couplings.py      Running couplings, squashing correction, pairwise crossings
   proton_stability.py     Proton lifetime bounds, sphaleron rate, experiment comparison
   weinberg_angle_rg.py    sin²θ_W = 3/8 at closure scale → 0.231 via RG running (Route 3B)
+  bifurcation_dynamics.py γ_D = (16/3)√β verified; β = 0.035; M_c(D5) reproduced exactly
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
@@ -123,7 +125,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~16%** (viability as a theory: ~31.5%; mathematical rigor: ~12.5%)
+**Current estimate: ~17%** (viability as a theory: ~32%; mathematical rigor: ~14%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
@@ -133,11 +135,12 @@ is that it *derives* rather than *reconstructs* the Standard Model. Three bottle
 2. **First-principles coupling constants** — α_s, sin²θ_W, g_W (Route 3B gives sin²θ_W = 0.231 from equal-coupling initial condition + SM running; deriving M_c from substrate parameters is the next step)
 3. **S-matrix derivation** — no scattering amplitude has been computed from substrate dynamics
 
-The next highest-value step: derive M_c(12) ≈ 10^13 GeV from substrate parameters (α, β, c)
-rather than reading it from observed SM running. Moving any bottleneck to "derived" shifts
-the estimate materially. The d_depth_lagrangians framework (Cycle 29) establishes that
-M_c(D) = √(α_D/2) and maps the derivation sequence — what remains is deriving how α runs
-with compression depth from D1 to D5/D6/D7.
+The next highest-value step: derive β ≈ 0.035 from a pre-substrate principle, which would
+complete the γ_space derivation chain (γ_D = (16/3)√β was derived in Cycle 32 from
+E_kink/E_total at one coherence volume — all α,c dependence cancels; β is the sole remaining
+free parameter in the depth-running sector). A complementary target: derive M_c(12) from
+substrate parameters rather than SM running. The d_depth_lagrangians framework (Cycle 29)
+maps the full derivation sequence from D1 to D5/D6/D7.
 
 *Updated after every push. Full history in `CLAUDE.md`.*
 
