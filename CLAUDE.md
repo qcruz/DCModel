@@ -109,9 +109,9 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~18%  (viability: ~32.5%, mathematical rigor: ~15.5%)
-Key bottleneck: D-depth assignment mechanism; derive β from pre-substrate principle; Born-level S-matrix done, exact S-matrix and 3+1D extension open
-Next milestone: 3+1D kink scattering (Skyrme model); shape mode correspondence to observed particle splittings; derive β from pre-substrate principle
+Current estimate: ~19%  (viability: ~33%, mathematical rigor: ~16%)
+Key bottleneck: D-depth assignment mechanism; derive β from pre-substrate principle; Assumption 2 violation formal proof; exact S-matrix and 3+1D extension open
+Next milestone: Tsirelson bound formal proof from SU(2) closure; derive β from coupling derivation chain; 3+1D kink scattering
 ```
 
 **Push history (viability / rigor / overall):**
@@ -133,6 +133,8 @@ Next milestone: 3+1D kink scattering (Skyrme model); shape mode correspondence t
 | 2026-04-05 | 31 | Depth-running exploration: uniform γ falsified by co-crystallization; two-scale model (γ_space >> γ_weak≈0) self-consistent; M_c(D7) ≈ 8×10^14 GeV predicted from equal-coupling on α_s; depth-order ≠ energy-order structural finding; depth_running.md + .py new | 31.5% | 12.5% | ~16% |
 | 2026-04-05 | 32 | γ_D = (16/3)√β DERIVED from E_kink/E_total(λ) — all α,c dependence cancels; β ≈ 0.035 inferred; kink width at D1 = Planck length (self-consistent); D-label Scheme A/B ambiguity formally documented in bifurcation.py; bifurcation_dynamics.md + .py new | 32% | 14% | ~17% |
 | 2026-04-05 | 33 | First S-matrix from DFC substrate: shape mode ω₁ = (√3/2)m_σ parameter-free (Pöschl-Teller n=2 spectrum, exact); kink-antikink Born phase shift δ(k) = 4m_σ/(βk); Levinson consistency verified; kink_scattering.md + .py new; formation.md audited (added cross-refs + quantitative γ note) | 32.5% | 15.5% | ~18% |
+| 2026-04-05 | Prep | Equation stubs (11 modules) + comparisons/swot.md — roadmap to completeness | — | — | — |
+| 2026-04-05 | 34 | Bell/DFC hidden variable formalization: Assumption 2 violated by D1/D2 substrate connectivity (not conspiracy); E(a,b) = -cos(θ) verified; CHSH = 2√2 ≈ 2.828 verified to 4×10^-16; no-signaling P(A)=0.5 verified; Tsirelson bound from SU(2) geometry (formal proof OPEN); bell_hidden_variables.md + bell_correlations.py new | 33% | 16% | ~19% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
