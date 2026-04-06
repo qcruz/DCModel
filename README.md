@@ -67,6 +67,18 @@ equations/                Runnable Python modules — input data, get prediction
   weinberg_angle_rg.py    sin²θ_W = 3/8 at closure scale → 0.231 via RG running (Route 3B)
   bifurcation_dynamics.py γ_D = (16/3)√β verified; β = 0.035; M_c(D5) reproduced exactly
   kink_scattering.py      Pöschl-Teller spectrum; shape mode = 0.8660 m_σ; Born phase shift
+  [STUBS — targets for future development]
+  s_matrix.py             Full S-matrix beyond Born; exact kink-antikink; 3+1D Skyrme
+  coupling_derivation.py  α_em, g_W, g_s from substrate (α, β, c) — Bottleneck 2
+  planck_constant.py      ℏ from DFC substrate characteristic scales
+  dark_matter.py          Stable intermediate kink modes as dark matter candidates
+  cosmological_constant.py  Λ from residual compression budget
+  beta_substrate.py       Derive β ≈ 0.035 from pre-substrate principle
+  fermion_spectrum_full.py  Full lepton+quark mass spectrum (τ/top failures to fix)
+  holographic_entropy.py  Bekenstein-Hawking from closure capacity
+  baryogenesis.py         Matter-antimatter asymmetry at D7 phase transition
+  inflation.py            Inflation as D1→D4 bifurcation cascade; n_s prediction
+  scattering_cross_sections.py  σ_Thomson, Compton, e+e- from DFC substrate
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
@@ -83,6 +95,7 @@ phenomena/                Natural language explanations of physical observations
     heat_and_conductivity.md  Heat, conduction, resistance, radiation unified
 
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
+  swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories
 archive/                  Original source documents
 data/                     Observational reference values (PDG, cosmological)
 ```
