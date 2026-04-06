@@ -59,6 +59,7 @@ foundations/              Core concepts, thought experiments, and structural arg
   bell_hidden_variables.md  DFC Bell resolution: Assumption 2 violated by D1/D2 connectivity; not conspiracy
   tsirelson_bound.md        Tsirelson CHSH ≤ 2√2 proved: C²=4I⊗I−[A₁,A₂]⊗[B₁,B₂]; SU(2) commutator norm ≤ 2
   kink_nucleation.md        Two-sector topology proved (φ⁴ kink); binary measurement outcomes; Born rule open
+  depth_assignment.md       D-depth assignment problem: 5 constraints; Route B (Hopf S¹→S³→S⁵) most promising
 
 equations/                Runnable Python modules — input data, get predictions
   constants.py            Physical constants (PDG 2024), particle masses, SM couplings
@@ -143,7 +144,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~21%** (viability as a theory: ~34%; mathematical rigor: ~18%)
+**Current estimate: ~21.5%** (viability as a theory: ~34.5%; mathematical rigor: ~18%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established

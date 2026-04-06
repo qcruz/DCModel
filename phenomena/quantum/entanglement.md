@@ -248,11 +248,13 @@ configuration, which would require energy that the measurement device does not p
    boundary conditions and show the cos(θ) dependence follows from the substrate's SU(2)
    closure geometry.
 
-2. **The Tsirelson bound from DFC.** Quantum mechanics has a maximum Bell violation of
-   2√2 (Tsirelson bound). Why not larger? In DFC, the bound should follow from a
-   property of the D6 SU(2) geometry — the maximum correlations achievable with SU(2)
-   spinors. Whether the Tsirelson bound can be derived from the substrate's SU(2) closure
-   topology is an open question with potential discriminating power.
+2. **[RESOLVED — Cycle 35] Tsirelson bound from DFC.** The bound CHSH ≤ 2√2 is now
+   proved from the algebraic identity C² = 4I⊗I − [A₁,A₂]⊗[B₁,B₂] combined with
+   ‖[A_i,A_j]‖_op ≤ 2 for SU(2). See `foundations/tsirelson_bound.md` for the full
+   proof, and `equations/bell_correlations.py` for numerical verification (error 4×10⁻¹⁶).
+   The bound follows from the D6 SU(2) closure giving binary observables + commutator
+   norm ≤ 2. The discriminating prediction: if D6 had a different (non-SU(2)) geometry,
+   the bound could differ — CHSH > 2√2 would falsify the D6 = SU(2) assignment.
 
 3. **Entanglement over cosmological distances.** Satellite experiments (Micius, 2017)
    verified entanglement at 1200 km. The DFC global field connectivity extends in
@@ -273,6 +275,14 @@ configuration, which would require energy that the measurement device does not p
 
 ## Connections
 
+- **Bell hidden variables** — DFC Bell resolution: Assumption 2 violated by D1/D2 substrate
+  connectivity (not conspiracy); hidden variable λ = φ(D1..D4); `foundations/bell_hidden_variables.md`
+- **Tsirelson bound** — CHSH ≤ 2√2 proved algebraically from SU(2) closure algebra;
+  `foundations/tsirelson_bound.md`
+- **Kink nucleation** — two-sector topology (N=±1); binary measurement outcomes from
+  φ⁴ instability; `foundations/kink_nucleation.md`
+- **Bell correlations** — E(a,b)=−cos(θ) and CHSH=2√2 verified numerically;
+  `equations/bell_correlations.py`
 - **Measurement** — kink nucleation as the measurement event that resolves the global
   constraint; `foundations/measurement.md`
 - **Quantum mechanics** — superposition and global field states; `phenomena/quantum/quantum_mechanics.md`

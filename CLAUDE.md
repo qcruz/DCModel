@@ -109,9 +109,9 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~21%  (viability: ~34%, mathematical rigor: ~18%)
-Key bottleneck: D-depth assignment mechanism; derive β from pre-substrate principle; Born rule from nucleation statistics; exact S-matrix and 3+1D extension open
-Next milestone: Born rule from φ⁴ first-passage statistics; derive β from coupling derivation chain; 3+1D kink scattering
+Current estimate: ~21.5%  (viability: ~34.5%, mathematical rigor: ~18%)
+Key bottleneck: D-depth assignment mechanism (Route B Hopf fibration candidate identified); Born rule from nucleation statistics; exact S-matrix and 3+1D extension open
+Next milestone: DOF count per bifurcation from substrate dynamics (Route B); Born rule from φ⁴ first-passage statistics; 3+1D kink scattering
 ```
 
 **Push history (viability / rigor / overall):**
@@ -137,6 +137,7 @@ Next milestone: Born rule from φ⁴ first-passage statistics; derive β from co
 | 2026-04-05 | 34 | Bell/DFC hidden variable formalization: Assumption 2 violated by D1/D2 substrate connectivity (not conspiracy); E(a,b) = -cos(θ) verified; CHSH = 2√2 ≈ 2.828 verified to 4×10^-16; no-signaling P(A)=0.5 verified; Tsirelson bound from SU(2) geometry (formal proof OPEN); bell_hidden_variables.md + bell_correlations.py new | 33% | 16% | ~19% |
 | 2026-04-05 | 35 | Tsirelson bound PROVED algebraically: C² = 4I⊗I − [A₁,A₂]⊗[B₁,B₂] → λ_max=8 → ‖C‖≤2√2; identity error 9×10^-16; commutator norms = 2.000000 exactly at optimal angles; tsirelson_proof() function verified; three_generations.md audited (bifurcation_dynamics + fermion_spectrum_full cross-refs added); gauge_couplings.py audited (M_c(D5) consistency note added; squashing_correction PLACEHOLDER clearly labeled) | 33.5% | 17% | ~20% |
 | 2026-04-05 | 36 | kink_nucleation.md (new): two-sector topology proved (π₀ of φ⁴ configs = Z₂ for |N|=1); V''(0)=−α<0 saddle instability; ΔV/E_kink=0.71 at β=0.035; nucleation binary by continuity; Tsirelson chain now closed conditional only on D6=φ⁴; Born rule from first-passage stats remains open. substrate.md audited: Open Problems updated (Schrödinger DERIVED, binary outcomes PROVED; Born rule + ℏ still open); cross-refs to Cycles 32–36 added. kink_model.py audited: stale KinkDynamics reference removed; cross-refs added; ρ(x) profile now shows ρ−ρ_vac (excess above vacuum) alongside absolute density | 34% | 18% | ~21% |
+| 2026-04-05 | 37 | depth_assignment.md (new): formal mapping of Bottleneck 1; 5 structural constraints identified; Route B (Hopf fibrations: S¹→S³→S⁵ at D5/D6/D7 gives U(1)/SU(2)/SU(3) isometry groups) identified as most promising; DOF count per bifurcation from substrate dynamics is the key missing derivation; termination at SU(3) conjectured from D7 confinement. entanglement.md audited: Tsirelson open question marked RESOLVED (Cycle 35); Cycles 34–36 cross-refs added. weinberg_angle_rg.py audited: k_Y=3/5 RESOLVED note added (Cycle 30 derivation); M_c(12) from substrate marked as remaining open; depth_assignment.md referenced | 34.5% | 18% | ~21.5% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:

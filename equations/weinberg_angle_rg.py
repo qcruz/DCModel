@@ -42,8 +42,10 @@ STATUS:
   - The physical sin²θ_W(M_Z) = 0.231 is reproduced at this scale.
   - Whether the D5/D6 equal-coupling scale M_c ≈ 10^13 GeV is consistent with
     other DFC scales (Higgs closure scale ~10^18 GeV) is an open tension.
-  - The 3/5 hypercharge normalization factor is borrowed from GUT embedding
-    arguments; its derivation from D5 closure geometry is an open problem.
+  - The 3/5 hypercharge normalization factor k_Y = 3/5 is DERIVED (Cycle 30)
+    from the Dynkin index matching condition on SM matter content — no GUT group
+    needed. See foundations/hypercharge_normalization.md and
+    equations/hypercharge_normalization.py.
 
 Usage:
     python3 equations/weinberg_angle_rg.py
@@ -284,7 +286,9 @@ if __name__ == "__main__":
     print(f"  3. α₃ (SU(3)) does NOT equal α₁,α₂ at 10^13 GeV. This is structurally")
     print(f"     acceptable if D7 emergence scale differs from D5/D6 (product topology),")
     print(f"     but the equal-coupling argument for α₃ needs a separate treatment.")
-    print(f"  4. The factor 3/5 (hypercharge normalization) must be derived from")
-    print(f"     D5 closure geometry, not borrowed from SU(5) embedding.")
+    print(f"  4. [RESOLVED Cycle 30] k_Y = 3/5 DERIVED from Dynkin index matching on SM")
+    print(f"     matter content — no GUT group needed. See hypercharge_normalization.py.")
     print(f"  5. Two-loop and threshold corrections shift predictions by ~2%; not implemented.")
-    print(f"  See: foundations/embedding_geometry.md, foundations/higgs_geometry.md")
+    print(f"  6. M_c(12) ≈ 10^13 GeV not yet derived from substrate parameters (α,β,c).")
+    print(f"     See foundations/depth_assignment.md for the D-depth assignment problem.")
+    print(f"  See: foundations/embedding_geometry.md, foundations/hypercharge_normalization.md")
