@@ -243,12 +243,17 @@ the generation count:
   `foundations/product_geometry.md`
 - **Dimensional stack** — D5/D6/D7 closure depths and their physical assignments;
   `foundations/dimensional_stack.md`
+- **Bifurcation dynamics** — γ_D = (16/3)√β derived; the compression fraction per spacetime
+  bifurcation sets the depth-running of closure scales (M_c per D-depth);
+  `foundations/bifurcation_dynamics.md`
 - **Higgs geometry** — the S³ closure at D6 and its role in mass generation;
   `foundations/higgs_geometry.md`
 - **Quark mass predictions** — depth-anchoring model with κ_q, isospin splitting;
   `equations/quark_masses.py`
 - **Neutrino mass predictions** — sub-D4 double-suppression model;
   `equations/neutrino_masses.py`
+- **Full fermion spectrum (stubs + failures)** — τ mass 8.4× failure and top/bottom
+  unaddressed; `equations/fermion_spectrum_full.py`
 - **Proton stability** — product geometry forbids X/Y bosons and proton decay;
   `phenomena/particle_physics/proton_stability.md`
 - **Route 1 (Skyrme)** — topological soliton approach to spin quantum numbers;

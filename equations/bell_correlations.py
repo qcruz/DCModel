@@ -12,8 +12,11 @@ Key results:
   2. CHSH S = 2*sqrt(2)       [Tsirelson bound saturated, verified]
   3. Bell inequality violated: S = 2.828 > 2 (classical limit)
   4. No signaling: marginal probabilities unchanged by remote measurement
+  5. Tsirelson proof: C^2 = 4*I - [A1,A2] x [B1,B2] => ||C|| <= 2*sqrt(2) [PROVED]
 
-Key reference: foundations/bell_hidden_variables.md
+Key references:
+  foundations/bell_hidden_variables.md
+  foundations/tsirelson_bound.md  (Cycle 35: formal proof)
 
 Usage:
     python3 equations/bell_correlations.py
@@ -172,6 +175,80 @@ def chsh_value(theta_a, theta_ap, theta_b, theta_bp):
     return S
 
 
+def tsirelson_proof(theta_a=0.0, theta_ap=None, theta_b=None, theta_bp=None):
+    """
+    Numerical verification of the Tsirelson bound algebraic proof.
+
+    Key identity: C² = 4*I⊗I − [A₁,A₂]⊗[B₁,B₂]
+    Bound: ‖C‖_op = sqrt(lambda_max(C²)) ≤ sqrt(8) = 2*sqrt(2)
+
+    For optimal angles (a=0°, a'=90°, b=45°, b'=135°):
+      [A₁,A₂] = [σ_z, σ_x] = 2i σ_y  → ‖[A₁,A₂]‖_op = 2
+      [B₁,B₂] perpendicular → ‖[B₁,B₂]‖_op = 2
+      λ_max(C²) = 4 + 4 = 8 exactly → ‖C‖ = 2√2
+
+    Returns
+    -------
+    dict with:
+      'C_norm_op'      : operator norm of CHSH operator C (≤ 2√2)
+      'lambda_max_C2'  : maximum eigenvalue of C²
+      'commutator_A_norm': ‖[A₁,A₂]‖_op
+      'commutator_B_norm': ‖[B₁,B₂]‖_op
+      'tsirelson_bound': 2*sqrt(2)
+      'bound_respected': bool
+    """
+    if theta_ap is None:
+        theta_ap = math.pi / 2
+    if theta_b is None:
+        theta_b = math.pi / 4
+    if theta_bp is None:
+        theta_bp = 3 * math.pi / 4
+
+    # Measurement directions
+    def n_hat(theta):
+        return np.array([math.sin(theta), 0.0, math.cos(theta)])
+
+    A1 = spin_operator(n_hat(theta_a))
+    A2 = spin_operator(n_hat(theta_ap))
+    B1 = spin_operator(n_hat(theta_b))
+    B2 = spin_operator(n_hat(theta_bp))
+
+    # CHSH operator C = A1 ⊗ (B1+B2) + A2 ⊗ (B1-B2)
+    M = B1 + B2
+    N = B1 - B2
+    C = np.kron(A1, M) + np.kron(A2, N)
+
+    # C²
+    C2 = C @ C
+
+    # Key identity check: C² = 4*I⊗I - [A1,A2]⊗[B1,B2]
+    I4 = np.eye(4, dtype=complex)
+    comm_A = A1 @ A2 - A2 @ A1   # [A₁,A₂]
+    comm_B = B1 @ B2 - B2 @ B1   # [B₁,B₂]
+    C2_identity = 4.0 * I4 - np.kron(comm_A, comm_B)
+
+    # Operator norms (largest singular value)
+    comm_A_norm = np.linalg.norm(comm_A, ord=2)
+    comm_B_norm = np.linalg.norm(comm_B, ord=2)
+
+    # Eigenvalues of C²
+    eigvals_C2 = np.linalg.eigvalsh(C2)
+    lambda_max = np.max(eigvals_C2.real)
+    C_norm_op = math.sqrt(max(lambda_max, 0.0))
+
+    tsirelson = 2.0 * math.sqrt(2.0)
+
+    return {
+        'C_norm_op':         C_norm_op,
+        'lambda_max_C2':     lambda_max,
+        'tsirelson_bound':   tsirelson,
+        'bound_respected':   C_norm_op <= tsirelson + 1e-10,
+        'commutator_A_norm': comm_A_norm,
+        'commutator_B_norm': comm_B_norm,
+        'C2_identity_error': np.max(np.abs(C2 - C2_identity)),
+    }
+
+
 # ── Main output ───────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -244,6 +321,18 @@ if __name__ == "__main__":
             # P(A=up, B=up) = (1 - E)/4, P(A=up, B=dn) = (1 + E)/4
             P_A_up = 0.25 * (1 - Eab) + 0.25 * (1 + Eab)   # = 0.5 exactly
         print(f"  theta_A={theta_a_deg:3d}°, theta_B=any: P(A=up) = {P_A_up:.6f}  [= 0.5 ✓]")
+
+    print("\n--- Tsirelson Bound Algebraic Proof Verification ---")
+    proof = tsirelson_proof()
+    print(f"  Key identity: C² = 4*I⊗I − [A₁,A₂]⊗[B₁,B₂]")
+    print(f"  Identity error:         {proof['C2_identity_error']:.2e}  [should be ~0]")
+    print(f"  ‖[A₁,A₂]‖_op =        {proof['commutator_A_norm']:.6f}  [≤ 2 for SU(2)]")
+    print(f"  ‖[B₁,B₂]‖_op =        {proof['commutator_B_norm']:.6f}  [≤ 2 for SU(2)]")
+    print(f"  λ_max(C²) =            {proof['lambda_max_C2']:.6f}  [≤ 4+4=8]")
+    print(f"  ‖C‖_op = √λ_max(C²) = {proof['C_norm_op']:.6f}  [≤ 2√2]")
+    print(f"  Tsirelson bound:        {proof['tsirelson_bound']:.6f}  = 2√2")
+    print(f"  Bound respected:        {proof['bound_respected']}  ✓")
+    print(f"  ‖C‖_op - 2√2 =         {proof['C_norm_op'] - proof['tsirelson_bound']:.2e}  [0 at optimal angles]")
 
     print("\n--- DFC Physical Interpretation ---")
     print(f"  E(a,b) = -cos(theta) follows from SU(2) spinor inner product geometry")
