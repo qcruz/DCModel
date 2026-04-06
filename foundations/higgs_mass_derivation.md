@@ -2,8 +2,13 @@
 
 ## Result
 
-> **m_H = 125.1 ± 1.5 GeV**
+> **m_H = 124.4 ± 3.7 GeV** (using PDG m_t = 172.76 GeV)
+> **m_H = 125.1 GeV** (using Buttazzo et al. reference m_t = 173.0 GeV)
 > Observed: 125.25 ± 0.17 GeV (ATLAS+CMS, 2020)
+>
+> The quoted uncertainty (±3.7 GeV) is dominated by the λ₀ boundary condition (±3.4 GeV),
+> which reflects the fact that λ₀ ∈ [0.006, 0.020] is a range, not a measured value.
+> The earlier ±1.5 GeV figure used ±0.8 GeV for the geometric uncertainty — this was in error.
 
 **Epistemic status: consistency identification, not ab initio derivation.**
 
@@ -190,21 +195,41 @@ resistance and SU(3) geometric pressure.
 
 ### 4.2 Result
 
+Using reference m_t = 173.0 GeV (Buttazzo et al.):
 ```
-λ(v) = 0.1290 ± 0.0046
-m_H = √(2λ(v)) × v = √(2 × 0.1290) × 246.22 GeV
-m_H = 125.1 ± 1.5 GeV
+λ(v) = 0.1290
+m_H = √(2 × 0.1290) × 246.22 GeV = 125.1 GeV
 ```
+
+Using PDG m_t = 172.76 GeV (current):
+```
+λ(v) = 0.1276  (top Yukawa correction: Δλ = 0.006 × (172.76 − 173.0) = −0.00144)
+m_H = √(2 × 0.1276) × 246.22 GeV = 124.4 GeV
+```
+
+Full uncertainty (see Section 4.3):
+```
+m_H = 124.4 ± 3.7 GeV  (PDG m_t, correct uncertainty budget)
+```
+
+Both are consistent with the observed 125.25 ± 0.17 GeV at the ~0.9 GeV level (< 1σ).
+The uncertainty is dominated by the unresolved geometric boundary condition λ₀.
 
 ### 4.3 Uncertainty Budget
 
-| Source | δm_H (GeV) | Note |
-|---|---|---|
-| Top quark mass (±0.4 GeV) | ±1.2 | Dominant systematic |
-| α_s(M_Z) (±0.0011) | ±0.6 | QCD coupling |
-| λ₀ boundary (±0.007) | ±0.8 | Geometric uncertainty |
-| Two-loop matching | ±0.3 | Higher-order corrections |
-| **Total (added in quadrature)** | **±1.5** | |
+| Source | δm_H (GeV) | Formula | Note |
+|---|---|---|---|
+| Top quark mass (±0.4 GeV) | ±1.2 | 484 GeV × 0.006 GeV⁻¹ × 0.4 GeV | From dλ/dm_t ≈ 0.006 GeV⁻¹ |
+| α_s(M_Z) (±0.0011) | ±0.6 | Buttazzo et al. | QCD coupling |
+| λ₀ boundary (±0.007) | ±3.4 | (m_H/2λ_v) × δλ₀ = 487 × 0.007 | Dominant — λ₀ not yet derived |
+| Two-loop matching | ±0.3 | Estimate | Higher-order corrections |
+| **Total (added in quadrature)** | **±3.7** | sqrt(1.2²+0.6²+3.4²+0.3²) | |
+
+**Note:** An earlier version of this table quoted ±0.8 GeV for the geometric uncertainty
+(λ₀ boundary) and ±1.5 GeV total. This was incorrect — the correct propagation is
+δm_H = (m_H / 2λ_v) × δλ₀ = 487 GeV × 0.007 = 3.4 GeV. The dominant uncertainty is
+the boundary condition λ₀, which is not yet derived from DFC substrate parameters.
+Until λ₀ is derived, the Higgs mass is a consistency identification, not a prediction.
 
 ---
 

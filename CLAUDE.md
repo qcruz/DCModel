@@ -109,9 +109,9 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~21.5%  (viability: ~34.5%, mathematical rigor: ~18%)
-Key bottleneck: D-depth assignment mechanism (Route B Hopf fibration candidate identified); Born rule from nucleation statistics; exact S-matrix and 3+1D extension open
-Next milestone: DOF count per bifurcation from substrate dynamics (Route B); Born rule from φ⁴ first-passage statistics; 3+1D kink scattering
+Current estimate: ~22%  (viability: ~35%, mathematical rigor: ~18.5%)
+Key bottleneck: D-depth assignment mechanism (Route B Hopf fibration candidate identified); Born rule for position from Kramers escape rate; exact S-matrix and 3+1D extension open
+Next milestone: DOF count per bifurcation from substrate dynamics (Route B); formal Kramers escape derivation for position Born rule; derive λ₀ from DFC substrate parameters (removes dominant Higgs mass uncertainty)
 ```
 
 **Push history (viability / rigor / overall):**
@@ -138,6 +138,7 @@ Next milestone: DOF count per bifurcation from substrate dynamics (Route B); Bor
 | 2026-04-05 | 35 | Tsirelson bound PROVED algebraically: C² = 4I⊗I − [A₁,A₂]⊗[B₁,B₂] → λ_max=8 → ‖C‖≤2√2; identity error 9×10^-16; commutator norms = 2.000000 exactly at optimal angles; tsirelson_proof() function verified; three_generations.md audited (bifurcation_dynamics + fermion_spectrum_full cross-refs added); gauge_couplings.py audited (M_c(D5) consistency note added; squashing_correction PLACEHOLDER clearly labeled) | 33.5% | 17% | ~20% |
 | 2026-04-05 | 36 | kink_nucleation.md (new): two-sector topology proved (π₀ of φ⁴ configs = Z₂ for |N|=1); V''(0)=−α<0 saddle instability; ΔV/E_kink=0.71 at β=0.035; nucleation binary by continuity; Tsirelson chain now closed conditional only on D6=φ⁴; Born rule from first-passage stats remains open. substrate.md audited: Open Problems updated (Schrödinger DERIVED, binary outcomes PROVED; Born rule + ℏ still open); cross-refs to Cycles 32–36 added. kink_model.py audited: stale KinkDynamics reference removed; cross-refs added; ρ(x) profile now shows ρ−ρ_vac (excess above vacuum) alongside absolute density | 34% | 18% | ~21% |
 | 2026-04-05 | 37 | depth_assignment.md (new): formal mapping of Bottleneck 1; 5 structural constraints identified; Route B (Hopf fibrations: S¹→S³→S⁵ at D5/D6/D7 gives U(1)/SU(2)/SU(3) isometry groups) identified as most promising; DOF count per bifurcation from substrate dynamics is the key missing derivation; termination at SU(3) conjectured from D7 confinement. entanglement.md audited: Tsirelson open question marked RESOLVED (Cycle 35); Cycles 34–36 cross-refs added. weinberg_angle_rg.py audited: k_Y=3/5 RESOLVED note added (Cycle 30 derivation); M_c(12) from substrate marked as remaining open; depth_assignment.md referenced | 34.5% | 18% | ~21.5% |
+| 2026-04-06 | 38 | born_rule_derivation.md (new): Born rule for spin DERIVED (P(↑,n̂)=cos²(θ/2)) from SU(2) spinor geometry + binary nucleation (no free parameters); position Born rule structural argument (Kramers escape rate OPEN); born_rule_spin() verified in quantum_emergence.py (9 angles, normalization = 1.000000). higgs_geometry.md audited: Consistency Checks table added (two closure scale TENSION ✗); Open Questions 1–4 added; Weinberg angle language corrected to Route 3B. higgs_potential.py audited: σ_geom error found in higgs_mass_derivation.md (0.8 GeV was wrong → 3.4 GeV correct); m_H corrected to 124.4 ± 3.7 GeV (PDG m_t=172.76); one-loop 397.9 GeV warning added; mass_derivation.md uncertainty table corrected | 35% | 18.5% | ~22% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:

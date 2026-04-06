@@ -144,7 +144,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~21.5%** (viability as a theory: ~34.5%; mathematical rigor: ~18%)
+**Current estimate: ~22%** (viability as a theory: ~35%; mathematical rigor: ~18.5%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
@@ -172,7 +172,7 @@ The model is in active development. Current priorities:
 **Completed (structural):**
 - Product topology and proton stability argument
 - Three-generation derivation from SU(3) knot topology
-- Higgs mass prediction: m_H = 125.1 ± 1.5 GeV (observed: 125.25 GeV) — RG-improved
+- Higgs mass: 124.4 ± 3.7 GeV (observed: 125.25 GeV); uncertainty dominated by unresolved λ₀ boundary condition
 - Mass hierarchy mechanism (qualitative)
 - All four thermodynamic laws derived from folding mechanics
 - Gravity, light, QM, interference derived from folding framework

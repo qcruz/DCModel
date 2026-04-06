@@ -156,16 +156,61 @@ m_Z = m_W / cos(θ_W)    where θ_W is the electroweak mixing angle
 m_Z ≈ 91.2 GeV  ✓
 ```
 
-The ratio m_W / m_Z = cos(θ_W) is the **Weinberg angle**, which in this model is determined by the
-ratio of the radii of the D5 U(1) and D6 S³ closure geometries. It is not a free parameter — it is the geometric
-mixing angle between the D5 electromagnetic and D6 weak closure geometries.
+The ratio m_W / m_Z = cos(θ_W) is the **Weinberg angle**, determined in DFC by Route 3B
+(`foundations/embedding_geometry.md`): sin²θ_W = 3/8 at the D5/D6 closure scale, running
+to 0.231 at M_Z. The geometric framing is consistent — the squashing selects the unbroken
+U(1) direction, which sets the mixing angle — but the quantitative prediction comes from
+Route 3B's equal-coupling initial condition, not from a radius ratio calculation.
 
 ---
 
-## Equations Reference
+## Consistency Checks
 
-See `../equations/higgs_potential.py` for:
-- Numerical computation of V(ε) given μ and λ
-- Running of λ from closure scale to electroweak scale
-- W and Z mass predictions as functions of squashing parameter ε
-- Weinberg angle as a function of closure geometry radii ratio
+| Prediction | DFC value | Observed | Status |
+|---|---|---|---|
+| Higgs mass m_H | 124.4 ± 3.7 GeV (PDG m_t) | 125.25 ± 0.17 GeV | ✓ (within 1σ; ±1.5 GeV was incorrect — see higgs_mass_derivation.md §4.3) |
+| W mass m_W | (1/2)g₂ × 246 GeV = 80.4 GeV | 80.4 GeV | ✓ (inputs: g₂, v) |
+| Z mass m_Z | m_W/cos(θ_W) = 91.2 GeV | 91.2 GeV | ✓ (inputs: θ_W, m_W) |
+| Weinberg angle sin²θ_W | 0.231 (Route 3B) | 0.231 | ✓ |
+| Mexican hat potential shape | V = −μ²ε² + λε⁴ derived from geometry | Observed SM form | ✓ (structural) |
+| λ₀ ≈ 0 at M_c | Protected by geometric modulus symmetry | λ(M_c) near 0 ✓ | Structural (not independently tested) |
+| m_H from M_c = 10¹⁸ GeV | 125.1 GeV | 125.25 GeV | ✓ |
+| Consistency with sin²θ_W M_c = 10¹³ GeV | Two different closure scales | TENSION — OPEN ✗ |
+
+---
+
+## Open Questions
+
+1. **Two closure scale tension.** The Higgs mass derivation uses M_c(Higgs) ≈ 10¹⁸ GeV
+   (where the tree-level quartic λ₀ ≈ 0.013). The Weinberg angle Route 3B uses
+   M_c(D5/D6) ≈ 10¹³ GeV. Both cannot be the same DFC "closure scale" without either
+   (a) two distinct closure processes at different depths, or (b) a derivation error.
+   This is Open Problem 2 in `equations/weinberg_angle_rg.py`. Resolution: possibly
+   M_c(Higgs) is the scale at which the geometric modulus becomes dynamical (a different
+   event than D5/D6 co-crystallization).
+
+2. **Derive μ and λ from substrate parameters.** The geometric squashing pressure μ² and
+   the S³ curvature resistance λ are currently structural arguments, not numbers computed
+   from (α, β, c). A derivation of μ² ∝ α_D7 × f(β) and λ ≈ 0 at M_c from the DFC
+   field equations would complete the Higgs mass prediction.
+
+3. **λ₀ ≈ 0 from modulus symmetry.** The claim that λ₀ is suppressed by the geometric
+   modulus structure needs a formal derivation. Currently a structural argument: moduli
+   (shape parameters of a manifold) are not protected from quantum corrections in
+   the same way Goldstone bosons are, so the argument requires more precision.
+
+4. **The Higgs as metric modulus vs. kink.** The document identifies the Higgs with the
+   squashing parameter ε (a modulus of the D6 S³ closure geometry), distinct from the
+   kink solutions in `equations/kink_model.py`. Clarifying the connection between the
+   squashing modulus description and the full DFC field φ(x,t) description is needed.
+
+---
+
+## Equations and Cross-References
+
+- `equations/higgs_potential.py` — numerical V(ε), running of λ, W/Z mass predictions
+- `foundations/higgs_mass_derivation.md` — full RG-improved derivation; uncertainty budget
+- `foundations/embedding_geometry.md` — sin²θ_W = 3/8 at closure scale (Route 3B)
+- `foundations/depth_assignment.md` — why SU(2) at D6 (Route B Hopf fibration candidate)
+- `foundations/bifurcation_dynamics.md` — γ_D = (16/3)√β; M_c(D5) from substrate
+- `equations/weinberg_angle_rg.py` — self-consistent M_c(12) ≈ 10¹³ GeV; M_c tension noted
