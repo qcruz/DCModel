@@ -33,9 +33,13 @@ In this model, the three force interaction regimes emerge from three *topologica
 closure behaviors of one substrate — not from three pre-existing separate spaces:
 
 ```
-Closure product = U(1) × S³ × SU(3)
-                   D5    D6   D7
+Closure product = U(1) × SU(2) × SU(3)
+                   D5     D6      D7
 ```
+
+(Here SU(2) ≅ S³ as a manifold — the D6 closure geometry is a 3-sphere whose isometry
+group is SU(2). The gauge group is SU(2), the closure topology is S³.)
+
 
 These closure behaviors coexist at every substrate point, but they formed at different
 compression thresholds and do not interact through force carriers that bridge between them.
@@ -162,3 +166,17 @@ See `equations/gauge_couplings.py` (pairwise crossing analysis) and
 | Free parameters | 1 (unified coupling + GUT group) | 0 for sin²θ_W (M_c self-consistent) |
 | Force unity | Gauge-group unity (one force at high E) | Ontological unity (always one object) |
 | Experimental status | Pressured by proton decay limits | Consistent with all data |
+
+---
+
+## Connections
+
+- `foundations/embedding_geometry.md` — Route 3B: sin²θ_W = 3/8 at M_c without GUT group
+- `foundations/depth_assignment.md` — why U(1)/SU(2)/SU(3) at D5/D6/D7 (Bottleneck 1)
+- `foundations/coupling_derivation.md` — g_common ≈ 0.543 at M_c; chain to α_em
+- `equations/gauge_couplings.py` — pairwise crossing; D5/D6 equal-coupling verified numerically
+- `equations/weinberg_angle_rg.py` — Route 3B full derivation; sin²θ_W = 0.231
+- `equations/proton_stability.py` — proton lifetime bounds in product topology
+- `phenomena/particle_physics/proton_stability.md` — why proton is absolutely stable
+- `phenomena/particle_physics/forces/parity_violation.md` — why weak force is left-handed
+  (consequence of D6 SU(2) closure chirality, not of product topology per se)

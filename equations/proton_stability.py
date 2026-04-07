@@ -64,9 +64,11 @@ def explain_proton_stability():
         'dimension_5_operators': (
             "Baryon-number-violating dimension-5 operators (QQQL, UUDE) require "
             "integrating out heavy leptoquarks. In the product geometry, the only "
-            "heavy particles are KK modes, which are color singlets, SU(2) singlets, "
-            "or U(1) singlets separately — never combinations. So even at dimension-5, "
-            "the effective operators are absent to all perturbative orders."
+            "heavy particles are closure-depth excitations (substrate modes above "
+            "each closure threshold), which carry color, SU(2), or U(1) charge "
+            "separately — never a combination bridging two independent closure depths. "
+            "So even at dimension-5, the effective operators are absent to all "
+            "perturbative orders."
         ),
         'conclusion': (
             "Proton decay through any gauge interaction is forbidden by the product "
@@ -378,7 +380,7 @@ if __name__ == "__main__":
     print("\n--- Sphaleron Activity at Various Temperatures ---")
     for T in [1000.0, 100.0, 10.0, 1.0, 0.1, 0.01]:
         s = sphaleron_rate(T)
-        print(f"  T = {T:8.3f} GeV:  {s['status'][:40]}")
+        print(f"  T = {T:8.3f} GeV:  {s['status']}")
 
     print("\n" + "="*60)
     print("NEUTRON LIFETIME CONSISTENCY CHECK")
