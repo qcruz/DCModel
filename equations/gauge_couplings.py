@@ -248,3 +248,18 @@ if __name__ == "__main__":
     print(f"\n  DFC (Route 3B): α₁ = α₂ at M_c(12) ≈ 10^13 GeV is the relevant condition.")
     print(f"  Product topology: α₃ need not meet at the same scale (D7 = separate stage).")
     print(f"  See equations/weinberg_angle_rg.py for sin²θ_W = 0.231 derivation.")
+
+    print(f"\n--- Common Coupling at the D5/D6 Crossing Scale ---")
+    mu_cross = crossings['alpha_1_meets_alpha_2_gev']
+    if mu_cross:
+        a1_cross = alpha_running(ALPHA_1_MZ, B1_SM, mu_cross)
+        a2_cross = alpha_running(ALPHA_2_MZ, B2_SM, mu_cross)
+        a_common = 0.5 * (a1_cross + a2_cross)
+        g_common = (4 * math.pi * a_common) ** 0.5
+        print(f"  At μ = {mu_cross:.2e} GeV:")
+        print(f"    α₁ = {a1_cross:.5f},  α₂ = {a2_cross:.5f}")
+        print(f"    α_common ≈ {a_common:.5f}  →  1/α_common ≈ {1/a_common:.1f}")
+        print(f"    g_common = √(4π α_common) ≈ {g_common:.4f}")
+        print(f"  NOTE: g_common ≈ 0.543 is the DFC boundary value for all three gauge")
+        print(f"  couplings at M_c. Deriving this from substrate (α_D5, β, c) is Bottleneck 2.")
+        print(f"  See foundations/coupling_derivation.md for the derivation structure.")

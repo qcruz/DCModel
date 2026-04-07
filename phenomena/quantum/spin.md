@@ -32,8 +32,9 @@ has exactly spin s = 1/2, meaning:
 statistics (antisymmetric wavefunctions, Pauli exclusion). Integer-spin particles obey
 Bose-Einstein statistics (symmetric wavefunctions, can pile into the same state).
 
-No particle has ever been observed with spin 3/2 or higher among the elementary particles.
-The Standard Model takes spin assignments as fundamental inputs.
+No *elementary* particle has ever been observed with spin 3/2. (Composite hadrons such
+as the Δ(1232) and Ω⁻ carry spin 3/2, but as bound states of three spin-1/2 quarks.)
+The Standard Model takes spin assignments of elementary fields as fundamental inputs.
 
 ---
 
@@ -146,7 +147,8 @@ Mλ = 2.0:
 ```
 
 The zero mode is exact (D̸ψ_0 = 0) and localizes at the kink center with width ~1 kink
-width = ~L_Planck.
+width. (The kink width at D1 equals the Planck length; at D6 it is the electroweak
+scale ~10⁻¹⁸ m — the two scales are distinct.)
 
 **What determines the 720° rotation property:** The zero mode transforms as a spinor of
 SL(2,C). A spinor picks up a phase e^{iπ} = −1 under 2π rotation (360°), returning to
@@ -293,3 +295,6 @@ the same D6 SU(2) closure topology.
   `equations/spin_zero_mode.py`
 - **Quantum mechanics** — fold orientation angle θ as quantum phase;
   `phenomena/quantum/quantum_mechanics.md`
+- **Born rule for spin** — P(↑, n̂) = cos²(θ/2) derived from SU(2) geometry + binary
+  outcomes (Cycle 38); direct application of this document's spinor formalism;
+  `foundations/born_rule_derivation.md`
