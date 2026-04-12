@@ -3,11 +3,15 @@
 ## One-Sentence Synthesis
 
 > Blackbody radiation is the thermal equilibrium distribution of massless D2 compression
-> wave modes in a cavity: the photon occupation number n(ν) = 1/(e^{hν/kT} − 1) follows
-> from Bose-Einstein statistics applied to the massless KG mode spectrum, E = hν is derived
-> (not postulated) from the compression field dispersion, and the Planck catastrophe is
-> resolved by the same field discreteness that produces particle quantization — not by a
-> separate quantum postulate.
+> wave modes in a cavity: the photon occupation number (the mean number of photons in each
+> mode as a function of frequency and temperature) follows from Bose-Einstein statistics
+> applied to the massless compression-field mode spectrum, and the Planck catastrophe is
+> resolved because the energy per mode is proportional to frequency — a consequence of
+> the quantum of action — so high-frequency modes are exponentially suppressed; the massless
+> dispersion relation (angular frequency proportional to wavenumber) is derived from the
+> substrate field equation, but the identification that the minimum energy per mode is
+> Planck's constant times frequency requires the quantum of action, which is not yet
+> derived from the DFC substrate (see `foundations/planck_constant_derivation.md`).
 
 ---
 
@@ -62,16 +66,33 @@ Bose-Einstein distribution is derived from statistical mechanics once quantizati
 ### Photons as Massless D2 Modes
 
 In DFC, photons are massless excitations of the compression field propagating as D2 modes
-— solutions of the massless KG equation:
+— solutions of the massless Klein-Gordon equation. The field equation with no buckling
+potential gives a linear dispersion relation: the angular frequency of each mode equals
+the speed of light times the wavenumber (the spatial rate of oscillation). This is the
+massless dispersion, derived from the substrate field equation:
 
 ```
-□φ = 0    →    ω = ck    →    E = ℏω = ℏck = hν
+□φ = 0    →    ω = ck    [massless dispersion — derived from substrate ✓]
 ```
 
-The quantization E = hν is **derived** from the dispersion relation, not postulated. A
-photon at frequency ν carries energy E = hν because that is the quantum of energy for the
-KG mode at wave vector k = 2πν/c. This is the same result that appears in the photoelectric
-effect and Compton scattering — all derived from the same KG dispersion.
+The minimum energy of a photon mode at frequency ν is:
+
+```
+E = hν    [POSTULATE — requires the quantum of action ℏ; not yet derived from DFC]
+```
+
+The relationship between frequency and energy (Planck's quantization condition) is not
+derived from the dispersion relation — it requires separately identifying that the minimum
+excitation energy of a mode is one quantum of action (Planck's constant divided by two
+pi) times the angular frequency. This identification is currently imported from canonical
+quantum field theory, not derived from the DFC substrate. See
+`foundations/planck_constant_derivation.md` for the status of this derivation.
+
+Note: the statements "the energy equals Planck's constant times frequency" and "the energy
+equals the reduced Planck's constant times angular frequency" are the same statement
+(since Planck's constant equals two pi times the reduced Planck's constant, and angular
+frequency equals two pi times frequency). Neither is derived from the other; both require
+the quantum of action.
 
 ### The Mode Density
 
@@ -134,9 +155,11 @@ KG mode energy spectrum (E = hν), which means that high-energy modes require la
 to excite. The thermal fluctuations at temperature T cannot supply energy much larger than
 kT, so high-frequency modes are exponentially suppressed.
 
-This is not a separate quantum postulate. It is the same field discreteness that produces
-particle quantization throughout DFC — the compression field has discrete mode energies
-because it satisfies the KG equation with quantization condition E = ℏω.
+The suppression at high frequency is automatic once E = hν is accepted — modes requiring
+energy much larger than the thermal energy are exponentially unlikely to be excited. The
+massless dispersion relation (angular frequency proportional to wavenumber) is derived
+from the substrate; the quantization E = hν that gives modes their minimum excitation
+energy is the remaining open step (see above).
 
 ---
 
@@ -187,7 +210,10 @@ P/A = c/4 × u_total = (2π⁵k⁴)/(15 c² h³) × T⁴ = σT⁴
 σ = 2π⁵k⁴/(15c²h³) = 5.670 × 10⁻⁸ W/m²/K⁴    ✓
 ```
 
-All constants (k, h, c) are already present in DFC — no new parameters are introduced.
+All constants (k, h, c) appear in DFC. Note: c is a structural parameter of the substrate
+field equation; k (Boltzmann's constant) enters through statistical mechanics; h (Planck's
+constant) is the quantum of action that quantizes mode energies and is not yet derived
+from the substrate (see `foundations/planck_constant_derivation.md`).
 
 ---
 
@@ -196,7 +222,8 @@ All constants (k, h, c) are already present in DFC — no new parameters are int
 | Prediction | DFC mechanism | Observed |
 |---|---|---|
 | Planck spectrum u(ν) = 8πhν³/c³ × (e^{hν/kT}−1)⁻¹ | KG dispersion + Bose-Einstein | Standard result ✓ |
-| E = hν not postulated | KG dispersion E = ℏω | Derived ✓ |
+| ω = ck (massless dispersion) | KG equation with no potential | Derived from substrate ✓ |
+| E = hν (energy proportional to frequency) | Requires quantum of action ℏ — imported from QFT | POSTULATE — ℏ not derived from DFC ✗ |
 | Two photon polarizations | Massless gauge field, transverse only | Two helicity states ✓ |
 | Bose-Einstein statistics | Spin-1 D5 field, even FR phase | Photons are bosons ✓ |
 | Wien's law λ_max T = 2.898 × 10⁻³ m·K | Maximum of Planck curve, x ≈ 2.821 | Confirmed ✓ |

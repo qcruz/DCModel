@@ -187,7 +187,7 @@ Predicted τ_μ: 2.197 μs   [matches observed to < 0.1%]
 | Spin | Jackiw-Rebbi nth excited zero mode | 1/2 ✓ |
 | No color | No D7 closure | colorless ✓ |
 | m_μ/m_e | R/d = 206.77 (by construction) | 206.77 ✓ |
-| m_τ/m_μ | **not derived** (S³ eigenvalue gives 2.67; box model gives 2.0) | 16.82 ✗ |
+| m_τ/m_μ | **FAILING** — best model predicts ratio ~2.0 → m_τ ≈ 212 MeV | 16.82 (1777 MeV) — **8.4× off** ✗ |
 | μ decays to e only, no hadrons | m_μ < m_π, no D7 access | ✓ |
 | τ has dominant hadronic decays | m_τ ≫ m_π, D7 access open | ✓ |
 | τ lifetime ≪ μ lifetime | m_τ⁵/m_μ⁵ = (1777/105.7)⁵ ≈ 1.4 × 10⁶ → Γ_τ ≫ Γ_μ | ✓ |

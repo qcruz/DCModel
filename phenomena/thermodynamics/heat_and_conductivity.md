@@ -1,6 +1,6 @@
 # Phenomenon: Heat, Conductivity, and Radiation
 
-## Core Claim
+## One-Sentence Synthesis
 
 > Heat, electrical current, and radiation are not different kinds of energy, but different
 > regimes of accelerated dimensional compression, distinguished by whether folding pathways
