@@ -215,9 +215,11 @@ difference between U(1) and SU(2) closure formation is small compared to the
 compression budget spent reaching that threshold.
 
 This physical picture is consistent with the SM: the electroweak symmetry group
-SU(2)_L × U(1)_Y is a unified structure at the scale where both closures form.
-The product topology of DFC then forbids their re-unification at higher energies —
-they are forever topologically independent — but they form together.
+SU(2)_L × U(1)_Y describes two independent closures that happen to form at the same
+compression threshold — they emerge together but are topologically distinct from the
+moment of their formation. The product topology of DFC means they are forever
+independent — not a single force that later separates, but two separate closures
+that co-emerge simultaneously at the same threshold energy.
 
 ---
 
