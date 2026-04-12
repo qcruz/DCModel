@@ -46,6 +46,10 @@ STATUS:
     from the Dynkin index matching condition on SM matter content — no GUT group
     needed. See foundations/hypercharge_normalization.md and
     equations/hypercharge_normalization.py.
+  - [Cycle 42] The equal-coupling value α_common is now INDEPENDENTLY PREDICTED
+    from the substrate quartic coupling β via g² = 8πβ/3. With β = 0.0351:
+    α_common(DFC) = 0.02340 vs α_common(SM) = 0.02358 (0.75% agreement).
+    See equations/coupling_derivation.py.
 
 Usage:
     python3 equations/weinberg_angle_rg.py

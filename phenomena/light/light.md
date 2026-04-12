@@ -4,8 +4,10 @@
 
 > Light is the massless limit of the compression field — a D2 propagation mode that
 > carries no D4 inertial anchor, travels at c because c is the natural propagation
-> speed of the compression field itself, and whose energy quantization E = hν follows
-> directly from the massless Klein-Gordon dispersion relation.
+> speed of the compression field itself; the Planck relation E = hν has the right form
+> from the massless dispersion ω = ck combined with the quantum of action ℏ, but the
+> value of ℏ and the identification E = ℏω require a derivation not yet completed in
+> DFC (see Open Question 1 and `foundations/planck_constant_derivation.md`).
 
 ---
 
@@ -61,10 +63,13 @@ pushing its inertial anchoring — the deeper the anchoring, the more energy req
 The speed limit c is the speed at which the unanchored field moves, and nothing with
 depth can match it.
 
-**E = hν is the massless limit of the KG dispersion relation.** For a massive particle,
-E² = (pc)² + (mc²)². When m = 0: E = pc = ℏωck/k = ℏω = hν. The quantization of
-light energy is not a separate postulate — it is what the KG dispersion relation gives
-when mass is zero. The Planck relation is the massless Klein-Gordon equation.
+**E = hν has the right form from the massless dispersion.** For a massless field,
+ω = ck → E = pc (from the KG dispersion relation). Combined with the quantum of action
+(E = ℏω, p = ℏk), this gives E = hν. The dispersion relation ω = ck is structural
+(derived from the KG equation). The identification E = ℏω is the additional step —
+it requires showing that the compression field's minimum excitation energy is ℏω.
+This step is not yet derived from the DFC substrate; it is currently imported from
+canonical quantum field theory (see Open Question 1).
 
 **Polarization is fold orientation.** The compression wave propagating along z has two
 transverse degrees of freedom — the fold can be oriented at any angle θ in the x-y plane.
@@ -125,23 +130,33 @@ with m_eff = ℏ√(2α)/c² from the potential curvature.
 
 ### E = hν from Massless Dispersion
 
-Energy and momentum for a quantum of the massless field:
+The massless KG dispersion relation gives:
 ```
-E = ℏω                    [energy quantum]
-p = ℏk                    [momentum quantum]
-ω = ck   →   E = pc       [massless dispersion]
-   = ℏck = hcλ⁻¹ = hν    [since ν = c/λ]
+ω = ck   →   E = pc       [massless: energy = momentum × c]
 ```
 
-Therefore:
+Combined with the de Broglie-Planck relations (currently imported from QFT, not
+derived from DFC substrate):
 ```
-┌────────────────────┐
-│   E = hν   ✓       │
-└────────────────────┘
+E = ℏω    [POSTULATE — quantum of action; not yet derived from DFC; see Open Q.1]
+p = ℏk    [POSTULATE — de Broglie relation; same status]
 ```
 
-The Planck relation is not a separate postulate. It is the massless Klein-Gordon
-dispersion relation combined with the de Broglie relations E = ℏω, p = ℏk.
+Then: E = ℏω = ℏck = hcλ⁻¹ = hν.
+
+**What is derived from DFC:** The form ω = ck (massless linear dispersion, from
+the substrate wave equation with no potential). The existence of exactly two
+transverse polarization states (from the D2 closure topology). The speed c as a
+structural constant.
+
+**What is imported (not yet derived):** The identification E = ℏω — that the
+minimum excitation energy of the massless mode is one quantum of action ℏ per
+cycle. Deriving this from DFC substrate requires showing that the compression field
+admits excitations only in units of ℏω, which is the core of the Planck constant
+hierarchy problem (`foundations/planck_constant_derivation.md`).
+
+Note: E = ℏω and E = hν (since h = 2πℏ, ω = 2πν) are the **same relation** —
+the derivation of one from the other is trivially circular. Both require ℏ.
 
 ### c as the Compression Field Propagation Speed
 
@@ -218,7 +233,7 @@ against the compression gradient. ✓
 |---|---|
 | Constancy of c | c is the compression field propagation speed, not a velocity |
 | Masslessness | No D4 anchor — no buckling potential, no stable minimum |
-| E = hν | Massless KG dispersion: ω = ck → E = ℏω = hν ✓ |
+| E = hν | ω = ck from KG (✓ derived) + E = ℏω (POSTULATE — ℏ not yet derived from DFC) |
 | Gravitational bending | D2 mode follows the local compression gradient geometry |
 | Gravitational redshift | Effective propagation conditions change with gradient depth |
 | Discrete emission/absorption | Reconfiguration is threshold-driven (buckling character) |
