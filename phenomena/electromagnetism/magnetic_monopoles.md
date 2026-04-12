@@ -57,57 +57,182 @@ is: monopoles exist but are too rare to find.
 
 ## Dimensional Folding Explanation
 
-**STUB — full derivation not yet written.**
+### Step 1: Electric Charge as D5 U(1) Winding Number
 
-**DFC mechanism direction:**
+Electric charge is the winding number of the D5 closure. The D5 closure manifold is a
+circle — the fold orientation angle wraps around once to close, producing a U(1) symmetry.
+The winding number counts how many times the phase of the D5 order parameter rotates by
+two pi as you traverse a loop surrounding a particle's location in the substrate (see
+`phenomena/electromagnetism/electric_charge.md`):
 
-1. **Electric charge from U(1) winding:** Electric charge is the winding number of the D5
-   U(1) closure — an integer count of how many times the fold orientation angle wraps
-   around the U(1) circle as you traverse a path around the particle's location (see
-   `phenomena/electromagnetism/electric_charge.md`). The proton has winding +1, the
-   electron has winding −1.
+```
+n = (1 / 2π) ∮ dθ    [winding number around a loop enclosing the kink]
+```
 
-2. **What a magnetic monopole would require:** A magnetic monopole is a source of radial
-   magnetic field lines — not a circulation (which is produced by electric charges in
-   motion or magnetic dipoles) but a genuine radial source. In Maxwell's equations, this
-   requires a non-zero divergence of the magnetic field, which in the language of differential
-   geometry requires a different kind of topological defect: not a winding around a circle
-   but a wrapping of a sphere.
+The winding number is an integer — it cannot change continuously. This is why electric
+charge is quantized. The electron has winding number negative one; the proton has winding
+number positive one (at the D5 level, before D7 structure is included for fractional
+quark charges).
 
-3. **Why the D5 U(1) circle does not admit monopoles:** The D5 closure is a circle (a
-   one-dimensional closed manifold). Its fundamental group is the integers (one winding
-   direction). There is no second homotopy group for a circle — pi-2(S¹) = 0, meaning
-   a two-sphere in the D5 manifold can always be continuously contracted to a point.
-   This is precisely the condition for the absence of magnetic monopoles. In contrast,
-   in a GUT model where the gauge group is a sphere (S² or higher), pi-2 is non-trivial
-   and monopoles are topologically required.
+### Step 2: What a Magnetic Monopole Requires Topologically
 
-4. **No inflationary dilution needed:** DFC does not require inflation to explain the
-   absence of monopoles. The absence is structural: the D5 topology does not permit them.
-   This is a stronger statement than the inflationary account, which predicts that monopoles
-   exist but are rare. DFC predicts that monopoles in the classical EM sense strictly do
-   not exist.
+A magnetic monopole is a point source of radial magnetic field: all field lines point
+outward from (or inward to) a single location. In differential geometry, this is
+characterized by the field strength two-form having non-zero integral over a closed
+two-sphere surrounding the source:
 
-5. **Dirac charge quantization from U(1) winding:** The Dirac condition — that the product
-   of electric and magnetic charges equals an integer multiple of 2 pi — is automatically
-   satisfied in DFC because charge quantization is already explained by the winding number
-   structure. If monopoles existed, their charge would also be quantized. But since
-   pi-2(S¹) = 0, they do not exist.
+```
+∮_{S²} F = Φ_m    [non-zero magnetic flux through a sphere enclosing the monopole]
+```
 
-**Key open derivation:** Formalize pi-2(S¹) = 0 as the topological proof of monopole
-absence. Show that the D5 U(1) closure has trivial second homotopy, and that this directly
-implies the absence of monopole solutions in the DFC substrate equation.
+In the language of fiber bundles, a magnetic monopole exists when the U(1) gauge bundle
+over a spatial two-sphere is non-trivial — that is, when the gauge connection cannot be
+globally defined over the sphere but must be patched. The obstruction to global patching
+is measured by the second homotopy group of the gauge group: the group of mappings from
+a two-sphere into the gauge manifold, classified up to continuous deformation.
+
+A magnetic monopole solution exists in a theory with gauge group G if and only if the
+second homotopy group of the gauge manifold is non-trivial:
+
+```
+π₂(G) ≠ 0    →    magnetic monopoles can exist
+π₂(G) = 0    →    magnetic monopoles are topologically forbidden
+```
+
+### Step 3: The D5 U(1) Circle Has Trivial Second Homotopy
+
+The D5 closure manifold is a circle — the one-dimensional sphere S¹ (the unit circle in
+the complex plane). The topological invariant controlling monopole existence is the second
+homotopy group of this manifold. The second homotopy group measures whether maps from a
+two-sphere (S²) into the manifold can be continuously deformed to a constant map.
+
+For the circle S¹, this group is trivial:
+
+```
+π₂(S¹) = 0    [algebraic topology: standard result]
+```
+
+The proof is direct. A map from S² to S¹ can always be factored through the universal
+covering space of S¹, which is the real line R. Since R is contractible (every map from
+any space into R is null-homotopic), every map from S² to S¹ is homotopically trivial.
+Concretely: wrap a sphere around a circle — you can always pull it off. There is no way
+to tie a two-dimensional surface irreversibly around a one-dimensional circle.
+
+This is in contrast to gauge groups that are two-spheres or higher-dimensional spheres.
+For example:
+
+```
+π₂(SU(2)) = π₂(S³) = 0    [SU(2) ≅ S³ has trivial second homotopy — no SU(2) monopoles]
+π₂(SO(3)) = Z              [SO(3) = RP³ has non-trivial π₂ — monopoles exist]
+π₂(S²) = Z                 [GUT models with S²-like vacuum manifolds have monopoles]
+```
+
+For the specific case of the D5 U(1) closure:
+
+```
+π₂(S¹) = 0    →    no magnetic monopoles in DFC    ✓
+```
+
+### Step 4: dF = 0 as a Topological Consequence
+
+In the DFC construction of electromagnetism, the field strength two-form F is the curvature
+of the U(1) connection on the D5 circle bundle over the apparent three-dimensional space.
+For a U(1) bundle, the curvature two-form F automatically satisfies the Bianchi identity:
+
+```
+dF = d(dA) = 0    [exterior derivative of exterior derivative is zero]
+```
+
+In physical notation, this is:
+
+```
+∂_μ F̃^{μν} = 0    equivalently    ∇·B = 0    and    ∇×E = −∂B/∂t
+```
+
+The first of these is the absence of magnetic charge (div B = 0). It is not an additional
+constraint imposed on Maxwell's equations — it is a direct consequence of writing F = dA,
+which in turn follows from the U(1) bundle structure of the D5 closure.
+
+Magnetic monopoles would require ∇·B = ρ_m (non-zero magnetic charge density), which
+would break the Bianchi identity. But the Bianchi identity holds automatically for a U(1)
+bundle — there is no way to break it by adding a source, because the source would require
+a non-trivial S² wrapping, and π₂(S¹) = 0 means no such wrapping exists.
+
+### Step 5: Why This Is Stronger Than the Inflationary Account
+
+In grand unified theories (GUTs) such as SU(5), the vacuum manifold after symmetry breaking
+is topologically non-trivial — it contains S² factors with π₂ = Z. Monopoles are therefore
+topologically required as stable defects. Their predicted density is far too high. Inflation
+dilutes this density by stretching the spatial volume exponentially, making monopoles too
+rare to observe.
+
+DFC makes a stronger statement: monopoles do not exist at all. Their absence is not
+because they were diluted by an early-universe phase (which would predict they exist but
+are rare) — it is because the D5 U(1) topology does not admit them.
+
+The two predictions are observationally distinguishable:
+
+```
+GUT + inflation:  monopoles exist but at density ~1/V_observable_universe — may never be found
+DFC:              monopoles strictly do not exist — finding one would falsify DFC's D5 topology
+```
+
+This is a genuine DFC prediction, not a consistency check. If a magnetic monopole is
+confirmed, the D5 = U(1) closure assignment is wrong, or the D5 closure manifold is
+more complex than a simple circle.
+
+### Formal Topology Summary
+
+```
+D5 closure manifold: S¹    (one-dimensional circle)
+Fundamental group:   π₁(S¹) = Z    →    electric charge quantized
+First homotopy:      π₁(S¹) = Z    →    vortex solutions (D5 kink solitons = charged particles)
+Second homotopy:     π₂(S¹) = 0    →    no magnetic monopole solutions
+Third homotopy:      π₃(S¹) = 0    →    no Skyrmion-like instanton in D5
+
+Consequence:         dF = 0 automatically    →    ∇·B = 0 strictly
+                     No magnetic sources     →    no magnetic monopoles, no dyons
+```
+
+Verified numerically in `equations/magnetic_monopoles.py`.
 
 ---
+
+## Formal Equations
+
+```
+D5 gauge bundle:   principal U(1) bundle P(M, S¹)
+Field strength:    F = dA    [curvature of U(1) connection A]
+Bianchi identity:  dF = d²A = 0    [exterior derivative nilpotent]
+Magnetic source:   ∇·B = 0    [no magnetic charge — derived, not postulated]
+
+Monopole condition:  requires π₂(G) ≠ 0
+D5 gauge group:      G = U(1) ≅ S¹
+Second homotopy:     π₂(S¹) = 0    [trivial — proved below]
+
+Proof of π₂(S¹) = 0:
+  Let f: S² → S¹ be any continuous map.
+  The universal cover of S¹ is p: ℝ → S¹, where p(t) = e^{2πit}.
+  S² is simply connected: π₁(S²) = 0.
+  By the lifting criterion, f lifts to f̃: S² → ℝ with p ∘ f̃ = f.
+  ℝ is contractible: every map into ℝ is null-homotopic.
+  Therefore f̃ (and hence f) is null-homotopic.
+  Since f was arbitrary: π₂(S¹) = 0.    □
+
+Dirac quantization:  e · g_m = 2πn (n ∈ Z)
+DFC form:            e = integer winding number × e_fundamental
+                     g_m would require π₂(S¹) ≠ 0 → absent
+```
 
 ## Consistency Checks
 
 | Check | DFC prediction | Observed | Status |
 |---|---|---|---|
-| No magnetic monopoles | pi-2(S¹) = 0 for D5 U(1) circle | None detected | ✓ structural (argument written) |
-| Electric charge quantized | U(1) winding number is an integer | All charges are integer multiples of e/3 | ✓ structural |
-| No inflationary dilution required | Absence is topological, not dynamical | Absence is absolute | ✓ (stronger than inflation prediction) |
-| Formal pi-2(S¹) = 0 proof | Algebraic topology of D5 closure | — | not yet formalized ✗ |
+| No magnetic monopoles | π₂(S¹) = 0 → topologically forbidden | None detected in any search | ✓ DERIVED (topological proof) |
+| Electric charge quantized | U(1) winding number ∈ Z | All charges are integer multiples of e/3 | ✓ structural |
+| dF = 0 strictly | Bianchi identity from F = dA | ∇·B = 0 confirmed to high precision | ✓ derived |
+| No inflationary dilution required | Absence is structural, not dynamical | Absence is total, not rarity | ✓ (stronger than GUT+inflation) |
+| Falsifiable prediction | If monopole confirmed, D5 ≠ S¹ | No monopole found (Parker bound < 10⁻¹⁵ cm⁻²s⁻¹sr⁻¹) | ✓ currently consistent |
 
 ---
 
