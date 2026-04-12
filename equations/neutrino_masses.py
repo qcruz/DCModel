@@ -336,34 +336,44 @@ if __name__ == "__main__":
 
     kd = fit_kappa_from_leptons()
     print(f"\n--- Anchoring Calibration from Lepton Masses ---")
-    print(f"  Electron depth:     D5 (d = 5.0)")
-    print(f"  Muon depth:         D6 (d = 6.0)")
+    print(f"  Electron depth:     D5 (d = 5.0)  [ASSUMPTION: D-label integer spacing = 1]")
+    print(f"  Muon depth:         D6 (d = 6.0)  [ASSUMPTION: same integer spacing]")
+    print(f"  WARNING: D-labels are provisional markers; spacing of 1.0 between")
+    print(f"           adjacent D-levels is not derived from the substrate. Kappa")
+    print(f"           and all depth-based quantities depend on this assumption.")
     print(f"  Mass ratio m_μ/m_e: {kd['mass_ratio']:.2f}")
     print(f"  Kappa κ:            {kd['kappa']:.4f}  ({kd['note']})")
 
     print(f"\n--- Neutrino Mass Predictions (Normal Hierarchy) ---")
     print(f"  (anchoring fraction scanned for consistency with Planck + KATRIN bounds)")
+    print()
+    print(f"  IMPORTANT: what is input vs. output in this model:")
+    print(f"    INPUT  (from oscillation data): Δm²₂₁ = {DM2_SOLAR:.3e} eV²,  Δm²₃₁ = {DM2_ATM:.3e} eV²")
+    print(f"    INPUT  (fit parameter):          anchoring fraction f_ν (not derived from substrate)")
+    print(f"    OUTPUT (from model):             m₁ = m_e × f_ν² (this is the only genuine prediction)")
+    print(f"    DERIVED (from m₁ + inputs):     m₂, m₃ from m₁² ± Δm² → circular for Δm² checks")
+    print(f"    NOTE: the Δm² 'predictions' below are INPUTS used to derive m₂,m₃ — not free predictions")
 
     consistent = scan_anchoring_fractions(hierarchy='normal')
     if consistent:
         f_min = consistent[0][0]
         f_max = consistent[-1][0]
-        print(f"  Consistent anchoring fractions: {f_min:.2e} – {f_max:.2e}")
+        print(f"\n  Consistent anchoring fractions (passes Planck + KATRIN): {f_min:.2e} – {f_max:.2e}")
         # Show mid-range example
         mid = consistent[len(consistent)//2]
         r = mid[1]
         print(f"\n  Example (f = {mid[0]:.2e}):")
-        print(f"    f_ν1 = {r['anchoring_fraction']:.2e},  m₁ = {r['m1_ev']*1000:.4f} meV")
+        print(f"    m₁ = m_e × f²    = {r['m1_ev']*1000:.4f} meV  [OUTPUT: from anchoring model]")
         if r['m2_ev']:
-            print(f"    m₂   = {r['m2_ev']*1000:.4f} meV")
+            print(f"    m₂ = √(m₁²+Δm²₂₁) = {r['m2_ev']*1000:.4f} meV  [DERIVED from input Δm²₂₁]")
         if r['m3_ev']:
-            print(f"    m₃   = {r['m3_ev']*1000:.4f} meV")
+            print(f"    m₃ = √(m₁²+Δm²₃₁) = {r['m3_ev']*1000:.4f} meV  [DERIVED from input Δm²₃₁]")
         print(f"    Σmᵢ  = {r['sum_masses_ev']*1000:.3f} meV  "
-              f"(bound: < {SUM_MASS_BOUND_EV*1000:.0f} meV)")
+              f"(Planck bound: < {SUM_MASS_BOUND_EV*1000:.0f} meV)  ✓ consistent")
         print(f"    Δm²₂₁ = {r['dm2_21_pred_ev2']:.3e} eV²  "
-              f"(data: {DM2_SOLAR:.3e} eV²)  ✓")
+              f"(data: {DM2_SOLAR:.3e} eV²)  [CIRCULAR — input used to derive m₂]")
         print(f"    Δm²₃₁ = {r['dm2_31_pred_ev2']:.3e} eV²  "
-              f"(data: {DM2_ATM:.3e} eV²)  ✓")
+              f"(data: {DM2_ATM:.3e} eV²)  [CIRCULAR — input used to derive m₃]")
     else:
         print("  No consistent range found — model parameters need refinement.")
 

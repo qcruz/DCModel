@@ -55,10 +55,6 @@ which outcome occurs.
 
 ## Dimensional Folding Explanation
 
-**STUB — full derivation not yet written.**
-
-**DFC mechanism direction:**
-
 1. **Decoherence as environmental entanglement:** In DFC, a quantum superposition is an
    amplitude distribution over field configurations that has not yet committed to a single
    topological sector. The compression field is a single connected object, so any local
