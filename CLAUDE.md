@@ -102,6 +102,58 @@ explanatory structure.
 
 ---
 
+## Mathematical Communication Standard
+
+This rule applies to all conceptual documents (`foundations/`, `phenomena/`). It does **not**
+apply to equation modules (`equations/`) or formal equation display blocks within docs, where
+symbolic notation is necessary for computation and precision.
+
+**Rule:** Every mathematical relationship introduced in prose must first be stated in plain
+natural language. The symbolic form may follow immediately in a display block as the formal
+reference. A symbol expression alone — appearing in running text without a natural language
+statement — is never sufficient.
+
+**Why this rule exists:** Mathematical notation is a compressed shorthand for relationships
+between quantities. Readers unfamiliar with the notation cannot evaluate whether a claimed
+relationship is correct or what it physically means. Natural language forces the author to
+commit to a specific physical interpretation, which makes the claim auditable without
+requiring fluency in the notation. It also makes circular or incomplete reasoning more
+visible — it is easier to hide a missing step inside a symbol chain than inside a sequence
+of English sentences.
+
+**What "natural language" means here:** State the relationship between the named physical
+quantities in words. Identify what each quantity is (not just its symbol), and state the
+direction of the relationship (proportional to, inversely proportional to, equals the
+product of, etc.).
+
+**Examples:**
+
+Bad: "ω = ck, so E = ℏω = hν."
+
+Good: "In the massless limit, the angular frequency of a wave is proportional to its
+wavenumber — the spatial rate of oscillation — with the speed of light as the
+proportionality constant. Combining this linear dispersion relationship with the quantum
+of action (the minimum excitation energy per cycle of oscillation), the energy of the
+wave packet is proportional to its frequency."
+
+Bad: "g² = 8πβ/3 gives the gauge coupling."
+
+Good: "The square of the gauge coupling constant — the number that sets the strength
+of the force — equals eight times pi times the substrate quartic self-coupling, divided
+by three. The quartic self-coupling is the coefficient controlling how steeply the
+field's potential energy rises away from equilibrium."
+
+**What symbols may still appear in prose:** After a quantity has been defined in natural
+language, its symbol may be used as a shorthand in subsequent sentences in the same
+section. Mathematical symbols in table cells, headers, and equation display blocks are
+not subject to this rule. Code blocks are exempt.
+
+**Enforcement:** When auditing any conceptual document, check that every equation
+appearing in prose was preceded by a natural language statement of the same relationship.
+If not, add the natural language statement.
+
+---
+
 ## Development Cycle
 
 Repeat this cycle indefinitely:
@@ -278,6 +330,237 @@ Always maintain this distinction explicitly. The model's credibility depends on 
 - D5 ↔ U(1), D6 ↔ SU(2), D7 ↔ SU(3) assignments
 - V(φ) = −α/2 φ² + β/4 φ⁴ (postulated, not derived from D1); quartic coupling β ≈ 0.035 inferred from γ_space via γ = (16/3)√β
 - Weinberg angle sin²θ_W ≈ 0.231 (Route 3B gives 0.231 from equal-coupling initial condition + SM running; k_Y = 3/5 now derived from Dynkin normalization condition on SM matter content — no GUT needed; M_c(12) from SM running, not substrate parameters — remaining open item)
+
+---
+
+## Scientific Merit Criteria
+
+This section defines the objective standards by which this project evaluates its own
+scientific status. These criteria are permanent and apply at every stage of development.
+They exist to distinguish genuine progress from apparent progress, and to keep the
+project anchored to physics rather than to internal narrative consistency.
+
+---
+
+### Tier System for Claims
+
+Every claim in this project is assigned to one of five tiers. The tier determines what
+is required to consider the claim substantiated. **Tier assignment is not permanent** —
+a claim moves up when additional derivation is completed.
+
+---
+
+**Tier 0 — Core Postulates** *(inputs; not derived; define the model)*
+
+Tier 0 items are the starting assumptions of the model. They cannot be evaluated as
+right or wrong in isolation — only their consequences can be tested. They must be stated
+explicitly and kept minimal. Any postulate that can be derived from another within the
+model should be demoted to a lower tier, because it was not a genuine starting assumption.
+
+Current Tier 0 postulates:
+1. There is one continuous self-compressing field. No pre-existing space, gauge group,
+   or dimensional structure is assumed.
+2. The field's self-interaction potential has the double-well form: the potential energy
+   as a function of field amplitude equals negative one-half times a quadratic coupling
+   times the amplitude squared, plus one-quarter times a quartic coupling times the
+   amplitude to the fourth power. The quadratic coupling alpha and quartic coupling beta
+   are free parameters of the model.
+3. Bifurcation events — points at which the compressed field opens a new degree of
+   freedom rather than compressing further — produce all structure observed as particles,
+   forces, and spacetime.
+
+Requirement to stay Tier 0: The postulate is stated as an assumption, not a derivation.
+If a derivation of a Tier 0 item is found, it is promoted to Tier 1 or Tier 2, and the
+list above is updated.
+
+---
+
+**Tier 1 — Structural Predictions** *(logical consequences of Tier 0; no quantitative free parameters)*
+
+Tier 1 claims are qualitative or topological: they assert that a specific structure exists
+or a specific symmetry holds, without requiring a numerical match to experiment. A Tier 1
+claim is substantiated when: (a) the logical argument from Tier 0 to the claim is
+written out completely, with no missing steps, and (b) the claim matches the observed
+qualitative feature.
+
+Current Tier 1 claims and their status:
+
+| Claim | Logical basis | Status |
+|---|---|---|
+| Proton absolutely stable — no decay mode exists | Product topology U(1)×SU(2)×SU(3) has no path between baryon and lepton sectors | Argument written; no equation needed ✓ |
+| Exactly three fermion generations | SU(3) fundamental representation has dimension three; no fourth generation is topologically available | Argument written; Cycle 35 ✓ |
+| Photon is massless and propagates at c | Massless limit of Klein-Gordon field equation has linear (massless) dispersion: frequency is proportional to wavenumber | Derived from field equation ✓ |
+| Exactly two photon polarization states | One angular degree of freedom (phase angle on a circle) has exactly two transverse projections | Structural argument written ✓ |
+| Parity violation in weak force | Jackiw-Rebbi zero mode bound to a positively wound kink is inherently left-handed | Argument written; Cycle 41 ✓ |
+| Spin-1/2 exists and is the minimum spin | Finkelstein-Rubinstein winding N=1 with Jackiw-Rebbi zero mode | Verified numerically; Cycle 33 ✓ |
+| Space appears three-dimensional | Three apparent degrees of freedom emerge at D3 localization depth | Structural argument; not yet a derivation ✗ |
+| Binary measurement outcomes | Two-sector topology of the substrate field (Z₂ configuration space) | Proved topologically; Cycle 36 ✓ |
+
+---
+
+**Tier 2 — Quantitative Predictions** *(numerical outputs computed from substrate parameters; compared to measured values)*
+
+A Tier 2 claim is substantiated when all four conditions are met:
+1. There is a runnable equation module that takes the substrate parameters as input and
+   produces the claimed number as output.
+2. The derivation chain from postulate to equation has no circular steps — the target
+   quantity does not appear as an input anywhere in the chain.
+3. The predicted value matches the observed value within 5% (or within the stated
+   theoretical uncertainty for cases where the derivation itself introduces uncertainty).
+4. The number of free parameters used in the derivation is explicitly stated.
+
+Tier 2a — **Verified** (all four conditions met):
+
+| Prediction | Equation module | Predicted | Observed | Error | Free params |
+|---|---|---|---|---|---|
+| Muon-to-electron mass ratio (206.77) | mass_spectrum.py | 206.77 | 206.77 | 0.0% | 2 (R, d) |
+| Neutron lifetime (878 seconds) | proton_stability.py | 878.4 s | 877.8 s | 0.1% | 0 (imported rates) |
+| Hubble constant (67 km/s/Mpc) | cosmology.py | 67.26 | 67.66 | 0.2% | 2 (Ω_m, Ω_Λ) |
+| Higgs boson mass (125 GeV) | higgs_potential.py | 124.4 ± 3.7 GeV | 125.25 GeV | 0.7% | 1 (λ₀ boundary) |
+| Weinberg angle (0.231) | weinberg_angle_rg.py | 0.2312 | 0.2312 | 0.01% | 1 (M_c from SM running) |
+| Electromagnetic fine structure constant at the Z boson mass scale (1/128) | coupling_derivation.py | 1/129.6 | 1/127.9 | 1.3% | 1 (β; heuristic derivation) |
+| Common gauge coupling at unification scale (0.543) | coupling_derivation.py | 0.5423 | 0.5443 | 0.4% | 1 (β; heuristic derivation) |
+
+Tier 2b — **Failing** (equation exists, but prediction misses by more than 5%):
+
+| Prediction | Module | Predicted | Observed | Error | Resolution status |
+|---|---|---|---|---|---|
+| Tau lepton mass | mass_spectrum.py | 212 MeV | 1777 MeV | 8.4× off | Unresolved |
+| Neutrino mass hierarchy ratio | neutrino_masses.py | 1.34 | 5.71 | 4.3× off | Unresolved |
+| Strong coupling constant at the Z boson mass scale | coupling_derivation.py | 0.105 | 0.1182 | 11% | M_c(D7) not derived from substrate |
+| Charm and strange quark masses | quark_masses.py | 15% below observed | — | 15% | Unresolved |
+
+---
+
+**Tier 3 — Correspondences** *(consistent with observation; not yet derived from Tier 0)*
+
+A Tier 3 claim is an assignment or structural choice that is consistent with observation
+and has a plausible path to derivation, but has not been derived. Tier 3 items must be
+labeled as "working hypothesis" in all documents. They must not be presented as derived
+results. The goal of the project is to either promote Tier 3 items to Tier 2 (by
+completing the derivation) or to discard them (if the derivation path closes).
+
+Current Tier 3 items:
+
+| Item | Why it is Tier 3 | Path to Tier 2 |
+|---|---|---|
+| D5 depth produces U(1) behavior | Consistent with Hopf S¹ correspondence, not derived from compression dynamics | Derive DOF count per bifurcation from substrate field equation (Route B) |
+| D6 depth produces SU(2) behavior | Same as above for S³ | Same path |
+| D7 depth produces SU(3) behavior | Same as above for S⁵; confinement argument supports termination | Same path plus formal confinement argument |
+| Quartic coupling beta equals approximately 0.035 | Inferred from the energy fraction per bifurcation; not derived from a pre-substrate constraint | Derive beta from the condition that the substrate field equation admits a stable kink at the Planck scale |
+| The double-well potential form V = -α/2 φ² + β/4 φ⁴ | Postulated; consistent with known physics of symmetry breaking | Derive from the self-interaction dynamics of a compressing one-dimensional field |
+
+---
+
+**Tier 4 — Claims Awaiting Resolution** *(stated but neither derived nor falsified)*
+
+Tier 4 items are claims present in the documentation that have no supporting derivation
+and no equation module. They are placeholders for future work, not results. They must be
+labeled "open" in all documents.
+
+Examples: derivation of Planck's constant from substrate; derivation of the cosmological
+constant; derivation of matter-antimatter asymmetry; quark mass spectrum beyond
+electron/muon; neutrino masses beyond qualitative correspondence.
+
+---
+
+### Criteria for Novel Scientific Contribution
+
+The project makes a genuine novel scientific contribution if and only if it satisfies at
+least one of the following four criteria. These are the standards a referee would apply.
+
+**Criterion A — Derives a SM postulate without circular import:**
+The model produces a quantity that the Standard Model takes as an unexplained input
+parameter, and does so without importing that quantity (or an equivalent quantity) at
+any step. The derivation chain is fully explicit.
+
+Current candidates: gauge coupling from beta (heuristic; not yet rigorous); three
+generations from SU(3) topology (structural; complete); proton stability from product
+topology (structural; complete).
+
+**Criterion B — Makes a prediction the SM cannot make:**
+The model predicts a specific numerical value for a quantity that the Standard Model does
+not predict (either because the SM has a free parameter there, or because the phenomenon
+falls outside the SM's scope), and the prediction is testable in principle.
+
+Current candidates: absolute proton stability (SM predicts only suppressed decay, not
+zero rate; DFC predicts strictly zero from topology); the relationship between the quartic
+coupling beta and the gauge coupling strength (if the holonomy derivation is made rigorous).
+
+**Criterion C — Provides a structural explanation for a SM pattern:**
+The model explains why a feature of the Standard Model has the form it does — not just
+reproduces its numerical value, but identifies the structural reason. The explanation
+must be specific enough to rule out alternatives.
+
+Current candidates: why parity is violated in the weak force (chirality of the
+Jackiw-Rebbi zero mode at D6 depths); why there are exactly three generations (SU(3)
+fundamental representation dimension); why the gauge group is a product and not a simple
+group (independent closure thresholds produce independent topological structures).
+
+**Criterion D — Passes an independent consistency check:**
+A quantity computed by two different paths within the model gives the same answer. The
+agreement is not guaranteed by construction (i.e., the two paths use different inputs).
+
+Current candidate: the common gauge coupling at the closure scale is obtained both from
+SM running down from high energy and from the substrate formula using only beta. These
+two paths agree to 0.4%. If the substrate derivation is made rigorous, this constitutes
+a genuine internal consistency check.
+
+---
+
+### Completeness Milestones
+
+The following milestones define what "scientifically complete" means at each phase. The
+overall completeness estimate in the header of this document measures progress toward
+Phase 5.
+
+**Phase 1 — Structural coherence (~30%):** All Tier 1 claims have complete logical
+arguments with no missing steps. No Tier 1 item is marked as "structural argument" when
+an actual derivation exists or is straightforward. The qualitative structure of the model
+is internally consistent.
+
+**Phase 2 — Quantitative contact (~50%):** At least five Tier 2a predictions match
+observation to within 5%, with complete derivation chains and explicitly stated free
+parameters. The three most fundamental quantities — electromagnetic coupling, Weinberg
+angle, and the Higgs mass — are all in Tier 2a.
+
+**Phase 3 — Coupling sector complete (~70%):** All three force coupling constants
+(electromagnetic, weak, strong) are derived from the substrate parameters to within 5%
+with no free parameters beyond the two substrate couplings (alpha, beta). The D-depth
+assignment mechanism (Tier 3 items for U(1), SU(2), SU(3)) has been promoted to Tier 2.
+
+**Phase 4 — Parameter-free (~85%):** The substrate quartic coupling beta is derived from
+a pre-substrate condition rather than inferred from data. The double-well potential form
+is derived from compression dynamics rather than postulated. The number of free parameters
+reaches zero beyond the Planck-scale normalization.
+
+**Phase 5 — Scientifically rigorous (~95%):** All Tier 4 failures are either resolved
+(promoted to Tier 2b or better) or formally shown to require extension beyond the current
+model. At least one prediction satisfies Criterion A or B above — that is, the model
+makes a genuinely new statement about physics that could in principle be tested and has
+not been made by any other theory.
+
+---
+
+### Evaluation Checklist for New Derivations
+
+When a new derivation is completed and a claim is being promoted up the tier ladder,
+apply this checklist before updating the tier assignment:
+
+- [ ] Can the derivation be stated in natural language without any symbol that cannot be
+      defined in words?
+- [ ] Does the derivation chain start only from Tier 0 postulates and previously
+      substantiated results?
+- [ ] Is the target quantity absent from the right-hand side of every step in the
+      derivation?
+- [ ] Is there a runnable equation module that produces the predicted number?
+- [ ] Is the percent discrepancy from observation computed and printed by the module?
+- [ ] Is the number of free parameters explicitly counted and printed?
+- [ ] Is there at least one Consistency Check table row that tests the result against an
+      independent check (not just against the same data used to calibrate the model)?
+
+If any item is unchecked, the claim remains at its current tier until the item is
+satisfied.
 
 ---
 
