@@ -172,9 +172,11 @@ m_τ/m_μ = C(R,κ) × R = 16.82    [not yet derived — known open problem]
 ```
 Γ(μ → e ν̄_e ν_μ) = G_F² m_μ⁵ / (192 π³)
 
-G_F/√2 = g_W² / (8 m_W²)    [D6 coupling, derived in weak_force.md]
+G_F = g₂² / (4√2 M_W²)    [D6 coupling chain; see equations/muon_lifetime.py]
 
-Predicted τ_μ: 2.197 μs   [matches observed to < 0.1%]
+DFC prediction: τ_μ = 2.180 μs   (observed 2.197 μs, −0.80%)
+[Full derivation: β → g_common → g₂(M_Z) → M_W → G_F → τ_μ]
+[See phenomena/particle_physics/muon_decay.md and equations/muon_lifetime.py]
 ```
 
 ---
@@ -191,6 +193,7 @@ Predicted τ_μ: 2.197 μs   [matches observed to < 0.1%]
 | μ decays to e only, no hadrons | m_μ < m_π, no D7 access | ✓ |
 | τ has dominant hadronic decays | m_τ ≫ m_π, D7 access open | ✓ |
 | τ lifetime ≪ μ lifetime | m_τ⁵/m_μ⁵ = (1777/105.7)⁵ ≈ 1.4 × 10⁶ → Γ_τ ≫ Γ_μ | ✓ |
+| τ_μ (DFC coupling chain) | 2.180 μs (from β → g₂ → G_F chain) | 2.197 μs (−0.80%) — Tier 2a ✓ |
 
 ---
 
@@ -226,3 +229,5 @@ Predicted τ_μ: 2.197 μs   [matches observed to < 0.1%]
 - **Neutrinos** — doublet partners (ν_μ, ν_τ); `phenomena/particle_physics/particles/neutrinos.md`
 - **Three generations** — D6 topology and index theorem; `foundations/three_generations.md`
 - **Weak force** — D6 SU(2) decay vertex; `phenomena/particle_physics/forces/weak_force.md`
+- **Muon decay** — full DFC coupling chain to M_W, G_F, τ_μ; `phenomena/particle_physics/muon_decay.md`
+- **Muon lifetime equation** — β → g₂ → M_W → G_F → τ_μ numerical; `equations/muon_lifetime.py`

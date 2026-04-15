@@ -61,7 +61,7 @@ Usage:
 Key references:
   - foundations/coupling_derivation.md    (holonomy formula, r_U1/λ = 21.3 target)
   - foundations/hopf_fibration_geometry.md (S¹/S³/S⁵ closure topology)
-  - equations/bifurcation_dynamics.py      (β = 0.0351, M_c(D5))
+  - equations/bifurcation_dynamics.py      (β = 0.0351, M_c(D5); NOTE: γ_D = (16/3)√β RETRACTED Cycle 48 — β is Tier 3 reference value only)
   - equations/gauge_couplings.py           (g_common from SM running)
   - equations/weinberg_angle_rg.py         (Route 3B: sin²θ_W)
 """
@@ -70,9 +70,15 @@ import math
 
 # ─── Substrate Parameters ─────────────────────────────────────────────────────
 
-# From equations/bifurcation_dynamics.py (Cycle 32)
-BETA        = 0.0351        # quartic coupling — INFERRED from γ_D = (16/3)√β
-GAMMA_D     = (16.0/3.0) * math.sqrt(BETA)  # energy fraction consumed per bifurcation
+# Quartic coupling — Tier 3 reference value (previously inferred from γ_D = (16/3)√β,
+# but that derivation was RETRACTED in Cycle 48: E_kink/E_total(λ) = 8/3 exactly,
+# a universal constant > 1, so γ_D cannot be extracted from this ratio.
+# β = 0.0351 remains a working reference value; its derivation from pre-substrate
+# principles is open (see equations/bifurcation_dynamics.py and bifurcation_dynamics.md).
+BETA        = 0.0351        # quartic coupling — Tier 3 reference value (NOT derived)
+# GAMMA_D = (16/3)√β is RETRACTED — see bifurcation_dynamics.py Cycle 48 audit.
+# Kept here as a named constant only for reference; not used in any coupling derivation.
+GAMMA_D     = (16.0/3.0) * math.sqrt(BETA)  # RETRACTED — do not use as physical prediction
 
 # D5 closure scale (from bifurcation_dynamics.py)
 MC_D5_GEV   = 1.0189e13    # GeV — from bifurcation dynamics
@@ -286,8 +292,10 @@ if __name__ == "__main__":
     print("=" * 65)
 
     print("\n--- Substrate Parameters (from bifurcation_dynamics.py) ---")
-    print(f"  β          = {BETA:.4f}   [quartic coupling, inferred from γ_D]")
-    print(f"  γ_D        = {GAMMA_D:.6f}  [= (16/3)√β, energy fraction per bifurcation]")
+    print(f"  β          = {BETA:.4f}   [quartic coupling — Tier 3 reference value; derivation OPEN]")
+    print(f"  NOTE: γ_D = (16/3)√β = {GAMMA_D:.6f} is RETRACTED (Cycle 48)")
+    print(f"        E_kink/E_total(λ) = 8/3 exactly (>1, not a physical fraction)")
+    print(f"        β provenance is open; depth-running M_c(D5) remains self-consistent")
     print(f"  M_c(D5)    = {MC_D5_GEV:.4e} GeV  [D5/D6 co-crystallization scale]")
     print(f"  φ₀(D5)     = {PHI0_D5:.4e} GeV  [kink amplitude = √(α/β)]")
     print(f"  λ(D5)      = {LAMBDA_D5:.4e} GeV⁻¹  [kink width = 1/M_c]")

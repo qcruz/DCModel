@@ -161,9 +161,9 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~25.5%  (viability: ~38.5%, mathematical rigor: ~21.5%)
-Key bottleneck: D-depth assignment mechanism (Route B Hopf fibration — DOF count derivation open); rigorous proof of r_U1/λ = 3/(4β) from substrate field equation; Born rule for position from Kramers escape rate
-Next milestone: Derive r_U1/λ = 3/(4β) formally from D5 phase boundary condition; derive β from pre-substrate principle (sole remaining free parameter in coupling chain)
+Current estimate: ~26%  (viability: ~40%, mathematical rigor: ~21%)
+Key bottleneck: D-depth assignment mechanism (Route B Hopf fibration — DOF count derivation open); r_U1/λ = 3/(4β) from holonomy integral over D5 S¹ fiber (routes A and B both blocked for pure real φ⁴ — U(1) localization requires substrate extension); Born rule for position from Kramers escape rate; γ_D ∈ (0,1) from substrate (E_total normalization open after Cycle 48 retraction)
+Next milestone: Derive E_total(L) with macroscopic coherence length L from substrate dynamics to recover γ_D ∈ (0,1) with β dependence; document r_U1/λ blockage formally (substrate extension needed); derive β from pre-substrate condition
 ```
 
 **Push history (viability / rigor / overall):**
@@ -198,6 +198,12 @@ Next milestone: Derive r_U1/λ = 3/(4β) formally from D5 phase boundary conditi
 | 2026-04-11 | 43 | tension_analysis.md (new): 10 conceptual tensions classified — T1 graviton/T3 strong CP/T7 hierarchy problem = DFC Supersedes (not reconciliation targets); T2 CKM/PMNS/T4 fundamental rep/T8 ℏ hierarchy/T9 two-closure-scale = DFC Internal Tension (must resolve); T5 dark matter/T6 dark energy/T10 proton mass = Open Assessment (deferred). magnetic_monopoles.md COMPLETED: π₂(S¹) = 0 topological proof written out (lifting criterion via universal cover ℝ, contractibility of ℝ); Bianchi identity dF = d²A = 0 → ∇·B = 0 derived structurally; DFC prediction Φ_m = 0 (stronger than Parker bound); falsifiability criterion stated. magnetic_monopoles.py (new): π₂(S¹) = 0 proof verified step-by-step; winding number quantization verified for all SM charges; Bianchi identity checked numerically; Parker bound vs DFC prediction tabulated; Dirac quantization shown consistent but vacuous. No free parameters used. | 37.5% | 21% | ~24.5% |
 | 2026-04-11 | 44 | atomic_structure.md COMPLETED: DFC coupling chain extended to atomic physics — β → g²=8πβ/3 → α_em(M_Z)=1/129.6 → QED running (Δ1/α=10.46) → α_em(m_e)=1/140.0 → E_1=-13.03 eV. All spectral errors (4.2%) are systematic and trace to single 1.3% error in α_em(M_Z); ratio of any two lines is exact. atomic_structure.py (new): full QED one-loop threshold matching from M_Z to m_e; hydrogen energy levels E_n=-m_e α²/(2n²); Lyman/Balmer/Paschen series computed; error budget confirmed (all ≈4.2% from common source). decoherence.md audited: STUB label removed (content was already written). neutrino_masses.py audited: CRITICAL — Δm² "predictions" marked CIRCULAR (m₂,m₃ are derived from input Δm² values, not predicted); D-label integer spacing assumption flagged; only genuine output is m₁ = m_e × f_ν². | 38% | 21.5% | ~25% |
 | 2026-04-12 | 45 | arrow_of_time.md COMPLETED: irreversibility from Z₂ topology formalized (ΔV/E_kink=0.71 computed from kink_model.py, Γ_forward/Γ_reverse=exp(ΔV/k_BT)≫1 at any observable T); low initial entropy of D1 state explained without fine-tuning (W=1 for pre-cascade substrate); S=k_B log W structural argument written; CPT/weak arrow distinguished from thermodynamic arrow; formal equations section added; consistency checks updated (irreversibility DERIVED, others structural or open). depth_running.md audited: one forbidden-language fix ("unified structure" → "two independent closures that co-emerge simultaneously"). depth_running.py audited: runs correctly, outputs honest about inputs vs predictions, free parameters correctly identified; no changes needed. | 38.5% | 21.5% | ~25.5% |
+| 2026-04-12 | 46 | strong_cp_problem.md COMPLETED (STUB → full doc): strong CP dissolved by S⁵ CP symmetry — complex conjugation is exact Z₂ isometry of S⁵ (verified numerically); theta=0 selected as CP-symmetric fixed point at D7 formation; no axion predicted (Criterion B); theta=pi ruled out experimentally (d_n would be 10⁹ × bound); product topology independence of D6 CKM and D7 theta formalized; quark mass matrix phase identified as open. strong_cp.py (new): CP symmetry verified (10k random S⁵ points, max deviation 0.00e+00); CP fixed points on S⁵ = S² (real 2-sphere); theta=0 vs pi comparison; future nEDM projections tabulated; homotopy groups pi_3(SU(3))=Z vs pi_3(S⁵)=Z₂ documented; axion search falsifiability table. | 39% | 21.5% | ~26% |
+| 2026-04-13 | 47 | phase_stiffness_derivation.md (new): f² = (4/3)φ₀²/λ proved exactly via ∫sech⁴(u)du = 4/3 (Bogomolny identity verified numerically: error 6.5e-14); holonomy formula g² = 2π/(r_U1/λ) stated; gap precisely located: r_U1/λ = 3/(4β) is physical identification r_U1 = φ₀²/(β×f²) not derived from substrate; Route A (KK reduction on S¹) and Route B (domain-wall worldvolume) proposed for next step; AUDIT FINDING: kink_model.py formula (4/3)c√(2α³/β) wrong by factor 2√β vs BPS-correct (4/3)c²φ₀²/λ; γ_D derivation (Cycle 32) depends on wrong formula — retraction flagged. | 39% | 22% | ~26% |
+| 2026-04-13 | 48 | RETRACTION — kink_model.py corrected: E_kink formula changed from (4/3)c√(2α³/β) to BPS-correct (4/3)c²φ₀²/λ = (4/3)cα^(3/2)/(β√2); γ_D = (16/3)√β retracted — with correct E_kink, E_kink/E_total(λ) = 8/3 exactly (universal constant, β-independent, > 1); bifurcation_dynamics.py audited: gamma_from_beta() labeled RETRACTED, gamma_ratio_correct() added (verifies 8/3 for all β); bifurcation_dynamics.md updated; ΔV/E_kink corrected 0.71 → 0.265 (at α=1, β=0.035) in 6 files: kink_nucleation.md, kink_model.py, arrow_of_time.md, balloon_analogy.md, fundamental_limits.md, OVERVIEW.md. | 38.5% | 20% | ~24.5% |
+| 2026-04-13 | 49 | hierarchy_problem.md COMPLETED (STUB → full doc): DFC dissolution formalized — Higgs has no bare mass parameter (radiative CW generation only); S³ Goldstone structure gives m_H → 0 as y_t → 0 (symmetry protection without SUSY); 5 bifurcation events separate D1 from D6 (exponential decoupling of Planck-scale corrections); desert prediction (no new particles between TeV and M_c); T9 tension formally quantified: Δ_FT(Route 3B) ≈ 10²⁰ (12-order improvement over SM), Δ_FT(higgs_md) ≈ 10³⁰ (no improvement — depends on which M_c is correct); hierarchy_problem.py (new): fine-tuning Δ_FT(SM)=3.56e32, Δ_FT(R3B)=2.49e20 verified; CW mass estimate; desert table. | 39% | 20% | ~25% |
+| 2026-04-15 | 50 | compton_scattering.md (new): first physical cross-section from DFC — Thomson σ_T = (8π/3)(α_em/m_e)² derived through unbroken chain β→g²=8πβ/3→α_em(M_Z)=1/129.6→QED running→α_em(0)=1/140.1→σ_T=6.37×10⁻²⁹ m² (observed 6.65×10⁻²⁹; −4.3% systematic error = 2×α_em error; single source: r_U1/λ gap); Klein-Nishina Compton cross-section shape derived structurally (ε-dependent suppression exact). scattering_cross_sections.py COMPLETED (STUB → full implementation): full coupling chain verified; QED running imports atomic_structure.py (all fermions e,μ,τ,u,d,s,c,b; Δ(1/α)=10.46); r_e, σ_T, σ_KN(ε) implemented; error budget confirmed (2.2% in α → 4.3% in σ). strong_force.md audited: Consistency Checks table added (α_s(M_Z)=0.105 vs 0.118 failure noted, 8 gluons/confinement structural). higgs_geometry.md audited: stale γ_D cross-ref corrected. coupling_derivation.py audited: BETA/GAMMA_D provenance corrected (γ_D retraction labeled). | 39.5% | 20.5% | ~25.5% |
+| 2026-04-15 | 51 | muon_decay.md (new): weak sector fully derived — β → g_common → g₂(M_Z) → M_W = 79.67 GeV (−0.88%), M_Z = 90.86 GeV (−0.36%), G_F = 1.168×10⁻⁵ GeV⁻² (+0.18%), τ_μ = 2.180 μs (−0.80%); all within 1%; most accurate cluster in the model. Six-step derivation chain documented end-to-end. muon_lifetime.py (new): full numerical computation of all four quantities from β. muon_tau.md audited: stale "< 0.1%" τ_μ claim corrected to actual −0.80% DFC prediction; Consistency Checks row and Connections updated. weinberg_angle_rg.py audited: Cycle 51 cross-ref to muon_lifetime.py added. r_U1/λ blockage analyzed: Routes A and B both blocked for pure real φ⁴ (no U(1) phase to localize); requires substrate extension. M_W, M_Z, G_F, τ_μ added to Tier 2a. | 40% | 21% | ~26% |
 
 **After every push:** Update the estimate here and in `README.md` after every commit push,
 even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
@@ -229,6 +235,17 @@ give preferential weight to those that connect to the three critical bottlenecks
 
 These bottlenecks are the difference between a conceptual framework (~25% viable) and a
 predictive, mathematically rigorous theory (~80%+). All other work is valuable but secondary.
+
+---
+
+### Step 0 — Practical Applications (every ~5–10 cycles, optional)
+
+Before Step 1, consider whether to add a new entry in `practical_applications/`.
+See `practical_applications/OVERVIEW.md` for the document format and Pool A/B/C source selection.
+Use this step to explore engineering implications derived from verified DFC results —
+absolute limits, efficiency ceilings, or unusual technological possibilities implied by
+the substrate structure. These entries do not advance rigor directly but make the model's
+scope concrete and communicate its implications beyond fundamental physics.
 
 ---
 
@@ -331,7 +348,7 @@ Always maintain this distinction explicitly. The model's credibility depends on 
 
 **Correspondences (consistent but not derived):**
 - D5 ↔ U(1), D6 ↔ SU(2), D7 ↔ SU(3) assignments
-- V(φ) = −α/2 φ² + β/4 φ⁴ (postulated, not derived from D1); quartic coupling β ≈ 0.035 inferred from γ_space via γ = (16/3)√β
+- V(φ) = −α/2 φ² + β/4 φ⁴ (postulated, not derived from D1); quartic coupling β ≈ 0.035 is a Tier 3 reference value — the γ = (16/3)√β inference (Cycle 32) was retracted in Cycle 48 (wrong E_kink formula); β constrained by kink width at D1 = Planck length and heuristic g² = 8πβ/3
 - Weinberg angle sin²θ_W ≈ 0.231 (Route 3B gives 0.231 from equal-coupling initial condition + SM running; k_Y = 3/5 now derived from Dynkin normalization condition on SM matter content — no GUT needed; M_c(12) from SM running, not substrate parameters — remaining open item)
 
 ---
@@ -423,6 +440,11 @@ Tier 2a — **Verified** (all four conditions met):
 | Weinberg angle (0.231) | weinberg_angle_rg.py | 0.2312 | 0.2312 | 0.01% | 1 (M_c from SM running) |
 | Electromagnetic fine structure constant at the Z boson mass scale (1/128) | coupling_derivation.py | 1/129.6 | 1/127.9 | 1.3% | 1 (β; heuristic derivation) |
 | Common gauge coupling at unification scale (0.543) | coupling_derivation.py | 0.5423 | 0.5443 | 0.4% | 1 (β; heuristic derivation) |
+| Thomson scattering cross-section (6.65×10⁻²⁹ m²) | scattering_cross_sections.py | 6.368×10⁻²⁹ m² | 6.652×10⁻²⁹ m² | −4.3% | 1 (β; m_e from data) |
+| W boson mass (80.38 GeV) | muon_lifetime.py | 79.67 GeV | 80.377 GeV | −0.88% | 2 (β; v=246 GeV from data) |
+| Z boson mass (91.19 GeV) | muon_lifetime.py | 90.86 GeV | 91.1876 GeV | −0.36% | 2 (β; v=246 GeV from data) |
+| Fermi constant G_F (1.166×10⁻⁵ GeV⁻²) | muon_lifetime.py | 1.168×10⁻⁵ GeV⁻² | 1.166×10⁻⁵ GeV⁻² | +0.18% | 2 (β; v=246 GeV from data) |
+| Muon lifetime (2.197 μs) | muon_lifetime.py | 2.180 μs | 2.197 μs | −0.80% | 3 (β; v=246 GeV; m_μ from data) |
 
 Tier 2b — **Failing** (equation exists, but prediction misses by more than 5%):
 

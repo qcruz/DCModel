@@ -15,13 +15,13 @@ The model:
         φ_kink(x) = √(α/β) × tanh((x - x₀) / λ),  λ = √(2c²/α)
 
     Kink energy (mass analog):
-        E_kink = (4/3) c √(2α³/β)
+        E_kink = (4/3) c² φ₀²/λ = (4/3) c α^(3/2)/(β√2)   [BPS-correct]
 
 Key results:
   - Stable vacua at φ₀ = ±√(α/β)
   - Kink width λ = √(2c²/α)
-  - Kink energy E_kink = (4/3)c√(2α³/β)  [topologically protected]
-  - Barrier ΔV = α²/(4β)  [sector separation; ΔV/E_kink ≈ 0.71 at β=0.035]
+  - Kink energy E_kink = (4/3) c α^(3/2)/(β√2)  [BPS-correct; topologically protected]
+  - Barrier ΔV = α²/(4β)  [sector separation; ΔV/E_kink = 3√(2α)/16 ≈ 0.265 at α=1, β=0.035]
   - V''(0) = −α < 0 (saddle, unstable); V''(φ₀) = 2α > 0 (stable minimum)
   - Two topological sectors: N=+1 (kink) and N=−1 (antikink); see kink_nucleation.md
 
@@ -106,7 +106,22 @@ def kink_energy(alpha: float, beta: float, c: float = 1.0) -> float:
     """
     Total energy (mass) of a static kink:
 
-        E_kink = (4/3) c √(2α³/β)
+        E_kink = (4/3) c² φ₀²/λ = (4/3) c α^(3/2) / (β√2)
+
+    Derived from the Bogomolny identity: E_kink = c² ∫(dφ/dx)² dx.
+    Using dφ/dx = (φ₀/λ) sech²(x/λ) and ∫sech⁴(u)du = 4/3 (exact):
+
+        E_kink = c² × (φ₀/λ)² × λ × (4/3) = (4/3) c² φ₀²/λ
+
+    Substituting φ₀ = √(α/β), λ = c√(2/α):
+
+        E_kink = (4/3) c α^(3/2) / (β√2)
+
+    NOTE: A previous incorrect formula was (4/3) c √(2α³/β), which differs from
+    this result by a factor of 2√β. The old formula overestimates E_kink by 2√β
+    (= 2 at β=1; = 0.374 at β=0.035). The formula here is the BPS-correct result,
+    verified numerically by integrating the energy density directly. See
+    foundations/phase_stiffness_derivation.md for the complete derivation.
 
     This is finite, localized, and topologically protected.
     It cannot be continuously deformed to zero without passing through the unstable
@@ -123,7 +138,9 @@ def kink_energy(alpha: float, beta: float, c: float = 1.0) -> float:
     -------
     float : kink energy (in same units as V × length).
     """
-    return (4.0 / 3.0) * c * math.sqrt(2 * alpha**3 / beta)
+    phi_0 = math.sqrt(alpha / beta)
+    lam = kink_width(alpha, c)
+    return (4.0 / 3.0) * c**2 * phi_0**2 / lam
 
 
 def potential_energy(phi: float, alpha: float, beta: float) -> float:
@@ -289,7 +306,7 @@ if __name__ == "__main__":
     print(f"  This budget is conserved and cannot vanish — only transfer to other modes")
 
     print(f"\n--- Parameter Scaling ---")
-    print(f"  E_kink ∝ c × (α³/β)^(1/2):")
+    print(f"  E_kink = (4/3) c α^(3/2)/(β√2)  ∝ c × α^(3/2)/β:")
     print(f"  λ_kink ∝ 1/√α   (higher α → sharper, heavier kink)")
     for scale in [0.5, 1.0, 2.0, 4.0]:
         E_scaled = kink_energy(alpha * scale, beta, c)

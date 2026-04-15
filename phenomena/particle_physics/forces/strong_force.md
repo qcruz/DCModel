@@ -261,6 +261,23 @@ with one unit of anti-red winding also cancel to zero.
 
 ---
 
+## Consistency Checks
+
+| Check | DFC prediction | Observed | Status |
+|---|---|---|---|
+| α_s(M_Z) from D7 closure | 0.105 (from coupling_derivation.py; M_c(D7) not derived from substrate) | 0.1182 | ✗ 11% off — M_c(D7) open |
+| α_s running shape (asymptotic freedom) | β < 0 for N_f ≤ 16 follows from SU(3) non-Abelian structure | confirmed | ✓ structural |
+| Confinement: color-neutral states only | Zero net D7 winding required in D3 localization layer | all observed hadrons color-neutral | ✓ structural (formal proof open) |
+| 8 gluons from SU(3) (3²−1 = 8 generators) | 8 | 8 | ✓ topological |
+| Three-generation structure from D7 | SU(3) fundamental rep dim = 3 | 3 generations | ✓ Tier 1 |
+| D7 independent of D5, D6 (product topology) | No X/Y boson mediating proton decay | proton lifetime > 10³⁴ yr | ✓ structural |
+
+Note: The 11% error in α_s(M_Z) traces to M_c(D7) not being derived from substrate parameters.
+The depth-running model gives M_c(D7) ≈ 8×10¹⁴ GeV from equal-coupling extrapolation, but this
+is not derived from first principles. See `equations/coupling_derivation.py` and `foundations/depth_assignment.md`.
+
+---
+
 ## Connections to Other Phenomena
 
 - **Gluons** — the 8 connection fields G_μ^a; `phenomena/particle_physics/particles/gluons.md`

@@ -75,7 +75,7 @@ through the saddle point of the potential (the unstable maximum at φ = 0), whic
 a finite energy equal to the potential barrier. This barrier has been computed:
 
 ```
-ΔV / E_kink ≈ 0.71   (at β = 0.035, from equations/kink_model.py)
+ΔV / E_kink ≈ 0.265  (at α=1, β = 0.035, BPS-correct formula; Cycle 48 correction)
 ```
 
 The kink energy E_kink equals the field's rest mass energy, which at D6 depths is the
@@ -157,7 +157,7 @@ time is not in the elementary dynamics but in the nucleation statistics.
 The precise statement: the probability of a kink nucleation event in a small time dt
 is proportional to the nucleation rate (determined by the saddle-point crossing rate,
 related to the Kramers escape rate). The probability of a spontaneous un-nucleation in
-the same dt is proportional to exp(−ΔV/k_B T) times the same rate. For ΔV ≈ 0.71 E_kink
+the same dt is proportional to exp(−ΔV/k_B T) times the same rate. For ΔV ≈ 0.265 E_kink
 and k_B T much less than E_kink at any post-nucleation temperature, the ratio of
 forward to reverse rates is:
 
@@ -186,7 +186,7 @@ physics arrow is from the D6 CKM phase (tiny).
 ```
 Topological irreversibility:
     π₀(configuration space) = Z₂     [two disconnected components: vacuum and kink sectors]
-    Kink ↔ vacuum transition cost: ΔV ≈ 0.71 × E_kink   (at β = 0.035)
+    Kink ↔ vacuum transition cost: ΔV ≈ 0.265 × E_kink  (at α=1, β=0.035; Cycle 48 correction)
     Spontaneous un-nucleation rate: Γ_reverse ∝ exp(−ΔV / k_B T) ≪ Γ_forward
 
 Boltzmann entropy:
@@ -212,7 +212,7 @@ CPT and weak CP violation:
 
 | Check | DFC prediction | Observed | Status |
 |---|---|---|---|
-| Entropy increases | Kink nucleation irreversible: π₀ = Z₂, ΔV = 0.71 E_kink | Second law universally observed | ✓ DERIVED (topological proof) |
+| Entropy increases | Kink nucleation irreversible: π₀ = Z₂, ΔV ≈ 0.265 E_kink (at α=1, β=0.035) | Second law universally observed | ✓ DERIVED (topological proof) |
 | Low initial entropy explained | Pre-cascade D1 = unique zero-entropy state, W=1 | CMB uniformity; early universe low entropy | ✓ structural — no fine-tuning needed |
 | Microscopic reversibility | KG field equation is time-reversal symmetric | CPT invariance in SM | ✓ structural |
 | Arrow from statistics | Γ_forward/Γ_reverse = exp(ΔV/k_B T) ≫ 1 | Entropy always increases | ✓ structural (ΔV/E_kink derived) |

@@ -243,8 +243,9 @@ the generation count:
   `foundations/product_geometry.md`
 - **Dimensional stack** — D5/D6/D7 closure depths and their physical assignments;
   `foundations/dimensional_stack.md`
-- **Bifurcation dynamics** — γ_D = (16/3)√β derived; the compression fraction per spacetime
-  bifurcation sets the depth-running of closure scales (M_c per D-depth);
+- **Bifurcation dynamics** — kink bifurcation mechanics; depth-running of closure scales
+  (M_c per D-depth); NOTE: γ_D = (16/3)√β was retracted in Cycle 48 (wrong E_kink formula);
+  depth-running integration remains valid with γ_space as fitted input;
   `foundations/bifurcation_dynamics.md`
 - **Higgs geometry** — the S³ closure at D6 and its role in mass generation;
   `foundations/higgs_geometry.md`

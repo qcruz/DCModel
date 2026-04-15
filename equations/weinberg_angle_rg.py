@@ -50,6 +50,10 @@ STATUS:
     from the substrate quartic coupling β via g² = 8πβ/3. With β = 0.0351:
     α_common(DFC) = 0.02340 vs α_common(SM) = 0.02358 (0.75% agreement).
     See equations/coupling_derivation.py.
+  - [Cycle 51] Route 3B is used as upstream input in equations/muon_lifetime.py:
+    sin²θ_W from this module → g₂(M_Z) → M_W = 79.67 GeV (−0.88%) → G_F → τ_μ
+    = 2.180 μs (−0.80%). All four weak-sector predictions are within 1%.
+    See phenomena/particle_physics/muon_decay.md.
 
 Usage:
     python3 equations/weinberg_angle_rg.py

@@ -256,18 +256,21 @@ the saddle at N = 0. The barrier height:
 
 For β ≈ 0.035 and α calibrated at D6:
 ```
-ΔV/E_kink = [α²/(4β)] / [(4/3)√(2α³/β)]
-           = α²/(4β) × 3/(4√(2α³/β))
-           = 3α^(1/2) / (16√(2β))
-           ∝ 1/√β                    [grows as β → 0]
+NOTE (Cycle 48 correction): The BPS-correct E_kink = (4/3) c² φ₀²/λ differs
+from the previously used formula by a factor of 2√β. The correct ratio is:
+
+ΔV/E_kink = [α²/(4β)] / [(4/3) c α^(3/2)/(β√2)]
+           = 3√2 α^(1/2) / 16
+           ∝ √α   [depends on α; evaluated at α=1 for natural-unit comparison]
 ```
 
-For β = 0.035: ΔV/E_kink ≈ 3/(16√(0.07)) ≈ 0.71
+For α = 1, β = 0.035: ΔV/E_kink ≈ 3√2/16 ≈ 0.265
+(Previous value 0.71 was computed with the wrong E_kink formula.)
 
-The barrier is comparable to the kink energy — the topological sectors are
-well-separated but not infinitely so. Thermal fluctuations can overcome the
-barrier only if T ~ E_kink (i.e., at extremely high temperature). At D6 closure
-scales, the sectors are stable.
+The barrier is about 26.5% of the kink energy — the topological sectors are
+well-separated. Thermal fluctuations can overcome the barrier only at T comparable
+to the kink energy scale. At any observable temperature T << E_kink, the sectors
+are completely stable and nucleation between them is thermally suppressed.
 
 ### 2. Unstable mode growth rate
 

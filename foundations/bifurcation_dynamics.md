@@ -2,17 +2,21 @@
 
 ## Status
 
-> **New in Cycle 32:** This document formalizes the buckling-instability mechanism
-> of DFC bifurcations and derives the compression budget fraction γ_D from the
-> substrate kink model. The central result:
+> **Cycle 32 claim RETRACTED in Cycle 48.** The central result γ_D = (16/3)√β was
+> derived using an incorrect kink energy formula:
 >
-> **γ_D = (16/3) × √β**
+> **Wrong:** `E_kink = (4/3) c √(2α³/β)` — overstates E_kink by a factor of 2√β
+> **Correct (BPS):** `E_kink = (4/3) c² φ₀²/λ = (4/3) c α^(3/2)/(β√2)`
 >
-> where β is the quartic coupling in V(φ) = −α/2 φ² + β/4 φ⁴. This connects the
-> two-scale depth-running model to the substrate parameters, partially closing the
-> most important open derivation in the framework.
+> With the correct formula, the ratio E_kink / E_total(λ) = **8/3** exactly —
+> a universal constant independent of α, β, and c. Since 8/3 > 1, the interpretation
+> of this ratio as a "compression fraction" γ_D ∈ (0, 1) fails. The γ_D = (16/3)√β
+> result is retracted. The β ≈ 0.035 inference that followed from it is also retracted
+> as a derivation (β remains at Tier 3 — a reference value, not derived).
 >
-> Verified numerically in `equations/bifurcation_dynamics.py`.
+> What remains valid: the depth-running integration, the M_c(D5) reproduction,
+> the Planck-length self-consistency check, and the D-label disambiguation.
+> See `equations/bifurcation_dynamics.py` for the corrected numerical verification.
 
 ---
 
@@ -34,10 +38,14 @@ where:
   φ₀ = √(α/β)      [vacuum field value]
 ```
 
-The kink energy (mass of one topological closure) is:
+The kink energy (mass of one topological closure) is (BPS-correct formula,
+derived from the Bogomolny identity and verified by direct numerical integration):
 
 ```
-E_kink = (4/3) c √(2α³/β)
+E_kink = (4/3) c² φ₀²/λ = (4/3) c α^(3/2)/(β√2)
+
+NOTE: A previous formula (4/3) c √(2α³/β) was incorrect — it overstates
+E_kink by a factor of 2√β. See foundations/phase_stiffness_derivation.md.
 ```
 
 A **bifurcation event** occurs when the substrate reaches a compression threshold where
@@ -51,7 +59,7 @@ key parameter in the depth-running equation α_{D+1} = α_D × (1 − γ_D).
 
 ---
 
-## Deriving γ_D from Kink Mechanics
+## γ_D Derivation Attempt and Retraction (Cycle 32 → Cycle 48)
 
 ### Step 1: Energy budget within one coherence volume
 
@@ -68,125 +76,116 @@ where V_min = −α²/(4β) is the depth of the double-well potential minimum.
 Substituting λ = √(2c²/α) = c√(2/α):
 
 ```
-E_total(λ) = (α²/4β) × c√(2/α)
-           = (c/4β) × α^(3/2) × √2
-           = (c√2 / 4β) × α^(3/2)
+E_total(λ) = (α²/4β) × c√(2/α) = (c√2 / 4β) × α^(3/2)
 ```
 
-### Step 2: Compression fraction consumed by one kink
+### Step 2: Ratio with BPS-correct E_kink
+
+Using the correct kink energy E_kink = (4/3) c α^(3/2)/(β√2):
 
 ```
 γ_D = E_kink / E_total(λ)
-    = [(4/3) c √(2α³/β)] / [(c√2/4β) × α^(3/2)]
+    = [(4/3) c α^(3/2)/(β√2)] / [(c√2/4β) × α^(3/2)]
+    = (4/3) × (4β)/(β × √2 × √2)
+    = (4/3) × 4/2
+    = 8/3  ≈ 2.667
 ```
 
-Simplify the numerator:
+All α, β, c dependence cancels. The ratio is the universal constant 8/3 — independent
+of every substrate parameter.
+
+### Why this is not γ_D
+
+Since 8/3 > 1, this ratio cannot be a "compression fraction" γ_D ∈ (0, 1). The
+E_total(λ) = |V_min| × λ measure is smaller than E_kink: a single kink contains more
+energy than the potential-energy-density × width product. This means E_total(λ) is not
+the right normalization for the compression budget.
+
+The Cycle 32 result γ_D = (16/3)√β arose from substituting the wrong E_kink formula
+(which was smaller by a factor of 2√β). With the wrong formula, the ratio was
+(16/3)√β ≈ 0.999 at β = 0.035 — numerically close to 1 and physically plausible as
+a compression fraction, but built on an error. The derivation is **retracted**.
+
+### What would be needed for a valid γ_D derivation
+
+To derive a physical compression fraction from the kink model, the right framework is:
+
 ```
-E_kink = (4/3) c √2 × α^(3/2) / √β
+γ_D = E_kink / E_total(L)
 ```
 
-Simplify the ratio:
-```
-γ_D = [(4/3) c √2 α^(3/2) / √β] / [(c√2 / 4β) × α^(3/2)]
-    = [(4/3) / √β] / [1 / (4β)]
-    = (4/3) × 4β / √β
-    = (16/3) × β / √β
-    = (16/3) × √β
-```
-
-### Result
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│   γ_D = (16/3) × √β                                        │
-│                                                             │
-│   The compression fraction consumed at each spacetime       │
-│   bifurcation is determined entirely by the substrate       │
-│   quartic coupling β.                                       │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-This result is independent of α, c, and the layer index D. If β is the universal quartic
-coupling of the DFC substrate (the same at all depths), then γ is the same at every
-spacetime bifurcation — consistent with the uniform-γ model for the D1→D4 spacetime sector.
+where L is a macroscopic length scale much larger than λ. If L is the coherence length
+of the full substrate field (rather than one kink width), then E_total(L) ≫ E_kink and
+γ_D ≪ 1 naturally. But L must be derived from the substrate dynamics — it cannot be
+postulated without undermining the derivation. This remains an open problem.
 
 ---
 
 ## Connection to the Two-Scale Depth-Running Model
 
-From `foundations/depth_running.md`, the two-scale model requires:
+The depth-running model requires a compression fraction γ_space such that:
 
 ```
-γ_space ≈ 1 − 10^{−3.05} ≈ 0.9991
+M_c(D5) = M_Pl × (1 − γ_space)^2   →   γ_space ≈ 0.9991
 ```
 
-This pins the quartic coupling:
+The Cycle 32 claim was that β could be inferred from γ_space via γ = (16/3)√β. This
+inference is **retracted**. The depth-running integration remains valid with γ_space
+treated as an independent fitted parameter. The M_c(D5) reproduction is self-consistent
+but does not derive β from first principles.
+
+### What the depth-running model does correctly
+
+With γ_space as input (not derived from β), the depth-running equation:
 
 ```
-γ_space = (16/3) × √β
-0.9991  = 5.333 × √β
-√β      = 0.9991 / 5.333 ≈ 0.18733
-β       ≈ 0.0351
+α_{D+1} = α_D × (1 − γ_space)
 ```
 
-**β ≈ 0.035 is the DFC substrate quartic coupling.** This is a perturbatively small
-value, consistent with the substrate being weakly self-interacting at the kink level.
-
-### Verification: Does this reproduce the D1→D5 hierarchy?
-
-With γ_space = 0.9991 over 4 spacetime bifurcations (D1→D5):
+correctly reproduces the closure scale hierarchy from D1 to D5:
 
 ```
-M_c(D5) / M_Pl = √[(1 − γ_space)^4] = (1 − 0.9991)^2 = (9 × 10^{−4})^2 = 8.1 × 10^{−7}
-
-M_c(D5) = 1.22 × 10^{19} × 8.1 × 10^{−7} ≈ 9.9 × 10^{12} GeV ≈ 10^{13} GeV  ✓
+M_c(D5) ≈ 1.02 × 10^13 GeV  (matches Route 3B target, error < 0.001%)
 ```
 
-The Route 3B target M_c(D5) = 1.02 × 10^13 GeV is reproduced to within the precision
-of the γ_space fit.
+The D1 anchor M_c(D1) = M_Pl with α_D1 = 2M_Pl² is self-consistent, and the kink width
+at D1 equals the Planck length (see below). These structural results are unaffected by
+the γ_D retraction.
 
-### Translating to a first-principles prediction
+### Status of β ≈ 0.035
 
-The derivation converts the depth-running constraint into a substrate parameter constraint:
-
-```
-β ≈ (3 γ_space / 16)²  →  β ≈ 0.0351
-```
-
-This is a prediction: if the DFC model is correct, the quartic coupling of the scalar
-substrate must be approximately β ≈ 0.035 in dimensionless units. Future work deriving β
-from a pre-substrate principle would eliminate the last remaining free parameter in the
-depth-running sector.
+The value β ≈ 0.035 is retained as a **Tier 3 reference value** — not derived from first
+principles. It was previously inferred from the (wrong) γ_D formula; it now stands only
+as a value consistent with: (a) the kink width at D1 = Planck length, and (b) the
+heuristic coupling derivation g² = 8πβ/3 (Cycle 42, also heuristic). Deriving β from
+a pre-substrate condition is the highest-priority open problem in the model.
 
 ---
 
 ## Why γ → 0 at the D5/D6 Gauge Co-Emergence
 
-The γ_D = (16/3)√β formula applies when L = λ — when the bifurcation event is localized
-to one kink coherence volume. This is the correct scale for the spacetime bifurcations
-(D1→D4), which occur while the substrate is still near-D1 and the coherence length is
-near the Planck scale.
+Even without a derived γ_D, the structural argument for co-crystallization remains:
 
-The D5/D6 co-crystallization is physically different:
+The γ → 0 behavior at D5/D6 can be understood by considering L >> λ:
 
-1. **Different length scale:** By the time the D5/D6 gauge closure threshold is reached,
-   the substrate has organized into a structure whose coherence length is not λ_D5 but
-   the full macroscopic substrate extent L_macro >> λ_D5. The total compression energy in
-   the denominator is:
-   ```
-   E_total(L_macro) = (α_D5² / 4β) × L_macro >> E_total(λ_D5)
-   ```
-   The larger denominator drives γ → 0.
+```
+γ = E_kink / E_total(L) = E_kink / [(α²/4β) × L]
+```
+
+As L → ∞, γ → 0 regardless of α, β, or c. The D5/D6 gauge closures involve a coherence
+length L_macro >> λ_D5, so their γ is genuinely close to zero. This argument is structural
+and survives the retraction of the γ_D = (16/3)√β formula (which was specifically for L = λ).
+
+1. **Different length scale:** By D5/D6, the substrate has organized into a structure whose
+   coherence length is not λ_D5 but L_macro >> λ_D5. The total compression energy in the
+   denominator is E_total(L_macro) >> E_kink, driving γ → 0.
 
 2. **Co-emergence from the same event:** The D5 (U(1)) and D6 (SU(2)) closures emerge as
-   two aspects of a single bifurcation event at the electroweak compression threshold. The
-   energy budget for this bifurcation is shared between both closures; neither individually
-   consumes a large fraction.
+   two aspects of a single bifurcation event. The energy budget for this bifurcation is
+   shared between both closures; neither individually consumes a large fraction.
 
 3. **Physical consequence:** Because γ_{D5→D6} ≈ 0, the D6 closure forms at the same
-   energy scale as D5. This is the DFC account of electroweak unification: U(1) and SU(2)
+   energy scale as D5. This is the DFC account of electroweak structure: U(1) and SU(2)
    do not unify by merging into a simple group — they co-crystallize because they emerge
    from the same substrate event with the same compression budget.
 
@@ -224,15 +223,22 @@ use Scheme B. When reading `bifurcation.py` or `dimensional_stack.md`, mentally 
 
 ## What Remains Open
 
-The derivation establishes that β ≈ 0.035 is required by the M_Pl/M_c(D5) ratio. Three
-questions remain:
+Three open problems survive the Cycle 48 retraction:
 
-### 1. β from a pre-substrate principle
+### 1. γ_D from a valid energy normalization
 
-The quartic coupling β is currently read from the requirement γ_space ≈ 0.9991. A complete
-derivation would compute β from a more fundamental starting point — perhaps from the
-topology of the D1 state itself, or from the self-consistency condition that the kink
-solution be stable against small perturbations at the Planck scale.
+The ratio E_kink / E_total(λ) = 8/3 > 1, so E_total(λ) = |V_min|×λ is not a valid
+compression budget. A valid derivation must identify an energy normalization E_norm > E_kink
+that depends on β (so γ_D = E_kink/E_norm is β-dependent and < 1). The macroscopic
+coherence length argument (γ → 0 for L >> λ) shows the direction: E_norm = |V_min|×L for
+some substrate-derived L. Identifying L from the kink dynamics is the key step.
+
+### 2. β from a pre-substrate principle
+
+The quartic coupling β is currently a Tier 3 reference value (β ≈ 0.035) without a
+derivation. A complete account would compute β from a fundamental starting point — perhaps
+from the topology of the D1 state itself, or from the self-consistency condition that the
+kink solution be stable at the Planck scale.
 
 ### 2. α from β and c
 
@@ -259,10 +265,9 @@ excitation at D1 has a size equal to the Planck length.
 
 ### 3. Why exactly 4 macroscopic bifurcations (D1→D4)
 
-The formula γ_D = (16/3)√β predicts that every bifurcation consumes γ ≈ 0.9991 of the
-compression budget. This is the same fraction whether the bifurcation produces D2, D3,
-or D4. The model does not yet explain from this formula alone why the sequence terminates
-at D4 and transitions to closed gauge modes at D5.
+Without a valid γ_D derivation, the number-of-bifurcations question is even more open.
+The model does not yet explain why the sequence terminates at D4 and transitions to
+closed gauge modes at D5.
 
 The open/closed transition (why D5+ forms compact topological loops rather than open
 propagating modes) must come from a different argument — one related to the topology of
@@ -275,11 +280,15 @@ the available closed manifolds at each compression depth.
 | Claim | Status |
 |---|---|
 | Bifurcation mechanism is buckling instability of kink potential | Established ✓ |
-| γ_D = (16/3)√β derived from E_kink / E_total at one coherence volume | **Derived ✓** |
-| β ≈ 0.035 from γ_space ≈ 0.9991 requirement | Derived (conditional on γ_space fit) |
-| M_c(D5) ≈ 10^13 GeV reproduced with β ≈ 0.035 | Verified ✓ |
-| γ_{D5→D6} → 0 explained by macroscopic coherence length | Physical argument ✓; formal derivation OPEN |
-| D-label ambiguity (Scheme A vs B) identified and documented | Documented ✓ |
+| E_kink = (4/3) c² φ₀²/λ (BPS-correct, Bogomolny identity) | Proved ✓ (Cycle 48) |
+| γ_D = (16/3)√β derived from E_kink / E_total(λ) | **RETRACTED** (Cycle 48) — used wrong E_kink |
+| E_kink(BPS) / E_total(λ) = 8/3 exactly (universal constant) | Proved ✓ (Cycle 48) |
+| β ≈ 0.035 from γ_space ≈ 0.9991 requirement | RETRACTED as derivation — β is Tier 3 reference |
+| M_c(D5) ≈ 10^13 GeV from depth-running (γ_space as input) | Verified ✓ |
+| Kink width at D1 = Planck length (self-consistency) | Verified ✓ |
+| γ_{D5→D6} → 0 from macroscopic coherence length argument | Physical argument ✓; formal derivation OPEN |
+| D-label ambiguity (Scheme A vs B) documented | Documented ✓ |
+| γ_D ∈ (0,1) derivation from substrate with correct E_kink | OPEN — requires deriving L from dynamics |
 | β from pre-substrate principle | OPEN |
 | Why open/closed transition at D4→D5 | OPEN |
 

@@ -84,7 +84,7 @@ The balloon buckles into one of two stable configurations:
 
 These are the two topological sectors, N = +1 and N = −1. The balloon cannot transition
 between them without passing through the flat (symmetric) configuration — which costs
-energy equal to the barrier height ΔV ≈ 0.71 × E_kink (at β ≈ 0.035). The barrier is
+energy equal to the barrier height ΔV ≈ 0.265 × E_kink (at α=1, β ≈ 0.035; BPS-correct). The barrier is
 high enough that once the balloon has settled into one configuration, it stays.
 
 This is why **measurement outcomes are binary**. When something disturbs the balloon enough

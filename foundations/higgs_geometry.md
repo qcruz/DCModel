@@ -212,5 +212,5 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 - `foundations/higgs_mass_derivation.md` — full RG-improved derivation; uncertainty budget
 - `foundations/embedding_geometry.md` — sin²θ_W = 3/8 at closure scale (Route 3B)
 - `foundations/depth_assignment.md` — why SU(2) at D6 (Route B Hopf fibration candidate)
-- `foundations/bifurcation_dynamics.md` — γ_D = (16/3)√β; M_c(D5) from substrate
+- `foundations/bifurcation_dynamics.md` — NOTE: γ_D = (16/3)√β RETRACTED (Cycle 48); E_kink/E_total(λ) = 8/3 proved; M_c(D5) depth-running still valid
 - `equations/weinberg_angle_rg.py` — self-consistent M_c(12) ≈ 10¹³ GeV; M_c tension noted

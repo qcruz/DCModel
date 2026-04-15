@@ -1,7 +1,7 @@
 # Current State of the DFC Model
 
 *Living document — updated periodically as the model develops.*
-*Last reviewed: 2026-04-04*
+*Last reviewed: 2026-04-13 (Cycles 47–49)*
 
 ---
 
@@ -196,6 +196,28 @@ substrate behaviors. This ambiguity is a known open problem.
 Values are all PDG 2024 or estimates; R_U1/R_S3/R_SU3 are all explicitly ESTIMATE.
 
 **All equation modules reviewed.** Audit complete.
+
+**`kink_model.py`** — critical formula bug fixed (Cycle 48). Old formula `(4/3)c√(2α³/β)`
+was wrong by a factor of 2√β vs the BPS-correct Bogomolny identity result
+`E_kink = (4/3)c²φ₀²/λ`. The retraction propagated to 6 files; ΔV/E_kink corrected
+from 0.71 to 0.265 everywhere.
+
+**`bifurcation_dynamics.py`** — γ_D = (16/3)√β retracted (Cycle 48). With the
+BPS-correct E_kink, the ratio E_kink/E_total(λ) = 8/3 exactly — a universal constant
+greater than 1. It cannot be a physical fraction consumed per bifurcation. The β ≈ 0.035
+inference via γ_D is retracted; β is now a Tier 3 reference value with derivation open.
+The depth-running M_c(D5) derivation remains self-consistent (uses γ_space as fitted input).
+
+**`hierarchy_problem.py`** — new module created (Cycle 49). Fine-tuning measure
+Δ_FT = (3y_t²/8π²)×Λ²/m_H² computed for SM, Route 3B, and higgs_mass_derivation
+closure scales. SM: 3.56×10³². DFC Route 3B: 2.49×10²⁰ (~12 orders improvement).
+DFC higgs_md: 2.44×10³⁰ (~same as SM — T9 tension is critical). Desert prediction
+and CW mass estimate functions included.
+
+**`coupling_derivation.py`** — audited (Cycle 49). β provenance description corrected:
+removed claim "inferred from γ_D" (retracted). GAMMA_D constant kept for reference but
+labeled RETRACTED. Core formula g²=8πβ/3 and all coupling predictions unaffected
+(use correct phase stiffness f²=(4/3)φ₀²/λ throughout).
 
 ---
 

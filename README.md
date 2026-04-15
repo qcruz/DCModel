@@ -54,7 +54,7 @@ foundations/              Core concepts, thought experiments, and structural arg
   mass_hierarchy.md       Electron/muon mass ratio from geometric defect
   substrate.md            Mathematical substrate framework (kink model, postulates)
   embedding_geometry.md   Weinberg angle from equal-coupling initial conditions (Route 3B)
-  bifurcation_dynamics.md γ_D = (16/3)√β derived; β ≈ 0.035; Planck-length kink width; D-label disambiguation
+  bifurcation_dynamics.md γ_D = (16/3)√β RETRACTED (Cycle 48); E_kink/E_total(λ)=8/3 proved; Planck-length kink width; D-label disambiguation
   kink_scattering.md      Shape mode ω₁ = (√3/2)m_σ (parameter-free); first S-matrix from substrate (Born)
   bell_hidden_variables.md  DFC Bell resolution: Assumption 2 violated by D1/D2 connectivity; not conspiracy
   tsirelson_bound.md        Tsirelson CHSH ≤ 2√2 proved: C²=4I⊗I−[A₁,A₂]⊗[B₁,B₂]; SU(2) commutator norm ≤ 2
@@ -69,7 +69,7 @@ equations/                Runnable Python modules — input data, get prediction
   gauge_couplings.py      Running couplings, squashing correction, pairwise crossings
   proton_stability.py     Proton lifetime bounds, sphaleron rate, experiment comparison
   weinberg_angle_rg.py    sin²θ_W = 3/8 at closure scale → 0.231 via RG running (Route 3B)
-  bifurcation_dynamics.py γ_D = (16/3)√β verified; β = 0.035; M_c(D5) reproduced exactly
+  bifurcation_dynamics.py γ_D formula RETRACTED; E_kink/E_total(λ)=8/3 verified; depth-running M_c(D5) remains self-consistent
   kink_scattering.py      Pöschl-Teller spectrum; shape mode = 0.8660 m_σ; Born phase shift
   [STUBS — targets for future development]
   s_matrix.py             Full S-matrix beyond Born; exact kink-antikink; 3+1D Skyrme
@@ -82,11 +82,14 @@ equations/                Runnable Python modules — input data, get prediction
   holographic_entropy.py  Bekenstein-Hawking from closure capacity
   baryogenesis.py         Matter-antimatter asymmetry at D7 phase transition
   inflation.py            Inflation as D1→D4 bifurcation cascade; n_s prediction
-  scattering_cross_sections.py  σ_Thomson, Compton, e+e- from DFC substrate
+  scattering_cross_sections.py  σ_Thomson, Compton from DFC coupling chain (Cycle 50; −4.3% systematic)
+  muon_lifetime.py        M_W, M_Z, G_F, τ_μ from DFC coupling chain (Cycle 51; all <1%)
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
     proton_stability.md   Why the proton cannot decay (product topology argument)
+    compton_scattering.md Thomson/Compton cross-section from DFC coupling chain (Cycle 50)
+    muon_decay.md         W mass, Fermi constant, muon lifetime from DFC (Cycle 51; all <1%)
   quantum/
     quantum_mechanics.md  Superposition, collapse, entanglement, tunneling, uncertainty
     interference.md       Wave interference as stationary field redistribution
@@ -100,6 +103,9 @@ phenomena/                Natural language explanations of physical observations
 
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories
+practical_applications/   Engineering limits and implications derived from DFC
+  OVERVIEW.md             Document type protocol and rotation guide
+  fundamental_limits.md   Five canonical engineering ceilings from substrate structure
 archive/                  Original source documents
 data/                     Observational reference values (PDG, cosmological)
 ```
@@ -144,22 +150,24 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~25.5%** (viability as a theory: ~38.5%; mathematical rigor: ~21.5%)
+**Current estimate: ~26%** (viability as a theory: ~40%; mathematical rigor: ~21%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
 is that it *derives* rather than *reconstructs* the Standard Model. Three bottlenecks dominate:
 
 1. **D-depth assignment mechanism** — why U(1) at D5, SU(2) at D6, SU(3) at D7 (not derived)
-2. **First-principles coupling constants** — α_s, sin²θ_W, g_W (Route 3B gives sin²θ_W = 0.231 from equal-coupling initial condition + SM running; deriving M_c from substrate parameters is the next step)
-3. **S-matrix derivation** — no scattering amplitude has been computed from substrate dynamics
+2. **First-principles coupling constants** — α_s, sin²θ_W, g_W (Route 3B gives sin²θ_W = 0.231; Cycle 51 extended the chain to M_W = 79.67 GeV, G_F = 1.168×10⁻⁵, τ_μ = 2.180 μs — all within 1%; deriving v = 246 GeV and M_c from substrate parameters is the next step)
+3. **S-matrix derivation** — Cycle 50 computed Thomson σ_T (−4.3%); Cycle 51 computed weak sector predictions (all <1%); the r_U1/λ = 3/(4β) identification is blocked for pure real φ⁴ — requires substrate extension (complex scalar or gauge structure)
 
-The next highest-value step: derive β ≈ 0.035 from a pre-substrate principle, which would
-complete the γ_space derivation chain (γ_D = (16/3)√β was derived in Cycle 32 from
-E_kink/E_total at one coherence volume — all α,c dependence cancels; β is the sole remaining
-free parameter in the depth-running sector). A complementary target: derive M_c(12) from
-substrate parameters rather than SM running. The d_depth_lagrangians framework (Cycle 29)
-maps the full derivation sequence from D1 to D5/D6/D7.
+The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the correct BPS E_kink
+formula gives E_kink/E_total(λ) = 8/3 exactly — a universal constant, β-independent, and
+greater than 1. The β ≈ 0.035 inference that depended on this is also retracted; β is now
+Tier 3 (reference value). The next highest-value step: find an energy normalization
+E_total(L) with macroscopic L derived from substrate dynamics that gives γ_D ∈ (0,1) with
+β dependence — this would complete the depth-running derivation chain. The r_U1/λ formal
+derivation requires extending the substrate beyond pure real φ⁴ — the U(1) phase has no
+localizable mode on the real kink (both KK and worldvolume routes are blocked).
 
 *Updated after every push. Full history in `CLAUDE.md`.*
 
