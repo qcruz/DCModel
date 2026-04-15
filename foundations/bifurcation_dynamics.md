@@ -240,7 +240,7 @@ derivation. A complete account would compute β from a fundamental starting poin
 from the topology of the D1 state itself, or from the self-consistency condition that the
 kink solution be stable at the Planck scale.
 
-### 2. α from β and c
+### 3. α from β and c
 
 The substrate has three parameters: α, β, c. The closure scale formula M_c = √(α/2)
 fixes the combination α_D1 ≈ 2 M_Pl² in GeV². The kink width λ = c√(2/α_D1) then fixes
@@ -300,5 +300,5 @@ the available closed manifolds at each compression depth.
 - `foundations/substrate.md` — DFC kink model; V(φ) = −α/2 φ² + β/4 φ⁴
 - `equations/bifurcation.py` — Scheme A D-label assignments (particle mass spectrum)
 - `equations/depth_running.py` — Scheme B D-label assignments (gauge closure thresholds)
-- `equations/bifurcation_dynamics.py` — numerical verification of γ = (16/3)√β
+- `equations/bifurcation_dynamics.py` — E_kink/E_total = 8/3 verified; gamma_from_beta() RETRACTED (label present)
 - `foundations/embedding_geometry.md` — Route 3B; M_c(D5) = 10^13 GeV

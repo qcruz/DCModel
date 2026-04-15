@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-15 (Cycles 47–52)
+**Last updated:** 2026-04-15 (Cycles 47–53)
 
 ---
 
@@ -91,7 +91,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | Born rule for position | Spin case DERIVED (Cycle 38); Kramers escape rate Γ(x) ∝ \|φ(x)\|² not rigorously derived | `measurement.md`, `born_rule_derivation.md` | Escape rate calculation from V(φ) saddle topology |
 | ℏ from (α, β, c) | S_kink(D1)/ℏ = 4×10³⁹ — 13.2 bifurcations needed to reach ℏ scale; model has only 4 | `planck_constant_derivation.md` | Either additional sub-bifurcation structure or route via α_em derivation |
 | Confinement formal proof | Requires nonlinear SU(3) analysis; equivalent to Yang-Mills mass gap problem | `strong_force.md` (Open Q1), `strong_cp.md` | Nonlinear D7 field theory; beyond perturbation theory |
-| v = 246 GeV from substrate | μ² and λ in V(ε) not derived from (α, β, c) | `higgs_geometry.md` (Open Q2), `higgs_mass_derivation.md` | Derive μ² from D7 squashing pressure, λ from S³ curvature resistance |
+| v = 246 GeV from substrate | μ² and λ in V(ε) not derived from (α, β, c) | `higgs_geometry.md` (Open Q2), `higgs_mass_derivation.md`, `foundations/vev_derivation.md` (Cycle 53) | Derive μ² from D7/D6 overlap integral; λ from Berger sphere quartic (tractable — R₄ expansion of squashed S³); T9 must be resolved first |
 | CKM and PMNS matrices | Holonomy mismatch integral over D6/D7 boundary not computed | `flavor_mixing.md`, `tension_analysis.md` | D6/D7 overlap geometry → mixing angle computation |
 | Electroweak loop corrections (Δρ_top) | One-loop DFC calculation from D6+D7 dynamics not done | `electroweak_precision.md` (Open Q1) | Standard Feynman diagram computation in DFC effective Lagrangian |
 

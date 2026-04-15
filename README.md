@@ -55,6 +55,7 @@ foundations/              Core concepts, thought experiments, and structural arg
   mass_hierarchy.md       Electron/muon mass ratio from geometric defect
   substrate.md            Mathematical substrate framework (kink model, postulates)
   embedding_geometry.md   Weinberg angle from equal-coupling initial conditions (Route 3B)
+  vev_derivation.md       v = 246 GeV derivation path: μ² from D6/D7 overlap, λ from Berger sphere quartic
   bifurcation_dynamics.md γ_D = (16/3)√β RETRACTED (Cycle 48); E_kink/E_total(λ)=8/3 proved; Planck-length kink width; D-label disambiguation
   kink_scattering.md      Shape mode ω₁ = (√3/2)m_σ (parameter-free); first S-matrix from substrate (Born)
   bell_hidden_variables.md  DFC Bell resolution: Assumption 2 violated by D1/D2 connectivity; not conspiracy
@@ -153,26 +154,48 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~26.5%** (viability as a theory: ~40.5%; mathematical rigor: ~21.5%)
+**Current estimate: ~27%** (viability as a theory: ~41%; mathematical rigor: ~21.5%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
 is that it *derives* rather than *reconstructs* the Standard Model. Three bottlenecks dominate:
 
 1. **D-depth assignment mechanism** — why U(1) at D5, SU(2) at D6, SU(3) at D7 (not derived)
-2. **First-principles coupling constants** — α_s, sin²θ_W, g_W (Route 3B gives sin²θ_W = 0.231; Cycle 51 extended the chain to M_W = 79.67 GeV, G_F = 1.168×10⁻⁵, τ_μ = 2.180 μs — all within 1%; deriving v = 246 GeV and M_c from substrate parameters is the next step)
+2. **First-principles coupling constants** — α_s, sin²θ_W, g_W (Route 3B gives sin²θ_W = 0.231; Cycle 51 extended the chain to M_W = 79.67 GeV, G_F = 1.168×10⁻⁵, τ_μ = 2.180 μs — all within 1%; Cycle 53 formally maps v = 246 GeV derivation: μ² from D6/D7 overlap, λ from Berger sphere quartic — Berger sphere R₄ identified as tractable)
 3. **S-matrix derivation** — Cycle 50 computed Thomson σ_T (−4.3%); Cycle 51 computed weak sector predictions (all <1%); the r_U1/λ = 3/(4β) identification is blocked for pure real φ⁴ — requires substrate extension (complex scalar or gauge structure)
 
 The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the correct BPS E_kink
 formula gives E_kink/E_total(λ) = 8/3 exactly — a universal constant, β-independent, and
 greater than 1. The β ≈ 0.035 inference that depended on this is also retracted; β is now
-Tier 3 (reference value). The next highest-value step: find an energy normalization
-E_total(L) with macroscopic L derived from substrate dynamics that gives γ_D ∈ (0,1) with
-β dependence — this would complete the depth-running derivation chain. The r_U1/λ formal
-derivation requires extending the substrate beyond pure real φ⁴ — the U(1) phase has no
-localizable mode on the real kink (both KK and worldvolume routes are blocked).
+Tier 3 (reference value). The r_U1/λ formal derivation requires extending the substrate
+beyond pure real φ⁴ — the U(1) phase has no localizable mode on the real kink (both KK
+and worldvolume routes are blocked).
 
 *Updated after every push. Full history in `CLAUDE.md`.*
+
+---
+
+## Coverage of Existing Theories
+
+How much of each major theory's key content (derivations, predictions, structural explanations)
+has been replicated or superseded within the DFC framework. These are honest estimates, not
+aspirational targets. A theory is "covered" when DFC either reproduces the result from DFC
+substrate parameters or provides a structural explanation for *why* the result takes the form
+it does. Percentage reflects breadth of coverage, not accuracy of any single result.
+
+| Theory | Coverage | What DFC Has | What's Missing |
+|---|---|---|---|
+| **Quantum Mechanics** | ~40% | Schrödinger eq. (derived from KG); spin-1/2 (FR/JR derivation); Born rule for spin (derived); binary outcomes (proved topologically); Tsirelson bound (proved); superposition/entanglement/tunneling (structural accounts) | Born rule for position (OPEN); path integral; operator formalism; ℏ from substrate (OPEN) |
+| **Thermodynamics** | ~55% | All four laws (derived from folding mechanics); arrow of time (derived from Z₂ topology); blackbody Planck spectrum (structural, modulo ℏ); Boltzmann statistics (structural); heat/conduction (structural) | Fluctuation theorems (Jarzynski, Crooks); Carnot efficiency formula from DFC (in progress) |
+| **Standard Model** | ~35% | U(1)×SU(2)×SU(3) product structure (derived); 3 generations (derived); proton stability (stronger than SM — zero rate); parity violation (derived from JR chirality); Weinberg angle (0.231, <0.01%); m_μ/m_e (206.77, exact); M_W, M_Z, G_F, τ_μ (all <1%); Higgs mass (124.4 GeV, <1σ) | CKM/PMNS matrices; τ mass (8.4× off); α_s (11% off); top quark mass; Feynman rules not in DFC framework; loop corrections not computed |
+| **General Relativity** | ~15% | Gravity as folding gradient (structural); gravitational waves (structural + polarization); black holes (structural); time dilation (structural); Hubble constant (67.26 km/s/Mpc, 0.2%) | Schwarzschild/Kerr metrics not derived; Einstein field equations not derived; G_Newton not derived; perihelion advance not computed |
+| **ΛCDM Cosmology** | ~20% | Hubble constant (0.2% match); CMB Planck spectrum + uniformity (structural); Big Bang (structural); flatness/horizon problem dissolved structurally; dark energy as substrate residual (structural, qualitative) | Inflation (stub); dark matter candidates (stub); baryogenesis (stub); Λ from substrate (stub); CMB power spectrum amplitude A_s (OPEN) |
+| **QFT (perturbative)** | ~12% | Born S-matrix from substrate (kink-antikink phase shift); Thomson/Compton cross-section (−4.3%, systematic); Pöschl-Teller spectrum (exact, parameter-free); RG running imported from SM as boundary condition | Loop corrections not computed in DFC; Feynman diagram rules not derived; renormalization in DFC not formalized; vacuum energy cancellations not addressed |
+| **String Theory** | ~3% | Some topological overlaps (compact closure geometries, dimensional counting); DFC has no pre-existing spacetime, similar in spirit | No strings, branes, D-branes; no T/S-duality; no moduli stabilization in string sense; DFC is a fundamentally different framework |
+| **Loop Quantum Gravity** | ~5% | Discrete topological closures analogous in spirit to spin networks; binary measurement outcomes proved (similar discreteness motivation) | No Ashtekar variables; no spin foams; no area/volume quantization computed; discreteness origin is different (topology vs. quantization of geometry) |
+
+*Estimates updated after each push cycle. Coverage increases when a derivation is completed
+or a structural explanation is formalized. See CLAUDE.md Tier system for claim classifications.*
 
 ---
 
