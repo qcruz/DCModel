@@ -36,6 +36,7 @@ at different fold depths are what we call electricity, the weak force, and color
 
 ```
 WRITING_GUIDE.md          How to write phenomenon descriptions (read before contributing)
+ISSUES.md                 Centralized tracker: all open questions, failures, tensions, retracted claims
 
 foundations/              Core concepts, thought experiments, and structural arguments
   introduction.md         Originating thought experiment, overview, string theory comparison

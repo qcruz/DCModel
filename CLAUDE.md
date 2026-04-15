@@ -237,6 +237,10 @@ give preferential weight to those that connect to the three critical bottlenecks
 These bottlenecks are the difference between a conceptual framework (~25% viable) and a
 predictive, mathematically rigorous theory (~80%+). All other work is valuable but secondary.
 
+**After every push, also check `ISSUES.md`** — the centralized tracker for all open questions,
+known failures, internal tensions, retracted claims, and blocked derivations. When an issue is
+resolved, move it to the Resolved section. When a new failure or conflict is discovered, add it.
+
 ---
 
 ### Step 0 — Practical Applications (every ~5–10 cycles, optional)
