@@ -84,12 +84,14 @@ equations/                Runnable Python modules — input data, get prediction
   inflation.py            Inflation as D1→D4 bifurcation cascade; n_s prediction
   scattering_cross_sections.py  σ_Thomson, Compton from DFC coupling chain (Cycle 50; −4.3% systematic)
   muon_lifetime.py        M_W, M_Z, G_F, τ_μ from DFC coupling chain (Cycle 51; all <1%)
+  electroweak_precision.py  ρ=1, T=0, sin²θ_W consistency — five EW precision tests (Cycle 52)
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
     proton_stability.md   Why the proton cannot decay (product topology argument)
     compton_scattering.md Thomson/Compton cross-section from DFC coupling chain (Cycle 50)
     muon_decay.md         W mass, Fermi constant, muon lifetime from DFC (Cycle 51; all <1%)
+    forces/electroweak_precision.md  ρ, T, S parameters; five tree-level precision tests (Cycle 52)
   quantum/
     quantum_mechanics.md  Superposition, collapse, entanglement, tunneling, uncertainty
     interference.md       Wave interference as stationary field redistribution
@@ -150,7 +152,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~26%** (viability as a theory: ~40%; mathematical rigor: ~21%)
+**Current estimate: ~26.5%** (viability as a theory: ~40.5%; mathematical rigor: ~21.5%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established

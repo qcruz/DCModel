@@ -230,7 +230,7 @@ def dfc_decay_classification():
 
 
 def neutron_lifetime_treelevel(
-    G_F=1.16638e-5,     # Fermi constant in GeV^-2
+    G_F=1.16638e-5,     # Fermi constant in GeV^-2  [PDG default; derivable from muon_lifetime.py]
     V_ud=0.97373,       # CKM element
     g_A=1.2756,         # axial coupling
     m_n=0.93957,        # neutron mass in GeV
@@ -376,6 +376,31 @@ def compare_to_experiment():
 
 if __name__ == "__main__":
     compare_to_experiment()
+
+    # ── Neutron lifetime (DFC prediction — intra-D6 allowed decay) ──────────────
+    # G_F is now derivable from the DFC coupling chain (β → g₂ → M_W → G_F).
+    # Default uses PDG value; DFC-derived G_F = 1.168e-5 (+0.18%) gives same result.
+    print("\n" + "=" * 70)
+    print("NEUTRON LIFETIME — DFC PREDICTION")
+    print("n → p + e⁻ + ν̄_e  [intra-D6 SU(2) — ALLOWED]")
+    print("=" * 70)
+
+    n_pdg = neutron_lifetime_treelevel(G_F=1.16638e-5)   # PDG G_F input
+    print(f"\n  G_F input:              {1.16638e-5:.5e} GeV⁻²  [PDG 2024]")
+    print(f"  Tree-level τ_n:         {n_pdg['tau_tree_s']:.1f} s")
+    print(f"  With radiative corr.:   {n_pdg['tau_with_RC_s']:.1f} s")
+    print(f"  Observed τ_n:           {n_pdg['tau_observed_s']:.1f} s  [PDG 2024]")
+    print(f"  Error:                  {(n_pdg['tau_with_RC_s']/n_pdg['tau_observed_s'] - 1)*100:+.2f}%")
+
+    # Now with DFC-derived G_F = 1.168e-5 from muon_lifetime.py
+    G_F_dfc = 1.168463e-5  # from equations/muon_lifetime.py via β = 0.0351
+    n_dfc = neutron_lifetime_treelevel(G_F=G_F_dfc)
+    print(f"\n  G_F input (DFC chain):  {G_F_dfc:.5e} GeV⁻²  [β=0.0351 via muon_lifetime.py]")
+    print(f"  Tree-level τ_n (DFC):   {n_dfc['tau_tree_s']:.1f} s")
+    print(f"  With radiative corr.:   {n_dfc['tau_with_RC_s']:.1f} s")
+    print(f"  Error vs observed:      {(n_dfc['tau_with_RC_s']/n_pdg['tau_observed_s'] - 1)*100:+.2f}%")
+    print(f"\n  NOTE: G_F error (+0.18% from DFC chain) → τ_n error (−0.36%).")
+    print(f"  Both routes agree to better than 0.5%. See equations/muon_lifetime.py.")
 
     print("\n--- Sphaleron Activity at Various Temperatures ---")
     for T in [1000.0, 100.0, 10.0, 1.0, 0.1, 0.01]:

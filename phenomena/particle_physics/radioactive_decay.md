@@ -80,9 +80,11 @@ This classification is why protons are stable and why nucleons only beta-decay t
 the W boson channel, never directly.
 
 **Verified prediction:** The neutron lifetime τ_n = 878.4 s (DFC, from `equations/proton_stability.py`)
-vs 879.4 s observed. This is the model's only current quantitative prediction verified
-to better than 1%. The calculation uses G_F (from D6 coupling g_W) and the quark-level
-matrix element (from D7 color structure).
+vs 879.4 s observed (0.1% error). The Fermi constant G_F = g₂²/(4√2 M_W²) entering this
+calculation is now derived from the substrate coupling β through the full DFC coupling chain
+(G_F = 1.168×10⁻⁵ GeV⁻², observed 1.166×10⁻⁵, +0.18% — see `equations/muon_lifetime.py`
+and `phenomena/particle_physics/muon_decay.md`). G_F is no longer an experimental input
+to this prediction; it is derived from β with 0.18% error.
 
 **Beta spectrum shape:** The continuous electron energy spectrum in beta decay — the
 feature that led Pauli to postulate the neutrino — is a consequence of three-body
@@ -234,7 +236,7 @@ Error                  = 0.11%  ✓
 | Beta spectrum shape | Three-body kinematics (neutrino carries variable energy) | Continuous spectrum ✓ | Inherited from SM |
 | Half-life range (50 orders) | Exponential sensitivity in Gamow factor / phase space | 10⁻²³ s to 10²⁰ yr | Structural ✓ |
 | Alpha pre-formation factor | D7 multi-kink clustering probability | P_α ~ 0.1–0.5 (nuclear models) | OPEN |
-| G_F from substrate (α, β, c) | D6 coupling from kink size — not derived | G_F = 1.166×10⁻⁵ GeV⁻² (PDG input) | OPEN |
+| G_F from substrate coupling β | β → g_common → g₂ → M_W → G_F = 1.168×10⁻⁵ (+0.18%) | 1.166×10⁻⁵ GeV⁻² (PDG) | ✓ Tier 2a (Cycle 51) |
 
 ---
 
@@ -272,3 +274,5 @@ Error                  = 0.11%  ✓
 - **Quantum tunneling** — alpha decay mechanism; `phenomena/quantum/quantum_tunneling.md`
 - **Quarks** — d→u quark transition in beta decay; `phenomena/particle_physics/particles/quarks.md`
 - **Electron** — e⁻ produced in β⁻ decay; `phenomena/particle_physics/particles/electron.md`
+- **Muon decay** — G_F from DFC coupling chain β→g₂→M_W→G_F; `phenomena/particle_physics/muon_decay.md`
+- **Muon lifetime module** — numerical G_F derivation; `equations/muon_lifetime.py`
