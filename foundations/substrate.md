@@ -100,10 +100,14 @@ The system admits **kink solutions** that interpolate between the two minima:
 
 where λ = √(2c²/α) is the kink width and x₀ is the kink center.
 
-The kink's energy (mass analog):
+The kink's energy (mass analog) — BPS-correct formula (Cycle 48):
 
 ```
-E_kink = (4/3) c √(2α³/β)
+E_kink = (4/3) c² φ₀²/λ = (4/3) c α^(3/2)/(β√2)
+
+NOTE: An earlier formula (4/3) c √(2α³/β) was RETRACTED in Cycle 48 — it
+overstated E_kink by a factor of 2√β. The correct formula follows from the
+Bogomolny identity ∫sech⁴(u)du = 4/3. See foundations/phase_stiffness_derivation.md.
 ```
 
 This energy is:
@@ -155,9 +159,11 @@ rigorously derived.
 - **Binary measurement outcomes from topology:** The φ⁴ kink has exactly two topological
   sectors (N=±1), and V''(0) = −α < 0 guarantees binary nucleation. See
   `foundations/kink_nucleation.md`. Status: PROVED (topology + instability analysis).
-- **γ_D = (16/3)√β from substrate:** The compression fraction per spacetime bifurcation is
-  derived from E_kink/E_total — all α, c dependence cancels. β ≈ 0.035 inferred from
-  γ_space ≈ 0.999. See `foundations/bifurcation_dynamics.md`. Status: DERIVED.
+- **γ_D = (16/3)√β:** **RETRACTED (Cycle 48).** The ratio E_kink/E_total(λ) = 8/3 exactly
+  (not (16/3)√β) — the earlier result used a wrong E_kink formula. Since 8/3 > 1, this
+  ratio cannot be a compression fraction. β ≈ 0.035 is now a Tier 3 reference value (not
+  derived). A valid γ_D requires E_total(L) with macroscopic L from substrate dynamics.
+  See `foundations/bifurcation_dynamics.md`. Status: RETRACTED.
 
 **Critical (must solve for full QM):**
 - **Born rule from nucleation statistics:** P = |ψ|² is identified with the nucleation rate
@@ -182,7 +188,9 @@ rigorously derived.
 - Connect closure stability to quantum error correction (suggestive formal parallels)
 - Derive Bekenstein entropy bounds from compression budget (`equations/holographic_entropy.py` — STUB)
 - Explain CP violation from DFC asymmetry principles
-- Derive coupling constants α_em, g_W, g_s from (α, β, c) (`equations/coupling_derivation.py` — 8.6× mismatch)
+- Derive coupling constants α_em, g_W, g_s from (α, β, c) — partial progress: sin²θ_W = 0.231
+  (0.01% error), α_em = 1/129.6 (1.3% error), M_W/M_Z/G_F/τ_μ all within 1%; r_U1/λ = 3/(4β)
+  is heuristic — formally blocked for real φ⁴ (see `equations/coupling_derivation.py`)
 
 ---
 

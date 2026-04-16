@@ -1,7 +1,7 @@
 # Current State of the DFC Model
 
 *Living document — updated periodically as the model develops.*
-*Last reviewed: 2026-04-13 (Cycles 47–49)*
+*Last reviewed: 2026-04-15 (Cycles 47–54)*
 
 ---
 

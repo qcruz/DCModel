@@ -31,9 +31,9 @@ DERIVATION STATUS:
 - squashing_correction(): PLACEHOLDER — the D6 S³ squashing correction
   to coupling running has not been derived. Returns None for all corrections.
 - For the Weinberg angle derivation, see equations/weinberg_angle_rg.py.
-- M_c(D5) = 1.02×10^13 GeV is derived from substrate parameters (γ_D = (16/3)√β,
-  β ≈ 0.035) in equations/bifurcation_dynamics.py. The α₁ ∩ α₂ crossing at
-  9.44×10^12 GeV is consistent with this independently-derived scale (5% difference).
+- M_c(D5) = 1.02×10^13 GeV: from SM α₁ = α₂ crossing via Route 3B running (not from
+  γ_D = (16/3)√β, which was RETRACTED in Cycle 48). The α₁ ∩ α₂ crossing at
+  9.44×10^12 GeV from one-loop running is the DFC closure scale for D5/D6.
 
 Usage:
     python equations/gauge_couplings.py

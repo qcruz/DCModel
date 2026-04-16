@@ -87,6 +87,7 @@ equations/                Runnable Python modules — input data, get prediction
   scattering_cross_sections.py  σ_Thomson, Compton from DFC coupling chain (Cycle 50; −4.3% systematic)
   muon_lifetime.py        M_W, M_Z, G_F, τ_μ from DFC coupling chain (Cycle 51; all <1%)
   electroweak_precision.py  ρ=1, T=0, sin²θ_W consistency — five EW precision tests (Cycle 52)
+  pair_production.py      e⁺e⁻ → μ⁺μ⁻ cross-section; R-ratio = 11/3 (exact Tier 1); kink-antikink nucleation (Cycle 54)
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
@@ -94,6 +95,7 @@ phenomena/                Natural language explanations of physical observations
     compton_scattering.md Thomson/Compton cross-section from DFC coupling chain (Cycle 50)
     muon_decay.md         W mass, Fermi constant, muon lifetime from DFC (Cycle 51; all <1%)
     forces/electroweak_precision.md  ρ, T, S parameters; five tree-level precision tests (Cycle 52)
+    pair_production.md    Pair production/annihilation as kink-antikink nucleation/coalescence; R-ratio (Cycle 54)
   quantum/
     quantum_mechanics.md  Superposition, collapse, entanglement, tunneling, uncertainty
     interference.md       Wave interference as stationary field redistribution
@@ -154,7 +156,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~27%** (viability as a theory: ~41%; mathematical rigor: ~21.5%)
+**Current estimate: ~27.5%** (viability as a theory: ~41.5%; mathematical rigor: ~21.5%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
