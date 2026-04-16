@@ -276,8 +276,11 @@ the same D6 SU(2) closure topology.
 4. **Spin precession and the Larmor formula.** A free spin-1/2 particle in a magnetic
    field undergoes spin precession at the Larmor frequency ω_L = eB/m. In DFC, this
    corresponds to the D6 kink's fold orientation angle precessing in the external D5
-   gauge field. Whether DFC predicts the correct g-factor (g = 2 at tree level, with
-   QED corrections) from the D6-D5 coupling is an open derivation.
+   gauge field. The tree-level g = 2 follows from the Dirac structure of the Jackiw-Rebbi
+   zero mode. The one-loop Schwinger correction (g−2)/2 = α_em/(2π) has been computed
+   from the DFC coupling chain (Cycle 55): predicted a_e = 0.001136, observed 0.001160
+   (−2.01% systematic error tracing to the same α_em gap as all electromagnetic predictions).
+   See `phenomena/quantum/anomalous_magnetic_moment.md`.
 
 ---
 
@@ -298,3 +301,6 @@ the same D6 SU(2) closure topology.
 - **Born rule for spin** — P(↑, n̂) = cos²(θ/2) derived from SU(2) geometry + binary
   outcomes (Cycle 38); direct application of this document's spinor formalism;
   `foundations/born_rule_derivation.md`
+- **Anomalous magnetic moment** — one-loop Schwinger correction from DFC coupling chain;
+  a_e = α_em/(2π) = 0.001136 (−2.01%, systematic); full g-factor analysis;
+  `phenomena/quantum/anomalous_magnetic_moment.md`, `equations/anomalous_magnetic_moment.py`
