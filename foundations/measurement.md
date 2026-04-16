@@ -415,6 +415,10 @@ controlled environments, τ_dec can be seconds or longer.
 
 ## Connections
 
+- `foundations/compression_dynamics.md` — mathematical reconciliation of DFC substrate
+  compression with standard physics compression formalisms (thermodynamic, hydraulic,
+  elastic, acoustic, gravitational, quantum); all core DFC compression equations with
+  natural-language statements; buckling threshold and measurement threshold in context
 - `foundations/kink_nucleation.md` — two-sector topology proved; binary measurement outcomes;
   nucleation rate argument for Born rule
 - `foundations/born_rule_derivation.md` — spin Born rule derived (Cycle 38); position rule open

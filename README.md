@@ -62,6 +62,8 @@ foundations/              Core concepts, thought experiments, and structural arg
   tsirelson_bound.md        Tsirelson CHSH ≤ 2√2 proved: C²=4I⊗I−[A₁,A₂]⊗[B₁,B₂]; SU(2) commutator norm ≤ 2
   kink_nucleation.md        Two-sector topology proved (φ⁴ kink); binary measurement outcomes; Born rule open
   depth_assignment.md       D-depth assignment problem: 5 constraints; Route B (Hopf S¹→S³→S⁵) most promising
+  compression_dynamics.md   DFC self-compression equations reconciled with thermodynamic/elastic/acoustic/gravitational formalisms
+  measurement.md            Measurement as buckling threshold; six measurement types; Born rule status
 
 equations/                Runnable Python modules — input data, get predictions
   constants.py            Physical constants (PDG 2024), particle masses, SM couplings
@@ -89,6 +91,10 @@ equations/                Runnable Python modules — input data, get prediction
   electroweak_precision.py  ρ=1, T=0, sin²θ_W consistency — five EW precision tests (Cycle 52)
   pair_production.py      e⁺e⁻ → μ⁺μ⁻ cross-section; R-ratio = 11/3 (exact Tier 1); kink-antikink nucleation (Cycle 54)
   anomalous_magnetic_moment.py  a_e = α_em/(2π) from DFC coupling chain; −2.01% systematic (Cycle 55)
+  [STUBS — structural account written, quantitative derivation open]
+  nuclear_binding.py      Bethe-Weizsäcker formula; Yukawa potential; Fe-56 peak; DFC α_s 11% blocks strong predictions
+  lamb_shift.py           Hydrogen 2s-2p Lamb shift; self-energy loop integral stub; α⁵ scaling estimate
+  quark_gluon_plasma.py   QGP deconfinement T_c; DFC Λ_QCD estimate; 653% error from α_s blockage
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
@@ -99,9 +105,15 @@ phenomena/                Natural language explanations of physical observations
     pair_production.md    Pair production/annihilation as kink-antikink nucleation/coalescence; R-ratio (Cycle 54)
   quantum/
     anomalous_magnetic_moment.md  a_e = α_em/(2π) Schwinger term; DFC −2.01% systematic; muon g-2 (Cycle 55)
-  quantum/
     quantum_mechanics.md  Superposition, collapse, entanglement, tunneling, uncertainty
     interference.md       Wave interference as stationary field redistribution
+    lamb_shift.md         [STUB] Hydrogen 2s-2p splitting; DFC self-energy loop integral; α⁵ scaling
+    photoelectric_effect.md  [STUB] Photon absorption as threshold crossing; ℏ blockage
+    hawking_radiation.md  [STUB] Horizon pair nucleation; T_H blocked by G_Newton and ℏ
+  condensed_matter/       [NEW DOMAIN]
+    superconductivity.md  [STUB] Cooper pairs as D6 kink bound states; Meissner = D5 mode exclusion
+    superfluidity.md      [STUB] Global phase coherence; quantized vortices from winding numbers
+    quantum_hall_effect.md  [STUB] TKNN Chern number = DFC winding number; FQHE composite kinks
   gravity/
     general_relativity.md Gravity as folding gradient and dimensional pressure
   light/
@@ -159,7 +171,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~28%** (viability as a theory: ~42%; mathematical rigor: ~21.5%)
+**Current estimate: ~29%** (viability as a theory: ~43%; mathematical rigor: ~21.5%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
@@ -190,14 +202,15 @@ it does. Percentage reflects breadth of coverage, not accuracy of any single res
 
 | Theory | Coverage | What DFC Has | What's Missing |
 |---|---|---|---|
-| **Quantum Mechanics** | ~40% | Schrödinger eq. (derived from KG); spin-1/2 (FR/JR derivation); Born rule for spin (derived); binary outcomes (proved topologically); Tsirelson bound (proved); superposition/entanglement/tunneling (structural accounts) | Born rule for position (OPEN); path integral; operator formalism; ℏ from substrate (OPEN) |
-| **Thermodynamics** | ~55% | All four laws (derived from folding mechanics); arrow of time (derived from Z₂ topology); blackbody Planck spectrum (structural, modulo ℏ); Boltzmann statistics (structural); heat/conduction (structural) | Fluctuation theorems (Jarzynski, Crooks); Carnot efficiency formula from DFC (in progress) |
-| **Standard Model** | ~35% | U(1)×SU(2)×SU(3) product structure (derived); 3 generations (derived); proton stability (stronger than SM — zero rate); parity violation (derived from JR chirality); Weinberg angle (0.231, <0.01%); m_μ/m_e (206.77, exact); M_W, M_Z, G_F, τ_μ (all <1%); Higgs mass (124.4 GeV, <1σ) | CKM/PMNS matrices; τ mass (8.4× off); α_s (11% off); top quark mass; Feynman rules not in DFC framework; loop corrections not computed |
-| **General Relativity** | ~15% | Gravity as folding gradient (structural); gravitational waves (structural + polarization); black holes (structural); time dilation (structural); Hubble constant (67.26 km/s/Mpc, 0.2%) | Schwarzschild/Kerr metrics not derived; Einstein field equations not derived; G_Newton not derived; perihelion advance not computed |
-| **ΛCDM Cosmology** | ~20% | Hubble constant (0.2% match); CMB Planck spectrum + uniformity (structural); Big Bang (structural); flatness/horizon problem dissolved structurally; dark energy as substrate residual (structural, qualitative) | Inflation (stub); dark matter candidates (stub); baryogenesis (stub); Λ from substrate (stub); CMB power spectrum amplitude A_s (OPEN) |
-| **QFT (perturbative)** | ~12% | Born S-matrix from substrate (kink-antikink phase shift); Thomson/Compton cross-section (−4.3%, systematic); Pöschl-Teller spectrum (exact, parameter-free); RG running imported from SM as boundary condition | Loop corrections not computed in DFC; Feynman diagram rules not derived; renormalization in DFC not formalized; vacuum energy cancellations not addressed |
-| **String Theory** | ~3% | Some topological overlaps (compact closure geometries, dimensional counting); DFC has no pre-existing spacetime, similar in spirit | No strings, branes, D-branes; no T/S-duality; no moduli stabilization in string sense; DFC is a fundamentally different framework |
-| **Loop Quantum Gravity** | ~5% | Discrete topological closures analogous in spirit to spin networks; binary measurement outcomes proved (similar discreteness motivation) | No Ashtekar variables; no spin foams; no area/volume quantization computed; discreteness origin is different (topology vs. quantization of geometry) |
+| **Quantum Mechanics** | ~42% | Schrödinger eq. (derived from KG); spin-1/2 (FR/JR derivation); Born rule for spin (derived); binary outcomes (proved); Tsirelson bound (proved); g-2 Schwinger term (−2.01% systematic); superposition/entanglement/tunneling/decoherence (structural) | Born rule for position (OPEN); Lamb shift (stub); path integral; ℏ from substrate (OPEN) |
+| **Thermodynamics** | ~55% | All four laws (derived from folding mechanics); arrow of time (derived from Z₂ topology); blackbody Planck spectrum (structural, modulo ℏ); Boltzmann statistics (structural); heat/conduction (structural); compression dynamics reconciled (Cycle 56) | Fluctuation theorems (Jarzynski, Crooks); Carnot efficiency formula from DFC |
+| **Standard Model** | ~36% | U(1)×SU(2)×SU(3) product structure (derived); 3 generations (derived); proton stability (zero rate); parity violation (JR chirality); sin²θ_W (<0.01%); m_μ/m_e (exact); M_W/M_Z/G_F/τ_μ (<1%); Higgs (124.4 GeV); R-ratio = 11/3 (exact) | CKM/PMNS; τ mass (8.4× off); α_s (11% off); Feynman rules; loop corrections |
+| **General Relativity** | ~15% | Gravity as folding gradient (structural); gravitational waves (structural); black holes (structural); Hawking radiation (stub); time dilation; H₀ (0.2%) | Einstein field equations not derived; G_Newton not derived; Schwarzschild metric not derived |
+| **ΛCDM Cosmology** | ~20% | H₀ (0.2% match); CMB (structural); Big Bang (structural); flatness/horizon dissolved; dark energy (structural, qualitative) | Inflation (stub); dark matter (stub); baryogenesis (stub); Λ from substrate (stub) |
+| **QFT (perturbative)** | ~14% | Born S-matrix; Thomson/Compton (−4.3%); Pöschl-Teller (exact); pair production (R-ratio exact, σ −3.1%); g-2 leading term (−2.01%); RG running | Loop corrections (Lamb shift stub, 2-loop g-2); Feynman rules; renormalization |
+| **Condensed Matter** | ~5% | Superconductivity/superfluidity/QHE structural accounts (stubs, Cycle 56); winding-number topology applies to flux quantization and QHE plateaux | BCS gap equation; Ginzburg-Landau; FQHE; band structure; solid-state spectrum |
+| **String Theory** | ~3% | Some topological overlaps (compact closure geometries, Hopf fibrations); DFC has no pre-existing spacetime | No strings/branes; no T/S-duality; fundamentally different framework |
+| **Loop Quantum Gravity** | ~5% | Discrete topological closures analogous to spin networks; binary outcomes proved | No Ashtekar variables; no spin foams; no area/volume quantization |
 
 *Estimates updated after each push cycle. Coverage increases when a derivation is completed
 or a structural explanation is formalized. See CLAUDE.md Tier system for claim classifications.*
