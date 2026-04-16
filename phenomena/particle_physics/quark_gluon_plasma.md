@@ -87,9 +87,101 @@ quark flavors and their masses.
    moment, quarks propagate freely. The baryogenesis scenario in
    `phenomena/cosmology/baryogenesis.md` operates before this crossover.
 
-**Key open derivation:** Compute the QCD deconfinement temperature T-c from DFC parameters.
-The target is T-c ≈ 155 MeV. This requires computing the D7 string tension from the
-substrate field equation and relating it to the deconfinement thermal energy.
+**Key open derivation:** Derive T_c from DFC parameters directly — compute the D7 string
+tension from the SU(3) closure geometry and substrate field equation, then set T_c via the
+thermal disruption condition. Primary blockage: α_s at the QCD scale requires M_c(D7)
+from substrate (Bottleneck 2). See `equations/quark_gluon_plasma.py` for the current
+numerical estimate and its error.
+
+---
+
+## Formal Equations
+
+### QCD Deconfinement Temperature
+
+The deconfinement temperature marks the crossover where the D7 SU(3) closure configurations
+become thermally disrupted. A rough estimate follows from balancing the string tension
+(the energy cost per unit length of separating a quark-antiquark pair) against the thermal
+energy scale. The string tension σ has dimensions of energy per length (or equivalently
+energy squared in natural units):
+
+```
+T_c ~ √σ / (2π)    [rough dimensional estimate]
+σ ≈ 0.18 GeV²      [empirical string tension from Regge trajectories]
+T_c ~ √0.18 / (2π) ≈ 68 MeV    [underestimates observed T_c by factor ~2]
+```
+
+The deconfinement temperature is approximately proportional to the square root of the
+string tension divided by two pi. The observed T_c ≈ 155 MeV is higher than this
+dimensional estimate because the crossover involves collective effects not captured by
+the one-parameter string tension.
+
+### Color Debye Screening
+
+Above T_c, color charge is Debye-screened: the gluon propagator acquires an effective
+thermal mass proportional to the strong coupling times the temperature. The Debye screening
+length — the scale over which color fields are suppressed — equals one divided by the product
+of the strong coupling constant g_s and the temperature:
+
+```
+λ_D ~ 1 / (g_s T)    [Debye screening length]
+g_s = √(4π α_s)
+
+At T = 2T_c ≈ 310 MeV,  α_s ≈ 0.25:
+    g_s ≈ 1.77
+    λ_D ~ 1/(1.77 × 310 MeV) ≈ 0.36 fm
+```
+
+This is shorter than the hadronic radius (~1 fm), confirming that color forces are
+effectively screened at twice the crossover temperature.
+
+### DFC Prediction for T_c (current status)
+
+The DFC coupling chain gives α_s(M_Z) = 0.105 (11% below observed). Running α_s down
+to the QCD scale using one-loop perturbation theory is unreliable at low energies —
+the one-loop formula diverges at Λ_QCD. The DFC prediction from `equations/quark_gluon_plasma.py`:
+
+```
+DFC α_s(M_Z) = 0.105  (11% below observed 0.1182)
+DFC Λ_QCD (one-loop) ≈ 1841 MeV    (vs empirical 217 MeV — one-loop divergence)
+DFC T_c estimate ≈ 1160 MeV        (vs observed 154 MeV — 653% error)
+```
+
+The 653% error traces directly to:
+1. The 11% error in α_s(M_Z) from M_c(D7) not derived from substrate
+2. The one-loop running formula is uncontrolled at hadronic scales (non-perturbative regime)
+
+The proper path to T_c requires either lattice calculation of the D7 closure partition
+function, or a non-perturbative DFC computation beyond the current one-loop framework.
+
+### KSS Viscosity Bound
+
+The ratio of shear viscosity to entropy density (η/s) has a conjectured lower bound from
+the AdS/CFT correspondence. This lower bound equals one divided by four pi:
+
+```
+η/s ≥ 1/(4π) ≈ 0.0796    [KSS bound, Kovtun-Son-Starinets 2005]
+```
+
+The RHIC QGP measurement gives η/s ≈ 1-4 times this bound — the closest approach to
+the bound of any known fluid. In DFC, this bound may follow from the SU(3) commutator
+structure of the D7 closure (analogous to how the Tsirelson bound CHSH ≤ 2√2 was proved
+from SU(2) commutator norms in Cycle 35). This connection is suggestive and not yet derived.
+
+### Order Parameter: Polyakov Loop
+
+The Polyakov loop L is the thermal Wilson loop in the imaginary time direction — its
+expectation value is zero in the confined phase (global center symmetry preserved) and
+nonzero in the deconfined phase (symmetry broken):
+
+```
+⟨L⟩ = 0    (T < T_c, confined — global Z₃ center symmetry of SU(3) unbroken)
+⟨L⟩ ≠ 0    (T > T_c, deconfined — Z₃ symmetry spontaneously broken)
+```
+
+In DFC, the Polyakov loop is the thermal holonomy of the D7 SU(3) connection around
+the compactified time direction. The center symmetry Z₃ ⊂ SU(3) is the DFC analog of
+the discrete residual symmetry that distinguishes confined and deconfined phases.
 
 ---
 
@@ -97,26 +189,40 @@ substrate field equation and relating it to the deconfinement thermal energy.
 
 | Check | DFC prediction | Observed | Status |
 |---|---|---|---|
-| Deconfinement exists | D7 flux tubes disrupted above T-c | QGP observed at RHIC, LHC | ✓ structural |
-| Near-perfect fluid | Near-critical D7 dynamics | eta/s ≈ 1/4 pi at RHIC | ✓ structural (qualitative) |
-| T-c ≈ 155 MeV | D7 string tension / hadron size thermal threshold | 155 MeV from lattice QCD | not yet derived ✗ |
-| Crossover not first order | At zero baryon density | Crossover confirmed by lattice | not yet accounted for ✗ |
+| Deconfinement exists | D7 flux tubes thermally disrupted above T_c | QGP at RHIC/LHC confirmed | ✓ structural |
+| Near-perfect fluid (η/s near bound) | Near-critical D7 dynamics → maximal correlations | η/s ≈ 1–4 × 1/(4π) at RHIC | ✓ structural (qualitative) |
+| QGP as early-universe phase | D7 SU(3) closure not yet stabilized above T_c | Universe in QGP state t < 10 μs | ✓ structural |
+| T_c ≈ 155 MeV | DFC estimates 1160 MeV (one-loop, blocked by α_s error) | 154 ± 9 MeV (lattice QCD) | ✗ 653% off — α_s blockage |
+| Z₃ center symmetry breaking | Polyakov loop ⟨L⟩ from D7 holonomy | ⟨L⟩ = 0 → ≠ 0 across crossover | ✓ structural (topology) |
+| Crossover, not first order at μ_B=0 | D7 crossover character depends on quark masses | Crossover confirmed by lattice | structural account open ✗ |
 
 ---
 
 ## Open Questions
 
-1. **Derive T-c from DFC substrate:** Compute the critical temperature for D7 deconfinement
-   from the string tension and hadron scale, both of which should follow from the D7 closure
-   geometry and the substrate coupling.
+1. **Derive T_c from D7 closure geometry.** The deconfinement temperature should follow
+   from the string tension σ and the D7 closure parameters. The blocking step is deriving
+   α_s at the QCD scale from the DFC substrate — specifically M_c(D7) from substrate
+   dynamics (Bottleneck 2). Once M_c(D7) is derived, α_s(M_c) = g²/(4π) is fixed and
+   the running to hadronic scales becomes a calculation rather than an estimate.
 
-2. **First-order transition at finite density:** The QCD phase diagram may have a critical
-   endpoint at finite baryon density where the crossover becomes first-order. In DFC,
-   this would correspond to a specific condition on the D7 closure under compression.
+2. **KSS bound from D7 SU(3) commutator structure.** The Tsirelson bound CHSH ≤ 2√2
+   was derived from SU(2) commutator norms (Cycle 35). An analogous argument may derive
+   η/s ≥ 1/(4π) from the SU(3) commutator algebra of the D7 closure — the viscosity
+   bound as a structural consequence of the D7 topology rather than an import from
+   AdS/CFT. This would be a genuine DFC prediction.
 
-3. **Viscosity bound from D7 closure:** Derive the eta/s bound of 1/(4 pi) from the D7
-   SU(3) closure dynamics. If this follows from the product topology and the strength of
-   the D7 coupling, it would be a structural derivation of a significant QGP property.
+3. **QCD critical endpoint at finite baryon density.** The QCD phase diagram at nonzero
+   baryon chemical potential μ_B may have a critical endpoint where the crossover becomes
+   a first-order transition. In DFC, this corresponds to the D7 closure under combined
+   thermal and baryon density compression — a two-parameter deformation of the V(φ)
+   effective potential. The search for this endpoint is an active experimental program
+   (RHIC BES, CBM at FAIR).
+
+4. **Jet quenching coefficient q̂ from D7 medium.** The jet quenching parameter q̂
+   measures the rate of transverse momentum broadening of a high-energy parton traversing
+   the QGP. DFC should predict q̂ from the D7 gluon density and the substrate coupling
+   g_s. The current α_s error propagates into this prediction.
 
 ---
 
@@ -127,3 +233,5 @@ substrate field equation and relating it to the deconfinement thermal energy.
 - `phenomena/particle_physics/particles/gluons.md` — D7 connection fields as gluons
 - `phenomena/cosmology/baryogenesis.md` — pre-QCD-crossover baryon generation
 - `phenomena/thermodynamics/phase_transitions.md` — phase transitions from V_eff bifurcations
+- `equations/quark_gluon_plasma.py` — numerical estimates; T_c 653% error; α_s blockage confirmed
+- `equations/coupling_derivation.py` — α_s(M_Z) = 0.105 (11% below observed)

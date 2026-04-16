@@ -29,7 +29,8 @@ Key references:
   foundations/substrate.md           — substrate postulates and kink interpretation
   foundations/kink_nucleation.md     — two-sector topology; binary measurement outcomes
   foundations/kink_scattering.md     — Pöschl-Teller spectrum; shape mode ω₁ = (√3/2)m_σ
-  foundations/bifurcation_dynamics.md — γ_D = (16/3)√β derived; β ≈ 0.035 inferred
+  foundations/bifurcation_dynamics.md — E_kink/E_total=8/3 proved (Cycle 48); γ_D=(16/3)√β RETRACTED; β Tier 3 ref value
+  foundations/compression_dynamics.md — DFC compression equations reconciled with standard physics formalisms
   equations/kink_scattering.py       — fluctuation spectrum (verified numerically)
 
 Usage:
