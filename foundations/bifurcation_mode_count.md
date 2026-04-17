@@ -15,16 +15,25 @@
 This document maps the **first half of Bottleneck 1** — the open problem identified in
 `foundations/depth_assignment.md`. The second half (n coincident degenerate zero modes →
 SU(n)) was proved in `foundations/zero_mode_multiplet.md` (Cycle 59). The first half
-remains open as of Cycle 62.
+remains open as of Cycle 66, with Computation 1 completed: scalar coupling types identified
+as incompatible with n zero modes; the precise remaining gap is proving that D5/D6/D7
+inter-depth coupling is gauge coupling (derivative coupling), not scalar coupling.
 
 **What is proved:**
 - The φ⁴ kink has exactly one zero mode (Pöschl-Teller uniqueness; Cycle 59)
 - n coincident degenerate zero modes → configuration space S^(2n-1) → SU(n) (Cycle 59)
 - The U(1), SU(2), SU(3) gauge groups require n = 1, 2, 3 coincident modes respectively
+- Biquadratic (Z₂×Z₂) coupling V = gφ₅²φ₆²: diagonal corrections V_eff_5 = V_eff_6 exactly
+  for all g — proved analytically; verified numerically to floating-point precision (Cycle 66)
+- For non-zero scalar (biquadratic) coupling: the Goldstone theorem protects exactly 1 zero mode
+  (the center-of-mass translation); the relative mode is lifted by off-diagonal coupling 4gφ₀²tanh²
+  (Cycle 66). n zero modes require g = 0 (decoupled) or gauge coupling.
 
 **What is not yet proved:**
 - Why D(4+n) opens exactly n coincident modes from the substrate field equation
 - Why each bifurcation adds one COMPLEX degree of freedom (2 real DOFs) rather than one real DOF (1 real DOF)
+- Why the D5/D6/D7 inter-depth coupling is gauge coupling (not scalar), so each kink's translation
+  zero mode is independently protected → n zero modes survive (this is the precise remaining gap)
 - Why the series terminates at n = 3 (the SU(3) confinement argument is stated but not derived)
 
 ---
@@ -185,14 +194,34 @@ Configuration space at D(4+n) (requires complex structure from D5):
 
 The following computations would complete Bottleneck 1:
 
-**Computation 1 — Coupled D5/D6 spectrum:**
-Write the linearized fluctuation equation for the substrate with both D5 and D6 modes
-present. Count the number of zero modes (modes with ω²=0) at the D6 threshold. If the
-D5 background imposes a complex structure on the D6 fluctuation, the count will be 2 (one
-complex mode = 2 real modes). If not, it will be 1.
+**Computation 1 — Coupled D5/D6 spectrum [COMPLETED Cycle 66]:**
 
-*Approach:* Consider a two-component field (φ_D5, φ_D6) coupled by a cross-term. At the
-D6 threshold, count the zero eigenvalues of the 2×2 fluctuation operator.
+The two-component substrate fluctuation system (φ₅, φ₆) with biquadratic coupling
+V_c = g φ₅² φ₆² (the unique Z₂×Z₂-preserving interaction) was analyzed numerically in
+`equations/d5_d6_coupling.py`. Results:
+
+*Diagonal corrections:* ΔV_5(x) = 2g φ₀² tanh²(x/ξ) = ΔV_6(x) exactly — the two kink
+fields get identical potential corrections, proved analytically and verified to floating-point
+precision for all g values tested.
+
+*Full 2×2 analysis (including off-diagonal 4gφ₀²tanh²):* The symmetric and antisymmetric
+combinations decouple into H_+ = H_PT + 6gφ₀²tanh² (center-of-mass) and H_- = H_PT − 2gφ₀²tanh²
+(relative mode). For any g > 0: H_+ ground state shifts above zero (lifted); H_- ground state
+becomes negative (unstable). The Goldstone theorem for the FULL 2N×2N operator protects exactly
+ONE zero mode. At g/β = 1.0, V_minus = −2sech²(x/ξ) has a Pöschl-Teller bound state at ω² = 0
+exactly — a mode threshold crossing, not a protected zero mode.
+
+*Key finding:* Scalar biquadratic coupling reduces n zero modes to 1 for any g > 0. For n = 2
+zero modes (needed for SU(2)), the D5/D6 coupling must be GAUGE (derivative) coupling, which
+does not create a static kink-kink interaction energy — each kink retains its independent
+translation zero mode.
+
+*Linear coupling V = gφ₅φ₆:* The correct cross-term ∂²V/∂φ₅∂φ₆ = g (constant). This gives
+ω²(±) = ω²_n ± g: the zero modes split to ±g, creating an instability. Also breaks Z₂ topology
+of each kink field → physically excluded.
+
+*Precise remaining gap:* Derive from the substrate field equation that the D5/D6/D7 inter-depth
+coupling emerges as gauge coupling (minimal coupling D_μ = ∂_μ − igA_μ), not scalar coupling.
 
 **Computation 2 — D6/D7 mode count:**
 Repeat Computation 1 for the D6→D7 threshold. If the D5/D6 background has SU(2) symmetry,
@@ -221,16 +250,23 @@ may be 2 rather than 1.
 | n coincident zero modes → SU(n) | ✓ proved Cycle 59 |
 | One codimension-1 bifurcation → one new soft mode | ✓ structural (codimension-1 theorem) |
 | D5 U(1) imposes complex structure on D6/D7 modes | ✓ structural (charge coupling argument) |
-| Formally derived: D6 has 2 complex DOFs (not 1 or 3) | ✗ OPEN — requires Computation 1 above |
+| Biquadratic coupling: diagonal V_eff_5 = V_eff_6 exactly | ✓ proved and verified Cycle 66 |
+| Scalar coupling reduces n zero modes to 1 (Goldstone, not n) | ✓ proved numerically Cycle 66 |
+| Gauge coupling needed for n independent zero modes | ✓ structural argument Cycle 66 |
+| Formally derived: D5/D6/D7 coupling is gauge (not scalar) | ✗ OPEN — precise remaining gap |
 | Termination at SU(3): no D8 free gauge group | ✓ structural (confinement argument) |
 
 ---
 
 ## Open Questions
 
-1. **Coupled fluctuation spectrum (Computation 1):** Write the two-component substrate
-   fluctuation equation (D5 + D6 fields) and count zero modes at the D6 threshold. Does
-   the D5 background produce 2 zero modes (one complex) at the D6 threshold, or 1?
+1. **Gauge vs. scalar coupling (Computation 1 follow-up):** Computation 1 (Cycle 66) showed
+   that scalar biquadratic coupling reduces n zero modes to 1. The precise remaining gap:
+   derive from the substrate field equation that the D5/D6/D7 coupling is gauge coupling
+   (minimal coupling D_μ = ∂_μ − igA_μ). Approach: at the D6 threshold, the D5 U(1) gauge
+   field A_μ couples to the D6 kink via the covariant derivative in the kinetic term. Show
+   that this gauge coupling does not produce a static kink-kink potential (because it is a
+   derivative coupling), so each kink retains its independent translation zero mode.
 
 2. **Fundamental representation constraint:** The D7 mode should be in the fundamental of
    the existing D5/D6 gauge group. But this gives a constraint on the number of new DOFs that
@@ -278,6 +314,7 @@ theorem but has not been derived from the coupled D5+D6 field equations.
 ## Connections
 
 - `equations/coupled_fluctuation.py` — n-field zero mode coincidence verified (Cycle 63)
+- `equations/d5_d6_coupling.py` — Computation 1: biquadratic/linear coupling zero mode analysis (Cycle 66)
 - `foundations/zero_mode_multiplet.md` — second half proved (n modes → SU(n); Cycle 59)
 - `foundations/depth_assignment.md` — Bottleneck 1 five constraints; Route B formalism
 - `foundations/hopf_fibration_geometry.md` — S^(2n-1) correspondence; Route B Hopf picture
@@ -285,4 +322,5 @@ theorem but has not been derived from the coupled D5+D6 field equations.
 - `foundations/kink_nucleation.md` — single-kink zero mode; Z₂ topology
 - `foundations/kink_scattering.md` — shape mode spectrum; Pöschl-Teller exact results
 
-Cycle 62–63 | Bottleneck 1 first half: n-field picture demonstrated; one open item remains
+Cycle 62–63 | n-field picture demonstrated; one open item remains
+Cycle 66 | Computation 1 complete: scalar coupling eliminates n-mode structure; gauge coupling required

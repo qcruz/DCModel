@@ -69,6 +69,18 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - D5/D6 co-crystallization explains why M_c(D5) ≈ M_c(D6); D7 is a separate bifurcation event with unknown scale
 - Files: `equations/coupling_derivation.py`, `foundations/depth_running.md`
 
+### T10 — Near-maximal θ₂₃ argument self-contradicts (Cycle 65)
+- The structural DFC argument for θ₂₃ ≈ 45° is "near-degeneracy of 2nd/3rd neutrino winding modes"
+- But observed mass-squared differences give m₃ ≫ m₂ (Δm²₃₁/Δm²₂₁ = 33.8) — contradicts near-degeneracy
+- Near-maximal θ₂₃ remains unexplained in DFC; the structural argument is not viable
+- Files: `phenomena/particle_physics/neutrino_oscillations.md`, `equations/neutrino_oscillations.py`
+
+### T11 — Neutrino hierarchy ratio: two inconsistent metrics in use (Cycle 65)
+- `neutrino_masses.py` and ISSUES.md track the mass ratio m₃/m₂ ≈ √33.8 ≈ 5.81 (DFC gives 1.34, error 4.3×)
+- `neutrino_oscillations.py` computes the Δm² ratio Δm²₃₁/Δm²₂₁ = 33.8 (DFC gives 1.34², error ~25×)
+- Both failures have the same root cause (non-uniform D4 winding mode spacing), but the claimed error factor (4.3×) refers to mass ratios, not Δm² ratios
+- Files: `equations/neutrino_masses.py`, `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
+
 ---
 
 ## Retracted Claims

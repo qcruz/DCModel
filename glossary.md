@@ -88,6 +88,24 @@ In this project: the compression field's "stiffness" parameter — controls how 
 the buckling potential is. Also used generally for coupling constants (how strongly
 things interact).
 
+**α_em (alpha-em) — electromagnetic fine-structure constant**
+The dimensionless number that sets the strength of the electromagnetic force.
+α_em = e²/(4πε₀ℏc) ≈ 1/137 at low energy, rising to ≈ 1/128 at the Z boson mass scale
+due to quantum loop corrections (running coupling). In DFC: derived from β via
+α_em = g²/(4π) where g² = 8πβ/3, giving α_em(M_Z) ≈ 1/129.6 (1.3% error vs. observed).
+
+**α_s (alpha-s) — strong coupling constant**
+The dimensionless number that sets the strength of the strong nuclear force (the force
+that binds quarks inside protons). Unlike the electromagnetic coupling α_em ≈ 1/137,
+the strong coupling at low energy is α_s ≈ 1 — meaning it cannot be treated
+perturbatively at low energies (this is why quarks are permanently confined). At the Z
+boson mass scale it runs down to α_s(M_Z) ≈ 0.118. In DFC: computed from the common
+gauge coupling g² = 8πβ/3 plus SU(3) running, predicting α_s(M_Z) ≈ 0.105 (11% error;
+blocked on deriving M_c(D7) from the substrate). **Running**: α_s decreases at higher
+energies (asymptotic freedom) — quarks behave almost freely at very high energies but
+are confined at low energies. The perturbative formula for α_s breaks down below ~1 GeV
+(the Landau pole).
+
 **β (beta)**
 In this project: the compression field's "self-limiting" parameter — prevents φ from
 growing without bound. Together α and β define the shape of the buckling potential.
@@ -773,6 +791,61 @@ Which level of the stack a particle reaches. Depth d ≥ 4 = inertial anchoring 
 d = 5 = electromagnetic charge. d = 6 = weak isospin. d = 7 = color charge.
 A particle's mass depends exponentially on its depth: m(d) ∝ exp(κ·d).
 
+**M_c (closure scale) — also written M_c(D5), M_c(D6), M_c(D7)**
+The energy scale at which two running gauge coupling constants (e.g., U(1) and SU(2))
+meet — the point where those couplings are equal. Also called the co-crystallization
+scale: the energy at which the two closure topologies achieved equal coupling strength
+and became locked in their current relationship. Not a unification scale in the GUT
+sense — there is no single enclosing group. Each pair of depth behaviors has its own
+crossing point: M_c(D5/D6) ≈ 9.4 × 10¹² GeV (electroweak unification of D5 and D6);
+M_c(D7) ≈ 8 × 10¹⁴ GeV (strong force co-crystallization with D5/D6).
+In DFC: M_c values are currently read from Standard Model running of the coupling
+constants; deriving them from the substrate field equation is the core open problem
+of Bottleneck 2.
+
+**φ₀ — vacuum field value / kink amplitude**
+The value of the compression field at its stable minimum: φ₀ = √(α/β). This is the
+"height" the field reaches at either end of a kink. All kink solutions interpolate
+from −φ₀ to +φ₀. In DFC: φ₀ = √(2/0.035) ≈ 7.56 in model units; its physical scale
+is set by identifying the kink width with the Planck length.
+
+**g_common — common gauge coupling**
+The value of all three gauge coupling constants where they meet at the closure scale
+M_c. In DFC: derived heuristically from β as g_common = √(8πβ/3). For β = 0.035:
+g_common ≈ 0.5423, matching the SM value 0.5443 at M_c to 0.37%.
+
+**Zero mode**
+An eigenmode of the fluctuation equation around a kink with eigenvalue exactly zero
+(ω² = 0). Zero modes correspond to directions in field space that cost no energy —
+they arise from symmetries. The key zero mode of a φ⁴ kink is the translation mode:
+you can shift the kink's center without changing its energy. For a kink at depth D(4+n),
+n coincident degenerate zero modes → the gauge group SU(n). This is the core of
+Bottleneck 1. The zero mode profile is the derivative of the kink: ∝ sech²(x/ξ).
+
+**Pöschl-Teller (P-T) potential**
+The effective potential seen by small fluctuations around a φ⁴ kink. It has the form
+V_PT = α(3tanh²(x/ξ) − 1), which is equivalent to −2αsech²(x/ξ) plus a constant.
+The P-T potential is analytically solvable. It has exactly two bound states: the zero
+mode (ω² = 0, exact) and the shape mode (ω² = 3α/2). All other modes are in the
+continuous scattering spectrum (ω² > α). Named after physicists Pöschl and Teller.
+
+**k_Y — hypercharge normalization factor**
+The rescaling factor that makes the U(1)_Y coupling constant comparable to the SU(2)
+and SU(3) couplings. Standard convention: k_Y = √(3/5) ≈ 0.775, so the normalized
+coupling g₁ = k_Y × g_Y. This factor ensures that the Weinberg angle formula
+sin²θ_W = g₁²/(g₁² + g₂²) gives the correct value. In DFC: k_Y = 3/5 is derived from
+the Dynkin index matching condition on Standard Model matter content — proved in Cycle 30
+without invoking GUT normalization conventions.
+
+**Running coupling / coupling constant running**
+The fact that coupling constants (α_em, α_s, sin²θ_W) are not truly constant — they
+depend on the energy scale at which they are measured. This is a quantum effect: virtual
+particles at each energy scale partially screen (or anti-screen) the force. The equations
+governing this change are called the renormalization group (RG) equations. In DFC: the
+common gauge coupling at M_c runs down to the observed values of α_em, α_s, g₂ at
+low energies — this running is inherited from the Standard Model (Tier 3 correspondence;
+not yet derived from the substrate).
+
 ---
 
 ## Quick Reference — Frequently Used Equations
@@ -790,3 +863,9 @@ A particle's mass depends exponentially on its depth: m(d) ∝ exp(κ·d).
 | η = 1 − T_c/T_h | Maximum engine efficiency depends only on the two temperatures |
 | ω² = c²k² + m² | KG dispersion: how a massive field's frequency relates to its wavenumber |
 | ω = ck | Massless dispersion: frequency proportional to wavenumber (light) |
+| g² = 8πβ/3 | DFC gauge coupling from substrate quartic self-coupling β |
+| φ₀ = √(α/β) | Kink amplitude: the field value at the stable minimum |
+| ξ = √(2/α) | Kink width: the spatial scale over which the kink transitions |
+| E_kink = (4/3)cα^{3/2}/(β√2) | BPS kink energy (exact, from Bogomolny identity) |
+| sin²θ_W = g₁²/(g₁²+g₂²) = 3/8 | Weinberg angle at closure scale (tree-level DFC) |
+| Δm² = m₂²−m₁² | Mass-squared difference between neutrino eigenstates; drives oscillation |
