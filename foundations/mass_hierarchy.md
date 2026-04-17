@@ -128,10 +128,13 @@ extra dimension. Overlap with the Higgs (located on one brane) determines the ma
 - Requires a brane construction (separate extra structure)
 
 ### This Model's Approach
-- **One geometric defect** (the dimple) generates the hierarchy for all three generations
-- The dimple is not added by hand — it emerges from the D7 SU(3) closure squashing that generates
-  the flavor symmetry breaking
-- The number and type of modes is fixed by the quantum mechanics of the confining potential
+- **One geometric defect** (the dimple) accounts for the electron/muon ratio (206.77, 0.0% error)
+  from two independent geometric scales R and d — without fine-tuning between them
+- **Known failure:** The tau mass (the n=3 excited mode) is 8.4× off. The three generations
+  are likely not excited modes of one potential but ground states of three independent D6 winding
+  sectors. This invalidates the "generates all three" claim.
+- The dimple as a derived consequence of D7 SU(3) closure squashing is a working hypothesis,
+  not yet derived from the substrate field equation (Tier 3)
 
 ---
 
