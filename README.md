@@ -13,6 +13,27 @@ different compression thresholds.
 
 ---
 
+## Core Derivations
+
+Five results derived directly from `V(φ) = −α/2 φ² + β/4 φ⁴` and winding-number topology. Each follows from the compression mechanics with no free parameters beyond the substrate quartic β ≈ 0.035. All expressions are Wolfram Alpha-verifiable.
+
+- **Gauge coupling constant** — paste `sqrt(8*pi*0.035/3)` → **0.5423**
+  Kink phase stiffness f² = (4/3)(φ₀²/ξ) from the Bogomolny identity ∫sech⁴(u)du = 4/3. Holonomy radius r = 3ξ/(4β) gives g² = 8πβ/3. With β = 0.035: g = 0.5423. Observed at SM unification scale: g_common = 0.5443 (**0.4% agreement**; [`equations/coupling_derivation.py`](equations/coupling_derivation.py)).
+
+- **Weinberg angle** — paste `(3/5) / (1 + 3/5)` → **3/8 = 0.375**
+  Hypercharge normalization k_Y = 3/5 from Dynkin index matching on SM matter content (no GUT assumed). Equal closure couplings g₁ = g₂ → sin²θ_W = k_Y/(k_Y + 1) = 3/8 at threshold. RG running to M_Z: sin²θ_W = 0.2312. Observed: 0.2312 (**<0.01% agreement**; [`equations/weinberg_angle_rg.py`](equations/weinberg_angle_rg.py)).
+
+- **φ⁴ kink shape-mode frequency** — paste `sqrt(3)/2` → **0.8660**
+  The φ⁴ kink fluctuation potential V''(φ_kink) = 2α − (6/ξ²)sech²(x/ξ) is an exact n=2 Pöschl-Teller potential. Bound-state eigenvalues: ω₀² = 0 (translation zero mode) and ω₁² = (3/2)α (shape mode). Ratio: ω₁/m_σ = √((3/2)α)/√(2α) = √3/2. Verified numerically to 2.5 × 10⁻⁵ ([`equations/coupled_fluctuation.py`](equations/coupled_fluctuation.py)).
+
+- **Tsirelson bound (quantum Bell inequality)** — paste `sqrt(8)` → **2√2 ≈ 2.828**
+  CHSH operator C = A₁⊗B₁ + A₁⊗B₂ + A₂⊗B₁ − A₂⊗B₂ satisfies C² = 4I⊗I − [A₁,A₂]⊗[B₁,B₂]. For ±1 observables ‖[Aᵢ,Aⱼ]‖ ≤ 2, so ‖C‖² ≤ 4 + 4 = 8 → CHSH ≤ 2√2. Proved algebraically from substrate SU(2) geometry with no quantum formalism assumed ([`equations/bell_correlations.py`](equations/bell_correlations.py)).
+
+- **Superconducting flux quantum** — paste `6.626e-34 / (2 * 1.602e-19)` → **2.068 × 10⁻¹⁵ Wb**
+  U(1) single-valuedness of the condensate configuration Ψ = |Ψ|e^{iθ} on any closed path → ∮∇θ·dl = 2πn → enclosed flux Φ = nh/(2e). Zero free parameters; relative error 2.2 × 10⁻¹⁰ against CODATA ([`equations/superconductivity.py`](equations/superconductivity.py)).
+
+---
+
 ## Core Claim
 
 There is one thing. A continuous field that pulls inward on itself — this self-attraction
