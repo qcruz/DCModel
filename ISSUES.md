@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-16 (Cycles 47–57)
+**Last updated:** 2026-04-16 (Cycles 47–59)
 
 ---
 
@@ -24,11 +24,12 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Files: `foundations/planck_constant_derivation.md`, `equations/planck_constant.py` [STUB]
 - Path: route via α_em derivation proposed; requires completing coupling chain first
 
-### Bottleneck 1 — D-depth assignment not derived
+### Bottleneck 1 — D-depth assignment not fully derived (partial progress Cycle 59)
 - D5=U(1), D6=SU(2), D7=SU(3) are Tier 3 working hypotheses, not derivations
-- Route B (Hopf fibrations: S¹→S³→S⁵) is the leading candidate; DOF count per bifurcation from substrate dynamics is the missing step
-- Files: `foundations/depth_assignment.md`, `foundations/hopf_fibration_geometry.md`
-- Path: derive DOF count per bifurcation event from V(φ) = −α/2 φ² + β/4 φ⁴ compression dynamics
+- **Cycle 59 partial result:** n coincident degenerate zero modes on a shared background → SU(n) symmetry proved algebraically (not n independent U(1)s). This is the second half of Bottleneck 1.
+- **Remaining open (first half):** Why does D(4+n) open exactly n coincident modes? Requires counting unstable modes at each bifurcation threshold from the substrate field equation.
+- Files: `foundations/depth_assignment.md`, `foundations/hopf_fibration_geometry.md`, `foundations/zero_mode_multiplet.md` (NEW Cycle 59), `equations/hopf_dof_count.py` (NEW Cycle 59)
+- Path: count unstable modes at each bifurcation threshold from V(φ) compression dynamics; then n modes → SU(n) is now proved
 
 ### Bottleneck 2 — r_U1/λ = 3/(4β) not formally derived
 - The key coupling chain step g² = 8πβ/3 depends on identifying r_U1 = φ₀²/(β f²)
@@ -171,6 +172,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 **`depth_assignment.md`**
 - Route B (Hopf fibrations S¹→S³→S⁵) most promising; DOF count calculation not yet done
+- n coincident modes → SU(n) now proved (Cycle 59; see `foundations/zero_mode_multiplet.md`); only "why n modes at D(4+n)" remains
 
 ### phenomena/
 
@@ -230,6 +232,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | E_kink formula wrong | Cycle 47–48 | BPS-correct formula derived; γ_D retracted; all downstream files corrected |
 | G_F as pure experimental input | Cycle 51 | G_F derived from β via coupling chain (+0.18%); added to Tier 2a |
 | Berger sphere R₄ as source of Higgs quartic λ | Cycle 58 | R₄ = 0 exactly proved (analytic + numeric); λ comes from substrate β/4 ≈ 0.0088; see `equations/berger_sphere.py` |
+| kink_scattering.py used old retracted kink mass formula | Cycle 59 | Corrected to BPS-correct E_kink = (4/3)cα^(3/2)/(β√2); gamma_D provenance note updated |
+| SU(n) from n coincident modes: claimed as correspondence only | Cycle 59 (partial) | Proved: n coincident degenerate zero modes → SU(n) symmetry (not U(1)^n); see `foundations/zero_mode_multiplet.md`; "why n modes at D(4+n)" still open |
 | Neutron lifetime hidden in `proton_stability.py` | Cycle 52 | Added to `__main__` output; both G_F routes shown |
 | sin²θ_W(M_Z) Route 3B derivation (open since model inception) | Cycle 22 | sin²θ_W = 3/8 at M_c → 0.231 at M_Z from equal-coupling + SM running; 0.01% error |
 | E=hν claimed "derived" from massless KG dispersion | Cycle 42 | Corrected: E=ℏω is a QFT postulate imported from outside DFC; labeled as such |

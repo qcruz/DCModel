@@ -2,10 +2,10 @@
 
 ## One-Sentence Synthesis
 
-> The electron is the ground-state zero mode of the DFC compression kink at the D5+D6
-> closure level — a normalizable spin-1/2 spinor bound to the kink core by the Jackiw-Rebbi
-> mechanism, carrying D5 winding number n = −1 (electric charge) and forming an SU(2)
-> doublet with the electron neutrino at D6.
+> The electron is the ground-state zero mode of the DFC compression kink closing at D5
+> and D6 compression depths — a normalizable spin-1/2 spinor bound to the kink core by
+> the Jackiw-Rebbi mechanism, carrying D5 winding number n = −1 (electric charge) and
+> forming an SU(2) doublet with the electron neutrino via the two coincident D6 zero modes.
 
 ---
 
@@ -233,6 +233,7 @@ y_e = m_e / v ≈ 2.9 × 10⁻⁶    [Yukawa = Mλ-over-v in DFC language]
 | Doublet partner | ν_eL at T₃ = +1/2, Y = −1, Q = 0 | electron neutrino ✓ |
 | Color charge | No D7 closure → no color | colorless ✓ |
 | Left-handed weak coupling | S³ intrinsic orientation at D6 | e_L couples, e_R does not ✓ |
+| Tau mass (2nd excited state) | ~212 MeV predicted (mass_spectrum.py) | 1777 MeV — 8.4× off ✗ |
 
 ---
 
@@ -274,3 +275,5 @@ y_e = m_e / v ≈ 2.9 × 10⁻⁶    [Yukawa = Mλ-over-v in DFC language]
   `foundations/three_generations.md`
 - **Mass hierarchy** — dimple potential at D6, m_μ/m_e = R/d; `foundations/mass_hierarchy.md`
 - **Electron neutrino** — SU(2)_L doublet partner; `phenomena/particle_physics/particles/neutrinos.md`
+- **SU(2) doublet from coincident zero modes** — why 2 coincident D6 modes → SU(2) symmetry (not U(1)²);
+  `foundations/zero_mode_multiplet.md`

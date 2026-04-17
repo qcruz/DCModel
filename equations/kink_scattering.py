@@ -33,7 +33,7 @@ import numpy as np
 # ── Substrate parameters ──────────────────────────────────────────────────────
 
 ALPHA_D5 = 2.0 * (1.02e13)**2    # GeV^2 (D5 closure scale from Route 3B)
-BETA     = 0.0351                 # quartic coupling (inferred from Cycle 32: gamma = (16/3)*sqrt(beta))
+BETA     = 0.0351                 # quartic coupling (Tier 3 reference value; gamma_D = (16/3)*sqrt(beta) RETRACTED Cycle 48)
 
 # ── Basic scales ──────────────────────────────────────────────────────────────
 
@@ -50,8 +50,16 @@ def vacuum_field(alpha, beta):
     return math.sqrt(alpha / beta)
 
 def kink_mass(alpha, beta, c=1.0):
-    """Kink mass (energy). M_K = (4/3) c sqrt(2 alpha^3 / beta)."""
-    return (4.0/3.0) * c * math.sqrt(2.0 * alpha**3 / beta)
+    """
+    BPS-correct kink energy: E_kink = (4/3) c alpha^(3/2) / (beta sqrt(2))
+    = (4/3) c^2 phi_0^2 / lambda  (Bogomolny identity; Cycle 48 correction).
+
+    RETRACTED formula (Cycle 32, wrong by factor sqrt(2*beta)):
+        E_kink = (4/3) c sqrt(2 alpha^3 / beta)  ← WRONG
+    Correct formula (Cycle 48):
+        E_kink = (4/3) c alpha^(3/2) / (beta * sqrt(2))
+    """
+    return (4.0/3.0) * c * alpha**1.5 / (beta * math.sqrt(2.0))
 
 # ── Fluctuation spectrum ──────────────────────────────────────────────────────
 
@@ -234,12 +242,12 @@ if __name__ == "__main__":
 
     print(f"\n--- Substrate Parameters (D5 Closure Scale) ---")
     print(f"  alpha           = {alpha:.4e} GeV^2")
-    print(f"  beta            = {beta:.4f}  (inferred from gamma_space = (16/3)*sqrt(beta))")
+    print(f"  beta            = {beta:.4f}  (Tier 3 reference value; gamma_D RETRACTED Cycle 48)")
     print(f"  phi_0           = sqrt(alpha/beta) = {phi0:.4e} GeV")
     print(f"  m_sigma         = sqrt(2 alpha)    = {m_sig:.4e} GeV  [meson mass]")
     print(f"  lambda          = sqrt(2/alpha)    = {lam:.4e} GeV^-1 [kink width]")
     print(f"  m_sigma * lambda= {m_sig * lam:.6f}         [must = 2 exactly]")
-    print(f"  M_K             = (4/3)sqrt(2 alpha^3/beta) = {M_K:.4e} GeV  [kink mass]")
+    print(f"  M_K             = (4/3)c alpha^(3/2)/(beta*sqrt(2)) = {M_K:.4e} GeV  [BPS-correct; Cycle 48]")
     print(f"  M_K / m_sigma   = {M_K/m_sig:.4e}   [kink is heavy compared to meson]")
 
     print(f"\n--- Poschl-Teller Fluctuation Spectrum (Exact, Parameter-Free) ---")
