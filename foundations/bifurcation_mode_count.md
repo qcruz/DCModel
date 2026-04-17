@@ -252,8 +252,32 @@ may be 2 rather than 1.
 
 ---
 
+## n-Field Picture (Cycle 63)
+
+The coupled_fluctuation.py module (Cycle 63) demonstrates the n-field mechanism numerically:
+
+**Result:** n independent φ⁴ kink fields, each with a kink at position x=0, have n IDENTICAL
+zero modes with profile η₀(x) ∝ sech²(x/ξ). Because all n zero mode profiles are identical
+(same frequency ω=0, same spatial form, same norm), they satisfy the "coincident and degenerate"
+condition proved in zero_mode_multiplet.md (Cycle 59) → SU(n).
+
+**Overlap degrades with separation:** When the n kinks are at different positions x₁,...,xₙ,
+the zero mode profiles differ: η_k(x) ∝ sech²((x-xₖ)/ξ). Their overlap decays exponentially
+with separation |xᵢ-xⱼ|/ξ. At large separation, the modes become orthogonal → symmetry
+breaks from SU(n) to U(1)ⁿ. Coincidence (all at x=0) is the condition for SU(n).
+
+**Shape mode:** ω₁² = (3/2)α, giving ω₁/m_σ = √3/2 ≈ 0.866 (exact; verified numerically,
+error 2.5×10⁻⁵ from grid discretization).
+
+**Remaining open question:** The n-field picture requires that D(4+k) introduces exactly ONE
+NEW INDEPENDENT FIELD DIRECTION per threshold. This is plausible from the codimension-1
+theorem but has not been derived from the coupled D5+D6 field equations.
+
+---
+
 ## Connections
 
+- `equations/coupled_fluctuation.py` — n-field zero mode coincidence verified (Cycle 63)
 - `foundations/zero_mode_multiplet.md` — second half proved (n modes → SU(n); Cycle 59)
 - `foundations/depth_assignment.md` — Bottleneck 1 five constraints; Route B formalism
 - `foundations/hopf_fibration_geometry.md` — S^(2n-1) correspondence; Route B Hopf picture
@@ -261,4 +285,4 @@ may be 2 rather than 1.
 - `foundations/kink_nucleation.md` — single-kink zero mode; Z₂ topology
 - `foundations/kink_scattering.md` — shape mode spectrum; Pöschl-Teller exact results
 
-Cycle 62 | Bottleneck 1 first half: structural argument mapped; derivation open
+Cycle 62–63 | Bottleneck 1 first half: n-field picture demonstrated; one open item remains

@@ -121,20 +121,101 @@ not a derived result.
 
 ## Formal Equations
 
+### Hawking Temperature (BLOCKED — requires G and ℏ from substrate)
+
+The Hawking temperature equals the reduced Planck constant times the cube of the speed
+of light, divided by eight times pi times Newton's gravitational constant times the mass
+times the Boltzmann constant. In natural units where ℏ = c = k_B = 1, the temperature
+equals the surface gravity divided by two times pi:
+
 ```
-[STUB — quantitative prediction blocked by G_Newton and ℏ derivation gaps]
+T_H = ℏ c³ / (8π G M k_B)     [both G and ℏ are Tier 4 open in DFC]
 
-Hawking temperature:
-T_H = ℏ c³ / (8π G M k_B)     [requires G_Newton and ℏ from substrate]
+Equivalently: T_H = κ / (2π)  where κ = c⁴/(4GM) is the surface gravity
 
-Surface gravity:
-κ = c⁴ / (4 G M)              [Schwarzschild black hole]
+Numerical values (using physical G and ℏ; NOT DFC predictions):
+  Solar mass M_☉ = 1.989×10³⁰ kg:
+    T_H(M_☉) = 6.17×10⁻⁸ K   (unmeasurably small)
+  Primordial black hole M = 10¹⁵ g = 10¹² kg:
+    T_H = 1.23×10¹¹ K         (would be evaporating today → observable)
+  Planck mass M_P = √(ℏc/G) = 2.18×10⁻⁸ kg:
+    T_H(M_P) = 0.5 T_P = 7.1×10³¹ K  (Planck-temperature regime)
+```
 
-Evaporation timescale:
-t_evap = (5120 π G² M³) / (ℏ c⁴)    [requires G_Newton and ℏ]
+**DFC status: DOUBLY BLOCKED.** Both G_Newton and ℏ must be derived from the substrate
+before T_H can be predicted. This makes Hawking radiation the last observable to become
+computable in DFC (after all other blocked quantities are resolved).
 
-DFC pair nucleation rate at horizon:
-Γ_pair ∝ exp(−2 E_kink / T_H)    [Boltzmann factor; structural analog of Schwinger rate]
+### Evaporation Timescale (BLOCKED — same dependencies)
+
+The time for a black hole to evaporate completely scales as the cube of the initial mass,
+with a coefficient set by G² divided by ℏ c⁴. The evaporation time equals five thousand
+one hundred twenty times pi times G squared times M cubed, divided by ℏ times c to the
+fourth power:
+
+```
+t_evap = (5120 π G² M³) / (ℏ c⁴)
+
+  Solar mass: t_evap ≈ 2.1×10⁶⁷ years (≫ age of universe)
+  Primordial (M = 10¹² kg): t_evap ≈ 1.4×10¹⁰ years ≈ age of universe today
+```
+
+The M³ scaling follows from dM/dt = −constant/(G² M²) from energy conservation and
+Stefan-Boltzmann (power ∝ T_H⁴ × area ∝ 1/M² × M²). In DFC, this structure follows
+from the horizon's role as a closure boundary: mass lost equals the net outward kink flux.
+
+### DFC Schwinger-Like Pair Nucleation Rate (structural)
+
+Near the horizon, the pair production rate per unit volume has the same Boltzmann form as
+Schwinger's formula for pair creation in an electric field. The nucleation rate decreases
+exponentially as the ratio of the kink energy to the Hawking temperature:
+
+```
+Γ_pair ∝ exp(−E_kink / T_H)    [structural analog of Schwinger rate]
+
+Schwinger comparison:
+  Γ_Schwinger ∝ exp(−π m_e² / (eE))    [electric field pair production]
+  Γ_Hawking   ∝ exp(−E_kink / T_H)     [gravitational field pair production]
+
+Both expressions follow from the same WKB tunneling formula applied to the pair's
+action under the respective background field (electric or gravitational).
+```
+
+### Temperature–Entropy–Area Relation (structural)
+
+The Bekenstein-Hawking entropy of a black hole equals one-quarter of the event horizon
+area in Planck units. The entropy, temperature, and mass satisfy the first law of black
+hole thermodynamics, which states that the differential of mass equals the temperature
+times the differential of entropy:
+
+```
+S_BH = A_horizon / (4 G ℏ/c³)    [Planck units; A = 4πR_S²; R_S = 2GM/c²]
+     = 4π G M² / (ℏ c)
+
+dM = T_H dS_BH    [first law of black hole mechanics]
+
+In DFC: S_BH counts the number of accessible D1 substrate configurations in the
+        closure interior — analogous to S = k_B ln W, but for fold configurations
+        rather than molecular arrangements. This is a structural identification;
+        the numerical coefficient 1/4 has not been derived from the substrate.
+```
+
+### BEC Analog Black Hole (structural — testable without G or ℏ in ratio)
+
+In a Bose-Einstein condensate with spatially varying flow velocity, a sonic horizon forms
+where the flow speed exceeds the local speed of sound. The analog Hawking temperature
+equals the reduced Planck constant times the gradient of the flow velocity at the sonic
+horizon, divided by two pi times k_B:
+
+```
+T_analog = ℏ (∂v/∂x)|_horizon / (2π k_B)
+
+In DFC: the sonic horizon is a D2/D3 alignment boundary in the BEC (macroscopic D2 mode
+occupation). The gradient ∂v/∂x at the boundary sets the effective surface gravity.
+This is testable in existing BEC experiments without knowing G_Newton.
+
+Connection to superfluidity: T_analog involves ℏ and k_B but NOT G_Newton → one
+degree of blockage removed vs. astrophysical T_H.
 ```
 
 ---

@@ -1,6 +1,6 @@
 # DFC Model — SWOT Analysis vs. Major Theories
 
-*Updated periodically as the model develops. Last updated: Cycle 57.*
+*Updated periodically as the model develops. Last updated: Cycle 63.*
 
 This document analyzes the DFC model's position relative to existing frameworks.
 The format is:
@@ -102,27 +102,30 @@ The format is:
 - **No Einstein equations:** Proto-GR equations exist (folding_gradient.py) but the full nonlinear
   GR has not been derived. Hawking temperature blocked by both G_Newton and ℏ being open.
 
-- **D-depth assignment unresolved (Bottleneck 1):** Why U(1) at D5, SU(2) at D6, SU(3) at D7?
-  Route B (Hopf fibrations S¹→S³→S⁵) is the most promising path but DOF count per bifurcation
-  from substrate dynamics has not been computed.
+- **D-depth assignment (Bottleneck 1, partially resolved):** Second half proved (Cycle 59):
+  n coincident degenerate zero modes → SU(n). First half structural (Cycles 62–63): n
+  independent kink fields at x=0 → n identical zero modes → coincident. Remaining open:
+  why D(4+k) introduces exactly one new independent field direction from the coupled field
+  equation.
 
-- **r_U1/λ gap (Bottleneck 2):** The coupling formula g² = 8πβ/3 is heuristic — derived from
-  phase stiffness + holonomy identification, but r_U1/λ = 3/(4β) is a physical identification
-  rather than a substrate derivation. Routes A (KK reduction on S¹) and B (domain-wall
-  worldvolume) are both blocked for pure real φ⁴ field; substrate extension required.
+- **r_U1/λ gap (Bottleneck 2):** The coupling formula g² = 8πβ/3 is heuristic. Routes A and B
+  are blocked for pure real φ⁴; substrate extension (complex scalar, vortex core = r_U1) is
+  the candidate path but requires ℏ for the vortex core radius.
 
-- **~27.5% complete:** By internal estimate (viability ~41.5%, rigor ~21.5%), the model is
-  substantially incomplete relative to full mathematical closure.
+- **~32% complete:** By internal estimate (viability ~46%, rigor ~24%); updated Cycle 63.
 
 ### Opportunities
 
-- **Berger sphere R₄ coefficient:** The quartic self-coupling λ_DFC from the S³ metric expansion
-  is identified as tractable (Cycle 53). Completing this + D6/D7 overlap integral for μ² would
-  derive v = 246 GeV and close 4 Tier 2a free parameters simultaneously.
+- **Bottleneck 1 completion:** The one remaining open item — why D(4+k) introduces exactly one
+  new independent field — requires the coupled D5+D6 fluctuation spectrum. This is now a
+  well-posed computation (Cycle 63). If it gives 1 new zero mode, the full chain closes.
 
-- **DOF count per bifurcation:** Deriving how many degrees of freedom each substrate bifurcation
-  event opens (Route B: 1, 2, 3 complex DOFs at D5/D6/D7) would promote all three D-depth
-  assignments from Tier 3 to Tier 2. This is Bottleneck 1 — highest leverage derivation.
+- **D6/D7 overlap integral for μ²:** Would derive v = 246 GeV and remove 4 Tier 2a free
+  parameters simultaneously. Identified as tractable (Cycles 53, 58).
+
+- **Condensed matter Tier 1 cluster:** Φ₀, K_J, R_K, κ₀ all verified (Cycles 60–61). The
+  same DFC winding-number mechanism applies to topological insulators and Majorana modes
+  in superconducting wires — concrete condensed-matter predictions beyond the SM.
 
 - **KSS viscosity bound from SU(3) algebra:** The Tsirelson bound CHSH ≤ 2√2 was derived from
   SU(2) commutator norms (Cycle 35). An analogous argument may derive η/s ≥ 1/(4π) from the
