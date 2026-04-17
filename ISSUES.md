@@ -91,7 +91,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | Born rule for position | Spin case DERIVED (Cycle 38); Kramers escape rate Γ(x) ∝ \|φ(x)\|² not rigorously derived | `measurement.md`, `born_rule_derivation.md` | Escape rate calculation from V(φ) saddle topology |
 | ℏ from (α, β, c) | S_kink(D1)/ℏ = 4×10³⁹ — 13.2 bifurcations needed to reach ℏ scale; model has only 4 | `planck_constant_derivation.md` | Either additional sub-bifurcation structure or route via α_em derivation |
 | Confinement formal proof | Requires nonlinear SU(3) analysis; equivalent to Yang-Mills mass gap problem | `strong_force.md` (Open Q1), `strong_cp.md` | Nonlinear D7 field theory; beyond perturbation theory |
-| v = 246 GeV from substrate | μ² and λ in V(ε) not derived from (α, β, c) | `higgs_geometry.md` (Open Q2), `higgs_mass_derivation.md`, `foundations/vev_derivation.md` (Cycle 53) | Derive μ² from D7/D6 overlap integral; λ from Berger sphere quartic (tractable — R₄ expansion of squashed S³); T9 must be resolved first |
+| v = 246 GeV from substrate | μ² not yet derived from (α, β, c); λ = β/4 identified (Cycle 58) | `higgs_geometry.md` (Open Q2), `foundations/vev_derivation.md`, `equations/berger_sphere.py` | λ = β/4 ≈ 0.0088 (R₄=0 proved; substrate β is the source); derive μ² from D7/D6 overlap integral; resolve field normalization factor ~1.5; T9 must be resolved first |
 | CKM and PMNS matrices | Holonomy mismatch integral over D6/D7 boundary not computed | `flavor_mixing.md`, `tension_analysis.md` | D6/D7 overlap geometry → mixing angle computation |
 | Electroweak loop corrections (Δρ_top) | One-loop DFC calculation from D6+D7 dynamics not done | `electroweak_precision.md` (Open Q1) | Standard Feynman diagram computation in DFC effective Lagrangian |
 
@@ -229,6 +229,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | Born rule for spin "assumed" | Cycle 38 | Derived: P(↑,n̂) = cos²(θ/2) from SU(2) spinor geometry + binary nucleation |
 | E_kink formula wrong | Cycle 47–48 | BPS-correct formula derived; γ_D retracted; all downstream files corrected |
 | G_F as pure experimental input | Cycle 51 | G_F derived from β via coupling chain (+0.18%); added to Tier 2a |
+| Berger sphere R₄ as source of Higgs quartic λ | Cycle 58 | R₄ = 0 exactly proved (analytic + numeric); λ comes from substrate β/4 ≈ 0.0088; see `equations/berger_sphere.py` |
 | Neutron lifetime hidden in `proton_stability.py` | Cycle 52 | Added to `__main__` output; both G_F routes shown |
 | sin²θ_W(M_Z) Route 3B derivation (open since model inception) | Cycle 22 | sin²θ_W = 3/8 at M_c → 0.231 at M_Z from equal-coupling + SM running; 0.01% error |
 | E=hν claimed "derived" from massless KG dispersion | Cycle 42 | Corrected: E=ℏω is a QFT postulate imported from outside DFC; labeled as such |

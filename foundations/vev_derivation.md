@@ -7,9 +7,16 @@
 > Completing this derivation would promote those four predictions to fully first-principles
 > results, removing the last experimental input from the weak-sector coupling chain.
 >
-> **Epistemic status: OPEN.** The structural argument for why μ² and λ have the right
-> signs is complete; the numerical computation of their magnitudes from (α, β, c)
-> is the missing step.
+> **Cycle 58 — MAJOR CORRECTION:** The claim that λ_DFC = R₄/r_D6⁴ (the quartic
+> coefficient of the Berger sphere Ricci scalar) is **wrong**. R₄ = 0 identically
+> for the biaxial Berger sphere with DFC parametrization a=1/2, b=(1+ε)/2. The exact
+> result is R(ε) = 24 − 16ε − 8ε² — a polynomial of degree 2. The quartic stabilizer
+> λ comes from the substrate quartic β, not from the Ricci geometry. See
+> `equations/berger_sphere.py` for the analytic derivation and numerical verification.
+>
+> **Epistemic status: OPEN.** The structural argument for V(ε) = −α_D6/2 ε² + β/4 ε⁴
+> is now on firmer footing (λ identified with β/4); the remaining gap is converting
+> α_D6 to GeV, which requires M_c(D6) from Bottleneck 1.
 
 ---
 
@@ -79,23 +86,39 @@ the D6 shape mode. This coupling is not yet computed numerically.
 
 ### 2.2 The quartic restoring term λ
 
-The term that stabilizes the potential at large squashing — the brim of the Mexican hat
-— comes from the intrinsic curvature resistance of the S³ geometry. A round three-sphere
-is a rigid object: deforming it from round to ellipsoidal costs energy proportional to
-the square of the eccentricity. At large squashing (ε → ∞), this cost dominates.
-
-For small squashing, the curvature energy scales as ε⁴ rather than ε² because: the
-leading (ε²) correction to the Ricci scalar under uniform S³ squashing vanishes by
-symmetry (the squashing is a conformal mode, not a Ricci-changing mode, at leading
-order). The first non-trivial curvature cost is at quartic order:
+**Cycle 58 correction:** The pre-Cycle 58 account claimed that λ comes from the quartic
+term in the Berger sphere Ricci scalar expansion. This is incorrect. The exact Ricci
+scalar for the biaxial Berger sphere is:
 
 ```
-V_curvature(ε) ≈ +λ_DFC ε⁴    where λ_DFC ~ (S³ curvature resistance) / (closure radius)⁴
+R(ε) = 24 − 16ε − 8ε²   [exact; see equations/berger_sphere.py]
 ```
 
-This is the same suppression that makes the tree-level Higgs quartic small:
-λ_tree(M_c) ≈ 0.013 (see `foundations/higgs_mass_derivation.md`). The gauge-Higgs
-unification structure of the S³ modulus protects the quartic from being O(1).
+The quartic coefficient R₄ = 0 identically. There is no quartic term in R(ε). The
+Ricci term actually DESTABILIZES ε = 0 (R decreases with |ε|, so geometric curvature
+energy decreases as squashing increases — this is a negative-mass-squared contribution,
+not a quartic stabilizer).
+
+**Correct source of λ:** The quartic stabilizer comes from the substrate quartic
+coupling β, evaluated at D6 depth. The DFC substrate potential V(φ) = −α/2 φ² + β/4 φ⁴
+evaluated at the squashing mode gives the full Higgs potential directly:
+
+```
+V(ε) = −α_D6/2 ε² + β/4 ε⁴
+```
+
+The quartic term β/4 ε⁴ is the stabilizer. In terms of standard Higgs potential
+notation V_H = −μ² h² + λ h⁴:
+
+```
+λ_DFC = β/4 ≈ 0.0351/4 ≈ 0.0088
+```
+
+Comparison with the SM tree-level value λ₀(M_c) ≈ 0.013 from vacuum stability running:
+the DFC value is approximately 1.5× below. This factor reflects a normalization
+mismatch between the substrate field ε and the SM Higgs field h — a remaining open
+problem in the field identification. The structural identification λ ↔ β is correct;
+the precise normalization requires care in mapping ε ↔ h.
 
 ### 2.3 The Minimum
 
@@ -202,40 +225,40 @@ exp(−Δ_depth × L), where Δ_depth = depth separation and L = kink characteri
 units) is not known from substrate dynamics — it requires completing Bottleneck 1
 (D-depth assignment mechanism).
 
-### 4.2 Step 2 — Compute S³ curvature resistance
+### 4.2 Step 2 — Establish λ from substrate β (Cycle 58 result)
 
-The quartic coefficient λ from the S³ geometry requires computing the fourth-order term
-in the expansion of the S³ Ricci scalar under uniform squashing:
+**This step is now resolved.** The Berger sphere Ricci scalar has been computed exactly
+(Cycle 58, `equations/berger_sphere.py`):
 
-```
-R(ε) = R₀ + R₂ ε² + R₄ ε⁴ + ...
-```
-
-For a round S³ with radius r, R₀ = 6/r². The first non-trivial squashing-induced
-correction R₄ is the curvature resistance λ_DFC. This is a geometric calculation in
-differential geometry — the expansion of the Ricci scalar for the Berger sphere
-(one-parameter family of squashed S³ metrics).
-
-**This calculation is tractable.** The Berger sphere metric squashing is a known
-object in differential geometry. The fourth-order term in the Ricci scalar expansion
-is computable. This is the most tractable step in the VEV derivation.
-
-The Berger sphere family: the metric on S³ with squashing parameter ε along the Hopf
-fiber direction is:
+The Ricci scalar equals twice the sum of sectional curvatures. For the biaxial Berger
+sphere with horizontal radius one-half and fiber radius one-half times one plus
+the squashing parameter:
 
 ```
-ds²(ε) = (1/4) [(σ₁² + σ₂²) + (1 + ε)² σ₃²]
+R(ε) = 2(4a² − b²)/a⁴   with a = 1/2, b = (1+ε)/2
+     = 32 − 8(1+ε)²
+     = 24 − 16ε − 8ε²   [EXACT — polynomial terminates at degree 2]
 ```
 
-where σ₁, σ₂, σ₃ are the left-invariant 1-forms on SU(2). The Ricci scalar for this
-metric has the expansion:
+The quartic coefficient R₄ = 0 exactly (verified numerically to 1.5×10⁻¹² by
+fourth-order finite difference). The Ricci scalar provides:
+- A linear destabilization term (−16ε, first order in squashing)
+- A quadratic destabilization term (−8ε², contributing to −μ²_eff ε²)
+- **No quartic term**
+
+The quartic stabilizer therefore comes from the substrate potential directly:
 
 ```
-R(ε) = 6/r² × [1 − (ε²/4) + (higher order)]     [schematic — signs need verification]
+V(ε) = −α_D6/2 ε²  +  β/4 ε⁴       [substrate potential at D6 depth]
+        ↑                  ↑
+    destabilization    stabilization
+  (D7 pressure + R)   (substrate β)
+
+λ_DFC = β/4 ≈ 0.00877
 ```
 
-The precise fourth-order coefficient — which is λ_DFC in DFC units — requires evaluating
-the quartic term in this expansion with the DFC closure radius r = r_D6.
+The ~1.5× factor between λ_DFC and λ_SM(M_c) ≈ 0.013 is an open normalization
+problem in the ε ↔ h field identification. The structural source of λ is now identified.
 
 ### 4.3 Step 3 — Convert to GeV
 
@@ -318,25 +341,28 @@ The consistency condition that both numbers must satisfy is:
 
 ## 7. Open Problems
 
-1. **Berger sphere quartic coefficient.** Compute R₄ in the expansion of R(ε) for
-   the Berger sphere metric, expressed in DFC substrate units. This is tractable
-   via the Ricci tensor formula for the squashed S³: R_ij = diag(2/r², 2/r², 2/(r²(1+ε)²))
-   at leading squashing. The fourth-order term requires evaluating the curvature-squared
-   corrections. Target: λ_DFC ≈ 0.013 (consistent with SM vacuum stability running).
+1. **~~Berger sphere quartic coefficient~~** — **RESOLVED (Cycle 58):** R₄ = 0 exactly.
+   The quartic stabilizer does NOT come from the Ricci scalar geometry. λ is identified
+   as β/4 from the substrate potential. See `equations/berger_sphere.py`.
 
-2. **D6/D7 overlap integral.** Compute ∫|∂_z φ_kink(D7)| × δV_D6(z) dz to give μ²
-   in substrate units. Requires knowing the relative depth separation between D6 and D7
-   closures (Bottleneck 1) and the cross-depth coupling in V(φ). Target: μ ≈ 28 GeV.
+2. **Field normalization: ε ↔ h.** The substrate squashing parameter ε and the SM
+   Higgs field h are related by a normalization factor. With λ_DFC = β/4 ≈ 0.0088
+   and λ_SM(M_c) ≈ 0.013, the ratio is ~1.5. Identifying the precise DFC-to-SM
+   field normalization (likely a factor involving the closure radius r_D6) would
+   close this gap without requiring new physics.
 
-3. **Resolve T9 before computing v.** The scale at which V(ε) is evaluated determines
-   whether μ and λ are computed at 10¹³ GeV or 10¹⁸ GeV. The two-scale interpretation
-   (gauge scale ≠ modulus activation scale) needs formal justification from the DFC
-   field dynamics.
+3. **D6/D7 overlap integral for μ².** Compute ∫|∂_z φ_kink(D7)| × δV_D6(z) dz to
+   give μ² in substrate units, then convert to GeV. This requires knowing the relative
+   depth separation between D6 and D7 closures (Bottleneck 1). Target: μ ≈ 28 GeV
+   (from consistency condition μ = v√λ with v = 246 GeV, λ ≈ 0.013).
 
-4. **RG matching at closure scale.** Once μ_DFC and λ_DFC are computed at M_c, they
-   must be run down to the electroweak scale using the SM RGE before the VEV is extracted.
-   This running is standard SM calculation (already done for λ in higgs_mass_derivation.md)
-   but requires the correct M_c as the starting point.
+4. **α_D6 in GeV units.** The VEV is v = √(2α_D6/β) in substrate units. Converting
+   to GeV requires identifying M_c(D6) from Bottleneck 1. This is the last step
+   once μ² and the normalization are resolved.
+
+5. **Resolve T9 before finalizing v.** The scale at which V(ε) is evaluated (10¹³ GeV
+   vs 10¹⁸ GeV) affects the RG running of λ down to the electroweak scale. The
+   two-scale picture (gauge scale ≠ modulus activation scale) needs formal justification.
 
 ---
 

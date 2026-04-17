@@ -3,15 +3,21 @@ Higgs potential from S³ fiber geometry.
 
 In the Dimensional Folding Model, the Higgs field is the squashing parameter ε of the
 weak-force S³ fiber. The Mexican hat potential emerges from:
-  - Negative mass term: pressure from the squashed SU(3) fiber (destabilizer)
-  - Quartic term: intrinsic curvature of S³ resisting deformation (stabilizer)
+  - Negative mass term (-μ²ε²): D7 pressure on D6 geometry PLUS the Ricci curvature
+    contribution (Berger sphere R(ε) = 24-16ε-8ε² decreases with squashing, so
+    geometric energy DESTABILIZES ε=0, contributing to -μ²_eff ε²).
+  - Quartic term (+λε⁴): substrate quartic coupling β, NOT S³ curvature resistance.
+    CORRECTION (Cycle 58): R₄ = 0 exactly for the biaxial Berger sphere — there is no
+    quartic term in the Ricci scalar. λ_DFC = β/4 ≈ 0.0088 from the substrate potential.
+    See equations/berger_sphere.py for the analytic proof and numerical verification.
 
 The Higgs mass derivation separates two regimes:
   Above the closure scale M_c: geometric — the quartic is suppressed to ~0.013 by the
     gauge-Higgs unification structure (Higgs as metric modulus, protected by symmetry)
   Below M_c: field-theoretic — top quark loops radiatively generate λ(v) ≈ 0.129
 
-Result: m_H = 125.1 ± 1.5 GeV  (observed: 125.25 ± 0.17 GeV)
+Result: m_H = 124.4 ± 3.7 GeV  (observed: 125.25 ± 0.17 GeV; within 1σ)
+  [Corrected in Cycle 38 from stale 125.1 ± 1.5 GeV; PDG m_t = 172.76 GeV used]
 
 The tree-level estimate (~91 GeV) was incorrect because it used λ_tree directly as the
 physical quartic without RG evolution. See foundations/higgs_mass_derivation.md.
@@ -34,6 +40,12 @@ DERIVATION STATUS (important):
   - Vacuum stability: the simplified top-only beta function in vacuum_stability() gives
     a stability scale ~10^3.8 GeV, inconsistent with the actual SM result (~10^9 GeV)
     and the claimed DFC scale M_c ~ 10^18 GeV. This function is a placeholder.
+
+Key references:
+    foundations/higgs_geometry.md         — Higgs as S³ squashing modulus
+    foundations/higgs_mass_derivation.md  — full RG-improved derivation
+    foundations/vev_derivation.md         — VEV derivation path (updated Cycle 58)
+    equations/berger_sphere.py            — R₄=0 proof; λ=β/4 identification (Cycle 58)
 
 Usage:
     python equations/higgs_potential.py
