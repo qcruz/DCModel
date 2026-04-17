@@ -80,19 +80,86 @@ is also a one-loop self-energy diagram.
 
 ## Formal Equations
 
-```
-[STUB — loop integral not yet computed in DFC framework]
+### DFC Self-Energy Diagram (schematic — loop integral open)
 
-Self-energy shift (schematic):
+The electron self-energy under its emitted-and-reabsorbed D5 photon modes is represented
+by the diagram in which the electron propagator emits and reabsorbs a single photon. The
+energy shift equals the integral over all D5 photon wavevectors of the product of the
+squared vertex factor, the photon propagator, and the electron propagator:
+
+```
 ΔE_self ≡ (g_em² / (2π)²) ∫ d⁴k D_μν(k) S_F(p − k)
-         integrated over D5 mode space, regulated at M_c(D5)
+          [integrated over D5 mode space; regulated at M_c(D5) = 9.44 × 10¹² GeV]
 
 2s-2p splitting:
-Δν_Lamb = (ΔE_self[2s] − ΔE_self[2p]) / h = 1057.845 MHz    [observed]
-
-DFC input: g_em² derived from β = 0.035 via Cycle 42/44 chain
-DFC cutoff: M_c(D5) ~ 9.44 × 10¹² GeV (from SM α₁=α₂ running)
+Δν_Lamb = (ΔE_self[2s] − ΔE_self[2p]) / h    [2p contribution ≈ 0: |ψ_2p(0)|² = 0]
 ```
+
+The DFC photon propagator is the massless D5 Klein-Gordon Green's function: the negative
+of the metric tensor divided by the squared wavevector, D_μν(k) = −η_μν/k². The DFC
+vertex factor g_em is derived from β through the coupling chain.
+
+**DFC inputs:**
+```
+g_em² = 4π α_em(m_e) = 4π/140.1      [from β chain; Cycle 42/44]
+UV cutoff: M_c(D5) = 9.44 × 10¹² GeV  [from SM α₁=α₂ crossing]
+```
+
+**DFC status: loop integral not yet computed.** The full integral requires the bound-state
+electron propagator in the hydrogen potential — this is the open step.
+
+### Bethe Non-Relativistic Estimate (QED reference, not DFC)
+
+The dominant Lamb shift contribution is the electron self-energy for the 2s state. The
+energy shift of the n-th s-wave level equals four times the fifth power of the fine
+structure constant times the electron rest energy, divided by three times pi times n cubed,
+times the logarithm of the electron rest energy divided by twice the average excitation
+energy:
+
+```
+ΔE(ns) = (4 α⁵ m_e c²) / (3π n³) × ln(m_e c² / (2 <E>_avg))
+
+For n = 2 (2s state), <E>_avg ≈ 16.6 eV (Bethe 1947):
+  Bethe log = ln(511000 / 33.2) ≈ 9.64
+  Simple formula gives: 1308 MHz   [vs Bethe's actual 1040 MHz — discrepancy from
+                                    simplified <E>_avg; exact calculation sums all states]
+  Full QED (observed): 1057.845 MHz
+```
+
+The 2p contribution vanishes because the 2p wavefunction has a node at the nucleus:
+|ψ_2p(0)|² = 0, so the 2p self-energy is zero at leading order. The 2s-2p splitting
+equals approximately the 2s self-energy alone.
+
+### DFC Systematic Prediction (Tier 2b)
+
+Since the Lamb shift scales as α⁵ in leading order, and the DFC fine structure constant
+at the electron mass scale (1/140.1) is 2.2% below the physical value (1/137.036), the
+DFC Lamb shift prediction is below the observed value by approximately five times 2.2%,
+which equals about 11%:
+
+```
+α_DFC(m_e) = 1/140.1  (observed: 1/137.036;  error: −2.2%)
+
+DFC scaling prediction:
+  Δν_DFC = Δν_obs × (α_DFC / α_obs)⁵
+          = 1057.845 × (137.036/140.1)⁵
+          = 1057.845 × 0.8953
+          = 947 MHz
+
+  Relative error: −10.5%   ✗ TIER 2b (exceeds 5% threshold)
+```
+
+The error budget across all DFC EM predictions (single source: α_em(m_e) = 1/140.1):
+
+| Observable | α power | Predicted DFC error |
+|---|---|---|
+| H energy levels E_n | 2 | −4.4% (Tier 2a) |
+| Thomson cross-section | 2 | −4.4% (Tier 2a) |
+| Electron g-2 (leading) | 1 | −2.2% (Tier 2a) |
+| **Lamb shift (leading)** | **5** | **−10.5% (Tier 2b)** |
+
+Resolving the r_U1/λ derivation gap (Bottleneck 2) would correct α_em(m_e) and bring
+the Lamb shift within the 5% threshold. Verified in `equations/lamb_shift.py` (Cycle 62).
 
 ---
 
@@ -102,9 +169,11 @@ DFC cutoff: M_c(D5) ~ 9.44 × 10¹² GeV (from SM α₁=α₂ running)
 |---|---|
 | Structural account consistent with DFC photon/electron picture | ✓ (structural) |
 | Self-energy diagram topology same as QED | ✓ |
-| g_em from DFC chain available as input | ✓ (1.3% error in α_em) |
-| Quantitative Lamb shift prediction from DFC loop integral | ✗ (OPEN — equation module stub only) |
-| Proton radius puzzle (muonic hydrogen discrepancy) addressed | ✗ (OPEN) |
+| g_em = √(4π α_em) from DFC chain available as input | ✓ (2.2% error in α_em at m_e) |
+| Bethe formula includes correct 1/n³ factor for n=2 | ✓ (Cycle 62 fix) |
+| DFC scaling prediction: 947 MHz vs observed 1057.845 MHz | ✗ −10.5% error — Tier 2b (Cycle 62) |
+| Lamb shift from DFC self-energy loop integral (first principles) | ✗ OPEN — requires D5 photon propagator in hydrogen potential |
+| Proton radius puzzle (muonic hydrogen discrepancy) addressed | ✗ OPEN |
 
 ---
 
@@ -128,9 +197,10 @@ DFC cutoff: M_c(D5) ~ 9.44 × 10¹² GeV (from SM α₁=α₂ running)
 
 ## Connections
 
-- `phenomena/quantum/atomic_structure.md` — hydrogen energy levels from DFC coupling chain
-- `phenomena/quantum/anomalous_magnetic_moment.md` — same order (one-loop self-energy) calculation
-- `phenomena/particle_physics/pair_production.md` — vacuum polarization contribution
-- `foundations/coupling_derivation.md` — g_em from β; DFC coupling chain
-- `equations/atomic_structure.py` — QED running α_em from M_Z to m_e; hydrogen levels
-- `equations/lamb_shift.py` — stub for loop integral computation
+- `equations/lamb_shift.py` — DFC scaling estimate (−10.5%); Bethe formula; error budget (Cycle 62)
+- `phenomena/quantum/atomic_structure.md` — hydrogen energy levels from DFC coupling chain; same α_em
+- `phenomena/quantum/anomalous_magnetic_moment.md` — g-2 (α¹ dependence; −2.2%); same root error
+- `foundations/coupling_derivation.md` — g_em from β; DFC coupling chain; r_U1/λ gap source
+- `foundations/bifurcation_mode_count.md` — Bottleneck 1; why DFC gauge structure gives this α
+- `equations/atomic_structure.py` — QED running α_em from M_Z to m_e
+- `equations/scattering_cross_sections.py` — Thomson σ_T (α² dependence; −4.4%); same root error
