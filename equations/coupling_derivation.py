@@ -64,6 +64,8 @@ Key references:
   - equations/bifurcation_dynamics.py      (β = 0.0351, M_c(D5); NOTE: γ_D = (16/3)√β RETRACTED Cycle 48 — β is Tier 3 reference value only)
   - equations/gauge_couplings.py           (g_common from SM running)
   - equations/weinberg_angle_rg.py         (Route 3B: sin²θ_W)
+  - equations/berger_sphere.py             (Cycle 58: R₄=0 proved; λ=β/4 from substrate, not S³ curvature)
+  - foundations/zero_mode_multiplet.md     (Cycle 59: n coincident modes → SU(n) proved; Bottleneck 1 partial)
 """
 
 import math

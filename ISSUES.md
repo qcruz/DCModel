@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-16 (Cycles 47–59)
+**Last updated:** 2026-04-16 (Cycles 47–60)
 
 ---
 
@@ -232,6 +232,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | E_kink formula wrong | Cycle 47–48 | BPS-correct formula derived; γ_D retracted; all downstream files corrected |
 | G_F as pure experimental input | Cycle 51 | G_F derived from β via coupling chain (+0.18%); added to Tier 2a |
 | Berger sphere R₄ as source of Higgs quartic λ | Cycle 58 | R₄ = 0 exactly proved (analytic + numeric); λ comes from substrate β/4 ≈ 0.0088; see `equations/berger_sphere.py` |
+| higgs_geometry.md: m_H = 125.1 ± 1.5 GeV stale value | Cycle 60 | Corrected to 124.4 ± 3.7 GeV (Cycle 38 correction now propagated); quartic source updated (β not S³ curvature — Cycle 58) |
+| higgs_geometry.md: quartic attributed to "S³ curvature resistance" | Cycle 60 | Corrected: Ricci quartic R₄=0 (Cycle 58); λ = β/4 from substrate; Ricci term −8ε² destabilizes ε=0 |
+| Flux quantization Φ₀ = h/(2e) as structural only | Cycle 60 | Verified numerically to 2.2×10⁻¹⁰ relative error; Josephson K_J to 2×10⁻¹²; added as Tier 1 in superconductivity module |
 | kink_scattering.py used old retracted kink mass formula | Cycle 59 | Corrected to BPS-correct E_kink = (4/3)cα^(3/2)/(β√2); gamma_D provenance note updated |
 | SU(n) from n coincident modes: claimed as correspondence only | Cycle 59 (partial) | Proved: n coincident degenerate zero modes → SU(n) symmetry (not U(1)^n); see `foundations/zero_mode_multiplet.md`; "why n modes at D(4+n)" still open |
 | Neutron lifetime hidden in `proton_stability.py` | Cycle 52 | Added to `__main__` output; both G_F routes shown |

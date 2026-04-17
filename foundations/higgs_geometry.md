@@ -59,14 +59,23 @@ V_pressure ~ -μ² ε²
 
 This term makes ε = 0 unstable — the "top of the Mexican hat."
 
-### Effect 2: Intrinsic Curvature of S³ (Stabilizer)
+### Effect 2: Substrate Quartic Self-Coupling (Stabilizer)
 
-A sphere resists being deformed. The intrinsic curvature of S³ creates an energy cost for
-squashing — the more you squash it, the more energy it costs. This appears as a **quartic term**:
+**Cycle 58 correction:** The Berger sphere Ricci scalar was computed exactly via Cartan
+structure equations: R(ε) = 24 − 16ε − 8ε² (see `equations/berger_sphere.py`). The
+quartic coefficient R₄ = 0 exactly — the geometric curvature of S³ does not produce a
+quartic term in ε. The ε⁴ stabilizer comes instead from the substrate's quartic
+self-coupling β directly:
 
 ```
-V_curvature ~ +λ ε⁴
+V_substrate = −α_D6/2 ε² + β/4 ε⁴
+→ quartic coefficient λ_DFC = β/4 ≈ 0.0088  [from substrate β, not from S³ curvature]
 ```
+
+Note: λ_DFC = β/4 ≈ 0.0088 while λ_SM(M_c) ≈ 0.013 (~1.5× discrepancy — a field
+normalization gap between the squashing parameter ε and the canonically normalized Higgs
+field h that remains open). The Ricci curvature term −8ε² actually contributes to the
+**destabilizing** quadratic term (alongside the D7 pressure), not the stabilizing quartic.
 
 This term stabilizes the potential at large ε — the "brim of the Mexican hat."
 
@@ -107,9 +116,10 @@ derivation separates two regimes:
 
 **Result:**
 ```
-m_H = √(2 × 0.129) × 246.22 GeV = 125.1 ± 1.5 GeV
-Observed: 125.25 ± 0.17 GeV  ✓
+m_H = √(2 × 0.129) × 246.22 GeV = 124.4 ± 3.7 GeV
+Observed: 125.25 ± 0.17 GeV  ✓  (−0.7%, within 1σ)
 ```
+(Uncertainty corrected in Cycle 38: σ_geom = ±3.4 GeV; total ±3.7 GeV; earlier ±1.5 GeV was wrong.)
 
 The dominant uncertainty is the top quark mass (δm_H/δm_t ≈ 1.2 GeV/GeV). The 30%
 discrepancy from the naive tree-level estimate (~91 GeV) is resolved by incorporating
@@ -168,7 +178,7 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 
 | Prediction | DFC value | Observed | Status |
 |---|---|---|---|
-| Higgs mass m_H | 124.4 ± 3.7 GeV (PDG m_t) | 125.25 ± 0.17 GeV | ✓ (within 1σ; ±1.5 GeV was incorrect — see higgs_mass_derivation.md §4.3) |
+| Higgs mass m_H | 124.4 ± 3.7 GeV (PDG m_t; Cycle 38) | 125.25 ± 0.17 GeV | ✓ (within 1σ) |
 | W mass m_W | (1/2)g₂ × 246 GeV = 80.4 GeV | 80.4 GeV | ✓ (inputs: g₂, v) |
 | Z mass m_Z | m_W/cos(θ_W) = 91.2 GeV | 91.2 GeV | ✓ (inputs: θ_W, m_W) |
 | Weinberg angle sin²θ_W | 0.231 (Route 3B) | 0.231 | ✓ |
@@ -209,6 +219,7 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 ## Equations and Cross-References
 
 - `equations/higgs_potential.py` — numerical V(ε), running of λ, W/Z mass predictions
+- `equations/berger_sphere.py` — R(ε) = 24−16ε−8ε² (Cycle 58); R₄ = 0 proved; λ = β/4 identified
 - `foundations/higgs_mass_derivation.md` — full RG-improved derivation; uncertainty budget
 - `foundations/embedding_geometry.md` — sin²θ_W = 3/8 at closure scale (Route 3B)
 - `foundations/depth_assignment.md` — why SU(2) at D6 (Route B Hopf fibration candidate)
