@@ -88,8 +88,13 @@ def alpha_s_running(mu_gev, alpha_s_ref, mu_ref_gev=91.1876, n_f=5):
     """
     b0 = (11.0 - 2.0 * n_f / 3.0) / (2.0 * math.pi)
     log_ratio = 2.0 * math.log(mu_gev / mu_ref_gev)
-    alpha_mu = alpha_s_ref / (1.0 + b0 * alpha_s_ref * log_ratio)
-    return max(alpha_mu, 0.01)   # Clamp to avoid unphysical negative values
+    denom = 1.0 + b0 * alpha_s_ref * log_ratio
+    if denom <= 0.0:
+        return None   # Landau pole — one-loop formula breaks down; non-perturbative regime
+    alpha_mu = alpha_s_ref / denom
+    if alpha_mu > 1.0:
+        return None   # Strong coupling O(1) — perturbative expansion not reliable
+    return alpha_mu
 
 
 def estimate_t_c_from_lambda_qcd(lambda_qcd_mev):
@@ -161,10 +166,13 @@ if __name__ == "__main__":
 
     # α_s running from M_Z to hadronic scale
     print("α_s running from M_Z to hadronic scales (DFC vs observed):")
+    print("  [None = past Landau pole or α_s > 1: one-loop formula breaks down]")
     for mu_gev, n_f_here in [(91.2, 5), (10.0, 5), (4.2, 4), (1.0, 3), (0.3, 3)]:
         a_dfc = alpha_s_running(mu_gev, ALPHA_S_DFC_MZ, n_f=n_f_here)
         a_obs = alpha_s_running(mu_gev, ALPHA_S_OBS_MZ, n_f=n_f_here)
-        print(f"  μ = {mu_gev:5.1f} GeV (n_f={n_f_here}):  α_s(DFC) = {a_dfc:.4f},  α_s(obs) = {a_obs:.4f}")
+        fmt_dfc = f"{a_dfc:.4f}" if a_dfc is not None else "NON-PERT"
+        fmt_obs = f"{a_obs:.4f}" if a_obs is not None else "NON-PERT"
+        print(f"  μ = {mu_gev:5.1f} GeV (n_f={n_f_here}):  α_s(DFC) = {fmt_dfc:>8},  α_s(obs) = {fmt_obs:>8}")
     print()
     print("OPEN: Derive T_c from DFC substrate:")
     print("  1. Resolve M_c(D7) from D7 SU(3) closure dynamics (not from SM running)")
