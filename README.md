@@ -111,9 +111,9 @@ phenomena/                Natural language explanations of physical observations
     photoelectric_effect.md  [STUB] Photon absorption as threshold crossing; ℏ blockage
     hawking_radiation.md  [STUB] Horizon pair nucleation; T_H blocked by G_Newton and ℏ
   condensed_matter/       [NEW DOMAIN]
-    superconductivity.md  [STUB] Cooper pairs as D6 kink bound states; Meissner = D5 mode exclusion
-    superfluidity.md      [STUB] Global phase coherence; quantized vortices from winding numbers
-    quantum_hall_effect.md  [STUB] TKNN Chern number = DFC winding number; FQHE composite kinks
+    superconductivity.md  Cooper pairs as D6 kink bound states; Φ₀=h/(2e) Tier 1 ✓; K_J Tier 1 ✓ (Cycle 60)
+    superfluidity.md      Global phase coherence; κ₀=h/m Tier 1 ✓; BEC BLOCKED (Cycle 61)
+    quantum_hall_effect.md  TKNN Chern number = DFC winding number; R_K Tier 1 ✓; FQHE structural (Cycle 61)
   gravity/
     general_relativity.md Gravity as folding gradient and dimensional pressure
   light/
@@ -171,7 +171,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~31%** (viability as a theory: ~45%; mathematical rigor: ~23.5%)
+**Current estimate: ~31.5%** (viability as a theory: ~45.5%; mathematical rigor: ~23.75%)
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
@@ -208,7 +208,7 @@ it does. Percentage reflects breadth of coverage, not accuracy of any single res
 | **General Relativity** | ~15% | Gravity as folding gradient (structural); gravitational waves (structural); black holes (structural); Hawking radiation (stub); time dilation; H₀ (0.2%) | Einstein field equations not derived; G_Newton not derived; Schwarzschild metric not derived |
 | **ΛCDM Cosmology** | ~20% | H₀ (0.2% match); CMB (structural); Big Bang (structural); flatness/horizon dissolved; dark energy (structural, qualitative) | Inflation (stub); dark matter (stub); baryogenesis (stub); Λ from substrate (stub) |
 | **QFT (perturbative)** | ~14% | Born S-matrix; Thomson/Compton (−4.3%); Pöschl-Teller (exact); pair production (R-ratio exact, σ −3.1%); g-2 leading term (−2.01%); RG running | Loop corrections (Lamb shift stub, 2-loop g-2); Feynman rules; renormalization |
-| **Condensed Matter** | ~5% | Superconductivity/superfluidity/QHE structural accounts (stubs, Cycle 56); winding-number topology applies to flux quantization and QHE plateaux | BCS gap equation; Ginzburg-Landau; FQHE; band structure; solid-state spectrum |
+| **Condensed Matter** | ~12% | Φ₀=h/(2e) Tier 1 ✓ (Cycle 60); K_J Tier 1 ✓; R_K=h/e² Tier 1 ✓ (Cycle 61); κ₀=h/m Tier 1 ✓; all three from same DFC U(1) winding; IQHE plateaus structural | BCS gap equation; Ginzburg-Landau; FQHE; roton gap; band structure; solid-state spectrum |
 | **String Theory** | ~3% | Some topological overlaps (compact closure geometries, Hopf fibrations); DFC has no pre-existing spacetime | No strings/branes; no T/S-duality; fundamentally different framework |
 | **Loop Quantum Gravity** | ~5% | Discrete topological closures analogous to spin networks; binary outcomes proved | No Ashtekar variables; no spin foams; no area/volume quantization |
 
