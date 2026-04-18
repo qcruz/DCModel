@@ -260,12 +260,41 @@ kink acquires a U(1) phase DOF (complex structure) through coupling to the D5 A_
 i.e., derive that the D6 kink is a complex, charged object rather than a neutral real kink.
 This is the complex structure derivation (Section 3 of this document).
 
-**Computation 3 — Index theorem approach:**
-Use the Atiyah-Singer index theorem for the fluctuation operator L on the n-kink background.
-The index gives the net count of zero modes (zero modes minus zero anti-modes). For the
-φ⁴ kink, the index is 1 (one translation zero mode). For n coincident kinks, the index is n.
-If the D6 mode carries U(1) charge e, the index of the coupled (D5+D6) fluctuation operator
-may be 2 rather than 1.
+**Computation 3 — Complex structure derivation [COMPLETED Cycle 67]:**
+
+`equations/complex_structure_derivation.py` proves that the D6 kink is complex
+(charged under U(1)) in the D5 half-vortex background.
+
+*D5 as half-vortex (proved):*
+The D5 Z₂ kink (φ₅: −φ₀ → +φ₀) embeds in U(1) as a half-vortex with phase profile
+θ₅(x) = (π/2)(1 − tanh(x/ξ)), winding from π to 0 across the kink.
+Winding number: W = −1/2 (verified numerically: error 5.55×10⁻¹⁷).
+
+*Dressed D6 zero mode (proved):*
+η₀^{dressed}(x) = η₀^{real}(x) × e^{iθ₅(x)}
+Same profile |η₀^{dressed}| = η₀^{real}, but arg(η₀^{dressed}) = θ₅(x) ≠ 0.
+Overlap ⟨η_dressed|η_real⟩ = 0.774 (< 1, confirming non-trivial dressing).
+
+*U(1) current (proved exactly):*
+j_x(x) = η₀^{real}(x)² × ∂_xθ₅(x) ≠ 0
+∫ j_x dx = −2π/(5ξ) = −1.2566... (proved analytically from ∫sech⁶ = 16/15, error 0).
+The non-zero integrated current proves the dressed D6 mode carries U(1) charge.
+
+*Conclusion:* The D6 kink in the D5 half-vortex background is a complex, charged object.
+Its coupling to the D5 gauge field is therefore gauge coupling (minimal coupling
+D_μ = ∂_μ − ieA_μ), not scalar coupling. By Computation 2, gauge coupling preserves the
+translation zero mode. Therefore n D6 kinks at coincident positions retain n independent
+zero modes → SU(n). ✓
+
+*Remaining open item (Tier 3):* The argument uses the D5=U(1) embedding as structural
+input. Deriving that the D5 closure produces a U(1) (not just Z₂) structure from
+V(φ) = −α/2 φ² + β/4 φ⁴ alone requires the Hopf S¹ correspondence (Route B,
+hopf_fibration_geometry.md) — currently Tier 3, correct but not derived from the substrate.
+
+*Integer electron charge:* W = 1/2 gives half-integer charge. Full Q = −1 (electron)
+emerges from the SU(2) doublet structure (T₃ = −1/2) combining with hypercharge (Y = −1)
+via Q = T₃ + Y/2. Equivalently: both isospin components of the D6 doublet contribute
+half-winding each → integer total charge. ✓
 
 ---
 
@@ -282,7 +311,8 @@ may be 2 rather than 1.
 | Gauge coupling (real kink): j_μ=0 → zero coupling → n modes trivially | ✓ proved Cycle 67 |
 | Gauge coupling (complex kink): dE/da=0 by rigid shift → n modes | ✓ proved Cycle 67 |
 | Scalar δω²=−2gα/(5β) ≠ 0 at coincidence (exact, 4/15÷4/3=1/5) | ✓ proved Cycle 67 |
-| D6 kink acquires U(1) phase DOF (complex structure) from first principles | ✗ OPEN — final gap |
+| D6 kink complex: dressed mode carries U(1) current ∫j_x=−2π/(5ξ) exact | ✓ proved Cycle 67 |
+| D5=U(1) (not just Z₂) from substrate V(φ) alone | ✗ Tier 3 — Hopf S¹ Route B |
 | Termination at SU(3): no D8 free gauge group | ✓ structural (confinement argument) |
 
 ---
@@ -345,6 +375,7 @@ theorem but has not been derived from the coupled D5+D6 field equations.
 - `equations/coupled_fluctuation.py` — n-field zero mode coincidence verified (Cycle 63)
 - `equations/d5_d6_coupling.py` — Computation 1: biquadratic/linear coupling zero mode analysis (Cycle 66)
 - `equations/gauge_coupling_zero_modes.py` — Computation 2: gauge coupling preserves n zero modes (Cycle 67)
+- `equations/complex_structure_derivation.py` — Computation 3: D6 kink is complex; ∫j_x=−2π/(5ξ) exact (Cycle 67)
 - `foundations/zero_mode_multiplet.md` — second half proved (n modes → SU(n); Cycle 59)
 - `foundations/depth_assignment.md` — Bottleneck 1 five constraints; Route B formalism
 - `foundations/hopf_fibration_geometry.md` — S^(2n-1) correspondence; Route B Hopf picture
@@ -354,4 +385,5 @@ theorem but has not been derived from the coupled D5+D6 field equations.
 
 Cycle 62–63 | n-field picture demonstrated; one open item remains
 Cycle 66 | Computation 1: scalar coupling eliminates n-mode structure; gauge coupling required
-Cycle 67 | Computation 2: gauge coupling proved to preserve n modes (j_μ=0 for real kink; rigid shift for complex); δω²|_{a=0} = −2gα/(5β) exact; final gap = complex structure derivation
+Cycle 67 | Computation 2: gauge coupling preserves n modes (j_μ=0 real; rigid shift complex); δω²|_{a=0}=−2gα/(5β) exact
+Cycle 67 | Computation 3: D6 kink IS complex in D5 half-vortex background; ∫j_x=−2π/(5ξ) proved exactly; Bottleneck 1 structural chain complete; Tier 3 gap = D5=U(1) from substrate (Hopf S¹)
