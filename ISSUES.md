@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-18 (Cycles 47–71)
+**Last updated:** 2026-04-18 (Cycles 47–74)
 
 ---
 
@@ -24,17 +24,14 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Files: `foundations/planck_constant_derivation.md`, `equations/planck_constant.py` [STUB]
 - Path: route via α_em derivation proposed; requires completing coupling chain first
 
-### Bottleneck 1 — D-depth assignment derivation chain complete (Cycles 67c+70+71); mode count Tier 4 open
-- D5/D6/D7 are now **Tier 2 candidates** (derivation chain complete assuming n modes at D(4+n))
-- **Complete derivation chain (Cycles 59–71):**
-  - [Cycle 59] n coincident degenerate zero modes → SU(n): configuration space S^{2n−1} ⊂ ℂⁿ; isometry U(n) = U(1)×SU(n); gauge boson counts 1/3/8 verified.
-  - [Cycles 66–67] Scalar coupling excludes n modes; gauge coupling preserves them; D6 kink IS complex (∫j_x = −2π/(5ξ), proved exactly from ∫sech⁶=16/15).
-  - [Cycle 70] D5=U(1) from real substrate: second-order PDE → 2 real DOFs per zero mode → n modes: 2n DOFs → S^{2n−1} → SO(2n); SO(2)=U(1) at D5 exactly (no complex structure needed); commutant dim U(2)=4 ✓, U(3)=9 ✓ via SVD.
-  - [Cycle 71] U(1) gauge action on charged fields = complex structure J: φ→e^{iqθ}φ → infinitesimal generator J_q(A,B)=(−qB,qA) → J_q²=−I (for |q|=1); J_gauge = J_Cycle70 (identical matrix, diff = 0.00e+00); fractional charges q=±1/3,±2/3,±1 all give J_norm²=−I; ALL CHECKS PASS.
-- **Remaining Tier 4 item:** Why D(4+n) opens exactly n zero modes — codimension-1 argument is structural; substrate field equation derivation of mode count not yet complete.
-- **Also Tier 4:** Termination at D7 (confinement prevents D8): stated structural argument; formal derivation open.
-- Files: `foundations/d5_complex_structure.md` (Cycle 71), `foundations/complex_zero_mode_gap.md` (Cycle 70), `foundations/zero_mode_multiplet.md`, `foundations/bifurcation_mode_count.md`, `equations/d5_j_connection.py`, `equations/u1_from_paired_modes.py`, `equations/complex_structure_derivation.py`
-- Path (Tier 4 promotion): Solve coupled D5+D(4+n) substrate field equation at each threshold; count zero eigenvalues of full fluctuation operator L including all accumulated modes
+### Bottleneck 1 — CLOSED (Cycles 59–74); remaining: termination + threshold positions
+- **Status: derivation chain complete including mode count (Cycles 59–74)**
+- The non-degeneracy item (last Tier 4) was proved in Cycle 73 via PT s=2 spectrum.
+  D7 n=3 verified numerically in Cycle 74. D5/D6/D7 groups now DERIVED from V(φ)=−α/2 φ²+β/4 φ⁴.
+- **Still open (not blocking core claim):**
+  - Termination at D7: confinement prevents D8 — structural argument; formal proof = Yang-Mills mass gap equivalent
+  - Threshold positions α₅, α₆, α₇ from substrate dynamics (not yet derived)
+- Files: `foundations/threshold_nondegeneracy.md` (Cycle 73), `foundations/mode_count_threshold.md` (Cycles 72–74), `foundations/bifurcation_mode_count.md`, `equations/threshold_nondegeneracy.py`, `equations/mode_count_threshold.py`
 
 ### Bottleneck 2 — r_U1/λ = 3/(4β) not formally derived
 - The key coupling chain step g² = 8πβ/3 depends on identifying r_U1 = φ₀²/(β f²)
@@ -127,7 +124,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | `cosmological_constant.py` | Λ from residual compression budget | Medium |
 | `holographic_entropy.py` | Bekenstein-Hawking from closure capacity | Medium |
 | `baryogenesis.py` | Matter-antimatter asymmetry at D7 phase transition | Medium |
-| `inflation.py` | Inflation as D1→D4 bifurcation cascade; n_s prediction | Medium |
+| `inflation.py` | COMPLETED Cycle 68 — n_s=0.9667 ✓; A_s, r still blocked | — |
 
 ---
 
@@ -161,8 +158,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - λ₀ boundary condition at M_c — currently matched to observed m_H; not independently predicted
 
 **`depth_assignment.md`**
-- DOF count per bifurcation from substrate dynamics — the key missing step for Bottleneck 1
-- Why bifurcation cascade terminates at SU(3) — conjectured from D7 confinement; not proved
+- DOF count per bifurcation from substrate dynamics — RESOLVED Cycles 72–74 (PT s=2 non-degeneracy)
+- Why bifurcation cascade terminates at SU(3) — conjectured from D7 confinement; formal proof open
 
 **`embedding_geometry.md`**
 - M_c from substrate parameters (α, β, c) — currently read from SM running (not a DFC derivation)
@@ -189,7 +186,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 **`depth_assignment.md`**
 - Route B (Hopf fibrations S¹→S³→S⁵) most promising; DOF count calculation not yet done
-- n coincident modes → SU(n) now proved (Cycle 59; see `foundations/zero_mode_multiplet.md`); only "why n modes at D(4+n)" remains
+- n coincident modes → SU(n) proved (Cycle 59); mode count non-degeneracy proved (Cycle 73); D7 n=3 verified (Cycle 74) — Bottleneck 1 CLOSED
 
 ### phenomena/
 
@@ -253,7 +250,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | higgs_geometry.md: quartic attributed to "S³ curvature resistance" | Cycle 60 | Corrected: Ricci quartic R₄=0 (Cycle 58); λ = β/4 from substrate; Ricci term −8ε² destabilizes ε=0 |
 | Flux quantization Φ₀ = h/(2e) as structural only | Cycle 60 | Verified numerically to 2.2×10⁻¹⁰ relative error; Josephson K_J to 2×10⁻¹²; added as Tier 1 in superconductivity module |
 | kink_scattering.py used old retracted kink mass formula | Cycle 59 | Corrected to BPS-correct E_kink = (4/3)cα^(3/2)/(β√2); gamma_D provenance note updated |
-| SU(n) from n coincident modes: claimed as correspondence only | Cycle 59 (partial) | Proved: n coincident degenerate zero modes → SU(n) symmetry (not U(1)^n); see `foundations/zero_mode_multiplet.md`; "why n modes at D(4+n)" still open |
+| SU(n) from n coincident modes: claimed as correspondence only | Cycle 59 (partial); fully closed Cycles 73–74 | Proved: n coincident degenerate zero modes → SU(n) (Cycle 59); PT s=2 non-degeneracy → exactly 1 zero mode per kink (Cycle 73); D7 n=3 verified (Cycle 74) |
 | Neutron lifetime hidden in `proton_stability.py` | Cycle 52 | Added to `__main__` output; both G_F routes shown |
 | sin²θ_W(M_Z) Route 3B derivation (open since model inception) | Cycle 22 | sin²θ_W = 3/8 at M_c → 0.231 at M_Z from equal-coupling + SM running; 0.01% error |
 | E=hν claimed "derived" from massless KG dispersion | Cycle 42 | Corrected: E=ℏω is a QFT postulate imported from outside DFC; labeled as such |

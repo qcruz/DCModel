@@ -35,6 +35,13 @@ Key quantities that remain valid:
   M_c(D5)               reproduced to < 1% from gamma_space  [closure_scale_prediction()]
   S_kink / hbar         hierarchy at each depth               [separate from gamma_D]
 
+Related results from later cycles:
+  - PT s=2 non-degeneracy (Cycle 73): each φ⁴ kink has exactly 1 zero mode for all α>0
+    (U₀ξ²=6 exact → s=2 → Sturm-Liouville). Supports "one kink per threshold" claim.
+    See: foundations/threshold_nondegeneracy.md, equations/threshold_nondegeneracy.py
+  - Mode count n=1,2,3 at D5,D6,D7 numerically verified Cycles 72–74.
+    See: equations/mode_count_threshold.py
+
 Usage:
     python equations/bifurcation_dynamics.py
 """

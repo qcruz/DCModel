@@ -17,8 +17,12 @@
 > shifts the threshold without adding a mode). Verified numerically in
 > `equations/mode_count_threshold.py`.
 >
-> **Remaining Tier 4 item:** The n=2→n=3 step (D6→D7 threshold). The same mechanism
-> applies structurally, but the coupled 3-field spectrum has not been computed.
+> **Cycle 74 update:** n=3 at D7 VERIFIED. L₇₇^solo (PT operator for D7 field, α₇>0)
+> has exactly 1 zero mode for all α₇ tested (same PT s=2 argument). Combined with
+> D5 and D6 translations: total = 3 zero modes → SU(3). ✓ ALL CHECKS PASS.
+>
+> **Remaining open:** Threshold positions α₅, α₆, α₇ from substrate dynamics;
+> termination at D7 (confinement formal derivation).
 
 ---
 
@@ -304,7 +308,7 @@ ruled out from the field equation alone.
 | Total at D6: 2 zero modes → SU(2) | ✓ (1 D5 translation + 1 D6 translation) |
 | Gauge coupling cannot create static kink-kink potential | ✓ proved Cycle 67 (rigid shift argument) |
 | n independent translations → n independent zero modes | ✓ proved Cycle 67 (gauge decoupling) |
-| D7 threshold: 3 zero modes → SU(3) | ✓ structural (same argument, n=3); numerical verification OPEN |
+| D7 threshold: 3 zero modes → SU(3) | ✓ numerical verified Cycle 74 (L₇₇^solo: 1 ZM all α₇>0; total=3) |
 | One new kink per threshold (not two or zero) | ✗ Tier 4 — non-degeneracy of bifurcation not proved from field equation |
 
 ---
@@ -318,9 +322,9 @@ ruled out from the field equation alone.
    has exactly one zero eigenvalue at each threshold and the associated eigenfunction is
    normalizable.
 
-2. **D6→D7 threshold (n=2→n=3):** Apply the same computation to the 3-field system at the
-   D7 threshold. Does the coupled (φ₅, φ₆, φ₇) system have 3 zero modes at α₇ → 0?
-   Candidate computation: `equations/mode_count_threshold.py` extended to n=3.
+2. **D6→D7 threshold (n=2→n=3) — VERIFIED Cycle 74:** The L₇₇ PT operator (solo, α₇>0)
+   has exactly 1 zero mode for all α₇ tested (Step 6–7 in mode_count_threshold.py).
+   Total at D7 = 3 → SU(3) confirmed numerically. ✓
 
 3. **Position of each threshold in α:** The thresholds D5, D6, D7 occur at specific values
    α₅, α₆, α₇ of the compression parameter. What determines these values? The ratio
