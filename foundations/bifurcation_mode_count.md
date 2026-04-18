@@ -12,12 +12,17 @@
 
 ## Status
 
-This document maps the **first half of Bottleneck 1** — the open problem identified in
-`foundations/depth_assignment.md`. The second half (n coincident degenerate zero modes →
-SU(n)) was proved in `foundations/zero_mode_multiplet.md` (Cycle 59). The first half
-remains open as of Cycle 66, with Computation 1 completed: scalar coupling types identified
-as incompatible with n zero modes; the precise remaining gap is proving that D5/D6/D7
-inter-depth coupling is gauge coupling (derivative coupling), not scalar coupling.
+**Cycle 71 update:** The Complex Structure Gap (why each mode is COMPLEX rather than REAL)
+is now CLOSED. See `foundations/d5_complex_structure.md` and `equations/d5_j_connection.py`.
+
+The complete Bottleneck 1 derivation chain is now:
+1. [Cycle 59] n coincident degenerate zero modes → SU(n): proved algebraically
+2. [Cycles 66–67c] Scalar coupling excluded; gauge coupling required; D6 kink IS complex (∫j_x exact)
+3. [Cycle 70] D5=U(1) from real substrate: second-order PDE → 2 DOFs/mode → SO(2)=U(1) at D5
+4. **[Cycle 71] U(1) gauge action = complex structure J: J_q²=−I for |q|=1; verified numerically**
+5. [Cycle 70] SO(4)∩Aut(J)=U(2) dim=4; SO(6)∩Aut(J)=U(3) dim=9; → SU(2) and SU(3)
+
+D5, D6, D7 are now **Tier 2 candidates** (derivation chain complete assuming mode count n).
 
 **What is proved:**
 - The φ⁴ kink has exactly one zero mode (Pöschl-Teller uniqueness; Cycle 59)
@@ -28,12 +33,13 @@ inter-depth coupling is gauge coupling (derivative coupling), not scalar couplin
 - For non-zero scalar (biquadratic) coupling: the Goldstone theorem protects exactly 1 zero mode
   (the center-of-mass translation); the relative mode is lifted by off-diagonal coupling 4gφ₀²tanh²
   (Cycle 66). n zero modes require g = 0 (decoupled) or gauge coupling.
+- D5=U(1) from real substrate: second-order PDE → 2 real DOFs per zero mode → SO(2)=U(1) (Cycle 70)
+- **U(1) gauge action on charged zero modes = complex structure J: J²=−I (Cycle 71)**
+  Derivation: φ→e^{iqθ}φ → J_q(A,B)=(−qB,qA) → J_q²=q²(−I)=−I for |q|=1. Verified for n=1,2,3.
+- **Complex structure gap CLOSED: D6 modes carry D5 U(1) charge [Cycle 67c] + U(1) action = J [Cycle 71]**
 
-**What is not yet proved:**
-- Why D(4+n) opens exactly n coincident modes from the substrate field equation
-- Why each bifurcation adds one COMPLEX degree of freedom (2 real DOFs) rather than one real DOF (1 real DOF)
-- Why the D5/D6/D7 inter-depth coupling is gauge coupling (not scalar), so each kink's translation
-  zero mode is independently protected → n zero modes survive (this is the precise remaining gap)
+**What is not yet proved (Tier 4):**
+- Why D(4+n) opens exactly n coincident modes from the substrate field equation (mode count assumption)
 - Why the series terminates at n = 3 (the SU(3) confinement argument is stated but not derived)
 
 ---
@@ -312,7 +318,10 @@ half-winding each → integer total charge. ✓
 | Gauge coupling (complex kink): dE/da=0 by rigid shift → n modes | ✓ proved Cycle 67 |
 | Scalar δω²=−2gα/(5β) ≠ 0 at coincidence (exact, 4/15÷4/3=1/5) | ✓ proved Cycle 67 |
 | D6 kink complex: dressed mode carries U(1) current ∫j_x=−2π/(5ξ) exact | ✓ proved Cycle 67 |
-| D5=U(1) (not just Z₂) from substrate V(φ) alone | ✗ Tier 3 — Hopf S¹ Route B |
+| D5=U(1) from real substrate (SO(2)=U(1) from 2 DOFs/mode) | ✓ proved Cycle 70 |
+| U(1) gauge action = complex structure J: J²=−I for |q|=1 | ✓ proved Cycle 71 |
+| Complex structure gap closed: D6/D7 modes inherit complex structure from D5 | ✓ Cycles 67c+71 |
+| Mode count n at D(4+n) from substrate field equation | ✗ Tier 4 — codimension-1 argument structural only |
 | Termination at SU(3): no D8 free gauge group | ✓ structural (confinement argument) |
 
 ---
@@ -375,7 +384,11 @@ theorem but has not been derived from the coupled D5+D6 field equations.
 - `equations/coupled_fluctuation.py` — n-field zero mode coincidence verified (Cycle 63)
 - `equations/d5_d6_coupling.py` — Computation 1: biquadratic/linear coupling zero mode analysis (Cycle 66)
 - `equations/gauge_coupling_zero_modes.py` — Computation 2: gauge coupling preserves n zero modes (Cycle 67)
-- `equations/complex_structure_derivation.py` — Computation 3: D6 kink is complex; ∫j_x=−2π/(5ξ) exact (Cycle 67)
+- `equations/complex_structure_derivation.py` — Computation 3: D6 kink is complex; ∫j_x=−2π/(5ξ) exact (Cycle 67c)
+- `foundations/complex_zero_mode_gap.md` — D5=U(1) from real substrate; 2 DOFs/mode; commutant U(n) (Cycle 70)
+- `equations/u1_from_paired_modes.py` — SO(2)=U(1), so(4)≅su(2)⊕su(2), commutant dims verified (Cycle 70)
+- `foundations/d5_complex_structure.md` — U(1) gauge action = complex structure J; full Bottleneck 1 chain (Cycle 71)
+- `equations/d5_j_connection.py` — J²=−I, antisymmetric, commutant dims, J_gauge=J_Cycle70, fractional charges (Cycle 71)
 - `foundations/zero_mode_multiplet.md` — second half proved (n modes → SU(n); Cycle 59)
 - `foundations/depth_assignment.md` — Bottleneck 1 five constraints; Route B formalism
 - `foundations/hopf_fibration_geometry.md` — S^(2n-1) correspondence; Route B Hopf picture
@@ -386,4 +399,6 @@ theorem but has not been derived from the coupled D5+D6 field equations.
 Cycle 62–63 | n-field picture demonstrated; one open item remains
 Cycle 66 | Computation 1: scalar coupling eliminates n-mode structure; gauge coupling required
 Cycle 67 | Computation 2: gauge coupling preserves n modes (j_μ=0 real; rigid shift complex); δω²|_{a=0}=−2gα/(5β) exact
-Cycle 67 | Computation 3: D6 kink IS complex in D5 half-vortex background; ∫j_x=−2π/(5ξ) proved exactly; Bottleneck 1 structural chain complete; Tier 3 gap = D5=U(1) from substrate (Hopf S¹)
+Cycle 67c | Computation 3: D6 kink IS complex in D5 half-vortex background; ∫j_x=−2π/(5ξ) proved exactly
+Cycle 70 | D5=U(1) from real substrate: second-order PDE → 2 DOFs/mode → SO(2)=U(1); commutant U(2)/U(3) verified via SVD; complex_zero_mode_gap.md + u1_from_paired_modes.py
+Cycle 71 | U(1) gauge action = complex structure J: J²=−I proved algebraically + numerically; J_gauge = J_Cycle70 (diff 0.00e+00); complex structure gap CLOSED; D5/D6/D7 all Tier 2 candidates; d5_complex_structure.md + d5_j_connection.py

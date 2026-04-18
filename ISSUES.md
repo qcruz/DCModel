@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-17 (Cycles 47–65)
+**Last updated:** 2026-04-18 (Cycles 47–71)
 
 ---
 
@@ -24,12 +24,17 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Files: `foundations/planck_constant_derivation.md`, `equations/planck_constant.py` [STUB]
 - Path: route via α_em derivation proposed; requires completing coupling chain first
 
-### Bottleneck 1 — D-depth assignment not fully derived (partial progress Cycle 59)
-- D5=U(1), D6=SU(2), D7=SU(3) are Tier 3 working hypotheses, not derivations
-- **Cycle 59 partial result:** n coincident degenerate zero modes on a shared background → SU(n) symmetry proved algebraically (not n independent U(1)s). This is the second half of Bottleneck 1.
-- **Remaining open (first half):** Why does D(4+n) open exactly n coincident modes? Requires counting unstable modes at each bifurcation threshold from the substrate field equation.
-- Files: `foundations/depth_assignment.md`, `foundations/hopf_fibration_geometry.md`, `foundations/zero_mode_multiplet.md` (NEW Cycle 59), `equations/hopf_dof_count.py` (NEW Cycle 59)
-- Path: count unstable modes at each bifurcation threshold from V(φ) compression dynamics; then n modes → SU(n) is now proved
+### Bottleneck 1 — D-depth assignment derivation chain complete (Cycles 67c+70+71); mode count Tier 4 open
+- D5/D6/D7 are now **Tier 2 candidates** (derivation chain complete assuming n modes at D(4+n))
+- **Complete derivation chain (Cycles 59–71):**
+  - [Cycle 59] n coincident degenerate zero modes → SU(n): configuration space S^{2n−1} ⊂ ℂⁿ; isometry U(n) = U(1)×SU(n); gauge boson counts 1/3/8 verified.
+  - [Cycles 66–67] Scalar coupling excludes n modes; gauge coupling preserves them; D6 kink IS complex (∫j_x = −2π/(5ξ), proved exactly from ∫sech⁶=16/15).
+  - [Cycle 70] D5=U(1) from real substrate: second-order PDE → 2 real DOFs per zero mode → n modes: 2n DOFs → S^{2n−1} → SO(2n); SO(2)=U(1) at D5 exactly (no complex structure needed); commutant dim U(2)=4 ✓, U(3)=9 ✓ via SVD.
+  - [Cycle 71] U(1) gauge action on charged fields = complex structure J: φ→e^{iqθ}φ → infinitesimal generator J_q(A,B)=(−qB,qA) → J_q²=−I (for |q|=1); J_gauge = J_Cycle70 (identical matrix, diff = 0.00e+00); fractional charges q=±1/3,±2/3,±1 all give J_norm²=−I; ALL CHECKS PASS.
+- **Remaining Tier 4 item:** Why D(4+n) opens exactly n zero modes — codimension-1 argument is structural; substrate field equation derivation of mode count not yet complete.
+- **Also Tier 4:** Termination at D7 (confinement prevents D8): stated structural argument; formal derivation open.
+- Files: `foundations/d5_complex_structure.md` (Cycle 71), `foundations/complex_zero_mode_gap.md` (Cycle 70), `foundations/zero_mode_multiplet.md`, `foundations/bifurcation_mode_count.md`, `equations/d5_j_connection.py`, `equations/u1_from_paired_modes.py`, `equations/complex_structure_derivation.py`
+- Path (Tier 4 promotion): Solve coupled D5+D(4+n) substrate field equation at each threshold; count zero eigenvalues of full fluctuation operator L including all accumulated modes
 
 ### Bottleneck 2 — r_U1/λ = 3/(4β) not formally derived
 - The key coupling chain step g² = 8πβ/3 depends on identifying r_U1 = φ₀²/(β f²)

@@ -9,6 +9,24 @@
 > **Result:** The question is mapped precisely. Three structural constraints
 > narrow the possible assignments significantly. Three candidate derivation
 > routes are identified. No complete derivation yet — this is the open problem.
+>
+> **Cycles 59–63:** The second half of Bottleneck 1 proved: n coincident degenerate
+> zero modes → configuration space S^(2n-1) → SU(n) gauge group. The DOF count
+> mechanism remained open.
+>
+> **Cycles 66–67c:** Scalar inter-depth coupling lifts zero modes; gauge (derivative)
+> coupling preserves n independent zero modes. The D5 half-vortex background makes the
+> D6 kink complex (W=−1/2, ∫j_x = −2π/(5ξ) exact). Structural chain complete.
+>
+> **Cycle 70:** Key progress on why 2n real DOFs arise per n kinks. The substrate
+> field equation is second-order in time → each zero mode has 2 real DOFs (position q
+> and velocity v). For n kinks: 2n real DOFs → S^(2n-1). Real isometry SO(2n). At
+> D5 (n=1): SO(2) = U(1) exactly — no complex structure needed (Tier 2 candidate).
+> At D6/D7: SO(4)/SO(6) too large; D5 complex structure J reduces to U(2)/U(3) →
+> SU(2)/SU(3). Verified numerically in `equations/u1_from_paired_modes.py`.
+>
+> **Remaining open:** Formally prove that the D5 U(1) gauge field defines the complex
+> structure J on the D6/D7 zero mode spaces.
 
 ---
 
@@ -66,11 +84,15 @@ At each bifurcation, the substrate opens a new compression direction. The number
 independent directions available sets an upper bound on the dimension of the group
 that can close there.
 
-From bifurcation dynamics (`foundations/bifurcation_dynamics.md`): the compression
-fraction γ_D = (16/3)√β ≈ 0.999 per depth. The fractional DOF budget per bifurcation
-is small — but the number of new independent directions at each buckling event is
-not the same as the fractional budget. The DOF count comes from the local geometry
-of the bifurcation.
+From the substrate field equation (second-order in time): each zero mode has two
+independent initial data — position q and velocity v along the mode direction. This
+gives 2 real DOFs per zero mode per kink. For n kinks at the same depth, the total
+is 2n real DOFs → S^(2n-1) ⊂ ℝ^(2n) (Cycle 70; `foundations/complex_zero_mode_gap.md`).
+The real isometry SO(2n) is reduced to U(n) by the D5 complex structure.
+
+NOTE: The formula γ_D = (16/3)√β cited here in prior versions was RETRACTED in Cycle 48
+(wrong E_kink formula). The energy fraction per bifurcation is E_kink/E_total = 8/3
+(β-independent, exact). See `foundations/bifurcation_dynamics.md`.
 
 **What is needed:** A derivation of how many independent field directions open at
 each bifurcation event from the substrate dynamics. If the D5 event opens exactly
@@ -278,26 +300,36 @@ driving a further bifurcation.
 
 ## Open Problems (Ordered by Priority)
 
-1. **Derive the DOF count per bifurcation from substrate dynamics.** Show that the
-   D5/D6/D7 buckling events open 1/2/3 complex DOFs respectively (or equivalently,
-   1/3/8 real DOFs, the dimensions of U(1)/SU(2)/SU(3)).
+1. **Formally prove that D5 U(1) defines J on D6/D7 zero mode spaces.** (Remaining
+   Tier 3 gap after Cycle 70.) The structural argument is: D6 modes carry U(1) charge
+   → their configuration must be complex → J is defined by the U(1) phase rotation.
+   Making this rigorous requires computing the D5 gauge field coupling to D6 zero mode
+   fluctuations and showing the U(1) phase acts precisely as J. Approach: extend
+   `equations/complex_structure_derivation.py` (Cycle 67c) to verify J² = −I from the
+   D5 gauge background on the D6 mode space.
 
-2. **Derive the S^(2n−1) topology at D(4+n) depth.** Show that the constrained
-   field configuration at each closure depth is the unit sphere in ℂⁿ, not some
-   other topology.
+2. **Derive the 2 real DOFs per zero mode from the substrate equation.** (Largely
+   resolved in Cycle 70: second-order PDE → zero mode initial data is (q,v) ∈ ℝ².)
+   Remaining step: connect the symplectic pairing (q,v) to the complex structure J via
+   Ω(·, J·) = ⟨·,·⟩ (Darboux theorem for the zero mode subsector).
 
 3. **Explain termination at D7.** Derive why the substrate stops generating new
-   closure groups after SU(3) — either from a confinement mechanism or from the
-   exhaustion of the substrate's available compression budget.
+   closure groups after SU(3) — the D7 confinement mechanism should prevent D8.
+   Approach: compute the D7 self-energy integral and show infrared divergence prevents
+   any free D8 mode from propagating.
 
 4. **Rule out alternative assignments.** Formally show that U(1) cannot close at D6
-   (or equivalently, that the D6 bifurcation necessarily opens ≥ 2 complex DOFs,
-   ruling out a U(1) closure there).
+   (the D6 bifurcation opens 4 real DOFs → SO(4), not SO(2) = U(1)). With Cycle 70
+   results this is now structural: D6 has 4 real DOFs → SO(4) dim=6 ≠ 1 = dim(U(1)).
+   The D5 complex structure reduces it to U(2), not U(1). Status: structural argument
+   in place; formal derivation open.
 
 5. **Connect to Route B via substrate field equations.** Show that the substrate's
-   field equation (∂²φ/∂t² = c²∇²φ − V'(φ)) in the neighborhood of the D5/D6/D7
-   bifurcation thresholds produces saddle configurations with S¹/S³/S⁵ topology
-   respectively.
+   field equation produces exactly 1, 2, 3 zero modes at D5, D6, D7 bifurcation
+   thresholds — the codimension-1 argument (Cycle 62) gives 1 new mode per threshold,
+   so n thresholds → n zero modes. Combined with the 2-DOF pairing (Cycle 70), this
+   gives 2n real DOFs → S^(2n-1) → U(n). Structural argument in place; substrate
+   derivation of "1 new mode per threshold" remains open.
 
 ---
 
@@ -324,6 +356,11 @@ The structural constraints are all satisfied. A complete derivation requires Rou
 - `foundations/three_generations.md` — three generations from SU(3) fundamental rep (Constraint 4)
 - `foundations/embedding_geometry.md` — sin²θ_W from equal coupling at M_c (Constraint 5)
 - `foundations/d_depth_lagrangians.md` — effective gauge Lagrangians at each depth; coupling derivation
-- `foundations/bifurcation_dynamics.md` — γ_D = (16/3)√β; DOF budget per bifurcation
+- `foundations/bifurcation_dynamics.md` — E_kink/E_total = 8/3 exact (γ_D retracted Cycle 48)
 - `foundations/formation.md` — D1→D4 bifurcation sequence; how dimensions emerge
 - `foundations/dimensional_stack.md` — provisional D-label ordering
+- `foundations/complex_zero_mode_gap.md` — 2 real DOFs per mode → SO(2n) → U(n) → SU(n) (Cycle 70)
+- `foundations/zero_mode_multiplet.md` — n complex modes → SU(n) proved (Cycle 59)
+- `foundations/bifurcation_mode_count.md` — full Bottleneck 1 structural chain (Cycles 62–67c)
+- `equations/u1_from_paired_modes.py` — numerical verification SO(2n) dim, U(n) commutant (Cycle 70)
+- `equations/complex_structure_derivation.py` — D5 half-vortex makes D6 kink complex (Cycle 67c)

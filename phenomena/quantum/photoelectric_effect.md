@@ -155,3 +155,5 @@ nucleation barrier ΔV = α²/(4β), but at the condensed-matter scale.
 - `phenomena/condensed_matter/superconductivity.md` — related: electrons in collective
   D7 substrate potential
 - `equations/atomic_structure.py` — electron energy levels in DFC framework
+- `foundations/d5_complex_structure.md` — D5=U(1) derivation chain complete (Cycle 71);
+  confirms photon as D5 mode with gauge group U(1)

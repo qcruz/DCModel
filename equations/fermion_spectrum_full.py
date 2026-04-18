@@ -46,23 +46,32 @@ Known failures to fix:
 Key references:
   - foundations/three_generations.md (generation count from SU(3))
   - foundations/mass_hierarchy.md (dimple model + known failure)
+  - foundations/zero_mode_multiplet.md (n=3 zero modes → SU(3) → three generations, Cycle 59)
   - equations/mass_spectrum.py (lepton masses)
   - equations/quark_masses.py (quark masses)
   - equations/neutrino_masses.py (neutrino masses)
+  - equations/neutrino_oscillations.py (Δm² hierarchy ratio failure, Cycle 65)
+  - equations/flavor_mixing.py (CKM/PMNS structure; CP violation requires N≥3, Cycle 69)
 
 PRIORITY: Medium (known failures documented; new mechanism needed for tau/top)
 """
 
 # Particle masses (PDG 2024) for comparison
+# Neutrino masses: individual masses not directly measured; estimates from oscillation data
+# (normal hierarchy, minimum-mass case m₁ ≈ 0):
+#   Δm²₂₁ = 7.42e-5 eV² → m₂ ≈ 8.6 meV = 8.6e-9 MeV
+#   Δm²₃₁ = 2.517e-3 eV² → m₃ ≈ 50 meV = 5.0e-8 MeV
+#   Cosmological bound: Σm_ν < 0.12 eV (Planck 2018)
 MASSES_MEV = {
     # Leptons
     'electron': 0.511,
     'muon': 105.66,
     'tau': 1776.86,
-    # Neutrinos (approximate)
-    'nu_e': 1e-9,
-    'nu_mu': 1e-4,
-    'nu_tau': 0.015,
+    # Neutrinos (normal hierarchy minimum-mass estimates from oscillation Δm² data)
+    # These are LOWER BOUNDS on individual masses for m₁ ≈ 0 assumption
+    'nu_1': 1e-11,     # m₁ ≈ 0 (free; sets scale)
+    'nu_2': 8.6e-9,    # m₂ ≈ √Δm²₂₁ ≈ 8.6 meV  [NOTE: was wrong as nu_mu, nu_tau]
+    'nu_3': 5.0e-8,    # m₃ ≈ √Δm²₃₁ ≈ 50 meV
     # Quarks (MS-bar at 2 GeV for u,d,s; at M_c for c,b,t)
     'up': 2.2,
     'down': 4.7,
@@ -82,17 +91,29 @@ PREDICTIONS_MEV = {
 }
 
 if __name__ == "__main__":
-    print("equations/fermion_spectrum_full.py — STUB")
+    print("equations/fermion_spectrum_full.py — STUB (Cycle 69 audit: neutrino masses corrected)")
     print(f"  Full fermion spectrum: {len(MASSES_MEV)} particles to predict")
     print(f"  Currently predicted: {len(PREDICTIONS_MEV)}")
-    print(f"  Failures:")
+    print()
+    print(f"  Known failures:")
     for p in ['tau', 'charm', 'strange']:
         if p in PREDICTIONS_MEV:
             obs = MASSES_MEV[p]
             pred = PREDICTIONS_MEV[p]
             ratio = pred / obs
+            factor = max(ratio, 1.0/ratio)
             status = "FAILS" if abs(ratio - 1) > 0.05 else "OK"
             print(f"    {p:10s}: predicted {pred:.1f} MeV, observed {obs:.1f} MeV, "
-                  f"ratio {ratio:.2f} [{status}]")
-    print(f"  Unpredicted: top, bottom, up, down, all neutrinos")
+                  f"off by {factor:.1f}× [{status}]")
+    print()
+    print(f"  Unpredicted (no DFC derivation yet):")
+    print(f"    top, bottom, up, down quarks")
+    print(f"    neutrino masses ν₁, ν₂, ν₃")
+    print(f"    (oscillation estimates: ν₂ ≈ 8.6 meV, ν₃ ≈ 50 meV)")
+    print()
+    print(f"  NOTE (Cycle 69 audit): Previous neutrino entries 'nu_mu=1e-4 MeV' and")
+    print(f"  'nu_tau=0.015 MeV' were wrong by ~4-6 orders of magnitude vs oscillation")
+    print(f"  data. Corrected to nu_2=8.6e-9 MeV, nu_3=5.0e-8 MeV.")
+    print(f"  Neutrino mass ratio failure documented in neutrino_oscillations.py (Cycle 65).")
+    print()
     print(f"  Status: new mechanism needed beyond dimple potential for tau/top.")

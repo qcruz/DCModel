@@ -207,8 +207,13 @@ aA = 23.2 MeV    (asymmetry — equal n/p favored by Pauli)
 
 ### Iron-56 Prediction
 
+**Note:** The Bethe-Weizsäcker coefficients aV, aS, aC, aA are empirical inputs taken
+from fits to the nuclear binding curve — they are not yet derived from DFC substrate
+dynamics. The Fe-56 calculation below is a consistency check that the formula (with
+empirical coefficients) matches data, not a DFC first-principles prediction.
+
 ```
-A = 56, Z = 26:
+A = 56, Z = 26 (using empirical coefficients):
 B(56, 26) = 15.8×56 − 18.3×56^{2/3} − 0.715×26×25/56^{1/3} − 23.2×(56−52)²/56 + 12/√56
            = 884.8 − 168.9 − 117.0 − 66.5 + 1.6
            = 492.1 MeV
@@ -216,18 +221,27 @@ B(56, 26) = 15.8×56 − 18.3×56^{2/3} − 0.715×26×25/56^{1/3} − 23.2×(56
 B/A = 492.1/56 = 8.79 MeV/nucleon    ✓  (observed: 8.790 MeV/nucleon)
 ```
 
+**Bethe-Weizsäcker known failure for very light nuclei:** The semi-empirical formula
+is calibrated for medium and heavy nuclei (A ≳ 12). For the deuteron (A=2, Z=1), the
+formula gives B ≈ −5.9 MeV (negative — predicts the deuteron is unbound), while the
+observed binding energy is +2.22 MeV. This failure is expected: the B-W formula
+describes bulk nuclear matter and does not capture the short-range two-body physics
+that binds the lightest nuclei. Verified in `equations/nuclear_binding.py`.
+
 ---
 
 ## Consistency Checks
 
-| Property | DFC mechanism | Observed |
-|---|---|---|
-| Nuclear force range ~1.4 fm | Pion Compton wavelength r₀ = ℏ/(mπc) | Confirmed ✓ |
-| Binding energy ~8 MeV/nucleon | Yukawa attraction minus kinetic energy | ~8 MeV/nucleon ✓ |
-| Iron-56 most tightly bound | D5/D7 competition peak at A=56 | 8.790 MeV/nucleon ✓ |
-| Fusion releases energy for A < 56 | Moving up binding curve toward Fe-56 | Solar fusion ✓ |
-| Fission releases energy for A > 56 | Moving down binding curve toward Fe-56 | Nuclear reactors ✓ |
-| Saturation of nuclear force | Short-range Yukawa (each nucleon binds ~4 neighbors) | Constant B/A for A > 20 ✓ |
+| Property | DFC mechanism | Observed | Status |
+|---|---|---|---|
+| Nuclear force range ~1.4 fm | Pion Compton wavelength r₀ = ℏ/(mπc) | ~1.4 fm | ✓ structural |
+| Binding energy ~8 MeV/nucleon | Yukawa attraction minus kinetic energy | ~8 MeV/nucleon | ✓ structural |
+| Iron-56 most tightly bound | D5/D7 competition peak at A=56 | 8.790 MeV/nucleon | ✓ (empirical coefficients) |
+| Fusion releases energy for A < 56 | Moving up binding curve toward Fe-56 | Solar fusion | ✓ structural |
+| Fission releases energy for A > 56 | Moving down binding curve toward Fe-56 | Nuclear reactors | ✓ structural |
+| Saturation of nuclear force | Short-range Yukawa (~4 neighbors per nucleon) | Constant B/A for A > 20 | ✓ structural |
+| Deuteron binding (A=2) | B-W formula predicts B ≈ −5.9 MeV | +2.22 MeV | ✗ B-W fails for A ≤ 4 (known limitation) |
+| B-W coefficients aV, aS, aC, aA from DFC | Not yet derived from D7 SU(3) dynamics | Empirical fits | ✗ OPEN — blocked at 11% α_s error |
 
 ---
 
@@ -273,3 +287,5 @@ B/A = 492.1/56 = 8.79 MeV/nucleon    ✓  (observed: 8.790 MeV/nucleon)
   `phenomena/particle_physics/radioactive_decay.md`
 - **Pauli exclusion** — nuclear saturation and asymmetry term from fermion exclusion;
   `phenomena/quantum/pauli_exclusion.md`
+- `equations/nuclear_binding.py` — Bethe-Weizsäcker formula, deuteron failure documented,
+  empirical inputs clearly labeled; α_s(M_Z) error noted (Cycle 68 audit)

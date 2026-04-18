@@ -155,7 +155,7 @@ as μ increases (shorter distances).
 
 | Contribution | Sign | Source |
 |---|---|---|
-| Gluon self-coupling | +11 (per gluon loop) | Non-Abelian self-interaction: gluons spread color charge, effectively screening anti-screening |
+| Gluon self-coupling | +11 (per gluon loop) | Non-Abelian self-interaction: gluons carry color and self-interact; their contribution to the beta function is opposite in sign to EM (anti-screening) |
 | Quark loops | −2/3 per flavor | Quark-antiquark pairs partially screen color (same as EM) |
 
 In EM, only screening occurs (electron loops reduce the apparent charge at low energy →
@@ -288,6 +288,10 @@ is not derived from first principles. See `equations/coupling_derivation.py` and
 - **Three generations** — D7 SU(3) topology; `foundations/three_generations.md`
 - **Proton stability** — D7/D5 cross-closure forbidden; `phenomena/particle_physics/proton_stability.md`
 - **Product geometry** — D7 independence from D5, D6; `foundations/product_geometry.md`
+- `foundations/zero_mode_multiplet.md` — proves n=3 coincident zero modes → SU(3) → 8 gluons (Cycle 59; directly proves the 8-gluon count in this document)
+- `foundations/bifurcation_mode_count.md` — structural chain from D5 half-vortex to D7 SU(3); Cycles 62–67c
+- `equations/coupling_derivation.py` — α_s(M_Z) = 0.105 computed (11% off; M_c(D7) input only)
+- `phenomena/particle_physics/quark_gluon_plasma.md` — strong force at T > Λ_QCD; deconfinement
 
 ---
 

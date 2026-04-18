@@ -45,9 +45,11 @@ import math
 # ── Experimental constraints (PDG 2024) ──────────────────────────────────────
 
 # Mass-squared differences from oscillation experiments (eV²)
-DM2_SOLAR    = 7.53e-5    # Δm²₂₁ = m₂² - m₁²  (positive by convention)
-DM2_ATM      = 2.453e-3   # |Δm²₃₁|  (sign = +: normal, -: inverted)
-DM2_ATM_ERR  = 0.033e-3   # uncertainty
+# PDG 2024 values — consistent with equations/flavor_mixing.py (Cycle 69)
+# and equations/neutrino_oscillations.py (Cycle 65)
+DM2_SOLAR    = 7.42e-5    # Δm²₂₁ = m₂² - m₁²  (positive by convention)
+DM2_ATM      = 2.517e-3   # |Δm²₃₁|  (sign = +: normal, -: inverted)
+DM2_ATM_ERR  = 0.028e-3   # uncertainty (PDG 2024)
 
 # Cosmological bound on sum of neutrino masses (Planck 2018)
 SUM_MASS_BOUND_EV = 0.12  # eV
