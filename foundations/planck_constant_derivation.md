@@ -4,9 +4,16 @@
 
 > **Cycle 39:** The Planck constant derivation chain is formalized here for the first time.
 >
+> **Cycle 75 audit:** E_kink formula corrected to BPS-correct form (Cycle 48 retraction
+> propagated). The retracted formula was E_kink = (4/3)c√(2α³/β); the BPS-correct formula
+> is E_kink = (4/3)c²φ₀²/ξ = (4/3)cα^(3/2)/(β√2). This changes S_kink(D1)/ℏ from
+> 4.24×10³⁹ to 1.13×10⁴⁰ and updates all numerical propagations. Qualitative conclusions
+> (ℏ not derivable from D1 alone; ~13 bifurcations needed; nuclear scale identification)
+> are unchanged.
+>
 > **Result:** ℏ is not independently derivable from the substrate parameters (α, β, c)
 > given only the D1 Planck length identification. The derivation reveals a self-consistency
-> equation ℏ² = 16c⁶/(3G√β) that is violated by a factor of ~10^{130} when evaluated
+> equation ℏ² = 32c⁶/(3Gβ) that is violated by a large factor when evaluated
 > with known constants. This rules out the interpretation that a single D1 kink action
 > equals ℏ. The resolution requires a collective (multi-kink) or multi-depth action
 > interpretation — the Planck constant emerges from the D3–D4 closure scale, not the
@@ -40,18 +47,24 @@ and known gravitational constants (G), without using ℏ as an input.
 The kink solution φ_K(x) = φ₀ tanh(x/λ_kink) has:
 
 ```
-Kink width:   λ_kink = √(2c²/α)          [length scale]
-Kink energy:  E_kink = (4/3)c√(2α³/β)   [energy scale]
+Kink width:   λ_kink = c √(2/α)                      [length scale; ξ = c√(2/α)]
+Kink energy:  E_kink = (4/3) c² φ₀² / ξ
+                     = (4/3) c × α^(3/2) / (β √2)    [BPS-correct; Cycle 48]
 ```
 
-The characteristic action of the substrate is:
+The characteristic action of the substrate — kink energy times kink formation time — is:
 
 ```
 S_substrate = E_kink × (λ_kink / c)
-            = (4/3)c√(2α³/β) × √(2c²/α) / c
-            = (4/3)√(2α³/β) × √(2c²/α)
-            = (4/3)√(4α²c²/β)
-            = (8/3) × αc / √β
+            = (4/3) c × α^(3/2) / (β √2)  ×  √(2/α) / c
+            = (4/3) × α^(3/2) × √2 / (β √2 × √α)
+            = (4/3) × α / β
+```
+
+In natural units (c = 1):
+
+```
+S_substrate = (4/3) α / β    [BPS-correct; replaces retracted (8/3)α/√β from Cycle 32]
 ```
 
 This is the "quantum of action" of the DFC substrate in terms of the dimensionful
@@ -66,11 +79,12 @@ coincides with the Planck length:
 λ_kink(D1) = ℓ_P = √(ℏG/c³)    →    α(D1) = 2c²/ℓ_P²
 ```
 
-Substituting into the action:
+Substituting into the action (BPS-correct):
 
 ```
-S_substrate = (8/3) × (2c²/ℓ_P²) × c / √β
-            = (16c³) / (3ℓ_P²√β)
+S_substrate = (4/3) × α_D1 / β
+            = (4/3) × (2c²/ℓ_P²) / β
+            = (8c²) / (3ℓ_P²β)
 ```
 
 ### Step 3: If S_substrate = ℏ, what does the constraint say?
@@ -78,9 +92,9 @@ S_substrate = (8/3) × (2c²/ℓ_P²) × c / √β
 Setting the substrate action equal to ℏ and substituting ℓ_P² = ℏG/c³:
 
 ```
-ℏ  = (16c³) / (3 × (ℏG/c³) × √β)
-ℏ  = (16c⁶) / (3ℏG√β)
-ℏ² = 16c⁶ / (3G√β)
+ℏ  = (8c²) / (3 × (ℏG/c³) / β)
+ℏ  = (8c⁵β) / (3ℏG)
+ℏ² = 8c⁵β / (3G)
 ```
 
 This is a self-consistency equation relating ℏ to G, c, and β.
@@ -95,18 +109,22 @@ The cleanest computation is in natural units (ℏ = c = 1), using the values fro
 ```
 α_D1 = 2 M_P² = 2 × (1.22 × 10¹⁹ GeV)² = 2.977 × 10³⁸ GeV²
 λ_kink(D1) = √(2/α_D1) = 8.197 × 10⁻²⁰ GeV⁻¹ = 1.615 × 10⁻³⁵ m  ≈ ℓ_P ✓
-E_kink(D1) = (4/3)√(2α_D1³/β) = 5.170 × 10⁵⁸ GeV
-β = 0.0351,  √β = 0.1873
+E_kink(D1) = (4/3) α_D1^(3/2) / (β √2) = 1.38 × 10⁵⁹ GeV    [BPS-correct; Cycle 48]
+β = 0.0351
 
-S_kink(D1) = E_kink × λ_kink
-           = 5.170 × 10⁵⁸ GeV × 8.197 × 10⁻²⁰ GeV⁻¹
-           = 4.24 × 10³⁹ ℏ    [in units where ℏ = 1]
+S_kink(D1) = E_kink × λ_kink  =  (4/3) α_D1 / β
+           = (4/3) × 2.977 × 10³⁸ / 0.0351
+           = 1.13 × 10⁴⁰ ℏ    [in units where ℏ = 1]
 ```
 
-**The D1 kink action is 4.24 × 10³⁹ times larger than ℏ.**
+**The D1 kink action is 1.13 × 10⁴⁰ times larger than ℏ.**
 
-Equivalently: S_substrate = (8/3)(α_D1/√β) = (8/3)(2M_P²/√β)
-= (8/3) × 2 × (1.22×10¹⁹)² / 0.1873 = 4.24 × 10³⁹ ℏ.
+Equivalently: S_substrate = (4/3)(α_D1/β) = (4/3)(2M_P²/β)
+= (4/3) × 2 × (1.22×10¹⁹)² / 0.0351 = 1.13 × 10⁴⁰ ℏ.
+
+[Cycle 75 correction: prior value 4.24×10³⁹ used the retracted formula (8/3)α/√β.
+BPS-correct (4/3)α/β gives 1.13×10⁴⁰, a factor ~2.7 larger. The hierarchy is slightly
+worse than previously stated. Qualitative conclusions are unchanged.]
 
 The factor 4.24 × 10³⁹ cannot be explained by loop corrections or parameter
 adjustments. It definitively rules out the interpretation that a single D1 kink action
@@ -131,7 +149,7 @@ If λ_kink(D1) = ℓ_P (the Planck length identification), then the single-kink 
 at D1 is not ℏ. The D1 kink action is:
 
 ```
-S_kink(D1) = 4.24 × 10³⁹ × ℏ
+S_kink(D1) = 1.13 × 10⁴⁰ × ℏ
 ```
 
 The single D1 kink action is ~4 × 10³⁹ times larger than ℏ.
@@ -142,12 +160,12 @@ Alternatively, the kink width at D1 is NOT the Planck length. If instead we
 impose S_kink = ℏ and solve for α in natural units:
 
 ```
-S_kink = (8/3)(α/√β) = ℏ = 1
-α_S=ℏ = (3/8)√β = (3/8) × 0.1873 = 0.0702 GeV²
-λ_kink = √(2/α_S=ℏ) = √(2/0.0702) = 5.34 GeV⁻¹ ≈ 1.06 × 10⁻¹⁶ m
+S_kink = (4/3)(α/β) = ℏ = 1    [BPS-correct]
+α_S=ℏ = (3/4)β = (3/4) × 0.0351 = 0.0263 GeV²
+λ_kink = √(2/α_S=ℏ) = √(2/0.0263) = 8.72 GeV⁻¹ ≈ 1.72 × 10⁻¹⁵ m
 ```
 
-A kink width of ~10⁻¹⁶ m is the nuclear scale — not the Planck scale (10⁻³⁵ m).
+A kink width of ~1.7×10⁻¹⁵ m is the nuclear scale — not the Planck scale (10⁻³⁵ m).
 This is consistent with a D7 (strong force) closure scale, not the D1 substrate.
 
 **Implication:** The kink whose action equals ℏ has a width at the nuclear/hadronic
@@ -215,25 +233,25 @@ dimensionless and derivable in principle from DFC without ℏ. See `equations/co
 
 ### How many depth bifurcations to reach the ℏ-scale action?
 
-S_kink scales linearly with α (since S = (8/3)α/√β in natural units, c=1).
+S_kink scales linearly with α (since S = (4/3)α/β in natural units, c=1).
 The running is α(D_{n+1}) = α(D_n) × (1 − γ_space) ≈ α(D_n) × 10⁻³.
 
 ```
-S_kink(D1) = 4.24 × 10³⁹ ℏ
-After n spacetime bifurcations: S_kink(D_n) = 4.24 × 10³⁹ × (10⁻³)ⁿ ℏ
+S_kink(D1) = 1.13 × 10⁴⁰ ℏ    [BPS-correct; Cycle 75 update]
+After n spacetime bifurcations: S_kink(D_n) = 1.13 × 10⁴⁰ × (10⁻³)ⁿ ℏ
 
 For S_kink(D_n) = 1 ℏ:
-  (10⁻³)ⁿ = 1/(4.24 × 10³⁹) = 2.36 × 10⁻⁴⁰
-  n = 40/3 ≈ 13.3 bifurcations
+  (10⁻³)ⁿ = 1/(1.13 × 10⁴⁰) = 8.85 × 10⁻⁴¹
+  n = 40.05/3 ≈ 13.4 bifurcations
 ```
 
 The kink action equals ℏ after approximately 13 spacetime bifurcations. The current
 DFC model has D1→D5 with 4 spacetime bifurcations (γ_space ≈ 0.999), reducing
-S_kink by (10⁻³)⁴ = 10⁻¹², leaving S_kink(D5) ≈ 4.24 × 10²⁷ ℏ.
+S_kink by (10⁻³)⁴ = 10⁻¹², leaving S_kink(D5) ≈ 1.13 × 10²⁸ ℏ.
 
-This 10²⁷ residual is the DFC statement of the hierarchy problem: the model needs
+This 10²⁸ residual is the DFC statement of the hierarchy problem: the model needs
 either additional depth layers or a different mechanism at D5–D7 to bridge from
-S_kink ≈ 10²⁷ ℏ to the observed action quantum ℏ.
+S_kink ≈ 10²⁸ ℏ to the observed action quantum ℏ.
 
 ---
 
@@ -241,9 +259,9 @@ S_kink ≈ 10²⁷ ℏ to the observed action quantum ℏ.
 
 | Quantity | DFC computation | Observed | Status |
 |---|---|---|---|
-| D1 kink action / ℏ | 4.24 × 10³⁹ | 1 | ✗ (by construction) |
-| D5 kink action / ℏ | 4.24 × 10²⁷ | 1 | ✗ (hierarchy residual) |
-| Bifurcations needed for S = ℏ | ~13 | — | Only 4 spacetime bifurcations in model |
+| D1 kink action / ℏ | 1.13 × 10⁴⁰ | 1 | ✗ (by construction; Cycle 75 update) |
+| D5 kink action / ℏ | 1.13 × 10²⁸ | 1 | ✗ (hierarchy residual; Cycle 75 update) |
+| Bifurcations needed for S = ℏ | ~13.4 | — | Only 4 spacetime bifurcations in model |
 | ℏ from fine structure constant | Possible if α_em derived | ℏ = 1.055×10⁻³⁴ J·s | Requires coupling_derivation.py |
 | ℏ as pure natural-units identity | Trivially satisfied | — | Not a DFC prediction |
 
@@ -318,7 +336,7 @@ Planck constant.
 The DFC hierarchy problem has a precise form:
 
 ```
-S_kink(D1) / ℏ = (8/3)(α_D1/√β) / ℏ = (8/3)(2M_P²/√β) = 4.24 × 10³⁹
+S_kink(D1) / ℏ = (4/3)(α_D1/β) / ℏ = (4/3)(2M_P²/β) = 1.13 × 10⁴⁰    [BPS-correct]
 ```
 
 This is the ratio between the Planck-scale action (set by G and c) and the
@@ -327,16 +345,16 @@ the substrate kink action at D1 and the observed ℏ.
 
 This is not a problem to solve separately — it is the hierarchy problem restated in DFC
 terms. The model will have addressed the hierarchy problem when it explains why the
-particle-scale action quantum ℏ is 10³⁹ times smaller than the D1 substrate action.
+particle-scale action quantum ℏ is 10⁴⁰ times smaller than the D1 substrate action.
 The depth-running of α provides a partial mechanism: 4 bifurcations reduce this by
-10¹², leaving a factor of 10²⁷ unexplained within the current 4-bifurcation spacetime sector.
+10¹², leaving a factor of 10²⁸ unexplained within the current 4-bifurcation spacetime sector.
 
 ---
 
 ## Connections
 
 - `foundations/substrate.md` — V(φ) = −α/2 φ² + β/4 φ⁴; kink solutions
-- `foundations/bifurcation_dynamics.md` — γ_D = (16/3)√β; β ≈ 0.035; D1 kink = Planck length
+- `foundations/bifurcation_dynamics.md` — β ≈ 0.035; D1 kink width = Planck length; γ_D derivation RETRACTED (Cycle 48)
 - `foundations/d_depth_lagrangians.md` — depth-running of α; closure scales
 - `equations/quantum_emergence.py` — Schrödinger equation derived; ℏ as free parameter noted
 - `foundations/substrate.md` Open Problem 2 — ℏ in SI units from (α, β, c) [this doc formalizes]

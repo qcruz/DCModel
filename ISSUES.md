@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-18 (Cycles 47–74)
+**Last updated:** 2026-04-18 (Cycles 47–75)
 
 ---
 
@@ -18,8 +18,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Files: `foundations/higgs_geometry.md` (Open Q1), `equations/weinberg_angle_rg.py` (Open Problem 2), `foundations/hierarchy_problem.md`
 - Path: either (a) identify two distinct closure events at D6 vs. D6-squashing, or (b) find the derivation error
 
-### T8 — ℏ hierarchy (10²⁷ gap)
-- S_kink(D1) ≈ 4×10³⁹ ℏ; model has ~4 bifurcations → reduces to ~4×10²⁷ ℏ residual
+### T8 — ℏ hierarchy (10²⁸ gap)
+- S_kink(D1) = 1.13×10⁴⁰ ℏ (Cycle 75 update: BPS-correct E_kink; prior value 4.24×10³⁹ used retracted formula); model has ~4 bifurcations → reduces to ~1.13×10²⁸ ℏ residual
 - ℏ is not derivable from (α, β, c) alone without identification with SI unit system
 - Files: `foundations/planck_constant_derivation.md`, `equations/planck_constant.py` [STUB]
 - Path: route via α_em derivation proposed; requires completing coupling chain first
@@ -35,10 +35,20 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 ### Bottleneck 2 — r_U1/λ = 3/(4β) not formally derived
 - The key coupling chain step g² = 8πβ/3 depends on identifying r_U1 = φ₀²/(β f²)
-- Route A (KK reduction) blocked: real φ⁴ scalar has no U(1) vector zero modes on kink
-- Route B (domain-wall worldvolume) blocked: U(1) phase of complex scalar is NOT localized on real kink
-- Requires substrate extension beyond pure real φ⁴ (complex scalar or gauge structure)
-- Files: `foundations/phase_stiffness_derivation.md` (Open Q1–Q2), `foundations/coupling_derivation.md`
+- **Cycle 75 (complex substrate extension):** D5 substrate extended to complex scalar
+  Φ = φ₁ + iφ₂, V = −α/2|Φ|² + β/4|Φ|⁴. Key results:
+  - Transverse fluctuation (L₂) has tachyonic bound state ω² = −α/2: D5 does NOT form
+    real kinks; the stable D5 defect is the vortex (π₁(S¹) = ℤ). This is consistent with
+    D5 = U(1) behavior.
+  - Vortex profile solved numerically (BVP): core radius r_v = 1.10 ξ. But r_v/ξ ≈ 1 ≠
+    target r_U1/λ = 3/(4β) ≈ 21. The vortex core alone does not give the right coupling.
+  - Real kink is metastable at DFC compression scales L < L_crit = (3/4)π² ξ ≈ 7.4 ξ.
+  - KK reduction on field-space S¹ is now geometrically well-defined (S¹ of radius φ₀).
+- **Remaining gap:** Derive r_U1/λ = 3/(4β) from the D5-D6 coupling integral.
+  Route: g² = (∫j_x dx)² / (photon normalization × kink normalization).
+  Key ingredient known: ∫j_x dx = −2π/(5ξ) from Cycle 67c. Missing: normalization.
+- Files: `foundations/complex_substrate.md` (Cycle 75), `equations/complex_substrate.py`,
+  `foundations/phase_stiffness_derivation.md` (Open Q1–Q2), `foundations/coupling_derivation.md`
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---
