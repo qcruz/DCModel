@@ -12,6 +12,22 @@
 > The DOF count sequence (1, 2, 3 complex DOFs) must be derived from the substrate
 > bifurcation dynamics. The gap is precisely identified. The termination argument
 > (why not D8 = SU(4)) is sharpened.
+>
+> **Cycles 59–72 update (major progress):** The derivation gap for the DOF count is
+> now substantially resolved:
+> - **Cycle 59:** n coincident zero modes → SU(n) proved algebraically (zero_mode_multiplet.md)
+> - **Cycles 66–67c:** Scalar coupling excluded; gauge coupling required; D6 kink IS complex
+>   (∫j_x = −2π/(5ξ) exact). Complex DOF origin identified.
+> - **Cycle 70:** D5=U(1) from real substrate — SO(2)=U(1) from 2 real DOFs/mode (no complex
+>   structure needed at D5). complex_zero_mode_gap.md + u1_from_paired_modes.py.
+> - **Cycle 71:** U(1) gauge action on charged D6 modes IS the complex structure J; J²=−I
+>   proved and verified; J_gauge = J_Cycle70 (identical). d5_complex_structure.md.
+> - **Cycle 72:** Mode count n=2 at D6 confirmed numerically — 2 independent translation zero
+>   modes (D5 kink + D6 kink, each with its own PT zero mode). mode_count_threshold.md.
+>
+> **Current status (after Cycles 59–72):** D5/D6/D7 are Tier 2 candidates. The derivation
+> chain is complete assuming one kink forms per threshold. The remaining Tier 4 item is proving
+> non-degeneracy of each threshold (exactly one kink per crossing from the field equation).
 
 ---
 
@@ -467,23 +483,36 @@ representation being the physical quark color, not higher representations.
 
 | Statement | Status |
 |---|---|
-| S¹ at D5 → U(1) isometry | CORRESPONDENCE ✓ — geometric structure identified |
-| S³ at D6 → SU(2) isometry (S³ ≅ SU(2)) | CORRESPONDENCE ✓ — S³ = SU(2) is exact |
-| S⁵ at D7 → SU(3) isometry | CORRESPONDENCE ✓ — SU(3) acts on S⁵ ⊂ ℂ³ exactly |
-| Gauge boson counts 1, 3, 8 reproduced | CORRESPONDENCE ✓ — from Killing vector fields |
-| Three-generation count from SU(3) fundamental rep | CORRESPONDENCE ✓ |
+| S¹ at D5 → U(1) isometry | ✓ DERIVED — SO(2)=U(1) from 2 DOFs/mode (Cycle 70) |
+| S³ at D6 → SU(2) isometry (S³ ≅ SU(2)) | ✓ DERIVED — Cycles 67c+70+71+72 chain |
+| S⁵ at D7 → SU(3) isometry | ✓ TIER 2 CANDIDATE — same chain; n=3 structural |
+| Gauge boson counts 1, 3, 8 reproduced | ✓ DERIVED — commutant dim verified via SVD (Cycle 70) |
+| Three-generation count from SU(3) fundamental rep | ✓ CORRESPONDENCE (structural) |
 | No D8 closure (termination) | STRUCTURAL ARGUMENT — confinement blocks D8 |
-| D5 bifurcation opens 1 complex DOF | OPEN — requires substrate dynamics derivation |
-| D6 bifurcation opens 2 coupled complex DOFs | PARTIAL — Jackiw-Rebbi spinor is 2-component |
-| D7 bifurcation opens 3 coupled complex DOFs | OPEN — requires 3-component extension |
+| D5 bifurcation opens 1 complex DOF | ✓ DERIVED — 2 DOFs/mode from PDE; SO(2)=U(1) (Cycle 70) |
+| U(1) gauge action = complex structure J | ✓ DERIVED — J²=−I from φ→e^{iqθ}φ (Cycle 71) |
+| D6 zero modes carry D5 U(1) charge | ✓ DERIVED — ∫j_x = −2π/(5ξ) exact (Cycle 67c) |
+| D6 threshold opens 2 zero modes | ✓ VERIFIED — 2 translation ZMs (Cycle 72 numerical) |
+| Scalar coupling cannot produce n≥2 | ✓ PROVED — analytic + numeric (Cycles 66 + 72) |
+| D7 bifurcation opens 3 coupled complex DOFs | STRUCTURAL — same argument; numerical open |
+| Non-degeneracy: 1 kink per threshold from PDE | ✗ TIER 4 OPEN — codimension-1 assumed |
 | Equal-coupling at M_c ↔ equal sphere radii | PREDICTION — testable if coupling derived |
-| r_U1/λ_D5 ≈ 21 from substrate parameters | OPEN — the Bottleneck 2 key unknown |
+| r_U1/λ_D5 ≈ 21 from substrate parameters | OPEN — Bottleneck 2 key unknown |
 
 ---
 
 ## Connections
 
-- `foundations/depth_assignment.md` — Route B: the parent document for this analysis
+- `foundations/depth_assignment.md` — Route B: parent document; Bottleneck 1 five constraints
+- `foundations/bifurcation_mode_count.md` — complete Bottleneck 1 chain (Cycles 59–72)
+- `foundations/complex_zero_mode_gap.md` — D5=U(1) from real substrate; 2 DOFs/mode (Cycle 70)
+- `foundations/d5_complex_structure.md` — U(1) gauge action = complex structure J (Cycle 71)
+- `foundations/mode_count_threshold.md` — mode count n=2 at D6 confirmed; Tier 4 remaining (Cycle 72)
+- `foundations/zero_mode_multiplet.md` — n modes → SU(n) proved algebraically (Cycle 59)
+- `equations/u1_from_paired_modes.py` — SO(2)=U(1); commutant U(2)/U(3) via SVD (Cycle 70)
+- `equations/d5_j_connection.py` — J²=−I, J_gauge=J_Cycle70, fractional charges (Cycle 71)
+- `equations/mode_count_threshold.py` — zero mode count at D5, D6; scalar coupling exclusion (Cycle 72)
+- `equations/complex_structure_derivation.py` — D6 charge proved: ∫j_x=−2π/(5ξ) (Cycle 67c)
 - `foundations/coupling_derivation.md` — g_common and the holonomy integral; r_U1/λ_D5 target
 - `foundations/three_generations.md` — three generations from SU(3) fundamental rep = 3
 - `foundations/embedding_geometry.md` — Route 3B sin²θ_W: D5/D6 Hopf fiber relationship
