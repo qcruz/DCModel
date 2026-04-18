@@ -233,6 +233,7 @@ y_e = m_e / v ≈ 2.9 × 10⁻⁶    [Yukawa = Mλ-over-v in DFC language]
 | Doublet partner | ν_eL at T₃ = +1/2, Y = −1, Q = 0 | electron neutrino ✓ |
 | Color charge | No D7 closure → no color | colorless ✓ |
 | Left-handed weak coupling | S³ intrinsic orientation at D6 | e_L couples, e_R does not ✓ |
+| Anomalous magnetic moment (leading) | a_e = α_em/(2π) = 0.001136 (Cycle 55) | 0.001160 — −2.01% (Tier 2b) ✗ |
 | Tau mass (2nd excited state) | ~212 MeV predicted (mass_spectrum.py) | 1777 MeV — 8.4× off ✗ |
 
 ---
@@ -249,16 +250,17 @@ y_e = m_e / v ≈ 2.9 × 10⁻⁶    [Yukawa = Mλ-over-v in DFC language]
    Computing g_Y from the D6 geometry is the fermion mass prediction problem.
 
 3. **The 3+1D Jackiw-Rebbi generalization.** The exact zero mode computed above is in
-   1+1D. The full substrate case requires the kink background to be a soliton across the substrate's D3+D4 behavior (the Skyrmion
-   or D3+D4 kink) and the zero mode to be a normalizable spinor. The BPST instanton result
-   (Step 2) gives this for the composite baryon; the elementary lepton analog in 3+1D
-   is the open formal derivation in `foundations/spin_emergence.md`.
+   1+1D. The full substrate case requires the kink background to extend across the D3+D4
+   localization behavior (as a Skyrmion or D3+D4 kink), with the zero mode as a normalizable
+   spinor. The BPST instanton result gives this for the composite baryon; the elementary
+   lepton analog in 3+1D is the open formal derivation in `foundations/spin_emergence.md`.
 
-4. **The anomalous magnetic moment.** g_e = −2 at tree level is exact in QED; the
-   deviation a_e = (g−2)/2 ≈ 1.16 × 10⁻³ arises from one-loop photon exchange. In DFC
-   the loop correction corresponds to a higher-order effect in the D5 closure geometry.
-   The leading correction a_e = α/(2π) is standard QED; whether DFC modifies this at
-   higher orders is open.
+4. **The anomalous magnetic moment beyond leading order.** g_e = −2 at tree level is
+   exact in QED; the deviation a_e = (g−2)/2 ≈ 1.16 × 10⁻³ arises from one-loop photon
+   exchange. The leading Schwinger term a_e = α_em/(2π) is computed from the DFC coupling
+   chain in `equations/anomalous_magnetic_moment.py` (Cycle 55): prediction 0.001136 vs
+   observed 0.001160 (−2.01% error — Tier 2b; systematic from α_em). Whether DFC modifies
+   higher-loop corrections via D5 geometry is open.
 
 ---
 
@@ -277,3 +279,11 @@ y_e = m_e / v ≈ 2.9 × 10⁻⁶    [Yukawa = Mλ-over-v in DFC language]
 - **Electron neutrino** — SU(2)_L doublet partner; `phenomena/particle_physics/particles/neutrinos.md`
 - **SU(2) doublet from coincident zero modes** — why 2 coincident D6 modes → SU(2) symmetry (not U(1)²);
   `foundations/zero_mode_multiplet.md`
+- **Mode count non-degeneracy** — PT s=2 → exactly 1 zero mode per kink, all α > 0;
+  `foundations/threshold_nondegeneracy.md` (Cycle 73)
+- **Mode count at D6** — n=2 verified; scalar coupling excluded; gauge coupling required;
+  `foundations/mode_count_threshold.md` (Cycle 72)
+- **Complex structure of D6 zero modes** — U(1) gauge action = complex structure J;
+  `foundations/d5_complex_structure.md` (Cycle 71)
+- **Anomalous magnetic moment** — leading Schwinger term a_e = α_em/(2π) from DFC chain;
+  `phenomena/quantum/anomalous_magnetic_moment.md`, `equations/anomalous_magnetic_moment.py`

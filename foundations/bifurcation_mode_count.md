@@ -39,8 +39,13 @@ D5, D6, D7 are now **Tier 2 candidates** (derivation chain complete assuming mod
 - **Complex structure gap CLOSED: D6 modes carry D5 U(1) charge [Cycle 67c] + U(1) action = J [Cycle 71]**
 
 **What is not yet proved (Tier 4):**
-- Why D(4+n) opens exactly n coincident modes from the substrate field equation (mode count assumption)
-- Why the series terminates at n = 3 (the SU(3) confinement argument is stated but not derived)
+- **[CLOSED Cycle 73]** Why D(4+n) opens exactly n modes — proved via PT s=2 non-degeneracy:
+  each φ⁴ kink has exactly one zero mode (U₀ξ² = 6 → s=2 → exactly 2 bound states; lowest
+  is ω²=0, unique by Sturm-Liouville). Combined with gauge decoupling: n thresholds → n
+  independent zero modes. See `foundations/threshold_nondegeneracy.md`.
+- [Open] Why the series terminates at n = 3 (the SU(3) confinement argument is stated but not derived)
+- [Open] D6→D7 three-field (n=3) numerical spectrum verification
+- [Open] Threshold positions α₅, α₆, α₇ from substrate compression dynamics
 
 ---
 
@@ -321,7 +326,7 @@ half-winding each → integer total charge. ✓
 | D5=U(1) from real substrate (SO(2)=U(1) from 2 DOFs/mode) | ✓ proved Cycle 70 |
 | U(1) gauge action = complex structure J: J²=−I for |q|=1 | ✓ proved Cycle 71 |
 | Complex structure gap closed: D6/D7 modes inherit complex structure from D5 | ✓ Cycles 67c+71 |
-| Mode count n at D(4+n) from substrate field equation | ✗ Tier 4 — codimension-1 argument structural only |
+| Mode count n from substrate field equation: PT s=2 non-degeneracy | ✓ proved Cycle 73 |
 | Termination at SU(3): no D8 free gauge group | ✓ structural (confinement argument) |
 
 ---
@@ -389,6 +394,10 @@ theorem but has not been derived from the coupled D5+D6 field equations.
 - `equations/u1_from_paired_modes.py` — SO(2)=U(1), so(4)≅su(2)⊕su(2), commutant dims verified (Cycle 70)
 - `foundations/d5_complex_structure.md` — U(1) gauge action = complex structure J; full Bottleneck 1 chain (Cycle 71)
 - `equations/d5_j_connection.py` — J²=−I, antisymmetric, commutant dims, J_gauge=J_Cycle70, fractional charges (Cycle 71)
+- `foundations/threshold_nondegeneracy.md` — PT s=2 non-degeneracy; exactly 1 zero mode per kink; Bottleneck 1 Tier 4 closed (Cycle 73)
+- `equations/threshold_nondegeneracy.py` — s=2 verified all α; 1 zero mode per kink; n blocks → n zero modes (Cycle 73)
+- `foundations/mode_count_threshold.md` — n=2 at D6; scalar coupling excluded; gauge coupling gives exactly 1 new mode (Cycle 72)
+- `equations/mode_count_threshold.py` — D5 1 ZM, D6 total 2 ZM, scalar 0 new modes verified (Cycle 72)
 - `foundations/zero_mode_multiplet.md` — second half proved (n modes → SU(n); Cycle 59)
 - `foundations/depth_assignment.md` — Bottleneck 1 five constraints; Route B formalism
 - `foundations/hopf_fibration_geometry.md` — S^(2n-1) correspondence; Route B Hopf picture
@@ -402,3 +411,5 @@ Cycle 67 | Computation 2: gauge coupling preserves n modes (j_μ=0 real; rigid s
 Cycle 67c | Computation 3: D6 kink IS complex in D5 half-vortex background; ∫j_x=−2π/(5ξ) proved exactly
 Cycle 70 | D5=U(1) from real substrate: second-order PDE → 2 DOFs/mode → SO(2)=U(1); commutant U(2)/U(3) verified via SVD; complex_zero_mode_gap.md + u1_from_paired_modes.py
 Cycle 71 | U(1) gauge action = complex structure J: J²=−I proved algebraically + numerically; J_gauge = J_Cycle70 (diff 0.00e+00); complex structure gap CLOSED; D5/D6/D7 all Tier 2 candidates; d5_complex_structure.md + d5_j_connection.py
+Cycle 72 | Mode count n=2 at D6 verified numerically; ξ=√(2/α) convention confirmed; scalar coupling excluded analytically (8√(g/β)=0 unsolvable); mode_count_threshold.md + mode_count_threshold.py
+Cycle 73 | Non-degeneracy theorem PROVED: PT s=2 exact (U₀ξ²=6 for all α,β); exactly 1 zero mode per kink (Sturm-Liouville); n thresholds → n independent zero modes; Bottleneck 1 Tier 4 item CLOSED; threshold_nondegeneracy.md + threshold_nondegeneracy.py
