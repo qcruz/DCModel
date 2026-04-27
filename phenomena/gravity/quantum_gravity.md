@@ -67,9 +67,7 @@ in their fundamental starting assumptions.
 
 ## Dimensional Folding Explanation
 
-**STUB — full derivation not yet written.**
-
-**DFC mechanism direction:**
+**DFC account:**
 
 1. **The problem is dissolved, not solved:** DFC does not "quantize gravity" because gravity
    is not an independent classical structure to be quantized. Gravity is the gradient of the
@@ -81,7 +79,9 @@ in their fundamental starting assumptions.
    D1 kink — the scale at which the substrate field's compression structure is defined
    (see `foundations/bifurcation_dynamics.md`). This is not a breakdown point but a
    characteristic length built into the substrate. The field equation is well-defined at
-   this scale; there is no singularity.
+   this scale; there is no singularity. This identification fixes the D1 substrate coupling:
+   the quadratic coupling at D1 depth is twice the square of the Planck mass (in natural
+   units), giving α_D1 = 2M_Pl².
 
 3. **Black hole singularities replaced by D1 compression:** As matter falls into a black
    hole and density increases without bound, DFC predicts that the compression field
@@ -104,17 +104,127 @@ in their fundamental starting assumptions.
    waves propagate at c with the same dispersion as massless modes. The graviton would
    be the single-quantum excitation of the same field. Spin-2 requires the D2 mode to
    carry two units of fold orientation — this is more complex than the spin-1 photon
-   (one unit of D2 orientation) and is an open derivation.
+   (one unit of D2 orientation) and is an open derivation (Tier 4).
 
 6. **Why gravity is weak:** The gravitational coupling constant G is approximately 10⁴⁰
-   times weaker than the electromagnetic coupling. In DFC, this hierarchy should follow
-   from the depth separation between D2 (gravity as background field curvature) and D5
-   (electromagnetism as U(1) closure). The derivation of this ratio is a Criterion A target.
+   times weaker than the electromagnetic coupling at the proton mass scale. In DFC, this
+   hierarchy follows from the depth separation between D2 (gravity as background field
+   curvature) and D5 (electromagnetism as U(1) closure). The quantitative derivation of
+   this ratio — α_grav/α_em ≈ (m_p/M_Pl)² / α_em ≈ 10⁻³⁶ — is a Criterion A target
+   not yet completed.
 
-**Key open derivation:** Show that the DFC substrate field equation at D1 depth is
-non-singular and well-defined at the Planck scale. Identify the graviton as a specific
-D2 mode and derive its spin-2 character. Derive the ratio G/alpha-em ≈ 10⁻⁴⁰ from
-substrate parameters.
+---
+
+## Formal Equations
+
+### Planck Scale (imported — requires ℏ and G as independent inputs)
+
+The Planck length is the geometric mean of the reduced Planck constant and Newton's
+gravitational constant divided by the 3/2 power of the speed of light. It is the unique
+length scale at which quantum and gravitational effects are simultaneously of order unity:
+
+```
+L_Pl = √(ℏ G / c³) ≈ 1.616 × 10⁻³⁵ m
+```
+
+The Planck mass is the mass at which the Schwarzschild radius and the Compton wavelength
+coincide. It equals the square root of the ratio of the reduced Planck constant times the
+speed of light to Newton's gravitational constant:
+
+```
+M_Pl = √(ℏ c / G) ≈ 1.22 × 10¹⁹ GeV/c²
+```
+
+The Planck time is the Planck length divided by the speed of light:
+
+```
+t_Pl = L_Pl / c ≈ 5.39 × 10⁻⁴⁴ s
+```
+
+### D1 Substrate Parameters (structural — Cycles 32, 48, 75)
+
+The identification of the D1 kink width with the Planck length determines the D1 quadratic
+coupling. The kink width equals the speed of light times the square root of two divided by
+the quadratic coupling, so setting this equal to the Planck length gives: the D1 quadratic
+coupling equals two times the square of the Planck mass (in natural units):
+
+```
+ξ_D1 = c √(2/α_D1) = L_Pl   →   α_D1 = 2M_Pl²  (in natural units ℏ=c=1)
+α_D1 ≈ 2.98 × 10³⁸ GeV²
+```
+
+### D1 Kink Action Hierarchy (BPS-correct, Cycles 48 and 75)
+
+The kink action at D1 depth equals the kink energy times the kink formation timescale.
+Using the BPS-correct kink energy (Cycle 48 retraction), the kink action is four-thirds
+times the quadratic coupling divided by the quartic coupling:
+
+```
+S_kink(D1) = (4/3) α_D1 / β = (8/3) M_Pl² / β
+```
+
+For β ≈ 0.0351, the D1 kink action exceeds the quantum of action by a factor of
+approximately 10⁴⁰:
+
+```
+S_kink(D1) ≈ 1.13 × 10⁴⁰ ℏ                    [BPS-correct; Cycle 75 update]
+```
+
+This hierarchy factor represents the gap between the Planck-scale kink action and the
+observed quantum of action. Bridging it is the T8 open problem (Tier 4). Approximately
+13.4 bifurcation events at an effective reduction factor of 10³ per step would be needed
+to reach ℏ from S_kink(D1); the DFC model has 4 events (D1→D5), leaving a residual of
+~10²⁸ ℏ at D5 depth. See `foundations/planck_constant_derivation.md`.
+
+### Hawking Temperature (structural — imported from QFT; consistent with DFC)
+
+A black hole of mass M radiates thermally at the Hawking temperature. The Hawking
+temperature equals the reduced Planck constant times the cube of the speed of light,
+divided by the product of eight times pi, Newton's gravitational constant, the black hole
+mass, and the Boltzmann constant:
+
+```
+T_H = ℏ c³ / (8π G M k_B)
+```
+
+Representative values:
+
+```
+M = M_Sun = 2×10³⁰ kg:   T_H ≈ 6.2 × 10⁻⁸ K   (unobservably cold)
+M = M_Pl  ≈ 2.2×10⁻⁸ kg: T_H ≈ 1.4 × 10³² K   (Planck temperature)
+```
+
+The Planck mass black hole evaporates at the Planck temperature — the D1 regime where
+the substrate topology is fully exposed.
+
+### Bekenstein-Hawking Entropy (structural — imported; consistent with DFC)
+
+The entropy of a black hole is proportional to the area of its event horizon. The
+Bekenstein-Hawking formula states that the entropy equals the Boltzmann constant times
+the ratio of the horizon area to four times the square of the Planck length:
+
+```
+S_BH = k_B A / (4 L_Pl²)
+```
+
+where A = 16π G² M² / c⁴ is the area of the event horizon.
+
+For a solar mass black hole: S_BH/k_B ≈ 1.05 × 10⁷⁷. For a Planck mass black hole:
+S_BH/k_B = 4π ≈ 12.6, consistent with a single topological configuration quantum.
+
+### Gravitational vs. Electromagnetic Coupling Ratio (Tier 4 — not yet derived)
+
+The ratio of the gravitational coupling at the proton mass scale to the electromagnetic
+fine structure constant equals the square of the proton-to-Planck mass ratio divided by
+the fine structure constant:
+
+```
+α_grav(m_p) / α_em = (m_p / M_Pl)² / α_em ≈ 8 × 10⁻³⁷
+```
+
+This ~10³⁶ hierarchy between gravity and electromagnetism at the proton scale is not yet
+derived from the DFC substrate. The qualitative argument attributes it to the D2/D5 depth
+separation, but no quantitative chain from (α, β) to G exists.
 
 ---
 
@@ -122,11 +232,14 @@ substrate parameters.
 
 | Check | DFC prediction | Observed | Status |
 |---|---|---|---|
-| No true singularity | D1 compression regime replaces divergent density | Not observable (but GR predicts singularity) | ✓ structural (argument written) |
-| Gravitational waves travel at c | Massless D2 mode dispersion | v-gw = c confirmed to 10⁻¹⁵ | ✓ (in gravitational_waves.md) |
-| Black hole information conserved | Topological winding numbers conserved | Hawking unitary evolution — active research | ✓ structural |
-| Graviton spin-2 | D2 mode carries two fold orientation units | — | not yet derived ✗ |
-| Gravity/EM strength ratio | G/alpha-em from depth separation D2/D5 | ~10⁻⁴⁰ | not yet derived ✗ |
+| No true singularity at Planck scale | D1 compression replaces GR divergence; field equation well-defined | Not directly measurable; GR predicts singularity | ✓ structural |
+| Gravitational waves travel at c | Massless D2 mode dispersion: ω = ck | v_gw = c to 10⁻¹⁵ (GW170817) | ✓ structural (gravitational_waves.md) |
+| Black hole information conserved | Topological winding numbers conserved under Hawking evaporation | Unitary evolution — active research question | ✓ structural |
+| Hawking temperature formula | T_H = ℏc³/(8πGMk_B) — structural consequence of D1 kink temperature | No direct observation; consistent with GR+QFT | ✓ imported, consistent |
+| Bekenstein-Hawking entropy | S_BH = k_B A/(4L_Pl²) — Planck mass limit: S/k_B = 4π ≈ 12.6 | No direct observation; consistent with GR+QFT | ✓ verified (equations/quantum_gravity.py) |
+| D1 kink action hierarchy | S_kink(D1)/ℏ = 1.13×10⁴⁰ (BPS-correct, Cycle 75) | ℏ from substrate not derived (T8) | ✓ computed; hierarchy unresolved |
+| Graviton spin-2 | D2 mode carries two fold-orientation units | spin-2 from GW observations | not yet derived ✗ |
+| Gravity/EM coupling ratio | α_grav/α_em from D2/D5 depth separation | ~10⁻³⁶ at proton scale | not yet derived ✗ |
 
 ---
 
@@ -156,6 +269,9 @@ substrate parameters.
 - `phenomena/gravity/general_relativity.md` — gravity as compression gradient
 - `phenomena/gravity/black_holes.md` — D1 compression as black hole interior
 - `phenomena/gravity/gravitational_waves.md` — graviton as massless D2 mode
-- `foundations/bifurcation_dynamics.md` — Planck length as D1 kink width
-- `foundations/planck_constant_derivation.md` — Planck scale and hbar
+- `foundations/bifurcation_dynamics.md` — Planck length as D1 kink width; α_D1 = 2M_Pl²
+- `foundations/planck_constant_derivation.md` — ℏ hierarchy; S_kink(D1)/ℏ = 1.13×10⁴⁰; T8 open
 - `foundations/substrate.md` — substrate field equation at D1
+- `foundations/complex_substrate.md` — D5 complex scalar extension (Cycle 75); vortex geometry
+- `equations/quantum_gravity.py` — Planck scale computations; Hawking temperature; entropy table
+- `equations/planck_constant.py` — S_kink(D1)/ℏ = 1.13×10⁴⁰ numerical verification

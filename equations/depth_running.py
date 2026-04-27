@@ -417,7 +417,48 @@ if __name__ == "__main__":
   This is the depth-running derivation problem.
 """)
 
+    # ── α_s status: the equal-coupling M_c(D7) estimate vs DFC prediction ──────
+    print("\n" + "─" * 68)
+    print("α_s STATUS: equal-coupling M_c(D7) estimate vs observed α_s(M_Z)")
     print("─" * 68)
+    # DFC β-derived common coupling
+    BETA_DFC = 0.0351
+    g_common_sq = 8 * math.pi * BETA_DFC / 3.0
+    alpha_common = g_common_sq / (4 * math.pi)   # ≈ 0.02340
+
+    # Running formula: 1/α_s(M_Z) = 1/α_s(M_c) − (b₃/2π)×ln(M_c/M_Z)
+    b3 = 7.0
+    MC_D7_ESTIMATE = M_c_D7_alphas_constraint  # ≈ 8×10¹⁴ GeV (equal-coupling SM crossing)
+    inv_alpha_mz = 1.0/alpha_common - (b3/(2*math.pi))*math.log(MC_D7_ESTIMATE/M_Z)
+    alpha_s_current = 1.0/inv_alpha_mz if inv_alpha_mz > 0 else None
+
+    # Target M_c(D7) for α_s = 0.1182
+    alpha_s_obs = 0.1182
+    inv_diff = 1.0/alpha_common - 1.0/alpha_s_obs
+    ln_ratio = inv_diff / (b3/(2*math.pi))
+    mc_target = M_Z * math.exp(ln_ratio)
+
+    print(f"\n  β = {BETA_DFC} → g_common² = 8πβ/3 → α_common = {alpha_common:.5f}")
+    print(f"  M_c(D7) from SM equal-coupling crossing:  {MC_D7_ESTIMATE:.2e} GeV")
+    if alpha_s_current:
+        err = 100*(alpha_s_current/alpha_s_obs - 1)
+        print(f"  → α_s(M_Z) from this M_c(D7):  {alpha_s_current:.4f}  (error: {err:+.1f}%)")
+        print(f"  ✗ 11% below observed 0.1182  — M_c(D7) estimate is too low")
+    print(f"\n  Target M_c(D7) for α_s(M_Z) = 0.1182:  {mc_target:.3e} GeV")
+    print(f"  Factor: {mc_target/MC_D7_ESTIMATE:.2f}× larger than current estimate")
+    print(f"  γ_color required: produces M_c(D7) = {mc_target:.3e} GeV from M_c(D6)={M_c_D5_TARGET:.2e} GeV")
+    if M_c_D5_TARGET > 0:
+        alpha_D6_ref = mc_to_alpha(M_c_D5_TARGET)
+        alpha_D7_target = mc_to_alpha(mc_target)
+        if alpha_D7_target > alpha_D6_ref:
+            print(f"  NOTE: α_D7_target ({alpha_D7_target:.2e}) > α_D6 ({alpha_D6_ref:.2e})")
+            print(f"  This means D7 formed at HIGHER compression than D5/D6")
+            print(f"  → D-depth label ordering and energy ordering differ at gauge depths")
+    print(f"\n  See equations/alpha_s_target.py for full target analysis.")
+
+    print("\n" + "─" * 68)
     print("CONCLUSION: Two-scale model (γ_space for spacetime, γ_weak ≈ 0 for")
     print("D5/D6 co-cryst) is self-consistent. γ_color is the remaining free")
     print("parameter. Deriving γ_space from (α, β, c) closes the derivation.")
+    print("CRITICAL GAP: M_c(D7) target = 2.094×10¹⁵ GeV (not 8×10¹⁴ from SM")
+    print("  crossing). The 11% α_s error traces to this M_c(D7) underestimate.")

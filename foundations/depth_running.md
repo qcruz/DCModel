@@ -150,10 +150,16 @@ Setting α_s(M_c(D7)) = α_U ≈ 0.024:
 → M_c(D7) ≈ 7.9 × 10^14 GeV  (log10 ≈ 14.9)
 ```
 
-**Prediction: M_c(D7) ≈ 8 × 10^14 GeV from the equal-coupling condition on SU(3).**
+**Estimate: M_c(D7) ≈ 8 × 10^14 GeV from the equal-coupling condition on SU(3).**
 
 This is numerically close to — but distinct from — the GUT scale (~3 × 10^15 GeV for
 non-SUSY SU(5)). It's above M_c(D5/D6) by a factor of ~80.
+
+**However, this is an estimate, not a DFC prediction.** Using the β-derived common
+coupling α_common = 0.02340 (from g² = 8πβ/3) and running down from 8×10¹⁴ GeV
+gives α_s(M_Z) = 0.1049 — 11% below the observed 0.1182. The correct M_c(D7)
+for matching α_s(M_Z) is 2.094×10¹⁵ GeV (a factor of 2.62 larger). See
+`foundations/alpha_s_derivation.md` and `equations/alpha_s_target.py`.
 
 ---
 
@@ -269,7 +275,8 @@ Whether this produces γ_space ≈ 0.999 is a computation that remains open.
 | Uniform depth-running is inconsistent with D5/D6 co-crystallization | Established ✓ |
 | Two-scale model: γ_space >> γ_weak ≈ 0 satisfies all D1–D6 constraints | Established ✓ |
 | M_c(D5) = M_c(D6) ≈ 10^13 GeV from two-scale model | Satisfied by construction ✓ |
-| M_c(D7) ≈ 8 × 10^14 GeV from equal-coupling initial condition on SU(3) | Predicted (conditional) |
+| M_c(D7) ≈ 8 × 10^14 GeV from equal-coupling SM crossing (Approach B) | Estimate only — gives α_s(M_Z)=0.1049, 11% low ✗ |
+| M_c(D7) target = 2.094×10¹⁵ GeV for correct α_s(M_Z)=0.1182 | OPEN — requires α_D7 from substrate |
 | Depth-ordering ≠ energy-ordering for gauge closures | Structural finding — open |
 | Deriving γ_space from (α, β, c) | OPEN — the key remaining derivation |
 | Co-crystallization mechanism (why γ_D5→D6 ≈ 0) | Physical argument given; formal derivation OPEN |
@@ -280,6 +287,8 @@ Whether this produces γ_space ≈ 0.999 is a computation that remains open.
 
 - `foundations/d_depth_lagrangians.md` — M_c(D) = √(α_D/2) relationship
 - `foundations/embedding_geometry.md` — Route 3B; M_c(D5) = 10^13 GeV from SM running
+- `foundations/alpha_s_derivation.md` — M_c(D7) gap formally mapped; target 2.094×10¹⁵ GeV
 - `equations/depth_running.py` — all numerical models and constraint tables
 - `equations/weinberg_angle_rg.py` — confirms M_c(12) = 1.02 × 10^13 GeV
+- `equations/alpha_s_target.py` — target M_c(D7) computation; RG running table
 - `phenomena/cosmology/big_bang.md` — pre-D3 substrate connectivity (coherence length L)

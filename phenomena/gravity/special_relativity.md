@@ -245,6 +245,24 @@ has no rest frame; it is Lorentz-invariant by construction.
 
 ---
 
+## Consistency Checks
+
+| Check | DFC prediction | Observed | Status |
+|---|---|---|---|
+| c invariant under Lorentz boost | ω'/k' = c after boost (exact algebra) | Michelson-Morley null result; GPS; all SR experiments | ✓ structural — verified numerically in `special_relativity.py` |
+| E = mc² at rest (p = 0) | KG dispersion: E² = (pc)² + (mc²)², p=0 → E = mc² | Nuclear binding energies; pair production threshold | ✓ structural |
+| E² = (pc)² + (mc²)² | KG plane-wave dispersion | Electron/proton energies at all accelerators | ✓ structural — residual error < 10⁻¹⁵ |
+| Time dilation Δτ = Δt/γ | Moving kink energy E = γmc² → ω_lab = γω_C | Muon lifetime × γ = 34.8 μs reaches surface | ✓ verified: muon at v=0.998c travels 10.4 km |
+| Length contraction L' = L/γ | Boosted kink profile: tanh(γ(x−vt)/λ) | Heavy-ion collision geometry; relativistic beams | ✓ structural |
+| No preferred frame | □φ = V'(φ) has no frame-dependent terms | Michelson-Morley; Kennedy-Thorndike experiments | ✓ structural |
+| NR limit KE → ½mv² | (γ−1)mc² → ½mv² as v/c → 0 | Verified all v/c < 0.05 | ✓ structural |
+| Derive Lorentz transformation from DFC | Must derive group structure from field covariance | — | ✗ OPEN (verified invariant under known transform, not derived) |
+| GR: spacetime curvature from compression gradient | Weak-gravity limit gives SR; full GR blocked | — | ✗ OPEN (Bottleneck: derive G_Newton from substrate) |
+
+See `equations/special_relativity.py` for all numerical verifications.
+
+---
+
 ## Connections to Other Phenomena
 
 - **Light** — invariant c as massless KG mode; polarization unchanged under boosts;
@@ -256,6 +274,7 @@ has no rest frame; it is Lorentz-invariant by construction.
 - **Time dilation** — specific observational consequences; `phenomena/gravity/time_dilation.md`
 - **Mass generation** — rest mass m_eff = ℏ√(2α)/c² from potential curvature; `foundations/substrate.md`
 - **Quantum emergence** — KG derivation chain; `equations/quantum_emergence.py`
+- **Numerical verification** — `equations/special_relativity.py` — γ table, E-p relation, time dilation, muon case, c invariance
 
 ---
 

@@ -263,28 +263,35 @@ a different substrate property.
 
 **Standard claim:** N/A
 
-**DFC alignment:** DFC Internal Tension
+**DFC alignment:** Structurally Resolved (Cycle 79) — pending D-label corrections in 3 docs
 
 **Notes:**
-Two separate DFC derivations require incompatible closure scales:
+The apparent tension was a labeling confusion, not a genuine inconsistency. The two scales
+refer to physically distinct depth events, both of which can be correct simultaneously:
 
-- **Weinberg angle (Route 3B):** Sin²θ_W = 0.231 at M_Z requires the equal-coupling
-  initial condition at M_c(12) ≈ 9.44 × 10¹² GeV (from SM running; see
-  `foundations/coupling_derivation.md` and `equations/weinberg_angle_rg.py`)
+- **M_c(D1) = M_Planck ≈ 10¹⁸ GeV:** The D1 maximum-compression boundary. The substrate
+  at D1 depth sets the UV boundary condition λ₀ ≈ 0.013 for the Higgs quartic coupling
+  (consistent with SM two-loop running from the electroweak scale upward; Buttazzo et al.
+  2013). This is what `foundations/higgs_geometry.md` uses when it writes "M_c ≈ 10¹⁸ GeV."
 
-- **Higgs mass derivation:** m_H ≈ 124.4 GeV requires the S³ squashing modulus to have
-  a mass set by the electroweak scale, which in turn requires the D6 closure to occur at
-  the electroweak scale (∼246 GeV). But the geometric parameters in the calculation
-  (`foundations/higgs_mass_derivation.md`) used σ_geom ≈ 0.8 GeV from a closure scale
-  near the Planck mass — an internal inconsistency flagged in the Consistency Checks table.
+- **M_c(D5/D6) ≈ 10¹³ GeV:** The D5/D6 co-crystallization scale where the electroweak
+  gauge closures freeze. The equal-coupling initial condition g₁ = g₂ = g_common applies
+  here. This is what Route 3B uses when it writes "M_c ≈ 10¹³ GeV." Verified numerically:
+  GUT-normalized α₁_GUT = α₂ crossing at 1.03×10¹³ GeV (one-loop; Route 3B reference
+  9.44×10¹² GeV, 9% discrepancy from one-loop approximation).
 
-The question is: what is the closure scale for D6? If it is ∼10¹³ GeV (Weinberg),
-the Higgs mass derivation parameters need revision. If it is near-electroweak (246 GeV),
-the Weinberg angle running is not what the Route 3B calculation assumes.
+The two scales use the same substrate β through different aspects of the substrate dynamics:
+D1 sets initial conditions for the Higgs sector; D5/D6 sets initial conditions for the gauge
+sector. This is structurally analogous to multiple matching scales in ordinary RG physics.
 
-**Required:** A single consistent D6 closure scale satisfying both constraints simultaneously.
-This may require revising the Higgs mass derivation (currently the weaker of the two
-derivations) to match the Weinberg angle closure scale.
+**Remaining open after resolution (separate problems, not T9):**
+1. λ normalization: λ_DFC = β/4 ≈ 0.0088 vs λ_SM(M_Pl) ≈ 0.013 (factor ~1.5 — field
+   normalization mismatch between squashing parameter ε and canonical Higgs field h)
+2. μ² from D6/D7 overlap integral (required for v = 246 GeV derivation)
+3. D-label consistency: replace ambiguous "M_c" with "M_c(D1)" and "M_c(D5/D6)" in
+   `higgs_geometry.md`, `hierarchy_problem.md`, `embedding_geometry.md`
+
+**See:** `foundations/two_scale_resolution.md`, `equations/two_scale_check.py` (Cycle 79)
 
 ---
 
@@ -330,7 +337,7 @@ potential shape. It is an open quantitative problem, not a conceptual conflict.
 | T6: Dark energy (w ≈ −1) | Open Assessment | Low | Quantitative D1 pressure → w(z) prediction |
 | T7: Hierarchy problem | DFC Supersedes | N/A — problem dissolved | No action; assess if SUSY is discovered |
 | T8: ℏ hierarchy (10²⁷ gap) | DFC Internal Tension | Very high | Additional bifurcation structure or new mechanism |
-| T9: Two closure scales | DFC Internal Tension | High | Consistent D6 scale satisfying both constraints |
+| T9: Two closure scales | Structurally Resolved (Cycle 79) | Low (residual) | D-label corrections; λ normalization (×1.5); μ² derivation |
 | T10: Proton mass / Lambda_QCD | Open Assessment | Medium | Three-kink bound state energy from D7 geometry |
 
 ---

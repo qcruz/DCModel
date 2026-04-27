@@ -106,13 +106,12 @@ than a field with its own kinetic term in the usual sense. Geometric moduli are 
 symmetry at tree level.
 
 The physical Higgs mass is then generated **radiatively** — by top quark loops during RG
-evolution from the closure scale M_c ≈ 10¹⁸ GeV down to the electroweak scale. The
-derivation separates two regimes:
+evolution from the D1 closure scale M_c(D1) = M_Pl ≈ 10¹⁸ GeV down to the electroweak
+scale. The derivation separates two regimes:
 
-- **Above M_c:** geometric description sets the boundary condition λ₀ ≈ 0.013
-  (suppressed by gauge-Higgs unification structure — the same SU(3) pressure that
-  triggers EWSB nearly cancels the S³ curvature resistance at quartic order)
-- **Below M_c:** SM RGE evolution runs λ from 0.013 up to λ(v) ≈ 0.129
+- **Above M_c(D1):** D1 compression geometry sets the boundary condition λ₀ ≈ 0.013
+  (consistent with SM two-loop running from EW scale upward; Buttazzo et al. 2013)
+- **Below M_c(D1):** SM RGE evolution runs λ from 0.013 up to λ(v) ≈ 0.129
 
 **Result:**
 ```
@@ -184,20 +183,21 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 | Weinberg angle sin²θ_W | 0.231 (Route 3B) | 0.231 | ✓ |
 | Mexican hat potential shape | V = −μ²ε² + λε⁴ derived from geometry | Observed SM form | ✓ (structural) |
 | λ₀ ≈ 0 at M_c | Protected by geometric modulus symmetry | λ(M_c) near 0 ✓ | Structural (not independently tested) |
-| m_H from M_c = 10¹⁸ GeV | 125.1 GeV | 125.25 GeV | ✓ |
-| Consistency with sin²θ_W M_c = 10¹³ GeV | Two different closure scales | TENSION — OPEN ✗ |
+| m_H from M_c(D1) = M_Pl ≈ 10¹⁸ GeV | 125.1 GeV | 125.25 GeV | ✓ |
+| M_c(D1) vs M_c(D5/D6): two scales | D1 sets Higgs UV BC; D5/D6 sets gauge IC | RESOLVED Cycle 79 — see `two_scale_resolution.md` ✓ |
 
 ---
 
 ## Open Questions
 
-1. **Two closure scale tension.** The Higgs mass derivation uses M_c(Higgs) ≈ 10¹⁸ GeV
-   (where the tree-level quartic λ₀ ≈ 0.013). The Weinberg angle Route 3B uses
-   M_c(D5/D6) ≈ 10¹³ GeV. Both cannot be the same DFC "closure scale" without either
-   (a) two distinct closure processes at different depths, or (b) a derivation error.
-   This is Open Problem 2 in `equations/weinberg_angle_rg.py`. Resolution: possibly
-   M_c(Higgs) is the scale at which the geometric modulus becomes dynamical (a different
-   event than D5/D6 co-crystallization).
+1. **Two closure scale tension — RESOLVED (Cycle 79).** The two scales refer to different
+   depth events on the same substrate: M_c(D1) = M_Pl ≈ 10¹⁸ GeV is the D1 maximum-compression
+   boundary that sets the Higgs sector UV boundary condition λ₀ ≈ 0.013. M_c(D5/D6) ≈ 10¹³ GeV
+   is the D5/D6 co-crystallization scale that sets the equal-coupling gauge initial condition.
+   Both use the same substrate β. GUT-normalized α₁ = α₂ crossing verified numerically at
+   1.03×10¹³ GeV (Cycle 79). Residual open: λ normalization factor ~1.5 between λ_DFC = β/4 ≈ 0.0088
+   and λ_SM(M_Pl) ≈ 0.013; and μ² from D6/D7 overlap (see Open Question 2).
+   See `foundations/two_scale_resolution.md`, `equations/two_scale_check.py`.
 
 2. **Derive μ and λ from substrate parameters.** The geometric squashing pressure μ² and
    the S³ curvature resistance λ are currently structural arguments, not numbers computed
@@ -224,4 +224,6 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 - `foundations/embedding_geometry.md` — sin²θ_W = 3/8 at closure scale (Route 3B)
 - `foundations/depth_assignment.md` — why SU(2) at D6 (Route B Hopf fibration candidate)
 - `foundations/bifurcation_dynamics.md` — NOTE: γ_D = (16/3)√β RETRACTED (Cycle 48); E_kink/E_total(λ) = 8/3 proved; M_c(D5) depth-running still valid
-- `equations/weinberg_angle_rg.py` — self-consistent M_c(12) ≈ 10¹³ GeV; M_c tension noted
+- `equations/weinberg_angle_rg.py` — self-consistent M_c(D5/D6) ≈ 10¹³ GeV; M_c(D1) vs M_c(D5/D6) distinction
+- `foundations/two_scale_resolution.md` — T9 resolution: M_c(D1) ≠ M_c(D5/D6) (Cycle 79)
+- `equations/two_scale_check.py` — GUT-normalized crossing verification (Cycle 79)

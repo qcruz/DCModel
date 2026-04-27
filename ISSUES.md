@@ -4,19 +4,23 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-18 (Cycles 47–75)
+**Last updated:** 2026-04-26 (Cycles 47–79)
 
 ---
 
 ## Critical (Block core claims)
 
-### T9 — Two closure-scale inconsistency
-- **Weinberg angle / Route 3B** uses M_c(D5/D6) ≈ 10¹³ GeV (from SM α₁=α₂ crossing)
-- **Higgs mass derivation** uses M_c(Higgs) ≈ 10¹⁸ GeV (where tree-level λ₀ ≈ 0.013)
-- Both cannot be "the DFC closure scale" without two distinct closure processes
-- Quantitative impact: fine-tuning Δ_FT changes by 10¹⁰ depending on which scale is used
-- Files: `foundations/higgs_geometry.md` (Open Q1), `equations/weinberg_angle_rg.py` (Open Problem 2), `foundations/hierarchy_problem.md`
-- Path: either (a) identify two distinct closure events at D6 vs. D6-squashing, or (b) find the derivation error
+### T9 — Two closure-scale inconsistency (STRUCTURALLY RESOLVED — Cycle 79)
+- **Status:** NOT a genuine inconsistency. The two scales refer to different depth events:
+  - M_c(D1) = M_Pl ≈ 10¹⁸ GeV: D1 compression boundary; sets Higgs quartic UV boundary λ₀ ≈ 0.013
+  - M_c(D5/D6) ≈ 10¹³ GeV: D5/D6 co-crystallization; sets equal-coupling IC for Route 3B
+  - Both verified numerically: GUT-normalized crossing α₁_GUT = α₂ at 1.03×10¹³ GeV (one-loop), consistent with Route 3B reference 9.44×10¹² GeV
+- **Formal resolution document:** `foundations/two_scale_resolution.md` (Cycle 79); `equations/two_scale_check.py` (Cycle 79)
+- **Remaining open (not T9):**
+  - λ normalization mismatch: λ_DFC = β/4 ≈ 0.0088 vs λ_SM(M_Pl) ≈ 0.013 (factor ~1.5 = field normalization problem)
+  - μ² from D6/D7 overlap integral (v = 246 GeV still underived)
+  - D-label correction still needed in `higgs_geometry.md`, `hierarchy_problem.md`, `embedding_geometry.md`
+- MRRS for T9: **35% → ~20%** (residual: λ normalization + μ² derivation)
 
 ### T8 — ℏ hierarchy (10²⁸ gap)
 - S_kink(D1) = 1.13×10⁴⁰ ℏ (Cycle 75 update: BPS-correct E_kink; prior value 4.24×10³⁹ used retracted formula); model has ~4 bifurcations → reduces to ~1.13×10²⁸ ℏ residual
@@ -77,9 +81,11 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Files: `foundations/tension_analysis.md`, `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty
-- DFC-derived α_s(M_Z) = 0.105 (11% off); error traces to M_c(D7) ≈ 8×10¹⁴ GeV from equal-coupling extrapolation, not from substrate
+- DFC-derived α_s(M_Z) = 0.1049 (11% off); error traces to M_c(D7) ≈ 8×10¹⁴ GeV from equal-coupling extrapolation, not from substrate
+- **Cycle 77 (alpha_s_target.py):** Target M_c(D7) = 2.094×10¹⁵ GeV quantified exactly (factor 2.62× above current estimate). Required α_D7 = 8.77×10³⁰ GeV². If D5→D7 is 2 depth steps, depth-running coefficient γ ≈ 2.66 per step is required. One-loop running from target M_c(D7) → α_s(M_Z) to machine precision; breaks down at hadronic scales (73% error at m_b — known one-loop limitation).
 - D5/D6 co-crystallization explains why M_c(D5) ≈ M_c(D6); D7 is a separate bifurcation event with unknown scale
-- Files: `equations/coupling_derivation.py`, `foundations/depth_running.md`
+- Files: `equations/coupling_derivation.py`, `foundations/depth_running.md`,
+  `foundations/alpha_s_derivation.md` (Cycle 77), `equations/alpha_s_target.py` (Cycle 77)
 
 ### T10 — Near-maximal θ₂₃ argument self-contradicts (Cycle 65)
 - The structural DFC argument for θ₂₃ ≈ 45° is "near-degeneracy of 2nd/3rd neutrino winding modes"
@@ -111,7 +117,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | Target | Why Blocked | Files | Required Extension |
 |---|---|---|---|
 | r_U1/λ = 3/(4β) from substrate | Real φ⁴ has no localizable U(1) phase; Routes A and B both blocked | `phase_stiffness_derivation.md` | Complex scalar or gauge field in substrate |
-| M_c(D7) from substrate | γ_color (D6→D7) depth-running not computed; E_total normalization open after Cycle 48 retraction | `depth_running.py`, `bifurcation_dynamics.py` | Find E_total(L) with macroscopic coherence length L from substrate dynamics |
+| M_c(D7) from substrate | Target 2.094×10¹⁵ GeV quantified (Cycle 77); γ_color (D6→D7) = γ ≈ 2.66 required per step; E_total normalization open after Cycle 48 retraction | `depth_running.py`, `bifurcation_dynamics.py`, `alpha_s_target.py` | Compute D7 compression from SU(3) three-kink energy or derive γ_D7 from substrate depth-running |
 | β ≈ 0.035 from pre-substrate principle | No pre-substrate condition identified that selects β | `beta_substrate.py` [STUB] | New theoretical input (pre-bifurcation stability condition) |
 | Born rule for position | Spin case DERIVED (Cycle 38); Kramers escape rate Γ(x) ∝ \|φ(x)\|² not rigorously derived | `measurement.md`, `born_rule_derivation.md` | Escape rate calculation from V(φ) saddle topology |
 | ℏ from (α, β, c) | S_kink(D1)/ℏ = 4×10³⁹ — 13.2 bifurcations needed to reach ℏ scale; model has only 4 | `planck_constant_derivation.md` | Either additional sub-bifurcation structure or route via α_em derivation |
@@ -265,3 +271,4 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | sin²θ_W(M_Z) Route 3B derivation (open since model inception) | Cycle 22 | sin²θ_W = 3/8 at M_c → 0.231 at M_Z from equal-coupling + SM running; 0.01% error |
 | E=hν claimed "derived" from massless KG dispersion | Cycle 42 | Corrected: E=ℏω is a QFT postulate imported from outside DFC; labeled as such |
 | muon_tau.md: τ_μ = 2.197 μs "< 0.1% match" (false) | Cycle 51 | Corrected to DFC prediction 2.180 μs (−0.80%); actual chain derivation added |
+| T9: Two closure scales (10¹³ vs 10¹⁸ GeV) inconsistency | Cycle 79 | Labeling confusion: M_c(D1) = M_Pl sets Higgs λ₀; M_c(D5/D6) ≈ 10¹³ GeV sets gauge IC. GUT-normalized α₁ = α₂ crossing verified numerically. See `foundations/two_scale_resolution.md`, `equations/two_scale_check.py` |

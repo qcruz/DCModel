@@ -1,7 +1,7 @@
 # Current State of the DFC Model
 
 *Living document — updated periodically as the model develops.*
-*Last reviewed: 2026-04-15 (Cycles 47–54)*
+*Last reviewed: 2026-04-26 (Cycles 47–79)*
 
 ---
 
@@ -211,8 +211,9 @@ The depth-running M_c(D5) derivation remains self-consistent (uses γ_space as f
 **`hierarchy_problem.py`** — new module created (Cycle 49). Fine-tuning measure
 Δ_FT = (3y_t²/8π²)×Λ²/m_H² computed for SM, Route 3B, and higgs_mass_derivation
 closure scales. SM: 3.56×10³². DFC Route 3B: 2.49×10²⁰ (~12 orders improvement).
-DFC higgs_md: 2.44×10³⁰ (~same as SM — T9 tension is critical). Desert prediction
-and CW mass estimate functions included.
+DFC M_c(D1): 2.44×10³⁰ (shown for completeness; not the correct D6 cutoff — T9 RESOLVED
+Cycle 79). DFC M_c(D5/D6) = correct D6 cutoff: 2.49×10²⁰ (~11 orders improvement). Desert
+prediction and CW mass estimate functions included.
 
 **`coupling_derivation.py`** — audited (Cycle 49). β provenance description corrected:
 removed claim "inferred from γ_D" (retracted). GAMMA_D constant kept for reference but
@@ -230,7 +231,7 @@ labeled RETRACTED. Core formula g²=8πβ/3 and all coupling predictions unaffec
 **Tier 2 — Structural (make the model a derivation, not a correspondence):**
 - Depth-assignment mechanism — why U(1) at D5, SU(2) at D6, SU(3) at D7
 - G_Newton from (α, β, c) — the Planck length identification gives a derivable relation
-- Resolve Weinberg/Higgs scale tension — M_c(12) ≈ 10^13 GeV (Route 3B) vs M_c ≈ 10^18 GeV (Higgs). Must identify whether these are different events or a derivation error.
+- ~~Resolve Weinberg/Higgs scale tension~~ **RESOLVED Cycle 79** — M_c(D5/D6) ≈ 10¹³ GeV sets gauge IC; M_c(D1) = M_Pl ≈ 10¹⁸ GeV sets Higgs λ₀ UV BC. Different depth events, not a contradiction. See `foundations/two_scale_resolution.md`.
 - Derive M_c(12) from substrate parameters (α, β, c) — currently read from SM running
 
 **Tier 3 — Completeness:**

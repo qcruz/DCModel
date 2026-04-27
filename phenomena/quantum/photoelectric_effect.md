@@ -132,7 +132,8 @@ nucleation barrier ΔV = α²/(4β), but at the condensed-matter scale.
 1. **ℏ from substrate:** The primary blockage. The ratio of the photon energy to the
    photon frequency is Planck's constant. In DFC, this requires identifying the substrate's
    natural action unit with ℏ. See `foundations/planck_constant_derivation.md` — currently
-   13.2 bifurcation events separate the D1 kink action from ℏ, leaving a 10²⁷ residual.
+   ~13.4 bifurcation events separate the D1 kink action from ℏ (S_kink(D1)/ℏ = 1.13×10⁴⁰;
+   BPS-correct formula, Cycle 75), leaving a ~10²⁸ residual at D5 depth.
 
 2. **Work function from D7 substrate:** Model the metallic binding as a collective D7
    closure configuration and derive the depth W of the D6 electron kink below the free-field

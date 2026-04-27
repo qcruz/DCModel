@@ -1,15 +1,14 @@
 # Dimensional Folding Model — Repository
 
-A theoretical physics model proposing that all of physics — forces, particles, mass, spacetime
-itself — emerges from one self-compressing object: a continuous field that pulls inward on
-itself, approaches a near-1D state through compression and bifurcation, and whose
-self-closing bifurcation events produce the topological structures we observe as particles
-and forces.
+A theoretical physics model under development. The starting postulate is a single
+self-compressing scalar field with a double-well potential V(φ) = −α/2 φ² + β/4 φ⁴.
+The model proposes that the particle content and gauge structure of the Standard Model
+arise from the topology of bifurcation events in this field, without assuming pre-existing
+spatial dimensions, gauge groups, or particle species.
 
-Forces are not fragments of a broken gauge symmetry. They are interaction behaviors between
-different fold topologies of this one object — never three separate things at any energy,
-always the same substrate appearing topologically distinct because its closures formed at
-different compression thresholds.
+Current status: ~42.5% complete by internal estimate. Several Standard Model quantities
+are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
+known failures below.
 
 ---
 
@@ -34,22 +33,15 @@ Five results derived directly from `V(φ) = −α/2 φ² + β/4 φ⁴` and windi
 
 ---
 
-## Core Claim
+## Core Claims
 
-There is one thing. A continuous field that pulls inward on itself — this self-attraction
-is the fundamental driver. That inward pull drives the field toward a near-1D state through
-compression and bifurcation: when compression reaches a threshold, the field cannot compress
-further without opening a new degree of freedom, and that opening is a bifurcation.
+The model rests on three postulates:
 
-Bifurcations that close back on themselves — the field folding or wrapping back onto itself
-due to compression — form topological closures. Those closures are what we observe as
-particles, forces, and fields.
+1. One continuous self-compressing scalar field exists. No pre-existing space, gauge group, or particle content is assumed.
+2. The field's self-interaction potential has the double-well form V(φ) = −α/2 φ² + β/4 φ⁴, with free parameters α (quadratic coupling) and β (quartic coupling).
+3. When compression reaches a threshold, the field opens a new degree of freedom rather than compressing further. These bifurcation events produce all structure in the model.
 
-The three forces are not fragments of a broken unified force. They are always the same one
-object's fold interactions, appearing as distinct force behaviors because their closures
-formed at different compression thresholds with different topologies. The unity of this model
-is deeper than gauge unification: there is one object, and its interactions with itself
-at different fold depths are what we call electricity, the weak force, and color.
+The model proposes that the gauge groups U(1), SU(2), SU(3) arise from the topology of these bifurcation closures at different compression depths — a correspondence that has been worked out structurally through zero-mode counting (Cycles 59–74) but is not yet a complete first-principles derivation. Quantitative predictions for gauge couplings, Weinberg angle, W/Z masses, and Higgs mass match observation at the 0.01%–5% level, with derivation chains of varying completeness. Known failures include the τ lepton mass (8.4× off), neutrino hierarchy (4.3× off), and α_s (11% off). Planck's constant and Newton's constant are not yet derivable within the current framework.
 
 ---
 
@@ -192,7 +184,17 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~40%** (viability as a theory: ~52.5%; mathematical rigor: ~28%)
+**Current estimate: ~42.5%** (viability as a theory: ~55%; mathematical rigor: ~30%)
+
+**Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
+
+| Scope | MRRS | Key blocker |
+|---|---|---|
+| Core gauge/coupling sector | **28%** | g² rigor; α_s; β derivation |
+| Full SM reproduction | **58%** | τ mass mechanism; β derivation |
+| Complete theory (SM + gravity + QM) | **76%** | ℏ derivability; G_Newton |
+
+*Full per-failure analysis with paths and swing factors in .*
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
@@ -200,7 +202,7 @@ is that it *derives* rather than *reconstructs* the Standard Model. Three bottle
 
 1. **D-depth assignment mechanism** — Bottleneck 1 FULLY CLOSED (Cycle 73): PT parameter s=2 exact for φ⁴ kink (U₀ξ²=6, α cancels) → s=2 PT has exactly 2 bound states → zero mode unique by Sturm-Liouville → each threshold adds exactly 1 zero mode → n thresholds → SU(n). Combined with Cycles 59–72 chain: D5=U(1), D6=SU(2), D7=SU(3) derived from V(φ) = −α/2 φ² + β/4 φ⁴. Remaining open: D7 three-field numerical verification; threshold positions α₅, α₆, α₇.
 2. **First-principles coupling constants** — α_s, sin²θ_W, g_W (Route 3B gives sin²θ_W = 0.231; Cycle 51 extended the chain to M_W = 79.67 GeV, G_F = 1.168×10⁻⁵, τ_μ = 2.180 μs — all within 1%; Cycle 53 formally maps v = 246 GeV derivation: μ² from D6/D7 overlap, λ from Berger sphere quartic — Berger sphere R₄ identified as tractable)
-3. **S-matrix derivation** — Cycle 50 computed Thomson σ_T (−4.3%); Cycle 51 computed weak sector predictions (all <1%); the r_U1/λ = 3/(4β) identification is blocked for pure real φ⁴ — requires substrate extension (complex scalar or gauge structure)
+3. **S-matrix derivation** — Cycle 50 computed Thomson σ_T (−4.3%); Cycle 51 computed weak sector predictions (all <1%); Cycle 75 extended D5 to complex scalar Φ = φ₁+iφ₂ — vortex profile solved (r_v=1.1ξ), tachyonic L₂ mode confirms D5 defect is vortex not kink; gap = derive g² from D5-D6 coupling integral (∫j_x dx)²/normalizations. Cycle 76: quantum_gravity.md completed (Formal Equations, Planck scale, Hawking/Bekenstein-Hawking; quantum_gravity.py module verified). Cycle 77: α_s(M_Z) gap formally mapped — target M_c(D7)=2.094×10¹⁵ GeV; requires γ_D7≈2.66 per depth step (alpha_s_derivation.md + alpha_s_target.py new).
 
 The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the correct BPS E_kink
 formula gives E_kink/E_total(λ) = 8/3 exactly — a universal constant, β-independent, and

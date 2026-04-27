@@ -328,3 +328,9 @@ The thermal relic estimate is inapplicable without a specific production channel
   boundary; DM and neutrinos are both "light" closures in different depth regimes;
   `phenomena/particle_physics/particles/neutrinos.md`
 - **CMB** — dark matter acoustic oscillation signature; `phenomena/cosmology/cosmic_microwave_background.md`
+- **DM equation module** — closure scale vs. rest mass; `equations/dark_matter.py`
+  *(Note: the module gives M_c(D4) ~ 3.4×10¹⁴ GeV and M_c(D5) ~ 10¹³ GeV as closure
+  energy scales — not rest masses. The rest-mass estimate ~35 keV in this document comes
+  from a depth-to-mass exponential extrapolation; the ratio M_c/m_particle is ~10¹⁹ for
+  the electron and appears consistent with the DM estimate, but this connection is not yet
+  formally derived.)*

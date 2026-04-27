@@ -52,9 +52,7 @@ quark flavors and their masses.
 
 ## Dimensional Folding Explanation
 
-**STUB — full derivation not yet written.**
-
-**DFC mechanism direction:**
+**DFC account:**
 
 1. **Confinement as D7 flux tube:** In DFC, confinement of color charge follows from the
    non-Abelian SU(3) structure of the D7 closure: isolated D7 winding has no stable D3

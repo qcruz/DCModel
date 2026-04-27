@@ -252,7 +252,7 @@ def dfc_status():
     Honest assessment of what DFC derives vs. imports for the Casimir effect.
     """
     return {
-        'tier': 'Tier 2b (partially structural; magnitude BLOCKED)',
+        'tier': 'Tier 2a (P = -1.3001 mN/m² at 1 µm matches Lamoreaux <1%; ℏ imported from experiment — magnitude derivation from substrate is Tier 4 open)',
         'derived': [
             '1/d^4 distance scaling (dimensional analysis of massless D2 modes)',
             'Attractive sign (fewer modes inside than outside for standard geometry)',

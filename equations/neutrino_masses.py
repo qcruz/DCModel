@@ -27,9 +27,9 @@ Observable predictions:
   - Absolute mass scale constrained by f_ν, which is currently a fit parameter
   - Normal vs inverted hierarchy: determined by the sign of the SU(3) winding asymmetry
 
-Experimental inputs used:
-  - Δm²₂₁ = 7.53 × 10⁻⁵ eV²  (solar, KamLAND)
-  - |Δm²₃₁| = 2.453 × 10⁻³ eV²  (atmospheric, T2K, NOvA)
+Experimental inputs used (PDG 2024):
+  - Δm²₂₁ = 7.42 × 10⁻⁵ eV²  (solar, KamLAND)
+  - |Δm²₃₁| = 2.517 × 10⁻³ eV²  (atmospheric, T2K, NOvA)
   - Σmᵢ < 0.12 eV  (Planck 2018 cosmological bound)
   - Individual mass bounds: mᵢ < 0.45 eV (KATRIN 2022)
 

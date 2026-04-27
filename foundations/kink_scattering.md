@@ -228,11 +228,12 @@ With α = 2 M_c(D5)², β = 0.035, m_σ = 2.04 × 10^13 GeV:
 
 **The 1+1D kink model is a toy model for DFC closures.** Several features require caution:
 
-1. **Kink mass M_K vs. meson mass m_σ ratio:** In 1+1D, the kink mass
-   M_K = (4/3)√(2α³/β) >> m_σ = √(2α) by a factor of order M_c/√β ~ 10^14.
-   In 1+1D φ⁴ theory, the kink is a heavy extended object (domain wall), not a pointlike
-   particle. The DFC closures that correspond to particles are 3+1D objects — the 1+1D
-   kink is the simplest toy model for their topological character.
+1. **Kink mass M_K vs. meson mass m_σ ratio:** In 1+1D, the BPS-correct kink energy
+   E_kink = (8/3)M_c³/β (Cycle 48 retraction; see `equations/kink_model.py`), while
+   m_σ = 2M_c. The ratio E_kink/m_σ = (4/3)M_c²/β ~ 10^26 at M_c = 10^13 GeV.
+   In 1+1D φ⁴ theory, the kink is an extremely heavy extended object (domain wall),
+   not a pointlike particle. The DFC closures that correspond to particles are 3+1D
+   objects — the 1+1D kink is the simplest toy model for their topological character.
 
 2. **Shape mode physical correspondence:** The shape mode in 1+1D is an
    internal oscillation of the domain wall. In the DFC model, the physical correspondence
@@ -271,6 +272,6 @@ specific numbers for M_K and the scattering phase shift require the full 3+1D tr
 
 - `foundations/substrate.md` — DFC kink model; V(φ) postulates
 - `foundations/route1_skyrme.md` — 3+1D generalization (Skyrme soliton)
-- `foundations/bifurcation_dynamics.md` — β ≈ 0.035; γ = (16/3)√β
+- `foundations/bifurcation_dynamics.md` — β ≈ 0.035; γ_D = (16/3)√β RETRACTED (Cycle 48; E_kink/E_total(λ) = 8/3 exactly, β-independent)
 - `equations/kink_scattering.py` — all numerical results
 - `equations/kink_model.py` — static kink solution
