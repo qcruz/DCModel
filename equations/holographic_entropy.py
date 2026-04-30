@@ -10,7 +10,9 @@ What this module will compute:
 
 Physical argument:
   In DFC, entropy is the count of distinct folding configurations compatible
-  with a given macroscopic state (Postulate 5: S = k_B ln Omega(phi)).
+  with a given macroscopic state. This is a structural identification —
+  entropy counts the number of distinct substrate configurations, not a
+  separately postulated rule.
 
   For a black hole (extreme closure), the surface area A bounds the number of
   distinct kink configurations within the closure:
@@ -22,19 +24,23 @@ Physical argument:
   The factor of 1/4: currently missing from the DFC derivation.
   The standard QFT argument gives 1/4 from the thermal properties of the
   horizon. In DFC, the factor 1/4 would come from the kink phase space
-  structure (4 modes: kink, antikink, meson, antimeson?) or from the
-  compression budget partition at the horizon.
+  structure or from the compression budget partition at the horizon.
+
+NOTE: equations/quantum_gravity.py (Cycle 76) already computes S_BH numerically
+and verifies the formula is imported/structural. This module's contribution is
+to derive the 1/4 factor and the area-scaling from DFC substrate dynamics.
 
 Key questions:
   1. Does the DFC compression budget scale as A or V for a given region?
-  2. Does the DFC give the factor of 1/4 in S = A/(4 l_Pl^2)?
+  2. Does DFC give the factor of 1/4 in S = A/(4 l_Pl^2)?
   3. What is the DFC account of Hawking radiation (thermal emission as
-     the horizon evaporates kink excitations)?
+     the horizon evaporates kink excitations)? See hawking_radiation.md.
 
 Key references:
   - phenomena/gravity/black_holes.md
-  - foundations/substrate.md (budget conservation)
-  - equations/folding_gradient.py (proto-Einstein equations)
+  - foundations/substrate.md
+  - equations/quantum_gravity.py   (Cycle 76: S_BH computed numerically, labeled structural)
+  - equations/folding_gradient.py
 
 PRIORITY: Medium (connects to quantum gravity)
 """
