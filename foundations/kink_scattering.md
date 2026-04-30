@@ -199,11 +199,20 @@ R(k) = sin²(δ(k))
 
 Levinson's theorem in 1+1D states:
 ```
-δ(0) − δ(∞) = n_bound × π
+δ(0⁺) − δ(∞) = n_bound × π
 ```
 
-where n_bound counts the number of bound states. We have 2 bound states (zero mode +
-shape mode), consistent with δ → ∞ as k → 0 in the Born approximation.
+where n_bound counts the number of bound states of the **single-kink** fluctuation potential.
+The PT n=2 potential has 2 bound states (zero mode + shape mode), giving:
+
+```
+δ_exact(0⁺) = 2π,  δ_exact(∞) = 0   [from s_matrix.py — exact PT result, Cycle 89]
+```
+
+For the **kink-antikink Born approximation** (Yukawa potential), the Born phase shift
+δ_Born(k) ~ A/(k m_σ) diverges as k → 0. This Born divergence is consistent with the
+infinite scattering length for an attractive Yukawa potential (no additional bound states
+of the two-particle system accounted for here).
 
 ---
 
@@ -261,10 +270,13 @@ specific numbers for M_K and the scattering phase shift require the full 3+1D tr
 | Shape mode is stable (below decay threshold) | Established ✓ |
 | Kink-antikink long-range potential: V = −8(α/β) e^{−m_σ R} | Established ✓ |
 | Born-approximation phase shift δ(k) = 4m_σ/(βk) | **First S-matrix from DFC (Born approx.)** |
-| Levinson consistency (δ(0)→∞, δ(∞)→0) | Verified ✓ |
+| Levinson consistency δ(0⁺)=2π, δ(∞)=0 (n=2 bound states) | Verified exact ✓ (Cycle 89) |
+| Exact single-kink T-matrix: T(q) = (q+iM_c)(q+i2M_c)/[(q−iM_c)(q−i2M_c)] | **Derived exact ✓ (Cycle 89)** |
+| Reflectionless property \|T(q)\|² = 1 for all q | Proved ✓ (Cycle 89, machine precision) |
+| Born agrees with exact at q >> M_c (leading term 6M_c/q) | Verified ✓ (Cycle 89) |
 | 3+1D extension to physical particles | OPEN |
 | Shape mode physical correspondence (which splitting?) | OPEN |
-| Beyond Born approximation | OPEN |
+| Exact kink-antikink scattering (DHN two-soliton) | OPEN |
 
 ---
 
@@ -273,5 +285,7 @@ specific numbers for M_K and the scattering phase shift require the full 3+1D tr
 - `foundations/substrate.md` — DFC kink model; V(φ) postulates
 - `foundations/route1_skyrme.md` — 3+1D generalization (Skyrme soliton)
 - `foundations/bifurcation_dynamics.md` — β ≈ 0.035; γ_D = (16/3)√β RETRACTED (Cycle 48; E_kink/E_total(λ) = 8/3 exactly, β-independent)
-- `equations/kink_scattering.py` — all numerical results
+- `equations/kink_scattering.py` — shape mode and kink-antikink Born phase shift
 - `equations/kink_model.py` — static kink solution
+- `equations/s_matrix.py` — exact single-kink T-matrix (Cycle 89): T(q), phase shift,
+  Levinson verification, Wigner time delay, Born vs exact comparison

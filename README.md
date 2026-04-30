@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~44.5% complete by internal estimate. Several Standard Model quantities
+Current status: ~45% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -88,8 +88,7 @@ equations/                Runnable Python modules — input data, get prediction
   weinberg_angle_rg.py    sin²θ_W = 3/8 at closure scale → 0.231 via RG running (Route 3B)
   bifurcation_dynamics.py γ_D formula RETRACTED; E_kink/E_total(λ)=8/3 verified; depth-running M_c(D5) remains self-consistent
   kink_scattering.py      Pöschl-Teller spectrum; shape mode = 0.8660 m_σ; Born phase shift
-  [STUBS — targets for future development]
-  s_matrix.py             Full S-matrix beyond Born; exact kink-antikink; 3+1D Skyrme
+  s_matrix.py             Exact single-kink T(q) (Cycle 89): reflectionless n=2 PT, |T|²=1 to 4×10⁻¹⁶; Levinson δ(0⁺)=2π; open: DHN kink-antikink exact
   coupling_derivation.py  α_em, g_W, g_s from substrate (α, β, c) — Bottleneck 2
   planck_constant.py      ℏ from DFC substrate characteristic scales
   dark_matter.py          Stable intermediate kink modes as dark matter candidates
@@ -184,7 +183,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~44.5%** (viability as a theory: ~57%; mathematical rigor: ~32%)
+**Current estimate: ~45%** (viability as a theory: ~57.5%; mathematical rigor: ~32.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -202,7 +201,7 @@ is that it *derives* rather than *reconstructs* the Standard Model. Three bottle
 
 1. **D-depth assignment mechanism** — Bottleneck 1 FULLY CLOSED (Cycle 73): PT parameter s=2 exact for φ⁴ kink (U₀ξ²=6, α cancels) → s=2 PT has exactly 2 bound states → zero mode unique by Sturm-Liouville → each threshold adds exactly 1 zero mode → n thresholds → SU(n). Combined with Cycles 59–72 chain: D5=U(1), D6=SU(2), D7=SU(3) derived from V(φ) = −α/2 φ² + β/4 φ⁴. Remaining open: D7 three-field numerical verification; threshold positions α₅, α₆, α₇.
 2. **First-principles coupling constants** — Route 3B gives sin²θ_W = 0.231; Cycles 51–52 extended chain to M_W, G_F, τ_μ (all <1%). Cycle 85: g² = 2π×β×I₄ compact form; α-independence proved exact across 3 decades; derivation target reformulated as r_U1/λ = 1/(β×I₄) from V(φ). Cycle 86: v = 246 GeV gap quantified — SM quartic runs negative at M_c; DFC provides stabilizing BC λ=β/4; DFC BC + 2-loop Δλ → m_H=122.9 GeV (−1.9%); target μ=23 GeV for D6/D7 overlap integral (blocked on threshold positions). Cycle 87: β self-consistently determined — β = 3g_common²/(8π) = 0.03536 (+0.75%); Route F removes β as free parameter conditional on Bottleneck 2 proof. Cycle 88: required KK mode normalization 9/(64π) identified; r_U1=φ₀²/(β×f²) uniqueness proved algebraically; remaining calc = 2D coupling integral (Route B close).
-3. **S-matrix derivation** — Cycle 50: Thomson σ_T (−4.3%); Cycles 51–52: weak sector M_W/G_F/τ_μ (all <1%); Cycle 75: D5 extended to complex substrate — vortex confirmed; Cycle 85: Route B worldvolume normalization (64π/9)M_c verified; kink action route eliminated. Gap: derive r_U1/λ = 1/(β×I₄) from the field equation. α_s: target M_c(D7) = 2.094×10¹⁵ GeV (Cycle 77); requires γ_D7 ≈ 2.66 per depth step.
+3. **S-matrix derivation** — Cycle 50: Thomson σ_T (−4.3%); Cycles 51–52: weak sector M_W/G_F/τ_μ (all <1%); Cycle 89: exact single-kink T-matrix (reflectionless n=2 PT, Tier 1). Bottleneck 2 gap: derive r_U1/λ = 1/(β×I₄) from the field equation — required KK mode normalization = 9/(64π) identified (Cycle 88); remaining = 2D coupling integral. α_s: target M_c(D7) = 2.094×10¹⁵ GeV (Cycle 77); requires γ_D7 ≈ 2.66 per depth step.
 
 The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the correct BPS E_kink
 formula gives E_kink/E_total(λ) = 8/3 exactly — a universal constant, β-independent, and

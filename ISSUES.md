@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-29 (Cycles 47–85)
+**Last updated:** 2026-04-30 (Cycles 86–89)
 
 ---
 
@@ -61,16 +61,32 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     matching.
   - **Derivation target reformulated:** show r_U1/λ = 1/(β × I₄) from V(φ) field equation.
     Key: I₄ = 4/3 arises from the kink shape ∫sech⁴ du. Why does r_U1 equal (kink width)/I₄?
+- **Cycle 88 (worldvolume analysis — `equations/worldvolume_coupling.py`):**
+  - **VORTEX INTEGRALS ALL O(1) in ξ:** I_def, I_grad, I_ang all ≈ O(1) numerical factors;
+    vortex core r_v/ξ = 1.0994. None of these give r_U1 ≈ 21ξ. The U(1) radius cannot
+    come from vortex geometry.
+  - **UNIQUENESS ALGEBRAIC PROOF:** r_U1 = φ₀²/(β × f²) = 3λ/(4β) is the ONLY combination
+    of (α, β, λ) with length dimensions that is α-independent. Verified across 6 decades
+    (α ∈ [0.001, 100]): error < 10⁻¹⁰. Any successful derivation must produce this exact form.
+  - **REQUIRED KK MODE NORMALIZATION:** g² = (2π)²/(2πr_U1 × N_wv × M_c × mode_norm) with
+    N_wv = (64π/9)M_c → mode_norm = 9/(64π) ≈ 0.04474. Verified numerically: g² = 0.29322.
+  - **1D CANDIDATE INTEGRAL FAILS:** ∫sech⁴(u)×(trial)du tested at high resolution → 0.08965,
+    which is +0.14% above 2 × 9/(64π). Not an exact identity. The 1D reduction is insufficient;
+    the full 2D coupling integral in (x, ρ) geometry is required.
+  - **Next step:** Compute J_coupling = ∫∫ ψ₀(x)² × ∂_ρ θ_vortex(ρ) dx dρ in 2D, where
+    ψ₀(x) = sech²(x/λ) (D6 zero mode) and θ_vortex is the D5 vortex phase. Show this
+    equals 9/(64π) with the (64π/9)M_c worldvolume normalization.
 - **Remaining gap:** Derive r_U1/λ = 1/(β × I₄) from the field equation or from the
   D5-D6 coupling integral. Two routes:
   - Route A: KK reduction on field-space S¹ (radius φ₀) with kink-dressed connection
-  - Route B: domain-wall worldvolume Lagrangian — normalize bulk-worldvolume matching to
-    get norm = (64π/9)M_c, then read off r_U1
+  - Route B: domain-wall worldvolume Lagrangian — compute 2D coupling integral
+    J_2D = ∫∫ ψ₀(x)² ∂_ρ θ_vortex dxdρ; show norm = 9/(64π); derive r_U1 from this
   J_total = −2π/(5ξ) (Cycle 67c) is the D6 kink CHARGE in D5 U(1); it is NOT g directly.
-  Connection: g² ∝ |J_total|² / (photon norm × kink norm) — normalization factors missing.
+  Connection: g² ∝ |J_2D|² / (mode_norm) — 2D geometry is the remaining calculation.
 - Files: `foundations/complex_substrate.md` (Cycle 75), `equations/complex_substrate.py`,
-  `foundations/phase_stiffness_derivation.md` (updated Cycle 85), `foundations/coupling_derivation.md`,
-  `equations/bottleneck2_coupling_integral.py` (Cycle 85 — systematic analysis)
+  `foundations/phase_stiffness_derivation.md` (updated Cycles 85, 88), `foundations/coupling_derivation.md`,
+  `equations/bottleneck2_coupling_integral.py` (Cycle 85 — systematic analysis),
+  `equations/worldvolume_coupling.py` (Cycle 88 — vortex integrals, uniqueness proof, KK normalization)
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---
@@ -153,7 +169,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | `s_matrix.py` | Full S-matrix beyond Born; exact kink-antikink; 3+1D Skyrme | High — Bottleneck 3 |
 | `planck_constant.py` | ℏ from DFC substrate characteristic scales | High — Bottleneck 2 |
 | `fermion_spectrum_full.py` | Full lepton+quark mass spectrum (τ/top failures to fix) | High — Tier 2b failures |
-| `beta_substrate.py` | Derive β ≈ 0.035 from pre-substrate principle | High — only free substrate parameter |
+| `beta_substrate.py` | COMPLETED Cycle 87 — Route F: β = 3g²/(8π) = 0.03536 (+0.75%, Tier 3 self-consistency); Routes A–E all documented as failures with numerical verification | Resolved as Tier 3; Tier 2 requires Bottleneck 2 proof |
 | `dark_matter.py` | Stable intermediate kink modes as dark matter candidates | Medium |
 | `cosmological_constant.py` | Λ from residual compression budget | Medium |
 | `holographic_entropy.py` | Bekenstein-Hawking from closure capacity | Medium |
@@ -183,7 +199,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - ℏ from substrate — OPEN (T8)
 
 **`higgs_geometry.md`**
-- Open Q1: T9 two-closure-scale tension — CRITICAL
+- Open Q1: T9 two-closure-scale tension — RESOLVED Cycle 79 (see `foundations/two_scale_resolution.md`; M_c(D1) sets λ₀, M_c(D5/D6) sets gauge IC; not a genuine inconsistency)
 - Open Q2: Derive μ², λ from (α, β, c)
 - Open Q3: λ₀ ≈ 0 from modulus symmetry — needs formal proof
 - Open Q4: Higgs as metric modulus vs. kink (conceptual clarification needed)
@@ -242,7 +258,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 **`particle_physics/hierarchy_problem.md`**
 - Formal proof of geometric protection (Goldstone argument at all loop orders) (Open Q1)
-- Resolve T9 two-closure-scale tension (Open Q2) — critical
+- T9 two-closure-scale tension — RESOLVED Cycle 79 (Open Q2 closed; see `foundations/two_scale_resolution.md`)
 
 **`particle_physics/strong_cp_problem.md`**
 - Formal derivation of θ = 0 from S⁵ formation dynamics — currently structural argument

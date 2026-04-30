@@ -24,24 +24,28 @@ Physical argument:
 
   These are the defining properties of dark matter.
 
-Candidate mass scales:
+Candidate CLOSURE SCALES (M_c, not rest masses):
+  From the two-scale depth model: M_c(D4) ~ 3.37e14 GeV (Cycle 32/depth_running.py)
   If dark matter corresponds to D4.5 (halfway between D4 inertia and D5 gauge):
-    M_c(D4.5) = M_c(D4) * sqrt(1 - gamma_space/2)
-              ~ M_c(D4) * sqrt(0.0005) * M_c(D4)
+    M_c(D4.5) = intermediate between M_c(D4) and M_c(D5) ≈ 10^13–10^14 GeV (closure SCALE)
 
-  From the two-scale depth model: M_c(D4) ~ 3.37e14 GeV
-  Dark matter mass ~ O(10^12 - 10^14) GeV range
+  NOTE: M_c is the UV closure scale, NOT the particle rest mass. The electron has
+  M_c(D5) ~ 10^13 GeV but rest mass = 0.511 MeV (ratio M_c/m ~ 10^19).
+  Estimated DM rest mass ~ 35 keV from depth-to-mass exponential
+  (see phenomena/cosmology/dark_matter.md).
 
-  This is above LHC reach but below Planck scale — consistent with
-  WIMP-like heavy dark matter if interactions are appropriately suppressed.
+  The M_c(D4.x) closure scales are above LHC reach — consistent with the DM
+  candidates not being produced at colliders. Rest-mass derivation from M_c is
+  the same unsolved problem as for quarks and leptons.
 
   Alternative: D3/D4 transition modes (at ~1 TeV scale) — accessible to colliders.
 
 Key references:
-  - foundations/dimensional_stack.md (D-layer ordering)
-  - foundations/depth_running.md (D4 scale M_c ~ 3.37e14 GeV)
+  - foundations/dimensional_stack.md (D-depth ordering)
+  - foundations/depth_running.md (D4 scale M_c ~ 3.37e14 GeV, two-scale model)
   - foundations/product_geometry.md (why DM cannot be a SM particle)
   - equations/depth_running.py (numerical depth scales)
+  - phenomena/cosmology/dark_matter.md (DM rest mass ~35 keV estimate, M_c/m ratio)
 
 Open problems:
   1. What topological condition stabilizes an intermediate closure?
