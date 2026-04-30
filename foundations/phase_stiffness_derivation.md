@@ -21,6 +21,16 @@
 > the correct coupling. The derivation target is now stated as: show
 > r_U1/λ = 1/(β × I₄) from the substrate field equation V(φ) = −α/2 φ² + β/4 φ⁴.
 > See `equations/bottleneck2_coupling_integral.py` for the full systematic analysis.
+>
+> **Cycle 88 update:** The worldvolume coupling analysis (`equations/worldvolume_coupling.py`)
+> maps the Route B gap precisely. Key new results: (1) all D5 vortex integrals are O(1)
+> in units of ξ — the vortex geometry alone cannot produce r_U1/λ ≈ 21.4; (2) the
+> uniqueness of r_U1 = φ₀²/(β×f²) = 3λ/(4β) as the only α-independent length is proved
+> algebraically; (3) the naive KK formula g² = 2πf²λ/r_U1 is α-dependent (wrong);
+> (4) the required KK mode normalization for Route B is 9/(64π) ≈ 0.0448; (5) the 1D
+> candidate integral (3/4)∫sech⁴g² dρ ≈ 0.08965 is 0.14% above 2×9/(64π) — not exact.
+> The remaining calculation is the 2D coupling integral: D6 zero mode × D5 vortex phase
+> gradient, integrated over the correct (x, ρ) geometry with the (64π/9)M_c normalization.
 
 ---
 
@@ -448,3 +458,6 @@ Consequence:
 - `equations/coupling_derivation.py` — g² = 8πβ/3 implemented and verified
 - `equations/bottleneck2_coupling_integral.py` — Cycle 85: compact form g²=2π×β×I₄;
   α-independence proved; 8 candidate r_U1 definitions tested; Route B norm=(64π/9)M_c verified
+- `equations/worldvolume_coupling.py` — Cycle 88: vortex integrals O(1) in ξ; r_U1/λ=3/(4β)
+  uniqueness proved algebraically; required KK mode normalization 9/(64π) identified; 2D
+  coupling integral specified as the remaining calculation to close Route B

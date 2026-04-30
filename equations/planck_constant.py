@@ -47,6 +47,7 @@ Key references:
   - foundations/planck_constant_derivation.md  (hierarchy analysis, Cycles 39+75)
   - foundations/substrate.md  (kink model)
   - foundations/bifurcation_dynamics.md  (D1 kink = Planck length)
+  - equations/quantum_gravity.py  (Cycle 76: S_kink(D1)/ℏ = 1.13×10⁴⁰ independently verified)
 
 PRIORITY: Critical (QM compatibility requires this derivation; T8 in ISSUES.md)
 """
@@ -68,7 +69,7 @@ if __name__ == "__main__":
     print(f"  alpha_D1 = 2*M_Pl^2 = {alpha_D1:.3e} GeV^2")
     print(f"  beta = {BETA}")
     print(f"  S_kink(D1) = (4/3)*alpha_D1/beta = {S_kink_D1:.3e}  [natural units, hbar=1]")
-    print(f"  S_kink(D1)/hbar = {S_kink_D1:.3e} hbar  (hierarchy factor)")
+    print(f"  S_kink(D1)/hbar = {S_kink_D1:.3e}  (dimensionless; hierarchy factor)")
     print(f"  [Prior value 4.24e39 used retracted E_kink formula; corrected to {S_kink_D1:.2e}]")
     print()
     # Nuclear scale: where S_kink = hbar = 1
