@@ -210,7 +210,8 @@ where β ≡ arg(−V_cd V*_cb / V_td V*_tb) ≈ 21°
 | Kaon ε parameter ~ 2×10⁻³ | CKM phase δ ≈ 1.2 rad from D6 geometry | Observed ε_K = 2.23 × 10⁻³ ✓ |
 | sin(2β) ≈ 0.69 in B decays | CKM triangle angle β from fold orientation angles | Observed 0.699 ± 0.017 ✓ |
 | SM CP too small for baryogenesis | J ≈ 3×10⁻⁵ → η_B ≪ 10⁻¹⁰ | SM insufficient — confirmed ✓ |
-| Cosmological CP from D7 closure | D7 closure chirality → net winding asymmetry | η_B = 6×10⁻¹⁰ (DFC prediction: not yet computed) |
+| Cosmological CP from D7 closure | D7 closure chirality → net winding asymmetry | η_B = 6×10⁻¹⁰ (DFC prediction: not yet computed) ✗ |
+| θ_QCD = 0 (strong CP) | S⁵ Z₂ isometry is exact; θ=0 is CP-fixed point at D7 formation | |θ_QCD| < 10⁻¹⁰ — RESOLVED (Cycle 46) ✓ |
 
 ---
 
@@ -229,11 +230,13 @@ where β ≡ arg(−V_cd V*_cb / V_td V*_tb) ≈ 21°
    This requires computing the CP-violating amplitude of the D7 closure event — the ratio
    of closure events with one orientation vs. the other.
 
-3. **Strong CP problem.** QCD admits a CP-violating term θ_QCD in the Lagrangian, but
-   the measured value is |θ_QCD| < 10⁻¹⁰ — a severe fine-tuning problem. In DFC, the
-   strong CP problem would be addressed if the D7 closure geometry naturally sets θ_QCD = 0
-   or a small value. Whether the D7 SU(3) closure topology forces θ_QCD ≈ 0 (an analog
-   of the Peccei-Quinn mechanism) is an open structural question.
+3. **Strong CP problem — RESOLVED (Cycle 46).** QCD admits a CP-violating term θ_QCD in
+   the Lagrangian, but the measured value is |θ_QCD| < 10⁻¹⁰. In DFC, this is dissolved:
+   complex conjugation is an exact Z₂ isometry of S⁵ (the D7 closure manifold), selecting
+   θ_QCD = 0 as the CP-symmetric fixed point during D7 closure formation. θ = π is ruled
+   out experimentally (d_n would be 10⁹ × the current bound). No axion is predicted —
+   the symmetry is exact at D7 formation, not approximate. See `foundations/strong_cp_problem.md`
+   and `equations/strong_cp.py` (CP symmetry verified on 10k random S⁵ points; max deviation 0.0).
 
 4. **PMNS CP phase.** The lepton sector has its own CP-violating phase δ_CP in the PMNS
    matrix. Current evidence (T2K) suggests δ_CP ≈ −π/2. Whether DFC's D6 closure geometry
@@ -255,3 +258,7 @@ where β ≡ arg(−V_cd V*_cb / V_td V*_tb) ≈ 21°
   `phenomena/particle_physics/particles/antimatter.md`
 - **Neutrinos** — PMNS matrix CP phase and its DFC origin;
   `phenomena/particle_physics/particles/neutrinos.md`
+- **Flavor mixing** — CKM/PMNS matrix structure; Jarlskog J = 3.07×10⁻⁵ computed;
+  `phenomena/particle_physics/flavor_mixing.md` and `equations/flavor_mixing.py` (Cycle 69)
+- **Strong CP problem** — θ_QCD = 0 derived from S⁵ Z₂ isometry (Cycle 46);
+  `foundations/strong_cp_problem.md` and `equations/strong_cp.py`

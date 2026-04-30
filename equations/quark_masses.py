@@ -346,16 +346,26 @@ if __name__ == "__main__":
         print(f"  Gen {gen} ({names[0]:8s} / {names[1]:8s}): {r:.4f}")
 
     print(f"\n--- Predicted vs Observed Quark Masses ---")
+    print(f"  NOTE: gen-1 (up/down) and gen-3 (top/bottom) are FITTED INPUTS.")
+    print(f"        Only gen-2 (charm/strange) SCALE is a genuine prediction.")
+    print(f"        The charm/strange RATIO is also taken from data (r_ud_gen2).")
     pred = predict_quark_masses()
-    print(f"  {'Quark':10s}  {'Predicted':>12s}  {'Observed':>12s}  {'Ratio':>8s}")
-    print(f"  {'-'*10}  {'-'*12}  {'-'*12}  {'-'*8}")
+    print(f"  {'Quark':10s}  {'Predicted':>12s}  {'Observed':>12s}  {'Ratio':>8s}  {'Status'}")
+    print(f"  {'-'*10}  {'-'*12}  {'-'*12}  {'-'*8}  {'-'*20}")
+    fitted = {'up', 'down', 'top', 'bottom'}
     for name, vals in pred.items():
         p = vals['predicted_gev']
         o = vals['observed_gev']
         r = vals['ratio']
         unit = 'GeV' if o > 0.1 else 'MeV'
         scale = 1.0 if unit == 'GeV' else 1000.0
-        print(f"  {name:10s}  {p*scale:>10.4f} {unit}  {o*scale:>10.4f} {unit}  {r:>8.4f}")
+        if name in fitted:
+            status = "INPUT (fitted)"
+        elif abs(r - 1.0) > 0.05:
+            status = f"FAILS ({(r-1)*100:+.1f}%, Tier 2b)"
+        else:
+            status = f"OK ({(r-1)*100:+.1f}%)"
+        print(f"  {name:10s}  {p*scale:>10.4f} {unit}  {o*scale:>10.4f} {unit}  {r:>8.4f}  {status}")
 
     print(f"\n--- Log Mass Ratios Between Generations ---")
     ratios = generation_mass_ratios()

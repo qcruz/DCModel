@@ -354,9 +354,13 @@ in a single measurement event.
   this document closes the condition
 - `foundations/bell_hidden_variables.md` — DFC Bell resolution; entanglement from D1/D2 connectivity
 - `foundations/measurement.md` — measurement as threshold crossing; Born rule open problem
+- `foundations/born_rule_derivation.md` — spin Born rule P(↑,n̂) = cos²(θ/2) DERIVED (Cycle 38)
+  from SU(2) spinor geometry + binary nucleation (no free parameters); position Born rule
+  structural argument remains open (Kramers escape rate)
 - `foundations/spin_emergence.md` — Jackiw-Rebbi zero mode; N=±1 ↔ spin ↑/↓
 - `foundations/substrate.md` — the φ⁴ potential and kink solutions
 - `equations/kink_model.py` — static kink solution, energy, width
 - `equations/kink_scattering.py` — two-sector Pöschl-Teller spectrum; zero mode and shape mode
 - `equations/bell_correlations.py` — CHSH = 2√2; Tsirelson proof verification
-- `equations/quantum_emergence.py` — Schrödinger equation from compression field; Born rule open
+- `equations/quantum_emergence.py` — Schrödinger equation from compression field; born_rule_spin()
+  verified (9 angles, normalization = 1.000000); position Born rule open

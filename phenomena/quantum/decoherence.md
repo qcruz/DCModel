@@ -91,6 +91,90 @@ which outcome occurs.
 
 ---
 
+## Formal Equations
+
+### Density matrix decoherence
+
+A quantum superposition of two field configurations separated by Δx is described by
+the reduced density matrix obtained by tracing out the environmental degrees of freedom.
+The off-diagonal element — the interference term between the two configurations — decays
+exponentially in time at a rate set by the decoherence rate Λ and the separation squared:
+
+```
+ρ(x, x', t) = ρ(x, x', 0) × exp(−Λ (x − x')² t)
+
+where Λ = (2m k_B T γ) / ℏ²
+
+  m   = mass of the system
+  T   = temperature of the environment
+  γ   = momentum relaxation rate (system-environment coupling strength)
+  k_B = Boltzmann constant
+  ℏ   = reduced Planck constant (POSTULATE — not yet derived from DFC substrate)
+```
+
+The interference terms that carry quantum coherence are suppressed by a factor
+exp(−Λ Δx² t). When this factor falls below 1/e, coherence is effectively lost.
+
+### Decoherence time
+
+The decoherence time — the time for the coherence factor to fall to 1/e — is the
+reciprocal of the decoherence rate times the squared separation:
+
+```
+τ_D = 1 / (Λ Δx²) = ℏ² / (2m k_B T γ Δx²)
+    = τ_relax × (λ_th / Δx)²    [Zurek form]
+
+where:
+  τ_relax = m/γ      (momentum relaxation time — classical friction timescale)
+  λ_th = ℏ / √(2mk_BT)  (thermal de Broglie length)
+```
+
+The thermal de Broglie length is the quantum length scale below which quantum effects
+are important. For separations much larger than this length, decoherence is extremely
+rapid.
+
+### Numerical estimates
+
+For a 1-gram macroscopic object at room temperature (T = 300 K), with separation
+Δx = 1 nm and typical air-molecule scattering relaxation time τ_relax ≈ 10⁻¹³ s:
+
+```
+λ_th = ℏ / √(2mk_BT) = 1.055×10⁻³⁴ / √(2 × 10⁻³ × 4.14×10⁻²¹)
+     ≈ 1.16×10⁻²³ m   [sub-nuclear — quantum effects completely irrelevant]
+
+τ_D = τ_relax × (λ_th / Δx)²
+    = 10⁻¹³ × (1.16×10⁻²³ / 10⁻⁹)²
+    ≈ 10⁻¹³ × 1.35×10⁻²⁸
+    ≈ 10⁻⁴¹ s   [far faster than any physical timescale]
+```
+
+For a C₆₀ molecule (m ≈ 720 u ≈ 1.2×10⁻²⁴ kg) in vacuum at T = 1 K,
+with Δx = 10 nm and τ_relax = 10⁻³ s (isolated):
+
+```
+λ_th = ℏ / √(2 × 1.2×10⁻²⁴ × 1.38×10⁻²³ × 1)
+     ≈ 5.7×10⁻¹² m  [5.7 pm]
+
+τ_D = 10⁻³ × (5.7×10⁻¹² / 10⁻⁸)²
+    ≈ 10⁻³ × 3.2×10⁻⁷ ≈ 3×10⁻¹⁰ s
+```
+
+Consistent with why C₆₀ interference is only observable in high vacuum at low temperature.
+
+### Connection to DFC substrate
+
+In DFC, the decoherence rate Λ follows from the rate at which sub-threshold amplitude
+in the compression field leaks into environmental kink configurations. The Kramers escape
+rate for a field fluctuation to reach the kink threshold φ₀ from amplitude φ < φ₀ sets
+the environmental coupling γ in the formula above. This connection is not yet formally
+derived. See `foundations/born_rule_derivation.md` Open Problem: position Born rule from
+Kramers escape statistics.
+
+The decoherence formula above requires ℏ, which is imported as a postulate
+(not derived from DFC substrate). See `foundations/planck_constant_derivation.md`.
+
+---
+
 ## Consistency Checks
 
 | Check | DFC prediction | Observed | Status |

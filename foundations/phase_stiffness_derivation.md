@@ -12,6 +12,15 @@
 > The step from f² to r_U1/λ requires a physical identification that is motivated
 > but not yet formally proved. The gap is precisely located and is a single,
 > specific calculation.
+>
+> **Cycle 85 update:** The compact form g² = 2π × β × I₄ (where I₄ = 4/3) is the
+> most transparent reformulation: the gauge coupling equals 2π times the quartic
+> coupling times the kink shape integral. α-independence is proved exactly across
+> three decades of α (error < 10⁻¹⁰) — any formal derivation must be β-only.
+> Eight candidate r_U1 definitions were tested; only 1/(β × I₄) = 3/(4β) gives
+> the correct coupling. The derivation target is now stated as: show
+> r_U1/λ = 1/(β × I₄) from the substrate field equation V(φ) = −α/2 φ² + β/4 φ⁴.
+> See `equations/bottleneck2_coupling_integral.py` for the full systematic analysis.
 
 ---
 
@@ -437,3 +446,5 @@ Consequence:
 - `foundations/kink_nucleation.md` — kink energy and barrier height from same integral
 - `equations/kink_model.py` — numerical verification of kink profile and energy
 - `equations/coupling_derivation.py` — g² = 8πβ/3 implemented and verified
+- `equations/bottleneck2_coupling_integral.py` — Cycle 85: compact form g²=2π×β×I₄;
+  α-independence proved; 8 candidate r_U1 definitions tested; Route B norm=(64π/9)M_c verified

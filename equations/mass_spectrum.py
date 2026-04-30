@@ -19,6 +19,7 @@ KNOWN FAILURE:
   The three lepton generations are likely ground states of three independent D6
   winding sectors, not excited modes of a single potential. See foundations/
   three_generations.md for the current working description.
+  See equations/fermion_spectrum_full.py for the full failure tracker.
 
 FINE-TUNING NOTE:
   The electron mass emerges from near-exact cancellation: box energy ~26 MeV
@@ -34,7 +35,6 @@ Usage:
 """
 
 import math
-from typing import Optional
 
 # ─── Observed Masses (PDG 2024) ───────────────────────────────────────────────
 
@@ -60,11 +60,12 @@ TAU_ELECTRON_RATIO  = M_OBS['tau'] / M_OBS['electron']     # 3477.2
 
 def dimple_potential(x, depth, width, box_size):
     """
-    Effective 1D potential for a fermion in a compact extra dimension with a dimple.
+    Effective 1D potential for a fermion in the D6 closure geometry with a dimple.
 
     V(x) = V_box(x) + V_dimple(x)
 
-    V_box:   infinite square well from 0 to L (confining dimension)
+    V_box:   infinite square well from 0 to L (D6 closure scale — not an "extra dimension"
+             but the effective confinement length at D6 depth)
     V_dimple: Gaussian depression centered at x=L/2
 
         V_dimple(x) = -depth × exp(-(x - L/2)² / (2 width²))
@@ -78,7 +79,7 @@ def dimple_potential(x, depth, width, box_size):
     width : float
         Width of the dimple (fraction of box_size, typically << 1)
     box_size : float
-        Size of the extra dimension (sets muon mass scale)
+        D6 closure scale (sets muon mass scale)
 
     Returns
     -------
@@ -116,7 +117,7 @@ def perturbation_energies(depth, width, box_size, n_modes=3):
     width : float
         Dimple width as fraction of box_size (e.g., 0.01 = 1% of dimension)
     box_size : float
-        Size of extra dimension (arbitrary length units, cancels in ratios)
+        D6 closure scale (arbitrary length units, cancels in ratios)
     n_modes : int
         Number of modes to compute
 

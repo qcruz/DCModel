@@ -14,9 +14,25 @@
 > λ comes from the substrate quartic β, not from the Ricci geometry. See
 > `equations/berger_sphere.py` for the analytic derivation and numerical verification.
 >
-> **Epistemic status: OPEN.** The structural argument for V(ε) = −α_D6/2 ε² + β/4 ε⁴
-> is now on firmer footing (λ identified with β/4); the remaining gap is converting
-> α_D6 to GeV, which requires M_c(D6) from Bottleneck 1.
+> **Cycle 79 update:** T9 is resolved — no longer a blocker for this derivation.
+> M_c(D1) = M_Pl sets the Higgs quartic UV boundary; M_c(D5/D6) ≈ 10¹³ GeV sets gauge
+> couplings. The VEV derivation uses M_c(D5/D6) as the relevant scale (D6 is part of the
+> D5/D6 co-crystallization). Remaining gaps: (1) μ² from the D6/D7 overlap integral;
+> (2) λ field normalization factor ~1.5 between β/4 ≈ 0.0088 and λ_SM(M_c) ≈ 0.013.
+>
+> **Epistemic status: OPEN.** T9 blocker cleared. Two genuine open problems remain
+> before v can be predicted from substrate parameters.
+>
+> **Cycle 86 update:** `equations/vev_derivation.py` (new) provides quantitative
+> Bottleneck 3 analysis. New findings: (1) The SM quartic runs **negative** at
+> M_c(D5/D6) ≈ 9.44×10¹² GeV (SM vacuum metastable there), confirming that DFC must
+> provide a POSITIVE UV boundary condition λ_BC = β/4 ≈ 0.0088 at M_c. This is a
+> Tier 1 structural result. (2) DFC BC + 2-loop SM running gives m_H = 122.9 GeV
+> (−1.9% error), consistent with higgs_potential.py (124.4 ± 3.7 GeV). (3) Target
+> for D6/D7 overlap integral: μ = v × √λ_DFC = **23 GeV** (concrete numerical target).
+> (4) The required D6/D7 overlap I_D67 ≈ 10⁻²⁸ — exponential suppression from the
+> D6/D7 depth gap explains its smallness. Blockers: threshold positions (Bottleneck 1)
+> and M_c(D7) (depth-running).
 
 ---
 
@@ -176,29 +192,27 @@ This is a concrete numerical target: the D7-to-D6 pressure must give an effectiv
 mass parameter μ ≈ 28 GeV at the closure scale, which then runs (as part of the
 electroweak sector) to the observed VEV at low energy.
 
-### 3.3 Connection to the T9 tension
+### 3.3 T9 resolved — scale identification for the VEV derivation
 
-The T9 tension (see `ISSUES.md` Critical section) is directly relevant here: the Higgs
-mass derivation uses M_c(Higgs) ≈ 10¹⁸ GeV, while the Weinberg angle derivation uses
-M_c(D5/D6) ≈ 10¹³ GeV. The VEV derivation requires knowing which M_c is the physical
-cutoff for the squashing potential. Resolution options:
+**T9 is resolved (Cycle 79).** The two scales are physically distinct depth events and
+can both be correct simultaneously (see `foundations/two_scale_resolution.md`):
 
-**(a) Two distinct closure events:** D5/D6 co-crystallization (≈ 10¹³ GeV) is the scale
-at which the gauge structure freezes and the equal-coupling condition applies. The Higgs
-mass derivation closure (≈ 10¹⁸ GeV) is the scale at which the geometric description of
-the S³ modulus becomes dynamical — a different event, the D6 geometric mode being
-promoted to a propagating degree of freedom. If this interpretation is correct, then:
+- **M_c(D1) = M_Pl ≈ 10¹⁸ GeV:** D1 maximum-compression boundary. Sets the Higgs quartic
+  UV boundary condition λ₀ ≈ 0.013. Used by `foundations/higgs_mass_derivation.md`.
+- **M_c(D5/D6) ≈ 10¹³ GeV:** D5/D6 co-crystallization scale. Sets the equal-coupling
+  gauge IC. Used by Route 3B. This is the relevant scale for the VEV derivation because
+  the Higgs is a D6 object — its mass and VEV are set at the D6 closure scale, not at D1.
 
-- v is set by dynamics below the D6 activation scale (≈ 10¹⁸ GeV)
-- The gauge coupling running uses the D5/D6 co-crystallization scale (≈ 10¹³ GeV)
-- The two scales are physically distinct closure processes
+**Consequence for the VEV derivation:** The squashing potential V(ε) = −μ²ε² + β/4 ε⁴
+is evaluated at M_c(D5/D6) ≈ 10¹³ GeV. The VEV v = μ/√λ at this scale then runs down
+to the observed electroweak VEV v ≈ 246 GeV. The correct target for μ at M_c(D5/D6) is:
 
-**(b) Single closure scale with derivation error:** If both processes occur at the same
-scale, one of the two numbers (10¹³ vs 10¹⁸) contains a systematic error. This would
-require retracing the Route 3B running and/or the Higgs RG analysis.
+```
+μ(M_c) = v_EW × √λ₀ = 246 × √0.013 ≈ 28 GeV
+```
 
-Resolution of T9 is a prerequisite for the VEV derivation, because v enters as
-v = μ/√λ, and the scale at which μ and λ are defined depends on which M_c is correct.
+where λ₀ ≈ 0.013 is the tree-level quartic at the D6 closure scale (from SM running).
+This remains the numerical target for the D6/D7 overlap integral computation.
 
 ---
 
@@ -324,12 +338,16 @@ compression state couples into the D6 shape mode:
 ```
 
 The quartic coupling — the positive coefficient of the fourth-order term in the squashing
-potential — equals the fourth-order coefficient in the expansion of the S³ Ricci scalar
-under Berger squashing, divided by the fourth power of the D6 closure radius:
+potential — comes directly from the substrate quartic coupling β (the Berger sphere Ricci
+scalar contributes only a quadratic destabilizing term; its quartic coefficient R₄ = 0
+exactly, proved in Cycle 58):
 
 ```
-λ_DFC = R₄_Berger / r_D6⁴
+λ_DFC = β / 4 ≈ 0.0088
 ```
+
+This is ~1.5× below λ_SM(M_c) ≈ 0.013, reflecting a field normalization factor between
+the substrate squashing parameter ε and the canonically normalized SM Higgs field h.
 
 The consistency condition that both numbers must satisfy is:
 
@@ -360,9 +378,9 @@ The consistency condition that both numbers must satisfy is:
    to GeV requires identifying M_c(D6) from Bottleneck 1. This is the last step
    once μ² and the normalization are resolved.
 
-5. **Resolve T9 before finalizing v.** The scale at which V(ε) is evaluated (10¹³ GeV
-   vs 10¹⁸ GeV) affects the RG running of λ down to the electroweak scale. The
-   two-scale picture (gauge scale ≠ modulus activation scale) needs formal justification.
+5. ~~**Resolve T9.**~~ **RESOLVED (Cycle 79).** The VEV is evaluated at M_c(D5/D6) ≈
+   10¹³ GeV; M_c(D1) = M_Pl sets the Higgs λ₀ UV boundary only. See
+   `foundations/two_scale_resolution.md`. The remaining issues are Items 2–4 above.
 
 ---
 
@@ -373,7 +391,10 @@ The consistency condition that both numbers must satisfy is:
 - `foundations/depth_assignment.md` — Route B: S³ at D6 (source of the curvature geometry)
 - `foundations/coupling_derivation.md` — coupling chain from β to M_W, M_Z, G_F, τ_μ
 - `foundations/hopf_fibration_geometry.md` — Berger sphere structure at D6 depth
-- `foundations/tension_analysis.md` — T9: two-closure-scale tension
+- `foundations/two_scale_resolution.md` — T9 RESOLVED (Cycle 79): M_c(D1) vs M_c(D5/D6)
+- `foundations/tension_analysis.md` — T9 entry updated: Structurally Resolved
 - `phenomena/particle_physics/muon_decay.md` — M_W, M_Z, G_F, τ_μ predictions (v input)
 - `phenomena/particle_physics/forces/electroweak_precision.md` — five precision tests
+- `equations/vev_derivation.py` — Cycle 86: Bottleneck 3 quantitative analysis; SM running,
+  DFC BC → m_H = 122.9 GeV, target μ = 23 GeV, D6/D7 overlap framework
 - `ISSUES.md` — T9 (Critical), Bottleneck 1 (D-depth assignment), Blocked: v = 246 GeV

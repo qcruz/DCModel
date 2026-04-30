@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-04-26 (Cycles 47–79)
+**Last updated:** 2026-04-29 (Cycles 47–85)
 
 ---
 
@@ -44,15 +44,33 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - Transverse fluctuation (L₂) has tachyonic bound state ω² = −α/2: D5 does NOT form
     real kinks; the stable D5 defect is the vortex (π₁(S¹) = ℤ). This is consistent with
     D5 = U(1) behavior.
-  - Vortex profile solved numerically (BVP): core radius r_v = 1.10 ξ. But r_v/ξ ≈ 1 ≠
-    target r_U1/λ = 3/(4β) ≈ 21. The vortex core alone does not give the right coupling.
-  - Real kink is metastable at DFC compression scales L < L_crit = (3/4)π² ξ ≈ 7.4 ξ.
-  - KK reduction on field-space S¹ is now geometrically well-defined (S¹ of radius φ₀).
-- **Remaining gap:** Derive r_U1/λ = 3/(4β) from the D5-D6 coupling integral.
-  Route: g² = (∫j_x dx)² / (photon normalization × kink normalization).
-  Key ingredient known: ∫j_x dx = −2π/(5ξ) from Cycle 67c. Missing: normalization.
+  - Vortex core radius r_v = 1.10 ξ — does NOT give the right coupling (1 ≠ target 21).
+  - Real kink is metastable at DFC compression scales L < L_crit ≈ 7.4 ξ.
+- **Cycle 85 (systematic analysis — `equations/bottleneck2_coupling_integral.py`):**
+  - **NEW COMPACT FORM:** g² = 2π × β × I₄, where I₄ = ∫sech⁴(u) du = 4/3.
+    The gauge coupling equals 2π times the quartic coupling times the kink shape integral.
+  - **α-INDEPENDENCE PROVED:** g² = 8πβ/3 is exactly α-independent across 3 decades
+    (error < 10⁻¹⁰). Any formal derivation must be β-only — α, φ₀, M_c, λ cannot appear
+    as essential inputs (they cancel identically).
+  - **KINK ACTION ROUTE ELIMINATED:** r from S_kink winding = 2πR gives r/λ = 0.85
+    (α-dependent) → ruled out. Cannot use S_kink ∝ φ₀² as the radius.
+  - **8 candidate r_U1 definitions scanned:** Only r = 3/(4β) = 1/(β × I₄) matches SM
+    at −0.5%. All other candidates fail (errors 67%–340% or α-dependent).
+  - **Route B target confirmed:** worldvolume normalization = (64π/9) M_c verified
+    algebraically (error 1.59×10⁻¹⁶). This exact number must emerge from bulk-worldvolume
+    matching.
+  - **Derivation target reformulated:** show r_U1/λ = 1/(β × I₄) from V(φ) field equation.
+    Key: I₄ = 4/3 arises from the kink shape ∫sech⁴ du. Why does r_U1 equal (kink width)/I₄?
+- **Remaining gap:** Derive r_U1/λ = 1/(β × I₄) from the field equation or from the
+  D5-D6 coupling integral. Two routes:
+  - Route A: KK reduction on field-space S¹ (radius φ₀) with kink-dressed connection
+  - Route B: domain-wall worldvolume Lagrangian — normalize bulk-worldvolume matching to
+    get norm = (64π/9)M_c, then read off r_U1
+  J_total = −2π/(5ξ) (Cycle 67c) is the D6 kink CHARGE in D5 U(1); it is NOT g directly.
+  Connection: g² ∝ |J_total|² / (photon norm × kink norm) — normalization factors missing.
 - Files: `foundations/complex_substrate.md` (Cycle 75), `equations/complex_substrate.py`,
-  `foundations/phase_stiffness_derivation.md` (Open Q1–Q2), `foundations/coupling_derivation.md`
+  `foundations/phase_stiffness_derivation.md` (updated Cycle 85), `foundations/coupling_derivation.md`,
+  `equations/bottleneck2_coupling_integral.py` (Cycle 85 — systematic analysis)
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---

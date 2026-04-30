@@ -44,6 +44,9 @@ DERIVATION STATUS (important):
 Key references:
     foundations/higgs_geometry.md         — Higgs as S³ squashing modulus
     foundations/higgs_mass_derivation.md  — full RG-improved derivation
+    foundations/hierarchy_problem.md      — DFC hierarchy dissolution: no bare mass, S³ protection
+    foundations/two_scale_resolution.md   — T9 resolution (Cycle 79): M_c(D1)≈10¹⁸ GeV sets λ₀ BC;
+                                            M_c(D5/D6)≈10¹³ GeV sets gauge IC (two distinct events)
     foundations/vev_derivation.md         — VEV derivation path (updated Cycle 58)
     equations/berger_sphere.py            — R₄=0 proof; λ=β/4 identification (Cycle 58)
 

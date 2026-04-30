@@ -140,17 +140,32 @@ extra dimension. Overlap with the Higgs (located on one brane) determines the ma
 
 ## The Quark Hierarchy
 
-The quark mass pattern follows the same principle, but with the additional complication that quarks
-carry both color charge (left-copy SU(3)) and flavor charge (right-copy SU(3)).
+**NOTE:** The dimple potential description above applies specifically to the lepton sector.
+The quark mass hierarchy is handled by a different quantitative model — the confinement
+depth-anchoring model (κ_q exponential spacing) in `equations/quark_masses.py`. The description
+below is a schematic account; the formal treatment is in that module.
 
-The up-type quarks (u, c, t) and down-type quarks (d, s, b) have separate dimple potentials,
-related by the electroweak symmetry that mixes them. The top quark's extraordinary mass (173 GeV,
-compared to the bottom's 4.2 GeV) comes from the fact that its wavefunction samples the dimple
-in a qualitatively different way — the large SU(2) × U(1) coupling in its quantum numbers pushes
-its wavefunction toward the dimple center rather than away from it.
+The quark mass pattern uses the confinement depth-anchoring mechanism. Within each generation,
+up-type and down-type quarks split by an SU(2) isospin asymmetry. Across generations, the mass
+scale grows exponentially with the depth index — each generation sits deeper in the D7 SU(3)
+confinement closure, experiencing a larger effective binding energy:
 
-This is currently one of the key quantitative challenges: deriving the top/bottom mass ratio (≈ 40)
-from the D7 SU(3) closure geometry without free parameters.
+```
+M_gen(n) = M₀ × exp(κ_q × (n−1))
+  κ_q ≈ 4.5–4.7   (fitted from gen-1 and gen-3 anchor masses)
+```
+
+The up/down ratio within each generation is separately parameterized. The charm and strange
+quark common scale is a genuine prediction and fails by ~15% (see Tier 2b table in CLAUDE.md).
+The top and bottom masses are used as fitting anchors.
+
+The top quark's extraordinary mass (173 GeV) is interpreted as its Yukawa coupling reaching
+O(1) — the top quark sits at the D6 S³ squashing threshold where the Higgs VEV sets the mass
+scale directly (see `foundations/higgs_geometry.md`). This breaks the uniform κ_q spacing
+across generations, which explains the non-uniform log-spacing observed in `quark_masses.py`.
+
+A first-principles derivation of the top/bottom mass ratio (≈ 40) from the D7 SU(3) closure
+geometry without free parameters is an open problem.
 
 ---
 
@@ -159,6 +174,15 @@ from the D7 SU(3) closure geometry without free parameters.
 See `../equations/mass_spectrum.py` for:
 - Wavefunction calculation in the dimple potential
 - Electron, muon, tau mass predictions as functions of dimple depth d and D6 closure scale R
-- Quark mass pattern predictions
 - Sensitivity analysis: how do masses change with d and R?
 - Documented tau failure (8.4×) and electron fine-tuning caveat
+
+See `../equations/quark_masses.py` for:
+- Quark mass predictions from the κ_q exponential depth model
+- Charm/strange scale prediction: 15% below observed (Tier 2b)
+- Top quark Yukawa y_t ≈ 1 interpretation
+
+See `../equations/fermion_spectrum_full.py` for:
+- Full fermion spectrum summary across all sectors
+- Known failure tracker: tau (8.4×), charm/strange (15%), neutrino mass ratio (4.3×)
+- Status of unpredicted masses (top, bottom, up, down, neutrinos)

@@ -260,17 +260,25 @@ a free parameter — it is determined by:
 2. The scale where α₁ = α₂ in SM running (M_c ≈ 10¹³ GeV — self-consistent)
 3. Standard RG running below M_c
 
-**Tension with the Higgs mass derivation:** The Higgs mass prediction in `higgs_geometry.md`
-uses a closure scale M_c ≈ 10¹⁸ GeV. The Weinberg angle equal-coupling scale is M_c ≈ 10¹³
-GeV — five orders of magnitude lower. These cannot both be the same scale.
+**T9 RESOLVED (Cycle 79) — Two scales, two distinct D-depth events:**
 
-Possible resolutions:
-- The two "closure scales" refer to different physical events: D5/D6 electroweak closure
-  (M_c^ew ≈ 10¹³ GeV) vs. the geometric modulus matching condition in the Higgs derivation.
-- The Higgs derivation closure scale estimate (~10¹⁸ GeV) may be an overestimate from
-  the tree-level quartic boundary condition; two-loop corrections not yet applied.
-- This tension is an active open problem requiring resolution before either derivation
-  can be considered fully consistent.
+The apparent tension between M_c ≈ 10¹³ GeV (Route 3B, this document) and M_c ≈ 10¹⁸ GeV
+(higgs_mass_derivation.md) is a D-labeling confusion, not a genuine inconsistency. The two
+scales refer to different depth events in the same substrate:
+
+- **M_c(D5/D6) ≈ 10¹³ GeV** — the scale at which the D5 (U(1)) and D6 (SU(2)) closures
+  form; sets the equal-coupling gauge initial conditions for RG running; the correct UV
+  cutoff for the D6 Higgs field's radiative corrections.
+- **M_c(D1) ≈ 10¹⁸ GeV** — the D1 substrate compression scale; sets the Higgs quartic
+  boundary condition λ₀ in the Coleman-Weinberg potential; the Planck-scale normalization
+  for the substrate field. This is NOT the UV cutoff for the D6 Higgs — it only sets λ₀.
+
+Both scales use the same substrate quartic coupling β. The ratio M_c(D1)/M_c(D5/D6) ≈ 10⁵
+corresponds to ~5 depth steps with γ_space ≈ 2.47 per step (consistent with
+`foundations/depth_running.md`). The GUT-normalized α₁ = α₂ crossing at 1.03×10¹³ GeV
+confirms M_c(D5/D6) numerically (see `equations/two_scale_check.py`).
+
+See `foundations/two_scale_resolution.md` for the full T9 resolution argument.
 
 ---
 
@@ -283,7 +291,7 @@ Possible resolutions:
 | The closure scale M_c(12) | Self-consistent — determined by where α₁ = α₂ in SM running (~10¹³ GeV) |
 | α_U (coupling magnitude at M_c) | Determined by α_em(M_Z) and M_c — not a free parameter |
 | The 3/5 normalization factor | DERIVED ✓ — from equal-coupling + SM matter content (hypercharge_normalization.md) |
-| Tension with Higgs closure scale | OPEN — 10¹³ GeV vs 10¹⁸ GeV unresolved |
+| Tension with Higgs closure scale | RESOLVED (Cycle 79) — M_c(D5/D6)≈10¹³ GeV sets gauge IC; M_c(D1)≈10¹⁸ GeV sets λ₀ BC; see `two_scale_resolution.md` |
 
 **Verdict on free parameters:**
 
@@ -319,9 +327,10 @@ only on M_c. The primary remaining work is: (1) derive or constrain M_c from sub
 
 ## Open Problems
 
-1. **Resolve the M_c tension** — the D5/D6 equal-coupling scale (M_c ≈ 10¹³ GeV) and the Higgs
-   mass derivation closure scale (~10¹⁸ GeV) differ by five orders. These must either refer to
-   different physical events, or one derivation has an error. This is the most urgent open problem.
+1. ~~**Resolve the M_c tension**~~ **RESOLVED (Cycle 79)** — M_c(D5/D6) ≈ 10¹³ GeV and
+   M_c(D1) ≈ 10¹⁸ GeV refer to different D-depth events: electroweak closure scale vs. Higgs
+   quartic boundary condition. Not a genuine inconsistency. See `foundations/two_scale_resolution.md`
+   and `equations/two_scale_check.py` (α₁ = α₂ crossing verified at 1.03×10¹³ GeV).
 
 2. **Derive M_c(12) from substrate parameters** — the scale where α₁ = α₂ is currently read
    from observed SM couplings. A DFC derivation would predict it from (α, β, c). Until then the
@@ -352,6 +361,6 @@ only on M_c. The primary remaining work is: (1) derive or constrain M_c from sub
 | sin²θ_W(M_Z) = 0.231 self-consistently from M_c ≈ 10¹³ GeV | Derived (conditional on α₁=α₂ closure identification) ✓ |
 | Self-consistency of M_c(12) (no new free parameter) | Established ✓ — M_c determined by SM running |
 | Connection to ε squashing (higgs_geometry.md) | Consistent; quantitative tie OPEN |
-| Tension: Weinberg scale (10¹³ GeV) vs Higgs scale (10¹⁸ GeV) | OPEN — must be resolved |
+| Tension: Weinberg scale (10¹³ GeV) vs Higgs scale (10¹⁸ GeV) | RESOLVED (Cycle 79) — different D-depth events; see `two_scale_resolution.md` |
 | Hypercharge normalization (3/5 factor) from geometry | DERIVED ✓ — see hypercharge_normalization.md |
 | M_c from DFC substrate parameters (α, β, c) | OPEN |

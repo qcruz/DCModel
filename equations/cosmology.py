@@ -184,7 +184,8 @@ def friedmann_dfc_analogue(
 
     DFC prediction for spatial flatness:
         The compression process acts uniformly at cosmological scales — there is no
-        preferred direction for folding. This naturally produces k = 0 (flat universe).
+        geometrically distinguished direction for folding. This naturally produces
+        k = 0 (flat universe).
         Observed: Ω_total = 1.0000 ± 0.0040 (Planck 2018). ✓
 
     Parameters
@@ -288,7 +289,7 @@ def dark_matter_candidates():
     Dark matter candidates from intermediate-depth stable kinks.
 
     In the DFC stack, particles correspond to stable closures at specific depths.
-    The observed Standard Model particles occupy depths D2–D9.
+    The observed Standard Model particles occupy depths D2–D7.
     Stable structures between the observed depths — particularly between D4
     (mass onset) and D5 (electron) — would be:
       - Massive (they reach D4)
@@ -375,7 +376,7 @@ def equation_of_state_dfc(epsilon=0.007):
         'observational_constraint': '-1.03 ± 0.03 (Planck 2018 + BAO + SNIa)',
         'dfc_prediction':   f'w_Λ = {w:.4f}  (ε = {epsilon:.4f})',
         'within_1sigma':    abs(w - (-1.03)) < 0.03,
-        'testable_by':      'DESI (Year 5), Euclid, Nancy Roman Space Telescope',
+        'testable_by':      'DESI Year 1 (2024) shows w₀ > −1 at ~2σ (consistent with ε > 0); Euclid, Nancy Roman Space Telescope',
         'dfc_interpretation': (
             'w_Λ = −1 + ε where ε > 0 because the global compression rate '
             'decreases monotonically as dimensional volume is removed. This '

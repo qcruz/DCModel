@@ -98,20 +98,51 @@ photoelectric threshold cannot be predicted in DFC units.
 
 ## Formal Equations
 
+**Threshold condition** — the photon energy must exceed the binding energy of the
+D6 electron kink in the metal's collective potential:
+
 ```
-[STUB — ℏ from substrate required for quantitative prediction]
+hν ≥ W         (photon energy ≥ work function)
+```
 
-Threshold condition:
-hν ≥ W         (photon energy ≥ binding energy of D6 kink in metal)
+where h is Planck's constant (postulate; not derived from substrate — see Open Question 1)
+and W is the binding depth of the D6 electron kink below the free-field vacuum level.
 
-Emitted electron kinetic energy:
+**Emitted electron kinetic energy** — the excess energy above threshold becomes the
+kinetic energy of the escaping kink:
+
+```
 KE_max = hν − W = h(ν − ν₀)    where ν₀ = W/h
-
-DFC structural statement:
-The threshold W corresponds to the barrier height ΔV_binding for the D6 electron
-kink to escape the metal's collective D7 closure potential — analogous to the DFC
-nucleation barrier ΔV = α²/(4β), but at the condensed-matter scale.
 ```
+
+The maximum kinetic energy of the emitted electron equals Planck's constant times the
+excess of the photon frequency above the threshold frequency.
+
+**Threshold frequency** — the minimum photon frequency that supplies enough energy to
+drive the D6 kink over the binding barrier:
+
+```
+ν₀ = W / h
+```
+
+**DFC structural statement — nucleation barrier analog:**
+The work function W corresponds to the potential barrier height for the D6 electron
+kink to escape the metal's collective D7 substrate closure potential. This is structurally
+analogous to the DFC kink nucleation barrier from V(φ) = −α/2 φ² + β/4 φ⁴:
+
+```
+ΔV = α² / (4β)     [DFC substrate barrier height; condensed-matter W is the analog]
+```
+
+The ratio ΔV / E_kink = (α²/4β) / ((4/3)cα^(3/2)/β√2) = (3√2 α^(1/2)) / (16c)
+simplifies to a dimensionless fraction that sets the nucleation probability.
+For the metal binding case, the analog is W / (ℏω) — the ratio of work function to
+photon energy, which must exceed 1 for the electron to remain bound.
+
+**Quantitative status:** All numerical predictions (threshold values, cross-sections)
+are blocked by the ℏ derivation gap (S_kink(D1)/ℏ = 1.13×10⁴⁰; ~13.4 bifurcations
+needed; model has 4 — ~10²⁸ residual, Cycle 75). The structural account (threshold
+behavior, instantaneous emission, energy-frequency proportionality) is complete.
 
 ---
 

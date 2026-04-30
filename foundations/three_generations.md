@@ -6,6 +6,10 @@
 > establishes the SU(3) closure topology at D7, and that topology carries two independent
 > symmetry actions — one becomes color, the other forces matter into triplets, and the
 > dimension of SU(3)'s fundamental representation is fixed at 3 by mathematics alone.
+> The chain from substrate to SU(3) is: n coincident D7 zero modes → configuration space
+> S^(2n−1) → gauge group SU(n) → n=3 at D7 (Bottleneck 1 closed, Cycles 59–74, Tier 1).
+> The D7=SU(3) assignment itself remains a Tier 3 correspondence pending derivation from
+> substrate dynamics.
 
 ---
 
@@ -260,6 +264,13 @@ the generation count:
 - **Route 1 (Skyrme)** — topological soliton approach to spin quantum numbers;
   the J=1/2 result from π₄(SU(2)) connects to why the three generation copies
   are all spin-1/2; `foundations/route1_skyrme.md`
+- **Zero mode multiplet** — proved: n coincident degenerate zero modes on one kink
+  background → configuration space S^(2n−1) → gauge group SU(n); the n=3 case gives
+  SU(3) at D7 and three-generation count; `foundations/zero_mode_multiplet.md` (Cycle 59)
+- **Mode count threshold** — proved numerically: D7 (n=3) has exactly 3 zero modes across
+  all tested α₇ values; SU(3) confirmed; `foundations/mode_count_threshold.md` (Cycles 72–74)
+- **Hierarchy problem** — Higgs mass from D6 S³ geometry; the three-generation structure
+  underpins the CKM phase and baryogenesis; `foundations/hierarchy_problem.md`
 
 ---
 

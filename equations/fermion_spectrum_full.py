@@ -1,9 +1,12 @@
 """
 Full fermion mass spectrum from DFC substrate dynamics.
 
-STUB — Target for future development.
+STATUS: Running — serves as fermion spectrum summary and failure tracker.
+A complete derivation of all fermion masses from DFC substrate parameters
+remains a major open goal; current predictions and known failures are documented
+here and in the individual modules below.
 
-What this module will compute:
+What a complete implementation will compute:
   - All lepton and quark masses from DFC geometric parameters
   - Generation structure from SU(3) fiber topology (three_generations.md)
   - Mass ratios within and across generations
@@ -52,6 +55,8 @@ Key references:
   - equations/neutrino_masses.py (neutrino masses)
   - equations/neutrino_oscillations.py (Δm² hierarchy ratio failure, Cycle 65)
   - equations/flavor_mixing.py (CKM/PMNS structure; CP violation requires N≥3, Cycle 69)
+  - equations/mode_count_threshold.py (D7 n=3 zero modes → SU(3) VERIFIED, Cycles 72–74)
+  - foundations/zero_mode_multiplet.md (n zero modes → SU(n) proved algebraically, Cycle 59)
 
 PRIORITY: Medium (known failures documented; new mechanism needed for tau/top)
 """
@@ -91,7 +96,7 @@ PREDICTIONS_MEV = {
 }
 
 if __name__ == "__main__":
-    print("equations/fermion_spectrum_full.py — STUB (Cycle 69 audit: neutrino masses corrected)")
+    print("equations/fermion_spectrum_full.py — Fermion spectrum summary (Cycle 81 audit)")
     print(f"  Full fermion spectrum: {len(MASSES_MEV)} particles to predict")
     print(f"  Currently predicted: {len(PREDICTIONS_MEV)}")
     print()

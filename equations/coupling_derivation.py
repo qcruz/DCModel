@@ -66,6 +66,9 @@ Key references:
   - equations/weinberg_angle_rg.py         (Route 3B: sin²θ_W)
   - equations/berger_sphere.py             (Cycle 58: R₄=0 proved; λ=β/4 from substrate, not S³ curvature)
   - foundations/zero_mode_multiplet.md     (Cycle 59: n coincident modes → SU(n) proved; Bottleneck 1 partial)
+  - equations/bottleneck2_coupling_integral.py (Cycle 85: compact form g²=2π×β×I₄; α-independence
+    proved; 8 candidate r_U1 definitions scanned; Route B norm=(64π/9)M_c confirmed;
+    kink action route eliminated — derivation target: show r_U1/λ=1/(β×I₄) from V(φ))
 """
 
 import math

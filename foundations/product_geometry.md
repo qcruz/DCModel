@@ -174,6 +174,9 @@ See `equations/gauge_couplings.py` (pairwise crossing analysis) and
 - `foundations/embedding_geometry.md` — Route 3B: sin²θ_W = 3/8 at M_c without GUT group
 - `foundations/depth_assignment.md` — why U(1)/SU(2)/SU(3) at D5/D6/D7 (Bottleneck 1)
 - `foundations/coupling_derivation.md` — g_common ≈ 0.543 at M_c; chain to α_em
+- `foundations/strong_cp_problem.md` — strong CP dissolved by D7 S⁵ Z₂ isometry; the product
+  topology is the prerequisite: the D7 closure being an independent S⁵ (not a subspace of a
+  larger GUT manifold) is what makes the CP-symmetric fixed point exact (Cycle 46)
 - `equations/gauge_couplings.py` — pairwise crossing; D5/D6 equal-coupling verified numerically
 - `equations/weinberg_angle_rg.py` — Route 3B full derivation; sin²θ_W = 0.231
 - `equations/proton_stability.py` — proton lifetime bounds in product topology
