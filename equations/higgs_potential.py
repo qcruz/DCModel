@@ -49,6 +49,9 @@ Key references:
                                             M_c(D5/D6)≈10¹³ GeV sets gauge IC (two distinct events)
     foundations/vev_derivation.md         — VEV derivation path (updated Cycle 58)
     equations/berger_sphere.py            — R₄=0 proof; λ=β/4 identification (Cycle 58)
+    equations/vev_derivation.py           — Bottleneck 3 quantitative analysis; μ_eff=23 GeV target (Cycle 86)
+    foundations/dfc_sm_lagrangian.md      — Higgs sector in full DFC–SM Lagrangian; λ_H, μ_eff, v chain (Cycle 94)
+    equations/lagrangian_verification.py  — numerical Higgs coefficient check; CW vs UV-BC distinction (Cycle 94)
 
 Usage:
     python equations/higgs_potential.py

@@ -292,7 +292,7 @@ V → ∞ as r → ∞ → quarks cannot be separated
 | Property | DFC | Observed |
 |---|---|---|
 | Spin | Jackiw-Rebbi zero mode with D7 coupling | 1/2 ✓ |
-| Color states | 3 = dimension of SU(3) fundamental rep at D7 | 3 ✓ |
+| Color states | 3 = dim of SU(3) fund. rep at D7; D7=SU(3) formally derived Cycles 59–74 (Bottleneck 1 CLOSED) | 3 ✓ |
 | Charges +2/3, −1/3 | Q = T₃ + Y/2, Y = 1/3 from D7 triplet distribution | ✓ |
 | Six flavors | 3 D7 sectors × 2 SU(2)_L isospin states | 6 ✓ |
 | Confinement | Isolated D7 winding has no stable D3 realization | ✓ (qualitative) |
@@ -350,3 +350,7 @@ V → ∞ as r → ∞ → quarks cannot be separated
 - **CP violation** — CKM mixing between D7 sectors; `phenomena/particle_physics/cp_violation.md`
 - **Mass hierarchy** — depth-anchoring κ_q; `foundations/mass_hierarchy.md`
 - **Electron** — lepton analog (stops at D6, no D7); `phenomena/particle_physics/particles/electron.md`
+- **Quark masses** — charm/strange predictions (−15% systematic); `equations/quark_masses.py`
+- **DFC-SM Lagrangian** — Yukawa sector, quark coupling chain; `foundations/dfc_sm_lagrangian.md` (Cycle 94)
+- **Flavor mixing** — CKM matrix from D6/D7 geometry; `equations/flavor_mixing.py`, `phenomena/particle_physics/flavor_mixing.md`
+- **D7=SU(3) derivation** — n=3 zero modes, SU(3) algebra verified; `equations/hopf_dof_count.py`, `foundations/zero_mode_multiplet.md` (Cycles 59–74)
