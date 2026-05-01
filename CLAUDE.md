@@ -156,6 +156,10 @@ If not, add the natural language statement.
 
 ## Development Cycle
 
+> **MANDATORY: Git push to remote at the end of EVERY cycle (every "continue" run).**
+> After committing in Step 4, always run `git push`. Do not finish a cycle without pushing.
+> This applies even if the changes are small. The remote must stay current.
+
 Repeat this cycle indefinitely:
 
 ### Completeness Estimate (running)
