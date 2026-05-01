@@ -28,17 +28,25 @@ Physical argument:
      is natural. This is currently unquantified.
 
   3. Non-equilibrium: The D7 SU(3) closure is a phase transition. As the
-     substrate cools through M_c(D7) ~ 8e14 GeV, closures crystallize
-     out-of-equilibrium. This is the DFC analog of the electroweak phase
-     transition scenario.
+     substrate passes through M_c(D7) — current DFC estimate ~8×10¹⁴ GeV
+     (Cycle 31); target value to match α_s is 2.094×10¹⁵ GeV (Cycle 77) —
+     closures crystallize out-of-equilibrium via the Kibble-Zurek mechanism.
+     This is the DFC analog of the electroweak phase transition scenario.
 
-  The key open problem: quantifying the DFC CP asymmetry and showing it
-  reproduces eta_B ~ 6e-10.
+  Note on CP violation: The strong CP problem is RESOLVED in DFC (Cycle 46) —
+  θ_QCD = 0 from S⁵ Z₂ isometry (equations/strong_cp.py). The CP violation
+  relevant for baryogenesis comes from the CKM matrix (D6/D7 overlap integral)
+  and from the intrinsic chirality of the D7 SU(3) closure event itself.
+
+  The key open problem: quantifying the DFC CP asymmetry from the closure
+  geometry and showing it reproduces eta_B ~ 6e-10.
 
 Key references:
   - foundations/product_geometry.md (proton stability; no proton decay)
   - equations/proton_stability.py (sphaleron rate constraints)
-  - phenomena/particle_physics/baryogenesis.md (if exists)
+  - phenomena/cosmology/baryogenesis.md (DFC structural account)
+  - equations/strong_cp.py (θ_QCD = 0 RESOLVED, Cycle 46)
+  - equations/alpha_s_target.py (M_c(D7) target value, Cycle 77)
 
 PRIORITY: Low-Medium (important for completeness; no current DFC prediction)
 """

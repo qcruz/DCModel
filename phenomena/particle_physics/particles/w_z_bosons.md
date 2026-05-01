@@ -272,18 +272,25 @@ Inserting m_W = g_W v/2:    G_F = 1 / (√2 v²)   [v = 246 GeV exactly]
 | N_ν = 3 | Three D6 depth-anchoring levels | 2.984 ± 0.008 ✓ | Structural prediction ✓ |
 | sin²θ_W = 0.231 | Equal-coupling initial condition + k_Y = 3/5 + SM RG running (Route 3B) | 0.23122 | 0.01% — derived ✓ (M_c from SM running, not substrate — remaining open) |
 | g_W not derived | SM input | 0.6533 | OPEN |
+| Γ(Z→e⁺e⁻) = 82.7 MeV | DFC chain: β→G_F, M_Z, sin²θ_W → coupling formula | 83.984 MeV | −1.56% ✓ Tier 2a (Cycle 93) |
+| Γ_Z(total) = 2456 MeV | DFC chain: sum over all SM fermions (massless limit) | 2495.2 MeV | −1.56% ✓ Tier 2a (Cycle 93) |
+| Γ_inv = 493 MeV (3ν) | DFC chain + N_ν=3 structural prediction | 499.0 MeV | −1.16% ✓ Tier 2a (Cycle 93) |
+| R_l = Γ_had/Γ_ll = 20.75 | DFC fermion coupling strengths (vector + axial) | 20.767 | −0.10% ✓ Tier 2a (Cycle 93) |
+| R_b = Γ_bb̄/Γ_had = 0.220 | DFC b-quark couplings: T₃=−1/2, Q=−1/3 | 0.21629 | +1.58% ✓ Tier 2a (Cycle 93) |
+| A_FB^lep = 0.0168 | A_FB = (3/4)A_e²; A_e from sin²θ_W | 0.01626 | +3.17% ✓ Tier 2a (Cycle 93) |
+| A_FB^b = 0.105 | A_FB^b = (3/4)A_e A_b; needs loop corrections | 0.0996 | +5.4% ✗ Tier 2b (Cycle 93) |
 
 ---
 
 ## Open Questions (Priority Tier 1)
 
-1. **Derive sin²θ_W = 0.23122 from the D5/D6 closure geometry.** The Weinberg angle is
-   determined by the ratio of the D5 U(1) closure radius R_U1 to the D6 S³ closure
-   radius R_S3: tan θ_W ≈ R_U1/R_S3. The specific value sin²θ_W ≈ 0.231 requires
-   R_U1/R_S3 = tan(28.7°) ≈ 0.548. Whether this ratio follows from the depth-anchoring
-   mechanism — the relative difficulty of achieving U(1) vs. SU(2) closure at their
-   respective substrate depths — is the primary open problem. This is identified as
-   the most accessible coupling constant derivation in the model (see `CLAUDE.md`).
+1. **RESOLVED (Cycle 22/30): sin²θ_W = 0.2312 derived via Route 3B.** The Weinberg angle
+   follows from the equal-coupling initial condition at the D5/D6 closure scale M_c ≈ 10¹³ GeV
+   (g₁ = g₂ = g₃ at M_c, confirmed numerically), plus the Dynkin normalization k_Y = 3/5
+   derived from the SM matter content. SM RG running from M_c to M_Z gives sin²θ_W = 0.2312
+   (error < 0.01%). **Remaining open:** deriving M_c from the substrate compression dynamics
+   rather than from the SM running itself (currently M_c is read off from the α₁=α₂ crossing
+   in the SM RG equations). See `foundations/embedding_geometry.md`, `equations/weinberg_angle_rg.py`.
 
 2. **Derive g_W (or equivalently, m_W for given v) from substrate parameters.** The
    W mass m_W = g_W v/2 requires knowing g_W from DFC geometry, not as input. The
@@ -324,3 +331,7 @@ Inserting m_W = g_W v/2:    G_F = 1 / (√2 v²)   [v = 246 GeV exactly]
   `foundations/three_generations.md`
 - **CP violation** — CKM CP phase from D6 fold orientation geometry;
   `phenomena/particle_physics/cp_violation.md`
+- **Z boson decay widths** — all partial widths, Γ_Z, R_l, R_b, A_FB^lep from DFC coupling chain (Cycle 93);
+  `equations/z_boson_decays.py`
+- **Electroweak precision** — ρ=1, T=0, sin²θ_W self-consistency checks;
+  `equations/electroweak_precision.py`, `equations/muon_lifetime.py`
