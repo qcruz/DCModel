@@ -98,7 +98,13 @@ amplitude at that location rises above the local buckling threshold. The energy 
 absorbed in a single interaction: one photon → one excited atom. The "click" is the
 buckling event.
 
-Energy: E = hν (from ω = ck → E = ℏω = ℏck = hν/λ × λ = hν). ✓
+The energy of a photon mode with angular frequency ω is proportional to ω, with the
+constant of proportionality being the quantum of action ℏ (Planck's constant divided
+by 2π). This identification E = ℏω is a postulate imported from quantum field theory,
+not derivable from the dispersion relation ω = ck alone — the dispersion relation
+only determines the speed of propagation. Since ω = 2πν, this is the same statement
+as E = hν (h = 2πℏ, ν = ω/2π). See `phenomena/light/light.md` for the full audit
+(Cycle 42 correction).
 
 The photon does not "choose" to be a wave or a particle at any point. It is always
 the field. What changes is whether the field amplitude locally exceeds the kink threshold.
@@ -176,7 +182,7 @@ Wave regime (|φ| ≪ φ₀):
 Kink regime (|φ| → φ₀):
     φ_kink(x) = φ₀ tanh((x − x₀)/λ)    λ = √(2c²/α)
 
-    Energy: E_kink = (4/3)φ₀²λ α c² = (4c²/3)√(α/2) (α/β)
+    Energy: E_kink = (4/3)c²φ₀²/λ = (4c²/3)√(α/2) (α/β)   [BPS-correct, Cycle 48]
 ```
 
 ### de Broglie from KG
@@ -209,8 +215,8 @@ a local constraint at one slit prevents coherent cross-channel redistribution.
 
 | Property | DFC mechanism | Verified |
 |---|---|---|
-| de Broglie λ = h/p | KG dispersion: p = ℏk | Derived, not postulated ✓ |
-| E = hν for photons | ω = ck → E = ℏω | Derived ✓ |
+| de Broglie λ = h/p | KG dispersion: p = ℏk (given E=ℏω postulate) | Structurally consistent ✓ |
+| E = hν for photons | E = ℏω is a postulate (quantum of action); E=hν is the same relation | Consistent — not independently derived ✓ |
 | Interference pattern shape | Stationary BVP of wave equation | λL/d fringe spacing ✓ |
 | Point-like detection | Kink localization width λ_kink ~ L_Planck | Structural ✓ |
 | Which-path destroys fringes | New boundary condition prevents cross-channel | Mechanical ✓ |
@@ -222,10 +228,12 @@ a local constraint at one slit prevents coherent cross-channel redistribution.
 ## Open Questions
 
 1. **Rigorous derivation of the Born rule.** The argument above (buckling probability ∝ |φ|²)
-   gives the correct scaling but is not a proof. A rigorous derivation would compute the
-   buckling event rate from the nonlinear compression field dynamics and show it equals |φ|²
-   exactly, including the normalization condition ∫|ψ|² = 1. This is the central unsolved
-   problem in quantum foundations.
+   gives the correct scaling but is not a proof. **Partial result (Cycle 38):** The spin Born
+   rule P(↑, n̂) = cos²(θ/2) has been derived from SU(2) spinor geometry + binary nucleation
+   (zero free parameters) — see `foundations/born_rule_derivation.md`. The position Born rule
+   (buckling event rate Γ(x) ∝ |φ(x)|² from Kramers escape dynamics) remains open. A rigorous
+   derivation would compute the threshold-crossing rate from the nonlinear field dynamics and
+   show it equals |φ|² exactly, including normalization.
 
 2. **Kink re-localization dynamics.** When an electron passes through a double slit, the
    kink's phase field propagates coherently through both slits. The re-localization at the
@@ -260,3 +268,7 @@ a local constraint at one slit prevents coherent cross-channel redistribution.
 - **Light** — photon as massless compression wave with E = hν; `phenomena/light/light.md`
 - **Spin** — Jackiw-Rebbi zero mode — the localized kink that is the electron;
   `phenomena/quantum/spin.md`
+- **Born rule (spin)** — P(↑,n̂)=cos²(θ/2) DERIVED from SU(2) geometry + binary nucleation
+  (Cycle 38); `foundations/born_rule_derivation.md`
+- **Decoherence** — large-molecule coherence suppression; `phenomena/quantum/decoherence.md`
+- **Special relativity** — de Broglie verified via KG dispersion; `equations/special_relativity.py` (Cycle 78)

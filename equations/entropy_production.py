@@ -264,7 +264,7 @@ def arrow_of_time_metric(omega_initial, omega_final):
             'NOTE (Cycle 45): irreversibility is FORMALLY DERIVED from Z₂ topology: '
             'ΔV/E_kink = 0.265 at α=1, β=0.035 (BPS-correct); '
             'Γ_forward/Γ_reverse = exp(ΔV/k_BT) ≫ 1 at any observable T. '
-            'See foundations/arrow_of_time.md.'
+            'See phenomena/thermodynamics/arrow_of_time.md.'
         ),
     }
 
@@ -407,7 +407,7 @@ if __name__ == "__main__":
     print(f"  RESOLVED (Cycle 45): Irreversibility formally derived from Z₂ topology.")
     print(f"    ΔV/E_kink = 0.265 (BPS-correct, α=1, β=0.035).")
     print(f"    Γ_forward/Γ_reverse = exp(ΔV/k_BT) ≫ 1 at any observable T.")
-    print(f"    See: foundations/arrow_of_time.md")
+    print(f"    See: phenomena/thermodynamics/arrow_of_time.md")
     print(f"\n--- Open Problems ---")
     print(f"  1. Count folding configurations directly from φ(x,t) field")
     print(f"  2. Derive Ω_fold(E, V, N) from compression field theory")

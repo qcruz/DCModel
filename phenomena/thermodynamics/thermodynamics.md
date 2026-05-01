@@ -354,9 +354,11 @@ D3 boundary of the collapse region).
 
 - **Heat and conductivity** — the physical mechanisms of heat flow and radiation;
   `phenomena/thermodynamics/heat_and_conductivity.md`
-- **Time** — the second law provides the arrow of time as a derived consequence
-  of folding degradation; Ω_fold monotonically non-decreasing gives time its direction;
-  `foundations/premise.md`
+- **Arrow of time** — Z₂ irreversibility derived formally from kink topology;
+  ΔV/E_kink=0.265, Γ_forward/Γ_reverse≫1 (Cycle 45);
+  `phenomena/thermodynamics/arrow_of_time.md`, `equations/entropy_production.py`
+- **Phase transitions** — V_eff bifurcations, EWSB crossover, QCD confinement as
+  critical compression events; `phenomena/thermodynamics/phase_transitions.md`
 - **Quantum mechanics** — decoherence is the quantum manifestation of the second law:
   fold orientation (quantum phase) becomes entangled with environmental folds and
   Ω_fold increases as the pure state disperses; `phenomena/quantum/quantum_mechanics.md`
