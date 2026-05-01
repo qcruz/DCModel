@@ -156,9 +156,13 @@ If not, add the natural language statement.
 
 ## Development Cycle
 
-> **MANDATORY: Git push to remote at the end of EVERY cycle (every "continue" run).**
-> After committing in Step 4, always run `git push`. Do not finish a cycle without pushing.
-> This applies even if the changes are small. The remote must stay current.
+> ### ⚠ MANDATORY FINAL STEP — EVERY CYCLE WITHOUT EXCEPTION
+> **After every commit, run `git push` before the cycle is considered complete.**
+> A cycle is NOT finished until the remote is updated. This applies to every "continue"
+> invocation, no matter how small the change. The last command of every cycle must be
+> `git push` and you must confirm the remote accepted it (look for the branch update line
+> in the output, e.g. `main -> main`). If you reach the end of a cycle and have not pushed,
+> do not return to Step 1 — push first.
 
 Repeat this cycle indefinitely:
 
@@ -374,6 +378,9 @@ After any new document or any audit:
 3. Check whether any linked documents need updating.
 4. If the cycle produced a significant change (new verified prediction, resolved bottleneck,
    major discovered failure), update the Completeness Estimate above and in `README.md`.
+5. **Commit all changed files and run `git push`.** Confirm the remote accepted the push
+   (output must show `main -> main` or equivalent). This step is non-optional — do not
+   skip it and do not return to Step 1 until the push has completed successfully.
 
 Then return to Step 1.
 
