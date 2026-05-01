@@ -15,6 +15,16 @@
 > Both results are computed in the 1+1D kink model (toy model for DFC closures).
 > The 3+1D extension to pointlike particles requires the Skyrme/higher-dimensional
 > substrate treatment. Verified in `equations/kink_scattering.py`.
+>
+> **New in Cycle 89:** Exact T-matrix T(q) = (q+iM_c)(q+i2M_c)/[(q−iM_c)(q−i2M_c)]
+> derived from the reflectionless Pöschl-Teller n=2 potential. |T|²=1 exactly.
+> Levinson theorem verified: δ(0⁺) = 2π, δ(∞) = 0. See `equations/s_matrix.py`.
+>
+> **New in Cycle 91:** Effective range theory derived from the exact T-matrix.
+> Scattering length a_s = 3/M_c = 3λ and effective range r₀ = 11/(6M_c) ≈ 1.833λ —
+> both exact, parameter-free. Wigner time delay τ_W(0) = −3/M_c = −a_s (exact
+> identity). The PT n=2 potential is time-advancing (always negative τ_W).
+> See `equations/scattering_length.py`.
 
 ---
 
@@ -230,6 +240,119 @@ With α = 2 M_c(D5)², β = 0.035, m_σ = 2.04 × 10^13 GeV:
 | δ(k=m_σ) | 22.8 rad | Phase shift at threshold |
 | R(k=m_σ) | 0.52 | Reflection at threshold |
 | R(k=10 m_σ) | 0.0008 | Near-transparent at high energy |
+| a_s / λ | 3.000 (exactly) | Scattering length = 3 kink widths (Cycle 91) |
+| a_s (D5) | 5.80 × 10^−29 m | Physical scattering length at D5 scale |
+| r₀ / λ | 1.833 = 11/6 (exactly) | Effective range (Cycle 91) |
+| τ_W(0) | −3/M_c = −a_s | Zero-energy time advance (Cycle 91) |
+
+---
+
+## Effective Range Theory from the Exact T-Matrix (Cycle 91)
+
+The exact single-kink T-matrix (Cycle 89) allows the full effective range expansion to be
+derived analytically. This section states the physical relationships in words before giving
+the formal expressions.
+
+### Scattering Length
+
+The scattering length measures the zero-energy limit of the phase shift: it equals the
+negative of the phase shift divided by the wavenumber, taken as the wavenumber approaches
+zero. A positive scattering length corresponds to an effectively repulsive potential at
+zero energy; a negative scattering length to an effectively attractive one.
+
+For the Levinson-shifted phase shift δ_s(q) = δ(q) − 2π (which goes to zero as q → 0),
+a Taylor expansion of the two arctan contributions gives:
+
+```
+arctan(M_c/q) → π/2 − q/M_c + O(q³)   as q → 0
+arctan(2M_c/q) → π/2 − q/(2M_c) + O(q³)
+
+δ_s(q) = δ(q) − 2π → −(1/M_c + 1/(2M_c)) × 2q + O(q³) = −3q/M_c + O(q³)
+```
+
+The scattering length is defined as minus the coefficient of q in this expansion:
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│  a_s = 3/M_c = 3λ       (exact, 0 free parameters)          │
+│                                                              │
+│  The scattering length is exactly three times the kink       │
+│  width λ = 1/M_c = c/√(2α), for any α, β, c.                │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+The scattering length is positive (equal to +3λ), consistent with the reflectionless
+character of the potential: there is no zero-energy bound state (a bound state at threshold
+would require a_s → +∞).
+
+### Effective Range
+
+The effective range parameterizes the leading correction to the zero-energy approximation.
+The quantity q × cot(δ_s(q)) has a Taylor expansion in even powers of q; its constant term
+equals minus the inverse scattering length, and the coefficient of q² gives the effective
+range divided by two.
+
+Expanding q × cot(δ_s(q)) to order q²:
+
+```
+q cot δ_s(q) = −M_c/3 + (11/12M_c) q² + O(q⁴)
+```
+
+The coefficient of q² on the right gives r₀/2 = 11/(12M_c), so:
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│  r₀ = 11/(6M_c) ≈ 1.833λ   (exact, 0 free parameters)       │
+│                                                              │
+│  The effective range is eleven-sixths of the kink width.     │
+│  The coefficient 11/12 comes from the sum of the two pole    │
+│  contributions: 1/(2κ₀) × f(κ₀) + 1/(2κ₁) × f(κ₁), where  │
+│  κ₀ = 2M_c (zero mode) and κ₁ = M_c (shape mode).           │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Wigner Time Delay
+
+The Wigner time delay measures how much longer a wave packet takes to traverse the
+scattering region compared to free propagation. It equals the derivative of the phase
+shift with respect to the wavenumber.
+
+Taking the derivative of δ(q) = 2 arctan(M_c/q) + 2 arctan(2M_c/q):
+
+```
+τ_W(q) = dδ/dq = −2M_c/(q² + M_c²) − 4M_c/(q² + 4M_c²)
+```
+
+Both terms are negative for all real q. The time delay is **always negative** — the
+reflectionless PT n=2 potential is time-advancing: a wave packet transits the scattering
+region in less time than it would take to traverse the same distance freely.
+
+At zero wavenumber, the time delay equals minus the scattering length (divided by the
+wave speed, set to 1 here):
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│  τ_W(0) = −3/M_c = −a_s    (exact identity)                 │
+│                                                              │
+│  The zero-energy time advance equals the scattering length.  │
+│  Both measure the same effective range of the kink's         │
+│  influence on the scattering state.                          │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Connection to Bottleneck 2
+
+The scattering length a_s = 3λ and the holonomy radius r_U1 = 3λ/(4β) (the candidate for
+the U(1) coupling radius in Bottleneck 2) differ by a factor of 1/(4β) ≈ 7.1 at β ≈ 0.035.
+The scattering length sets the physical size of the kink's influence on a passing wave;
+the holonomy radius is the effective orbit radius for the gauge coupling. Both share the
+scale 3λ but differ by the quartic coupling suppression.
 
 ---
 
@@ -274,6 +397,10 @@ specific numbers for M_K and the scattering phase shift require the full 3+1D tr
 | Exact single-kink T-matrix: T(q) = (q+iM_c)(q+i2M_c)/[(q−iM_c)(q−i2M_c)] | **Derived exact ✓ (Cycle 89)** |
 | Reflectionless property \|T(q)\|² = 1 for all q | Proved ✓ (Cycle 89, machine precision) |
 | Born agrees with exact at q >> M_c (leading term 6M_c/q) | Verified ✓ (Cycle 89) |
+| Scattering length a_s = 3/M_c = 3λ (0 free params) | **Derived exact ✓ (Cycle 91)** |
+| Effective range r₀ = 11/(6M_c) ≈ 1.833λ (0 free params) | **Derived exact ✓ (Cycle 91)** |
+| Wigner time delay τ_W(q) always negative (time-advancing) | **Proved ✓ (Cycle 91)** |
+| τ_W(0) = −3/M_c = −a_s (exact identity) | **Proved ✓ (Cycle 91)** |
 | 3+1D extension to physical particles | OPEN |
 | Shape mode physical correspondence (which splitting?) | OPEN |
 | Exact kink-antikink scattering (DHN two-soliton) | OPEN |
@@ -289,3 +416,5 @@ specific numbers for M_K and the scattering phase shift require the full 3+1D tr
 - `equations/kink_model.py` — static kink solution
 - `equations/s_matrix.py` — exact single-kink T-matrix (Cycle 89): T(q), phase shift,
   Levinson verification, Wigner time delay, Born vs exact comparison
+- `equations/scattering_length.py` — effective range theory (Cycle 91): a_s = 3/M_c,
+  r₀ = 11/(6M_c), τ_W(q) always negative, τ_W(0) = −a_s; Born vs exact comparison
