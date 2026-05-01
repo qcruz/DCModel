@@ -188,7 +188,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~45%** (viability as a theory: ~57.5%; mathematical rigor: ~32.5%)
+**Current estimate: ~47%** (viability as a theory: ~59.5%; mathematical rigor: ~34.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -198,24 +198,21 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 | Full SM reproduction | **58%** | τ mass mechanism; β derivation |
 | Complete theory (SM + gravity + QM) | **76%** | ℏ derivability; G_Newton |
 
-*Full per-failure analysis with paths and swing factors in .*
+*Full per-failure analysis with paths and swing factors in `comparisons/reconcilability_risk.md`.*
 
 The model provides a coherent structural framework — the gauge sector, proton stability,
 and several qualitative derivations are genuinely compelling. What it has not yet established
 is that it *derives* rather than *reconstructs* the Standard Model. Three bottlenecks dominate:
 
-1. **D-depth assignment mechanism** — Bottleneck 1 FULLY CLOSED (Cycle 73): PT parameter s=2 exact for φ⁴ kink (U₀ξ²=6, α cancels) → s=2 PT has exactly 2 bound states → zero mode unique by Sturm-Liouville → each threshold adds exactly 1 zero mode → n thresholds → SU(n). Combined with Cycles 59–72 chain: D5=U(1), D6=SU(2), D7=SU(3) derived from V(φ) = −α/2 φ² + β/4 φ⁴. Remaining open: D7 three-field numerical verification; threshold positions α₅, α₆, α₇.
-2. **First-principles coupling constants** — Route 3B gives sin²θ_W = 0.231; Cycles 51–52 extended chain to M_W, G_F, τ_μ (all <1%). Cycle 85: g² = 2π×β×I₄ compact form; α-independence proved exact across 3 decades; derivation target reformulated as r_U1/λ = 1/(β×I₄) from V(φ). Cycle 86: v = 246 GeV gap quantified — SM quartic runs negative at M_c; DFC provides stabilizing BC λ=β/4; DFC BC + 2-loop Δλ → m_H=122.9 GeV (−1.9%); target μ=23 GeV for D6/D7 overlap integral (blocked on threshold positions). Cycle 87: β self-consistently determined — β = 3g_common²/(8π) = 0.03536 (+0.75%); Route F removes β as free parameter conditional on Bottleneck 2 proof. Cycle 88: required KK mode normalization 9/(64π) identified; r_U1=φ₀²/(β×f²) uniqueness proved algebraically; remaining calc = 2D coupling integral (Route B close).
-3. **S-matrix derivation** — Cycle 50: Thomson σ_T (−4.3%); Cycles 51–52: weak sector M_W/G_F/τ_μ (all <1%); Cycle 89: exact single-kink T-matrix (reflectionless n=2 PT, Tier 1). Bottleneck 2 gap: derive r_U1/λ = 1/(β×I₄) from the field equation — required KK mode normalization = 9/(64π) identified (Cycle 88); remaining = 2D coupling integral. α_s: target M_c(D7) = 2.094×10¹⁵ GeV (Cycle 77); requires γ_D7 ≈ 2.66 per depth step.
+1. **D-depth assignment mechanism** — Bottleneck 1 FULLY CLOSED (Cycle 73): PT parameter s=2 exact for φ⁴ kink → s=2 PT has exactly 2 bound states → zero mode unique by Sturm-Liouville → each threshold adds exactly 1 zero mode → n thresholds → SU(n). Combined with Cycles 59–72: D5=U(1), D6=SU(2), D7=SU(3) derived from V(φ). Remaining open: threshold positions α₅, α₆, α₇ from substrate.
+2. **First-principles coupling constants** — Route 3B gives sin²θ_W = 0.231; Cycles 51–52 extended to M_W, G_F, τ_μ (all <1%); Cycle 93: Z boson widths Γ_Z/Γ_inv/R_l/R_b/A_FB^lep (all <5%, Tier 2a). Bottleneck 2: g² = 2π×β×I₄ compact form proved; target = derive r_U1/λ = 1/(β×I₄) from V(φ) field equation (2D coupling integral, Cycle 88). Bottleneck 3: v = 246 GeV from D6/D7 overlap integral (blocked on threshold positions).
+3. **S-matrix derivation** — Cycle 89: exact single-kink T-matrix (reflectionless n=2 PT, Tier 1); Cycle 91: effective range theory a_s=3λ, r₀=1.833λ (exact); Cycle 92: kink form factor F(k) exact. α_s: target M_c(D7) = 2.094×10¹⁵ GeV (Cycle 77).
 
 The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the correct BPS E_kink
-formula gives E_kink/E_total(λ) = 8/3 exactly — a universal constant, β-independent, and
-greater than 1. The β ≈ 0.035 inference that depended on this is also retracted; β is now
-Tier 3 (reference value). The r_U1/λ formal derivation requires extending the substrate
-beyond pure real φ⁴ — the U(1) phase has no localizable mode on the real kink (both KK
-and worldvolume routes are blocked).
+formula gives E_kink/E_total(λ) = 8/3 exactly — β-independent. β is Tier 3 (reference value);
+self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) conditional on Bottleneck 2 proof.
 
-*Updated after every push. Full history in `CLAUDE.md`.*
+*Updated after every push. Full push history in `CLAUDE.md`.*
 
 ---
 
