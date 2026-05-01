@@ -262,8 +262,12 @@ Key swing factors: τ mass mechanism (Full SM −12% if found); g² rigor (Core 
 | 2026-04-16 | 58 | berger_sphere.py (new): Ricci scalar of biaxial Berger sphere derived analytically via Cartan structure equations; R(ε) = 24−16ε−8ε² exact (polynomial terminates at degree 2); R₄ = 0 proved (numeric verification: 1.5×10⁻¹²); CORRECTS vev_derivation.md claim that λ_DFC = R₄/r_D6⁴. Physical consequence: Ricci term DESTABILIZES ε=0 (contributes to −μ²ε²); quartic stabilizer λ = β/4 ≈ 0.0088 from substrate β, not from geometry; V(ε) = −α_D6/2 ε² + β/4 ε⁴ identified directly as the substrate potential at D6 depth; VEV = √(2α_D6/β) in substrate units; remaining gap = α_D6 in GeV (requires M_c(D6) from Bottleneck 1). vev_derivation.md CORRECTED: Open Problem 1 (Berger R₄) marked RESOLVED; new Open Problems 2–5 restructured around normalization and overlap integral. higgs_potential.py AUDITED: docstring corrected (quartic from β not curvature; m_H uncertainty corrected to ±3.7 GeV); berger_sphere.py cross-ref added. ISSUES.md: Berger R₄ moved to Resolved. | 44% | 22.5% | ~30% |
 | 2026-04-16 | 57 | quark_gluon_plasma.md (STUB → full doc): Formal Equations section added (string tension T_c estimate, Debye screening λ_D ~ 1/(g_s T), DFC T_c prediction 1160 MeV vs 154 MeV with 653% error explained, KSS viscosity bound η/s ≥ 1/(4π), Polyakov loop order parameter); Consistency Checks updated (6 rows, 4 ✓ structural, 2 ✗ blocked); 4 specific Open Questions added. kink_model.py audited: stale γ_D=(16/3)√β retraction label corrected (Cycle 48); compression_dynamics.md cross-ref added. comparisons/swot.md major update (Cycles 34–57): γ_D retraction removed from Strengths; weak sector <1% cluster added; Tsirelson proved, Born rule spin derived, first cross-sections, strong CP dissolved, hierarchy dissolved, magnetic monopole prediction, k_Y derived documented; completeness 18% → 27.5% → 29.5% corrected; all 5 comparison tables updated; Summary Scorecard expanded with k_Y and strong CP rows. | 43.5% | 21.5% | ~29.5% |
 
-**After every push:** Update the estimate here and in `README.md` after every commit push,
-even if the change is small (e.g., ~10% → ~10.5%). The estimate has two components:
+**After every push:** Update the estimate in THREE places every cycle:
+1. The `Current estimate:` line in the code block above (this file)
+2. The `Current status:` line at the top of `README.md` (line ~9)
+3. The `## Mathematical Completeness Estimate` section in `README.md` (~line 191) — **this is what appears on the GitHub repo page and is what users see first**
+
+All three must stay in sync. The estimate has two components:
 - **Viability** (~25% baseline): increases when new structural accounts are added, known
   failures are resolved, or predictions are confirmed by data. Formalizing placeholder
   docs adds small increments (~0.5% each for major phenomena).
