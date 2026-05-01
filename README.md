@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~45% complete by internal estimate. Several Standard Model quantities
+Current status: ~45.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -103,6 +103,7 @@ equations/                Runnable Python modules — input data, get prediction
   electroweak_precision.py  ρ=1, T=0, sin²θ_W consistency — five EW precision tests (Cycle 52)
   pair_production.py      e⁺e⁻ → μ⁺μ⁻ cross-section; R-ratio = 11/3 (exact Tier 1); kink-antikink nucleation (Cycle 54)
   anomalous_magnetic_moment.py  a_e = α_em/(2π) from DFC coupling chain; −2.01% systematic (Cycle 55)
+  josephson_effect.py     K_J=2e/h verified to 7.75×10⁻¹⁶; Shapiro steps, SQUID, Josephson inductance (Cycle 90)
   [STUBS — structural account written, quantitative derivation open]
   nuclear_binding.py      Bethe-Weizsäcker formula; Yukawa potential; Fe-56 peak; DFC α_s 11% blocks strong predictions
   lamb_shift.py           Hydrogen 2s-2p Lamb shift; self-energy loop integral stub; α⁵ scaling estimate
@@ -122,10 +123,11 @@ phenomena/                Natural language explanations of physical observations
     lamb_shift.md         [STUB] Hydrogen 2s-2p splitting; DFC self-energy loop integral; α⁵ scaling
     photoelectric_effect.md  [STUB] Photon absorption as threshold crossing; ℏ blockage
     hawking_radiation.md  [STUB] Horizon pair nucleation; T_H blocked by G_Newton and ℏ
-  condensed_matter/       [NEW DOMAIN]
+  condensed_matter/
     superconductivity.md  Cooper pairs as D6 kink bound states; Φ₀=h/(2e) Tier 1 ✓; K_J Tier 1 ✓ (Cycle 60)
     superfluidity.md      Global phase coherence; κ₀=h/m Tier 1 ✓; BEC BLOCKED (Cycle 61)
     quantum_hall_effect.md  TKNN Chern number = DFC winding number; R_K Tier 1 ✓; FQHE structural (Cycle 61)
+    josephson_effect.md   DC CPR I=I_c sin(δ); AC f_J=K_J×V; Shapiro steps; SQUID; all Tier 1 from K_J=2e/h (Cycle 90)
   gravity/
     general_relativity.md Gravity as folding gradient and dimensional pressure
   light/

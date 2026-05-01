@@ -20,14 +20,24 @@ The force strengths (coupling constants) are set by the sizes of these closures,
 not by their topologies. The topologies determine which forces exist; the sizes
 determine how strong they are.
 
-STATUS: The identification of U(1)/SU(2)/SU(3) with depth-ordered closures is
-well-motivated but not yet formally derived. The open problem is showing from
-the substrate dynamics why these three and not others are stable.
+STATUS: Bottleneck 1 CLOSED (Cycles 59–74). The U(1)/SU(2)/SU(3) identification
+is now Tier 2 candidate status:
+  - n coincident zero modes → S^(2n−1) configuration space → U(n) isometry → SU(n)
+    gauge group (zero_mode_multiplet.md, Cycle 59)
+  - D5 real kink has 2 real DOFs per zero mode → S¹ → SO(2) = U(1) (Cycle 70)
+  - D6/D7: complex structure J → U(2)→SU(2), U(3)→SU(3) (Cycles 70–71)
+  - Non-degeneracy of zero modes proved for all α,β (Cycle 73)
+  - Mode count n verified numerically at D5/D6/D7 (Cycle 74)
+  Remaining gap: why n kinks open at depth D(4+n) from substrate dynamics (Tier 3).
+  Electric charge quantization: k_Y = 3/5 derived from Dynkin normalization (Cycle 30).
 
 Key references:
   - foundations/product_geometry.md — why these form a product, not a simple group
   - foundations/three_generations.md — why SU(3) has exactly 3 winding modes
   - foundations/higgs_geometry.md — S³ squashing as electroweak symmetry breaking
+  - foundations/zero_mode_multiplet.md — SU(n) from n coincident zero modes (Cycle 59)
+  - equations/u1_from_paired_modes.py — SO(2)=U(1) at D5 verified (Cycle 70)
+  - equations/hypercharge_normalization.py — k_Y = 3/5 derived (Cycle 30)
 
 Usage:
     python equations/closure_topology.py
@@ -268,11 +278,12 @@ def product_structure_argument():
         'structure':    'U(1) × SU(2) × SU(3)  (direct product, not quotient)',
         'proton_decay': 'Forbidden — no X/Y bosons, no leptoquark operators',
         'coupling_unification': (
-            'Couplings converge at the closure scale because all three closures '
-            'were formed at the same geometric scale (D_closure — exact value not '
-            'yet derived from DFC substrate parameters; SM running suggests '
-            '~10^15-10^16 GeV for coupling convergence). '
-            'Convergence reflects common origin, not simple group unification.'
+            'Couplings converge at M_c(D5/D6) ≈ 9.44×10^12 GeV (the equal-coupling '
+            'scale from SM running; α₁ = α₂ one-loop crossing). DFC predicts '
+            'g_common = 0.5423 vs SM 0.5443 (0.4% error, from β alone via g²=8πβ/3). '
+            'This is NOT the GUT scale ~10^15 GeV — DFC has no GUT scale. '
+            'Convergence reflects a common substrate origin, not simple group '
+            'unification at high energy. See coupling_derivation.py, Cycle 87.'
         ),
         'GUT_distinction': (
             'SU(5), SO(10) unification requires G → SM breaking at GUT scale. '
@@ -360,9 +371,14 @@ if __name__ == "__main__":
         print(f"  {label:6s}  (dim={dim}):  E_total = {e['E_total']:.4f}  "
               f"R_stable = {e['R_stable_est']:.4f}")
 
-    print(f"\n--- Open Problems ---")
-    print(f"  1. Derive why the open→closed transition occurs at D5 specifically")
+    print(f"\n--- Open Problems (updated Cycle 90) ---")
+    print(f"  1. [PARTIALLY RESOLVED — Cycles 59–74] n coincident zero modes at D(4+n)")
+    print(f"     → SU(n); SO(2)=U(1) at D5, SU(2) at D6, SU(3) at D7 (Tier 2 candidate).")
+    print(f"     Remaining: derive WHY n kinks open at depth D(4+n) from substrate dynamics.")
     print(f"  2. Compute U(1)/SU(2)/SU(3) closure sizes from substrate parameters")
+    print(f"     (Bottleneck 2 — see bottleneck2_coupling_integral.py)")
     print(f"  3. Show SU(4) and higher are NOT stable at D8+ (exclusion argument)")
-    print(f"  4. Connect winding numbers to quantized electric charge values")
-    print(f"  See: foundations/product_geometry.md, foundations/three_generations.md")
+    print(f"     Confinement at D7 is the working hypothesis; formal proof open.")
+    print(f"  4. [RESOLVED Cycle 30] k_Y = 3/5 derived from Dynkin normalization;")
+    print(f"     Q = T₃ + Y/2 for all SM fermions verified (hypercharge_normalization.py).")
+    print(f"  See: zero_mode_multiplet.md, u1_from_paired_modes.py, hypercharge_normalization.py")

@@ -285,3 +285,6 @@ KG equation in the non-relativistic limit is the Schrödinger equation.
   `phenomena/electromagnetism/electromagnetism.md`
 - **Measurement** — whether the compression field has a definite value inside the barrier;
   `foundations/measurement.md`
+- **Josephson effect** — macroscopic quantum tunneling of the superconducting phase
+  (Open Question 4); `phenomena/condensed_matter/josephson_effect.md`,
+  `equations/josephson_effect.py`
