@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~46% complete by internal estimate. Several Standard Model quantities
+Current status: ~46.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -105,6 +105,7 @@ equations/                Runnable Python modules — input data, get prediction
   anomalous_magnetic_moment.py  a_e = α_em/(2π) from DFC coupling chain; −2.01% systematic (Cycle 55)
   josephson_effect.py     K_J=2e/h verified to 7.75×10⁻¹⁶; Shapiro steps, SQUID, Josephson inductance (Cycle 90)
   scattering_length.py    a_s=3/M_c=3λ, r₀=11/(6M_c)≈1.833λ, τ_W(0)=−a_s; all exact, 0 free params (Cycle 91)
+  kink_form_factor.py     F(k)=πκ(κ²+4)/(8 sinh(πκ/2)); ⟨r⟩_rms=√((π²−6)/4)/M_c≈0.984λ; Tier 1 (Cycle 92)
   [STUBS — structural account written, quantitative derivation open]
   nuclear_binding.py      Bethe-Weizsäcker formula; Yukawa potential; Fe-56 peak; DFC α_s 11% blocks strong predictions
   lamb_shift.py           Hydrogen 2s-2p Lamb shift; self-energy loop integral stub; α⁵ scaling estimate

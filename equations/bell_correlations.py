@@ -345,4 +345,6 @@ if __name__ == "__main__":
     print(f"  are not yet spatially separated objects.")
     print(f"")
     print(f"  The Tsirelson bound S <= 2*sqrt(2) follows from SU(2) geometry.")
-    print(f"  Formal proof OPEN (see foundations/bell_hidden_variables.md).")
+    print(f"  Formal proof PROVED (Cycle 35): C² = 4I⊗I − [A₁,A₂]⊗[B₁,B₂],")
+    print(f"  ‖[Aᵢ,Aⱼ]‖ ≤ 2 for ±1 observables → λ_max(C²) ≤ 8 → ‖C‖ ≤ 2√2.")
+    print(f"  See: foundations/tsirelson_bound.md, equations/bell_correlations.py")

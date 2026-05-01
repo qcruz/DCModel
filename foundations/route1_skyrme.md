@@ -167,13 +167,15 @@ The full account requires connecting:
 The current document (`foundations/spin_emergence.md`) has all three outlined; the formal
 connection between them has not been completed.
 
-### Open 3: Parity Violation from D6 Chirality
+### Open 3: Parity Violation from D6 Chirality — RESOLVED (Cycle 41)
 
 S³ has an intrinsic chirality — it distinguishes left from right. The FR mechanism
-produces left-handed fermion statistics for N=1 winding. Whether this chirality bias
-is the unique source of the observed parity violation in weak interactions, or whether
-it must be supplemented by the SU(2)_L subscript (chirality projection) from a
-separate assumption, is not yet formally derived.
+produces left-handed fermion statistics for N=1 winding. This chirality bias IS the
+source of parity violation in the weak force: the D6 Jackiw-Rebbi zero mode bound to
+a positively wound N=+1 kink is inherently left-handed (pure (1−γ⁵) coupling). No
+right-handed analogue W_R coupling exists because the product topology has no D6'
+closure. The structural derivation is complete in `phenomena/particle_physics/forces/
+parity_violation.md`. No additional assumption is required.
 
 ### Open 4: Three Generations from D6 Topology
 
@@ -216,11 +218,18 @@ compression field's intrinsic dynamics.
 
 Both routes require a common prerequisite: the **D7 effective Lagrangian from DFC**.
 
-Route 3B needs to derive M_c(12) from where the D5/D6 closures actually form —
-which requires understanding the D5/D6 formation dynamics from the compression field.
+**UPDATE (Cycles 59–74):** Bottleneck 1 (why U(1) at D5, SU(2) at D6, SU(3) at D7) is
+now CLOSED structurally. The zero mode counting argument proves: n coincident degenerate
+zero modes at depth D(4+n) → configuration space S^(2n−1) → U(n) isometry → gauge group
+SU(n). Non-degeneracy is guaranteed by the PT n=2 universal structure (independent of α, β,
+confirmed in `foundations/threshold_nondegeneracy.md`, `foundations/mode_count_threshold.md`).
+D5=U(1), D6=SU(2), D7=SU(3) are now Tier 2 candidates. The remaining derivation gap is
+the number of zero modes at D(4+n) from the substrate field equation (not yet from
+first principles; see `foundations/zero_mode_multiplet.md`, `equations/hopf_dof_count.py`).
 
-Route 1 needs to derive F_π from the D7 chiral condensate — which requires the D7
-effective field theory at the QCD scale.
+Route 3B needs M_c(D5/D6) from where the D5/D6 closures form — currently from SM RG
+running (M_c(D5/D6) ≈ 9.44×10¹² GeV; Tier 3). Route 1 needs to derive F_π from the D7
+chiral condensate.
 
 Both are asking the same question from different angles: *what does the DFC compression
 field produce at each depth, in terms of effective Lagrangian parameters?*
@@ -274,3 +283,7 @@ See also:
 - `foundations/spin_emergence.md` — detailed derivation of Paths A and B
 - `equations/spin_zero_mode.py` — all numerical verifications
 - `foundations/embedding_geometry.md` — Route 3B for comparison
+- `foundations/zero_mode_multiplet.md` — Bottleneck 1 closure (n zero modes → SU(n))
+- `foundations/mode_count_threshold.md` — non-degeneracy proof (PT n=2 universal)
+- `foundations/threshold_nondegeneracy.md` — s=2 for all α,β verified
+- `phenomena/particle_physics/forces/parity_violation.md` — Open 3 resolved (Cycle 41)

@@ -356,6 +356,83 @@ scale 3λ but differ by the quartic coupling suppression.
 
 ---
 
+## Kink Charge Form Factor (Cycle 92)
+
+The zero mode η₀(x) ∝ sech²(M_c x) describes the spatial distribution of the kink's
+internal degree of freedom. The charge form factor F(k) is the Fourier transform of the
+normalized density ρ(x) = η₀(x)² / ∫η₀(x)² dx. It measures the deviation from a
+point-source response at momentum transfer k.
+
+### Exact formula
+
+The Fourier transform of sech⁴(u) is derived analytically via the Beta integral
+B(2−iκ/2, 2+iκ/2), using the reflection formula Γ(z)Γ(1−z) = π/sin(πz):
+
+```
+∫ sech⁴(u) e^{iκu} du = πκ(κ²+4) / (6 sinh(πκ/2))    [exact]
+```
+
+Dividing by I₄ = 4/3 (the zero-mode norm, the same integral appearing in Bottleneck 2)
+gives the normalized form factor:
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│                                                                │
+│  F(k) = πκ(κ²+4) / (8 sinh(πκ/2))    κ = k/M_c               │
+│                                                                │
+│  F(0) = 1 exactly (normalization); F(k) < 1 for all k > 0.    │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+```
+
+### Charge radius
+
+The RMS charge radius is defined by the small-k expansion F(k) = 1 − k²⟨r²⟩/6 + O(k⁴).
+Expanding F(k) for small κ:
+
+```
+sinh(πκ/2) ≈ πκ/2 × (1 + π²κ²/24)
+F(κ) ≈ (κ²+4)/4 × (1 − π²κ²/24) = 1 + κ²/4 − π²κ²/24
+     = 1 − κ²(π²/24 − 1/4) + O(κ⁴)
+```
+
+The coefficient gives the charge radius:
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│                                                                │
+│  ⟨r²⟩ = (π²−6)/(4 M_c²)                                       │
+│                                                                │
+│  ⟨r⟩_rms = √((π²−6)/4) / M_c ≈ 0.9836 λ   (0 free params)    │
+│                                                                │
+│  The kink charge radius is approximately equal to one kink     │
+│  width λ = 1/M_c, for any α, β, c.                            │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+```
+
+At k = M_c (probe wavelength equal to kink width), F = 0.853 — the kink is 14.7%
+less responsive than a point source at this scale.
+
+### Scale hierarchy
+
+All exact lengths from the PT n=2 scattering problem lie at O(λ):
+
+| Length | Expression | Value / λ | Source |
+|---|---|---|---|
+| Kink width | λ = 1/M_c | 1.000 | Definition |
+| Charge radius | √((π²−6)/4)/M_c | 0.984 | Cycle 92, Tier 1 |
+| Effective range | 11/(6M_c) | 1.833 | Cycle 91, Tier 1 |
+| Scattering length | 3/M_c | 3.000 | Cycle 91, Tier 1 |
+| U(1) holonomy radius | 3/(4βM_c) | ≈21.4 | Bottleneck 2, Tier 3 |
+
+The gauge coupling radius r_U1 is ~22 times larger than the kink's charge radius. The
+factor 1/(4β) ≈ 7 separates the scattering sector from the gauge sector. Whether this
+factor can be derived from the coupling structure of the D5/D6 system is the content
+of Bottleneck 2.
+
+---
+
 ## Limitations of the 1+1D Model
 
 **The 1+1D kink model is a toy model for DFC closures.** Several features require caution:
@@ -401,6 +478,8 @@ specific numbers for M_K and the scattering phase shift require the full 3+1D tr
 | Effective range r₀ = 11/(6M_c) ≈ 1.833λ (0 free params) | **Derived exact ✓ (Cycle 91)** |
 | Wigner time delay τ_W(q) always negative (time-advancing) | **Proved ✓ (Cycle 91)** |
 | τ_W(0) = −3/M_c = −a_s (exact identity) | **Proved ✓ (Cycle 91)** |
+| Form factor F(k) = πκ(κ²+4)/(8 sinh(πκ/2)) proved via Beta integral | **Derived exact ✓ (Cycle 92)** |
+| Charge radius ⟨r⟩_rms = √((π²−6)/4) × λ ≈ 0.984λ (0 free params) | **Derived exact ✓ (Cycle 92)** |
 | 3+1D extension to physical particles | OPEN |
 | Shape mode physical correspondence (which splitting?) | OPEN |
 | Exact kink-antikink scattering (DHN two-soliton) | OPEN |
@@ -418,3 +497,5 @@ specific numbers for M_K and the scattering phase shift require the full 3+1D tr
   Levinson verification, Wigner time delay, Born vs exact comparison
 - `equations/scattering_length.py` — effective range theory (Cycle 91): a_s = 3/M_c,
   r₀ = 11/(6M_c), τ_W(q) always negative, τ_W(0) = −a_s; Born vs exact comparison
+- `equations/kink_form_factor.py` — charge form factor (Cycle 92): F(k) exact,
+  ⟨r⟩_rms = √((π²−6)/4)/M_c ≈ 0.984λ; scale comparison table; Beta integral proof
