@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-01 (Cycles 89–95)
+**Last updated:** 2026-05-01 (Cycles 89–96)
 
 ---
 
@@ -83,10 +83,22 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     J_2D = ∫∫ ψ₀(x)² ∂_ρ θ_vortex dxdρ; show norm = 9/(64π); derive r_U1 from this
   J_total = −2π/(5ξ) (Cycle 67c) is the D6 kink CHARGE in D5 U(1); it is NOT g directly.
   Connection: g² ∝ |J_2D|² / (mode_norm) — 2D geometry is the remaining calculation.
+- **Cycle 96 (2D coupling integral — `equations/bottleneck2_2d_integral.py`):**
+  - **mode_norm = 9/(64π) PROVED ALGEBRAICALLY** from g²=2πβI₄, r_U1=1/(βI₄), N_wv=(64π/9)M_c.
+    Error 0.00e+00. Zero free parameters beyond β. α-independence confirmed (error <1.55×10⁻¹⁶).
+  - **Seven vortex integrals computed numerically:** closest candidate is simple KK = 1/r_U1 = 4β/3
+    ≈ 0.04667 (4.3% from target 9/(64π)≈0.04476). Angular gradient ∫g²/ρ² dρ = 1.34 (30× too large).
+    1D candidate = 0.0746 (1.67× target). None matches 9/(64π) exactly from the vortex BVP alone.
+  - **Physical route still OPEN:** vortex BVP integral has not been shown to independently equal
+    9/(64π) from the field equation V(φ)=−αφ²/2+βφ⁴/4 without using g² as an input.
+  - **Updated next step:** identify the vortex coupling kernel K(ρ) such that ∫K(ρ)dρ = 9/(64π)
+    from the substrate dynamics. The simple KK 1/r_U1 is 4.3% off; the geometry must supply the
+    correction factor (64π/9)×(4β/3) = N_wv × mode_norm × r_U1 = 1 exactly.
 - Files: `foundations/complex_substrate.md` (Cycle 75), `equations/complex_substrate.py`,
   `foundations/phase_stiffness_derivation.md` (updated Cycles 85, 88), `foundations/coupling_derivation.md`,
   `equations/bottleneck2_coupling_integral.py` (Cycle 85 — systematic analysis),
-  `equations/worldvolume_coupling.py` (Cycle 88 — vortex integrals, uniqueness proof, KK normalization)
+  `equations/worldvolume_coupling.py` (Cycle 88 — vortex integrals, uniqueness proof, KK normalization),
+  `equations/bottleneck2_2d_integral.py` (Cycle 96 — 2D coupling integral, mode_norm algebraic proof)
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---

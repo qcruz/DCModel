@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~48% complete by internal estimate. Several Standard Model quantities
+Current status: ~48.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -188,7 +188,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~48%** (viability as a theory: ~60%; mathematical rigor: ~36%)
+**Current estimate: ~48.5%** (viability as a theory: ~60.5%; mathematical rigor: ~36.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
