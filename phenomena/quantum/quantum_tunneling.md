@@ -288,3 +288,9 @@ KG equation in the non-relativistic limit is the Schrödinger equation.
 - **Josephson effect** — macroscopic quantum tunneling of the superconducting phase
   (Open Question 4); `phenomena/condensed_matter/josephson_effect.md`,
   `equations/josephson_effect.py`
+- **Wave-particle duality** — evanescent wave regime is the same field behavior as
+  tunneling: oscillatory ↔ decaying depending on sign of k²(x);
+  `phenomena/quantum/wave_particle_duality.md`
+- **Kink scattering** — exact Pöschl-Teller T-matrix for kink scattering through
+  a barrier region; effective range, scattering length from reflectionless potential;
+  `foundations/kink_scattering.md`, `equations/s_matrix.py`, `equations/scattering_length.py`

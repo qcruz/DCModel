@@ -1,7 +1,7 @@
 # Current State of the DFC Model
 
 *Living document — updated periodically as the model develops.*
-*Last reviewed: 2026-04-29 (Cycles 47–87)*
+*Last reviewed: 2026-05-04 (Cycles 88–96)*
 
 ---
 
@@ -90,10 +90,13 @@ The epistemic hygiene makes the project tractable and honest.
 **1. Bottleneck 2: compact form g²=2π×β×I₄ not yet formally proved.**
 The heuristic g² = 8πβ/3 is derived via phase stiffness f²=(4/3)φ₀²/λ → holonomy
 (Cycle 42). The compact form g²=2π×β×I₄ is verified to be α-independent (error <10⁻¹⁰
-across 3 decades, Cycle 85) and gives α_em to 1.3%, M_W/M_Z/G_F/τ_μ all <1%. But
-the derivation target — show r_U1/λ = 1/(β×I₄) directly from V(φ) field equation —
-is not complete. Until Bottleneck 2 closes, g² is a Tier 3 heuristic, not Tier 2. This
-is the single most impactful open derivation.
+across 3 decades, Cycle 85). The mode_norm=9/(64π) ≈ 0.04476 has been proved algebraically
+from the KK matching formula with zero free parameters (Cycle 96, error 0.00e+00); α-independence
+confirmed across 5 α values (error <1.55×10⁻¹⁶). Seven vortex BVP integral candidates were
+tested: the closest is the simple KK result 1/r_U1 = 4β/3 = 0.04667 (4.3% from target,
+Cycle 96). The physical route — deriving mode_norm from the vortex BVP integral alone without
+using g² as input — is still open. Until Bottleneck 2 closes, g² is a Tier 3 heuristic, not
+Tier 2. This is the single most impactful open derivation.
 
 **2. Bottleneck 3: v = 246 GeV not yet derived.**
 The Higgs VEV requires μ² from a D6/D7 overlap integral (Cycles 53, 86). DFC provides
@@ -138,7 +141,7 @@ is required — not yet derived.
 
 ---
 
-## Equation Layer Summary (as of Cycle 87)
+## Equation Layer Summary (as of Cycle 96)
 
 | Module | Status | Key result |
 |---|---|---|
@@ -173,6 +176,14 @@ is required — not yet derived.
 | vev_derivation.py | Structural | λ_DFC=β/4; m_H calibrated 122.9 GeV; I_D67≈10⁻²⁸ |
 | beta_substrate.py | Tier 3 | Route F: β=0.03536 (+0.75%); Routes A–E fail |
 | bottleneck2_coupling_integral.py | Structural | g²=2π×β×I₄ compact form; α-independence proved |
+| worldvolume_coupling.py | Structural | Bottleneck 2 gap precisely mapped; r_U1=3λ/(4β) algebraic identity; Route B target verified |
+| s_matrix.py | Tier 1 | T(q) exact reflectionless n=2 PT; |T|²=1 to 4×10⁻¹⁶; Levinson δ(0⁺)=2π verified |
+| josephson_effect.py | Tier 1 | K_J=2e/h verified (7.75×10⁻¹⁶); Shapiro steps; SQUID zeros |
+| scattering_length.py | Tier 1 | a_s=3/M_c (exact); r₀=11/(6M_c) (exact); τ_W always negative |
+| kink_form_factor.py | Tier 1 | F(k)=πκ(κ²+4)/(8 sinh(πκ/2)); ⟨r⟩_rms=0.984λ (exact) |
+| z_boson_decays.py | Tier 2a | Γ_Z=2456 MeV (−1.56%); R_l=20.75 (−0.10%); N_ν=3 Tier 1 |
+| lagrangian_verification.py | Structural | All four DFC–SM Lagrangian sectors verified; JR residual 1.4×10⁻¹⁷ |
+| bottleneck2_2d_integral.py | Structural | mode_norm=9/(64π) proved algebraically (0.00e+00 error); seven vortex candidates; simple KK 4.3% from target |
 | casimir_effect.py | Tier 2a | P(1µm) = −1.3001 mN/m² (vs Lamoreaux −1.30) |
 | superfluidity.py | Tier 1 | κ₀ = h/m_He4 verified (7.1×10⁻⁵) |
 | superconductivity.py | Tier 1 | Φ₀ = h/(2e) verified (2.2×10⁻¹⁰) |
@@ -183,12 +194,17 @@ is required — not yet derived.
 
 ---
 
-## Direction — Priority Order (as of Cycle 87)
+## Direction — Priority Order (as of Cycle 96)
 
 **Bottleneck 2 — Critical (closes the coupling constant derivation chain):**
 - Formally prove r_U1/λ = 1/(β×I₄) from V(φ) field equation
 - Route B: worldvolume Lagrangian normalization → norm=(64π/9)M_c from bulk-worldvolume
-  matching; normalization target verified algebraically (Cycle 85)
+  matching; normalization target verified algebraically (Cycle 85); mode_norm=9/(64π)
+  proved algebraically with 0.00e+00 error, α-independent (Cycle 96)
+- Cycle 96 finding: simple KK result 1/r_U1=4β/3 is 4.3% from mode_norm target — the
+  closest of seven vortex candidates. The 4.3% correction represents non-trivial vortex
+  geometry. Physical route = identify vortex coupling kernel K(ρ) from V(φ) such that
+  ∫K(ρ)dρ = 9/(64π) without using g² as input.
 - If proved, g²=8πβ/3 becomes Tier 2, β becomes Tier 2 via Route F, and α_em/M_W/M_Z/G_F/τ_μ
   all become ab initio
 
@@ -208,17 +224,20 @@ is required — not yet derived.
 
 ---
 
-## Viability Assessment (Cycle 87)
+## Viability Assessment (Cycle 96)
 
-**Overall completeness: ~43.5%** (viability ~56%, rigor ~31%)
+**Overall completeness: ~48.5%** (viability ~60.5%, rigor ~36.5%)
 
 The model has moved decisively beyond conceptual framework territory. It now has:
-- 12 Tier 2a verified predictions (all <5% error)
+- 18 Tier 2a verified predictions (all <5% error), including full Z boson decay widths
 - Multiple Tier 1 structural proofs (Tsirelson bound, Born rule for spin, strong CP,
-  magnetic monopoles absent, k_Y = 3/5, three generations, proton stability)
+  magnetic monopoles absent, k_Y = 3/5, three generations, proton stability, reflectionless
+  kink T-matrix, flux quantization, resistance quantum, superfluid circulation quantum)
 - Bottleneck 1 closed: D-depth → gauge group chain structurally derived (Cycles 59–74)
 - T9 (two-scale tension) structurally resolved (Cycle 79)
 - β self-consistently determined to <1% by Route F (Cycle 87)
+- DFC–SM Lagrangian fully assembled with exact status accounting (Cycle 94)
+- mode_norm=9/(64π) proved algebraically (Cycle 96); Bottleneck 2 physical route mapped
 
 What distinguishes it from a reformulation: (1) k_Y = 3/5 derived without GUT, (2)
 parity violation from geometry, (3) strong CP dissolved without axion, (4) Tsirelson
@@ -268,3 +287,12 @@ that weaken the parsimony claim.
 | 2026-04-29 | Cycle 86: vev_derivation.py — Bottleneck 3 quantitative analysis; DFC stabilizes SM vacuum |
 | 2026-04-29 | Cycle 87: beta_substrate.py — Route F β=0.03536 (0.75%); β self-consistently determined |
 | 2026-04-29 | Cycle 87: current_state.md rewritten to reflect Cycles 47–87 progress |
+| 2026-04-30 | Cycle 88: worldvolume_coupling.py — Bottleneck 2 gap precisely mapped; r_U1=3λ/(4β) algebraic identity; Route B normalization verified |
+| 2026-04-30 | Cycle 89: s_matrix.py completed — exact n=2 Pöschl-Teller T-matrix; reflectionless; Levinson δ(0⁺)=2π |
+| 2026-04-30 | Cycle 90: josephson_effect.md+.py — Josephson effect formalized; K_J verified; SQUID zeros |
+| 2026-04-30 | Cycle 91: scattering_length.py — a_s=3λ (exact), r₀=1.833λ (exact), τ_W always negative |
+| 2026-05-01 | Cycle 92: kink_form_factor.py — F(k) proved via Beta integral; ⟨r⟩_rms=0.984λ exact |
+| 2026-05-01 | Cycle 93: z_boson_decays.py — 7 Z partial widths; all Tier 2a; N_ν=3 Tier 1 |
+| 2026-05-01 | Cycle 94: dfc_sm_lagrangian.md + lagrangian_verification.py — full Lagrangian assembled |
+| 2026-05-01 | Cycle 95: wave_particle_duality.md CRITICAL fix — circular E=hν corrected; BPS E_kink fixed |
+| 2026-05-01 | Cycle 96: bottleneck2_2d_integral.py — mode_norm=9/(64π) proved algebraically (0 free params); seven vortex candidates; simple KK 4.3% from target |

@@ -69,6 +69,10 @@ Key references:
   - equations/bottleneck2_coupling_integral.py (Cycle 85: compact form g²=2π×β×I₄; α-independence
     proved; 8 candidate r_U1 definitions scanned; Route B norm=(64π/9)M_c confirmed;
     kink action route eliminated — derivation target: show r_U1/λ=1/(β×I₄) from V(φ))
+  - equations/bottleneck2_2d_integral.py (Cycle 96: mode_norm=9/(64π) PROVED algebraically
+    from g²=2πβI₄, r_U1=1/(βI₄), N_wv=(64π/9)M_c — error 0.00e+00, 0 free parameters;
+    α-independence confirmed across 5 α values; seven vortex BVP candidates tested;
+    closest = simple KK 1/r_U1=4β/3=0.04667 (4.3% from target); physical route open)
 """
 
 import math
