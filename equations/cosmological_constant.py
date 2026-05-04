@@ -19,12 +19,16 @@ Physical argument:
   is the difference between the compression budget at D1 (M_Pl^4) and the
   budget consumed by forming the stable closure structure.
 
-  Budget consumed by spacetime bifurcations (D1->D4): gamma_space^4 * M_Pl^4
+  Budget consumed by spacetime bifurcations (D1->D4): estimated fraction (1-f)^4
   Budget consumed by gauge closures (D5/D6/D7): much smaller (co-crystallization)
-  Residual: (1 - gamma_space)^4 * M_Pl^4 ~ (10^-3.05)^4 * M_Pl^4 ~ 10^-12 * M_Pl^4
+  Residual: (1 - f)^4 * M_Pl^4
 
   But the observed Lambda ~ (10^-3 eV)^4 ~ 10^-120 M_Pl^4. The residual budget
-  argument gives ~10^-12 M_Pl^4, still ~10^-108 too large.
+  argument (with placeholder f=0.9991) gives ~10^-12 M_Pl^4, still ~111 orders too large.
+  NOTE: the GAMMA_SPACE value below is a placeholder — not derived from any DFC calculation.
+  The two-scale depth-running model (foundations/depth_running.md, Cycle 31) shows
+  γ_space ≈ 2.47 per depth step (a scale factor, not a fraction), which is not the
+  same as GAMMA_SPACE used here. This module's numerical estimate is illustrative only.
 
   The DFC resolution proposal: Lambda is not a static residual but the current
   compression rate — the substrate is still compressing toward D1, and Lambda
@@ -37,9 +41,10 @@ Physical argument:
 
 Key references:
   - phenomena/cosmology/dark_energy.md (DFC account of dark energy)
-  - foundations/depth_running.md (compression budget per bifurcation)
+  - foundations/depth_running.md (compression budget per bifurcation; γ_space ≈ 2.47/step)
   - equations/cosmology.py (expansion from compression budget)
   - foundations/d_depth_lagrangians.md (effective cosmological constant from vacuum energy)
+  - foundations/dfc_sm_lagrangian.md (Cycle 94: full DFC-SM Lagrangian with λ_BC=β/4)
 
 Open problems:
   1. The precise mechanism suppressing Lambda by 10^-108 below the residual estimate
@@ -52,7 +57,7 @@ PRIORITY: Medium (known 120-order-of-magnitude failure in SM -> opportunity for 
 import math
 
 M_PLANCK_GEV = 1.22e19
-GAMMA_SPACE = 0.9991
+GAMMA_SPACE = 0.9991   # PLACEHOLDER — not derived; see docstring NOTE above
 
 # Residual budget fraction after D1->D4 spacetime bifurcations
 residual_fraction = (1 - GAMMA_SPACE)**4

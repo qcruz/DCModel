@@ -2,16 +2,32 @@
 
 ## Status
 
-> **Cycle 40:** This document formally maps the coupling constant derivation problem
-> (Bottleneck 2). It identifies what has been derived, what has been established via
-> consistency (Route 3B), and what remains genuinely open.
+> **Cycle 40 (original mapping):** Formally mapped the coupling constant derivation
+> problem (Bottleneck 2). Identified what is derived vs open.
 >
-> **What is derived:** sin²θ_W = 0.231 from equal-coupling initial condition + SM RG
-> running + k_Y = 3/5 from Dynkin normalization (Route 3B, Cycles 22 and 30).
+> **Cycle 42:** g² = 8πβ/3 heuristically derived from kink phase stiffness f²=(4/3)φ₀²/λ
+> → holonomy formula. g_common = 0.5423 vs SM 0.5443 (0.37%). α_em(M_Z) = 1/129.6 (1.3%
+> off). Tier 3 heuristic — physical derivation of r_U1/λ remains open.
 >
-> **What is open:** The value of the common coupling g_common at M_c from DFC substrate
-> parameters (α, β, c). Until this is derived, α_em, g_W, and α_s are consistency
-> checks, not predictions.
+> **Cycle 47:** f² = (4/3)φ₀²/λ proved exactly via ∫sech⁴(u)du = 4/3 (Bogomolny
+> identity, Cycle 47). This is the rigorous foundation of the phase stiffness.
+>
+> **Cycle 85:** Compact form g² = 2π×β×I₄ proved equivalent to g²=8πβ/3. α-independence
+> proved across 3 decades (error <10⁻¹⁰). Eight candidate r_U1 definitions scanned;
+> only 3/(4β) = 1/(β×I₄) matches SM at −0.5%. Route B worldvolume normalization
+> (64π/9)M_c verified algebraically (error 1.6×10⁻¹⁶).
+>
+> **Cycle 87:** β = 3g_common²/(8π) = 0.03536 (+0.75% from reference 0.0351) —
+> Route F self-consistency. If Bottleneck 2 closes, β is NOT a free parameter.
+>
+> **Cycle 96:** mode_norm = 9/(64π) ≈ 0.04476 PROVED algebraically from KK matching
+> with zero free parameters (error 0.00e+00). Seven vortex BVP candidates tested;
+> closest is simple KK 1/r_U1 = 4β/3 = 0.04667 (4.3% from target). Physical route
+> (deriving mode_norm from V(φ) field equation alone) still open.
+>
+> **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.37% numerical agreement).
+> Closed: f² exact; compact form; α-independence; mode_norm algebraic proof.
+> Open: physical derivation of r_U1/λ = 1/(β×I₄) from V(φ) without importing g².
 
 ---
 
@@ -238,21 +254,26 @@ The M_c(D7) value is not yet precisely determined from substrate dynamics.
 
 | Problem | Status | Priority |
 |---|---|---|
-| g_common from holonomy integral over D5 S¹ | OPEN | Critical (Bottleneck 2) |
-| r_U1/λ_D5 from Route B Hopf structure | OPEN | Connects to Bottleneck 1 |
-| M_c(D7) from substrate (gives α_s) | OPEN | High |
-| sin²θ_W = 0.231 | DERIVED ✓ | Done |
-| k_Y = 3/5 | DERIVED ✓ | Done |
-| α_em(M_Z) = 1/128 | CONSISTENT ✓ | Follows from Route 3B |
-| α_s(M_Z) = 0.118 | CONSISTENT ~10% | Needs M_c(D7) |
+| g_common from holonomy integral over D5 S¹ | OPEN (physical route) | Critical (Bottleneck 2) |
+| r_U1/λ_D5 = 1/(β×I₄) from V(φ) alone | OPEN — algebraic identity proved, physical derivation open | Critical |
+| f² = (4/3)φ₀²/λ from Bogomolny identity | PROVED ✓ (Cycle 47) | Done |
+| g² = 2π×β×I₄ compact form, α-independence | PROVED ✓ (Cycle 85) | Done |
+| mode_norm = 9/(64π) algebraic proof | PROVED ✓ (Cycle 96, error 0.00e+00) | Done |
+| β self-consistent from Route F | Tier 3 (Cycle 87, 0.75% off) | Done when B2 closes |
+| M_c(D7) from substrate (gives α_s) | OPEN — target 2.094×10¹⁵ GeV | High |
+| sin²θ_W = 0.231 | DERIVED ✓ (Route 3B) | Done |
+| k_Y = 3/5 | DERIVED ✓ (Cycle 30) | Done |
+| α_em(M_Z) = 1/129.6 | Tier 2a, 1.3% off ✓ | Improves when B2 closes |
+| α_s(M_Z) = 0.118 | 11% off — needs M_c(D7) | High |
 
-**The single most valuable calculation:** Compute the holonomy integral of the D5 U(1)
-closure to get g_U1 in terms of (α_D5, β, c). This gives g_common without SM running,
-and from g_common all three coupling constants follow.
+**The critical next calculation:** Identify the vortex coupling kernel K(ρ) such that
+∫K(ρ)dρ = 9/(64π) directly from the D5 vortex BVP field equation and V(φ), without
+using g² as input. The closest known candidate is the simple KK normalization
+1/r_U1 = 4β/3 (4.3% off). The 4.3% correction arises from non-trivial vortex geometry
+and has not yet been identified analytically.
 
-The ratio r_U1/λ_D5 ≈ 21.6 is the key dimensionless target that the Hopf fibration
-geometry at D5 must produce. See `foundations/depth_assignment.md` Route B for the
-geometric candidate.
+The ratio r_U1/λ_D5 ≈ 21.4 (= 3/(4β) at β = 0.035) is the key dimensionless target.
+See `equations/bottleneck2_2d_integral.py` for the systematic candidate scan (Cycle 96).
 
 ---
 
@@ -262,8 +283,18 @@ geometric candidate.
 - `foundations/hypercharge_normalization.md` — k_Y = 3/5 from Dynkin index matching
 - `foundations/depth_assignment.md` — Route B: S¹ at D5, S³ at D6, S⁵ at D7
 - `foundations/depth_running.md` — two-scale model; M_c(D5) from substrate
-- `foundations/bifurcation_dynamics.md` — γ_D = (16/3)√β; β ≈ 0.035; M_c(D5) exact
+- `foundations/bifurcation_dynamics.md` — β ≈ 0.035; M_c(D5) exact; NOTE: γ_D = (16/3)√β
+  was RETRACTED Cycle 48 (BPS-correct E_kink gives 8/3 universal, β-independent)
+- `foundations/phase_stiffness_derivation.md` — f² = (4/3)φ₀²/λ proved (Cycle 47);
+  holonomy gap precisely located; Route A and Route B identified
 - `equations/gauge_couplings.py` — numerical running; pairwise crossings
 - `equations/weinberg_angle_rg.py` — full Route 3B derivation; g_common at M_c
 - `equations/hypercharge_normalization.py` — k_Y = 3/5 numerical verification
-- `equations/coupling_derivation.py` — STUB: holonomy integral, first-principles g
+- `equations/coupling_derivation.py` — g²=8πβ/3 chain; α_em(M_Z)=1/129.6; Tier 2a
+- `equations/bottleneck2_coupling_integral.py` — compact form g²=2πβI₄; α-independence;
+  8 candidate r_U1 definitions; Route B normalization verified (Cycle 85)
+- `equations/worldvolume_coupling.py` — Bottleneck 2 gap precisely mapped; r_U1=3λ/(4β)
+  algebraic identity; Route B matching formula; vortex candidates (Cycle 88)
+- `equations/bottleneck2_2d_integral.py` — mode_norm=9/(64π) proved algebraically;
+  seven vortex BVP candidates; simple KK 4.3% from target (Cycle 96)
+- `equations/beta_substrate.py` — Route F: β=0.03536, 0.75% (Cycle 87)

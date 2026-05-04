@@ -60,9 +60,11 @@ A_BH = 4 * math.pi * R_SCHW**2       # area in m^2
 S_BH = K_B * A_BH / (4 * L_PL_M**2)
 
 if __name__ == "__main__":
-    print("equations/holographic_entropy.py — STUB")
+    print("equations/holographic_entropy.py")
     print(f"  Solar-mass BH: R_schw = {R_SCHW:.3e} m, A = {A_BH:.3e} m^2")
     print(f"  S_BH = k_B * A / (4 l_Pl^2) = {S_BH:.3e} J/K")
     print(f"  S_BH / k_B = {S_BH/K_B:.3e}  [dimensionless entropy]")
-    print(f"  Status: Bekenstein-Hawking target identified.")
-    print(f"  Needed: DFC derivation of S ~ A/l_Pl^2 from closure capacity + factor 1/4.")
+    print(f"  NOTE: equations/quantum_gravity.py (Cycle 76) provides full numerical")
+    print(f"  coverage including Hawking table, evaporation timescales, and G/alpha_em.")
+    print(f"  THIS MODULE: scope limited to Bekenstein-Hawking target identification.")
+    print(f"  OPEN: DFC derivation of S ~ A/l_Pl^2 from closure capacity + factor 1/4.")
