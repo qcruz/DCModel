@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-01 (Cycles 89–96)
+**Last updated:** 2026-05-05 (Cycles 97–101)
 
 ---
 
@@ -94,11 +94,22 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - **Updated next step:** identify the vortex coupling kernel K(ρ) such that ∫K(ρ)dρ = 9/(64π)
     from the substrate dynamics. The simple KK 1/r_U1 is 4.3% off; the geometry must supply the
     correction factor (64π/9)×(4β/3) = N_wv × mode_norm × r_U1 = 1 exactly.
+- **Cycle 100 (β-derivation equivalence — `equations/bottleneck2_beta_selfconsistency.py`):**
+  - **B2 ↔ β-derivation proved:** 3-step chain f²→r_U1→g² is complete given β. Closing B2 = deriving β.
+  - Self-consistent β_B2=27/(256π)≈0.03357 makes mode_norm=9/(64π) exact but degrades M_W (−2.92%).
+- **Cycle 101 (β candidates — `equations/beta_constraint.py`):**
+  - **Candidates (a)(b)(c) all BLOCKED:** (a) fixes α not β; (b) α-dependent via M_c; (c) β-free.
+  - **NEW candidate (d): β=1/(9π) from Hopf fiber dimension sum** — dim(S¹)+dim(S³)+dim(S⁵)=1+3+5=9.
+    Gives g²=8/27 exactly (=(2/3)³), g=0.54433 (0.006% vs SM 0.5443). r_U1/λ=27π/4≈21.21 (0.91%).
+  - **Target reformulated:** prove β=1/(9π) from KK normalization over product fiber S¹×S³×S⁵.
+    Once proved: Bottleneck 2 closes — g²=8/27, 0 free parameters.
 - Files: `foundations/complex_substrate.md` (Cycle 75), `equations/complex_substrate.py`,
   `foundations/phase_stiffness_derivation.md` (updated Cycles 85, 88), `foundations/coupling_derivation.md`,
   `equations/bottleneck2_coupling_integral.py` (Cycle 85 — systematic analysis),
   `equations/worldvolume_coupling.py` (Cycle 88 — vortex integrals, uniqueness proof, KK normalization),
-  `equations/bottleneck2_2d_integral.py` (Cycle 96 — 2D coupling integral, mode_norm algebraic proof)
+  `equations/bottleneck2_2d_integral.py` (Cycle 96 — 2D coupling integral, mode_norm algebraic proof),
+  `equations/bottleneck2_beta_selfconsistency.py` (Cycle 100 — β-derivation equivalence),
+  `equations/beta_constraint.py` (Cycle 101 — all β candidates analyzed, Hopf dim candidate)
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---

@@ -36,10 +36,22 @@
 > automatically with zero additional free parameters. See
 > equations/bottleneck2_beta_selfconsistency.py.
 >
+> **Cycle 101:** Candidates (a) kink-width=L_Pl, (b) S_kink/ℏ=n, (c) ΔV/E_kink=const
+> all shown BLOCKED: (a) fixes α not β; (b) gives E_kink/M_c=8/(3β), α-dependent;
+> (c) ΔV/E_kink=3√(2α)/16, β-free. NEW candidate (d): β=1/(9π) from Hopf fiber
+> dimension sum — dim(S¹)+dim(S³)+dim(S⁵) = 1+3+5 = 9 at D5/D6/D7. This gives
+> g²=8/27 exactly (=(2/3)³, error <2×10⁻¹⁶) and g=√(8/27)=2√2/(3√3)=0.54433,
+> matching SM g_common=0.5443 to 0.006%. Also: r_U1/λ=27π/4≈21.21 (0.91% from
+> target 21.4). Status: Tier 3 structural argument; formal derivation from V(φ)
+> KK normalization over S¹×S³×S⁵ product fiber is the remaining open step.
+> See equations/beta_constraint.py.
+>
 > **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.37% numerical agreement).
 > Closed: f² exact; compact form; α-independence; mode_norm algebraic proof; 3-step
-> chain P1→P2→P3 complete given β; B2 ↔ β-derivation equivalence proved.
-> Open: derive β from V(φ) substrate dynamics (= close B2 with zero free parameters).
+> chain P1→P2→P3 complete given β; B2 ↔ β-derivation equivalence proved; all three
+> standard candidates (a)(b)(c) shown blocked.
+> Candidate: β=1/(9π) from Hopf dim sum 1+3+5=9 → g²=8/27 (0.006% vs SM).
+> Open: derive β=1/(9π) from V(φ) KK normalization over three Hopf fibers.
 
 ---
 
