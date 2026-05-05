@@ -85,11 +85,21 @@ When a kink moves at velocity v, its total energy in the lab frame is:
 E = γmc²    [from KG dispersion: E² = (pc)² + (mc²)², with p = γmv]
 ```
 
-Energy and frequency are related by E = ℏω, so the kink's oscillation rate in the lab frame:
+The energy-frequency relation E = ℏω (the energy of a mode equals the reduced Planck
+constant times its angular frequency) is a postulate imported from canonical quantum
+field theory — it is not yet derived from the DFC substrate. See
+`foundations/planck_constant_derivation.md` for the status of this derivation. Using it:
 
 ```
-ω_lab = E/ℏ = γmc²/ℏ = γω_C
+ω_lab = E/ℏ = γmc²/ℏ = γω_C    [requires E = ℏω — POSTULATE]
 ```
+
+**Alternative derivation without ℏ (cleaner):** The same result follows directly from the
+Lorentz boost of the KG solution. A stationary kink solution φ_K(t,x) oscillates at the
+rest frequency ω_C. Applying the Lorentz boost x → γ(x − vt), t → γ(t − vx/c²), the
+transformed solution oscillates at ω_lab = γω_C in the lab frame — purely from the
+covariance of the field equation with no reference to ℏ. See `equations/special_relativity.py`
+for the numerical verification of the boosted kink profile.
 
 The kink oscillates faster (more energy), but one proper tick corresponds to one
 complete oscillation regardless of frame. The lab time per proper tick:
@@ -277,6 +287,8 @@ In weak-field, low-velocity limit:
 
 - **Special relativity** — velocity time dilation as Section 4, KG dispersion derivation;
   `phenomena/gravity/special_relativity.md`
+- **Special relativity equations** — boosted kink profile numerical verification (Cycle 79);
+  `equations/special_relativity.py`
 - **General relativity** — gravitational time dilation in the weak-field metric;
   `phenomena/gravity/general_relativity.md`
 - **Light** — gravitational redshift as time dilation of photon frequency;
@@ -285,3 +297,7 @@ In weak-field, low-velocity limit:
   `phenomena/quantum/entanglement.md`
 - **Thermodynamics** — compression irreversibility as the arrow of time;
   `phenomena/thermodynamics/thermodynamics.md`
+- **Arrow of time** — irreversibility of the compression process; Compton rate can slow
+  but direction cannot reverse; `phenomena/thermodynamics/arrow_of_time.md`
+- **Planck constant** — ℏ identification (used in Compton route); status as open problem;
+  `foundations/planck_constant_derivation.md`

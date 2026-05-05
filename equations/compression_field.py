@@ -30,9 +30,11 @@ The compression budget:
     dB/dt = − ∮ J_B · dA   (conservation law — budget flows, doesn't vanish)
 
 Related documents:
-    foundations/substrate.md         — substrate postulates and five-postulate structure
+    foundations/substrate.md                   — substrate postulates and five-postulate structure
+    foundations/phase_stiffness_derivation.md  — f²=(4/3)φ₀²/λ proved exactly (Cycle 47)
+    foundations/bifurcation_dynamics.md        — M_c(D5), S_kink/ℏ, BPS-correct kink energy
     phenomena/thermodynamics/phase_transitions.md — phase transitions as V_eff bifurcations
-    equations/kink_model.py          — 1D kink solutions (analytic)
+    equations/kink_model.py                    — 1D kink solutions (analytic, BPS-correct)
 
 Usage:
     python equations/compression_field.py
@@ -100,12 +102,20 @@ def kink_width(alpha=ALPHA_DEFAULT, c=C_LIGHT):
 
 def kink_energy(alpha=ALPHA_DEFAULT, beta=BETA_DEFAULT, c=C_LIGHT):
     """
-    Topological kink energy: E_kink = (4/3) c √(2α³/β)
+    Topological kink energy (BPS-correct):
+
+        E_kink = (4/3) c α^{3/2} / (β √2)
+               = (4/3) c² φ₀² / λ
+
+    where φ₀ = √(α/β) is the kink amplitude and λ = √(2c²/α) is the kink width.
 
     This is the mass analogue of a stable localized closure.
     It is finite, localized, and topologically protected.
+
+    NOTE: The formula (4/3)c√(2α³/β) was RETRACTED in Cycle 48 — it was wrong by
+    a factor of 2√β. This function uses the BPS-correct result matching kink_model.py.
     """
-    return (4.0 / 3.0) * c * math.sqrt(2 * alpha**3 / beta)
+    return (4.0 / 3.0) * c * alpha**1.5 / (beta * math.sqrt(2))
 
 
 # ── Compression budget ────────────────────────────────────────────────────────
