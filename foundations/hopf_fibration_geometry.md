@@ -25,9 +25,22 @@
 > - **Cycle 72:** Mode count n=2 at D6 confirmed numerically — 2 independent translation zero
 >   modes (D5 kink + D6 kink, each with its own PT zero mode). mode_count_threshold.md.
 >
-> **Current status (after Cycles 59–72):** D5/D6/D7 are Tier 2 candidates. The derivation
-> chain is complete assuming one kink forms per threshold. The remaining Tier 4 item is proving
-> non-degeneracy of each threshold (exactly one kink per crossing from the field equation).
+> **Cycles 73–74 update:** Bottleneck 1 fully closed. Non-degeneracy proved from PT s=2
+> spectrum (Cycle 73); D7 n=3 zero modes verified numerically (Cycle 74). D5=U(1),
+> D6=SU(2), D7=SU(3) now DERIVED from V(φ)=−α/2 φ²+β/4 φ⁴ with zero free parameters.
+>
+> **Cycle 101 update (β from Hopf structure):** The Hopf fiber dimension sum gives a
+> structural formula for the gauge coupling: g² = 2I₄/N_Hopf, where I₄ = ∫sech⁴(u)du
+> = 4/3 is the kink shape integral (from V(φ), proved Cycle 47) and N_Hopf = dim(S¹) +
+> dim(S³) + dim(S⁵) = 1+3+5 = 9 is the total Hopf fiber dimension sum. This gives
+> g² = 8/27 exactly (=(2/3)³, π-independent). Equivalently: β = 1/(N_Hopf × π) = 1/(9π).
+> Matches SM g_common = 0.5443 to 0.006%. Status: Tier 3 — formal derivation from
+> V(φ) KK normalization over S¹×S³×S⁵ is the remaining open step.
+> See equations/beta_constraint.py.
+>
+> **Current status:** D5/D6/D7 are DERIVED (Tier 2 candidates). g² = 2I₄/N_Hopf = 8/27
+> is the new coupling prediction (Tier 3, 0.006% vs SM). Bottleneck 2 reduces to proving
+> this normalization from the substrate field equation.
 
 ---
 
@@ -469,6 +482,48 @@ r_S⁵/λ_D7 should also equal ~21 at their respective closure scales. This is a
 consistency prediction: the three coupling constants being equal at M_c is equivalent
 to the three sphere radii being equal in substrate-normalized units.
 
+### 2b. Structural formula: g² from Hopf fiber dimensions (Cycle 101)
+
+The Hopf fiber dimension sum N_Hopf = dim(S¹) + dim(S³) + dim(S⁵) = 1 + 3 + 5 = 9
+connects the gauge group topology to the substrate kink shape integral I₄ = ∫sech⁴(u)du = 4/3
+(proved Cycle 47 from V(φ)). The structural formula is:
+
+The square of the common gauge coupling equals twice the kink shape integral divided by
+the total Hopf fiber dimension sum across all three gauge depths:
+
+```
+g² = 2 I₄ / N_Hopf = 2 × (4/3) / 9 = 8/27
+```
+
+This gives g² = 8/27 = (2/3)³ exactly (π-independent, verified to error < 2×10⁻¹⁶
+across all α values from 0.01 to 100 — equations/beta_constraint.py). Numerically:
+
+```
+g = √(8/27) = 2√2/(3√3) = 0.54433
+g_SM (common coupling) = 0.5443    [from SM running — gauge_couplings.py]
+Error: 0.006%   (Tier 3 structural argument)
+```
+
+Equivalently, the quartic substrate coupling is fixed by:
+
+```
+β = 1 / (N_Hopf × π) = 1 / (9π) ≈ 0.035368
+```
+
+and the KK holonomy formula g² = 2πβI₄ then gives g² = 8/27 automatically.
+
+**Status:** The formula g² = 2I₄/N_Hopf is a Tier 3 structural argument — the
+connection between kink shape (I₄) and Hopf fiber dimensions (N_Hopf) is geometrically
+motivated but not yet derived from the V(φ) field equation via KK normalization. The
+remaining open step is to show that the mode normalization integral over the product
+fiber S¹×S³×S⁵ equals I₄/N_Hopf from the substrate field equation.
+
+The r_U1/λ value at β = 1/(9π) is:
+
+```
+r_U1/λ = 3/(4β) = 3×9π/4 = 27π/4 ≈ 21.21    (0.91% from SM holonomy target 21.4)
+```
+
 ### 3. Generation count from SU(3) representation dimension
 
 The fundamental representation of SU(3) has dimension 3, which DFC identifies with
@@ -498,6 +553,8 @@ representation being the physical quark color, not higher representations.
 | Non-degeneracy: 1 kink per threshold from PDE | ✗ TIER 4 OPEN — codimension-1 assumed |
 | Equal-coupling at M_c ↔ equal sphere radii | PREDICTION — testable if coupling derived |
 | r_U1/λ_D5 ≈ 21 from substrate parameters | OPEN — Bottleneck 2 key unknown |
+| g² = 2I₄/N_Hopf = 8/27 (β=1/(9π)) | TIER 3 STRUCTURAL — Cycle 101; 0.006% vs SM (equations/beta_constraint.py) |
+| r_U1/λ = 27π/4 ≈ 21.21 at β=1/(9π) | TIER 3 — 0.91% from holonomy target 21.4 |
 
 ---
 
@@ -520,3 +577,5 @@ representation being the physical quark color, not higher representations.
 - `phenomena/particle_physics/forces/strong_force.md` — SU(3) structure, confinement, 8 gluons
 - `phenomena/particle_physics/forces/parity_violation.md` — left-handedness from D6 chirality
 - `equations/spin_zero_mode.py` — numerical verification of D6 two-component zero mode
+- `equations/beta_constraint.py` — all β derivation candidates; g²=2I₄/N_Hopf=8/27 verified; β=1/(9π) (Cycle 101)
+- `foundations/coupling_derivation.md` — full Bottleneck 2 chain; β=1/(9π) and β_B2 compared
