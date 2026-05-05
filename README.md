@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~48.5% complete by internal estimate. Several Standard Model quantities
+Current status: ~49.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -188,7 +188,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~48.5%** (viability as a theory: ~60.5%; mathematical rigor: ~36.5%)
+**Current estimate: ~49.5%** (viability as a theory: ~61.5%; mathematical rigor: ~37.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -205,7 +205,7 @@ and several qualitative derivations are genuinely compelling. What it has not ye
 is that it *derives* rather than *reconstructs* the Standard Model. Three bottlenecks dominate:
 
 1. **D-depth assignment mechanism** — Bottleneck 1 FULLY CLOSED (Cycle 73): PT parameter s=2 exact for φ⁴ kink → s=2 PT has exactly 2 bound states → zero mode unique by Sturm-Liouville → each threshold adds exactly 1 zero mode → n thresholds → SU(n). Combined with Cycles 59–72: D5=U(1), D6=SU(2), D7=SU(3) derived from V(φ). Remaining open: threshold positions α₅, α₆, α₇ from substrate.
-2. **First-principles coupling constants** — Route 3B gives sin²θ_W = 0.231; Cycles 51–52 extended to M_W, G_F, τ_μ (all <1%); Cycle 93: Z boson widths Γ_Z/Γ_inv/R_l/R_b/A_FB^lep (all <5%, Tier 2a); Cycle 94: full DFC–SM Lagrangian assembled (foundations/dfc_sm_lagrangian.md) with exact coefficient accounting per sector. Bottleneck 2: g² = 2π×β×I₄ compact form proved; target = derive r_U1/λ = 1/(β×I₄) from V(φ) field equation (2D coupling integral, Cycle 88). Bottleneck 3: v = 246 GeV from D6/D7 overlap integral; λ_H = β/4 UV BC stabilizes Higgs vacuum (Tier 1, Cycle 86).
+2. **First-principles coupling constants** — Route 3B gives sin²θ_W = 0.231; Cycles 51–52 extended to M_W, G_F, τ_μ (all <1%); Cycle 93: Z boson widths Γ_Z/Γ_inv/R_l/R_b/A_FB^lep (all <5%, Tier 2a); Cycle 94: full DFC–SM Lagrangian assembled (foundations/dfc_sm_lagrangian.md) with exact coefficient accounting per sector. Bottleneck 2: g² = 2π×β×I₄ compact form proved; 3-step chain f²→r_U1→g² complete given β (Cycles 47/85/88); Cycle 100 proves B2 ↔ β-derivation equivalence — self-consistent β_B2=27/(256π) makes mode_norm=9/(64π) exactly; closing B2 = deriving β from V(φ). Bottleneck 3: v = 246 GeV from D6/D7 overlap integral; λ_H = β/4 UV BC stabilizes Higgs vacuum (Tier 1, Cycle 86).
 3. **S-matrix derivation** — Cycle 89: exact single-kink T-matrix (reflectionless n=2 PT, Tier 1); Cycle 91: effective range theory a_s=3λ, r₀=1.833λ (exact); Cycle 92: kink form factor F(k) exact. α_s: target M_c(D7) = 2.094×10¹⁵ GeV (Cycle 77).
 
 The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the correct BPS E_kink

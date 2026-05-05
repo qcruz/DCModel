@@ -25,9 +25,21 @@
 > closest is simple KK 1/r_U1 = 4β/3 = 0.04667 (4.3% from target). Physical route
 > (deriving mode_norm from V(φ) field equation alone) still open.
 >
+> **Cycle 100:** B2 ↔ β-derivation structural equivalence PROVED. The 3-step chain
+> (P1) f²=I₄φ₀²/λ [Cycle 47, exact] → (P2) r_U1=λ/(βI₄)=3λ/(4β) [algebraic identity,
+> α-independent] → (P3) g²=2πλ/r_U1=2πβI₄=8πβ/3 [KK holonomy] is complete given β.
+> Self-consistent β_B2=27/(256π)≈0.03357 makes mode_norm=9/(64π) exactly (error
+> 0.00e+00) and gives g²=9/32 (exact), g=3/(4√2)≈0.5303 (−2.57% vs SM 0.5443), but
+> degrades M_W from −0.88% to −2.92%. The 4.25% gap between simple KK (4β/3=0.04667)
+> and target (9/(64π)=0.04476) equals the 4.3% difference between β_ref=0.035 and
+> β_B2=27/(256π). Closing B2 = deriving β from V(φ); once β is fixed, g² follows
+> automatically with zero additional free parameters. See
+> equations/bottleneck2_beta_selfconsistency.py.
+>
 > **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.37% numerical agreement).
-> Closed: f² exact; compact form; α-independence; mode_norm algebraic proof.
-> Open: physical derivation of r_U1/λ = 1/(β×I₄) from V(φ) without importing g².
+> Closed: f² exact; compact form; α-independence; mode_norm algebraic proof; 3-step
+> chain P1→P2→P3 complete given β; B2 ↔ β-derivation equivalence proved.
+> Open: derive β from V(φ) substrate dynamics (= close B2 with zero free parameters).
 
 ---
 
