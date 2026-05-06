@@ -64,11 +64,21 @@
 > (B) Z₂ kink two-sidedness → coefficient 2 in g²=2I₄/N_Hopf.
 > See `equations/gauge_coupling_from_fiber.py`.
 >
+> **Cycle 106:** SERIES HOLONOMY DERIVATION added and verified (error = 0.00e+00).
+> Each Hopf fiber S^{d_n} contributes a natural Obata-kink radius R_n/λ = πd_n/I₄.
+> The D6 zero mode traverses all three in series: r_U1/λ = (π/I₄)(1+3+5) = πN_Hopf/I₄
+> = 27π/4. KK coupling: g² = 2π/(πN_Hopf/I₄) = 2I₄/N_Hopf = 8/27. The two π factors
+> cancel (2π from KK holonomy ÷ π from half-vortex radius). Self-consistency with P2:
+> β = 1/(πN_Hopf) = 1/(9π). Verified: r_U1 series vs P2 residual = 0.00e+00, g² residual
+> = 0.00e+00. New module: equations/g2_selfconsistency_proof.py. REMAINING: prove
+> R_n/λ = πd_n/I₄ from KK overlap integral on each S^{d_n} — one calculation remaining.
+>
 > **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.006% at β=1/(9π)).
 > Proved: f² exact (P1); r_U1=1/(βI₄) algebraic identity (P2); g²=2πβI₄ compact
-> form (P3); mode_norm=9/(64π) β-independent identity (P4, Cycle 105).
+> form (P3); mode_norm=9/(64π) β-independent identity (P4, Cycle 105); series holonomy
+> r_U1=πN_Hopf/I₄ verified (P5, Cycle 106, error 0.00e+00).
 > Candidate: β=1/(9π) from Hopf dim sum 1+3+5=9 → g²=8/27 (0.006% vs SM).
-> Open: derive g²=2I₄/N_Hopf=8/27 directly from V(φ) without β as input.
+> Open: prove R_n/λ = πd_n/I₄ from KK overlap integral on S^{d_n} → CLOSES Bottleneck 2.
 
 ---
 

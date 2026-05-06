@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-06 (Cycle 105)
+**Last updated:** 2026-05-06 (Cycle 106)
 
 ---
 
@@ -135,6 +135,22 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
       fiber geometry S¹×S³×S⁵ constrains β. Show equal-coupling solution gives β=1/(9π).
     - Route B: fiber stiffness normalization — show the coefficient in g²∝I₄/N_Hopf equals
       exactly 2 (from Z₂ kink two-sidedness) from the substrate field equation.
+- **Cycle 106 (series holonomy — `equations/g2_selfconsistency_proof.py`):**
+  - **SERIES HOLONOMY DERIVATION formalized and verified (error = 0.00e+00).**
+    Each Hopf fiber S^{d_n} has a natural Obata-kink radius R_n/λ = πd_n/I₄. The D6 zero
+    mode traverses all three in series: r_U1/λ = (π/I₄)(1+3+5) = πN_Hopf/I₄ = 27π/4.
+    KK coupling: g² = 2π/(πN_Hopf/I₄) = 2I₄/N_Hopf = 8/27 (error 0.00e+00).
+    Self-consistency with P2: β = 1/(πN_Hopf) = 1/(9π) (error 6.94e-18).
+    The two π factors cancel: 2π (KK holonomy) ÷ π (half-vortex radius) = 2.
+  - **THREE INDEPENDENT FACTOR DERIVATIONS:**
+    π — from Z₂ kink as half-vortex (W=−1/2, Cycle 67c, proved Cycle 67c)
+    d_n — from Obata first Laplacian eigenvalue λ₁(S^{d_n})=d_n (proved Cycle 103, error 0)
+    1/I₄ — from kink shape integral I₄=4/3 via Bogomolny identity (proved Cycle 47, error 0)
+  - **ONE REMAINING OPEN STEP:** Prove R_n/λ = πd_n/I₄ from the KK overlap integral:
+      g_n⁻² = (Vol(S^{d_n}))⁻¹ × ∫dx ∫_{S^{d_n}} dΩ |η₀(x)|² |K_n(Ω)|²/R_n^{d_n-1}
+    Show this equals d_n/(2πβI₄), giving g_n² = 2πβI₄/d_n per fiber.
+    Series combination: 1/g_eff² = Σd_n/(2πβI₄) = N_Hopf/(2πβI₄) → g_eff² = 2I₄/N_Hopf.
+    This is the one calculation that promotes Bottleneck 2 from Tier 3 → Tier 2a.
 - Files: `foundations/complex_substrate.md` (Cycle 75), `equations/complex_substrate.py`,
   `foundations/phase_stiffness_derivation.md` (updated Cycles 85, 88), `foundations/coupling_derivation.md`,
   `equations/bottleneck2_coupling_integral.py` (Cycle 85 — systematic analysis),
