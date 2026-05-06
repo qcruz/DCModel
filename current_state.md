@@ -24,7 +24,7 @@ big_bang, inflation, compton_scattering, pair_production, anomalous_magnetic_mom
 muon_decay, electroweak_precision, casimir_effect, quantum_hall_effect, superfluidity,
 superconductivity, lamb_shift, magnetic_monopoles, arrow_of_time, nuclear_binding,
 neutrino_oscillations, flavor_mixing, hawking_radiation, quark_gluon_plasma,
-strong_cp_problem, hierarchy_problem.
+strong_cp_problem, hierarchy_problem, aharonov_bohm (Cycle 104).
 
 **Equations:** 35+ runnable Python modules. Key modules listed in the Equation Layer
 section below.

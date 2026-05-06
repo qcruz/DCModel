@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-05 (Cycles 97–101)
+**Last updated:** 2026-05-06 (Cycle 104)
 
 ---
 
@@ -210,6 +210,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | `neutrino_masses.py` | m₂, m₃ predictions | CIRCULAR: m₂, m₃ derived from input Δm² values — not independent predictions |
 | `bifurcation_dynamics.py` | `gamma_from_beta()` | RETRACTED — output is unphysical (ratio > 1); labeled but still present |
 | `closure_topology.py` | `closure_energy()` | No stable minimum for SU(2)/SU(3) — Derrick's theorem violation for n≥3 |
+| `pair_production.py` | α_em at low energy | INCONSISTENCY: uses perturbative one-loop QED running from M_Z → gives Δ(1/α)≈4.4; atomic_structure.py uses Δ(1/α)=10.46 (includes hadronic vacuum polarization). For √s > 2 GeV pair-production predictions: consistent. For absolute α(m_e): use atomic_structure.py. Corrected docstring in Cycle 104. |
+| `pair_production.py` | σ(e⁺e⁻→μ⁺μ⁻) at 29–55 GeV | MISLEADING: large errors (10–18%) at √s=29–55 GeV arise from missing γ-Z interference (not DFC-specific); noted in docstring Cycle 104. Valid range for pure-photon formula: √s < 20 GeV or > 100 GeV. |
 
 ---
 

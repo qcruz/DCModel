@@ -220,6 +220,10 @@ anomaly-free charge assignments — is the key open derivation for this document
 - **Product geometry** — D5, D6, D7 independence; `foundations/product_geometry.md`
 - **Proton stability** — why quark→lepton is forbidden (D7→D5 transition);
   `phenomena/particle_physics/proton_stability.md`
+- **Aharonov-Bohm effect** — direct physical measurement of U(1) holonomy; the flux quantum
+  Φ₀ = h/e is the minimum D5 winding unit for single charge; connects charge quantization
+  to an experimentally measurable topological quantity;
+  `phenomena/quantum/aharonov_bohm.md`, `equations/aharonov_bohm.py`
 
 ---
 

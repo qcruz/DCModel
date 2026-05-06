@@ -17,11 +17,20 @@ Coupling chain:
     → σ = 4πα²(√s)/(3s)
 
 Key results:
-    - σ(e⁺e⁻ → μ⁺μ⁻) at √s = 10.58 GeV: DFC ≈ 0.831 nb vs. observed 0.873 nb (~4.8%)
+    - σ(e⁺e⁻ → μ⁺μ⁻) at √s = 10.58 GeV: DFC ≈ 0.847 nb vs. observed 0.873 nb (−2.9%)
     - R-ratio (5 flavors): DFC = 11/3 = 3.667 vs. observed ≈ 3.66  (< 1%, Tier 1)
-    - Error source: entirely from 1.3% α_em systematic (→ 2.6% in σ for scale)
-      plus QED running 2.2% correction gives ~4.8% total
+    - Error at 10.58 GeV entirely from 1.3% α_em systematic (→ ~2.6% in σ);
+      residual ~0.3% from missing QCD correction (α_s/π ≈ +3%)
     - R-ratio is exact (Tier 1) — no α_em dependence; depends only on color count and charges
+    - IMPORTANT: The formula σ = 4πα²/(3s) is PURE PHOTON EXCHANGE (leading order QED).
+      Above √s ≈ 20 GeV, γ-Z interference (destructive below Z pole) becomes significant.
+      Errors at 29–55 GeV (10–18%) arise from this missing Z-exchange, NOT from the DFC
+      coupling chain. SM tree-level also overestimates by ~7% at 29 GeV from pure photon alone.
+    - α_em running in this module uses perturbative QCD fermion loops only.
+      This gives Δ(1/α) ≈ 4.4 from M_Z to m_e, INCONSISTENT with atomic_structure.py
+      which uses total Δ(1/α) = 10.46 (includes hadronic vacuum polarization from
+      dispersion relations). For cross-section predictions, the perturbative formula is
+      adequate at √s > 2 GeV; for low-energy α_em, use atomic_structure.py instead.
 
 Status:
     - R-ratio (structure): Tier 1 VERIFIED ✓ — no free parameters
@@ -278,6 +287,9 @@ if __name__ == "__main__":
     print(f"\n  σ_point formula: σ_point = 86.85 nb / (√s [GeV])²  [uses α = 1/137]")
     print(f"  DFC correction: uses α_DFC(√s) = 1/{1/alpha_em_running(10.58, ALPHA_DFC_MZ):.1f}  "
           f"at √s = 10.58 GeV")
+    print(f"\n  NOTE: Large errors at √s = 29–55 GeV arise from γ-Z interference (missing in this")
+    print(f"  formula), NOT from the DFC coupling chain. SM pure-photon formula also overestimates")
+    print(f"  at these energies by ~7–10%. Valid comparison energies: √s < 20 GeV or √s > 100 GeV.")
 
     print("\n--- R-Ratio: Hadronic vs. Leptonic Cross-Section ---")
     print("  (N_colors = 3 from D7 SU(3) fundamental representation)")
