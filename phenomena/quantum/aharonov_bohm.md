@@ -255,9 +255,13 @@ The 1.1% error traces to the same α_em systematic as all DFC electromagnetic pr
 ## Open Questions
 
 1. **Holonomy and the coupling derivation.** The AB phase γ_AB = 2πg at the D5 radius r_U1
-   is exactly the quantity that Bottleneck 2 targets. Proving r_U1/λ = πN_Hopf/I₄ from the
-   V(φ) field equation would simultaneously derive the AB period Φ₀ from first principles
-   (zero free parameters). This is the current highest-priority open derivation.
+   is exactly the quantity that Bottleneck 2 targets. Cycle 105 showed that mode_norm =
+   9/(64π) is a β-independent algebraic identity (β cancels exactly in the full KK formula),
+   so deriving g² from the vortex BVP integral alone is blocked. The revised open step is:
+   derive g² = 2I₄/N_Hopf = 8/27 directly from V(φ), or equivalently β = 1/(9π) from a
+   constraint external to the KK chain. Proving this would simultaneously derive the AB
+   period Φ₀ from first principles with zero free parameters. This remains the
+   highest-priority open derivation in Bottleneck 2.
 
 2. **Non-Abelian Aharonov-Bohm (D6, D7 analogs).** The SU(2) closure at D6 and SU(3) at
    D7 depths should produce non-Abelian holonomy effects — path-ordering of the Wilson loop

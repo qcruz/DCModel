@@ -46,12 +46,29 @@
 > KK normalization over S¹×S³×S⁵ product fiber is the remaining open step.
 > See equations/beta_constraint.py.
 >
-> **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.37% numerical agreement).
-> Closed: f² exact; compact form; α-independence; mode_norm algebraic proof; 3-step
-> chain P1→P2→P3 complete given β; B2 ↔ β-derivation equivalence proved; all three
-> standard candidates (a)(b)(c) shown blocked.
+> **Cycle 103:** β=1/(9π) self-consistency formalized. Two routes for r_U1/λ:
+> (A) 1/(βI₄) [kink holonomy]; (B) πN_Hopf/I₄ [Hopf Laplacian sum, Obata theorem].
+> Equating → β=1/(9π), g²=8/27. λ₁(S^d)=d proved (error 0.00e+00). N_Hopf=9 exact.
+> M_W error improves 0.88%→0.50%. TIER 4 OPEN: show r_U1/λ=πN_Hopf/I₄ from V(φ).
+> See `equations/beta_from_laplacian.py`.
+>
+> **Cycle 105:** KEY FINDING — mode_norm = 9/(64π) is β-INDEPENDENT (β cancels
+> exactly in the full KK formula). The "4.3% gap" (Cycles 96–103) between simple KK
+> (4β/3) and target 9/(64π) was a red herring: simple KK ≠ full formula. Full formula
+> is trivially satisfied for any β. Vortex BVP cannot constrain β via this route.
+> REVISED OPEN STEP: derive g² = 2I₄/N_Hopf = 8/27 from V(φ), or equivalently
+> derive β = 1/(9π) from a constraint external to the KK chain.
+> β_B2=27/(256π) solved the wrong condition (simple KK); gives g=0.5303 (−2.57%).
+> β=1/(9π) [Hopf dim sum] gives g=0.54433 (0.006% vs SM) — best available candidate.
+> Candidate routes: (A) equal-coupling IC + product fiber S¹×S³×S⁵ → β=1/(9π);
+> (B) Z₂ kink two-sidedness → coefficient 2 in g²=2I₄/N_Hopf.
+> See `equations/gauge_coupling_from_fiber.py`.
+>
+> **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.006% at β=1/(9π)).
+> Proved: f² exact (P1); r_U1=1/(βI₄) algebraic identity (P2); g²=2πβI₄ compact
+> form (P3); mode_norm=9/(64π) β-independent identity (P4, Cycle 105).
 > Candidate: β=1/(9π) from Hopf dim sum 1+3+5=9 → g²=8/27 (0.006% vs SM).
-> Open: derive β=1/(9π) from V(φ) KK normalization over three Hopf fibers.
+> Open: derive g²=2I₄/N_Hopf=8/27 directly from V(φ) without β as input.
 
 ---
 

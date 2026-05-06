@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-06 (Cycle 104)
+**Last updated:** 2026-05-06 (Cycle 105)
 
 ---
 
@@ -103,13 +103,47 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     Gives g²=8/27 exactly (=(2/3)³), g=0.54433 (0.006% vs SM 0.5443). r_U1/λ=27π/4≈21.21 (0.91%).
   - **Target reformulated:** prove β=1/(9π) from KK normalization over product fiber S¹×S³×S⁵.
     Once proved: Bottleneck 2 closes — g²=8/27, 0 free parameters.
+- **Cycle 103 (Laplacian self-consistency — `equations/beta_from_laplacian.py`):**
+  - **β=1/(9π) self-consistency formalized:** Two independent expressions for r_U1/λ equated:
+    (A) r_U1/λ = 1/(βI₄) [kink holonomy, algebraic identity]; (B) r_U1/λ = πN_Hopf/I₄
+    [Hopf Laplacian sum — λ₁(S^d)=d proved by Obata theorem]. Equating: β = 1/(πN_Hopf) = 1/(9π).
+  - **N_Hopf = 1+3+5 = 9 PROVED:** From Bottleneck 1 (Cycles 59–74) S¹×S³×S⁵ correspondence;
+    Obata theorem gives λ₁(S^d) = d exactly for all d (error 0.00e+00 for d=1,3,5).
+  - **g²=8/27 from both routes:** residual 0.00e+00. M_W error improves 0.88%→0.50%.
+  - **Tier status:** Laplacian/N_Hopf/I₄ all EXACT; g²=8/27 TIER 3; r_U1/λ=πN_Hopf/I₄ TIER 4 OPEN.
+  - **ONE REMAINING OPEN STEP:** show r_U1/λ = πN_Hopf/I₄ from V(φ) KK mode normalization integral.
+- **Cycle 104 (Aharonov-Bohm — `equations/aharonov_bohm.py`):**
+  - DFC holonomy γ_DFC = 2πg connects to Bottleneck 2; Φ₀^{DFC} numerical error = +1.1% (Tier 2b,
+    same α_em systematic as all coupling predictions). r_U1 at holonomy quantization condition
+    explicitly referenced. No new derivation; provides physical cross-check.
+- **Cycle 105 (β-cancellation — `equations/gauge_coupling_from_fiber.py`):**
+  - **KEY FINDING: mode_norm = 9/(64π) is β-INDEPENDENT.** The β in g²=2πβI₄ and the 1/β in
+    r_U1=3/(4β) cancel exactly: denom = (8π/3)×2π×(3/4)×(64π/9) = 256π³/9 → mode_norm =
+    4π²/denom = 9/(64π) for ALL β. Numerical scan β∈[0.01,0.5]: max error 1.55×10⁻¹⁶.
+  - **IMPLICATION:** The "4.3% gap" (Cycles 96–103) between simple KK (4β/3) and target
+    9/(64π) was a red herring — simple KK was a wrong proxy for the full formula.
+    The full formula is satisfied trivially for any β. The vortex BVP integral cannot
+    constrain β via this route.
+  - **REVISED OPEN STEP:** Not "show mode_norm=9/(64π) from vortex integral" (auto-satisfied).
+    The one remaining open step is: **derive g² = 2I₄/N_Hopf = 8/27 from V(φ)**, or
+    equivalently derive β = 1/(πN_Hopf) = 1/(9π) from a constraint external to the KK chain.
+  - **β_B2 clarification:** β_B2=27/(256π) solved 4β/3=9/(64π) (simple KK, wrong condition).
+    It gives g=0.5303 (−2.57% vs SM). β=1/(9π) gives g=0.54433 (0.006% vs SM). The
+    Hopf dimension argument remains the best available candidate.
+  - **CANDIDATE ROUTES (open):**
+    - Route A: formalize equal-coupling argument — equal-coupling IC combined with product
+      fiber geometry S¹×S³×S⁵ constrains β. Show equal-coupling solution gives β=1/(9π).
+    - Route B: fiber stiffness normalization — show the coefficient in g²∝I₄/N_Hopf equals
+      exactly 2 (from Z₂ kink two-sidedness) from the substrate field equation.
 - Files: `foundations/complex_substrate.md` (Cycle 75), `equations/complex_substrate.py`,
   `foundations/phase_stiffness_derivation.md` (updated Cycles 85, 88), `foundations/coupling_derivation.md`,
   `equations/bottleneck2_coupling_integral.py` (Cycle 85 — systematic analysis),
   `equations/worldvolume_coupling.py` (Cycle 88 — vortex integrals, uniqueness proof, KK normalization),
   `equations/bottleneck2_2d_integral.py` (Cycle 96 — 2D coupling integral, mode_norm algebraic proof),
   `equations/bottleneck2_beta_selfconsistency.py` (Cycle 100 — β-derivation equivalence),
-  `equations/beta_constraint.py` (Cycle 101 — all β candidates analyzed, Hopf dim candidate)
+  `equations/beta_constraint.py` (Cycle 101 — all β candidates analyzed, Hopf dim candidate),
+  `equations/beta_from_laplacian.py` (Cycle 103 — Laplacian self-consistency; Obata theorem),
+  `equations/gauge_coupling_from_fiber.py` (Cycle 105 — β-cancellation proof; revised open step)
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---

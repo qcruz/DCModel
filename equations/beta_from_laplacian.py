@@ -39,9 +39,12 @@ WHAT IS NOT YET DERIVED FROM V(φ):
   Step (B): the closure radius condition r_U1/λ = πN_Hopf/I₄ is the
   structural claim that the U(1) closure radius in the product fiber
   S¹×S³×S⁵ is set by the total Laplacian first-eigenvalue sum. This
-  requires computing the KK mode normalization integral over the product
-  fiber from the substrate field equation — this integral has not yet
-  been performed.
+  is what needs to be proved from V(φ). NOTE (Cycle 105): showing
+  mode_norm = 9/(64π) from the vortex BVP is BLOCKED — mode_norm is
+  β-independent and trivially satisfied for all β (β cancels in the
+  full KK formula). The vortex BVP cannot constrain β via this route.
+  The open step is to derive g² = 2I₄/N_Hopf = 8/27 directly, possibly
+  via the equal-coupling IC on the product fiber geometry.
 
 PHYSICAL INTERPRETATION OF N_Hopf = 9:
   On S^d, the first nonzero eigenvalue of the Laplacian is λ₁(S^d) = d.
@@ -332,25 +335,32 @@ WHAT REMAINS OPEN TO DERIVE FROM V(φ):
   The self-consistency argument reduces Bottleneck 2 to ONE missing equation:
 
   ┌─────────────────────────────────────────────────────────────────┐
-  │   r_U1/λ = π × N_Hopf / I₄                                     │
-  │   (closure radius equals π × total fiber stiffness / kink shape)│
+  │   Derive g² = 2I₄/N_Hopf = 8/27 from V(φ) = −α/2 φ² + β/4 φ⁴ │
+  │   (equivalently: derive β = 1/(9π) from a V(φ) constraint)     │
   └─────────────────────────────────────────────────────────────────┘
 
-  Specific calculation required:
-  Show that the KK mode normalization integral for the kink zero mode
-  η₀(x) ∝ sech²(x/λ) winding around the product fiber S¹×S³×S⁵
-  gives:
+  NOTE (Cycle 105 update): The approach of deriving r_U1/λ = πN_Hopf/I₄
+  via the KK mode normalization integral is BLOCKED. Cycle 105 proved that
+  mode_norm = 9/(64π) is a β-independent algebraic identity (β cancels
+  exactly in the full KK formula). The vortex BVP integral cannot constrain
+  β via this route. The simple KK formula 4β/3 ≠ 9/(64π) (used as proxy in
+  Cycles 96–103) was a wrong proxy for the full formula.
 
-      ∫_x ∫_{S¹×S³×S⁵} |η₀(x)|² × |K_a(Ω)|² dx dΩ = I₄ / (π × N_Hopf)
+  REVISED CANDIDATE ROUTES:
 
-  where K_a(Ω) is the Killing vector field on the product fiber
-  associated with gauge boson a, normalized canonically.
+  Route A — Equal-coupling constraint:
+    The equal-coupling IC (g₁=g₂=g₃ at M_c) combined with the product fiber
+    geometry S¹×S³×S⁵ may constrain β. Show that the coupling formula for
+    each sphere S^{d_n} at equal coupling gives β = 1/(π × N_Hopf) = 1/(9π).
 
-  Equivalently: show that the phase boundary condition at D5 depth
-  produces r_U1/λ = πN_Hopf/I₄ = 27π/4 ≈ 21.21 from the kink
-  dynamics alone (without using g² as input).
+  Route B — Coefficient derivation:
+    The formula g²=2I₄/N_Hopf has coefficient 2. Show formally from the
+    substrate field equation that this coefficient equals 2 (possibly from
+    Z₂ kink two-sidedness). This would prove g²=2I₄/N_Hopf without β.
 
-  TIER STATUS after this proof:
+  See equations/gauge_coupling_from_fiber.py (Cycle 105) for full analysis.
+
+  TIER STATUS after proof of g²=2I₄/N_Hopf from V(φ):
     β = 1/(9π):   TIER 2a (from TIER 3)
     g² = 8/27:    TIER 2a (from TIER 3)
     All downstream predictions inherit the proof.
