@@ -414,19 +414,20 @@ budget across many more modes. See `foundations/depth_running.md`.
 The following compression relationships are motivated by the DFC framework but have not
 been formally derived from the Tier 0 postulates.
 
-**1. r_U1/λ from the holonomy integral.**
-The gauge coupling g² = 8πβ/3 depends on the identification of the D5 closure fiber radius
-r_U1 with the kink half-width λ through the relation r_U1/λ = 3/(4β). This identification
-is physically motivated (the closure fiber radius is the scale at which the phase stiffness
-of the kink equals the holonomy period), but requires either:
-- Route A: Kaluza-Klein reduction of the DFC field on the S¹ closure fiber, giving r_U1
-  directly as the mode normalization scale
-- Route B: domain-wall worldvolume action showing that the D5 localization length matches
-  the kink half-width
-
-Both routes are blocked for a purely real φ⁴ field — U(1) localization requires a complex
-field or substrate extension. See `foundations/phase_stiffness_derivation.md` and
-`foundations/coupling_derivation.md`.
+**1. g_1² from the DFC action (Bottleneck 2).**
+The gauge coupling g² = 8πβ/3 = 2πβI₄ (compact form, Cycle 85). Progress through Cycles
+100–111 has established the following:
+- The series holonomy r_U1/λ = πN_Hopf/I₄ = 27π/4 is verified (Cycle 106, error 0.00e+00).
+- The TB product formula: g_1² = Q_top × I₄ = 2 × 4/3 = 8/3 = 2I₄ (Cycles 110–111).
+  Both factors derive from V(φ) via the BPS superpotential W(ψ) = 1-ψ²:
+  - Q_top = ∫W du = 2 (FTC, exact — kink spans both Z₂ vacua)
+  - I₄ = ∫W² du = 4/3 (Bogomolny identity, exact)
+- g_eff² = 2I₄/N_Hopf = 8/27 (parallel Hopf fiber combination, Cycle 107, exact).
+- β = 1/(9π) (self-consistent, Cycle 103; Route F agreement 0.01%, Cycle 87).
+Remaining open step (Tier 4): identify which DFC KK action integral equals the TB product
+Q_top × I₄. Steps 0–3 (W(ψ), BPS, Q_top, I₄) are Tier 1 from V(φ); Step 4 (the product
+as the coupling formula) needs physical derivation from a specific DFC KK action term.
+See `foundations/coupling_derivation.md` and `equations/kk_action_coupling.py`.
 
 **2. V(φ) from compression dynamics.**
 The double-well potential form is currently postulated (Tier 0). Deriving it from the
@@ -435,11 +436,13 @@ produces a negative quadratic and positive quartic term — would promote V(φ) 
 to Tier 1. Candidate approach: derive the effective potential of a 1D field under its own
 gravitational-analog self-interaction via a mean-field approximation.
 
-**3. β from Planck-scale kink width.**
-The quartic coupling β ≈ 0.035 is a Tier 3 reference value inferred from the condition that
-the D1 kink width equals the Planck length. The precise derivation requires knowing the
-relationship between the substrate's α and the Planck energy independently. This is the
-same gap as the ℏ derivation — see `foundations/planck_constant_derivation.md`.
+**3. β from Hopf fiber sum.**
+The quartic coupling β ≈ 0.035 has a leading Tier 3 candidate: β = 1/(9π) ≈ 0.03537 from
+Hopf fiber dimension sum dim(S¹)+dim(S³)+dim(S⁵) = 1+3+5 = N_Hopf = 9 (Cycle 101). This
+gives g² = 8/27 exactly (error < 2×10⁻¹⁶) and g = 0.54433 (0.006% vs SM). The older
+Planck-scale kink width constraint fixes α not β. The Hopf sum candidate is Tier 3: it
+follows from the DFC depth structure but is not yet derived from the field equation alone.
+See `foundations/planck_constant_derivation.md` and `equations/beta_constraint.py`.
 
 **4. Decoherence rate from substrate field coupling.**
 The decoherence rate Γ_dec ~ λ²_coupling × ρ_env(E) is imported from Lindblad theory.
@@ -470,3 +473,6 @@ stochastic φ⁴ field to cross threshold starting from φ = 0, using Kramers es
 - `foundations/kink_scattering.md` — kink S-matrix; shape mode ω₁ = (√3/2)m_σ (Cycle 33)
 - `equations/kink_model.py` — BPS-correct E_kink; ΔV/E_kink numerical verification
 - `equations/bifurcation_dynamics.py` — E_kink/E_total = 8/3 verified; retracted γ_D labeled
+- `equations/kk_action_coupling.py` — BPS superpotential W(ψ)=1-ψ², TB product g_1²=Q_top×I₄=2I₄ (Cycle 111)
+- `equations/g2_selfconsistency_proof.py` — series holonomy r_U1/λ=πN_Hopf/I₄ verified; g_eff²=8/27 (Cycle 106)
+- `equations/kk_fiber_coupling.py` — Hopf Killing vector |K|²=R², parallel combination g_eff²=8/27 (Cycle 107)
