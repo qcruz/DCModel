@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-06 (Cycles 108–110)
+**Last updated:** 2026-05-06 (Cycles 108–111)
 
 ---
 
@@ -199,6 +199,18 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
       equals g_1² = |∫(φ²-φ₀²)dx| × ∫(∂_x φ)²dx / φ₀⁴. The product is correct algebraically;
       needs physical derivation from DFC action (coupling overlap integral in KK reduction).
     - Once physical justification is given, Steps 3+4 promote to Tier 2 → g²=8/27 Tier 2a.
+  - **Cycle 111 (BPS superpotential — `equations/kk_action_coupling.py`):**
+    - **BPS DERIVATION CHAIN:** Both factors of g_1²=2I₄ derived from V(φ) via Bogomolny:
+      (Step 0) V(φ) → W(ψ)=1-ψ² [Bogomolny completion, α-independent, error 3.33e-16]
+      (Step 1) BPS equation ∂_uψ=W(ψ) from E≥ΔP [Bogomolny inequality, BPS residual 3.33e-16]
+      (Step 2) Q_top = ∫W du = 2 [FTC: ψ(+∞)-ψ(-∞)=1-(-1)=2, exact]
+      (Step 3) I₄ = ∫W² du = 4/3 [Bogomolny identity, exact, Cycle 47]
+    - STEPS 0-3 ARE TIER 1: all derived from V(φ) alone, α-independent, 0 free parameters.
+    - **TB PRODUCT FORMULA (Tier 3):** g_1² = Q_top × I₄ = 2×4/3 = 8/3 = 2I₄
+      Physical interpretation: (Z₂ topological content) × (BPS stiffness); α-independent max error 1.78e-15
+    - **REMAINING GAP (Tier 4 → Tier 2):** Show from DFC KK action that g_1² equals
+      the TB product Q_top×I₄. Steps 0-3 give both factors from V(φ); Step 4 (the product
+      itself as the coupling formula) still lacks explicit DFC action derivation.
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---

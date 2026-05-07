@@ -85,13 +85,32 @@
 > normalization integral, (C) Obata eigenvalue-to-radius connection. See
 > equations/kk_fiber_coupling.py.
 >
+> **Cycle 110:** Product formula g_1²=2I₄ identified — g_phase×I₄ = |∫(tanh²-1)du|×∫sech⁴du
+> = 2×4/3 = 8/3 = 2I₄ (exact). Z₂ vacuum identity |∫(φ²-φ₀²)dx|=2 proved (FTC).
+> SU(d_n) equal-coupling g_n²=g_1²/d_n→g_eff²=2I₄/N_Hopf=8/27 (error 0.00e+00).
+> OPEN STEP: identify which DFC KK action integral equals g_1²=2I₄.
+>
+> **Cycle 111:** BPS SUPERPOTENTIAL DERIVATION — both factors of g_1²=2I₄ derived from
+> V(φ) via the Bogomolny superpotential W(ψ)=1-ψ²:
+> (Step 0) W(ψ)=1-ψ² derived from V(φ) [Bogomolny completion, α-independent, max error 3e-16]
+> (Step 1) BPS equation ∂_u ψ=W(ψ) from energy minimization [E ≥ ΔP, equality iff BPS]
+> (Step 2) Q_top = ∫W du = 2 [FTC exact: ψ(+∞)-ψ(-∞)=1-(-1)=2]
+> (Step 3) I₄ = ∫W² du = 4/3 [Bogomolny integral, exact, Cycle 47]
+> (Step 4) TB product formula: g_1² = Q_top × I₄ = 2×4/3 = 8/3 = 2I₄ [Tier 3→2 candidate]
+>   Physical: (Z₂ topological content) × (BPS stiffness) = 2×I₄; α-independent (error 1.78e-15)
+> (Steps 5-7) g_n²=2I₄/d_n [Schur] → g_eff²=8/27 [exact] → β=1/(9π)
+> See `equations/kk_action_coupling.py`. Tier: Steps 0-3 TIER 1, Step 4 TIER 3 (open: physical
+> action identification), Steps 5-6 TIER 3/2a, Step 7 TIER 3.
+>
 > **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.006% at β=1/(9π)).
 > Proved: f² exact (P1); r_U1=1/(βI₄) algebraic identity (P2); g²=2πβI₄ compact
 > form (P3); mode_norm=9/(64π) β-independent identity (P4, Cycle 105); series holonomy
 > r_U1=πN_Hopf/I₄ verified (P5, Cycle 106, error 0.00e+00); |K_Hopf|²=R² proved
 > (P6, Cycle 107, Tier 1); g_eff²=8/27 via parallel fibers (P7, Cycle 107, exact).
+> BPS superpotential chain (Steps 0-3) derived V(φ)→W(ψ)→Q_top=2→I₄=4/3 (Cycle 111, Tier 1).
+> TB product formula g_1²=Q_top×I₄=2I₄ (Cycle 111, Tier 3 — DFC action identification open).
 > Candidate: β=1/(9π) from Hopf dim sum 1+3+5=9 → g²=8/27 (0.006% vs SM).
-> Open: prove R_n/λ = πd_n/I₄ from DFC moduli space / closure condition → CLOSES Bottleneck 2.
+> Open (Tier 4): identify which DFC KK action integral equals the TB product Q_top×I₄=2I₄.
 
 ---
 
