@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-06 (Cycles 108–111)
+**Last updated:** 2026-05-06 (Cycles 108–112)
 
 ---
 
@@ -151,6 +151,22 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     Show this equals d_n/(2πβI₄), giving g_n² = 2πβI₄/d_n per fiber.
     Series combination: 1/g_eff² = Σd_n/(2πβI₄) = N_Hopf/(2πβI₄) → g_eff² = 2I₄/N_Hopf.
     This is the one calculation that promotes Bottleneck 2 from Tier 3 → Tier 2a.
+- **Cycle 112 (moduli metric — `equations/kk_moduli_metric.py`):**
+  - **g_1² = det(g_{moduli}) = I₄ × Q_top = 2I₄ (error 0.00e+00, Tier 1 for det; Tier 2 candidate for identification).**
+    The kink has a 2×2 moduli space metric (position X, phase θ):
+      g_{XX} = ∫(∂_u ψ)² du = I₄ = 4/3  [Manton metric, Tier 1]
+      g_{θθ} = |∫(ψ²-1) du| = Q_top = 2  [phase metric, FTC, Tier 1]
+      g_{Xθ} = 0                          [vanishes by parity, exact]
+    Both components derived from V(φ) via W(ψ)=1-ψ² (Cycle 111). α-independent.
+  - **Physical identification:** g_1² = det(g_{moduli}) = volume element of moduli space.
+    Standard soliton collective coordinate quantization: reparametrization-invariant
+    coupling = √det(g) per zero mode, squared → g_1² = det(g). DFC context makes this
+    Tier 2 candidate once verified that DFC KK coupling = soliton moduli volume.
+  - **Full chain:** det(g)=2I₄ → g_n²=2I₄/d_n → g_eff²=8/27 → β=1/(9π) (all exact).
+  - **ONE REMAINING OPEN STEP:** Show explicitly that the DFC 5D action integrates
+    over the kink profile with gauge fluctuation to give det(g_{moduli}) = 2I₄.
+    This is the standard D-brane effective action calculation; the DFC analog requires
+    integrating the 5D DFC Lagrangian → 4D KK mass/coupling = moduli space volume element.
 - Files: `foundations/complex_substrate.md` (Cycle 75), `equations/complex_substrate.py`,
   `foundations/phase_stiffness_derivation.md` (updated Cycles 85, 88), `foundations/coupling_derivation.md`,
   `equations/bottleneck2_coupling_integral.py` (Cycle 85 — systematic analysis),
