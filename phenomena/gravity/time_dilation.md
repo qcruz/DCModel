@@ -247,6 +247,7 @@ In weak-field, low-velocity limit:
 | GPS gravitational correction | +45.9 μs/day from Φ at 20,200 km | Applied and verified ✓ |
 | Pound-Rebka redshift | Δν/ν = gh/c² = 2.46 × 10⁻¹⁵ | Confirmed to 1% ✓ |
 | Combined formula dτ/dt = √(1 − v²/c² − 2Φ/c²) | KG dispersion + field potential | Standard GR result ✓ |
+| Gravitational field equation modification (2Φ/c²) term | Working hypothesis — field eq. near mass; not derived from DFC substrate dynamics | OPEN ✗ |
 
 ---
 
@@ -271,8 +272,14 @@ In weak-field, low-velocity limit:
    clock rate — they never reverse it. In DFC, this is the statement that the compression
    process is irreversible: the Compton oscillation rate can be slowed but the direction
    of the rate (positive, forward in time) cannot be reversed because dimensional volume
-   removal is monotonic. A formal proof that DFC's irreversibility enforces the arrow of
-   time — connecting to thermodynamics and baryogenesis — is an open question.
+   removal is monotonic. **RESOLVED (Cycle 45):** `phenomena/thermodynamics/arrow_of_time.md`
+   formally proved DFC irreversibility from Z₂ kink topology — ΔV/E_kink = 0.265 (computed
+   from kink_model.py), giving Γ_forward/Γ_reverse = exp(ΔV/k_BT) ≫ 1 at any observable
+   temperature. The low initial entropy of the D1 state (W=1, pre-cascade substrate)
+   explains the thermodynamic arrow without fine-tuning. The connection between time dilation
+   and this irreversibility proof — that slowing the Compton rate and reversing the
+   compression direction are structurally forbidden by the same Z₂ topology — is documented
+   in `phenomena/thermodynamics/arrow_of_time.md`.
 
 4. **Time dilation and the measurement problem.** If a clock is in superposition of two
    velocities, its Compton rate is also in superposition. The "tick" of a superposed clock

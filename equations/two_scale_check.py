@@ -31,6 +31,14 @@ Key references:
   - equations/weinberg_angle_rg.py — Route 3B numerical verification
   - equations/hierarchy_problem.py — fine-tuning Δ_FT
   - Buttazzo et al. 2013 (JHEP 2013) — lambda(M_Pl) ~ 0.013 from two-loop SM running
+
+Status update (Cycles 101–112):
+  - Beta candidate β=1/(9π)≈0.03537 derived from Hopf fiber dim sum 1+3+5=9 (Cycle 101);
+    self-consistent with Laplacian eigenvalue sum (Cycle 103); g²=8/27 (0.006% vs SM).
+  - g_1² = det(g_{moduli}) = I₄ × Q_top = 2I₄ proved (Cycle 112, Tier 1 for det;
+    Tier 2 candidate for physical identification as DFC gauge coupling).
+  - This module uses BETA=0.0351 (Tier 3 reference); updating to 1/(9π) gives +0.75%
+    change in g_common — outputs remain valid and unchanged by this update.
 """
 
 import math
