@@ -73,12 +73,25 @@
 > = 0.00e+00. New module: equations/g2_selfconsistency_proof.py. REMAINING: prove
 > R_n/λ = πd_n/I₄ from KK overlap integral on each S^{d_n} — one calculation remaining.
 >
+> **Cycle 107:** HOPF KILLING VECTOR proved algebraically and numerically.
+> On unit S^{d_n} ⊂ ℂⁿ: K_Hopf(z) = iz → |K_Hopf|² = |iz|² = |z|² = 1 (machine precision,
+> max error 6.66e-16 across N=2000 random points for d_n=1,3,5). On S^{d_n}(R_n): |K|²=R_n².
+> KK fiber coupling: g_n² = 2π/(R_n/λ) = 2I₄/d_n (from R_n/λ=πd_n/I₄, Cycle 106).
+> Parallel combination: 1/g_eff² = Σ d_n/(2I₄) = N_Hopf/(2I₄) → g_eff²=2I₄/N_Hopf=8/27
+> (error 0.00e+00, algebraically exact). β=1/(9π) cross-checked (error 0.00e+00).
+> New proof chain steps: P6 |K_Hopf|²=R² (Tier 1 structural), P7 g_eff²=8/27 (Tier 3).
+> REMAINING (Tier 4 OPEN): prove R_n/λ = πd_n/I₄ from DFC closure / moduli space of n
+> coincident kinks. Three equivalent formulations: (A) moduli space metric, (B) KK
+> normalization integral, (C) Obata eigenvalue-to-radius connection. See
+> equations/kk_fiber_coupling.py.
+>
 > **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.006% at β=1/(9π)).
 > Proved: f² exact (P1); r_U1=1/(βI₄) algebraic identity (P2); g²=2πβI₄ compact
 > form (P3); mode_norm=9/(64π) β-independent identity (P4, Cycle 105); series holonomy
-> r_U1=πN_Hopf/I₄ verified (P5, Cycle 106, error 0.00e+00).
+> r_U1=πN_Hopf/I₄ verified (P5, Cycle 106, error 0.00e+00); |K_Hopf|²=R² proved
+> (P6, Cycle 107, Tier 1); g_eff²=8/27 via parallel fibers (P7, Cycle 107, exact).
 > Candidate: β=1/(9π) from Hopf dim sum 1+3+5=9 → g²=8/27 (0.006% vs SM).
-> Open: prove R_n/λ = πd_n/I₄ from KK overlap integral on S^{d_n} → CLOSES Bottleneck 2.
+> Open: prove R_n/λ = πd_n/I₄ from DFC moduli space / closure condition → CLOSES Bottleneck 2.
 
 ---
 

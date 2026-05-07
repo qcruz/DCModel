@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-06 (Cycle 106)
+**Last updated:** 2026-05-06 (Cycle 107)
 
 ---
 
@@ -159,7 +159,22 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   `equations/bottleneck2_beta_selfconsistency.py` (Cycle 100 — β-derivation equivalence),
   `equations/beta_constraint.py` (Cycle 101 — all β candidates analyzed, Hopf dim candidate),
   `equations/beta_from_laplacian.py` (Cycle 103 — Laplacian self-consistency; Obata theorem),
-  `equations/gauge_coupling_from_fiber.py` (Cycle 105 — β-cancellation proof; revised open step)
+  `equations/gauge_coupling_from_fiber.py` (Cycle 105 — β-cancellation proof; revised open step),
+  `equations/g2_selfconsistency_proof.py` (Cycle 106 — series holonomy; P1–P5+new step verified),
+  `equations/kk_fiber_coupling.py` (Cycle 107 — Hopf Killing vector; P6 |K|²=R²; P7 g_eff²=8/27)
+- **Cycle 107 (Hopf Killing vector — `equations/kk_fiber_coupling.py`):**
+  - **P6 PROVED (Tier 1 structural):** K_Hopf(z)=iz on unit S^{d_n} ⊂ ℂⁿ → |K|²=|iz|²=|z|²=1
+    (algebraic, exact; numerical: max error 6.66e-16 for d_n=1,3,5, N=2000 samples each).
+    On S^{d_n}(R_n): |K_Hopf|²=R_n² everywhere — constant, no angular dependence.
+  - **P7 PROVED (Tier 3, conditional):** g_n²=2I₄/d_n per fiber (from R_n/λ=πd_n/I₄, Cycle 106);
+    parallel combination 1/g_eff²=Σd_n/(2I₄)=N_Hopf/(2I₄) → g_eff²=2I₄/N_Hopf=8/27 (error 0.00e+00).
+    β=1/(9π) cross-check exact (error 0.00e+00).
+  - **ONE REMAINING OPEN STEP (Tier 4):** Prove R_n/λ = πd_n/I₄ from DFC closure condition.
+    Three equivalent formulations:
+    (A) Moduli space: n coincident kinks on ℝ → ℂⁿ moduli with Kähler radius R_n = πd_nλ/I₄
+    (B) KK normalization: ∫∫ |η₀(x)|² |K_Hopf|²/R_n dxdΩ = 9/(64π) iff R_n = πd_nλ/I₄
+    (C) Obata eigenvalue-to-radius: d_n → R_n mechanism (connection not yet explicit)
+  - All P1–P7 results are exact (error 0.00e+00 or machine precision) once R_n=πd_nλ/I₄ is assumed.
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---
