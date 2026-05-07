@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-06 (Cycle 107)
+**Last updated:** 2026-05-06 (Cycles 108–109)
 
 ---
 
@@ -175,6 +175,23 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     (B) KK normalization: ∫∫ |η₀(x)|² |K_Hopf|²/R_n dxdΩ = 9/(64π) iff R_n = πd_nλ/I₄
     (C) Obata eigenvalue-to-radius: d_n → R_n mechanism (connection not yet explicit)
   - All P1–P7 results are exact (error 0.00e+00 or machine precision) once R_n=πd_nλ/I₄ is assumed.
+- **Cycles 108–109 (systematic survey — `equations/moduli_space_radius.py`, `equations/fiber_radius_constraint.py`):**
+  - **8 routes evaluated — ALL BLOCKED or approximate except one (circular):**
+    (a) Spectral matching (shape mode ω₁²=(3/2)α or continuum 2α): gives R∝√d_n, WRONG POWER
+    (b) Phase stiffness balance F_n²/R_n²=g_n²/R_n: gives R∝d_n² (wrong power, α-independent)
+    (c) Energy minimization dE/dR=0: α-DEPENDENT (f² contains φ₀=√(α/β)), BLOCKED
+    (d) Vortex core R_1=2r_v: gives R_1/λ≈2.198 vs target 2.356 (7% off), NOT EXACT
+    (e) KK normalization integral on ℝ×S^{d_n}(R): is R-INDEPENDENT (does not constrain R_n)
+    (f) Obata matching λ₁=I₄²/(π²d_nλ²): gives R_n=πd_nλ/I₄ exactly but is CIRCULAR (defines R_n)
+  - **KEY REDUCTION:** The open step is equivalent to proving g_1²=2I₄ for S¹ (D5, d_1=1).
+    Once g_1²=2I₄ is proved, SU(d_n) isometry (Cycle 59: U(n) symmetry of n coincident kinks)
+    gives g_n²=g_1²/d_n=2I₄/d_n for each fiber, and the parallel combination gives g_eff²=8/27.
+    Factor 2: from Z₂ two-sidedness of kink (two vacua ±φ₀, W=−1/2, Cycle 67c).
+    Factor I₄: from Bogomolny sech⁴ integral (Cycle 47).
+  - **REMAINING OPEN STEP (Tier 4):** Prove g_1²=2I₄ for D5 S¹ fiber from the D5 complex kink.
+    The most promising route: compute the coupling integral of D6 zero mode to D5 vortex phase,
+    imposing R_1 as free parameter, and find R_1 by a self-consistency / normalization condition.
+    Or: use the Hitchin system for the 2-kink moduli space on ℝ.
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
 ---
