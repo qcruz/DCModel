@@ -33,8 +33,11 @@ Related documents:
     foundations/substrate.md                   — substrate postulates and five-postulate structure
     foundations/phase_stiffness_derivation.md  — f²=(4/3)φ₀²/λ proved exactly (Cycle 47)
     foundations/bifurcation_dynamics.md        — M_c(D5), S_kink/ℏ, BPS-correct kink energy
+    foundations/compression_dynamics.md        — DFC self-compression equations vs. classical formalisms
+    foundations/d1_mechanics.md               — D1 mechanics and substrate initial conditions
     phenomena/thermodynamics/phase_transitions.md — phase transitions as V_eff bifurcations
     equations/kink_model.py                    — 1D kink solutions (analytic, BPS-correct)
+    equations/dfc_5d_action.py                 — 5D action → collective coordinate action (Cycle 114)
 
 Usage:
     python equations/compression_field.py
@@ -312,8 +315,13 @@ if __name__ == "__main__":
     print(f"\n--- Status and Open Problems ---")
     print(f"  Solved:    1+1D kink solution (see kink_model.py)")
     print(f"  Solved:    Small-perturbation spectrum around stable backgrounds")
+    print(f"  Solved:    Phase stiffness f²=I₄φ₀²/λ (Cycle 47; phase_stiffness_derivation.md)")
+    print(f"  Solved:    Collective coordinate action S_CC from DFC 5D action (Cycle 114;")
+    print(f"             dfc_5d_action.py: g_XX=I₄, g_θθ=Q_top=2, det(g)=2I₄, α-independent)")
     print(f"  Open:      D-dimensional generalization of field equation")
     print(f"  Open:      Conservation law for compression budget in curved background")
     print(f"  Open:      Connection between folding rate field and GR stress-energy tensor")
     print(f"  Open:      Quantization of compression field modes → ℏ")
-    print(f"  See: foundations/substrate.md, foundations/d1_mechanics.md")
+    print(f"  Open:      Derive R₁=π/I₄ (Hopf fiber radius) from V(φ) alone (Bottleneck 2)")
+    print(f"  See: foundations/substrate.md, foundations/d1_mechanics.md,")
+    print(f"       foundations/compression_dynamics.md, equations/dfc_5d_action.py")

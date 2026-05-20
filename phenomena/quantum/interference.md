@@ -125,11 +125,17 @@ with dispersion relations:
 
 ### de Broglie Relation from KG
 
-From the KG dispersion (see `equations/quantum_emergence.py`):
+From the KG dispersion (see `equations/quantum_emergence.py`): the energy of a quantum
+equals the reduced Planck constant times the angular frequency, and the momentum equals
+the reduced Planck constant times the wavenumber. Together these give the de Broglie
+relation — the wavelength equals Planck's constant divided by momentum:
 
 ```
 E = ℏω,   p = ℏk   →   λ = h/p     [de Broglie relation] ✓
 ```
+
+*Note: E = ℏω is imported from QFT as a postulate (see `phenomena/light/light.md`,
+Cycle 42 correction); it is not derived from the compression field equation alone.*
 
 This is the same relation for both photons (p = E/c = ℏω/c = ℏk) and massive particles
 (p = ℏk from the NR approximation). Interference works identically for both because both
@@ -197,6 +203,21 @@ of the compression field requires the nonlinear kink dynamics.*
 
 ---
 
+## Consistency Checks
+
+| Claim | Status | Notes |
+|---|---|---|
+| Fringe spacing Δy = λL/d from DFC field equation | ✓ STRUCTURAL | Path difference → phase difference → constructive condition; no free params |
+| de Broglie λ = h/p for massive particles | ✓ DERIVED (conditional) | From KG NR limit p = ℏk; requires E = ℏω postulate (imported, Cycle 42) |
+| Single-particle interference (one-at-a-time) | ✓ STRUCTURAL | Field exists before particle; pattern is stationary BVP solution |
+| Which-path detection destroys pattern | ✓ STRUCTURAL | New boundary condition changes field redistribution solution |
+| Molecule interference (C₆₀, 25,000 amu) | ✓ STRUCTURAL | λ_dB = h/p still applies; no mass cutoff in KG dispersion |
+| Electron at 50 keV: Δy = 5.5 μm (d=1 μm, L=1 m) | ✓ VERIFIED | Matches experimental value; 0 free parameters |
+| Born rule P(y) ∝ \|φ\|² | ✗ OPEN | Identification of detection rate with field energy density is physical but not formally derived; spin case DERIVED (Cycle 38); position case still open |
+| Coherence length from field parameters | ✗ OPEN | L_coh(α,β,T) not yet derived from compression field |
+
+---
+
 ## What This Explains
 
 | Phenomenon | DFC explanation |
@@ -223,9 +244,12 @@ of the compression field requires the nonlinear kink dynamics.*
   the disappearance of fringes is the field finding a new boundary-value solution;
   `foundations/measurement.md`
 - **Decoherence** — which-path detection destroys interference via the same mechanism as
-  decoherence: environmental coupling constrains the field redistribution
-- **Measurement** — the "collapse" of the interference pattern under which-path detection
-  is a direct instance of field-to-kink localization
+  decoherence: environmental coupling constrains the field redistribution;
+  `phenomena/quantum/decoherence.md`
+- **Born rule** — spin Born rule P(↑,n̂) = cos²(θ/2) DERIVED (Cycle 38) from SU(2) geometry;
+  position Born rule P(y) ∝ |φ(y)|² still open; `foundations/born_rule_derivation.md`
+- **Wave-particle duality** — the DFC account of interference directly dissolves the
+  wave-particle paradox; `phenomena/quantum/wave_particle_duality.md`
 - **Quantum emergence equations** — KG dispersion, NR reduction, de Broglie relation;
   `equations/quantum_emergence.py`
 

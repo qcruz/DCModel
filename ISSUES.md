@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-06 (Cycles 108–112)
+**Last updated:** 2026-05-20 (Cycles 113–114)
 
 ---
 
@@ -151,6 +151,26 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     Show this equals d_n/(2πβI₄), giving g_n² = 2πβI₄/d_n per fiber.
     Series combination: 1/g_eff² = Σd_n/(2πβI₄) = N_Hopf/(2πβI₄) → g_eff² = 2I₄/N_Hopf.
     This is the one calculation that promotes Bottleneck 2 from Tier 3 → Tier 2a.
+- **Cycle 114 (DFC 5D collective coordinate action — `equations/dfc_5d_action.py`):**
+  - **COLLECTIVE COORDINATE ACTION DERIVED from DFC 5D complex scalar action.**
+    Ansatz Φ = Φ₀(y−X)exp(iθ) gives S_CC = ½g_XX∫(∂X)² + ½g_θθ∫(∂θ)²
+    with BOTH components derived from ∫d⁴x∫dy action:
+      g_XX = ∫(∂_u ψ)² du = I₄ = 4/3  [Manton metric, Tier 1, error 0.00e+00]
+      g_θθ = |∫(ψ²−1) du| = Q_top = 2  [FTC, Tier 1, error 8.88e-16]
+      g_Xθ = 0 (even×odd = odd → vanishes, exact); det(g) = 2I₄ (Tier 1)
+  - **TWO INDEPENDENT ROUTES to g₁² = 2I₄, both verified:**
+    Route A: g₁² = det(g_{moduli}) = I₄ × Q_top = 2I₄  [Tier 2 candidate]
+    Route B: g₁² = 2π/R₁ = 2I₄  [Tier 3, uses R₁=π/I₄ from Cycle 106]
+    Residual between routes: 0.00e+00. α-independence: max error 0.00e+00.
+  - **STRUCTURAL IDENTITY proved:** det(g) = 2π/R₁ reduces to Q_top = 2d₁ = 2×1 = 2.
+    This is an exact identity (Q_top = 2, d₁ = 1). The consistency is not coincidental:
+    it encodes the Z₂ kink topology (two vacua → Q_top = 2) and the Hopf fiber dimension
+    (d₁ = 1 for S¹ at D5). For higher fibers: Q_top = 2d_n for d_n = 3,5 would give
+    consistency for all three fibers — this is the content of the remaining open step.
+  - **REMAINING OPEN STEP (Tier 4 → Tier 2a):** Derive R₁ = πd₁/I₄ (equivalently
+    Q_top = 2d_n for all Hopf fibers) from V(φ) alone. Once proved, both Route A and
+    Route B give g₁² = 2I₄ at Tier 2, closing Bottleneck 2 and giving g_eff² = 8/27
+    and β = 1/(9π) at Tier 2a with zero free parameters.
 - **Cycle 112 (moduli metric — `equations/kk_moduli_metric.py`):**
   - **g_1² = det(g_{moduli}) = I₄ × Q_top = 2I₄ (error 0.00e+00, Tier 1 for det; Tier 2 candidate for identification).**
     The kink has a 2×2 moduli space metric (position X, phase θ):

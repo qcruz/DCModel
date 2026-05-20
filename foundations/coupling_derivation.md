@@ -116,6 +116,21 @@
 > det(g)=2I₄; Tier 2 candidate for g_1²=det(g) (standard soliton result in DFC context).
 > See `equations/kk_moduli_metric.py`.
 >
+> **Cycle 114:** DFC 5D COLLECTIVE COORDINATE ACTION derived explicitly in `equations/dfc_5d_action.py`.
+> Starting from S = ∫d⁴x∫dy [½|∂_MΦ|² − V(|Φ|)] and the kink background Φ₀(y) = φ₀tanh(y/λ),
+> the collective coordinate ansatz Φ = Φ₀(y−X)exp(iθ) gives S_CC = ½g_XX∫(∂X)² + ½g_θθ∫(∂θ)².
+> Both metric components derived from the 5D action integrals (Tier 1):
+>   g_XX = ∫(∂_u ψ)² du = I₄ = 4/3  [Manton translation metric, error 0.00e+00]
+>   g_θθ = |∫(ψ²−1) du| = Q_top = 2  [phase rotation metric, FTC, error 8.88e-16]
+>   g_Xθ = 0 (parity, exact); det(g) = 2I₄ (Tier 1, α-independent, max error 0.00e+00).
+> TWO INDEPENDENT ROUTES TO g₁² = 2I₄:
+>   Route A: g₁² = det(g_{moduli}) = I₄ × Q_top = 2I₄  [Tier 2 candidate, soliton CC]
+>   Route B: g₁² = 2π/R₁ = 2I₄ using R₁=π/I₄  [Tier 3, Cycle 106 series holonomy]
+>   Consistency: Routes A and B agree exactly (residual = 0.00e+00).
+> STRUCTURAL IDENTITY: det(g) = 2π/R₁ reduces to Q_top = 2d₁ (i.e., 2 = 2×1) — an
+> exact identity. The one remaining step: derive R₁=π/I₄ (equivalently Q_top=2d_n for
+> all fibers) from V(φ) alone, without importing from the series holonomy argument.
+>
 > **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.006% at β=1/(9π)).
 > Proved: f² exact (P1); r_U1=1/(βI₄) algebraic identity (P2); g²=2πβI₄ compact
 > form (P3); mode_norm=9/(64π) β-independent identity (P4, Cycle 105); series holonomy
