@@ -3,10 +3,11 @@
 ## One-Sentence Synthesis
 
 > Superconductivity is the regime in which pairs of D6 electron kinks form bound states
-> through phonon-mediated D7 substrate interactions, acquiring a collective macroscopic
-> phase coherence that eliminates the phase gradient (viscosity analog) required for
-> electrical resistance; the superconducting gap Δ is the binding energy of the paired
-> kink state, and the Meissner effect is the exclusion of D5 photon modes from the
+> through phonon-mediated lattice interactions — phonons being long-wavelength collective
+> oscillations of D3-localized D4-inertia substrate configurations in the crystal — acquiring
+> collective macroscopic phase coherence that eliminates the phase gradient (viscosity analog)
+> required for electrical resistance; the superconducting gap Δ is the binding energy of the
+> paired kink state, and the Meissner effect is the exclusion of D5 photon modes from the
 > interior — the same S³ squashing geometry as the Higgs mechanism, but driven thermally
 > at the condensed-matter scale.
 
@@ -63,8 +64,10 @@ mechanism), exponentially suppressing the field over the penetration depth.
 In DFC, the electron is a D6 kink and the positron (its antiparticle) is the corresponding
 antikink. However, Cooper pairs are not kink-antikink pairs — they are bound states of
 two D6 kinks with opposite fold orientations (opposite spin). The binding is mediated by
-D7 substrate phonons: collective oscillations of the D7 SU(3) substrate at the condensed-
-matter scale (phonons in DFC are the acoustic modes of the D7 substrate at long wavelengths).
+phonons of the crystal lattice: collective long-wavelength acoustic oscillations of the
+D3-localized D4-inertia substrate configurations that make up the ionic crystal. Phonons
+in DFC are acoustic modes of a many-body D3/D4 configuration — not D7 strong-force dynamics,
+which operate at QCD scales (~ 200 MeV) far above the condensed-matter phonon range (~ meV).
 
 The phonon-mediated attraction between two D6 kinks with opposite momenta and orientations
 produces a bound-state configuration whose binding energy is the superconducting gap Δ.
@@ -210,10 +213,11 @@ conventional superconductors (Al, Sn, Pb, Nb, NbN).
 ## Open Questions
 
 1. **Phonon-mediated kink attraction:** Derive the effective interaction V_phonon between
-   two D6 kinks with opposite momenta, mediated by D7 acoustic modes (phonons) at long
-   wavelengths. The DFC acoustic mode is the D7 substrate oscillation below the confinement
-   scale (~155 MeV). At condensed-matter temperatures and scales, these modes should produce
-   a retarded attractive potential analogous to the BCS phonon interaction.
+   two D6 kinks with opposite momenta, mediated by crystal phonons (long-wavelength D3/D4
+   acoustic modes of the ionic lattice). The phonon energy scale (meV) is far below the D7
+   QCD scale (~200 MeV); the connection is through the lattice excitations of composite ions.
+   At condensed-matter temperatures, these modes produce a retarded attractive potential
+   analogous to the BCS phonon interaction, but the explicit DFC derivation is open.
 
 2. **Critical temperature T_c from substrate parameters:** Given V_phonon from step 1,
    the BCS gap equation gives Δ as a function of N(0) (density of states at the Fermi level)
@@ -243,4 +247,6 @@ conventional superconductors (Al, Sn, Pb, Nb, NbN).
 - `phenomena/condensed_matter/quantum_hall_effect.md` — related topological phenomena
 - `equations/magnetic_monopoles.py` — winding number quantization; flux quantization follows
 - `equations/superconductivity.py` — numerical verification: Φ₀, K_J (Tier 1); London depth, BCS gap (inputs from experiment)
+- `phenomena/condensed_matter/josephson_effect.md` — DC/AC Josephson effects, Shapiro steps, SQUID (Cycle 90); full treatment of junction dynamics
+- `equations/josephson_effect.py` — K_J = 2e/h verified to 7.75×10⁻¹⁶; Shapiro steps; SQUID oscillations
 - `foundations/depth_assignment.md` — D5/D6/D7 provisional assignments

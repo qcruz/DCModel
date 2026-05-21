@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~57% complete by internal estimate. Several Standard Model quantities
+Current status: ~57.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -110,7 +110,7 @@ equations/                Runnable Python modules — input data, get prediction
   [STUBS — structural account written, quantitative derivation open]
   nuclear_binding.py      Bethe-Weizsäcker formula; Yukawa potential; Fe-56 peak; DFC α_s 11% blocks strong predictions
   lamb_shift.py           Hydrogen 2s-2p Lamb shift; self-energy loop integral stub; α⁵ scaling estimate
-  quark_gluon_plasma.py   QGP deconfinement T_c; DFC Λ_QCD estimate; 653% error from α_s blockage
+  quark_gluon_plasma.py   QGP deconfinement T_c; DFC Λ_QCD estimate; −80% (Cycle 120 RG fix; one-loop breakdown)
 
 phenomena/                Natural language explanations of physical observations
   particle_physics/
@@ -188,15 +188,17 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~57%** (viability as a theory: ~69%; mathematical rigor: ~45%)
+**Current estimate: ~57.5%** (viability as a theory: ~69.5%; mathematical rigor: ~45.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
 | Scope | MRRS | Key blocker |
 |---|---|---|
-| Core gauge/coupling sector | **28%** | g² rigor; α_s; β derivation |
-| Full SM reproduction | **58%** | τ mass mechanism; β derivation |
-| Complete theory (SM + gravity + QM) | **76%** | ℏ derivability; G_Newton |
+| Core gauge/coupling sector | **20%** | α_s (8.1% off, M_c(D7) open); τ mass |
+| Full SM reproduction | **48%** | τ mass mechanism; M_c(D7) derivation |
+| Complete theory (SM + gravity + QM) | **72%** | ℏ derivability; G_Newton |
+
+*Cycle 117: Bottleneck 2 closed (β=1/(9π) Tier 2a); Core reduced 28→20%, Full 58→48%.*
 
 *Full per-failure analysis with paths and swing factors in `comparisons/reconcilability_risk.md`.*
 

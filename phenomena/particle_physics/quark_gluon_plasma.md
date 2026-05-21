@@ -135,19 +135,34 @@ effectively screened at twice the crossover temperature.
 
 ### DFC Prediction for T_c (current status)
 
-The DFC coupling chain gives α_s(M_Z) = 0.105 (11% below observed). Running α_s down
-to the QCD scale using one-loop perturbation theory is unreliable at low energies —
-the one-loop formula diverges at Λ_QCD. The DFC prediction from `equations/quark_gluon_plasma.py`:
+The DFC coupling chain gives α_s(M_Z) = 0.1086 (8.1% below observed; updated Cycle 119
+using β=1/(9π) Tier 2a). Running α_s down to the QCD scale using one-loop perturbation
+theory is unreliable at low energies — the one-loop formula diverges at Λ_QCD. The DFC
+prediction from `equations/quark_gluon_plasma.py` (corrected Cycle 120 — see note below):
 
 ```
-DFC α_s(M_Z) = 0.105  (11% below observed 0.1182)
-DFC Λ_QCD (one-loop) ≈ 1841 MeV    (vs empirical 217 MeV — one-loop divergence)
-DFC T_c estimate ≈ 1160 MeV        (vs observed 154 MeV — 653% error)
+DFC α_s(M_Z) = 0.1086   (8.1% below observed 0.1182; Cycle 119)
+DFC Λ_QCD (one-loop) ≈ 48 MeV     (one-loop Landau pole scale; N_f=5 at M_Z)
+DFC T_c estimate ≈ 30 MeV         (vs observed 154 MeV — −80% error)
+
+Note: The one-loop Λ_QCD ≈ 89 MeV (observed) also does not match the empirical
+MS-bar 2-loop value Λ_QCD ≈ 217 MeV. The factor-of-3 discrepancy is scheme and
+loop-order dependent, not a DFC-specific failure. T_c ≈ 0.63×Λ_QCD applies to the
+MS-bar 2-loop Λ_QCD, not to the one-loop value.
 ```
 
-The 653% error traces directly to:
-1. The 11% error in α_s(M_Z) from M_c(D7) not derived from substrate
+The error in the T_c estimate traces directly to:
+1. The 8.1% error in α_s(M_Z) from M_c(D7) not derived from the substrate
 2. The one-loop running formula is uncontrolled at hadronic scales (non-perturbative regime)
+3. The T_c ∝ Λ_QCD relation used here applies at 2-loop accuracy; the one-loop estimate
+   is a factor ~3 below the MS-bar value, making T_c estimates unreliable from one-loop alone
+
+**Cycle 120 BUG FIX:** The previous version of `quark_gluon_plasma.py` had a factor-of-2
+error in the RG running formula (using `log(μ²/μ_ref²)` where `log(μ/μ_ref)` was needed),
+which artificially gave Λ_QCD ≈ 1841 MeV and T_c ≈ 1160 MeV (653% overestimate).
+With the corrected formula, Λ_QCD ≈ 48 MeV and T_c ≈ 30 MeV (−80% underestimate).
+Both the old and new estimates are wrong because of issue (2) above — the one-loop formula
+cannot reliably give T_c. The bug-free formula at least gives physically correct α_s running.
 
 The proper path to T_c requires either lattice calculation of the D7 closure partition
 function, or a non-perturbative DFC computation beyond the current one-loop framework.
@@ -190,7 +205,7 @@ the discrete residual symmetry that distinguishes confined and deconfined phases
 | Deconfinement exists | D7 flux tubes thermally disrupted above T_c | QGP at RHIC/LHC confirmed | ✓ structural |
 | Near-perfect fluid (η/s near bound) | Near-critical D7 dynamics → maximal correlations | η/s ≈ 1–4 × 1/(4π) at RHIC | ✓ structural (qualitative) |
 | QGP as early-universe phase | D7 SU(3) closure not yet stabilized above T_c | Universe in QGP state t < 10 μs | ✓ structural |
-| T_c ≈ 155 MeV | DFC estimates 1160 MeV (one-loop, blocked by α_s error) | 154 ± 9 MeV (lattice QCD) | ✗ 653% off — α_s blockage |
+| T_c ≈ 155 MeV | DFC estimates 30 MeV (one-loop, corrected Cycle 120) | 154 ± 9 MeV (lattice QCD) | ✗ −80% — one-loop formula unreliable at hadronic scales; see text |
 | Z₃ center symmetry breaking | Polyakov loop ⟨L⟩ from D7 holonomy | ⟨L⟩ = 0 → ≠ 0 across crossover | ✓ structural (topology) |
 | Crossover, not first order at μ_B=0 | D7 crossover character depends on quark masses | Crossover confirmed by lattice | structural account open ✗ |
 
@@ -231,5 +246,5 @@ the discrete residual symmetry that distinguishes confined and deconfined phases
 - `phenomena/particle_physics/particles/gluons.md` — D7 connection fields as gluons
 - `phenomena/cosmology/baryogenesis.md` — pre-QCD-crossover baryon generation
 - `phenomena/thermodynamics/phase_transitions.md` — phase transitions from V_eff bifurcations
-- `equations/quark_gluon_plasma.py` — numerical estimates; T_c 653% error; α_s blockage confirmed
+- `equations/quark_gluon_plasma.py` — numerical estimates; T_c −80% (one-loop, corrected Cycle 120); old 653% was from factor-of-2 RG bug
 - `equations/coupling_derivation.py` — α_s(M_Z) = 0.105 (11% below observed)

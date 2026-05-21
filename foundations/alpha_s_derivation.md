@@ -279,7 +279,7 @@ calculation at D7.
 - `foundations/hopf_fibration_geometry.md` — S⁵ as D7 closure manifold
 - `foundations/mode_count_threshold.md` — SU(3) confirmed from n=3 at D7 (Cycle 74)
 - `foundations/threshold_nondegeneracy.md` — non-degeneracy of n modes at D7
-- `phenomena/particle_physics/quark_gluon_plasma.md` — T_c 653% error traces to α_s
+- `phenomena/particle_physics/quark_gluon_plasma.md` — T_c error (−80%, corrected Cycle 120 RG bug) traces to α_s and one-loop breakdown
 - `equations/coupling_derivation.py` — g² = 8πβ/3; current α_s = 0.1049 (11% off)
 - `equations/alpha_s_target.py` — target M_c(D7) computation; RG table
 - `equations/gauge_couplings.py` — SM running; M_c(D7) crossing estimate

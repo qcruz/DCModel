@@ -38,10 +38,12 @@ Key data (from lattice QCD):
 
 Status:
     STUB — T_c is not yet derived from DFC substrate parameters.
-    Primary blockage: α_s(M_Z) = 0.105 (DFC) vs 0.118 (observed): 11% error.
+    Primary blockage: α_s(M_Z) = 0.1086 (DFC) vs 0.1182 (observed): 8.1% error.
+    [Improved from 11% → 8.1% in Cycle 119 by updating β=1/(9π) Tier 2a.]
     M_c(D7) ~ 8×10¹⁴ GeV is from equal-coupling running (depth_running.md), not
-    from substrate dynamics. Connecting M_c(D7) to T_c requires the running of α_s
-    from M_c(D7) down to the hadronic scale — a 15-order-of-magnitude extrapolation.
+    from substrate dynamics. Target M_c(D7) = 1.57×10¹⁵ GeV (Cycle 119 update).
+    Connecting M_c(D7) to T_c requires the running of α_s from M_c(D7) to hadronic
+    scale — a 15-order-of-magnitude extrapolation.
 
 Key references:
     - Aoki et al. (2006): T_c ≈ 154 MeV from lattice QCD
@@ -60,7 +62,8 @@ SIGMA_STRING_MEV_FM = 170.0    # QCD string tension (MeV/fm ~ 0.18 GeV²); empir
 
 # ─── DFC inputs ───────────────────────────────────────────────────────────────
 
-ALPHA_S_DFC_MZ = 0.105         # DFC α_s at M_Z (11% below observed 0.1182)
+ALPHA_S_DFC_MZ = 0.1086        # DFC α_s at M_Z (Cycle 119: β=1/(9π) Tier 2a; 8.1% below obs)
+# Updated from 0.105 (old β) to 0.1086 (β=1/(9π), α_common=2/(27π); alpha_s_target.py Cycle 119)
 ALPHA_S_OBS_MZ = 0.1182        # Observed α_s at M_Z
 M_C_D7_GEV = 8.0e14           # DFC M_c(D7) from equal-coupling running (depth_running.md)
 LAMBDA_QCD_MEV = 217.0         # QCD scale Λ_MS-bar (5 flavors, empirical; MeV)
@@ -87,7 +90,9 @@ def alpha_s_running(mu_gev, alpha_s_ref, mu_ref_gev=91.1876, n_f=5):
         float: α_s at scale mu
     """
     b0 = (11.0 - 2.0 * n_f / 3.0) / (2.0 * math.pi)
-    log_ratio = 2.0 * math.log(mu_gev / mu_ref_gev)
+    # Standard one-loop: 1/α_s(μ) = 1/α_s(μ_ref) + (β₀/2π)×ln(μ/μ_ref)
+    # In terms of b0 = β₀/(2π): denominator = 1 + b0 × α_s × ln(μ/μ_ref)
+    log_ratio = math.log(mu_gev / mu_ref_gev)
     denom = 1.0 + b0 * alpha_s_ref * log_ratio
     if denom <= 0.0:
         return None   # Landau pole — one-loop formula breaks down; non-perturbative regime
@@ -127,8 +132,10 @@ def lambda_qcd_from_alpha_s(alpha_s_mz, mu_ref_gev=91.1876, n_f=5):
         float: Λ_QCD in GeV
     """
     b0 = (11.0 - 2.0 * n_f / 3.0) / (2.0 * math.pi)
-    # One-loop Λ: Λ = μ_ref × exp(−1 / (2 b₀ α_s))
-    lambda_gev = mu_ref_gev * math.exp(-1.0 / (2.0 * b0 * alpha_s_mz))
+    # One-loop Λ: Landau pole of 1 + b0 × α_s × ln(Λ/μ) = 0
+    # → ln(Λ/μ) = -1/(b₀ α_s) → Λ = μ × exp(-1/(b₀ α_s))
+    # with b₀ = β₀/(2π): Λ = μ × exp(-1/(b₀ α_s)) = μ × exp(-2π/(β₀ α_s))
+    lambda_gev = mu_ref_gev * math.exp(-1.0 / (b0 * alpha_s_mz))
     return lambda_gev
 
 
@@ -138,7 +145,8 @@ if __name__ == "__main__":
     print("=" * 66)
     print()
     print("STATUS: STUB — T_c not derived from DFC substrate.")
-    print("        Primary blockage: α_s error 11%; M_c(D7) not from substrate.")
+    print("        α_s error 8.1% (Cycle 119: β=1/(9π)); M_c(D7) not from substrate.")
+    print("        BUG FIX (Cycle 120): log_ratio factor-of-2 error corrected in running formula.")
     print()
 
     # DFC α_s error
@@ -149,9 +157,10 @@ if __name__ == "__main__":
     # Λ_QCD from DFC α_s vs observed α_s
     lambda_dfc = lambda_qcd_from_alpha_s(ALPHA_S_DFC_MZ) * 1000   # convert to MeV
     lambda_obs = lambda_qcd_from_alpha_s(ALPHA_S_OBS_MZ) * 1000
-    print(f"Λ_QCD from DFC α_s:       {lambda_dfc:.1f} MeV")
-    print(f"Λ_QCD from observed α_s:  {lambda_obs:.1f} MeV")
-    print(f"  (Empirical Λ_QCD^(5) ≈ 217 MeV)")
+    print(f"Λ_QCD from DFC α_s:       {lambda_dfc:.1f} MeV  [one-loop; Landau pole of running formula]")
+    print(f"Λ_QCD from observed α_s:  {lambda_obs:.1f} MeV  [one-loop]")
+    print(f"  Note: One-loop Λ_QCD^(5) ≈ 89 MeV; empirical MS-bar 2-loop Λ_QCD^(5) ≈ 217 MeV.")
+    print(f"  The factor-of-3 discrepancy is scheme/loop-order dependent, not a DFC-specific failure.")
     print()
 
     # T_c estimate
