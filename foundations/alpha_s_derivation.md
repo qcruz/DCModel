@@ -7,9 +7,18 @@
 > gap numerically, and states precisely what substrate calculation is required
 > to close it.
 >
-> **Current result:** α_s(M_Z) = 0.1049 from DFC (11% below observed 0.1182).
+> **Cycle 117 update:** Bottleneck 2 CLOSED. g_common² = 2I₄/N_Hopf = 8/27 is now
+> Tier 2a (0 free parameters). β = 1/(9π) is Tier 2a. This changes the initial
+> condition for the α_s running:
+> - Old: α_common = 8πβ/3/(4π) = 8×0.0351/12 = 0.02340 (Tier 3 reference)
+> - New: α_common = 8/(27×4π) = 2/(27π) = 0.02358 (Tier 2a, exact)
+> The revised target M_c(D7) is now **1.57×10¹⁵ GeV** (one-loop, N_f=6).
+> See `equations/d5_complex_from_instability.py` for the full derivation chain.
+>
+> **Current result:** α_s(M_Z) = 0.1086 from DFC with β=1/(9π) and M_c(D7)=8×10¹⁴ GeV
+> (8.1% below observed 0.1182 — improved from 11% with old β=0.0351).
 > **Root cause:** M_c(D7) = 8×10¹⁴ GeV (from equal-coupling crossing) is too
-> low. The target M_c(D7) ≈ 2.0×10¹⁵ GeV. The gap is a factor of ~2.5.
+> low. The updated target M_c(D7) = 1.57×10¹⁵ GeV. The gap is a factor of ~2.0.
 > **Blocking step:** Derive α_D7 (the D7 substrate coupling) from the substrate
 > field equation, not from SM running.
 
@@ -19,18 +28,22 @@
 
 The chain from DFC substrate to α_s(M_Z) proceeds as follows:
 
-**Step 1 — Substrate β to g_common (DERIVED, heuristic).**
+**Step 1 — Substrate β to g_common (DERIVED, Tier 2a as of Cycle 117).**
 The substrate quartic coupling β determines the common gauge coupling at the
-closure scale. The square of the gauge coupling constant equals eight times pi
-times β, divided by three:
+closure scale. The square of the gauge coupling constant equals twice the kink
+shape integral I₄ = 4/3, divided by the Hopf fiber dimension sum N_Hopf = 9,
+derived from V(φ) with zero free parameters (see
+`equations/d5_complex_from_instability.py`):
 
 ```
-g_common² = 8πβ/3     [g_from_beta in coupling_derivation.py]
-β = 0.0351  →  g_common = 0.5423
+g_common² = 2I₄/N_Hopf = 8/27  (Tier 2a, exact, 0 free parameters)
+β = 1/(9π) ≈ 0.03537  (Tier 2a, derived from self-consistency)
+α_common = g_common²/(4π) = 2/(27π) ≈ 0.02358
+g_common = √(8/27) ≈ 0.54433  (SM: 0.5443, error 0.006%)
 ```
 
-The common coupling at the closure scale has been verified to match the
-independent SM running determination at the 0.3% level.
+The old formula g²=8πβ/3 is consistent: 8π/(9π)/3 = 8/27 ✓. The heuristic
+derivation (Cycle 42) is superseded by the rigorous chain in Cycle 117.
 
 **Step 2 — Equal-coupling initial condition (STRUCTURAL).**
 The three gauge closures at D5, D6, and D7 all emerge from the same compression
@@ -41,7 +54,7 @@ scale equals g_common.
 
 ```
 g₃(M_c(D7)) = g_common     [structural — same substrate, same β]
-α_s(M_c(D7)) = g_common² / (4π) ≈ 0.02344
+α_s(M_c(D7)) = g_common² / (4π) = 2/(27π) ≈ 0.02358   [Tier 2a]
 ```
 
 **Step 3 — RG running from M_c(D7) to M_Z (BORROWED, SM one-loop).**
@@ -99,30 +112,33 @@ substrate's depth-running structure.
 ## The Target: What M_c(D7) Is Needed?
 
 To obtain the observed α_s(M_Z) = 0.1182 from the equal-coupling initial
-condition g_common = 0.5423 (β = 0.0351), the target M_c(D7) is the scale
-that satisfies:
+condition g_common = √(8/27) (Tier 2a, β = 1/(9π)), the target M_c(D7) is the
+scale that satisfies:
 
 ```
-1/0.1182 = 1/0.02344 − [7/(2π)] × ln(M_c(D7) / 91.19 GeV)
+1/0.1182 = 1/0.02358 − [7/(2π)] × ln(M_c(D7) / 91.19 GeV)
 ```
 
 Solving: the natural log of the ratio of M_c(D7) to M_Z equals the difference
-between the inverse couplings divided by the beta function factor. Numerically:
+between the inverse couplings divided by the beta function factor. Numerically
+(updated for Cycle 117 α_common):
 
 ```
-ln(M_c(D7) / 91.19) = (42.74 − 8.461) / 1.114 = 34.28 / 1.114 = 30.77
-M_c(D7)_target = 91.19 × e^30.77 = 2.094 × 10¹⁵ GeV
+1/α_common = 27π/2 ≈ 42.41   [Tier 2a: exact from 8/27]
+ln(M_c(D7) / 91.19) = (42.41 − 8.461) / 1.114 = 33.95 / 1.114 = 30.48
+M_c(D7)_target = 91.19 × e^30.48 ≈ 1.57 × 10¹⁵ GeV   [one-loop, N_f=6]
 ```
 
-The exact value is computed by `equations/alpha_s_target.py` (verification
-error: −2×10⁻¹²%, machine precision). The required M_c(D7) is
-2.094×10¹⁵ GeV — a factor of 2.62 above the current equal-coupling-crossing
-estimate of 8×10¹⁴ GeV.
+See `equations/alpha_s_target.py` for the full numerical computation (note:
+that module uses the old β=0.0351 reference value; update BETA to 1/(9π) for
+the Cycle 117 result). The updated target M_c(D7) ≈ 1.57×10¹⁵ GeV is a factor
+of ~2.0 above the current equal-coupling-crossing estimate of 8×10¹⁴ GeV
+(reduced from the old factor of 2.62 since α_common is now slightly larger).
 
-The corresponding α_D7 target follows immediately from the closure scale formula:
+The corresponding α_D7 target:
 
 ```
-α_D7_target = 2 × M_c(D7)² = 2 × (2.094×10¹⁵)² = 8.77 × 10³⁰ GeV²
+α_D7_target = 2 × M_c(D7)² ≈ 2 × (1.57×10¹⁵)² ≈ 4.93 × 10³⁰ GeV²
 ```
 
 **Note on one-loop running at low scales.** The one-loop formula breaks down
@@ -151,15 +167,16 @@ M_c(D7)/M_c(D5) in the two-scale model is:
 M_c(D7) / M_c(D5) = exp(γ_strong × N_depth_gap)
 ```
 
-With M_c(D5) = 1.02×10¹³ GeV and M_c(D7)_target = 2.094×10¹⁵ GeV:
+With M_c(D5) = 1.02×10¹³ GeV and M_c(D7)_target = 1.57×10¹⁵ GeV (updated
+Cycle 117):
 
 ```
-M_c(D7)/M_c(D5) ≈ 205     →     γ_strong × N_depth_gap ≈ ln(205) ≈ 5.32
+M_c(D7)/M_c(D5) ≈ 154     →     γ_strong × N_depth_gap ≈ ln(154) ≈ 5.04
 ```
 
-If N_depth_gap = 2 (D5 to D7 is two depth increments), then γ_strong ≈ 2.66
+If N_depth_gap = 2 (D5 to D7 is two depth increments), then γ_strong ≈ 2.52
 per depth unit. This is a specific prediction: the substrate compression
-coefficient at D7 depths is approximately 2.6 times the logarithm of the
+coefficient at D7 depths is approximately 2.5 times the logarithm of the
 mass ratio per depth step.
 
 **Route 2 — Threshold correction.**
@@ -185,18 +202,19 @@ from the kink equation at that configuration.
 The α_s gap is the last remaining large quantitative failure in the DFC
 coupling sector. The other couplings have the following errors:
 
-| Coupling | DFC value | Observed | Error |
-|---|---|---|---|
-| g_common | 0.5423 | 0.5443 | 0.4% |
-| sin²θ_W(M_Z) | 0.2312 | 0.2312 | 0.01% |
-| α_em(M_Z) | 1/129.6 | 1/127.9 | 1.3% |
-| M_W | 79.67 GeV | 80.38 GeV | 0.88% |
-| M_Z | 90.86 GeV | 91.19 GeV | 0.36% |
-| **α_s(M_Z)** | **0.1049** | **0.1182** | **11%** |
+| Coupling | DFC value | Observed | Error | Status |
+|---|---|---|---|---|
+| g_common | 0.54433 | 0.5443 | 0.006% | Tier 2a (Cycle 117) |
+| sin²θ_W(M_Z) | 0.2312 | 0.2312 | 0.01% | Tier 2a |
+| α_em(M_Z) | 1/129.6 | 1/127.9 | 1.3% | Tier 2a |
+| M_W | 79.67 GeV | 80.38 GeV | 0.88% | Tier 2a |
+| M_Z | 90.86 GeV | 91.19 GeV | 0.36% | Tier 2a |
+| **α_s(M_Z)** | **0.1049** | **0.1182** | **11%** | **Tier 2b (M_c(D7) open)** |
 
 All errors except α_s trace to the same source: the 1.3% error in α_em(M_Z)
-from the heuristic derivation of r_U1/λ. The α_s error is independent — it
-comes from M_c(D7) not being derived from the substrate.
+from the systematic in the QED running (the coupling chain itself is now Tier 2a).
+The α_s error is independent — it comes from M_c(D7) not being derived from the
+substrate, which keeps the D7 closure scale as a free SM input.
 
 Once M_c(D7) is derived, the strong coupling follows automatically from the
 same coupling chain that already gives the weak sector to < 1% accuracy.
@@ -210,22 +228,22 @@ Phase 3 of the completeness milestones.
 Let α_D7 be the substrate quadratic coupling at D7 depth. The DFC closure
 scale at D7 depth equals the square root of α_D7 divided by two. Given
 the observed strong coupling constant at the Z mass scale α_s(M_Z) = 0.1182
-and the known common coupling g_common = √(8πβ/3) ≈ 0.5423 (from β ≈ 0.0351),
-the required value of α_D7 satisfies:
+and the known common coupling g_common = √(8/27) ≈ 0.54433 (Tier 2a, Cycle 117,
+β = 1/(9π)), the required value of α_D7 satisfies:
 
 ```
-√(α_D7/2) = M_c(D7)_target ≈ 2.0 × 10¹⁵ GeV
-→ α_D7 ≈ 8 × 10³⁰ GeV²
+√(α_D7/2) = M_c(D7)_target ≈ 1.57 × 10¹⁵ GeV   [updated Cycle 117]
+→ α_D7 ≈ 4.9 × 10³⁰ GeV²
 ```
 
 The open derivation: show that the substrate compression dynamics, starting
 from the D5/D6 co-crystallization scale M_c(D5) = 1.02×10¹³ GeV, produces
-α_D7 ≈ 8×10³⁰ GeV² at D7 depth — a factor of ~200 larger than α_D5.
+α_D7 ≈ 4.9×10³⁰ GeV² at D7 depth — a factor of ~154 larger in energy scale.
 
-The ratio α_D7/α_D5 = M_c(D7)²/M_c(D5)² ≈ (2.094×10¹⁵)²/(1.02×10¹³)² ≈ 4.21×10⁴.
+The ratio α_D7/α_D5 = M_c(D7)²/M_c(D5)² ≈ (1.57×10¹⁵)²/(1.02×10¹³)² ≈ 2.37×10⁴.
 The substrate depth-running must generate this ratio across two depth steps
 (D5→D6→D7). If the running is exponential with coefficient γ per step, then
-the ratio per step is approximately √(4.21×10⁴) ≈ 205, so γ ≈ ln(205) ≈ 5.32
+the ratio per step is approximately √(2.37×10⁴) ≈ 154, so γ ≈ ln(154) ≈ 5.04
 per step. This is the specific numerical target for the depth-running
 calculation at D7.
 

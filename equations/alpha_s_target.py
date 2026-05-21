@@ -34,12 +34,13 @@ ALPHA_S_OBS   = 0.1182    # observed α_s(M_Z)  [PDG 2024]
 
 # ─── DFC Parameters ──────────────────────────────────────────────────────────
 
-BETA          = 0.0351    # substrate quartic coupling [Tier 3 reference value]
+BETA          = 1.0/(9*math.pi)  # Tier 2a (Cycle 117): β=1/(9π) derived from V(φ)
+                                  # See equations/d5_complex_from_instability.py
 
-# g_common² = 8πβ/3
-G_COMMON_SQ   = 8 * math.pi * BETA / 3.0
+# g_common² = 2I₄/N_Hopf = 8/27 (Tier 2a, Cycle 117)
+G_COMMON_SQ   = 8.0 / 27.0
 G_COMMON      = math.sqrt(G_COMMON_SQ)
-ALPHA_COMMON  = G_COMMON_SQ / (4 * math.pi)   # ≈ 0.02344
+ALPHA_COMMON  = G_COMMON_SQ / (4 * math.pi)   # = 2/(27π) ≈ 0.02358
 
 # Current M_c(D7) estimate: equal-coupling crossing in SM running
 MC_D7_CURRENT = 8.0e14    # GeV  [from gauge_couplings.py α₁∩α₃ crossing]
@@ -149,10 +150,10 @@ if __name__ == "__main__":
     print("=" * 68)
 
     print("\n--- DFC Common Coupling from β ---")
-    print(f"  β         = {BETA:.4f}  [quartic coupling — Tier 3 reference value]")
-    print(f"  g_common² = 8πβ/3 = {G_COMMON_SQ:.5f}")
-    print(f"  g_common  = {G_COMMON:.4f}")
-    print(f"  α_common  = g²/(4π) = {ALPHA_COMMON:.5f}   [= 1/{1/ALPHA_COMMON:.2f}]")
+    print(f"  β         = 1/(9π) = {BETA:.6f}  [Tier 2a, Cycle 117, derived from V(φ)]")
+    print(f"  g_common² = 2I₄/N_Hopf = 8/27 = {G_COMMON_SQ:.6f}  [Tier 2a, exact]")
+    print(f"  g_common  = {G_COMMON:.6f}  (SM: 0.5443, error {abs(G_COMMON/0.5443-1)*100:.3f}%)")
+    print(f"  α_common  = 2/(27π) = {ALPHA_COMMON:.6f}   [= 1/{1/ALPHA_COMMON:.2f}]")
     print(f"  [This is α_s at the D7 closure scale under equal-coupling IC]")
 
     print("\n--- Current Status: M_c(D7) from SM crossing ---")
@@ -161,7 +162,8 @@ if __name__ == "__main__":
     print(f"  M_c(D7) current   = {MC_D7_CURRENT:.2e} GeV  [α₁∩α₃ crossing, gauge_couplings.py]")
     print(f"  α_s(M_Z) current  = {alpha_s_current:.4f}  (DFC prediction)")
     print(f"  α_s(M_Z) observed = {ALPHA_S_OBS:.4f}")
-    print(f"  Error:              {err_current:+.2f}%  ← 11% gap (Bottleneck 2)")
+    print(f"  Error:              {err_current:+.2f}%  ← from M_c(D7)=8e14 GeV estimate")
+    print(f"  [Note: with β=1/(9π) Tier 2a, error improved from −11% (old β=0.0351)]")
 
     print("\n--- Target M_c(D7): inversion of RG equation ---")
     mc_target = find_target_mc_d7()

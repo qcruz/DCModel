@@ -265,7 +265,7 @@ with one unit of anti-red winding also cancel to zero.
 
 | Check | DFC prediction | Observed | Status |
 |---|---|---|---|
-| α_s(M_Z) from D7 closure | 0.105 (from coupling_derivation.py; M_c(D7) not derived from substrate) | 0.1182 | ✗ 11% off — M_c(D7) open |
+| α_s(M_Z) from D7 closure | 0.1086 (with β=1/(9π) Tier 2a; M_c(D7)=8×10¹⁴ GeV from SM crossing) | 0.1182 | ✗ 8.1% off — M_c(D7) target 1.57×10¹⁵ GeV (Cycle 119) |
 | α_s running shape (asymptotic freedom) | β < 0 for N_f ≤ 16 follows from SU(3) non-Abelian structure | confirmed | ✓ structural |
 | Confinement: color-neutral states only | Zero net D7 winding required in D3 localization layer | all observed hadrons color-neutral | ✓ structural (formal proof open) |
 | 8 gluons from SU(3) (3²−1 = 8 generators) | 8 | 8 | ✓ topological |
