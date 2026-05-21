@@ -272,9 +272,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 | Prediction | Module | DFC | Observed | Error | Path to Fix |
 |---|---|---|---|---|---|
-| Tau lepton mass | `mass_spectrum.py` | 212 MeV | 1777 MeV | **8.4×** | D7 boundary conditions on D6 outer wall; D7 SU(3) squashing pressure |
+| Tau lepton mass | `mass_spectrum.py` | 212 MeV | 1777 MeV | **8.4×** | Dimple model wrong mechanism. Koide formula candidate: m_τ from m_e+m_μ via Z₃ circulant Yukawa → 1776.97 MeV (<0.01% error, Tier 3, `equations/tau_mass_koide.py` Cycle 122) |
 | Neutrino mass hierarchy ratio Δm²₃₁/Δm²₂₁ | `neutrino_masses.py` | 1.34 | 5.71 | **4.3×** | D-label spacing assumption; f_ν derivation |
-| Strong coupling α_s(M_Z) | `coupling_derivation.py` | 0.105 | 0.1182 | **11%** | M_c(D7) not derived from substrate; depth-running |
+| Strong coupling α_s(M_Z) | `coupling_derivation.py` | 0.1086 | 0.1182 | **8.1%** | M_c(D7) not derived from substrate; depth-running (Cycle 119: improved from 11% via β=1/(9π)) |
 | Charm/strange quark masses | `quark_masses.py` | ~15% below | — | **15%** | Non-uniform Higgs threshold scaling |
 
 ---
@@ -292,8 +292,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Files: `foundations/tension_analysis.md`, `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty
-- DFC-derived α_s(M_Z) = 0.1049 (11% off); error traces to M_c(D7) ≈ 8×10¹⁴ GeV from equal-coupling extrapolation, not from substrate
-- **Cycle 77 (alpha_s_target.py):** Target M_c(D7) = 2.094×10¹⁵ GeV quantified exactly (factor 2.62× above current estimate). Required α_D7 = 8.77×10³⁰ GeV². If D5→D7 is 2 depth steps, depth-running coefficient γ ≈ 2.66 per step is required. One-loop running from target M_c(D7) → α_s(M_Z) to machine precision; breaks down at hadronic scales (73% error at m_b — known one-loop limitation).
+- DFC-derived α_s(M_Z) = 0.1086 (8.1% off; improved from 11% via β=1/(9π) Tier 2a, Cycle 119); error traces to M_c(D7) ≈ 8×10¹⁴ GeV from equal-coupling extrapolation, not from substrate
+- **Cycle 77 (alpha_s_target.py):** Target M_c(D7) = 1.57×10¹⁵ GeV (updated Cycle 119: factor 2.0× above current estimate). Required α_D7 = 4.93×10³⁰ GeV². If D5→D7 is 2 depth steps, depth-running coefficient γ ≈ 2.52 per step is required. One-loop running from target M_c(D7) → α_s(M_Z) to machine precision; breaks down at hadronic scales (73% error at m_b — known one-loop limitation).
 - D5/D6 co-crystallization explains why M_c(D5) ≈ M_c(D6); D7 is a separate bifurcation event with unknown scale
 - Files: `equations/coupling_derivation.py`, `foundations/depth_running.md`,
   `foundations/alpha_s_derivation.md` (Cycle 77), `equations/alpha_s_target.py` (Cycle 77)

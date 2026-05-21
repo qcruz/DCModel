@@ -257,8 +257,10 @@ the generation count:
   `equations/quark_masses.py`
 - **Neutrino mass predictions** — sub-D4 double-suppression model;
   `equations/neutrino_masses.py`
-- **Full fermion spectrum (stubs + failures)** — τ mass 8.4× failure and top/bottom
-  unaddressed; `equations/fermion_spectrum_full.py`
+- **Full fermion spectrum (stubs + failures)** — τ mass 8.4× failure in dimple model;
+  `equations/fermion_spectrum_full.py`
+- **Koide formula and tau mass** — m_τ predicted from m_e, m_μ via Z₃/Koide; < 0.01% error;
+  Tier 3 candidate (circulant Yukawa from D7 Z₃ symmetry); `equations/tau_mass_koide.py` (Cycle 122)
 - **Proton stability** — product geometry forbids X/Y bosons and proton decay;
   `phenomena/particle_physics/proton_stability.md`
 - **Route 1 (Skyrme)** — topological soliton approach to spin quantum numbers;
@@ -300,3 +302,24 @@ the generation count:
    κ_23 ≈ 4.36 — the spacing is not uniform across generations. This asymmetry has no
    explanation in the current model. A geometric mechanism at D7 that produces
    non-uniform squashing across the flavor triplet is needed.
+
+6. **Koide formula and the tau mass (Cycle 122):** The empirical Koide relation states that
+   the sum of the three charged lepton masses divided by the square of the sum of their
+   square roots equals two-thirds: (m_e + m_μ + m_τ)/(√m_e + √m_μ + √m_τ)² = 2/3.
+   This holds to < 10 ppm and is unexplained in the Standard Model. Given m_e and m_μ,
+   the Koide formula predicts m_τ = 1776.97 MeV (obs 1776.86 MeV; error < 0.01%) with
+   zero additional free parameters.
+
+   In DFC, the Koide formula has a natural structural explanation: the three charged lepton
+   zero modes at D7 are related by a Z₃ cyclic permutation symmetry (one of three coincident
+   kinks → the next). If the Yukawa mass matrix is invariant under this Z₃ action — that is,
+   it is a circulant matrix — then the three eigenmasses (√m_e, √m_μ, √m_τ) lie at equal
+   angular spacing 2π/3 on a circle in (√m_e, √m_μ, √m_τ) space, satisfying the Koide
+   constraint. Equivalently: the mass-amplitude vector makes exactly 45° with the democratic
+   direction (1,1,1) in square-root space, verified to < 10 ppm.
+
+   Status: Tier 3 candidate. The Z₃ symmetry of three coincident kinks is structurally
+   expected from the SU(3) isometry (Cycle 59: n coincident kinks → SU(n) symmetry, which
+   includes the Z₃ ⊂ S₃ permutation subgroup). The remaining open step is showing the
+   Yukawa matrix from D7-D6 zero mode overlap is specifically circulant (not just Z₃-symmetric).
+   See `equations/tau_mass_koide.py` for full verification.

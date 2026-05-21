@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~57.5% complete by internal estimate. Several Standard Model quantities
+Current status: ~58.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -41,7 +41,7 @@ The model rests on three postulates:
 2. The field's self-interaction potential has the double-well form V(φ) = −α/2 φ² + β/4 φ⁴, with free parameters α (quadratic coupling) and β (quartic coupling).
 3. When compression reaches a threshold, the field opens a new degree of freedom rather than compressing further. These bifurcation events produce all structure in the model.
 
-The model proposes that the gauge groups U(1), SU(2), SU(3) arise from the topology of these bifurcation closures at different compression depths — a correspondence that has been worked out structurally through zero-mode counting (Cycles 59–74) but is not yet a complete first-principles derivation. Quantitative predictions for gauge couplings, Weinberg angle, W/Z masses, and Higgs mass match observation at the 0.01%–5% level, with derivation chains of varying completeness. Known failures include the τ lepton mass (8.4× off), neutrino hierarchy (4.3× off), and α_s (11% off). Planck's constant and Newton's constant are not yet derivable within the current framework.
+The model proposes that the gauge groups U(1), SU(2), SU(3) arise from the topology of these bifurcation closures at different compression depths — a correspondence that has been worked out structurally through zero-mode counting (Cycles 59–74) but is not yet a complete first-principles derivation. Quantitative predictions for gauge couplings, Weinberg angle, W/Z masses, and Higgs mass match observation at the 0.01%–5% level, with derivation chains of varying completeness. Known failures include the τ lepton mass (dimple model 8.4× off; Koide formula Tier 3 candidate gives <0.01% with 0 free params), neutrino hierarchy (4.3× off), and α_s (8.1% off). Planck's constant and Newton's constant are not yet derivable within the current framework.
 
 ---
 
@@ -188,7 +188,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~57.5%** (viability as a theory: ~69.5%; mathematical rigor: ~45.5%)
+**Current estimate: ~58.5%** (viability as a theory: ~70.5%; mathematical rigor: ~46.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
