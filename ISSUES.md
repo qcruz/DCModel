@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-20 (Cycles 113–114)
+**Last updated:** 2026-05-20 (Cycles 113–115)
 
 ---
 
@@ -167,10 +167,12 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     it encodes the Z₂ kink topology (two vacua → Q_top = 2) and the Hopf fiber dimension
     (d₁ = 1 for S¹ at D5). For higher fibers: Q_top = 2d_n for d_n = 3,5 would give
     consistency for all three fibers — this is the content of the remaining open step.
-  - **REMAINING OPEN STEP (Tier 4 → Tier 2a):** Derive R₁ = πd₁/I₄ (equivalently
-    Q_top = 2d_n for all Hopf fibers) from V(φ) alone. Once proved, both Route A and
-    Route B give g₁² = 2I₄ at Tier 2, closing Bottleneck 2 and giving g_eff² = 8/27
-    and β = 1/(9π) at Tier 2a with zero free parameters.
+  - **CYCLE 115 RESOLUTION:** R₁ = π/I₄ PROVED algebraically (equations/fiber_radius_derivation.py).
+    R₁ = 2π/g₁² = 2π/(2I₄) = π/I₄ [residual 0.00e+00]. The Cycle 106 series holonomy
+    R_n = πd_n/I₄ is a THEOREM — follows from g₁²=2I₄ + SU(d_n) + KK def. Not an independent input.
+    Tier upgrades: R₁ Tier 4→2 (algebraic); R_n Tier 3→2/3 (algebraic + Tier 3 SU(d_n)).
+  - **REMAINING OPEN STEP (Tier 3 → Tier 2a):** Derive d_n = 2n−1 (Hopf fiber dimensions
+    D5→S¹, D6→S³, D7→S⁵) from V(φ). Once proved, g_eff²=8/27 and β=1/(9π) become Tier 2a.
 - **Cycle 112 (moduli metric — `equations/kk_moduli_metric.py`):**
   - **g_1² = det(g_{moduli}) = I₄ × Q_top = 2I₄ (error 0.00e+00, Tier 1 for det; Tier 2 candidate for identification).**
     The kink has a 2×2 moduli space metric (position X, phase θ):

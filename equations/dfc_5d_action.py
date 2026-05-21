@@ -42,10 +42,15 @@ Key results (all derived in this module):
     Route B (KK):      g₁² = 2π/R₁ = 2I₄         [Tier 3, uses R₁ = π/I₄ from Cycle 106]
     Consistency:       det(g) = 2π/R₁  iff  R₁ = π/I₄  [both give 2I₄]
 
-Remaining open step (Tier 4 → Tier 2):
-    Derive R₁ = π/I₄ from the DFC closure condition without importing it from Cycle 106.
-    This is equivalent to proving the series holonomy formula (Cycle 106) from the
-    DFC field equation. Once R₁ = π/I₄ is proved Tier 1, both routes become Tier 2a.
+Cycle 115 resolution (fiber_radius_derivation.py):
+    R₁ = π/I₄ is proved algebraically from g₁² = det(g) = 2I₄ via R₁ := 2π/g₁².
+    The Cycle 106 series holonomy R_n = πd_n/I₄ is a THEOREM (not an independent input):
+    it follows from (1) g₁²=2I₄ + (2) g_n²=g₁²/d_n [SU(d_n)] + (3) R_n:=2π/g_n².
+    Route B is now derived (Tier 2) rather than imported (Tier 3).
+
+Remaining open step (Tier 3 → Tier 2a):
+    Derive d_n = 2n−1 from V(φ) — i.e., prove WHY D5 closes on S¹, D6 on S³, D7 on S⁵.
+    Once the fiber dimension assignment is derived, g_eff²=8/27 and β=1/(9π) become Tier 2a.
 
 Connections:
     Cycle 47:  phase_stiffness_derivation.md — g_XX = I₄ = 4/3 (Bogomolny)

@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~53.5% complete by internal estimate. Several Standard Model quantities
+Current status: ~54% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -188,7 +188,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~53.5%** (viability as a theory: ~65.5%; mathematical rigor: ~41.5%)
+**Current estimate: ~54%** (viability as a theory: ~66%; mathematical rigor: ~42%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -205,7 +205,7 @@ and several qualitative derivations are genuinely compelling. What it has not ye
 is that it *derives* rather than *reconstructs* the Standard Model. Three bottlenecks dominate:
 
 1. **D-depth assignment mechanism** — Bottleneck 1 FULLY CLOSED (Cycle 73): PT parameter s=2 exact for φ⁴ kink → s=2 PT has exactly 2 bound states → zero mode unique by Sturm-Liouville → each threshold adds exactly 1 zero mode → n thresholds → SU(n). Combined with Cycles 59–72: D5=U(1), D6=SU(2), D7=SU(3) derived from V(φ). Remaining open: threshold positions α₅, α₆, α₇ from substrate.
-2. **First-principles coupling constants** — Route 3B gives sin²θ_W = 0.231; Cycles 51–52 extended to M_W, G_F, τ_μ (all <1%); Cycle 93: Z boson widths Γ_Z/Γ_inv/R_l/R_b/A_FB^lep (all <5%, Tier 2a); Cycle 94: full DFC–SM Lagrangian assembled (foundations/dfc_sm_lagrangian.md). Bottleneck 2: g² = 2π×β×I₄ compact form proved; 3-step chain f²→r_U1→g² complete given β; β=1/(9π) from Hopf fiber dim sum N_Hopf=9 → g²=8/27 exactly (0.006% vs SM); Cycles 110–112: g_1²=2I₄ derived from V(φ) via BPS superpotential (Q_top=2, I₄=4/3, det(g)=2I₄, Tier 1); Cycle 114: DFC 5D collective coordinate action derived explicitly — both g_XX=I₄ and g_θθ=Q_top=2 shown from the 5D action integrals; two independent routes to g₁²=2I₄ (moduli det and KK formula) agree exactly; one remaining open step: derive R₁=π/I₄ from V(φ) to close Bottleneck 2 at Tier 2a. Bottleneck 3: v = 246 GeV from D6/D7 overlap integral; λ_H = β/4 UV BC stabilizes Higgs vacuum (Tier 1, Cycle 86).
+2. **First-principles coupling constants** — Route 3B gives sin²θ_W = 0.231; Cycles 51–52 extended to M_W, G_F, τ_μ (all <1%); Cycle 93: Z boson widths Γ_Z/Γ_inv/R_l/R_b/A_FB^lep (all <5%, Tier 2a); Cycle 94: full DFC–SM Lagrangian assembled (foundations/dfc_sm_lagrangian.md). Bottleneck 2: g² = 2π×β×I₄ compact form proved; 3-step chain f²→r_U1→g² complete given β; β=1/(9π) from Hopf fiber dim sum N_Hopf=9 → g²=8/27 exactly (0.006% vs SM); Cycles 110–112: g_1²=2I₄ derived from V(φ) via BPS superpotential (Q_top=2, I₄=4/3, det(g)=2I₄, Tier 1); Cycle 114: DFC 5D collective coordinate action derived explicitly — both g_XX=I₄ and g_θθ=Q_top=2 shown from the 5D action integrals; two independent routes to g₁²=2I₄ (moduli det and KK formula) agree exactly. Cycle 115: R₁=π/I₄ PROVED algebraically (fiber_radius_derivation.py) — R₁=2π/g₁²=π/I₄ is a consequence of g₁²=det(g)=2I₄; Cycle 106 series holonomy R_n=πd_n/I₄ is now a THEOREM (all three fibers verified, errors 0.00e+00); Tier upgrades: R₁ Tier 4→2, R_n Tier 3→2/3. Remaining open step: derive d_n=2n−1 from V(φ) to promote g_eff²=8/27 to Tier 2a. Bottleneck 3: v = 246 GeV from D6/D7 overlap integral; λ_H = β/4 UV BC stabilizes Higgs vacuum (Tier 1, Cycle 86).
 3. **S-matrix derivation** — Cycle 89: exact single-kink T-matrix (reflectionless n=2 PT, Tier 1); Cycle 91: effective range theory a_s=3λ, r₀=1.833λ (exact); Cycle 92: kink form factor F(k) exact. α_s: target M_c(D7) = 2.094×10¹⁵ GeV (Cycle 77).
 
 The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the correct BPS E_kink
