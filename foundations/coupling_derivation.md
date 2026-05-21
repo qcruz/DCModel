@@ -375,23 +375,17 @@ values follow from RG running — a complete chain from substrate to α_em.
 ### Step 3: From g₃ to α_s
 
 The strong coupling at the D7 closure scale M_c(D7) would equal g_common (from the
-same equal-coupling initial condition). Running from M_c(D7) ≈ 10¹⁵ GeV to M_Z:
+same equal-coupling initial condition). Running from M_c(D7) to M_Z:
 
+With α_common = g_eff²/(4π) = 2/(27π) ≈ 0.02358 at M_c(D7), the one-loop running gives:
 ```
-1/α₃(M_Z) = 1/α_common + (7/(2π)) × ln(M_c(D7)/M_Z)
-           ≈ 42.6 + 7/(2π) × ln(10¹⁵/91) ≈ 42.6 − 29.3 ≈ 8.5  [using SM running]
-```
-
-Wait — the SM beta function for SU(3) has b₃ = +7 (coupling weakens at high energy),
-so running DOWN from M_c(D7) to M_Z means the coupling gets stronger:
-
-```
-1/α₃(M_Z) = 1/α₃(M_c) − (7/(2π)) × ln(M_c/M_Z)
-           = 42.6 − (7/6.28) × 29.8 = 42.6 − 33.2 = 9.4
+1/α_s(M_Z) = 1/α_common − b₃ × ln(M_c(D7)/M_Z)/(2π)
+           [b₃ = (33−2n_f)/(12π) in the convention used by alpha_s_target.py]
 ```
 
-α₃(M_Z) ≈ 1/9.4 ≈ 0.106 vs observed 0.118 — 10% off with M_c(D7) ≈ 10¹⁵ GeV.
-The M_c(D7) value is not yet precisely determined from substrate dynamics.
+The current estimate M_c(D7) ≈ 8.0×10¹⁴ GeV (from α₁=α₃ SM crossing) gives α_s = 0.1086
+(−8.1% vs observed 0.1182). The exact target is M_c(D7) = 1.566×10¹⁵ GeV — a factor
+1.96× above the current estimate. See `equations/alpha_s_target.py` for full analysis.
 
 ---
 
@@ -399,26 +393,29 @@ The M_c(D7) value is not yet precisely determined from substrate dynamics.
 
 | Problem | Status | Priority |
 |---|---|---|
-| g_common from holonomy integral over D5 S¹ | OPEN (physical route) | Critical (Bottleneck 2) |
-| r_U1/λ_D5 = 1/(β×I₄) from V(φ) alone | OPEN — algebraic identity proved, physical derivation open | Critical |
+| g_common from V(φ) — Bottleneck 2 | CLOSED ✓ (Cycle 117, Tier 2a) | DONE |
+| D5 complex structure J from V(φ) | PROVED ✓ (Cycle 117, tachyon instability) | Done |
+| d_n = 2n−1 Hopf fiber dimensions | PROVED ✓ (Cycle 116, Tier 1 from J) | Done |
+| N_Hopf = 9, g_eff² = 8/27 | PROVED ✓ (Cycles 107–117, Tier 2a) | Done |
+| β = 1/(9π) from V(φ) | PROVED ✓ (Cycle 117, Tier 2a, 0 free params) | Done |
+| g₁² = 2I₄ from moduli metric | PROVED ✓ (Cycle 112/114, Tier 1) | Done |
 | f² = (4/3)φ₀²/λ from Bogomolny identity | PROVED ✓ (Cycle 47) | Done |
-| g² = 2π×β×I₄ compact form, α-independence | PROVED ✓ (Cycle 85) | Done |
-| mode_norm = 9/(64π) algebraic proof | PROVED ✓ (Cycle 96, error 0.00e+00) | Done |
-| β self-consistent from Route F | Tier 3 (Cycle 87, 0.75% off) | Done when B2 closes |
-| M_c(D7) from substrate (gives α_s) | OPEN — target 2.094×10¹⁵ GeV | High |
-| sin²θ_W = 0.231 | DERIVED ✓ (Route 3B) | Done |
+| sin²θ_W = 0.231 | DERIVED ✓ (Route 3B, Cycle 22) | Done |
 | k_Y = 3/5 | DERIVED ✓ (Cycle 30) | Done |
-| α_em(M_Z) = 1/129.6 | Tier 2a, 1.3% off ✓ | Improves when B2 closes |
-| α_s(M_Z) = 0.118 | 11% off — needs M_c(D7) | High |
+| α_em(M_Z) = 1/128.2 | Tier 2a, −1.14% (Cycle 117 β chain) | Active |
+| M_c(D7) from substrate (gives α_s) | OPEN — target 1.566×10¹⁵ GeV | High |
+| α_s(M_Z) = 0.118 | 8.1% off — needs M_c(D7) | High |
+| τ mass from Z₃ circulant Yukawa (Koide) | OPEN — Tier 3 candidate (<0.01% via Koide) | High |
 
-**The critical next calculation:** Identify the vortex coupling kernel K(ρ) such that
-∫K(ρ)dρ = 9/(64π) directly from the D5 vortex BVP field equation and V(φ), without
-using g² as input. The closest known candidate is the simple KK normalization
-1/r_U1 = 4β/3 (4.3% off). The 4.3% correction arises from non-trivial vortex geometry
-and has not yet been identified analytically.
-
-The ratio r_U1/λ_D5 ≈ 21.4 (= 3/(4β) at β = 0.035) is the key dimensionless target.
-See `equations/bottleneck2_2d_integral.py` for the systematic candidate scan (Cycle 96).
+**Current critical next derivation:** The gauge coupling chain (Bottleneck 2) is closed
+at Tier 2a with zero free parameters. The remaining open problems are:
+1. **M_c(D7)** — the D7 (SU(3)) closure scale is not yet derived from substrate dynamics.
+   Target: 1.566×10¹⁵ GeV (from inverting one-loop α_s RG equation). This would close
+   the 8.1% α_s gap. See `equations/alpha_s_target.py`.
+2. **τ lepton mass** — the Koide formula gives m_τ = 1776.97 MeV (+0.006%, 0 free params)
+   from m_e and m_μ, but the DFC derivation (Z₃ Yukawa circulant from three coincident
+   D7 kinks) is Tier 3. See `equations/tau_mass_koide.py`, `equations/koide_yukawa_circulant.py`.
+3. **v = 246 GeV** (Bottleneck 3) — blocked by M_c(D7).
 
 ---
 
@@ -443,3 +440,14 @@ See `equations/bottleneck2_2d_integral.py` for the systematic candidate scan (Cy
 - `equations/bottleneck2_2d_integral.py` — mode_norm=9/(64π) proved algebraically;
   seven vortex BVP candidates; simple KK 4.3% from target (Cycle 96)
 - `equations/beta_substrate.py` — Route F: β=0.03536, 0.75% (Cycle 87)
+- `equations/g2_selfconsistency_proof.py` — series holonomy derivation; g²=8/27 (Cycle 106)
+- `equations/kk_fiber_coupling.py` — Hopf Killing vector |K|²=R²; parallel combination (Cycle 107)
+- `equations/kk_action_coupling.py` — BPS superpotential W=1-ψ²; Q_top×I₄=g_1²=8/3 (Cycle 111)
+- `equations/kk_moduli_metric.py` — moduli metric det(g)=2I₄; g_1²=det(g) (Cycle 112)
+- `equations/dfc_5d_action.py` — 5D collective coordinate action; both routes to g_1²=2I₄ (Cycle 114)
+- `equations/fiber_radius_derivation.py` — R_1=π/I₄ as algebraic corollary of g_1²=2I₄ (Cycle 115)
+- `equations/fiber_dimension_derivation.py` — d_n=2n-1 derived from V(φ) (Cycle 116)
+- `equations/d5_complex_from_instability.py` — J from tachyon; BOTTLENECK 2 CLOSED (Cycle 117)
+- `equations/alpha_s_target.py` — M_c(D7) target 1.566×10¹⁵ GeV; α_s 8.1% gap analysis (Cycle 119)
+- `equations/tau_mass_koide.py` — Koide formula; m_τ prediction from m_e, m_μ (Cycle 122)
+- `equations/koide_yukawa_circulant.py` — Koide ↔ DFT |F0|/|F1|=√2; circulant structure (Cycle 123)
