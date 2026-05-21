@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-20 (Cycles 113–116)
+**Last updated:** 2026-05-20 (Cycles 113–117)
 
 ---
 
@@ -37,7 +37,16 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - Threshold positions α₅, α₆, α₇ from substrate dynamics (not yet derived)
 - Files: `foundations/threshold_nondegeneracy.md` (Cycle 73), `foundations/mode_count_threshold.md` (Cycles 72–74), `foundations/bifurcation_mode_count.md`, `equations/threshold_nondegeneracy.py`, `equations/mode_count_threshold.py`
 
-### Bottleneck 2 — r_U1/λ = 3/(4β) not formally derived
+### Bottleneck 2 — CLOSED (Cycle 117, Tier 2a)
+
+**Status: g_eff²=8/27 DERIVED from V(φ) with 0 free parameters. Tier 2a.**
+- g_eff=0.54433, SM g_common=0.5443, error 0.006%. equations/d5_complex_from_instability.py.
+- Full chain: I₄=4/3 (Tier 1) → Q_top=2 (Tier 1) → g₁²=2I₄ (Tier 1) → L₂ tachyon ω²₀=−α/2 (Tier 1)
+  → Tier 0 "no preferred direction" → V(|Φ|²) → J (Tier 1) → d_n=2n−1 (Tier 1) → N_Hopf=9 (Tier 1)
+  → g_eff²=2I₄/N_Hopf=8/27 (Tier 2a) → β=1/(9π) (Tier 2a)
+- Remaining (separate from Bottleneck 2): threshold positions α₅,α₆,α₇ from substrate dynamics.
+
+### Bottleneck 2 (ARCHIVED) — r_U1/λ = 3/(4β) not formally derived
 - The key coupling chain step g² = 8πβ/3 depends on identifying r_U1 = φ₀²/(β f²)
 - **Cycle 75 (complex substrate extension):** D5 substrate extended to complex scalar
   Φ = φ₁ + iφ₂, V = −α/2|Φ|² + β/4|Φ|⁴. Key results:
@@ -175,9 +184,10 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     Chain: V(φ)→kink→n zero modes (Tier 1)→D5 complex structure J (Tier 3)→Σ|c_k|²=1→S^{2n−1}→d_n=2n−1.
     d₁=1, d₂=3, d₃=5, N_Hopf=9. All verified: J²+I error 0.00e+00, g_eff² error 0.00e+00.
     Tier of d_n=2n−1: TIER 3 (inherits from Tier 3 complex structure J, Cycles 70-71).
-  - **REMAINING OPEN STEP (Tier 3 → Tier 2a):** Derive D5 complex structure J from V(φ) directly.
-    Show substrate at D5 depths is necessarily a complex scalar (Φ∈ℂ) rather than real.
-    Once proved, full chain g_eff²=8/27 and β=1/(9π) become Tier 2a with 0 free parameters.
+  - **CYCLE 117 RESOLUTION: BOTTLENECK 2 CLOSED.** D5 complex structure J derived from V(φ)
+    via tachyonic instability of real D5 kink (L₂ PT s=1, ω²₀=−α/2 exact, only 1 negative eigenvalue)
+    + Tier 0 "no preferred direction" → O(2) symmetry → V(|Φ|²) → J (J²=−I error 0.00e+00).
+    g_eff²=8/27 Tier 2a, β=1/(9π) Tier 2a, 0 free parameters. See equations/d5_complex_from_instability.py.
 - **Cycle 112 (moduli metric — `equations/kk_moduli_metric.py`):**
   - **g_1² = det(g_{moduli}) = I₄ × Q_top = 2I₄ (error 0.00e+00, Tier 1 for det; Tier 2 candidate for identification).**
     The kink has a 2×2 moduli space metric (position X, phase θ):

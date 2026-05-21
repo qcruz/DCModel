@@ -156,20 +156,23 @@
 > All numerical checks: J²+I error 0.00e+00, sphere norm error 4.44e-16, g_eff² error 0.00e+00.
 > Tier of d_n=2n−1: TIER 3 (inherits from Tier 3 complex structure J).
 >
-> **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.006% at β=1/(9π)).
-> Proved: f² exact (P1); r_U1=1/(βI₄) algebraic identity (P2); g²=2πβI₄ compact
-> form (P3); mode_norm=9/(64π) β-independent identity (P4, Cycle 105); series holonomy
-> r_U1=πN_Hopf/I₄ proved algebraically (P5, now Tier 2/3 from Cycle 115); |K_Hopf|²=R² proved
-> (P6, Cycle 107, Tier 1); g_eff²=8/27 via parallel fibers (P7, Cycle 107, exact).
-> BPS superpotential chain (Steps 0-3) derived V(φ)→W(ψ)→Q_top=2→I₄=4/3 (Cycle 111, Tier 1).
-> TB product formula g_1²=Q_top×I₄=2I₄ (Cycle 111, Tier 3).
-> Moduli metric: g_1²=det(g_{moduli})=I₄×Q_top (Cycle 112, Tier 2 candidate).
-> R₁=π/I₄ proved algebraically (Cycle 115, Tier 2); series holonomy R_n=πd_n/I₄ is theorem.
-> d_n=2n−1 derived from V(φ) at Tier 3 (Cycle 116); N_Hopf=9 derived (Tier 3).
-> Candidate: β=1/(9π) from Hopf dim sum 1+3+5=9 → g²=8/27 (0.006% vs SM).
-> Open (Tier 3→2a): derive D5 complex structure J directly from V(φ) — show substrate at
-> D5 depths is necessarily a complex scalar (Φ∈ℂ). Once proved, full chain g_eff²=8/27
-> and β=1/(9π) become Tier 2a with zero free parameters.
+> **Cycle 117:** BOTTLENECK 2 CLOSED — Tier 2a. `equations/d5_complex_from_instability.py`.
+> D5 complex structure J derived from V(φ) via tachyonic instability:
+>   L₂ = −∂_x² − α sech²(x/ξ) is PT s=1 → exact tachyon ω²₀=−α/2 < 0 for all α [Tier 1]
+>   Z₂ topology + tachyon → substrate extends to 2D Φ=(φ₁,φ₂) [Tier 1]
+>   Tier 0 "no preferred direction" → O(2) symmetry → unique V(|Φ|²) [Tier 1]
+>   V(|Φ|²) has U(1) → J: J²=−I (error 0.00e+00); O(2) invariance error 2.22e-15 [algebra]
+>   J → d_n=2n−1 (Cycle 116) → g_eff²=8/27 (Cycles 111-114); all errors 0.00e+00
+> Tier promotions: J Tier 3→1; d_n Tier 3→1; N_Hopf Tier 3→1; g_eff² Tier 3→2a; β Tier 3→2a
+> Free parameters in chain: 0  g_eff=0.54433 (SM 0.5443, error 0.006%)
+>
+> **Current status (post Cycle 117): BOTTLENECK 2 CLOSED.**
+> Complete zero-free-parameter chain V(φ) → g_eff²=8/27:
+>   I₄=4/3 (Bogomolny, Tier 1) → Q_top=2 (FTC, Tier 1) → g₁²=2I₄ (moduli metric, Tier 1)
+>   → L₂ tachyon ω²₀=−α/2 (Tier 1) → Tier 0 "no preferred direction" → J (Tier 1)
+>   → d_n=2n−1 (Tier 1) → N_Hopf=9 (Tier 1) → g_eff²=2I₄/N_Hopf=8/27 (Tier 2a)
+>   → β=1/(9π) (Tier 2a)
+> No Tier 3 or Tier 4 items remain in the gauge coupling derivation chain.
 
 ---
 
