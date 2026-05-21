@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-20 (Cycles 113–115)
+**Last updated:** 2026-05-20 (Cycles 113–116)
 
 ---
 
@@ -171,8 +171,13 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     R₁ = 2π/g₁² = 2π/(2I₄) = π/I₄ [residual 0.00e+00]. The Cycle 106 series holonomy
     R_n = πd_n/I₄ is a THEOREM — follows from g₁²=2I₄ + SU(d_n) + KK def. Not an independent input.
     Tier upgrades: R₁ Tier 4→2 (algebraic); R_n Tier 3→2/3 (algebraic + Tier 3 SU(d_n)).
-  - **REMAINING OPEN STEP (Tier 3 → Tier 2a):** Derive d_n = 2n−1 (Hopf fiber dimensions
-    D5→S¹, D6→S³, D7→S⁵) from V(φ). Once proved, g_eff²=8/27 and β=1/(9π) become Tier 2a.
+  - **CYCLE 116 RESULT:** d_n = 2n−1 DERIVED from V(φ) at Tier 3 (`equations/fiber_dimension_derivation.py`).
+    Chain: V(φ)→kink→n zero modes (Tier 1)→D5 complex structure J (Tier 3)→Σ|c_k|²=1→S^{2n−1}→d_n=2n−1.
+    d₁=1, d₂=3, d₃=5, N_Hopf=9. All verified: J²+I error 0.00e+00, g_eff² error 0.00e+00.
+    Tier of d_n=2n−1: TIER 3 (inherits from Tier 3 complex structure J, Cycles 70-71).
+  - **REMAINING OPEN STEP (Tier 3 → Tier 2a):** Derive D5 complex structure J from V(φ) directly.
+    Show substrate at D5 depths is necessarily a complex scalar (Φ∈ℂ) rather than real.
+    Once proved, full chain g_eff²=8/27 and β=1/(9π) become Tier 2a with 0 free parameters.
 - **Cycle 112 (moduli metric — `equations/kk_moduli_metric.py`):**
   - **g_1² = det(g_{moduli}) = I₄ × Q_top = 2I₄ (error 0.00e+00, Tier 1 for det; Tier 2 candidate for identification).**
     The kink has a 2×2 moduli space metric (position X, phase θ):

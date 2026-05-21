@@ -142,6 +142,20 @@
 >   R_n = πd_n/I₄:  Tier 3 → Tier 2/3 (algebraic from g₁²=2I₄ + Tier 3 SU(d_n))
 >   g₁² = det(g):   Tier 2 candidate (unchanged; DFC-specific gauge kinetic term open)
 >
+> **Cycle 116:** d_n = 2n−1 DERIVED from V(φ) at Tier 3 in `equations/fiber_dimension_derivation.py`.
+> The Hopf fiber dimensions (1, 3, 5) at D5/D6/D7 are no longer imported from Hopf geometry;
+> they follow from the substrate field equation via four steps:
+>   Step 1: V(φ) → kink ψ=tanh(u) → 1 zero mode η₀=sech²(u) per kink [PT s=2, Tier 1]
+>           n coincident kinks at D(4+n) → n independent zero modes, ||η₀||²=I₄=4/3
+>   Step 2: D5 complex substrate Φ∈ℂ → U(1) phase rotation → complex structure J on ℝ^{2n}
+>           c_k ∈ ℝ → c_k ∈ ℂ (each real DOF pair promoted to complex) [Tier 3, Cycles 70-71]
+>   Step 3: Σ_k|c_k|²=1 (canonical normalization, kink number conserved)
+>           → configuration space = S^{2n−1} ⊂ ℂⁿ [Tier 1 algebra]
+>   Step 4: d_n = dim_ℝ(S^{2n−1}) = 2n−1 [Tier 1 algebra]
+> Results: d₁=1 [D5, U(1)], d₂=3 [D6, SU(2)], d₃=5 [D7, SU(3)], N_Hopf=9
+> All numerical checks: J²+I error 0.00e+00, sphere norm error 4.44e-16, g_eff² error 0.00e+00.
+> Tier of d_n=2n−1: TIER 3 (inherits from Tier 3 complex structure J).
+>
 > **Current status:** g² = 8πβ/3 is Tier 3 (heuristic, 0.006% at β=1/(9π)).
 > Proved: f² exact (P1); r_U1=1/(βI₄) algebraic identity (P2); g²=2πβI₄ compact
 > form (P3); mode_norm=9/(64π) β-independent identity (P4, Cycle 105); series holonomy
@@ -151,9 +165,11 @@
 > TB product formula g_1²=Q_top×I₄=2I₄ (Cycle 111, Tier 3).
 > Moduli metric: g_1²=det(g_{moduli})=I₄×Q_top (Cycle 112, Tier 2 candidate).
 > R₁=π/I₄ proved algebraically (Cycle 115, Tier 2); series holonomy R_n=πd_n/I₄ is theorem.
+> d_n=2n−1 derived from V(φ) at Tier 3 (Cycle 116); N_Hopf=9 derived (Tier 3).
 > Candidate: β=1/(9π) from Hopf dim sum 1+3+5=9 → g²=8/27 (0.006% vs SM).
-> Open (Tier 3→2a): derive d_n = 2n−1 (Hopf fiber dimensions D5→S¹, D6→S³, D7→S⁵) from V(φ).
-> Once proved, g_eff²=8/27 and β=1/(9π) become Tier 2a with zero free parameters.
+> Open (Tier 3→2a): derive D5 complex structure J directly from V(φ) — show substrate at
+> D5 depths is necessarily a complex scalar (Φ∈ℂ). Once proved, full chain g_eff²=8/27
+> and β=1/(9π) become Tier 2a with zero free parameters.
 
 ---
 
