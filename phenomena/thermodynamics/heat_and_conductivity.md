@@ -207,12 +207,54 @@ In this model, the "terrain" is the folding structure of dimensional space.
 - **Black holes** — Hawking radiation is compression propagating away from an extreme
   folding gradient at the horizon — radiation without a material carrier, at maximum
   compression
+- **Wiedemann-Franz law** — universality of κ/(σT) derived from single D5 carrier type;
+  numerical L₀ (+2.2% from α_em); `equations/wiedemann_franz.py` (Cycle 128)
+- **Superconductivity** — near-perfect compression coherence; Cooper pair charge 2e,
+  flux quantization Φ₀ = h/(2e); `../condensed_matter/superconductivity.md`,
+  `equations/superconductivity.py`
+- **Josephson effect** — DC/AC coupling across phase-coherent barrier;
+  `../condensed_matter/josephson_effect.md`, `equations/josephson_effect.py`
+- **Quantum Hall effect** — quantum of conductance G₀ = e²/h from D5 U(1) winding;
+  `../condensed_matter/quantum_hall_effect.md`, `equations/quantum_hall.py`
+
+## Formal Equations
+
+### Wiedemann-Franz Law (Lorenz number)
+
+The ratio of thermal conductivity to electrical conductivity in a metal, divided by
+temperature, equals a universal constant — the Lorenz number — whose value is set
+only by Boltzmann's constant and the electron charge:
+
+```
+κ/(σT) = L₀ = π²k_B²/(3e²) = 2.443 × 10⁻⁸ W·Ω·K⁻²
+```
+
+In DFC, this universality is a Tier 1 structural prediction: both κ and σ are carried
+by the same D4/D5 fermionic carriers (electron zero modes). The carrier-specific
+relaxation time τ and effective mass m* cancel in the ratio, leaving only k_B and e.
+
+DFC numerical prediction: L₀_DFC = 2.498 × 10⁻⁸ W·Ω·K⁻² (+2.2% from α_em systematic;
+same source as all DFC electromagnetic predictions). Verified: `equations/wiedemann_franz.py`.
+
+### Quantum of Thermal Conductance
+
+The minimum thermal conductance per transport mode:
+
+```
+G_Q = π²k_B²T/(3h) = L₀ × (e²/h) × T
+```
+
+This is a universal quantum of thermal conductance — independent of material, Tier 1 from
+DFC D5 U(1) winding (giving e²/h as quantum of conductance) combined with the k_B postulate.
+
+---
 
 ## Open Questions
 
 - Can the thermal conductivity of specific material classes be predicted from their
   folding pathway geometry — without invoking phonon statistics?
-- Is there a precise dimensional folding derivation of the Wiedemann-Franz law
-  (the empirical ratio of thermal to electrical conductivity in metals)?
+- The Wiedemann-Franz universality is derived (Tier 1, Cycle 128). The numerical L₀
+  is Tier 2b (+2.2% from α_em systematic). Open: derive k_B from substrate statistical
+  mechanics to remove the remaining import. See `equations/wiedemann_franz.py`.
 - What is the dimensional folding description of a superconducting phase transition —
-  is it a folding pathway alignment transition?
+  is it a folding pathway alignment transition? (See `../condensed_matter/superconductivity.md`)
