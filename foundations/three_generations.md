@@ -323,15 +323,21 @@ the generation count:
    includes the Z₃ ⊂ S₃ permutation subgroup). The remaining open step is showing the
    Yukawa matrix from D7-D6 zero mode overlap is specifically circulant (not just Z₃-symmetric).
 
-   Koide proof chain status (Cycles 122–125):
+   Koide proof chain status (Cycles 122–126):
    - Step 0: V(φ) → W(ψ)=1−ψ²                Tier 1  [Cycle 111]
    - Step 1: η₀ ∝ sech²(u), unique zero mode   Tier 1  [Cycles 33, 73]
    - Step 2: n=3 kinks → SU(3) isometry        Tier 1  [Cycles 59, 73, 74]
    - Step 3: Z₃ ⊂ SU(3) → Y circulant         Tier 3  [Cycle 124; `equations/koide_step3_yukawa.py`]
-   - Step 4: Q_top=2 → r²=Q_top → K=2/3       Tier 3  [Cycle 125; `equations/koide_step4_bps.py`]
-     Central formula: |F₀|/|F₁| = 2/√Q_top = √2 (since Q_top=2, Tier 1)
-     Algebraic proof: |F₀|=3v, |F₁|=(3v·r/2) → ratio=2/r; r²=Q_top (18 ppm from masses)
-     Open gap (Tier 4): derive r=√Q_top from DFC 5D action integral over D7 moduli space.
+   - Step 4: Q_top=2 → r²=Q_top → K=2/3       Tier 3  [Cycles 125–126]
+     Step 4a: γ=2π/3 from D5 π₁(S¹)=ℤ + Z₃ positions    Tier 1  [Cycle 126]
+     Step 4b: K=1/3+2t²/3 at γ=2π/3 (algebraic)          Tier 1  [Cycle 126]
+              Eigenvalues: (1−t, 1−t, 1+2t); S=3 t-independent; K=M/S²
+     Step 4c: K=2/3 ↔ t²=1/Q_top=1/2 ↔ t=1/√Q_top        Tier 1  [Cycle 126; error 1.11e-16]
+              r=√Q_top universal on K=2/3 curve for all γ near 2π/3 (PASS)
+     Step 4d: t=1/√Q_top from DFC 5D Yukawa vortex integral Tier 4  OPEN
+              Requires: ∫η₀*(x)·e^{iΔθ(x)}·φ_H(x)·η₀(x) dx / ∫|η₀|²·φ_H dx = 1/√Q_top
+     Central formula (Cycle 125): |F₀|/|F₁| = 2/√Q_top = √2 (error 3.55e-15)
 
    See `equations/tau_mass_koide.py`, `equations/koide_yukawa_circulant.py`,
-   `equations/koide_step3_yukawa.py`, `equations/koide_step4_bps.py` for full verification.
+   `equations/koide_step3_yukawa.py`, `equations/koide_step4_bps.py`,
+   `equations/koide_complex_circulant.py` for full verification.
