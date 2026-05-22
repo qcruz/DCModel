@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-22 (Cycles 122–124)
+**Last updated:** 2026-05-22 (Cycles 122–125)
 
 ---
 
@@ -272,7 +272,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 | Prediction | Module | DFC | Observed | Error | Path to Fix |
 |---|---|---|---|---|---|
-| Tau lepton mass | `mass_spectrum.py` | 212 MeV | 1777 MeV | **8.4×** | Dimple model wrong mechanism. **Koide formula (Tier 3):** m_τ from m_e+m_μ via Z₃ circulant Yukawa → 1776.97 MeV (+0.006%, 0 free params, `equations/tau_mass_koide.py` Cycle 122). Algebraic structure: K=2/3 ↔ circulant ↔ DFT |F₀|/|F₁|=√2 (Theorems 1–3, `equations/koide_yukawa_circulant.py` Cycle 123). Step 3 (Z₃→circulant) Tier 3 (`equations/koide_step3_yukawa.py` Cycle 124). Step 4 (|F₀|/|F₁|=√2 from V(φ)) Tier 4 OPEN. |
+| Tau lepton mass | `mass_spectrum.py` | 212 MeV | 1777 MeV | **8.4×** | Dimple model wrong mechanism. **Koide formula (Tier 3):** m_τ from m_e+m_μ via Z₃ circulant Yukawa → 1776.97 MeV (+0.006%, 0 free params, `equations/tau_mass_koide.py` Cycle 122). Algebraic structure: K=2/3 ↔ circulant ↔ DFT |F₀|/|F₁|=√2 (Theorems 1–3, `equations/koide_yukawa_circulant.py` Cycle 123). Step 3 (Z₃→circulant) Tier 3 (`equations/koide_step3_yukawa.py` Cycle 124). Step 4 (|F₀|/|F₁|=2/√Q_top = √2 since Q_top=2) Tier 3 (`equations/koide_step4_bps.py` Cycle 125): central formula |F₀|/|F₁|=2/√Q_top proved algebraically (error 3.55e-15); r²=Q_top verified to 18 ppm from observed masses; open Tier 4 gap: derive r=√Q_top from DFC 5D action. |
 | Neutrino mass hierarchy ratio Δm²₃₁/Δm²₂₁ | `neutrino_masses.py` | 1.34 | 5.71 | **4.3×** | D-label spacing assumption; f_ν derivation |
 | Strong coupling α_s(M_Z) | `coupling_derivation.py` | 0.1086 | 0.1182 | **8.1%** | M_c(D7) not derived from substrate; depth-running (Cycle 119: improved from 11% via β=1/(9π)) |
 | Charm/strange quark masses | `quark_masses.py` | ~15% below | — | **15%** | Non-uniform Higgs threshold scaling |

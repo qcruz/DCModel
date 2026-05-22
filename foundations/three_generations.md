@@ -322,4 +322,16 @@ the generation count:
    expected from the SU(3) isometry (Cycle 59: n coincident kinks → SU(n) symmetry, which
    includes the Z₃ ⊂ S₃ permutation subgroup). The remaining open step is showing the
    Yukawa matrix from D7-D6 zero mode overlap is specifically circulant (not just Z₃-symmetric).
-   See `equations/tau_mass_koide.py` for full verification.
+
+   Koide proof chain status (Cycles 122–125):
+   - Step 0: V(φ) → W(ψ)=1−ψ²                Tier 1  [Cycle 111]
+   - Step 1: η₀ ∝ sech²(u), unique zero mode   Tier 1  [Cycles 33, 73]
+   - Step 2: n=3 kinks → SU(3) isometry        Tier 1  [Cycles 59, 73, 74]
+   - Step 3: Z₃ ⊂ SU(3) → Y circulant         Tier 3  [Cycle 124; `equations/koide_step3_yukawa.py`]
+   - Step 4: Q_top=2 → r²=Q_top → K=2/3       Tier 3  [Cycle 125; `equations/koide_step4_bps.py`]
+     Central formula: |F₀|/|F₁| = 2/√Q_top = √2 (since Q_top=2, Tier 1)
+     Algebraic proof: |F₀|=3v, |F₁|=(3v·r/2) → ratio=2/r; r²=Q_top (18 ppm from masses)
+     Open gap (Tier 4): derive r=√Q_top from DFC 5D action integral over D7 moduli space.
+
+   See `equations/tau_mass_koide.py`, `equations/koide_yukawa_circulant.py`,
+   `equations/koide_step3_yukawa.py`, `equations/koide_step4_bps.py` for full verification.
