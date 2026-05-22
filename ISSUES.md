@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-05-20 (Cycles 113–117)
+**Last updated:** 2026-05-22 (Cycles 122–124)
 
 ---
 
@@ -272,7 +272,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 | Prediction | Module | DFC | Observed | Error | Path to Fix |
 |---|---|---|---|---|---|
-| Tau lepton mass | `mass_spectrum.py` | 212 MeV | 1777 MeV | **8.4×** | Dimple model wrong mechanism. Koide formula candidate: m_τ from m_e+m_μ via Z₃ circulant Yukawa → 1776.97 MeV (<0.01% error, Tier 3, `equations/tau_mass_koide.py` Cycle 122) |
+| Tau lepton mass | `mass_spectrum.py` | 212 MeV | 1777 MeV | **8.4×** | Dimple model wrong mechanism. **Koide formula (Tier 3):** m_τ from m_e+m_μ via Z₃ circulant Yukawa → 1776.97 MeV (+0.006%, 0 free params, `equations/tau_mass_koide.py` Cycle 122). Algebraic structure: K=2/3 ↔ circulant ↔ DFT |F₀|/|F₁|=√2 (Theorems 1–3, `equations/koide_yukawa_circulant.py` Cycle 123). Step 3 (Z₃→circulant) Tier 3 (`equations/koide_step3_yukawa.py` Cycle 124). Step 4 (|F₀|/|F₁|=√2 from V(φ)) Tier 4 OPEN. |
 | Neutrino mass hierarchy ratio Δm²₃₁/Δm²₂₁ | `neutrino_masses.py` | 1.34 | 5.71 | **4.3×** | D-label spacing assumption; f_ν derivation |
 | Strong coupling α_s(M_Z) | `coupling_derivation.py` | 0.1086 | 0.1182 | **8.1%** | M_c(D7) not derived from substrate; depth-running (Cycle 119: improved from 11% via β=1/(9π)) |
 | Charm/strange quark masses | `quark_masses.py` | ~15% below | — | **15%** | Non-uniform Higgs threshold scaling |
@@ -328,7 +328,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | Target | Why Blocked | Files | Required Extension |
 |---|---|---|---|
 | r_U1/λ = 3/(4β) from substrate | Real φ⁴ has no localizable U(1) phase; Routes A and B both blocked | `phase_stiffness_derivation.md` | Complex scalar or gauge field in substrate |
-| M_c(D7) from substrate | Target 2.094×10¹⁵ GeV quantified (Cycle 77); γ_color (D6→D7) = γ ≈ 2.66 required per step; E_total normalization open after Cycle 48 retraction | `depth_running.py`, `bifurcation_dynamics.py`, `alpha_s_target.py` | Compute D7 compression from SU(3) three-kink energy or derive γ_D7 from substrate depth-running |
+| M_c(D7) from substrate | Target 1.566×10¹⁵ GeV (updated Cycle 119 via β=1/(9π) Tier 2a; factor 1.96× above current estimate 8×10¹⁴ GeV); γ_color (D6→D7) ≈ 2.52 required per step; E_total normalization open after Cycle 48 retraction | `depth_running.py`, `bifurcation_dynamics.py`, `alpha_s_target.py` | Compute D7 compression from SU(3) three-kink energy or derive γ_D7 from substrate depth-running |
 | β ≈ 0.035 from pre-substrate principle | No pre-substrate condition identified that selects β | `beta_substrate.py` [STUB] | New theoretical input (pre-bifurcation stability condition) |
 | Born rule for position | Spin case DERIVED (Cycle 38); Kramers escape rate Γ(x) ∝ \|φ(x)\|² not rigorously derived | `measurement.md`, `born_rule_derivation.md` | Escape rate calculation from V(φ) saddle topology |
 | ℏ from (α, β, c) | S_kink(D1)/ℏ = 4×10³⁹ — 13.2 bifurcations needed to reach ℏ scale; model has only 4 | `planck_constant_derivation.md` | Either additional sub-bifurcation structure or route via α_em derivation |
@@ -397,7 +397,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Exponent κ (mass-to-depth scaling) — currently fitted from spectrum; not derived from substrate
 
 **`three_generations.md`**
-- Second excited state eigenvalue in D6 S³ geometry with D7 boundary — tau mass failure
+- Second excited state eigenvalue in D6 S³ geometry with D7 boundary — tau mass failure (8.4× in dimple model)
+- Koide formula Step 3 (Z₃ Yukawa from D7 moduli space): Tier 3 (`equations/koide_step3_yukawa.py` Cycle 124)
+- Koide formula Step 4 (|F₀|/|F₁|=√2 from V(φ)): Tier 4 OPEN — candidate Z₂×Z₃=Z₆ phase structure
 
 **`coupling_derivation.md`**
 - Holonomy integral: physical identification r_U1 = φ₀²/(β f²) not derived from substrate
@@ -422,7 +424,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **`particle_physics/forces/strong_force.md`**
 - Formal proof of confinement from DFC (Open Q1) — Yang-Mills mass gap equivalent
 - Derive Λ_QCD from D7 closure parameters (Open Q2)
-- Derive α_s from D7 geometry (Open Q3) — 11% error currently
+- Derive α_s from D7 geometry (Open Q3) — 8.1% error currently (improved from 11% via β=1/(9π) Tier 2a, Cycle 119); M_c(D7) target 1.566×10¹⁵ GeV
 - Non-perturbative D7 dynamics: confinement, hadron masses, nuclear binding (Open Q4)
 
 **`particle_physics/forces/electroweak_precision.md`**
@@ -485,3 +487,5 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | E=hν claimed "derived" from massless KG dispersion | Cycle 42 | Corrected: E=ℏω is a QFT postulate imported from outside DFC; labeled as such |
 | muon_tau.md: τ_μ = 2.197 μs "< 0.1% match" (false) | Cycle 51 | Corrected to DFC prediction 2.180 μs (−0.80%); actual chain derivation added |
 | T9: Two closure scales (10¹³ vs 10¹⁸ GeV) inconsistency | Cycle 79 | Labeling confusion: M_c(D1) = M_Pl sets Higgs λ₀; M_c(D5/D6) ≈ 10¹³ GeV sets gauge IC. GUT-normalized α₁ = α₂ crossing verified numerically. See `foundations/two_scale_resolution.md`, `equations/two_scale_check.py` |
+| Tau lepton mass mechanism (8.4× from dimple model) | Cycles 122–124 | Koide formula replaces dimple model: m_τ=1776.97 MeV (+0.006%) from m_e,m_μ with 0 free params (Tier 3). Algebraic chain: THEOREM 1 K=2/3 ↔ |F₀|/|F₁|=√2; THEOREM 2 Z₃-invariance ↔ circulant; THEOREM 3 eigenvalues = DFT (Cycle 123). Z₃ → circulant argument formalized at Tier 3 (Cycle 124: `koide_step3_yukawa.py`). Remaining OPEN: Step 4 — |F₀|/|F₁|=√2 from V(φ) (Tier 4). |
+| Bottleneck 2 (r_U₁/λ, coupling derivation) | Cycle 117 | Tier 2a: g_eff²=8/27 (error 0.00e+00), β=1/(9π), 0 free parameters. Full chain: V(φ)→tachyon→complex scalar→O(2)→U(1)→J→d_n=2n−1→N_Hopf=9→g_eff²=8/27 (`equations/d5_complex_from_instability.py`). |

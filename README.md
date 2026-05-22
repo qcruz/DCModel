@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~59% complete by internal estimate. Several Standard Model quantities
+Current status: ~59.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -188,7 +188,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~59%** (viability as a theory: ~71%; mathematical rigor: ~47%)
+**Current estimate: ~59.5%** (viability as a theory: ~71.5%; mathematical rigor: ~47.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -208,7 +208,7 @@ is that it *derives* rather than *reconstructs* the Standard Model. Three bottle
 
 1. **D-depth assignment mechanism** — Bottleneck 1 FULLY CLOSED (Cycle 73): PT parameter s=2 exact for φ⁴ kink → s=2 PT has exactly 2 bound states → zero mode unique by Sturm-Liouville → each threshold adds exactly 1 zero mode → n thresholds → SU(n). Combined with Cycles 59–72: D5=U(1), D6=SU(2), D7=SU(3) derived from V(φ). Remaining open: threshold positions α₅, α₆, α₇ from substrate.
 2. **First-principles coupling constants** — Route 3B gives sin²θ_W = 0.231; Cycles 51–52 extended to M_W, G_F, τ_μ (all <1%); Cycle 93: Z boson widths Γ_Z/Γ_inv/R_l/R_b/A_FB^lep (all <5%, Tier 2a); Cycle 94: full DFC–SM Lagrangian assembled (foundations/dfc_sm_lagrangian.md). Bottleneck 2: g² = 2π×β×I₄ compact form proved; 3-step chain f²→r_U1→g² complete given β; β=1/(9π) from Hopf fiber dim sum N_Hopf=9 → g²=8/27 exactly (0.006% vs SM); Cycles 110–112: g_1²=2I₄ derived from V(φ) via BPS superpotential (Q_top=2, I₄=4/3, det(g)=2I₄, Tier 1); Cycle 114: DFC 5D collective coordinate action derived explicitly — both g_XX=I₄ and g_θθ=Q_top=2 shown from the 5D action integrals; two independent routes to g₁²=2I₄ (moduli det and KK formula) agree exactly. Cycle 115: R₁=π/I₄ PROVED algebraically (fiber_radius_derivation.py) — R₁=2π/g₁²=π/I₄ is a consequence of g₁²=det(g)=2I₄; Cycle 106 series holonomy R_n=πd_n/I₄ is now a THEOREM (all three fibers verified, errors 0.00e+00); Tier upgrades: R₁ Tier 4→2, R_n Tier 3→2/3. Cycle 116: d_n=2n−1 DERIVED from V(φ) at Tier 3 (fiber_dimension_derivation.py). Cycle 117: BOTTLENECK 2 CLOSED — Tier 2a (d5_complex_from_instability.py) — D5 complex structure J derived from V(φ) via tachyonic instability: L₂=−∂²−αsech²(x/ξ) is PT s=1 with exact ω²₀=−α/2 < 0 for all α (1 negative eigenvalue); Tier 0 "no preferred direction" → O(2) symmetry → unique V(|Φ|²); U(1) → J (J²=−I error 0.00e+00) → d_n=2n−1 → g_eff²=8/27 (error 0.00e+00, 0 free params, 0.006% vs SM) → β=1/(9π). Full chain tier: all Tier 1 from V(φ), result Tier 2a. Bottleneck 3: v = 246 GeV from D6/D7 overlap integral; λ_H = β/4 UV BC stabilizes Higgs vacuum (Tier 1, Cycle 86).
-3. **S-matrix derivation** — Cycle 89: exact single-kink T-matrix (reflectionless n=2 PT, Tier 1); Cycle 91: effective range theory a_s=3λ, r₀=1.833λ (exact); Cycle 92: kink form factor F(k) exact. α_s: target M_c(D7) = 1.566×10¹⁵ GeV (8.1% gap; Cycle 119). τ lepton mass: Koide formula gives m_τ=1776.97 MeV (+0.006%, 0 free params) from Z₃ circulant Yukawa structure (Cycle 122, Tier 3); Koide ↔ DFT |F₀|/|F₁|=√2 condition proved algebraically (Cycle 123, Tier 1).
+3. **S-matrix derivation** — Cycle 89: exact single-kink T-matrix (reflectionless n=2 PT, Tier 1); Cycle 91: effective range theory a_s=3λ, r₀=1.833λ (exact); Cycle 92: kink form factor F(k) exact. α_s: target M_c(D7) = 1.566×10¹⁵ GeV (8.1% gap; Cycle 119). τ lepton mass: Koide formula gives m_τ=1776.97 MeV (+0.006%, 0 free params) from Z₃ circulant Yukawa structure (Cycle 122, Tier 3); Koide ↔ DFT |F₀|/|F₁|=√2 proved algebraically (Cycle 123); Step 3 (Z₃ isometry → circulant Yukawa) formalized at Tier 3 (Cycle 124: koide_step3_yukawa.py); Step 4 (|F₀|/|F₁|=√2 from V(φ)) Tier 4 open.
 
 The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the correct BPS E_kink
 formula gives E_kink/E_total(λ) = 8/3 exactly — β-independent. β is Tier 3 (reference value);

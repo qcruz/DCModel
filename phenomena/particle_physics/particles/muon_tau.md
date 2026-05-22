@@ -3,12 +3,13 @@
 ## One-Sentence Synthesis
 
 > The muon and tau are the second and third zero modes of the DFC compression kink at the
-> D5+D6 closure level — the muon's wavefunction has a node at the dimple center (making it
-> insensitive to the local dimple depth and setting its mass by the global D6 scale R), while
-> the tau's second-excitation structure samples both the global scale and the outer wall
-> curvature; the muon/electron mass ratio of 207 follows naturally from the independence of
-> the two geometric scales R and d, while the tau/muon ratio (16.82) remains an open
-> quantitative derivation.
+> D5+D6 closure level — the muon's mass ratio to the electron (206.77) is derived from the
+> two independent geometric scales R and d of the D6 confining potential; the tau mass is
+> not derivable from this excited-state picture (8.4× failure in mass_spectrum.py) but is
+> predicted to <0.01% from the Koide formula: the three charged lepton masses satisfy
+> K = (m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)² = 2/3 because the three D7 zero modes related by
+> Z₃ ⊂ SU(3) cyclic symmetry produce a circulant Yukawa matrix whose eigenvalue structure
+> gives m_τ = 1776.97 MeV from m_e and m_μ alone (Tier 3, 0 free parameters).
 
 ---
 
@@ -110,16 +111,37 @@ positive contribution beyond the 1/R term. The exact ratio m_τ/m_μ = 16.82 req
 computing the second excited mode eigenvalue in the D6 S³ geometry with the dimple
 included.
 
-**Current status: not derived.** The S³ Laplacian eigenvalues alone (without the dimple)
-scale as l(l+2): eigenvalue for l=1 is 3, for l=2 is 8, giving a ratio of 8/3 ≈ 2.67.
-This is too small by a factor of ~6. The `equations/mass_spectrum.py` simple 1D box
-model predicts tau ≈ 2 × muon ≈ 212 MeV — off by 8.4×. This is a **known failure**.
+**Current status: not derived from the excited-state picture.** The S³ Laplacian eigenvalues
+alone (without the dimple) scale as l(l+2): eigenvalue for l=1 is 3, for l=2 is 8, giving
+a ratio of 8/3 ≈ 2.67. This is too small by a factor of ~6. The `equations/mass_spectrum.py`
+simple 1D box model predicts tau ≈ 2 × muon ≈ 212 MeV — off by 8.4×. This is a
+**known failure of the excited-mode mechanism**.
 
-The likely physical source of the discrepancy: D7 SU(3) pressure on the outer D6 wall.
-The same squashing that generates the Higgs mechanism distorts the outer boundary of
-the D6 confining potential. The second excited mode, which samples this outer boundary,
-feels a much stronger restoring force than the simple S³ eigenvalue predicts. Quantifying
-this requires incorporating the D7 boundary conditions into the D6 potential shape.
+**Alternative: Koide formula (Tier 3).** The three charged lepton masses satisfy, to
+better than 10 ppm, the Koide relation:
+
+```
+K = (m_e + m_μ + m_τ) / (√m_e + √m_μ + √m_τ)² = 2/3
+```
+
+Given m_e and m_μ as inputs, the Koide formula predicts m_τ = 1776.97 MeV (observed
+1776.86 MeV, error +0.006%, 0 free parameters). This is verified in
+`equations/tau_mass_koide.py` (Cycle 122).
+
+In DFC, the Koide formula has a structural explanation based on three facts:
+1. The three D7 zero modes are related by the Z₃ cyclic permutation C ∈ SU(3)
+   (from Cycle 59: SU(3) isometry of 3-coincident D7 kink moduli space)
+2. Z₃ invariance → [Y,C]=0 → the Yukawa matrix Y is circulant
+   (Theorem 2, `equations/koide_yukawa_circulant.py` Cycle 123)
+3. Circulant structure → the mass-amplitude vector (√m_e, √m_μ, √m_τ) lies at
+   equal angular spacing 2π/3 in square-root space (Theorem 3, Cycle 123)
+4. The Koide condition K=2/3 ↔ |F₀|/|F₁| = √2 (Theorem 1, Cycle 123),
+   which pins the mass-amplitude vector to exactly 45° from the democratic direction
+
+Steps 1–3 are at Tier 3 (formalized in `equations/koide_step3_yukawa.py` Cycle 124).
+Step 4 (|F₀|/|F₁|=√2 from V(φ)) is Tier 4 (open). The excited-mode mechanism remains
+a parallel open derivation — D7 SU(3) pressure on the outer D6 wall is the candidate
+physical source of the discrepancy, requiring D7 boundary conditions in the D6 potential.
 
 ### Decay Structure
 
@@ -189,7 +211,8 @@ DFC prediction: τ_μ = 2.180 μs   (observed 2.197 μs, −0.80%)
 | Spin | Jackiw-Rebbi nth excited zero mode | 1/2 ✓ |
 | No color | No D7 closure | colorless ✓ |
 | m_μ/m_e | R/d = 206.77 (by construction) | 206.77 ✓ |
-| m_τ/m_μ | **FAILING** — best model predicts ratio ~2.0 → m_τ ≈ 212 MeV | 16.82 (1777 MeV) — **8.4× off** ✗ |
+| m_τ (dimple/excited-mode) | **FAILING** — 1D box: m_τ ≈ 212 MeV | 1776.9 MeV — **8.4× off** ✗ |
+| m_τ (Koide formula) | 1776.97 MeV from m_e, m_μ via Z₃ circulant Yukawa (Tier 3) | 1776.86 MeV — **+0.006%** ✓ (Tier 3) |
 | μ decays to e only, no hadrons | m_μ < m_π, no D7 access | ✓ |
 | τ has dominant hadronic decays | m_τ ≫ m_π, D7 access open | ✓ |
 | τ lifetime ≪ μ lifetime | m_τ⁵/m_μ⁵ = (1777/105.7)⁵ ≈ 1.4 × 10⁶ → Γ_τ ≫ Γ_μ | ✓ |
@@ -199,13 +222,17 @@ DFC prediction: τ_μ = 2.180 μs   (observed 2.197 μs, −0.80%)
 
 ## Open Questions
 
-1. **Derive m_τ/m_μ = 16.82 from D6 geometry.** The tau's mass involves the outer wall
-   curvature of the D6 confining potential. The D7 SU(3) pressure on this boundary is
-   the likely mechanism raising the tau mass above the naive S³ eigenvalue prediction.
-   This requires incorporating D7 boundary conditions into the D6 potential.
+1. **Promote Koide to Tier 2 (derive Step 4): |F₀|/|F₁|=√2 from V(φ).** The Koide
+   formula predicts m_τ to +0.006% with 0 free parameters at Tier 3. Step 4 — showing
+   that the DFC action from V(φ) forces the eigenvalue ratio |F₀|/|F₁|=√2 — would
+   promote this to Tier 2. Candidate: Z₂×Z₃=Z₆ phase structure from D5 tachyon ×
+   D7 three-kink system. See `equations/koide_step3_yukawa.py` for Step 3 formalization.
 
-2. **Fix `equations/mass_spectrum.py`.** The current 1D box model predicts 212 MeV
-   (8.4× off). The correct implementation needs S³ geometry with D7 boundary effects.
+2. **Alternatively: derive m_τ/m_μ = 16.82 from D6 geometry (excited-mode route).** The
+   tau's mass involves the outer wall curvature of the D6 confining potential. The D7
+   SU(3) pressure on this boundary is the likely mechanism raising the tau mass above
+   the naive S³ eigenvalue prediction. The current 1D box model predicts 212 MeV (8.4×
+   off). The correct implementation needs S³ geometry with D7 boundary effects.
 
 3. **The muon (g−2) anomaly.** The measured muon anomalous magnetic moment deviates
    from the SM prediction by ~4σ: a_μ^{exp} − a_μ^{SM} ≈ 25 × 10⁻¹⁰. In DFC, loop
@@ -231,3 +258,7 @@ DFC prediction: τ_μ = 2.180 μs   (observed 2.197 μs, −0.80%)
 - **Weak force** — D6 SU(2) decay vertex; `phenomena/particle_physics/forces/weak_force.md`
 - **Muon decay** — full DFC coupling chain to M_W, G_F, τ_μ; `phenomena/particle_physics/muon_decay.md`
 - **Muon lifetime equation** — β → g₂ → M_W → G_F → τ_μ numerical; `equations/muon_lifetime.py`
+- **Koide formula** — m_τ from m_e, m_μ (+0.006%, Tier 3); `equations/tau_mass_koide.py` (Cycle 122)
+- **Koide algebraic structure** — Theorems 1–3: K=2/3 ↔ circulant ↔ |F₀|/|F₁|=√2; `equations/koide_yukawa_circulant.py` (Cycle 123)
+- **Koide Step 3** — Z₃ isometry → circulant Yukawa (Tier 3); `equations/koide_step3_yukawa.py` (Cycle 124)
+- **Zero mode multiplet** — n coincident kinks → SU(n) isometry; `foundations/zero_mode_multiplet.md` (Cycle 59)

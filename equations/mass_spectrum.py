@@ -21,6 +21,14 @@ KNOWN FAILURE:
   three_generations.md for the current working description.
   See equations/fermion_spectrum_full.py for the full failure tracker.
 
+ALTERNATIVE MECHANISM (Koide, Tier 3):
+  The Koide formula K=(m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)²=2/3 predicts
+  m_τ=1776.97 MeV from m_e and m_μ alone (+0.006%, 0 free parameters).
+  DFC origin: Z₃ ⊂ SU(3) cyclic symmetry of 3 coincident D7 kinks → circulant Yukawa.
+  Steps 0-3 of the proof chain: Tier 3. Step 4 (|F₀|/|F₁|=√2 from V(φ)): Tier 4 open.
+  See: equations/tau_mass_koide.py, equations/koide_yukawa_circulant.py,
+       equations/koide_step3_yukawa.py.
+
 FINE-TUNING NOTE:
   The electron mass emerges from near-exact cancellation: box energy ~26 MeV
   minus dimple correction ~26 MeV = 0.511 MeV. A 10% change in dimple depth
@@ -339,3 +347,13 @@ if __name__ == "__main__":
     print(f"  = {box_base:.3f} - {box_base - M_OBS['electron']:.3f} ≈ {M_OBS['electron']:.3f} MeV")
     print(f"  Near-exact cancellation of ~26 MeV terms to get ~0.5 MeV.")
     print(f"  A different mechanism (not near-cancellation) may be needed for m_electron.")
+
+    print("\n--- Koide Formula Alternative (Tier 3) ---")
+    print("  This dimple model fails at 8.4× for the tau. An alternative mechanism")
+    print("  is the Koide formula: K = (m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)² = 2/3.")
+    print("  Koide predicts m_τ = 1776.97 MeV from m_e, m_μ alone (+0.006%, 0 free params).")
+    print("  DFC origin: Z₃ ⊂ SU(3) isometry of 3 coincident D7 kinks → circulant Yukawa.")
+    print("  Proof chain status: Steps 0-3 Tier 3; Step 4 (|F₀|/|F₁|=√2) Tier 4 open.")
+    print("  See: equations/tau_mass_koide.py (Cycle 122)")
+    print("       equations/koide_yukawa_circulant.py (Cycle 123)")
+    print("       equations/koide_step3_yukawa.py (Cycle 124)")
