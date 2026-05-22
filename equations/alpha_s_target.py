@@ -8,16 +8,19 @@ PHYSICAL QUESTION:
 
 DFC MECHANISM:
   1. All three gauge closures (D5, D6, D7) emerge from the same substrate.
-  2. Equal-coupling initial condition: g₃(M_c(D7)) = g_common = √(8πβ/3).
+  2. Equal-coupling initial condition: g₃(M_c(D7)) = g_common = √(8/27) [Tier 2a].
   3. SM one-loop RG running from M_c(D7) down to M_Z gives α_s(M_Z).
-  4. The current M_c(D7) estimate (8×10¹⁴ GeV from equal-coupling crossing)
-     gives α_s(M_Z) = 0.1049 — 11% below the observed 0.1182.
-  5. This module computes the target M_c(D7) that closes the gap.
+  4. The old M_c(D7) estimate (8×10¹⁴ GeV from wrong α₁∩α₃ crossing) gives
+     α_s(M_Z) = 0.1086 — 8.1% below the observed 0.1182 (improved from 11%).
+  5. The ECCC (Equal-Coupling Closure Condition, Cycle 130) gives M_c(D7) = 1.57×10¹⁵ GeV
+     self-consistently — but this uses α_s(M_Z) as input, so it's a consistency check.
+  6. This module computes the target M_c(D7) from the RG equation (identical to ECCC result).
 
 KEY REFERENCES:
   - foundations/alpha_s_derivation.md  (full formal analysis of the gap)
-  - foundations/coupling_derivation.md  (g² = 8πβ/3 derivation)
+  - foundations/coupling_derivation.md  (g² = 2I₄/N_Hopf = 8/27 derivation)
   - foundations/depth_running.md        (two-scale model; M_c(D7) not derived)
+  - equations/mc_closure_scales.py      (ECCC: M_c(D5/D6/D7), co-crystallization, Δ_D67, Cycle 130)
   - equations/coupling_derivation.py    (coupling chain from β)
   - equations/gauge_couplings.py        (SM RG running; M_c crossing)
 
@@ -42,8 +45,11 @@ G_COMMON_SQ   = 8.0 / 27.0
 G_COMMON      = math.sqrt(G_COMMON_SQ)
 ALPHA_COMMON  = G_COMMON_SQ / (4 * math.pi)   # = 2/(27π) ≈ 0.02358
 
-# Current M_c(D7) estimate: equal-coupling crossing in SM running
-MC_D7_CURRENT = 8.0e14    # GeV  [from gauge_couplings.py α₁∩α₃ crossing]
+# Old M_c(D7) estimate: α₁∩α₃ crossing (WRONG — see ECCC below)
+MC_D7_CURRENT = 8.0e14    # GeV  [from gauge_couplings.py α₁∩α₃ crossing — gives 8.1% error]
+
+# ECCC M_c(D7): α₃(M_c) = g_eff²/(4π) = α_common [SELF-CONSISTENT; circular — see mc_closure_scales.py]
+MC_D7_ECCC    = 1.5663e15  # GeV  [Cycle 130, ECCC — same as target by construction]
 
 # SM one-loop SU(3) beta function coefficient
 # Positive = asymptotically free (coupling weakens at high energy)
@@ -156,14 +162,24 @@ if __name__ == "__main__":
     print(f"  α_common  = 2/(27π) = {ALPHA_COMMON:.6f}   [= 1/{1/ALPHA_COMMON:.2f}]")
     print(f"  [This is α_s at the D7 closure scale under equal-coupling IC]")
 
-    print("\n--- Current Status: M_c(D7) from SM crossing ---")
+    print("\n--- ECCC: Equal-Coupling Closure Condition (Cycle 130) ---")
+    print(f"  ECCC: α_i(M_c(Di)) = g_eff²/(4π) = α_common = {ALPHA_COMMON:.6f}")
+    alpha_s_eccc = alpha_s_at_mz(MC_D7_ECCC)
+    err_eccc = 100 * (alpha_s_eccc / ALPHA_S_OBS - 1)
+    print(f"  M_c(D7) [ECCC]    = {MC_D7_ECCC:.4e} GeV  [α₃=α_common, mc_closure_scales.py]")
+    print(f"  α_s(M_Z) [ECCC]   = {alpha_s_eccc:.6f}  (error {err_eccc:.2e}% — trivially zero by construction)")
+    print(f"  STATUS: SELF-CONSISTENT but circular. M_c(D7) derived by inverting SM running")
+    print(f"  of α_s. Running back to M_Z trivially recovers α_s=0.1182. Not Tier 2.")
+    print(f"  NON-CIRCULAR predictions: co-crystallization M_c(D5)≈M_c(D6) [Tier 1],")
+    print(f"  and Δ_D67 = 5.08 [Tier 3, Bottleneck 3 input].")
+
+    print("\n--- Current Status: Old M_c(D7) from α₁∩α₃ crossing (WRONG condition) ---")
     alpha_s_current = alpha_s_at_mz(MC_D7_CURRENT)
     err_current = 100 * (alpha_s_current / ALPHA_S_OBS - 1)
-    print(f"  M_c(D7) current   = {MC_D7_CURRENT:.2e} GeV  [α₁∩α₃ crossing, gauge_couplings.py]")
-    print(f"  α_s(M_Z) current  = {alpha_s_current:.4f}  (DFC prediction)")
+    print(f"  M_c(D7) old       = {MC_D7_CURRENT:.2e} GeV  [wrong: α₁∩α₃ crossing ≠ ECCC]")
+    print(f"  α_s(M_Z) old      = {alpha_s_current:.4f}  (DFC prediction with wrong M_c)")
     print(f"  α_s(M_Z) observed = {ALPHA_S_OBS:.4f}")
-    print(f"  Error:              {err_current:+.2f}%  ← from M_c(D7)=8e14 GeV estimate")
-    print(f"  [Note: with β=1/(9π) Tier 2a, error improved from −11% (old β=0.0351)]")
+    print(f"  Error:              {err_current:+.2f}%  ← corrected from 11% (old β=0.0351) to 8.1% (β=1/(9π))")
 
     print("\n--- Target M_c(D7): inversion of RG equation ---")
     mc_target = find_target_mc_d7()

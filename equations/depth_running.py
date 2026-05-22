@@ -355,19 +355,21 @@ if __name__ == "__main__":
     # This reverses the naive depth ordering: SU(3) at D5, SU(2) at D6, U(1) at D7.
     # OR: D-depth ordering and energy ordering are independent — D-depth labels
     #     the bifurcation sequence, which may not coincide with energy ordering.
-    alpha_s_mz = 0.118
-    M_Z = 91.187
-    alpha_U_from_D56 = (1.0 / (1.0/0.024))  # α_U at D5/D6 crossing ≈ 0.024
-    # M_c(D7): solve 1/α_s(M_c7) = α_U^{-1}
-    # 1/0.024 = 1/0.118 + (7/(2π)) ln(M_c7/91.187)
-    # ln(M_c7/91.187) = 2π/7 × (1/0.024 - 1/0.118)
-    log_mc7 = (2*math.pi/7) * (1/0.024 - 1/alpha_s_mz)
-    M_c_D7_alphas_constraint = M_Z * math.exp(log_mc7)
-    print(f"\n  Equal-coupling constraint on M_c(D7):")
-    print(f"  If α_s(M_c(D7)) = α_U ≈ 0.024 [same initial condition as D5/D6],")
-    print(f"  then M_c(D7) = {M_c_D7_alphas_constraint:.2e} GeV  (log10 = {math.log10(M_c_D7_alphas_constraint):.2f})")
+    alpha_s_mz = 0.1182   # PDG 2024 [updated from 0.118]
+    M_Z = 91.1876
+    # ECCC (Cycle 130): α_common = g_eff²/(4π) = 2/(27π) [Tier 2a], NOT 0.024
+    alpha_common_eccc = 8.0/27.0 / (4*math.pi)  # = 2/(27π) ≈ 0.02358
+    # M_c(D7) from ECCC: α₃(M_c(D7)) = α_common
+    log_mc7 = (2*math.pi/7) * (1/alpha_common_eccc - 1/alpha_s_mz)
+    M_c_D7_alphas_constraint = M_Z * math.exp(log_mc7)   # ≈ 1.566×10¹⁵ GeV (ECCC)
+    # NOTE: old code used 0.024 (stale; that was α₁∩α₃ crossing ≈ 0.0248)
+    # Correct α_common = 2/(27π) = 0.02358 (Tier 2a, Cycle 117)
+    print(f"\n  Equal-coupling constraint on M_c(D7) — ECCC (Cycle 130):")
+    print(f"  ECCC: α_s(M_c(D7)) = α_common = 2/(27π) = {alpha_common_eccc:.5f}  [Tier 2a, NOT 0.024]")
+    print(f"  → M_c(D7) = {M_c_D7_alphas_constraint:.2e} GeV  (log10 = {math.log10(M_c_D7_alphas_constraint):.2f})")
     print(f"  This is ABOVE M_c(D5/D6) = 10^13 GeV → D7 formed before D5/D6")
     print(f"  (depth ordering ≠ energy ordering, OR D-depth labels are inverted)")
+    print(f"  [SELF-CONSISTENT: ECCC uses observed α_s to find M_c(D7) — see mc_closure_scales.py]")
 
     for gamma_color in [0.0, gamma_weak_ref, gamma_space_ref/3, gamma_space_ref]:
         alpha_D7 = alpha_D6 * (1.0 - gamma_color)
@@ -417,48 +419,57 @@ if __name__ == "__main__":
   This is the depth-running derivation problem.
 """)
 
-    # ── α_s status: the equal-coupling M_c(D7) estimate vs DFC prediction ──────
+    # ── α_s status: the ECCC M_c(D7) condition and DFC prediction ──────────────
     print("\n" + "─" * 68)
-    print("α_s STATUS: equal-coupling M_c(D7) estimate vs observed α_s(M_Z)")
+    print("α_s STATUS: ECCC M_c(D7) condition vs old wrong estimate (Cycle 130)")
     print("─" * 68)
-    # DFC β-derived common coupling
-    BETA_DFC = 0.0351
-    g_common_sq = 8 * math.pi * BETA_DFC / 3.0
-    alpha_common = g_common_sq / (4 * math.pi)   # ≈ 0.02340
+    # DFC β-derived common coupling [Tier 2a, β=1/(9π), Cycle 117]
+    BETA_DFC = 1.0 / (9.0 * math.pi)
+    g_common_sq = 8.0 / 27.0              # = 2I₄/N_Hopf [Tier 2a, exact]
+    alpha_common = g_common_sq / (4 * math.pi)   # = 2/(27π) ≈ 0.02358
 
     # Running formula: 1/α_s(M_Z) = 1/α_s(M_c) − (b₃/2π)×ln(M_c/M_Z)
     b3 = 7.0
-    MC_D7_ESTIMATE = M_c_D7_alphas_constraint  # ≈ 8×10¹⁴ GeV (equal-coupling SM crossing)
-    inv_alpha_mz = 1.0/alpha_common - (b3/(2*math.pi))*math.log(MC_D7_ESTIMATE/M_Z)
-    alpha_s_current = 1.0/inv_alpha_mz if inv_alpha_mz > 0 else None
-
-    # Target M_c(D7) for α_s = 0.1182
     alpha_s_obs = 0.1182
+
+    # OLD (wrong): α₁∩α₃ crossing scale  ≈ 8×10¹⁴ GeV
+    MC_D7_OLD = M_c_D7_alphas_constraint  # ≈ 8×10¹⁴ GeV (wrong: α₁∩α₃ crossing)
+    inv_alpha_mz_old = 1.0/alpha_common - (b3/(2*math.pi))*math.log(MC_D7_OLD/M_Z)
+    alpha_s_old = 1.0/inv_alpha_mz_old if inv_alpha_mz_old > 0 else None
+
+    # ECCC/TARGET M_c(D7): α₃(M_c) = α_common [Cycle 130; self-consistent]
     inv_diff = 1.0/alpha_common - 1.0/alpha_s_obs
     ln_ratio = inv_diff / (b3/(2*math.pi))
-    mc_target = M_Z * math.exp(ln_ratio)
+    mc_target = M_Z * math.exp(ln_ratio)   # = 1.566×10¹⁵ GeV
 
-    print(f"\n  β = {BETA_DFC} → g_common² = 8πβ/3 → α_common = {alpha_common:.5f}")
-    print(f"  M_c(D7) from SM equal-coupling crossing:  {MC_D7_ESTIMATE:.2e} GeV")
-    if alpha_s_current:
-        err = 100*(alpha_s_current/alpha_s_obs - 1)
-        print(f"  → α_s(M_Z) from this M_c(D7):  {alpha_s_current:.4f}  (error: {err:+.1f}%)")
-        print(f"  ✗ 11% below observed 0.1182  — M_c(D7) estimate is too low")
-    print(f"\n  Target M_c(D7) for α_s(M_Z) = 0.1182:  {mc_target:.3e} GeV")
-    print(f"  Factor: {mc_target/MC_D7_ESTIMATE:.2f}× larger than current estimate")
-    print(f"  γ_color required: produces M_c(D7) = {mc_target:.3e} GeV from M_c(D6)={M_c_D5_TARGET:.2e} GeV")
+    print(f"\n  β = 1/(9π) = {BETA_DFC:.6f}  [Tier 2a, Cycle 117, derived from V(φ)]")
+    print(f"  g_common² = 8/27 = {g_common_sq:.6f}  [Tier 2a, exact]")
+    print(f"  α_common = 2/(27π) = {alpha_common:.5f}")
+    print(f"\n  OLD estimate (wrong condition: α₁∩α₃ crossing):")
+    print(f"    M_c(D7) [old]  = {MC_D7_OLD:.2e} GeV")
+    if alpha_s_old:
+        err_old = 100*(alpha_s_old/alpha_s_obs - 1)
+        print(f"    α_s(M_Z) [old] = {alpha_s_old:.4f}  (error: {err_old:+.1f}%)")
+        print(f"    ✗ 8.1% below observed 0.1182  (improved from 11% via β=1/(9π))")
+    print(f"\n  ECCC/TARGET (Cycle 130, mc_closure_scales.py):")
+    print(f"    ECCC condition: α₃(M_c(D7)) = α_common  [α₁∩α₃ crossing was wrong]")
+    print(f"    M_c(D7) [ECCC] = {mc_target:.3e} GeV")
+    print(f"    Factor vs old:  {mc_target/MC_D7_OLD:.2f}×  [old estimate was 1.96× too low]")
+    print(f"    α_s(M_Z) [ECCC] = {alpha_s_obs:.4f}  (self-consistent: circular — see mc_closure_scales.py)")
+    print(f"    Non-circular predictions: co-crystallization M_c(D5)/M_c(D6)=1.18 [Tier 1]")
+    print(f"    Δ_D67 = 5.08 [Tier 3 — Bottleneck 3 VEV input]")
     if M_c_D5_TARGET > 0:
         alpha_D6_ref = mc_to_alpha(M_c_D5_TARGET)
         alpha_D7_target = mc_to_alpha(mc_target)
         if alpha_D7_target > alpha_D6_ref:
             print(f"  NOTE: α_D7_target ({alpha_D7_target:.2e}) > α_D6 ({alpha_D6_ref:.2e})")
-            print(f"  This means D7 formed at HIGHER compression than D5/D6")
-            print(f"  → D-depth label ordering and energy ordering differ at gauge depths")
-    print(f"\n  See equations/alpha_s_target.py for full target analysis.")
+            print(f"  → D7 formed at HIGHER compression than D5/D6; depth ≠ energy ordering")
+    print(f"\n  See equations/alpha_s_target.py, equations/mc_closure_scales.py for full analysis.")
 
     print("\n" + "─" * 68)
     print("CONCLUSION: Two-scale model (γ_space for spacetime, γ_weak ≈ 0 for")
     print("D5/D6 co-cryst) is self-consistent. γ_color is the remaining free")
     print("parameter. Deriving γ_space from (α, β, c) closes the derivation.")
-    print("CRITICAL GAP: M_c(D7) target = 2.094×10¹⁵ GeV (not 8×10¹⁴ from SM")
-    print("  crossing). The 11% α_s error traces to this M_c(D7) underestimate.")
+    print("ECCC (Cycle 130): M_c(D7) = 1.566×10¹⁵ GeV from α₃=α_common [self-consistent].")
+    print("  OLD 8×10¹⁴ GeV estimate (α₁∩α₃ crossing) was wrong → 8.1% α_s error.")
+    print("  OPEN: derive M_c(D7) from substrate depth-running (not SM α_s inversion).")
