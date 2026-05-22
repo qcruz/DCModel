@@ -119,41 +119,54 @@ open. This is the remaining Tier 4 item.
 ---
 
 **Step 5 — What the model actually predicts**
-From the single coupling constant β ≈ 0.035 (itself a Tier 3 reference value):
-- g² = 8πβ/3 → common gauge coupling → α_em(M_Z) = 1/129.6 (1.3% error)
+From β = 1/(9π) — itself now Tier 2a, derived from V(φ) alone with zero free parameters
+(Bottleneck 2 closed, Cycle 117):
+- g² = 8πβ/3 → g_eff = 0.54433 (SM 0.5443, 0.006% error)
+- → α_em(M_Z) = 1/129.6 (1.3% error)
 - → sin²θ_W = 0.231 (matches to 0.01%)
 - → M_W = 79.67 GeV (0.9% error), M_Z = 90.86 GeV (0.4% error)
 - → G_F = 1.168×10⁻⁵ GeV⁻² (0.2% error), τ_μ = 2.180 μs (0.8% error)
-- → Thomson cross-section σ_T = 6.37×10⁻²⁹ m² (4.3% error — same source as α_em error)
+- → Thomson cross-section σ_T = 6.37×10⁻²⁹ m² (4.3% error — same α_em systematic)
 - → Neutron lifetime τ_n = 878.4 s (0.1% error)
 - → Higgs mass 124.4 ± 3.7 GeV (within 1σ of 125.25 GeV)
+- → Z boson total width 2456 MeV (1.6% error), N_ν = 3 exactly (Tier 1)
+- → Lorenz number L₀ = π²k_B²/(3e²) universality: Tier 1 structural (Cycle 128)
+- → Tau lepton mass via Koide formula: 1776.97 MeV (+0.006%, 0 free params, Tier 3, Cycle 122–127)
 
-These all trace through a connected chain: one number (β) → one heuristic identification
-(r_U1/λ = 3/(4β)) → the entire electroweak sector. The r_U1/λ identification is the
-unfinished step — it's plausible but not formally derived. Fixing that one link would turn
-~1.3% systematic errors into a rigorous prediction.
+The chain is now: V(φ) → β = 1/(9π) (Tier 2a) → the entire gauge sector.
+The r_U1/λ identification has been formally derived through the gauge coupling derivation
+chain (Cycles 100–117). The remaining ~1.3% systematic in α_em traces to residual
+approximations in the coupling-to-fine-structure running, not to a missing step.
 
 ---
 
 **Known failures (honest list):**
-- Tau lepton mass: model predicts 212 MeV, observed 1777 MeV (8.4× off — mechanism unclear)
-- Strong coupling α_s(M_Z): model gives 0.105 vs 0.118 observed (11% off — M_c(D7) not derived)
+- Tau lepton mass — direct mode picture: model predicts 212 MeV, observed 1777 MeV (8.4× off).
+  The Koide formula gives 1776.97 MeV (+0.006%) from m_e and m_μ with no free parameters (Tier 3,
+  Cycles 122–127), but the derivation of the Koide ratio itself from V(φ) is not yet complete.
+- Strong coupling α_s(M_Z): model gives 0.109 vs 0.118 observed (8.1% off — M_c(D7) not yet
+  derived from substrate parameters; target M_c(D7) = 1.566×10¹⁵ GeV)
 - Neutrino mass hierarchy: predicted ratio 1.34 vs observed 5.71 (4.3× off)
 - ℏ: Planck's constant is not derivable from the substrate parameters alone; it requires
-  connecting to SI units through a path not yet identified (13.2 bifurcation events are
+  connecting to SI units through a path not yet identified (~13.4 bifurcation events are
   needed; the model currently accounts for ~4)
 
 ---
 
-**Where we are now (~38% complete):**
-The structural foundation is solid. The gauge group derivation chain is complete. The weak
-sector quantitative predictions are all within 1%. The two largest open items are: (1)
-formally deriving r_U1/λ from the substrate, which would make the coupling predictions
-rigorous; and (2) deriving the mode count n at each depth from the field equations, which
-would fully promote D5/D6/D7 from "Tier 2 candidates" to "Tier 2 verified."
+**Where we are now (~61.5% complete):**
+The structural foundation is solid. Both major derivation bottlenecks have been closed:
+- **Bottleneck 1** (Cycles 59–74): Why D5 → U(1), D6 → SU(2), D7 → SU(3). The chain from
+  V(φ) to the full Standard Model gauge group is derived with no free parameters.
+- **Bottleneck 2** (Cycles 100–117): The common gauge coupling g_eff = 0.54433 follows from
+  V(φ) with zero free parameters. β = 1/(9π) is Tier 2a.
+
+The weak sector is the quantitatively strongest cluster: M_W, M_Z, G_F, τ_μ all within 1%.
+The tau lepton mass has a new Tier 3 account via the Koide formula.
+The three main remaining gaps are: v = 246 GeV (Bottleneck 3 — Higgs VEV not yet derived),
+α_s (M_c(D7) not yet from substrate parameters), and the Koide step from V(φ) to t = 1/√Q_top.
 
 The model is not finished. But it's not speculative hand-waving either. There's a
-connected mathematical chain from one equation to the periodic table.
+connected mathematical chain from one equation to the gauge coupling of the Standard Model.
 
 ---
 
@@ -567,23 +580,29 @@ DFC starts from a single continuous substrate with a single compression dynamic,
 - **Three generations** from three independent D6 winding sectors (exact mechanism open)
 - **Confinement** from the D7 topology requiring color-neutral combinations
 
-The verified quantitative results are:
-- Neutron lifetime: 878.4 s predicted vs 879.4 s observed (0.1% match)
-- Higgs mass: ~124–125 GeV from RG boundary condition identification (within 1σ)
-- W and Z masses: within 0.3% using SM formulas with the DFC electroweak geometry
+The verified quantitative results (Tier 2a, all < 5% error):
+- Common gauge coupling: g_eff = 0.54433 from V(φ) alone (0.006% — zero free parameters)
+- Weinberg angle sin²θ_W = 0.2312 (< 0.01% — derived from equal-coupling IC + k_Y = 3/5)
+- Neutron lifetime: 878.4 s (0.1% match)
+- Higgs mass: 124.4 ± 3.7 GeV (within 1σ of 125.25 GeV)
+- W boson mass: 79.67 GeV (0.9% match), Z boson: 90.86 GeV (0.4% match)
+- G_F = 1.168×10⁻⁵ GeV⁻² (0.2%), muon lifetime τ_μ = 2.180 μs (0.8%)
+- Z total width: 2456 MeV (1.6%); R_l = 20.75 (0.1%); N_ν = 3 exact (Tier 1)
 - Hubble constant: 67.26 vs 67.40 km/s/Mpc (0.2% match)
+- Tau mass via Koide formula: 1776.97 MeV (+0.006%, 0 free params — Tier 3, Cycle 122–127)
 
 The known failures are:
-- Tau lepton mass: the excited-mode picture gives ~212 MeV vs 1777 MeV observed (8.4× off)
-- Weinberg angle: currently fitted to data, not derived from the closure geometry
-- Dark matter: identified structurally but not derived from first principles
+- Tau lepton mass — excited-mode picture: predicts 212 MeV, observed 1777 MeV (8.4× off;
+  Koide formula gives +0.006% but derivation of the Koide ratio from V(φ) is Tier 3)
+- Strong coupling α_s(M_Z): 8.1% off (M_c(D7) not yet derived from substrate)
+- Neutrino mass hierarchy: ratio 1.34 vs 5.71 (4.3× off)
+- Dark matter: structurally identified but not derived from first principles
 
 The deepest open questions are:
-- What selects U(1), SU(2), SU(3) specifically from the compression dynamics?
-- How does the complex structure of quantum mechanics (the imaginary unit in the Schrödinger
-  equation) emerge from a real classical substrate?
-- What sets the three independent D6 sector geometries that determine lepton masses?
-- Why does D3 localization behavior produce three apparent spatial degrees of freedom (not two, not four)?
+- Why does D3 localization behavior produce three apparent spatial degrees of freedom?
+- What sets the three depth spacings that determine lepton masses?
+- How to derive G_Newton and full GR from the scalar substrate?
+- How to derive the Higgs VEV v = 246 GeV from the D6/D7 overlap integral (Bottleneck 3)?
 
 ---
 

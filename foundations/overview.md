@@ -131,19 +131,32 @@ central ongoing work of the model.
 
 ---
 
+## What Has Been Achieved
+
+Since the initial writing of this document, two of the four central open problems have been resolved:
+
+- **The specific knot topologies U(1), SU(2), SU(3)** are now derived (Cycles 59–74, "Bottleneck 1").
+  The chain: V(φ) → one zero mode per kink (Pöschl-Teller, exact) → n coincident modes → S^{2n-1}
+  → SU(n) isometry. D5 produces U(1) (n=1), D6 produces SU(2) (n=2), D7 produces SU(3) (n=3).
+  The complex structure J comes from the tachyonic instability of a real D5 kink — proved Tier 1.
+
+- **The coupling constant from bifurcation dynamics** is now derived (Cycles 100–117, "Bottleneck 2").
+  The common gauge coupling g_eff = 0.54433 follows from V(φ) alone with zero free parameters.
+  β = 1/(9π) is Tier 2a. This is the model's first Criterion A result: a SM input derived,
+  not reconstructed.
+
 ## What Is Not Yet Complete
 
-The model has the right conceptual foundation and several powerful structural results. What
-it does not yet have:
+- A derivation of the Higgs VEV v = 246 GeV from the D6/D7 overlap integral (Bottleneck 3).
+  DFC provides the UV boundary condition λ_BC = β/4 (Tier 1), but the VEV magnitude requires
+  deriving the D6/D7 threshold positions from the substrate field equation.
+- A formal derivation of D3 localization → three apparent spatial degrees of freedom (not two, not four).
+- A derivation of G_Newton as a function of (α, β, c).
+- The tau lepton mass: the Koide formula gives +0.006% (Tier 3), but deriving the Koide ratio
+  t = 1/√Q_top from the DFC 5D Yukawa action is Tier 4 open.
+- The strong coupling α_s(M_Z): 8.1% off because M_c(D7) is not yet derived from substrate parameters.
 
-- A precise mathematical description of what the "compressed energy field" is at the
-  fundamental level — what equation governs it before bifurcation
-- A derivation of why the specific knot topologies U(1), S³, SU(3) are the ones that form
-  (rather than other topologies)
-- A derivation of the coupling constants from the bifurcation dynamics
-- A description of the Big Bang as a bifurcation event and its cosmological consequences
-
-These are the central open problems. The documents in this repository track progress on all of them.
+These are the central remaining open problems. The documents in this repository track progress on all of them.
 
 ---
 

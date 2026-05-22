@@ -1,7 +1,7 @@
 # Current State of the DFC Model
 
 *Living document — updated periodically as the model develops.*
-*Last reviewed: 2026-05-20 (Cycles 96–117)*
+*Last reviewed: 2026-05-22 (Cycles 96–128)*
 
 ---
 
@@ -15,7 +15,7 @@ complex_substrate, zero_mode_multiplet, threshold_nondegeneracy, mode_count_thre
 d5_complex_structure, complex_zero_mode_gap, born_rule_derivation, alpha_s_derivation,
 coupling_derivation, dfc_sm_lagrangian.
 
-**Phenomena:** 50+ documents — ~37 formalized, remainder placeholders.
+**Phenomena:** 55+ documents — ~42 formalized, remainder placeholders.
 
 *Formalized:* special_relativity, electromagnetism, electric_charge, strong_force,
 weak_force, electroweak, interference, proton_stability, light, general_relativity,
@@ -25,7 +25,9 @@ big_bang, inflation, compton_scattering, pair_production, anomalous_magnetic_mom
 muon_decay, electroweak_precision, casimir_effect, quantum_hall_effect, superfluidity,
 superconductivity, lamb_shift, magnetic_monopoles, arrow_of_time, nuclear_binding,
 neutrino_oscillations, flavor_mixing, hawking_radiation, quark_gluon_plasma,
-strong_cp_problem, hierarchy_problem, aharonov_bohm (Cycle 104), josephson_effect (Cycle 90).
+strong_cp_problem, hierarchy_problem, aharonov_bohm (Cycle 104), josephson_effect (Cycle 90),
+zeeman_effect (Cycle 119), stark_effect (Cycle 120), fine_structure (Cycle 121),
+wiedemann_franz (Cycle 128), wave_particle_duality (audited Cycle 95).
 
 **Equations:** 50+ runnable Python modules. See Equation Layer table below.
 
@@ -86,7 +88,16 @@ Jackiw-Rebbi chirality (Cycle 41), spin-1/2 as minimum spin (Cycle 33), three fe
 generations from SU(3) fundamental dimension (structural, Cycle 35), magnetic monopoles
 absent (π₂(S¹)=0, Cycle 43), R-ratio=N_c×ΣQ²=11/3 exact (Cycle 54), reflectionless
 kink T-matrix (Cycle 89), flux quantization Φ₀=h/(2e) (Cycle 60), resistance quantum
-R_K=h/e² (Cycle 61), superfluid circulation κ₀=h/m_He4 (Cycle 61).
+R_K=h/e² (Cycle 61), superfluid circulation κ₀=h/m_He4 (Cycle 61), Wiedemann-Franz
+universality κ/(σT)=L₀ from single D5 carrier type — τ/m* cancels (Cycle 128).
+
+**10. Tau lepton mass via Koide formula (Tier 3, Cycles 122–127).**
+The 8.4× failure of the excited-mode picture has a new account: the Koide formula
+K=(m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)²=2/3 predicts m_τ=1776.97 MeV from m_e and m_μ
+(+0.006%, 0 free parameters). The algebraic structure is fully derived at Tier 1 (Cycles
+122–126): γ=2π/3 from D5 π₁(S¹)=ℤ + Z₃, K=1/3+2t²/3 at γ=2π/3 (algebraic identity),
+K=2/3 ↔ t=1/√Q_top (exact, error 1.11e-16). Remaining open: derive t=1/√Q_top from the
+DFC 5D Yukawa action (Tier 4, Cycle 127).
 
 **7. k_Y=3/5 derived without GUT assumption.**
 From DFC equal-coupling IC plus SM Dynkin index matching — not borrowed from SU(5) GUT
@@ -111,10 +122,11 @@ the UV boundary condition λ_BC=β/4. Calibrated estimate gives m_H≈122.9 GeV 
 Target overlap I_D67≈10⁻²⁸ (exponentially suppressed from depth gap). D6/D7 threshold
 positions α₆, α₇ are not yet derived from substrate dynamics.
 
-**2. α_s(M_Z) misses by 11%.**
-DFC predicts 0.105 vs observed 0.1182. Root cause: M_c(D7) is not derived from substrate
-parameters. Target M_c(D7)=2.094×10¹⁵ GeV requires factor 2.62× above current 8×10¹⁴
-GeV estimate (Cycle 77). This is the main quantitative failure remaining in the gauge sector.
+**2. α_s(M_Z) misses by 8.1%.**
+DFC predicts 0.109 vs observed 0.1182. Root cause: M_c(D7) is not derived from substrate
+parameters. Target M_c(D7)=1.566×10¹⁵ GeV (improved from 2.094×10¹⁵ after β=1/(9π) Tier 2a,
+Cycle 119). Error improved from 11% to 8.1% with β=1/(9π). This is the main quantitative
+failure remaining in the gauge sector.
 
 **3. Tau lepton mass fails (8.4×).**
 τ mass predicted 212 MeV, observed 1777 MeV. The second-mode linear scaling does not
@@ -134,7 +146,7 @@ requires a tensor structure the scalar field does not directly produce.
 
 ---
 
-## Equation Layer Summary (as of Cycle 117)
+## Equation Layer Summary (as of Cycle 128)
 
 | Module | Status | Key result |
 |---|---|---|
@@ -193,10 +205,20 @@ requires a tensor structure the scalar field does not directly produce.
 | aharonov_bohm.py | Tier 1/2b | AB phase, Φ₀=h/e, Cooper Φ₀^SC=h/(2e) (Tier 1); Φ₀ numerical +1.1% (Tier 2b) |
 | two_scale_check.py | Structural | T9 resolved; crossing at 1.03×10¹³ GeV verified |
 | special_relativity.py | Tier 1 | 7 SR results confirmed; E²=(pc)²+(mc²)² to 1.87×10⁻¹⁶ |
+| zeeman_effect.py | Tier 1/2b | μ_B exact; Landé g-factors exact; Δλ(H-α) −4.6e-2%; g_S 0.002% |
+| stark_effect.py | Tier 1/2b | Quadratic/linear Stark Tier 1; α_pol +6.8% (α_em systematic) |
+| fine_structure.py | Tier 1 | Exact Dirac formula; 2P splitting −4.5% (4× α_em systematic) |
+| tau_mass_koide.py | Tier 3 | Koide K=2/3: m_τ=1776.97 MeV (+0.006%, 0 free params) |
+| koide_yukawa_circulant.py | Tier 1 | Theorems 1–3: Koide ↔ DFT condition ↔ circulant ↔ eigenvalues |
+| koide_step3_yukawa.py | Tier 3 | Z₃ isometry → circulant Yukawa (Step 3) |
+| koide_step4_bps.py | Tier 3 | |F₀|/|F₁|=2/√Q_top; r²=Q_top from lepton masses (18 ppm) |
+| koide_complex_circulant.py | Tier 1 | Theorems 4a–4c: γ=2π/3 (Tier 1); K=2/3↔t²=1/Q_top (err 1.11e-16) |
+| koide_yukawa_overlap.py | Tier 3 | t=1/√Q_top from phase zero mode normalization (Tier 3); moduli metric verified |
+| wiedemann_franz.py | Tier 1/2b | L₀ universality Tier 1; L₀ numerical +2.24% (α_em systematic) |
 
 ---
 
-## Direction — Priority Order (as of Cycle 117)
+## Direction — Priority Order (as of Cycle 128)
 
 **Bottleneck 2 — CLOSED (Cycle 117):**
 g_eff²=8/27 (Tier 2a), β=1/(9π) (Tier 2a), 0 free parameters.
@@ -209,37 +231,43 @@ All weak-sector predictions are now fully parameter-free once v is derived.
 - DFC UV BC λ_BC=β/4 stabilizes Higgs vacuum instability (Tier 1)
 
 **M_c(D7) — High priority (closes α_s):**
-- Target M_c(D7)=2.094×10¹⁵ GeV; current estimate gives 11% error in α_s
+- Target M_c(D7)=1.566×10¹⁵ GeV; current estimate gives 8.1% error in α_s
 - Requires γ_D7≈2.66 per depth step if D5→D7=2 steps (alpha_s_derivation.md)
 - Connected to threshold positions α₇ (Bottleneck 3 substep)
 
+**Koide Step 4d — Tier 3 → 2a:**
+- Derive t=1/√Q_top from DFC 5D Yukawa action explicitly (compute F(γ)=|∫η₀²e^{iΔθ}dx|/I₄)
+- Would promote tau mass prediction to Tier 2 level
+
 **Ongoing structural work:**
-- Derive m_τ mechanism (currently fails 8.4×)
 - Derive G_Newton from (α, β, c)
 - Formalize D3 localization and D4 mass mechanism
 
 ---
 
-## Viability Assessment (Cycle 117)
+## Viability Assessment (Cycle 128)
 
-**Overall completeness: ~56%** (viability ~68%, rigor ~44%)
+**Overall completeness: ~61.5%** (viability ~73%, rigor ~50%)
 
-The model has now crossed a qualitative threshold with Bottleneck 2 closing.
-It now provides the first zero-free-parameter derivation of a SM coupling constant
-directly from the substrate potential V(φ). Key landmarks:
+Key landmarks reached since Cycle 117:
 
+- **Zeeman effect** (Cycle 119): μ_B exact; Landé g-factors exact; Δλ(H-α) −4.6e-2%
+- **Stark effect** (Cycle 120): quadratic/linear Stark Tier 1; α_pol +6.8% (α_em systematic)
+- **Hydrogen fine structure** (Cycle 121): exact Dirac formula; 2P splitting −4.5%
+- **Tau mass Koide formula** (Cycles 122–127): m_τ=1776.97 MeV (+0.006%, 0 free params, Tier 3);
+  Theorems 4a–4c at Tier 1 (error 1.11e-16); Step 4d Tier 3; Step 4d-explicit Tier 4 open
+- **Wiedemann-Franz universality** (Cycle 128): L₀=π²k_B²/(3e²) Tier 1 structural; +2.24% Tier 2b
+- **α_s improved**: 11% → 8.1% with β=1/(9π) Tier 2a; M_c(D7) target 2.094→1.566×10¹⁵ GeV
+
+Cumulative as of Cycle 128:
 - 20+ Tier 2a verified predictions (all <5% error)
 - Multiple Tier 1 structural proofs (Tsirelson, Born rule spin, strong CP, monopoles
   absent, k_Y=3/5, three generations, proton stability, reflectionless T-matrix,
-  flux quantization, resistance quantum, superfluid circulation)
-- Bottleneck 1 CLOSED: D-depth → gauge group chain derived (Cycles 59–74)
-- Bottleneck 2 CLOSED: g_eff²=8/27, β=1/(9π), 0 free params (Cycle 117)
-- T9 (two-scale tension) structurally resolved (Cycle 79)
-- DFC Higgs UV BC stabilizes SM vacuum instability (Tier 1, Cycle 86)
+  flux quantization, resistance quantum, superfluid circulation, Wiedemann-Franz universality)
+- Bottleneck 1 CLOSED (Cycles 59–74), Bottleneck 2 CLOSED (Cycle 117)
+- MRRS: Core 20%, Full SM 48%, Complete 72%
 
-Primary remaining gaps: v=246 GeV (Bottleneck 3), α_s (M_c(D7)), τ lepton mass.
-The model satisfies Criterion A for the gauge coupling constant — a genuine novel
-scientific contribution in the sense that it derives (not reconstructs) a SM input.
-Whether the derivation is rigorous enough to satisfy external referees depends on whether
-the physical identification g₁²=det(g_moduli) from the DFC 5D action is accepted as
-Tier 2 rather than Tier 2 candidate. This is the main open interpretive question.
+Primary remaining gaps: v=246 GeV (Bottleneck 3), α_s (M_c(D7) 8.1% off), Koide Step 4d.
+The model satisfies Criterion A for the gauge coupling constant — derives g_eff from V(φ)
+with zero free parameters. Whether the identification g₁²=det(g_moduli) reaches external
+referee standard is the main open interpretive question.
