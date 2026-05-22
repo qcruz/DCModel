@@ -154,7 +154,10 @@ zero modes of the effective potential near the D6 closure depth:
 - **Muon** (first excited state with a node at the dimple center): mass ∝ 1/R where
   R is the global D6 scale. m_μ/m_e = R/d ≈ 207.
 
-- **Tau** (second excited state): m_τ ≈ m_μ × (geometric factor from D6 curvature).
+- **Tau** (second excited state): m_τ from the excited-mode picture fails (8.4× off in
+  the 1D box model). The current DFC account is the Koide formula: given m_e and m_μ,
+  the relation (m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)² = 2/3 predicts m_τ = 1776.97 MeV
+  (+0.006%, 0 free params, Tier 3 — Cycles 122–127). See `foundations/three_generations.md`.
 
 The ratio m_μ/m_e ≈ 207 corresponds to R/d — two independent length scales in the D6
 S³ geometry (global radius and dimple depth), not two free parameters fitted to data.
@@ -235,6 +238,7 @@ y_e = m_e / v ≈ 2.9 × 10⁻⁶    [Yukawa = Mλ-over-v in DFC language]
 | Left-handed weak coupling | S³ intrinsic orientation at D6 | e_L couples, e_R does not ✓ |
 | Anomalous magnetic moment (leading) | a_e = α_em/(2π) = 0.001136 (Cycle 55) | 0.001160 — −2.01% (Tier 2b) ✗ |
 | Tau mass (2nd excited state) | ~212 MeV predicted (mass_spectrum.py) | 1777 MeV — 8.4× off ✗ |
+| Tau mass (Koide formula) | 1776.97 MeV from m_e,m_μ via Z₃ circulant Yukawa (Tier 3, Cycle 122–127) | 1776.86 MeV — +0.006% ✓ |
 
 ---
 
@@ -287,3 +291,8 @@ y_e = m_e / v ≈ 2.9 × 10⁻⁶    [Yukawa = Mλ-over-v in DFC language]
   `foundations/d5_complex_structure.md` (Cycle 71)
 - **Anomalous magnetic moment** — leading Schwinger term a_e = α_em/(2π) from DFC chain;
   `phenomena/quantum/anomalous_magnetic_moment.md`, `equations/anomalous_magnetic_moment.py`
+- **Tau mass via Koide formula** — m_τ from m_e,m_μ via Z₃ circulant Yukawa (Tier 3, Cycles 122–127);
+  `equations/tau_mass_koide.py`, `equations/koide_yukawa_circulant.py`,
+  `equations/koide_step3_yukawa.py`, `equations/koide_complex_circulant.py`,
+  `equations/koide_yukawa_overlap.py`
+- **Parity violation** — Jackiw-Rebbi zero mode is inherently left-handed; `phenomena/particle_physics/parity_violation.md` (Cycle 41)
