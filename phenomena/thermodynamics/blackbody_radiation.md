@@ -167,26 +167,36 @@ energy is the remaining open step (see above).
 
 ### Wien's Displacement Law
 
-Find the maximum of u(ν, T) by setting du/dν = 0:
+**Critical distinction:** The peak of the energy density in the frequency domain (u(ν))
+and the peak in the wavelength domain (u(λ)) occur at different positions because the
+two forms are related by u(λ) = (c/λ²) u(ν), which introduces a spectral distortion.
+The standard Wien constant b = 2.898 × 10⁻³ m·K refers to the *wavelength-domain* peak.
+
+**Frequency-domain peak:** Find the maximum of u(ν, T) by setting du/dν = 0:
 
 ```
-d/dν [ν³/(e^{hν/kT} − 1)] = 0
-
-Let x = hν/kT:
-d/dx [x³/(e^x − 1)] = 0
-3x²(e^x − 1) − x³ e^x = 0
+d/dx [x³/(e^x − 1)] = 0    [x = hν/kT]
 3(1 − e^{−x}) = x
-→  x ≈ 2.821    [numerical solution]
+→  x_ν ≈ 2.8214    [numerical solution]
+
+hν_peak/kT = 2.8214    (frequency-domain peak only)
 ```
 
-Therefore:
-```
-hν_max = 2.821 kT
-→  ν_max = 2.821 kT/h
-→  λ_max = c/ν_max = hc/(2.821 kT)
+**Wavelength-domain peak** (gives the Wien constant b): Find the maximum of u(λ, T)
+by setting du/dλ = 0. The energy density per unit wavelength u(λ) ∝ λ⁻⁵/(e^{hc/λkT}−1)
+gives a different transcendental equation:
 
-λ_max T = hc/(2.821 k) = b = 2.898 × 10⁻³ m·K    ✓
 ```
+d/dx [x⁵/(e^x − 1)] = 0    [x = hc/λkT]
+5(1 − e^{−x}) = x
+→  x_λ ≈ 4.9651    [numerical solution]
+
+hc/(λ_max kT) = 4.9651
+→  λ_max T = hc/(4.9651 k) = b = 2.898 × 10⁻³ m·K    ✓
+```
+
+Using x_ν = 2.821 to compute b would give hc/(2.821 k) = 5.10 × 10⁻³ m·K — a value
+that does not match the standard Wien constant. Only x_λ = 4.9651 gives the correct b.
 
 ### Stefan-Boltzmann Law
 
@@ -226,7 +236,7 @@ from the substrate (see `foundations/planck_constant_derivation.md`).
 | E = hν (energy proportional to frequency) | Requires quantum of action ℏ — imported from QFT | POSTULATE — ℏ not derived from DFC ✗ |
 | Two photon polarizations | Massless gauge field, transverse only | Two helicity states ✓ |
 | Bose-Einstein statistics | Spin-1 D5 field, even FR phase | Photons are bosons ✓ |
-| Wien's law λ_max T = 2.898 × 10⁻³ m·K | Maximum of Planck curve, x ≈ 2.821 | Confirmed ✓ |
+| Wien's law λ_max T = 2.898 × 10⁻³ m·K | Wavelength-domain peak x_λ = 4.9651 (not frequency-domain x_ν = 2.821) | Confirmed ✓ |
 | Stefan-Boltzmann σ = 5.67 × 10⁻⁸ W/m²/K⁴ | Integral of Planck spectrum | Confirmed ✓ |
 | UV catastrophe resolved | Exponential suppression from discrete KG modes | Resolved ✓ |
 | CMB spectrum T = 2.7255 K | Planck spectrum from thermalized D2 modes | <10⁻⁴ precision ✓ |
@@ -259,6 +269,9 @@ from the substrate (see `foundations/planck_constant_derivation.md`).
 
 ## Connections
 
+- **Equation module** — full numerical verification (Planck spectrum, Wien error 0.000%, Stefan-Boltzmann
+  error 0.0000%, CMB spectrum, UV catastrophe analysis, consistency checks);
+  `equations/blackbody_radiation.py` (Cycle 129)
 - **Light** — photons as massless D2 compression modes, E = hν derived;
   `phenomena/light/light.md`
 - **Quantum mechanics** — discretization of field modes, KG equation;
@@ -269,3 +282,5 @@ from the substrate (see `foundations/planck_constant_derivation.md`).
   `phenomena/thermodynamics/thermodynamics.md`
 - **CMB** — blackbody radiation at T = 2.7255 K, photon decoupling;
   `phenomena/cosmology/cosmic_microwave_background.md`
+- **Planck constant derivation** — status of ℏ as DFC derivation vs postulate;
+  `foundations/planck_constant_derivation.md`

@@ -94,9 +94,9 @@ It avoids both the dimple center AND samples the very outer edge of the potentia
 are steepest. Its mass is set by a combination of the D6 closure scale and the curvature of the
 potential walls.
 
-**Known failure:** The dimple potential model predicts tau/muon ratio = 2.00 (the n=3/n=2 box
-mode ratio from the pure box contribution). The observed ratio is 16.82. The model is 8.4× off for
-the tau mass (predicted ~212 MeV, observed 1777 MeV).
+**Known failure of dimple model:** The dimple potential model predicts tau/muon ratio = 2.00
+(the n=3/n=2 box mode ratio from the pure box contribution). The observed ratio is 16.82. The
+model is 8.4× off for the tau mass (predicted ~212 MeV, observed 1777 MeV).
 
 The likely cause: the three lepton generations are not three excited modes of the same D6 potential
 well. They are more likely ground states of three independent D6 winding sectors (see
@@ -104,7 +104,21 @@ well. They are more likely ground states of three independent D6 winding sectors
 geometric differences between D6 sectors — not on the simple n²-spacing of an excited mode series.
 The dimple model successfully explains the electron/muon ratio but does not predict the tau mass.
 
-See `equations/mass_spectrum.py` for the detailed calculation and failure documentation.
+**Koide formula account (Tier 3, Cycles 122–127):** An alternative mechanism accounts for the
+tau mass with zero free parameters. The Koide formula is a mass relation connecting all three
+charged lepton masses: the sum of the three masses, divided by the square of the sum of the
+three square-root masses, equals two-thirds. Substituting the electron and muon masses, the
+observed tau mass follows to 10 ppm accuracy — and is reproduced by the DFC Koide calculation
+to 0.006% (+0.006%: predicted m_τ = 1776.97 MeV, observed 1776.86 MeV). The DFC mechanism
+proposes that a Z₃ permutation symmetry among the three coincident D7 kinks produces a
+circulant Yukawa coupling matrix, whose eigenvalue structure enforces the Koide relation. This
+accounts for the tau mass as a Tier 3 candidate (structural motivation; Step 3 of the derivation
+chain — proving Z₃ Yukawa invariance from the D7 moduli space integral — remains open).
+
+See `equations/tau_mass_koide.py` and `equations/koide_yukawa_circulant.py` for the numerical
+verification and algebraic structure of the Koide account.
+
+See `equations/mass_spectrum.py` for the dimple model failure documentation.
 
 ---
 
@@ -130,9 +144,12 @@ extra dimension. Overlap with the Higgs (located on one brane) determines the ma
 ### This Model's Approach
 - **One geometric defect** (the dimple) accounts for the electron/muon ratio (206.77, 0.0% error)
   from two independent geometric scales R and d — without fine-tuning between them
-- **Known failure:** The tau mass (the n=3 excited mode) is 8.4× off. The three generations
-  are likely not excited modes of one potential but ground states of three independent D6 winding
-  sectors. This invalidates the "generates all three" claim.
+- **Known failure of dimple model:** The tau mass (the n=3 excited mode) is 8.4× off. The three
+  generations are likely not excited modes of one potential but ground states of three independent
+  D6 winding sectors. This invalidates the "generates all three" claim for the dimple model.
+- **Koide formula alternative (Tier 3):** The tau mass is accounted for to 0.006% (m_τ = 1776.97
+  MeV) via the Koide formula, with a DFC mechanism based on Z₃ permutation symmetry of coincident
+  D7 kinks producing a circulant Yukawa matrix. Step 3 of this derivation remains open (Tier 3).
 - The dimple as a derived consequence of D7 SU(3) closure squashing is a working hypothesis,
   not yet derived from the substrate field equation (Tier 3)
 
@@ -184,5 +201,49 @@ See `../equations/quark_masses.py` for:
 
 See `../equations/fermion_spectrum_full.py` for:
 - Full fermion spectrum summary across all sectors
-- Known failure tracker: tau (8.4×), charm/strange (15%), neutrino mass ratio (4.3×)
+- Known failure tracker: tau (8.4× for dimple model; 0.006% for Koide), charm/strange (15%), neutrino mass ratio (4.3×)
 - Status of unpredicted masses (top, bottom, up, down, neutrinos)
+
+See `../equations/tau_mass_koide.py` for:
+- Koide formula derivation: m_τ = 1776.97 MeV from m_e + m_μ alone (0 free params)
+- Z₃ circle parametrization and DFC mechanism
+
+See `../equations/koide_yukawa_circulant.py` for:
+- Algebraic structure of the Koide formula (Theorems 1–3)
+- DFT condition |F₀|/|F₁| = √2 ↔ Koide K=2/3 proved algebraically
+
+---
+
+## Open Questions
+
+1. **Derive the Koide Step 3 from the D7 substrate.** The algebraic structure of the Koide
+   formula has been proved (Theorem 2: Z₃ invariance ↔ circulant Yukawa; Theorem 3: masses =
+   DFT eigenvalues), but the physical origin of Z₃ symmetry requires proving that the D7 moduli
+   space integral produces a Z₃-invariant Yukawa matrix from three coincident D7 kinks. This
+   is the Step 3 open derivation in `equations/koide_yukawa_circulant.py`.
+
+2. **Derive the Koide ratio condition |F₀|/|F₁| = √2 from V(φ).** Given Z₃ symmetry (Step 3),
+   the constraint that the DFT amplitude ratio equals √2 (equivalently, that the Koide angle is
+   45°) needs to be derived from the substrate field equation — not just verified from data.
+   This is Step 4 in `equations/tau_mass_koide.py`.
+
+3. **Top quark mass from D6/D7 overlap.** The top quark mass 173 GeV is interpreted as a Yukawa
+   coupling y_t ≈ 1, but the mechanism that places the top precisely at O(1) Yukawa — compared
+   to the electron at y_e ~ 10⁻⁶ — requires a derivation from the D6/D7 depth geometry.
+
+4. **First-principles dimple depth from D7 squashing.** The fine-tuning between the box energy
+   (~26 MeV) and dimple correction (~26 MeV) that produces m_e = 0.511 MeV needs a derivation
+   from the substrate field equation at D7 depth (currently Tier 3).
+
+---
+
+## Connections
+
+- `equations/mass_spectrum.py` — dimple model calculation (tau 8.4× failure documented)
+- `equations/quark_masses.py` — κ_q exponential depth-anchoring for quark hierarchy
+- `equations/fermion_spectrum_full.py` — full spectrum failure tracker
+- `equations/tau_mass_koide.py` — Koide formula: m_τ = 1776.97 MeV, 0 free params (Cycle 122)
+- `equations/koide_yukawa_circulant.py` — Koide algebraic structure, Theorems 1–3 (Cycle 123)
+- `foundations/three_generations.md` — three independent D6 winding sectors
+- `foundations/higgs_geometry.md` — S³ squashing mechanism and top quark Yukawa
+- `equations/fermion_spectrum_full.py` — Cycles 59, 65, 69, 81

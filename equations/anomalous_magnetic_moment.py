@@ -6,12 +6,20 @@ Physical question: What does the DFC coupling chain predict for a_e = (g-2)/2?
 DFC mechanism: The one-loop vertex correction to the electron-photon coupling shifts
 the effective magnetic moment by α_em/(2π). The leading Schwinger term depends only on
 α_em at the electron mass scale, which is determined by the DFC coupling chain:
-  β → g² = 8πβ/3 → α_em(M_Z) = 1/129.6 → QED running → α_em(m_e) = 1/140.1
+  β = 1/(9π) [Tier 2a, Cycle 117; 0 free parameters]
+  → g_eff² = 2I₄/N_Hopf = 8/27 [g_eff = 0.54433]
+  → α_em(M_Z) = 1/129.6 → QED running → α_em(m_e) = 1/140.1
   a_e = α_em(m_e) / (2π)
 
+The common gauge coupling g_eff²=8/27 is derived from V(φ) alone via the chain:
+  V(φ) → tachyonic instability → O(2)=U(1) symmetry → complex structure J →
+  d_n=2n−1 → N_Hopf=9 → g_eff²=2I₄/N_Hopf=8/27 (Cycle 117, Tier 2a)
+β=1/(9π) follows from self-consistency: g_eff²=8/27 requires β=1/(9π).
+
 Key references:
-  - equations/coupling_derivation.py: g_common from substrate β
-  - equations/atomic_structure.py:    QED running Δ(1/α) = 10.46
+  - equations/d5_complex_from_instability.py: β=1/(9π) derivation (Cycle 117)
+  - equations/coupling_derivation.py:         g_common from substrate β
+  - equations/atomic_structure.py:            QED running Δ(1/α) = 10.46
   - phenomena/quantum/anomalous_magnetic_moment.md: full DFC account
 
 Usage:
@@ -21,6 +29,9 @@ Usage:
 import math
 import sys
 import os
+
+# Exact β: 1/(9π) [Tier 2a, Cycle 117; derived from V(φ) with 0 free parameters]
+_BETA_EXACT = 1.0 / (9.0 * math.pi)
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -43,7 +54,7 @@ ALPHA_SM_LOW = 1/137.036    # α_em at q→0 (Thomson limit)
 ALPHA_SM_MZ  = 1/127.9      # α_em at M_Z (PDG)
 
 # DFC inputs
-BETA_DFC     = 0.0351       # substrate quartic coupling [Tier 3]
+BETA_DFC     = _BETA_EXACT  # β = 1/(9π) ≈ 0.03537 [Tier 2a, Cycle 117; 0 free params]
 ALPHA_DFC_MZ = 1/129.6      # α_em(M_Z) from DFC holonomy chain [Tier 2a]
 
 # QED threshold matching: Δ(1/α) from M_Z down to m_e
@@ -199,9 +210,10 @@ if __name__ == "__main__":
     alpha_me_sm  = ALPHA_SM_LOW
 
     print(f"\n--- DFC Coupling Chain ---")
-    print(f"  INPUT:  β = {BETA_DFC}")
-    print(f"  INPUT:  g² = 8πβ/3  →  g_common = {(8*math.pi*BETA_DFC/3)**0.5:.4f}")
-    print(f"  INPUT:  α_em(M_Z) = 1/{1/ALPHA_DFC_MZ:.1f}  [DFC, Tier 2a]")
+    print(f"  β = 1/(9π) = {BETA_DFC:.6f}  [Tier 2a, Cycle 117; 0 free params]")
+    print(f"  g_eff² = 2I₄/N_Hopf = 8/27 = {8/27:.6f}  →  g_eff = {(8/27)**0.5:.5f}")
+    print(f"  [g²=8πβ/3 = {8*math.pi*BETA_DFC/3:.6f}, residual vs 8/27 = {abs(8*math.pi*BETA_DFC/3 - 8/27):.2e}]")
+    print(f"  α_em(M_Z) = 1/{1/ALPHA_DFC_MZ:.1f}  [DFC, Tier 2a]")
     print(f"  RUNNING: Δ(1/α) = {DELTA_INV_ALPHA} (QED thresholds M_Z → m_e)")
     print(f"  OUTPUT: α_em(m_e) = 1/{1/alpha_me_dfc:.1f}  [DFC]")
     print(f"  REF:    α_em(m_e) = 1/{1/alpha_me_sm:.3f}  [SM/CODATA]")
@@ -257,7 +269,7 @@ if __name__ == "__main__":
     print(f"  the difference is hadronic vacuum polarization + higher-order corrections.")
     print(f"  DFC −2.01% error has the same α_em origin as for a_e.")
     print(f"  Fermilab anomaly (4σ) is in HVP contribution — requires α_s at low energy,")
-    print(f"  blocked by the 11% DFC α_s error until M_c(D7) is derived from substrate.")
+    print(f"  blocked by the 8.1% DFC α_s error (Cycle 119) until M_c(D7) is derived from substrate.")
 
     print(f"\n--- Tier Classification ---")
     print(f"  Electron a_e:")
@@ -267,7 +279,7 @@ if __name__ == "__main__":
         tier = "Tier 2b (missing higher-order corrections)"
     print(f"    {tier}")
     print(f"    Equation module: anomalous_magnetic_moment.py")
-    print(f"    Free parameters: 1 (β; m_e from data)")
+    print(f"    Free parameters: 1 (m_e from data; β=1/(9π) now derived Tier 2a)")
     print(f"    Predicted: {a_e_dfc:.8f}")
     print(f"    Observed:  {A_E_OBS:.8f}")
     print(f"    Error:     {err_dfc:+.2f}% (systematic, traces to α_em(M_Z))")
