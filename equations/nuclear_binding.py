@@ -37,8 +37,10 @@ DFC mechanism:
 
 Key references:
     - Bethe & Weizsäcker (1935/1936): semi-empirical mass formula
-    - phenomena/particle_physics/nuclear_binding.md — DFC structural account (if it exists)
-    - equations/coupling_derivation.py — α_s from DFC (11% error; M_c(D7) not from substrate)
+    - phenomena/particle_physics/nuclear_binding.md — DFC structural account
+    - equations/coupling_derivation.py — α_s from DFC (8.1% error; M_c(D7) from ECCC)
+    - equations/confinement.py — Λ_QCD=45.9 MeV (Cycle 134)
+    - equations/alpha_s_target.py — M_c(D7) target derivation (Cycle 130)
 
 Status:
     STUB — the pion-nucleon coupling and nuclear binding coefficients are not yet derived
@@ -46,11 +48,21 @@ Status:
     empirical coefficients as a reference for comparison when DFC derivation is complete.
 
     Key failures to document:
-        - α_s(M_Z) = 0.105 (DFC) vs 0.118 (observed): 11% error
+        - α_s(M_Z) = 0.1086 (DFC, Cycle 119 β=1/(9π) Tier 2a) vs 0.1182 (observed): 8.1% error
+        - Λ_QCD = 45.9 MeV (DFC, Cycle 134) vs 210–340 MeV: −83% (8.1% α_s amplified ~38×)
+        - Deuteron B-W: −365.8% error — expected; B-W is a liquid-drop formula valid only
+          for A >> 1; the deuteron is a two-body quantum bound state, not a many-body
+          nuclear fluid. DFC must derive deuteron binding from pion exchange (Yukawa potential),
+          not the volume/surface coefficients.
         - Pion mass m_π: structural (Goldstone from chiral symmetry breaking) but not
           computed from DFC substrate parameters
         - Nucleon mass m_N ≈ 938 MeV: arises mostly from QCD confinement dynamics
           (not from Higgs mechanism); DFC account requires D7 strong-force dynamics
+
+Key references:
+    - equations/confinement.py — Λ_QCD=45.9 MeV from dimensional transmutation (Cycle 134)
+    - equations/alpha_s_target.py — M_c(D7) target 1.57×10¹⁵ GeV from ECCC (Cycle 130)
+    - equations/mc_closure_scales.py — ECCC closure scales (Cycle 130)
 """
 
 import math
@@ -70,7 +82,7 @@ F_PI_NN_SQ_OVER_4PI = 0.0795   # Pion-nucleon coupling squared / 4π (empirical;
 M_NUCLEON_MEV = 938.9  # Average nucleon mass (MeV) — input from data
 
 # ─── DFC status ───────────────────────────────────────────────────────────────
-ALPHA_S_DFC = 0.105    # DFC prediction for α_s(M_Z) — 11% below observed 0.1182
+ALPHA_S_DFC = 0.1086   # DFC prediction for α_s(M_Z) — 8.1% below observed 0.1182 (Cycle 119, β=1/(9π))
 ALPHA_S_OBS = 0.1182   # Observed α_s(M_Z) — PDG 2022
 
 # ─── Key nuclei (A, Z, observed binding energy in MeV) ───────────────────────
@@ -166,10 +178,12 @@ if __name__ == "__main__":
     # DFC α_s status
     alpha_s_err = 100.0 * (ALPHA_S_DFC - ALPHA_S_OBS) / ALPHA_S_OBS
     print(f"DFC α_s(M_Z):      {ALPHA_S_DFC:.4f}  (observed: {ALPHA_S_OBS:.4f},  error: {alpha_s_err:.1f}%)")
-    print(f"  [M_c(D7) not derived from substrate — 11% α_s error blocks strong-force predictions]")
+    print(f"  [M_c(D7) from ECCC (1.57×10¹⁵ GeV, Cycle 130) — 8.1% α_s error; Λ_QCD=45.9 MeV (Cycle 134)]")
     print()
 
     # Bethe-Weizsäcker predictions for key nuclei
+    print(f"  NOTE: B-W is a liquid-drop formula (A>>1); deuteron error expected (two-body quantum state).")
+    print()
     print(f"{'Nucleus':<22} {'A':>5} {'Z':>5} {'B_obs (MeV)':>13} {'B_BW (MeV)':>12} {'Error':>8}")
     print("-" * 68)
     for name, A, Z, B_obs in KEY_NUCLEI:
@@ -203,4 +217,4 @@ if __name__ == "__main__":
     print("  aS from surface D7 mode count relative to bulk")
     print("  aC from D5 Coulomb coupling (derived from β chain — 1.3% error)")
     print("  aA from D6 isospin breaking at the nucleon level")
-    print("  Requires: M_c(D7) from substrate (currently blocked at 11% α_s error)")
+    print("  Requires: M_c(D7) from V(φ) (ECCC gives 1.57×10¹⁵ GeV; 8.1% α_s error persists)")
