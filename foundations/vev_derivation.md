@@ -408,17 +408,20 @@ The consistency condition that both numbers must satisfy is:
    10¹³ GeV; M_c(D1) = M_Pl sets the Higgs λ₀ UV boundary only. See
    `foundations/two_scale_resolution.md`. The remaining issues are Items 2–4 above.
 
-6. **Non-perturbative EWSB mechanism (Cycle 132 — OPEN, Tier 4).** The classical overlap
-   route (I_D67 from d6_d7_overlap.py) cannot close the 2.8×10²⁵ gap. SM RGE cannot
-   drive EWSB in DFC because λ_DFC = β/4 > 0 at M_c provides a positive UV BC that keeps
-   λ positive all the way to M_Z. The most promising candidate is a non-perturbative D6
-   condensate in which the D6 field theory develops a mass gap via dimensional transmutation:
-   α_D6^NP = M_c(D6)² × exp(−c/g_eff²), where c_needed ≈ 15.7. This value brackets π²
-   (9.87) and 2π² (19.74) — natural values for one-loop-suppressed non-perturbative effects
-   (cf. the QCD confinement exponent, c = 2π/α_s at one loop). The gap from π² is ×3×10⁸ too
-   large; from 2π² is ×10⁻⁶ too small. Identifying the D6 gauge theory and its one-loop
-   exact beta function is the key next derivation step. See `equations/ewsb_mechanism.py`
-   for the full quantitative analysis.
+6. **Non-perturbative EWSB mechanism (Cycles 132–133 — Tier 3 candidate).** The classical
+   overlap route (I_D67) cannot close the 2.8×10²⁵ gap. SM RGE cannot drive EWSB in DFC
+   (λ_DFC = β/4 > 0 is a positive UV BC — Tier 1 result, Cycle 132). The required b₀ for
+   a one-loop dimensional transmutation formula v = M_c(D6)×exp(−8π²/(b₀ g_eff²)) is
+   b₀_needed ≈ 10.92, which EXCEEDS the SU(2) maximum of 22/3 ≈ 7.33 — SU(2) alone
+   cannot produce the EW scale (Tier 1 result). **Structural identity (Cycle 133):**
+   b₀_needed ≈ N_Hopf + Q_top = 9 + 2 = 11 = b₀(SU(3) pure gauge). The formula
+   v = M_c(D6)×exp(−27π²/(N_Hopf+Q_top)) gives v = 292 GeV (+19%, Tier 3 candidate,
+   0 free parameters). With the one-instanton measure prefactor √(2π/11), v = 221 GeV
+   (−10%). Neither is within 5%; a DFC prefactor A ≈ 0.842 is needed to close the gap.
+   The DFC interpretation: the D7 SU(3) pure gauge theory, evaluated at M_c(D6) with
+   g_eff², generates the EW scale via the same dimensional transmutation mechanism as
+   QCD, but the identification of the DFC prefactor is an open Tier 4 derivation.
+   See `equations/ewsb_mechanism.py` and `equations/d6_gauge_beta.py`.
 
 ---
 
@@ -438,4 +441,5 @@ The consistency condition that both numbers must satisfy is:
 - `equations/mc_closure_scales.py` — Cycle 130: ECCC closure scales; M_c(D6)=9.70e12, M_c(D7)=1.57e15, Δ_D67=5.085
 - `equations/d6_d7_overlap.py` — Cycle 131: gap factor 2.8×10²⁵; power-law p≈2.16 route; hierarchy problem characterization
 - `equations/ewsb_mechanism.py` — Cycle 132: root-cause analysis; six routes; NP condensate exp(−c/g²) with c≈15.7 most promising; SM RGE BLOCKED (λ stays positive)
+- `equations/d6_gauge_beta.py` — Cycle 133: one-loop b₀ survey; SU(2) BLOCKED (b₀_max=7.33<10.92); SU(3) pure b₀=11=N_Hopf+Q_top; v=292 GeV (+19%, Tier 3); prefactor A≈0.842 gap remains
 - `ISSUES.md` — T9 (Critical), Bottleneck 1 (D-depth assignment), Blocked: v = 246 GeV
