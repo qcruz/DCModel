@@ -127,8 +127,9 @@ temperature.
 
 In DFC terms: the compression field that creates particles (kinks) also mediates the
 resistance to packing those kinks together. When two fermion kinks are forced into the
-same region of D3 space with the same quantum numbers, the antisymmetry of their joint
-wavefunction (from the FR phase) requires the combined state to vanish. The system
+same apparent spatial region (the same D3 localization configuration) with the same quantum
+numbers, the antisymmetry of their joint wavefunction (from the FR phase) requires the
+combined state to vanish. The system
 responds by occupying higher-energy states — this occupation of higher states is the
 Pauli degeneracy pressure.
 

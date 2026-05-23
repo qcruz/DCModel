@@ -29,7 +29,7 @@ ONE-LOOP APPROXIMATION CAVEAT:
 
 THE VEV DERIVATION CHAIN:
   β → λ_DFC = β/4 ≈ 0.0088          [substrate quartic at D6 depth, Cycle 58]
-  β → g² = 8πβ/3 → coupling chain   [Bottleneck 2; heuristic, Cycle 42]
+  β → g_eff²=8/27 → coupling chain   [Bottleneck 2 CLOSED Cycle 117; Tier 2a]
   α_D6 → μ² = α_D6/2                [D6 compression parameter; requires D6/D7 overlap]
   (μ², λ_DFC) → v = √(2α_D6/β)     [VEV from substrate potential minimum]
   v, λ_DFC → SM running → m_H       [Radiative correction (this module)]
@@ -52,10 +52,11 @@ SM ONE-LOOP RGE used here (complete system):
   dλ/dt = [24λ² + 12y_t²λ − 6y_t⁴ − 3/2(3g_2⁴+g_Y⁴+2g_2²g_Y²) + (12g_2²+4g_Y²)λ] / (16π²)
 
 Key references:
-  - foundations/vev_derivation.md     (VEV derivation path; Cycles 53, 58, 79)
+  - foundations/vev_derivation.md     (VEV derivation path; Cycles 53, 58, 79, 131)
   - equations/berger_sphere.py        (Cycle 58: R₄=0; λ=β/4 from substrate)
   - equations/higgs_potential.py      (Higgs mass: 124.4 ± 3.7 GeV)
-  - equations/coupling_derivation.py  (β → g² = 8πβ/3)
+  - equations/mc_closure_scales.py    (Cycle 130: ECCC scales; M_c(D6)=9.70e12, M_c(D7)=1.566e15 GeV)
+  - equations/d6_d7_overlap.py        (Cycle 131: gap analysis; I_D67_req=2.18e-28; gap=2.8e25)
   - foundations/two_scale_resolution.md  (T9 resolved Cycle 79)
   - ISSUES.md                         (T9 resolved; Bottleneck 3)
 
@@ -68,8 +69,8 @@ import math
 # ─── Constants ─────────────────────────────────────────────────────────────────
 
 # DFC substrate
-BETA        = 0.0351        # quartic coupling — Tier 3 reference value
-M_C_D56     = 9.44e12       # GeV — D5/D6 equal-coupling scale (Route 3B)
+BETA        = 1.0 / (9.0 * math.pi)   # β = 1/(9π) [Tier 2a, Cycle 117, d5_complex_from_instability.py]
+M_C_D56     = 9.6978e12     # GeV — D5/D6 ECCC closure scale [Cycle 130, mc_closure_scales.py]
 
 # Observed SM values
 M_Z         = 91.1876       # GeV
@@ -451,8 +452,8 @@ def overlap_integral_framework(beta=BETA, v_target=V_EW):
     mu_req  = vc['mu_required_GeV']
     a_D6    = vc['alpha_D6_required_GeV2']
 
-    # D7 scale estimate from alpha_s_derivation.md (Cycle 77)
-    M_c_D7_target = 2.094e15  # GeV
+    # D7 scale from ECCC (Cycle 130, mc_closure_scales.py)
+    M_c_D7_target = 1.5663e15  # GeV  [ECCC: α₃(M_c(D7)) = α_common]
     alpha_D7_est  = 2.0 * M_c_D7_target**2   # = 2 M_c² in α=2M_c² units (from λ=1/M_c)
 
     # Overlap integral required to give μ²_DFC = α_D6

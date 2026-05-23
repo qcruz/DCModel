@@ -25,7 +25,7 @@
 >
 > **Cycle 86 update:** `equations/vev_derivation.py` (new) provides quantitative
 > Bottleneck 3 analysis. New findings: (1) The SM quartic runs **negative** at
-> M_c(D5/D6) ≈ 9.44×10¹² GeV (SM vacuum metastable there), confirming that DFC must
+> M_c(D5/D6) ≈ 9.70×10¹² GeV (SM vacuum metastable there), confirming that DFC must
 > provide a POSITIVE UV boundary condition λ_BC = β/4 ≈ 0.0088 at M_c. This is a
 > Tier 1 structural result. (2) DFC BC + 2-loop SM running gives m_H = 122.9 GeV
 > (−1.9% error), consistent with higgs_potential.py (124.4 ± 3.7 GeV). (3) Target
@@ -33,6 +33,18 @@
 > (4) The required D6/D7 overlap I_D67 ≈ 10⁻²⁸ — exponential suppression from the
 > D6/D7 depth gap explains its smallness. Blockers: threshold positions (Bottleneck 1)
 > and M_c(D7) (depth-running).
+>
+> **Cycle 130–131 update (ECCC + gap analysis):** ECCC closure scales now available
+> from `equations/mc_closure_scales.py`: M_c(D5)=1.14×10¹³ GeV, M_c(D6)=9.70×10¹² GeV,
+> M_c(D7)=1.57×10¹⁵ GeV, Δ_D67=5.085 (= log(M_c(D7)/M_c(D6))). **Gap analysis**
+> (`equations/d6_d7_overlap.py`, Cycle 131): the narrow-kink sech² profile overlap
+> gives I_sech ≈ ξ_D7/ξ_D6 = exp(−Δ_D67) ≈ 0.006, while the required I_D67 =
+> β v²/(4 M_c(D7)²) ≈ 2.18×10⁻²⁸. **Gap factor: 2.8×10²⁵ (25 orders of magnitude).**
+> All four candidate routes analyzed (cascade, power law, radiative, D6-anchored): none
+> resolves the gap with current DFC depth count. The gap IS the hierarchy problem recast
+> in DFC language. The power-law route (I = (v/M_c(D7))^p with p≈2.16) is the most
+> promising but requires deriving p from the D6/D7 coupling structure. Bottleneck 3
+> remains Tier 4 open.
 
 ---
 
@@ -397,4 +409,6 @@ The consistency condition that both numbers must satisfy is:
 - `phenomena/particle_physics/forces/electroweak_precision.md` — five precision tests
 - `equations/vev_derivation.py` — Cycle 86: Bottleneck 3 quantitative analysis; SM running,
   DFC BC → m_H = 122.9 GeV, target μ = 23 GeV, D6/D7 overlap framework
+- `equations/mc_closure_scales.py` — Cycle 130: ECCC closure scales; M_c(D6)=9.70e12, M_c(D7)=1.57e15, Δ_D67=5.085
+- `equations/d6_d7_overlap.py` — Cycle 131: gap factor 2.8×10²⁵; power-law p≈2.16 route; hierarchy problem characterization
 - `ISSUES.md` — T9 (Critical), Bottleneck 1 (D-depth assignment), Blocked: v = 246 GeV

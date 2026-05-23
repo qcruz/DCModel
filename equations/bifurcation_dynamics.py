@@ -18,10 +18,11 @@ the wrong E_kink. The correct E_kink/E_total(lambda) ratio is the universal
 constant 8/3 for ANY alpha, beta, c — established algebraically and numerically.
 
 Consequences:
-  - beta ≈ 0.035 can no longer be inferred from gamma_space via this formula
-  - beta remains a free parameter of the model (Tier 3 — inferred, not derived)
+  - beta can no longer be inferred from gamma_space via this formula
+  - beta = 1/(9π) is now Tier 2a (Cycle 117: derived from V(φ) tachyonic instability)
   - The depth-running integration run_depths() remains valid and self-consistent
   - M_c(D5) prediction still works if gamma_space is treated as an independent input
+  - M_c(D5) updated to ECCC value 1.1435×10¹³ GeV (Cycle 130, mc_closure_scales.py)
 
 The E_total(lambda) = ΔV * lambda formula is a valid scale combination, but its
 physical interpretation as "total compression budget per kink width" is undermined
@@ -51,7 +52,7 @@ import math
 # ── Physical constants ─────────────────────────────────────────────────────────
 
 M_PLANCK_GEV = 1.22e19      # Planck mass in GeV  (D1 anchor)
-M_C_D5_GEV   = 1.02e13     # Route 3B: D5 closure scale in GeV
+M_C_D5_GEV   = 1.1435e13   # ECCC (Cycle 130): α₁(M_c(D5))=α_common; mc_closure_scales.py
 N_STEPS_D1_D5 = 4           # spacetime bifurcations D1->D5
 
 # ── Core formula ──────────────────────────────────────────────────────────────
@@ -246,10 +247,10 @@ if __name__ == "__main__":
     beta_old_inference = beta_from_gamma(gamma_space_fit)
 
     print(f"  M_Pl = {M_PLANCK_GEV:.3e} GeV")
-    print(f"  M_c(D5) target = {M_C_D5_GEV:.3e} GeV  [Route 3B]")
+    print(f"  M_c(D5) target = {M_C_D5_GEV:.4e} GeV  [ECCC: α₁=α_common, Cycle 130]")
     print(f"  gamma_space (fitted from M_c/M_Pl) = {gamma_space_fit:.6f}")
     print(f"  OLD (retracted) beta inference: beta = (3*gamma/16)^2 = {beta_old_inference:.6f}")
-    print(f"  STATUS: beta is a free parameter of the substrate [Tier 3]")
+    print(f"  STATUS: beta = 1/(9π) = {1.0/(9.0*math.pi):.5f} [Tier 2a, Cycle 117 — no longer a free parameter]")
 
     # --- Verify M_c(D5) prediction
     print("\n--- Verification: M_c(D5) from depth-running (gamma_space as input) ---")
@@ -268,8 +269,8 @@ if __name__ == "__main__":
     print(f"  Error             = {error_pct:+.3f}%  [depth-running self-consistent]")
 
     # --- Physical interpretation: BPS-correct kink energy at D1
-    beta_ref = 0.035     # reference value (Tier 3 — no longer inferred from gamma_D)
-    print(f"\n--- Kink Energy at D1 (BPS-correct formula, beta = {beta_ref} reference) ---")
+    beta_ref = 1.0 / (9.0 * math.pi)   # β = 1/(9π) [Tier 2a, Cycle 117]
+    print(f"\n--- Kink Energy at D1 (BPS-correct formula, beta = 1/(9π) = {beta_ref:.5f} [Tier 2a]) ---")
     phi0_D1 = math.sqrt(alpha_D1 / beta_ref)
     lambda_D1 = math.sqrt(2.0 / alpha_D1)   # c=1
     E_kink_D1_bps = (4.0/3.0) * alpha_D1**1.5 / (beta_ref * math.sqrt(2.0))
@@ -286,7 +287,7 @@ if __name__ == "__main__":
     # S_kink = E_kink * lambda / c = (4/3) * c * alpha^(3/2) / (beta*sqrt(2)) * sqrt(2/alpha)/c
     #        = (4/3) * alpha / beta  [c-independent action]
     # NOTE: S_kink formula depends on beta_ref; hierarchy value still indicative
-    print(f"\n--- Kink Action Hierarchy: S_kink / hbar at each depth (beta = {beta_ref}) ---")
+    print(f"\n--- Kink Action Hierarchy: S_kink / hbar at each depth (β = 1/(9π) = {beta_ref:.5f}) ---")
     print("  S_kink = E_kink * lambda = (4/3) * alpha / beta  [c-independent action, c=1]")
     print(f"  {'D':>4}  {'alpha (GeV^2)':>18}  {'S_kink / hbar':>16}  {'lambda (m)':>14}")
     print(f"  {'-'*4}  {'-'*18}  {'-'*16}  {'-'*14}")
@@ -311,4 +312,4 @@ if __name__ == "__main__":
     print(f"  CORRECT:   E_kink(BPS)/E_total(λ) = 8/3 (constant, beta-independent)")
     print(f"  OPEN:      Find E_normalization that gives gamma_D ∈ (0,1) and depends on beta")
     print(f"  VALID:     Depth-running M_c(D5) = {mc_predicted:.3e} GeV ({error_pct:+.3f}% error) [gamma_space as input]")
-    print(f"  STATUS:    beta ≈ 0.035 remains Tier 3 — reference value, not derived")
+    print(f"  STATUS:    beta = 1/(9π) = {beta_ref:.5f} [Tier 2a, Cycle 117 — derived from V(φ) via tachyonic instability]")
