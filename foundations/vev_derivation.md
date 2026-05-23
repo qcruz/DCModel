@@ -45,6 +45,20 @@
 > in DFC language. The power-law route (I = (v/M_c(D7))^p with p≈2.16) is the most
 > promising but requires deriving p from the D6/D7 coupling structure. Bottleneck 3
 > remains Tier 4 open.
+>
+> **Cycle 132 update — EWSB root-cause analysis:** `equations/ewsb_mechanism.py` (new)
+> **reframes Bottleneck 3** from "derive I_D67 from classical overlap" to "identify the
+> DFC mechanism that generates α_D6 ≈ 1070 GeV²." The DFC hierarchy problem is quantified:
+> α_D6^natural = 2M_c(D6)² ≈ 1.88×10²⁶ GeV², while α_D6^required = βv²/2 ≈ 1070 GeV²;
+> **suppression factor ≈ 5.7×10⁻²⁴ (23.2 orders), Δ_EW = log(M_c(D6)/v) ≈ 24.4.**
+> Six routes analyzed: (A) Natural DFC — 1.8×10²³× too large; (B) SM RGE — λ stays
+> positive (no CW EWSB); DFC STABILIZES the SM vacuum rather than breaking it dynamically
+> via RGE (Tier 1 structural, Route B BLOCKED); (C) Soft mass depth-running — γ_Higgs/γ_space
+> ratio 1.004 (quadratic hypothesis fails by 2.8×10²⁴×); (D) Non-perturbative condensate
+> exp(−c/g_eff²) — c_needed ≈ 15.7, bracketing π² (9.87) and 2π² (19.74) — **MOST
+> PROMISING**; (E) Power law (M_c(D6)/M_c(D7))^p — p ≈ 10.4, no clean integer solution.
+> Next step: identify the D6 field theory whose one-loop exact beta function gives
+> v ~ M_c(D6) × exp(−c_D6/g_D6²) with c_D6 ≈ 15.7.
 
 ---
 
@@ -394,6 +408,18 @@ The consistency condition that both numbers must satisfy is:
    10¹³ GeV; M_c(D1) = M_Pl sets the Higgs λ₀ UV boundary only. See
    `foundations/two_scale_resolution.md`. The remaining issues are Items 2–4 above.
 
+6. **Non-perturbative EWSB mechanism (Cycle 132 — OPEN, Tier 4).** The classical overlap
+   route (I_D67 from d6_d7_overlap.py) cannot close the 2.8×10²⁵ gap. SM RGE cannot
+   drive EWSB in DFC because λ_DFC = β/4 > 0 at M_c provides a positive UV BC that keeps
+   λ positive all the way to M_Z. The most promising candidate is a non-perturbative D6
+   condensate in which the D6 field theory develops a mass gap via dimensional transmutation:
+   α_D6^NP = M_c(D6)² × exp(−c/g_eff²), where c_needed ≈ 15.7. This value brackets π²
+   (9.87) and 2π² (19.74) — natural values for one-loop-suppressed non-perturbative effects
+   (cf. the QCD confinement exponent, c = 2π/α_s at one loop). The gap from π² is ×3×10⁸ too
+   large; from 2π² is ×10⁻⁶ too small. Identifying the D6 gauge theory and its one-loop
+   exact beta function is the key next derivation step. See `equations/ewsb_mechanism.py`
+   for the full quantitative analysis.
+
 ---
 
 ## Connections
@@ -411,4 +437,5 @@ The consistency condition that both numbers must satisfy is:
   DFC BC → m_H = 122.9 GeV, target μ = 23 GeV, D6/D7 overlap framework
 - `equations/mc_closure_scales.py` — Cycle 130: ECCC closure scales; M_c(D6)=9.70e12, M_c(D7)=1.57e15, Δ_D67=5.085
 - `equations/d6_d7_overlap.py` — Cycle 131: gap factor 2.8×10²⁵; power-law p≈2.16 route; hierarchy problem characterization
+- `equations/ewsb_mechanism.py` — Cycle 132: root-cause analysis; six routes; NP condensate exp(−c/g²) with c≈15.7 most promising; SM RGE BLOCKED (λ stays positive)
 - `ISSUES.md` — T9 (Critical), Bottleneck 1 (D-depth assignment), Blocked: v = 246 GeV
