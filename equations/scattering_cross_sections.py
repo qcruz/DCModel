@@ -9,28 +9,29 @@ DFC mechanism:
   - Their interaction vertex is the coupling of the D2 field to the D5 closure charge.
   - At low photon energies (hν << m_e c²), the cross-section is the Thomson limit:
     σ_T = (8π/3) r_e²  where  r_e = α_em / m_e  (classical electron radius in natural units).
-  - The DFC coupling chain gives α_em from the substrate quartic coupling β:
-      β → g² = 8πβ/3 → g_common → sin²θ_W = 3/8 → α₂(M_Z) → QED running → α_em(0)
-  - Combining this with the electron mass m_e (taken as input from data; not yet derived
-    from substrate) gives the first DFC prediction of a measurable physical cross-section.
+  - The DFC coupling chain (36π, Cycle 141) gives α_em from the substrate:
+      V(φ) → g_eff²=8/27 → α_common=2/(27π) → ECCC co-crystallization → 1/α_em(M_Z)=36π+corrections
+      → QED running → α_em(0) = 1/137.23  (+0.14%, Tier 2b)
+  - Combining this with the electron mass m_e (taken as input) gives the Thomson cross-section.
 
-Key results:
-  - DFC: σ_T = (8π/3)(α_DFC(0)/m_e)²   with α_DFC(0) = 1/140.0
+Key results (Cycle 143 — updated to 36π chain):
+  - DFC: σ_T = (8π/3)(α_DFC(0)/m_e)²   with α_DFC(0) = 1/137.23  (+0.14%)
   - Observed: σ_T = 6.6524×10⁻²⁹ m²
-  - DFC prediction: 6.152×10⁻²⁹ m² (−4.2% error)
-  - Error source: entirely from α_em chain (2.1% error in α, squared → 4.2% in σ)
+  - DFC prediction: ~6.67×10⁻²⁹ m² (+0.28% error)  [improved from −4.3% via old chain]
+  - Error source: +0.14% in α propagates to +0.28% in σ_T ∝ α²
 
 Status:
-  - Thomson cross-section: PREDICTED (first physical cross-section from DFC, Cycle 50)
-  - Compton cross-section at finite energy: Klein-Nishina formula implemented with DFC α
-  - Full substrate S-matrix computation: OPEN (s_matrix.py stub)
+  - Thomson cross-section: PREDICTED (Cycle 50); updated Cycle 143 (36π chain, +0.28%)
+  - Compton cross-section: Klein-Nishina formula implemented
+  - Full substrate S-matrix: OPEN (s_matrix.py)
 
 Key references:
-  - equations/coupling_derivation.py   (α_em from DFC substrate via β)
-  - equations/atomic_structure.py      (QED running of α from M_Z to m_e scale)
-  - equations/kink_scattering.py       (Born phase shift — substrate S-matrix foundation)
+  - equations/alpha_em_prediction.py   (36π chain: α_em(M_Z)=1/128.09, Cycle 142)
+  - equations/alpha_em_cocrystallization.py (36π formula, Cycle 141)
+  - equations/atomic_structure.py      (QED running from M_Z to m_e)
+  - equations/coupling_derivation.py   (old chain: 1/129.6, superseded)
+  - equations/kink_scattering.py       (Born phase shift)
   - equations/s_matrix.py              (full S-matrix — STUB)
-  - foundations/coupling_derivation.md (holonomy formula derivation)
 
 Usage:
     python equations/scattering_cross_sections.py
@@ -57,10 +58,15 @@ ALPHA_EM_OBS_0   = 1.0 / 137.036  # α_em(0) = fine structure constant  [PDG 202
 # Observed Thomson cross-section
 SIGMA_T_OBS_M2   = 6.6524587158e-29   # m²  [CODATA 2018]
 
-# DFC coupling chain result (from coupling_derivation.py + atomic_structure.py)
-# β = 0.0351 → g² = 8πβ/3 → α_em(M_Z) = 1/129.6 → QED running → α_em(0) = 1/140.0
-ALPHA_DFC_MZ  = 1.0 / 129.6   # from coupling_derivation.py (1.3% off from observed)
-BETA_DFC      = 0.0351         # Tier 3 substrate quartic coupling
+# DFC coupling chain result — 36π formula (Cycle 141/142)
+# V(φ)→g_eff²=8/27→α_common=2/(27π)→ECCC co-crystallization→1/α_em(M_Z)=128.09 (+0.15%)
+ALPHA_DFC_MZ  = 1.0 / 128.09  # from alpha_em_prediction.py (36π chain, Cycle 142; +0.15%)
+BETA_DFC      = 1.0 / (9.0 * math.pi)  # β=1/(9π) Tier 2a (Cycle 117)
+# α_em(0) from 36π chain using observed Δ_QED=9.136 (Tier 2b, Cycle 142)
+# Note: one-loop QED running from 1/128.09 gives 1/138.6 (−1.1%) due to
+# hadronic vacuum polarization not captured by one-loop pert. QED.
+# The correct α_em(0)=1/137.23 uses the observed total Δ(1/α)=9.136 as input.
+ALPHA_DFC_0   = 1.0 / 137.23  # 36π chain + observed Δ_QED; +0.14% (Tier 2b)
 
 
 # ── QED running: α_em from M_Z to low energy ──────────────────────────────────
@@ -212,31 +218,38 @@ if __name__ == "__main__":
     print("First physical cross-section from the DFC coupling chain")
     print("=" * 70)
 
-    # DFC coupling values
-    alpha_dfc_0  = alpha_em_dfc_low()
+    # DFC coupling values — use ALPHA_DFC_0 (36π + observed Δ_QED) for Thomson/r_e
+    # Note: alpha_em_dfc_low() uses one-loop QED Δ≈10.46, which overestimates due to
+    # hadronic vacuum polarization; ALPHA_DFC_0 uses observed Δ_QED=9.136 (Tier 2b).
+    alpha_dfc_0  = ALPHA_DFC_0     # 1/137.23 from 36π + observed Δ_QED (Tier 2b)
+    alpha_dfc_0_1loop = alpha_em_dfc_low()  # one-loop only: ~1/138.6 (for reference)
     alpha_obs_0  = alpha_em_obs_low()
 
-    print("\n--- DFC Coupling Chain: β → α_em ---")
-    print(f"  β (substrate quartic coupling)    = {BETA_DFC:.4f}   [Tier 3 reference]")
-    print(f"  g² = 8πβ/3                        = {8*math.pi*BETA_DFC/3:.5f}")
-    print(f"  α_em(M_Z) DFC                     = {ALPHA_DFC_MZ:.6f}   [= 1/{1/ALPHA_DFC_MZ:.1f}]")
-    print(f"  α_em(M_Z) observed                = {ALPHA_EM_OBS_MZ:.6f}   [= 1/{1/ALPHA_EM_OBS_MZ:.1f}]")
+    print("\n--- DFC 36π Coupling Chain (Cycle 141/142) ---")
+    print(f"  β = 1/(9π)                        = {BETA_DFC:.6f}   [Tier 2a, Cycle 117]")
+    print(f"  g_eff² = 8/27                     = {8.0/27:.6f}   [Tier 2a, 0 free params]")
+    print(f"  1/α_em(M_Z) DFC  (36π chain)      = 1/{1/ALPHA_DFC_MZ:.3f}   = {ALPHA_DFC_MZ:.6f}")
+    print(f"  1/α_em(M_Z) obs                   = 1/{1/ALPHA_EM_OBS_MZ:.3f}   = {ALPHA_EM_OBS_MZ:.6f}")
+    err_mz = (ALPHA_DFC_MZ - ALPHA_EM_OBS_MZ) / ALPHA_EM_OBS_MZ * 100
+    print(f"  α_em(M_Z) error                   = {err_mz:+.2f}%   [was −1.31% with old chain]")
     running_dfc = _qed_running_full(ALPHA_DFC_MZ)
-    print(f"  QED running M_Z → 0 (all fermions e,μ,τ,u,d,s,c,b):")
-    print(f"    Δ(1/α) = Σ_f (2/3π) N_c Q_f² ln(M_Z/m_f) = {running_dfc['delta_inv_alpha']:.2f}")
-    print(f"  α_em(0) DFC                       = {alpha_dfc_0:.6f}   [= 1/{1/alpha_dfc_0:.1f}]")
-    print(f"  α_em(0) observed (1/137.036)      = {ALPHA_EM_OBS_0:.6f}   [= 1/{1/ALPHA_EM_OBS_0:.1f}]")
+    print(f"  QED running M_Z → 0 (one-loop):")
+    print(f"    Δ(1/α)_1loop = {running_dfc['delta_inv_alpha']:.3f}  [overestimates; hadronic HVP not captured]")
+    print(f"    Δ(1/α)_obs   = 9.136  [observed total; includes HVP; used below]")
+    print(f"  1/α_em(0) via one-loop            = 1/{1/alpha_dfc_0_1loop:.2f}  (−1.1%  [one-loop overestimates Δ])")
+    print(f"  1/α_em(0) via obs Δ_QED (Tier 2b) = 1/{1/alpha_dfc_0:.2f}   (+0.14% used for predictions)")
+    print(f"  1/α_em(0) observed                = 1/{1/ALPHA_EM_OBS_0:.3f}")
     alpha_err = (alpha_dfc_0 - ALPHA_EM_OBS_0) / ALPHA_EM_OBS_0 * 100
-    print(f"  α_em(0) error                     = {alpha_err:+.1f}%")
+    print(f"  α_em(0) error                     = {alpha_err:+.2f}%   [was −2.16% with old chain]")
 
-    print("\n--- Classical Electron Radius ---")
+    print("\n--- Classical Electron Radius (using α_em(0) = 1/137.23, Tier 2b) ---")
     r_e_dfc  = classical_electron_radius(alpha_dfc_0)
     r_e_obs  = classical_electron_radius(ALPHA_EM_OBS_0)
     r_e_codata = 2.8179403227e-15   # m  [CODATA 2018]
     print(f"  r_e (DFC):     {r_e_dfc:.6e} m")
     print(f"  r_e (SM/obs):  {r_e_obs:.6e} m")
     print(f"  r_e (CODATA):  {r_e_codata:.6e} m")
-    print(f"  DFC error:     {(r_e_dfc - r_e_codata)/r_e_codata*100:+.1f}%")
+    print(f"  DFC error:     {(r_e_dfc - r_e_codata)/r_e_codata*100:+.2f}%")
 
     print("\n--- Thomson Cross-Section (low-energy limit, hν << m_e c²) ---")
     sigma_dfc = thomson_cross_section(alpha_dfc_0)
@@ -246,11 +259,12 @@ if __name__ == "__main__":
     print(f"  σ_T (SM):      {sigma_sm:.6e} m²")
     print(f"  σ_T (CODATA):  {SIGMA_T_OBS_M2:.6e} m²")
     sigma_err = (sigma_dfc - SIGMA_T_OBS_M2) / SIGMA_T_OBS_M2 * 100
-    print(f"  DFC error:     {sigma_err:+.1f}%")
+    print(f"  DFC error:     {sigma_err:+.2f}%")
     print(f"")
     print(f"  Error budget:")
-    print(f"    α_em(0) error = {alpha_err:+.1f}%  →  σ ∝ α²  →  σ error ≈ 2×{alpha_err:+.1f}% = {2*alpha_err:+.1f}%  ✓")
-    print(f"    Source: single 1.3% error in α_em(M_Z) from r_U1/λ gap")
+    print(f"    α_em(0) error = {alpha_err:+.2f}%  →  σ ∝ α²  →  σ error ≈ 2×{alpha_err:+.2f}% = {2*alpha_err:+.2f}%  ✓")
+    print(f"    Source: 36π chain (Cycle 141) + observed Δ_QED=9.136 (Tier 2b)")
+    print(f"    Improvement over old chain: −4.3% → {sigma_err:+.2f}%")
     print(f"    m_e taken as PDG input — no additional error from this source")
 
     print("\n--- Klein-Nishina: Compton Cross-Section at Finite Photon Energy ---")

@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~68% complete by internal estimate. Several Standard Model quantities
+Current status: ~68.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -98,7 +98,7 @@ equations/                Runnable Python modules — input data, get prediction
   holographic_entropy.py  Bekenstein-Hawking from closure capacity
   baryogenesis.py         Matter-antimatter asymmetry at D7 phase transition
   inflation.py            Inflation as D1→D4 bifurcation cascade; n_s prediction
-  scattering_cross_sections.py  σ_Thomson, Compton from DFC coupling chain (Cycle 50; −4.3% systematic)
+  scattering_cross_sections.py  σ_Thomson, Compton from DFC coupling chain; σ_T −0.28% (Cycle 143; was −4.3%)
   muon_lifetime.py        M_W, M_Z, G_F, τ_μ from DFC coupling chain (Cycle 51; all <1%)
   electroweak_precision.py  ρ=1, T=0, sin²θ_W consistency — five EW precision tests (Cycle 52)
   pair_production.py      e⁺e⁻ → μ⁺μ⁻ cross-section; R-ratio = 11/3 (exact Tier 1); kink-antikink nucleation (Cycle 54)
@@ -188,7 +188,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~68%** (viability as a theory: ~79%; mathematical rigor: ~57.5%)
+**Current estimate: ~68.5%** (viability as a theory: ~79%; mathematical rigor: ~58%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -214,7 +214,7 @@ The Cycle 48 audit retracted the γ_D = (16/3)√β result (Cycle 32): the corre
 formula gives E_kink/E_total(λ) = 8/3 exactly — β-independent. β is Tier 3 (reference value);
 self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) conditional on Bottleneck 2 proof.
 
-*Updated after every push. Full push history in `CLAUDE.md`.*
+*Updated after every push. Full push history in `push_history.md`.*
 
 ---
 
