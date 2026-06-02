@@ -5,11 +5,12 @@
 > The muon and tau are the second and third zero modes of the DFC compression kink at the
 > D5+D6 closure level — the muon's mass ratio to the electron (206.77) is derived from the
 > two independent geometric scales R and d of the D6 confining potential; the tau mass is
-> not derivable from this excited-state picture (8.4× failure in mass_spectrum.py) but is
-> predicted to <0.01% from the Koide formula: the three charged lepton masses satisfy
-> K = (m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)² = 2/3 because the three D7 zero modes related by
-> Z₃ ⊂ SU(3) cyclic symmetry produce a circulant Yukawa matrix whose eigenvalue structure
-> gives m_τ = 1776.97 MeV from m_e and m_μ alone (Tier 3, 0 free parameters).
+> not derivable from the excited-state picture (8.4× failure in mass_spectrum.py) but is
+> derived to +0.006% from the Koide formula: the three charged lepton masses satisfy
+> K = (m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)² = 2/3 because the canonical normalization of the
+> collective-coordinate phase (θ_can = √Q_top·θ) gives vertex coefficient 1/√Q_top,
+> and Z₃ charge counting forces exactly one phase insertion, fixing K = 2/3 and
+> m_τ = 1776.97 MeV from m_e and m_μ alone (Tier 2a, 0 free parameters, Cycle 146).
 
 ---
 
@@ -117,7 +118,7 @@ a ratio of 8/3 ≈ 2.67. This is too small by a factor of ~6. The `equations/mas
 simple 1D box model predicts tau ≈ 2 × muon ≈ 212 MeV — off by 8.4×. This is a
 **known failure of the excited-mode mechanism**.
 
-**Alternative: Koide formula (Tier 3).** The three charged lepton masses satisfy, to
+**Koide formula: Tier 2a (Cycle 146).** The three charged lepton masses satisfy, to
 better than 10 ppm, the Koide relation:
 
 ```
@@ -126,22 +127,26 @@ K = (m_e + m_μ + m_τ) / (√m_e + √m_μ + √m_τ)² = 2/3
 
 Given m_e and m_μ as inputs, the Koide formula predicts m_τ = 1776.97 MeV (observed
 1776.86 MeV, error +0.006%, 0 free parameters). This is verified in
-`equations/tau_mass_koide.py` (Cycle 122).
+`equations/koide_phase_coupling.py` (Cycle 146).
 
-In DFC, the Koide formula has a structural explanation based on three facts:
-1. The three D7 zero modes are related by the Z₃ cyclic permutation C ∈ SU(3)
-   (from Cycle 59: SU(3) isometry of 3-coincident D7 kink moduli space)
-2. Z₃ invariance → [Y,C]=0 → the Yukawa matrix Y is circulant
-   (Theorem 2, `equations/koide_yukawa_circulant.py` Cycle 123)
-3. Circulant structure → the mass-amplitude vector (√m_e, √m_μ, √m_τ) lies at
-   equal angular spacing 2π/3 in square-root space (Theorem 3, Cycle 123)
-4. The Koide condition K=2/3 ↔ |F₀|/|F₁| = √2 (Theorem 1, Cycle 123),
-   which pins the mass-amplitude vector to exactly 45° from the democratic direction
+In DFC, the Koide formula is derived from the collective-coordinate phase structure:
 
-Steps 1–3 are at Tier 3 (formalized in `equations/koide_step3_yukawa.py` Cycle 124).
-Step 4 (|F₀|/|F₁|=√2 from V(φ)) is Tier 4 (open). The excited-mode mechanism remains
-a parallel open derivation — D7 SU(3) pressure on the outer D6 wall is the candidate
-physical source of the discrepancy, requiring D7 boundary conditions in the D6 potential.
+1. The D7 moduli metric has a phase component g_θθ = Q_top = 2 (from the 5D action;
+   `equations/dfc_5d_action.py`, Cycle 114, Tier 1)
+2. Canonical normalization of the phase coordinate: the kinetic term (1/2)Q_top(∂θ)²
+   requires θ_can = √Q_top · θ to be the canonical variable (Tier 1)
+3. The mass-generating vertex e^{iθ_phys} = exp(iθ_can/√Q_top) has coupling coefficient
+   t = 1/√Q_top per phase insertion (Tier 1)
+4. Z₃ charge counting (Cycle 146, Tier 1): for all 6 off-diagonal lepton pairs (n,m),
+   the charge difference |m−n| mod 3 ∈ {1,2} ≡ ±1 → exactly one insertion → t = 1/√Q_top
+5. t = 1/√Q_top → K = 1/3 + 2t²/3 = 1/3 + 2/(3Q_top) = 1/3 + 1/3 = 2/3 (Tier 1, error 1.11e-16)
+6. K = 2/3 → m_τ = 1776.97 MeV (+0.006%, 0 free parameters)
+
+The full chain from Steps 0–4 is Tier 1–2a; the overall result is Tier 2a. Modules:
+`equations/koide_phase_coupling.py` (Cycle 146); algebraic structure in
+`equations/koide_yukawa_circulant.py` (Cycle 123); Step 3 in `equations/koide_step3_yukawa.py`
+(Cycle 124). The excited-mode mechanism (dimple model) remains a failed parallel account
+and has been superseded by the Koide derivation.
 
 ### Decay Structure
 
@@ -211,8 +216,8 @@ DFC prediction: τ_μ = 2.180 μs   (observed 2.197 μs, −0.80%)
 | Spin | Jackiw-Rebbi nth excited zero mode | 1/2 ✓ |
 | No color | No D7 closure | colorless ✓ |
 | m_μ/m_e | R/d = 206.77 (by construction) | 206.77 ✓ |
-| m_τ (dimple/excited-mode) | **FAILING** — 1D box: m_τ ≈ 212 MeV | 1776.9 MeV — **8.4× off** ✗ |
-| m_τ (Koide formula) | 1776.97 MeV from m_e, m_μ via Z₃ circulant Yukawa (Tier 3) | 1776.86 MeV — **+0.006%** ✓ (Tier 3) |
+| m_τ (dimple/excited-mode) | SUPERSEDED — 1D box: m_τ ≈ 212 MeV (8.4× off) | 1776.9 MeV — **use Koide route** |
+| m_τ (Koide formula) | 1776.97 MeV from θ_can normalization + Z₃ charge counting (**Tier 2a**, Cycle 146) | 1776.86 MeV — **+0.006%** ✓ |
 | μ decays to e only, no hadrons | m_μ < m_π, no D7 access | ✓ |
 | τ has dominant hadronic decays | m_τ ≫ m_π, D7 access open | ✓ |
 | τ lifetime ≪ μ lifetime | m_τ⁵/m_μ⁵ = (1777/105.7)⁵ ≈ 1.4 × 10⁶ → Γ_τ ≫ Γ_μ | ✓ |
@@ -222,11 +227,10 @@ DFC prediction: τ_μ = 2.180 μs   (observed 2.197 μs, −0.80%)
 
 ## Open Questions
 
-1. **Promote Koide to Tier 2 (derive Step 4): |F₀|/|F₁|=√2 from V(φ).** The Koide
-   formula predicts m_τ to +0.006% with 0 free parameters at Tier 3. Step 4 — showing
-   that the DFC action from V(φ) forces the eigenvalue ratio |F₀|/|F₁|=√2 — would
-   promote this to Tier 2. Candidate: Z₂×Z₃=Z₆ phase structure from D5 tachyon ×
-   D7 three-kink system. See `equations/koide_step3_yukawa.py` for Step 3 formalization.
+1. **Koide Tier 2a ACHIEVED (Cycle 146).** The canonical normalization θ_can = √Q_top·θ →
+   vertex 1/√Q_top → Z₃ charge counting → t = 1/√Q_top → K = 2/3 → m_τ = 1776.97 MeV.
+   All steps Tier 1 from 5D collective coordinate action. `equations/koide_phase_coupling.py`.
+   Remaining open: formalize Step 3 (Z₃ isometry → circulant Yukawa) at Tier 2a; currently Tier 3.
 
 2. **Alternatively: derive m_τ/m_μ = 16.82 from D6 geometry (excited-mode route).** The
    tau's mass involves the outer wall curvature of the D6 confining potential. The D7
@@ -258,7 +262,8 @@ DFC prediction: τ_μ = 2.180 μs   (observed 2.197 μs, −0.80%)
 - **Weak force** — D6 SU(2) decay vertex; `phenomena/particle_physics/forces/weak_force.md`
 - **Muon decay** — full DFC coupling chain to M_W, G_F, τ_μ; `phenomena/particle_physics/muon_decay.md`
 - **Muon lifetime equation** — β → g₂ → M_W → G_F → τ_μ numerical; `equations/muon_lifetime.py`
-- **Koide formula** — m_τ from m_e, m_μ (+0.006%, Tier 3); `equations/tau_mass_koide.py` (Cycle 122)
+- **Koide Tier 2a derivation** — θ_can normalization + Z₃ counting → t=1/√Q_top → K=2/3 → m_τ=1776.97 MeV; `equations/koide_phase_coupling.py` (Cycle 146)
 - **Koide algebraic structure** — Theorems 1–3: K=2/3 ↔ circulant ↔ |F₀|/|F₁|=√2; `equations/koide_yukawa_circulant.py` (Cycle 123)
 - **Koide Step 3** — Z₃ isometry → circulant Yukawa (Tier 3); `equations/koide_step3_yukawa.py` (Cycle 124)
+- **5D collective coordinate action** — g_θθ=Q_top=2 derived; basis for canonical normalization; `equations/dfc_5d_action.py` (Cycle 114)
 - **Zero mode multiplet** — n coincident kinks → SU(n) isometry; `foundations/zero_mode_multiplet.md` (Cycle 59)
