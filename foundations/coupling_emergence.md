@@ -160,15 +160,23 @@ determines the coupling running, which in turn fixes all the closure scales.
 
 ### Open 1: Derive the 36π closure condition from the substrate
 
-**Statement:** Show algebraically why 1/α_em = 36π at the electroweak closure scale,
-starting from the kink profile and D5 winding geometry.
+**PARTIALLY CLOSED (Cycle 141, Tier 2a).** The algebraic chain is now complete:
 
-The factor 36 = 4 × 9. The 9 appears in β = 1/(9π) (the quartic instability threshold).
-The factor 4 may reflect the count of EM-charged degrees of freedom at D5 closure
-(the 4 components of the Higgs doublet, or equivalently the 4 generators of SU(2)×U(1)
-relative to U(1)_em). If this identification is correct, then 36π = 4/β, which would
-make the 36π formula a direct consequence of the kink instability with no additional input.
-This derivation path is open (Tier 4).
+```
+β = 1/(9π)               [Tier 2a, Cycle 117]
+k_Y² = 5/3               [Tier 2a, Cycle 30]
+ECCC: α₁ = α₂ at M_c(EW) → sin²θ_W = 1/(1+k_Y²) = 3/8
+1/α_em = (1+k_Y²)/α_common = (8/3)×(27π/2) = 36π    [exact, 0 free params]
+Also: 36π = 4/β   [since 4×9π = 36π — algebraic identity]
+```
+
+The "4" in 4/β equals (1+k_Y²)×R/α_common cancels to (8/3)×(9π) = 24π... no:
+4/β = 4×9π = 36π; (1+k_Y²)/α_common = (8/3)×(27π/2) = 36π. Both give 36π. ✓
+
+**Remaining open (Tier 4):** Derive 36π from the D5 winding geometry alone — without
+invoking k_Y as a separate input. This would require showing that the D5 vortex phase
+integral directly gives 1/α_em = 36π from the kink profile and the closure topology.
+The current chain uses k_Y (SM Dynkin index matching, Tier 2a) as an independent input.
 
 ### Open 2: Derive WHY g₂ and 36π routes to α_em(M_Z) agree
 

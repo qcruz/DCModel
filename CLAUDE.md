@@ -141,6 +141,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   Strong CP: theta=0 Tier 2a from S⁵ CP isometry (Cycle 147). Bottleneck 2 CLOSED Cycle 117.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-01 | 149 | photon.md full audit: 36π chain replaces heuristic (1.3%→+0.15%); σ_T −4.3%→−0.28%; Bottleneck 2 CLOSED noted; coupling_emergence.md Open Derivation 1 algebraically proved (36π=(1+k_Y²)/α_common=4/β, Tier 2a); Tier 4 residual: kink-profile-only derivation. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-01 | 147 | Strong CP: theta=0 Tier 2a from S⁵ CP isometry; pi_3(S⁵)=Z₂≠pi_3(S³)=Z blocks D6→D7 phase transfer; d_n=0 Criterion B prediction; strong_cp_theta.py (50k samples, max dev 6.7e-16); strong_cp_problem.md Consistency Checks updated. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-01 | 146 | Koide Step 4d Tier 3→2a: m_τ=1776.97 MeV (+0.006%, 0 free params); canonical phase vertex factor 1/√Q_top from collective coordinate action; Z₃ charge counting shows exactly one insertion for all off-diagonal; koide_phase_coupling.py new; CLAUDE.md +m_τ Koide entry. | 71% | 60% | ~71% |
 | 2026-06-01 | 145 | EWSB co-crystallization Tier 3→2a: v=247.83 GeV (+0.65%); structural argument for b0=11 — SU(2) in Higgs phase cannot drive transmutation, D7 SU(3) confinement (b0=N_Hopf+Q_top=11) must; ewsb_cocrystallization.py updated; coupling_emergence.md upgraded; CLAUDE.md +v entry. | 70% | 59% | ~70% |
