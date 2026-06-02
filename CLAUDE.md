@@ -141,6 +141,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   Strong CP: theta=0 Tier 2a from S⁵ CP isometry (Cycle 147). Bottleneck 2 CLOSED Cycle 117.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-02 | 153 | arg(det M_q)=0: equations/arg_det_mq_zero.py (new) — 5-step chain; Steps A-C Tier 2a/1; Step D Tier 3 (D6/D7 overlap real Hermitian pending); theta-bar=0 Tier 3; J=3.08e-05≠0 consistent (CKM = D6 mixing); weak/strong ratio=2.3e10 explained. strong_cp_problem.md Open Q2 PARTIALLY RESOLVED. Bottleneck 3 progress: arg(det M_q) Tier 3 structural argument complete. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-02 | 152 | electroweak_precision.md audit: global fit chain updated (β=0.0351→1/(9π), g_eff 0.5423→0.54433, v=246→247.83 GeV); error attribution corrected (r_U1/λ heuristic→ECCC M_c from SM running, B2 CLOSED noted); Open Q2 RESOLVED Cycle 145 Tier 2a. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-02 | 151 | strong_force.md audit: α_s row 8.1%→+0.006% Tier 2a (ECCC Direction B, Cycle 144); Λ_QCD row clarified (−83% threshold-matching issue, not α_s gap); Open Q3 RESOLVED; note rewritten. ISSUES.md: strong_force.md α_s updated; muon_tau.md stale note cleaned. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-02 | 150 | w_z_bosons.md audit: Coupling chain subsection added (β→g_eff→ECCC→M_W=79.67 GeV −0.88%/M_Z=90.86 GeV −0.36%/G_F +0.18%); v_DFC=247.83 GeV EWSB co-crystallization noted; Consistency Checks updated with Tier 2a rows for M_W, M_Z, G_F, v; g_W OPEN→Tier 2a (−0.19%); Open Question 2 updated PARTIALLY RESOLVED; Connections: 3 new equation modules. | 71.5% | 60.5% | ~71.5% |
@@ -158,7 +159,8 @@ Recent cycles (full history: push_history.md):
 
 Next milestone: prove structural identity A−B = ln(1/α_em(0)) algebraically (Tier 4→1);
   strong CP formation argument Tier 3→2a (formal nucleation path: theta=0 vs theta=pi energy);
-  quark mass matrix phase arg(det M_q)=0 from D6/D7 interface.
+  arg(det M_q)=0 structural argument COMPLETE Tier 3 (Cycle 153); remaining = explicit D6/D7
+  overlap integral to promote to Tier 2a.
 
 Model Reconcilability Risk Score (MRRS) — see reconcilability_risk.md for full analysis:
   Core gauge/coupling sector:      20%   (was 28%; Bottleneck 2 closed Cycle 117: −8%)
