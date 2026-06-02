@@ -444,7 +444,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **`particle_physics/strong_cp_problem.md`**
 - S⁵ CP isometry and theta=0 fixed point: VERIFIED Cycle 147 (Tier 2a); `equations/strong_cp_theta.py`
 - Formation selection theta=0 vs theta=pi: Tier 3 — structural argument (kink nucleates at phi0>0 real positive); formal nucleation path (energy comparison) still OPEN → Tier 3→2a candidate
-- Physical theta-bar = theta_QCD + arg(det M_q): D6/D7 quark phase relation not derived; arg(det M_q)=0 required but unproved — OPEN
+- Physical theta-bar = theta_QCD + arg(det M_q): **PARTIALLY RESOLVED Cycle 153 (Tier 3)** — arg(det M_q) = 0 in DFC natural basis (mass eigenstate basis); D6/D7 overlap operator real Hermitian claim is the remaining Tier 3 gap. `equations/arg_det_mq_zero.py`.
 - Criterion B prediction: no axion; falsifiable by ADMX/CASPEr etc.
 
 **`particle_physics/particles/neutrinos.md`**
