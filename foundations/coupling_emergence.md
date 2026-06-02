@@ -197,6 +197,7 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 | sin²θ_W from Route 3B | 0.2312 | 0.2312 | ✓ 0.01% |
 | α_s from ECCC+α_em(0) | 0.11821 | 0.11820 | ✓ +0.006% |
 | α_em(0) from ECCC+α_s | 1/136.98 | 1/137.04 | ✓ −0.044% |
+| EW VEV v (EWSB co-crystallization) | 247.83 GeV | 246.22 GeV | ✓ +0.65% |
 | SU(N) structure from topology | not derived | — | ✗ open |
 | 36π condition from kink profile | not derived | — | ✗ open |
 

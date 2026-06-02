@@ -134,13 +134,14 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~69%  (viability: ~80%, mathematical rigor: ~58%)
+Current estimate: ~70%  (viability: ~81%, mathematical rigor: ~59%)
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
-  α_s gap now closed to 0.006% via ECCC (Cycle 144). Koide Step 4d: F(γ)=1/√Q_top from D5 vortex BVP.
-  EWSB co-crystallization v=247.83 GeV (Tier 3→2a). Bottleneck 2 CLOSED Cycle 117.
+  α_s gap closed to 0.006% (Cycle 144); v=247.83 GeV Tier 3→2a (Cycle 145). Koide Step 4d: F(γ)=1/√Q_top from D5 vortex BVP.
+  Bottleneck 2 CLOSED Cycle 117.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-01 | 145 | EWSB co-crystallization Tier 3→2a: v=247.83 GeV (+0.65%); structural argument for b0=11 — SU(2) in Higgs phase cannot drive transmutation, D7 SU(3) confinement (b0=N_Hopf+Q_top=11) must; ewsb_cocrystallization.py updated; coupling_emergence.md upgraded; CLAUDE.md +v entry. | 70% | 59% | ~70% |
 | 2026-06-01 | 144 | ECCC self-consistency: α_s gap 8.1%→0.006% via correct M_c(D7) condition; α_em(0)=1/136.98 (−0.044%); alpha_em_selfconsistency.py; foundations/coupling_emergence.md stub; internal 36π↔g₂ tension documented. | 69% | 58% | ~69% |
 | 2026-05-27 | 143 | 36π chain propagated downstream: scattering_cross_sections.py σ_T −4.3%→−0.28%; atomic_structure.py H levels −4.2%→+0.28%; stale error-budget text fixed; CLAUDE.md rewrite (50% reduction); push_history.md + foundations/scientific_merit.md created. | 68.5% | 58% | ~68.5% |
 | 2026-05-27 | 142 | α_em prediction chain: 36π → 1/α_em(M_Z)=128.09 (+0.15%); 1/α_em(0)=137.23 (+0.14%); 10× improvement; downstream σ_T/a_e/r_e all now <0.3% error. | 68% | 57% | ~68% |
@@ -333,6 +334,7 @@ Full criteria, tier system explanations, completeness milestones, and evaluation
 | R_b = Γ_bb̄/Γ_had (0.2163) | z_boson_decays.py | 0.2197 | 0.21629 | +1.58% | 2 |
 | A_FB^lep (0.01626) | z_boson_decays.py | 0.01677 | 0.01626 | +3.17% | 2 |
 | α_s(M_Z) [ECCC+α_em(0)] | alpha_em_selfconsistency.py | 0.11821 | 0.11820 | +0.006% | 0 (SM α_em(0) input) |
+| EW VEV v (246 GeV) | ewsb_cocrystallization.py | 247.83 GeV | 246.22 GeV | +0.65% | 2 (M_c(D5,D6) from ECCC) |
 
 ### Current Tier 2b Predictions (equation exists; >5% error or leading-order only)
 
