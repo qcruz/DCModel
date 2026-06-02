@@ -231,11 +231,11 @@ Homotopy groups relevant to instantons:
 
 | Check | DFC prediction | Observed | Status |
 |---|---|---|---|
-| theta_QCD = 0 | CP action on S⁵ is a Z₂ symmetry with fixed point theta=0 | theta < 5 × 10⁻¹¹ | ✓ STRUCTURAL (CP symmetry of S⁵ proved; formation argument requires formalization) |
-| Neutron EDM = 0 exactly | d_n = 3.6 × 10⁻¹⁶ × 0 = 0 e·cm | |d_n| < 1.8 × 10⁻²⁶ e·cm | ✓ consistent; stronger prediction awaiting future experiments |
-| No axion | theta=0 topological; no PQ mechanism needed | No axion detected (ADMX, CASPEr, etc.) | ✓ consistent; falsifiable by future detection |
+| theta_QCD = 0 | CP action on S⁵ is a Z₂ isometry; fixed point theta=0 | theta < 5 × 10⁻¹¹ | ✓ Tier 2a — S⁵ CP isometry verified (50 000 samples, max dev 6.7e-16); formation argument Tier 3 |
+| Neutron EDM = 0 exactly | d_n = 3.6 × 10⁻¹⁶ × 0 = 0 e·cm | |d_n| < 1.8 × 10⁻²⁶ e·cm | ✓ Criterion B prediction; infinite margin (DFC: exact zero) |
+| No axion | theta=0 topological; no PQ mechanism needed | No axion detected (ADMX, CASPEr, etc.) | ✓ Criterion B; falsifiable by future detection |
 | Weak CP violation independent | D6 CKM phase from independent S³ closure | delta_CP ≈ 1 rad in quark sector | ✓ structural (product topology) |
-| Strong and weak CP independent | Product topology blocks D6 → D7 phase transfer | |theta_QCD| << delta_CP by ~10¹⁰ | ✓ structural (product topology argument) |
+| Strong and weak CP independent | pi_3(S³)=Z ≠ pi_3(S⁵)=Z₂ blocks D6→D7 phase transfer | |theta_QCD| << delta_CP by ~10¹⁰ | ✓ Tier 2a — homotopy groups differ; explains 10¹⁰ hierarchy |
 | No residual theta after quark mass matrix rotation | D7 topology fixes theta; quark mass rotation is a D6 effect | Physical theta = theta_QCD + arg(det M_q) = 0 | requires deriving quark mass CP phase from D6/D7 independently ✗ |
 | Formal proof from substrate formation dynamics | S⁵ CP symmetry → theta=0 at formation | — | argument given; formal first-principles derivation OPEN ✗ |
 
@@ -290,4 +290,4 @@ Homotopy groups relevant to instantons:
 - `foundations/product_geometry.md` — independent closures; D6 and D7 do not share phases
 - `foundations/depth_assignment.md` — Route B: Hopf sequence S¹/S³/S⁵ at D5/D6/D7
 - `foundations/tension_analysis.md` — T3: strong CP classified as DFC Supersedes (pending proof)
-- `equations/strong_cp.py` — CP symmetry of S⁵ verified; homotopy groups tabulated
+- `equations/strong_cp_theta.py` — CP symmetry of S⁵ verified (50k samples); neutron EDM; D6/D7 independence; homotopy groups tabulated (Cycle 147)

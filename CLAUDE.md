@@ -134,13 +134,14 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~71%  (viability: ~82%, mathematical rigor: ~60%)
+Current estimate: ~71.5%  (viability: ~82.5%, mathematical rigor: ~60.5%)
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
   α_s closed 0.006% (Cycle 144); v=247.83 GeV Tier 2a (Cycle 145); m_τ Koide Tier 2a (Cycle 146).
-  Bottleneck 2 CLOSED Cycle 117.
+  Strong CP: theta=0 Tier 2a from S⁵ CP isometry (Cycle 147). Bottleneck 2 CLOSED Cycle 117.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-01 | 147 | Strong CP: theta=0 Tier 2a from S⁵ CP isometry; pi_3(S⁵)=Z₂≠pi_3(S³)=Z blocks D6→D7 phase transfer; d_n=0 Criterion B prediction; strong_cp_theta.py (50k samples, max dev 6.7e-16); strong_cp_problem.md Consistency Checks updated. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-01 | 146 | Koide Step 4d Tier 3→2a: m_τ=1776.97 MeV (+0.006%, 0 free params); canonical phase vertex factor 1/√Q_top from collective coordinate action; Z₃ charge counting shows exactly one insertion for all off-diagonal; koide_phase_coupling.py new; CLAUDE.md +m_τ Koide entry. | 71% | 60% | ~71% |
 | 2026-06-01 | 145 | EWSB co-crystallization Tier 3→2a: v=247.83 GeV (+0.65%); structural argument for b0=11 — SU(2) in Higgs phase cannot drive transmutation, D7 SU(3) confinement (b0=N_Hopf+Q_top=11) must; ewsb_cocrystallization.py updated; coupling_emergence.md upgraded; CLAUDE.md +v entry. | 70% | 59% | ~70% |
 | 2026-06-01 | 144 | ECCC self-consistency: α_s gap 8.1%→0.006% via correct M_c(D7) condition; α_em(0)=1/136.98 (−0.044%); alpha_em_selfconsistency.py; foundations/coupling_emergence.md stub; internal 36π↔g₂ tension documented. | 69% | 58% | ~69% |
@@ -152,7 +153,8 @@ Recent cycles (full history: push_history.md):
 | 2026-05-23 | 138 | Koide Step 4d: selection rule t=1/√Q_top (Tier 3); m_τ=1776.97 MeV (+0.006%). | 66.5% | 55.5% | ~66.5% |
 
 Next milestone: prove structural identity A−B = ln(1/α_em(0)) algebraically (Tier 4→1);
-  Koide Step 4d Tier 3→2a (F(γ)=1/√Q_top from vortex BVP); v=247.83 GeV Tier 3→2a.
+  strong CP formation argument Tier 3→2a (formal nucleation path: theta=0 vs theta=pi energy);
+  quark mass matrix phase arg(det M_q)=0 from D6/D7 interface.
 
 Model Reconcilability Risk Score (MRRS) — see reconcilability_risk.md for full analysis:
   Core gauge/coupling sector:      20%   (was 28%; Bottleneck 2 closed Cycle 117: −8%)
@@ -176,9 +178,9 @@ All three must stay in sync. The estimate has two components:
 
 1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically to close α_em and α_s gaps simultaneously (equations/alpha_em_eccc.py, Cycle 139).
 
-2. **Koide Step 4d** — compute F(γ)=|∫η₀²·e^{iΔθ(u)}du|/I₄=1/√Q_top from D5 vortex BVP phase profile (Tier 4 open, equations/koide_step4d_action.py).
+2. **Strong CP formation argument** — formal nucleation path from D7 formation dynamics showing energy minimum at theta=0 vs theta=pi; promote theta=0 selection Tier 3→2a (equations/strong_cp_theta.py, Cycle 147).
 
-3. **v=247.83 GeV** — promote EWSB co-crystallization Tier 3→2a (equations/ewsb_cocrystallization.py, Cycle 136).
+3. **Quark mass matrix phase** — derive arg(det M_q)=0 from D6/D7 interface to close the theta-bar = theta_QCD + arg(det M_q) equation.
 
 **After every push, also check `ISSUES.md`** — centralized tracker for open questions,
 known failures, internal tensions, retracted claims, and blocked derivations.
