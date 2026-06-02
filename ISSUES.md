@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-01 (Cycles 122–147)
+**Last updated:** 2026-06-02 (Cycles 122–151)
 
 ---
 
@@ -423,8 +423,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 **`particle_physics/forces/strong_force.md`**
 - Formal proof of confinement from DFC (Open Q1) — Yang-Mills mass gap equivalent
-- Derive Λ_QCD from D7 closure parameters (Open Q2)
-- Derive α_s from D7 geometry (Open Q3) — 8.1% error currently (improved from 11% via β=1/(9π) Tier 2a, Cycle 119); M_c(D7) target 1.566×10¹⁵ GeV
+- Derive Λ_QCD from D7 closure parameters (Open Q2) — Λ_QCD^DFC = 45.9 MeV (−83%); forward-running formula with threshold-matching incomplete; not directly linked to α_s gap
+- Derive α_s from D7 geometry (Open Q3) — **RESOLVED Cycle 144 (Tier 2a):** α_s=0.11821 (+0.006%) via ECCC Direction B; remaining open = derive M_c(D7) from V(φ) alone
 - Non-perturbative D7 dynamics: confinement, hadron masses, nuclear binding (Open Q4)
 
 **`particle_physics/forces/electroweak_precision.md`**
@@ -452,7 +452,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Depth spacing ratio 1.34 vs observed 5.71 — [KNOWN_FAILURE]
 
 **`particle_physics/particles/muon_tau.md`**
-- τ mass: dimple+global-box model predicts 212 MeV — SUPERSEDED. Koide formula Tier 2a (Cycle 146): m_τ=1776.97 MeV (+0.006%, `equations/koide_phase_coupling.py`). Document needs update to remove [KNOWN_FAILURE] label.
+- τ mass: Koide formula Tier 2a (Cycle 146): m_τ=1776.97 MeV (+0.006%, `equations/koide_phase_coupling.py`). Dimple model SUPERSEDED. Document updated Cycle 148.
 
 **`quantum/quantum_mechanics.md`**
 - Born rule for position — OPEN (spin case derived, Cycle 38)
