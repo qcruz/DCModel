@@ -141,6 +141,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   Strong CP: theta=0 Tier 2a from S⁵ CP isometry (Cycle 147). Bottleneck 2 CLOSED Cycle 117.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-02 | 151 | strong_force.md audit: α_s row 8.1%→+0.006% Tier 2a (ECCC Direction B, Cycle 144); Λ_QCD row clarified (−83% threshold-matching issue, not α_s gap); Open Q3 RESOLVED; note rewritten. ISSUES.md: strong_force.md α_s updated; muon_tau.md stale note cleaned. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-02 | 150 | w_z_bosons.md audit: Coupling chain subsection added (β→g_eff→ECCC→M_W=79.67 GeV −0.88%/M_Z=90.86 GeV −0.36%/G_F +0.18%); v_DFC=247.83 GeV EWSB co-crystallization noted; Consistency Checks updated with Tier 2a rows for M_W, M_Z, G_F, v; g_W OPEN→Tier 2a (−0.19%); Open Question 2 updated PARTIALLY RESOLVED; Connections: 3 new equation modules. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-01 | 149 | photon.md full audit: 36π chain replaces heuristic (1.3%→+0.15%); σ_T −4.3%→−0.28%; Bottleneck 2 CLOSED noted; coupling_emergence.md Open Derivation 1 algebraically proved (36π=(1+k_Y²)/α_common=4/β, Tier 2a); Tier 4 residual: kink-profile-only derivation. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-01 | 147 | Strong CP: theta=0 Tier 2a from S⁵ CP isometry; pi_3(S⁵)=Z₂≠pi_3(S³)=Z blocks D6→D7 phase transfer; d_n=0 Criterion B prediction; strong_cp_theta.py (50k samples, max dev 6.7e-16); strong_cp_problem.md Consistency Checks updated. | 71.5% | 60.5% | ~71.5% |
