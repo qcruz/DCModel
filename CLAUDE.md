@@ -134,13 +134,14 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~68.5%  (viability: ~79%, mathematical rigor: ~58%)
+Current estimate: ~69%  (viability: ~80%, mathematical rigor: ~58%)
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
-  closes α_s gap simultaneously. Koide Step 4d: F(γ)=1/√Q_top from D5 vortex BVP.
+  α_s gap now closed to 0.006% via ECCC (Cycle 144). Koide Step 4d: F(γ)=1/√Q_top from D5 vortex BVP.
   EWSB co-crystallization v=247.83 GeV (Tier 3→2a). Bottleneck 2 CLOSED Cycle 117.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-01 | 144 | ECCC self-consistency: α_s gap 8.1%→0.006% via correct M_c(D7) condition; α_em(0)=1/136.98 (−0.044%); alpha_em_selfconsistency.py; foundations/coupling_emergence.md stub; internal 36π↔g₂ tension documented. | 69% | 58% | ~69% |
 | 2026-05-27 | 143 | 36π chain propagated downstream: scattering_cross_sections.py σ_T −4.3%→−0.28%; atomic_structure.py H levels −4.2%→+0.28%; stale error-budget text fixed; CLAUDE.md rewrite (50% reduction); push_history.md + foundations/scientific_merit.md created. | 68.5% | 58% | ~68.5% |
 | 2026-05-27 | 142 | α_em prediction chain: 36π → 1/α_em(M_Z)=128.09 (+0.15%); 1/α_em(0)=137.23 (+0.14%); 10× improvement; downstream σ_T/a_e/r_e all now <0.3% error. | 68% | 57% | ~68% |
 | 2026-05-27 | 141 | 36π formula: 1/α_em(M_c(EW))=36π (exact, 0 free params, Tier 2a); EW running → M_Z; Δ_QED=9.136 → q=0. | 67.5% | 56.5% | ~67.5% |
@@ -331,6 +332,7 @@ Full criteria, tier system explanations, completeness milestones, and evaluation
 | R_l = Γ_had/Γ_ll (20.767) | z_boson_decays.py | 20.746 | 20.767 | −0.10% | 2 |
 | R_b = Γ_bb̄/Γ_had (0.2163) | z_boson_decays.py | 0.2197 | 0.21629 | +1.58% | 2 |
 | A_FB^lep (0.01626) | z_boson_decays.py | 0.01677 | 0.01626 | +3.17% | 2 |
+| α_s(M_Z) [ECCC+α_em(0)] | alpha_em_selfconsistency.py | 0.11821 | 0.11820 | +0.006% | 0 (SM α_em(0) input) |
 
 ### Current Tier 2b Predictions (equation exists; >5% error or leading-order only)
 
@@ -341,7 +343,7 @@ Full criteria, tier system explanations, completeness milestones, and evaluation
 | Hydrogen E_1 (−13.598 eV) | atomic_structure.py | −13.568 eV | −13.598 eV | +0.28% | 36π+obs Δ_QED; was −4.2% (Cycle 143) |
 | Tau lepton mass | mass_spectrum.py | 212 MeV | 1777 MeV | 8.4× off | Koide Tier 3 alternative (Cycle 122) |
 | Neutrino mass hierarchy ratio | neutrino_masses.py | 1.34 | 5.71 | 4.3× off | Unresolved |
-| Strong coupling α_s(M_Z) | alpha_s_target.py | 0.1086 | 0.1182 | 8.1% | M_c(D7) gap; closes with α_em identity |
+| Strong coupling α_s(M_Z) [old] | alpha_s_target.py | 0.1086 | 0.1182 | 8.1% | Wrong M_c(D7) condition; superseded by ECCC above |
 | Charm and strange quark masses | quark_masses.py | 15% below obs | — | 15% | Unresolved |
 
 ---
