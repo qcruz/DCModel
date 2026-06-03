@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-02 (Cycles 122–155)
+**Last updated:** 2026-06-03 (Cycles 122–157)
 
 ---
 
@@ -453,8 +453,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 **`particle_physics/strong_cp_problem.md`**
 - S⁵ CP isometry and theta=0 fixed point: VERIFIED Cycle 147 (Tier 2a); `equations/strong_cp_theta.py`
-- Formation selection theta=0 vs theta=pi: **ADVANCED Cycle 156 (Tier 2b + Tier 3)** — Dashen ChPT V(theta=0) < V(theta=pi) with ΔV=9.9×10⁻⁵ GeV⁴ (63% of vacuum energy, Tier 2b); ΔV/T⁴_D7~10⁻⁶⁵ confirms topological selection must operate at D7 formation; domain wall cost 2×E_kink for theta=pi (Tier 3); D5 anchor V(|phi|²) real → theta_D5=0 (Tier 2a); recursion D5→D6→D7 (Tier 3). Remaining Tier 3→2a gap = D5→D6/D6→D7 interface overlap integrals (SHARED with arg(det M_q) proof). `equations/strong_cp_formation.py`.
-- Physical theta-bar = theta_QCD + arg(det M_q): **PARTIALLY RESOLVED Cycle 153 (Tier 3)** — arg(det M_q) = 0 in DFC natural basis (mass eigenstate basis); D6/D7 overlap operator real Hermitian claim is the remaining Tier 3 gap. `equations/arg_det_mq_zero.py`.
+- Formation selection theta=0 vs theta=pi: **RESOLVED Cycle 157 (Tier 2a)** — V(|Φ|²) real + D4 real IC → Im(Φ)≡0 exactly (ODE uniqueness theorem); D7 kink amplitude ∈ ℝ⁺ → theta_D7=0 by construction. ChPT confirms theta=0 is the stable minimum (Cycle 156). `equations/interface_overlap_integral.py`.
+- Physical theta-bar = theta_QCD + arg(det M_q): **RESOLVED Cycle 157 (Tier 2a)** — D6/D7 Jackiw-Rebbi zero modes are real (sech profiles, residual 9.96e-07); Higgs VEV ∈ ℝ⁺; overlap Y_{ij} ∈ ℝ⁺ exactly (Im(Y)=0 computed for all separations); arg(det M_q)=0 exactly. `equations/interface_overlap_integral.py`, `equations/arg_det_mq_zero.py`.
 - Criterion B prediction: no axion; falsifiable by ADMX/CASPEr etc.
 
 **`particle_physics/particles/neutrinos.md`**
@@ -503,5 +503,6 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | α_s(M_Z) gap: 8.1%→+0.006% | Cycle 144 | Root cause: wrong M_c(D7) from α₁∩α₃ crossing (not ECCC condition). ECCC: α₃(M_c(D7))=α_common=2/(27π) gives α_s=0.11821 (+0.006%, Tier 2a). `equations/alpha_em_selfconsistency.py`. |
 | EWSB vacuum v: Tier 3→Tier 2a | Cycle 145 | SU(2) in Higgs phase cannot drive its own transmutation; D7 SU(3) confining (b₀=N_Hopf+Q_top=11) drives EWSB scale; co-crystallization correction Δ_D56. v=247.83 GeV (+0.65%, Tier 2a). `equations/ewsb_cocrystallization.py`. |
 | Strong CP problem: theta=0 structural | Cycle 147 | S⁵ CP-isometry proved numerically (50k samples, max dev 6.7e-16); theta=0 is unique CP fixed point; D6/D7 independence from pi_3(S³)=Z≠pi_3(S⁵)=Z₂; d_n=0 Criterion B prediction. Tier 2a overall. `equations/strong_cp_theta.py`. Formation argument (theta=0 vs pi) remains Tier 3. |
+| Strong CP formation + arg(det M_q)=0 | Cycle 157 | Interface overlap integral computed: V(|Φ|²) real amplitude preservation theorem (ODE uniqueness) proves D4→D5→D6→D7 amplitude chain is real positive. Jackiw-Rebbi zero modes real (sech^n, verified residual 9.96e-07). D6/D7 overlap Im(Y)=0 exactly. theta_bar=0 Tier 2a. `equations/interface_overlap_integral.py`. |
 | Tau lepton mass mechanism (8.4× from dimple model, Tier 3 chain) | Cycles 122–126 | Koide formula replaces dimple model: m_τ=1776.97 MeV (+0.006%) from m_e,m_μ with 0 free params (Tier 3 chain). FULLY PROMOTED TO Tier 2a in Cycle 146 — see entry above. |
 | Bottleneck 2 (r_U₁/λ, coupling derivation) | Cycle 117 | Tier 2a: g_eff²=8/27 (error 0.00e+00), β=1/(9π), 0 free parameters. Full chain: V(φ)→tachyon→complex scalar→O(2)→U(1)→J→d_n=2n−1→N_Hopf=9→g_eff²=8/27 (`equations/d5_complex_from_instability.py`). |

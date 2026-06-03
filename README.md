@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~71.5% complete by internal estimate. Several Standard Model quantities
+Current status: ~72% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -195,13 +195,13 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~71.5%** (viability as a theory: ~82.5%; mathematical rigor: ~60.5%)
+**Current estimate: ~72%** (viability as a theory: ~82.5%; mathematical rigor: ~61.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
 | Scope | MRRS | Key blocker |
 |---|---|---|
-| Core gauge/coupling sector | **16%** | α_em(0) identity (0.044% gap); arg(det M_q)=0 from D6/D7 |
+| Core gauge/coupling sector | **14%** | α_em(0) identity (0.044% gap); arg(det M_q)=0 CLOSED Cycle 157 |
 | Full SM reproduction | **43%** | neutrino hierarchy (4×); quark masses (15%); G_Newton |
 | Complete theory (SM + gravity + QM) | **70%** | ℏ derivability; G_Newton; Born rule for position |
 

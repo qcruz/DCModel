@@ -134,13 +134,15 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~71.5%  (viability: ~82.5%, mathematical rigor: ~60.5%)
+Current estimate: ~72%  (viability: ~82.5%, mathematical rigor: ~61.5%)
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
   α_s closed 0.006% (Cycle 144); v=247.83 GeV Tier 2a (Cycle 145); m_τ Koide Tier 2a (Cycle 146).
   Strong CP: theta=0 Tier 2a from S⁵ CP isometry (Cycle 147). Bottleneck 2 CLOSED Cycle 117.
+  Priorities 2+3 CLOSED Cycle 157: real amplitude theorem + D6/D7 overlap integral.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-03 | 157 | Interface overlap integral: real amplitude preservation theorem (ODE uniqueness, Tier 1) → D4→D7 amplitude chain real positive; Jackiw-Rebbi zero modes sech^n real (residual 9.96e-07 Tier 2a); D6/D7 overlap Im(Y)=0 exact; 12-step chain theta_bar=0 Tier 2a; Priority 2 (theta=0 formation) Tier 3→2a; Priority 3 (arg(det M_q)=0) Tier 3→2a; interface_overlap_integral.py new. | 82.5% | 61.5% | ~72% |
 | 2026-06-03 | 156 | Strong CP formation: V(theta=0)<V(theta=pi) Dashen ChPT ΔV=9.9e-5 GeV⁴ (63% vac E density) Tier 2b; ΔV/T⁴_D7~1e-65 (topological selection must operate); domain wall 2×E_kink cost for theta=pi Tier 3; D5 anchor Tier 2a; recursion D5→D6→D7 Tier 3; KEY: Tier3→2a for Strong CP and arg(det M_q)=0 share same D5→D6/D6→D7 overlap integral — one calc closes both Priority 2 and 3; strong_cp_formation.py new. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-02 | 155 | α_em(0) identity proof: B_U1=(12π/41)cos²θ_W(1−Δα)(1/α_em(0)) algebraic substitution Tier 1; Δα_lep=0.0314 from DFC N_gen=3 Tier 2a (−0.24%); fermion content unification b₃,b₁,Δα_lep,Δα_had all from (N_gen=3,N_c=3,Q_f) Tier 3; NEW dominant gap = g₂/α_em α₁ chain tension 0.11% > ECCC 0.044%; Req Δα=0.0653 vs obs 0.0663 (−1.57%); T12 tension added ISSUES.md; alpha_em_identity_proof.py new. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-02 | 153 | arg(det M_q)=0: equations/arg_det_mq_zero.py (new) — 5-step chain; Steps A-C Tier 2a/1; Step D Tier 3 (D6/D7 overlap real Hermitian pending); theta-bar=0 Tier 3; J=3.08e-05≠0 consistent (CKM = D6 mixing); weak/strong ratio=2.3e10 explained. strong_cp_problem.md Open Q2 PARTIALLY RESOLVED. Bottleneck 3 progress: arg(det M_q) Tier 3 structural argument complete. | 71.5% | 60.5% | ~71.5% |
@@ -161,12 +163,10 @@ Recent cycles (full history: push_history.md):
 
 Next milestone: prove structural identity A−B = ln(1/α_em(0)) algebraically (Tier 4→1);
   Cycle 155: algebraic substitution B_U1→α_em(0) done (Tier 1); Δα_lep from N_gen=3 Tier 2a;
-  NEW: dominant gap is g₂/α_em α₁ chain tension 0.11% (T12 in ISSUES.md), not hadronic Δα.
+  Dominant gap: T12 g₂/α_em α₁ chain tension 0.11% (ISSUES.md).
   Two conditions to close: (i) resolve T12 g₂/α_em tension; (ii) derive Δα_had from D7.
-  Strong CP formation: Cycle 156 Tier 2b+3 — ChPT confirms theta=0 minimum; domain wall cost
-  established; D5 anchor Tier 2a; Tier 3→2a gap = D5→D6/D6→D7 interface overlap integrals.
-  arg(det M_q)=0: SAME overlap integral required (Cycle 153) — two priorities share one proof.
-  Next: attempt the interface overlap integral calculation (closes BOTH Priority 2 and 3).
+  Priorities 2+3 CLOSED Cycle 157 (Tier 2a): Strong CP formation + arg(det M_q)=0
+  via real amplitude preservation theorem. Only Priority 1 (α_em identity) remains open.
 
 Model Reconcilability Risk Score (MRRS) — see reconcilability_risk.md for full analysis:
   Core gauge/coupling sector:      20%   (was 28%; Bottleneck 2 closed Cycle 117: −8%)

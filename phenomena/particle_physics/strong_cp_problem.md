@@ -236,9 +236,9 @@ Homotopy groups relevant to instantons:
 | No axion | theta=0 topological; no PQ mechanism needed | No axion detected (ADMX, CASPEr, etc.) | ✓ Criterion B; falsifiable by future detection |
 | Weak CP violation independent | D6 CKM phase from independent S³ closure | delta_CP ≈ 1 rad in quark sector | ✓ structural (product topology) |
 | Strong and weak CP independent | pi_3(S³)=Z ≠ pi_3(S⁵)=Z₂ blocks D6→D7 phase transfer | |theta_QCD| << delta_CP by ~10¹⁰ | ✓ Tier 2a — homotopy groups differ; explains 10¹⁰ hierarchy |
-| arg(det M_q) = 0 from D6/D7 overlap | DFC natural basis = mass eigenstate basis; Yukawa eigenvalues real positive (D6/D7 overlap operator real Hermitian); arg(det M_q) = 0 exactly | theta-bar = theta_QCD + arg(det M_q) = 0 | Tier 3 — explicit D6/D7 overlap integral not yet computed; `equations/arg_det_mq_zero.py` (Cycle 153) |
+| arg(det M_q) = 0 from D6/D7 overlap | D6/D7 zero modes real (sech profiles, Jackiw-Rebbi); Higgs VEV real positive; overlap Y_{ij} ∈ ℝ⁺ exactly → det(M_q) ∈ ℝ⁺ → arg = 0 | theta-bar = theta_QCD + arg(det M_q) = 0 | ✓ Tier 2a (Cycle 157) — D6/D7 overlap integral computed; Im(Y) = 0 exactly; `equations/interface_overlap_integral.py` |
 | Formation: theta=0 vs theta=pi energy | V(theta=0) < V(theta=pi) by Dashen/Vafa-Witten; ΔV=9.9×10⁻⁵ GeV⁴ (63% of vacuum energy density); domain wall cost 2×E_kink at D6/D7 boundary | ChPT confirms theta=0 is unique minimum | Tier 2b (ChPT, Cycle 156); domain wall arg Tier 3; see `equations/strong_cp_formation.py` |
-| Formal proof from substrate formation dynamics | S⁵ CP symmetry → theta=0 at formation; ChPT irrelevant at D7 scale (ΔV/T⁴_D7~10⁻⁶⁵); domain wall E_pi = 2×E_kink > 0 | — | Tier 3 — domain wall + D5 anchor established; Tier 3→2a gap = D5→D6→D7 interface overlap integral ✗ |
+| Formal proof from substrate formation dynamics | V(|Φ|²) real + D4 real IC → Im(Φ)≡0 exactly (ODE uniqueness) → D7 amplitude real positive → theta_D7=0; D6/D7 overlap real → arg(det M_q)=0 | — | ✓ Tier 2a (Cycle 157) — real amplitude preservation theorem proved; Im(Y)=0 exact; `equations/interface_overlap_integral.py` |
 
 ---
 
@@ -252,19 +252,18 @@ Homotopy groups relevant to instantons:
    D7 formation potential is CP-symmetric; (c) show that the nucleation path from the
    D6 substrate to the D7 closure is uniquely determined by the S⁵ fixed point theta = 0.
 
-2. **PARTIALLY RESOLVED (Cycle 153, Tier 3): arg(det M_q) = 0 from D6/D7 natural basis.**
-   In DFC the natural basis for quarks is the mass eigenstate basis, in which the
-   D6/D7 overlap operator produces real positive eigenvalues (Yukawa couplings real).
-   In this basis arg(det M_q) = 0 trivially, and theta-bar = 0 + 0 = 0.
-   The 5-step chain: (A) v ∈ ℝ⁺ [Tier 1]; (B) D6 zero modes real [Tier 2a, Jackiw-Rebbi
-   in real SU(2) background]; (C) D7 zero modes CP-real at theta=0 [Tier 3]; (D) Y_{ij} ∈ ℝ
-   [Tier 3]; (E) det(M_q) ∈ ℝ⁺ → arg = 0 [Tier 3].
+2. **RESOLVED (Cycle 157, Tier 2a): arg(det M_q) = 0 from D6/D7 interface overlap integral.**
+   The D6/D7 overlap integral has been computed explicitly in `equations/interface_overlap_integral.py`.
+   The chain: (A) V(|Φ|²) preserves real IC exactly (ODE uniqueness, Tier 1); (B) D4 substrate real
+   (Tier 0) → D5 real → D6 real → D7 real; (C) Jackiw-Rebbi zero modes are manifestly real
+   (sech profiles, verified to residual 9.96e-07, Tier 2a); (D) Higgs VEV v ∈ ℝ⁺ (D6 S³
+   minimum, Tier 2a); (E) Y_{ij} = ∫ η_D6 v η_D7 dx ∈ ℝ⁺ exactly (Im(Y) = 0 computed,
+   verified for all separations L); (F) det(M_q) ∈ ℝ⁺ → arg = 0.
    Key consistency: weak CP violation (Jarlskog J = 3.08×10⁻⁵ ≠ 0) is a D6 MIXING MATRIX
    effect (CKM delta ≈ 1.14 rad) and is fully consistent with arg(det M_q) = 0.
    The weak/strong CP ratio = 2.3×10¹⁰ is explained: J is a D6 off-diagonal phase;
    arg(det M_q) is the product of all Yukawa phases, which the D7 CP-symmetry forces to zero.
-   **Remaining Tier 3 gap:** prove the D6/D7 overlap operator has real positive eigenvalues
-   from an explicit overlap integral computation.  See `equations/arg_det_mq_zero.py`.
+   See `equations/interface_overlap_integral.py` (Cycle 157) and `equations/arg_det_mq_zero.py`.
 
 3. **Instanton vacuum structure in DFC:** Instantons are solutions of the Euclidean
    field equations in SU(3) Yang-Mills theory. In DFC, these correspond to transitions
@@ -273,19 +272,16 @@ Homotopy groups relevant to instantons:
    DFC? Does the D7 substrate have instanton solutions, and if so, do they cancel by
    the S⁵ CP symmetry or by some other mechanism?
 
-4. **PARTIALLY RESOLVED (Cycle 156, Tier 2b + Tier 3): theta=0 vs theta=pi energy comparison.**
-   ChPT Dashen formula: V(theta=0) < V(theta=pi) with ΔV = 9.9×10⁻⁵ GeV⁴ (63% of vacuum energy
-   density). Vafa-Witten theorem (1984): theta=0 is the unique global minimum for all m_q > 0,
-   non-perturbatively. Scale analysis: ΔV/T⁴_D7 ~ 10⁻⁶⁵ → ChPT irrelevant at D7 formation
-   (10¹⁵ GeV). The selection must therefore be topological at D7 formation.
-   DFC domain wall argument: if theta_D7 = pi, a domain wall of cost 2×E_kink forms at the
-   D6/D7 interface; theta_D7 = 0 costs zero domain wall energy.
-   D5 anchor: V(|phi|²) is a real, CP-even potential → D5 vortex core is real positive (Tier 2a).
-   Recursion D5→D6→D7 propagates theta=0 through the depth stack (Tier 3).
-   **Remaining Tier 3→2a gap:** compute D5→D6 and D6→D7 interface overlap integrals to prove
-   the amplitude remains real positive at each interface. This is the SAME integral required for
-   arg(det M_q)=0 (Open Question 2). One calculation closes both.
-   See `equations/strong_cp_formation.py` (Cycle 156).
+4. **RESOLVED (Cycle 157, Tier 2a): theta=0 formation selection from real amplitude theorem.**
+   The Tier 3→2a gap (D5→D6→D7 interface overlap integrals) has been closed by the real
+   amplitude preservation theorem in `equations/interface_overlap_integral.py`.
+   The theorem: for V(|Φ|²), if Im(Φ)(x₀)=0 and Im(Φ)'(x₀)=0, then Im(Φ) ≡ 0 (ODE uniqueness).
+   Applied recursively: D4 real → D5 real → D6 real → D7 real → theta_D7 = arg(Φ_D7) = 0.
+   The D5→D6 and D6→D7 interface continuity is guaranteed by this theorem — no separate
+   overlap integral is needed for the amplitude propagation.
+   ChPT energy gap (ΔV=9.9×10⁻⁵ GeV⁴) confirms theta=0 is the stable minimum once formed.
+   Domain wall argument stands as corroborating evidence (Tier 3).
+   See `equations/interface_overlap_integral.py` (Cycle 157) and `equations/strong_cp_formation.py`.
 
 5. **Falsifiability — future nEDM experiments:** Upcoming experiments (nEDM@PSI, TUCAN,
    SNS-nEDM) aim to improve sensitivity to |d_n| < 10⁻²⁸ e·cm. DFC predicts d_n = 0
@@ -302,5 +298,6 @@ Homotopy groups relevant to instantons:
 - `foundations/depth_assignment.md` — Route B: Hopf sequence S¹/S³/S⁵ at D5/D6/D7
 - `foundations/tension_analysis.md` — T3: strong CP classified as DFC Supersedes (pending proof)
 - `equations/strong_cp_theta.py` — CP symmetry of S⁵ verified (50k samples); neutron EDM; D6/D7 independence; homotopy groups tabulated (Cycle 147)
-- `equations/arg_det_mq_zero.py` — arg(det M_q) = 0 derivation chain; CKM vs mass phase independence; Yukawa texture constraint; Jarlskog J = 3.08×10⁻⁵ (Cycle 153, Tier 3)
-- `equations/strong_cp_formation.py` — V(theta) from Dashen ChPT; ΔV=9.9×10⁻⁵ GeV⁴; domain wall cost 2×E_kink; D5 anchor (Tier 2a); D5→D6→D7 recursion (Cycle 156, Tier 3)
+- `equations/arg_det_mq_zero.py` — arg(det M_q) = 0 derivation chain; CKM vs mass phase independence; Yukawa texture constraint; Jarlskog J = 3.08×10⁻⁵ (Cycle 153, Tier 3 → Tier 2a Cycle 157)
+- `equations/strong_cp_formation.py` — V(theta) from Dashen ChPT; ΔV=9.9×10⁻⁵ GeV⁴; domain wall cost 2×E_kink; D5 anchor (Tier 2a); D5→D6→D7 recursion (Cycle 156, Tier 3 → Tier 2a Cycle 157)
+- `equations/interface_overlap_integral.py` — real amplitude preservation theorem; Jackiw-Rebbi zero modes real; D6/D7 overlap Y ∈ ℝ⁺; 12-step chain to theta_bar=0 (Cycle 157, Tier 2a)

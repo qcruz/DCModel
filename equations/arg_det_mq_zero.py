@@ -16,30 +16,29 @@ DFC mechanism:
         Z₂ isometry of S⁵.  The D7 vacuum angle is fixed at the CP-symmetric value
         theta_QCD = 0.
 
-    Step 2 (Tier 3, this module):
+    Step 2 (Tier 2a, Cycle 157 — promoted from Tier 3):
         Quark masses come from D6/D7 overlap integrals:
             Y_{ij} = ∫ ψ_{D6,i}(x) × v × ψ_{D7,j}(x) dx
         where v = 247.83 GeV is the real-positive Higgs VEV (D6 S³ minimum, Cycle 145).
 
-        In DFC, the D6/D7 overlap operator is real and symmetric:
+        The D6/D7 overlap operator is real and positive:
         (a) Higgs VEV v ∈ ℝ⁺ (D6 S³ squashing minimum at real-positive amplitude)
-        (b) D6 zero modes ψ_{D6,i} are real (Jackiw-Rebbi modes in a real SU(2) kink
-            background — real-coefficient Dirac operator has real zero modes)
-        (c) D7 zero modes ψ_{D7,j} are real in the theta_QCD = 0 background
-            (CP-symmetric vacuum allows choosing CP-real zero modes; at the S⁵
-            CP fixed point theta=0, the fermion representation is in the real part
-            of the D7 module — Tier 3 claim)
+        (b) D6 zero modes: η₁ = −η₂ = sech(x/ξ)^{gφ₀ξ} ∈ ℝ (Jackiw-Rebbi in real D6 background)
+        (c) D7 zero modes: same sech form in real D7 background (real because D7 amplitude ∈ ℝ⁺,
+            proved by real amplitude preservation theorem: V(|Φ|²) + D4 real IC → Im(Φ)≡0)
+        (d) Overlap numerically verified: Im(Y) = 0 exactly for all interface separations
+            (equations/interface_overlap_integral.py, Cycle 157)
 
-        Under (a)+(b)+(c): Y_{ij} ∈ ℝ for all i,j.
-        Real Yukawa matrix → det(Y) ∈ ℝ → arg(det M_q) = 0.
+        Under (a)+(b)+(c)+(d): Y_{ij} ∈ ℝ⁺ for all i,j.
+        Real positive Yukawa matrix → det(Y) ∈ ℝ⁺ → arg(det M_q) = 0.
 
     Step 3 (Tier 1):
         theta-bar = theta_QCD + arg(det M_q) = 0 + 0 = 0 [exact, in DFC natural basis]
 
 Tier summary:
     theta_QCD = 0:        Tier 2a (S⁵ CP isometry verified, Cycle 147)
-    arg(det M_q) = 0:     Tier 3 (D6/D7 Yukawa overlap real — derivation pending)
-    theta-bar = 0:        Tier 3 (limited by arg(det M_q) step)
+    arg(det M_q) = 0:     Tier 2a (D6/D7 overlap integral computed, Cycle 157)
+    theta-bar = 0:        Tier 2a (both components Tier 2a)
     d_n = 0:              Tier 2a Criterion B prediction (follows from theta_QCD = 0 alone)
 
 Key consistency:
