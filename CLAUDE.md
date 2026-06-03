@@ -142,6 +142,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   Priorities 2+3 CLOSED Cycle 157: real amplitude theorem + D6/D7 overlap integral.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-03 | 158 | α_em hadronic VP: R∞=11/3 exact from DFC (N_c=3, Q_f=2/3,1/3) Tier 2a; Δα_had^{pQCD}(c+b)=0.00820 (29.7% of PDG) Tier 2a; T12 gap decomposed: δ(Δα)^{non-pert}=0.00102 = 3.70% of Δα_had — b₁ running embeds 96.3% already; fermion content unification: b₃,b₁,Δα_lep,R∞ all from (N_gen=3,N_c=3,Q_f) Tier 3; blocking condition for Priority 1 precisely identified: R^{had}−R^{parton} from D7 confinement; alpha_em_hadronic.py new. | 82.5% | 61.5% | ~72% |
 | 2026-06-03 | 157 | Interface overlap integral: real amplitude preservation theorem (ODE uniqueness, Tier 1) → D4→D7 amplitude chain real positive; Jackiw-Rebbi zero modes sech^n real (residual 9.96e-07 Tier 2a); D6/D7 overlap Im(Y)=0 exact; 12-step chain theta_bar=0 Tier 2a; Priority 2 (theta=0 formation) Tier 3→2a; Priority 3 (arg(det M_q)=0) Tier 3→2a; interface_overlap_integral.py new. | 82.5% | 61.5% | ~72% |
 | 2026-06-03 | 156 | Strong CP formation: V(theta=0)<V(theta=pi) Dashen ChPT ΔV=9.9e-5 GeV⁴ (63% vac E density) Tier 2b; ΔV/T⁴_D7~1e-65 (topological selection must operate); domain wall 2×E_kink cost for theta=pi Tier 3; D5 anchor Tier 2a; recursion D5→D6→D7 Tier 3; KEY: Tier3→2a for Strong CP and arg(det M_q)=0 share same D5→D6/D6→D7 overlap integral — one calc closes both Priority 2 and 3; strong_cp_formation.py new. | 71.5% | 60.5% | ~71.5% |
 | 2026-06-02 | 155 | α_em(0) identity proof: B_U1=(12π/41)cos²θ_W(1−Δα)(1/α_em(0)) algebraic substitution Tier 1; Δα_lep=0.0314 from DFC N_gen=3 Tier 2a (−0.24%); fermion content unification b₃,b₁,Δα_lep,Δα_had all from (N_gen=3,N_c=3,Q_f) Tier 3; NEW dominant gap = g₂/α_em α₁ chain tension 0.11% > ECCC 0.044%; Req Δα=0.0653 vs obs 0.0663 (−1.57%); T12 tension added ISSUES.md; alpha_em_identity_proof.py new. | 71.5% | 60.5% | ~71.5% |
@@ -162,11 +163,11 @@ Recent cycles (full history: push_history.md):
 | 2026-05-23 | 138 | Koide Step 4d: selection rule t=1/√Q_top (Tier 3); m_τ=1776.97 MeV (+0.006%). | 66.5% | 55.5% | ~66.5% |
 
 Next milestone: prove structural identity A−B = ln(1/α_em(0)) algebraically (Tier 4→1);
-  Cycle 155: algebraic substitution B_U1→α_em(0) done (Tier 1); Δα_lep from N_gen=3 Tier 2a;
-  Dominant gap: T12 g₂/α_em α₁ chain tension 0.11% (ISSUES.md).
-  Two conditions to close: (i) resolve T12 g₂/α_em tension; (ii) derive Δα_had from D7.
-  Priorities 2+3 CLOSED Cycle 157 (Tier 2a): Strong CP formation + arg(det M_q)=0
-  via real amplitude preservation theorem. Only Priority 1 (α_em identity) remains open.
+  Cycle 158: T12 gap decomposed — δ(Δα)^{non-pert}=0.00102 (3.7% of Δα_had); b₁ running
+  embeds 96.3% of hadronic effect; R∞=11/3 from DFC (Tier 2a); blocker precisely identified.
+  Remaining condition: derive R^{had}(s)−R^{parton}(s) from D7 confinement → δ(Δα)=0.00102.
+  This requires non-perturbative D7 dynamics (same as Λ_QCD derivation — blocked Tier 4).
+  Priorities 2+3 CLOSED Cycle 157 (Tier 2a). Only Priority 1 (α_em identity) remains open.
 
 Model Reconcilability Risk Score (MRRS) — see reconcilability_risk.md for full analysis:
   Core gauge/coupling sector:      20%   (was 28%; Bottleneck 2 closed Cycle 117: −8%)
