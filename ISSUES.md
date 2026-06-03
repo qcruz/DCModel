@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-02 (Cycles 122–151)
+**Last updated:** 2026-06-02 (Cycles 122–155)
 
 ---
 
@@ -297,6 +297,16 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - **Correct condition:** α₃(M_c(D7)) = α_common = 2/(27π). ECCC gives M_c(D7)=1.566×10¹⁵ GeV → α_s(M_Z)=0.11821 (+0.006%, Tier 2a). `equations/alpha_em_selfconsistency.py`.
 - **Remaining open:** Derive M_c(D7) from substrate depth-running (not from SM α_s inversion). The ECCC self-consistency is Tier 2a; the formal derivation of M_c(D7) from V(φ) alone is Tier 4.
 - Files: `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_scales.py` (Cycle 130)
+
+### T12 — α₁ chain tension: g₂-derived vs α_em-derived (Cycle 155)
+
+- The DFC α₁(M_Z) (from g₂=0.6514, sin²θ_W=0.2312 via DFC chain) = 0.016924
+- The SM α₁(M_Z) (from α_em(M_Z)=1/127.95 directly) = 0.016943
+- Relative difference: 0.11% — this is LARGER than the ECCC 0.044% identity gap
+- **Consequence:** The algebraic identity A − B = ln(1/α_em(0)) cannot be proved to better than 0.11% until this tension is resolved, regardless of hadronic Δα accuracy
+- **Root cause:** The DFC g₂ coupling chain has a ~0.1% internal offset between the g₂-derived and α_em-derived α₁; this is the dominant residual inconsistency
+- **Path to resolution:** Show that the DFC g₂=0.6514 corresponds exactly to the observed α_em(M_Z) via the full ECCC self-consistency chain (not just the 36π → α_em(M_Z) route)
+- Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_eccc.py` (Cycle 139)
 
 ### T10 — Near-maximal θ₂₃ argument self-contradicts (Cycle 65)
 - The structural DFC argument for θ₂₃ ≈ 45° is "near-degeneracy of 2nd/3rd neutrino winding modes"
