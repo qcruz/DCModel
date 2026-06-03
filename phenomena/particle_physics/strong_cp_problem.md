@@ -237,7 +237,8 @@ Homotopy groups relevant to instantons:
 | Weak CP violation independent | D6 CKM phase from independent S³ closure | delta_CP ≈ 1 rad in quark sector | ✓ structural (product topology) |
 | Strong and weak CP independent | pi_3(S³)=Z ≠ pi_3(S⁵)=Z₂ blocks D6→D7 phase transfer | |theta_QCD| << delta_CP by ~10¹⁰ | ✓ Tier 2a — homotopy groups differ; explains 10¹⁰ hierarchy |
 | arg(det M_q) = 0 from D6/D7 overlap | DFC natural basis = mass eigenstate basis; Yukawa eigenvalues real positive (D6/D7 overlap operator real Hermitian); arg(det M_q) = 0 exactly | theta-bar = theta_QCD + arg(det M_q) = 0 | Tier 3 — explicit D6/D7 overlap integral not yet computed; `equations/arg_det_mq_zero.py` (Cycle 153) |
-| Formal proof from substrate formation dynamics | S⁵ CP symmetry → theta=0 at formation | — | argument given; formal first-principles derivation OPEN ✗ |
+| Formation: theta=0 vs theta=pi energy | V(theta=0) < V(theta=pi) by Dashen/Vafa-Witten; ΔV=9.9×10⁻⁵ GeV⁴ (63% of vacuum energy density); domain wall cost 2×E_kink at D6/D7 boundary | ChPT confirms theta=0 is unique minimum | Tier 2b (ChPT, Cycle 156); domain wall arg Tier 3; see `equations/strong_cp_formation.py` |
+| Formal proof from substrate formation dynamics | S⁵ CP symmetry → theta=0 at formation; ChPT irrelevant at D7 scale (ΔV/T⁴_D7~10⁻⁶⁵); domain wall E_pi = 2×E_kink > 0 | — | Tier 3 — domain wall + D5 anchor established; Tier 3→2a gap = D5→D6→D7 interface overlap integral ✗ |
 
 ---
 
@@ -272,13 +273,19 @@ Homotopy groups relevant to instantons:
    DFC? Does the D7 substrate have instanton solutions, and if so, do they cancel by
    the S⁵ CP symmetry or by some other mechanism?
 
-4. **Nontrivial theta = pi:** CP symmetry has two fixed points: theta = 0 and
-   theta = pi. The argument above selects theta = 0, not theta = pi. Why? The theta = pi
-   case is ruled out experimentally (it would produce observable strong CP violation).
-   But the DFC argument for theta = 0 vs. theta = pi requires showing that the D7
-   formation potential has a lower energy minimum at theta = 0 than at theta = pi.
-   This is likely related to the coupling g_s being real and positive at the formation
-   scale, but requires an explicit energy comparison.
+4. **PARTIALLY RESOLVED (Cycle 156, Tier 2b + Tier 3): theta=0 vs theta=pi energy comparison.**
+   ChPT Dashen formula: V(theta=0) < V(theta=pi) with ΔV = 9.9×10⁻⁵ GeV⁴ (63% of vacuum energy
+   density). Vafa-Witten theorem (1984): theta=0 is the unique global minimum for all m_q > 0,
+   non-perturbatively. Scale analysis: ΔV/T⁴_D7 ~ 10⁻⁶⁵ → ChPT irrelevant at D7 formation
+   (10¹⁵ GeV). The selection must therefore be topological at D7 formation.
+   DFC domain wall argument: if theta_D7 = pi, a domain wall of cost 2×E_kink forms at the
+   D6/D7 interface; theta_D7 = 0 costs zero domain wall energy.
+   D5 anchor: V(|phi|²) is a real, CP-even potential → D5 vortex core is real positive (Tier 2a).
+   Recursion D5→D6→D7 propagates theta=0 through the depth stack (Tier 3).
+   **Remaining Tier 3→2a gap:** compute D5→D6 and D6→D7 interface overlap integrals to prove
+   the amplitude remains real positive at each interface. This is the SAME integral required for
+   arg(det M_q)=0 (Open Question 2). One calculation closes both.
+   See `equations/strong_cp_formation.py` (Cycle 156).
 
 5. **Falsifiability — future nEDM experiments:** Upcoming experiments (nEDM@PSI, TUCAN,
    SNS-nEDM) aim to improve sensitivity to |d_n| < 10⁻²⁸ e·cm. DFC predicts d_n = 0
@@ -296,3 +303,4 @@ Homotopy groups relevant to instantons:
 - `foundations/tension_analysis.md` — T3: strong CP classified as DFC Supersedes (pending proof)
 - `equations/strong_cp_theta.py` — CP symmetry of S⁵ verified (50k samples); neutron EDM; D6/D7 independence; homotopy groups tabulated (Cycle 147)
 - `equations/arg_det_mq_zero.py` — arg(det M_q) = 0 derivation chain; CKM vs mass phase independence; Yukawa texture constraint; Jarlskog J = 3.08×10⁻⁵ (Cycle 153, Tier 3)
+- `equations/strong_cp_formation.py` — V(theta) from Dashen ChPT; ΔV=9.9×10⁻⁵ GeV⁴; domain wall cost 2×E_kink; D5 anchor (Tier 2a); D5→D6→D7 recursion (Cycle 156, Tier 3)

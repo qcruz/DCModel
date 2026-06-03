@@ -453,7 +453,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 **`particle_physics/strong_cp_problem.md`**
 - S⁵ CP isometry and theta=0 fixed point: VERIFIED Cycle 147 (Tier 2a); `equations/strong_cp_theta.py`
-- Formation selection theta=0 vs theta=pi: Tier 3 — structural argument (kink nucleates at phi0>0 real positive); formal nucleation path (energy comparison) still OPEN → Tier 3→2a candidate
+- Formation selection theta=0 vs theta=pi: **ADVANCED Cycle 156 (Tier 2b + Tier 3)** — Dashen ChPT V(theta=0) < V(theta=pi) with ΔV=9.9×10⁻⁵ GeV⁴ (63% of vacuum energy, Tier 2b); ΔV/T⁴_D7~10⁻⁶⁵ confirms topological selection must operate at D7 formation; domain wall cost 2×E_kink for theta=pi (Tier 3); D5 anchor V(|phi|²) real → theta_D5=0 (Tier 2a); recursion D5→D6→D7 (Tier 3). Remaining Tier 3→2a gap = D5→D6/D6→D7 interface overlap integrals (SHARED with arg(det M_q) proof). `equations/strong_cp_formation.py`.
 - Physical theta-bar = theta_QCD + arg(det M_q): **PARTIALLY RESOLVED Cycle 153 (Tier 3)** — arg(det M_q) = 0 in DFC natural basis (mass eigenstate basis); D6/D7 overlap operator real Hermitian claim is the remaining Tier 3 gap. `equations/arg_det_mq_zero.py`.
 - Criterion B prediction: no axion; falsifiable by ADMX/CASPEr etc.
 
