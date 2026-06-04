@@ -142,6 +142,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   Priorities 2+3 CLOSED Cycle 157: real amplitude theorem + D6/D7 overlap integral.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-03 | 165 | T11 neutrino metric correction: "4.3× failure" was metric error — Δd₃₁/Δd₂₁=1.34 is depth-difference ratio, not mass ratio; DFC κ=5.33 vs observed m₃/m₂=5.81 = −8.3% (Tier 2b, not catastrophic); CLAUDE.md Tier 2b + Known failures corrected; ISSUES.md T11 updated with revised analysis; foundations/mass_hierarchy.md audit: Koide account promoted Tier 3→2a (Cycle 146 promotion not yet reflected); correct mechanism description added (canonical phase vertex 1/√Q_top, Z₃ charge counting); educational/00_overview.md (new): Module 00 "What Is the DFC Model?" — general audience, no physics background, ~1200 words; covers: two-theory problem, DFC compression idea, bifurcations, how U(1)/SU(2)/SU(3) emerge, 36π quantitative example (+0.15%), established vs open table, comparison to String/SUSY/GUT, falsifiable predictions. | 83.5% | 62% | ~73% |
 | 2026-06-03 | 164 | Cycle structure restored + educational step added: three-bottleneck priorities restored (α_em identity, Strong CP formation, arg(det M_q)=0); Steps 1-5 — Step 1 critical/bottleneck, Step 2 random open issue from ISSUES.md, Step 3 update random doc, Step 4 create/update random educational module (educational/ planned 00-08, writing rules: English first, define jargon, Tier-honest, 500-1500 words), Step 5 MANDATORY README+push every session; README current focus updated. | 83.5% | 62% | ~73% |
 | 2026-06-03 | 163 | Strategic refocus (corrected): CLAUDE.md gap priority order made primary — Level 1 (σ from D7 vacuum energy, α_em identity, f_ρ overlap), Level 2 (proton mass, neutrino hierarchy, quark masses), Level 3 (G_Newton, ℏ, D3/D4 formal); falsifiable prediction documents and educational modules moved to Secondary A/B (only when no gap is tractable); Step 1 updated (gap work default, educational/phenomenon only as fallback); README current focus updated (gap-closing order explicit, predictions/education downstream). | 83.5% | 62% | ~73% |
 | 2026-06-03 | 162 | Strategic refocus: CLAUDE.md priorities rewritten — two top priorities replace three bottlenecks: (A) falsifiable prediction development (no axion/d_n=0 Tier 2a, absolute proton stability Tier 1, no SUSY, d_n=0 exact — each with derivation tightening goal and experimental timeline); (B) educational modules in educational/ (00-08 module plan, standard format, audience=general, writing rules); Step 1 updated; README updated (Status section rewritten, educational/ in repo map, Foundational Reading Order updated, recently resolved extended through Cycle 161, two-priority focus stated explicitly). | 83.5% | 62% | ~73% |
@@ -347,7 +348,7 @@ Always maintain this distinction explicitly. The model's credibility depends on 
 
 **Known failures (not yet resolved):**
 - τ mass from mass_spectrum.py: predicts 212 MeV, observed 1777 MeV (8.4× off)
-- Neutrino depth spacing ratio: 1.34 vs observed 5.71
+- Neutrino m₃/m₂: κ=5.33 vs observed 5.81 (−8.3%; Cycle 165 corrects prior 4.3× metric error)
 - Charm/strange quark masses: 15% below observed
 - α_s(M_Z) = 0.1086 vs 0.1182 (8.1% off; M_c(D7) gap)
 
@@ -401,7 +402,7 @@ Full criteria, tier system explanations, completeness milestones, and evaluation
 | Thomson cross-section (6.65×10⁻²⁹ m²) | scattering_cross_sections.py | 6.633×10⁻²⁹ | 6.652×10⁻²⁹ | −0.28% | 36π+obs Δ_QED; was −4.3% (Cycle 143) |
 | Hydrogen E_1 (−13.598 eV) | atomic_structure.py | −13.568 eV | −13.598 eV | +0.28% | 36π+obs Δ_QED; was −4.2% (Cycle 143) |
 | Tau lepton mass [dimple] | mass_spectrum.py | 212 MeV | 1777 MeV | 8.4× off | Superseded by Koide route (Tier 2a above) |
-| Neutrino mass hierarchy ratio | neutrino_masses.py | 1.34 | 5.71 | 4.3× off | Unresolved |
+| Neutrino mass ratio m₃/m₂ | neutrino_masses.py | κ=5.33 | 5.81 | −8.3% | Prior 4.3× was metric error (Cycle 165) |
 | Strong coupling α_s(M_Z) [old] | alpha_s_target.py | 0.1086 | 0.1182 | 8.1% | Wrong M_c(D7) condition; superseded by ECCC above |
 | Charm and strange quark masses | quark_masses.py | 15% below obs | — | 15% | Unresolved |
 

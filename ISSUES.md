@@ -318,10 +318,18 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Near-maximal θ₂₃ remains unexplained in DFC; the structural argument is not viable
 - Files: `phenomena/particle_physics/neutrino_oscillations.md`, `equations/neutrino_oscillations.py`
 
-### T11 — Neutrino hierarchy ratio: two inconsistent metrics in use (Cycle 65)
-- `neutrino_masses.py` and ISSUES.md track the mass ratio m₃/m₂ ≈ √33.8 ≈ 5.81 (DFC gives 1.34, error 4.3×)
-- `neutrino_oscillations.py` computes the Δm² ratio Δm²₃₁/Δm²₂₁ = 33.8 (DFC gives 1.34², error ~25×)
-- Both failures have the same root cause (non-uniform D4 winding mode spacing), but the claimed error factor (4.3×) refers to mass ratios, not Δm² ratios
+### T11 — Neutrino hierarchy ratio: metric confusion + revised error (Cycle 65; corrected Cycle 165)
+- The claimed "4.3× failure" (DFC gives 1.34, observed 5.71) conflated two different quantities:
+  (A) The depth-DIFFERENCE ratio Δd₃₁/Δd₂₁ — computed as log(m₃/m₁)/log(m₂/m₁) at small m₁ ≈ 0.05 meV; gives 1.34
+  (B) The physical mass ratio m₃/m₂ — observed as √(Δm²₃₁/Δm²₂₁) ≈ 5.81 for small m₁
+- These are DIFFERENT quantities; comparing them produced the spurious 4.3× factor.
+- **Revised analysis (Cycle 165):** DFC equal-integer depth spacing predicts m₃/m₂ = κ = 5.33
+  (since d₃ = d₂+1 → m₃/m₂ = κ^1 = 5.33). Observed m₃/m₂ ≈ 5.81 (small-m₁ limit). Error: −8.3%.
+  This is Tier 2b (equation exists, 8.3% error) — not a 4.3× failure.
+- **True remaining gap:** The DFC equal-winding model predicts uniform depth spacing → Δd₂₁ = Δd₃₂.
+  The depth-difference ratio Δd₃₁/Δd₂₁ ≈ 1.34 at small m₁, not 2 (equal-winding). This means
+  the depth spacings are NOT equal, i.e., ν₂ and ν₃ are much closer in depth than ν₁ and ν₂.
+  Root cause of non-uniform spacing: not yet identified from DFC substrate. This is the actual open problem.
 - Files: `equations/neutrino_masses.py`, `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
 
 ---

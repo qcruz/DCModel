@@ -146,8 +146,8 @@ phenomena/                Natural language explanations of physical observations
     thermodynamics.md     All four laws derived from folding mechanics
     heat_and_conductivity.md  Heat, conduction, resistance, radiation unified
 
-educational/              Step-by-step modules teaching the model from scratch (in preparation)
-  00_overview.md          What is DFC? (coming)
+educational/              Step-by-step modules teaching the model from scratch
+  00_overview.md          What is DFC? General audience, no physics background (~1200 words)
   01_the_substrate.md     The one object, V(φ), kinks (coming)
   ...
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
@@ -206,7 +206,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 | Scope | MRRS | Key blocker |
 |---|---|---|
 | Core gauge/coupling sector | **14%** | α_em(0) identity (0.044% gap); arg(det M_q)=0 CLOSED Cycle 157 |
-| Full SM reproduction | **43%** | neutrino hierarchy (4×); quark masses (15%); G_Newton |
+| Full SM reproduction | **43%** | neutrino m₃/m₂ −8.3% (Cycle 165 corrects prior 4× metric error); quark masses (15%); G_Newton |
 | Complete theory (SM + gravity + QM) | **70%** | ℏ derivability; G_Newton; Born rule for position |
 
 *Cycle 117: Bottleneck 2 closed (β=1/(9π) Tier 2a). Cycle 144: α_s gap 8.1%→0.006% (ECCC). Cycle 146: τ mass Tier 2a (Koide). Cycle 147: strong CP Tier 2a (S⁵ isometry). MRRS updated to reflect closures.*

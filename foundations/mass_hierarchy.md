@@ -104,16 +104,18 @@ well. They are more likely ground states of three independent D6 winding sectors
 geometric differences between D6 sectors — not on the simple n²-spacing of an excited mode series.
 The dimple model successfully explains the electron/muon ratio but does not predict the tau mass.
 
-**Koide formula account (Tier 3, Cycles 122–127):** An alternative mechanism accounts for the
+**Koide formula account (Tier 2a, Cycle 146):** An alternative mechanism accounts for the
 tau mass with zero free parameters. The Koide formula is a mass relation connecting all three
 charged lepton masses: the sum of the three masses, divided by the square of the sum of the
 three square-root masses, equals two-thirds. Substituting the electron and muon masses, the
 observed tau mass follows to 10 ppm accuracy — and is reproduced by the DFC Koide calculation
-to 0.006% (+0.006%: predicted m_τ = 1776.97 MeV, observed 1776.86 MeV). The DFC mechanism
-proposes that a Z₃ permutation symmetry among the three coincident D7 kinks produces a
-circulant Yukawa coupling matrix, whose eigenvalue structure enforces the Koide relation. This
-accounts for the tau mass as a Tier 3 candidate (structural motivation; Step 3 of the derivation
-chain — proving Z₃ Yukawa invariance from the D7 moduli space integral — remains open).
+to 0.006% (+0.006%: predicted m_τ = 1776.97 MeV, observed 1776.86 MeV). The DFC mechanism:
+the canonical normalization of the collective coordinate phase θ_can = √Q_top · θ produces a
+vertex factor 1/√Q_top per phase insertion; Z₃ charge counting shows all six off-diagonal lepton
+pairs have exactly one insertion; this uniquely selects t = 1/√Q_top, giving Koide K = 2/3 with
+error 1.11 × 10⁻¹⁶. Steps 0–2 and 4a–4c are Tier 1; Step 4d is Tier 2a (Cycle 146). Overall
+chain: Tier 2a. Step 3 (proving Z₃ symmetry from the D7 moduli space integral, not just by
+charge counting) remains the formal open derivation for this chain.
 
 See `equations/tau_mass_koide.py` and `equations/koide_yukawa_circulant.py` for the numerical
 verification and algebraic structure of the Koide account.
@@ -147,9 +149,9 @@ extra dimension. Overlap with the Higgs (located on one brane) determines the ma
 - **Known failure of dimple model:** The tau mass (the n=3 excited mode) is 8.4× off. The three
   generations are likely not excited modes of one potential but ground states of three independent
   D6 winding sectors. This invalidates the "generates all three" claim for the dimple model.
-- **Koide formula alternative (Tier 3):** The tau mass is accounted for to 0.006% (m_τ = 1776.97
-  MeV) via the Koide formula, with a DFC mechanism based on Z₃ permutation symmetry of coincident
-  D7 kinks producing a circulant Yukawa matrix. Step 3 of this derivation remains open (Tier 3).
+- **Koide formula (Tier 2a, Cycle 146):** m_τ = 1776.97 MeV (+0.006%, 0 free params) from
+  canonical phase vertex 1/√Q_top; Z₃ charge counting exact; K = 2/3 error 10⁻¹⁶. Step 3
+  (formal Z₃ from D7 moduli integral) remains the open formal completion.
 - The dimple as a derived consequence of D7 SU(3) closure squashing is a working hypothesis,
   not yet derived from the substrate field equation (Tier 3)
 
