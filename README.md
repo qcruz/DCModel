@@ -275,20 +275,20 @@ The model is in active development. Current priorities:
 - ρ meson mass: m_ρ=√(2π)×Λ_QCD=763 MeV (−1.6%, Tier 3, 0 free params; Cycle 160)
 - String tension: σ=Q_top×Λ_QCD² (−4.2%, Tier 3; Cycle 160)
 
-**Current focus — two top priorities:**
+**Current focus — close the remaining derivation gaps:**
 
-1. **Falsifiable prediction development** — strengthen the derivation chains for the
-   four predictions that distinguish DFC from all competitor theories:
-   - **No axion / d_n = 0** (Tier 2a, Cycle 147) — predicts null results at ADMX, CASPEr,
-     and nEDM@PSI. Each null experimental result accumulating in the coming decade is
-     consistent with DFC and inconsistent with the QCD axion.
-   - **Absolute proton stability** (Tier 1) — predicts zero decay rate at Hyper-K and JUNO,
-     in contrast to all GUT models (τ_p ~ 10³⁴ yr).
-   - **No SUSY partners** — consistent with all LHC Run 1/2/3 null results.
-   - **d_n = 0 exactly** — neutron EDM exactly zero; next-generation experiments probe to 10⁻²⁸ e·cm.
+The model's falsifiable predictions (no axion, proton absolutely stable, d_n = 0, no SUSY)
+are only as strong as the derivation chains behind them. The top priority is closing the
+open gaps, in order:
 
-2. **Educational modules** (`educational/`) — step-by-step explanations of the model for
-   any reader, regardless of physics background. In preparation.
+1. σ = Q_top × Λ_QCD² from D7 kink vacuum energy (Tier 3 → proof; Yang-Mills gap equivalent)
+2. α_em(0) algebraic identity A−B = ln(1/α_em(0)) (Tier 4, 0.044% residual)
+3. f_ρ from D5-D7 winding overlap (−82% off; needed to close hadronic Δα_had)
+4. Proton mass 938 MeV from D7 substrate (not yet attempted quantitatively)
+5. Neutrino mass hierarchy (4.3× off)
+
+Once gaps are closed: write them up as external-facing prediction documents, then build
+out educational modules (`educational/`) — step-by-step explanations for any reader.
 
 **Open:**
 - Proton mass 938 MeV from D7 substrate (Yang-Mills mass gap in DFC language)

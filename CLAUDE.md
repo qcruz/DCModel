@@ -142,6 +142,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   Priorities 2+3 CLOSED Cycle 157: real amplitude theorem + D6/D7 overlap integral.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-03 | 163 | Strategic refocus (corrected): CLAUDE.md gap priority order made primary — Level 1 (σ from D7 vacuum energy, α_em identity, f_ρ overlap), Level 2 (proton mass, neutrino hierarchy, quark masses), Level 3 (G_Newton, ℏ, D3/D4 formal); falsifiable prediction documents and educational modules moved to Secondary A/B (only when no gap is tractable); Step 1 updated (gap work default, educational/phenomenon only as fallback); README current focus updated (gap-closing order explicit, predictions/education downstream). | 83.5% | 62% | ~73% |
 | 2026-06-03 | 162 | Strategic refocus: CLAUDE.md priorities rewritten — two top priorities replace three bottlenecks: (A) falsifiable prediction development (no axion/d_n=0 Tier 2a, absolute proton stability Tier 1, no SUSY, d_n=0 exact — each with derivation tightening goal and experimental timeline); (B) educational modules in educational/ (00-08 module plan, standard format, audience=general, writing rules); Step 1 updated; README updated (Status section rewritten, educational/ in repo map, Foundational Reading Order updated, recently resolved extended through Cycle 161, two-priority focus stated explicitly). | 83.5% | 62% | ~73% |
 | 2026-06-03 | 161 | hadronic_spectroscopy.md (new): Regge trajectory DFC account — α_0=Q_top/4=1/2 [T2a], σ=Q_top×Λ² [T3], m_ρ=√(2π)Λ=763 MeV [T3, −1.58%, 0 free params], α'=0.858 GeV⁻² [T3, −2.5%], Γ(ρ→ππ)=142 MeV [T3, −4.6%]; 5 open questions documented (σ proof, f_ρ VMD, f_π chiral condensate, heavy mesons, Δα_had); composite_particles.md audit: α_s OPEN→+0.006% Tier 2a, σ and m_ρ rows added, hadronic_spectroscopy link added; strong_force.md Connections: hadronic_spectroscopy.md + rho_meson_dfc.py + d7_nonpert_coefficients.py added; confinement.py stale note fixed (one-loop artifact). | 83.5% | 62% | ~73% |
 | 2026-06-03 | 160 | D7 non-perturbative coefficients (equations/d7_nonpert_coefficients.py, new): α_0=Q_top/4=1/2 Tier 2a (massless D7 kinks, standard QCD string massless endpoint); σ=Q_top×Λ_QCD²=185440 MeV² Tier 3 (−4.2% vs obs 193600 MeV²; Q_top=2 is only DFC Tier-1 integer fitting c_σ<5%); m_ρ=√(2π)×Λ_QCD=763.3 MeV Tier 3 (−1.58%, 0 free params!); α'=1/(4πΛ_QCD²)=0.858 GeV⁻² Tier 3 (−2.5%); Γ(ρ→ππ)=142 MeV (−4.6%, KSFR+DFC m_ρ, obs f_π input); chain: Q_top[T1]→α_0=1/2[T2a]→σ=Q_top×Λ²[T3]→m_ρ=√(2π)Λ[T3]; DFC Λ_QCD=304.5 MeV selects minimum error (-1.6%); PDG lower bound 210 MeV gives −32%. | 83.5% | 62% | ~73% |
@@ -190,55 +191,72 @@ All three must stay in sync. The estimate has two components:
 - **Mathematical rigor** (~8% baseline): increases only when actual derivations are
   completed. Structural descriptions do not move rigor.
 
-**TOP PRIORITIES — default focus for every cycle unless user explicitly redirects:**
+**TOP PRIORITY — close the remaining derivation gaps. This is the default focus for every
+cycle unless the user explicitly redirects.**
 
-### Priority A — Falsifiable Prediction Development
+The model's external credibility — and the strength of its falsifiable predictions —
+depends entirely on how complete the underlying derivations are. A prediction that follows
+from a Tier 3 structural argument is weak. The same prediction following from a Tier 1
+chain is compelling. Every gap closed moves the model from "internally consistent sketch"
+toward "externally evaluable theory." Close the gaps first; write it up second.
 
-The clearest path to external credibility is a single prediction that: (a) follows
-unambiguously from the substrate derivation chain, (b) is distinct from SM or standard
-QCD expectations, and (c) is currently being tested or could be tested soon. Every cycle
-should ask: does this work strengthen one of the four falsifiable prediction chains?
+### Gap Priority Order
 
-**The four active falsifiable prediction chains:**
+Work on gaps in this order by default. Promote the first unresolved gap at each level
+before moving to the next:
 
-1. **No axion / d_n = 0** — DFC Strong CP resolution is topological (S⁵ CP isometry, Tier 2a,
-   Cycle 147; d_n = 0 Criterion B). This predicts null results for all RF-cavity axion searches
-   (ADMX, CASPEr, HAYSTAC) and neutron EDM below current experimental reach. The prediction
-   is already Tier 2a. Priority: write a clean, self-contained derivation document making
-   this the flagship external prediction; connect to `strong_cp_theta.py` and
-   `interface_overlap_integral.py`.
+**Level 1 — Gaps that block external credibility of existing predictions:**
 
-2. **Absolute proton stability** — DFC product topology forbids D7→D5 transitions (Tier 1).
-   Proton decay rate = 0 exactly. Any proton decay observation (Hyper-K, JUNO) falsifies
-   the model. Most GUTs predict τ_p ~ 10³⁴ yr. DFC predicts τ_p = ∞. Priority: produce
-   a one-page derivation document suitable for external readers.
+1. **σ = Q_top × Λ_QCD² from D7 kink vacuum energy** — currently Tier 3 (−4.2%).
+   Proof = D7 string ground-state calculation (Yang-Mills mass gap in DFC language).
+   Closes: m_ρ = √(2π)Λ Tier 3 → Tier 2a; string tension structural chain.
+   Files: `equations/d7_nonpert_coefficients.py`, `equations/rho_meson_dfc.py`
 
-3. **No SUSY partners** — DFC produces the SM gauge structure from closure topology.
-   No superpartner spectrum arises. LHC Run 3 and HL-LHC non-observation is consistent
-   with DFC. Priority: brief structural statement as part of the comparison document.
+2. **α_em(0) algebraic identity: A−B = ln(1/α_em(0))** — currently Tier 4 (0.044% gap).
+   Closes: T12 tension; simultaneously fixes α_em chain and α_s precision.
+   Files: `equations/alpha_em_eccc.py` (Cycle 139), `equations/alpha_em_identity_proof.py` (Cycle 155)
 
-4. **Neutron EDM exactly zero (d_n = 0)** — follows from d_n = 0 Criterion B (Cycle 147).
-   Current experimental bound: |d_n| < 1.8 × 10⁻²⁶ e·cm. DFC predicts d_n = 0 exactly.
-   Next-generation experiments (nEDM@PSI, TRIUMF nEDM) probe to 10⁻²⁸. A null result
-   is a DFC prediction; any positive signal falsifies the no-θ-bar argument.
+3. **f_ρ from D5-D7 winding overlap** — DFC Tier 3 estimate −82% off.
+   Needed to close the hadronic Δα_had dispersion integral (T12 path).
+   Files: `equations/rho_meson_dfc.py` Part D
 
-**Cycle work under Priority A:** write derivation documents, tighten the logical chain
-from postulates to each prediction, and note experimental timeline for each test.
+**Level 2 — Gaps that would substantially raise the completeness estimate:**
+
+4. **Proton mass 938 MeV from substrate** — not yet attempted at the quantitative level.
+   Requires full nonperturbative D7 field energy in the three-quark color-singlet state.
+
+5. **Neutrino mass hierarchy ratio** — 1.34 predicted vs 5.71 observed (4.3× off).
+   Non-uniform depth spacing required; root cause not yet identified.
+
+6. **Quark masses c/s** — 15% below observed; M_c(D7) dependence not fully resolved.
+
+**Level 3 — Gaps that would close the model's most fundamental openness:**
+
+7. **G_Newton from (α, β)** — gravity not yet quantitative.
+8. **ℏ from substrate characteristic scales** — not yet derived.
+9. **D3/D4 formal derivation** — three apparent spatial degrees of freedom and inertia
+   described behaviorally; structural derivation not complete.
 
 ---
 
-### Priority B — Educational Modules
+### Secondary Priorities (only when no Level 1/2 gap is tractable in a given cycle)
+
+**Secondary A — Falsifiable prediction documents**
+
+Once a gap is closed, write it up in a form suitable for external readers. The four
+predictions that distinguish DFC from all competitors are already structurally established;
+the work is making each derivation chain complete and clearly written:
+
+- No axion / d_n = 0 (Tier 2a, Cycle 147) — predicts null ADMX/CASPEr/nEDM results
+- Absolute proton stability (Tier 1) — zero decay rate vs GUT τ_p ~ 10³⁴ yr
+- No SUSY partners — consistent with all LHC null results
+- d_n = 0 exactly — next-generation nEDM experiments probe to 10⁻²⁸ e·cm
+
+**Secondary B — Educational Modules**
 
 The model must be teachable to someone with no physics background. Educational modules
-are step-by-step explanations of DFC concepts and results, written for general
-comprehension — not internal development notes. They live in `educational/` and will
-eventually form a complete course in the model.
-
-**Audience:** Anyone curious — no prior physics assumed. Build intuition first, then
-formalism. Each module should be self-contained and reference the technical documents
-as optional depth.
-
-**Module structure (standard format):**
+live in `educational/` and form a complete course in the model. Write one module per
+cycle when no gap work is available. Proceed through the list in order:
 
 ```
 educational/
@@ -259,18 +277,8 @@ educational/
   sentence immediately.
 - Each module should be readable without reading any other module first.
 - Accuracy is non-negotiable: if something is Tier 3 or open, say so plainly.
-  ("We believe X, but have not yet proved it" is the correct phrasing.)
-- Length: 500–1500 words per module. Dense is fine; imprecise is not.
-
-**Cycle work under Priority B:** write one educational module per cycle when not doing
-Priority A work, proceeding through the list in order. If a module requires a derivation
-that does not yet exist, note it as an open item rather than paper over it.
-
----
-
-**Default cycle behavior:** alternate between Priority A (derivation tightening) and
-Priority B (educational module writing) unless the user redirects. Priority A takes
-precedence when a derivation gap is blocking a falsifiable prediction.
+  ("We believe X, but have not yet proved it.")
+- Length: 500–1500 words per module.
 
 **After every push, also check `ISSUES.md`** — centralized tracker for open questions,
 known failures, internal tensions, retracted claims, and blocked derivations.
@@ -287,17 +295,17 @@ the substrate structure.
 
 ---
 
-### Step 1 — Add a New Phenomenon or Educational Module
+### Step 1 — Close a Gap, Add a Phenomenon, or Write an Educational Module
 
-1. **If doing Priority A:** Identify a derivation gap in one of the four falsifiable
-   prediction chains (no axion, proton stability, SUSY absence, d_n = 0). Write or
-   tighten the document or equation module that closes it.
+1. **Default:** Work on the highest-priority open gap in the Gap Priority Order above.
+   Write or update the equation module, run it, record the result. If a gap is not
+   tractable this cycle (requires a full Yang-Mills calculation, etc.), note the blocker
+   explicitly and move to the next gap.
 
-   **If doing Priority B:** Write the next educational module in `educational/` following
-   the standard format above. Proceed through the list in order (00 → 08).
-
-   **Otherwise:** Identify a physics phenomenon not yet in `phenomena/` (or a placeholder
-   needing content). Choose one systematically or randomly from the list of unformalized docs.
+   **If no gap is tractable:** Write the next educational module in `educational/`
+   following the standard format above (00 → 08 in order), OR identify a physics
+   phenomenon not yet in `phenomena/` (or a placeholder needing content) with preference
+   for phenomena that connect to a Level 1/2 gap.
 2. Write the **conceptual document** in `phenomena/` following the standard format:
    - One-Sentence Synthesis (DFC account, not a placeholder)
    - Observation (what is measured/observed)
