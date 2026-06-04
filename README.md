@@ -149,6 +149,7 @@ phenomena/                Natural language explanations of physical observations
 educational/              Step-by-step modules teaching the model from scratch
   00_overview.md          What is DFC? General audience, no physics background (~1200 words)
   01_the_substrate.md     The one object, V(φ), kinks, I₄=4/3, Q_top=2, β=1/(9π), g_eff (Cycle 166)
+  02_how_space_appears.md How apparent space arises: compression, D-depths, D3 localization (Cycle 167)
   ...
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories

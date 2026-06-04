@@ -390,12 +390,131 @@ def pion_loop_delta_alpha(f_pi_dfc):
     }
 
 
-# ─── Part E: Summary ─────────────────────────────────────────────────────────
+# ─── Part E: Large-N_c VMD f_ρ and improved T12 chain ────────────────────────
 
-def summary(f_pi_dfc, part_d_results):
+def large_nc_frho():
+    """
+    Part E: Large-N_c VMD formula for f_ρ.
+
+    Physical question:
+        The KSFR chain (Part D) gives f_ρ = f_π = 96.9 MeV, yielding Γ_ee = 2.745 keV
+        (−61% vs PDG).  Is there a better DFC-derivable f_ρ?
+
+    DFC mechanism:
+        In large-N_c QCD, each quark loop contributes O(N_c) to the ρ self-energy.
+        One-loop quark integration gives g_ρ² = 8π²/N_c (the 8π² is the 4D loop
+        measure ∫d⁴k/(2π)⁴ at k ~ m_ρ).  This yields:
+
+            f_ρ = m_ρ / g_ρ = m_ρ √(N_c / (8π²))
+
+        DFC supplies both ingredients:
+            N_c = 3   from D7 SU(3), Bottleneck 1 (Tier 2a)
+            m_ρ = √(2π) Λ_QCD   from Regge/string tension (Cycle 160, Tier 3)
+
+        Combined:
+            f_ρ^{DFC,large-Nc} = √(3/(4π)) × Λ_QCD            [DFC, Tier 3]
+            f_ρ / f_π  =  √(3/(4π)) / (1/π)  =  √(3π/4)       [DFC ratio, exact]
+
+    Tier: Tier 3 (N_c=3 Tier 2a; m_ρ Tier 3; 1/N_c counting structural).
+    """
+    print()
+    print('[PART E] LARGE-N_c VMD: f_ρ = m_ρ √(N_c/(8π²))')
+    print('=' * 70)
+    print()
+
+    m_rho = M_RHO_DFC          # √(2π) Λ_QCD = 0.7633 GeV, Tier 3
+    N_c   = 3                  # SU(3) from Bottleneck 1, Tier 2a
+    alpha = ALPHA_EM_0
+    M_Z2  = M_Z ** 2
+
+    # Large-N_c VMD formula: f_ρ = m_ρ √(N_c/(8π²))
+    f_rho_lnc_dfc = m_rho * math.sqrt(N_c / (8.0 * math.pi ** 2))
+    f_rho_lnc_obs = M_RHO_OBS * math.sqrt(N_c / (8.0 * math.pi ** 2))
+
+    # PDG f_ρ inferred from Γ(ρ→ee): Γ_ee = (4πα²/3) f_ρ²/m_ρ → f_ρ = √(3Γ_ee m_ρ/(4πα²))
+    GEE_PDG       = 7.04e-6     # GeV = 7.04 keV (PDG)
+    f_rho_pdg_val = math.sqrt(3.0 * GEE_PDG * M_RHO_OBS / (4.0 * math.pi * alpha ** 2))
+
+    err_dfc = (f_rho_lnc_dfc - f_rho_pdg_val) / f_rho_pdg_val * 100.0
+    err_obs = (f_rho_lnc_obs - f_rho_pdg_val) / f_rho_pdg_val * 100.0
+
+    print(f'  f_ρ^{{DFC, large-Nc}}     = {f_rho_lnc_dfc*1000:.1f} MeV   (DFC m_ρ={m_rho*1000:.1f} MeV, N_c=3)')
+    print(f'  f_ρ^{{obs m_ρ, large-Nc}} = {f_rho_lnc_obs*1000:.1f} MeV   (obs m_ρ={M_RHO_OBS*1000:.1f} MeV, N_c=3)')
+    print(f'  f_ρ^{{PDG}} (from Γ_ee)   = {f_rho_pdg_val*1000:.1f} MeV')
+    print()
+    print(f'  Error DFC m_ρ: {err_dfc:+.1f}%     (KSFR gave −37.1%)')
+    print(f'  Error obs m_ρ: {err_obs:+.1f}%')
+    print()
+
+    # DFC ratio f_ρ/f_π (analytic)
+    f_pi_dfc       = LAM_QCD_DFC / math.pi
+    ratio_dfc      = f_rho_lnc_dfc / f_pi_dfc
+    ratio_analytic = math.sqrt(3.0 * math.pi / 4.0)          # √(3π/4) exact
+    ratio_obs      = f_rho_pdg_val / F_PI_OBS
+    err_ratio      = (ratio_dfc - ratio_analytic) / ratio_analytic
+
+    print(f'  f_ρ/f_π (DFC large-Nc) = {ratio_dfc:.5f}')
+    print(f'  f_ρ/f_π analytical     = √(3π/4) = {ratio_analytic:.5f}  [residual {err_ratio:.2e}]')
+    print(f'  f_ρ/f_π (PDG)          = {ratio_obs:.5f}')
+    print()
+
+    # Γ_ee from large-N_c f_ρ: Γ_ee = (4πα²/3) f_ρ²/m_ρ
+    gee_lnc = (4.0 * math.pi * alpha ** 2 / 3.0) * f_rho_lnc_dfc ** 2 / m_rho
+    err_gee = (gee_lnc - GEE_PDG) / GEE_PDG * 100.0
+
+    print(f'  Γ_ee^{{DFC, large-Nc}} = {gee_lnc*1e6:.3f} keV   (PDG: {GEE_PDG*1e6:.3f} keV,  error {err_gee:+.1f}%)')
+    print(f'  [KSFR gave 2.745 keV (−61.0%); large-N_c improvement: +52 percentage points]')
+    print()
+
+    # NWA Δα_ρ with large-N_c Γ_ee
+    delta_alpha_lnc = 3.0 * gee_lnc / (alpha * m_rho ** 3) * M_Z2 / (M_Z2 - m_rho ** 2)
+    delta_alpha_pdg = 3.0 * GEE_PDG / (alpha * M_RHO_OBS ** 3) * M_Z2 / (M_Z2 - M_RHO_OBS ** 2)
+    T12 = 0.00102
+
+    print(f'  NWA Δα_ρ (large-N_c):')
+    print(f'    Δα_ρ^{{NWA,DFC,lnc}}  = {delta_alpha_lnc:.5f}')
+    print(f'    Δα_ρ^{{NWA,PDG}}      = {delta_alpha_pdg:.5f}')
+    print(f'    T12 target            = {T12:.5f}')
+    print(f'    Ratio DFC/T12         = {delta_alpha_lnc/T12:.2f}×')
+    print()
+    print('  NOTE: NWA gives the FULL ρ contribution; T12 = parton-subtracted NP excess.')
+    print('        The large-N_c improvement (Γ_ee −8% vs −61%) tightens the T12 chain')
+    print('        but parton-model subtraction (BW − pQCD baseline) remains Tier 4.')
+    print()
+    print('  STRUCTURAL DERIVATION:')
+    print('    f_ρ = m_ρ √(N_c/(8π²))')
+    print(f'        = {m_rho*1000:.1f} MeV × √(3/(8π²))')
+    print(f'        = {m_rho*1000:.1f} MeV × {math.sqrt(3/(8*math.pi**2)):.5f}')
+    print(f'        = {f_rho_lnc_dfc*1000:.1f} MeV')
+    print()
+    print('    Equivalently: f_ρ = √(3/(4π)) × Λ_QCD  (DFC Λ_QCD only, 0 free params)')
+    print(f'    = √(3/(4π)) × {LAM_QCD_DFC*1000:.1f} MeV = {math.sqrt(3/(4*math.pi))*LAM_QCD_DFC*1000:.1f} MeV')
+    print()
+    print('  TIER: Tier 3')
+    print('    N_c=3 [Tier 2a, Bottleneck 1] + m_ρ=√(2π)Λ_QCD [Tier 3, Cycle 160]')
+    print('    + large-N_c 1/N_c loop counting [structural, no explicit DFC action]')
+    print()
+    print('  COMPARISON TABLE:')
+    print(f'    Route           f_ρ (MeV)   Γ_ee (keV)   Error')
+    print(f'    KSFR            96.9         2.745        −61.0%')
+    print(f'    Large-N_c DFC  {f_rho_lnc_dfc*1000:.1f}       {gee_lnc*1e6:.3f}       {err_gee:+.1f}%')
+    print(f'    PDG             {f_rho_pdg_val*1000:.1f}        {GEE_PDG*1e6:.3f}       (reference)')
+
+    return {
+        'f_rho_lnc_dfc':    f_rho_lnc_dfc,
+        'gee_lnc':          gee_lnc,
+        'err_gee_lnc':      err_gee,
+        'delta_alpha_lnc':  delta_alpha_lnc,
+        'ratio_analytic':   ratio_analytic,
+    }
+
+
+# ─── Summary ──────────────────────────────────────────────────────────────────
+
+def summary(f_pi_dfc, part_d_results, part_e_results):
     print()
     print('=' * 70)
-    print('SUMMARY — DFC PION DECAY CONSTANT AND CHIRAL STRUCTURE  (Cycle 166)')
+    print('SUMMARY — DFC PION DECAY CONSTANT AND CHIRAL STRUCTURE  (Cycle 167)')
     print('=' * 70)
     print()
     print('  ESTABLISHED:')
@@ -408,20 +527,23 @@ def summary(f_pi_dfc, part_d_results):
     print(f'  [Tier 3]  g_ρππ^{{DFC}} = m_ρ^DFC/√(2f_π^DFC²) = {part_d_results["g_rhopipi_dfc"]:.4f}')
     print(f'            (KSFR first relation; obs g_ρππ ≈ {M_RHO_OBS/(math.sqrt(2)*F_PI_OBS):.4f})')
     print()
-    print(f'  [Tier 3]  f_ρ^{{DFC}} (KSFR) = {part_d_results["f_rho_ksfr_dfc"]*1000:.2f} MeV')
-    print(f'            (PDG: 154 MeV; error {(part_d_results["f_rho_ksfr_dfc"]-0.154)/0.154*100:+.1f}%)')
+    print(f'  [Tier 3]  f_ρ^{{DFC}} (KSFR)    = {part_d_results["f_rho_ksfr_dfc"]*1000:.2f} MeV'
+          f'  (PDG: 154 MeV; error {(part_d_results["f_rho_ksfr_dfc"]-0.154)/0.154*100:+.1f}%)')
+    print(f'  [Tier 3]  f_ρ^{{DFC}} (large-Nc) = {part_e_results["f_rho_lnc_dfc"]*1000:.1f} MeV'
+          f'  (error {(part_e_results["f_rho_lnc_dfc"]-0.1565)/0.1565*100:+.1f}%;  improvement over KSFR)')
     print()
-    print(f'  [Tier 3]  Γ_ee^{{DFC}} (KSFR) = {part_d_results["gee_dfc"]*1e6:.3f} keV')
-    print(f'            (PDG: 7.04 keV; error {(part_d_results["gee_dfc"]-7.04e-6)/7.04e-6*100:+.1f}%)')
+    print(f'  [Tier 3]  Γ_ee^{{DFC}} (KSFR)    = {part_d_results["gee_dfc"]*1e6:.3f} keV'
+          f'  (PDG: 7.04 keV; error {(part_d_results["gee_dfc"]-7.04e-6)/7.04e-6*100:+.1f}%)')
+    print(f'  [Tier 3]  Γ_ee^{{DFC}} (large-Nc) = {part_e_results["gee_lnc"]*1e6:.3f} keV'
+          f'  (error {part_e_results["err_gee_lnc"]:+.1f}%;  52 pp improvement over KSFR)')
     print()
-    print('  STRUCTURAL CHAIN (T12 path):')
+    print('  STRUCTURAL CHAIN (T12 path — large-N_c route, Cycle 167):')
     print('    α_s(M_Z)=0.11821 [T2a] → Λ_QCD=304.5 MeV [T2b]')
-    print('    → f_π=Λ_QCD/π=96.9 MeV [T3, +5.1%]')
-    print('    → g_ρππ=m_ρ/√(2f_π²) [T3, KSFR]')
-    print('    → f_ρ=m_ρ/(√2 g_ρππ) [T3, KSFR]')
-    print('    → Γ_ee=(4πα²/3)f_ρ²/m_ρ [T3]')
-    print('    → Δα_ρ^{NWA} [T3]')
-    print('    → δ(Δα)^{NP} → T12 closure [T4 OPEN: parton-model matching]')
+    print('    → m_ρ=√(2π)Λ=763.3 MeV [T3, −1.6%, Cycle 160]')
+    print('    → f_ρ=√(3/(4π))×Λ=√(N_c/(8π²))×m_ρ [T3, large-N_c VMD]')
+    print(f'    → Γ_ee=(4πα²/3)f_ρ²/m_ρ={part_e_results["gee_lnc"]*1e6:.3f} keV [T3, {part_e_results["err_gee_lnc"]:+.1f}%]')
+    print(f'    → Δα_ρ^{{NWA,DFC}}={part_e_results["delta_alpha_lnc"]:.5f} [T3]')
+    print('    → δ(Δα)^{NP} → T12 closure [T4 OPEN: parton-model subtraction]')
     print()
     print('  OPEN:')
     print('    (i)  Formal derivation of f_π from D7 kink condensate')
@@ -443,4 +565,5 @@ if __name__ == '__main__':
     _           = gor_relation(f_pi_dfc)
     su3_flavor_breaking(f_pi_dfc)
     part_d      = pion_loop_delta_alpha(f_pi_dfc)
-    summary(f_pi_dfc, part_d)
+    part_e      = large_nc_frho()
+    summary(f_pi_dfc, part_d, part_e)

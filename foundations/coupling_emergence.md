@@ -206,6 +206,8 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 | α_s from ECCC+α_em(0) | 0.11821 | 0.11820 | ✓ +0.006% |
 | α_em(0) from ECCC+α_s | 1/136.98 | 1/137.04 | ✓ −0.044% |
 | EW VEV v (EWSB co-crystallization) | 247.83 GeV | 246.22 GeV | ✓ +0.65% |
+| f_ρ from large-N_c VMD (N_c=3, m_ρ Tier 3) | 148.8 MeV | 156 MeV | ✓ Tier 3, −4.9% |
+| Γ_ee from large-N_c f_ρ | 6.47 keV | 7.04 keV | ✓ Tier 3, −8.1% |
 | SU(N) structure from topology | not derived | — | ✗ open |
 | 36π condition from kink profile | not derived | — | ✗ open |
 
@@ -216,6 +218,7 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 - `equations/d5_complex_from_instability.py` — β and g_eff derivation (Cycle 117)
 - `equations/alpha_em_prediction.py` — 36π chain to α_em(M_Z) and α_em(0) (Cycle 142)
 - `equations/alpha_em_eccc.py` — ECCC structural identity (Cycle 139)
+- `equations/pion_decay_constant.py` — f_π=Λ/π, large-N_c f_ρ=√(N_c/(8π²))×m_ρ (Cycles 166–167)
 - `equations/alpha_em_selfconsistency.py` — joint α_em/α_s self-consistency (Cycle 144)
 - `equations/weinberg_angle_rg.py` — sin²θ_W from Route 3B
 - `foundations/dimensional_stack.md` — D-depth closure hypothesis
