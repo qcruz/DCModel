@@ -142,6 +142,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   Priorities 2+3 CLOSED Cycle 157: real amplitude theorem + D6/D7 overlap integral.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-03 | 164 | Cycle structure restored + educational step added: three-bottleneck priorities restored (α_em identity, Strong CP formation, arg(det M_q)=0); Steps 1-5 — Step 1 critical/bottleneck, Step 2 random open issue from ISSUES.md, Step 3 update random doc, Step 4 create/update random educational module (educational/ planned 00-08, writing rules: English first, define jargon, Tier-honest, 500-1500 words), Step 5 MANDATORY README+push every session; README current focus updated. | 83.5% | 62% | ~73% |
 | 2026-06-03 | 163 | Strategic refocus (corrected): CLAUDE.md gap priority order made primary — Level 1 (σ from D7 vacuum energy, α_em identity, f_ρ overlap), Level 2 (proton mass, neutrino hierarchy, quark masses), Level 3 (G_Newton, ℏ, D3/D4 formal); falsifiable prediction documents and educational modules moved to Secondary A/B (only when no gap is tractable); Step 1 updated (gap work default, educational/phenomenon only as fallback); README current focus updated (gap-closing order explicit, predictions/education downstream). | 83.5% | 62% | ~73% |
 | 2026-06-03 | 162 | Strategic refocus: CLAUDE.md priorities rewritten — two top priorities replace three bottlenecks: (A) falsifiable prediction development (no axion/d_n=0 Tier 2a, absolute proton stability Tier 1, no SUSY, d_n=0 exact — each with derivation tightening goal and experimental timeline); (B) educational modules in educational/ (00-08 module plan, standard format, audience=general, writing rules); Step 1 updated; README updated (Status section rewritten, educational/ in repo map, Foundational Reading Order updated, recently resolved extended through Cycle 161, two-priority focus stated explicitly). | 83.5% | 62% | ~73% |
 | 2026-06-03 | 161 | hadronic_spectroscopy.md (new): Regge trajectory DFC account — α_0=Q_top/4=1/2 [T2a], σ=Q_top×Λ² [T3], m_ρ=√(2π)Λ=763 MeV [T3, −1.58%, 0 free params], α'=0.858 GeV⁻² [T3, −2.5%], Γ(ρ→ππ)=142 MeV [T3, −4.6%]; 5 open questions documented (σ proof, f_ρ VMD, f_π chiral condensate, heavy mesons, Δα_had); composite_particles.md audit: α_s OPEN→+0.006% Tier 2a, σ and m_ρ rows added, hadronic_spectroscopy link added; strong_force.md Connections: hadronic_spectroscopy.md + rho_meson_dfc.py + d7_nonpert_coefficients.py added; confinement.py stale note fixed (one-loop artifact). | 83.5% | 62% | ~73% |
@@ -191,122 +192,41 @@ All three must stay in sync. The estimate has two components:
 - **Mathematical rigor** (~8% baseline): increases only when actual derivations are
   completed. Structural descriptions do not move rigor.
 
-**TOP PRIORITY — close the remaining derivation gaps. This is the default focus for every
-cycle unless the user explicitly redirects.**
+**Priority weighting for Step 1:** Prefer phenomena and derivations connecting to the
+three bottlenecks:
 
-The model's external credibility — and the strength of its falsifiable predictions —
-depends entirely on how complete the underlying derivations are. A prediction that follows
-from a Tier 3 structural argument is weak. The same prediction following from a Tier 1
-chain is compelling. Every gap closed moves the model from "internally consistent sketch"
-toward "externally evaluable theory." Close the gaps first; write it up second.
+1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically to close α_em and
+   α_s gaps simultaneously (equations/alpha_em_eccc.py, Cycle 139).
 
-### Gap Priority Order
+2. **Strong CP formation argument** — formal nucleation path from D7 formation dynamics
+   showing energy minimum at theta=0 vs theta=pi; promote theta=0 selection Tier 3→2a
+   (equations/strong_cp_theta.py, Cycle 147).
 
-Work on gaps in this order by default. Promote the first unresolved gap at each level
-before moving to the next:
-
-**Level 1 — Gaps that block external credibility of existing predictions:**
-
-1. **σ = Q_top × Λ_QCD² from D7 kink vacuum energy** — currently Tier 3 (−4.2%).
-   Proof = D7 string ground-state calculation (Yang-Mills mass gap in DFC language).
-   Closes: m_ρ = √(2π)Λ Tier 3 → Tier 2a; string tension structural chain.
-   Files: `equations/d7_nonpert_coefficients.py`, `equations/rho_meson_dfc.py`
-
-2. **α_em(0) algebraic identity: A−B = ln(1/α_em(0))** — currently Tier 4 (0.044% gap).
-   Closes: T12 tension; simultaneously fixes α_em chain and α_s precision.
-   Files: `equations/alpha_em_eccc.py` (Cycle 139), `equations/alpha_em_identity_proof.py` (Cycle 155)
-
-3. **f_ρ from D5-D7 winding overlap** — DFC Tier 3 estimate −82% off.
-   Needed to close the hadronic Δα_had dispersion integral (T12 path).
-   Files: `equations/rho_meson_dfc.py` Part D
-
-**Level 2 — Gaps that would substantially raise the completeness estimate:**
-
-4. **Proton mass 938 MeV from substrate** — not yet attempted at the quantitative level.
-   Requires full nonperturbative D7 field energy in the three-quark color-singlet state.
-
-5. **Neutrino mass hierarchy ratio** — 1.34 predicted vs 5.71 observed (4.3× off).
-   Non-uniform depth spacing required; root cause not yet identified.
-
-6. **Quark masses c/s** — 15% below observed; M_c(D7) dependence not fully resolved.
-
-**Level 3 — Gaps that would close the model's most fundamental openness:**
-
-7. **G_Newton from (α, β)** — gravity not yet quantitative.
-8. **ℏ from substrate characteristic scales** — not yet derived.
-9. **D3/D4 formal derivation** — three apparent spatial degrees of freedom and inertia
-   described behaviorally; structural derivation not complete.
-
----
-
-### Secondary Priorities (only when no Level 1/2 gap is tractable in a given cycle)
-
-**Secondary A — Falsifiable prediction documents**
-
-Once a gap is closed, write it up in a form suitable for external readers. The four
-predictions that distinguish DFC from all competitors are already structurally established;
-the work is making each derivation chain complete and clearly written:
-
-- No axion / d_n = 0 (Tier 2a, Cycle 147) — predicts null ADMX/CASPEr/nEDM results
-- Absolute proton stability (Tier 1) — zero decay rate vs GUT τ_p ~ 10³⁴ yr
-- No SUSY partners — consistent with all LHC null results
-- d_n = 0 exactly — next-generation nEDM experiments probe to 10⁻²⁸ e·cm
-
-**Secondary B — Educational Modules**
-
-The model must be teachable to someone with no physics background. Educational modules
-live in `educational/` and form a complete course in the model. Write one module per
-cycle when no gap work is available. Proceed through the list in order:
-
-```
-educational/
-├── 00_overview.md          ← What is DFC? One-page answer.
-├── 01_the_substrate.md     ← The one object, V(φ), kinks
-├── 02_compression.md       ← Why it compresses; what bifurcation means
-├── 03_depth_map.md         ← D1-D7 as compression stages (provisional)
-├── 04_forces.md            ← How U(1), SU(2), SU(3) appear from fold topology
-├── 05_particles.md         ← Electrons, quarks, neutrinos as kink configurations
-├── 06_predictions.md       ← What the model predicts; how to test it
-├── 07_open_questions.md    ← What is not yet derived; honest gaps
-└── 08_mathematics.md       ← The key equations, explained in plain language
-```
-
-**Writing rules for educational modules:**
-- Every concept introduced in plain English first, equation (if any) second.
-- No jargon without definition. When a technical term is unavoidable, define it in one
-  sentence immediately.
-- Each module should be readable without reading any other module first.
-- Accuracy is non-negotiable: if something is Tier 3 or open, say so plainly.
-  ("We believe X, but have not yet proved it.")
-- Length: 500–1500 words per module.
+3. **Quark mass matrix phase** — derive arg(det M_q)=0 from D6/D7 interface to close
+   the theta-bar = theta_QCD + arg(det M_q) equation.
 
 **After every push, also check `ISSUES.md`** — centralized tracker for open questions,
 known failures, internal tensions, retracted claims, and blocked derivations.
 
 ---
 
-### Step 0 — Practical Applications (every ~10–20 cycles, optional)
+### Step 0 — Practical Applications (every ~5–10 cycles, optional)
 
 Before Step 1, consider whether to add a new entry in `practical_applications/`.
-See `practical_applications/OVERVIEW.md` for the document format and Pool A/B/C source selection.
-Use this step to explore engineering implications derived from verified DFC results —
-absolute limits, efficiency ceilings, or unusual technological possibilities implied by
-the substrate structure.
+See `practical_applications/OVERVIEW.md` for the document format and Pool A/B/C source
+selection. Use this step to explore engineering implications derived from verified DFC
+results — absolute limits, efficiency ceilings, or unusual technological possibilities
+implied by the substrate structure.
 
 ---
 
-### Step 1 — Close a Gap, Add a Phenomenon, or Write an Educational Module
+### Step 1 — Critical Step (bottleneck-focused)
 
-1. **Default:** Work on the highest-priority open gap in the Gap Priority Order above.
-   Write or update the equation module, run it, record the result. If a gap is not
-   tractable this cycle (requires a full Yang-Mills calculation, etc.), note the blocker
-   explicitly and move to the next gap.
+Identify a physics phenomenon not yet in `phenomena/` (or a placeholder needing content),
+or a derivation step that advances one of the three bottlenecks above. Choose one with
+preferential weight toward phenomena that connect to the three bottlenecks.
 
-   **If no gap is tractable:** Write the next educational module in `educational/`
-   following the standard format above (00 → 08 in order), OR identify a physics
-   phenomenon not yet in `phenomena/` (or a placeholder needing content) with preference
-   for phenomena that connect to a Level 1/2 gap.
-2. Write the **conceptual document** in `phenomena/` following the standard format:
+1. Write the **conceptual document** in `phenomena/` following the standard format:
    - One-Sentence Synthesis (DFC account, not a placeholder)
    - Observation (what is measured/observed)
    - Standard Explanation (SM account, concise)
@@ -315,15 +235,25 @@ the substrate structure.
    - Consistency Checks table
    - Open Questions (honest about what is not yet derived)
    - Connections (links to related docs)
-3. Write or update the **equation module** in `equations/` with numerical verification.
+2. Write or update the **equation module** in `equations/` with numerical verification.
    Every quantitative claim in a phenomenon doc should have a backing Python calculation.
    Run it and record the output in the document.
 
-### Step 2 — Audit a Random Document
+### Step 2 — Continue with a Random Open Issue
+
+Select a random open issue from `ISSUES.md` — an unresolved question, known failure,
+blocked derivation, or internal tension. Attempt to make progress on it:
+1. Read the issue entry and all linked files.
+2. Make the best available progress: run a new equation, tighten a logical argument,
+   identify the specific blocking step, or update the tier assignment if warranted.
+3. Update the `ISSUES.md` entry to reflect what was learned or resolved.
+
+### Step 3 — Update a Random Document
 
 **Goal:** Every document in the repository should be reviewed and updated periodically.
 Audit scope is the full repository — `foundations/`, `phenomena/`, `equations/`,
-`README.md`, `ISSUES.md`, `current_state.md`, `comparisons/`, `practical_applications/`.
+`README.md`, `ISSUES.md`, `current_state.md`, `comparisons/`, `practical_applications/`,
+`educational/`.
 
 1. Select any document at random from anywhere in the project.
 2. Read it and the corresponding equation modules (if any).
@@ -338,26 +268,45 @@ Audit scope is the full repository — `foundations/`, `phenomena/`, `equations/
    - Mathematical relations in prose without a prior natural-language statement
 4. Update the document to match the current state of the model.
 
-### Step 3 — Audit a Random Equation Module
+### Step 4 — Create or Update a Random Educational/Teaching Document
 
-1. Select an equation module in `equations/` at random.
-2. Run it. Check:
-   - Does it actually produce the claimed outputs?
-   - Are failures clearly labeled as failures?
-   - Are inputs vs. predictions clearly distinguished?
-   - Are all free parameters identified as such?
-3. Update the module to reflect any discovered discrepancies or failures.
-4. Update the corresponding conceptual docs if the equation reveals a gap or failure.
+The model must be teachable to someone with no physics background. Educational modules
+live in `educational/` and will form a complete course in the model. Each session,
+either create the next module that does not yet exist or update an existing one.
 
-### Step 4 — Propagate Updates
+**Planned module list** (work through in order; create if missing, update if exists):
+
+```
+educational/
+├── 00_overview.md          ← What is DFC? One-page answer.
+├── 01_the_substrate.md     ← The one object, V(φ), kinks
+├── 02_compression.md       ← Why it compresses; what bifurcation means
+├── 03_depth_map.md         ← D1-D7 as compression stages (provisional)
+├── 04_forces.md            ← How U(1)/SU(2)/SU(3) appear from fold topology
+├── 05_particles.md         ← Electrons, quarks, neutrinos as kink configurations
+├── 06_predictions.md       ← What the model predicts; how to test it
+├── 07_open_questions.md    ← What is not yet derived; honest gaps
+└── 08_mathematics.md       ← The key equations, explained in plain language
+```
+
+**Writing rules for educational modules:**
+- Every concept introduced in plain English first; equation (if any) second.
+- No jargon without definition. Define every technical term in one sentence on first use.
+- Each module must be readable without reading any other module first.
+- Accuracy is non-negotiable: if something is Tier 3 or open, say so plainly.
+  ("We believe X, but have not yet proved it" is the correct phrasing.)
+- Length: 500–1500 words per module. Dense is fine; imprecise is not.
+
+### Step 5 — Propagate Updates (MANDATORY every session)
 
 After any new document or any audit:
 1. Update `current_state.md` if a new strength, weakness, or audit result warrants it.
 2. Update `MEMORY.md` if any project-level facts have changed.
 3. Check whether any linked documents need updating.
-4. If the cycle produced a significant change, update the Completeness Estimate above and in `README.md`.
+4. **Update the Completeness Estimate in CLAUDE.md and README.md** (both places).
 5. **Commit all changed files and run `git push`.** Confirm the remote accepted the push
    (output must show `main -> main` or equivalent). This step is non-optional.
+   A session is NOT complete until the remote is updated.
 
 Then return to Step 1.
 

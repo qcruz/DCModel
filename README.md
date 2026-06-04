@@ -275,20 +275,15 @@ The model is in active development. Current priorities:
 - ρ meson mass: m_ρ=√(2π)×Λ_QCD=763 MeV (−1.6%, Tier 3, 0 free params; Cycle 160)
 - String tension: σ=Q_top×Λ_QCD² (−4.2%, Tier 3; Cycle 160)
 
-**Current focus — close the remaining derivation gaps:**
+**Current focus — three active bottlenecks:**
 
-The model's falsifiable predictions (no axion, proton absolutely stable, d_n = 0, no SUSY)
-are only as strong as the derivation chains behind them. The top priority is closing the
-open gaps, in order:
+1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically (Tier 4, 0.044% gap)
+2. **Strong CP formation** — formal energy argument theta=0 vs theta=pi (Tier 2a, Cycle 147;
+   nucleation path to Tier 2a still open)
+3. **Quark mass matrix phase** — derive arg(det M_q)=0 from D6/D7 interface
 
-1. σ = Q_top × Λ_QCD² from D7 kink vacuum energy (Tier 3 → proof; Yang-Mills gap equivalent)
-2. α_em(0) algebraic identity A−B = ln(1/α_em(0)) (Tier 4, 0.044% residual)
-3. f_ρ from D5-D7 winding overlap (−82% off; needed to close hadronic Δα_had)
-4. Proton mass 938 MeV from D7 substrate (not yet attempted quantitatively)
-5. Neutrino mass hierarchy (4.3× off)
-
-Once gaps are closed: write them up as external-facing prediction documents, then build
-out educational modules (`educational/`) — step-by-step explanations for any reader.
+Each session also: work a random open issue from ISSUES.md, update a random document,
+and create or update an educational module in `educational/`.
 
 **Open:**
 - Proton mass 938 MeV from D7 substrate (Yang-Mills mass gap in DFC language)
