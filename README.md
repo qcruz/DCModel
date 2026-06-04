@@ -146,6 +146,10 @@ phenomena/                Natural language explanations of physical observations
     thermodynamics.md     All four laws derived from folding mechanics
     heat_and_conductivity.md  Heat, conduction, resistance, radiation unified
 
+educational/              Step-by-step modules teaching the model from scratch (in preparation)
+  00_overview.md          What is DFC? (coming)
+  01_the_substrate.md     The one object, V(φ), kinks (coming)
+  ...
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories
 practical_applications/   Engineering limits and implications derived from DFC
@@ -257,41 +261,51 @@ The model is in active development. Current priorities:
 **Completed (structural):**
 - Product topology and proton stability argument
 - Three-generation derivation from SU(3) knot topology
-- Higgs mass: 124.4 ± 3.7 GeV (observed: 125.25 GeV); uncertainty dominated by unresolved λ₀ boundary condition
-- Mass hierarchy mechanism (qualitative)
+- Higgs mass: 124.4 ± 3.7 GeV (observed: 125.25 GeV)
 - All four thermodynamic laws derived from folding mechanics
-- Gravity, light, QM, interference derived from folding framework
-- Mathematics reframed as emergent folding grammar (19-field ordered map)
-- Weinberg angle: sin²θ_W = 3/8 at closure scale → 0.231 via SM RG running (self-consistent, no new free parameters)
+- Weinberg angle: sin²θ_W = 3/8 → 0.231 (no free parameters)
 
-**Recently resolved (Cycles 138–147):**
-- τ lepton mass: Koide formula m_τ=1776.97 MeV (+0.006%, Tier 2a, 0 free params; Cycle 146)
-- α_s(M_Z): ECCC condition gives 0.11821 (+0.006%, Tier 2a; Cycle 144)
+**Recently resolved (Cycles 138–161):**
+- τ lepton mass: Koide m_τ=1776.97 MeV (+0.006%, Tier 2a, 0 free params; Cycle 146)
+- α_s(M_Z): ECCC gives +0.006% (Tier 2a; Cycle 144)
 - EWSB vacuum v: co-crystallization v=247.83 GeV (+0.65%, Tier 2a; Cycle 145)
-- α_em(M_Z) and α_em(0): 36π chain gives +0.15% and +0.14% (Tier 2a/2b; Cycle 142)
-- Strong CP problem: theta=0 from S⁵ CP-isometry (Tier 2a; Cycle 147)
+- α_em(M_Z): 36π chain +0.15% (Tier 2a; Cycle 142)
+- Strong CP: theta=0 from S⁵ CP-isometry (Tier 2a; Cycle 147)
+- arg(det M_q)=0: CLOSED via D6/D7 real amplitude theorem (Tier 2a; Cycle 157)
+- ρ meson mass: m_ρ=√(2π)×Λ_QCD=763 MeV (−1.6%, Tier 3, 0 free params; Cycle 160)
+- String tension: σ=Q_top×Λ_QCD² (−4.2%, Tier 3; Cycle 160)
 
-**In progress:**
-- Neutrino mass spectrum from flavor knot structure
-- Formal nucleation path: theta=0 vs theta=pi energy comparison (strong CP Tier 3→2a)
-- Algebraic identity A−B = ln(1/α_em(0)): closes 0.044% gap simultaneously for α_em and α_s
-- Carnot efficiency formula derived from folding geometry (not ideal gas)
+**Current focus — two top priorities:**
+
+1. **Falsifiable prediction development** — strengthen the derivation chains for the
+   four predictions that distinguish DFC from all competitor theories:
+   - **No axion / d_n = 0** (Tier 2a, Cycle 147) — predicts null results at ADMX, CASPEr,
+     and nEDM@PSI. Each null experimental result accumulating in the coming decade is
+     consistent with DFC and inconsistent with the QCD axion.
+   - **Absolute proton stability** (Tier 1) — predicts zero decay rate at Hyper-K and JUNO,
+     in contrast to all GUT models (τ_p ~ 10³⁴ yr).
+   - **No SUSY partners** — consistent with all LHC Run 1/2/3 null results.
+   - **d_n = 0 exactly** — neutron EDM exactly zero; next-generation experiments probe to 10⁻²⁸ e·cm.
+
+2. **Educational modules** (`educational/`) — step-by-step explanations of the model for
+   any reader, regardless of physics background. In preparation.
 
 **Open:**
-- Governing equation for the pre-bifurcation field
-- arg(det M_q) = 0 from D6/D7 interface (theta-bar = theta_QCD + arg(det M_q))
-- Why exactly 4 observable dimensions (3 space + 1 time)
-- Cosmological constant from compression budget
-- Dark matter candidates from stable intermediate knot modes
-- Derivation of E = hν from folding geometry (Planck relation)
-- Einstein field equations from dimensional folding gradient dynamics
-- Holographic entropy bound from closure capacity
+- Proton mass 938 MeV from D7 substrate (Yang-Mills mass gap in DFC language)
+- σ = Q_top × Λ_QCD² from D7 kink vacuum energy (Tier 3 → proof)
+- Neutrino mass hierarchy (4.3× off, unresolved)
+- Quark masses c/s (15% below observed)
+- G_Newton and ℏ from substrate parameters
+- Einstein field equations from dimensional folding gradient
 
 ---
 
 ## Foundational Reading Order
 
-For someone new to the model, read in this order:
+**Quickest entry point (in preparation):** `educational/` — step-by-step modules written
+for any reader, no physics background required. Start there when available.
+
+**Technical reading order** (for those comfortable with physics notation):
 
 **Conceptual foundations:**
 1. `foundations/introduction.md` — Thought experiment, overview, string theory comparison
