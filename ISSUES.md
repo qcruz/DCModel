@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-03 (Cycles 122–158)
+**Last updated:** 2026-06-03 (Cycles 122–159)
 
 ---
 
@@ -308,8 +308,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - = 3.70% of total Δα_had(PDG) = 0.02764
   - b₁ running already embeds 96.3% of hadronic effect (pQCD quarks massless)
 - **DFC structural content:** N_c Σ Q_q² = 11/3 (from DFC N_c=3, Q_f=2/3,1/3) sets the scale; R∞=11/3 exact (Tier 2a, `equations/alpha_em_hadronic.py`)
-- **Path to closure:** Derive R^{had}(s)−R^{parton}(s) from DFC D7 confinement. This is the non-perturbative excess of hadronic over pQCD running in the resonance region. Same D7 dynamics as Λ_QCD derivation — blocked at Tier 4.
-- Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/alpha_em_eccc.py` (Cycle 139)
+- **Path to closure (Cycle 159 update):** Λ_QCD=304.5 MeV from DFC α_s two-loop (within PDG range); m_ρ=825 MeV (+6.4%) via Regge; Δα^{ρ+ω+φ}=0.010654 (39% of Δα_had). The 0.00102 gap is the RESIDUAL of matched EW→QED running conversion. Remaining: derive c_σ=σ/Λ²≈2.09 and Regge intercept α₀≈0.44 from D7 kink profile (Tier 4 = Yang-Mills gap equivalent).
+- **Note (Cycle 159):** confinement.py "−83% failure" (45.9 MeV) was a one-loop artifact. Two-loop from same DFC α_s(M_Z) gives 304.5 MeV (consistent). This is not a new DFC prediction — it follows from having the correct α_s.
+- Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/alpha_em_eccc.py` (Cycle 139)
 
 ### T10 — Near-maximal θ₂₃ argument self-contradicts (Cycle 65)
 - The structural DFC argument for θ₂₃ ≈ 45° is "near-degeneracy of 2nd/3rd neutrino winding modes"

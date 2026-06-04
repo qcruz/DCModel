@@ -134,7 +134,7 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~72%  (viability: ~82.5%, mathematical rigor: ~61.5%)
+Current estimate: ~72.5%  (viability: ~83%, mathematical rigor: ~62%)
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
   α_s closed 0.006% (Cycle 144); v=247.83 GeV Tier 2a (Cycle 145); m_τ Koide Tier 2a (Cycle 146).
@@ -142,6 +142,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   Priorities 2+3 CLOSED Cycle 157: real amplitude theorem + D6/D7 overlap integral.
 
 Recent cycles (full history: push_history.md):
+| 2026-06-03 | 159 | ρ meson from DFC D7: Λ_QCD=304.5 MeV two-loop from α_s(M_Z)=0.11821 — within PDG 210-340 MeV (confinement.py −83% diagnosed as one-loop artifact, not DFC failure); m_ρ=825 MeV (+6.4%) via Regge+DFC string tension Tier 2b; Δα^{ρ+ω+φ}=0.010654 (39% of Δα_had) structurally consistent; T12 gap 0.00102 requires matched EW→QED running conversion (not local subtraction); rho_meson_dfc.py new. | 83% | 62% | ~72.5% |
 | 2026-06-03 | 158 | α_em hadronic VP: R∞=11/3 exact from DFC (N_c=3, Q_f=2/3,1/3) Tier 2a; Δα_had^{pQCD}(c+b)=0.00820 (29.7% of PDG) Tier 2a; T12 gap decomposed: δ(Δα)^{non-pert}=0.00102 = 3.70% of Δα_had — b₁ running embeds 96.3% already; fermion content unification: b₃,b₁,Δα_lep,R∞ all from (N_gen=3,N_c=3,Q_f) Tier 3; blocking condition for Priority 1 precisely identified: R^{had}−R^{parton} from D7 confinement; alpha_em_hadronic.py new. | 82.5% | 61.5% | ~72% |
 | 2026-06-03 | 157 | Interface overlap integral: real amplitude preservation theorem (ODE uniqueness, Tier 1) → D4→D7 amplitude chain real positive; Jackiw-Rebbi zero modes sech^n real (residual 9.96e-07 Tier 2a); D6/D7 overlap Im(Y)=0 exact; 12-step chain theta_bar=0 Tier 2a; Priority 2 (theta=0 formation) Tier 3→2a; Priority 3 (arg(det M_q)=0) Tier 3→2a; interface_overlap_integral.py new. | 82.5% | 61.5% | ~72% |
 | 2026-06-03 | 156 | Strong CP formation: V(theta=0)<V(theta=pi) Dashen ChPT ΔV=9.9e-5 GeV⁴ (63% vac E density) Tier 2b; ΔV/T⁴_D7~1e-65 (topological selection must operate); domain wall 2×E_kink cost for theta=pi Tier 3; D5 anchor Tier 2a; recursion D5→D6→D7 Tier 3; KEY: Tier3→2a for Strong CP and arg(det M_q)=0 share same D5→D6/D6→D7 overlap integral — one calc closes both Priority 2 and 3; strong_cp_formation.py new. | 71.5% | 60.5% | ~71.5% |
@@ -163,11 +164,11 @@ Recent cycles (full history: push_history.md):
 | 2026-05-23 | 138 | Koide Step 4d: selection rule t=1/√Q_top (Tier 3); m_τ=1776.97 MeV (+0.006%). | 66.5% | 55.5% | ~66.5% |
 
 Next milestone: prove structural identity A−B = ln(1/α_em(0)) algebraically (Tier 4→1);
-  Cycle 158: T12 gap decomposed — δ(Δα)^{non-pert}=0.00102 (3.7% of Δα_had); b₁ running
-  embeds 96.3% of hadronic effect; R∞=11/3 from DFC (Tier 2a); blocker precisely identified.
-  Remaining condition: derive R^{had}(s)−R^{parton}(s) from D7 confinement → δ(Δα)=0.00102.
-  This requires non-perturbative D7 dynamics (same as Λ_QCD derivation — blocked Tier 4).
-  Priorities 2+3 CLOSED Cycle 157 (Tier 2a). Only Priority 1 (α_em identity) remains open.
+  Cycle 159: Λ_QCD=304.5 MeV from DFC α_s(M_Z) two-loop (within PDG range); confinement.py
+  −83% = one-loop artifact resolved; m_ρ=825 MeV (+6.4%) Tier 2b; Δα^{ρ+ω+φ}=0.010654 (39%
+  of Δα_had). T12 gap 0.00102 = matched EW→QED running residual, not local BW−parton.
+  Blocking condition: derive c_σ=σ/Λ²≈2.09 and Regge intercept α₀≈0.44 from D7 kink profile.
+  Same Yang-Mills problem as before — Tier 4. Priorities 2+3 CLOSED Cycle 157.
 
 Model Reconcilability Risk Score (MRRS) — see reconcilability_risk.md for full analysis:
   Core gauge/coupling sector:      20%   (was 28%; Bottleneck 2 closed Cycle 117: −8%)
