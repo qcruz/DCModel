@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-04 (Cycles 122–168)
+**Last updated:** 2026-06-04 (Cycles 122–169)
 
 ---
 
@@ -265,6 +265,34 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
       the TB product Q_top×I₄. Steps 0-3 give both factors from V(φ); Step 4 (the product
       itself as the coupling formula) still lacks explicit DFC action derivation.
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
+
+### T13 — α free parameter: Tier 3 candidate α = ∛18 (Cycle 169)
+
+- **Status:** α (the quadratic coupling in V(φ)) remains a postulated free parameter (Tier 0).
+  A Tier 3 candidate derivation exists from the primitive compression threshold condition.
+- **Candidate condition:** S_kink = 1/α_em(M_c(EW)) — the action cost of the first topological
+  defect equals the inverse of the photon coupling it generates. Physical reading: the D1 kink
+  action must equal 36π for the U(1) closure it seeds to be self-consistent.
+- **Derivation chain (Tier 3):** S_kink = (4/3)α^(3/2)/(β√2) = 4/β = 4×9π = 36π = 1/α_em.
+  Solving for α: α^(3/2) = 3√2 = √18 → α = ∛18 = (Q_top × N_Hopf)^(1/3) ≈ 2.6207 [Planck units].
+- **Three-way identity (Tier 3):** S_kink = 4/β = 1/α_em(M_c) = 36π.
+  All three are independently established; their equality is new (Cycle 169).
+  The identity β = 4 α_em(Mc) is an exact algebraic consequence (Tier 1 given β and 36π chain).
+- **Topological formula:** α = (Q_top × N_Hopf)^(1/3) — the quadratic coupling is the cube root
+  of the product of the two fundamental topological integers (Z₂ vacuum count × Hopf dim sum).
+- **Physical consequences (Planck units):**
+  - ξ = 18^(−1/6) ≈ 0.6177 l_Pl  [kink width; note: 0.07% from 1/φ_golden — structural note]
+  - E_kink = 36π M_Pl ≈ 113.1 M_Pl  [D1 kink energy; inaccessible]
+  - φ₀ = √(α/β) ≈ 8.608 M_Pl  [vacuum field amplitude]
+- **Tier status:** Tier 3 — conditional on S_kink = 1/α_em as the primitive threshold.
+  The condition is physically motivated (self-consistency of compression cascade) but not
+  yet derived from V(φ) or D5 geometry alone.
+- **Path to Tier 2a:** Show that D5 U(1) closure imposes S_kink = (1+k_Y²)/α_common = 1/α_em
+  from the D5 winding integral alone — without using α_em as external input.
+- **Open (Tier 4):** Derive M_c depth cascade from V(φ) substrate dynamics.
+  If achieved: Λ_QCD/M_Pl becomes a DFC first-principles prediction (currently read from SM).
+- **Files:** `equations/alpha_from_kink_action.py` (Cycle 169); `equations/d5_complex_from_instability.py`
+  (β=1/(9π)); `equations/alpha_em_prediction.py` (36π chain); `foundations/substrate.md`
 
 ---
 

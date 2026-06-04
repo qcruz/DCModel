@@ -178,11 +178,19 @@ rigorously derived.
 **High priority:**
 - Derive Einstein field equations as an effective description of substrate alignment dynamics
 - Derive cosmological expansion from global compression budget dynamics
-- Derive the form V(φ) = −α/2 φ² + β/4 φ⁴ from D1 compression dynamics — the double-well
-  potential is the minimal Lorentz-invariant scalar form with stable kinks, but it is
-  postulated, not derived from the near-D1 mechanics
-- Derive β ≈ 0.035 from a pre-substrate principle (all four candidate routes fail currently;
-  see `equations/beta_substrate.py`)
+- Derive the form V(φ) = −α/2 φ² + β/4 φ⁴ from D1 compression dynamics — uniquely determined
+  by three physical requirements (cannot reach zero, no preferred sign, stable rest state) as the
+  lowest-order consistent polynomial (Tier 3 structural argument); formal derivation from near-D1
+  mechanics open (Tier 4).
+- **β = 1/(9π): DERIVED Tier 2a (Cycle 117).** From D5 tachyonic instability + Hopf fiber
+  dimension sum N_Hopf = 9: β = 1/(πN_Hopf). See `equations/d5_complex_from_instability.py`.
+- **α ≈ 2.621: Tier 3 candidate from primitive compression threshold (Cycle 169).**
+  The self-consistency condition S_kink = 1/α_em(M_c(EW)) = 36π = 4/β fixes α = ∛18 ≈ 2.621
+  [Planck units]. Equivalently, α = (Q_top × N_Hopf)^(1/3) — the cube root of the product of
+  the two established topological integers. Physical consequences: ξ = 18^(−1/6) ≈ 0.617 l_Pl,
+  E_kink = 36π M_Pl. Tier 3: conditional on S_kink = 1/α_em as the compression threshold.
+  Path to Tier 2a: derive the condition from D5 winding geometry alone.
+  See `equations/alpha_from_kink_action.py`.
 
 **Medium priority:**
 - Connect closure stability to quantum error correction (suggestive formal parallels)

@@ -201,7 +201,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~73%** (viability as a theory: ~83.5%; mathematical rigor: ~62%)
+**Current estimate: ~73%** (viability as a theory: ~84%; mathematical rigor: ~62%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -267,7 +267,7 @@ The model is in active development. Current priorities:
 - All four thermodynamic laws derived from folding mechanics
 - Weinberg angle: sin²θ_W = 3/8 → 0.231 (no free parameters)
 
-**Recently resolved (Cycles 138–168):**
+**Recently resolved (Cycles 138–169):**
 - τ lepton mass: Koide m_τ=1776.97 MeV (+0.006%, Tier 2a, 0 free params; Cycle 146)
 - α_s(M_Z): ECCC gives +0.006% (Tier 2a; Cycle 144)
 - EWSB vacuum v: co-crystallization v=247.83 GeV (+0.65%, Tier 2a; Cycle 145)
@@ -278,6 +278,8 @@ The model is in active development. Current priorities:
 - f_ρ and Γ_ee: large-N_c VMD 148.8 MeV (−4.9%), 6.47 keV (−8.1%, Tier 3; Cycle 167)
 - Proton mass: m_p=√(3π)×Λ_QCD=934.8 MeV (−0.4%, Tier 3, 0 free params; Cycle 168)
 - Delta(1232): m_Δ=√(5π)×Λ_QCD=1207 MeV (−2.0%, Tier 3; Cycle 168)
+- α quadratic coupling: Tier 3 candidate α = ∛18 = (Q_top×N_Hopf)^(1/3) ≈ 2.621 [Planck units],
+  from S_kink = 1/α_em(Mc) = 36π = 4/β self-consistency; all residuals < 3e-16 (Cycle 169)
 
 **Current focus — three active bottlenecks:**
 
