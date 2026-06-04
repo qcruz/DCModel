@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~73% complete by internal estimate. Several Standard Model quantities
+Current status: ~73.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -202,7 +202,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~73%** (viability as a theory: ~84%; mathematical rigor: ~62%)
+**Current estimate: ~73.5%** (viability as a theory: ~84%; mathematical rigor: ~62.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -268,7 +268,7 @@ The model is in active development. Current priorities:
 - All four thermodynamic laws derived from folding mechanics
 - Weinberg angle: sin²θ_W = 3/8 → 0.231 (no free parameters)
 
-**Recently resolved (Cycles 138–169):**
+**Recently resolved (Cycles 138–171):**
 - τ lepton mass: Koide m_τ=1776.97 MeV (+0.006%, Tier 2a, 0 free params; Cycle 146)
 - α_s(M_Z): ECCC gives +0.006% (Tier 2a; Cycle 144)
 - EWSB vacuum v: co-crystallization v=247.83 GeV (+0.65%, Tier 2a; Cycle 145)
@@ -281,6 +281,9 @@ The model is in active development. Current priorities:
 - Delta(1232): m_Δ=√(5π)×Λ_QCD=1207 MeV (−2.0%, Tier 3; Cycle 168)
 - α quadratic coupling: Tier 3 candidate α = ∛18 = (Q_top×N_Hopf)^(1/3) ≈ 2.621 [Planck units],
   from S_kink = 1/α_em(Mc) = 36π = 4/β self-consistency; all residuals < 3e-16 (Cycle 169)
+- BPS/duality S_kink × α_D5 = 1: upgraded from Tier 3 → **TIER 1** (algebraic tautology:
+  S_kink=4/β, α_D5=β/4, product=1 for ALL β; verified 7 values, all residuals 0.00e+00);
+  α_D5 = 1/S_kink is Tier 2a derived; KK reduction chain confirmed from 5D Lagrangian (Cycle 171)
 
 **Current focus — three active bottlenecks:**
 
