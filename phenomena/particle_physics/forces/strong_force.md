@@ -288,6 +288,7 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 - **Gluons** — the 8 connection fields G_μ^a; `phenomena/particle_physics/particles/gluons.md`
 - **Quarks** — carry D7 SU(3) color charge; `phenomena/particle_physics/particles/quarks.md`
 - **Composite particles** — color-neutral bound states; `phenomena/particle_physics/particles/composite_particles.md`
+- **Hadronic spectroscopy** — Regge trajectories, σ = Q_top×Λ², m_ρ = √(2π)Λ (Tier 3); `phenomena/particle_physics/particles/hadronic_spectroscopy.md`
 - **Nuclear binding** — residual strong force between color-neutral nucleons; `phenomena/particle_physics/nuclear_binding.md`
 - **Electromagnetism** — same gauge logic at D5; `phenomena/electromagnetism/electromagnetism.md`
 - **Three generations** — D7 SU(3) topology; `foundations/three_generations.md`
@@ -297,7 +298,9 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 - `foundations/bifurcation_mode_count.md` — structural chain from D5 half-vortex to D7 SU(3); Cycles 62–67c
 - `equations/coupling_derivation.py` — α_s(M_Z) = 0.1086 (old, superseded by ECCC route)
 - `equations/alpha_em_selfconsistency.py` — α_s(M_Z) = 0.11821 (+0.006%, Tier 2a, Cycle 144; ECCC Direction B)
-- `equations/confinement.py` — Λ_QCD^DFC = 45.9 MeV (Cycle 133); b₀^QCD=7=N_Hopf+Q_top−4; structural identity
+- `equations/confinement.py` — Λ_QCD^DFC = 45.9 MeV (Cycle 133 one-loop artifact; two-loop gives 304.5 MeV, Cycle 159)
+- `equations/rho_meson_dfc.py` — Λ_QCD=304.5 MeV two-loop from DFC α_s(M_Z); m_ρ=825 MeV Regge (Cycle 159)
+- `equations/d7_nonpert_coefficients.py` — σ=Q_top×Λ²(−4.2%), m_ρ=√(2π)Λ=763 MeV (−1.58%, 0 free params, Cycle 160)
 - `equations/d6_gauge_beta.py` — b₀ survey (Cycle 133); SU(2) CANNOT drive EWSB (Tier 1); b₀_EW=N_Hopf+Q_top=11
 - `equations/mc_closure_scales.py` — ECCC M_c(D7)=1.566×10¹⁵ GeV (Cycle 130)
 - `phenomena/particle_physics/quark_gluon_plasma.md` — strong force at T > Λ_QCD; deconfinement

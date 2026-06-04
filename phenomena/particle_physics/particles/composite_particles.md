@@ -244,7 +244,7 @@ Meson (qq̄) singlet:
 ```
 V_QCD(r) = σ r − α_s(r) × (4/3) / r    [Cornell potential]
 
-σ ≈ 0.18 GeV² ≈ 1 GeV/fm    [string tension — from lattice QCD and Regge trajectories]
+σ ≈ 0.194 GeV² ≈ 1 GeV/fm    [string tension — observed; DFC: σ = Q_top × Λ_QCD² = 0.185 GeV², −4.2% Tier 3]
 α_s(r) → running coupling at scale r
 
 Short range (r ≪ 1/Λ_QCD):  V ~ −(4/3) α_s/r   [Coulomb-like, asymptotic freedom]
@@ -287,7 +287,9 @@ dσ/dΩ|_{CM} ~ α_s² CF² / (4 sin⁴(θ/2) × s)    [tree level, massless qua
 | n−p mass difference | D6 isospin breaking + EM correction | 1.293 MeV | Open (not derived) |
 | Proton radius | r_p = 0.87 fm from confinement scale | 0.841 fm | Structural, 3% off |
 | Proton mass exact | Full nonperturbative D7 calculation needed | 938.272 MeV | OPEN |
-| α_s(M_Z) | Strong coupling at Z pole | 0.1182 | OPEN (input to DFC) |
+| α_s(M_Z) | ECCC Direction B from DFC α_em inputs | 0.1182 | +0.006% Tier 2a (Cycle 144) |
+| String tension σ | σ = Q_top × Λ_QCD² = 185,440 MeV² | 193,600 MeV² | −4.2% Tier 3 (Cycle 160) |
+| ρ meson mass m_ρ | √(2π) × Λ_QCD = 763.3 MeV (0 free params) | 775.26 MeV | −1.58% Tier 3 (Cycle 160) |
 
 ---
 
@@ -326,6 +328,8 @@ dσ/dΩ|_{CM} ~ α_s² CF² / (4 sin⁴(θ/2) × s)    [tree level, massless qua
 
 ## Connections
 
+- **Hadronic spectroscopy** — Regge trajectories, ρ meson mass from σ = Q_top × Λ², m_ρ = √(2π)Λ (Tier 3);
+  `phenomena/particle_physics/particles/hadronic_spectroscopy.md`
 - **Strong force** — D7 SU(3) connection fields mediate quark binding;
   `phenomena/particle_physics/forces/strong_force.md`
 - **Quarks** — three-D7-depth kinks forming the proton content;
