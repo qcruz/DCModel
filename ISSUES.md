@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-03 (Cycles 122–159)
+**Last updated:** 2026-06-04 (Cycles 122–168)
 
 ---
 
@@ -275,6 +275,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | Tau lepton mass | `mass_spectrum.py` (dimple) | 212 MeV | 1777 MeV | ~~8.4×~~ | **RESOLVED CYCLE 146 — Tier 2a:** Koide formula via canonical phase vertex 1/√Q_top: θ_can=√Q_top·θ → vertex e^{iθ}=exp(iθ_can/√Q_top); Z₃ charge counting gives exactly 1 insertion → t=1/√Q_top → K=2/3 → m_τ=1776.97 MeV (+0.006%, 0 free params). `equations/koide_phase_coupling.py`. Dimple model SUPERSEDED. |
 | Neutrino mass ratio m₃/m₂ | `neutrino_masses.py` | κ=5.33 | 5.81 | **−8.3%** | Prior "4.3×" was metric error (Cycle 165); equal-integer depth spacing predicts κ; non-uniform spacing root cause open |
 | Strong coupling α_s(M_Z) | `alpha_em_selfconsistency.py` | ~~0.1086~~ **0.11821** | 0.1182 | ~~8.1%~~ **+0.006%** | **RESOLVED CYCLE 144 — Tier 2a:** Root cause was wrong M_c(D7) from α₁∩α₃ crossing. Correct ECCC condition α₃(M_c(D7))=α_common gives α_s=0.11821 (+0.006%). `equations/alpha_em_selfconsistency.py`. |
+| Proton mass m_p | `baryon_mass_dfc.py` | 934.8 MeV | 938.3 MeV | −0.4% | **Tier 3 (Cycle 168):** m_p=√(3π)×Λ_QCD from Y-junction Regge (α_0^N=−1/4, α'=1/(4πΛ²)); inherits from σ=Q_top×Λ² (Tier 3). Path to Tier 2a: prove σ formula from D7 vacuum energy. |
+| Delta(1232) mass m_Δ | `baryon_mass_dfc.py` | 1206.8 MeV | 1232.0 MeV | −2.0% | **Tier 3 (Cycle 168):** m_Δ=√(5π)×Λ_QCD; m_Δ/m_p=√(5/3)=1.291 (obs 1.313, −1.7%, 0 free params) |
 | Charm/strange quark masses | `quark_masses.py` | ~15% below | — | **15%** | Non-uniform Higgs threshold scaling; unresolved |
 | EWSB vacuum v | `ewsb_cocrystallization.py` | 247.83 GeV | 246.22 GeV | +0.65% | **RESOLVED CYCLE 145 — Tier 2a:** Co-crystallization from D7 SU(3) driving EWSB (b₀=11=N_Hopf+Q_top); Δ_D56 correction. 0 new free params beyond ECCC M_c(D5,D6). |
 
@@ -445,7 +447,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 **`particle_physics/forces/strong_force.md`**
 - Formal proof of confinement from DFC (Open Q1) — Yang-Mills mass gap equivalent
-- Derive Λ_QCD from D7 closure parameters (Open Q2) — Λ_QCD^DFC = 45.9 MeV (−83%); forward-running formula with threshold-matching incomplete; not directly linked to α_s gap
+- Derive Λ_QCD from D7 closure parameters (Open Q2) — Λ_QCD^DFC = 304.5 MeV (two-loop, Cycle 159) from DFC α_s(M_Z)=0.11821. The old 45.9 MeV (−83%) was a one-loop artifact in confinement.py (Cycle 159 diagnosis). The correct two-loop value gives m_ρ=√(2π)×Λ_QCD=763.3 MeV (−1.58%, Tier 3), m_p=√(3π)×Λ_QCD=934.8 MeV (−0.4%, Tier 3, Cycle 168). Remaining open: derive M_c(D7) — and thus Λ_QCD — from V(φ) alone (not from SM α_s inversion).
 - Derive α_s from D7 geometry (Open Q3) — **RESOLVED Cycle 144 (Tier 2a):** α_s=0.11821 (+0.006%) via ECCC Direction B; remaining open = derive M_c(D7) from V(φ) alone
 - Non-perturbative D7 dynamics: confinement, hadron masses, nuclear binding (Open Q4)
 

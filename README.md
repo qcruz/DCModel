@@ -150,6 +150,7 @@ educational/              Step-by-step modules teaching the model from scratch
   00_overview.md          What is DFC? General audience, no physics background (~1200 words)
   01_the_substrate.md     The one object, V(φ), kinks, I₄=4/3, Q_top=2, β=1/(9π), g_eff (Cycle 166)
   02_how_space_appears.md How apparent space arises: compression, D-depths, D3 localization (Cycle 167)
+  03_depth_map.md         D1-D7 as compression thresholds, Hopf closure sequence, verified evidence (Cycle 168)
   ...
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories
@@ -266,7 +267,7 @@ The model is in active development. Current priorities:
 - All four thermodynamic laws derived from folding mechanics
 - Weinberg angle: sin²θ_W = 3/8 → 0.231 (no free parameters)
 
-**Recently resolved (Cycles 138–161):**
+**Recently resolved (Cycles 138–168):**
 - τ lepton mass: Koide m_τ=1776.97 MeV (+0.006%, Tier 2a, 0 free params; Cycle 146)
 - α_s(M_Z): ECCC gives +0.006% (Tier 2a; Cycle 144)
 - EWSB vacuum v: co-crystallization v=247.83 GeV (+0.65%, Tier 2a; Cycle 145)
@@ -274,7 +275,9 @@ The model is in active development. Current priorities:
 - Strong CP: theta=0 from S⁵ CP-isometry (Tier 2a; Cycle 147)
 - arg(det M_q)=0: CLOSED via D6/D7 real amplitude theorem (Tier 2a; Cycle 157)
 - ρ meson mass: m_ρ=√(2π)×Λ_QCD=763 MeV (−1.6%, Tier 3, 0 free params; Cycle 160)
-- String tension: σ=Q_top×Λ_QCD² (−4.2%, Tier 3; Cycle 160)
+- f_ρ and Γ_ee: large-N_c VMD 148.8 MeV (−4.9%), 6.47 keV (−8.1%, Tier 3; Cycle 167)
+- Proton mass: m_p=√(3π)×Λ_QCD=934.8 MeV (−0.4%, Tier 3, 0 free params; Cycle 168)
+- Delta(1232): m_Δ=√(5π)×Λ_QCD=1207 MeV (−2.0%, Tier 3; Cycle 168)
 
 **Current focus — three active bottlenecks:**
 
@@ -287,9 +290,8 @@ Each session also: work a random open issue from ISSUES.md, update a random docu
 and create or update an educational module in `educational/`.
 
 **Open:**
-- Proton mass 938 MeV from D7 substrate (Yang-Mills mass gap in DFC language)
-- σ = Q_top × Λ_QCD² from D7 kink vacuum energy (Tier 3 → proof)
-- Neutrino mass hierarchy (4.3× off, unresolved)
+- σ = Q_top × Λ_QCD² from D7 kink vacuum energy (Tier 3 → proof; Yang-Mills mass gap)
+- Neutrino mass hierarchy m₃/m₂: DFC κ=5.33 vs observed 5.81 (−8.3%, unresolved)
 - Quark masses c/s (15% below observed)
 - G_Newton and ℏ from substrate parameters
 - Einstein field equations from dimensional folding gradient

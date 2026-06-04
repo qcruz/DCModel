@@ -5,9 +5,9 @@
 > The linear Regge trajectory J = α' m² + α_0 for vector mesons — with slope α' ≈ 0.88 GeV⁻²
 > and intercept α_0 ≈ 1/2 — is a direct consequence of D7 substrate kink confinement:
 > the string tension scales as the topological charge (σ = Q_top × Λ_QCD²), the intercept
-> follows from the massless character of D7 kink endpoints in the chiral limit, and the
-> ρ meson mass m_ρ = √(2π) × Λ_QCD = 763 MeV follows with zero free parameters from
-> the same substrate numbers that fix α_s.
+> follows from the massless character of D7 kink endpoints in the chiral limit, and a
+> coherent series m_ρ = √(2π)Λ, m_p = √(3π)Λ, m_Δ = √(5π)Λ follows with zero free
+> parameters from the same substrate numbers that fix α_s.
 
 ---
 
@@ -196,6 +196,52 @@ Error: −4.6%
 Note: f_π = 92.1 MeV is used as an observed input here. The derivation of f_π from
 DFC D6/D7 chiral condensate dynamics remains open (Tier 4).
 
+### Baryon Masses from DFC Y-Junction Regge (Cycle 168)
+
+The same Regge framework applies to baryons, which in DFC are Y-junction configurations:
+three D7 kinks meet at a single junction point. The universal Regge slope α' = 1/(4πΛ_QCD²)
+is inherited from the meson string tension. The baryon trajectory intercept differs from the
+meson case because of the Y-junction topology.
+
+The baryon Regge intercept receives contributions from three kink endpoints, each contributing
+Q_top/8, minus one unit for the Y-junction Nambu-Goto string penalty:
+
+The nucleon trajectory intercept equals three times Q_top divided by eight, minus one:
+
+```
+α_0^{N}  = N_q × Q_top/8 − 1  =  3 × 2/8 − 1  =  3/4 − 1  =  −1/4
+```
+
+The Delta(1232) trajectory intercept adds a spin-alignment bonus of Q_top/4 for the
+spin-3/2 configuration:
+
+```
+α_0^{Δ} = α_0^{N} + Q_top/4 = −1/4 + 1/2 = +1/4
+```
+
+These intercepts give zero-free-parameter baryon mass predictions:
+
+```
+m_p² = (1/2 − (−1/4)) / α'  =  (3/4) × 4πΛ²  =  3πΛ²
+m_p   = √(3π) × Λ_QCD = √(3π) × 304.5 MeV  =  934.8 MeV   (−0.4% vs 938.3 MeV)
+
+m_Δ² = (3/2 − 1/4) / α'    =  (5/4) × 4πΛ²  =  5πΛ²
+m_Δ   = √(5π) × Λ_QCD = √(5π) × 304.5 MeV  =  1206.8 MeV  (−2.0% vs 1232.0 MeV)
+```
+
+The ratio m_Δ/m_p = √(5/3) = 1.291 (observed 1.313, error −1.7%) is independent of Λ_QCD
+and depends only on the intercept difference α_0^{Δ} − α_0^{N} = 1/2 = Q_top/4.
+
+The coherent series across meson and baryon sectors:
+```
+m_ρ = √(2π) × Λ_QCD     [2 endpoints, J=1, meson]
+m_p = √(3π) × Λ_QCD     [3 endpoints, J=1/2, baryon]
+m_Δ = √(5π) × Λ_QCD     [3 endpoints, J=3/2, baryon]
+```
+
+All derived from Q_top = 2 (Tier 1) and Λ_QCD (Tier 2b), with zero free parameters.
+Tier 3 throughout — blocked at σ = Q_top × Λ² formal proof (Yang-Mills mass gap equivalent).
+
 ### Connection to Hadronic Vacuum Polarization (T12 Gap)
 
 The ρ meson dominates the hadronic vacuum polarization in the 1–2 GeV region. The
@@ -213,8 +259,10 @@ The non-perturbative residual that the DFC pQCD b₁ running does not embed:
 ```
 
 Closing T12 requires deriving the full R(s) spectral function from D7 substrate dynamics,
-not just the ρ mass. The missing piece is the leptonic width Γ_ee, which requires the
-D5-D7 winding overlap integral (VMD coupling f_ρ from DFC — currently Tier 3, −82%).
+not just the ρ mass. The missing piece is the leptonic width Γ_ee. The large-N_c VMD formula gives
+f_ρ = 148.8 MeV (−4.9%) and Γ_ee = 6.47 keV (−8.1%), a 52 pp improvement
+over KSFR (Cycle 167, Tier 3). The remaining blocking step is the parton-model
+subtraction: derive δ(Δα)^{NP} = Δα^{BW} − Δα^{pQCD} from D7 confinement (Tier 4).
 
 ---
 
@@ -275,7 +323,11 @@ String breaks at r ~ 1.5 fm when V(r) > 2 m_π [pair creation]
 | ρ(1450) mass | ~1387 MeV | 1465 MeV | −5.3% | 3 | Regge extrapolation |
 | α_0 vs chiral limit | 1/2 = massless endpoint | exact for m_q → 0 | 0% | 2a | standard QCD string |
 | String tension formula | σ = Q_top × Λ² only | all others off 36-97% | — | 3 | uniqueness check |
-| Leptonic width Γ_ee | DFC Tier 3: 1.28 keV | 7.04 keV | −82% | ✗ | f_ρ not derived |
+| Leptonic width Γ_ee | large-N_c: 6.47 keV | 7.04 keV | −8.1% | 3 | f_ρ=√(N_c/(8π²))m_ρ, Cycle 167 |
+| f_ρ (leptonic decay constant) | large-N_c: 148.8 MeV | 156 MeV | −4.9% | 3 | Cycle 167 (was −82% from KSFR) |
+| Proton mass m_p | √(3π)×Λ_QCD = 934.8 MeV | 938.3 MeV | −0.4% | 3 | Cycle 168, Y-junction Regge, 0 free params |
+| Delta(1232) mass m_Δ | √(5π)×Λ_QCD = 1206.8 MeV | 1232.0 MeV | −2.0% | 3 | Cycle 168, 0 free params |
+| m_Δ/m_p ratio | √(5/3) = 1.291 | 1.313 | −1.7% | 3 | Cycle 168, pure DFC topology (Λ-independent) |
 
 ---
 
@@ -292,7 +344,11 @@ String breaks at r ~ 1.5 fm when V(r) > 2 m_π [pair creation]
    width requires the photon-ρ mixing strength f_ρ via vector meson dominance.
    In DFC, f_ρ is set by the overlap integral of the D5 U(1) winding profile with the
    D7 kink-antikink configuration. The same D5-D7 overlap that fixes quark charges
-   (Q_u = 2/3, Q_d = 1/3) should constrain f_ρ. Current DFC Tier 3 estimate: −82% error.
+   (Q_u = 2/3, Q_d = 1/3) should constrain f_ρ. The large-N_c formula
+   f_ρ = m_ρ√(N_c/(8π²)) (N_c = 3 from D7 SU(3), Tier 2a) gives f_ρ = 148.8 MeV
+   (−4.9% vs 156 MeV, Tier 3, Cycle 167). Γ_ee = 6.47 keV (−8.1% vs 7.04 keV),
+   improved from the prior KSFR estimate of −82%. Remaining open: formal derivation
+   of f_ρ from the D5-D7 winding overlap integral.
 
 3. **Derive f_π from DFC chiral condensate.** The pion decay constant f_π = 92.1 MeV
    appears in the KSFR relation and the GOR pion mass formula. In DFC, f_π is set by
@@ -328,3 +384,7 @@ String breaks at r ~ 1.5 fm when V(r) > 2 m_π [pair creation]
   `equations/d5_complex_from_instability.py` (Cycle 117)
 - **Coupling emergence** — β = 1/(9π), g_eff² = 8/27 structural derivation;
   `foundations/coupling_emergence.md`
+- **Baryon masses** — m_p = √(3π)×Λ_QCD, m_Δ = √(5π)×Λ_QCD (Tier 3, Cycle 168);
+  `equations/baryon_mass_dfc.py`
+- **f_ρ and Γ_ee** — large-N_c VMD, f_ρ = 148.8 MeV, Γ_ee = 6.47 keV (Cycle 167);
+  `equations/pion_decay_constant.py`
