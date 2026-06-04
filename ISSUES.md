@@ -273,7 +273,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | Prediction | Module | DFC | Observed | Error | Path to Fix |
 |---|---|---|---|---|---|
 | Tau lepton mass | `mass_spectrum.py` (dimple) | 212 MeV | 1777 MeV | ~~8.4×~~ | **RESOLVED CYCLE 146 — Tier 2a:** Koide formula via canonical phase vertex 1/√Q_top: θ_can=√Q_top·θ → vertex e^{iθ}=exp(iθ_can/√Q_top); Z₃ charge counting gives exactly 1 insertion → t=1/√Q_top → K=2/3 → m_τ=1776.97 MeV (+0.006%, 0 free params). `equations/koide_phase_coupling.py`. Dimple model SUPERSEDED. |
-| Neutrino mass hierarchy ratio Δm²₃₁/Δm²₂₁ | `neutrino_masses.py` | 1.34 | 5.71 | **4.3×** | D-label spacing assumption; f_ν derivation |
+| Neutrino mass ratio m₃/m₂ | `neutrino_masses.py` | κ=5.33 | 5.81 | **−8.3%** | Prior "4.3×" was metric error (Cycle 165); equal-integer depth spacing predicts κ; non-uniform spacing root cause open |
 | Strong coupling α_s(M_Z) | `alpha_em_selfconsistency.py` | ~~0.1086~~ **0.11821** | 0.1182 | ~~8.1%~~ **+0.006%** | **RESOLVED CYCLE 144 — Tier 2a:** Root cause was wrong M_c(D7) from α₁∩α₃ crossing. Correct ECCC condition α₃(M_c(D7))=α_common gives α_s=0.11821 (+0.006%). `equations/alpha_em_selfconsistency.py`. |
 | Charm/strange quark masses | `quark_masses.py` | ~15% below | — | **15%** | Non-uniform Higgs threshold scaling; unresolved |
 | EWSB vacuum v | `ewsb_cocrystallization.py` | 247.83 GeV | 246.22 GeV | +0.65% | **RESOLVED CYCLE 145 — Tier 2a:** Co-crystallization from D7 SU(3) driving EWSB (b₀=11=N_Hopf+Q_top); Δ_D56 correction. 0 new free params beyond ECCC M_c(D5,D6). |

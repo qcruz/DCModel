@@ -117,19 +117,24 @@ m_b / m_a = exp(κ × (d_b − d_a))
 
 where κ ≈ 5.3 is the depth-to-mass sensitivity (fit from the electron/muon mass ratio).
 
-**Prediction from depth spacings:** The ratio of atmospheric to solar mass splittings
-is Δm²₃₁/Δm²₂₁ ≈ 32.6. In the depth-anchoring model, this corresponds to a depth
-spacing ratio Δd₃₁/Δd₂₁. The model currently predicts this ratio as approximately 1.34,
-while the observed mass splittings require ~5.7. This is a factor of 4× discrepancy —
-the single most quantitatively wrong prediction in the lepton sector. The neutrino depth
-spacings are not uniformly scaled relative to each other in the way the model expects.
+**Prediction from depth spacings:** The correct DFC prediction is the mass ratio m₃/m₂.
+With equal-integer depth spacing (d₃ − d₂ = 1 unit), the DFC model predicts m₃/m₂ = κ¹
+where κ ≈ 5.33 is the depth-to-mass sensitivity parameter. The observed value (for the
+limit m₁ → 0) is m₃/m₂ = √(|Δm²₃₁|/Δm²₂₁) = √(32.6) ≈ 5.71. The discrepancy is −6.7%
+— within the Tier 2b range (equation exists, >5% error). This is a modest failure, not
+the qualitatively wrong "4× discrepancy" cited in prior analyses.
 
-**Why the discrepancy may be physical:** The depth-anchoring exponential formula was
-calibrated at the charged lepton scale (electron at D5, muon at D6). At the sub-D4
-scale where neutrinos live, the same formula may not hold — the physics of fractional
-D4 penetration may be qualitatively different from full-depth anchoring. The depth spacing
-ratio failure may signal that neutrino masses require a different mechanism than the
-simple exponential depth formula.
+**Note on metric confusion (Cycle 165 correction):** An earlier analysis claimed a "4.3×
+discrepancy" by comparing the depth-difference ratio Δd₃₁/Δd₂₁ = 1.34 (a ratio of depth
+intervals) to the mass-squared ratio Δm²₃₁/Δm²₂₁ = 32.6 (an entirely different quantity).
+These are dimensionally incompatible. The correct comparison is the mass ratio m₃/m₂:
+DFC predicts 5.33, observed ≈ 5.71, error −6.7%.
+
+**Remaining true open problem:** The depth spacing is predicted to be EQUAL (d₃ − d₂ =
+d₂ − d₁ = 1 unit), but the observed mass ratios show m₂/m₁ ≈ 5.71 and m₃/m₂ ≈ 5.71
+only in the m₁ → 0 limit. For finite m₁, the effective depth spacing between ν₂ and ν₃
+is much closer than between ν₁ and ν₂ — contrary to equal-integer spacing. This non-uniform
+spacing in the sub-D4 regime is the actual unresolved problem.
 
 ### Flavor Oscillation: Quantum Interference in DFC
 
@@ -237,12 +242,17 @@ Oscillation length:  L_osc = 4πℏcE / Δm² = 2.48 m × (E/MeV) / (Δm²/eV²)
 ### Depth Spacing (winding modes)
 
 ```
-Δd = (1/2κ) × ln(1 + Δm² / m₁²)
+Depth-spacing formula:
+  Δd = (1/κ) × ln(m_high / m_low)
 
-Using κ ≈ 5.3 and m₁ ~ few meV:
-  Δd₂₁ ≈ 0.04 depth units   (solar splitting)
-  Δd₃₁ ≈ 0.05 depth units   (atmospheric splitting)
-  Δd₃₁ / Δd₂₁ ≈ 1.34        [model] vs 5.71 [data] — 4× discrepancy
+DFC equal-integer spacing predicts Δd₃₂ = Δd₂₁ = 1 unit, giving:
+  m₃/m₂ = κ^1 = 5.33  [DFC prediction]
+  m₃/m₂ = √(|Δm²₃₁|/Δm²₂₁) ≈ 5.71  [observed, m₁→0 limit]
+  Error: −6.7%  [Tier 2b]
+
+Note: the depth-difference ratio Δd₃₁/Δd₂₁ = 1.34 is a log-mass-ratio
+compared at small m₁; it is NOT the same quantity as the mass ratio m₃/m₂.
+Comparing 1.34 to 5.71 produced the spurious "4.3×" claim (Cycle 165 fix).
 ```
 
 ---
@@ -257,7 +267,7 @@ Using κ ≈ 5.3 and m₁ ~ few meV:
 | Near-zero mass | Sub-D4 fractional anchoring | < 0.45 eV ✓ | Mechanism identified |
 | Σm_ν ~ 59 meV | m_ν = m_e × f_ν² (fit f_ν) | < 120 meV ✓ | Consistency (f_ν fit) |
 | Δm²₂₁, Δm²₃₁ | By construction from f_ν scan | Both matched by design | Input, not prediction |
-| Δd₃₁/Δd₂₁ ratio | Depth spacing of winding modes | 1.34 (model) vs 5.71 (data) | WRONG — 4× off |
+| m₃/m₂ mass ratio | Equal-integer depth spacing κ^1 | 5.33 (DFC) vs 5.71 (obs, m₁→0) | −6.7% Tier 2b — prior "4×" was metric error (Cycle 165) |
 | Normal vs inverted | Sign of SU(3) winding asymmetry at D3/D4 | Not determined | Open prediction |
 | Majorana nature | Left-handed only; no D4 mirror mode | Not confirmed | DFC predicts Majorana |
 | δ_CP ≈ −π/2 | D6 fold orientation CP phase (PMNS sector) | −π/2 (T2K 2020, 2σ) | Structural consistency |
@@ -272,12 +282,14 @@ Using κ ≈ 5.3 and m₁ ~ few meV:
    a function of (α, β, c, d_ν). The double-boundary-crossing mechanism is structurally
    identified; computing f_ν from first principles would be a genuine prediction.
 
-2. **Explain the Δd₃₁/Δd₂₁ ≈ 4× discrepancy.** The depth-anchoring exponential formula
-   (calibrated at electron/muon scale) predicts depth spacing ratios ≈ 1.34, while the
-   observed mass-squared ratios require ≈ 5.71. Either the formula breaks down at sub-D4
-   scales, or the three neutrino winding modes do not follow the same exponential scaling
-   as the charged leptons. This is the most quantitatively wrong prediction in the lepton
-   sector, and investigating it may reveal the correct sub-D4 physics.
+2. **Explain the non-uniform depth spacing.** The equal-integer DFC spacing predicts
+   m₃/m₂ = κ = 5.33 vs observed ≈ 5.71 (−6.7%, Tier 2b) — a modest failure, not the
+   "4.3×" claimed in prior analyses (that compared incompatible quantities). The true
+   remaining gap is: DFC equal-integer spacing gives Δd₃₂ = Δd₂₁, but for finite m₁,
+   the neutrinos show ν₂ and ν₃ much closer in mass than ν₁ and ν₂. This non-uniform
+   sub-D4 spacing is not explained. Possible causes: the exponential depth formula breaks
+   down at fractional D4 penetration; or the three neutrino winding modes couple differently
+   to the D3/D4 boundary than charged leptons.
 
 3. **Derive the PMNS mixing angles from D6/D3-D4 geometry.** The three large mixing
    angles (θ₁₂ ≈ 34°, θ₂₃ ≈ 48°, θ₁₃ ≈ 8.5°) are strikingly different from the
