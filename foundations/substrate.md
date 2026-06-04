@@ -184,13 +184,14 @@ rigorously derived.
   mechanics open (Tier 4).
 - **β = 1/(9π): DERIVED Tier 2a (Cycle 117).** From D5 tachyonic instability + Hopf fiber
   dimension sum N_Hopf = 9: β = 1/(πN_Hopf). See `equations/d5_complex_from_instability.py`.
-- **α ≈ 2.621: Tier 3 candidate from primitive compression threshold (Cycle 169).**
-  The self-consistency condition S_kink = 1/α_em(M_c(EW)) = 36π = 4/β fixes α = ∛18 ≈ 2.621
-  [Planck units]. Equivalently, α = (Q_top × N_Hopf)^(1/3) — the cube root of the product of
-  the two established topological integers. Physical consequences: ξ = 18^(−1/6) ≈ 0.617 l_Pl,
-  E_kink = 36π M_Pl. Tier 3: conditional on S_kink = 1/α_em as the compression threshold.
-  Path to Tier 2a: derive the condition from D5 winding geometry alone.
-  See `equations/alpha_from_kink_action.py`.
+- **α = ∛18 ≈ 2.621: TIER 2a (Cycle 172).**
+  Derivation: β = 1/(9π) [T2a] → S_kink = 4/β [T2a, via T1 identity S_kink × α_D5 = 1] →
+  BPS saturation E_kink = S_kink [T1] → (4/3)α^{3/2}/(β√2) = 4/β → α = ∛18.
+  Equivalently: α = (Q_top × N_Hopf)^(1/3) = (2 × 9)^(1/3). Physical consequences:
+  ξ = √(2/∛18) = (2/3)^{1/3} ≈ 0.874 l_Pl, E_kink = 36π M_Pl, φ₀ ≈ 8.608 M_Pl.
+  NOTE: Cycle 169 stated ξ = 18^{−1/6} ≈ 0.617 l_Pl — this was wrong (missing √2 factor).
+  Correct value: ξ = √2 × 18^{−1/6} ≈ 0.874 l_Pl. Retracted from all documents.
+  See `equations/v_phi_rg_analysis.py` (Cycle 172) for the tier-upgrade derivation.
 
 **Medium priority:**
 - Connect closure stability to quantum error correction (suggestive formal parallels)

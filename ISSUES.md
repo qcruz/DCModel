@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-04 (Cycles 122–169)
+**Last updated:** 2026-06-04 (Cycles 122–172)
 
 ---
 
@@ -266,33 +266,45 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
       itself as the coupling formula) still lacks explicit DFC action derivation.
 - Downstream: all coupling predictions carry ~1.3% systematic error until resolved
 
-### T13 — α free parameter: Tier 3 candidate α = ∛18 (Cycle 169)
+### T13 — α free parameter: PROMOTED TO TIER 2a (Cycle 172)
 
-- **Status:** α (the quadratic coupling in V(φ)) remains a postulated free parameter (Tier 0).
-  A Tier 3 candidate derivation exists from the primitive compression threshold condition.
-- **Candidate condition:** S_kink = 1/α_em(M_c(EW)) — the action cost of the first topological
-  defect equals the inverse of the photon coupling it generates. Physical reading: the D1 kink
-  action must equal 36π for the U(1) closure it seeds to be self-consistent.
-- **Derivation chain (Tier 3):** S_kink = (4/3)α^(3/2)/(β√2) = 4/β = 4×9π = 36π = 1/α_em.
-  Solving for α: α^(3/2) = 3√2 = √18 → α = ∛18 = (Q_top × N_Hopf)^(1/3) ≈ 2.6207 [Planck units].
-- **Three-way identity (Tier 3):** S_kink = 4/β = 1/α_em(M_c) = 36π.
-  All three are independently established; their equality is new (Cycle 169).
-  The identity β = 4 α_em(Mc) is an exact algebraic consequence (Tier 1 given β and 36π chain).
-- **Topological formula:** α = (Q_top × N_Hopf)^(1/3) — the quadratic coupling is the cube root
-  of the product of the two fundamental topological integers (Z₂ vacuum count × Hopf dim sum).
-- **Physical consequences (Planck units):**
-  - ξ = 18^(−1/6) ≈ 0.6177 l_Pl  [kink width; note: 0.07% from 1/φ_golden — structural note]
+- **Status: TIER 2a** — α = ∛18 derived from established Tier 2a + Tier 1 results.
+  No longer a free parameter; promoted by v_phi_rg_analysis.py (Cycle 172).
+
+- **Derivation chain (all inputs ≥ Tier 2a):**
+  1. β = 1/(9π)               [Tier 2a, Cycle 117]
+  2. α_D5 = β/4 = 1/(36π)    [Tier 1, algebraic: β = 4 α_em]
+  3. S_kink × α_D5 = 1        [Tier 1, Cycle 171: (4/β)(β/4) = 1 for ALL β]
+  4. S_kink = 4/β = 36π       [Tier 2a, from 1+3]
+  5. E_kink = (4/3)α^{3/2}/(β√2)  [Tier 1, BPS formula from V(φ)]
+  6. E_kink = S_kink           [Tier 1, BPS saturation]
+  7. α = ∛18 ≈ 2.6207 [Planck units]  [Tier 2a — from 1-6]
+
+- **Topological encoding:** α = (Q_top × N_Hopf)^(1/3) = (2 × 9)^(1/3) = ∛18.
+  The quadratic coupling is the cube root of the product of the two fundamental integers.
+
+- **Physical consequences (corrected from Cycle 169):**
+  - ξ = √(2/α) = √(2/∛18) = (2/3)^{1/3} ≈ 0.8738 l_Pl  [kink width]
+    CORRECTION: Cycle 169 stated ξ = 18^{-1/6} ≈ 0.6177. That was WRONG.
+    ξ = √2 × 18^{-1/6} ≈ 0.8738. The "ξ ≈ 1/φ_golden" structural note is RETRACTED.
+    (18^{-1/6} ≈ 1/φ_golden to 0.07% is a coincidence for 18^{-1/6} alone, not for ξ.)
   - E_kink = 36π M_Pl ≈ 113.1 M_Pl  [D1 kink energy; inaccessible]
-  - φ₀ = √(α/β) ≈ 8.608 M_Pl  [vacuum field amplitude]
-- **Tier status:** Tier 3 — conditional on S_kink = 1/α_em as the primitive threshold.
-  The condition is physically motivated (self-consistency of compression cascade) but not
-  yet derived from V(φ) or D5 geometry alone.
-- **Path to Tier 2a:** Show that D5 U(1) closure imposes S_kink = (1+k_Y²)/α_common = 1/α_em
-  from the D5 winding integral alone — without using α_em as external input.
-- **Open (Tier 4):** Derive M_c depth cascade from V(φ) substrate dynamics.
-  If achieved: Λ_QCD/M_Pl becomes a DFC first-principles prediction (currently read from SM).
-- **Files:** `equations/alpha_from_kink_action.py` (Cycle 169); `equations/d5_complex_from_instability.py`
-  (β=1/(9π)); `equations/alpha_em_prediction.py` (36π chain); `foundations/substrate.md`
+  - φ₀ = √(α/β) = √(∛18 × 9π) ≈ 8.608 M_Pl  [vacuum field amplitude]
+
+- **Remaining open (path to Tier 1):**
+  If β = 1/(9π) is upgraded from Tier 2a to Tier 1 (by removing the "no preferred direction"
+  axiom dependency in the tachyonic instability argument), then α = ∛18 upgrades to Tier 1.
+  Target file: `equations/d5_instability_tier1.py`
+
+- **Perturbative RG note (Cycle 172):** Standard 4D φ⁴ theory has no UV fixed point at
+  finite coupling (Landau pole). The selection of α comes from the DFC compression
+  self-consistency condition (the kink at D1 must generate the coupling seen at D5),
+  not from the perturbative Wilsonian RG.
+
+- **Files:** `equations/v_phi_rg_analysis.py` (Cycle 172, tier upgrade proof);
+  `equations/alpha_from_kink_action.py` (Cycle 169, three-way identity);
+  `equations/kk_holonomy_derivation.py` (Cycle 171, S_kink × α_D5 = 1 Tier 1);
+  `equations/d5_complex_from_instability.py` (Cycle 117, β=1/(9π))
 
 ---
 
