@@ -151,6 +151,7 @@ educational/              Step-by-step modules teaching the model from scratch
   01_the_substrate.md     The one object, V(φ), kinks, I₄=4/3, Q_top=2, β=1/(9π), g_eff (Cycle 166)
   02_how_space_appears.md How apparent space arises: compression, D-depths, D3 localization (Cycle 167)
   03_depth_map.md         D1-D7 as compression thresholds, Hopf closure sequence, verified evidence (Cycle 168)
+  04_forces.md            How U(1)/SU(2)/SU(3) emerge: S¹→S³→S⁵ closure, coupling constants, 3 forces not 4 (Cycle 170)
   ...
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories

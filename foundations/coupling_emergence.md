@@ -160,23 +160,28 @@ determines the coupling running, which in turn fixes all the closure scales.
 
 ### Open 1: Derive the 36π closure condition from the substrate
 
-**PARTIALLY CLOSED (Cycle 141, Tier 2a).** The algebraic chain is now complete:
+**PARTIALLY CLOSED (Cycle 141, Tier 2a).** The algebraic chain is complete:
 
 ```
 β = 1/(9π)               [Tier 2a, Cycle 117]
 k_Y² = 5/3               [Tier 2a, Cycle 30]
 ECCC: α₁ = α₂ at M_c(EW) → sin²θ_W = 1/(1+k_Y²) = 3/8
 1/α_em = (1+k_Y²)/α_common = (8/3)×(27π/2) = 36π    [exact, 0 free params]
-Also: 36π = 4/β   [since 4×9π = 36π — algebraic identity]
+Also: 36π = 4/β   [since β = 1/(9π) → 4β = 4/(9π) → 1/(4β) = 9π/4... NO]
+Correct: 4/β = 4×9π = 36π  [algebraically exact, residual 0]
+β = 4 × α_em(Mc)  [exact identity, Cycle 169/170]
 ```
 
-The "4" in 4/β equals (1+k_Y²)×R/α_common cancels to (8/3)×(9π) = 24π... no:
-4/β = 4×9π = 36π; (1+k_Y²)/α_common = (8/3)×(27π/2) = 36π. Both give 36π. ✓
+**Cycle 170 update — BPS/duality mechanism (Tier 3):** The condition S_kink = 1/α_em
+is now motivated by the D1/D5 electromagnetic BPS duality (Montonen-Olive analog):
+the D1 kink is the "magnetic" BPS soliton and the D5 U(1) is the "electric" gauge field;
+their couplings satisfy S_kink × α_D5 = 1 (exact, residual 0). This promotes the 36π
+chain from "algebraic Tier 2a given k_Y" to a structural Tier 3 with explicit mechanism.
 
-**Remaining open (Tier 4):** Derive 36π from the D5 winding geometry alone — without
-invoking k_Y as a separate input. This would require showing that the D5 vortex phase
-integral directly gives 1/α_em = 36π from the kink profile and the closure topology.
-The current chain uses k_Y (SM Dynkin index matching, Tier 2a) as an independent input.
+**Remaining open (Tier 4 → 2a path):** Derive the holonomy weight α_D5 = 1/S_kink from
+the DFC 5D substrate KK reduction explicitly — show the D5 winding integral gives exactly
+this coupling. This would make the 36π chain Tier 2a without invoking k_Y as a separate
+input. See `equations/d5_closure_condition.py` (Cycle 170) for the current Tier 3 argument.
 
 ### Open 2: Derive WHY g₂ and 36π routes to α_em(M_Z) agree
 
@@ -208,13 +213,18 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 | EW VEV v (EWSB co-crystallization) | 247.83 GeV | 246.22 GeV | ✓ +0.65% |
 | f_ρ from large-N_c VMD (N_c=3, m_ρ Tier 3) | 148.8 MeV | 156 MeV | ✓ Tier 3, −4.9% |
 | Γ_ee from large-N_c f_ρ | 6.47 keV | 7.04 keV | ✓ Tier 3, −8.1% |
+| V(φ) form from 3 compression requirements | R1+R2+R3 → unique form | — | ✓ Tier 3, Cycle 170 |
+| β = 4 × α_em(Mc) | exact algebraic identity | — | ✓ Tier 1 given β, 36π (Cycle 169) |
+| α = ∛18 from BPS duality | ∛18 ≈ 2.621 [Planck units] | — | ✓ Tier 3 BPS mechanism (Cycle 170) |
 | SU(N) structure from topology | not derived | — | ✗ open |
-| 36π condition from kink profile | not derived | — | ✗ open |
+| D5 holonomy weight from KK reduction | not derived | — | ✗ open (path to Tier 2a for 36π) |
 
 ---
 
 ## Connections
 
+- `equations/d5_closure_condition.py` — V(φ) form, BPS/duality, D5 minimal winding (Cycle 170)
+- `equations/alpha_from_kink_action.py` — α=∛18 numerical, three-way identity (Cycle 169)
 - `equations/d5_complex_from_instability.py` — β and g_eff derivation (Cycle 117)
 - `equations/alpha_em_prediction.py` — 36π chain to α_em(M_Z) and α_em(0) (Cycle 142)
 - `equations/alpha_em_eccc.py` — ECCC structural identity (Cycle 139)
