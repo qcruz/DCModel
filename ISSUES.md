@@ -308,9 +308,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - = 3.70% of total Δα_had(PDG) = 0.02764
   - b₁ running already embeds 96.3% of hadronic effect (pQCD quarks massless)
 - **DFC structural content:** N_c Σ Q_q² = 11/3 (from DFC N_c=3, Q_f=2/3,1/3) sets the scale; R∞=11/3 exact (Tier 2a, `equations/alpha_em_hadronic.py`)
-- **Path to closure (Cycle 159 update):** Λ_QCD=304.5 MeV from DFC α_s two-loop (within PDG range); m_ρ=825 MeV (+6.4%) via Regge; Δα^{ρ+ω+φ}=0.010654 (39% of Δα_had). The 0.00102 gap is the RESIDUAL of matched EW→QED running conversion. Remaining: derive c_σ=σ/Λ²≈2.09 and Regge intercept α₀≈0.44 from D7 kink profile (Tier 4 = Yang-Mills gap equivalent).
+- **Path to closure (Cycle 160 update):** σ=Q_top×Λ_QCD² (Tier 3, −4.2%); α_0=Q_top/4=1/2 (Tier 2a); m_ρ=√(2π)×Λ_QCD=763 MeV (Tier 3, −1.58%, 0 free params). Q_top=2 is the ONLY DFC Tier-1 integer giving c_σ<5%. Remaining: prove σ=Q_top×Λ² from D7 kink vacuum energy (Tier 4 = Yang-Mills mass gap). That proof would also fix the c_σ → BW → Δα_had → Δα dispersion chain.
 - **Note (Cycle 159):** confinement.py "−83% failure" (45.9 MeV) was a one-loop artifact. Two-loop from same DFC α_s(M_Z) gives 304.5 MeV (consistent). This is not a new DFC prediction — it follows from having the correct α_s.
-- Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/alpha_em_eccc.py` (Cycle 139)
+- Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/d7_nonpert_coefficients.py` (Cycle 160), `equations/alpha_em_eccc.py` (Cycle 139)
 
 ### T10 — Near-maximal θ₂₃ argument self-contradicts (Cycle 65)
 - The structural DFC argument for θ₂₃ ≈ 45° is "near-degeneracy of 2nd/3rd neutrino winding modes"
