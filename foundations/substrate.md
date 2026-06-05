@@ -182,8 +182,12 @@ rigorously derived.
   by three physical requirements (cannot reach zero, no preferred sign, stable rest state) as the
   lowest-order consistent polynomial (Tier 3 structural argument); formal derivation from near-D1
   mechanics open (Tier 4).
-- **β = 1/(9π): DERIVED Tier 2a (Cycle 117).** From D5 tachyonic instability + Hopf fiber
-  dimension sum N_Hopf = 9: β = 1/(πN_Hopf). See `equations/d5_complex_from_instability.py`.
+- **β = 1/(9π): Tier 2a (Cycle 117).** From V(|Φ|²) + Hopf fiber dimension sum N_Hopf=9:
+  β = 1/(πN_Hopf). NOTE (Cycle 175): The original derivation claimed the L₂ tachyon
+  'forces' complexification, but this was circular (L₂ uses V(|Φ|²) to derive V(|Φ|²)).
+  Corrected chain: P4a (new DOF opens at D5) + P1 (one substrate → Q_top universal) →
+  λ=2β → V=V(|Φ|²) [T1] → N_Hopf=9 → β=1/(9π) [T2a].
+  See `equations/p4_derivation_attempt.py` (Cycle 175) and `REVIEW_RESPONSE.md`.
 - **α = ∛18 ≈ 2.621: TIER 2a (Cycle 172).**
   Derivation: β = 1/(9π) [T2a] → S_kink = 4/β [T2a, via T1 identity S_kink × α_D5 = 1] →
   BPS saturation E_kink = S_kink [T1] → (4/3)α^{3/2}/(β√2) = 4/β → α = ∛18.

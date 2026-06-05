@@ -333,21 +333,37 @@ agreement alone is not strong evidence. This is a standard scientific concern.
 
 ## Remediation Plan
 
-### Priority 1 (Critical — fixes the circular argument)
+### Priority 1 (Critical) — RESOLVED Cycle 175
 
-**Add a new Tier 0 postulate for complexification:**
+**P4 analysed in `equations/p4_derivation_attempt.py`. Key findings:**
 
-Replace the claim "tachyon forces complexification" with:
+P4 decomposes into two parts:
 
-> **P4 (Tier 0):** At D5 compression depth, the substrate develops a second field
-> degree of freedom φ₂ with the same dynamics as φ₁. The combined field is Φ = φ₁ + iφ₂.
+**P4a (irreducible Tier 0 — minimal):** 'A second field DOF φ₂ opens at D5.'
+Cannot be derived from V(φ) alone. The real kink is stable (no tachyon in V(φ)).
+Motivated by P3 (buckling) but not quantitatively derived. This is the minimum new input.
 
-Then Step 3 of the derivation chain becomes:
-- V = V(|Φ|²) follows from rotational tachyon universality [T1, Cycle 173, given P4]
-- β = 1/(9π) follows [T2a, given V(|Φ|²)]
+**V = V(|Φ|²) is now Tier 1 given P1 + P4a.**
 
-This makes the model **honest**: one more postulate (the 2D extension) is needed.
-The claim changes from "derived from V(φ) alone" to "derived from V(φ) plus complex field extension."
+The 'no preferred direction' axiom has been eliminated — derived from P1 instead:
+
+1. P1 (one substrate) → one kink type → Q_top is a universal constant [T3→T1]
+2. Q_top universal → β_eff(θ) = β for all θ → λ = 2β [T1 algebraic]
+3. λ = 2β ↔ V = V(|Φ|²) [T1 algebraic, max diff 3.55e-15]
+
+Key T1 result: for Z₂×Z₂ quartic V = −α/2(φ₁²+φ₂²) + β/4(φ₁⁴+φ₂⁴) + λ/4 φ₁²φ₂²,
+requiring all points on |Φ|=φ₀ to be global minima uniquely forces λ=2β,
+which is algebraically identical to V=V(|Φ|²).
+
+Simplest reading (T1): V(φ) depends on φ via φ²=|φ|². In 2D the amplitude is |Φ|².
+Replacing φ² → |Φ|² gives V(|Φ|²) directly — the same potential on a 2D amplitude.
+
+| Before (Cycle 174) | After (Cycle 175) |
+|---|---|
+| P4 = 'no preferred direction' [T0 axiom] | P4a = 'new DOF opens' [T0 minimal] |
+| V=V(|Φ|²) postulated | V=V(|Φ|²) derived from P1+P4a [T1] |
+| Separate no-preference axiom | No-preference derived from 'one substrate' |
+
 
 ### Priority 2 (Documentation fixes)
 

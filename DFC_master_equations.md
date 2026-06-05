@@ -15,11 +15,12 @@ Double-well with minima at ±φ₀ and unstable maximum at φ = 0.
 
 **P3. Dynamics:** ∂²φ/∂t² = ∇²φ − dV/dφ
 
-**P4. Complex extension (Tier 0):** At D5 compression depth, the substrate develops
-a second field degree of freedom φ₂ with the same dynamics as φ₁. The combined field
-is Φ = φ₁ + iφ₂. This is a postulate; see REVIEW_RESPONSE.md Priority 1 for status.
+**P4a. New DOF (Tier 0 — minimal):** At D5 compression depth, a second field
+degree of freedom φ₂ opens. This is the minimum new input needed; it cannot be derived
+from V(φ) alone (the real kink is stable). Motivated by P3 (buckling), not quantified.
 
-Steps 1–2 below follow from P1–P3 alone. Steps 3–15 require P4.
+Steps 1–2 follow from P1–P3 alone. Steps 3–15 require P4a.
+V = V(|Φ|²) is then derived from P1+P4a via T1 algebra (see Step 3 below).
 
 ---
 
@@ -51,21 +52,30 @@ E_kink = (4/3) α^{3/2} / (β√2)
 ```
 Algebraic check: E_kink = (4/3) × φ₀² × ξ⁻¹ × (2/3) ... reduces to (4/3)I₄ × φ₀³/ξ = (4/3) × (α/β) × √(α/2) = (4/3)α^{3/2}/(β√2).
 
-**Step 3 — Complexification and rotational tachyon universality** [P4 + T1]
+**Step 3 — V = V(|Φ|²) derived from P1 + P4a** [T1, Cycle 175]
 
 NOTE: The real 1D kink in V(φ) is STABLE — L₁ (PT s=2) has zero mode and shape
 mode ω² = 3α/2 > 0. No tachyon exists in the real field theory.
 
-The complexification step (φ → Φ = φ₁+iφ₂) is Postulate P4, not derived from V(φ).
+Given P4a (new DOF φ₂ opens), the field extends to Φ = (φ₁, φ₂). The general
+Z₂×Z₂ quartic with the same α,β on each axis has one free parameter λ:
+```
+V(φ₁,φ₂) = −α/2(φ₁²+φ₂²) + β/4(φ₁⁴+φ₂⁴) + λ/4 φ₁²φ₂²
+```
+P1 (one substrate) → Q_top is a universal constant (all kinks are the same object).
+Q_top(θ) = 2√(α/β_eff(θ)) where β_eff(θ) = β + (λ−2β)cos²θ sin²θ.
+Q_top constant for all θ requires β_eff(θ) = β → λ = 2β [T1 algebraic].
+```
+λ = 2β  →  V = −α/2|Φ|² + β/4|Φ|⁴ = V(|Φ|²)   [T1 algebraic, max diff 3.55e-15]
+```
+Simplest reading: V(φ) = −α/2φ²+β/4φ⁴ depends on φ via φ²=|φ|². In 2D, replacing
+φ² → |Φ|² = φ₁²+φ₂² gives V(|Φ|²) — the same potential applied to the 2D amplitude.
 
-Given P4, the transverse fluctuation operator within V(|Φ|²) is:
+Given V(|Φ|²), the transverse tachyon is exact:
 ```
-L₂ = −∂²/∂x² − α sech²(x/ξ)    [PT s=1, derived from V(|Φ|²)]
-ω²₀ = −α/2   [exact tachyon eigenvalue — real and exact GIVEN V(|Φ|²)]
+L₂ = −∂²/∂x² − α sech²(x/ξ)    [PT s=1]
+ω²₀ = −α/2                       [exact, given V(|Φ|²)]
 ```
-Rotational tachyon universality (Cycle 173, T1): ω²₀(θ) = −α/2 for all kink
-directions θ forces V₁₁ = V₂₂ and V₁₂ = 0 → V = V(|Φ|²). This is the converse:
-given P4 (2D field), the form V = V(|Φ|²) is derived algebraically [T1].
 
 
 **Step 4 — Complex structure generates Hopf sequence** [T1, exact]
