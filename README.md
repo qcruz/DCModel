@@ -232,6 +232,58 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 
 ---
 
+## Clay Prize Challenge: Yang-Mills Mass Gap
+
+**Status: Active primary focus** (Cycle 179 onward; see CLAUDE.md Primary Focus section)
+
+The DFC model provides a structural physical mechanism for the Yang-Mills mass gap
+that differs from all existing approaches: the topological obstruction from Q_top ≠ 0
+combined with the exact identity I₄ = C₂(fund, SU(3)) = 4/3 connects the substrate
+kink profile to the gauge theory's quadratic Casimir. The goal is to develop this into
+a rigorous mathematical argument.
+
+**Overall Clay challenge progress: ~8%**
+(T3 physical mechanism established; constructive QFT and Hamiltonian bound open)
+
+### Sub-Problem Tracking
+
+| # | Sub-problem | Tier | Progress | Key equation | Notes |
+|---|---|---|---|---|---|
+| SP1 | Constructive 4D gauge theory from V(φ) | T4 | 0% | — | Equivalent to half the Clay problem itself; approach via DFC Hilbert space construction |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | T4 | 5% | `yang_mills_mass_gap.py` | Classical BPS bound T1; quantum extension open; I₄=C₂ identity is the key bridge |
+| SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,...} in QFT Hilbert space) | T3 | 20% | `yang_mills_mass_gap.py` | Classical kink topology T1; QFT Hilbert space structure T4; Pomeron α₀^P=1 consistent T3 |
+| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | T4 | 5% | — | D7=SU(3) established T2a; IR decoupling of V(φ) scalar from gauge sector not addressed |
+| SP5 | Derive Δ = I₄ × Λ_QCD from V(φ) without external input | T4 | 10% | `yang_mills_mass_gap.py` | Λ_QCD currently from SM α_s inversion; M_c(D7) derivation blocked (ISSUES.md) |
+
+### Key Structural Assets (established, do not re-derive)
+
+| Result | Value | Tier | File |
+|---|---|---|---|
+| BPS lower bound E_kink > 0 | E = 113.1 M_Pl | T1 | `yang_mills_mass_gap.py` |
+| Topological charge | Q_top = 2 (exact) | T1 | `yang_mills_mass_gap.py` |
+| Kink shape integral = SU(3) Casimir | I₄ = C₂(fund,SU(3)) = 4/3 | T1 exact | `fermion_representation.py` |
+| D7 = SU(3) gauge group | Cycles 59–74 | T2a | `generation_count_proof.py` |
+| Mass gap lower bound | Δ_min = Q_top × Λ_QCD = 609 MeV | T3 | `yang_mills_mass_gap.py` |
+| Pomeron intercept | α_0^P = Q_top/2 = 1.0 | T3 | `yang_mills_mass_gap.py` |
+| Glueball 2++ | 2159 MeV (−10% vs lattice) | T3 | `yang_mills_mass_gap.py` |
+| String tension | σ = Q_top × Λ_QCD² (−4.2%) | T3 | `d7_nonpert_coefficients.py` |
+
+### Gap to Clay Prize Requirements
+
+The Clay problem (Jaffe-Witten) requires:
+1. A *quantum* Yang-Mills theory on ℝ⁴ — Hilbert space H, Hamiltonian H, vacuum Ω
+2. Proof that inf{⟨ψ|H|ψ⟩ : |ψ⟩ ∈ H, ⟨ψ|ψ⟩=1, ⟨ψ|Ω⟩=0} ≥ Δ > 0
+
+DFC currently provides a classical topological argument (T3) for why Δ > 0. The gap
+between T3 and the Clay requirement is entirely in constructive QFT — which is also
+the hardest part of the problem for all other approaches.
+
+**Stopping conditions:**
+- *Hard barrier:* A fundamental obstruction identified within DFC → document, return to general cycle
+- *Adequate solution:* All five sub-problems reach T2a or better → publishable proof candidate
+
+---
+
 ## Coverage of Existing Theories
 
 How much of each major theory's key content (derivations, predictions, structural explanations)

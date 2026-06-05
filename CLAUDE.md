@@ -211,8 +211,53 @@ All three must stay in sync. The estimate has two components:
 - **Mathematical rigor** (~8% baseline): increases only when actual derivations are
   completed. Structural descriptions do not move rigor.
 
-**Priority weighting for Step 1:** Prefer phenomena and derivations connecting to the
-three bottlenecks:
+---
+
+### ⭐ PRIMARY FOCUS (overrides Step 1 priority until resolved)
+
+**Yang-Mills Mass Gap — Clay Millennium Prize Problem**
+
+Starting Cycle 179, every session's Step 1 is directed toward advancing the DFC
+structural argument for the Yang-Mills mass gap to higher mathematical rigor.
+This focus continues until one of two stopping conditions is met:
+
+- **Hard barrier:** A fundamental obstruction is identified that cannot be resolved
+  within the DFC framework (document in `ISSUES.md` and return to general cycle).
+- **Adequate solution:** The argument reaches Tier 2a or better across all five
+  sub-problems listed below, constituting a publishable structural proof candidate.
+
+**The five sub-problems (tracked in README.md `## Clay Prize Challenge` section):**
+
+| # | Sub-problem | Current tier | Target |
+|---|---|---|---|
+| SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | T4 | T2a |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | T4 | T2a |
+| SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | T3 | T2a |
+| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | T4 | T3 |
+| SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | T4 | T3 |
+
+**Workflow within PRIMARY FOCUS:**
+
+Step 1 of each cycle must advance at least one sub-problem. Priority order:
+SP2 → SP3 → SP4 → SP1 → SP5 (SP2 is most tractable given BPS structure already T1).
+
+Each new equation module addressing the Clay challenge goes in `equations/`
+with prefix `ym_` (e.g., `ym_hamiltonian_bound.py`, `ym_hilbert_space.py`).
+
+Each conceptual argument goes in `phenomena/particle_physics/forces/` or a new
+`foundations/yang_mills/` directory if the argument grows to multiple documents.
+
+**Key structural assets available (do not re-derive):**
+- BPS lower bound E_kink > 0: **T1** (`equations/yang_mills_mass_gap.py`)
+- I₄ = C₂(fund, SU(3)) = 4/3: **exact identity**, residual 0.00e+00
+- Q_top = 2: **T1 exact**
+- D7 = SU(3): **T2a** (Cycles 59–74)
+- α_0^P = Q_top/2 = 1: **T3 structural**
+- g_eff² = 2I₄/N_Hopf = 8/27: **T2a**
+
+---
+
+**Secondary priorities (when no Clay sub-problem is tractable in a session):**
 
 1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically to close α_em and
    α_s gaps simultaneously (equations/alpha_em_eccc.py, Cycle 139).
