@@ -270,7 +270,11 @@ with one unit of anti-red winding also cancel to zero.
 | α_s running shape (asymptotic freedom) | β < 0 for N_f ≤ 16 follows from SU(3) non-Abelian structure | confirmed | ✓ structural |
 | Confinement: color-neutral states only | Zero net D7 winding required in D3 localization layer | all observed hadrons color-neutral | ✓ structural (formal proof open) |
 | 8 gluons from SU(3) (3²−1 = 8 generators) | 8 | 8 | ✓ topological |
-| Three-generation structure from D7 | SU(3) fundamental rep dim = 3 | 3 generations | ✓ Tier 1 |
+| Three-generation structure from D7 | SU(3) fundamental rep dim = 3 | 3 generations | ✓ Tier 2a (conditional on D7=SU(3)) |
+| Mass gap Δ > 0 | BPS lower bound Q_top×Λ_QCD = 609 MeV (T3, Cycle 178) | Δ > 0 (Clay problem) | ✓ T3 structural |
+| Glueball 2++ (Pomeron) | 2159 MeV (−10%, T3, Cycle 178) | ~2400 MeV (lattice) | ✗ −10% T3 |
+| Glueball 0++ (Nambu-Goto) | 2159 MeV (+33%, T3, Cycle 178) | ~1625 MeV (lattice) | ✗ +33% T3 |
+| Pomeron intercept α_0^P | Q_top/2 = 1.0 (T3) | ~1.0 | ✓ T3 structural |
 | D7 independent of D5, D6 (product topology) | No X/Y boson mediating proton decay | proton lifetime > 10³⁴ yr | ✓ structural |
 
 Note: The α_s(M_Z) gap is RESOLVED (Cycle 144). Root cause of the old 8.1% error was using the
@@ -301,6 +305,7 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 - `equations/confinement.py` — Λ_QCD^DFC = 45.9 MeV (Cycle 133 one-loop artifact; two-loop gives 304.5 MeV, Cycle 159)
 - `equations/rho_meson_dfc.py` — Λ_QCD=304.5 MeV two-loop from DFC α_s(M_Z); m_ρ=825 MeV Regge (Cycle 159)
 - `equations/d7_nonpert_coefficients.py` — σ=Q_top×Λ²(−4.2%), m_ρ=√(2π)Λ=763 MeV (−1.58%, 0 free params, Cycle 160)
+- `equations/yang_mills_mass_gap.py` — BPS lower bound T1; glueball estimates T3; mass gap structural argument (Cycle 178)
 - `equations/d6_gauge_beta.py` — b₀ survey (Cycle 133); SU(2) CANNOT drive EWSB (Tier 1); b₀_EW=N_Hopf+Q_top=11
 - `equations/mc_closure_scales.py` — ECCC M_c(D7)=1.566×10¹⁵ GeV (Cycle 130)
 - `phenomena/particle_physics/quark_gluon_plasma.md` — strong force at T > Λ_QCD; deconfinement
@@ -309,12 +314,20 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 
 ## Open Questions
 
-1. **Formal proof of confinement from DFC:** The flux-tube picture is physically
-   motivated — gluon self-attraction collapses field lines. But the formal DFC statement
-   (isolated D7 winding is topologically forbidden in D3) has not been derived from the
-   compression field equation. This requires analyzing the D7 closure topology at the
-   nonlinear level — the regime where α_s ~ 1 and perturbation theory fails. This is
-   the DFC equivalent of the Yang-Mills mass gap problem.
+1. **Yang-Mills mass gap — DFC structural argument (T3, Cycle 178):** A three-layer
+   argument exists in `equations/yang_mills_mass_gap.py`:
+   - **Layer 1 (T1):** The BPS/Bogomolny inequality applied to V(φ) establishes E_kink ≥ |ΔW| > 0
+     for any configuration with Q_top ≠ 0. With Q_top = 2 (exact) and the shape integral I₄ = 4/3
+     (exact, equals the SU(3) Casimir), E_BPS = 113.1 M_Pl > 0 is an algebraic identity.
+   - **Layer 2 (T2a):** D7 = SU(3) (Cycles 59–74) → D7 kinks carry this topological bound at
+     the QCD scale. The gluon field of D7 closure inherits the topological obstruction.
+   - **Layer 3 (T3):** Closed flux tubes (glueballs, Q_top = 0 net) still require traversing
+     the topological barrier — their energy satisfies E ≥ σ × C_min = Q_top × Λ_QCD = 609 MeV > 0.
+     Pomeron intercept α_0^P = Q_top/2 = 1.0. Glueball 0++ (Nambu-Goto) = 2159 MeV (+33% vs
+     lattice 1625 MeV); 2++ (Pomeron) = 2159 MeV (−10% vs lattice 2400 MeV).
+   - **Formal proof gap (T4):** constructive 4D QFT from V(φ), proof that ALL gauge-invariant
+     states have E ≥ Δ, and a derivation of Δ purely from V(φ) without Λ_QCD as external input.
+   See also `ISSUES.md` Blocked Derivations entry updated Cycle 178.
 
 2. **Derive Λ_QCD from DFC parameters:** The confinement scale Λ_QCD ≈ 200 MeV is
    set by dimensional transmutation. In DFC (Cycle 133, `equations/confinement.py`),

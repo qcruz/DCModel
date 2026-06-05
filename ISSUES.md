@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-04 (Cycles 122–176)
+**Last updated:** 2026-06-05 (Cycles 122–178)
 
 ---
 
@@ -414,7 +414,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | β ≈ 0.035 from pre-substrate principle | No pre-substrate condition identified that selects β | `beta_substrate.py` [STUB] | New theoretical input (pre-bifurcation stability condition) |
 | Born rule for position | Spin case DERIVED (Cycle 38); Kramers escape rate Γ(x) ∝ \|φ(x)\|² not rigorously derived | `measurement.md`, `born_rule_derivation.md` | Escape rate calculation from V(φ) saddle topology |
 | ℏ from (α, β, c) | S_kink(D1)/ℏ = 4×10³⁹ — 13.2 bifurcations needed to reach ℏ scale; model has only 4 | `planck_constant_derivation.md` | Either additional sub-bifurcation structure or route via α_em derivation |
-| Confinement formal proof | Requires nonlinear SU(3) analysis; equivalent to Yang-Mills mass gap problem | `strong_force.md` (Open Q1), `strong_cp.md` | Nonlinear D7 field theory; beyond perturbation theory |
+| Confinement formal proof / Yang-Mills mass gap | **Cycle 178 (T3 structural argument):** Three-layer DFC argument `equations/yang_mills_mass_gap.py`. Layer 1 (T1): BPS lower bound E_kink > 0 from V(φ) two-well — Q_top=2 exact, I₄=4/3 exact, E_BPS=113.1 M_Pl. Layer 2 (T2a): D7=SU(3) (Cycles 59-74) → D7 kinks carry this bound at the QCD scale. Layer 3 (T3): closed flux tubes (glueballs) have E ≥ σ×C_min = Q_top×Λ_QCD = 609 MeV > 0. Pomeron intercept α_0^P = Q_top/2 = 1.0. Glueball 2++ = 2159 MeV (−10% vs lattice 2400 MeV); 0++ Nambu-Goto = 2159 MeV (+33% vs lattice 1625 MeV). ρ meson check −1.5% (same Q_top input). **Remaining for rigorous proof (T4):** constructive 4D QFT from V(φ), prove ALL gauge-invariant states have E ≥ Δ, derive Δ purely from V(φ) without Λ_QCD as external input. | `equations/yang_mills_mass_gap.py` (Cycle 178), `strong_force.md` (Open Q1), `equations/confinement.py` | Constructive 4D QFT from DFC substrate; prove all non-vacuum states satisfy BPS-topological energy lower bound |
 | v = 246 GeV from substrate | **TIER 2a (Cycle 145):** v=247.83 GeV (+0.65%) from EWSB co-crystallization. Remaining open: derive M_c(D5), M_c(D6) from substrate (currently from ECCC+SM inputs). | `equations/ewsb_cocrystallization.py` | Promote M_c(D5), M_c(D6) from ECCC condition to pure substrate derivation |
 | CKM and PMNS matrices | Holonomy mismatch integral over D6/D7 boundary not computed | `flavor_mixing.md`, `tension_analysis.md` | D6/D7 overlap geometry → mixing angle computation |
 | Electroweak loop corrections (Δρ_top) | One-loop DFC calculation from D6+D7 dynamics not done | `electroweak_precision.md` (Open Q1) | Standard Feynman diagram computation in DFC effective Lagrangian |

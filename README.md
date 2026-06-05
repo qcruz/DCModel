@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~75.5% complete by internal estimate. Several Standard Model quantities
+Current status: ~76% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -202,7 +202,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~75.5%** (viability as a theory: ~86%; mathematical rigor: ~65%)
+**Current estimate: ~76%** (viability as a theory: ~86%; mathematical rigor: ~66%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -268,7 +268,7 @@ The model is in active development. Current priorities:
 - All four thermodynamic laws derived from folding mechanics
 - Weinberg angle: sin²θ_W = 3/8 → 0.231 (no free parameters)
 
-**Recently resolved (Cycles 138–177):**
+**Recently resolved (Cycles 138–178):**
 - τ lepton mass: Koide m_τ=1776.97 MeV (+0.006%, Tier 2a, 0 free params; Cycle 146)
 - α_s(M_Z): ECCC gives +0.006% (Tier 2a; Cycle 144)
 - EWSB vacuum v: co-crystallization v=247.83 GeV (+0.65%, Tier 2a; Cycle 145)
@@ -299,6 +299,9 @@ The model is in active development. Current priorities:
 - SU(3) vs SO(6) resolved: D5 complex structure J (Cycle 117) forces moduli ≅ ℂ³ →
   U(3)/center = SU(3); SO(6) acts on real S⁵⊂ℝ⁶, not the complex zero mode structure (Cycle 177)
 - ξ = 18^{-1/6} structural note **RETRACTED** (Cycle 172): correct ξ = √(2/∛18) ≈ 0.874 l_Pl
+- Yang-Mills mass gap **T3 structural argument** (Cycle 178): BPS lower bound E_kink > 0 [T1] +
+  D7=SU(3) [T2a] + closed flux tube E ≥ Q_top×Λ_QCD=609 MeV [T3]; Pomeron α_0^P=1.0;
+  glueball 2++=2159 MeV (−10%, T3); 0++=2159 MeV (+33%, T3); `equations/yang_mills_mass_gap.py`
 
 **Current focus — active bottlenecks:**
 
@@ -317,7 +320,7 @@ Active secondary work (ISSUES.md):
 - Fermion representation: Jackiw-Rebbi zero mode BVP (T4 → T2a path)
 
 **Open:**
-- σ = Q_top × Λ_QCD² from D7 kink vacuum energy (Tier 3 → proof; Yang-Mills mass gap)
+- σ = Q_top × Λ_QCD² from D7 kink vacuum energy (Tier 3 structural; T4 formal proof = constructive 4D QFT)
 - Neutrino mass ratio m₃/m₂: DFC κ=5.33 vs observed 5.81 (−8.3%, Tier 2b)
 - Quark masses c/s (15% below observed)
 - G_Newton and ℏ from substrate parameters
