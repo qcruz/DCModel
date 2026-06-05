@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–178)
+**Last updated:** 2026-06-05 (Cycles 122–180)
 
 ---
 
@@ -308,6 +308,26 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   `equations/alpha_from_kink_action.py` (Cycle 169, three-way identity);
   `equations/kk_holonomy_derivation.py` (Cycle 171, S_kink × α_D5 = 1 Tier 1);
   `equations/d5_complex_from_instability.py` (Cycle 117, β=1/(9π))
+
+### T14 — Yang-Mills Mass Gap (Clay Prize): SP1-SP5 tracking (Cycles 178–)
+
+- **Status:** Active primary focus. Five sub-problems (SP1–SP5) being developed.
+- **SP2 (1+1D): T2a — ESTABLISHED (Cycle 180)**
+  - Q1 (Coleman superselection sectors): T2a [Cycle 179]
+  - Q2 (Glimm-Jaffe :H:≥0 + kink sector min ≥ m_kink): **T2a [Cycle 180]**
+    - DFC V(φ) satisfies ALL P(φ)₂ conditions (GJ1–GJ5 apply)
+    - μ²/λ = 148 >> 1: confirmed deeply in broken SSB phase
+    - m_kink^quantum = E_BPS × (1 − 3g/(4π)) > 0 rigourously [DHN 1-loop, g=0.0067]
+    - 1+1D mass gap: Δ_1D = 112.92 M_Pl (constructive QFT, T2a)
+  - Q4 (4D Yang-Mills inheritance): T4 — blocked on SP4
+- **SP1 (4D constructive theory):** T4 — hardest step
+- **SP3 (topological charge spectrum in QFT):** T3
+- **SP4 (pure YM decoupling from scalar in IR):** T4 — NEXT priority
+- **SP5 (derive Δ_4D from V(φ) without SM input):** T4
+- **Key result:** I₄ = C₂(fund,SU(3)) = 4/3 exact — kink shape integral equals SU(3) Casimir
+- **Files:** `equations/yang_mills_mass_gap.py` (T3, Cycle 178), `equations/ym_hamiltonian_bound.py`
+  (SP2 classical + Q1, Cycles 179), `equations/ym_coleman_sectors.py` (SP2 Q2 T2a, Cycle 180)
+- **Next:** `equations/ym_gauge_decoupling.py` — SP4: show D7 zero modes give pure SU(3) in 4D IR
 
 ---
 

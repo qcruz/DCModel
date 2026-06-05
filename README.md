@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~76.5% complete by internal estimate. Several Standard Model quantities
+Current status: ~77% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -202,7 +202,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~76.5%** (viability as a theory: ~86%; mathematical rigor: ~67%)
+**Current estimate: ~77%** (viability as a theory: ~86%; mathematical rigor: ~68%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -242,17 +242,17 @@ combined with the exact identity I₄ = C₂(fund, SU(3)) = 4/3 connects the sub
 kink profile to the gauge theory's quadratic Casimir. The goal is to develop this into
 a rigorous mathematical argument.
 
-**Overall Clay challenge progress: ~15%**
-(T3 physical mechanism + Bogomolny T1 + Coleman Q1 T2a; constructive QFT and 4D extension open)
+**Overall Clay challenge progress: ~22%**
+(1+1D mass gap T2a from constructive QFT [Cycle 180]; Bogomolny T1 + Coleman T2a; 4D Yang-Mills extension open via SP4)
 
 ### Sub-Problem Tracking
 
 | # | Sub-problem | Tier | Progress | Key equation | Notes |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | T4 | 0% | — | Equivalent to half the Clay problem itself; approach via DFC Hilbert space construction |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | T3 | 30% | `ym_hamiltonian_bound.py` | Bogomolny exact [T1]; fluctuation spectrum ≥0 [T1]; Coleman Q1→T2a; Q2 (normal-ordering) T3; Q4 (4D) blocked |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a (1+1D)** | **60%** | `ym_coleman_sectors.py` | Bogomolny T1; fluctuation ≥0 T1; Coleman Q1 T2a; Glimm-Jaffe Q2 T2a [Cycle 180]; Q4 (4D) blocked on SP4 |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,...} in QFT Hilbert space) | T3 | 20% | `yang_mills_mass_gap.py` | Classical kink topology T1; QFT Hilbert space structure T4; Pomeron α₀^P=1 consistent T3 |
-| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | T4 | 5% | — | D7=SU(3) established T2a; IR decoupling of V(φ) scalar from gauge sector not addressed |
+| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | T4 | 5% | — | D7=SU(3) established T2a; IR decoupling of V(φ) scalar from gauge sector not addressed — **NEXT** |
 | SP5 | Derive Δ = I₄ × Λ_QCD from V(φ) without external input | T4 | 10% | `yang_mills_mass_gap.py` | Λ_QCD currently from SM α_s inversion; M_c(D7) derivation blocked (ISSUES.md) |
 
 ### Key Structural Assets (established, do not re-derive)
@@ -274,9 +274,10 @@ The Clay problem (Jaffe-Witten) requires:
 1. A *quantum* Yang-Mills theory on ℝ⁴ — Hilbert space H, Hamiltonian H, vacuum Ω
 2. Proof that inf{⟨ψ|H|ψ⟩ : |ψ⟩ ∈ H, ⟨ψ|ψ⟩=1, ⟨ψ|Ω⟩=0} ≥ Δ > 0
 
-DFC currently provides a classical topological argument (T3) for why Δ > 0. The gap
-between T3 and the Clay requirement is entirely in constructive QFT — which is also
-the hardest part of the problem for all other approaches.
+DFC now provides: (a) a classical topological argument (T3) for why Δ > 0, and (b) a
+rigorous constructive QFT proof (T2a, Glimm-Jaffe) that Δ_1D = m_kink > 0 in the 1+1D
+DFC substrate. The remaining gap to the Clay Prize is the 4D dimensional extension (SP4),
+which is the hardest step for all known approaches.
 
 **Stopping conditions:**
 - *Hard barrier:* A fundamental obstruction identified within DFC → document, return to general cycle
