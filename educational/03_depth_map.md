@@ -89,7 +89,7 @@ Here is the current evidence status at each claimed depth:
 - The Weinberg angle sin²θ_W = 0.2312 (observed: 0.2312, error 0.01%, Tier 2a).
   This follows from the D5/D6 winding ratio k_Y = √(5/3).
 - The W and Z boson masses: 79.67 GeV (−0.88%) and 90.86 GeV (−0.36%), Tier 2a.
-- Three generations of fermions from the D6 S³ topology (Tier 1 structural count).
+- Three generations of fermions from the D7 SU(3) fundamental representation (Weyl formula gives dim=3; Tier 2a, conditional on D7=SU(3)).
 - The tau lepton mass: 1776.97 MeV (+0.006%, Tier 2a) from the D6 Koide mechanism.
 
 **D7 (SU(3) closure):**

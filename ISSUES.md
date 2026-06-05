@@ -333,9 +333,23 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Files: `foundations/tension_analysis.md`, `phenomena/particle_physics/flavor_mixing.md`
 
 ### T4 — Fermion representation origin (fundamental vs. adjoint)
-- Why do D7 fermions appear in the fundamental rep of SU(3), not the adjoint?
-- Route B Hopf fiber provides structural motivation; formal derivation of representation content missing
-- Files: `foundations/tension_analysis.md`, `foundations/three_generations.md`
+- **Status: Tier 3 structural argument (Cycle 177)**
+- **DFC argument (winding number minimality):**
+  - D7 zero modes generate SU(3) gauge group (adjoint by definition) [T1]
+  - D6 kinks traversing D7 background acquire SU(3) holonomy from single crossings [T3]
+  - One crossing = winding number n=1 → Dynkin label (1,0) → fundamental rep, dim=3 [T3]
+  - Adjoint requires n=2 (two fundamental crossings = meson/gluon bound state, not single quark)
+  - Individual D6 kinks = single defects = one crossing each → fundamental [T3]
+- **Structural identity (Cycle 177):** I₄ = C₂(fund, SU(3)) = 4/3 (exact, residual 0.00e+00)
+  - I₄ = ∫sech⁴(u) du = 4/3 [T1, Bogomolny]
+  - C₂(fund, SU(3)) = (N_c²-1)/(2N_c) = 8/6 = 4/3 [math, exact]
+  - Interpretation: the kink shape integral (setting the gauge coupling g₁²=2I₄) equals
+    the Casimir of the representation in which matter couples. Structural self-consistency:
+    the coupling formula g₁²=2I₄ and the matter-rep color factor C_F=4/3 are the same number.
+    This would fail for any other SU(3) representation.
+- **Winding table:** n=0 singlet, n=1 fundamental (quarks, dim=3), n=2 diquark (dim=6), n=3 baryon precursor (dim=10)
+- **Path to T2a:** Compute Jackiw-Rebbi zero mode of D6 Dirac operator in explicit D7 kink background; show zero mode transforms as (1,0) fundamental. This is a boundary value problem for the D7 kink field equation.
+- **Files:** `equations/fermion_representation.py` (Cycle 177, T3 structural argument + I₄=C₂ identity), `foundations/tension_analysis.md`, `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty — **RESOLVED Cycle 144**
 - **STATUS: CLOSED.** Root cause identified and fixed: α_s=0.1086 (8.1% off) used wrong M_c(D7) from α₁∩α₃ crossing (~2.5×10¹⁴ GeV), not the correct ECCC condition.
@@ -404,7 +418,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | v = 246 GeV from substrate | **TIER 2a (Cycle 145):** v=247.83 GeV (+0.65%) from EWSB co-crystallization. Remaining open: derive M_c(D5), M_c(D6) from substrate (currently from ECCC+SM inputs). | `equations/ewsb_cocrystallization.py` | Promote M_c(D5), M_c(D6) from ECCC condition to pure substrate derivation |
 | CKM and PMNS matrices | Holonomy mismatch integral over D6/D7 boundary not computed | `flavor_mixing.md`, `tension_analysis.md` | D6/D7 overlap geometry → mixing angle computation |
 | Electroweak loop corrections (Δρ_top) | One-loop DFC calculation from D6+D7 dynamics not done | `electroweak_precision.md` (Open Q1) | Standard Feynman diagram computation in DFC effective Lagrangian |
-| SU(3) vs SO(6) gauge group (D7) | Full Riemannian isometry of S⁵ is SO(6); DFC uses SU(3) from zero mode counting (T2a, Cycles 59-74). The formal mechanism by which the gauge group of the zero mode moduli space is SU(3) (not SO(6)) is: n=3 coincident degenerate zero modes → moduli ≅ ℂ³ → U(3) → SU(3) (center decoupled). SU(3) acts on S⁵ as SU(3)/SU(2) (not as full isometry group). This is documented in `DFC_master_equations.md` Step 4 (Cycle 176), but the formal derivation that moduli space is specifically ℂ³ (not ℝ⁶ → SO(6)) has not been written as a standalone proof. Required: show that the zero mode index structure forces complex structure on the moduli. | `DFC_master_equations.md` Step 4, `foundations/three_generations.md`, `equations/generation_count_proof.py` | Formal proof that degenerate zero modes on D7 kink carry complex (not real) moduli structure, forcing U(n) rather than O(2n) |
+| SU(3) vs SO(6) gauge group (D7) | **LARGELY RESOLVED by Cycle 117 (Cycle 177 clarification).** Full Riemannian isometry of S⁵ ⊂ ℝ⁶ is SO(6). But DFC zero modes carry COMPLEX structure (from D5 complex structure J derived in Cycle 117: V(φ)→tachyonic instability→O(2) symmetry→V(|Φ|²)→complex structure J). Complex structure on the zero modes forces moduli ≅ ℂ³ (not ℝ⁶). U(3) acts on ℂ³; decoupling the U(1) center gives SU(3). SO(6) would arise if moduli were real (ℝ⁶), but D5 complex structure propagates to all higher depths, making moduli complex throughout. This distinguishes the DFC gauge group origin (zero mode complex moduli) from the full Riemannian isometry of the sphere (real tangent bundle). Remaining open: write standalone proof that D5 complex structure J extends to D6 and D7 zero modes (currently implicit in Cycles 70-74). | `equations/d5_complex_from_instability.py` (Cycle 117), `DFC_master_equations.md` Step 4, `equations/generation_count_proof.py` | Standalone derivation that complex structure J propagates from D5 to D7 zero modes |
 | Koide t = 1/√Q_top derivation | t=1/√Q_top is used in Step 13 (Koide formula) to give m_τ=1776.97 MeV (T2a, Cycle 146). The derivation of t from the 5D Yukawa vortex integral is T4 OPEN. Current status: t is identified as the canonical normalization factor from the collective coordinate action (θ_can=√Q_top·θ → vertex 1/√Q_top), but the full vortex integral that computes this factor from V(φ) has not been done. | `equations/koide_phase_coupling.py`, `DFC_master_equations.md` Step 13, `foundations/three_generations.md` | Compute 5D Yukawa vortex integral ∫d⁵x ψ̄Φψ for kink profile φ(x) to extract t as a function of α, β |
 | Series holonomy rule for g_eff (Step 9c) | g_eff² = g₁²/N_Hopf assumes N_Hopf=9 fibers combine in series (each fiber independent, couplings add in inverse-square). Steps 9a-9b (moduli metric, per-fiber coupling g₁²=2I₄) are T1. Step 9c is T3: the series combination rule from KK reduction on the complex sphere sequence has not been formally derived. Formal requirement: KK reduction on each S^{2n-1} factor in the sequence d_n=1,3,5 with appropriate periodicity → coupling per fiber → series combination formula → g_eff²=2I₄/N_Hopf. | `DFC_master_equations.md` Step 9, `equations/generation_count_proof.py` Part A | Formal KK reduction on S¹×S³×S⁵ product, showing each fiber contributes g₁² to inverse coupling sum |
 
