@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–180)
+**Last updated:** 2026-06-05 (Cycles 122–181)
 
 ---
 
@@ -322,12 +322,14 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - Q4 (4D Yang-Mills inheritance): T4 — blocked on SP4
 - **SP1 (4D constructive theory):** T4 — hardest step
 - **SP3 (topological charge spectrum in QFT):** T3
-- **SP4 (pure YM decoupling from scalar in IR):** T4 — NEXT priority
+- **SP4 (pure YM decoupling from scalar in IR):** **T3 [Cycle 181]** — scale hierarchy T2a (m_sigma/Λ_QCD=9.2e19); moduli approx → SU(3) sigma model; Lemmas E1-E5 structural; G1 (KK reduction 1+1D→4D) T4 blocking
 - **SP5 (derive Δ_4D from V(φ) without SM input):** T4
 - **Key result:** I₄ = C₂(fund,SU(3)) = 4/3 exact — kink shape integral equals SU(3) Casimir
 - **Files:** `equations/yang_mills_mass_gap.py` (T3, Cycle 178), `equations/ym_hamiltonian_bound.py`
-  (SP2 classical + Q1, Cycles 179), `equations/ym_coleman_sectors.py` (SP2 Q2 T2a, Cycle 180)
-- **Next:** `equations/ym_gauge_decoupling.py` — SP4: show D7 zero modes give pure SU(3) in 4D IR
+  (SP2 classical + Q1, Cycle 179), `equations/ym_coleman_sectors.py` (SP2 Q2 T2a, Cycle 180),
+  `equations/ym_gauge_decoupling.py` (SP4 T4→T3, Cycle 181)
+- **Next:** `equations/ym_kk_reduction.py` — SP4 G1: formalize 1+1D → 4D KK reduction
+  OR `equations/ym_anomaly_check.py` — SP4 G4 support: gauge anomaly cancellation
 
 ---
 
