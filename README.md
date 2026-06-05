@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~74% complete by internal estimate. Several Standard Model quantities
+Current status: ~74.5% complete by internal estimate. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -202,7 +202,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~74%** (viability as a theory: ~84.5%; mathematical rigor: ~63%)
+**Current estimate: ~74.5%** (viability as a theory: ~85%; mathematical rigor: ~63.5%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
@@ -286,6 +286,10 @@ The model is in active development. Current priorities:
   α_D5 = 1/S_kink is Tier 2a derived; KK reduction chain confirmed from 5D Lagrangian (Cycle 171)
 - α = ∛18: promoted from Tier 3 → **TIER 2a** — derived from β[T2a] + S_kink×α_D5=1[T1] +
   BPS saturation; (4/3)α^{3/2}/(β√2) = 4/β solves uniquely to α = ∛18 (Cycle 172)
+- β = 1/(9π) **Tier 1 candidate** (Cycle 173): "no preferred direction" Tier 0 axiom
+  eliminated via Route F (rotational tachyon universality). ω²₀(θ)=−α/2 for all kink
+  directions θ → V=V(|Φ|²) algebraically [T1]. Spread across all θ: 0.00e+00 (exact).
+  See `equations/d5_instability_tier1.py`. α=∛18 also upgrades to Tier 1 candidate.
 - ξ = 18^{-1/6} structural note **RETRACTED** (Cycle 172): correct ξ = √(2/∛18) ≈ 0.874 l_Pl,
   not 18^{-1/6} ≈ 0.618; "ξ ≈ 1/φ_golden" claim removed from all documents
 

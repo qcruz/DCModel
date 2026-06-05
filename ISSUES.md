@@ -292,16 +292,19 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - φ₀ = √(α/β) = √(∛18 × 9π) ≈ 8.608 M_Pl  [vacuum field amplitude]
 
 - **Remaining open (path to Tier 1):**
-  If β = 1/(9π) is upgraded from Tier 2a to Tier 1 (by removing the "no preferred direction"
-  axiom dependency in the tachyonic instability argument), then α = ∛18 upgrades to Tier 1.
-  Target file: `equations/d5_instability_tier1.py`
+  β = 1/(9π) axiom-free derivation COMPLETED (Cycle 173): the "no preferred direction"
+  postulate has been removed. Route F (rotational tachyon universality) proves V=V(|Φ|²)
+  from T1 alone. β = 1/(9π) is now a Tier 1 candidate; α = ∛18 upgrades to Tier 1 candidate.
+  See `equations/d5_instability_tier1.py` (Cycle 173) — all routes PASS.
+  Spread across θ: 0.00e+00 (exact rotational invariance). Route B residual: 7.26e-16.
 
 - **Perturbative RG note (Cycle 172):** Standard 4D φ⁴ theory has no UV fixed point at
   finite coupling (Landau pole). The selection of α comes from the DFC compression
   self-consistency condition (the kink at D1 must generate the coupling seen at D5),
   not from the perturbative Wilsonian RG.
 
-- **Files:** `equations/v_phi_rg_analysis.py` (Cycle 172, tier upgrade proof);
+- **Files:** `equations/d5_instability_tier1.py` (Cycle 173, β Tier 1 candidate — axiom-free);
+  `equations/v_phi_rg_analysis.py` (Cycle 172, α=∛18 Tier 2a);
   `equations/alpha_from_kink_action.py` (Cycle 169, three-way identity);
   `equations/kk_holonomy_derivation.py` (Cycle 171, S_kink × α_D5 = 1 Tier 1);
   `equations/d5_complex_from_instability.py` (Cycle 117, β=1/(9π))

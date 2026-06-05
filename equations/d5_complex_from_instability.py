@@ -30,6 +30,10 @@ Derivation chain:
           (φ₁,φ₂) cannot be physically distinguished → O(2) symmetry
           The unique O(2)-invariant quartic potential reducing to V(φ) is:
           V(|Φ|²) = −α/2|Φ|² + β/4|Φ|⁴  (no mixed terms possible)    [Tier 1]
+          NOTE (Cycle 173): This Tier 0 axiom is ELIMINATED by Route F
+          (rotational tachyon universality). V=V(|Φ|²) follows from:
+          ω²₀(θ)=−α/2 for ALL kink directions θ [T1, algebraic, exact].
+          See equations/d5_instability_tier1.py — β = 1/(9π) is now T1 candidate.
 
   Step 5. V(|Φ|²) has U(1)=O(2) symmetry: Φ→e^{iθ}Φ.
           Generator at θ=0: J(φ₁,φ₂) = (−φ₂,φ₁)  →  J²=−I           [algebra]
@@ -46,7 +50,7 @@ Tier promotions after Cycle 117:
   d_n = 2n−1:              Tier 3 → Tier 1  (structural, from substrate field eq)
   N_Hopf = 9:              Tier 3 → Tier 1  (= sum of d_n)
   g_eff² = 8/27:           Tier 3 → Tier 2a (0 free params, 0.006% vs SM)
-  β = 1/(9π):              Tier 3 → Tier 2a (same chain)
+  β = 1/(9π):              Tier 3 → Tier 2a (Cycle 117) → Tier 1 candidate (Cycle 173, Route F)
 
 References:
   Cycle 75:  complex_substrate.py — D5 vortex, L₂ tachyon (numerical)
