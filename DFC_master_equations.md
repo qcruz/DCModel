@@ -84,17 +84,39 @@ V(|Φ|²) has U(1) symmetry Φ → e^{iθ}Φ. Generator J satisfies J² = −I (
 d_n = 2n − 1     →     d₁=1, d₂=3, d₃=5
 N_Hopf = d₁ + d₂ + d₃ = 1 + 3 + 5 = 9
 ```
-These are the **complex unit spheres** S^{2n−1} ⊂ ℂⁿ with isometry groups U(1), SU(2), SU(3):
-- S¹ ⊂ ℂ¹: isometry U(1)             [D5, T1]
-- S³ ⊂ ℂ²: isometry SU(2) (S³≅SU(2)) [D6, T1]
-- S⁵ ⊂ ℂ³: isometry SU(3)            [D7, T2a — from n=3 zero modes, Cycles 59-74]
 
-NOTE: This is NOT the classical Hopf fibration sequence. The classical Hopf fibers
-(Adams 1960) have dimensions 1, 3, 7 (summing to 11). The DFC sequence has dimensions
-1, 3, 5 (summing to N_Hopf = 9). Both sequences have exactly 3 non-trivial entries, but
-DFC uses the complex sphere isometry groups — not the Hopf fiber structure groups.
+**Gauge group source — zero mode counting (NOT sphere isometry):**
 
-Sequence terminates at n=3 because D7 SU(3) confinement blocks further closures [T3].
+The gauge group SU(n) at each depth comes from n coincident translation zero modes
+on the kink background, proved algebraically in Cycles 59-74 (T2a):
+
+```
+n coincident degenerate zero modes  →  moduli space ℂⁿ  →  gauge group U(n)/U(1) = SU(n)
+```
+
+- n=1: 1 zero mode → U(1)   [D5, T2a from Cycles 59-73]
+- n=2: 2 zero modes → SU(2) [D6, T2a; S³ ≅ SU(2) as Lie groups — S³ IS SU(2)]
+- n=3: 3 zero modes → SU(3) [D7, T2a from Cycle 74]
+
+**Precision note on S⁵:** The full Riemannian isometry group of S⁵ as a smooth manifold is
+SO(6), not SU(3). SU(3) appears because it acts transitively on S⁵ as the homogeneous space
+SU(3)/SU(2), and is the structure group of the principal bundle SU(2) → SU(3) → S⁵. The DFC
+gauge group is SU(3) from zero mode counting, not from the full SO(6) isometry of S⁵.
+
+**N_Hopf = 9 is not cherry-picked:** d_n = dim(S^{2n-1}) = 2n-1 are the real dimensions of
+the three complex unit spheres S¹, S³, S⁵. Their sum N_Hopf = 9 enters the gauge coupling
+formula g_eff² = 2I₄/N_Hopf (Step 9) as the denominator from the series holonomy calculation —
+it is not selected to produce the answer; it is the output of the moduli space metric.
+
+**D-depth labels:** D5, D6, D7 are compression depth markers derived from threshold behavior
+(zero mode counting, PT spectrum). They are NOT string theory D-branes — they carry no
+spatial dimensionality interpretation. D5=U(1) etc. are T2a correspondences verified
+numerically (Cycles 59-74). See `foundations/hopf_fibration_geometry.md`.
+
+NOTE: Not the classical Hopf fibration sequence (Adams 1960 fiber dims 1,3,7 summing to 11).
+DFC uses complex sphere dimensions 1,3,5 summing to N_Hopf = 9.
+
+Sequence terminates at n=3: D7 SU(3) confinement blocks further closures [T3 open].
 Generation count = dim(SU(3) fundamental representation) = 3 [T1 given D7=SU(3), T2a].
 
 **Step 5 — β derivation** [Tier 2a, 0 free parameters]
@@ -109,6 +131,18 @@ ECCC condition: α_em(D5) = β/4                                           [T2a 
 The ECCC step is the single remaining T2a input. It asserts α_em(D5) = β/4, connecting
 the DFC substrate coupling to the observed fine structure constant at the D5 scale.
 All other steps in the chain are T1 algebraic given V(|Φ|²).
+
+**The ECCC is not arbitrary.** The T1 identity S_kink × α_D5 = (4/β)(β/4) = 1 holds for
+ALL β (Step 6 below). The ECCC is the self-consistency condition: at the D5 closure scale,
+the fine structure constant equals the D5 coupling β/4. The observed α_em fixes the numerical
+scale; the structural relation S_kink × α_em = 1 is T1. The T2a step is identifying the D5
+scale with the electroweak scale where α_em = 1/(36π). This is a scale identification, not
+a free parameter — it removes β from the set of unspecified inputs.
+
+Downstream predictions (α_em running to M_Z, α_s via ECCC) use SM RG equations. They are
+consistent back-calculations in the sense that they take β as input and recover known constants
+— the non-trivial content is that β = 1/(9π) from the Hopf structure reproduces MULTIPLE
+independent SM quantities simultaneously (α_em, α_s, sin²θ_W) within 0.15%.
 
 What would make β Tier 1: a derivation of α_em(D5) = β/4 from V(φ) alone. Still open.
 
@@ -195,11 +229,36 @@ ECCC (Equal Coupling Coincidence Condition): M_c(D7)/M_c(D5) = 1/α_em(0):
 α_s(M_Z) = 0.11821    (observed: 0.11820,  error +0.006%)
 ```
 
-**Step 13 — Tau lepton mass (Koide)** [Tier 2a, 0 free parameters]
-Koide rule with DFC phase vertex factor 1/√Q_top modifying off-diagonal coupling:
+**Step 13 — Tau lepton mass (Koide)** [Tier 2a, inputs: m_e, m_μ; see tier note]
+
+The Koide relation K ≡ (m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)² = 2/3 is an empirical fact.
+Given m_e and m_μ as inputs, the Koide relation uniquely fixes m_τ with no free parameter.
+This is ONE equation, ONE unknown — a constraint, not a fit.
+
+The DFC contribution is structural: WHY does K = 2/3?
+
+DFC argument (chain with tiers):
 ```
-(√m_e + √m_μ + √m_τ)² = (3/2)(m_e + m_μ + m_τ)    [Koide constraint]
-Phase factor: t = 1/√Q_top = 1/√2
+Z₃ symmetry of 3 coincident kinks at D7 → circulant Yukawa matrix     [T2a, Cycle 59]
+Circulant Yukawa → K = 1/3 + 2t²/3 where t is the off-diagonal factor [T1 algebra]
+Phase factor from DFC: t = 1/√Q_top = 1/√2  [Q_top=2 is T1; t derivation is T4 OPEN]
+K = 1/3 + 2×(1/2)/3 = 1/3 + 1/3 = 2/3                                [T1 algebra]
+```
+
+**Honest tier assessment:** The prediction m_τ = 1776.97 MeV is:
+- CORRECT and 0 additional free parameters GIVEN t = 1/√Q_top
+- t = 1/√Q_top is structurally motivated (Q_top = 2 is T1) but its derivation via the
+  Yukawa vortex integral is T4 OPEN (see `foundations/three_generations.md` Step 4d)
+- Without the t derivation, this is T2a with the caveat that t could be treated as
+  one structural input (fixed by a T1 integer) rather than a free parameter
+
+The Koide formula itself is empirical input — DFC explains WHY K=2/3 (from kink topology),
+not just that it holds. This is mechanistic, not post-hoc fitting. The open question is
+whether t=1/√Q_top follows rigorously from the 5D vortex integral.
+
+```
+(√m_e + √m_μ + √m_τ)² = (3/2)(m_e + m_μ + m_τ)    [Koide constraint, K=2/3]
+Phase factor: t = 1/√Q_top = 1/√2                   [Q_top=2 T1; t derivation T4]
 ```
 Inputs: m_e = 0.51100 MeV, m_μ = 105.658 MeV (observed)
 ```

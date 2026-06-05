@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-04 (Cycles 122–172)
+**Last updated:** 2026-06-04 (Cycles 122–176)
 
 ---
 
@@ -404,6 +404,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | v = 246 GeV from substrate | **TIER 2a (Cycle 145):** v=247.83 GeV (+0.65%) from EWSB co-crystallization. Remaining open: derive M_c(D5), M_c(D6) from substrate (currently from ECCC+SM inputs). | `equations/ewsb_cocrystallization.py` | Promote M_c(D5), M_c(D6) from ECCC condition to pure substrate derivation |
 | CKM and PMNS matrices | Holonomy mismatch integral over D6/D7 boundary not computed | `flavor_mixing.md`, `tension_analysis.md` | D6/D7 overlap geometry → mixing angle computation |
 | Electroweak loop corrections (Δρ_top) | One-loop DFC calculation from D6+D7 dynamics not done | `electroweak_precision.md` (Open Q1) | Standard Feynman diagram computation in DFC effective Lagrangian |
+| SU(3) vs SO(6) gauge group (D7) | Full Riemannian isometry of S⁵ is SO(6); DFC uses SU(3) from zero mode counting (T2a, Cycles 59-74). The formal mechanism by which the gauge group of the zero mode moduli space is SU(3) (not SO(6)) is: n=3 coincident degenerate zero modes → moduli ≅ ℂ³ → U(3) → SU(3) (center decoupled). SU(3) acts on S⁵ as SU(3)/SU(2) (not as full isometry group). This is documented in `DFC_master_equations.md` Step 4 (Cycle 176), but the formal derivation that moduli space is specifically ℂ³ (not ℝ⁶ → SO(6)) has not been written as a standalone proof. Required: show that the zero mode index structure forces complex structure on the moduli. | `DFC_master_equations.md` Step 4, `foundations/three_generations.md`, `equations/generation_count_proof.py` | Formal proof that degenerate zero modes on D7 kink carry complex (not real) moduli structure, forcing U(n) rather than O(2n) |
+| Koide t = 1/√Q_top derivation | t=1/√Q_top is used in Step 13 (Koide formula) to give m_τ=1776.97 MeV (T2a, Cycle 146). The derivation of t from the 5D Yukawa vortex integral is T4 OPEN. Current status: t is identified as the canonical normalization factor from the collective coordinate action (θ_can=√Q_top·θ → vertex 1/√Q_top), but the full vortex integral that computes this factor from V(φ) has not been done. | `equations/koide_phase_coupling.py`, `DFC_master_equations.md` Step 13, `foundations/three_generations.md` | Compute 5D Yukawa vortex integral ∫d⁵x ψ̄Φψ for kink profile φ(x) to extract t as a function of α, β |
+| Series holonomy rule for g_eff (Step 9c) | g_eff² = g₁²/N_Hopf assumes N_Hopf=9 fibers combine in series (each fiber independent, couplings add in inverse-square). Steps 9a-9b (moduli metric, per-fiber coupling g₁²=2I₄) are T1. Step 9c is T3: the series combination rule from KK reduction on the complex sphere sequence has not been formally derived. Formal requirement: KK reduction on each S^{2n-1} factor in the sequence d_n=1,3,5 with appropriate periodicity → coupling per fiber → series combination formula → g_eff²=2I₄/N_Hopf. | `DFC_master_equations.md` Step 9, `equations/generation_count_proof.py` Part A | Formal KK reduction on S¹×S³×S⁵ product, showing each fiber contributes g₁² to inverse coupling sum |
 
 ---
 
@@ -482,6 +485,11 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 **`born_rule_derivation.md`**
 - Position Born rule (Kramers escape rate) — OPEN; spin case complete
+
+**`DFC_master_equations.md`**
+- Step 4: Formal derivation that D7 zero mode moduli carry complex (not real) structure → SU(3) not SO(6) [T4 OPEN — see Blocked Derivations above]
+- Step 9c: Series holonomy rule — KK reduction giving g_eff²=2I₄/N_Hopf [T3 — formal derivation needed]
+- Step 13: Koide t=1/√Q_top from 5D Yukawa vortex integral [T4 OPEN]
 
 **`depth_assignment.md`**
 - Route B (Hopf fibrations S¹→S³→S⁵) most promising; DOF count calculation not yet done
