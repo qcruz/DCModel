@@ -85,14 +85,18 @@ def transverse_tachyon(alpha=1.0, N=1500, L=25.0):
     """
     Verify L₂ = −∂_x² − α sech²(x/ξ) has exactly ONE negative eigenvalue at ω²₀ = −α/2.
 
-    Derivation of L₂:
+    Derivation of L₂ (CONDITIONAL on V(|Φ|²) already assumed — see REVIEW_RESPONSE.md):
       V(|Φ|²) = −α/2|Φ|² + β/4|Φ|⁴
       ∂²V/∂φ₂² at Φ=(φ₀tanh(x/ξ), 0) = −α + βφ₁² = −α + α tanh² = −α sech²(x/ξ)
       L₂ = −∂_x² + V_{,22} = −∂_x² − α sech²(x/ξ)
 
+    NOTE: The real kink in V(φ) (1D real field) is STABLE — L₁ has no tachyon.
+    L₂ with tachyon ω²₀ = −α/2 is a property of V(|Φ|²), not of V(φ).
+    The complexification step (P4) is a postulate; L₂ is derived GIVEN P4.
+
     Exact PT s=1 analytic result:
       s(s+1)κ² = α,  κ=1/ξ=√(α/2)  →  s=1
-      ω²₀ = −s²κ² = −1×(α/2) = −α/2  (single bound state, exact)
+      ω²₀ = −s²κ² = −1×(α/2) = −α/2  (single bound state, exact, given V(|Φ|²))
     """
     xi  = np.sqrt(2.0 / alpha)
     T, x, _ = _kinetic(N, L)

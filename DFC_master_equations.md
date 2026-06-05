@@ -15,7 +15,11 @@ Double-well with minima at ±φ₀ and unstable maximum at φ = 0.
 
 **P3. Dynamics:** ∂²φ/∂t² = ∇²φ − dV/dφ
 
-Everything below is derived from P1–P3.
+**P4. Complex extension (Tier 0):** At D5 compression depth, the substrate develops
+a second field degree of freedom φ₂ with the same dynamics as φ₁. The combined field
+is Φ = φ₁ + iφ₂. This is a postulate; see REVIEW_RESPONSE.md Priority 1 for status.
+
+Steps 1–2 below follow from P1–P3 alone. Steps 3–15 require P4.
 
 ---
 
@@ -47,24 +51,22 @@ E_kink = (4/3) α^{3/2} / (β√2)
 ```
 Algebraic check: E_kink = (4/3) × φ₀² × ξ⁻¹ × (2/3) ... reduces to (4/3)I₄ × φ₀³/ξ = (4/3) × (α/β) × √(α/2) = (4/3)α^{3/2}/(β√2).
 
-**Step 3 — Tachyon instability forces complex extension** [T1, exact]
-Perturbing φ_kink: φ → φ_kink + η. The transverse fluctuation operator is
-```
-L₂ = −∂²/∂x² + V''(φ_kink)
-V''(φ_kink) = −α + 3β φ_kink² = −α sech²(x/ξ) + (−α + 3α) ...
-            = −α[2 sech²(x/ξ) − 1]     →   Pöschl-Teller s=1
-```
-The Pöschl-Teller s=1 operator has bound state eigenvalue:
-```
-ω²₀ = −α/2 < 0    (tachyon — exact for all α, β)
-```
-This instability forces the substrate to extend φ → Φ = φ₁ + iφ₂.
+**Step 3 — Complexification and rotational tachyon universality** [P4 + T1]
 
-**Rotational tachyon universality** [T1, algebraic]: For a kink in any direction θ in the (φ₁,φ₂) plane, the perpendicular tachyon eigenvalue is the same: ω²₀(θ) = −α/2 for all θ. This forces V₁₁ = V₂₂ and V₁₂ = 0 at the kink background, which uniquely requires:
+NOTE: The real 1D kink in V(φ) is STABLE — L₁ (PT s=2) has zero mode and shape
+mode ω² = 3α/2 > 0. No tachyon exists in the real field theory.
+
+The complexification step (φ → Φ = φ₁+iφ₂) is Postulate P4, not derived from V(φ).
+
+Given P4, the transverse fluctuation operator within V(|Φ|²) is:
 ```
-V = V(|Φ|²) = −(α/2)|Φ|² + (β/4)|Φ|⁴       (O(2)-symmetric)
+L₂ = −∂²/∂x² − α sech²(x/ξ)    [PT s=1, derived from V(|Φ|²)]
+ω²₀ = −α/2   [exact tachyon eigenvalue — real and exact GIVEN V(|Φ|²)]
 ```
-No "preferred direction" axiom is needed — rotational symmetry is a consequence.
+Rotational tachyon universality (Cycle 173, T1): ω²₀(θ) = −α/2 for all kink
+directions θ forces V₁₁ = V₂₂ and V₁₂ = 0 → V = V(|Φ|²). This is the converse:
+given P4 (2D field), the form V = V(|Φ|²) is derived algebraically [T1].
+
 
 **Step 4 — Complex structure generates Hopf sequence** [T1, exact]
 V(|Φ|²) has U(1) symmetry Φ → e^{iθ}Φ. Generator J satisfies J² = −I (complex structure on field space). Complex amplitudes c_k ∈ ℂ constrained by Σ|c_k|² = 1 live on spheres S^{2n−1} with fiber dimension:
