@@ -134,12 +134,15 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~75%  (viability: ~85.5%, mathematical rigor: ~64.5%)
+Current estimate: ~75.5%  (viability: ~86%, mathematical rigor: ~65%)
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
   α_s closed 0.006% (Cycle 144); v=247.83 GeV Tier 2a (Cycle 145); m_τ Koide Tier 2a (Cycle 146).
   Strong CP: theta=0 Tier 2a from S⁵ CP isometry (Cycle 147). Bottleneck 2 CLOSED Cycle 117.
   Priorities 2+3 CLOSED Cycle 157: real amplitude theorem + D6/D7 overlap integral.
+  β Tier 1 candidate (Cycle 173); α=∛18 Tier 2a (Cycle 172); P4 decomposed (Cycle 175).
+  Reviewer concerns addressed in DFC_master_equations.md (Cycle 176).
+  T4 structural argument + I₄=C₂(fund,SU(3))=4/3 identity (Cycle 177).
   S_kink×α_D5=1 TIER 1 (Cycle 171): α_D5=1/S_kink algebraic tautology, not BPS assumption.
   α=∛18 TIER 2a (Cycle 172): derived from β[T2a]+S_kink×α_D5=1[T1]+BPS saturation[T1].
 

@@ -41,7 +41,7 @@ The model rests on three postulates:
 2. The field's self-interaction potential has the double-well form V(φ) = −α/2 φ² + β/4 φ⁴, with free parameters α (quadratic coupling) and β (quartic coupling).
 3. When compression reaches a threshold, the field opens a new degree of freedom rather than compressing further. These bifurcation events produce all structure in the model.
 
-The model proposes that the gauge groups U(1), SU(2), SU(3) arise from the topology of these bifurcation closures at different compression depths — a correspondence that has been worked out structurally through zero-mode counting (Cycles 59–74) but is not yet a complete first-principles derivation. Quantitative predictions for gauge couplings, Weinberg angle, W/Z masses, Higgs mass, and τ lepton mass match observation at the 0.006%–5% level, with derivation chains of varying completeness. Known failures include the neutrino hierarchy (4.3× off), and the algebraic identity closing the α_em(0) gap (0.044%; Tier 4 open). The τ lepton mass is now resolved via the Koide formula at Tier 2a (m_τ=1776.97 MeV, +0.006%, 0 free params; Cycle 146). The strong coupling α_s is resolved to +0.006% via the ECCC condition (Cycle 144). Planck's constant and Newton's constant are not yet derivable within the current framework.
+The model proposes that the gauge groups U(1), SU(2), SU(3) arise from the topology of these bifurcation closures at different compression depths — a correspondence that has been worked out structurally through zero-mode counting (Cycles 59–74) but is not yet a complete first-principles derivation. Quantitative predictions for gauge couplings, Weinberg angle, W/Z masses, Higgs mass, and τ lepton mass match observation at the 0.006%–5% level, with derivation chains of varying completeness. Known failures include the neutrino mass ratio m₃/m₂ (DFC predicts 5.33 vs observed 5.81, −8.3%; Cycle 165 corrects a prior 4.3× metric error), and the algebraic identity closing the α_em(0) gap (0.044%; Tier 4 open). The τ lepton mass is now resolved via the Koide formula at Tier 2a (m_τ=1776.97 MeV, +0.006%, 0 free params; Cycle 146). The strong coupling α_s is resolved to +0.006% via the ECCC condition (Cycle 144). Planck's constant and Newton's constant are not yet derivable within the current framework.
 
 ---
 
@@ -268,54 +268,78 @@ The model is in active development. Current priorities:
 - All four thermodynamic laws derived from folding mechanics
 - Weinberg angle: sin²θ_W = 3/8 → 0.231 (no free parameters)
 
-**Recently resolved (Cycles 138–171):**
+**Recently resolved (Cycles 138–177):**
 - τ lepton mass: Koide m_τ=1776.97 MeV (+0.006%, Tier 2a, 0 free params; Cycle 146)
 - α_s(M_Z): ECCC gives +0.006% (Tier 2a; Cycle 144)
 - EWSB vacuum v: co-crystallization v=247.83 GeV (+0.65%, Tier 2a; Cycle 145)
 - α_em(M_Z): 36π chain +0.15% (Tier 2a; Cycle 142)
 - Strong CP: theta=0 from S⁵ CP-isometry (Tier 2a; Cycle 147)
-- arg(det M_q)=0: CLOSED via D6/D7 real amplitude theorem (Tier 2a; Cycle 157)
+- arg(det M_q)=0: **CLOSED** via D6/D7 real amplitude theorem (Tier 2a; Cycle 157)
+- Strong CP formation theta=0 vs pi: **CLOSED** via V(|Φ|²) real IC + ODE uniqueness (Tier 2a; Cycle 157)
 - ρ meson mass: m_ρ=√(2π)×Λ_QCD=763 MeV (−1.6%, Tier 3, 0 free params; Cycle 160)
 - f_ρ and Γ_ee: large-N_c VMD 148.8 MeV (−4.9%), 6.47 keV (−8.1%, Tier 3; Cycle 167)
 - Proton mass: m_p=√(3π)×Λ_QCD=934.8 MeV (−0.4%, Tier 3, 0 free params; Cycle 168)
 - Delta(1232): m_Δ=√(5π)×Λ_QCD=1207 MeV (−2.0%, Tier 3; Cycle 168)
-- α quadratic coupling: Tier 3 candidate α = ∛18 = (Q_top×N_Hopf)^(1/3) ≈ 2.621 [Planck units],
-  from S_kink = 1/α_em(Mc) = 36π = 4/β self-consistency; all residuals < 3e-16 (Cycle 169)
-- BPS/duality S_kink × α_D5 = 1: upgraded from Tier 3 → **TIER 1** (algebraic tautology:
-  S_kink=4/β, α_D5=β/4, product=1 for ALL β; verified 7 values, all residuals 0.00e+00);
-  α_D5 = 1/S_kink is Tier 2a derived; KK reduction chain confirmed from 5D Lagrangian (Cycle 171)
-- α = ∛18: promoted from Tier 3 → **TIER 2a** — derived from β[T2a] + S_kink×α_D5=1[T1] +
-  BPS saturation; (4/3)α^{3/2}/(β√2) = 4/β solves uniquely to α = ∛18 (Cycle 172)
+- α quadratic coupling: α = ∛18 = (Q_top×N_Hopf)^(1/3) ≈ 2.621 [Planck units];
+  S_kink = 1/α_em(Mc) = 36π = 4/β self-consistency (all residuals < 3e-16; Cycle 169)
+- BPS/duality S_kink × α_D5 = 1: **TIER 1** (algebraic tautology S_kink=4/β, α_D5=β/4;
+  all β verified, residuals 0.00e+00; KK reduction chain from 5D Lagrangian; Cycle 171)
+- α = ∛18: **TIER 2a** — derived from β[T2a] + S_kink×α_D5=1[T1] + BPS saturation;
+  unique solution to (4/3)α^{3/2}/(β√2)=4/β (Cycle 172)
 - β = 1/(9π) **Tier 1 candidate** (Cycle 173): "no preferred direction" Tier 0 axiom
-  eliminated via Route F (rotational tachyon universality). ω²₀(θ)=−α/2 for all kink
-  directions θ → V=V(|Φ|²) algebraically [T1]. Spread across all θ: 0.00e+00 (exact).
-  See `equations/d5_instability_tier1.py`. α=∛18 also upgrades to Tier 1 candidate.
-- ξ = 18^{-1/6} structural note **RETRACTED** (Cycle 172): correct ξ = √(2/∛18) ≈ 0.874 l_Pl,
-  not 18^{-1/6} ≈ 0.618; "ξ ≈ 1/φ_golden" claim removed from all documents
+  eliminated via rotational tachyon universality [Route F]; ω²₀(θ)=−α/2 for all θ
+  → V=V(|Φ|²) algebraically [T1]; `equations/d5_instability_tier1.py`
+- P4 (complexification) derivation: P4a [T0, irreducible] + T1 chain P1→circular vacuum
+  →λ=2β→V=V(|Φ|²); "no preferred direction" derived from P1, not postulated (Cycle 175)
+- Reviewer assessment: all 5 open concerns addressed in `DFC_master_equations.md` (Cycle 176):
+  SO(6) vs SU(3) clarified; N_Hopf not cherry-picked; ECCC condition explicit; generation
+  count tier corrected; Hopf fibration language error fixed
+- Fermion representation (T4): structural argument T3 — winding n=1 → fundamental rep;
+  I₄ = C₂(fund, SU(3)) = 4/3 (exact identity, residual 0.00e+00); `equations/fermion_representation.py` (Cycle 177)
+- SU(3) vs SO(6) resolved: D5 complex structure J (Cycle 117) forces moduli ≅ ℂ³ →
+  U(3)/center = SU(3); SO(6) acts on real S⁵⊂ℝ⁶, not the complex zero mode structure (Cycle 177)
+- ξ = 18^{-1/6} structural note **RETRACTED** (Cycle 172): correct ξ = √(2/∛18) ≈ 0.874 l_Pl
 
-**Current focus — three active bottlenecks:**
+**Current focus — active bottlenecks:**
 
-1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically (Tier 4, 0.044% gap)
-2. **Strong CP formation** — formal energy argument theta=0 vs theta=pi (Tier 2a, Cycle 147;
-   nucleation path to Tier 2a still open)
-3. **Quark mass matrix phase** — derive arg(det M_q)=0 from D6/D7 interface
+1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically (Tier 4, 0.044% gap;
+   `equations/alpha_em_eccc.py`, Cycle 139)
+2. **Strong CP formation** — **CLOSED Cycle 157** (Tier 2a): real amplitude theorem + ODE
+   uniqueness; theta=0 forced by V(|Φ|²) structure
+3. **Quark mass matrix phase** — **CLOSED Cycle 157** (Tier 2a): D6/D7 overlap Im(Y)=0 exact;
+   `equations/interface_overlap_integral.py`
 
-Each session also: work a random open issue from ISSUES.md, update a random document,
-and create or update an educational module in `educational/`.
+Active secondary work (ISSUES.md):
+- T4 Fermion representation (fundamental vs adjoint): T3 structural argument complete (Cycle 177);
+  path to T2a = Jackiw-Rebbi BVP for D6 Dirac operator in D7 kink background
+- T12 α_em(0) hadronic VP gap: δ(Δα)^{NP}=0.00102 from ρ+ω+φ — parton subtraction Tier 4
+- T11 Neutrino non-uniform depth spacing: DFC κ=5.33 vs observed 5.81 (−8.3%); root cause open
+- Fermion representation: Jackiw-Rebbi zero mode BVP (T4 → T2a path)
 
 **Open:**
 - σ = Q_top × Λ_QCD² from D7 kink vacuum energy (Tier 3 → proof; Yang-Mills mass gap)
-- Neutrino mass hierarchy m₃/m₂: DFC κ=5.33 vs observed 5.81 (−8.3%, unresolved)
+- Neutrino mass ratio m₃/m₂: DFC κ=5.33 vs observed 5.81 (−8.3%, Tier 2b)
 - Quark masses c/s (15% below observed)
 - G_Newton and ℏ from substrate parameters
 - Einstein field equations from dimensional folding gradient
+- Series holonomy rule g_eff²=2I₄/N_Hopf: formal KK derivation on S¹×S³×S⁵ (T3→T2a path)
+- Koide t=1/√Q_top from 5D Yukawa vortex integral (T4)
 
 ---
 
 ## Foundational Reading Order
 
-**Quickest entry point (in preparation):** `educational/` — step-by-step modules written
-for any reader, no physics background required. Start there when available.
+**Quickest entry point:** `educational/` — step-by-step modules written for any reader,
+no physics background required. Modules 00–05 are complete; start with `00_overview.md`.
+
+| Module | Topic |
+|---|---|
+| `00_overview.md` | What is DFC? One-page answer |
+| `01_the_substrate.md` | The one object, V(φ), kinks |
+| `02_how_space_appears.md` | Why space is emergent, not fundamental |
+| `03_depth_map.md` | D1–D7 as compression stages |
+| `04_forces.md` | How U(1)/SU(2)/SU(3) appear from fold topology |
+| `05_particles.md` | Electrons, quarks, neutrinos as kink configurations |
 
 **Technical reading order** (for those comfortable with physics notation):
 
