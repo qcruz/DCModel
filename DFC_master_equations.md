@@ -78,19 +78,40 @@ L₂ = −∂²/∂x² − α sech²(x/ξ)    [PT s=1]
 ```
 
 
-**Step 4 — Complex structure generates Hopf sequence** [T1, exact]
-V(|Φ|²) has U(1) symmetry Φ → e^{iθ}Φ. Generator J satisfies J² = −I (complex structure on field space). Complex amplitudes c_k ∈ ℂ constrained by Σ|c_k|² = 1 live on spheres S^{2n−1} with fiber dimension:
+**Step 4 — Complex structure generates sphere sequence** [T1/T2a]
+V(|Φ|²) has U(1) symmetry Φ → e^{iθ}Φ. Generator J satisfies J² = −I (complex structure on field space). Complex amplitudes c_k ∈ ℂ constrained by Σ|c_k|² = 1 live on spheres S^{2n−1} ⊂ ℂⁿ with real dimension:
 ```
 d_n = 2n − 1     →     d₁=1, d₂=3, d₃=5
 N_Hopf = d₁ + d₂ + d₃ = 1 + 3 + 5 = 9
 ```
-These correspond to Hopf fibrations S¹⊂S³ (U(1)), S³⊂S⁷ (SU(2)), S⁷⊂S¹⁵ (SU(3)).
+These are the **complex unit spheres** S^{2n−1} ⊂ ℂⁿ with isometry groups U(1), SU(2), SU(3):
+- S¹ ⊂ ℂ¹: isometry U(1)             [D5, T1]
+- S³ ⊂ ℂ²: isometry SU(2) (S³≅SU(2)) [D6, T1]
+- S⁵ ⊂ ℂ³: isometry SU(3)            [D7, T2a — from n=3 zero modes, Cycles 59-74]
+
+NOTE: This is NOT the classical Hopf fibration sequence. The classical Hopf fibers
+(Adams 1960) have dimensions 1, 3, 7 (summing to 11). The DFC sequence has dimensions
+1, 3, 5 (summing to N_Hopf = 9). Both sequences have exactly 3 non-trivial entries, but
+DFC uses the complex sphere isometry groups — not the Hopf fiber structure groups.
+
+Sequence terminates at n=3 because D7 SU(3) confinement blocks further closures [T3].
+Generation count = dim(SU(3) fundamental representation) = 3 [T1 given D7=SU(3), T2a].
 
 **Step 5 — β derivation** [Tier 2a, 0 free parameters]
-The tachyon instability at D5 depth connects the kink scale to N_Hopf:
+The derivation chain, with every step labeled:
 ```
+V(|Φ|²) → U(1) symmetry → S^{2n-1} sphere sequence → N_Hopf = 9        [T1]
+ECCC condition: α_em(D5) = β/4                                           [T2a — THE KEY STEP]
+  (The fine structure constant at the D5 closure scale equals β/4.)
+β/4 = α_em(D5) = 1/(S_kink) = 1/(36π)  →  β = 4/(36π) = 1/(9π)        [T2a]
 β = 1 / (N_Hopf × π) = 1/(9π) ≈ 0.035368
 ```
+The ECCC step is the single remaining T2a input. It asserts α_em(D5) = β/4, connecting
+the DFC substrate coupling to the observed fine structure constant at the D5 scale.
+All other steps in the chain are T1 algebraic given V(|Φ|²).
+
+What would make β Tier 1: a derivation of α_em(D5) = β/4 from V(φ) alone. Still open.
+
 Numerical check: 1/(9π) = 0.03536776... Confirmed by `equations/d5_complex_from_instability.py`.
 
 **Step 6 — Three-way identity** [T1 × T2a, exact given β]
@@ -101,8 +122,10 @@ S_kink × α_D5 = (4/β)(β/4) = 1  (exact for ALL β — Tier 1 algebraic tauto
 ```
 Numerical: 4/(1/9π) = 36π ≈ 113.097... ✓
 
-**Step 7 — α derivation** [Tier 2a, 0 free parameters]
-BPS saturation requires E_kink = S_kink (Euclidean action equals energy — standard for BPS kinks):
+**Step 7 — α derivation** [Tier 1 given β, 0 free parameters]
+BPS saturation: for a static classical solution, energy = Euclidean action identically
+(both are the same integral ∫[(dφ/dx)² + V] dx). This is not a convention — it is a
+mathematical identity for any static field configuration.
 ```
 (4/3) α^{3/2} / (β√2)  =  4/β
 
@@ -124,6 +147,25 @@ E_kink = 36π M_Pl           ≈ 113.1 M_Pl
 ```
 
 **Step 9 — Gauge coupling** [Tier 2a, 0 free parameters]
+
+Derivation (not numerology — each step labeled):
+```
+Step 9a: Kink moduli metric from 5D collective coordinate action    [T1, exact]
+  g_θθ = Q_top = 2   (phase mode normalization: ∫sech⁴ × φ₀²/ξ = I₄ × φ₀²/ξ)
+  g_XX  = I₄ = 4/3   (position mode normalization: ∫(dφ/dx)² dx = I₄ × φ₀²/ξ)
+
+Step 9b: Per-fiber coupling g₁² = det(g) = Q_top × I₄ = 2I₄ = 8/3  [T1, two routes]
+  Route A: KK reduction with fiber radius R₁ = π/I₄ [proved algebraically, Cycle 115]
+  Route B: Moduli metric determinant: det(g) = g_θθ × g_XX = 2 × 4/3 = 8/3
+
+Step 9c: Series combination over N_Hopf = 9 fibers                  [T3, see note]
+  g_eff² = g₁² / N_Hopf = 2I₄/N_Hopf = (8/3)/9 = 8/27
+
+NOTE: Steps 9a-9b are T1. Step 9c (series rule) is T3 — the physical mechanism
+connecting kink moduli to the gauge coupling has a derivation in
+equations/kk_holonomy_derivation.py, but the series combination itself is not yet
+proved rigorously. The result is T2a (well-motivated, 0.006% match).
+```
 ```
 g_eff² = 2 I₄ / N_Hopf = (8/3) / 9 = 8/27
 g_eff  = √(8/27) ≈ 0.54433
@@ -170,11 +212,26 @@ Y-junction Regge trajectory with string tension σ = Q_top × Λ_QCD²:
 m_p = √(3π) × Λ_QCD = 934.8 MeV    (observed: 938.3 MeV,  error −0.4%)
 ```
 
-**Step 15 — Three generations** [Tier 1, exact]
-S³ topology at D6 depth supports exactly 3 independent stable winding configurations.
+**Step 15 — Three generations** [Tier 2a, conditional on D7=SU(3)]
+
+Chain (each step labeled):
 ```
-Number of fermion generations = 3    (topological count, no free parameters)
+Step 15a: D7 depth has n=3 coincident zero modes → SU(3) gauge group     [T2a, Cycles 59-74]
+Step 15b: SU(3) carries both left-copy (color) and right-copy (flavor)    [T3, structural]
+Step 15c: Fundamental rep of SU(3) has dim = 3  [Weyl formula: (p+1)(q+1)(p+q+2)/2
+          for (p,q)=(1,0): 2×1×3/2 = 3]                                   [T1, exact]
+Step 15d: Generation count = dim(fundamental rep) = 3                     [T2a given 15a-c]
+
+Termination (why not 4 generations/SU(4)): D7 SU(3) fully confines below Λ_QCD.
+No free color DOFs remain to seed a D8 closure. D5/D6 do not confine fully → D7 forms.
+D7 does confine fully → D8 is blocked. This is T3 (physically motivated, not proved).
 ```
+```
+Number of fermion generations = 3    (from dim(SU(3) fund. rep) = 3)
+```
+NOTE: Step 15 is T2a, not T1. The previous claim "Tier 1, exact" was overstated.
+The T1 fact is that dim(SU(3) fund. rep) = 3 given D7=SU(3). D7=SU(3) is T2a.
+See `equations/generation_count_proof.py` for full verification.
 
 ---
 
@@ -201,7 +258,7 @@ All predictions from α = ∛18 and β = 1/(9π) as the only DFC parameters:
 | H₀ | 67.26 km/s/Mpc | 67.40 | −0.2% | 2 (Ω_m, Ω_Λ) |
 | m_p | 934.8 MeV | 938.3 MeV | −0.4% | 0 |
 | θ_QCD | 0 (exact) | <10⁻¹⁰ | exact | 0 |
-| Fermion generations | 3 (topological) | 3 | exact | 0 |
+| Fermion generations | 3 (SU(3) fund. rep dim) | 3 | exact | 0 |
 | Spin-1/2 | J = ℏ/2 (Jackiw-Rebbi) | ℏ/2 | exact | 0 |
 
 ---
@@ -216,7 +273,7 @@ All predictions from α = ∛18 and β = 1/(9π) as the only DFC parameters:
 (5)  36π ≈ 113.097  →  1/36π ≈ 0.008842              [α_em at EW scale]
 (6)  β = 1/(9π)  →  4/β = 36π                         [verify: 4×9π=36π ✓]
 (7)  α = (2×9)^{1/3} = 18^{1/3}                       [topological: Q_top=2, N_Hopf=9]
-(8)  N_Hopf = 1+3+5 = 9                                [Hopf dims: S¹,S³,S⁵]
+(8)  N_Hopf = 1+3+5 = 9                                [complex sphere dims: S¹⊂ℂ¹, S³⊂ℂ², S⁵⊂ℂ³]
 ```
 
 ---
@@ -225,12 +282,14 @@ All predictions from α = ∛18 and β = 1/(9π) as the only DFC parameters:
 
 | Gap | Status | Notes |
 |---|---|---|
+| β Tier 1 final step | T2a open | ECCC (α_em(D5)=β/4) is the single T2a step; derive from V(φ) alone to close |
+| Generation termination (why not D8) | T3 open | Confinement blocks D8; formal proof requires nonlinear D7 dynamics |
+| Series holonomy rule for g_eff | T3 open | Why N_Hopf fibers combine in series; formal KK derivation needed |
 | Electron mass m_e absolute | 2 free params | D4/D5 dimple depth not derived |
 | Neutrino mass ratio m₃/m₂ | −8.3% (Tier 2b) | κ=5.33 vs 5.81; non-uniform depth spacing unexplained |
 | Quark masses (u,d,s,c) | ~15% below observed | Light quark sector not fully connected |
 | α_em identity A−B = ln(1/α_em) | Tier 4 open | Would close α_em and α_s simultaneously |
 | G_Newton, ℏ in SI | Planck calibration open | Ratio E_kink/ℏ dimensionally correct but no SI anchor |
-| β → Tier 1 final step | T2a→T1 candidate | Single α_em at D5 still T2a; if proved T1, full chain is T1 |
 
 ---
 
@@ -240,11 +299,14 @@ All numerical claims are backed by runnable Python modules in `equations/`:
 
 | Claim | File |
 |---|---|
-| β = 1/(9π) | `d5_complex_from_instability.py` |
-| α = ∛18 | `v_phi_rg_analysis.py` |
-| S_kink × α_D5 = 1 (Tier 1) | `kk_holonomy_derivation.py` |
-| β Tier 1 candidate, rotational universality | `d5_instability_tier1.py` |
-| g_eff, α_em, α_s | `alpha_em_selfconsistency.py` |
+| β = 1/(9π), ECCC derivation chain | `d5_complex_from_instability.py` |
+| α = ∛18 (T2a, BPS+β) | `v_phi_rg_analysis.py` |
+| S_kink × α_D5 = 1 (Tier 1 tautology) | `kk_holonomy_derivation.py` |
+| V=V(\|Φ\|²) from P1+P4a, λ=2β algebraic | `p4_derivation_attempt.py` |
+| Rotational universality of tachyon | `d5_instability_tier1.py` |
+| g_eff moduli metric derivation (T1 Steps 9a-9b) | `kk_holonomy_derivation.py` |
+| g_eff, α_em, α_s numerical chain | `alpha_em_selfconsistency.py` |
+| 3 generations: complex sphere sequence, Weyl formula | `generation_count_proof.py` |
 | m_τ Koide | `koide_phase_coupling.py` |
 | sin²θ_W | `weinberg_angle_rg.py` |
 | m_p, m_Δ | `baryon_mass_dfc.py` |
