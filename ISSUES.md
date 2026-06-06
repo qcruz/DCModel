@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-06 (Cycles 122–190)
+**Last updated:** 2026-06-06 (Cycles 122–195)
 
 ---
 
@@ -457,6 +457,14 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   New: SP1f T2a (block-spin UV flow), SP1g T3 (perturbative domain), SP1h T2a (Haar moments).
   SP1: T3 (progress 48%→55%). Clay ~65%→~66%. CPC unchanged ~30%.
   Files: `equations/ym_balaban_rg.py` (Cycle 194)
+- **Cycle 195: SP1i Seiler-Simon SU(3) T4→T2a** — M_p(SU(N)) bounds via Peter-Weyl + RSK. ym_seiler_simon_su3.py:
+  Part A: Exact formula M_p(SU(N)) = Σ_{λ⊢p, rows(λ)≤N} (f^λ)² via Peter-Weyl decomposition + RSK correspondence; f^λ = p!/Π h(i,j) (hook-length formula). SU(2) = Catalan numbers verified exactly for p=1..8 [T1]; SU(3) exact values for p=1..10: [1,2,6,23,103,513,2761,15767,94359,586590] [T2a].
+  Part B: **T1 PROOF** — M_p(SU(N)) ≤ N^{2p} from |Tr U| ≤ N (triangle inequality, eigenvalues on unit circle). For SU(3): M_p(SU(3)) ≤ 9^p for ALL p ≥ 1 [T1 EXACT]; bound verified for p=1..10 (ratios 0.111→0.000168, all ≤ 1 [T1]).
+  Part C: MC verification (C194 30k samples) matches exact formula to within 1% noise [T2a PASS].
+  Part D: Asymptotic fit M_p(SU(3)) ~ 0.156 × 9^p × p^{-2.88} [T2a]; growth rate approaches N²=9 as expected.
+  Part E: Balaban convergence check — ε=1/(c×g²)=0.3750; ratio (g²/16π²)/ε=0.005004 << 1 [T3 PASS]; DFC satisfies Seiler-Simon domain condition with comfortable margin. SP1i: T4→T2a. SP1: all sub-steps T2a or T3, **no T4 gaps remaining**. SP1 progress 55%→65%.
+  CPC: ~30%→~35% (+5% per Cycle 194 swing event).
+  Clay ~66%→~67%. Files: `equations/ym_seiler_simon_su3.py` (Cycle 195)
 
 ---
 
