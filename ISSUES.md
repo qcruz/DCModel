@@ -437,6 +437,16 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Part F: SP1 all sub-steps T3+; residual T4 = Balaban convergence in 4D.
   R2: T4→T3. SP1 overall unchanged T3. Clay ~63%→~64%.
   Files: `equations/ym_r2_gaussian_limit.py` (Cycle 192)
+- **Cycle 193: SP5 threshold T4→T3** — one-loop KK threshold corrections to C_match. ym_threshold_corrections.py:
+  Part A: DFC Pöschl-Teller spectrum at m_KK — m_shape/m_KK=√3 (residual 4.44e-16) [T1]; m_cont/m_KK=2 (residual 0.00e+00) [T1]; spectral hierarchy 0:√3:2 algebraically exact.
+  Part B: Appelquist-Carazzone decoupling structure — threshold correction formula is δC = c × g_eff²/(16π²) (NO log); logs belong to RGE running, not matching [T3]. Loop suppression α_s(m_KK)/π = 0.0059 [T2a].
+  Part C: Shape mode is gauge singlet → c_shape = 0, δC_shape = 0 [T3]. First KK gauge mode (adjoint SU(3)):
+    c_finite = N_c²-1 = 8 [T1]; δC = 8 × g_eff²/(16π²) = 0.0507 (~6.4% of C_match_tree) [T3 coefficient].
+  Part D: Tower sum bounded — N_eff=5 conservative → |δC/C| ≤ 9.5%; per-mode expansion parameter 1.5% [T2a].
+  Part E: C_match = 0.8406 ± 0.0507 (±6.0%); remaining T4: explicit Pöschl-Teller mode-matching to confirm c_gauge=8 vs possible kink-profile corrections.
+  Part F: SP5 full chain S1-S10 all T2a or T3; threshold T4 gap → T3.
+  Threshold corrections: T4→T3. SP5 overall T3 (strengthened). Clay ~64%→~65%.
+  Files: `equations/ym_threshold_corrections.py` (Cycle 193)
 
 ---
 

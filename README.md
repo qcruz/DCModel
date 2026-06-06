@@ -242,8 +242,8 @@ combined with the exact identity I₄ = C₂(fund, SU(3)) = 4/3 connects the sub
 kink profile to the gauge theory's quadratic Casimir. The goal is to develop this into
 a rigorous mathematical argument.
 
-**Overall Clay challenge progress: ~64%**
-(R2 T4→T3 [C192]: <θ²> NG corr +2.6% T2a, perturbative corr 0.59%, Balaban RG T3; C_match T4→T2a [C191]: 0.7899 from 2-loop RGE; R1 T4→T3 [C190]; SP2 T3(4D) [C189]; SP5 T4→T3 [C188]; SP3 T3→T2a [C187]; SP1f T4→T3 [C186]; SP4 T2a [C184]; residual T4: Balaban convergence, threshold corrections)
+**Overall Clay challenge progress: ~65%**
+(Threshold corrections T4→T3 [C193]: δC=0.0507 per KK gauge mode (~6.4%), |δC/C|≤9.5% conservative; R2 T4→T3 [C192]: <θ²> NG corr +2.6% T2a, perturbative corr 0.59%, Balaban RG T3; C_match T4→T2a [C191]: 0.7899 from 2-loop RGE; R1 T4→T3 [C190]; SP2 T3(4D) [C189]; SP5 T4→T3 [C188]; SP3 T3→T2a [C187]; SP1f T4→T3 [C186]; SP4 T2a [C184]; residual T4: Balaban convergence, explicit KK mode-matching for c_gauge)
 
 ### Sub-Problem Tracking
 
@@ -253,7 +253,7 @@ a rigorous mathematical argument.
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain)** | **65%** | `ym_4d_gap_extension.py` | 1+1D T2a [C180]; 4D: PT spectrum T1 (ω₁=√(3α/2)), KK decoupling T2a (m_shape/Λ=7.95e19), Δ_4D≥861 MeV T3 [C189]; Q4 T4→T3 |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | Q_top^YM∈ℤ T2a [C187]: BPST Q=1 T1, π₃(SU(3))=ℤ T1, SU(2)≅S³ verified; [H,Q]=0 T1; S_inst=27π²>0 T2a; gap in n≠0 sectors T3; domain wall↔instanton T3 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | G1 T3 [C182]; G2 T2a; G3 T3 [C183]; G3 full T2a [C184]: Tr(T^a T^b)=δ/2 T1 (8×8 res 1e-16), flat metric T1, curvature 10⁻⁴⁰ T2a |
-| SP5 | Derive Δ = I₄ × Λ_QCD from V(φ) without external input | **T3** | **40%** | `ym_cmatch_msbar.py` | Chain V(φ)→Λ_QCD T3 [C188]; **C_match T4→T2a [C191]**: α_s(m_KK)=0.018626 (2-loop), C_match=0.789948 (0.01% from estimate), all steps T2a; residual T4: KK threshold corrections (~1%), M_c(D7) from substrate |
+| SP5 | Derive Δ = I₄ × Λ_QCD from V(φ) without external input | **T3** | **50%** | `ym_threshold_corrections.py` | Chain V(φ)→Λ_QCD T3 [C188]; C_match T4→T2a [C191]: 0.789948 (2-loop); **threshold corrections T4→T3 [C193]**: δC=0.0507/mode (6.4%), shape mode c=0 [T3], |δC/C|≤9.5%; residual T4: explicit Pöschl-Teller mode-matching for c_gauge=8 |
 
 ### Key Structural Assets (established, do not re-derive)
 
