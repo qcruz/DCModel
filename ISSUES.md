@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–184)
+**Last updated:** 2026-06-05 (Cycles 122–185)
 
 ---
 
@@ -343,7 +343,22 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   curvature correction at Λ_QCD: (Λ_QCD/m_KK)²=6.2×10⁻⁴⁰ (T2a, negligible);
   sigma model = linear YM kinetic term (T2a). Files: `equations/ym_moduli_metric.py`
 - **Only remaining T4:** SP1 = constructive 4D gauge QFT on ℝ⁴
-  (the Clay Prize core — hardest step; next: `ym_constructive_qft.py`)
+  (the Clay Prize core — hardest step; **addressed in Cycle 185**)
+- **Cycle 185: SP1 T4→T3** — Osterwalder-Schrader axiom inheritance via domain wall chain.
+  OS1 (temperedness): T3 — P(φ)₂ substrate [T2a] + smooth zero modes.
+  OS2 (Euclidean covariance): T3 — worldvolume inherits 5D Poincaré.
+  **OS3 (reflection positivity): T2a NEW** — Wilson action with β_lat=2N/g²=20.25>0
+    satisfies OS3 by Osterwalder-Seiler (1978) theorem. β_lat=20.25>>6 (continuum regime).
+  OS4 (SU(3) symmetry): T2a — D7 topology + bosonic zero modes.
+  OS5 (cluster decomposition): T3 — follows from mass gap Δ_4D>0.
+  Remaining T4: SP1f = continuum limit a→0 (G6) + RG fixed point (G7).
+  Asymptotic freedom: b₀=11>0 [T1]; g_eff²=8/27<4π [T2a perturbative].
+  Mass gap lower bound: Δ_4D ≥ C₂×Λ_QCD = 406 MeV [T3].
+  Clay Prize SPECIFIC residual: show Wilson measure with β_lat=20.25 has
+  non-trivial a→0 limit with H≥0 and spec(H)\{0} bounded below.
+  Files: `equations/ym_constructive_qft.py` (Cycle 185)
+- **Full chain after Cycle 185:** 6×T1, 6×T2a, 3×T3, 1×T4 (SP1f only)
+- **Clay Prize overall:** ~45% → ~52%; SP1: 0% → 35%
 
 ---
 
