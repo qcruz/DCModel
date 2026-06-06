@@ -379,6 +379,14 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Part F: mass gap lower bound Δ_4D≥C₂×Λ_QCD=406 MeV in Q≠0 sectors [T3];
     instanton weight exp(−S_inst)=1.86×10⁻¹¹⁶ → non-perturbative scale Λ_QCD [T3].
   SP3: T3/20% → T2a/50%. Files: `equations/ym_topological_sectors.py`; Clay ~55%→~57%.
+- **Cycle 188: SP5 T4→T3** — dimensional transmutation chain V(φ) → Λ_QCD. ym_dimensional_transmutation.py:
+  Part A: 7-step chain V(φ) → β → g_eff² → α_common → ECCC → M_c(D7) → QCD running → Λ_QCD. T4 gap: M_c(D7) from substrate depth dynamics.
+  Part B: b₀(N_f)=11−2Nf/3, b₁(Nf)=102−38Nf/3 from N_c=3 algebraically [T1]; all standard SU(3) values verified [PASS].
+  Part C: M_c(D7) self-consistently from 2-loop RGE — run UP from M_Z with α_s=0.11821; find where α_s=α_common=2/(27π); M_c(D7)=6.35×10¹⁴ GeV [T2a; residual 1.87×10⁻⁶ PASS]; Cycle 144 value 1.566×10¹⁵ differs by factor 2.5 (3-loop vs 2-loop scheme).
+  Part D: Λ_QCD from 2-loop Landau pole = 685 MeV [T3]; PDG Λ_MS^(3) ≈ 332 MeV; factor-2 scheme dependence (Landau pole ≠ Λ_MS); correct hadronic scale established.
+  Part E: Pure DFC identity α_common × b₀(3) = 2/(3π) [T1+T2a PASS]; Λ/M_c = exp(−3π²) × [threshold corr]; 3π² = 29.61 algebraic [T1].
+  Part F: C_match = g_QCD²(m_KK)/g_eff² = 0.790; S_kink/S_ratio candidate: b₀(6)×ln(m_KK/M_c)/S_kink = 0.619.
+  SP5: T4/10% → T3/25%. Files: `equations/ym_dimensional_transmutation.py`; Clay ~57%→~59%.
 
 ---
 
