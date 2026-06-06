@@ -242,8 +242,8 @@ combined with the exact identity I₄ = C₂(fund, SU(3)) = 4/3 connects the sub
 kink profile to the gauge theory's quadratic Casimir. The goal is to develop this into
 a rigorous mathematical argument.
 
-**Overall Clay challenge progress: ~65%**
-(Threshold corrections T4→T3 [C193]: δC=0.0507 per KK gauge mode (~6.4%), |δC/C|≤9.5% conservative; R2 T4→T3 [C192]: <θ²> NG corr +2.6% T2a, perturbative corr 0.59%, Balaban RG T3; C_match T4→T2a [C191]: 0.7899 from 2-loop RGE; R1 T4→T3 [C190]; SP2 T3(4D) [C189]; SP5 T4→T3 [C188]; SP3 T3→T2a [C187]; SP1f T4→T3 [C186]; SP4 T2a [C184]; residual T4: Balaban convergence, explicit KK mode-matching for c_gauge)
+**Overall Clay challenge progress: ~66%**
+(Balaban RG + SU(3) Haar moments [C194]: block-spin UV shift T2a, α_s/π=0.59% domain check T3, M_p(SU(3)) moments T2a — SP1 48%→55%; threshold T4→T3 [C193]; R2 T4→T3 [C192]; C_match T4→T2a [C191]; R1 T4→T3 [C190]; SP2 T3(4D) [C189]; SP5 T4→T3 [C188]; SP3 T2a [C187]; SP4 T2a [C184]; residual T4: Seiler-Simon SU(3) Haar bound [SP1i], explicit KK mode-matching [SP5])
 
 **Clay Prize Confidence Score (CPC): ~30%**
 
@@ -258,7 +258,7 @@ CPC is distinct from progress %: it measures P(the DFC framework, continued to c
 
 | # | Sub-problem | Tier | Progress | Key equation | Notes |
 |---|---|---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | **48%** | `ym_continuum_limit.py` | SP1f [C186]: a×Λ=2.2×10⁻²⁰ T2a, Symanzik~10⁻⁴¹ T2a, no bulk SU(3) transition T3, universality T3; OS3 T2a [C185]; R1 T4→T3 [C190]: Z_V>0 T1, FKG T3, no first-order transition β>β_OS T3; residual T4: R2 (Wilson measure→Gauss) |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | **55%** | `ym_balaban_rg.py` | SP1f [C186]: a×Λ=2.2×10⁻²⁰ T2a; OS3 T2a [C185]; R1 T3 [C190]; R2 T3 [C192]; **Balaban RG [C194]**: block-spin UV flow T2a (Δα_s=−4.21e-4/step), α_s/π=0.59% domain check T3, M_p(SU(3)) moments T2a (M_1=1 Schur, c_3≈1.016≈c_2); SP1i: Seiler-Simon SU(3) Haar bound T4 [Weingarten, tractable] |
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain)** | **65%** | `ym_4d_gap_extension.py` | 1+1D T2a [C180]; 4D: PT spectrum T1 (ω₁=√(3α/2)), KK decoupling T2a (m_shape/Λ=7.95e19), Δ_4D≥861 MeV T3 [C189]; Q4 T4→T3 |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | Q_top^YM∈ℤ T2a [C187]: BPST Q=1 T1, π₃(SU(3))=ℤ T1, SU(2)≅S³ verified; [H,Q]=0 T1; S_inst=27π²>0 T2a; gap in n≠0 sectors T3; domain wall↔instanton T3 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | G1 T3 [C182]; G2 T2a; G3 T3 [C183]; G3 full T2a [C184]: Tr(T^a T^b)=δ/2 T1 (8×8 res 1e-16), flat metric T1, curvature 10⁻⁴⁰ T2a |

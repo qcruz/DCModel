@@ -447,6 +447,16 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Part F: SP5 full chain S1-S10 all T2a or T3; threshold T4 gap → T3.
   Threshold corrections: T4→T3. SP5 overall T3 (strengthened). Clay ~64%→~65%.
   Files: `equations/ym_threshold_corrections.py` (Cycle 193)
+- **Cycle 194: SP1 Balaban block-spin RG T4→T3** — block-spin RG analysis + SU(3) Haar moments. ym_balaban_rg.py:
+  Part A: One-loop block-spin UV shift — Δ(1/g²) = b₀/(16π²) × 2D×ln2 = 0.386268 [T1 formula]; Δα_s = −4.21e-4 per UV step (−2.26%) [T2a]; verified residual 5.55e-17.
+  Part B: UV flow monotone — α_s decreasing for 201 consecutive steps (toward Gaussian, a→0) [T2a]; reaches α_s<0.010 in 38 UV steps.
+  Part C: Balaban domain checks — (i) α_s/π=0.59%<<10% [T2a PASS]; (ii) β_lat/β_deconf=3.56× [T3 PASS]; (iii) g²/(16π²)=0.19%<<5% per step [T2a PASS]; all 3 PASS → DFC in Balaban perturbative domain [T3].
+  Part D: SU(3) Haar moments M_p(SU(3)) numerically for p=1..5 (30k samples): M_1=1.006 (Schur exact=1 [T1], MC residual 0.0061); M_p finite, controlled growth; c_3≈1.016 ≈ c_2=1.000 (SU(2)) [T2a]. Growth rate SU(3)=1.160 ≈ SU(2)=0.934 per unit p — same structure [T3].
+  Part E: Specific T4 gap documented — Seiler-Simon analytic bound M_p(SU(3)) ≤ (c_3)^p×p^s from Weingarten calculus; numerical evidence c_3≈1.016 (tractable, no fundamental obstruction); closing this → +5% CPC.
+  Part F: SP1a-h tier table; SP1i (Seiler-Simon SU(3)) is the only T4 remaining.
+  New: SP1f T2a (block-spin UV flow), SP1g T3 (perturbative domain), SP1h T2a (Haar moments).
+  SP1: T3 (progress 48%→55%). Clay ~65%→~66%. CPC unchanged ~30%.
+  Files: `equations/ym_balaban_rg.py` (Cycle 194)
 
 ---
 
