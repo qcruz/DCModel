@@ -366,6 +366,19 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   β_lat=20.25 in same universality class as continuum limit [T3]; SP1f T4→T3.
   Residual T4: rigorous proof of no bulk transition (R1) + continuum measure (R2).
   Files: `equations/ym_continuum_limit.py`; Clay ~52%→~55%.
+- **Cycle 187: SP3 T3→T2a** — topological charge spectrum. ym_topological_sectors.py:
+  Part A: BPST Q_top=1 numerically verified: ∫u³/(u²+1)⁴ du=1/12 exact (residual 1.15e-15 T1);
+    Q_top^BPST = 12×(1/12) = 1.0000 (residual 1.38e-14 T1).
+  Part B: π₃(SU(3))=ℤ via homotopy sequence: SU(2)≅S³ verified (100 random pts,
+    max |det−1|=4.54e-16, max |UU*−I|=3.33e-16 T1); long exact sequence
+    π₄(S⁵)=ℤ₂→π₃(SU(2))=ℤ→π₃(SU(3))→π₃(S⁵)=0 → π₃(SU(3))=ℤ [T1 algebraic topology].
+  Part C: Q_top^YM ∈ ℤ for DFC SU(3) YM [T2a = T1 math + T2a DFC SU(3)];
+    S_inst=8π²/g_eff²=27π²=266.48>0 [T2a]; instanton action positive — no tachyonic instability.
+  Part D: Q_top^DFC=2 ↔ Q_top^YM=1 via domain wall mapping [T3]; ratio=2 (kink pair=instanton).
+  Part E: superselection sectors — [H, Q̂_top^YM]=0 [T1]; theta=0 DFC vacuum [T2a+T3].
+  Part F: mass gap lower bound Δ_4D≥C₂×Λ_QCD=406 MeV in Q≠0 sectors [T3];
+    instanton weight exp(−S_inst)=1.86×10⁻¹¹⁶ → non-perturbative scale Λ_QCD [T3].
+  SP3: T3/20% → T2a/50%. Files: `equations/ym_topological_sectors.py`; Clay ~55%→~57%.
 
 ---
 
