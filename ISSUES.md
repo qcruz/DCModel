@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–182)
+**Last updated:** 2026-06-05 (Cycles 122–183)
 
 ---
 
@@ -331,8 +331,14 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   `equations/ym_kk_reduction.py` (SP4 G1 T4→T3, Cycle 182)
 - **New T1 result (Cycle 182):** N_X = ∫dx(∂_x φ_kink)² = E_BPS (residual 2.84e-14)
   — KK overlap integral equals kink mass from BPS saturation
-- **Next:** `equations/ym_anomaly_check.py` — SP4 G4: SU(3) gauge anomaly cancellation
-  for DFC D7 zero modes; OR attack G3 (sigma → linear YM kinetic term via Atiyah-Bott)
+- **Cycle 183:** SP4 G3 T4→T3 — sigma model on SU(3) moduli = YM kinetic term.
+  A_μ^a = (1/g)∂_μθ^a identifies zero modes with pure gauge configs; Atiyah-Bott (1983)
+  L² metric on A/G = YM kinetic term; non-abelian correction suppressed by (Λ_QCD/m_KK)²
+  = 4.7×10⁻⁴⁰ (T2a); Wilson EFT = pure SU(3) YM + O(10⁻⁴⁰) corrections.
+  Files: `equations/ym_sigma_to_ym.py` (Cycle 183)
+- **Full chain after Cycle 183:** 4×T1, 5×T2a, 4×T3, 2×T4 (G3 full + SP1)
+- **Remaining T4:** G3 full = Fubini-Study on ℂ³ → flat metric (next: `ym_moduli_metric.py`);
+  SP1 = constructive 4D QFT on ℝ⁴ (the Clay Prize core — hardest step)
 
 ---
 

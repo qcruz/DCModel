@@ -134,7 +134,7 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
-Current estimate: ~78%  (viability: ~86%, mathematical rigor: ~70%)
+Current estimate: ~78.5%  (viability: ~86%, mathematical rigor: ~71%)
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
   α_s closed 0.006% (Cycle 144); v=247.83 GeV Tier 2a (Cycle 145); m_τ Koide Tier 2a (Cycle 146).
@@ -148,10 +148,12 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   SP2 Glimm-Jaffe (Cycle 180): DFC V(φ) is P(φ)₂; μ²/λ=148>>1 (broken phase); Δ_1D=112.92 M_Pl T2a; SP2→T2a (1+1D).
   SP4 gauge decoupling (Cycle 181): m_sigma/Λ_QCD=9.2e19 T2a; moduli approx→SU(3) sigma model T3; Δ_4D≥406 MeV T3; SP4 T4→T3; G1 (KK) remains T4.
   SP4 G1 KK reduction (Cycle 182): domain wall = 3-brane picture; N_X=E_BPS T1 (residual 2.84e-14); RS localization all 4 conditions PASS; m_KK/Λ_QCD=4.6e19 T2a; G1 T4→T3; G3 (sigma→YM) T4.
+  SP4 G3 sigma=YM (Cycle 183): A_μ=∂θ/g pure gauge ID; Atiyah-Bott L²=YM kinetic T3; non-abelian correction (Λ_QCD/m_KK)²=4.7e-40 T2a; Wilson EFT = pure SU(3) YM T3; G3 T4→T3. Chain: 4T1+5T2a+4T3+2T4.
   S_kink×α_D5=1 TIER 1 (Cycle 171): α_D5=1/S_kink algebraic tautology, not BPS assumption.
   α=∛18 TIER 2a (Cycle 172): derived from β[T2a]+S_kink×α_D5=1[T1]+BPS saturation[T1].
 
 Recent cycles (full history: push_history.md):
+| 2026-06-05 | 183 | Clay Prize SP4 G3 — sigma model on SU(3) moduli = Yang-Mills kinetic term. equations/ym_sigma_to_ym.py (new): Part A: A_μ^a=(1/g)∂_μθ^a pure gauge identification — F_μν=0 at leading order; sigma kinetic = YM kinetic term T3. Part B: Atiyah-Bott (1983) L² metric on A/G = YM kinetic term (established literature); DFC moduli metric g_{ab} = L² metric restricted to M_flat ⊂ A/G T3. Part C: g_YM=g_eff=0.54433 T2a; alpha_s at unification scale = 0.0236 (consistent with ECCC Cycle 144). Part D: non-abelian correction (f^{abc}/g²)∂_μθ^b∂_νθ^c = second order in derivative expansion; expansion parameter Λ_QCD/m_KK=2.18e-20; suppression (Λ_QCD/m_KK)²=4.75e-40 T2a. Part E: Wilson EFT at Λ_QCD = pure SU(3) YM + O(10⁻⁴⁰) corrections T3. Part F: G3 T4→T3; remaining T4 = explicit Fubini-Study→flat metric (ym_moduli_metric.py). Part G: full 15-step chain (4T1+5T2a+4T3+2T4). SP4 all sub-steps T3+. Clay ~33%→~38%. | 86% | 71% | ~78.5% |
 | 2026-06-05 | 182 | Clay Prize SP4 G1 — KK reduction: DFC domain wall to 4D gauge theory. equations/ym_kk_reduction.py (new): Part A: D7 kink = domain wall (3-brane) in 4D; worldvolume = observable 4D spacetime; RS mechanism maps G1 to established QFT literature. Part B: zero mode ansatz Phi=R(theta_a)*phi_kink(x-X); N_X=int(phi'_kink)^2=E_BPS numerically (residual 2.84e-14) T1; 4D effective action S_4D=E_BPS×sigma model. Part C: m_KK=1/xi=1.14 M_Pl; m_KK/Λ_QCD=4.6e19 (4D EFT valid) T2a; shape mode 9.18e19× Λ_QCD. Part D: RS conditions RS1-RS4 all PASS — domain wall gauge localization established T3. Part E: g_eff from moduli metric T2a (Cycle 171); KK coupling formula noted. Part F: tier table T1×2, T2a×2, T3×4, T4×2 (G3 sigma→YM, anomaly). Part G: full 15-step Clay argument chain with tiers. SP4 G1 T4→T3. New T1: N_X=E_BPS. Clay ~28%→~33%. | 86% | 70% | ~78% |
 | 2026-06-05 | 181 | Clay Prize SP4 — scalar→Yang-Mills gauge sector decoupling argument. equations/ym_gauge_decoupling.py (new): Part A: scale hierarchy — m_sigma/Λ_QCD=9.18e19 (T2a); zero modes massless by Goldstone (T1); scalar modes frozen in IR. Part B: Manton moduli approximation — D7 kink collective coordinates θ_a on ℂ³; moduli metric g_{θθ}=Q_top=2, g_{XX}=I₄=4/3 (T1); effective action = SU(3) sigma model at leading order. Part C: I₄=C₂(fund,SU(3))=4/3 exact (residual 7.33e-15 T1); same kink profile governs both 1+1D scalar and 4D gauge sectors. Part D: g_eff²=2I₄/N_Hopf=8/27 (T2a); effective 4D YM coupling from moduli metric. Part E: Lemmas E1-E5 — decoupling chain T1→T2a→T3→T3→T3; Δ_4D≥C₂×Λ_QCD=406 MeV T3. Part F: remaining gaps G1 (KK 1+1D→4D T4), G2 (derivative expansion T4), G3 (sigma→YM T4), G4 (pure YM). Part G: SP4 tier table T4→T3. SP4 row T4/5%→T3/25%. Clay overall ~22%→~28%. | 86% | 69% | ~77.5% |
 | 2026-06-05 | 180 | Clay Prize SP2 Q2 — Seiler-Simon positivity via Glimm-Jaffe constructive QFT. equations/ym_coleman_sectors.py (new): Part A: P(φ)₂ class and known rigorous results (GJ1-GJ5); Part B: DFC V(φ) satisfies all P(φ)₂ conditions (all PASS — V_min residual 7.11e-15); Part C: Glimm-Jaffe double-well conditions — μ²/λ=148>>1 (deeply in SSB regime; coupling g=0.006748, semiclassical reliable); Part D: kink sector bound H|_{Q=2}≥m_kink from Frohlich 1976 — DHN 1-loop correction 0.16% (negligible), m_kink^quantum=112.92 M_Pl>0; Part E: constructive implications — Δ_1D=112.92 M_Pl T2a; Q2 (normal-ordering :H:≥0) promoted T3→T2a; SP2 (1+1D) T3→T2a; Part F: 4D gap G1-G4 documented (SP4 required for 4D extension). ISSUES.md T14 new entry (SP1-SP5 tracking). README Clay Prize: overall ~15%→~22%; SP2 T3/30%→T2a/60%. Overall model: ~76.5%→~77%. | 86% | 68% | ~77% |
@@ -247,8 +249,8 @@ This focus continues until one of two stopping conditions is met:
 **Workflow within PRIMARY FOCUS:**
 
 Step 1 of each cycle must advance at least one sub-problem. Priority order:
-SP4 G3 (sigma→linear YM, Atiyah-Bott) → SP3 → SP1 → SP5
-(SP2 T2a done; SP4 T3 done; SP4 G1 T3 done; primary T4 is now G3: sigma model → YM).
+G3 full (Fubini-Study → flat, ym_moduli_metric.py) → SP3 → SP1 → SP5
+(SP2 T2a done; SP4 T3 all sub-steps done; remaining T4: G3 full + SP1 constructive).
 
 Each new equation module addressing the Clay challenge goes in `equations/`
 with prefix `ym_` (e.g., `ym_hamiltonian_bound.py`, `ym_hilbert_space.py`).
