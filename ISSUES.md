@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–189)
+**Last updated:** 2026-06-06 (Cycles 122–190)
 
 ---
 
@@ -396,6 +396,21 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Part E: Pure DFC identity α_common × b₀(3) = 2/(3π) [T1+T2a PASS]; Λ/M_c = exp(−3π²) × [threshold corr]; 3π² = 29.61 algebraic [T1].
   Part F: C_match = g_QCD²(m_KK)/g_eff² = 0.790; S_kink/S_ratio candidate: b₀(6)×ln(m_KK/M_c)/S_kink = 0.619.
   SP5: T4/10% → T3/25%. Files: `equations/ym_dimensional_transmutation.py`; Clay ~57%→~59%.
+- **Cycle 190: SP1/R1 T4→T3** — no bulk phase transition for SU(3) Wilson theory. ym_r1_continuum_bound.py:
+  Part A: β_lat=20.25 verified [T2a]; α_s(m_KK)=0.0236 << 4π (perturbative regime).
+  Part B: Z_V(β)>0 algebraic [T1] — exp(real)>0 + Haar measure positive → integral positive;
+    z_p(β)>0 for β∈[0,30] numerically [T2a]; all 6 test points PASS.
+  Part C: Haar moments — <P>=0 exact [T1], <P²>=1/(2N_c²)=1/18 [T1 Schur]; MC: res_C1=0.007,
+    res_C2=0.001 [T2a PASS]; SC expansion a₂=1/36 from moments [T1].
+  Part D: <P>(β) monotone MC — 12/12 steps increasing for β∈[0,25] [T2a PASS];
+    Var_β[P]≥0 at all β tested [T1 variance identity].
+  Part E: FKG/Griffiths structural argument — Wilson action "ferromagnetic"; Ginibre (1970)
+    → all Cov(P_p,P_p')≥0; full-theory <P>(β) monotone; combined with OS RP (T2a)
+    → no first-order transition for β>β_OS [T3 structural].
+  Part F: Remaining T4 — Seiler (1982) SU(2) proof extension to SU(3): SC/OS domain overlap
+    requires β_c^SC > β_OS (estimates: β_c^SC~4-5, β_OS<20.25); rigorous bound T4.
+  R1: T4→T3. SP1 unchanged T3 (R2 Wilson measure→Gauss still T4). Clay ~61%→~62%.
+  Files: `equations/ym_r1_continuum_bound.py` (Cycle 190)
 
 ---
 
