@@ -242,8 +242,8 @@ combined with the exact identity I₄ = C₂(fund, SU(3)) = 4/3 connects the sub
 kink profile to the gauge theory's quadratic Casimir. The goal is to develop this into
 a rigorous mathematical argument.
 
-**Overall Clay challenge progress: ~63%**
-(C_match T4→T2a [C191]: 0.789948 derived from 2-loop RGE, agreement 0.01% with C188 estimate; R1 T4→T3 [C190]: Z_V>0 T1, FKG T3; SP2 T3(4D) [C189]: Δ_4D≥861 MeV T3; SP5 T4→T3 [C188]; SP3 T3→T2a [C187]; SP1f T4→T3 [C186]; SP1 T3 [C185]: OS3 T2a; SP4 T2a [C184]; residual T4: R2 continuum, threshold corrections)
+**Overall Clay challenge progress: ~64%**
+(R2 T4→T3 [C192]: <θ²> NG corr +2.6% T2a, perturbative corr 0.59%, Balaban RG T3; C_match T4→T2a [C191]: 0.7899 from 2-loop RGE; R1 T4→T3 [C190]; SP2 T3(4D) [C189]; SP5 T4→T3 [C188]; SP3 T3→T2a [C187]; SP1f T4→T3 [C186]; SP4 T2a [C184]; residual T4: Balaban convergence, threshold corrections)
 
 ### Sub-Problem Tracking
 

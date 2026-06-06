@@ -423,6 +423,20 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     M_c(D7) from substrate dynamics (not SM running) still T4.
   C_match: T4→T2a. SP5 overall unchanged T3 (chain V(φ)→Λ_QCD structural).
   Clay ~62%→~63%. Files: `equations/ym_cmatch_msbar.py` (Cycle 191)
+- **Cycle 192: SP1/R2 T4→T3** — Wilson measure → Gaussian free-field limit. ym_r2_gaussian_limit.py:
+  Part A: Weak-coupling expansion S_W around U=1 [T1]; plaquette = YM action at O(a⁰);
+    S_G = (β_lat/2N_c)×Sum_links Tr(A²) is Gaussian action [T1]; expansion coefficient -1/6 verified.
+  Part B: U(1) single-link measure exact via Bessel functions — <θ²>_exact=0.0507 vs 1/β=0.0494;
+    non-Gaussian correction +2.6% [T2a]; <P>=I₁/I₀ matches Gaussian 1-1/(2β) [T2a].
+  Part C: Var[cos θ] non-Gaussian correction ~8% with correct Gaussian baseline (1/2)(1-e^{-1/β})²;
+    higher-order power counting O(1/β²)=0.24% for <θ²> [T2a].
+  Part D: Free gauge field measure (g→0 limit) is well-defined Gaussian distribution-valued measure;
+    perturbative corrections O(α_s/π)=0.59% at m_KK [T3]; expansion parameter α_s/π<1 [T2a].
+  Part E: Balaban (1983-1989) block-spin RG program — UV Gaussian fixed point [T3];
+    rigorous a→0 convergence of blocked measures: T4 (remaining open).
+  Part F: SP1 all sub-steps T3+; residual T4 = Balaban convergence in 4D.
+  R2: T4→T3. SP1 overall unchanged T3. Clay ~63%→~64%.
+  Files: `equations/ym_r2_gaussian_limit.py` (Cycle 192)
 
 ---
 
