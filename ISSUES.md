@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–181)
+**Last updated:** 2026-06-05 (Cycles 122–182)
 
 ---
 
@@ -327,9 +327,12 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - **Key result:** I₄ = C₂(fund,SU(3)) = 4/3 exact — kink shape integral equals SU(3) Casimir
 - **Files:** `equations/yang_mills_mass_gap.py` (T3, Cycle 178), `equations/ym_hamiltonian_bound.py`
   (SP2 classical + Q1, Cycle 179), `equations/ym_coleman_sectors.py` (SP2 Q2 T2a, Cycle 180),
-  `equations/ym_gauge_decoupling.py` (SP4 T4→T3, Cycle 181)
-- **Next:** `equations/ym_kk_reduction.py` — SP4 G1: formalize 1+1D → 4D KK reduction
-  OR `equations/ym_anomaly_check.py` — SP4 G4 support: gauge anomaly cancellation
+  `equations/ym_gauge_decoupling.py` (SP4 T4→T3, Cycle 181),
+  `equations/ym_kk_reduction.py` (SP4 G1 T4→T3, Cycle 182)
+- **New T1 result (Cycle 182):** N_X = ∫dx(∂_x φ_kink)² = E_BPS (residual 2.84e-14)
+  — KK overlap integral equals kink mass from BPS saturation
+- **Next:** `equations/ym_anomaly_check.py` — SP4 G4: SU(3) gauge anomaly cancellation
+  for DFC D7 zero modes; OR attack G3 (sigma → linear YM kinetic term via Atiyah-Bott)
 
 ---
 
