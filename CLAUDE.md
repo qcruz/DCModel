@@ -152,6 +152,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   G3 full flat metric (Cycle 184): Tr(T^a T^b)=(1/2)δ^{ab} T1 (8×8 residual 1.11e-16); off-diagonal=0 T1; metric constant∝I_8 (flat) T1; curvature correction (Λ/m_KK)²=6.2e-40 T2a; G3 full T4→T2a. Chain: 2T1+4T2a+3T3+1T4(SP1 only).
   SP1 OS axioms (Cycle 185): ym_constructive_qft.py — OS1 T3, OS2 T3, OS3 T2a NEW (OS-Seiler: β_lat=20.25>0), OS4 T2a, OS5 T3; b₀=11>0 T1 AF; g_eff²=8/27<4π T2a perturbative; Δ_4D≥406 MeV T3; SP1 T4→T3. Residual T4: SP1f continuum limit a→0. Clay Prize ~45%→~52%.
   SP1f continuum (Cycle 186): ym_continuum_limit.py — a_DFC=ξ T1; a×Λ_QCD=2.2e-20 T2a (19.7 orders below 1); Symanzik O(a²)~1.2e-41 T2a (consistent with C184 curvature 4.75e-40); no bulk phase transition in SU(3) for all β_lat>0 T3 (Creutz 1980); β_lat=20.25 in continuum universality class T3; SP1f T4→T3. Clay ~52%→~55%. educational/06_predictions.md new.
+  SP2 4D gap chain (Cycle 189): ym_4d_gap_extension.py — PT spectrum T1 (ω₁²=3α/2, ω₁/m_σ=√3/2 residual 0); FD numeric ω₁²=3.930 (error 3.1e-4) T2a; m_shape/Λ_QCD=7.95e19 T2a; flux-tube gap Δ_4D≥2√2×Λ_QCD=861 MeV T3 (2√2>C₂=4/3 algebraic T1); lattice 0++ consistent (861<1475 MeV ✓); 5-step chain: Δ_1D T2a→KK T3→decoupling T2a→SU(3) YM T2a→confinement T3; C_match warning (exponent 3π²=29.6 >> 1 → one-loop shift unreliable, T4); SP2: T2a→T3(4D)/65%; Clay ~59%→~61%.
   SP5 dimensional transmutation (Cycle 188): ym_dimensional_transmutation.py — chain V(φ)→Λ_QCD T3; b₀(Nf)=11-2Nf/3, b₁(Nf)=102-38Nf/3 from N_c=3 T1 (all SU(3) values verified); M_c(D7) from 2-loop RGE T2a (residual 1.87e-6); Λ_QCD=685 MeV Landau pole T3 (PDG 210-340 MeV; factor-2 scheme); pure DFC identity α_common×b₀(3)=2/(3π), Λ/M_c=exp(-3π²)×[corr] T1+T2a; C_match=0.79 at m_KK T4 gap. SP5: T4→T3. Clay ~57%→~59%.
   SP3 topological spectrum (Cycle 187): ym_topological_sectors.py — BPST Q_top=1 T1 (∫u³/(u²+1)⁴ du=1/12, residual 1.4e-14); SU(2)≅S³ T1 (100 pts, all checks pass); π₃(SU(3))=ℤ T1 (homotopy sequence); Q_top^YM∈ℤ T2a (T1 math + T2a DFC SU(3)); S_inst=27π²=266.48>0 T2a; [H,Q]=0 T1; Q_top^DFC=2↔Q_top^YM=1 T3; gap ≥406 MeV in Q≠0 sectors T3. SP3 T3→T2a. Clay ~55%→~57%.
   S_kink×α_D5=1 TIER 1 (Cycle 171): α_D5=1/S_kink algebraic tautology, not BPS assumption.
@@ -251,7 +252,7 @@ This focus continues until one of two stopping conditions is met:
 | # | Sub-problem | Current tier | Target |
 |---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T3** | T2a |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T2a (1+1D)** | T2a (4D) |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain)** | T2a (4D rigorous) |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | T2a |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | T2a |
 | SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T3** | T2a |
@@ -259,8 +260,8 @@ This focus continues until one of two stopping conditions is met:
 **Workflow within PRIMARY FOCUS:**
 
 Step 1 of each cycle must advance at least one sub-problem. Priority order:
-SP2 4D extension (Q4: 4D mass gap from 1+1D kink) → SP1 R1/R2 (rigorous continuum limit)
-(SP5 T4→T3 done Cycle 188; SP3 T3→T2a done Cycle 187; SP1f T4→T3 done Cycle 186; SP4 T2a done; SP2 T2a 1+1D done; remaining open: SP2 4D + SP1 R1/R2).
+SP1 R1/R2 (rigorous continuum limit + Wilson measure) → SP5 C_match (MS-bar matching)
+(SP2 T3(4D) done Cycle 189; SP5 T4→T3 done Cycle 188; SP3 T3→T2a done Cycle 187; SP1f T4→T3 done Cycle 186; SP4 T2a done; remaining open: SP1 R1/R2 + SP5 C_match).
 
 Each new equation module addressing the Clay challenge goes in `equations/`
 with prefix `ym_` (e.g., `ym_hamiltonian_bound.py`, `ym_hilbert_space.py`).

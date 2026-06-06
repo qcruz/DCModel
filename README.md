@@ -242,15 +242,15 @@ combined with the exact identity I₄ = C₂(fund, SU(3)) = 4/3 connects the sub
 kink profile to the gauge theory's quadratic Casimir. The goal is to develop this into
 a rigorous mathematical argument.
 
-**Overall Clay challenge progress: ~59%**
-(SP5 T4→T3 [C188]: chain V(φ)→Λ_QCD T3, M_c(D7) 2-loop T2a, b₀/b₁ T1; SP3 T3→T2a [C187]; SP1f T4→T3 [C186]; SP1 T3 [C185]: OS3 T2a; SP4 T2a [C184]; SP2 T2a [C180]; residual T4: M_c(D7) from dynamics, R1+R2 continuum)
+**Overall Clay challenge progress: ~61%**
+(SP2 T3(4D) [C189]: PT spectrum T1/T2a, KK decoupling T2a, Δ_4D≥861 MeV T3, full 5-step chain; SP5 T4→T3 [C188]; SP3 T3→T2a [C187]; SP1f T4→T3 [C186]; SP1 T3 [C185]: OS3 T2a; SP4 T2a [C184]; residual T4: R1+R2 continuum, C_match)
 
 ### Sub-Problem Tracking
 
 | # | Sub-problem | Tier | Progress | Key equation | Notes |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T3** | **45%** | `ym_continuum_limit.py` | SP1f [C186]: a×Λ=2.2×10⁻²⁰ T2a, Symanzik~10⁻⁴¹ T2a, no bulk SU(3) transition T3, continuum universality T3; OS3 T2a [C185]; residual T4: R1+R2 (formal math) |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a (1+1D)** | **60%** | `ym_coleman_sectors.py` | Bogomolny T1; fluctuation ≥0 T1; Coleman Q1 T2a; Glimm-Jaffe Q2 T2a [Cycle 180]; Q4 (4D) blocked on SP4 |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain)** | **65%** | `ym_4d_gap_extension.py` | 1+1D T2a [C180]; 4D: PT spectrum T1 (ω₁=√(3α/2)), KK decoupling T2a (m_shape/Λ=7.95e19), Δ_4D≥861 MeV T3 [C189]; Q4 T4→T3 |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | Q_top^YM∈ℤ T2a [C187]: BPST Q=1 T1, π₃(SU(3))=ℤ T1, SU(2)≅S³ verified; [H,Q]=0 T1; S_inst=27π²>0 T2a; gap in n≠0 sectors T3; domain wall↔instanton T3 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | G1 T3 [C182]; G2 T2a; G3 T3 [C183]; G3 full T2a [C184]: Tr(T^a T^b)=δ/2 T1 (8×8 res 1e-16), flat metric T1, curvature 10⁻⁴⁰ T2a |
 | SP5 | Derive Δ = I₄ × Λ_QCD from V(φ) without external input | **T3** | **25%** | `ym_dimensional_transmutation.py` | Chain V(φ)→Λ_QCD T3 [C188]: α_common T2a, b₀/b₁ T1, M_c(D7) 2-loop T2a, Λ_QCD 685 MeV T3; T4 gap: M_c(D7) from substrate dynamics |

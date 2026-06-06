@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–186)
+**Last updated:** 2026-06-05 (Cycles 122–189)
 
 ---
 
@@ -319,7 +319,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     - μ²/λ = 148 >> 1: confirmed deeply in broken SSB phase
     - m_kink^quantum = E_BPS × (1 − 3g/(4π)) > 0 rigourously [DHN 1-loop, g=0.0067]
     - 1+1D mass gap: Δ_1D = 112.92 M_Pl (constructive QFT, T2a)
-  - Q4 (4D Yang-Mills inheritance): T4 — blocked on SP4
+  - Q4 (4D Yang-Mills inheritance): **T3** — 5-step chain established [Cycle 189]
+    (KK decoupling T2a + pure SU(3) YM T2a + flux-tube gap bound T3)
 - **SP1 (4D constructive theory):** T4 — hardest step
 - **SP3 (topological charge spectrum in QFT):** T3
 - **SP4 (pure YM decoupling from scalar in IR):** **T3 [Cycle 181]** — scale hierarchy T2a (m_sigma/Λ_QCD=9.2e19); moduli approx → SU(3) sigma model; Lemmas E1-E5 structural; G1 (KK reduction 1+1D→4D) T4 blocking
@@ -379,6 +380,14 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Part F: mass gap lower bound Δ_4D≥C₂×Λ_QCD=406 MeV in Q≠0 sectors [T3];
     instanton weight exp(−S_inst)=1.86×10⁻¹¹⁶ → non-perturbative scale Λ_QCD [T3].
   SP3: T3/20% → T2a/50%. Files: `equations/ym_topological_sectors.py`; Clay ~55%→~57%.
+- **Cycle 189: SP2 T2a→T3(4D)** — 4D mass gap chain from 1+1D kink. ym_4d_gap_extension.py:
+  Part A: Pöschl-Teller spectrum verified — ω₁²=3α/2=3.931 M_Pl² analytic [T1]; ω₁/m_σ=√3/2 residual 0.00e+00 [T1]; numerical FD check ω₁²=3.930 (error 3.1×10⁻⁴) [T2a PASS].
+  Part B: Scale hierarchy — m_shape=1.983 M_Pl=2.42×10¹⁹ GeV; m_shape/Λ_QCD=7.95×10¹⁹ >> 1 [T2a]; Appelquist-Carazzone suppression (Λ/m_shape)²=1.58×10⁻⁴⁰; 4D EFT = pure SU(3) YM [T2a, SP4].
+  Part C: Gap bounds — σ=Q_top×Λ_QCD²=185440 MeV²; Δ_4D≥2√σ=2√2×Λ_QCD=861 MeV [T3]; 2√2>C₂=4/3 algebraic [T1]; lattice 0++ glueball 1475-1730 MeV consistent ✓.
+  Part D: 5-step chain documented: Δ_1D T2a → KK reduction T3 → KK decoupling T2a → pure SU(3) YM T2a → confinement gap T3.
+  Part E: C_match scheme warning: one-loop Λ shift formula unreliable (exponent 3π²=29.6 >> 1); proper resolution requires 2-loop MS-bar matching [T4].
+  SP2: T2a(1+1D)/60% → T3(full 4D chain)/65%. Q4 upgraded T4→T3. Clay ~59%→~61%.
+  Files: `equations/ym_4d_gap_extension.py`
 - **Cycle 188: SP5 T4→T3** — dimensional transmutation chain V(φ) → Λ_QCD. ym_dimensional_transmutation.py:
   Part A: 7-step chain V(φ) → β → g_eff² → α_common → ECCC → M_c(D7) → QCD running → Λ_QCD. T4 gap: M_c(D7) from substrate depth dynamics.
   Part B: b₀(N_f)=11−2Nf/3, b₁(Nf)=102−38Nf/3 from N_c=3 algebraically [T1]; all standard SU(3) values verified [PASS].
