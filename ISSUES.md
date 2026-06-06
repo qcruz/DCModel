@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–183)
+**Last updated:** 2026-06-05 (Cycles 122–184)
 
 ---
 
@@ -337,8 +337,13 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   = 4.7×10⁻⁴⁰ (T2a); Wilson EFT = pure SU(3) YM + O(10⁻⁴⁰) corrections.
   Files: `equations/ym_sigma_to_ym.py` (Cycle 183)
 - **Full chain after Cycle 183:** 4×T1, 5×T2a, 4×T3, 2×T4 (G3 full + SP1)
-- **Remaining T4:** G3 full = Fubini-Study on ℂ³ → flat metric (next: `ym_moduli_metric.py`);
-  SP1 = constructive 4D QFT on ℝ⁴ (the Clay Prize core — hardest step)
+- **Cycle 184: G3 full T4→T2a** — DFC moduli metric is flat (Killing-Cartan).
+  Tr(T^a T^b)=(1/2)δ^{ab} verified numerically (8×8, residual 1.11e-16 T1);
+  off-diagonal all exactly 0; g_{ab}∝δ_{ab} (constant flat metric T1);
+  curvature correction at Λ_QCD: (Λ_QCD/m_KK)²=6.2×10⁻⁴⁰ (T2a, negligible);
+  sigma model = linear YM kinetic term (T2a). Files: `equations/ym_moduli_metric.py`
+- **Only remaining T4:** SP1 = constructive 4D gauge QFT on ℝ⁴
+  (the Clay Prize core — hardest step; next: `ym_constructive_qft.py`)
 
 ---
 
