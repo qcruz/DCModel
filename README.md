@@ -245,6 +245,15 @@ a rigorous mathematical argument.
 **Overall Clay challenge progress: ~65%**
 (Threshold corrections T4→T3 [C193]: δC=0.0507 per KK gauge mode (~6.4%), |δC/C|≤9.5% conservative; R2 T4→T3 [C192]: <θ²> NG corr +2.6% T2a, perturbative corr 0.59%, Balaban RG T3; C_match T4→T2a [C191]: 0.7899 from 2-loop RGE; R1 T4→T3 [C190]; SP2 T3(4D) [C189]; SP5 T4→T3 [C188]; SP3 T3→T2a [C187]; SP1f T4→T3 [C186]; SP4 T2a [C184]; residual T4: Balaban convergence, explicit KK mode-matching for c_gauge)
 
+**Clay Prize Confidence Score (CPC): ~30%**
+
+CPC is distinct from progress %: it measures P(the DFC framework, continued to completion, produces a proof candidate meeting the Jaffe-Witten criteria). Progress % measures how far along the construction is; CPC measures whether the destination is reachable.
+
+*Positive factors:* I₄ = C₂(fund,SU(3)) = 4/3 exact T1 (non-trivial structural link); OS-Seiler + flat Killing metric + Balaban UV fixed point all established literature extensions; SP3 T2a + SP4 T2a (topology and decoupling solid); no fundamental obstruction found.
+*Negative factors:* SP1 Balaban 4D convergence is genuinely hard (unsolved in 80 years of Yang-Mills math); T3→rigorous math gap is large; Clay requires proof for any SU(N), N≥2 while DFC specifically derives N=3; M_c(D7) from substrate remains T4.
+*Key swing events (up):* SP1 Balaban closes (+15%); c_gauge explicit calculation confirms T3 (+5%).
+*Key swing events (down):* Hard obstruction in Balaban for SU(3) (−15%); N=3 specificity incompatible with "any gauge group" requirement (−10%).
+
 ### Sub-Problem Tracking
 
 | # | Sub-problem | Tier | Progress | Key equation | Notes |

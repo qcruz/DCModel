@@ -135,6 +135,12 @@ Repeat this cycle indefinitely:
 
 ```
 Current estimate: ~79.5%  (viability: ~87%, mathematical rigor: ~72%)
+Clay Prize progress: ~65%  |  Clay Prize Confidence Score (CPC): ~30%
+
+  CPC definition: P(DFC framework → valid Jaffe-Witten proof candidate | continued work)
+  CPC is NOT the progress %; it measures reachability of the destination, not distance traveled.
+  Key CPC swing events: SP1 Balaban closes (+15%), hard obstruction found (−15%),
+  SU(N) generality issue (−10%), c_gauge explicit T1 (+5%).
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
   α_s closed 0.006% (Cycle 144); v=247.83 GeV Tier 2a (Cycle 145); m_τ Koide Tier 2a (Cycle 146).
@@ -235,6 +241,12 @@ Key swing factors: τ mass mechanism (Full SM −12% if found); M_c(D7) (α_s 8.
 2. The `Current status:` line at the top of `README.md` (line ~9)
 3. The `## Mathematical Completeness Estimate` section in `README.md` (~line 191)
 
+**Clay Prize tracking — update when a swing event occurs (not every cycle):**
+- `Clay Prize progress:` and `Clay Prize Confidence Score (CPC):` lines above (this file)
+- `Overall Clay challenge progress:` and `Clay Prize Confidence Score (CPC):` in `README.md`
+- CPC changes only on: SP1 Balaban closes (±15%), hard obstruction found (−15%), SU(N) generality confirmed/blocked (±10%), c_gauge explicit (±5%), or other significant structural shift.
+- Progress % changes every Clay cycle.
+
 All three must stay in sync. The estimate has two components:
 - **Viability** (~25% baseline): increases when new structural accounts are added, known
   failures are resolved, or predictions are confirmed by data.
@@ -255,6 +267,10 @@ This focus continues until one of two stopping conditions is met:
   within the DFC framework (document in `ISSUES.md` and return to general cycle).
 - **Adequate solution:** The argument reaches Tier 2a or better across all five
   sub-problems listed below, constituting a publishable structural proof candidate.
+
+**Two tracked quantities (update both each cycle):**
+- **Progress %** (~65%): fraction of the construction completed across SP1–SP5.
+- **CPC** (~30%): P(DFC → valid Jaffe-Witten proof candidate | continued work). Update CPC when a swing event occurs (hard obstruction, Balaban closure, SU(N) issue confirmed/resolved, c_gauge explicit).
 
 **The five sub-problems (tracked in README.md `## Clay Prize Challenge` section):**
 
