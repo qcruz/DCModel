@@ -411,6 +411,18 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     requires β_c^SC > β_OS (estimates: β_c^SC~4-5, β_OS<20.25); rigorous bound T4.
   R1: T4→T3. SP1 unchanged T3 (R2 Wilson measure→Gauss still T4). Clay ~61%→~62%.
   Files: `equations/ym_r1_continuum_bound.py` (Cycle 190)
+- **Cycle 191: SP5 C_match T4→T2a** — one-loop MS-bar matching at m_KK. ym_cmatch_msbar.py:
+  Part A: g_eff²=8/27 [T1], ξ=√(2/∛18)=0.8736 M_Pl⁻¹ [T2a], m_KK=1.3976×10¹⁹ GeV [T2a].
+  Part B: Beta function coefficients b₀/b₁ for N_f=0,3,4,5,6 [T1 algebraic].
+  Part C: 2-loop RGE α_s(M_Z)=0.11821 → α_s(172.69 GeV)=0.10742 → α_s(m_KK)=0.018626 [T2a];
+    N_f transitions: 5 below m_top, 6 above m_top (PDG thresholds).
+  Part D: g_MS²(m_KK)=4π×α_s(m_KK)=0.23406; C_match=g_MS²/g_eff²=0.789948 [T2a];
+    previous estimate (C188) was 0.790; agreement 0.01% — estimate confirmed.
+  Part E: Λ_QCD Landau-pole correction documented; DFC ECCC chain Λ_QCD=304.5 MeV T2a remains reliable.
+  Part F: Remaining T4 — one-loop threshold corrections from KK spectrum (~1%);
+    M_c(D7) from substrate dynamics (not SM running) still T4.
+  C_match: T4→T2a. SP5 overall unchanged T3 (chain V(φ)→Λ_QCD structural).
+  Clay ~62%→~63%. Files: `equations/ym_cmatch_msbar.py` (Cycle 191)
 
 ---
 
