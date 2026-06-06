@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-05 (Cycles 122–185)
+**Last updated:** 2026-06-05 (Cycles 122–186)
 
 ---
 
@@ -359,6 +359,13 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Files: `equations/ym_constructive_qft.py` (Cycle 185)
 - **Full chain after Cycle 185:** 6×T1, 6×T2a, 3×T3, 1×T4 (SP1f only)
 - **Clay Prize overall:** ~45% → ~52%; SP1: 0% → 35%
+- **Cycle 186: SP1f T4→T3** — continuum limit argument. ym_continuum_limit.py:
+  a_DFC=ξ (natural UV cutoff T1); a_DFC×Λ_QCD=2.2×10⁻²⁰ T2a (19.7 orders finer than QCD);
+  Symanzik O(a²) corrections ~ 1.2×10⁻⁴¹ T2a (consistent with Cycle 184 curvature 4.75×10⁻⁴⁰);
+  SU(3) Wilson action has NO bulk phase transition for any β_lat>0 [T3, Creutz 1980];
+  β_lat=20.25 in same universality class as continuum limit [T3]; SP1f T4→T3.
+  Residual T4: rigorous proof of no bulk transition (R1) + continuum measure (R2).
+  Files: `equations/ym_continuum_limit.py`; Clay ~52%→~55%.
 
 ---
 

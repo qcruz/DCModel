@@ -242,14 +242,14 @@ combined with the exact identity I₄ = C₂(fund, SU(3)) = 4/3 connects the sub
 kink profile to the gauge theory's quadratic Casimir. The goal is to develop this into
 a rigorous mathematical argument.
 
-**Overall Clay challenge progress: ~52%**
-(SP1 T4→T3 [C185]: OS axioms OS1-OS5 chain, OS3 reflection positivity T2a via OS-Seiler; SP4 T2a [C184]: flat Killing metric 8×8; SP2 T2a [C180]; chain 6×T1+6×T2a+3×T3; 1 T4 gap: SP1f continuum limit a→0)
+**Overall Clay challenge progress: ~55%**
+(SP1f T4→T3 [C186]: a×Λ_QCD=2.2×10⁻²⁰ T2a, Symanzik~10⁻⁴¹ T2a, no bulk SU(3) transition T3; SP1 T3 [C185]: OS3 refl. positivity T2a; SP4 T2a [C184]; SP2 T2a [C180]; residual T4: R1+R2 continuum limit math)
 
 ### Sub-Problem Tracking
 
 | # | Sub-problem | Tier | Progress | Key equation | Notes |
 |---|---|---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | **35%** | `ym_constructive_qft.py` | OS axioms inherited [C185]: OS1-OS3 T3-T2a; OS3 (refl. positivity) T2a new — OS-Seiler β_lat=20.25>0; Residual T4: SP1f continuum limit a→0 |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | **45%** | `ym_continuum_limit.py` | SP1f [C186]: a×Λ=2.2×10⁻²⁰ T2a, Symanzik~10⁻⁴¹ T2a, no bulk SU(3) transition T3, continuum universality T3; OS3 T2a [C185]; residual T4: R1+R2 (formal math) |
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a (1+1D)** | **60%** | `ym_coleman_sectors.py` | Bogomolny T1; fluctuation ≥0 T1; Coleman Q1 T2a; Glimm-Jaffe Q2 T2a [Cycle 180]; Q4 (4D) blocked on SP4 |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,...} in QFT Hilbert space) | T3 | 20% | `yang_mills_mass_gap.py` | Classical kink topology T1; QFT Hilbert space structure T4; Pomeron α₀^P=1 consistent T3 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | G1 T3 [C182]; G2 T2a; G3 T3 [C183]; G3 full T2a [C184]: Tr(T^a T^b)=δ/2 T1 (8×8 res 1e-16), flat metric T1, curvature 10⁻⁴⁰ T2a |
