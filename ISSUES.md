@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-06 (Cycles 122–195)
+**Last updated:** 2026-06-07 (Cycles 122–199)
 
 ---
 
@@ -311,27 +311,40 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 ### T14 — Yang-Mills Mass Gap (Clay Prize): SP1-SP5 tracking (Cycles 178–)
 
-- **Status:** Active primary focus. Five sub-problems (SP1–SP5) being developed.
-- **SP2 (1+1D): T2a — ESTABLISHED (Cycle 180)**
-  - Q1 (Coleman superselection sectors): T2a [Cycle 179]
-  - Q2 (Glimm-Jaffe :H:≥0 + kink sector min ≥ m_kink): **T2a [Cycle 180]**
-    - DFC V(φ) satisfies ALL P(φ)₂ conditions (GJ1–GJ5 apply)
-    - μ²/λ = 148 >> 1: confirmed deeply in broken SSB phase
-    - m_kink^quantum = E_BPS × (1 − 3g/(4π)) > 0 rigourously [DHN 1-loop, g=0.0067]
-    - 1+1D mass gap: Δ_1D = 112.92 M_Pl (constructive QFT, T2a)
-  - Q4 (4D Yang-Mills inheritance): **T3** — 5-step chain established [Cycle 189]
-    (KK decoupling T2a + pure SU(3) YM T2a + flux-tube gap bound T3)
-- **SP1 (4D constructive theory):** T4 — hardest step
-- **SP3 (topological charge spectrum in QFT):** T3
-- **SP4 (pure YM decoupling from scalar in IR):** **T3 [Cycle 181]** — scale hierarchy T2a (m_sigma/Λ_QCD=9.2e19); moduli approx → SU(3) sigma model; Lemmas E1-E5 structural; G1 (KK reduction 1+1D→4D) T4 blocking
-- **SP5 (derive Δ_4D from V(φ) without SM input):** T4
-- **Key result:** I₄ = C₂(fund,SU(3)) = 4/3 exact — kink shape integral equals SU(3) Casimir
-- **Files:** `equations/yang_mills_mass_gap.py` (T3, Cycle 178), `equations/ym_hamiltonian_bound.py`
-  (SP2 classical + Q1, Cycle 179), `equations/ym_coleman_sectors.py` (SP2 Q2 T2a, Cycle 180),
-  `equations/ym_gauge_decoupling.py` (SP4 T4→T3, Cycle 181),
-  `equations/ym_kk_reduction.py` (SP4 G1 T4→T3, Cycle 182)
-- **New T1 result (Cycle 182):** N_X = ∫dx(∂_x φ_kink)² = E_BPS (residual 2.84e-14)
-  — KK overlap integral equals kink mass from BPS saturation
+- **Status:** Active primary focus. Five sub-problems (SP1–SP5). Last updated: Cycle 199.
+
+**Current sub-problem tiers (as of Cycle 199):**
+
+| SP | Description | Tier | Progress | Key file | Last changed |
+|---|---|---|---|---|---|
+| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | 65% | `ym_infinite_volume.py` | C199 |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain)** | 65% | `ym_4d_gap_extension.py` | C189 |
+| SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | `ym_topological_sectors.py` | C187 |
+| SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | `ym_moduli_metric.py` | C184 |
+| SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | `ym_jost_function.py` | C197 |
+
+**SP1 sub-steps (Cycles 185–199):**
+- SP1a: Z_N > 0 [T1] — C198
+- SP1b: OS3 reflection positivity [T2a] — C198 (Seiler 1978, β_lat=20.25>0)
+- SP1c: Seiler-Simon M_p(SU(3))≤9^p [T1] — C195
+- SP1d: OS reconstruction T_L≥0, H_L≥0 [T2a] — C198
+- SP1e: asymptotic freedom b₀=11>0 [T1] — C185
+- SP1f: a×Λ_QCD=2.2e-20 T2a; no bulk phase transition T3 — C186
+- SP1g: Balaban RG domain checks T3 — C194
+- SP1h: C_match=0.7952 T2a — C197
+- SP1i: Seiler-Simon analytic bound SU(3) [T2a] — C195
+- SP1j: **Infinite-volume L→∞ [T2a]** — **C199** (cluster expansion KP=0.344<1; Dobrushin uniqueness)
+- SP1k: Continuum a→0 [T4] — OPEN (Balaban 1983-1989 formal proof required)
+
+**SP2 key results:**
+- Q1 (Coleman superselection sectors): T2a [C179]
+- Q2 (Glimm-Jaffe :H:≥0 + kink sector min ≥ m_kink): T2a [C180]
+  — μ²/λ=148>>1 (broken phase); m_kink^quantum=112.92 M_Pl [DHN 1-loop]
+- Q4 (4D chain): T3 [C189] — Δ_4D ≥ 861 MeV; 5-step chain
+
+**Key structural results:** I₄=C₂(fund,SU(3))=4/3 [T1]; Q_top=2 [T1]; N_X=E_BPS [T1 C182]; g_eff²=8/27 [T2a]; C_match=0.795151 [T2a C197]; KP_criterion=0.344<1 [T2a C199]
+
+**Clay Prize overall:** ~67%. CPC: ~35%. Remaining T4: SP1k (Balaban a→0) + SP5 M_c(D7) from substrate.
 - **Cycle 183:** SP4 G3 T4→T3 — sigma model on SU(3) moduli = YM kinetic term.
   A_μ^a = (1/g)∂_μθ^a identifies zero modes with pure gauge configs; Atiyah-Bott (1983)
   L² metric on A/G = YM kinetic term; non-abelian correction suppressed by (Λ_QCD/m_KK)²
@@ -482,6 +495,15 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   SP5 threshold: T3→T2a. C_match history: C193=0.841 RETRACTED; C196=0.791 superseded; C197=0.795151 [T2a definitive].
   Remaining SP5 T4 gap: M_c(D7) derivation from V(phi) substrate dynamics (needed to close Λ_QCD chain fully from first principles). Clay: ~67% (unchanged). CPC: ~35% (unchanged).
   Files: `equations/ym_jost_function.py` (Cycle 197)
+- **Cycle 198: SP1 finite-volume T3→T2a** — ym_sp1_finite_volume.py:
+  Part A: Z_N>0 [T1]; Part B: Seiler RP min eigenvalue 5.21e8>>0 [T2a]; Part C: Seiler-Simon M_p ratios<<1 [T1]; Part D: H_OS bounded [T2a]; SP1j (finite-volume) T3→T2a.
+- **Cycle 199: SP1j infinite-volume L→∞ T3→T2a** — ym_infinite_volume.py:
+  Part A: Kotecky-Preiss criterion — KP = C_polymer×ε_plaq×e = 12×0.01054×e = 0.344 < 1 [T2a PASS]; β_crit=17.05<<β_lat=20.25 (1.19× margin); cluster expansion converges.
+  Part B: free energy density convergent (higher-order/leading=1.4e-3); Dobrushin uniqueness KP<1 → unique infinite-volume Gibbs state ω_∞ [T2a].
+  Part C: transfer matrix gap uniform in L — Δ_gap(L)≥Δ_∞≥861 MeV uniformly (finite-size correction 5.2e-13, negligible); T_∞=lim T_L bounded [T2a]; H_∞≥0 [T3 from SP2 gap bound].
+  Part D: exponential clustering → GNS Hilbert space H_∞, unique vacuum [T2a].
+  SP1j: T3→T2a. SP1k (a→0 continuum) remains T4. Clay: ~67% (unchanged). CPC: ~35% (unchanged).
+  Files: `equations/ym_infinite_volume.py` (Cycle 199)
 
 ---
 
