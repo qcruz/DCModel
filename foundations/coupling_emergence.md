@@ -1,8 +1,9 @@
 # Coupling Emergence in the DFC Framework
 
-**Status:** Stub — structural account written; quantitative derivation of coupling from fold
-topology is incomplete. This document synthesizes verified results and identifies the open
-derivation paths.
+**Status:** Active — quantitative results documented through Cycle 197. Coupling emergence
+chain is Tier 2a for g_eff, α_em(M_Z), sin²θ_W, α_s. Open derivations: D5 holonomy from
+KK reduction (Open 1), 36π route consistency (Open 2), SU(N) structure constants from winding
+(Open 3, partial T2a for D7 kinetic sector via SP4 G3 Cycle 184).
 
 ---
 
@@ -167,8 +168,7 @@ determines the coupling running, which in turn fixes all the closure scales.
 k_Y² = 5/3               [Tier 2a, Cycle 30]
 ECCC: α₁ = α₂ at M_c(EW) → sin²θ_W = 1/(1+k_Y²) = 3/8
 1/α_em = (1+k_Y²)/α_common = (8/3)×(27π/2) = 36π    [exact, 0 free params]
-Also: 36π = 4/β   [since β = 1/(9π) → 4β = 4/(9π) → 1/(4β) = 9π/4... NO]
-Correct: 4/β = 4×9π = 36π  [algebraically exact, residual 0]
+4/β = 4×9π = 36π  [algebraically exact, residual 0]
 β = 4 × α_em(Mc)  [exact identity, Cycle 169/170]
 ```
 
@@ -197,6 +197,13 @@ g₂ = √(8/27 × ...) chain and the 36π closure condition from first principl
 **Statement:** Show that the closure topology at D6 depth produces SU(2) structure
 constants (not U(1)², not U(3), specifically SU(2)), and similarly for D7 and SU(3).
 
+**Partial progress (Cycles 183–184, Tier 2a for D7):** SP4 G3 shows that the DFC
+moduli metric for D7 zero modes is flat with Tr(T^a T^b) = (1/2)δ^{ab} (residual
+1.11e-16), consistent with SU(3) structure, and the Wilson EFT at Λ_QCD equals pure
+SU(3) Yang-Mills + O(10⁻⁴⁰) corrections. This advances D7=SU(3) to Tier 2a for the
+kinetic sector. Full derivation of SU(3) structure constants from winding integrals
+(rather than assuming SU(3)) remains open.
+
 This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Tier 1.
 
 ---
@@ -215,7 +222,7 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 | Γ_ee from large-N_c f_ρ | 6.47 keV | 7.04 keV | ✓ Tier 3, −8.1% |
 | V(φ) form from 3 compression requirements | R1+R2+R3 → unique form | — | ✓ Tier 3, Cycle 170 |
 | β = 4 × α_em(Mc) | exact algebraic identity | — | ✓ Tier 1 given β, 36π (Cycle 169) |
-| α = ∛18 from BPS duality | ∛18 ≈ 2.621 [Planck units] | — | ✓ Tier 3 BPS mechanism (Cycle 170) |
+| α = ∛18 from BPS duality | ∛18 ≈ 2.621 [Planck units] | — | ✓ Tier 2a (Cycle 172, derived from β+BPS saturation) |
 | SU(N) structure from topology | not derived | — | ✗ open |
 | D5 holonomy weight from KK reduction | not derived | — | ✗ open (path to Tier 2a for 36π) |
 
@@ -235,3 +242,7 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 - `foundations/substrate.md` — V(φ), kink solution, β derivation
 - `phenomena/particle_physics/forces/strong_force.md`
 - `phenomena/electromagnetism/electromagnetic_coupling.md`
+- `equations/ym_sigma_to_ym.py` — SP4 G3: moduli sigma model = SU(3) YM kinetic term (Cycle 183, T3)
+- `equations/ym_moduli_metric.py` — SP4 G3 full: flat moduli metric Tr(T^a T^b)=(1/2)δ^{ab} (Cycle 184, T2a)
+- `equations/ym_c_gauge_explicit.py` — c_gauge parity argument, Z_KK/Z_0=1/3 (Cycle 196, T1)
+- `equations/ym_jost_function.py` — c_gauge(cont)=2.773063, C_match=0.795151 (Cycle 197, T2a)
