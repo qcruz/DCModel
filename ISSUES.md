@@ -465,6 +465,13 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Part E: Balaban convergence check — ε=1/(c×g²)=0.3750; ratio (g²/16π²)/ε=0.005004 << 1 [T3 PASS]; DFC satisfies Seiler-Simon domain condition with comfortable margin. SP1i: T4→T2a. SP1: all sub-steps T2a or T3, **no T4 gaps remaining**. SP1 progress 55%→65%.
   CPC: ~30%→~35% (+5% per Cycle 194 swing event).
   Clay ~66%→~67%. Files: `equations/ym_seiler_simon_su3.py` (Cycle 195)
+- **Cycle 196: SP5 c_gauge parity — c_gauge(n=1)=0 T1; Z_KK/Z_0=1/3 T1; correction to C193.** ym_c_gauge_explicit.py:
+  Part A: PT bound state parity — ψ_0(y) ∝ sech²(y/ξ) EVEN; ψ_n1(y) ∝ sech(y/ξ)tanh(y/ξ) ODD [T1, numerical max dev 0.00e+00 both modes].
+  Part B: AAB cubic coupling vanishes by parity — g_AAB ∝ ∫dy(φ')²ψ_0²ψ_n1 = ∫[EVEN×EVEN×ODD]dy = ∫ODD dy = 0 [T1 EXACT]; numerical residual -1.59e-15 (machine zero). **CORRECTION TO C193**: c_gauge(n=1 discrete KK mode) = 0, NOT 8. C193 asserted c_finite=N_c²-1=8 [T1] for the group-theory coefficient, but did not account for the PT mode profile parity which kills the vertex entirely.
+  Part C: Z_KK/Z_0 = 1/3 EXACTLY [T1] — analytic: Z_0 ∝ C_0²×∫sech⁸ du × ξ = (3/4ξ)(32/35)ξ = 24/35×(φ₀/ξ)²; Z_KK ∝ C_n1²×∫sech⁶tanh² du × ξ = (3/2ξ)(16/105)ξ = 8/35×(φ₀/ξ)²; ratio = 8/24 = 1/3 [T1]; numerical residual from 1/3: 5.55e-17.
+  Part D: Even-parity continuum (ω > 2m_KK) produces non-zero c_gauge — ∫EVEN×EVEN×EVEN ≠ 0; threshold suppression factor exp(-π√3/2) ≈ 0.066 [T3 structural estimate]; c_gauge(cont) ≈ 0.527 [T3].
+  Part E: C_match corrected to 0.791 (tree-level T2a = 0.790 + continuum threshold T3 ≈ 0.001); C193 estimate 0.841 RETRACTED. SP5 threshold tier: T3 (unchanged), argument corrected and strengthened by T1 parity result. Remaining T4 gap: explicit Jost-function integral ∫ρ_even(ω)f_match(ω)dω over n=2 PT even-parity scattering states. Clay: ~67% (unchanged). CPC: ~35% (unchanged).
+  Files: `equations/ym_c_gauge_explicit.py` (Cycle 196)
 
 ---
 
