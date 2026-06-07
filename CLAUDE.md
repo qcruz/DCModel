@@ -286,13 +286,13 @@ This focus continues until one of two stopping conditions is met:
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain)** | T2a (4D rigorous) |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | T2a |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | T2a |
-| SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T3** | T2a |
+| SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a** | T2a |
 
 **Workflow within PRIMARY FOCUS:**
 
 Step 1 of each cycle must advance at least one sub-problem. Priority order:
-SP1 Seiler-Simon SU(3) Haar bound (T4 → T3 via Weingarten) → SP5 explicit KK mode-matching (verify c_gauge=8 from Pöschl-Teller profile, T4)
-(Balaban RG + Haar moments done Cycle 194: SP1g T3, SP1f/SP1h T2a; SP5 threshold T4→T3 done Cycle 193; R2 T4→T3 done Cycle 192; C_match T4→T2a done Cycle 191; R1 T4→T3 done Cycle 190; remaining open: SP1i Seiler-Simon SU(3) [tractable] + SP5 c_gauge explicit).
+SP1 Seiler-Simon SU(3) Haar bound (T4 → T2a) → SP5 M_c(D7) from substrate (remaining T4)
+(Balaban RG done C194; SP1i Seiler-Simon T4→T2a done C195; C196: c_gauge(n=1)=0 T1 by parity; C197: Jost integral c_gauge(cont)=2.773 T2a, C_match=0.7952 T2a, SP5 threshold T3→T2a; remaining: SP1 Balaban 4D convergence T4, SP5 M_c(D7) T4).
 
 Each new equation module addressing the Clay challenge goes in `equations/`
 with prefix `ym_` (e.g., `ym_hamiltonian_bound.py`, `ym_hilbert_space.py`).
