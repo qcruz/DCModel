@@ -203,7 +203,7 @@ See `../equations/quark_masses.py` for:
 
 See `../equations/fermion_spectrum_full.py` for:
 - Full fermion spectrum summary across all sectors
-- Known failure tracker: tau (8.4× for dimple model; 0.006% for Koide), charm/strange (15%), neutrino mass ratio (4.3×)
+- Known failure tracker: tau (8.4× for dimple model; 0.006% for Koide), charm/strange (15%), neutrino mass ratio κ=5.33 vs obs 5.81 (−8.3%; Cycle 165 corrects prior 4.3× metric error)
 - Status of unpredicted masses (top, bottom, up, down, neutrinos)
 
 See `../equations/tau_mass_koide.py` for:

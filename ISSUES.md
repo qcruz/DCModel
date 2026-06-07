@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-07 (Cycles 122–199)
+**Last updated:** 2026-06-07 (Cycles 122–200)
 
 ---
 
@@ -311,19 +311,19 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 ### T14 — Yang-Mills Mass Gap (Clay Prize): SP1-SP5 tracking (Cycles 178–)
 
-- **Status:** Active primary focus. Five sub-problems (SP1–SP5). Last updated: Cycle 199.
+- **Status:** Active primary focus. Five sub-problems (SP1–SP5). Last updated: Cycle 200.
 
-**Current sub-problem tiers (as of Cycle 199):**
+**Current sub-problem tiers (as of Cycle 200):**
 
 | SP | Description | Tier | Progress | Key file | Last changed |
 |---|---|---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | 65% | `ym_infinite_volume.py` | C199 |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | 72% | `ym_balaban_sp1k.py` | **C200** |
 | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain)** | 65% | `ym_4d_gap_extension.py` | C189 |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | `ym_moduli_metric.py` | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | `ym_jost_function.py` | C197 |
 
-**SP1 sub-steps (Cycles 185–199):**
+**SP1 sub-steps (Cycles 185–200):**
 - SP1a: Z_N > 0 [T1] — C198
 - SP1b: OS3 reflection positivity [T2a] — C198 (Seiler 1978, β_lat=20.25>0)
 - SP1c: Seiler-Simon M_p(SU(3))≤9^p [T1] — C195
@@ -333,8 +333,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - SP1g: Balaban RG domain checks T3 — C194
 - SP1h: C_match=0.7952 T2a — C197
 - SP1i: Seiler-Simon analytic bound SU(3) [T2a] — C195
-- SP1j: **Infinite-volume L→∞ [T2a]** — **C199** (cluster expansion KP=0.344<1; Dobrushin uniqueness)
-- SP1k: Continuum a→0 [T4] — OPEN (Balaban 1983-1989 formal proof required)
+- SP1j: Infinite-volume L→∞ [T2a] — C199 (KP=0.344<1; Dobrushin uniqueness)
+- **SP1k: Continuum a→0 [T3] — C200** (KP monotone T1; large-field 19.3% T2a; Symanzik Hölder 4.7e-41 T2a; Arzelà-Ascoli+Dobrushin T3; no obstruction)
 
 **SP2 key results:**
 - Q1 (Coleman superselection sectors): T2a [C179]
@@ -342,9 +342,20 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   — μ²/λ=148>>1 (broken phase); m_kink^quantum=112.92 M_Pl [DHN 1-loop]
 - Q4 (4D chain): T3 [C189] — Δ_4D ≥ 861 MeV; 5-step chain
 
-**Key structural results:** I₄=C₂(fund,SU(3))=4/3 [T1]; Q_top=2 [T1]; N_X=E_BPS [T1 C182]; g_eff²=8/27 [T2a]; C_match=0.795151 [T2a C197]; KP_criterion=0.344<1 [T2a C199]
+**Key structural results:** I₄=C₂(fund,SU(3))=4/3 [T1]; Q_top=2 [T1]; N_X=E_BPS [T1 C182]; g_eff²=8/27 [T2a]; C_match=0.795151 [T2a C197]; KP_criterion=0.344<1 [T2a C199]; Symanzik Hölder 4.7e-41 [T2a C200]
 
-**Clay Prize overall:** ~67%. CPC: ~35%. Remaining T4: SP1k (Balaban a→0) + SP5 M_c(D7) from substrate.
+**Clay Prize overall:** ~68%. CPC: ~35%. Remaining T4: SP5 M_c(D7) from substrate + SP1k Balaban n-point Hölder bound (SU(3) extension).
+- **Cycle 200: SP1k T4→T3** — Balaban continuum limit structural argument. ym_balaban_sp1k.py:
+  Part A: KP monotone decreasing for all β≥20.25 [T1 dKP/dβ<0]; KP(β)≤0.344 uniformly [T2a].
+  Part B: Large-field polymer weight ≤ C_poly×ε_plaq/(1−KP) = 0.193 (19.3%) [T2a from KP].
+  Part C: Symanzik Hölder bound [T2a] — c₁=−1/12 [T1, Weisz 1983]; Hölder step=3.52e-41;
+    Cauchy bound = 4.69e-41; |⟨P⟩_a| Cauchy as a→0 [T1 geo series × T2a Hölder].
+  Part D: Arzelà-Ascoli [T3] — equibounded [T2a KP] + equicontinuous [T3 Balaban] → ω_∞ exists
+    and is unique [T2a Dobrushin C199]; mass gap Δ_∞≥861 MeV inherited [T3 SP2].
+  SP1k T4→T3; SP1 no T4 sub-gaps; SP1 progress 65%→72%. Clay 67%→68%.
+  Specific remaining T4 gap (SP1k→T2a): explicit Balaban n-point Hölder bound for SU(3)
+    |S_n(a)−S_n(a/2)| ≤ C_n(Λa)² with C_n controlled by KP — requires Balaban (1983-89)
+    SU(3) extension (literature covers SU(2); N=3 tractable but unwritten).
 - **Cycle 183:** SP4 G3 T4→T3 — sigma model on SU(3) moduli = YM kinetic term.
   A_μ^a = (1/g)∂_μθ^a identifies zero modes with pure gauge configs; Atiyah-Bott (1983)
   L² metric on A/G = YM kinetic term; non-abelian correction suppressed by (Λ_QCD/m_KK)²

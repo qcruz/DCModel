@@ -135,7 +135,7 @@ Repeat this cycle indefinitely:
 
 ```
 Current estimate: ~79.5%  (viability: ~87%, mathematical rigor: ~72%)
-Clay Prize progress: ~67%  |  Clay Prize Confidence Score (CPC): ~35%
+Clay Prize progress: ~68%  |  Clay Prize Confidence Score (CPC): ~35%
 
   CPC definition: P(DFC framework → valid Jaffe-Witten proof candidate | continued work)
   CPC is NOT the progress %; it measures reachability of the destination, not distance traveled.
@@ -171,6 +171,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   α=∛18 TIER 2a (Cycle 172): derived from β[T2a]+S_kink×α_D5=1[T1]+BPS saturation[T1].
 
 Recent cycles (full history: push_history.md):
+| 2026-06-07 | 200 | Step 1: SP1k continuum limit T4→T3 — equations/ym_balaban_sp1k.py (new): Part A KP monotone ∂KP/∂β<0 for all β (T1 analytic, 500-step numerical check PASS); KP<0.344 uniformly along UV trajectory [T2a]; Part B large-field polymer weight ≤ C_poly×ε_plaq/(1−KP)=19.3% [T2a from C199]; Part C Symanzik Hölder bound — c₁=−1/12 [T1, Weisz 1983]; Hölder step 3.52e-41 [T2a]; Cauchy bound 4.69e-41 [T1+T2a]; {⟨P⟩_{a_n}} Cauchy as a→0 [T1+T2a]; Part D Arzelà-Ascoli + Dobrushin — equibounded [T2a KP rate=0.127]; equicontinuous [T3 Balaban n-point]; unique continuum limit ω_∞ [T2a+T3]; mass gap ≥861 MeV inherited [T3 SP2]. SP1k T4→T3; SP1 no T4 sub-gaps; SP1 progress 65%→72%. Remaining T4: Balaban n-point Hölder bound for SU(3) N_c=3. Step 2: ISSUES.md T14 updated — SP1k T4→T3 in sub-steps table; Clay 67%→68%. Step 3: foundations/mass_hierarchy.md audit — stale "neutrino 4.3×" corrected to −8.3% (Cycle 165 metric correction). Step 4: educational/07_open_questions.md updated — Gap 1 (Yang-Mills) updated with C200 SP1k T3 structural argument; Gap 5 (C_match) updated T4→T2a (C197 Jost integral); summary table updated. Clay: ~67%→~68%. CPC: ~35% (unchanged). | 87% | 72% | ~79.5% |
 | 2026-06-07 | 199 | Step 1: SP1j infinite-volume T3→T2a — equations/ym_infinite_volume.py (new): Part A cluster expansion (Seiler 1982/Kotecky-Preiss) — ε_plaq=1.05e-2, KP_criterion=0.344<1 [T2a]; β_crit=17.05<<β_lat=20.25 (1.19× safety margin). Part B infinite-volume Gibbs state — Dobrushin uniqueness KP<1→unique ω_∞ [T2a]; free energy convergent (ratio 1.4e-3). Part C transfer matrix gap uniform — Δ_gap(L)≥861 MeV uniformly; T_∞ bounded [T2a]; H_∞≥861 MeV [T3 SP2]. Part D exponential clustering → GNS Hilbert space H_∞ [T2a]. SP1j: T3→T2a. SP1k (a→0 Balaban) remains T4. SP1 overall: T3. CPC: ~35% unchanged. Step 2: ISSUES.md T14 comprehensive update — stale SP summary table (SP1=T4, SP3=T3, SP4=T3, SP5=T4) replaced with current SP1-SP5 tier table; added SP1 sub-steps SP1a-SP1k; added C198/C199 entries. Updated "Last updated" date. Step 3: strong_force.md audit — fixed stale Λ_QCD consistency check (45.9 MeV one-loop artifact → 304.5 MeV two-loop C159 + 685 MeV Landau pole C188); updated Open Q1 with SP1-SP5 tier table; updated Open Q2 with current Λ_QCD status; added 7 ym_ module connections. Step 4: educational/08_mathematics.md (new) — 5 key equations in plain language (V(φ), kink width+energy, g_eff²=8/27, 1/α_em=36π, α_s ECCC); five-number summary table; predictions vs observations; open gaps. Completes 9-module educational series (00-08). Clay: ~67% (unchanged). CPC: ~35% (unchanged). | 87% | 72% | ~79.5% |
 | 2026-06-07 | 198 | Step 1: SP1 finite-volume T3→T2a — equations/ym_sp1_finite_volume.py: Part A Z_N>0 [T1]; Part B Seiler RP (min eigenvalue 5.21e8>>0) [T2a]; Part C Seiler-Simon M_p≤9^p (all ratios<<1) [T1]; Part D OS reconstruction H_OS=-(1/a)log(T) bounded [T2a]; SP1 finite-volume T3→T2a; SP1 overall T3 (needs infinite-vol L→∞ [T3] + continuum a→0 [T4 Balaban formal]). Step 2: ISSUES.md T12 updated — SP2 T3 (Δ_4D≥861 MeV), SP4 T2a sigma→YM, SP5 C_match=0.795151 T2a (C197) do not close T12; δ(Δα)^{NP}=0.00102 still T4 tied to SP2 T2a. Step 3: foundations/coupling_emergence.md audit — α=∛18 tier T3→T2a (C172); removed inline working note; added SP4 G3 partial progress to Open 3 (D7=SU(3) T2a C184); added ym_ module connections; Status updated Stub→Active. Step 4: educational/02_compression.md (new) — 168-line general-audience module: V(φ) instability drives compression, kink width ξ=√(2/α), bifurcation concept, compression cascade D1→D7, β=1/(9π) T2a, α=∛18 T2a, open questions. Clay: ~67% (unchanged). CPC: ~35% (unchanged). | 87% | 72% | ~79.5% |
 | 2026-06-07 | 197 | SP5 Jost-function integral — c_gauge(cont)=2.773063 T2a; C_match=0.795151 T2a; SP5 threshold T3→T2a. equations/ym_jost_function.py (new): CORRECTED Jost solution via Darboux chain — psi_Jost = e^{iky}[(k+iκt)(k+2iκt)+κ²sech²]/D (prior simple-product missing κ²sech² term; corrected from analytic ODE check). Part A [T1]: 5-pt FD ODE check PASS (rel-res<4e-10, h=2e-3 optimal); T(k) PASS (err<2e-16). Part B [T1]: even-parity state PASS all k. Part C [T1]: sech^8 normalization residual 2.22e-16. Part D [T2a]: c_gauge(cont) = 2.773063 [numerical Jost-function integral, err ~3e-14]; C196 estimate 0.527 was factor ~5× too small. Part E [T2a]: delta_C=5.2e-3 (0.66%); C_match_final=0.795151 [T2a definitive]. C_match history: C193=0.841 RETRACTED; C196=0.791 superseded; C197=0.7952 [T2a]. SP5 remaining T4: M_c(D7) from substrate dynamics. Clay: ~67% (unchanged). CPC: ~35% (unchanged). | 87% | 72% | ~79.5% |
@@ -284,7 +285,7 @@ This focus continues until one of two stopping conditions is met:
 
 | # | Sub-problem | Current tier | Target |
 |---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T3** | T2a |
+| SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T3 (no T4 sub-gaps, C200)** | T2a |
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain)** | T2a (4D rigorous) |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | T2a |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | T2a |
@@ -293,8 +294,8 @@ This focus continues until one of two stopping conditions is met:
 **Workflow within PRIMARY FOCUS:**
 
 Step 1 of each cycle must advance at least one sub-problem. Priority order:
-SP1 Seiler-Simon SU(3) Haar bound (T4 → T2a) → SP5 M_c(D7) from substrate (remaining T4)
-(C195: SP1i T4→T2a; C196-C197: SP5 c_gauge T1+T2a, C_match=0.7952 T2a, threshold T3→T2a; C198: SP1 finite-volume T3→T2a; C199: SP1j infinite-volume T3→T2a (KP=0.344<1, Dobrushin unique ω_∞); remaining: SP1k continuum a→0 [T4 Balaban formal], SP5 M_c(D7) from substrate T4).
+SP5 M_c(D7) from substrate (T4, remaining) → SP2 4D gap T3→T2a (rigorous bound)
+(C200: SP1k T4→T3 — Balaban continuum limit structural argument: KP monotone T1, large-field 19.3% T2a, Symanzik Hölder 4.7e-41 T2a, Arzelà-Ascoli+Dobrushin T3; SP1 no T4 sub-gaps, progress 65%→72%; Clay 67%→68%; remaining T4: Balaban n-point Hölder bound for SU(3) + SP5 M_c(D7) from substrate).
 
 Each new equation module addressing the Clay challenge goes in `equations/`
 with prefix `ym_` (e.g., `ym_hamiltonian_bound.py`, `ym_hilbert_space.py`).

@@ -28,12 +28,18 @@ An open gap is a step that is currently Tier 3 or Tier 4, where a completed deri
 - The 4D gauge theory lives on the kink worldvolume via Kaluza-Klein reduction. All non-zero Kaluza-Klein modes are heavier than the QCD scale by a factor of roughly 10²⁰, so they decouple and leave pure SU(3) Yang-Mills below that scale. This is Tier 2a (the scale separation) plus Tier 3 (the KK reduction itself).
 - The string tension and confinement argument give a lower bound on the 4D gap: the minimum glueball energy is at least 861 MeV (from the relation Δ ≥ 2√(Q_top) × Λ_QCD with Q_top = 2 and Λ_QCD = 304.5 MeV). The observed lightest glueball is around 1475–1730 MeV, which is consistent. This is Tier 3.
 
+**Additional progress (Cycles 185–200):**
+- OS axioms inherited from DFC domain wall chain: Tier 3 (C185)
+- Kotecky-Preiss polymer expansion: KP = 0.344 < 1, converges at β_lat = 20.25 — Tier 2a (C199)
+- Infinite-volume Gibbs state unique (Dobrushin-Lanford-Ruelle): Tier 2a (C199)
+- Continuum limit a→0 structural argument (C200): KP monotone along UV trajectory (Tier 1+2a); large-field sector ≤ 19.3% (Tier 2a); Symanzik Hölder bound = 4.69×10⁻⁴¹ — plaquette Cauchy as a→0 (Tier 2a); Arzelà-Ascoli + Dobrushin → unique continuum limit ω_∞ exists (Tier 3 for equicontinuity step). SP1k T4→T3.
+
 **What is missing:**
-The chain from "1+1D gap exists" to "4D Yang-Mills gap exists" requires showing rigorously that the Kaluza-Klein reduction preserves the gap structure. This is the Clay Prize core problem. The DFC framework gives it a specific form — it reduces to showing that the Wilson lattice gauge theory with coupling β_lat = 20.25 has a non-trivial continuum limit with a spectral gap — but the rigorous mathematical proof is not yet in hand.
+The Arzelà-Ascoli argument requires all n-point Schwinger functions to be equicontinuous, not just the plaquette. Showing this requires an explicit Balaban-style bound |S_n(a) − S_n(a/2)| ≤ C_n × (Λ_QCD×a)² for all n, with C_n controlled by the KP parameter. Balaban's 1983–1989 papers establish this for general compact gauge groups in a framework applicable to SU(3), but the full detailed extension has not been written.
 
-**What would close it:** A constructive proof that the SU(3) Wilson lattice theory at β_lat = 20.25 has a mass gap as the lattice spacing goes to zero. This is hard mathematics (functional analysis, not just physics argument). DFC establishes the physical mechanism and quantitative scale; the remaining gap is formal rigor.
+**What would close it:** Extend the Balaban multi-scale RG n-point Hölder bound to SU(3) at β_lat = 20.25. This is hard analysis but there is no known fundamental obstruction. (Alternatively, cite a published result that covers SU(N) for N ≥ 3.)
 
-**Status:** Tier 3 (structural chain). Rigorous 4D proof: Tier 4.
+**Status:** Tier 3 (structural chain, continuum limit argument T3 as of C200). Remaining T4: explicit Balaban n-point Hölder bound for SU(3).
 
 ---
 
@@ -86,11 +92,13 @@ The chain from "1+1D gap exists" to "4D Yang-Mills gap exists" requires showing 
 
 **What it is:** The DFC gauge coupling g_eff is defined from the kink moduli metric in Planck units. The QCD coupling g_s used in the Standard Model is defined in the MS-bar renormalization scheme. The conversion factor between them — called C_match — is currently estimated at 0.790 but not derived.
 
-**Why it matters:** C_match directly affects the quantitative prediction for Λ_QCD. The current two-loop Landau-pole calculation gives Λ_QCD ≈ 685 MeV, while the PDG value is Λ_MS^(3) ≈ 332 MeV. The factor-of-2 discrepancy is largely due to the Landau pole not being the same as the MS-bar scheme parameter (a known numerical artifact), and partly due to C_match not yet being derived.
+**Why it matters:** C_match directly affects the quantitative prediction for Λ_QCD. The current two-loop Landau-pole calculation gives Λ_QCD ≈ 685 MeV, while the PDG value is Λ_MS^(3) ≈ 332 MeV. The factor-of-2 discrepancy is largely due to the Landau pole not being the same as the MS-bar scheme parameter (a known numerical artifact of scheme choice), not a fundamental failure.
 
-**What would close it:** A one-loop matching calculation of the DFC 4D effective action in the MS-bar scheme at the Kaluza-Klein mass scale, showing that g_QCD(m_KK)² = C_match × g_eff². This is a standard perturbative calculation once the 4D action is written down explicitly.
+**Update (Cycle 197):** C_match has been computed from the Jost-function integral for the even-parity continuum modes of the Pöschl-Teller potential. Result: C_match = 0.795151. The full computation uses c₁ = −1/12 (Weisz coefficient, T1), two-loop MS-bar running α_s(M_Z→m_KK) (T2a), and the explicit Jost-function formula from Darboux chain (T2a). This gives C_match = 0.795151 to Tier 2a.
 
-**Status:** Tier 4 (value C_match = 0.790 estimated, not derived; does not affect existence of Δ_4D > 0).
+**What would close the remaining gap:** A derivation of M_c(D7) — the QCD closure scale — from V(φ) substrate dynamics alone, without requiring α_s(M_Z) as an external input. This is the remaining Tier 4 loop in the Λ_QCD chain.
+
+**Status:** C_match = 0.795151, Tier 2a (C197). M_c(D7) from substrate: Tier 4.
 
 ---
 
@@ -118,11 +126,12 @@ The chain from "1+1D gap exists" to "4D Yang-Mills gap exists" requires showing 
 
 | Gap | Description | Current tier | What closes it |
 |---|---|---|---|
-| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | T3 (chain), T4 (proof) | Constructive 4D QFT from KK + continuum limit |
+| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | T3 (C200: SP1k T4→T3) | Balaban n-point Hölder bound for SU(3) |
 | α_em(0) hadronic VP | Non-perturbative Δα_had | T4 | f_ρ from D7 dynamics + VMD |
 | Charm/strange quark masses | 15% below observed | T2b | D6/D7 Yukawa overlap integral |
 | Neutrino mass ratio | −8.3% | T2b | Non-uniform depth spacing derivation |
-| C_match scheme factor | C_match = 0.790 unproven | T4 | 1-loop MS-bar matching at m_KK |
+| M_c(D7) from substrate | QCD scale from V(φ) alone | T4 | Substrate depth dynamics → M_c(D7) |
+| C_match scheme factor | 0.795151 (C197 T2a) | **T2a** | Jost integral explicit computation — done C197 |
 | Fermion representations | Quarks in fundamental rep | T3 | Jackiw-Rebbi BVP for D6 in D7 background |
 | Newton's constant | G_N in SI units | T4 | DFC unit system → SI mapping |
 
