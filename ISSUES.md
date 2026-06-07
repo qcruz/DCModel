@@ -472,6 +472,16 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Part D: Even-parity continuum (ω > 2m_KK) produces non-zero c_gauge — ∫EVEN×EVEN×EVEN ≠ 0; threshold suppression factor exp(-π√3/2) ≈ 0.066 [T3 structural estimate]; c_gauge(cont) ≈ 0.527 [T3].
   Part E: C_match corrected to 0.791 (tree-level T2a = 0.790 + continuum threshold T3 ≈ 0.001); C193 estimate 0.841 RETRACTED. SP5 threshold tier: T3 (unchanged), argument corrected and strengthened by T1 parity result. Remaining T4 gap: explicit Jost-function integral ∫ρ_even(ω)f_match(ω)dω over n=2 PT even-parity scattering states. Clay: ~67% (unchanged). CPC: ~35% (unchanged).
   Files: `equations/ym_c_gauge_explicit.py` (Cycle 196)
+- **Cycle 197: SP5 Jost-function integral — c_gauge(cont)=2.773063 T2a; C_match=0.795151 T2a; SP5 threshold T3→T2a.** ym_jost_function.py:
+  CORRECTED Jost formula via Darboux chain: prior formula e^{iky}(k+iκt)(k+2iκt)/D was missing κ²sech²(κy) term; correct formula: psi_Jost = e^{iky}[(k+iκt)(k+2iκt)+κ²sech²]/D; analytic ODE check confirms residual exactly zero; 5-pt FD confirms rel-res < 4e-10 [T1].
+  Part A [T1]: ODE check 5-pt FD PASS (h=2e-3, optimal for float64); T(k) PASS (err <2e-16).
+  Part B [T1]: even-parity state parity=0 and asympt err < 1e-15 for all k tested.
+  Part C [T1]: sech^8 vertex normalization residual 2.22e-16.
+  Part D [T2a]: c_gauge(cont) = 2.773063 [numerical Jost integral, err ~3e-14]; C196 estimate 0.527 was factor ~5× too small (used wrong scale for suppression factor).
+  Part E [T2a]: delta_C = 5.2e-3 (0.66%); C_match_final = 0.795151.
+  SP5 threshold: T3→T2a. C_match history: C193=0.841 RETRACTED; C196=0.791 superseded; C197=0.795151 [T2a definitive].
+  Remaining SP5 T4 gap: M_c(D7) derivation from V(phi) substrate dynamics (needed to close Λ_QCD chain fully from first principles). Clay: ~67% (unchanged). CPC: ~35% (unchanged).
+  Files: `equations/ym_jost_function.py` (Cycle 197)
 
 ---
 
