@@ -243,7 +243,7 @@ kink profile to the gauge theory's quadratic Casimir. The goal is to develop thi
 a rigorous mathematical argument.
 
 **Overall Clay challenge progress: ~67%**
-(C198: SP1 finite-volume T3→T2a — ym_sp1_finite_volume.py; C197: SP5 threshold T3→T2a — c_gauge(cont)=2.773 T2a, C_match=0.7952 T2a; C196: c_gauge(n=1)=0 T1 parity; C195: SP1i T4→T2a, SP1 no T4 gaps, SP1 55%→65%; C194: Balaban RG UV flow T2a, Haar moments T2a — SP1 48%→55%; C191-193: R1/R2/C_match/threshold T3 or T2a; SP2 T3(4D) [C189]; SP5 T4→T3 [C188]; SP3 T2a [C187]; SP4 T2a [C184]; remaining T4: SP1 continuum a→0 (Balaban formal), SP5 M_c(D7) from substrate)
+(C199: SP1j infinite-volume T3→T2a — KP=0.344<1, Dobrushin unique ω_∞, Δ_gap uniform, GNS vacuum; C198: SP1 finite-volume T3→T2a — ym_sp1_finite_volume.py; C197: SP5 threshold T3→T2a — c_gauge(cont)=2.773 T2a, C_match=0.7952 T2a; C196: c_gauge(n=1)=0 T1 parity; C195: SP1i T4→T2a, SP1 no T4 gaps, SP1 55%→65%; C194: Balaban RG UV flow T2a, Haar moments T2a — SP1 48%→55%; C191-193: R1/R2/C_match/threshold T3 or T2a; SP2 T3(4D) [C189]; SP5 T4→T3 [C188]; SP3 T2a [C187]; SP4 T2a [C184]; remaining T4: SP1k continuum a→0 (Balaban formal — Clay core), SP5 M_c(D7) from substrate)
 
 **Clay Prize Confidence Score (CPC): ~35%**
 
@@ -258,7 +258,7 @@ CPC is distinct from progress %: it measures P(the DFC framework, continued to c
 
 | # | Sub-problem | Tier | Progress | Key equation | Notes |
 |---|---|---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | **65%** | `ym_sp1_finite_volume.py` | SP1i T4→T2a [C195]: M_p(SU(3))≤9^p T1; **C198 finite-volume T3→T2a**: Z_N>0 T1, Seiler RP eigenvalue 5.21e8>>0 T2a, M_p ratios<<1 T1, H_OS bounded T2a; SP1 finite-volume complete T2a; remaining: infinite-vol L→∞ T3, continuum a→0 T4 (Balaban formal) |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | **65%** | `ym_sp1_finite_volume.py`, `ym_infinite_volume.py` | SP1i T4→T2a [C195]: M_p(SU(3))≤9^p T1; C198 finite-volume T3→T2a: Z_N>0 T1, Seiler RP T2a, H_OS bounded T2a; **C199 SP1j infinite-volume T3→T2a**: KP=0.344<1 T2a, Dobrushin unique ω_∞ T2a, Δ_gap(L) uniform T2a, GNS vacuum unique T2a; remaining: SP1k continuum a→0 T4 (Balaban formal — Clay core) |
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain)** | **65%** | `ym_4d_gap_extension.py` | 1+1D T2a [C180]; 4D: PT spectrum T1 (ω₁=√(3α/2)), KK decoupling T2a (m_shape/Λ=7.95e19), Δ_4D≥861 MeV T3 [C189]; Q4 T4→T3 |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | Q_top^YM∈ℤ T2a [C187]: BPST Q=1 T1, π₃(SU(3))=ℤ T1, SU(2)≅S³ verified; [H,Q]=0 T1; S_inst=27π²>0 T2a; gap in n≠0 sectors T3; domain wall↔instanton T3 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | G1 T3 [C182]; G2 T2a; G3 T3 [C183]; G3 full T2a [C184]: Tr(T^a T^b)=δ/2 T1 (8×8 res 1e-16), flat metric T1, curvature 10⁻⁴⁰ T2a |
