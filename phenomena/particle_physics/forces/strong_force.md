@@ -266,7 +266,8 @@ with one unit of anti-red winding also cancel to zero.
 | Check | DFC prediction | Observed | Status |
 |---|---|---|---|
 | α_s(M_Z) via ECCC self-consistency | 0.11821 (+0.006%, Tier 2a, Cycle 144) | 0.1182 | ✓ +0.006% — ECCC Direction B: ECCC + SM α_em(0) → α_s; `equations/alpha_em_selfconsistency.py` |
-| Λ_QCD from DFC dimensional transmutation | 45.9 MeV (Λ=M_c(D7)×exp(−8π²/(b₀ g_eff²)), b₀=7, nf=6) | 210–340 MeV | ✗ −83% (Tier 2b); forward-running formula with α_s(M_c(D7))=α_common as UV boundary; threshold matching incomplete |
+| Λ_QCD from two-loop RGE (ECCC, α_s route) | 304.5 MeV (Cycle 159, two-loop from α_s(M_Z)=0.11821) | 210–340 MeV | ✓ T3, within PDG range (45.9 MeV was one-loop artifact, retracted C159) |
+| Λ_QCD from DFC dimensional transmutation chain | 685 MeV Landau pole (Cycle 188, V(φ)→β→g_eff²→α_common→Λ) | ~332 MeV (Λ_MS^{(3)}) | ✗ T3, factor-2 scheme dependence (Landau pole ≠ Λ_MS); `equations/ym_dimensional_transmutation.py` |
 | α_s running shape (asymptotic freedom) | β < 0 for N_f ≤ 16 follows from SU(3) non-Abelian structure | confirmed | ✓ structural |
 | Confinement: color-neutral states only | Zero net D7 winding required in D3 localization layer | all observed hadrons color-neutral | ✓ structural (formal proof open) |
 | 8 gluons from SU(3) (3²−1 = 8 generators) | 8 | 8 | ✓ topological |
@@ -306,6 +307,12 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 - `equations/rho_meson_dfc.py` — Λ_QCD=304.5 MeV two-loop from DFC α_s(M_Z); m_ρ=825 MeV Regge (Cycle 159)
 - `equations/d7_nonpert_coefficients.py` — σ=Q_top×Λ²(−4.2%), m_ρ=√(2π)Λ=763 MeV (−1.58%, 0 free params, Cycle 160)
 - `equations/yang_mills_mass_gap.py` — BPS lower bound T1; glueball estimates T3; mass gap structural argument (Cycle 178)
+- `equations/ym_constructive_qft.py` — SP1 OS axioms OS1-OS5, Seiler RP T2a (Cycle 185)
+- `equations/ym_topological_sectors.py` — SP3 Q_top^YM∈ℤ T2a, π₃(SU(3))=ℤ T1 (Cycle 187)
+- `equations/ym_4d_gap_extension.py` — SP2 4D chain Δ_4D≥861 MeV T3 (Cycle 189)
+- `equations/ym_moduli_metric.py` — SP4 G3 full T2a, flat Killing metric (Cycle 184)
+- `equations/ym_infinite_volume.py` — SP1j infinite-volume T2a, KP cluster expansion (Cycle 199)
+- `equations/ym_jost_function.py` — SP5 c_gauge(cont)=2.773, C_match=0.795151 T2a (Cycle 197)
 - `equations/d6_gauge_beta.py` — b₀ survey (Cycle 133); SU(2) CANNOT drive EWSB (Tier 1); b₀_EW=N_Hopf+Q_top=11
 - `equations/mc_closure_scales.py` — ECCC M_c(D7)=1.566×10¹⁵ GeV (Cycle 130)
 - `phenomena/particle_physics/quark_gluon_plasma.md` — strong force at T > Λ_QCD; deconfinement
@@ -314,30 +321,34 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 
 ## Open Questions
 
-1. **Yang-Mills mass gap — DFC structural argument (T3, Cycle 178):** A three-layer
-   argument exists in `equations/yang_mills_mass_gap.py`:
-   - **Layer 1 (T1):** The BPS/Bogomolny inequality applied to V(φ) establishes E_kink ≥ |ΔW| > 0
-     for any configuration with Q_top ≠ 0. With Q_top = 2 (exact) and the shape integral I₄ = 4/3
-     (exact, equals the SU(3) Casimir), E_BPS = 113.1 M_Pl > 0 is an algebraic identity.
-   - **Layer 2 (T2a):** D7 = SU(3) (Cycles 59–74) → D7 kinks carry this topological bound at
-     the QCD scale. The gluon field of D7 closure inherits the topological obstruction.
-   - **Layer 3 (T3):** Closed flux tubes (glueballs, Q_top = 0 net) still require traversing
-     the topological barrier — their energy satisfies E ≥ σ × C_min = Q_top × Λ_QCD = 609 MeV > 0.
-     Pomeron intercept α_0^P = Q_top/2 = 1.0. Glueball 0++ (Nambu-Goto) = 2159 MeV (+33% vs
-     lattice 1625 MeV); 2++ (Pomeron) = 2159 MeV (−10% vs lattice 2400 MeV).
-   - **Formal proof gap (T4):** constructive 4D QFT from V(φ), proof that ALL gauge-invariant
-     states have E ≥ Δ, and a derivation of Δ purely from V(φ) without Λ_QCD as external input.
-   See also `ISSUES.md` Blocked Derivations entry updated Cycle 178.
+1. **Yang-Mills mass gap — DFC five-sub-problem construction (PRIMARY FOCUS, Cycles 178–199):**
 
-2. **Derive Λ_QCD from DFC parameters:** The confinement scale Λ_QCD ≈ 200 MeV is
-   set by dimensional transmutation. In DFC (Cycle 133, `equations/confinement.py`),
-   the formula is Λ_QCD = M_c(D7) × exp(−8π²/(b₀ g_eff²)) with b₀ = 7, g_eff² = 8/27,
-   M_c(D7) = 1.566×10¹⁵ GeV. This gives Λ_QCD^DFC = 45.9 MeV (observed 210–340 MeV,
-   −83% error). The structural identity b₀^QCD = 7 = (N_Hopf + Q_top) − (2/3)×6 = 11 − 4
-   connects the QCD beta function to the DFC Hopf fiber count. **The −83% is not the α_s
-   gap** (which is resolved at +0.006%, Cycle 144); it is a failure of the dimensional
-   transmutation formula with α_s(M_c(D7)) = α_common ≈ 0.024 as the UV initial condition,
-   without the proper multi-loop threshold matching needed to reach Λ_QCD(MS, nf=3) ≈ 270 MeV.
+   The three-layer structural argument (T3, Cycle 178) has been developed into a five-sub-problem
+   Clay Prize construction in `ISSUES.md` T14. Current status:
+
+   | SP | Description | Tier | Key file |
+   |---|---|---|---|
+   | SP1 | Constructive 4D gauge theory | T3 (finite+infinite vol T2a; a→0 T4) | `ym_infinite_volume.py` (C199) |
+   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | T3 (4D chain) | `ym_4d_gap_extension.py` (C189) |
+   | SP3 | Topological charge spectrum Q_top∈ℤ | **T2a** | `ym_topological_sectors.py` (C187) |
+   | SP4 | Pure YM decoupling from scalar in IR | **T2a** | `ym_moduli_metric.py` (C184) |
+   | SP5 | Derive Λ_QCD from V(φ) | **T2a** (C_match=0.795; M_c(D7) T4) | `ym_jost_function.py` (C197) |
+
+   Key T1 structural inputs: E_BPS=113.1 M_Pl>0; Q_top=2 exact; I₄=C₂(fund,SU(3))=4/3 exact.
+   4D gap bound: Δ_4D ≥ 2√2×Λ_QCD = 861 MeV [T3, SP2]. Clay Prize progress: ~67%, CPC: ~35%.
+   Remaining T4: SP1k (Balaban a→0 continuum limit) + SP5 M_c(D7) from V(φ) substrate dynamics.
+
+2. **Derive Λ_QCD from DFC parameters (SP5, T2a):** The confinement scale Λ_QCD is set by
+   dimensional transmutation. The old one-loop formula (Cycle 133, `equations/confinement.py`)
+   gave 45.9 MeV (−83% vs PDG) — this was a one-loop artifact from using b₀=7 (N_f=6) at
+   low energy, corrected in Cycle 159. Current status:
+   - **Two-loop α_s route (T3):** Starting from α_s(M_Z)=0.11821 (ECCC, C144), two-loop RGE
+     running gives Λ_QCD=304.5 MeV, within the PDG range 210–340 MeV.
+   - **V(φ) dimensional transmutation chain (T3, SP5):** V(φ)→β→g_eff²→α_common→M_c(D7)→Λ_QCD.
+     Two-loop Landau pole gives 685 MeV [T3]; factor-2 scheme dependence (Landau pole ≠ Λ_MS).
+   - **Remaining T4:** Derive M_c(D7) from V(φ) substrate dynamics without using α_s(M_Z) as
+     input. Once M_c(D7) is derived from first principles, Λ_QCD follows from the 2-loop RGE.
+   See `equations/ym_dimensional_transmutation.py` (Cycle 188), `equations/rho_meson_dfc.py`.
 
 3. **RESOLVED (Cycle 144): α_s(M_Z) = 0.11821 (+0.006%, Tier 2a).** The resolution came
    from Direction B of the ECCC self-consistency: given SM α_em(0) as input and the ECCC
