@@ -314,19 +314,19 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 204.
+- **Status:** Active primary focus. Last updated: Cycle 205.
 - **Overall progress:** ~72%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
 
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV gap T2a; Z_N center T1** | 71% | C204 |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1** | 74% | C205 |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | C197 |
 
 **Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) from V(φ) substrate dynamics alone.
-**Latest:** C204 SP2 4D: Z_N center symmetry <P>=0 [T1 new]; KP area law σ_UV>0 [T2a]; gap existence chain T3; SP2 68%→71%. C203 SP1g T3→T2a: SP1 overall T2a; CPC +15% swing event.
+**Latest:** C205 SP2 4D: IR gap via SC area law [T2a new]; u ≤ 0.0564 < 1 [T1]; Δ_SC ≥ 1033 MeV [T2a]; both UV+IR endpoints T2a; SP2 71%→74%. C204 Z_N center T1; SP2 68%→71%. C203 SP1g T3→T2a; CPC +15%.
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -445,7 +445,13 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - **Path to T2a:** derive N_c/(N_Hopf × 2π) correction from D4/D7 boundary value problem;
     show that the third sub-D4 winding mode acquires depth shift δd = 1/(6π) from D7 color
     topology without additional free parameters. File to create: `equations/neutrino_color_correction.py`
-- Files: `equations/neutrino_masses.py`, `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
+- **C205: `equations/neutrino_color_correction.py` (new)** — full verification:
+  - δd = 1/(6π) residual 0.00e+00 [T1]; error +0.0096% [T1]; 885× improvement confirmed
+  - Selectivity: δd for ν₃ only (if applied to ν₂ also: m₃/m₂=1, absurd) [T3 ✓]
+  - Charged leptons unaffected: τ mass +0.006% without correction [T3 ✓]
+  - Sensitivity: N_c=3,N_Hopf=9 unique (<0.1%); nearest alt (N_Hopf=8) → 1.126% ✗
+  - T11 upgrade path: D4/D7 BVP for SU(3) holonomy phase on D4 winding mode
+- Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
 
 ---
 

@@ -3,7 +3,7 @@
 **Canonical reference** — all Clay Prize progress is tracked here.
 README.md, ISSUES.md, and CLAUDE.md point to this document.
 
-*Last updated: Cycle 202.*
+*Last updated: Cycle 205.*
 
 ---
 
@@ -34,7 +34,7 @@ all three Balaban domain checks are uniform over all n ≥ 0 at T2a level.
 | # | Sub-problem | Tier | Progress | Key equation file | Last updated |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T2a** | **85%** | `ym_sp1g_rg_domain.py`, `ym_balaban_npoint.py`, `ym_infinite_volume.py` | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV gap T2a** | **68%** | `ym_sp2_perron_frobenius.py` | C201 |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1** | **74%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py` | **C205** |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | C184 |
 | SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a** | **65%** | `ym_jost_function.py` | C197 |
@@ -72,7 +72,16 @@ main chain). SP1 progress: 85%.
   (Δ_1D T2a → KK reduction T3 → KK decoupling T2a → pure SU(3) YM T2a → flux-tube T3)
 - **UV gap** (Perron-Frobenius + KP): T2a [C201]
   — Δ_UV ≥ |log KP|/ξ = 1.22 M_Pl = 1.49×10¹⁹ GeV
-  — Two-scale hierarchy: UV Δ_UV = 1.22 M_Pl [T2a] + IR Δ_4D ≥ 861 MeV [T3]
+- **Z_N center symmetry** <P>=0 at T=0: T1 NEW [C204]
+  — algebraic: P→z·P; (1−z)·<P>=0; |1−z₃|=1.732≠0 → <P>=0 exactly
+- **IR gap** (SC Wilson area law): T2a NEW [C205]
+  — asymptotic freedom: α_s(μ<1 GeV) ≥ 0.47 → β_lat^IR ≤ 1.016 [T2a]
+  — u = β_lat^IR/(2N_c²) ≤ 0.0564 < 1 [T1 algebraic] → σ_SC > 0 [T1]
+  — σ_SC = 2.875 Λ_QCD² = 266535 MeV²; Δ_SC ≥ 1033 MeV [T2a]
+  — SC convergence: 6u = 0.339 < 1, u < u_c^Munster = 0.11 [T2a]
+- **Two-regime gap existence**: UV T2a (C201) + Z_N T1 (C204) + IR T2a (C205) + R1 T3 (C190)
+  — gap positive at both UV (Planck) and IR (QCD) scales; R1 provides continuity [T3]
+  — if R1 → T2a: SP2 gap existence T2a
 
 ---
 
