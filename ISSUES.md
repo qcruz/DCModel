@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-07 (Cycles 122–201)
+**Last updated:** 2026-06-07 (Cycles 122–206)
 
 ---
 
@@ -314,19 +314,19 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 205.
+- **Status:** Active primary focus. Last updated: Cycle 206.
 - **Overall progress:** ~72%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
 
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1** | 74% | C205 |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **76%** | **C206** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | C197 |
 
 **Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) from V(φ) substrate dynamics alone.
-**Latest:** C205 SP2 4D: IR gap via SC area law [T2a new]; u ≤ 0.0564 < 1 [T1]; Δ_SC ≥ 1033 MeV [T2a]; both UV+IR endpoints T2a; SP2 71%→74%. C204 Z_N center T1; SP2 68%→71%. C203 SP1g T3→T2a; CPC +15%.
+**Latest:** C206 R1 SC domain T3→T2a: polymer analyticity → no phase transition β<1.1 [T1+T2a]; SC Weierstrass M-test; β_lat^IR=1.016<β_c^SC=1.1036 [T2a]; R1 domain map (0,1.1) T2a+(17,∞) T2a+[1.1,17] T3; SP2 74%→76%. C205 IR gap T2a; C204 Z_N center T1; C203 SP1g T3→T2a CPC+15%.
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -401,11 +401,37 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - **Status (Cycle 198):** T12 blocking gap unchanged. The Yang-Mills work has promoted the structural argument for σ>0 to T3 (SP2+SP4), but the explicit σ=Q_top×Λ² derivation from V(φ) (needed for δ(Δα)^{NP} from first principles) remains T4, tied to SP2 reaching T2a (4D rigorous). No numerical improvement to 1/α_em(0) from Cycles 168–198.
 - Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/d7_nonpert_coefficients.py` (Cycle 160), `equations/alpha_em_eccc.py` (Cycle 139), `equations/ym_4d_gap_extension.py` (Cycle 189), `equations/ym_gauge_decoupling.py` (Cycle 181)
 
-### T10 — Near-maximal θ₂₃ argument self-contradicts (Cycle 65)
-- The structural DFC argument for θ₂₃ ≈ 45° is "near-degeneracy of 2nd/3rd neutrino winding modes"
-- But observed mass-squared differences give m₃ ≫ m₂ (Δm²₃₁/Δm²₂₁ = 33.8) — contradicts near-degeneracy
-- Near-maximal θ₂₃ remains unexplained in DFC; the structural argument is not viable
-- Files: `phenomena/particle_physics/neutrino_oscillations.md`, `equations/neutrino_oscillations.py`
+### T10 — Near-maximal θ₂₃: near-degeneracy argument retracted; Z₂ symmetry argument proposed (C65, updated C206)
+
+**Near-degeneracy argument RETRACTED.** The claim that θ₂₃ ≈ 45° requires m₂ ≈ m₃ was wrong.
+In a 2×2 mixing system, tan(2θ) = 2ε/δ where ε is the off-diagonal coupling and δ is the
+diagonal splitting. Near-maximal mixing (θ → 45°) occurs when:
+- (a) near-degeneracy: δ → 0 with ε fixed, OR
+- (b) large off-diagonal: ε >> δ with the masses held fixed
+
+Case (b) is entirely consistent with m₃ >> m₂: large off-diagonal elements in the flavor-basis
+mass matrix rotate the eigenstates maximally even when eigenvalues differ greatly. The mass ratio
+Δm²₃₁/Δm²₂₁ = 33.8 does NOT preclude θ₂₃ ≈ 45°.
+
+**Updated DFC structural argument [T3]:**
+The S³/SU(2) manifold at D6 depth carries a Z₂ exchange symmetry: the second and third winding
+modes of S³ (which correspond to the μ and τ flavors) are related by the anti-podal map on S³.
+This Z₂ symmetry (μ ↔ τ interchange) forces the 2×3 block of the PMNS matrix to have equal
+entries: |U_μ₂| = |U_τ₂| and |U_μ₃| = |U_τ₃|, which is precisely maximal θ₂₃ = 45°.
+
+The observed value θ₂₃ = 49° (deviation of ~4° from 45°) represents a small Z₂-breaking correction.
+A candidate correction source: the same color-topology depth shift δd = N_c/(N_Hopf×2π) = 1/(6π)
+that explains the ν₃ mass ratio correction (C205) also breaks the μ↔τ symmetry slightly, since ν₃
+couples preferentially to D7 color winding. Whether δd = 1/(6π) quantitatively explains the 4°
+deviation has not been calculated.
+
+**Status:**
+- Near-degeneracy argument: RETRACTED (conceptual error)
+- Z₂ exchange symmetry → θ₂₃ = 45° at leading order: T3 structural [C206]
+- Deviation 49° − 45° = 4°: open; color correction δd = 1/(6π) is candidate but not calculated
+- Quantitative: θ₂₃ derivation from D4/D6 projection geometry is T4 (no formula yet)
+
+**Files:** `phenomena/particle_physics/neutrino_oscillations.md` (text at lines 117-126 needs update), `equations/neutrino_oscillations.py`
 
 ### T11 — Neutrino hierarchy ratio: metric confusion + revised error (Cycle 65; corrected Cycle 165)
 - The claimed "4.3× failure" (DFC gives 1.34, observed 5.71) conflated two different quantities:

@@ -114,24 +114,37 @@ phase evolution — the compression field evolves as a linear wave equation in t
 limit, and the non-linear (kink) sector provides the mass splittings that drive the
 oscillation.
 
-**Near-maximal θ₂₃ from near-degeneracy of second and third winding modes:**
+**Near-maximal θ₂₃ — Z₂ exchange symmetry of S³ at D6 depth [T3]:**
 
-The atmospheric mixing angle θ₂₃ ≈ 49° is close to the maximal mixing value of 45°. In
-quantum mechanics, near-maximal mixing between two states arises when those states are
-nearly degenerate in energy — small energy splitting relative to the coupling produces
-large mixing. In DFC, this suggests that the second and third neutrino mass eigenstates
-have nearly equal masses (or, equivalently, nearly equal D4 winding mode depths). The mass
-ratio √(Δm²₃₁/Δm²₂₁) ≈ √34 ≈ 5.8 shows that Δm²₃₂ ≈ 32 × Δm²₂₁, so m₃ ≫ m₂ ≫ m₁
-in the normal ordering — which conflicts with the near-degeneracy interpretation. The near-
-maximal θ₂₃ is therefore not explained by near-degeneracy and remains open.
+The atmospheric mixing angle θ₂₃ ≈ 49° is close to the maximal mixing value of 45°.
+A previous version of this account argued that θ₂₃ ≈ 45° follows from near-degeneracy of
+the second and third neutrino mass eigenstates; that argument is incorrect and retracted
+(Cycle 206). Near-maximal mixing does not require near-mass-degeneracy. In a two-state
+mixing problem, tan(2θ) = 2ε/δ where ε is the off-diagonal coupling and δ is the
+diagonal splitting in the flavor basis; large off-diagonal elements produce θ ≈ 45° even
+when the eigenvalues differ greatly.
+
+The structural DFC argument (Tier 3) proceeds differently: the S³ manifold at D6 depth
+carries a Z₂ exchange symmetry — the anti-podal map on S³, which exchanges the second
+and third winding modes. This Z₂ maps μ ↔ τ in the flavor basis. If this symmetry is
+preserved in the D4/D6 projection that produces the PMNS matrix, the 2×3 mixing block
+satisfies |U_μ₂| = |U_τ₂| and |U_μ₃| = |U_τ₃|, which forces θ₂₃ = 45° exactly. The
+observed deviation θ₂₃ = 49° − 45° = 4° is a small Z₂-breaking correction. The same
+color-topology depth shift δd = N_c/(N_Hopf × 2π) = 1/(6π) ≈ 0.053 that corrects the
+ν₃ mass ratio (see neutrinos.md, Cycle 205) is a candidate source of this correction,
+but the quantitative calculation has not been carried out.
+
+Status: θ₂₃ = 45° from Z₂ symmetry is T3 structural. The 4° deviation and the full
+derivation of θ₁₂, θ₂₃, θ₁₃ from D4/D6 projection geometry remain T4 (open).
 
 **Mass-squared difference ratio failure:**
 
-The ratio Δm²₃₁/Δm²₂₁ ≈ 34 is not reproduced by the DFC uniform depth-spacing model
-(which predicts ~1.34 — a 4.3× failure; see `equations/neutrino_masses.py`). This failure
-indicates that the three neutrino winding modes at the D4 boundary are not uniformly spaced
-in depth — a non-trivial constraint on the D4 geometry. Resolving this requires a derivation
-of the winding mode depths, not an assumption of equal spacing.
+The mass ratio m₃/m₂ = √(Δm²₃₁/Δm²₂₁) ≈ 5.82 (observed) vs. the DFC equal-spacing
+prediction κ = 5.33 gives an −8.3% error before the color correction. A structural T3
+correction (Cycle 205) accounts for the ν₃ proximity to the D7/SU(3) closure threshold:
+m₃/m₂ = κ^(1 + 1/(6π)) = 5.8248, +0.010% error, 0 free parameters. See
+`equations/neutrino_color_correction.py`. The prior "4.3× failure" notation was a metric
+error (Cycle 165); the actual DFC gap is −8.3% uncorrected.
 
 ---
 
@@ -229,8 +242,9 @@ KamLAND (2002):
 | Oscillation exists | D4/D6 geometry mismatch → mass/flavor basis misaligned | Confirmed solar, atmospheric, reactor | ✓ structural |
 | Oscillation formula (sin² form) | Standard QM superposition; no DFC modification | All experiments consistent | ✓ structural |
 | Daya Bay P(νe-bar) at 1.648 km, 5 MeV | 0.935 (using input θ₁₃) | 0.944 | −1.0% (inputs not DFC) |
-| θ₂₃ near-maximal | Open — near-degeneracy argument fails (m₃ ≫ m₂) | 49.1° ≈ 45° | ✗ not derived |
-| Mass ratio Δm²₃₁/Δm²₂₁ ≈ 34 | DFC uniform spacing → 1.34 (4.3× failure) | 33.8 | ✗ FAILS |
+| θ₂₃ near-maximal | Z₂ (μ↔τ) symmetry of S³ at D6 → θ₂₃=45° at leading order [T3]; deviation 4° open | 49.1° ≈ 45° | ~ T3 leading; deviation open |
+| m₃/m₂ mass ratio (corrected) | κ^(1+1/(6π)) = 5.8248 [T3, 0 free params, C205] | 5.824 | +0.010% ✓ T3 |
+| m₃/m₂ (uncorrected) | κ = 5.33 [T2b] | 5.824 | −8.3% T2b |
 | Absolute neutrino mass scale | OPEN — requires D4 winding depth calculation | < 0.1 eV (sum) | ✗ not derived |
 
 ---

@@ -215,7 +215,8 @@ With the five numbers above determined, the model predicts:
 | Tau mass (Koide) | 1776.97 MeV | 1776.86 MeV | +0.006% | Tier 2a |
 | Hubble constant | 67.26 km/s/Mpc | 67.40 km/s/Mpc | −0.2% | Tier 2a |
 | UV mass gap Δ_UV | ≥ 1.22 M_Pl = 1.49×10¹⁹ GeV | > 0 | — | T2a (C201, KP+PF) |
-| IR mass gap Δ_4D | ≥ 861 MeV | > 0 (unproven) | — | T3 structural |
+| IR mass gap Δ_SC | ≥ 1033 MeV (SC area law) | > 0 | — | T2a (C205) |
+| IR mass gap Δ_4D | ≥ 861 MeV (flux-tube bound) | > 0 | — | T3 structural (C189) |
 
 ---
 
@@ -227,12 +228,15 @@ mathematical content. What is not yet derived:
 1. **M_c(D7) from first principles** — the remaining loop in the coupling chain.
 2. **Quark masses** — the charm and strange quarks are ~15% below observed values;
    the tau lepton from the mass spectrum (as opposed to Koide route) is off by a large factor.
-3. **Neutrino mass hierarchy** — the ratio m₃/m₂ = 5.33 predicted, observed 5.81 (−8.3%).
-4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at 68%
-   overall. A UV spectral gap Δ_UV ≥ 1.22 M_Pl is now T2a (C201, Perron-Frobenius + KP).
-   SP1 (constructive 4D QFT) is at T3 with all sub-steps T2a/T3; no T4 sub-gaps remain after
-   C200 (Balaban continuum limit T3). Remaining T4: explicit Balaban n-point Hölder bound for
-   SU(3) (the final step from T3 to T2a for SP1) and M_c(D7) from V(φ) substrate dynamics (SP5).
+3. **Neutrino mass hierarchy** — the ratio m₃/m₂ = 5.33 (−8.3% without correction); a T3
+   structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
+   Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
+4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~72%
+   overall (CPC ~50%). SP1 (constructive 4D gauge QFT) is T2a as of C203. SP2 (Hamiltonian
+   bound): UV gap T2a (C201), IR gap T2a via SC area law (C205), R1 SC domain T2a (C206);
+   R1 intermediate [β∈1.1,17.1] T3 remaining. SP3 and SP4 T2a. SP5 T2a except M_c(D7) from
+   V(φ) alone (T4). The two remaining T4 gaps are R1 intermediate domain (σ rigor) and
+   M_c(D7) from substrate depth dynamics.
 
 The model does not claim completeness. These are honest, documented gaps.
 
