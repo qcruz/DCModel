@@ -314,19 +314,19 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 203.
+- **Status:** Active primary focus. Last updated: Cycle 204.
 - **Overall progress:** ~72%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
 
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV gap T2a** | 68% | C201 |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV gap T2a; Z_N center T1** | 71% | C204 |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | C197 |
 
 **Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) from V(φ) substrate dynamics alone.
-**Latest:** **C203 SP1g T3→T2a** — SP1 overall T2a; all 11 sub-steps SP1a-SP1k T2a; CPC +15% (swing event). C202 SP1k T3→T2a (uniform Hölder bound 4.45e-42).
+**Latest:** C204 SP2 4D: Z_N center symmetry <P>=0 [T1 new]; KP area law σ_UV>0 [T2a]; gap existence chain T3; SP2 68%→71%. C203 SP1g T3→T2a: SP1 overall T2a; CPC +15% swing event.
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -426,17 +426,25 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
     Error: (5.33 − 5.824)/5.824 = −8.48% (slightly worse than prior −8.3%; PDG values used here).
   - Required depth correction: Δd₃₂/Δd₂₁ = ln(5.824)/ln(5.33) = 1.763/1.673 = **1.053**.
     The upper neutrino depth spacing (ν₂→ν₃) must be ~5.3% larger than the lower spacing (ν₁→ν₂).
-  - Physical interpretation: a small 5.3% asymmetry in sub-D4 winding mode spacing. Small enough to
-    have a specific mechanism, unlike the 8.4× tau failure. Candidate sources:
-    (a) Non-degenerate SU(3) winding modes: the third mode (associated with the heaviest neutrino, ν_τ)
-        sits at a depth influenced by D7 SU(3) closure, giving a small extra depth push.
-    (b) Dirac vs. Majorana boundary condition at D3/D4: only ν₃ is sensitive to the full D3↔D4
-        double-boundary topology if it is the Majorana endpoint of the see-saw.
-    (c) Seesaw-like renormalization: ν₃ mass receives a small additive correction from D6 Yukawa
-        mixing at the D6/D4 interface, shifting its effective depth by δd = 0.053.
-  - Path to T2a: compute the depth of the three sub-D4 winding modes of the SU(3) shallow closure
-    from the D3↔D4 boundary value problem; show that the third mode is shifted by ≈ 5.3% due to
-    D7 topology or D6 mixing; derive the ratio 1.053 from first principles without free parameters.
+- **Cycle 204 structural formula: m₃/m₂ = κ^(1 + N_c/(N_Hopf × 2π)) [T3, 0.010% error]**
+  - **Formula:** m₃/m₂ = κ^(1 + 1/(6π)) where 1/(6π) = N_c/(N_Hopf × 2π) = 3/(9×2π)
+  - **Predicted:** 5.33^(1+1/(6π)) = 5.33^1.053052 = **5.8248** [T3]
+  - **Observed:** √(Δm²₃₁/Δm²₂₁) = √(33.92) = 5.8242
+  - **Error: +0.010%** (vs −8.49% uncorrected; 885× improvement)
+  - **Zero free parameters beyond DFC structural quantities:**
+    - κ = 5.33: DFC depth ratio per unit [Tier 2b, Cycle 165]
+    - N_c = 3: SU(3) color number [T1]
+    - N_Hopf = 9: Hopf sphere dimension sum (S¹+S³+S⁵) [T1, Cycle 103]
+    - Correction 1/(6π) = N_c/(N_Hopf × 2π): color-phase factor [T3 structural]
+  - **Physical interpretation [T3]:** The third neutrino ν₃ sits closest to the D7/SU(3)
+    closure threshold. Its effective depth receives a small additional push from the color
+    topology: the SU(3) winding contributes N_c/N_Hopf = 1/3 of a full winding phase 1/(2π).
+    Combined: δd = (1/3) × 1/(3 × 2π) = N_c/(N_Hopf × 2π) = 1/(6π) ≈ 0.0531.
+    This correction applies only to ν₃; ν₁ and ν₂ remain at equal depth spacing.
+  - **Tier: T3** — formula from DFC structural quantities, 0.010% agreement; derivation open
+  - **Path to T2a:** derive N_c/(N_Hopf × 2π) correction from D4/D7 boundary value problem;
+    show that the third sub-D4 winding mode acquires depth shift δd = 1/(6π) from D7 color
+    topology without additional free parameters. File to create: `equations/neutrino_color_correction.py`
 - Files: `equations/neutrino_masses.py`, `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
 
 ---

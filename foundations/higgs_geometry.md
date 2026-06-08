@@ -48,8 +48,8 @@ effects:
 ### Effect 1: Pressure from the D7 SU(3) Closure (Destabilizer)
 
 The SU(3) closure geometry (strong force) is also slightly squashed to break the right-copy flavor symmetry.
-This squashing propagates through their shared embedding in spacetime and exerts a "pressure" on
-the S³ weak closure geometry, tending to push it away from ε = 0 (the symmetric point).
+This squashing is geometrically communicated through the shared substrate depth region, producing
+a destabilizing coupling on the S³ weak closure geometry that makes ε = 0 energetically unstable.
 
 In the effective potential, this appears as a **negative mass-squared term**:
 
@@ -93,7 +93,7 @@ competition between the SU(3) closure geometry's pressure and the S³'s resistan
 The minimum (the vacuum expectation value) sits at:
 
 ```
-ε₀ = μ / √(2λ)     ← the vev, v ≈ 246 GeV
+ε₀ = μ / √(2λ)     ← the vev, v ≈ 247.83 GeV  [T2a, C145]
 ```
 
 ---
@@ -155,8 +155,8 @@ the squashing axis encounter resistance (that's the mass of W⁺, W⁻, and Z⁰
 
 The W mass:
 ```
-m_W = (1/2) g₂ v    where  v = 246 GeV
-m_W ≈ 80.4 GeV  ✓
+m_W = (1/2) g₂ v    where  v_DFC = 247.83 GeV  [T2a, C145]
+m_W^DFC = 79.67 GeV  (−0.88% vs 80.377 GeV observed; full chain in muon_lifetime.py)
 ```
 
 The Z mass:
@@ -178,7 +178,7 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 | Prediction | DFC value | Observed | Status |
 |---|---|---|---|
 | Higgs mass m_H | 124.4 ± 3.7 GeV (PDG m_t; Cycle 38) | 125.25 ± 0.17 GeV | ✓ (within 1σ) |
-| W mass m_W | (1/2)g₂ × 246 GeV = 80.4 GeV | 80.4 GeV | ✓ (inputs: g₂, v) |
+| W mass m_W | (1/2)g₂ × 247.83 GeV = 79.67 GeV [T2a, C145] | 80.377 GeV | −0.88% (inputs: g₂, v_DFC) |
 | Z mass m_Z | m_W/cos(θ_W) = 91.2 GeV | 91.2 GeV | ✓ (inputs: θ_W, m_W) |
 | Weinberg angle sin²θ_W | 0.231 (Route 3B) | 0.231 | ✓ |
 | Mexican hat potential shape | V = −μ²ε² + λε⁴ derived from geometry | Observed SM form | ✓ (structural) |
@@ -227,3 +227,4 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 - `equations/weinberg_angle_rg.py` — self-consistent M_c(D5/D6) ≈ 10¹³ GeV; M_c(D1) vs M_c(D5/D6) distinction
 - `foundations/two_scale_resolution.md` — T9 resolution: M_c(D1) ≠ M_c(D5/D6) (Cycle 79)
 - `equations/two_scale_check.py` — GUT-normalized crossing verification (Cycle 79)
+- `foundations/yang_mills_clay.md` — SP1 T2a (C203): constructive 4D gauge theory established; mass gap lower bound Δ_4D ≥ 861 MeV T3; Higgs hierarchy problem context (gap between EW and Planck scales)
