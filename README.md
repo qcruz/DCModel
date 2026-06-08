@@ -234,67 +234,26 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 
 ## Clay Prize Challenge: Yang-Mills Mass Gap
 
-**Status: Active primary focus** (Cycle 179 onward; see CLAUDE.md Primary Focus section)
+**Status: Active primary focus** (Cycle 179 onward)
 
-The DFC model provides a structural physical mechanism for the Yang-Mills mass gap
-that differs from all existing approaches: the topological obstruction from Q_top ≠ 0
-combined with the exact identity I₄ = C₂(fund, SU(3)) = 4/3 connects the substrate
-kink profile to the gauge theory's quadratic Casimir. The goal is to develop this into
-a rigorous mathematical argument.
+**Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
+(SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~68%**
-(C200: SP1k T4→T3 — Balaban structural argument: KP monotone T1, large-field 19.3% T2a, Symanzik Hölder 4.69e-41 T2a, Arzelà-Ascoli T3; SP1 no T4 sub-gaps, 65%→72%; C199: SP1j T3→T2a — KP=0.344<1, Dobrushin unique ω_∞; C198: SP1 finite-volume T3→T2a; C197: SP5 C_match=0.7952 T2a; C196: c_gauge(n=1)=0 T1; C195: SP1i T4→T2a; SP3 T2a [C187]; SP4 T2a [C184]; remaining T4: Balaban n-point Hölder bound SU(3) + SP5 M_c(D7) from substrate)
-
+**Overall Clay challenge progress: ~69%**
 **Clay Prize Confidence Score (CPC): ~35%**
 
-CPC is distinct from progress %: it measures P(the DFC framework, continued to completion, produces a proof candidate meeting the Jaffe-Witten criteria). Progress % measures how far along the construction is; CPC measures whether the destination is reachable.
-
-*Positive factors:* I₄ = C₂(fund,SU(3)) = 4/3 exact T1 (non-trivial structural link); OS-Seiler + flat Killing metric + Balaban UV fixed point all established literature extensions; SP3 T2a + SP4 T2a (topology and decoupling solid); M_p(SU(3)) ≤ 9^p T1 (Seiler-Simon domain condition met); SP1 has no T4 gaps; no fundamental obstruction found.
-*Negative factors:* SP1 Balaban 4D convergence is genuinely hard (unsolved in 80 years of Yang-Mills math); T3→rigorous math gap is large; Clay requires proof for any SU(N), N≥2 while DFC specifically derives N=3; M_c(D7) from substrate remains T4.
-*Key swing events (up):* SP1 Balaban closes (+15%); c_gauge explicit calculation confirms T3 (+5%).
-*Key swing events (down):* Hard obstruction in Balaban for SU(3) (−15%); N=3 specificity incompatible with "any gauge group" requirement (−10%).
-
-### Sub-Problem Tracking
-
-| # | Sub-problem | Tier | Progress | Key equation | Notes |
-|---|---|---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T3** | **72%** | `ym_sp1_finite_volume.py`, `ym_infinite_volume.py`, `ym_balaban_sp1k.py` | C199 SP1j T2a: KP=0.344<1, Dobrushin unique ω_∞; **C200 SP1k T4→T3**: KP monotone T1, large-field weight 19.3% T2a, Symanzik Hölder 4.69e-41 T2a, Arzelà-Ascoli+Dobrushin T3; **SP1 no T4 sub-gaps**; remaining T4: Balaban n-point Hölder bound for SU(3) N_c=3 |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain, UV gap T2a)** | **68%** | `ym_sp2_perron_frobenius.py` | 1+1D T2a [C180]; 4D: PT T1, KK T2a, Δ_4D≥861 MeV T3 [C189]; **C201 UV gap**: Δ_UV≥|log KP|/ξ=1.22 M_Pl=1.49×10¹⁹ GeV T2a (P-F+KP); two-scale hierarchy UV T2a + IR T3 |
-| SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | Q_top^YM∈ℤ T2a [C187]: BPST Q=1 T1, π₃(SU(3))=ℤ T1, SU(2)≅S³ verified; [H,Q]=0 T1; S_inst=27π²>0 T2a; gap in n≠0 sectors T3; domain wall↔instanton T3 |
-| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | G1 T3 [C182]; G2 T2a; G3 T3 [C183]; G3 full T2a [C184]: Tr(T^a T^b)=δ/2 T1 (8×8 res 1e-16), flat metric T1, curvature 10⁻⁴⁰ T2a |
-| SP5 | Derive Δ = I₄ × Λ_QCD from V(φ) without external input | **T2a** | **65%** | `ym_jost_function.py` | Chain V(φ)→Λ_QCD T3 [C188]; C_match T4→T2a [C191]: 0.789948 (2-loop); threshold T4→T3 [C193]; C196: c_gauge(n=1 KK)=0 T1 (parity); **C197**: Jost-function integral explicit — corrected formula via Darboux chain psi_Jost=e^{iky}[(k+iκt)(k+2iκt)+κ²sech²]/D; ODE PASS (FD rel-res<4e-10); c_gauge(cont)=2.773063 T2a; delta_C=0.66%; **C_match=0.795151 T2a** [C193=0.841 RETRACTED; C196=0.791 superseded]; threshold: **T3→T2a [C197]**; remaining T4: M_c(D7) from V(φ) substrate |
-
-### Key Structural Assets (established, do not re-derive)
-
-| Result | Value | Tier | File |
+| # | Sub-problem | Tier | Progress |
 |---|---|---|---|
-| BPS lower bound E_kink > 0 | E = 113.1 M_Pl | T1 | `yang_mills_mass_gap.py` |
-| Topological charge | Q_top = 2 (exact) | T1 | `yang_mills_mass_gap.py` |
-| Kink shape integral = SU(3) Casimir | I₄ = C₂(fund,SU(3)) = 4/3 | T1 exact | `fermion_representation.py` |
-| D7 = SU(3) gauge group | Cycles 59–74 | T2a | `generation_count_proof.py` |
-| Mass gap lower bound | Δ_min = Q_top × Λ_QCD = 609 MeV | T3 | `yang_mills_mass_gap.py` |
-| Pomeron intercept | α_0^P = Q_top/2 = 1.0 | T3 | `yang_mills_mass_gap.py` |
-| Glueball 2++ | 2159 MeV (−10% vs lattice) | T3 | `yang_mills_mass_gap.py` |
-| String tension | σ = Q_top × Λ_QCD² (−4.2%) | T3 | `d7_nonpert_coefficients.py` |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T3** (→T2a once SP1g closes) | **78%** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV gap T2a** | **68%** |
+| SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
+| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
+| SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **65%** |
 
-### Gap to Clay Prize Requirements
+Latest: C202 SP1k equicontinuity T3→T2a (n-point Hölder bound polymer-controlled: μ=0.1265<1/e → sup_n(n×μ^n)=μ → uniform bound 4.45e-42); C201 Δ_UV≥1.22 M_Pl T2a (P-F+KP).
+Remaining T4: SP1g Balaban RG domain (T3→T2a) + SP5 M_c(D7) from substrate dynamics.
 
-The Clay problem (Jaffe-Witten) requires:
-1. A *quantum* Yang-Mills theory on ℝ⁴ — Hilbert space H, Hamiltonian H, vacuum Ω
-2. Proof that inf{⟨ψ|H|ψ⟩ : |ψ⟩ ∈ H, ⟨ψ|ψ⟩=1, ⟨ψ|Ω⟩=0} ≥ Δ > 0
-
-DFC now provides: (a) a rigorous constructive QFT proof (T2a) that Δ_1D = m_kink > 0
-in the 1+1D substrate; (b) a structural decoupling argument (T2a) that the gauge sector
-gives effective SU(3) Yang-Mills with flat Killing metric (Tr(T^a T^b)=(1/2)δ^{ab}; curvature
-correction 6×10⁻⁴⁰); (c) OS reflection positivity (T2a) via OS-Seiler theorem with
-β_lat = 2N/g_eff² = 20.25 >> 6 (deep in continuum regime); (d) Δ_4D ≥ 406 MeV lower bound
-(T3); and (e) the exact identity I₄ = C₂(fund,SU(3)) = 4/3 (T1) connecting substrate to
-gauge theory. The remaining T4 gap is SP1f: the formal a→0 continuum limit of Wilson SU(3)
-with β_lat = 20.25 — this IS the Clay Prize core mathematical problem.
-
-**Stopping conditions:**
-- *Hard barrier:* A fundamental obstruction identified within DFC → document, return to general cycle
-- *Adequate solution:* All five sub-problems reach T2a or better → publishable proof candidate
+*Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
 ---
 

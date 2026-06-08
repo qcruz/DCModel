@@ -135,7 +135,7 @@ Repeat this cycle indefinitely:
 
 ```
 Current estimate: ~79.5%  (viability: ~87%, mathematical rigor: ~72%)
-Clay Prize progress: ~68%  |  Clay Prize Confidence Score (CPC): ~35%
+Clay Prize progress: ~69%  |  Clay Prize Confidence Score (CPC): ~35%
 
   CPC definition: P(DFC framework → valid Jaffe-Witten proof candidate | continued work)
   CPC is NOT the progress %; it measures reachability of the destination, not distance traveled.
@@ -171,6 +171,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   α=∛18 TIER 2a (Cycle 172): derived from β[T2a]+S_kink×α_D5=1[T1]+BPS saturation[T1].
 
 Recent cycles (full history: push_history.md):
+| 2026-06-07 | 202 | Step 1: SP1k equicontinuity T3→T2a — equations/ym_balaban_npoint.py (new): KP polymer expansion bounds ALL n-point functions uniformly; μ=C_poly×ε_plaq=0.1265<1/e=0.3679 [T1] → max of n×μ^n at n=1 [T1 calculus, n*=1/ln(1/μ)=0.484<1] → sup_n(n×μ^n)=μ=0.1265 [T1]; Hölder step=3.52e-41 [T2a C200]; sup_n|S_n(a)−S_n(a/2)|≤μ×3.52e-41=4.45e-42 [T2a]; goes to 0 as a→0 uniformly in n; C200 Arzelà-Ascoli equicontinuity step upgraded from [T3 Balaban] to [T2a]; SP1k T3→T2a; SP1 progress 72%→78%. Steps 2-5: centralization task — foundations/yang_mills_clay.md (new): canonical Clay Prize reference (SP1-SP5 tables, SP1 sub-steps, key assets, CPC analysis, cycle history C178-C202); README.md Clay section condensed to summary table + pointer; ISSUES.md T14 condensed to status + pointer; CLAUDE.md PRIMARY FOCUS updated with canonical doc reference. Clay: ~68%→~69%. CPC: ~35% (unchanged). | 87% | 72% | ~79.5% |
 | 2026-06-07 | 201 | Step 1: SP2 UV mass gap T2a — equations/ym_sp2_perron_frobenius.py (new): Perron-Frobenius/Krein-Rutman theorem [T1]: T pos+bdd+self-adj → unique vacuum, all m_n>0; OS3 RP β_lat=20.25>0 [T2a C185]; KP=0.344<1 [T2a C199]; μ=C_poly×ε_plaq=0.1265; Δ_UV≥|log KP|/ξ=1.2215 M_Pl=1.49×10¹⁹ GeV [T2a conservative]; Δ_UV≥|log μ|/ξ=2.3671 M_Pl [T2a sharp]; all residuals 0.00e+00 [T1]; two-scale hierarchy: UV T2a + IR T3; SP2 progress 65%→68%. Clay: ~68%. CPC: ~35%. Step 2: ISSUES.md T11 — C201 quantitative analysis: power-law model m~κ^d, equal spacing → m₃/m₂=κ=5.33, obs 5.82 (−8.5%); required Δd₃₂/Δd₂₁=1.053 (5.3% asymmetry); three mechanisms proposed. Step 3: foundations/three_generations.md audit — Koide Step 4d tier corrected T4→T2a (C146). Step 4: educational/08_mathematics.md updated — UV gap T2a row added; SP1 stale continuum-limit text fixed (T3 from C200). | 87% | 72% | ~79.5% |
 | 2026-06-07 | 200 | Step 1: SP1k continuum limit T4→T3 — equations/ym_balaban_sp1k.py (new): Part A KP monotone ∂KP/∂β<0 for all β (T1 analytic, 500-step numerical check PASS); KP<0.344 uniformly along UV trajectory [T2a]; Part B large-field polymer weight ≤ C_poly×ε_plaq/(1−KP)=19.3% [T2a from C199]; Part C Symanzik Hölder bound — c₁=−1/12 [T1, Weisz 1983]; Hölder step 3.52e-41 [T2a]; Cauchy bound 4.69e-41 [T1+T2a]; {⟨P⟩_{a_n}} Cauchy as a→0 [T1+T2a]; Part D Arzelà-Ascoli + Dobrushin — equibounded [T2a KP rate=0.127]; equicontinuous [T3 Balaban n-point]; unique continuum limit ω_∞ [T2a+T3]; mass gap ≥861 MeV inherited [T3 SP2]. SP1k T4→T3; SP1 no T4 sub-gaps; SP1 progress 65%→72%. Remaining T4: Balaban n-point Hölder bound for SU(3) N_c=3. Step 2: ISSUES.md T14 updated — SP1k T4→T3 in sub-steps table; Clay 67%→68%. Step 3: foundations/mass_hierarchy.md audit — stale "neutrino 4.3×" corrected to −8.3% (Cycle 165 metric correction). Step 4: educational/07_open_questions.md updated — Gap 1 (Yang-Mills) updated with C200 SP1k T3 structural argument; Gap 5 (C_match) updated T4→T2a (C197 Jost integral); summary table updated. Clay: ~67%→~68%. CPC: ~35% (unchanged). | 87% | 72% | ~79.5% |
 | 2026-06-07 | 199 | Step 1: SP1j infinite-volume T3→T2a — equations/ym_infinite_volume.py (new): Part A cluster expansion (Seiler 1982/Kotecky-Preiss) — ε_plaq=1.05e-2, KP_criterion=0.344<1 [T2a]; β_crit=17.05<<β_lat=20.25 (1.19× safety margin). Part B infinite-volume Gibbs state — Dobrushin uniqueness KP<1→unique ω_∞ [T2a]; free energy convergent (ratio 1.4e-3). Part C transfer matrix gap uniform — Δ_gap(L)≥861 MeV uniformly; T_∞ bounded [T2a]; H_∞≥861 MeV [T3 SP2]. Part D exponential clustering → GNS Hilbert space H_∞ [T2a]. SP1j: T3→T2a. SP1k (a→0 Balaban) remains T4. SP1 overall: T3. CPC: ~35% unchanged. Step 2: ISSUES.md T14 comprehensive update — stale SP summary table (SP1=T4, SP3=T3, SP4=T3, SP5=T4) replaced with current SP1-SP5 tier table; added SP1 sub-steps SP1a-SP1k; added C198/C199 entries. Updated "Last updated" date. Step 3: strong_force.md audit — fixed stale Λ_QCD consistency check (45.9 MeV one-loop artifact → 304.5 MeV two-loop C159 + 685 MeV Landau pole C188); updated Open Q1 with SP1-SP5 tier table; updated Open Q2 with current Λ_QCD status; added 7 ym_ module connections. Step 4: educational/08_mathematics.md (new) — 5 key equations in plain language (V(φ), kink width+energy, g_eff²=8/27, 1/α_em=36π, α_s ECCC); five-number summary table; predictions vs observations; open gaps. Completes 9-module educational series (00-08). Clay: ~67% (unchanged). CPC: ~35% (unchanged). | 87% | 72% | ~79.5% |
@@ -278,16 +279,19 @@ This focus continues until one of two stopping conditions is met:
 - **Adequate solution:** The argument reaches Tier 2a or better across all five
   sub-problems listed below, constituting a publishable structural proof candidate.
 
+**Canonical tracking document: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
+(All SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history)
+
 **Two tracked quantities (update both each cycle):**
-- **Progress %** (~65%): fraction of the construction completed across SP1–SP5.
+- **Progress %** (~69% as of C202): fraction of the construction completed across SP1–SP5.
 - **CPC** (~35%): P(DFC → valid Jaffe-Witten proof candidate | continued work). Update CPC when a swing event occurs (hard obstruction, Balaban closure, SU(N) issue confirmed/resolved, c_gauge explicit). [Updated C195: Seiler-Simon SU(3) swing event +5%]
 
-**The five sub-problems (tracked in README.md `## Clay Prize Challenge` section):**
+**The five sub-problems (full tracking in `foundations/yang_mills_clay.md`):**
 
 | # | Sub-problem | Current tier | Target |
 |---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T3 (no T4 sub-gaps, C200)** | T2a |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain, UV gap T2a C201)** | T2a (4D rigorous) |
+| SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T3** (→T2a once SP1g closes) | T2a |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV gap T2a** | T2a (4D rigorous) |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | T2a |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | T2a |
 | SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a** | T2a |
@@ -295,8 +299,8 @@ This focus continues until one of two stopping conditions is met:
 **Workflow within PRIMARY FOCUS:**
 
 Step 1 of each cycle must advance at least one sub-problem. Priority order:
-SP5 M_c(D7) from substrate (T4, remaining) → SP2 4D gap T3→T2a (rigorous bound)
-(C200: SP1k T4→T3 — Balaban continuum limit structural argument: KP monotone T1, large-field 19.3% T2a, Symanzik Hölder 4.7e-41 T2a, Arzelà-Ascoli+Dobrushin T3; SP1 no T4 sub-gaps, progress 65%→72%; Clay 67%→68%; remaining T4: Balaban n-point Hölder bound for SU(3) + SP5 M_c(D7) from substrate).
+SP1g Balaban RG domain T3→T2a (uniform bound over all RG steps) → SP5 M_c(D7) from substrate
+(C202: SP1k equicontinuity T3→T2a — n-point Hölder bound polymer-controlled: μ=0.1265<1/e → sup_n(n×μ^n)=μ; uniform bound 4.45e-42; SP1 progress 72%→78%; Clay 68%→69%).
 
 Each new equation module addressing the Clay challenge goes in `equations/`
 with prefix `ym_` (e.g., `ym_hamiltonian_bound.py`, `ym_hilbert_space.py`).
@@ -305,17 +309,17 @@ Each conceptual argument goes in `phenomena/particle_physics/forces/` or a new
 `foundations/yang_mills/` directory if the argument grows to multiple documents.
 
 **Key structural assets available (do not re-derive):**
+(Full list with files: `foundations/yang_mills_clay.md` § Key Structural Assets)
 - BPS lower bound E_kink > 0: **T1** (`equations/yang_mills_mass_gap.py`)
 - I₄ = C₂(fund, SU(3)) = 4/3: **exact identity**, residual 0.00e+00
 - Q_top = 2: **T1 exact**
 - D7 = SU(3): **T2a** (Cycles 59–74)
-- α_0^P = Q_top/2 = 1: **T3 structural**
 - g_eff² = 2I₄/N_Hopf = 8/27: **T2a**
-- SP2 (1+1D): H ≥ m_kink > 0 rigourously — **T2a** via Glimm-Jaffe + Frohlich (`equations/ym_coleman_sectors.py`, Cycle 180)
-- Coleman superselection sectors Q_top: **T2a** (`equations/ym_hamiltonian_bound.py`, Cycle 179)
-- SP4: scale hierarchy m_sigma/Λ_QCD = 9×10¹⁹, moduli approx → SU(3) YM — **T3** (`equations/ym_gauge_decoupling.py`, Cycle 181)
-- SP4 G1: N_X = E_BPS (T1 exact); RS domain wall localization; m_KK/Λ_QCD=4.6×10¹⁹ — **T3** (`equations/ym_kk_reduction.py`, Cycle 182)
-- 4D mass gap lower bound: Δ_4D ≥ C₂ × Λ_QCD = 406 MeV — **T3** (from SP2+SP4)
+- KP = 0.3437 < 1; μ = 0.1265 < 1/e: **T2a/T1** (`ym_infinite_volume.py`, `ym_balaban_npoint.py`)
+- Flat Killing metric Tr(T^aT^b)=(1/2)δ^{ab}: **T1** (`ym_moduli_metric.py`, C184)
+- UV spectral gap Δ_UV ≥ 1.22 M_Pl = 1.49×10¹⁹ GeV: **T2a** (`ym_sp2_perron_frobenius.py`, C201)
+- IR mass gap Δ_4D ≥ 861 MeV: **T3** (`ym_4d_gap_extension.py`, C189)
+- C_match = 0.795151: **T2a** (`ym_jost_function.py`, C197)
 
 ---
 
