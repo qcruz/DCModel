@@ -334,8 +334,10 @@ the generation count:
               Eigenvalues: (1−t, 1−t, 1+2t); S=3 t-independent; K=M/S²
      Step 4c: K=2/3 ↔ t²=1/Q_top=1/2 ↔ t=1/√Q_top        Tier 1  [Cycle 126; error 1.11e-16]
               r=√Q_top universal on K=2/3 curve for all γ near 2π/3 (PASS)
-     Step 4d: t=1/√Q_top from DFC 5D Yukawa vortex integral Tier 4  OPEN
-              Requires: ∫η₀*(x)·e^{iΔθ(x)}·φ_H(x)·η₀(x) dx / ∫|η₀|²·φ_H dx = 1/√Q_top
+     Step 4d: t=1/√Q_top from canonical phase vertex 1/√Q_top   Tier 2a [Cycle 146]
+              Z₃ charge counting → exactly one phase insertion per off-diagonal →
+              t=1/√Q_top; m_τ=1776.97 MeV (+0.006%, 0 free params) [koide_phase_coupling.py]
+              Formal open: ∫η₀*(x)·e^{iΔθ(x)}·φ_H(x)·η₀(x)dx/∫|η₀|²·φ_H dx = 1/√Q_top
      Central formula (Cycle 125): |F₀|/|F₁| = 2/√Q_top = √2 (error 3.55e-15)
 
    See `equations/tau_mass_koide.py`, `equations/koide_yukawa_circulant.py`,

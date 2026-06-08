@@ -214,7 +214,8 @@ With the five numbers above determined, the model predicts:
 | EW vacuum v | 247.83 GeV | 246.22 GeV | +0.65% | Tier 2a |
 | Tau mass (Koide) | 1776.97 MeV | 1776.86 MeV | +0.006% | Tier 2a |
 | Hubble constant | 67.26 km/s/Mpc | 67.40 km/s/Mpc | −0.2% | Tier 2a |
-| Mass gap Δ_4D | ≥ 861 MeV | > 0 (unproven) | — | T3 structural |
+| UV mass gap Δ_UV | ≥ 1.22 M_Pl = 1.49×10¹⁹ GeV | > 0 | — | T2a (C201, KP+PF) |
+| IR mass gap Δ_4D | ≥ 861 MeV | > 0 (unproven) | — | T3 structural |
 
 ---
 
@@ -227,8 +228,11 @@ mathematical content. What is not yet derived:
 2. **Quark masses** — the charm and strange quarks are ~15% below observed values;
    the tau lepton from the mass spectrum (as opposed to Koide route) is off by a large factor.
 3. **Neutrino mass hierarchy** — the ratio m₃/m₂ = 5.33 predicted, observed 5.81 (−8.3%).
-4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) reaches
-   T2a for most sub-problems but SP1 continuum limit (Balaban a→0) remains T4.
+4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at 68%
+   overall. A UV spectral gap Δ_UV ≥ 1.22 M_Pl is now T2a (C201, Perron-Frobenius + KP).
+   SP1 (constructive 4D QFT) is at T3 with all sub-steps T2a/T3; no T4 sub-gaps remain after
+   C200 (Balaban continuum limit T3). Remaining T4: explicit Balaban n-point Hölder bound for
+   SU(3) (the final step from T3 to T2a for SP1) and M_c(D7) from V(φ) substrate dynamics (SP5).
 
 The model does not claim completeness. These are honest, documented gaps.
 

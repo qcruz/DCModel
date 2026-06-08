@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-07 (Cycles 122–200)
+**Last updated:** 2026-06-07 (Cycles 122–201)
 
 ---
 
@@ -318,7 +318,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP | Description | Tier | Progress | Key file | Last changed |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T3** | 72% | `ym_balaban_sp1k.py` | **C200** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain)** | 65% | `ym_4d_gap_extension.py` | C189 |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain, UV gap T2a)** | 68% | `ym_sp2_perron_frobenius.py` | **C201** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | `ym_moduli_metric.py` | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | `ym_jost_function.py` | C197 |
@@ -602,6 +602,24 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   The depth-difference ratio Δd₃₁/Δd₂₁ ≈ 1.34 at small m₁, not 2 (equal-winding). This means
   the depth spacings are NOT equal, i.e., ν₂ and ν₃ are much closer in depth than ν₁ and ν₂.
   Root cause of non-uniform spacing: not yet identified from DFC substrate. This is the actual open problem.
+- **Cycle 201 quantitative analysis:**
+  - Power-law model: m ~ κ^d where κ_lepton = exp(κ_log) = 5.33 (lepton log-rate per depth unit).
+    Equal spacing Δd₃₂ = Δd₂₁ = 1 unit → m₃/m₂ = 5.33^1 = 5.33 [DFC prediction].
+  - Observed (hierarchical limit m₁→0): m₃/m₂ = √(Δm²₃₁/Δm²₂₁) = √(33.92) = 5.824.
+    Error: (5.33 − 5.824)/5.824 = −8.48% (slightly worse than prior −8.3%; PDG values used here).
+  - Required depth correction: Δd₃₂/Δd₂₁ = ln(5.824)/ln(5.33) = 1.763/1.673 = **1.053**.
+    The upper neutrino depth spacing (ν₂→ν₃) must be ~5.3% larger than the lower spacing (ν₁→ν₂).
+  - Physical interpretation: a small 5.3% asymmetry in sub-D4 winding mode spacing. Small enough to
+    have a specific mechanism, unlike the 8.4× tau failure. Candidate sources:
+    (a) Non-degenerate SU(3) winding modes: the third mode (associated with the heaviest neutrino, ν_τ)
+        sits at a depth influenced by D7 SU(3) closure, giving a small extra depth push.
+    (b) Dirac vs. Majorana boundary condition at D3/D4: only ν₃ is sensitive to the full D3↔D4
+        double-boundary topology if it is the Majorana endpoint of the see-saw.
+    (c) Seesaw-like renormalization: ν₃ mass receives a small additive correction from D6 Yukawa
+        mixing at the D6/D4 interface, shifting its effective depth by δd = 0.053.
+  - Path to T2a: compute the depth of the three sub-D4 winding modes of the SU(3) shallow closure
+    from the D3↔D4 boundary value problem; show that the third mode is shifted by ≈ 5.3% due to
+    D7 topology or D6 mixing; derive the ratio 1.053 from first principles without free parameters.
 - Files: `equations/neutrino_masses.py`, `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
 
 ---
