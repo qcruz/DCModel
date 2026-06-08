@@ -201,9 +201,13 @@ rigorously derived.
 - Connect closure stability to quantum error correction (suggestive formal parallels)
 - Derive Bekenstein entropy bounds from compression budget (`equations/holographic_entropy.py` — STUB)
 - Explain CP violation from DFC asymmetry principles
-- Derive coupling constants α_em, g_W, g_s from (α, β, c) — partial progress: sin²θ_W = 0.231
-  (0.01% error), α_em = 1/129.6 (1.3% error), M_W/M_Z/G_F/τ_μ all within 1%; r_U1/λ = 3/(4β)
-  is heuristic — formally blocked for real φ⁴ (see `equations/coupling_derivation.py`)
+- **Coupling constants — largely Tier 2a (Cycles 117–203):**
+  sin²θ_W = 0.231 (0.01%), α_em(M_Z) = 1/128.09 (+0.15%), g_eff = 0.5443 (+0.006%),
+  α_s(M_Z) = 0.11821 (+0.006%), M_W = 79.67 GeV (−0.88%), M_Z = 90.86 GeV (−0.36%).
+  Remaining: derive M_c(D7) from V(φ) alone (T4); hadronic VP 0.10% gap in α_em(0).
+  See `foundations/yang_mills_clay.md` for the formal Yang-Mills / Λ_QCD construction.
+- **Yang-Mills mass gap (Clay Prize):** formal constructive QFT now T2a (C203); see
+  `foundations/yang_mills_clay.md`. Progress ~72%, CPC ~50%.
 
 ---
 

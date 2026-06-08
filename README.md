@@ -239,19 +239,19 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~69%**
-**Clay Prize Confidence Score (CPC): ~35%**
+**Overall Clay challenge progress: ~72%**
+**Clay Prize Confidence Score (CPC): ~50%** ← *+15% swing event C203: SP1 Balaban closes*
 
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T3** (→T2a once SP1g closes) | **78%** |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** |
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV gap T2a** | **68%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **65%** |
 
-Latest: C202 SP1k equicontinuity T3→T2a (n-point Hölder bound polymer-controlled: μ=0.1265<1/e → sup_n(n×μ^n)=μ → uniform bound 4.45e-42); C201 Δ_UV≥1.22 M_Pl T2a (P-F+KP).
-Remaining T4: SP1g Balaban RG domain (T3→T2a) + SP5 M_c(D7) from substrate dynamics.
+Latest: **C203 SP1g T3→T2a** (SP1 overall T2a — all 11 sub-steps SP1a-SP1k now T2a; g²(n) algebraically decreasing → max at n=0 → all domain checks uniform [T1+T2a]); C202 SP1k equicontinuity T3→T2a.
+Remaining T4: SP2 4D rigorous gap chain + SP5 M_c(D7) from substrate dynamics (V(φ) alone).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 

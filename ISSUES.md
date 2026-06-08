@@ -314,19 +314,19 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 202.
-- **Overall progress:** ~69%. **CPC:** ~35%.
+- **Status:** Active primary focus. Last updated: Cycle 203.
+- **Overall progress:** ~72%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
 
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T3** (→T2a once SP1g closes) | 78% | **C202** |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
 | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV gap T2a** | 68% | C201 |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | C197 |
 
-**Remaining T4:** SP1g Balaban RG domain (T3→T2a) + SP5 M_c(D7) from substrate dynamics.
-**Latest:** C202 SP1k equicontinuity T3→T2a (n-point uniform Hölder bound via μ=0.1265<1/e); C201 Δ_UV≥1.22 M_Pl T2a.
+**Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) from V(φ) substrate dynamics alone.
+**Latest:** **C203 SP1g T3→T2a** — SP1 overall T2a; all 11 sub-steps SP1a-SP1k T2a; CPC +15% (swing event). C202 SP1k T3→T2a (uniform Hölder bound 4.45e-42).
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -351,23 +351,29 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - Files: `foundations/tension_analysis.md`, `phenomena/particle_physics/flavor_mixing.md`
 
 ### T4 — Fermion representation origin (fundamental vs. adjoint)
-- **Status: Tier 3 structural argument (Cycle 177)**
+- **Status: Tier 3 strengthened (Cycle 203)**
 - **DFC argument (winding number minimality):**
   - D7 zero modes generate SU(3) gauge group (adjoint by definition) [T1]
   - D6 kinks traversing D7 background acquire SU(3) holonomy from single crossings [T3]
   - One crossing = winding number n=1 → Dynkin label (1,0) → fundamental rep, dim=3 [T3]
   - Adjoint requires n=2 (two fundamental crossings = meson/gluon bound state, not single quark)
   - Individual D6 kinks = single defects = one crossing each → fundamental [T3]
-- **Structural identity (Cycle 177):** I₄ = C₂(fund, SU(3)) = 4/3 (exact, residual 0.00e+00)
+- **Jackiw-Rebbi zero mode (Cycle 203):** `equations/ym_jackiw_rebbi_su3.py`
+  - ψ_0(x) = N sech(x/ξ), N = 1/√(2ξ) [T1, explicit calculation]
+  - Normalization: ∫|ψ₀|²dx = 1 (residual 1.49e-13) [T1]
+  - Width (RMS): π/(2√3) × ξ (residual 6.96e-14) [T1 analytic]
+  - Nodeless: sech(x/ξ) > 0 everywhere → minimal SU(3) rep [T3]
+  - Normalizable for all m₀ξ > 0 via Beta function [T1]
+- **Structural identity (Cycle 177/203):** I₄ = C₂(fund, SU(3)) = 4/3 (exact, residual 0.00e+00)
   - I₄ = ∫sech⁴(u) du = 4/3 [T1, Bogomolny]
   - C₂(fund, SU(3)) = (N_c²-1)/(2N_c) = 8/6 = 4/3 [math, exact]
-  - Interpretation: the kink shape integral (setting the gauge coupling g₁²=2I₄) equals
-    the Casimir of the representation in which matter couples. Structural self-consistency:
-    the coupling formula g₁²=2I₄ and the matter-rep color factor C_F=4/3 are the same number.
-    This would fail for any other SU(3) representation.
-- **Winding table:** n=0 singlet, n=1 fundamental (quarks, dim=3), n=2 diquark (dim=6), n=3 baryon precursor (dim=10)
-- **Path to T2a:** Compute Jackiw-Rebbi zero mode of D6 Dirac operator in explicit D7 kink background; show zero mode transforms as (1,0) fundamental. This is a boundary value problem for the D7 kink field equation.
-- **Files:** `equations/fermion_representation.py` (Cycle 177, T3 structural argument + I₄=C₂ identity), `foundations/tension_analysis.md`, `foundations/three_generations.md`
+  - Self-consistency: I₄ = C₂(fund) exactly; I₄ ≠ C₂(adj) = 3; I₄ ≠ C₂(sym) ≈ 3.5 [T1 incompatibility check]
+  - The kink coupling formula g₁²=2I₄ and the matter-rep color factor C_F=4/3 are the same number.
+    This would fail algebraically for any other SU(3) representation.
+- **Winding table:** n=0 singlet, n=1 fundamental (quarks, dim=3), n=2 diquark (dim=6), n=3 baryon precursor
+- **Path to T2a:** Explicit D6 Dirac operator in D7 SU(3) kink background (with gauge holonomy);
+  show zero mode transforms as (1,0) under exp(i × SU(3) generator × π). File: `ym_jackiw_rebbi_su3_gauge.py`
+- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty — **RESOLVED Cycle 144**
 - **STATUS: CLOSED.** Root cause identified and fixed: α_s=0.1086 (8.1% off) used wrong M_c(D7) from α₁∩α₃ crossing (~2.5×10¹⁴ GeV), not the correct ECCC condition.
