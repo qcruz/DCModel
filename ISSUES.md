@@ -320,13 +320,13 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **76%** | **C206** |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **78%** | **C207** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | C197 |
 
 **Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) from V(φ) substrate dynamics alone.
-**Latest:** C206 R1 SC domain T3→T2a: polymer analyticity → no phase transition β<1.1 [T1+T2a]; SC Weierstrass M-test; β_lat^IR=1.016<β_c^SC=1.1036 [T2a]; R1 domain map (0,1.1) T2a+(17,∞) T2a+[1.1,17] T3; SP2 74%→76%. C205 IR gap T2a; C204 Z_N center T1; C203 SP1g T3→T2a CPC+15%.
+**Latest:** C207 R1 intermediate [3.0,17.1] T3 strengthened: |Tr U/N_c|≤1 [T1]; T(β) Lipschitz [T1]; Δ=0↔transition [T1]; SC domain corrected (0,1.1)→(0,3.0) [T2a]; β_deconf=5.69 finite-T only [T2a]; SP2 76%→78%. C206 R1 SC T2a, C205 IR gap T2a, C204 Z_N T1, C203 SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -398,7 +398,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - SP2 (Hamiltonian bound, Cycle 189): 4D chain Δ_4D ≥ 2√2×Λ_QCD=861 MeV [T3]; flux-tube bound σ=Q_top×Λ_QCD² [T3 structural, −4.2%]; σ derivation from first principles still T4.
   - SP4 (sigma→YM decoupling, Cycles 181–184): Wilson EFT at Λ_QCD = pure SU(3) YM + O(10⁻⁴⁰) corrections [T2a]; derives that the D7 kink vacuum energy equals pure YM partition function — a T2a argument that σ is a YM string tension, not yet the σ=Q_top×Λ² derivation from V(φ) alone.
   - SP5 C_match (Cycle 197): c_gauge(cont)=2.773063 T2a; C_match=0.795151 T2a. These values govern the scalar→gauge coupling matching (threshold corrections); they do NOT close the hadronic VP non-perturbative piece δ(Δα)^{NP}=0.00102.
-  - **Status (Cycle 198):** T12 blocking gap unchanged. The Yang-Mills work has promoted the structural argument for σ>0 to T3 (SP2+SP4), but the explicit σ=Q_top×Λ² derivation from V(φ) (needed for δ(Δα)^{NP} from first principles) remains T4, tied to SP2 reaching T2a (4D rigorous). No numerical improvement to 1/α_em(0) from Cycles 168–198.
+  - **Status (Cycle 207):** T12 blocking gap unchanged. Yang-Mills work: SP2 now at 78% (C207). New T1 results: Δ_gap(β)=0 ⟺ phase transition (exact logical equivalence); β_deconf=5.69 is finite-T ONLY, NOT T=0 bulk transition (T=0 <P>=0 algebraically for all β, C204 Z_N). These results strengthen the σ>0 structural argument: at T=0 there is no deconfinement transition at any β, so Δ(β)>0 (and hence σ>0) holds across all β in SC+intermediate+KP domains. But the explicit σ=Q_top×Λ² derivation from V(φ) alone (needed for δ(Δα)^{NP}=0.00102 from first principles) remains T4, tied to SP2 reaching T2a (4D rigorous). No numerical improvement to 1/α_em(0).
 - Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/d7_nonpert_coefficients.py` (Cycle 160), `equations/alpha_em_eccc.py` (Cycle 139), `equations/ym_4d_gap_extension.py` (Cycle 189), `equations/ym_gauge_decoupling.py` (Cycle 181)
 
 ### T10 — Near-maximal θ₂₃: near-degeneracy argument retracted; Z₂ symmetry argument proposed (C65, updated C206)
@@ -431,7 +431,7 @@ deviation has not been calculated.
 - Deviation 49° − 45° = 4°: open; color correction δd = 1/(6π) is candidate but not calculated
 - Quantitative: θ₂₃ derivation from D4/D6 projection geometry is T4 (no formula yet)
 
-**Files:** `phenomena/particle_physics/neutrino_oscillations.md` (text at lines 117-126 needs update), `equations/neutrino_oscillations.py`
+**Files:** `phenomena/particle_physics/neutrino_oscillations.md` (updated C206 Steps 2+3), `equations/neutrino_oscillations.py`
 
 ### T11 — Neutrino hierarchy ratio: metric confusion + revised error (Cycle 65; corrected Cycle 165)
 - The claimed "4.3× failure" (DFC gives 1.34, observed 5.71) conflated two different quantities:

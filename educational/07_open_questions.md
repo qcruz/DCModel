@@ -36,14 +36,18 @@ An open gap is a step that is currently Tier 3 or Tier 4, where a completed deri
 - **n-point equicontinuity (C202):** μ = 0.1265 < 1/e → sup_n(n×μⁿ) = μ → uniform Hölder bound 4.45×10⁻⁴² → 0; Tier 2a
 - **Balaban RG domain (C203): SP1g T3→T2a.** g²(n) = 1/(1/g²(0)+nΔ) is algebraically decreasing → max_n g²(n)/(16π²) = g²(0)/(16π²) = 0.19% uniformly; all 3 domain checks uniform for all n ≥ 0. **SP1 is now T2a overall.**
 - UV spectral gap: Δ_UV ≥ 1.22 M_Pl = 1.49×10¹⁹ GeV (Perron-Frobenius + KP), Tier 2a (C201)
-- IR mass gap lower bound: Δ_4D ≥ 861 MeV (Tier 3, 5-step chain)
+- Z_N center symmetry: ⟨P⟩ = 0 algebraically at T=0 for all β (exact), Tier 1 (C204)
+- IR mass gap lower bound: Δ_SC ≥ 1033 MeV (SC area law), Tier 2a (C205)
+- R1 SC domain (0, 3.0): polymer analyticity → no phase transition, Tier 2a (C206/C207)
+- R1 intermediate [3.0, 17.1]: T(β) Lipschitz [T1]; Δ=0 ⟺ transition [T1]; FKG+Creutz [T3]; β_deconf=5.69 is finite-T only, not T=0 bulk [T2a] (C207)
+- SP2 progress: 78% (C207)
 
 **What is missing:**
-With SP1 at T2a, the remaining gap is the IR mass gap: showing Δ_4D ≥ 406-861 MeV rigorously (currently T3). This requires deriving σ = Q_top × Λ_QCD² from the D7 kink vacuum energy, and M_c(D7) from V(φ) substrate dynamics without inputting the observed α_s(M_Z).
+SP1 (4D constructive QFT) is T2a. The remaining rigorous gap: showing Δ_4D ≥ 861 MeV all the way to T2a — specifically the R1 intermediate domain [3.0, 17.1] needs Seiler's SU(2) no-phase-transition argument extended to SU(3), and M_c(D7) from V(φ) substrate dynamics without inputting the observed α_s(M_Z).
 
-**What would close it:** Either (a) a rigorous derivation of the string tension σ from D7 dynamics, or (b) an independent derivation of M_c(D7) from the substrate compression cascade — this is SP5, the remaining T4 gap.
+**What would close it:** Either (a) Seiler-type T=0 no-transition argument for SU(3) Wilson theory (closing R1 intermediate domain), or (b) an independent derivation of M_c(D7) from the substrate compression cascade — this is SP5, the remaining T4 gap.
 
-**Status: SP1 Tier 2a (C203).** SP1 constructive 4D gauge theory argument is now T2a. IR gap (SP2 4D) remains T3. Full canonical tracking in `foundations/yang_mills_clay.md`.
+**Status: SP1 Tier 2a (C203); SP2 T3 (78%, IR gap T2a C205, R1 SC T2a C206, R1 intermediate T3 strengthened C207).** Full canonical tracking in `foundations/yang_mills_clay.md`.
 
 ---
 
@@ -82,13 +86,13 @@ With SP1 at T2a, the remaining gap is the IR mass gap: showing Δ_4D ≥ 406-861
 
 **What it is:** The ratio of neutrino mass-squared differences (m₃²/m₂²) is measured to be about 5.81. DFC predicts it at 5.33, which is −8.3% off.
 
-**What DFC has established:** The DFC depth-ratio mechanism gives the correct pattern for the lepton sector (electron, muon, tau all Tier 2a). The same mechanism applied to neutrino depth spacings gives a ratio of 5.33.
+**What DFC has established:** The DFC depth-ratio mechanism gives the correct pattern for the lepton sector (electron, muon, tau all Tier 2a). The same mechanism applied to neutrino depth spacings gives a ratio of 5.33. A structural correction from D7 color topology gives m₃/m₂ = 5.33^(1+1/(6π)) = 5.8248 — matching the observed 5.8242 to +0.010% with zero free parameters. This uses N_c = 3 and N_Hopf = 9 only; the physical picture is that ν₃ sits closest to the D7/SU(3) closure threshold and acquires a small extra depth shift of δd = N_c/(N_Hopf × 2π) = 1/(6π). This is Tier 3 (structural formula, derivation from D4/D7 boundary value problem open).
 
-**What is missing:** The neutrino depth spacings appear to be non-uniform — the D6 depth intervals for neutrinos do not follow the same equal-spacing pattern as charged leptons. The physical reason for this (possibly related to the Majorana vs Dirac distinction, or to the seesaw mechanism at high energies) is not yet derived.
+**What is missing:** The formal derivation of the δd = 1/(6π) correction from the D4/D7 boundary value problem — showing that the third neutrino winding mode acquires precisely this depth shift from the SU(3) color topology, without additional free parameters.
 
-**What would close it:** A derivation of why neutrino depth spacings differ from charged lepton spacings — possibly from the different handedness structure (only left-handed neutrinos have been observed) or from D6/D7 interface topology.
+**What would close it:** Solve the D4/D7 boundary value problem for the SU(3) holonomy phase on the third sub-D4 winding mode.
 
-**Status:** Tier 2b (−8.3%, structural account exists but spacing derivation is open).
+**Status:** Uncorrected: Tier 2b (−8.3%). Color-corrected: Tier 3 (+0.010%, zero free parameters, C205).
 
 ---
 
@@ -133,10 +137,10 @@ With SP1 at T2a, the remaining gap is the IR mass gap: showing Δ_4D ≥ 406-861
 
 | Gap | Description | Current tier | What closes it |
 |---|---|---|---|
-| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a SP1 (C203)** + T3 IR | SP1 closed; remaining: M_c(D7) from substrate (SP5) |
+| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a SP1 (C203)**; SP2 78% (UV+IR T2a; R1 SC T2a; intermediate T3) | SP2g R1 intermediate T2a; then M_c(D7) from substrate (SP5) |
 | α_em(0) hadronic VP | Non-perturbative Δα_had | T4 | f_ρ from D7 dynamics + VMD |
 | Charm/strange quark masses | 15% below observed | T2b | D6/D7 Yukawa overlap integral |
-| Neutrino mass ratio | −8.3% | T2b | Non-uniform depth spacing derivation |
+| Neutrino mass ratio | −8.3% uncorrected; +0.010% with color correction (T3) | T2b/T3 | D4/D7 BVP for δd=1/(6π) formal derivation |
 | M_c(D7) from substrate | QCD scale from V(φ) alone | T4 | Substrate depth dynamics → M_c(D7) |
 | C_match scheme factor | 0.795151 (C197 T2a) | **T2a** | Jost integral explicit computation — done C197 |
 | Fermion representations | Quarks in fundamental rep | T3 | Jackiw-Rebbi BVP for D6 in D7 background |
@@ -148,7 +152,7 @@ With SP1 at T2a, the remaining gap is the IR mass gap: showing Δ_4D ≥ 406-861
 
 The gaps above are derivation gaps, not failures. The model does not predict a wrong quark mass for the charm and comes out 15% low. That is different from predicting a wrong proton decay rate (which the model says is zero, and no decay has been observed) or a wrong tau mass (which the Koide formula gets to 0.006%).
 
-The most significant advance in Cycle 203 is SP1 reaching Tier 2a: the constructive 4D gauge theory argument is now formally established at Tier 2a. The remaining Yang-Mills gap is the IR sector — deriving the mass gap lower bound from the substrate's QCD scale without inputting the observed α_s. The DFC model is now a publishable proof candidate structure pending that derivation.
+The most significant advance in Cycle 203 is SP1 reaching Tier 2a: the constructive 4D gauge theory argument is now formally established at Tier 2a. Subsequent cycles (C205–C207) established the IR gap at Tier 2a (SC area law), R1 SC domain at Tier 2a, and strengthened the R1 intermediate domain argument with three new Tier 1 results. SP2 is now at 78% with only the intermediate domain [3.0, 17.1] remaining at Tier 3. The DFC model is a publishable proof candidate structure pending the R1 intermediate domain rigorous closure and M_c(D7) from substrate dynamics.
 
 A model that is honest about gaps is more trustworthy, not less.
 

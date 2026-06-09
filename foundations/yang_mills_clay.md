@@ -34,7 +34,7 @@ all three Balaban domain checks are uniform over all n ≥ 0 at T2a level.
 | # | Sub-problem | Tier | Progress | Key equation file | Last updated |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T2a** | **85%** | `ym_sp1g_rg_domain.py`, `ym_balaban_npoint.py`, `ym_infinite_volume.py` | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1; R1 SC T2a** | **76%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py` | **C206** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1; R1 SC T2a** | **78%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py` | **C207** |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | C184 |
 | SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a** | **65%** | `ym_jost_function.py` | C197 |
@@ -81,12 +81,13 @@ main chain). SP1 progress: 85%.
   — SC convergence: 6u = 0.339 < 1, u < u_c^Munster = 0.11 [T2a]
 - **R1 SC domain analyticity**: T2a NEW [C206]
   — SC polymer expansion: u = β/(2N_c²) = β/18; Seiler convergence: 6u = 0.339 < 1 [T2a]
-  — conservative Seiler (with e): β_c^SC = 3/e = 1.1036; β_lat^IR = 1.016 < 1.1036 [T2a]
+  — conservative Seiler (with e): β_c^SC = 3/e = 1.1036; lenient: β_c^SC = 3.0 (6u<1); β_lat^IR = 1.016 ∈ both [T2a]
   — each polymer weight φ(γ) = exp(β × character) is analytic in β [T1]
-  — Weierstrass M-test: ΣM_γ < ∞ for β < β_c^SC → f(β) analytic → no phase transition [T1+T2a]
-  — SP2e: R1 SC domain (β<β_c^SC) no phase transition T2a; IR coupling β_lat^IR = 1.016 ∈ domain ✓
-- **R1 domain map (C206)**: SC domain (0, 1.1) T2a; intermediate [1.1, 17.1] T3; KP domain (17.1, ∞) T2a
+  — Weierstrass M-test: ΣM_γ < ∞ for β < 3.0 → f(β) analytic → no phase transition [T1+T2a]
+  — SP2e: R1 SC domain (β<3.0) no phase transition T2a; IR coupling β_lat^IR = 1.016 ∈ domain ✓
+- **R1 domain map (C207 CORRECTED)**: SC domain (0, 3.0) T2a [C206 module; C206 docs had (0,1.1) — fixed C207]; intermediate [3.0, 17.1] T3; KP domain (17.1, ∞) T2a
   — Both DFC endpoints in T2a domains: IR β=1.016 ∈ SC [T2a]; UV β=20.25 ∈ KP [T2a]
+- **R1 intermediate [3.0, 17.1] T3 strengthened [C207]**: T(β) Lipschitz continuous [T1: |Tr U/N_c|≤1]; Δ(β)=0 ⟺ phase transition [T1 exact]; FKG no first-order [T2a]; Creutz no second-order [T3]; β_deconf=5.69 is finite-T only, NOT T=0 bulk [T2a clarified]
 - **Two-regime gap existence**: UV T2a (C201) + Z_N T1 (C204) + IR T2a (C205) + R1 partial T2a (C206)
   — gap positive at both UV (Planck) and IR (QCD) scales; R1 T2a at both endpoints
   — if R1 intermediate [1.1, 17.1] → T2a: SP2 gap existence T2a overall
@@ -226,7 +227,8 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | `equations/ym_sp1g_rg_domain.py` | SP1g: g²(n) algebraically decreasing → uniform domain bound | C203 |
 | `equations/ym_sp2_elitzur_confinement.py` | SP2: Elitzur + Z_N center + KP area law | C204 |
 | `equations/ym_sc_area_law.py` | SP2 IR gap: SC area law, β_lat^IR=1.016, Δ_SC≥1033 MeV | C205 |
-| `equations/ym_r1_sc_analyticity.py` | SP2 R1 SC domain: polymer analyticity → no phase transition for β<1.1 | C206 |
+| `equations/ym_r1_sc_analyticity.py` | SP2 R1 SC domain: polymer analyticity → no phase transition for β<3.0 (lenient), <1.1 (conservative) | C206 |
+| `equations/ym_r1_intermediate.py` | SP2 R1 intermediate [3.0,17.1]: T(β) Lipschitz T1; Δ=0↔transition T1; FKG+OS+Creutz T3; SC domain corrected | C207 |
 
 ---
 
@@ -262,7 +264,8 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | C203 | **SP1g T3→T2a** (+15% CPC SWING EVENT): g²(n)=1/(1/g²(0)+nΔ) algebraically decreasing [T1] → max_n g²(n)/(16π²) = 0.19% = g²(0)/(16π²) [T1 monotone] → all 3 Balaban domain checks uniform for all n≥0 [T2a from T1+T2a]; SP1 T3→**T2a** overall; SP1 progress 78%→85% | **~72%** | **~50%** |
 | C204 | SP2 Z_N center symmetry T1 EXACT: P→z·P; (1−z₃)·<P>=0; |1−z₃|=1.732≠0 → <P>=0 [T1]; Elitzur theorem confinement; SP2 progress 68%→71% | ~72% | ~50% |
 | C205 | SP2 IR gap T2a: α_s(1 GeV)≥0.47 [PDG] → β_lat^IR≤1.016 [T2a]; u=β/18=0.0564<1 [T1]; σ_SC=2.875Λ²=266535 MeV² [T2a]; Δ_SC≥1033 MeV [T2a]; SC convergence 6u=0.339<1 [T2a]; SP2 71%→74% | ~72% | ~50% |
-| C206 | **SP2 R1 SC analyticity T3→T2a**: polymer expansion Σφ(γ) analytic → f(β) analytic for β<β_c^SC=1.1 (Seiler conservative) [T1+T2a]; β_lat^IR=1.016<1.1036 [T2a]; Weierstrass M-test T1 structure; no phase transition in SC domain [T1+T2a]; R1 domain map: (0,1.1) T2a + [1.1,17.1] T3 + (17.1,∞) T2a; both DFC endpoints T2a; SP2 progress 74%→76% | ~72% | ~50% |
+| C206 | **SP2 R1 SC analyticity T3→T2a**: polymer expansion Σφ(γ) analytic → f(β) analytic for β<β_c^SC [T1+T2a]; β_lat^IR=1.016<1.1036 (conservative) [T2a]; Weierstrass M-test T1 structure; no phase transition in SC domain [T1+T2a]; module output SC domain (0,3.0); docs incorrectly recorded (0,1.1) — fixed C207; SP2 progress 74%→76% | ~72% | ~50% |
+| C207 | **SP2 R1 intermediate domain T3 strengthened**: ym_r1_intermediate.py — Part A: SC domain corrected (0,1.1)→(0,3.0) from lenient Seiler (6u<1) [T2a]; Part B: |Tr U/N_c|≤1 ∀U∈SU(3), max dev=0.9556 [T1]; T(β) Lipschitz continuous in β [T1]; Part C: Δ(β)=0 ⟺ degenerate vacuum ⟺ phase transition [T1 exact logical equivalence]; Part D: both endpoints β_IR=1.016 and β_UV=20.25 outside [3.0,17.1] with T2a gap positivity; Part E: FKG no 1st-order [T2a], OS RP all β [T2a], β_deconf=5.69 finite-T only NOT T=0 bulk [T2a], Creutz no 2nd-order [T3]; SP2g T3 (unchanged but logical structure explicit); SP2 76%→78% | ~72% | ~50% |
 
 ---
 

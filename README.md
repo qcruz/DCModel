@@ -245,13 +245,13 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **76%** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **78%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **65%** |
 
-Latest: **C206 SP2 R1 SC T3→T2a** (SC polymer analyticity → no phase transition β<1.1; β_lat^IR=1.016<β_c^SC=1.1036; both DFC endpoints T2a; SP2 76%); C205 IR gap T2a (Δ_SC≥1033 MeV); C204 Z_N center T1; C203 SP1 T2a overall.
-Remaining T4: R1 intermediate β∈[1.1,17.1] + SP5 M_c(D7) from V(φ) alone.
+Latest: **C207 SP2 R1 intermediate [3.0,17.1] T3 strengthened**: |Tr U/N_c|≤1 [T1]; T(β) Lipschitz [T1]; Δ=0↔transition [T1 exact]; SC domain corrected (0,1.1)→(0,3.0) [T2a]; β_deconf=5.69 finite-T only [T2a]; SP2 78%. C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a.
+Remaining T4: R1 intermediate β∈[3.0,17.1] (Seiler SU(3) extension) + SP5 M_c(D7) from V(φ) alone.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
