@@ -28,7 +28,7 @@ An open gap is a step that is currently Tier 3 or Tier 4, where a completed deri
 - The 4D gauge theory lives on the kink worldvolume via Kaluza-Klein reduction. All non-zero Kaluza-Klein modes are heavier than the QCD scale by a factor of roughly 10²⁰, so they decouple and leave pure SU(3) Yang-Mills below that scale. This is Tier 2a (the scale separation) plus Tier 3 (the KK reduction itself).
 - The string tension and confinement argument give a lower bound on the 4D gap: the minimum glueball energy is at least 861 MeV (from the relation Δ ≥ 2√(Q_top) × Λ_QCD with Q_top = 2 and Λ_QCD = 304.5 MeV). The observed lightest glueball is around 1475–1730 MeV, which is consistent. This is Tier 3.
 
-**Progress through Cycle 203 (SP1 T2a):**
+**Progress through Cycle 210 (SP1 T2a; SP2 78% strengthened):**
 - OS axioms inherited from DFC domain wall chain: Tier 3 (C185)
 - Kotecky-Preiss polymer expansion: KP = 0.344 < 1, converges at β_lat = 20.25 — Tier 2a (C199)
 - Infinite-volume Gibbs state unique (Dobrushin-Lanford-Ruelle): Tier 2a (C199)
@@ -41,7 +41,8 @@ An open gap is a step that is currently Tier 3 or Tier 4, where a completed deri
 - R1 SC domain (0, 3.0): polymer analyticity → no phase transition, Tier 2a (C206/C207)
 - R1 intermediate [3.0, 17.1]: T(β) Lipschitz [T1]; Δ=0 ⟺ transition [T1]; FKG+Creutz [T3]; β_deconf=5.69 is finite-T only, not T=0 bulk [T2a] (C207)
 - **R1 single-link MLSI (C209):** Holley-Stroock perturbation lemma → c_MLSI(Wilson, β) ≥ (1/16)×exp(−4β) > 0 for all β > 0 [T2a algebraic]; Poincaré constant c_PI > 0 at all intermediate β tested [T2a numerical]; full-lattice factorization volume-uniform bound remains T3
-- SP2 progress: 78% → **78% strengthened** (C209)
+- **R1 specific heat bounded (C210):** SU(3) Wilson Metropolis MC on 2⁴ hypercubic lattice at 7 intermediate β values throughout [3.0, 17.1] — max C_V = 20.0 << finite-L upper bound 7017.8 (ratio 0.003) [T2a numerical]; ⟨P_p⟩ monotone throughout [T2a]; single-plaquette analytic model also bounded (max C_V = 3.90) [T2a]; SP2g T3 (unchanged — volume-uniform L→∞ bound missing); path to T2a: L = 2, 4, 6 finite-size scaling showing C_V_peak/L⁴ → 0
+- SP2 progress: 78% → **78% strengthened** (C209/C210)
 
 **What is missing:**
 SP1 (4D constructive QFT) is T2a. The remaining rigorous gap: showing Δ_4D ≥ 861 MeV all the way to T2a — specifically the R1 intermediate domain [3.0, 17.1] needs a volume-uniform lower bound on the spectral gap (the Holley-Stroock MLSI is volume-dependent and vanishes as L→∞), and M_c(D7) from V(φ) substrate dynamics without inputting the observed α_s(M_Z).
@@ -140,7 +141,7 @@ SP1 (4D constructive QFT) is T2a. The remaining rigorous gap: showing Δ_4D ≥ 
 
 | Gap | Description | Current tier | What closes it |
 |---|---|---|---|
-| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a SP1 (C203)**; SP2 78% (UV+IR T2a; R1 SC T2a; R1 single-link T2a C209; intermediate T3) | SP2g R1 volume-uniform gap bound T2a; then M_c(D7) from substrate (SP5) |
+| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a SP1 (C203)**; SP2 78% (UV+IR T2a; R1 SC T2a; R1 MLSI T2a C209; R1 C_V numerical T2a C210; intermediate T3) | SP2g R1 volume-uniform bound T2a (L=2,4,6 FSS); then M_c(D7) from substrate (SP5) |
 | α_em(0) hadronic VP | Non-perturbative Δα_had | T4 | f_ρ from D7 dynamics + VMD |
 | Charm/strange quark masses | 15% below observed | T2b | D6/D7 Yukawa overlap integral |
 | Neutrino mass ratio | −8.3% uncorrected; +0.010% with color correction (T3) | T2b/T3 | D4/D7 BVP for δd=1/(6π) formal derivation |
@@ -155,7 +156,7 @@ SP1 (4D constructive QFT) is T2a. The remaining rigorous gap: showing Δ_4D ≥ 
 
 The gaps above are derivation gaps, not failures. The model does not predict a wrong quark mass for the charm and comes out 15% low. That is different from predicting a wrong proton decay rate (which the model says is zero, and no decay has been observed) or a wrong tau mass (which the Koide formula gets to 0.006%).
 
-The most significant advance in Cycle 203 is SP1 reaching Tier 2a. Subsequent cycles (C205–C207) established the IR gap at Tier 2a (SC area law), R1 SC domain at Tier 2a, and strengthened the R1 intermediate domain. Cycle 209 added the Holley-Stroock MLSI bound (T2a): c_MLSI(Wilson, β) > 0 for all β — meaning a positive spectral gap exists for each individual site, though the volume-uniform bound remains T3. Cycle 209 also proved (T1) that the neutrino mass correction δd = 1/(6π) is independent of the θ₂₃ mixing angle. SP2 is now at 78% with the intermediate domain volume-uniform bound as the primary remaining step. The DFC model is a publishable proof candidate structure pending that closure and M_c(D7) from substrate dynamics.
+The most significant advance in Cycle 203 is SP1 reaching Tier 2a. Subsequent cycles established the IR gap at Tier 2a (SC area law, C205), R1 SC domain at Tier 2a (C206), and strengthened the R1 intermediate domain (C207). Cycle 209 added the Holley-Stroock MLSI bound (T2a): c_MLSI(Wilson, β) > 0 for all β — a positive spectral gap exists at each individual site. Cycle 209 also proved (T1) that the neutrino mass correction δd = 1/(6π) is independent of the θ₂₃ mixing angle. Cycle 210 added numerical specific-heat evidence: C_V(β) bounded throughout [3.0, 17.1] on the 2⁴ lattice (max 20.0 vs upper bound 7018, ratio 0.003), with monotone ⟨P_p⟩ confirming no phase transition signal. SP2 is at 78% with the volume-uniform L→∞ specific-heat bound as the primary remaining step (path: finite-size scaling at L = 2, 4, 6). The DFC model is a publishable proof candidate structure pending that closure and M_c(D7) from substrate dynamics.
 
 A model that is honest about gaps is more trustworthy, not less.
 

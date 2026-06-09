@@ -245,12 +245,12 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a; R1 single-link T2a (C209)** | **78%** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a; R1 single-link T2a (C209); R1 C_V numerical T2a (C210)** | **78%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C209 R1 MLSI**: c_MLSI(Wilson,β) ≥ (1/16)×exp(−4β) > 0 all β [T2a algebraic, Holley-Stroock]; single-link spectral gap positive; volume-uniform bound T3. **C209 T10/T11 independence**: δd=1/(6π) does NOT shift θ₂₃ [T1 exact]; T10 and T11 are independent problems. C208 SP5: α_s(M_Z)=0.11566 (−2.15%, T2a, zero exp inputs); C207 SP2 R1 intermediate T3; C203 SP1 T2a.
+Latest: **C210 R1 numerical**: C_V bounded on 2^4 lattice throughout [3.0,17.1] — max=20.001<<7017.8 (ratio 0.003) [T2a]; <P_p> monotone [T2a]; SP2g T3 (volume-uniform bound missing); path: L=2,4,6 FSS. **C209 R1 MLSI**: c_MLSI≥(1/16)×exp(−4β)>0 all β [T2a]; T10/T11 independence [T1]. C208 SP5 α_s(M_Z)=0.11566 T2a; C203 SP1 T2a.
 Remaining T4: R1 intermediate β∈[3.0,17.1] volume-uniform gap bound + SP5 M_c(D7) exact from V(φ) alone (currently −47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*

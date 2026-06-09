@@ -313,6 +313,8 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 - `equations/ym_moduli_metric.py` — SP4 G3 full T2a, flat Killing metric (Cycle 184)
 - `equations/ym_infinite_volume.py` — SP1j infinite-volume T2a, KP cluster expansion (Cycle 199)
 - `equations/ym_jost_function.py` — SP5 c_gauge(cont)=2.773, C_match=0.795151 T2a (Cycle 197)
+- `equations/ym_r1_mlsi.py` — SP2 R1 single-link MLSI c_MLSI≥(1/16)exp(−4β)>0 T2a (Cycle 209)
+- `equations/ym_sp2g_numerical_gap.py` — SP2 R1 numerical: C_V bounded on 2^4 lattice T2a (Cycle 210)
 - `equations/d6_gauge_beta.py` — b₀ survey (Cycle 133); SU(2) CANNOT drive EWSB (Tier 1); b₀_EW=N_Hopf+Q_top=11
 - `equations/mc_closure_scales.py` — ECCC M_c(D7)=1.566×10¹⁵ GeV (Cycle 130)
 - `phenomena/particle_physics/quark_gluon_plasma.md` — strong force at T > Λ_QCD; deconfinement
@@ -328,15 +330,16 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 
    | SP | Description | Tier | Key file |
    |---|---|---|---|
-   | SP1 | Constructive 4D gauge theory | T3 (finite+infinite vol T2a; a→0 T4) | `ym_infinite_volume.py` (C199) |
-   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | T3 (4D chain) | `ym_4d_gap_extension.py` (C189) |
+   | SP1 | Constructive 4D gauge theory | **T2a** (C203: SP1g Balaban closes) | `ym_sp1g_rg_domain.py` (C203) |
+   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | T3 (4D chain); UV+IR gap T2a; R1 SC T2a; R1 MLSI T2a (C209); R1 C_V numerical T2a (C210) | `ym_r1_mlsi.py` (C209), `ym_sp2g_numerical_gap.py` (C210) |
    | SP3 | Topological charge spectrum Q_top∈ℤ | **T2a** | `ym_topological_sectors.py` (C187) |
    | SP4 | Pure YM decoupling from scalar in IR | **T2a** | `ym_moduli_metric.py` (C184) |
-   | SP5 | Derive Λ_QCD from V(φ) | **T2a** (C_match=0.795; M_c(D7) T4) | `ym_jost_function.py` (C197) |
+   | SP5 | Derive Λ_QCD from V(φ) | **T2a** (C_match=0.795151 T2a; M_c(D7) T2b C208) | `ym_jost_function.py` (C197), `ym_sp5_mcdz_derivation.py` (C208) |
 
    Key T1 structural inputs: E_BPS=113.1 M_Pl>0; Q_top=2 exact; I₄=C₂(fund,SU(3))=4/3 exact.
-   4D gap bound: Δ_4D ≥ 2√2×Λ_QCD = 861 MeV [T3, SP2]. Clay Prize progress: ~67%, CPC: ~35%.
-   Remaining T4: SP1k (Balaban a→0 continuum limit) + SP5 M_c(D7) from V(φ) substrate dynamics.
+   4D gap bound: Δ_4D ≥ 2√2×Λ_QCD = 861 MeV [T3, SP2]. **Clay Prize progress: ~72%, CPC: ~50%.**
+   Remaining gap: SP2 R1 intermediate domain [3.0,17.1] volume-uniform bound (T3→T2a); SP5 M_c(D7) from V(φ) (T2b→T2a).
+   Full tracking: `foundations/yang_mills_clay.md`.
 
 2. **Derive Λ_QCD from DFC parameters (SP5, T2a):** The confinement scale Λ_QCD is set by
    dimensional transmutation. The old one-loop formula (Cycle 133, `equations/confinement.py`)

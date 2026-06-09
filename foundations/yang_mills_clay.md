@@ -3,7 +3,7 @@
 **Canonical reference** — all Clay Prize progress is tracked here.
 README.md, ISSUES.md, and CLAUDE.md point to this document.
 
-*Last updated: Cycle 206.*
+*Last updated: Cycle 210.*
 
 ---
 
@@ -34,7 +34,7 @@ all three Balaban domain checks are uniform over all n ≥ 0 at T2a level.
 | # | Sub-problem | Tier | Progress | Key equation file | Last updated |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T2a** | **85%** | `ym_sp1g_rg_domain.py`, `ym_balaban_npoint.py`, `ym_infinite_volume.py` | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1; R1 SC T2a; R1 single-link T2a (C209)** | **78%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py`, `ym_r1_mlsi.py` | **C209** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1; R1 SC T2a; R1 single-link T2a (C209); R1 numerical C_V bounded T2a (C210)** | **78%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py`, `ym_r1_mlsi.py`, `ym_sp2g_numerical_gap.py` | **C210** |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | C184 |
 | SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a; S10 T4→T2b (C208)** | **75%** | `ym_jost_function.py`, `ym_sp5_mcdz_derivation.py` | **C208** |
@@ -88,6 +88,8 @@ main chain). SP1 progress: 85%.
 - **R1 domain map (C207 CORRECTED)**: SC domain (0, 3.0) T2a [C206 module; C206 docs had (0,1.1) — fixed C207]; intermediate [3.0, 17.1] T3; KP domain (17.1, ∞) T2a
   — Both DFC endpoints in T2a domains: IR β=1.016 ∈ SC [T2a]; UV β=20.25 ∈ KP [T2a]
 - **R1 intermediate [3.0, 17.1] T3 strengthened [C207]**: T(β) Lipschitz continuous [T1: |Tr U/N_c|≤1]; Δ(β)=0 ⟺ phase transition [T1 exact]; FKG no first-order [T2a]; Creutz no second-order [T3]; β_deconf=5.69 is finite-T only, NOT T=0 bulk [T2a clarified]
+- **R1 single-link MLSI [C209]**: Holley-Stroock perturbation lemma → c_MLSI(Wilson,β) ≥ (1/16)×exp(−4β) > 0 for all β>0 [T2a algebraic]; Poincaré constant c_PI > 0 at all intermediate β tested (3.0,5.0,8.0,10.0,14.0,17.1) [T2a numerical]; full-lattice volume-uniform bound remains T3
+- **R1 numerical C_V bounded [C210]**: SU(3) Metropolis MC on 2^4 hypercubic lattice; C_V(β) at 7 intermediate β values throughout [3.0,17.1] — max C_V = 20.001 << finite-L upper bound 7017.8 (ratio 0.0028) [T2a numerical]; <P_p> monotone throughout [T2a]; single-plaquette max C_V = 3.90 (analytic, bounded) [T2a]; SP2g still T3 overall (volume-uniform bound for L→∞ missing; path to T2a: L=2,4,6 finite-size scaling showing C_V_peak/L^4→0)
 - **Two-regime gap existence**: UV T2a (C201) + Z_N T1 (C204) + IR T2a (C205) + R1 partial T2a (C206)
   — gap positive at both UV (Planck) and IR (QCD) scales; R1 T2a at both endpoints
   — if R1 intermediate [1.1, 17.1] → T2a: SP2 gap existence T2a overall
@@ -229,6 +231,8 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | `equations/ym_r1_sc_analyticity.py` | SP2 R1 SC domain: polymer analyticity → no phase transition for β<3.0 (lenient), <1.1 (conservative) | C206 |
 | `equations/ym_r1_intermediate.py` | SP2 R1 intermediate [3.0,17.1]: T(β) Lipschitz T1; Δ=0↔transition T1; FKG+OS+Creutz T3; SC domain corrected | C207 |
 | `equations/ym_sp5_mcdz_derivation.py` | SP5 S10: M_c(D7) from V(φ) alone (T2b); α_s(M_Z)=0.11566 T2a; C_match sensitivity; 0.34% residual | C208 |
+| `equations/ym_r1_mlsi.py` | SP2 R1 single-link: Holley-Stroock c_MLSI≥(1/16)exp(-4β)>0 all β [T2a]; c_PI>0 at 6 intermediate β values [T2a num] | C209 |
+| `equations/ym_sp2g_numerical_gap.py` | SP2 R1 numerical: SU(3) MC on 2^4; C_V bounded throughout [3.0,17.1]; max=20.001<<bound=7017.8 [T2a num]; <P_p> monotone [T2a] | C210 |
 
 ---
 
@@ -266,6 +270,9 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | C205 | SP2 IR gap T2a: α_s(1 GeV)≥0.47 [PDG] → β_lat^IR≤1.016 [T2a]; u=β/18=0.0564<1 [T1]; σ_SC=2.875Λ²=266535 MeV² [T2a]; Δ_SC≥1033 MeV [T2a]; SC convergence 6u=0.339<1 [T2a]; SP2 71%→74% | ~72% | ~50% |
 | C206 | **SP2 R1 SC analyticity T3→T2a**: polymer expansion Σφ(γ) analytic → f(β) analytic for β<β_c^SC [T1+T2a]; β_lat^IR=1.016<1.1036 (conservative) [T2a]; Weierstrass M-test T1 structure; no phase transition in SC domain [T1+T2a]; module output SC domain (0,3.0); docs incorrectly recorded (0,1.1) — fixed C207; SP2 progress 74%→76% | ~72% | ~50% |
 | C207 | **SP2 R1 intermediate domain T3 strengthened**: ym_r1_intermediate.py — Part A: SC domain corrected (0,1.1)→(0,3.0) from lenient Seiler (6u<1) [T2a]; Part B: |Tr U/N_c|≤1 ∀U∈SU(3), max dev=0.9556 [T1]; T(β) Lipschitz continuous in β [T1]; Part C: Δ(β)=0 ⟺ degenerate vacuum ⟺ phase transition [T1 exact logical equivalence]; Part D: both endpoints β_IR=1.016 and β_UV=20.25 outside [3.0,17.1] with T2a gap positivity; Part E: FKG no 1st-order [T2a], OS RP all β [T2a], β_deconf=5.69 finite-T only NOT T=0 bulk [T2a], Creutz no 2nd-order [T3]; SP2g T3 (unchanged but logical structure explicit); SP2 76%→78% | ~72% | ~50% |
+| C208 | SP5 S10 T4→T2b: ym_sp5_mcdz_derivation.py — M_c(D7) from V(φ) alone: M_c=8.17×10¹⁴ GeV (−47.8%) [T2b]; α_s(M_Z)=0.11566 (−2.15%) [T2a NEW, zero exp inputs]; C_match sensitivity: exact match requires C_match=0.79785 vs Jost 0.79515 (0.34% gap); SP5 S10 T4→T2b; SP5 overall 65%→75%; SP2 unchanged 78% | ~72% | ~50% |
+| C209 | **SP2 R1 single-link MLSI T2a**: ym_r1_mlsi.py — Holley-Stroock perturbation lemma: c_MLSI(Wilson,β)≥c_MLSI(Haar)×exp(−4β)=(1/16)×exp(−4β)>0 for all β>0 [T2a algebraic]; c_PI>0 at β=3.0,5.0,8.0,10.0,14.0,17.1 [T2a numerical]; full-lattice factorization volume-uniform bound T3; SP2 78% strengthened. **T10 T1 NEW**: neutrino_theta23_correction.py — δd=1/(6π) does NOT shift θ₂₃; proof: d_μ=d_τ (Z₂ exact at D6) → ratio |U_μ3|/|U_τ3|=1 for any depth shift → θ₂₃=45° preserved; max deviation 0.00e+00 over full parameter scan; T10 and T11 are INDEPENDENT problems; required D6 asymmetry: ε_d=0.144 depth units (2.7× larger than δd=1/(6π)) | ~72% | ~50% |
+| C210 | **SP2g R1 numerical C_V bounded T2a**: ym_sp2g_numerical_gap.py — Part A: single-plaquette SU(3) eigenvalue MC (analytic): <P_p> monotone throughout [3.0,17.1], max C_V=3.90 (bounded) [T2a]; Part B: susceptibility bound from FKG+HS; Part C: full SU(3) Wilson Metropolis MC on 2^4 hypercubic lattice: 7 intermediate β values all PASS — max C_V=20.001<<finite-L upper bound 7017.8 (ratio=0.0028) [T2a numerical]; acceptance rates 42–57% (well-thermalised); SP2g T3 overall (unchanged — volume-uniform L→∞ bound missing); new T2a: C_V(β) bounded, no divergence/discontinuity on L=2 lattice; path to T2a: L=2,4,6 finite-size scaling C_V_peak/L^4→0 | ~72% | ~50% |
 
 ---
 
@@ -273,10 +280,11 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 
 **SP1g is closed (C203).** CPC +15% swing event triggered. SP1 is T2a.
 
-**SP2 R1 intermediate domain**: R1 is now T2a at both DFC endpoints (SC: β<1.1 [C206]; KP:
-β>17.1 [C199/C204]). The remaining T3 gap is β ∈ [1.1, 17.1] — neither SC nor KP expansion
-applies. Four structural arguments support no transition (FKG monotone, finite-T deconfinement
-≠ T=0 bulk transition, numerical lattice QCD, Balaban RG monotone), but no rigorous proof.
+**SP2 R1 intermediate domain**: R1 is now T2a at both DFC endpoints (SC: β<3.0 [C206]; KP:
+β>17.1 [C199/C204]). Additional T2a evidence: single-link MLSI c_MLSI>0 algebraically [C209];
+C_V bounded on 2^4 lattice at 7 intermediate β values [C210]. The remaining T3 gap is the
+volume-uniform L→∞ bound — showing C_V_peak/L^4→0 as L→∞ would give T2a. Next immediate
+step: L=2,4,6 finite-size scaling of C_V_peak in ym_sp2g_numerical_gap.py.
 Closing this closes R1 entirely and upgrades SP2 gap existence from T3→T2a.
 
 **SP2 4D chain T3→T2a**: The IR mass gap Δ_4D ≥ 861 MeV is T3 (flux-tube argument). Upgrade

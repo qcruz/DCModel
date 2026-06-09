@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-09 (Cycles 122–208)
+**Last updated:** 2026-06-09 (Cycles 122–210)
 
 ---
 
@@ -314,19 +314,19 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 208.
+- **Status:** Active primary focus. Last updated: Cycle 210.
 - **Overall progress:** ~72%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
 
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **78%** | **C207** |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a; R1 single-link T2a (C209); R1 C_V numerical T2a (C210)** | **78%** | **C210** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
 
 **Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b).
-**Latest:** C208 SP5 DFC-alone α_s(M_Z)=0.11566 (−2.15%, T2a, zero exp inputs); M_c(D7)=8.17×10¹⁴ GeV (T2b, −47.8%); SP5 S10 T4→T2b; SP5 65%→75%. C207 SP2 R1 intermediate T3; C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a (CPC+15%).
+**Latest:** C210 SP2g R1 numerical T2a: C_V bounded throughout [3.0,17.1] on 2^4 lattice (max=20.001<<7017.8); <P_p> monotone [T2a]; SP2g T3 (volume-uniform bound missing); path: L=2,4,6 FSS. C209 R1 single-link MLSI T2a + T10 T1 (θ₂₃ independence of δd). C208 SP5 S10 T4→T2b; C207 SP2 R1 intermediate T3; C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)
