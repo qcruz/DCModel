@@ -306,6 +306,15 @@ Comparing 1.34 to 5.71 produced the spurious "4.3×" claim (Cycle 165 fix).
    small? This asymmetry may reflect the structural difference between sub-D4 winding
    modes (neutrinos, large mixing) and D7 quark states (smaller mixing).
 
+   For θ₂₃ specifically: at leading order, the Z₂ (μ↔τ) exchange symmetry of S³ at D6
+   depth forces θ₂₃ = 45° exactly [T3, C206]. The observed value sin²θ₂₃ ≈ 0.55 (θ₂₃ ≈ 47–49°)
+   is close but not at maximal mixing. **C209 [T1]:** The C205 color correction δd = 1/(6π)
+   does NOT shift θ₂₃ — it shifts the mass EIGENSTATE depth of ν₃ symmetrically in both
+   μ and τ projections, leaving |U_μ3|/|U_τ3| = 1 exactly. The deviation requires an explicit
+   Z₂ breaking at D6 (flavor depth level), not at D4 (mass eigenstate level). Three T4 candidate
+   mechanisms: (1) CKM-like D6/D7 interface asymmetry, (2) winding-number-dependent D4/D6 BC,
+   (3) CP phase from π₃(S³) = ℤ topology. See `equations/neutrino_theta23_correction.py` (C209).
+
 4. **Confirm or refute the Majorana prediction.** DFC tentatively predicts neutrinos
    are Majorana — single-sided zero modes with no right-handed mirror state. This is
    testable via neutrinoless double beta decay: if ββ₀ν is observed, neutrinos are
@@ -334,3 +343,6 @@ Comparing 1.34 to 5.71 produced the spurious "4.3×" claim (Cycle 165 fix).
   `equations/neutrino_masses.py`
 - **Color phase correction** — κ^(1+1/(6π)) formula; selectivity/universality checks; sensitivity;
   `equations/neutrino_color_correction.py` (C205)
+- **θ₂₃ correction analysis** — T1 proof that δd = 1/(6π) does not shift θ₂₃; required D6
+  asymmetry ~15%; three T4 candidate mechanisms; T10 and T11 are independent problems;
+  `equations/neutrino_theta23_correction.py` (C209)

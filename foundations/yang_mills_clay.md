@@ -34,7 +34,7 @@ all three Balaban domain checks are uniform over all n ≥ 0 at T2a level.
 | # | Sub-problem | Tier | Progress | Key equation file | Last updated |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T2a** | **85%** | `ym_sp1g_rg_domain.py`, `ym_balaban_npoint.py`, `ym_infinite_volume.py` | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1; R1 SC T2a** | **78%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py` | **C207** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1; R1 SC T2a; R1 single-link T2a (C209)** | **78%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py`, `ym_r1_mlsi.py` | **C209** |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | C184 |
 | SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a; S10 T4→T2b (C208)** | **75%** | `ym_jost_function.py`, `ym_sp5_mcdz_derivation.py` | **C208** |

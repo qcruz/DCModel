@@ -245,13 +245,13 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **78%** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a; R1 single-link T2a (C209)** | **78%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C208 SP5 DFC-alone α_s(M_Z)**: α_s(M_Z)=0.11566 (−2.15%, T2a NEW, zero experimental inputs); M_c(D7)_DFC=8.17×10¹⁴ GeV (T2b); C_match sensitivity +0.34% needed; SP5 S10 T4→T2b. C207 SP2 R1 intermediate T3; C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a.
-Remaining T4: R1 intermediate β∈[3.0,17.1] (Seiler SU(3) extension) + SP5 M_c(D7) exact from V(φ) alone (currently −47.8%).
+Latest: **C209 R1 MLSI**: c_MLSI(Wilson,β) ≥ (1/16)×exp(−4β) > 0 all β [T2a algebraic, Holley-Stroock]; single-link spectral gap positive; volume-uniform bound T3. **C209 T10/T11 independence**: δd=1/(6π) does NOT shift θ₂₃ [T1 exact]; T10 and T11 are independent problems. C208 SP5: α_s(M_Z)=0.11566 (−2.15%, T2a, zero exp inputs); C207 SP2 R1 intermediate T3; C203 SP1 T2a.
+Remaining T4: R1 intermediate β∈[3.0,17.1] volume-uniform gap bound + SP5 M_c(D7) exact from V(φ) alone (currently −47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 

@@ -428,10 +428,22 @@ deviation has not been calculated.
 **Status:**
 - Near-degeneracy argument: RETRACTED (conceptual error)
 - Z₂ exchange symmetry → θ₂₃ = 45° at leading order: T3 structural [C206]
-- Deviation 49° − 45° = 4°: open; color correction δd = 1/(6π) is candidate but not calculated
+- **C209 NEW [T1]:** The C205 color correction δd = 1/(6π) does NOT shift θ₂₃.
+  Proof: δd shifts the MASS EIGENSTATE depth of ν₃ uniformly; since d_μ = d_τ (Z₂ exact),
+  |U_μ3| and |U_τ3| change by identical factors → ratio stays 1 → θ₂₃ = 45° preserved.
+  Verified numerically: max deviation from |U_μ3|/|U_τ3| = 1 over full parameter scan = 0.00e+00.
+- T11 correction (δd = 1/(6π)) and T10 deviation (4.1°) are **independent problems**.
+- Observed θ₂₃ = 49.1° requires ~15.5% asymmetry in |U_τ3|/|U_μ3| = 1.154.
+  Required D6 flavor depth asymmetry ε_d ≈ 0.144 depth units (2.7× larger than δd).
+- Deviation 4.1°: requires explicit Z₂ breaking at D6. Three T4 candidates:
+  1. **CKM-like D6/D7 interface mixing:** D7 closure couples asymmetrically to μ vs τ winding.
+     Required: D6 Dirac operator in D7 SU(3) kink background with flavor labeling.
+  2. **D4/D6 BC asymmetry:** winding-number-dependent BCs for 2nd vs 3rd generation winding.
+  3. **CP phase from π₃(S³)=ℤ:** Dirac CP phase δ_CP ≈ −90° (T2K/NOvA) contributes to
+     apparent θ₂₃ shift through PMNS marginalization. DFC account of CP violation open.
 - Quantitative: θ₂₃ derivation from D4/D6 projection geometry is T4 (no formula yet)
 
-**Files:** `phenomena/particle_physics/neutrino_oscillations.md` (updated C206 Steps 2+3), `equations/neutrino_oscillations.py`
+**Files:** `phenomena/particle_physics/neutrino_oscillations.md` (updated C206), `equations/neutrino_oscillations.py`, `equations/neutrino_theta23_correction.py` (C209)
 
 ### T11 — Neutrino hierarchy ratio: metric confusion + revised error (Cycle 65; corrected Cycle 165)
 - The claimed "4.3× failure" (DFC gives 1.34, observed 5.71) conflated two different quantities:
