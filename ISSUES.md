@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-07 (Cycles 122–206)
+**Last updated:** 2026-06-09 (Cycles 122–208)
 
 ---
 
@@ -314,7 +314,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 206.
+- **Status:** Active primary focus. Last updated: Cycle 208.
 - **Overall progress:** ~72%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
 
 | SP | Description | Tier | Progress | Last changed |
@@ -323,10 +323,10 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **78%** | **C207** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
-| SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | 65% | C197 |
+| SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
 
-**Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) from V(φ) substrate dynamics alone.
-**Latest:** C207 R1 intermediate [3.0,17.1] T3 strengthened: |Tr U/N_c|≤1 [T1]; T(β) Lipschitz [T1]; Δ=0↔transition [T1]; SC domain corrected (0,1.1)→(0,3.0) [T2a]; β_deconf=5.69 finite-T only [T2a]; SP2 76%→78%. C206 R1 SC T2a, C205 IR gap T2a, C204 Z_N T1, C203 SP1 T2a (CPC+15%).
+**Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b).
+**Latest:** C208 SP5 DFC-alone α_s(M_Z)=0.11566 (−2.15%, T2a, zero exp inputs); M_c(D7)=8.17×10¹⁴ GeV (T2b, −47.8%); SP5 S10 T4→T2b; SP5 65%→75%. C207 SP2 R1 intermediate T3; C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -497,7 +497,7 @@ deviation has not been calculated.
 | Target | Why Blocked | Files | Required Extension |
 |---|---|---|---|
 | r_U1/λ = 3/(4β) from substrate | Real φ⁴ has no localizable U(1) phase; Routes A and B both blocked | `phase_stiffness_derivation.md` | Complex scalar or gauge field in substrate |
-| M_c(D7) from substrate | Target 1.566×10¹⁵ GeV (confirmed Cycle 130 ECCC: the correct DFC condition α₃=α_common gives this self-consistently; γ_color ≈ 2.52 per D6→D7 step; Δ_D67=5.08 new Bottleneck 3 input); α₁∩α₃ crossing (old estimate 8×10¹⁴ GeV) identified as wrong condition | `depth_running.py`, `bifurcation_dynamics.py`, `alpha_s_target.py`, `mc_closure_scales.py` | Derive M_c(D7) from substrate depth-running (not from SM α_s inversion) to make α_s a genuine Tier 2 prediction |
+| M_c(D7) from substrate | **PARTIALLY UNBLOCKED (Cycle 208, T2b):** `ym_sp5_mcdz_derivation.py` gives first DFC-alone derivation. M_c(D7)_DFC = 8.17×10¹⁴ GeV (−47.8% vs ECCC 1.566×10¹⁵ GeV) [T2b]. NEW T2a: α_s(M_Z)_DFC = 0.11566 (−2.15%, zero experimental inputs) [T2a]. C_match sensitivity: exact α_s(M_Z) match requires C_match=0.797849 vs Jost value 0.795151; residual = +0.34% (= 2-loop threshold correction). Path to T2a for M_c: compute 2-loop C_match correction (+0.34% closes gap). | `equations/ym_sp5_mcdz_derivation.py` (C208), `depth_running.py`, `mc_closure_scales.py`, `equations/ym_cmatch_msbar.py` (C191), `equations/ym_jost_function.py` (C197) | Compute 2-loop threshold correction to C_match (+0.34% needed) from KK tower + shape mode loops |
 | β ≈ 0.035 from pre-substrate principle | No pre-substrate condition identified that selects β | `beta_substrate.py` [STUB] | New theoretical input (pre-bifurcation stability condition) |
 | Born rule for position | Spin case DERIVED (Cycle 38); Kramers escape rate Γ(x) ∝ \|φ(x)\|² not rigorously derived | `measurement.md`, `born_rule_derivation.md` | Escape rate calculation from V(φ) saddle topology |
 | ℏ from (α, β, c) | S_kink(D1)/ℏ = 4×10³⁹ — 13.2 bifurcations needed to reach ℏ scale; model has only 4 | `planck_constant_derivation.md` | Either additional sub-bifurcation structure or route via α_em derivation |

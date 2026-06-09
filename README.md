@@ -248,10 +248,10 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a** | **78%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
-| SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **65%** |
+| SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C207 SP2 R1 intermediate [3.0,17.1] T3 strengthened**: |Tr U/N_c|≤1 [T1]; T(β) Lipschitz [T1]; Δ=0↔transition [T1 exact]; SC domain corrected (0,1.1)→(0,3.0) [T2a]; β_deconf=5.69 finite-T only [T2a]; SP2 78%. C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a.
-Remaining T4: R1 intermediate β∈[3.0,17.1] (Seiler SU(3) extension) + SP5 M_c(D7) from V(φ) alone.
+Latest: **C208 SP5 DFC-alone α_s(M_Z)**: α_s(M_Z)=0.11566 (−2.15%, T2a NEW, zero experimental inputs); M_c(D7)_DFC=8.17×10¹⁴ GeV (T2b); C_match sensitivity +0.34% needed; SP5 S10 T4→T2b. C207 SP2 R1 intermediate T3; C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a.
+Remaining T4: R1 intermediate β∈[3.0,17.1] (Seiler SU(3) extension) + SP5 M_c(D7) exact from V(φ) alone (currently −47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 

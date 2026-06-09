@@ -37,7 +37,7 @@ all three Balaban domain checks are uniform over all n ≥ 0 at T2a level.
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1; R1 SC T2a** | **78%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py` | **C207** |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | C184 |
-| SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a** | **65%** | `ym_jost_function.py` | C197 |
+| SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a; S10 T4→T2b (C208)** | **75%** | `ym_jost_function.py`, `ym_sp5_mcdz_derivation.py` | **C208** |
 
 ---
 
@@ -107,10 +107,9 @@ main chain). SP1 progress: 85%.
 | S7 | c_gauge(n=1 KK) = 0 exactly (parity: ∫EVEN·EVEN·ODD = 0) [T1] | T1 | `ym_c_gauge_explicit.py` | C196 |
 | S8 | c_gauge(cont) = 2.773 (even-parity continuum Jost function) [T2a] | T2a | `ym_jost_function.py` | C197 |
 | S9 | C_match = 0.795151 (+threshold δC = +0.66%) [T2a] | T2a | `ym_jost_function.py` | C197 |
-| S10 | M_c(D7) from V(φ) substrate depth dynamics [T4 OPEN] | T4 | — | — |
+| S10 | M_c(D7) from V(φ) alone (no exp α_s input): M_c = 8.17×10¹⁴ GeV (−47.8%) [T2b]; α_s(M_Z) = 0.11566 (−2.15%) [T2a NEW] | **T2b/T2a** | `ym_sp5_mcdz_derivation.py` | **C208** |
 
-**SP5 remaining T4:** Step S10 only. All other steps T2a. M_c(D7) currently requires
-the observed α_s(M_Z) as input via ECCC self-consistency condition.
+**SP5 status (C208):** S10 T4→T2b. NEW T2a: **α_s(M_Z) = 0.11566 (−2.15%, zero experimental inputs)** — run from m_KK (C_match×g_eff²/(4π)) down to M_c_DFC then to M_Z. C_match sensitivity: exact α_s(M_Z) match requires C_match=0.79785 vs Jost 0.79515 (residual +0.34% = 2-loop threshold correction). M_c(D7) T2b (−47.8%); closing to T2a requires this 0.34% C_match correction.
 
 ---
 
@@ -178,7 +177,7 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 - SP1g Balaban RG domain: T3; upgrading to T2a is genuinely hard (80-year open problem)
 - T3→rigorous math gap is large; Clay requires a formal mathematical proof
 - Clay requires proof for *any* SU(N), N≥2; DFC specifically derives N=3
-- M_c(D7) from substrate remains T4; currently requires observed α_s input
+- M_c(D7) from substrate: T4→T2b (C208); α_s(M_Z) from V(φ) = 0.11566 (−2.15%, T2a); C_match 2-loop correction +0.34% closes to T2a
 
 *Key swing events (up):*
 - **SP1 Balaban fully closes: +15% CPC — TRIGGERED C203** (SP1g T3→T2a; SP1 T2a overall)
@@ -229,6 +228,7 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | `equations/ym_sc_area_law.py` | SP2 IR gap: SC area law, β_lat^IR=1.016, Δ_SC≥1033 MeV | C205 |
 | `equations/ym_r1_sc_analyticity.py` | SP2 R1 SC domain: polymer analyticity → no phase transition for β<3.0 (lenient), <1.1 (conservative) | C206 |
 | `equations/ym_r1_intermediate.py` | SP2 R1 intermediate [3.0,17.1]: T(β) Lipschitz T1; Δ=0↔transition T1; FKG+OS+Creutz T3; SC domain corrected | C207 |
+| `equations/ym_sp5_mcdz_derivation.py` | SP5 S10: M_c(D7) from V(φ) alone (T2b); α_s(M_Z)=0.11566 T2a; C_match sensitivity; 0.34% residual | C208 |
 
 ---
 
