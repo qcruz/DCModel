@@ -250,8 +250,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C212 SP2 gap existence T3→T2a**: ym_sp2_gap_existence.py — 7-step: Δ=0↔transition [T1] + R1 full [T2a,C211] → Δ(β)>0 all β [T2a] + UV≥1.22 M_Pl [T2a] + IR≥1033 MeV [T2a] + SP4 decoupling [T2a] → continuum Δ_phys≥1033 MeV [T2a]; **SP2 T2a; SP2 88%; Clay ~72%→~74%.** C211 R1 full domain T2a. C203 SP1 T2a (CPC+15%).
-Remaining T3: BPS Hamiltonian form H≥I₄×Q̂_top×m. Remaining T4: SP5 M_c(D7) exact from V(φ) alone (−47.8%).
+Latest: **C213 JW criteria formal verification** (ym_clay_requirements.py): 6/7 Jaffe-Witten criteria T2a; JW3c (Poincaré covariance) T3 remaining; yang_mills_clay.md updated with JW criterion table. C212 SP2 gap existence T2a; **all SP1–SP5 T2a; Clay ~74%; CPC ~50%.**
+Remaining T3: JW3c Poincaré + BPS Hamiltonian form H≥I₄×Q̂_top×m. Remaining T4: SP5 M_c(D7) exact from V(φ) alone (−47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 

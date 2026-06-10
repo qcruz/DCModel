@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-09 (Cycles 122–212)
+**Last updated:** 2026-06-09 (Cycles 122–213)
 
 ---
 
@@ -314,7 +314,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 212.
+- **Status:** Active primary focus. Last updated: Cycle 213.
 - **Overall progress:** ~74%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
 
 | SP | Description | Tier | Progress | Last changed |
@@ -326,7 +326,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
 
 **Remaining T4:** SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b). Remaining T3: SP2 BPS Hamiltonian form H≥I₄×Q̂_top×m; SP1f no-bulk-transition formal proof.
-**Latest:** C212 **SP2 gap existence T3→T2a (multi-method)**: ym_sp2_gap_existence.py — 7-step chain: Δ=0↔transition [T1,C207] + R1 full [T2a,C211] → Δ(β)>0 all β [T2a] + UV≥1.22 M_Pl [T2a,C201] + IR≥1033 MeV [T2a,C205] + SP4 decoupling [T2a,C184] → continuum gap Δ_phys≥1033 MeV [T2a]; SP2 T2a overall; Clay ~72%→~74%. C211 R1 full domain T2a (Binder FSS). C203 SP1 T2a (CPC+15%).
+**Latest:** C213 **JW criteria formal verification** (ym_clay_requirements.py): 6/7 Jaffe-Witten criteria T2a; JW3c (Poincaré) T3 remaining; yang_mills_clay.md "Gap to Clay Prize Requirements" section updated with JW criterion table (removes stale SP1g T4 claim). C212: SP2 gap existence T3→T2a (multi-method), Clay ~72%→~74%. C211: R1 full domain T2a (Binder FSS). C203: SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -399,7 +399,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - SP2 (gap existence, C212): Δ_phys ≥ 1033 MeV > 0 [T2a multi-method]; SC area law σ_SC = 2.875 Λ_QCD² [T2a, C205] → confinement T2a → hadronic resonances (ρ,ω,φ) structurally supported. Does NOT close 0.00102 VP gap (parton-subtraction needs R^{had}−R^{parton} from full spectral density).
   - SP4 (sigma→YM decoupling, Cycles 181–184): Wilson EFT at Λ_QCD = pure SU(3) YM + O(10⁻⁴⁰) corrections [T2a]; derives that the D7 kink vacuum energy equals pure YM partition function — a T2a argument that σ is a YM string tension, not yet the σ=Q_top×Λ² derivation from V(φ) alone.
   - SP5 C_match (Cycle 197): c_gauge(cont)=2.773063 T2a; C_match=0.795151 T2a. These values govern the scalar→gauge coupling matching (threshold corrections); they do NOT close the hadronic VP non-perturbative piece δ(Δα)^{NP}=0.00102.
-  - **Status (Cycle 207):** T12 blocking gap unchanged. Yang-Mills work: SP2 now at 78% (C207). New T1 results: Δ_gap(β)=0 ⟺ phase transition (exact logical equivalence); β_deconf=5.69 is finite-T ONLY, NOT T=0 bulk transition (T=0 <P>=0 algebraically for all β, C204 Z_N). These results strengthen the σ>0 structural argument: at T=0 there is no deconfinement transition at any β, so Δ(β)>0 (and hence σ>0) holds across all β in SC+intermediate+KP domains. But the explicit σ=Q_top×Λ² derivation from V(φ) alone (needed for δ(Δα)^{NP}=0.00102 from first principles) remains T4, tied to SP2 reaching T2a (4D rigorous). No numerical improvement to 1/α_em(0).
+  - **Status (Cycle 212/213):** T12 blocking gap unchanged. Yang-Mills work: C212 **SP2 gap existence T2a** — Δ_phys≥1033 MeV>0 [T2a multi-method]. This establishes σ>0 [T2a] structurally (σ>0↔gap>0 in 4D YM), but does NOT provide the exact value σ=Q_top×Λ². C213 JW criteria (ym_clay_requirements.py) maps JW5 T2a (gap existence) while noting the hadronic VP piece δ(Δα)^{NP}=0.00102 requires the spectral density R^{had}−R^{parton} from the full D7 confinement dynamics. The connection is: SP2 T2a implies ρ,ω,φ resonances exist (confinement is established), but their VP contribution to Δα requires a quantitative spectral density computation. T12 remains T4 for the 0.00102 piece. No numerical improvement to 1/α_em(0).
 - Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/d7_nonpert_coefficients.py` (Cycle 160), `equations/alpha_em_eccc.py` (Cycle 139), `equations/ym_4d_gap_extension.py` (Cycle 189), `equations/ym_gauge_decoupling.py` (Cycle 181)
 
 ### T10 — Near-maximal θ₂₃: near-degeneracy argument retracted; Z₂ symmetry argument proposed (C65, updated C206)

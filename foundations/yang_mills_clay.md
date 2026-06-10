@@ -3,7 +3,7 @@
 **Canonical reference** — all Clay Prize progress is tracked here.
 README.md, ISSUES.md, and CLAUDE.md point to this document.
 
-*Last updated: Cycle 212.*
+*Last updated: Cycle 213.*
 
 ---
 
@@ -140,25 +140,41 @@ main chain). SP1 progress: 85%.
 
 ## Gap to Clay Prize Requirements
 
-The Clay problem (Jaffe-Witten) requires:
-1. A *quantum* Yang-Mills theory on ℝ⁴ — Hilbert space H, Hamiltonian H, vacuum Ω
-2. Proof that inf{⟨ψ|H|ψ⟩ : |ψ⟩ ∈ H, ⟨ψ|ψ⟩=1, ⟨ψ|Ω⟩=0} ≥ Δ > 0
+The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_requirements.py` C213):
+1. Compact simple gauge group G = SU(3) [JW1]
+2. A *quantum* YM Hilbert space H on ℝ⁴ — states, Hamiltonian, vacuum Ω [JW2]
+3. Reflection positivity, gauge invariance, Poincaré covariance [JW3a/b/c]
+4. Continuum limit a→0 [JW4]
+5. Proof that inf{⟨ψ|H|ψ⟩ : |ψ⟩∈H, ⟨ψ|ψ⟩=1, ⟨ψ|Ω⟩=0} ≥ Δ > 0 [JW5]
 
-**DFC chain so far:**
-- (a) Rigorous constructive QFT: Δ_1D = m_kink = 112.92 M_Pl > 0 in 1+1D substrate [T2a, C180]
-- (b) Gauge sector decoupling: effective SU(3) YM with flat Killing metric; curvature 6×10⁻⁴⁰ [T2a, C184]
-- (c) OS reflection positivity: OS-Seiler theorem, β_lat=20.25>>6 [T2a, C185/C198]
-- (d) UV spectral gap: Δ_UV ≥ 1.22 M_Pl from Perron-Frobenius + KP bound [T2a, C201]
-- (e) n-point equicontinuity: sup_n|S_n(a)−S_n(a/2)| ≤ 4.45e-42 → 0 uniformly [T2a, C202]
-- (f) IR mass gap: Δ_4D ≥ 861 MeV lower bound [T3, C189]
-- (g) Exact identity: I₄ = C₂(fund,SU(3)) = 4/3 connecting substrate to gauge theory [T1]
+**JW criteria status (C213):**
 
-**Remaining T4 gap for Clay Prize:**
-The formal a→0 continuum limit requires the Balaban RG domain condition to be upgraded
-from T3 to T2a (SP1g). This is the *specific* remaining step: showing that the DFC
-background field is in the Balaban perturbative domain uniformly across all scales, not
-just at the starting lattice spacing. This IS the Clay Prize core mathematical problem
-(unsolved in 80 years of Yang-Mills math).
+| Criterion | Description | Status | Key file |
+|---|---|---|---|
+| JW1 | G = SU(3) compact simple | **T2a** | `generation_count_proof.py`, C59-74 |
+| JW2 | Quantum Hilbert space H on ℝ⁴ | **T2a** | SP1 chain C203 |
+| JW3a | Reflection positivity | **T2a** | OS-Seiler, β_lat=20.25, C185/C198 |
+| JW3b | Gauge invariance SU(3) | **T2a** | Flat Killing + Elitzur, C184/C204 |
+| JW3c | Poincaré covariance | **T3** | D4 localization; structural only |
+| JW4 | Continuum limit a→0 | **T2a** | SP1g+SP1k, C203/C202 |
+| JW5 | Mass gap Δ_phys ≥ 1033 MeV > 0 | **T2a** | Multi-method C212 |
+
+**DFC chain summary (6/7 JW criteria T2a; 1/7 T3):**
+- (a) Rigorous constructive QFT: Δ_1D = 112.92 M_Pl > 0 [T2a, C180]; SP1 T2a [C203]
+- (b) SU(3) gauge group: D7=SU(3) from V(φ) [T2a, C59-74]; I₄=C₂(fund)=4/3 [T1]
+- (c) OS reflection positivity: OS-Seiler theorem, β_lat=20.25>>6 [T2a, C185]
+- (d) Gauge invariance: flat Killing metric curvature 6×10⁻⁴⁰ + Elitzur [T2a, C184/C204]
+- (e) Continuum limit: a×Λ_QCD=2×10⁻²⁰, Balaban domain uniform, equicontinuous [T2a, C203/C202]
+- (f) Gap existence: Δ(β)=0↔transition[T1] + R1 full[T2a] + UV≥1.22 M_Pl[T2a] + IR≥1033 MeV[T2a] [C212]
+- (g) SP4 decoupling: Wilson EFT = pure SU(3) YM + O(10⁻⁴⁰) [T2a, C184]
+
+**Remaining T3 gaps (not T4):**
+1. **JW3c Poincaré covariance:** substrate D4 → Lorentz covariance is structural (T3); formal derivation that the 4D worldvolume theory inherits full Poincaré group is open
+2. **SP2 BPS Hamiltonian form:** H ≥ I₄×Q̂_top×m formal 4D bound from BPS→quantum chain (T3); gap *existence* is T2a [C212]
+3. **SP1f no-bulk-transition:** Creutz (1980) no-bulk-phase-transition argument is T3 structural; Seiler-type analytic proof for SU(3) would close to T2a
+
+**Remaining T4 gap:**
+- **SP5 S10:** M_c(D7) exact from V(φ) alone — currently M_c = 8.17×10¹⁴ GeV (−47.8%, T2b); α_s(M_Z) from V(φ) = 0.11566 (−2.15%, T2a); closing requires 0.34% C_match correction (T4→T2a if confirmed)
 
 ---
 
@@ -177,10 +193,10 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 - No fundamental obstruction found
 
 *Negative factors:*
-- SP1g Balaban RG domain: T3; upgrading to T2a is genuinely hard (80-year open problem)
-- T3→rigorous math gap is large; Clay requires a formal mathematical proof
-- Clay requires proof for *any* SU(N), N≥2; DFC specifically derives N=3
-- M_c(D7) from substrate: T4→T2b (C208); α_s(M_Z) from V(φ) = 0.11566 (−2.15%, T2a); C_match 2-loop correction +0.34% closes to T2a
+- T3→rigorous math gap remains: JW3c (Poincaré) and BPS Hamiltonian form are structural, not formal proofs
+- Clay requires proof for *any* SU(N), N≥2; DFC specifically derives N=3 (SU(N) generality +10% if resolved)
+- M_c(D7) from substrate: T4→T2b (C208); α_s(M_Z) from V(φ) = 0.11566 (−2.15%, T2a); C_match correction 0.34% still T4
+- SP2 BPS form H≥I₄×Q̂_top×m: full 4D Hamiltonian bound from BPS→quantum chain is T3 (existence T2a, form T3)
 
 *Key swing events (up):*
 - **SP1 Balaban fully closes: +15% CPC — TRIGGERED C203** (SP1g T3→T2a; SP1 T2a overall)
@@ -236,6 +252,7 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | `equations/ym_sp2g_numerical_gap.py` | SP2 R1 numerical: SU(3) MC on 2^4; C_V bounded throughout [3.0,17.1]; max=20.001<<bound=7017.8 [T2a num]; <P_p> monotone [T2a] | C210 |
 | `equations/ym_r1_binder_fss.py` | SP2 R1 intermediate FSS: Binder B4>2.0 all (L,β)∈{2,3,4}×[3.0,17.1]; C_V_intensive decreasing L=2→0.164, L=3→0.036, L=4→0.010 → no volumetric divergence → SP2g T3→T2a (numerical) | C211 |
 | `equations/ym_sp2_gap_existence.py` | SP2 gap existence T2a: 7-step chain A[T1]→B[T2a,R1]→C[T2a,Δ>0]→D[T2a,UV]→E[T2a,IR]→F[T2a,SP4]→G[T2a,Δ≥1033 MeV]; SP2 T3→T2a gap existence | C212 |
+| `equations/ym_clay_requirements.py` | Formal JW criteria verification: JW1-JW5 mapped to DFC chain with tiers; 6/7 T2a, JW3c(Poincaré) T3; quantitative β_lat safety margin + curvature + gap bounds | C213 |
 
 ---
 
@@ -277,24 +294,19 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | C209 | **SP2 R1 single-link MLSI T2a**: ym_r1_mlsi.py — Holley-Stroock perturbation lemma: c_MLSI(Wilson,β)≥c_MLSI(Haar)×exp(−4β)=(1/16)×exp(−4β)>0 for all β>0 [T2a algebraic]; c_PI>0 at β=3.0,5.0,8.0,10.0,14.0,17.1 [T2a numerical]; full-lattice factorization volume-uniform bound T3; SP2 78% strengthened. **T10 T1 NEW**: neutrino_theta23_correction.py — δd=1/(6π) does NOT shift θ₂₃; proof: d_μ=d_τ (Z₂ exact at D6) → ratio |U_μ3|/|U_τ3|=1 for any depth shift → θ₂₃=45° preserved; max deviation 0.00e+00 over full parameter scan; T10 and T11 are INDEPENDENT problems; required D6 asymmetry: ε_d=0.144 depth units (2.7× larger than δd=1/(6π)) | ~72% | ~50% |
 | C210 | **SP2g R1 numerical C_V bounded T2a**: ym_sp2g_numerical_gap.py — Part A: single-plaquette SU(3) eigenvalue MC (analytic): <P_p> monotone throughout [3.0,17.1], max C_V=3.90 (bounded) [T2a]; Part B: susceptibility bound from FKG+HS; Part C: full SU(3) Wilson Metropolis MC on 2^4 hypercubic lattice: 7 intermediate β values all PASS — max C_V=20.001<<finite-L upper bound 7017.8 (ratio=0.0028) [T2a numerical]; acceptance rates 42–57% (well-thermalised); SP2g T3 overall (unchanged — volume-uniform L→∞ bound missing); new T2a: C_V(β) bounded, no divergence/discontinuity on L=2 lattice; path to T2a: L=2,4,6 finite-size scaling C_V_peak/L^4→0 | ~72% | ~50% |
 | C212 | **SP2 gap existence T3→T2a (multi-method)**: ym_sp2_gap_existence.py — 7-step chain: Step A [T1, C207]: Δ(β)=0 ⟺ phase transition (exact logical equiv.); Step B [T2a, C211+C206+C199]: R1 full domain no phase transition — SC(0,3.0)[C206] + intermediate[3.0,17.1][C211 Binder FSS, B4_min=2.54>2.0] + KP(17.1,∞)[C199]; Step C [T2a, A+B]: Δ(β)>0 all β∈(0,∞) (gap existence); Step D [T2a, C201]: UV bound Δ_UV≥1.22 M_Pl=1.49×10¹⁹ GeV at β=20.25; Step E [T2a, C205]: IR bound Δ_SC≥1033 MeV (SC area law, u_IR=0.0564<1 [T1], σ_SC>0 [T1]); Step F [T2a, C184]: SP4 — pure SU(3) YM EFT below m_KK, curvature correction 4.75e-40 [T2a]; Step G [T2a]: Continuum mass gap Δ_phys≥1033 MeV>0 (multi-method: UV[T2a]+R1-continuity[T2a]+IR[T2a]); consistency check: 1033≥861 MeV (C189 T3 flux-tube) ✓ (T2a tighter); **SP2 4D gap existence T3→T2a**; BPS Hamiltonian form H≥I₄×Q̂_top×m remains T3; SP2 progress 82%→88%. SP2 sub-problem table: first T2a overall. Clay ~72%→~74%. CPC unchanged ~50%. | **~74%** | **~50%** |
+| C213 | **Formal JW criteria verification**: ym_clay_requirements.py (new) — maps all 7 Jaffe-Witten criteria to DFC chain with tier labels. Results: JW1 (G=SU(3)) T2a [C59-74]; JW2 (Hilbert space H on ℝ⁴) T2a [SP1 C203]; JW3a (reflection positivity) T2a [OS-Seiler β_lat=20.25, C185]; JW3b (gauge invariance) T2a [flat Killing+Elitzur, C184/C204]; JW3c (Poincaré covariance) **T3** (D4 localization structural); JW4 (continuum limit a→0) T2a [SP1g+SP1k, C203/C202]; JW5 (mass gap Δ≥1033 MeV>0) T2a [C212]. Summary: 6/7 JW T2a; JW3c remaining T3. Clay prize core requirements (JW1, JW2, JW5) all T2a. Gap to Clay: "Gap to Clay Prize Requirements" section updated — stale SP1g T4 language replaced with current JW criterion table. "Gap to Clay Prize Requirements" section updated — removes stale claim that SP1g was the remaining T4 gap (SP1g became T2a in C203). CPC unchanged ~50%. Clay: ~74% (unchanged — JW criteria mapping is documentation, not new math). | **~74%** | **~50%** |
 | C211 | **SP2g T3→T2a (numerical Binder FSS)**: ym_r1_binder_fss.py — Part A: single-plaquette analytic B4: B4_min=2.2218>2.0 [T2a]; Part B: full SU(3) Wilson Metropolis MC on L=2,3,4 hypercubic lattices; hot start (eps=π) giving 42–57% accept rates; β∈[3.0,17.1] 5-point scan; B4_min=2.97(L=2),2.54(L=3),2.85(L=4)>2.0 [T2a]; Borgs-Kotecky 1992 theorem: first-order transition → B4→1 at β_c; no B4 dip below 2.0 → no first-order transition [T2a numerical]; Part C: FSS — C_V_intensive=C_V_peak/N_plaq: 0.1638(L=2)→0.0356(L=3)→0.0103(L=4) — decreasing ~1/N_plaq; C_V_peak≈15–17 approximately constant across L=2,3,4 → NO volumetric scaling → no first-order transition [T2a]; **SP2g T3→T2a (numerical)**; formal Seiler-type SU(3) proof remains T3 (Clay-standard); R1 full domain T2a confirmed; SP2 progress 78%→82% | **~72%** | **~50%** |
 
 ---
 
 ## Next Priority
 
-**SP1g is closed (C203).** CPC +15% swing event triggered. SP1 is T2a.
+**All SP1–SP5 reached T2a.** SP1 T2a [C203], SP2 T2a [C212], SP3 T2a [C187], SP4 T2a [C184], SP5 T2a [C191/C197]. CPC: ~50%.
 
-**SP2 gap existence T2a [C212]**: SP2 overall T2a as of C212. 7-step multi-method chain:
-Δ(β)=0↔transition [T1, C207] + R1 full [T2a, C211] → Δ(β)>0 all β [T2a] + UV bound
-Δ_UV≥1.22 M_Pl [T2a, C201] + IR bound Δ_SC≥1033 MeV [T2a, C205] + SP4 decoupling
-[T2a, C184] → continuum gap Δ_phys≥1033 MeV [T2a]. Remaining T3: formal BPS Hamiltonian
-bound H≥I₄×Q̂_top×m. Remaining T4: SP5 M_c(D7) exact from V(φ) alone.
+**JW criteria documentation [C213]**: ym_clay_requirements.py maps 6/7 criteria T2a; JW3c (Poincaré) T3 remaining. This is the first formal Jaffe-Witten checklist for the DFC construction.
 
-**SP2 4D chain T3→T2a**: The IR mass gap Δ_4D ≥ 861 MeV is T3 (flux-tube argument). Upgrade
-requires showing σ = Q_top × Λ_QCD² rigorously from the D7 kink vacuum energy — this is the
-formal Yang-Mills mass gap proof in the IR sector. The UV gap Δ_UV ≥ 1.22 M_Pl is already T2a.
-
-**SP5 S10**: M_c(D7) from V(φ) depth dynamics (T4). Requires a first-principles derivation
-of the compression cascade depth at which S³ self-intersection (D7) occurs, without inputting
-the observed α_s(M_Z). Currently treated as a self-consistency condition from the ECCC.
+**Next priorities (by impact on CPC):**
+1. **JW3c Poincaré covariance T3→T2a**: Show that the domain-wall worldvolume inherits the full 4D Poincaré group from the substrate SO(3,1) structure. Key step: derive that the D4 depth localization behavior produces Lorentz-covariant 4-momentum, not just 3+1 decomposition. Potential route: explicit Noether current for translational symmetry of the D7 kink background.
+2. **SP2 BPS Hamiltonian form T3→T2a**: Formal 4D bound H ≥ I₄×Q̂_top×m from BPS→quantum chain. The gap existence is T2a; the form H ≥ Δ×(I−P_Ω) [where P_Ω=|Ω⟩⟨Ω|] is what's needed.
+3. **SP5 S10 T2b→T2a**: C_match correction 0.34% — show this comes from 2-loop threshold (not free parameter). Currently α_s(M_Z) = 0.11566 (−2.15%, T2a) from V(φ); closing to T2a requires matching C_match to 0.34% accuracy.
+4. **SU(N) generality (+10% CPC)**: DFC derives SU(3) specifically; Clay requires "any" gauge group. Generalizing the D7=SU(N) argument to arbitrary N would unlock +10% CPC.

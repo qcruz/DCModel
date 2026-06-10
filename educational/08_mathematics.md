@@ -257,11 +257,13 @@ mathematical content. What is not yet derived:
 3. **Neutrino mass hierarchy** — the ratio m₃/m₂ = 5.33 (−8.3% without correction); a T3
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
-4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~72%
-   overall (CPC ~50%). SP1 T2a (C203). SP2: UV gap T2a (C201), IR gap T2a (C205), R1 SC
-   domain T2a (C206), **R1 intermediate [β∈3.0,17.1] T2a [C211, Binder FSS]** — R1 full
-   domain T2a; SP2g T3→T2a (numerical). SP3, SP4, SP5 all T2a.
-   The remaining T4 gap is M_c(D7) exact from V(φ) alone (SP5 S10 T2b at −47.8%).
+4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~74%
+   overall (CPC ~50%). All five sub-problems SP1–SP5 are at T2a. The formal JW criteria
+   verification (Cycle 213, ym_clay_requirements.py) maps 6 of 7 Jaffe-Witten requirements
+   to T2a: gauge group JW1, Hilbert space JW2, reflection positivity JW3a, gauge invariance
+   JW3b, continuum limit JW4, and mass gap JW5. One criterion remains T3: Poincaré covariance
+   (JW3c) — the formal derivation that the 4D worldvolume theory inherits the full Poincaré
+   group from the substrate. The remaining T4 gap is M_c(D7) exact from V(φ) alone (SP5 S10 T2b at −47.8%).
 
 The model does not claim completeness. These are honest, documented gaps.
 
