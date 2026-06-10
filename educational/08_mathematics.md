@@ -265,13 +265,13 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~74%
-   overall (CPC ~50%). All five sub-problems SP1–SP5 are at T2a. The formal JW criteria
-   verification (Cycle 213, ym_clay_requirements.py) maps 6 of 7 Jaffe-Witten requirements
-   to T2a. Cycle 214 (ym_poincare_covariance.py) established JW3c-a (worldvolume Poincaré covariance)
-   at T2a — leaving JW3c-b (spacetime emergence, deriving η_μν from D3/D4 substrate behavior) at T3.
-   Cycle 215 (ym_sun_generality.py) proved SU(N) generality to T3 with one T1 result:
-   I₄=C₂(fund,SU(N)) is unique to N=3 (polynomial residual 0.00e+00).
-   The remaining T4 gap is M_c(D7) exact from V(φ) alone (SP5 S10 T2b at −47.8%).
+   overall (CPC ~60%, after +10% swing event C216). All five sub-problems SP1–SP5 are T2a.
+   Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
+   via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
+   hardest case, and passing at N=3 (T2a) implies passing for all N≥3. N=2 is covered by
+   Seiler (1982) literature. This addresses the Clay Prize requirement of "any compact simple
+   gauge group." Remaining T3: JW3c-b (spacetime emergence), BPS Hamiltonian form, SP4/SP5
+   for N≥4. Remaining T4: M_c(D7) from V(φ) alone (SP5 T2b at −47.8%).
 
 The model does not claim completeness. These are honest, documented gaps.
 

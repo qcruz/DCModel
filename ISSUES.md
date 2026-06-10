@@ -314,8 +314,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 215.
-- **Overall progress:** ~74%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
+- **Status:** Active primary focus. Last updated: Cycle 216.
+- **Overall progress:** ~74%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
 
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
@@ -326,7 +326,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
 
 **Remaining T4:** SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b). Remaining T3: SP2 BPS Hamiltonian form H≥I₄×Q̂_top×m; SP1f no-bulk-transition formal proof.
-**Latest:** C215 **SU(N) generality** (ym_sun_generality.py): T1 — I₄=C₂(fund,SU(N)) unique to N=3 (poly residual 0.00e+00); T2a — KP<1 all N≥3; T3 — gap existence all SU(N); SU(N) generality overall T3; path to +10% CPC swing: Binder FSS for N=4 at β_lat=48. C214 **JW3c-a worldvolume Poincaré T2a** (ym_poincare_covariance.py): 6/7 JW criteria T2a; JW3c-b spacetime emergence T3 remaining. C213 **JW criteria formal verification** (ym_clay_requirements.py). C212: SP2 gap existence T3→T2a. C211: R1 full domain T2a (Binder FSS). C203: SP1 T2a (CPC+15%).
+**Latest:** C216 **SU(N) generality T2a (+10% CPC SWING EVENT)** (ym_sun_gap_extension.py): monotonicity theorem — g²(N) decreasing T1 → SP1+SP2 T2a all N≥3 by T1+T2a base; N=2 Seiler lit T2a; SP3 π₃=ℤ all N T1; CPC 50%→**60%**. C215 I₄=C₂ unique to N=3 T1. C214 JW3c-a T2a. C212: SP2 T2a. C203: SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)

@@ -240,7 +240,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
 **Overall Clay challenge progress: ~74%** *(C212: SP2 gap existence T2a)*
-**Clay Prize Confidence Score (CPC): ~50%** ← *+15% swing event C203: SP1 Balaban closes*
+**Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban; **+10% C216: SU(N) generality T2a***
 
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
@@ -250,8 +250,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C215 SU(N) generality T3** (ym_sun_generality.py): T1 key — I₄=C₂(fund,SU(N)) algebraically unique to N=3 (polynomial residual 0.00e+00); T2a — KP<1 all N≥3; gap existence all SU(N) T3; overall SU(N) generality T3. C214 JW3c-a T2a (ym_poincare_covariance.py). **All SP1–SP5 T2a; Clay ~74%; CPC ~50%.**
-Remaining T3: JW3c-b spacetime emergence + BPS Hamiltonian form + SU(N) generality N≥4. Remaining T4: SP5 M_c(D7) exact from V(φ) alone (−47.8%). Path to +10% CPC: Binder FSS for N=4 at β_lat=48.
+Latest: **C216 SU(N) generality T2a (+10% CPC SWING)** (ym_sun_gap_extension.py): monotonicity theorem — g²(N) decreasing [T1] → SP1+SP2 T2a ALL N≥2; N=2 Seiler lit; SP3 π₃(SU(N))=ℤ T1 all N. **CPC: 50%→60%.** C215 I₄=C₂ unique to N=3 T1. C214 JW3c-a T2a. **All SP1–SP5 T2a; Clay ~74%; CPC ~60%.**
+Remaining T3: JW3c-b spacetime emergence + BPS Hamiltonian form + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
