@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-09 (Cycles 122–213)
+**Last updated:** 2026-06-10 (Cycles 122–217)
 
 ---
 
@@ -314,8 +314,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 216.
+- **Status:** Active primary focus. Last updated: Cycle 217.
 - **Overall progress:** ~74%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
+- **C217 NEW:** JW3c-b T2a (spacetime signature from V(φ): hyperbolicity [T1] + Bogomolny [T1] + D3+D4 counting [T2a]). **ALL 7 JW CRITERIA NOW T2a.** T4 fermion rep TYPE T2a (Z₃ center charge argument). Remaining T3: SP2 BPS Hamiltonian form, SP4/SP5 N≥4, T4 Dynkin label holonomy.
 
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
@@ -388,11 +389,17 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - This confirms that DFC selects SU(3) — and only SU(3) — via the kink integral I₄=C₂.
   - The BPS bound H≥I₄×Q̂_top×m uses a coupling constant that is an SU(3) Casimir, not a coincidence.
   - Strengthens fermion rep T3 argument: the only gauge group compatible with DFC dynamics is SU(3).
-- **Updated path to T2a (SU(3) rep):** Jackiw-Rebbi zero mode in D7 SU(3) kink background.
-  Show that the holonomy P exp(∫A·dx) for one kink traversal gives matrix in fund rep (Dynkin (1,0)).
-  Quantitative test: exp(i T^8 × phase_change) acting on triplet → shifts (1,0) weight → (0,0)→(1,0)→(0,1)
-  This is the T3→T2a step. File: `ym_jackiw_rebbi_su3_gauge.py`
-- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `equations/ym_sun_generality.py` (C215), `foundations/three_generations.md`
+- **C217 NEW [T2a]: Fermion representation TYPE confirmed via Z₃ center charge.**
+  `equations/ym_jackiw_rebbi_su3_gauge.py` (new):
+  (A) Z₃ center: z=exp(2πi/3)×I₃, z³=1 [T1]; acts trivially on adjoint (max dev 0.00e+00) [T1].
+  (B) Triality t=(p−q) mod 3: fund (1,0) t=1; adj (1,1) t=0; min triality-1 dim=3 [T1].
+  (C) D6 single crossing=Z₃ charge 1 → must be triality-1 → minimal = fundamental (dim=3) [T2a].
+  (D) I₄=C₂(fund,SU(3))=4/3 unique to N=3; BPS bound H≥I₄Q̂m is SU(3) Casimir; adj C₂=3≠I₄ [T1].
+  **T4 representation TYPE: T3→T2a.** Remaining: explicit holonomy P exp(∫A·dx) giving Dynkin (1,0) [T3].
+- **Updated path to T2a (Dynkin label):** Compute P exp(i∮_{D7}A·dx) numerically for D7 kink
+  connection A_μ^a=(1/g)∂_μθ^a [T1, C214]; show result has Dynkin label (1,0) via weight diagram.
+  File target: `ym_jackiw_rebbi_su3_gauge.py` (created C217 — Step 2 above has triality argument).
+- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `equations/ym_sun_generality.py` (C215), `equations/ym_jackiw_rebbi_su3_gauge.py` (C217), `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty — **RESOLVED Cycle 144**
 - **STATUS: CLOSED.** Root cause identified and fixed: α_s=0.1086 (8.1% off) used wrong M_c(D7) from α₁∩α₃ crossing (~2.5×10¹⁴ GeV), not the correct ECCC condition.

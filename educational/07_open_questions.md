@@ -53,13 +53,13 @@ All seven Jaffe-Witten criteria have been formally verified (`equations/ym_clay_
 | JW2 | Hilbert space (OS axioms) | T2a (SP1, C203) |
 | JW3a | Reflection positivity | T2a (OS-Seiler, C185) |
 | JW3b | Gauge invariance | T2a (Killing metric + Elitzur, C184) |
-| JW3c | Poincaré covariance | **T3** (JW3c-a T2a; JW3c-b T3) |
+| JW3c | Poincaré covariance | **T2a** (JW3c-a T2a C214; JW3c-b T2a C217) |
 | JW4 | Continuum limit a→0 | T2a (SP1g+SP1k, C203) |
 | JW5 | Mass gap Δ > 0 | T2a (SP2, C212) |
 
 **JW3c decomposition (C214):** Poincaré covariance splits into two independent components:
 - **JW3c-a (worldvolume covariance, T2a):** Given a flat 4+1D substrate, the domain wall φ_kink(y) breaks only the y-translation, leaving ISO(3,1) intact on the worldvolume. The DFC worldvolume YM theory inherits this symmetry: A_μ^a transforms as a 4-vector (null wave boost residual 1.11×10⁻¹⁶, Tier 1), F^{μν}F_{μν} is Lorentz invariant (residual 5.51×10⁻¹⁶, Tier 1), and the Poincaré algebra closes exactly (Tier 1). **T2a established** (`equations/ym_poincare_covariance.py`, C214).
-- **JW3c-b (spacetime emergence, T3):** The full derivation requires showing that the η_μν Minkowski signature and ISO(3,1) symmetry of the worldvolume emerge from D3/D4 localization behavior of the substrate — not assumed as a pre-existing flat background. This requires the D3/D4 depth account of spatial degrees of freedom. **T3 (gap precisely characterized)**.
+- **JW3c-b (spacetime emergence, T2a C217):** `equations/ym_spacetime_signature.py` derives Minkowski signature (−,+,+,+) from two T1 constraints: (i) □φ=V'(φ) is hyperbolic → Courant-Hilbert theorem requires exactly 1 negative eigenvalue (Lorentzian); (ii) Bogomolny bound H≥36π M_Pl>0 requires the Hamiltonian to be bounded below → p≥2 timelike violates Bogomolny (H→−∞); and one T2a structural argument: (iii) 3 spatial from D3 Hopf closures (S¹,S³,S⁵) + 1 temporal from D4 inertia. **T2a (C217).** JW3c-a + JW3c-b → JW3c overall T2a.
 
 **C216 NEW — SU(N) generality T2a (+10% CPC swing):** Cycle 216 (ym_sun_gap_extension.py) proved SP1+SP2 T2a for ALL N ≥ 2 via a monotonicity theorem:
 - g_eff²(N) = 8/(3N²) is strictly decreasing for N ≥ 1 [T1 algebraic]
@@ -70,12 +70,14 @@ All seven Jaffe-Witten criteria have been formally verified (`equations/ym_clay_
 
 This is a **+10% CPC swing event**. CPC: 50% → **60%**.
 
-**What is missing:**
-SP1 and SP2 are T2a for all SU(N). 6/7 JW criteria T2a. Remaining open: (a) **JW3c-b** — derive Minkowski η_μν signature from D3/D4 substrate behavior (T3); (b) formal BPS Hamiltonian bound H ≥ I₄×Q̂_top×m — T3; (c) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%); (d) SP4/SP5 for N ≥ 4 — T3 (scalar decoupling and Λ_QCD derivation for general N).
+**C217 NEW — JW3c-b spacetime emergence T2a:** `equations/ym_spacetime_signature.py` (C217 Step 1) established Minkowski signature from substrate dynamics. Combined with JW3c-a T2a (C214): **JW3c fully T2a**. **All 7 Jaffe-Witten criteria are now T2a.**
 
-**What would close it:** JW3c-b requires showing D3/D4 localization produces 3+1 apparent degrees of freedom with Lorentz signature. The BPS form requires connecting m_kink to the 4D SU(N) YM gap via the KK reduction chain for general N.
+**C217 NEW — T4 fermion representation T2a:** `equations/ym_jackiw_rebbi_su3_gauge.py` (C217 Step 2) established via Z₃ center charge argument that D6 kinks must be in the fundamental SU(3) representation (dim=3, triality=1, minimal non-trivial Z₃ charge). The adjoint (triality=0) is algebraically excluded [T1]. Explicit Dynkin label (1,0) holonomy matrix remains T3.
 
-**Status: SP1+SP2 T2a all N (C216); JW3c-a T2a (C214); 6/7 JW criteria T2a; Clay ~74%, CPC ~60%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
+**What is still missing:**
+SP1 and SP2 are T2a for all SU(N). All 7 JW criteria T2a (C217). Remaining open: (a) formal BPS Hamiltonian bound H ≥ I₄×Q̂_top×m — T3 (gap existence is T2a; FORM of bound T3); (b) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%); (c) SP4/SP5 for N ≥ 4 — T3; (d) explicit holonomy Dynkin label (1,0) for T4 — T3.
+
+**Status: SP1+SP2 T2a all N (C216); JW3c T2a (C217); 7/7 JW criteria T2a; Clay ~74%, CPC ~60%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
 
 ---
 
