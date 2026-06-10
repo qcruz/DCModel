@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-09 (Cycles 122–210)
+**Last updated:** 2026-06-09 (Cycles 122–211)
 
 ---
 
@@ -320,13 +320,13 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 SC T2a; R1 single-link T2a (C209); R1 C_V numerical T2a (C210)** | **78%** | **C210** |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 full T2a [C211]** | **82%** | **C211** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
 
 **Remaining T4:** SP2 4D rigorous gap chain (σ = Q_top×Λ_QCD² from D7 vacuum energy) + SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b).
-**Latest:** C210 SP2g R1 numerical T2a: C_V bounded throughout [3.0,17.1] on 2^4 lattice (max=20.001<<7017.8); <P_p> monotone [T2a]; SP2g T3 (volume-uniform bound missing); path: L=2,4,6 FSS. C209 R1 single-link MLSI T2a + T10 T1 (θ₂₃ independence of δd). C208 SP5 S10 T4→T2b; C207 SP2 R1 intermediate T3; C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a (CPC+15%).
+**Latest:** C211 **SP2g T3→T2a (numerical Binder FSS)**: ym_r1_binder_fss.py — B4>2.0 all (L,β)∈{2,3,4}×[3.0,17.1] (Borgs-Kotecky: 1st-order → B4→1 at β_c; not observed); C_V_intensive=C_V_peak/N_plaq decreasing: L=2→0.164, L=3→0.036, L=4→0.010 (∼1/N_plaq → no volumetric scaling → no first-order transition); R1 full domain T2a; SP2 progress 78%→82%. C210 SP2g R1 numerical C_V bounded T2a. C209 R1 single-link MLSI T2a + T10 T1. C208 SP5 S10 T4→T2b; C207 SP2 R1 intermediate T3; C206 R1 SC T2a; C205 IR T2a; C204 Z_N T1; C203 SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)

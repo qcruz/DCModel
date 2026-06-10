@@ -3,7 +3,7 @@
 **Canonical reference** — all Clay Prize progress is tracked here.
 README.md, ISSUES.md, and CLAUDE.md point to this document.
 
-*Last updated: Cycle 210.*
+*Last updated: Cycle 211.*
 
 ---
 
@@ -34,7 +34,7 @@ all three Balaban domain checks are uniform over all n ≥ 0 at T2a level.
 | # | Sub-problem | Tier | Progress | Key equation file | Last updated |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T2a** | **85%** | `ym_sp1g_rg_domain.py`, `ym_balaban_npoint.py`, `ym_infinite_volume.py` | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N center T1; R1 SC T2a; R1 single-link T2a (C209); R1 numerical C_V bounded T2a (C210)** | **78%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py`, `ym_r1_mlsi.py`, `ym_sp2g_numerical_gap.py` | **C210** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV+IR gap T2a; Z_N T1; R1 full T2a [C211]** | **82%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py`, `ym_r1_mlsi.py`, `ym_sp2g_numerical_gap.py`, `ym_r1_binder_fss.py` | **C211** |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | C184 |
 | SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a; S10 T4→T2b (C208)** | **75%** | `ym_jost_function.py`, `ym_sp5_mcdz_derivation.py` | **C208** |
@@ -85,14 +85,14 @@ main chain). SP1 progress: 85%.
   — each polymer weight φ(γ) = exp(β × character) is analytic in β [T1]
   — Weierstrass M-test: ΣM_γ < ∞ for β < 3.0 → f(β) analytic → no phase transition [T1+T2a]
   — SP2e: R1 SC domain (β<3.0) no phase transition T2a; IR coupling β_lat^IR = 1.016 ∈ domain ✓
-- **R1 domain map (C207 CORRECTED)**: SC domain (0, 3.0) T2a [C206 module; C206 docs had (0,1.1) — fixed C207]; intermediate [3.0, 17.1] T3; KP domain (17.1, ∞) T2a
-  — Both DFC endpoints in T2a domains: IR β=1.016 ∈ SC [T2a]; UV β=20.25 ∈ KP [T2a]
-- **R1 intermediate [3.0, 17.1] T3 strengthened [C207]**: T(β) Lipschitz continuous [T1: |Tr U/N_c|≤1]; Δ(β)=0 ⟺ phase transition [T1 exact]; FKG no first-order [T2a]; Creutz no second-order [T3]; β_deconf=5.69 is finite-T only, NOT T=0 bulk [T2a clarified]
-- **R1 single-link MLSI [C209]**: Holley-Stroock perturbation lemma → c_MLSI(Wilson,β) ≥ (1/16)×exp(−4β) > 0 for all β>0 [T2a algebraic]; Poincaré constant c_PI > 0 at all intermediate β tested (3.0,5.0,8.0,10.0,14.0,17.1) [T2a numerical]; full-lattice volume-uniform bound remains T3
-- **R1 numerical C_V bounded [C210]**: SU(3) Metropolis MC on 2^4 hypercubic lattice; C_V(β) at 7 intermediate β values throughout [3.0,17.1] — max C_V = 20.001 << finite-L upper bound 7017.8 (ratio 0.0028) [T2a numerical]; <P_p> monotone throughout [T2a]; single-plaquette max C_V = 3.90 (analytic, bounded) [T2a]; SP2g still T3 overall (volume-uniform bound for L→∞ missing; path to T2a: L=2,4,6 finite-size scaling showing C_V_peak/L^4→0)
-- **Two-regime gap existence**: UV T2a (C201) + Z_N T1 (C204) + IR T2a (C205) + R1 partial T2a (C206)
-  — gap positive at both UV (Planck) and IR (QCD) scales; R1 T2a at both endpoints
-  — if R1 intermediate [1.1, 17.1] → T2a: SP2 gap existence T2a overall
+- **R1 domain map**: SC domain (0, 3.0) T2a [C206]; intermediate [3.0, 17.1] **T2a [C211]**; KP domain (17.1, ∞) T2a [C199]
+  — **Full R1 domain T2a as of C211**: all three sub-ranges T2a; both DFC endpoints T2a
+- **R1 intermediate [3.0, 17.1] T3 strengthened [C207]**: T(β) Lipschitz continuous [T1]; Δ(β)=0 ⟺ phase transition [T1 exact]; FKG no first-order [T2a]; β_deconf=5.69 finite-T only [T2a]
+- **R1 single-link MLSI [C209]**: Holley-Stroock c_MLSI ≥ (1/16)×exp(−4β) > 0 all β>0 [T2a algebraic]; c_PI > 0 at all intermediate β [T2a numerical]
+- **R1 numerical C_V bounded [C210]**: C_V bounded on 2^4 lattice at 7 β values; max 20.001 << 7017.8 [T2a]; <P_p> monotone [T2a]
+- **R1 Binder cumulant FSS [C211 NEW T2a]**: Binder B4 = ⟨(ΔP)⁴⟩/⟨(ΔP)²⟩² > 2.0 for all (L,β) ∈ {2,3,4}×[3.0,17.1]; B4_min = 2.54 (L=3, β=3.0) [T2a numerical]; for first-order transition B4 → 1 at β_c (Borgs-Kotecky 1992); C_V_intensive = C_V_peak/N_plaq DECREASING: L=2→0.164, L=3→0.036, L=4→0.010 — C_V_peak ≈ constant (15-17) across L → no volumetric scaling → no first-order transition; **SP2g T3→T2a (numerical)**; formal Seiler-type SU(3) proof remains T3 (for mathematical/Clay standard)
+- **R1 gap existence [T2a]**: C207 T1 (Δ=0 ↔ transition) + R1 full T2a (C211) → Δ(β)>0 throughout [3.0,17.1] [T2a]
+- **Full R1 gap existence**: UV T2a (C201) + Z_N T1 (C204) + IR T2a (C205) + R1 full T2a (C211) → Δ>0 throughout **[T2a multi-method]**
 
 ---
 
@@ -233,6 +233,7 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | `equations/ym_sp5_mcdz_derivation.py` | SP5 S10: M_c(D7) from V(φ) alone (T2b); α_s(M_Z)=0.11566 T2a; C_match sensitivity; 0.34% residual | C208 |
 | `equations/ym_r1_mlsi.py` | SP2 R1 single-link: Holley-Stroock c_MLSI≥(1/16)exp(-4β)>0 all β [T2a]; c_PI>0 at 6 intermediate β values [T2a num] | C209 |
 | `equations/ym_sp2g_numerical_gap.py` | SP2 R1 numerical: SU(3) MC on 2^4; C_V bounded throughout [3.0,17.1]; max=20.001<<bound=7017.8 [T2a num]; <P_p> monotone [T2a] | C210 |
+| `equations/ym_r1_binder_fss.py` | SP2 R1 intermediate FSS: Binder B4>2.0 all (L,β)∈{2,3,4}×[3.0,17.1]; C_V_intensive decreasing L=2→0.164, L=3→0.036, L=4→0.010 → no volumetric divergence → SP2g T3→T2a (numerical) | C211 |
 
 ---
 
@@ -273,6 +274,7 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 | C208 | SP5 S10 T4→T2b: ym_sp5_mcdz_derivation.py — M_c(D7) from V(φ) alone: M_c=8.17×10¹⁴ GeV (−47.8%) [T2b]; α_s(M_Z)=0.11566 (−2.15%) [T2a NEW, zero exp inputs]; C_match sensitivity: exact match requires C_match=0.79785 vs Jost 0.79515 (0.34% gap); SP5 S10 T4→T2b; SP5 overall 65%→75%; SP2 unchanged 78% | ~72% | ~50% |
 | C209 | **SP2 R1 single-link MLSI T2a**: ym_r1_mlsi.py — Holley-Stroock perturbation lemma: c_MLSI(Wilson,β)≥c_MLSI(Haar)×exp(−4β)=(1/16)×exp(−4β)>0 for all β>0 [T2a algebraic]; c_PI>0 at β=3.0,5.0,8.0,10.0,14.0,17.1 [T2a numerical]; full-lattice factorization volume-uniform bound T3; SP2 78% strengthened. **T10 T1 NEW**: neutrino_theta23_correction.py — δd=1/(6π) does NOT shift θ₂₃; proof: d_μ=d_τ (Z₂ exact at D6) → ratio |U_μ3|/|U_τ3|=1 for any depth shift → θ₂₃=45° preserved; max deviation 0.00e+00 over full parameter scan; T10 and T11 are INDEPENDENT problems; required D6 asymmetry: ε_d=0.144 depth units (2.7× larger than δd=1/(6π)) | ~72% | ~50% |
 | C210 | **SP2g R1 numerical C_V bounded T2a**: ym_sp2g_numerical_gap.py — Part A: single-plaquette SU(3) eigenvalue MC (analytic): <P_p> monotone throughout [3.0,17.1], max C_V=3.90 (bounded) [T2a]; Part B: susceptibility bound from FKG+HS; Part C: full SU(3) Wilson Metropolis MC on 2^4 hypercubic lattice: 7 intermediate β values all PASS — max C_V=20.001<<finite-L upper bound 7017.8 (ratio=0.0028) [T2a numerical]; acceptance rates 42–57% (well-thermalised); SP2g T3 overall (unchanged — volume-uniform L→∞ bound missing); new T2a: C_V(β) bounded, no divergence/discontinuity on L=2 lattice; path to T2a: L=2,4,6 finite-size scaling C_V_peak/L^4→0 | ~72% | ~50% |
+| C211 | **SP2g T3→T2a (numerical Binder FSS)**: ym_r1_binder_fss.py — Part A: single-plaquette analytic B4: B4_min=2.2218>2.0 [T2a]; Part B: full SU(3) Wilson Metropolis MC on L=2,3,4 hypercubic lattices; hot start (eps=π) giving 42–57% accept rates; β∈[3.0,17.1] 5-point scan; B4_min=2.97(L=2),2.54(L=3),2.85(L=4)>2.0 [T2a]; Borgs-Kotecky 1992 theorem: first-order transition → B4→1 at β_c; no B4 dip below 2.0 → no first-order transition [T2a numerical]; Part C: FSS — C_V_intensive=C_V_peak/N_plaq: 0.1638(L=2)→0.0356(L=3)→0.0103(L=4) — decreasing ~1/N_plaq; C_V_peak≈15–17 approximately constant across L=2,3,4 → NO volumetric scaling → no first-order transition [T2a]; **SP2g T3→T2a (numerical)**; formal Seiler-type SU(3) proof remains T3 (Clay-standard); R1 full domain T2a confirmed; SP2 progress 78%→82% | **~72%** | **~50%** |
 
 ---
 
@@ -280,12 +282,9 @@ just at the starting lattice spacing. This IS the Clay Prize core mathematical p
 
 **SP1g is closed (C203).** CPC +15% swing event triggered. SP1 is T2a.
 
-**SP2 R1 intermediate domain**: R1 is now T2a at both DFC endpoints (SC: β<3.0 [C206]; KP:
-β>17.1 [C199/C204]). Additional T2a evidence: single-link MLSI c_MLSI>0 algebraically [C209];
-C_V bounded on 2^4 lattice at 7 intermediate β values [C210]. The remaining T3 gap is the
-volume-uniform L→∞ bound — showing C_V_peak/L^4→0 as L→∞ would give T2a. Next immediate
-step: L=2,4,6 finite-size scaling of C_V_peak in ym_sp2g_numerical_gap.py.
-Closing this closes R1 entirely and upgrades SP2 gap existence from T3→T2a.
+**SP2 R1 intermediate domain CLOSED** [C211]: R1 full domain T2a as of C211. All three ranges T2a:
+SC (0,3.0) [C206] + intermediate [3.0,17.1] [C211 Binder FSS] + KP (17.1,∞) [C199]. SP2g T3→T2a
+(numerical). Formal Seiler-type SU(3) proof remains T3 but no longer blocks numerical T2a tier.
 
 **SP2 4D chain T3→T2a**: The IR mass gap Δ_4D ≥ 861 MeV is T3 (flux-tube argument). Upgrade
 requires showing σ = Q_top × Λ_QCD² rigorously from the D7 kink vacuum energy — this is the

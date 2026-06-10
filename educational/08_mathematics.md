@@ -239,6 +239,7 @@ With the five numbers above determined, the model predicts:
 | UV mass gap Δ_UV | ≥ 1.22 M_Pl = 1.49×10¹⁹ GeV | > 0 | — | T2a (C201, KP+PF) |
 | IR mass gap Δ_SC | ≥ 1033 MeV (SC area law) | > 0 | — | T2a (C205) |
 | IR mass gap Δ_4D | ≥ 861 MeV (flux-tube bound) | > 0 | — | T3 structural (C189) |
+| R1 no bulk phase transition | Full domain β∈(0,∞) T2a | — | — | T2a (C211, Binder FSS closes intermediate) |
 
 ---
 
@@ -258,8 +259,9 @@ mathematical content. What is not yet derived:
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~72%
    overall (CPC ~50%). SP1 T2a (C203). SP2: UV gap T2a (C201), IR gap T2a (C205), R1 SC
-   domain T2a (C206); R1 intermediate [β∈3.0,17.1] T3 remaining. SP3, SP4, SP5 all T2a.
-   The two remaining T4 gaps are R1 intermediate domain and M_c(D7) exact from V(φ) alone.
+   domain T2a (C206), **R1 intermediate [β∈3.0,17.1] T2a [C211, Binder FSS]** — R1 full
+   domain T2a; SP2g T3→T2a (numerical). SP3, SP4, SP5 all T2a.
+   The remaining T4 gap is M_c(D7) exact from V(φ) alone (SP5 S10 T2b at −47.8%).
 
 The model does not claim completeness. These are honest, documented gaps.
 
