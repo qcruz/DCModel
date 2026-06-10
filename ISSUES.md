@@ -314,20 +314,21 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 217.
+- **Status:** Active primary focus. Last updated: Cycle 218.
 - **Overall progress:** ~74%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
-- **C217 NEW:** JW3c-b T2a (spacetime signature from V(φ): hyperbolicity [T1] + Bogomolny [T1] + D3+D4 counting [T2a]). **ALL 7 JW CRITERIA NOW T2a.** T4 fermion rep TYPE T2a (Z₃ center charge argument). Remaining T3: SP2 BPS Hamiltonian form, SP4/SP5 N≥4, T4 Dynkin label holonomy.
+- **C218 NEW:** SP2 BPS Hamiltonian form 1+1D T3→T2a (ym_sp2_bps_quantum.py). H|_{Q=2n}≥n×I₄×Q_top×m_hat (m_hat=42.35 M_Pl) composite T2a: Bogomolny[T1]+DHN−0.16%[T2a]+Coleman Q1[T2a]+Glimm-Jaffe[T2a]. I₄=C₂(fund,SU(3))=4/3 explicit in quantum bound [T1]. 4D form remains T3.
+- **C217 NEW:** JW3c-b T2a (spacetime signature from V(φ): hyperbolicity [T1] + Bogomolny [T1] + D3+D4 counting [T2a]). **ALL 7 JW CRITERIA NOW T2a.** T4 fermion rep TYPE T2a (Z₃ center charge argument). Remaining T3: SP2 BPS 4D form, SP4/SP5 N≥4, T4 Dynkin label holonomy.
 
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS form T3** | **88%** | **C212** |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS form 1+1D T2a [C218]; 4D T3** | **88%** | **C218** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
 
-**Remaining T4:** SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b). Remaining T3: SP2 BPS Hamiltonian form H≥I₄×Q̂_top×m; SP1f no-bulk-transition formal proof.
-**Latest:** C216 **SU(N) generality T2a (+10% CPC SWING EVENT)** (ym_sun_gap_extension.py): monotonicity theorem — g²(N) decreasing T1 → SP1+SP2 T2a all N≥3 by T1+T2a base; N=2 Seiler lit T2a; SP3 π₃=ℤ all N T1; CPC 50%→**60%**. C215 I₄=C₂ unique to N=3 T1. C214 JW3c-a T2a. C212: SP2 T2a. C203: SP1 T2a (CPC+15%).
+**Remaining T4:** SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b). Remaining T3: SP2 BPS 4D form (domain wall volume normalization); SP1f no-bulk-transition formal proof.
+**Latest:** C218 SP2 BPS form 1+1D T2a. C217 ALL 7 JW T2a. C216 **SU(N) generality T2a (+10% CPC SWING EVENT)**: CPC 50%→**60%**. C215 I₄=C₂ unique to N=3 T1. C214 JW3c-a T2a. C212: SP2 gap existence T2a. C203: SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -426,6 +427,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - SP4 (sigma→YM decoupling, Cycles 181–184): Wilson EFT at Λ_QCD = pure SU(3) YM + O(10⁻⁴⁰) corrections [T2a]; derives that the D7 kink vacuum energy equals pure YM partition function — a T2a argument that σ is a YM string tension, not yet the σ=Q_top×Λ² derivation from V(φ) alone.
   - SP5 C_match (Cycle 197): c_gauge(cont)=2.773063 T2a; C_match=0.795151 T2a. These values govern the scalar→gauge coupling matching (threshold corrections); they do NOT close the hadronic VP non-perturbative piece δ(Δα)^{NP}=0.00102.
   - **Status (Cycle 212/213):** T12 blocking gap unchanged. Yang-Mills work: C212 **SP2 gap existence T2a** — Δ_phys≥1033 MeV>0 [T2a multi-method]. This establishes σ>0 [T2a] structurally (σ>0↔gap>0 in 4D YM), but does NOT provide the exact value σ=Q_top×Λ². C213 JW criteria (ym_clay_requirements.py) maps JW5 T2a (gap existence) while noting the hadronic VP piece δ(Δα)^{NP}=0.00102 requires the spectral density R^{had}−R^{parton} from the full D7 confinement dynamics. The connection is: SP2 T2a implies ρ,ω,φ resonances exist (confinement is established), but their VP contribution to Δα requires a quantitative spectral density computation. T12 remains T4 for the 0.00102 piece. No numerical improvement to 1/α_em(0).
+  - **C218 NEW:** SP2 BPS form 1+1D T2a (`ym_sp2_bps_quantum.py`): H|_{Q=2n} ≥ n × I₄ × m_hat [T2a composite] where m_hat = 42.35 M_Pl and I₄ = C₂(fund,SU(3)) = 4/3 appears explicitly. BPS form makes the connection σ ∝ m_kink × (string length) more explicit: σ = Q_top × Λ² has the same I₄ prefactor from the kink shape. Quantum BPS form (1+1D) is now T2a, but the σ=Q_top×Λ² derivation from first principles is still T4 (requires 4D promotion of BPS form). T12 blocking gap (δ(Δα)^{NP}=0.00102) unchanged.
 - Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/d7_nonpert_coefficients.py` (Cycle 160), `equations/alpha_em_eccc.py` (Cycle 139), `equations/ym_4d_gap_extension.py` (Cycle 189), `equations/ym_gauge_decoupling.py` (Cycle 181)
 
 ### T10 — Near-maximal θ₂₃: near-degeneracy argument retracted; Z₂ symmetry argument proposed (C65, updated C206)

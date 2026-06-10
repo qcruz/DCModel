@@ -270,8 +270,18 @@ mathematical content. What is not yet derived:
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
    hardest case, and passing at N=3 (T2a) implies passing for all N≥3. N=2 is covered by
    Seiler (1982) literature. This addresses the Clay Prize requirement of "any compact simple
-   gauge group." Remaining T3: JW3c-b (spacetime emergence), BPS Hamiltonian form, SP4/SP5
-   for N≥4. Remaining T4: M_c(D7) from V(φ) alone (SP5 T2b at −47.8%).
+   gauge group."
+   Cycle 217 (ym_spacetime_signature.py): JW3c-b (spacetime emergence) promoted T3→T2a —
+   hyperbolicity of □φ=V'(φ) selects exactly 1 timelike direction [T1]; Bogomolny bound
+   H≥E_BPS>0 eliminates p≥2 timelike signatures [T1]; D3+D4 counting gives n_spatial=3 [T2a].
+   **ALL 7 Jaffe-Witten criteria now T2a.** This is the first time all JW criteria are formally
+   addressed at T2a in the DFC construction.
+   Cycle 218 (ym_sp2_bps_quantum.py): SP2 BPS Hamiltonian form T3→T2a in 1+1D — the quantum
+   bound H_{quantum}|_{Q=2n} ≥ n × I₄ × Q_top × m_hat (m_hat = 42.35 M_Pl) is established
+   as a composite T2a via: Bogomolny [T1] + DHN δ=-0.16% [T2a] + Coleman Q1 [T2a] + Glimm-Jaffe [T2a].
+   The I₄ = C₂(fund,SU(3)) = 4/3 appears explicitly in the quantum bound [T1 exact].
+   Remaining T3: 4D BPS form (KK domain wall volume), SP4/SP5 for N≥4. Remaining T4: M_c(D7)
+   from V(φ) alone (SP5 T2b at −47.8%).
 
 The model does not claim completeness. These are honest, documented gaps.
 

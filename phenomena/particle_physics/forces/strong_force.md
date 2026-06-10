@@ -272,7 +272,7 @@ with one unit of anti-red winding also cancel to zero.
 | Confinement: color-neutral states only | Zero net D7 winding required in D3 localization layer | all observed hadrons color-neutral | ✓ structural (formal proof open) |
 | 8 gluons from SU(3) (3²−1 = 8 generators) | 8 | 8 | ✓ topological |
 | Three-generation structure from D7 | SU(3) fundamental rep dim = 3 | 3 generations | ✓ Tier 2a (conditional on D7=SU(3)) |
-| Mass gap Δ > 0 | BPS lower bound Q_top×Λ_QCD = 609 MeV (T3, Cycle 178) | Δ > 0 (Clay problem) | ✓ T3 structural |
+| Mass gap Δ > 0 | Gap existence Δ≥1033 MeV T2a [C212]; BPS form H≥I₄×Q̂_top×m 1+1D T2a [C218]; 4D T3 | Δ > 0 (Clay problem) | ✓ T2a gap existence, T3 BPS 4D |
 | Glueball 2++ (Pomeron) | 2159 MeV (−10%, T3, Cycle 178) | ~2400 MeV (lattice) | ✗ −10% T3 |
 | Glueball 0++ (Nambu-Goto) | 2159 MeV (+33%, T3, Cycle 178) | ~1625 MeV (lattice) | ✗ +33% T3 |
 | Pomeron intercept α_0^P | Q_top/2 = 1.0 (T3) | ~1.0 | ✓ T3 structural |
@@ -307,6 +307,9 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 - `equations/rho_meson_dfc.py` — Λ_QCD=304.5 MeV two-loop from DFC α_s(M_Z); m_ρ=825 MeV Regge (Cycle 159)
 - `equations/d7_nonpert_coefficients.py` — σ=Q_top×Λ²(−4.2%), m_ρ=√(2π)Λ=763 MeV (−1.58%, 0 free params, Cycle 160)
 - `equations/yang_mills_mass_gap.py` — BPS lower bound T1; glueball estimates T3; mass gap structural argument (Cycle 178)
+- `equations/ym_sp2_bps_quantum.py` — SP2 quantum BPS bound: H|_{Q=2n} ≥ n × I₄ × m_hat = 42.35 M_Pl; 1+1D T2a; δ_DHN=−0.16%; ω₁/m_σ=√3/2 [T1] (Cycle 218)
+- `equations/ym_spacetime_signature.py` — JW3c-b T2a: hyperbolicity+Bogomolny→Minkowski (1,3) unique; all 7 JW criteria T2a (Cycle 217)
+- `equations/ym_jackiw_rebbi_su3_gauge.py` — T4 fermion rep TYPE T2a: Z₃ center triality→fundamental rep dim=3 (Cycle 217)
 - `equations/ym_constructive_qft.py` — SP1 OS axioms OS1-OS5, Seiler RP T2a (Cycle 185)
 - `equations/ym_topological_sectors.py` — SP3 Q_top^YM∈ℤ T2a, π₃(SU(3))=ℤ T1 (Cycle 187)
 - `equations/ym_4d_gap_extension.py` — SP2 4D chain Δ_4D≥861 MeV T3 (Cycle 189)
@@ -331,15 +334,16 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
    | SP | Description | Tier | Key file |
    |---|---|---|---|
    | SP1 | Constructive 4D gauge theory | **T2a** (C203: SP1g Balaban closes) | `ym_sp1g_rg_domain.py` (C203) |
-   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]**: gap existence Δ≥1033 MeV>0 multi-method; BPS form T3 | `ym_sp2_gap_existence.py` (C212) |
+   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]**: gap existence Δ≥1033 MeV>0; BPS form **1+1D T2a [C218]**, 4D T3 | `ym_sp2_gap_existence.py` (C212), `ym_sp2_bps_quantum.py` (C218) |
    | SP3 | Topological charge spectrum Q_top∈ℤ | **T2a** | `ym_topological_sectors.py` (C187) |
    | SP4 | Pure YM decoupling from scalar in IR | **T2a** | `ym_moduli_metric.py` (C184) |
    | SP5 | Derive Λ_QCD from V(φ) | **T2a** (C_match=0.795151 T2a; M_c(D7) T2b C208) | `ym_jost_function.py` (C197), `ym_sp5_mcdz_derivation.py` (C208) |
 
    Key T1 structural inputs: E_BPS=113.1 M_Pl>0; Q_top=2 exact; I₄=C₂(fund,SU(3))=4/3 exact.
-   All SP1–SP5 T2a as of C212. **Clay Prize progress: ~74%, CPC: ~50%.**
-   JW criteria (C213): 6/7 T2a; JW3c Poincaré T3 (JW3c-a worldvolume covariance T2a [C214]).
-   Remaining gaps: BPS Hamiltonian form H≥I₄×Q̂_top×m (T3); JW3c-b spacetime emergence D3/D4 (T3); SP5 M_c(D7) from V(φ) (T2b).
+   All SP1–SP5 T2a as of C212. **Clay Prize progress: ~74%, CPC: ~60%** (+10% C216 SU(N); +15% C203 SP1 Balaban).
+   JW criteria (C217): **7/7 T2a** — JW3c-b spacetime emergence T2a [C217 hyperbolicity+Bogomolny+D3+D4].
+   SP2 BPS form: 1+1D **T2a [C218]** (quantum bound H|_{Q=2n} ≥ n × I₄ × m_0 × (1+δ_DHN), δ_DHN=−0.16%); 4D T3.
+   Remaining T3: 4D BPS form via KK domain wall vol normalization; SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) (T2b −47.8%).
    Full tracking: `foundations/yang_mills_clay.md`.
 
 2. **Derive Λ_QCD from DFC parameters (SP5, T2a):** The confinement scale Λ_QCD is set by

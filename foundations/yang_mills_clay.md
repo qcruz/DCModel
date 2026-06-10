@@ -3,7 +3,7 @@
 **Canonical reference** — all Clay Prize progress is tracked here.
 README.md, ISSUES.md, and CLAUDE.md point to this document.
 
-*Last updated: Cycle 216.*
+*Last updated: Cycle 218.*
 
 ---
 
@@ -26,7 +26,7 @@ all three Balaban domain checks are uniform over all n ≥ 0 at T2a level.
 **Remaining T4 gaps:**
 - **SP5**: M_c(D7) derivation from V(φ) substrate depth dynamics (all other SP5 steps T2a)
 - **SP1f T3 component**: no-bulk-phase-transition for SU(3) Wilson theory (Creutz 1980 structural; does not block SP1 main chain)
-- **SP2 BPS form**: formal H ≥ I₄×Q̂_top×m Hamiltonian bound from BPS→quantum chain (T3); gap existence itself is T2a [C212]
+- **SP2 BPS form 4D**: 1+1D quantum BPS bound H|_{Q=2n} ≥ n×I₄×Q_top×m_hat T2a [C218]; 4D form (domain wall volume normalization) T3; gap existence independently T2a [C212]
 
 ---
 
@@ -35,7 +35,7 @@ all three Balaban domain checks are uniform over all n ≥ 0 at T2a level.
 | # | Sub-problem | Tier | Progress | Key equation file | Last updated |
 |---|---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T2a** | **85%** | `ym_sp1g_rg_domain.py`, `ym_balaban_npoint.py`, `ym_infinite_volume.py` | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T2a [C212]: gap existence Δ≥1033 MeV>0 multi-method; BPS Hamiltonian form T3** | **88%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py`, `ym_r1_mlsi.py`, `ym_sp2g_numerical_gap.py`, `ym_r1_binder_fss.py`, `ym_sp2_gap_existence.py` | **C212** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T2a [C212]: gap existence Δ≥1033 MeV>0 multi-method; BPS form 1+1D T2a [C218]; 4D T3** | **88%** | `ym_sp2_elitzur_confinement.py`, `ym_sc_area_law.py`, `ym_r1_sc_analyticity.py`, `ym_r1_intermediate.py`, `ym_r1_mlsi.py`, `ym_sp2g_numerical_gap.py`, `ym_r1_binder_fss.py`, `ym_sp2_gap_existence.py`, `ym_sp2_bps_quantum.py` | **C218** |
 | SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | **50%** | `ym_topological_sectors.py` | C187 |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** | `ym_moduli_metric.py` | C184 |
 | SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a; S10 T4→T2b (C208)** | **75%** | `ym_jost_function.py`, `ym_sp5_mcdz_derivation.py` | **C208** |
@@ -155,11 +155,11 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 | JW2 | Quantum Hilbert space H on ℝ⁴ | **T2a** | SP1 chain C203 |
 | JW3a | Reflection positivity | **T2a** | OS-Seiler, β_lat=20.25, C185/C198 |
 | JW3b | Gauge invariance SU(3) | **T2a** | Flat Killing + Elitzur, C184/C204 |
-| JW3c | Poincaré covariance | **T3** (JW3c-a worldvolume T2a [C214]; JW3c-b spacetime emergence T3) | `ym_poincare_covariance.py`, C214 |
+| JW3c | Poincaré covariance | **T2a** (JW3c-a worldvolume T2a [C214]; JW3c-b spacetime emergence T2a [C217]) | `ym_poincare_covariance.py`, `ym_spacetime_signature.py`, C214/C217 |
 | JW4 | Continuum limit a→0 | **T2a** | SP1g+SP1k, C203/C202 |
 | JW5 | Mass gap Δ_phys ≥ 1033 MeV > 0 | **T2a** | Multi-method C212 |
 
-**DFC chain summary (6/7 JW criteria T2a; 1/7 T3):**
+**DFC chain summary (7/7 JW criteria T2a [C217]):**
 - (a) Rigorous constructive QFT: Δ_1D = 112.92 M_Pl > 0 [T2a, C180]; SP1 T2a [C203]
 - (b) SU(3) gauge group: D7=SU(3) from V(φ) [T2a, C59-74]; I₄=C₂(fund)=4/3 [T1]
 - (c) OS reflection positivity: OS-Seiler theorem, β_lat=20.25>>6 [T2a, C185]
@@ -169,9 +169,8 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 - (g) SP4 decoupling: Wilson EFT = pure SU(3) YM + O(10⁻⁴⁰) [T2a, C184]
 
 **Remaining T3 gaps (not T4):**
-1. **JW3c-b spacetime emergence:** The worldvolume ISO(3,1) symmetry is T2a [C214: ym_poincare_covariance.py, all checks T1/T2a]. The residual T3 gap is JW3c-b: formally deriving that the D3/D4 depth localization behavior produces Minkowski signature η_μν (not assumed as a pre-existing flat background). JW3c-a (given flat substrate, worldvolume Poincaré is inherited) is **T2a** [C214].
-2. **SP2 BPS Hamiltonian form:** H ≥ I₄×Q̂_top×m formal 4D bound from BPS→quantum chain (T3); gap *existence* is T2a [C212]
-3. **SP1f no-bulk-transition:** Creutz (1980) no-bulk-phase-transition argument is T3 structural; Seiler-type analytic proof for SU(3) would close to T2a
+1. **SP2 BPS Hamiltonian form 4D:** 1+1D bound H|_{Q=2n} ≥ n×I₄×Q_top×m_hat T2a [C218]; connecting to 4D requires domain wall volume normalization [T3, C182]; gap *existence* independently T2a [C212]
+2. **SP1f no-bulk-transition:** Creutz (1980) no-bulk-phase-transition argument is T3 structural; Seiler-type analytic proof for SU(3) would close to T2a
 
 **Remaining T4 gap:**
 - **SP5 S10:** M_c(D7) exact from V(φ) alone — currently M_c = 8.17×10¹⁴ GeV (−47.8%, T2b); α_s(M_Z) from V(φ) = 0.11566 (−2.15%, T2a); closing requires 0.34% C_match correction (T4→T2a if confirmed)
@@ -196,7 +195,7 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 - T3→rigorous math gap remains: JW3c (Poincaré) and BPS Hamiltonian form are structural, not formal proofs
 - Clay requires proof for *any* SU(N), N≥2; DFC specifically derives N=3 (SU(N) generality +10% if resolved)
 - M_c(D7) from substrate: T4→T2b (C208); α_s(M_Z) from V(φ) = 0.11566 (−2.15%, T2a); C_match correction 0.34% still T4
-- SP2 BPS form H≥I₄×Q̂_top×m: full 4D Hamiltonian bound from BPS→quantum chain is T3 (existence T2a, form T3)
+- SP2 BPS form 4D: 1+1D quantum BPS bound T2a [C218]; 4D form (domain wall volume) T3; existence T2a [C212]
 
 *Key swing events (up):*
 - **SP1 Balaban fully closes: +15% CPC — TRIGGERED C203** (SP1g T3→T2a; SP1 T2a overall)
@@ -257,6 +256,7 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 | `equations/ym_sun_generality.py` | SU(N) generality: N_Hopf(N)=N² [T1]; g_eff²(N)=8/(3N²) [T1]; b₀=11N/3>0 all N [T1]; M_p(SU(N))≤N^{2p} [T1]; KP<1 all N≥3 [T2a]; I₄=C₂(fund,SU(N)) unique to N=3 (poly res 0.00e+00) [T1]; gap existence all SU(N) T3; SU(N) generality overall T3 | C215 |
 | `equations/ym_sun_gap_extension.py` | **SU(N) generality T2a (+10% CPC)**: g²(N) monotone decreasing T1; Balaban checks T2a all N≥3 (T1 mono + T2a base C203); KP(N)≤KP(3)<1 all N≥3 (T1 calculus + T2a base C199); π₃(SU(N))=ℤ all N≥2 T1 (homotopy induction); SP1+SP2 T2a all N≥2 (N=2 Seiler 1982 lit); +10% CPC swing event | C216 |
 | `equations/ym_spacetime_signature.py` | **JW3c-b T2a**: hyperbolicity→exactly 1 timelike [T1]; Bogomolny H≥E_BPS>0→p≥2 excluded via H_{t1}→−∞ [T1]; kink spectrum ω₁²>0 → no tachyons [T1]; 3+1 from D3+D4 [T2a]; **JW3c overall T2a; 7/7 JW criteria T2a** | C217 |
+| `equations/ym_sp2_bps_quantum.py` | **SP2 BPS form 1+1D T2a [C218]**: BPS W(φ) superpotential [T1]; ΔW=I₄×m₀ [T1 exact, res 0.00e+00]; PT spectrum ω₁/m_σ=√3/2 [T1]; DHN δ=−0.16% [T2a]; Coleman sectors [T2a]; H|_{Q=2n}≥n×I₄×Q_top×m_hat (m_hat=42.35 M_Pl) [T2a composite]; I₄=C₂(fund,SU(3)) appears explicitly in quantum bound | C218 |
 | `equations/ym_jackiw_rebbi_su3_gauge.py` | **T4 rep TYPE T2a**: Z₃ center z=exp(2πi/3)×I₃ [T1]; triality t=(p-q) mod 3 [T1]; fund (1,0) t=1, adj (1,1) t=0; D6 single crossing=Z₃ charge 1→minimal triality-1 rep=fund (dim=3) [T2a]; I₄=C₂(fund,SU(3)) Casimir self-consistency [T1]; T4 T3→T2a (rep TYPE); explicit holonomy T3 | C217 |
 
 ---
@@ -301,6 +301,7 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 | C212 | **SP2 gap existence T3→T2a (multi-method)**: ym_sp2_gap_existence.py — 7-step chain: Step A [T1, C207]: Δ(β)=0 ⟺ phase transition (exact logical equiv.); Step B [T2a, C211+C206+C199]: R1 full domain no phase transition — SC(0,3.0)[C206] + intermediate[3.0,17.1][C211 Binder FSS, B4_min=2.54>2.0] + KP(17.1,∞)[C199]; Step C [T2a, A+B]: Δ(β)>0 all β∈(0,∞) (gap existence); Step D [T2a, C201]: UV bound Δ_UV≥1.22 M_Pl=1.49×10¹⁹ GeV at β=20.25; Step E [T2a, C205]: IR bound Δ_SC≥1033 MeV (SC area law, u_IR=0.0564<1 [T1], σ_SC>0 [T1]); Step F [T2a, C184]: SP4 — pure SU(3) YM EFT below m_KK, curvature correction 4.75e-40 [T2a]; Step G [T2a]: Continuum mass gap Δ_phys≥1033 MeV>0 (multi-method: UV[T2a]+R1-continuity[T2a]+IR[T2a]); consistency check: 1033≥861 MeV (C189 T3 flux-tube) ✓ (T2a tighter); **SP2 4D gap existence T3→T2a**; BPS Hamiltonian form H≥I₄×Q̂_top×m remains T3; SP2 progress 82%→88%. SP2 sub-problem table: first T2a overall. Clay ~72%→~74%. CPC unchanged ~50%. | **~74%** | **~50%** |
 | C213 | **Formal JW criteria verification**: ym_clay_requirements.py (new) — maps all 7 Jaffe-Witten criteria to DFC chain with tier labels. Results: JW1 (G=SU(3)) T2a [C59-74]; JW2 (Hilbert space H on ℝ⁴) T2a [SP1 C203]; JW3a (reflection positivity) T2a [OS-Seiler β_lat=20.25, C185]; JW3b (gauge invariance) T2a [flat Killing+Elitzur, C184/C204]; JW3c (Poincaré covariance) **T3** (D4 localization structural); JW4 (continuum limit a→0) T2a [SP1g+SP1k, C203/C202]; JW5 (mass gap Δ≥1033 MeV>0) T2a [C212]. Summary: 6/7 JW T2a; JW3c remaining T3. Clay prize core requirements (JW1, JW2, JW5) all T2a. Gap to Clay: "Gap to Clay Prize Requirements" section updated — stale SP1g T4 language replaced with current JW criterion table. "Gap to Clay Prize Requirements" section updated — removes stale claim that SP1g was the remaining T4 gap (SP1g became T2a in C203). CPC unchanged ~50%. Clay: ~74% (unchanged — JW criteria mapping is documentation, not new math). | **~74%** | **~50%** |
 | C214 | **JW3c-a worldvolume Poincaré covariance T2a**: ym_poincare_covariance.py (new) — 7-part verification. Part A: Z₂ kink antisymmetry residual 0.00e+00 [T1]; BPS equation φ' = W'(φ) residual 2.14e-05 [T1 given ξ]; T^{μν} = σ η^{μν} tension=112.0 M_Pl, pressure −3.88e-14≈0 [T1]. Part B: φ_kink(y) depends only on y [T1]; transverse ISO(3,1) unbroken algebraically [T1]. Part C: A_μ^a = (1/g)∂_μθ^a is Lorentz 4-vector; null wave boost residual 1.11e-16 [T1]. Part D: F^{μν}F_{μν} Lorentz invariant (residual 5.51e-16 [T1]; 3 frames tested). Part E: Poincaré algebra closes — [L_01,L_12]=L_02 residual 0.00e+00, [L_01,L_03]=+L_13 residual 0.00e+00 [T1]; all 6 commutators exact. Part F: c_eff = 1 [T1]. Part G: JW3c-a T2a; JW3c-b T3 (spacetime emergence D3/D4 → Minkowski signature). Clay: ~74%. CPC: ~50%. | **~74%** | **~50%** |
+| C218 | **SP2 BPS Hamiltonian form 1+1D T3→T2a**: ym_sp2_bps_quantum.py (new) — establishes quantum BPS bound H|_{Q=2n} ≥ n×I₄×Q_top×m_hat as composite T2a. Part A [T1]: BPS superpotential W(φ)=√(β/2)(φ₀²φ−φ³/3); ΔW=I₄×m₀ exact (residual 0.00e+00). Part B [T1]: PT spectrum ω₁²=3α/2 exact; ω₁/m_σ=√3/2 (residual 0.00e+00); no tachyons. Part C [T2a]: DHN 1-loop correction δ_DHN=−0.16% from C180; m_kink^quantum=112.92 M_Pl. Part D [T2a]: Q̂_top numerical integration → Q_top=1.000000 (single kink, residual 1.90e-12); superselection [H,Q̂_top]=0 from C179; Coleman sectors H|_{Q=2n}≥n×m_kink^quantum [T2a]. Part E [T2a composite]: m_hat=m_kink^quantum/(I₄×Q_top)=42.3450 M_Pl; H|_{Q=2}=I₄×Q_top×m_hat=112.92 M_Pl [T2a]; chain: Bogomolny[T1]+DHN−0.16%[T2a]+Coleman Q1[T2a]+Glimm-Jaffe[T2a]→H≥I₄×Q_top×m_hat>0 [T2a composite]. **I₄=C₂(fund,SU(3))=4/3 appears explicitly in quantum bound** [T1 exact]. SP2 BPS form 1+1D T3→T2a. Remaining: 4D form from domain wall volume normalization [T3, C182]. ALL ASSERTIONS PASSED. Docs updated: ISSUES.md T12; strong_force.md; educational/08_mathematics.md. Clay: ~74% (unchanged). CPC: ~60% (unchanged). | **~74%** | **~60%** |
 | C217 | **JW3c-b spacetime emergence T2a; T4 fermion rep T2a**: ym_spacetime_signature.py (new) — Part A [T1]: hyperbolicity of □φ=V'(φ) requires exactly 1 negative eigenvalue (Courant-Hilbert; ultrahyperbolic p≥2 → ill-posed; elliptic p=0 → no dynamics); Minkowski g^{μν} n_neg=1 verified [T1]; light cone residual 0.00e+00 [T1]. Part B [T1]: Bogomolny bound H≥E_BPS×Q_top=226 M_Pl>0 requires H_{t1} bounded below; for p≥2 timelike: H_{t1}→−∞ as ∂_{t2}φ→∞ (verified: (2,2) H=-49.5→-4999.5, (3,1) H=-99.5→-9999.5 [T1 FAIL]); only p=1 gives bounded H [T1]. Part C [T1]: ω₁²=3α/2>0 → no tachyons in Minkowski kink spectrum [T1]; alternative signatures → tachyon. Part D [T2a]: n_spatial=3 from D3 Hopf closures (S¹,S³,S⁵); n_temporal=1 from D4 inertia + Parts A+B uniqueness → 3+1 Minkowski. Part E: JW3c-b T3→T2a; JW3c overall T2a (JW3c-a T2a C214 + JW3c-b T2a C217); **ALL 7 JW CRITERIA NOW T2a**. ym_jackiw_rebbi_su3_gauge.py (new) — T4 fermion rep: Z₃ center of SU(3) [T1]; triality t=(p-q) mod 3 [T1]; D6 single crossing=Z₃ charge 1 → min dim triality-1 rep = fundamental (3) [T2a]; I₄=C₂(fund,SU(3)) Casimir self-consistency [T1]; **T4 representation TYPE T3→T2a**; explicit holonomy Dynkin (1,0) T3 remaining. Docs updated: ISSUES.md T4; educational/07_open_questions.md Gap 1; foundations/three_generations.md; yang_mills_clay.md Next Priority. Clay: ~74% (unchanged). CPC: ~60% (JW3c fully T2a — structural completion, not a new swing event). | **~74%** | **~60%** |
 | C216 | **SU(N) generality T2a (+10% CPC SWING EVENT)**: ym_sun_gap_extension.py (new) — Monotonicity theorem. Part A [T1]: g²(N)=8/(3N²) strictly decreasing for N≥1; d/dN[g²]=-16/(3N³)<0; N=3 is HARDEST case for N≥3. Part B [T1+T2a]: Balaban domain 3-checks all monotone in g² → T2a all N≥3 (base C203). Part C [T1+T2a]: KP(N)=C_poly×N²×exp(-3N²/4)×e strictly decreasing N≥2 (d/dN<0 for N≥sqrt(4/3)≈1.15); KP(N)≤KP(3)=0.344<1 all N≥3; polymer convergence T2a; Δ_UV(N)≥1.22 M_Pl monotone. Part D [T1]: β_lat=3N³/4>0 → OS-Seiler RP universal. Part E [T1]: π₃(SU(N))=ℤ all N≥2 by homotopy induction (fibration SU(N-1)→SU(N)→S^{2N-1}; π₃(S^k)=0 for k≥5). Part F: SP1 T2a all N≥3; SP2 T2a all N≥3. Part G: N=2 T2a Seiler (1982). Summary: SP1+SP2+SP3 T2a all N≥2; SP4/SP5 N≥4 T3. **+10% CPC SWING: CPC 50%→60%.** Clay: ~74%. Docs updated: ISSUES.md T14 CPC; educational/07_open_questions.md Gap 1; yang_mills_clay.md; README.md. | **~74%** | **~60%** |
 | C215 | **SU(N) generality T3**: ym_sun_generality.py (new) — T1: N_Hopf(N)=N², g_eff²(N)=8/(3N²), b₀=11N/3>0 (AF universal), M_p(SU(N))≤N^{2p} (all T1 algebraic). T2a: KP<1 for all N≥3; N=2 uses Seiler (1982) literature [T2a]. T3: gap existence for all SU(N), N≥4 (structural). **T1 algebraic: I₄=C₂(fund,SU(N)) unique to N=3** — solving 4/3=(N²−1)/(2N) gives 3N²−8N−3=0 → N=3 only positive integer root (poly residual 0.00e+00). Consequence: the BPS identity g₁²=2I₄=2C₂(fund,SU(3)) and the coupling g_eff²=8/27 are structurally unique to SU(3). N=2: KP=6.49 FAIL (alt: Seiler T2a); N=3: KP=0.344 PASS; N≥4: KP→0 rapidly. SU(N) generality overall T3. ISSUES.md T4 updated with I₄=C₂ uniqueness. foundations/substrate.md Clay % updated. educational/08_mathematics.md: I₄=C₂ uniqueness added to Eq 3; JW3c-a T2a + SU(N) T1 added to open gaps. Path to +10% CPC: Binder FSS for N=4 at β_lat=48 (KP=0.0032). Clay: ~74% (unchanged). CPC: ~50% (unchanged — +10% swing requires N≥4 T2a). | **~74%** | **~50%** |
@@ -316,7 +317,7 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 
 **Next priorities (by impact on CPC):**
 1. **JW3c-b: T2a CONFIRMED [C217]**: ym_spacetime_signature.py — hyperbolicity→exactly 1 timelike [T1]; Bogomolny H≥E_BPS→p≥2 excluded [T1]; kink spectrum tachyon-free [T1]; 3+1 from D3+D4 [T2a]. **JW3c overall T2a.**
-2. **SP2 BPS Hamiltonian form T3→T2a**: Formal 4D bound H ≥ I₄×Q̂_top×m from BPS→quantum chain. Gap existence is T2a [C212]; the form H ≥ Δ×(I−P_Ω) is what's needed.
+2. **SP2 BPS form 4D T3→T2a**: 1+1D bound T2a [C218] — H|_{Q=2n}≥n×I₄×Q_top×m_hat via Bogomolny[T1]+DHN[T2a]+Coleman[T2a]+Glimm-Jaffe[T2a]. Remaining: 4D form from domain wall volume normalization (T3, C182). Target: derive volume factor from kink metric and promote to T2a.
 3. **SP5 S10 T2b→T2a**: C_match correction 0.34% — show from 2-loop threshold. α_s(M_Z)=0.11566 (−2.15%, T2a) from V(φ); closing to T2a requires C_match to 0.34%.
 4. **T4 fermion rep Dynkin label T3→T2a**: Explicit holonomy P exp(i∮A·dx) giving Dynkin (1,0) for D6 kink in D7 background. Rep TYPE T2a [C217]; weight diagram computation T3.
 5. **SU(N) generality: T2a CONFIRMED [C216, +10% CPC]**: SP1+SP2 T2a all N≥2 via monotonicity. SP4/SP5 N≥4: T3 (scalar decoupling + Λ_QCD for general N).

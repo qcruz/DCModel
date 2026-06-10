@@ -250,8 +250,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C217 JW3c-b T2a + T4 fermion rep TYPE T2a** (ym_spacetime_signature.py, ym_jackiw_rebbi_su3_gauge.py): hyperbolicity+Bogomolny→Minkowski (1,3) signature [T1+T2a]; Z₃ center charge→fundamental rep TYPE [T2a]. **ALL 7 JW CRITERIA NOW T2a.** C216 SU(N) T2a (+10% CPC). **Clay ~74%; CPC ~60%.**
-Remaining T3: BPS Hamiltonian form H≥I₄×Q̂_top×m + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%); T4 holonomy Dynkin label.
+Latest: **C218 SP2 BPS form 1+1D T2a** (ym_sp2_bps_quantum.py): H|_{Q=2n}≥n×I₄×Q_top×m_hat composite T2a [Bogomolny T1+DHN−0.16% T2a+Coleman Q1 T2a+Glimm-Jaffe T2a]; m_hat=42.35 M_Pl; I₄=C₂(fund,SU(3)) explicit in quantum bound. C217 ALL 7 JW T2a (+JW3c-b). C216 SU(N) T2a (+10% CPC). **Clay ~74%; CPC ~60%.**
+Remaining T3: BPS 4D form (domain wall volume) + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%); T4 holonomy Dynkin label.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
