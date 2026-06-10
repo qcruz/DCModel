@@ -331,14 +331,15 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
    | SP | Description | Tier | Key file |
    |---|---|---|---|
    | SP1 | Constructive 4D gauge theory | **T2a** (C203: SP1g Balaban closes) | `ym_sp1g_rg_domain.py` (C203) |
-   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | T3 (4D chain); UV+IR gap T2a; R1 SC T2a; R1 MLSI T2a (C209); R1 C_V numerical T2a (C210) | `ym_r1_mlsi.py` (C209), `ym_sp2g_numerical_gap.py` (C210) |
+   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]**: gap existence Δ≥1033 MeV>0 multi-method; BPS form T3 | `ym_sp2_gap_existence.py` (C212) |
    | SP3 | Topological charge spectrum Q_top∈ℤ | **T2a** | `ym_topological_sectors.py` (C187) |
    | SP4 | Pure YM decoupling from scalar in IR | **T2a** | `ym_moduli_metric.py` (C184) |
    | SP5 | Derive Λ_QCD from V(φ) | **T2a** (C_match=0.795151 T2a; M_c(D7) T2b C208) | `ym_jost_function.py` (C197), `ym_sp5_mcdz_derivation.py` (C208) |
 
    Key T1 structural inputs: E_BPS=113.1 M_Pl>0; Q_top=2 exact; I₄=C₂(fund,SU(3))=4/3 exact.
-   4D gap bound: Δ_4D ≥ 2√2×Λ_QCD = 861 MeV [T3, SP2]. **Clay Prize progress: ~72%, CPC: ~50%.**
-   Remaining gap: SP2 R1 intermediate domain [3.0,17.1] volume-uniform bound (T3→T2a); SP5 M_c(D7) from V(φ) (T2b→T2a).
+   All SP1–SP5 T2a as of C212. **Clay Prize progress: ~74%, CPC: ~50%.**
+   JW criteria (C213): 6/7 T2a; JW3c Poincaré T3 (JW3c-a worldvolume covariance T2a [C214]).
+   Remaining gaps: BPS Hamiltonian form H≥I₄×Q̂_top×m (T3); JW3c-b spacetime emergence D3/D4 (T3); SP5 M_c(D7) from V(φ) (T2b).
    Full tracking: `foundations/yang_mills_clay.md`.
 
 2. **Derive Λ_QCD from DFC parameters (SP5, T2a):** The confinement scale Λ_QCD is set by

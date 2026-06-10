@@ -371,9 +371,18 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - The kink coupling formula g₁²=2I₄ and the matter-rep color factor C_F=4/3 are the same number.
     This would fail algebraically for any other SU(3) representation.
 - **Winding table:** n=0 singlet, n=1 fundamental (quarks, dim=3), n=2 diquark (dim=6), n=3 baryon precursor
-- **Path to T2a:** Explicit D6 Dirac operator in D7 SU(3) kink background (with gauge holonomy);
-  show zero mode transforms as (1,0) under exp(i × SU(3) generator × π). File: `ym_jackiw_rebbi_su3_gauge.py`
-- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `foundations/three_generations.md`
+- **C214 NEW [T2a conditional]:** JW3c-a T2a (ym_poincare_covariance.py C214) establishes that
+  the D7 kink worldvolume has exact ISO(3,1) symmetry. This means:
+  - D6 fermion zero modes ψ_0(x) must transform under a representation of ISO(3,1)  [T2a, via JW3c-a]
+  - A_μ^a = (1/g)∂_μθ^a is a Lorentz 4-vector (null wave boost residual 1.11e-16)  [T1, C214]
+  - Combining with JR zero mode ψ_0 = N sech(x/ξ) normalizable [T1, C203]:
+    ψ_0 is a 4D Dirac spinor on the worldvolume  [T2a conditional on JW3c-a T2a]
+  - The SU(3) representation (fundamental vs adjoint) is still T3; the SPIN of the zero mode is T2a.
+- **Updated path to T2a (SU(3) rep):** Jackiw-Rebbi zero mode in D7 SU(3) kink background.
+  Show that the holonomy P exp(∫A·dx) for one kink traversal gives matrix in fund rep (Dynkin (1,0)).
+  Quantitative test: exp(i T^8 × phase_change) acting on triplet → shifts (1,0) weight → (0,0)→(1,0)→(0,1)
+  This is the T3→T2a step. File: `ym_jackiw_rebbi_su3_gauge.py`
+- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty — **RESOLVED Cycle 144**
 - **STATUS: CLOSED.** Root cause identified and fixed: α_s=0.1086 (8.1% off) used wrong M_c(D7) from α₁∩α₃ crossing (~2.5×10¹⁴ GeV), not the correct ECCC condition.
