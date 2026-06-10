@@ -245,12 +245,12 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS form T3** | **88%** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]** | **90%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C218 SP2 BPS form 1+1D T2a** (ym_sp2_bps_quantum.py): H|_{Q=2n}≥n×I₄×Q_top×m_hat composite T2a [Bogomolny T1+DHN−0.16% T2a+Coleman Q1 T2a+Glimm-Jaffe T2a]; m_hat=42.35 M_Pl; I₄=C₂(fund,SU(3)) explicit in quantum bound. C217 ALL 7 JW T2a (+JW3c-b). C216 SU(N) T2a (+10% CPC). **Clay ~74%; CPC ~60%.**
+Latest: **C219 SP2 4D BPS n-fold T2a** (ym_4d_bps_form.py): H_4D|_{Q=2n}≥n×1033 MeV T2a [S_inst=27π²=266>>1; n-instanton exp(−266)≈0 negligible]; three T1 forms for δd=1/(6π): δd=β×N_c/2=( I₄−1)/(2π) [T1 new]. C218 BPS 1+1D T2a. C217 ALL 7 JW T2a. C216 SU(N) T2a (+10% CPC). **Clay ~74%; CPC ~60%.**
 Remaining T3: BPS 4D form (domain wall volume) + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%); T4 holonomy Dynkin label.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*

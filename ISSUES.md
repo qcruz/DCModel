@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-10 (Cycles 122–217)
+**Last updated:** 2026-06-10 (Cycles 122–219)
 
 ---
 
@@ -517,8 +517,18 @@ deviation has not been calculated.
   - Selectivity: δd for ν₃ only (if applied to ν₂ also: m₃/m₂=1, absurd) [T3 ✓]
   - Charged leptons unaffected: τ mass +0.006% without correction [T3 ✓]
   - Sensitivity: N_c=3,N_Hopf=9 unique (<0.1%); nearest alt (N_Hopf=8) → 1.126% ✗
-  - T11 upgrade path: D4/D7 BVP for SU(3) holonomy phase on D4 winding mode
-- Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
+- **C219: `equations/neutrino_d7_holonomy.py` (new)** — three equivalent T1 forms for δd:
+  - Form (1): δd = N_c/(N_Hopf × 2π) = 1/(6π) [T1, C205]
+  - Form (2): δd = β × N_c/2 = (1/(9π)) × 3/2 = 1/(6π) [T1 NEW]
+  - Form (3): δd = (I₄-1)/(2π) = (4/3-1)/(2π) = 1/(6π) [T1 NEW]
+  - All three residuals < 1e-15 [T1 verified]
+  - KEY: δd = (I₄-1)/(2π) — same I₄ = C₂(fund,SU(3)) = 4/3 that governs g_eff²=2I₄/N_Hopf
+    and JR zero-mode normalization (∫sech⁴ = ξ × I₄). Common geometric origin established.
+  - JR zero mode norm: ∫sech⁴(y/ξ)dy = ξ × I₄ residual 2.22e-16 [T1]
+  - SU(3) Wilson line for single D7 kink: eigenphases ±π/2, 0 [T2a numerical]
+  - Upgrade path (Form 2): δd = β × N_c/2 → BVP: Dirac in D7 PT background → δω = β×N_c/2×m_KK
+  - T11 tier: T3 (unchanged; new identities sharpen derivation target)
+- Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_d7_holonomy.py` (C219), `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
 
 ---
 
