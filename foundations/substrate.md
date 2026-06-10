@@ -207,7 +207,9 @@ rigorously derived.
   Remaining: derive M_c(D7) from V(φ) alone (T4); hadronic VP 0.10% gap in α_em(0).
   See `foundations/yang_mills_clay.md` for the formal Yang-Mills / Λ_QCD construction.
 - **Yang-Mills mass gap (Clay Prize):** formal constructive QFT now T2a (C203); see
-  `foundations/yang_mills_clay.md`. Progress ~72%, CPC ~50%.
+  `foundations/yang_mills_clay.md`. Progress ~74%, CPC ~50% (6/7 JW criteria T2a, C213-C214).
+  C215 T1: I₄=C₂(fund,SU(N)) is algebraically unique to N=3 (polynomial residual 0.00e+00).
+  SU(N) generality of full gap construction: T3; path to +10% CPC: Binder FSS for N=4.
 
 ---
 

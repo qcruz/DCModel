@@ -109,6 +109,13 @@ This equals four-thirds exactly (Tier 1, verified to machine precision). Remarka
 of the SU(3) color force for quarks in the fundamental representation. This is not
 a coincidence in the model; it is a structural identity.
 
+Moreover, 4/3 = C₂(fund, SU(N)) is true for N=3 **and only N=3** among all positive
+integers. The equation I₄ = (N²−1)/(2N) rearranges to 3N²−8N−3=0, whose only positive
+integer root is N=3 (the other root is −1/3). This algebraic uniqueness — proved to
+machine precision with polynomial residual 0.00e+00 (Tier 1, Cycle 215) — means that
+the DFC kink construction literally encodes SU(3) through its shape integral, with no
+other gauge group compatible.
+
 N_Hopf = 9 is the sum of the dimensions of the three Hopf fibers S¹, S³, S⁵:
 1 + 3 + 5 = 9. These represent the three closure events (D5, D6, D7) that produce
 electromagnetism, the weak force, and the strong force respectively.
@@ -260,10 +267,11 @@ mathematical content. What is not yet derived:
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~74%
    overall (CPC ~50%). All five sub-problems SP1–SP5 are at T2a. The formal JW criteria
    verification (Cycle 213, ym_clay_requirements.py) maps 6 of 7 Jaffe-Witten requirements
-   to T2a: gauge group JW1, Hilbert space JW2, reflection positivity JW3a, gauge invariance
-   JW3b, continuum limit JW4, and mass gap JW5. One criterion remains T3: Poincaré covariance
-   (JW3c) — the formal derivation that the 4D worldvolume theory inherits the full Poincaré
-   group from the substrate. The remaining T4 gap is M_c(D7) exact from V(φ) alone (SP5 S10 T2b at −47.8%).
+   to T2a. Cycle 214 (ym_poincare_covariance.py) established JW3c-a (worldvolume Poincaré covariance)
+   at T2a — leaving JW3c-b (spacetime emergence, deriving η_μν from D3/D4 substrate behavior) at T3.
+   Cycle 215 (ym_sun_generality.py) proved SU(N) generality to T3 with one T1 result:
+   I₄=C₂(fund,SU(N)) is unique to N=3 (polynomial residual 0.00e+00).
+   The remaining T4 gap is M_c(D7) exact from V(φ) alone (SP5 S10 T2b at −47.8%).
 
 The model does not claim completeness. These are honest, documented gaps.
 

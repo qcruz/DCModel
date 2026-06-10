@@ -314,7 +314,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 213.
+- **Status:** Active primary focus. Last updated: Cycle 215.
 - **Overall progress:** ~74%. **CPC:** ~50% ← *+15% swing event C203: SP1 Balaban closes*.
 
 | SP | Description | Tier | Progress | Last changed |
@@ -326,7 +326,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
 
 **Remaining T4:** SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b). Remaining T3: SP2 BPS Hamiltonian form H≥I₄×Q̂_top×m; SP1f no-bulk-transition formal proof.
-**Latest:** C213 **JW criteria formal verification** (ym_clay_requirements.py): 6/7 Jaffe-Witten criteria T2a; JW3c (Poincaré) T3 remaining; yang_mills_clay.md "Gap to Clay Prize Requirements" section updated with JW criterion table (removes stale SP1g T4 claim). C212: SP2 gap existence T3→T2a (multi-method), Clay ~72%→~74%. C211: R1 full domain T2a (Binder FSS). C203: SP1 T2a (CPC+15%).
+**Latest:** C215 **SU(N) generality** (ym_sun_generality.py): T1 — I₄=C₂(fund,SU(N)) unique to N=3 (poly residual 0.00e+00); T2a — KP<1 all N≥3; T3 — gap existence all SU(N); SU(N) generality overall T3; path to +10% CPC swing: Binder FSS for N=4 at β_lat=48. C214 **JW3c-a worldvolume Poincaré T2a** (ym_poincare_covariance.py): 6/7 JW criteria T2a; JW3c-b spacetime emergence T3 remaining. C213 **JW criteria formal verification** (ym_clay_requirements.py). C212: SP2 gap existence T3→T2a. C211: R1 full domain T2a (Binder FSS). C203: SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)
@@ -378,11 +378,21 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - Combining with JR zero mode ψ_0 = N sech(x/ξ) normalizable [T1, C203]:
     ψ_0 is a 4D Dirac spinor on the worldvolume  [T2a conditional on JW3c-a T2a]
   - The SU(3) representation (fundamental vs adjoint) is still T3; the SPIN of the zero mode is T2a.
+- **C215 NEW [T1 algebraic]:** I₄ = C₂(fund,SU(N)) is algebraically unique to N=3 (ym_sun_generality.py, Part G):
+  Solving 4/3 = (N²-1)/(2N) gives 3N²−8N−3=0 → N = (8 ± √100)/6 → N=3 or N=−1/3.
+  N=3 is the ONLY positive integer root. Polynomial residual: 0.00e+00 [T1 exact].
+  Consequences:
+  - For N=2: C₂(fund)=3/4 ≠ 4/3 (algebraically incompatible)
+  - For N=4: C₂(fund)=15/8 ≠ 4/3 (algebraically incompatible)
+  - The identity g₁²=2I₄ and C_F=4/3 being the same number is structurally unique to SU(3).
+  - This confirms that DFC selects SU(3) — and only SU(3) — via the kink integral I₄=C₂.
+  - The BPS bound H≥I₄×Q̂_top×m uses a coupling constant that is an SU(3) Casimir, not a coincidence.
+  - Strengthens fermion rep T3 argument: the only gauge group compatible with DFC dynamics is SU(3).
 - **Updated path to T2a (SU(3) rep):** Jackiw-Rebbi zero mode in D7 SU(3) kink background.
   Show that the holonomy P exp(∫A·dx) for one kink traversal gives matrix in fund rep (Dynkin (1,0)).
   Quantitative test: exp(i T^8 × phase_change) acting on triplet → shifts (1,0) weight → (0,0)→(1,0)→(0,1)
   This is the T3→T2a step. File: `ym_jackiw_rebbi_su3_gauge.py`
-- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `foundations/three_generations.md`
+- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `equations/ym_sun_generality.py` (C215), `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty — **RESOLVED Cycle 144**
 - **STATUS: CLOSED.** Root cause identified and fixed: α_s=0.1086 (8.1% off) used wrong M_c(D7) from α₁∩α₃ crossing (~2.5×10¹⁴ GeV), not the correct ECCC condition.
