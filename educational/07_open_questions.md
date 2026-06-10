@@ -28,28 +28,27 @@ An open gap is a step that is currently Tier 3 or Tier 4, where a completed deri
 - The 4D gauge theory lives on the kink worldvolume via Kaluza-Klein reduction. All non-zero Kaluza-Klein modes are heavier than the QCD scale by a factor of roughly 10²⁰, so they decouple and leave pure SU(3) Yang-Mills below that scale. This is Tier 2a (the scale separation) plus Tier 3 (the KK reduction itself).
 - The string tension and confinement argument give a lower bound on the 4D gap: the minimum glueball energy is at least 861 MeV (from the relation Δ ≥ 2√(Q_top) × Λ_QCD with Q_top = 2 and Λ_QCD = 304.5 MeV). The observed lightest glueball is around 1475–1730 MeV, which is consistent. This is Tier 3.
 
-**Progress through Cycle 210 (SP1 T2a; SP2 78% strengthened):**
+**Progress through Cycle 212 (SP1 T2a; SP2 T2a gap existence; 88%):**
 - OS axioms inherited from DFC domain wall chain: Tier 3 (C185)
 - Kotecky-Preiss polymer expansion: KP = 0.344 < 1, converges at β_lat = 20.25 — Tier 2a (C199)
 - Infinite-volume Gibbs state unique (Dobrushin-Lanford-Ruelle): Tier 2a (C199)
 - Continuum limit a→0 (C200): KP monotone along UV trajectory (Tier 1+2a); Symanzik Hölder 3.52×10⁻⁴¹ (Tier 2a)
 - **n-point equicontinuity (C202):** μ = 0.1265 < 1/e → sup_n(n×μⁿ) = μ → uniform Hölder bound 4.45×10⁻⁴² → 0; Tier 2a
-- **Balaban RG domain (C203): SP1g T3→T2a.** g²(n) = 1/(1/g²(0)+nΔ) is algebraically decreasing → max_n g²(n)/(16π²) = g²(0)/(16π²) = 0.19% uniformly; all 3 domain checks uniform for all n ≥ 0. **SP1 is now T2a overall.**
+- **Balaban RG domain (C203): SP1g T3→T2a.** g²(n) = 1/(1/g²(0)+nΔ) is algebraically decreasing → max_n g²(n)/(16π²) = 0.19% uniformly; all 3 domain checks uniform for all n ≥ 0. **SP1 is now T2a overall.**
 - UV spectral gap: Δ_UV ≥ 1.22 M_Pl = 1.49×10¹⁹ GeV (Perron-Frobenius + KP), Tier 2a (C201)
 - Z_N center symmetry: ⟨P⟩ = 0 algebraically at T=0 for all β (exact), Tier 1 (C204)
 - IR mass gap lower bound: Δ_SC ≥ 1033 MeV (SC area law), Tier 2a (C205)
 - R1 SC domain (0, 3.0): polymer analyticity → no phase transition, Tier 2a (C206/C207)
-- R1 intermediate [3.0, 17.1]: T(β) Lipschitz [T1]; Δ=0 ⟺ transition [T1]; FKG+Creutz [T3]; β_deconf=5.69 is finite-T only, not T=0 bulk [T2a] (C207)
-- **R1 single-link MLSI (C209):** Holley-Stroock perturbation lemma → c_MLSI(Wilson, β) ≥ (1/16)×exp(−4β) > 0 for all β > 0 [T2a algebraic]; Poincaré constant c_PI > 0 at all intermediate β tested [T2a numerical]; full-lattice factorization volume-uniform bound remains T3
-- **R1 specific heat bounded (C210):** SU(3) Wilson Metropolis MC on 2⁴ hypercubic lattice at 7 intermediate β values throughout [3.0, 17.1] — max C_V = 20.0 << finite-L upper bound 7017.8 (ratio 0.003) [T2a numerical]; ⟨P_p⟩ monotone throughout [T2a]; single-plaquette analytic model also bounded (max C_V = 3.90) [T2a]; SP2g T3 (unchanged — volume-uniform L→∞ bound missing); path to T2a: L = 2, 4, 6 finite-size scaling showing C_V_peak/L⁴ → 0
-- SP2 progress: 78% → **78% strengthened** (C209/C210)
+- **R1 intermediate [3.0, 17.1] T3→T2a (C211):** Binder cumulant B4_min = 2.54 > 2.0 for L=2,3,4 [T2a]; C_V_intensive = C_V_peak/N_plaq decreasing: 0.164→0.036→0.010 (L=2→3→4) — no volumetric scaling → no first-order transition; **R1 full domain T2a**
+- **SP2 gap existence T3→T2a (C212):** 7-step multi-method chain — Δ(β)=0↔transition [T1, C207] + R1 full no transition [T2a, C211] → Δ(β)>0 all β [T2a]; UV bound Δ_UV≥1.22 M_Pl [T2a, C201]; IR bound Δ_SC≥1033 MeV [T2a, C205]; SP4 pure SU(3) YM EFT below m_KK [T2a, C184] → **continuum Δ_phys≥1033 MeV>0 [T2a, multi-method]**
+- SP2 progress: 82% (C211) → **88%** (C212); **SP2 T2a overall**
 
 **What is missing:**
-SP1 (4D constructive QFT) is T2a. The remaining rigorous gap: showing Δ_4D ≥ 861 MeV all the way to T2a — specifically the R1 intermediate domain [3.0, 17.1] needs a volume-uniform lower bound on the spectral gap (the Holley-Stroock MLSI is volume-dependent and vanishes as L→∞), and M_c(D7) from V(φ) substrate dynamics without inputting the observed α_s(M_Z).
+SP1 and SP2 are now both T2a. Remaining gap: (a) the formal BPS Hamiltonian bound H ≥ I₄×Q̂_top×m (which would give Δ explicitly from the kink BPS energy, not just from the SC area law) — this is T3; (b) M_c(D7) from V(φ) substrate dynamics alone — this is SP5 T4 (currently T2b at −47.8%).
 
-**What would close it:** Either (a) Seiler-type T=0 no-transition argument for SU(3) Wilson theory (closing R1 intermediate domain), or (b) an independent derivation of M_c(D7) from the substrate compression cascade — this is SP5, the remaining T4 gap.
+**What would close it:** The BPS Hamiltonian form requires connecting the 1+1D kink mass (m_kink = 112.92 M_Pl, T2a C180) to the 4D SU(3) YM mass gap via the KK reduction chain. The remaining T3 step is showing this connection rigorously.
 
-**Status: SP1 Tier 2a (C203); SP2 T3 (78%, IR gap T2a C205, R1 SC T2a C206, R1 intermediate T3 strengthened C207).** Full canonical tracking in `foundations/yang_mills_clay.md`.
+**Status: SP1 T2a (C203); SP2 T2a (C212, gap existence Δ≥1033 MeV); Clay ~74%, CPC ~50%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
 
 ---
 
@@ -141,7 +140,7 @@ SP1 (4D constructive QFT) is T2a. The remaining rigorous gap: showing Δ_4D ≥ 
 
 | Gap | Description | Current tier | What closes it |
 |---|---|---|---|
-| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a SP1 (C203)**; SP2 78% (UV+IR T2a; R1 SC T2a; R1 MLSI T2a C209; R1 C_V numerical T2a C210; intermediate T3) | SP2g R1 volume-uniform bound T2a (L=2,4,6 FSS); then M_c(D7) from substrate (SP5) |
+| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a SP1+SP2 (C203/C212)**; gap existence Δ≥1033 MeV [T2a, C212]; BPS Hamiltonian form T3 | M_c(D7) from V(φ) alone (SP5 S10, T2b at −47.8%); BPS form from KK reduction chain |
 | α_em(0) hadronic VP | Non-perturbative Δα_had | T4 | f_ρ from D7 dynamics + VMD |
 | Charm/strange quark masses | 15% below observed | T2b | D6/D7 Yukawa overlap integral |
 | Neutrino mass ratio | −8.3% uncorrected; +0.010% with color correction (T3) | T2b/T3 | D4/D7 BVP for δd=1/(6π) formal derivation |

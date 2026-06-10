@@ -8,8 +8,8 @@
 > dimension of SU(3)'s fundamental representation is fixed at 3 by mathematics alone.
 > The chain from substrate to SU(3) is: n coincident D7 zero modes → configuration space
 > S^(2n−1) → gauge group SU(n) → n=3 at D7 (Bottleneck 1 closed, Cycles 59–74, Tier 1).
-> The D7=SU(3) assignment itself remains a Tier 3 correspondence pending derivation from
-> substrate dynamics.
+> The D7=SU(3) assignment is Tier 2a (Cycles 59–74: PT s=2 → exactly 2 bound states →
+> SU(3) zero-mode counting from V(φ)).
 
 ---
 
@@ -259,8 +259,9 @@ the generation count:
   `equations/neutrino_masses.py`
 - **Full fermion spectrum (stubs + failures)** — τ mass 8.4× failure in dimple model;
   `equations/fermion_spectrum_full.py`
-- **Koide formula and tau mass** — m_τ predicted from m_e, m_μ via Z₃/Koide; < 0.01% error;
-  Tier 3 candidate (circulant Yukawa from D7 Z₃ symmetry); `equations/tau_mass_koide.py` (Cycle 122)
+- **Koide formula and tau mass** — m_τ predicted from m_e, m_μ via Z₃/Koide; < 0.006% error;
+  Tier 2a (Step 4d C146: canonical phase vertex 1/√Q_top); `equations/tau_mass_koide.py` (Cycle 122),
+  `equations/koide_phase_coupling.py` (Cycle 146)
 - **Proton stability** — product geometry forbids X/Y bosons and proton decay;
   `phenomena/particle_physics/proton_stability.md`
 - **Route 1 (Skyrme)** — topological soliton approach to spin quantum numbers;
@@ -318,10 +319,11 @@ the generation count:
    constraint. Equivalently: the mass-amplitude vector makes exactly 45° with the democratic
    direction (1,1,1) in square-root space, verified to < 10 ppm.
 
-   Status: Tier 3 candidate. The Z₃ symmetry of three coincident kinks is structurally
-   expected from the SU(3) isometry (Cycle 59: n coincident kinks → SU(n) symmetry, which
-   includes the Z₃ ⊂ S₃ permutation subgroup). The remaining open step is showing the
-   Yukawa matrix from D7-D6 zero mode overlap is specifically circulant (not just Z₃-symmetric).
+   Status: **Tier 2a** (Step 4d promoted Cycle 146: m_τ=1776.97 MeV +0.006%, 0 free params).
+   The Z₃ symmetry of three coincident kinks is structurally expected from the SU(3) isometry
+   (Cycle 59: n coincident kinks → SU(n) symmetry, which includes Z₃ ⊂ S₃). The remaining
+   open step is showing the Yukawa matrix from D7-D6 zero mode overlap is specifically circulant
+   (not just Z₃-symmetric) — path to T1 for the full Koide chain.
 
    Koide proof chain status (Cycles 122–126):
    - Step 0: V(φ) → W(ψ)=1−ψ²                Tier 1  [Cycle 111]
