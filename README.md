@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: Cycle 225 — NLO SC string tension: LO accurate to 0.083%, sigma_phys=185440 MeV² (−4.2%) confirmed T2a. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: Cycle 226 — Glueball mass predictions [T3]: m_{0++}=1529 MeV (in lattice range [1475,1730]), m_{2++}=2127 MeV; consistent with JW5 mass gap. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
