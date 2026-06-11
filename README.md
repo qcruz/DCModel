@@ -245,13 +245,13 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]** | **90%** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]; σ_adj/σ_fund=9/4 T1 + χ_adj=0 T1 [C220]** | **90%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C219 SP2 4D BPS n-fold T2a** (ym_4d_bps_form.py): H_4D|_{Q=2n}≥n×1033 MeV T2a [S_inst=27π²=266>>1; n-instanton exp(−266)≈0 negligible]; three T1 forms for δd=1/(6π): δd=β×N_c/2=( I₄−1)/(2π) [T1 new]. C218 BPS 1+1D T2a. C217 ALL 7 JW T2a. C216 SU(N) T2a (+10% CPC). **Clay ~74%; CPC ~60%.**
-Remaining T3: BPS 4D form (domain wall volume) + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%); T4 holonomy Dynkin label.
+Latest: **C220 Casimir string tension T3 + I₄ structural web** (ym_string_tension.py): χ_fund(P_kink)=−1 [T1], χ_adj(P_kink)=0 [T1] — D7 kink transparent to gluons; σ_adj/σ_fund=C₂(adj)/C₂(fund)=9/4 [T1]; σ_SC/σ_adj=0.958 (4.2%) [T2a]; σ_fund=I₄×Λ_QCD² [T3, −18%]. I₄=4/3 structural web: g_eff²=2I₄/N_Hopf [T2a], H≥I₄×Q_top×m [T2a C218], n-fold [T2a C219], σ_fund=I₄×Λ² [T3], δd=(I₄−1)/(2π) [T1 C219]. C219 three T1 forms for δd. C218 BPS 1+1D T2a. C217 ALL 7 JW T2a. **Clay ~74%; CPC ~60%.**
+Remaining T3: σ=I₄×Λ² explicit derivation + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%); T4 holonomy Dynkin label.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 

@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-10 (Cycles 122–219)
+**Last updated:** 2026-06-10 (Cycles 122–220)
 
 ---
 
@@ -314,8 +314,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 218.
+- **Status:** Active primary focus. Last updated: Cycle 220.
 - **Overall progress:** ~74%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
+- **C220 NEW:** Casimir string tension T3 + I₄ structural web. χ_fund(P_kink)=−1 [T1], χ_adj(P_kink)=0 [T1] — D7 kink transparent to gluons, non-trivial for quarks. σ_adj/σ_fund=9/4=C₂(adj)/C₂(fund) [T1]. σ_SC/σ_adj=0.958 (4.2%) [T2a]. σ_fund=I₄×Λ_QCD² [T3, −18%]. I₄ structural web: same I₄=4/3 governs g_eff², BPS gap, n-fold scaling, string tension, neutrino δd. SP2 progress 90% (unchanged).
 - **C218 NEW:** SP2 BPS Hamiltonian form 1+1D T3→T2a (ym_sp2_bps_quantum.py). H|_{Q=2n}≥n×I₄×Q_top×m_hat (m_hat=42.35 M_Pl) composite T2a: Bogomolny[T1]+DHN−0.16%[T2a]+Coleman Q1[T2a]+Glimm-Jaffe[T2a]. I₄=C₂(fund,SU(3))=4/3 explicit in quantum bound [T1]. 4D form remains T3.
 - **C217 NEW:** JW3c-b T2a (spacetime signature from V(φ): hyperbolicity [T1] + Bogomolny [T1] + D3+D4 counting [T2a]). **ALL 7 JW CRITERIA NOW T2a.** T4 fermion rep TYPE T2a (Z₃ center charge argument). Remaining T3: SP2 BPS 4D form, SP4/SP5 N≥4, T4 Dynkin label holonomy.
 
@@ -397,10 +398,23 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   (C) D6 single crossing=Z₃ charge 1 → must be triality-1 → minimal = fundamental (dim=3) [T2a].
   (D) I₄=C₂(fund,SU(3))=4/3 unique to N=3; BPS bound H≥I₄Q̂m is SU(3) Casimir; adj C₂=3≠I₄ [T1].
   **T4 representation TYPE: T3→T2a.** Remaining: explicit holonomy P exp(∫A·dx) giving Dynkin (1,0) [T3].
-- **Updated path to T2a (Dynkin label):** Compute P exp(i∮_{D7}A·dx) numerically for D7 kink
-  connection A_μ^a=(1/g)∂_μθ^a [T1, C214]; show result has Dynkin label (1,0) via weight diagram.
-  File target: `ym_jackiw_rebbi_su3_gauge.py` (created C217 — Step 2 above has triality argument).
-- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `equations/ym_sun_generality.py` (C215), `equations/ym_jackiw_rebbi_su3_gauge.py` (C217), `foundations/three_generations.md`
+- **C220 NEW [T1]: D7 kink holonomy characters distinguish quarks from gluons.**
+  `equations/ym_string_tension.py` Part F (C220):
+  For the D7 kink in T^3 direction with Q_top=2 (phase Δθ=2π):
+  P_kink = exp(i T^3 × 2π) = diag(−1,−1,1) in the fundamental [T1, residual 1.22e-16]
+  (A) χ_fund(P_kink) = Tr_fund(P_kink) = −1  [T1, residual 0.00e+00]
+      → D7 kink is NON-TRIVIAL for quarks: quarks acquire phase −1 [T1]
+  (B) χ_adj(P_kink) = |χ_fund|²−1 = 1−1 = 0  [T1, algebraic]
+      → D7 kink is TRANSPARENT to gluons: adjoint character vanishes [T1]
+  (C) χ_anti-fund(P_kink) = χ_fund* = −1  [T1]
+      → T^3 direction alone cannot distinguish quark from anti-quark; Z₃ triality (C217) does
+  Physical interpretation: The D7 kink acts as a Z₂ element (P²=I in this direction) for quarks
+  but trivially for gluons. Only fundamental (triality-1) representations "see" the kink.
+  This supports fermion rep TYPE T2a [C217]: D6 fermions = quarks (fund), not gluons (adj).
+- **Updated path to T2a (Dynkin label):** Z₃ triality [C217 T2a] establishes fundamental-vs-adjoint.
+  Next step to T2a: show Dynkin label (1,0) specifically (vs (0,1) anti-fund).
+  Requires P exp(∮A·dx) in T^8 (hypercharge) direction to distinguish (1,0) from (0,1).
+- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `equations/ym_sun_generality.py` (C215), `equations/ym_jackiw_rebbi_su3_gauge.py` (C217), `equations/ym_string_tension.py` (C220 Part F), `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty — **RESOLVED Cycle 144**
 - **STATUS: CLOSED.** Root cause identified and fixed: α_s=0.1086 (8.1% off) used wrong M_c(D7) from α₁∩α₃ crossing (~2.5×10¹⁴ GeV), not the correct ECCC condition.

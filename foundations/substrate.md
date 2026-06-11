@@ -206,10 +206,13 @@ rigorously derived.
   α_s(M_Z) = 0.11821 (+0.006%), M_W = 79.67 GeV (−0.88%), M_Z = 90.86 GeV (−0.36%).
   Remaining: derive M_c(D7) from V(φ) alone (T4); hadronic VP 0.10% gap in α_em(0).
   See `foundations/yang_mills_clay.md` for the formal Yang-Mills / Λ_QCD construction.
-- **Yang-Mills mass gap (Clay Prize):** formal constructive QFT now T2a (C203); see
-  `foundations/yang_mills_clay.md`. Progress ~74%, CPC ~50% (6/7 JW criteria T2a, C213-C214).
+- **Yang-Mills mass gap (Clay Prize):** formal constructive QFT T2a (C203); see
+  `foundations/yang_mills_clay.md`. Progress ~74%, **CPC ~60%** [+15% C203: SP1 Balaban; +10% C216: SU(N) T2a].
+  **ALL 7 JW criteria T2a [C217]**: JW1–JW5 including Poincaré covariance (JW3c-b via hyperbolicity+Bogomolny+D3+D4).
   C215 T1: I₄=C₂(fund,SU(N)) is algebraically unique to N=3 (polynomial residual 0.00e+00).
-  SU(N) generality of full gap construction: T3; path to +10% CPC: Binder FSS for N=4.
+  **SU(N) generality T2a [C216]**: monotonicity proof shows SP1+SP2 T2a for all N≥2 (Seiler 1982 for N=2).
+  C220 NEW [T1]: χ_adj(P_kink)=0 (D7 kink transparent to gluons); χ_fund(P_kink)=−1 (quarks acquire phase).
+  Remaining T3: SP2 BPS σ=I₄×Λ_QCD² (Casimir string tension). Remaining T4: SP5 M_c(D7) from V(φ).
 
 ---
 

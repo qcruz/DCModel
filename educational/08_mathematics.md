@@ -278,10 +278,17 @@ mathematical content. What is not yet derived:
    addressed at T2a in the DFC construction.
    Cycle 218 (ym_sp2_bps_quantum.py): SP2 BPS Hamiltonian form T3→T2a in 1+1D — the quantum
    bound H_{quantum}|_{Q=2n} ≥ n × I₄ × Q_top × m_hat (m_hat = 42.35 M_Pl) is established
-   as a composite T2a via: Bogomolny [T1] + DHN δ=-0.16% [T2a] + Coleman Q1 [T2a] + Glimm-Jaffe [T2a].
+   as a composite T2a via: Bogomolny [T1] + DHN δ=−0.16% [T2a] + Coleman Q1 [T2a] + Glimm-Jaffe [T2a].
    The I₄ = C₂(fund,SU(3)) = 4/3 appears explicitly in the quantum bound [T1 exact].
-   Remaining T3: 4D BPS form (KK domain wall volume), SP4/SP5 for N≥4. Remaining T4: M_c(D7)
-   from V(φ) alone (SP5 T2b at −47.8%).
+   Cycle 219 (ym_4d_bps_form.py): SP2 4D BPS n-fold scaling T2a — H_4D|_{Q=2n} ≥ n×1033 MeV
+   via S_inst = 27π² = 266.48 >> 1, so n-instanton corrections ~ exp(−266) ≈ 10⁻¹¹⁶ are negligible.
+   Three T1 algebraic forms for neutrino depth correction: δd = (I₄−1)/(2π) — the same I₄ governs
+   gauge coupling g_eff²=2I₄/N_Hopf, BPS gap H≥I₄×Q_top×m, and neutrino sector δd=(I₄−1)/(2π).
+   Cycle 220 (ym_string_tension.py): Casimir string tension — NEW T1: χ_adj(P_kink)=0 (D7 kink
+   transparent to gluons) and χ_fund(P_kink)=−1 (quarks acquire phase −1). Casimir ratio
+   σ_adj/σ_fund = C₂(adj)/C₂(fund) = 9/4 [T1]. String tension σ_fund = I₄ × Λ_QCD² [T3, ~18% accuracy].
+   SC area law consistency: σ_SC/σ_adj = 0.958 (4.2% from 1.0) [T2a]. SP2 progress 90%.
+   Remaining T3: σ=I₄×Λ² explicit derivation. Remaining T4: M_c(D7) from V(φ) alone (SP5 T2b −47.8%).
 
 The model does not claim completeness. These are honest, documented gaps.
 
