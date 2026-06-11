@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: Cycle 227 — Deconfinement temperature T_c=271.1 MeV (+0.4% vs lattice 270 MeV); glueball m_{0++}=1529 MeV [C226]. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: Cycle 228 — Static QQ-bar potential V(R)=σR−π/(12R) [T1 Luscher]; string valid R>0.43 fm [T2a]; α'=0.858 GeV⁻² (−2.5%) [T3]. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
