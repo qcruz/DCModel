@@ -129,6 +129,15 @@ in prose was preceded by a natural language statement. If not, add the natural l
 > in the output, e.g. `main -> main`). If you reach the end of a cycle and have not pushed,
 > do not return to Step 1 — push first.
 
+> ### ⚠ KEEP CYCLES SHORT — MANDATORY SCOPE CONSTRAINT
+> **Each "continue" invocation must accomplish exactly ONE focused task.**
+> Do not combine multiple steps into a single session. One new equation module OR one
+> document audit OR one tracking update — not all three. If Step 1 produces a new
+> equation file, commit and push immediately after running it, before doing Steps 2-5.
+> Steps 2-5 are each separate optional follow-ups, not a required bundle. A short cycle
+> that completes cleanly is always better than a long cycle that risks context overflow
+> or incomplete execution. When in doubt, stop earlier and push.
+
 Repeat this cycle indefinitely:
 
 ### Completeness Estimate (running)
