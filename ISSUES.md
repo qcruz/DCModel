@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-11 (Cycles 122–222)
+**Last updated:** 2026-06-11 (Cycles 122–223)
 
 ---
 
@@ -314,8 +314,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 222.
+- **Status:** Active primary focus. Last updated: Cycle 223.
 - **Overall progress:** ~74%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
+- **C223 NEW:** Wilson loop Creutz ratio MC — chi(2,2)>0. [T1] chi_SC=-ln(u_IR)=2.8745 at beta_IR=1.016 (res 0.00e+00, SC formula algebraically exact). [T2a] MC plaquette W(1,1)=0.041<<1 at beta=1.016 (27% from SC leading-order; SC regime confirmed). [T2a] MC Wilson loops at beta=5.0: W(2,2)<W(2,1)<W(1,1) area-law decay; chi(2,2)=0.108>0 (confinement numerically confirmed on L=4 lattice). ALL 6 ASSERTIONS PASSED. SP2 string tension: T1 exact (SC) + T2a MC (chi>0) + T3 derivation (rho_v=I4*Lambda^2). SP2 progress 90% (unchanged).
 - **C222 NEW:** String tension numerical validation T2a. [T1] E_kink/ξ²=I₄×φ₀²×m_KK³ (I₄ in kink energy density, res 5.68e-14). [T3] ρ_v=I₄×Λ_QCD² (structural). [T2a] σ_pred=Q_top×Λ_QCD²=185440 MeV² (−4.2% vs obs, 0 free params). [T2a] Λ_self=311.1 MeV vs Λ_DFC=304.5 MeV (2.2% self-consistency). [T2a] SC sandwich 185440<193600<266524 MeV². SP2 string tension: T2a numerical + T3 derivation. SP2 progress 90% (unchanged).
 - **C221 NEW:** Center vortex mechanism + two new T1 identities unique to N_c=3. [T1] 1−cos(2π/N_c)=N_c/2 exact (res 2.22e-16); [T1] Q_top=I₄×N_c/2=(4/3)×(3/2)=2 (res 0.00e+00) — structural link between Casimir I₄ and topological charge Q_top; both unique to N_c=3. [T3] Center vortex string tension chain: σ_fund=Q_top×Λ_QCD²=185440 MeV² (√σ=430.6 MeV, +0.1% vs obs 427 MeV, 0 free params). [T1+T3] σ_adj^{vortex}=0 (adjoint string breaks via Z_3 condensation), consistent with χ_adj(P_kink)=0 [T1,C220]. SP2 progress 90% (unchanged).
 - **C220 NEW:** Casimir string tension T3 + I₄ structural web. χ_fund(P_kink)=−1 [T1], χ_adj(P_kink)=0 [T1] — D7 kink transparent to gluons, non-trivial for quarks. σ_adj/σ_fund=9/4=C₂(adj)/C₂(fund) [T1]. σ_SC/σ_adj=0.958 (4.2%) [T2a]. σ_fund=I₄×Λ_QCD² [T3, −18%]. I₄ structural web: same I₄=4/3 governs g_eff², BPS gap, n-fold scaling, string tension, neutrino δd. SP2 progress 90% (unchanged).
@@ -325,7 +326,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS form 1+1D T2a [C218]; n-fold T2a [C219]; vortex T1s [C221]; σ=Q_top×Λ² T3** | **90%** | **C221** |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS form 1+1D T2a [C218]; n-fold T2a [C219]; vortex T1s [C221]; MC Creutz chi>0 [C223]; σ=Q_top×Λ² T3** | **90%** | **C223** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
