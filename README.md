@@ -250,7 +250,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C221 Center vortex mechanism + two T1 identities unique to N_c=3** (ym_center_vortex.py): [T1] 1−cos(2π/N_c)=N_c/2 (res 2.22e-16); [T1] Q_top=I₄×N_c/2=(4/3)×(3/2)=2 (res 0.00e+00) — structural link between Casimir I₄ and topological charge; both unique to N_c=3. [T3] Z_3 center vortex chain → σ_fund=Q_top×Λ_QCD²=185440 MeV² (√σ=430.6 MeV, +0.1% vs obs, 0 free params). σ_adj^{vortex}=0 (adjoint breaks), consistent with χ_adj=0 [T1,C220]. C220 I₄ structural web. C218 BPS 1+1D T2a. C217 ALL 7 JW T2a. **Clay ~74%; CPC ~60%.**
+Latest: **C222 String tension T2a numerical + kink energy density T1** (ym_vortex_density.py): [T1] E_kink/ξ²=I₄×φ₀²×m_KK³ (I₄ coefficient from kink shape); [T3] ρ_v=I₄×Λ_QCD²; [T2a] σ_pred=Q_top×Λ_QCD²=185440 MeV² (−4.2% vs obs, 0 free params); [T2a] Λ_self=311.1 MeV vs Λ_DFC=304.5 MeV (2.2%); [T2a] SC sandwich 185440<193600<266524 MeV². SP2 string tension: T2a numerical + T3 derivation. C221 two T1 identities unique to N_c=3. C220 I₄ web. C218 BPS 1+1D T2a. C217 ALL 7 JW T2a. **Clay ~74%; CPC ~60%.**
 Remaining T3: σ=I₄×Λ² explicit derivation + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%); T4 holonomy Dynkin label.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
