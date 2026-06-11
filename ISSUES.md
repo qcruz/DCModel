@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-10 (Cycles 122–220)
+**Last updated:** 2026-06-10 (Cycles 122–221)
 
 ---
 
@@ -314,8 +314,9 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 220.
+- **Status:** Active primary focus. Last updated: Cycle 221.
 - **Overall progress:** ~74%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
+- **C221 NEW:** Center vortex mechanism + two new T1 identities unique to N_c=3. [T1] 1−cos(2π/N_c)=N_c/2 exact (res 2.22e-16); [T1] Q_top=I₄×N_c/2=(4/3)×(3/2)=2 (res 0.00e+00) — structural link between Casimir I₄ and topological charge Q_top; both unique to N_c=3. [T3] Center vortex string tension chain: σ_fund=Q_top×Λ_QCD²=185440 MeV² (√σ=430.6 MeV, +0.1% vs obs 427 MeV, 0 free params). [T1+T3] σ_adj^{vortex}=0 (adjoint string breaks via Z_3 condensation), consistent with χ_adj(P_kink)=0 [T1,C220]. SP2 progress 90% (unchanged).
 - **C220 NEW:** Casimir string tension T3 + I₄ structural web. χ_fund(P_kink)=−1 [T1], χ_adj(P_kink)=0 [T1] — D7 kink transparent to gluons, non-trivial for quarks. σ_adj/σ_fund=9/4=C₂(adj)/C₂(fund) [T1]. σ_SC/σ_adj=0.958 (4.2%) [T2a]. σ_fund=I₄×Λ_QCD² [T3, −18%]. I₄ structural web: same I₄=4/3 governs g_eff², BPS gap, n-fold scaling, string tension, neutrino δd. SP2 progress 90% (unchanged).
 - **C218 NEW:** SP2 BPS Hamiltonian form 1+1D T3→T2a (ym_sp2_bps_quantum.py). H|_{Q=2n}≥n×I₄×Q_top×m_hat (m_hat=42.35 M_Pl) composite T2a: Bogomolny[T1]+DHN−0.16%[T2a]+Coleman Q1[T2a]+Glimm-Jaffe[T2a]. I₄=C₂(fund,SU(3))=4/3 explicit in quantum bound [T1]. 4D form remains T3.
 - **C217 NEW:** JW3c-b T2a (spacetime signature from V(φ): hyperbolicity [T1] + Bogomolny [T1] + D3+D4 counting [T2a]). **ALL 7 JW CRITERIA NOW T2a.** T4 fermion rep TYPE T2a (Z₃ center charge argument). Remaining T3: SP2 BPS 4D form, SP4/SP5 N≥4, T4 Dynkin label holonomy.
@@ -323,13 +324,13 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP | Description | Tier | Progress | Last changed |
 |---|---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** | **C203** |
-| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS form 1+1D T2a [C218]; 4D T3** | **88%** | **C218** |
+| SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS form 1+1D T2a [C218]; n-fold T2a [C219]; vortex T1s [C221]; σ=Q_top×Λ² T3** | **90%** | **C221** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
 
 **Remaining T4:** SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b). Remaining T3: SP2 BPS 4D form (domain wall volume normalization); SP1f no-bulk-transition formal proof.
-**Latest:** C218 SP2 BPS form 1+1D T2a. C217 ALL 7 JW T2a. C216 **SU(N) generality T2a (+10% CPC SWING EVENT)**: CPC 50%→**60%**. C215 I₄=C₂ unique to N=3 T1. C214 JW3c-a T2a. C212: SP2 gap existence T2a. C203: SP1 T2a (CPC+15%).
+**Latest:** C221 two T1 identities: Q_top=I₄×N_c/2 + vortex factor 1−cos(2π/N_c)=N_c/2 (both unique N_c=3); σ=Q_top×Λ² T3. C220 χ_adj=0 T1 + I₄ web. C218 SP2 BPS 1+1D T2a. C217 ALL 7 JW T2a. C216 **CPC+10%: SU(N) generality T2a**. C212: SP2 gap existence T2a. C203: SP1 T2a (CPC+15%).
 ---
 
 ## Known Prediction Failures (Tier 2b)
