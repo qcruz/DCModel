@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: Cycle 223 — Wilson loop Creutz ratio MC (chi(2,2)>0 [T2a], area-law confirmed numerically). Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: Cycle 224 — SP5 C_match systematic analysis: 2-loop negligible [T1], ghost wrong sign [T1], 0.34% gap is T4 open. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
