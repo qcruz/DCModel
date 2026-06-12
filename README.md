@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: Cycle 232 — Clay Prize minimal proof structure (ym_clay_minimal_proof.py): 5-step proof skeleton all T2a; three remaining formal gaps mapped (SU(3) Seiler theorem ~20-30pp, Balaban 4D SU(3) ~50-100pp, 4D BPS all-states ~30pp); SP5 confirmed supplementary. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: Cycle 233 — SU(3) Seiler theorem proof structure (ym_seiler_su3.py): 6-lemma proof for no bulk phase transition; KEY INSIGHT: beta_DFC=20.25 already in KP domain so Lemma F (intermediate domain) not needed for DFC's coupling — only for JW universality; SC[T2a]+KP[T2a]+Binder FSS no-first-order[T2a]; Lemma F gap (volume-uniform MLSI) formally characterized. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
