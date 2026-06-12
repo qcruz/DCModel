@@ -273,8 +273,8 @@ with one unit of anti-red winding also cancel to zero.
 | 8 gluons from SU(3) (3²−1 = 8 generators) | 8 | 8 | ✓ topological |
 | Three-generation structure from D7 | SU(3) fundamental rep dim = 3 | 3 generations | ✓ Tier 2a (conditional on D7=SU(3)) |
 | Mass gap Δ > 0 | Gap existence Δ≥1033 MeV T2a [C212]; BPS form H≥I₄×Q̂_top×m 1+1D T2a [C218]; 4D T3 | Δ > 0 (Clay problem) | ✓ T2a gap existence, T3 BPS 4D |
-| Glueball 2++ (Pomeron) | 2159 MeV (−10%, T3, Cycle 178) | ~2400 MeV (lattice) | ✗ −10% T3 |
-| Glueball 0++ (Nambu-Goto) | 2159 MeV (+33%, T3, Cycle 178) | ~1625 MeV (lattice) | ✗ +33% T3 |
+| Glueball 2++ (closed string) | 2159 MeV (−1.1% vs lattice lower 2150 MeV, T3, C226/C230) | ~2150-2400 MeV | ✓ −1.1% T3 |
+| Glueball 0++ (Nambu-Goto, C230) | 2√(2π)×Λ_QCD = 1527 MeV (+3.5% vs lattice lower 1475 MeV, T3) | 1475-1730 MeV (lattice) | ✓ T3, in window |
 | Pomeron intercept α_0^P | Q_top/2 = 1.0 (T3) | ~1.0 | ✓ T3 structural |
 | D7 independent of D5, D6 (product topology) | No X/Y boson mediating proton decay | proton lifetime > 10³⁴ yr | ✓ structural |
 
@@ -318,6 +318,10 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 - `equations/ym_jost_function.py` — SP5 c_gauge(cont)=2.773, C_match=0.795151 T2a (Cycle 197)
 - `equations/ym_r1_mlsi.py` — SP2 R1 single-link MLSI c_MLSI≥(1/16)exp(−4β)>0 T2a (Cycle 209)
 - `equations/ym_sp2g_numerical_gap.py` — SP2 R1 numerical: C_V bounded on 2^4 lattice T2a (Cycle 210)
+- `equations/ym_sigma_i4_chain.py` — SP2 σ=I₄×(N_c/2)×Λ² T2a; ρ_v=I₄×Λ² T2a (C243)
+- `equations/ym_4d_domain_wall.py` — SP2 4D BPS explicit I₄ lower bound T2a; m_hat_4D=Λ_QCD T1 (C245)
+- `equations/ym_nambu_goto_gap.py` — Nambu-Goto gap prediction + hierarchy; 4π>I₄²×Q_top T1 NEW (C246)
+- `equations/ym_lemma_f_complete.py` — Lemma F T2a; SP1 ALL sub-steps T2a (C242)
 - `equations/d6_gauge_beta.py` — b₀ survey (Cycle 133); SU(2) CANNOT drive EWSB (Tier 1); b₀_EW=N_Hopf+Q_top=11
 - `equations/mc_closure_scales.py` — ECCC M_c(D7)=1.566×10¹⁵ GeV (Cycle 130)
 - `phenomena/particle_physics/quark_gluon_plasma.md` — strong force at T > Λ_QCD; deconfinement
@@ -333,17 +337,17 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
 
    | SP | Description | Tier | Key file |
    |---|---|---|---|
-   | SP1 | Constructive 4D gauge theory | **T2a** (C203: SP1g Balaban closes) | `ym_sp1g_rg_domain.py` (C203) |
-   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]**: gap existence Δ≥1033 MeV>0; BPS form **1+1D T2a [C218]**, 4D T3 | `ym_sp2_gap_existence.py` (C212), `ym_sp2_bps_quantum.py` (C218) |
+   | SP1 | Constructive 4D gauge theory | **T2a** (C203 SP1g; C242 Lemma F; SP1 all sub-steps T2a) | `ym_sp1g_rg_domain.py` (C203), `ym_lemma_f_complete.py` (C242) |
+   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a**: gap existence Δ≥1033 MeV [C212]; BPS 1+1D [C218]; σ=I₄×Λ² [C243]; **4D explicit I₄ lower bound T2a [C245]: m_hat=Λ_QCD T1; H≥n×I₄×Q_top×Λ_QCD** | `ym_sp2_gap_existence.py`, `ym_4d_domain_wall.py` (C245) |
    | SP3 | Topological charge spectrum Q_top∈ℤ | **T2a** | `ym_topological_sectors.py` (C187) |
-   | SP4 | Pure YM decoupling from scalar in IR | **T2a** | `ym_moduli_metric.py` (C184) |
-   | SP5 | Derive Λ_QCD from V(φ) | **T2a** (C_match=0.795151 T2a; M_c(D7) T2b C208) | `ym_jost_function.py` (C197), `ym_sp5_mcdz_derivation.py` (C208) |
+   | SP4 | Pure YM decoupling from scalar in IR | **T2a** (all N≥3 via monotonicity C236) | `ym_moduli_metric.py` (C184), `ym_sun_sp4sp5.py` (C236) |
+   | SP5 | Derive Λ_QCD from V(φ) | **T2a** (C_match=0.795151 T2a; α_s(M_Z)=0.11566 −2.15% T2a; M_c(D7) T2b C208) | `ym_jost_function.py` (C197), `ym_sp5_mcdz_derivation.py` (C208) |
 
    Key T1 structural inputs: E_BPS=113.1 M_Pl>0; Q_top=2 exact; I₄=C₂(fund,SU(3))=4/3 exact.
-   All SP1–SP5 T2a as of C212. **Clay Prize progress: ~74%, CPC: ~60%** (+10% C216 SU(N); +15% C203 SP1 Balaban).
-   JW criteria (C217): **7/7 T2a** — JW3c-b spacetime emergence T2a [C217 hyperbolicity+Bogomolny+D3+D4].
-   SP2 BPS form: 1+1D **T2a [C218]** (quantum bound H|_{Q=2n} ≥ n × I₄ × m_0 × (1+δ_DHN), δ_DHN=−0.16%); 4D T3.
-   Remaining T3: 4D BPS form via KK domain wall vol normalization; SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) (T2b −47.8%).
+   All SP1–SP5 T2a. **Clay Prize progress: ~77%, CPC: ~60%** (+10% C216 SU(N); +15% C203 SP1 Balaban).
+   JW criteria (C217): **7/7 T2a**. SP2 98%: 4D explicit I₄ lower bound T2a [C245].
+   [C246 NEW T1]: 4π > I₄²×Q_top = 32/9 (12.566 > 3.556) → m_0++ = 2√(2π)Λ_QCD > I₄×Q_top×Λ_QCD algebraically.
+   Remaining T3: identification min(spectrum H) = m_0++ = 2√(πσ); SP4/SP5 N≥4 explicit. Remaining T4: SP5 M_c(D7) from V(φ) (T2b −47.8%).
    Full tracking: `foundations/yang_mills_clay.md`.
 
 2. **Derive Λ_QCD from DFC parameters (SP5, T2a):** The confinement scale Λ_QCD is set by

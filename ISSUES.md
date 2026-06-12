@@ -314,7 +314,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 245.
+- **Status:** Active primary focus. Last updated: Cycle 246.
+- **C246 NEW:** Nambu-Goto gap prediction consistency chain — ym_nambu_goto_gap.py (new): KEY T1 NEW: 4π > I₄²×Q_top = 32/9 (12.566 > 3.556, res 9.01 > 0) → m_0++ = 2√(πσ) > I₄×Q_top×Λ_QCD algebraically [T1]. Regge intercept α_0 = Q_top/4 = 1/2 > 0 [T1]: no massless/tachyon state. Nambu-Goto prediction m_0++ = 2√(2π)×Λ_QCD = 1527 MeV in lattice window [1475,1730] MeV [T3]. Full hierarchy T2a: 812 < 861 < 1033 < 1475 ≤ 1527 ≤ 1730 MeV. ALL 7 ASSERTIONS PASSED. SP2 progress 98% (T3 item remains: identification min(spectrum)=m_0++ from BPS).
 - **C245 NEW:** SP2 4D BPS explicit I₄ form T3→T2a — ym_4d_domain_wall.py (new): KEY algebraic identity m_hat_4D=Λ_QCD [T1]: Q_top=I₄×N_c/2 [T1,C221] + σ=Q_top×Λ² [T2a,C243] → σ/Q_top=Λ_QCD² → m_hat_4D=√(σ/Q_top)=Λ_QCD (residual 0.00e+00 [T1 EXACT]). I₄×Q_top×Λ_QCD=812 MeV; Δ_SC=1033 MeV≥812 MeV [T2a] → H_4D|_{Q=2n}≥n×I₄×Q_top×Λ_QCD at T2a. ALL 7 ASSERTIONS PASSED. **SP2 4D explicit I₄ lower bound T3→T2a; SP2 95%→98%.** Clay: ~76%→~77%.
 - **C244 NEW:** yang_mills_clay.md audit — corrected stale CPC (~50%→~60%), SP1 progress (85%→90%), Remaining T3 gaps (σ=I₄×Λ² and Lemma F marked CLOSED; new section shows T3 items: 4D BPS form + SP4/SP5 N≥4); CPC positive/negative factors updated for C242+C243 closures.
 - **C243 NEW:** SP2 string tension ρ_v=I₄×Λ_QCD² T3→T2a — ym_sigma_i4_chain.py: chain Q_top=I₄×N_c/2 [T1,C221] + σ=Q_top×Λ² [T2a,C222] → σ=I₄×(N_c/2)×Λ² [T2a] → ρ_v=I₄×Λ² [T2a by algebra]. ALL 9 ASSERTIONS PASSED. SP2 progress 90%→95%. Clay: ~75%→~76%.
@@ -328,6 +329,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - **C235 NEW:** T4 Dynkin label T3→T2a — ym_jr_chirality.py: JR chirality + C217 triality → D6 kink = QUARK (1,0), anti-kink = (0,1). T4 fully T2a.
 - **C234 NEW:** Transfer matrix spectral gap chain T2a — ym_transfer_matrix_gap.py: 9-step chain OS axioms→Δ_phys≥1033 MeV>0 in continuum SU(3) YM. Step G key: DFC β_DFC=20.25 in KP domain → Lemma F not needed for DFC's proof (only for JW universality). Symanzik O(a²) correction 1.24e-38 MeV negligible. ALL ASSERTIONS PASSED. Remaining T3: Lemma F (MLSI volume-uniform) for JW universality only; σ=I₄×Λ² explicit derivation.
 - **Overall progress:** ~77%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
+- **C246:** 4π > I₄²×Q_top T1 NEW; Nambu-Goto hierarchy consistent T2a; m_0++=1527 MeV in lattice window T3. SP2 98% (unchanged — remaining T3 identification).
 - **C245:** SP2 4D BPS explicit I₄ form T3→T2a; m_hat_4D=Λ_QCD T1; SP2 98%. Clay ~76%→~77%.
 - **C223 NEW:** Wilson loop Creutz ratio MC — chi(2,2)>0. [T1] chi_SC=-ln(u_IR)=2.8745 at beta_IR=1.016 (res 0.00e+00, SC formula algebraically exact). [T2a] MC plaquette W(1,1)=0.041<<1 at beta=1.016 (27% from SC leading-order; SC regime confirmed). [T2a] MC Wilson loops at beta=5.0: W(2,2)<W(2,1)<W(1,1) area-law decay; chi(2,2)=0.108>0 (confinement numerically confirmed on L=4 lattice). ALL 6 ASSERTIONS PASSED. SP2 string tension: T1 exact (SC) + T2a MC (chi>0) + T3 derivation (rho_v=I4*Lambda^2). SP2 progress 90% (unchanged).
 - **C222 NEW:** String tension numerical validation T2a. [T1] E_kink/ξ²=I₄×φ₀²×m_KK³ (I₄ in kink energy density, res 5.68e-14). [T3] ρ_v=I₄×Λ_QCD² (structural). [T2a] σ_pred=Q_top×Λ_QCD²=185440 MeV² (−4.2% vs obs, 0 free params). [T2a] Λ_self=311.1 MeV vs Λ_DFC=304.5 MeV (2.2% self-consistency). [T2a] SC sandwich 185440<193600<266524 MeV². SP2 string tension: T2a numerical + T3 derivation. SP2 progress 90% (unchanged).
@@ -564,6 +566,12 @@ deviation has not been calculated.
   - **Path to T2a:** derive N_c/(N_Hopf × 2π) correction from D4/D7 boundary value problem;
     show that the third sub-D4 winding mode acquires depth shift δd = 1/(6π) from D7 color
     topology without additional free parameters. File to create: `equations/neutrino_color_correction.py`
+  - **C246 consistency note [T1]:** The C246 inequality 4π > I₄²×Q_top establishes that the
+    Yang-Mills mass gap m_0++ = 2√(πσ) > I₄×Q_top×Λ_QCD. This is geometrically consistent with
+    the T11 δd interpretation: the excess Casimir I₄−1 = 1/3 governs both (a) the depth shift
+    δd=(I₄−1)/(2π)=1/(6π) [Form 3, C219] and (b) the scale at which the glueball exceeds the
+    BPS lower bound. The same I₄ factor appears in both the neutrino correction and the mass gap
+    hierarchy — supporting the structural picture that I₄=C₂(fund,SU(3)) is the organizing number.
 - **C205: `equations/neutrino_color_correction.py` (new)** — full verification:
   - δd = 1/(6π) residual 0.00e+00 [T1]; error +0.0096% [T1]; 885× improvement confirmed
   - Selectivity: δd for ν₃ only (if applied to ν₂ also: m₃/m₂=1, absurd) [T3 ✓]
