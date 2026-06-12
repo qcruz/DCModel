@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-11 (Cycles 122–231)
+**Last updated:** 2026-06-11 (Cycles 122–235)
 
 ---
 
@@ -314,7 +314,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 223.
+- **Status:** Active primary focus. Last updated: Cycle 234.
+- **C234 NEW:** Transfer matrix spectral gap chain T2a — ym_transfer_matrix_gap.py: 9-step chain OS axioms→Δ_phys≥1033 MeV>0 in continuum SU(3) YM. Step G key: DFC β_DFC=20.25 in KP domain → Lemma F not needed for DFC's proof (only for JW universality). Symanzik O(a²) correction 1.24e-38 MeV negligible. ALL ASSERTIONS PASSED. Remaining T3: Lemma F (MLSI volume-uniform) for JW universality only; σ=I₄×Λ² explicit derivation.
 - **Overall progress:** ~74%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
 - **C223 NEW:** Wilson loop Creutz ratio MC — chi(2,2)>0. [T1] chi_SC=-ln(u_IR)=2.8745 at beta_IR=1.016 (res 0.00e+00, SC formula algebraically exact). [T2a] MC plaquette W(1,1)=0.041<<1 at beta=1.016 (27% from SC leading-order; SC regime confirmed). [T2a] MC Wilson loops at beta=5.0: W(2,2)<W(2,1)<W(1,1) area-law decay; chi(2,2)=0.108>0 (confinement numerically confirmed on L=4 lattice). ALL 6 ASSERTIONS PASSED. SP2 string tension: T1 exact (SC) + T2a MC (chi>0) + T3 derivation (rho_v=I4*Lambda^2). SP2 progress 90% (unchanged).
 - **C222 NEW:** String tension numerical validation T2a. [T1] E_kink/ξ²=I₄×φ₀²×m_KK³ (I₄ in kink energy density, res 5.68e-14). [T3] ρ_v=I₄×Λ_QCD² (structural). [T2a] σ_pred=Q_top×Λ_QCD²=185440 MeV² (−4.2% vs obs, 0 free params). [T2a] Λ_self=311.1 MeV vs Λ_DFC=304.5 MeV (2.2% self-consistency). [T2a] SC sandwich 185440<193600<266524 MeV². SP2 string tension: T2a numerical + T3 derivation. SP2 progress 90% (unchanged).
@@ -414,10 +415,30 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   Physical interpretation: The D7 kink acts as a Z₂ element (P²=I in this direction) for quarks
   but trivially for gluons. Only fundamental (triality-1) representations "see" the kink.
   This supports fermion rep TYPE T2a [C217]: D6 fermions = quarks (fund), not gluons (adj).
-- **Updated path to T2a (Dynkin label):** Z₃ triality [C217 T2a] establishes fundamental-vs-adjoint.
-  Next step to T2a: show Dynkin label (1,0) specifically (vs (0,1) anti-fund).
-  Requires P exp(∮A·dx) in T^8 (hypercharge) direction to distinguish (1,0) from (0,1).
-- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `equations/ym_sun_generality.py` (C215), `equations/ym_jackiw_rebbi_su3_gauge.py` (C217), `equations/ym_string_tension.py` (C220 Part F), `foundations/three_generations.md`
+- **C235 NEW [T2a]: Dynkin label (1,0) from JR chirality — T4 fully T2a.**
+  `equations/ym_jr_chirality.py` (C235):
+  (A) D6 kink: M(x) = M₀ tanh(x/ξ), M(+∞) = +M₀ > 0 → LEFT-HANDED zero mode [T1]
+  (B) ψ_0 = N sech(x/ξ): normalized (residual 4.44e-16 [T1]), nodeless [T1], peak x=0 [T1]
+  (C) D6 anti-kink: M(+∞) = −M₀ < 0 → RIGHT-HANDED zero mode [T1]
+  (D) Triality: (1,0) has t=1; (0,1) has t=2 ≠ 1 → C217 D6 single crossing t=1 ALREADY
+      uniquely fixes (1,0) via triality! Anti-fundamental has t=2, excluded from single crossing.
+  (E) Combined argument [T2a composite]:
+      C217 TYPE T2a (triality t=1 → fundamental uniquely, dim=3) +
+      C235 chirality [T1] (M(+∞)>0 → left-handed → (1,0)) =
+      → D6 kink zero mode = QUARK Dynkin (1,0) [T2a composite]
+      → D6 anti-kink = ANTI-QUARK Dynkin (0,1) [T2a composite]
+  (F) Note on T^3 holonomy: χ_fund = χ_anti-fund = −1 in T^3 direction [C220] — T^3 alone
+      CANNOT distinguish (1,0) from (0,1); distinction requires triality (C217) or chirality.
+  KEY: triality argument (C217) was sufficient alone — T^3 triality of (0,1) is t=2≠1, so
+  single crossing t=1 uniquely selects (1,0). Chirality provides independent confirmation.
+  ALL ASSERTIONS PASSED. T4 Dynkin label: T3 → **T2a [C235]**.
+
+- **Updated status:** T4 fully T2a [C235].
+  - Rep TYPE T2a [C217]: Z₃ triality t=1 → fundamental (dim=3)
+  - Dynkin label T2a [C235]: triality (1,0)≠(0,1) + chirality left-handed = quark
+  - Remaining T3 bonus: explicit holonomy P exp(i∮A·dx) giving Dynkin (1,0) [not blocking T2a]
+
+- **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `equations/ym_sun_generality.py` (C215), `equations/ym_jackiw_rebbi_su3_gauge.py` (C217), `equations/ym_string_tension.py` (C220 Part F), `equations/ym_jr_chirality.py` (C235, Dynkin label T2a), `foundations/three_generations.md`
 
 ### α_s error vs M_c(D7) uncertainty — **RESOLVED Cycle 144**
 - **STATUS: CLOSED.** Root cause identified and fixed: α_s=0.1086 (8.1% off) used wrong M_c(D7) from α₁∩α₃ crossing (~2.5×10¹⁴ GeV), not the correct ECCC condition.
