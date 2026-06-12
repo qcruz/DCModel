@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C241 Single-site SU(3) Haar LSI via Bakry-Émery** (ym_single_site_lsi.py): Killing form B=N_c δ^{ab} [T1, C184]; Ric=N_c/4=κ=3/4 [T1, Milnor]; c₀≥4/N_c=4/3 [T2a, Bakry-Émery]; single-site LSI T4→T2a. C240 Dobrushin sum=0.163<1 [T1]; strong mixing T2a. Lemma F overall T3: Gross-Rothaus tensorization ~2pp remains. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C242 Lemma F T3→T2a** (ym_lemma_f_complete.py): Gross-Rothaus + Stroock-Zegarlinski closes Lemma F for all β∈(0,∞); SP1f T3→T2a; SP1 ALL sub-steps T2a for any g>0. c_global≥2.59e-16>0, volume-independent. Domain tiling SC+LF+KP complete. **Clay ~75%** (SP1f closure). C241 single-site c₀ T2a; C240 Dobrushin T2a. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -239,7 +239,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~74%** *(C212: SP2 gap existence T2a)*
+**Overall Clay challenge progress: ~75%** *(C242: Lemma F T3→T2a; SP1 ALL sub-steps T2a)*
 **Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban; **+10% C216: SU(N) generality T2a***
 
 | # | Sub-problem | Tier | Progress |
@@ -250,8 +250,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C240 Lemma F Dobrushin criterion T2a** (ym_lemma_f_dobrushin.py): uniform B=3 coarse-graining; N_adj=18 [T1]; Dobrushin sum=0.163<1 [T1]; strong mixing for all β∈[3.0,17.06] [T2a]; ξ_DS=1.654 fine units [T2a]. Remaining T3: Gross-Rothaus tensorization of single-site SU(3) Haar LSI (~5pp). C239 coarse-grain T1+T3; C238 free energy convexity T2a; C237 Holley-Stroock ergodicity T1; C235 Dynkin label T2a. **Clay ~74%; CPC ~60%.**
-Remaining T3: σ=I₄×Λ² explicit derivation + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
+Latest: **C242 Lemma F T3→T2a** (ym_lemma_f_complete.py): Gross-Rothaus + Stroock-Zegarlinski; c_global≥2.59e-16>0 for all β∈[3.0,17.06], volume-independent; domain tiling (0,∞) complete; SP1f T3→T2a; SP1 ALL sub-steps T2a. C241 single-site c₀=4/3 T2a; C240 Dobrushin sum=0.163<1 T2a. **Clay ~75%; CPC ~60%.**
+Remaining T3: σ=I₄×Λ² explicit derivation. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
