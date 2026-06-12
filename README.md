@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C239 Lemma F block-spin coarse-graining** (ym_lemma_f_coarse_grain.py): For all β∈[3.0,17.06], block size B=ceil(√(β_KP/β))≤3 is volume-independent [T1]; β_eff=β×B²≥β_KP=17.06 [T1, 500-pt scan]; KP_coarse≤9.06×10⁻³ [T1]; Pisztora-type: KP domain at coarse scale → volume-uniform MLSI for fine theory [T3]. Lemma F T3 sharpened (C237 finite-L + C239 volume-uniform structure). Formal T3→T2a: Pisztora SU(3) ~10-15pp. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C241 Single-site SU(3) Haar LSI via Bakry-Émery** (ym_single_site_lsi.py): Killing form B=N_c δ^{ab} [T1, C184]; Ric=N_c/4=κ=3/4 [T1, Milnor]; c₀≥4/N_c=4/3 [T2a, Bakry-Émery]; single-site LSI T4→T2a. C240 Dobrushin sum=0.163<1 [T1]; strong mixing T2a. Lemma F overall T3: Gross-Rothaus tensorization ~2pp remains. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
