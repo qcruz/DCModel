@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C243 SP2 string tension T3→T2a** (ym_sigma_i4_chain.py): ρ_v=I₄×Λ_QCD² upgraded from T3 structural to T2a composite via Q_top=I₄×N_c/2 [T1] + σ=Q_top×Λ² [T2a] → ρ_v=I₄×Λ² [T2a by algebra]. σ=185440 MeV² (−4.2%), 0 free params. **Clay ~76%** (SP2 95%). C242 Lemma F T3→T2a; SP1 ALL sub-steps T2a. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C244 yang_mills_clay.md audit** — corrected stale CPC (~50%→~60%), SP1 progress (85%→90%), Remaining T3 gaps (σ=I₄×Λ² + Lemma F marked CLOSED [C242/C243]). C243 SP2 string tension T3→T2a (ym_sigma_i4_chain.py, SP2 95%). C242 Lemma F T3→T2a; SP1 ALL sub-steps T2a. **Clay ~76%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -245,13 +245,13 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes) | **85%** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]; χ_adj=0 T1 [C220]; vortex factor T1 + Q_top=I₄×N_c/2 T1 [C221]; σ=Q_top×Λ² T3** | **90%** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]; χ_adj=0 T1 [C220]; vortex factor T1 + Q_top=I₄×N_c/2 T1 [C221]; σ=I₄×Λ² T2a [C243]** | **95%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **50%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C243 SP2 string tension T3→T2a** (ym_sigma_i4_chain.py): ρ_v=I₄×Λ_QCD² T2a composite; σ=I₄×(N_c/2)×Λ²=185440 MeV² (−4.2%); ALL 9 ASSERTIONS PASSED. C242 Lemma F T3→T2a; SP1 ALL sub-steps T2a. **Clay ~76%; CPC ~60%.**
-Remaining T3: none in SP1-SP4 (all T2a). Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
+Latest: **C244 yang_mills_clay.md audit** — CPC ~50%→~60% corrected; SP1 85%→90%; Remaining T3 gaps rewritten (σ=I₄×Λ² + Lemma F CLOSED; 4D BPS form + SP4/SP5 N≥4 remain T3). C243 SP2 string tension T3→T2a (ym_sigma_i4_chain.py, SP2 95%). **Clay ~76%; CPC ~60%.**
+Remaining T3: 4D BPS form (domain wall volume normalization) + SP4/SP5 N≥4 explicit. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
