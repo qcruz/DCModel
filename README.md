@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C236 SP4+SP5 SU(N) generality T3→T2a** (ym_sun_sp4sp5.py): g_eff²(N)=8/(3N²) [T1]; NEW T1: m_sigma/m_KK=2 and m_shape/m_KK=√3 (both N-independent from V(φ)); SP4 hierarchy m_sigma/Λ_QCD(N) monotone increasing T2a; SP5 b₀(N)=11N/3>0 T1 → AF → Λ_QCD(N)>0 all N≥2 T2a; **ALL 5 SP T2a for all SU(N), N≥2**. JW "any compact simple G" addressed at T2a. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C237 Holley-Stroock ergodicity bound** (ym_holley_stroock_bound.py): Three new T1 identities — osc(Re Tr P)=9/2 [T1], osc(H_link/β)=27 [T1], gap_link(β)≥exp(−27β)>0 all β>0 finite L [T1 algebraic]; ergodicity proved for any SU(3) Wilson lattice at any coupling. Lemma F (volume-uniform MLSI for β∈[3,17]) remains T3 but NOT needed for DFC's β_DFC=20.25 chain (KP domain). Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 

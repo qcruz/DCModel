@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-11 (Cycles 122–235)
+**Last updated:** 2026-06-12 (Cycles 122–237)
 
 ---
 
@@ -314,7 +314,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 236.
+- **Status:** Active primary focus. Last updated: Cycle 237.
+- **C237 NEW:** Holley-Stroock ergodicity bound — ym_holley_stroock_bound.py: [T1] osc(Re Tr P)=9/2=3N_c/2 (Z₃ center achieves minimum; res 4.44e-16); [T1] osc(H_link/β)=27=2(d-1)×9/2 (exact, res 0.00e+00); [T1] gap_link(β)≥exp(−27β)>0 for ALL β>0 and finite L (Holley-Stroock perturbation lemma — ergodicity proved for any finite lattice). Dobrushin C_Dob≈4>1 at β_DFC (bound too conservative; uniqueness via KP [C199]). Lemma F T3 remains (volume-uniform bound). NOT needed for DFC's β_DFC=20.25 chain (KP domain). ALL ASSERTIONS PASSED.
 - **C236 NEW:** SP4+SP5 SU(N) generality T3→T2a — ym_sun_sp4sp5.py: [T1] g_eff²(N)=8/(3N²); m_sigma/m_KK=2 exact N-independent; m_shape/m_KK=√3 exact N-independent; b₀(N)=11N/3>0. [T2a] m_sigma/Λ_QCD(N) monotone increasing — SP4 T2a all N≥3 by monotonicity from C181. [T2a] Λ_QCD(N)>0 all N≥2 — SP5 T2a all N≥2 from b₀>0+DT. ALL 5 SP now T2a for all SU(N), N≥2. JW "any compact simple G" T2a. 12 assertions PASSED.
 - **C235 NEW:** T4 Dynkin label T3→T2a — ym_jr_chirality.py: JR chirality + C217 triality → D6 kink = QUARK (1,0), anti-kink = (0,1). T4 fully T2a.
 - **C234 NEW:** Transfer matrix spectral gap chain T2a — ym_transfer_matrix_gap.py: 9-step chain OS axioms→Δ_phys≥1033 MeV>0 in continuum SU(3) YM. Step G key: DFC β_DFC=20.25 in KP domain → Lemma F not needed for DFC's proof (only for JW universality). Symanzik O(a²) correction 1.24e-38 MeV negligible. ALL ASSERTIONS PASSED. Remaining T3: Lemma F (MLSI volume-uniform) for JW universality only; σ=I₄×Λ² explicit derivation.
