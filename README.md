@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: Cycle 233 — SU(3) Seiler theorem proof structure (ym_seiler_su3.py): 6-lemma proof for no bulk phase transition; KEY INSIGHT: beta_DFC=20.25 already in KP domain so Lemma F (intermediate domain) not needed for DFC's coupling — only for JW universality; SC[T2a]+KP[T2a]+Binder FSS no-first-order[T2a]; Lemma F gap (volume-uniform MLSI) formally characterized. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: Cycle 234 — Transfer matrix spectral gap chain (ym_transfer_matrix_gap.py): 9-step T2a chain OS axioms→T pos+bdd+self-adj→m_lat>0→Symanzik negligible (1.24e-38 MeV)→Δ_phys≥1033 MeV>0 in continuum SU(3) YM; Step G T2a*/T3 (Lemma F not needed for DFC: β_DFC=20.25 already in KP domain per C233); Remaining T3 gaps in yang_mills_clay.md updated. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
