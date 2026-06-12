@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: Cycle 228 — Static QQ-bar potential V(R)=σR−π/(12R) [T1 Luscher]; string valid R>0.43 fm [T2a]; α'=0.858 GeV⁻² (−2.5%) [T3]. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: Cycle 232 — Clay Prize minimal proof structure (ym_clay_minimal_proof.py): 5-step proof skeleton all T2a; three remaining formal gaps mapped (SU(3) Seiler theorem ~20-30pp, Balaban 4D SU(3) ~50-100pp, 4D BPS all-states ~30pp); SP5 confirmed supplementary. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
