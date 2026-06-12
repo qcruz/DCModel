@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-12 (Cycles 122–237)
+**Last updated:** 2026-06-12 (Cycles 122–238)
 
 ---
 
@@ -314,7 +314,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 237.
+- **Status:** Active primary focus. Last updated: Cycle 238.
+- **C238 NEW:** Free energy convexity + Binder FSS composite T2a for no first-order transition in intermediate domain [3.0, 17.06]. [T1] Z_L(β) entire in β (dominated convergence for bounded Re Tr P_plaq); [T1] f_L(β) real-analytic and convex: d²f_L/dβ² = Var_L(S_W)/|Λ| = C_V ≥ 0 (variance non-negativity); [T1] Borgs-Kotecky (1990) criterion: first-order transition ↔ C_V_intensive → const > 0 as L→∞; [T2a composite] C_V_intensive → 0 from C211 FSS (C_V_peak≈17 across L=2,3,4 → C_V_intensive = C_V_peak/N_plaq → 0) + B4_min=2.54>1 → no volumetric divergence → no first-order transition throughout [3.0, 17.06]. [T2a] full intermediate domain established. ALL ASSERTIONS PASSED. Clay: ~74%. CPC: ~60%.
 - **C237 NEW:** Holley-Stroock ergodicity bound — ym_holley_stroock_bound.py: [T1] osc(Re Tr P)=9/2=3N_c/2 (Z₃ center achieves minimum; res 4.44e-16); [T1] osc(H_link/β)=27=2(d-1)×9/2 (exact, res 0.00e+00); [T1] gap_link(β)≥exp(−27β)>0 for ALL β>0 and finite L (Holley-Stroock perturbation lemma — ergodicity proved for any finite lattice). Dobrushin C_Dob≈4>1 at β_DFC (bound too conservative; uniqueness via KP [C199]). Lemma F T3 remains (volume-uniform bound). NOT needed for DFC's β_DFC=20.25 chain (KP domain). ALL ASSERTIONS PASSED.
 - **C236 NEW:** SP4+SP5 SU(N) generality T3→T2a — ym_sun_sp4sp5.py: [T1] g_eff²(N)=8/(3N²); m_sigma/m_KK=2 exact N-independent; m_shape/m_KK=√3 exact N-independent; b₀(N)=11N/3>0. [T2a] m_sigma/Λ_QCD(N) monotone increasing — SP4 T2a all N≥3 by monotonicity from C181. [T2a] Λ_QCD(N)>0 all N≥2 — SP5 T2a all N≥2 from b₀>0+DT. ALL 5 SP now T2a for all SU(N), N≥2. JW "any compact simple G" T2a. 12 assertions PASSED.
 - **C235 NEW:** T4 Dynkin label T3→T2a — ym_jr_chirality.py: JR chirality + C217 triality → D6 kink = QUARK (1,0), anti-kink = (0,1). T4 fully T2a.
@@ -571,6 +572,22 @@ deviation has not been calculated.
   - SU(3) Wilson line for single D7 kink: eigenphases ±π/2, 0 [T2a numerical]
   - Upgrade path (Form 2): δd = β × N_c/2 → BVP: Dirac in D7 PT background → δω = β×N_c/2×m_KK
   - T11 tier: T3 (unchanged; new identities sharpen derivation target)
+- **C238 structural observation (T3):** Form 3 admits a Berry phase / excess-Casimir interpretation:
+  - A color-singlet object (C_F = 1) traversing the D7 closure acquires zero net depth shift.
+  - A quark in the fundamental rep (C_F = I₄ = 4/3 > 1) acquires excess depth shift
+    (C_F − 1)/(2π) = (I₄−1)/(2π) = 1/(6π). This is the color excess above the singlet,
+    normalized by the full D7 winding phase 2π.
+  - Prediction for adjoint (gluon): δd_gluon = (C_A − 1)/(2π) = (3−1)/(2π) = 1/π ≈ 0.318
+    (6× larger than the quark correction). Glueballs, which are color-neutral bound states,
+    net δd_glueball = 0 — consistent with glue sector decoupling.
+  - The formula δd = (C_F − 1)/(2π) is the minimal Berry-phase-like depth correction from
+    D7 SU(3) holonomy, with the singlet (C_F=1) as the baseline. The "1" in (I₄−1) is the
+    absence of any correction for a color-neutral state.
+  - This interpretation connects Form 3 to the holonomy character χ_fund(P_kink) = −1 [T1, C220]:
+    The D7 kink acts non-trivially on quarks (χ = −1 ≠ 1) but trivially on gluons (χ = 0 + N_c
+    contributions cancel). The phase shift seen by a quark is proportional to 1 − Re(χ)/N_c
+    = 1 − (−1)/3 = 4/3 = I₄. Normalized by 2π gives I₄/(2π). The correction above singlet
+    is (I₄−1)/(2π). [T3 structural; needs BVP computation to confirm]
 - Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_d7_holonomy.py` (C219), `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
 
 ---

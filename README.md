@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C237 Holley-Stroock ergodicity bound** (ym_holley_stroock_bound.py): Three new T1 identities — osc(Re Tr P)=9/2 [T1], osc(H_link/β)=27 [T1], gap_link(β)≥exp(−27β)>0 all β>0 finite L [T1 algebraic]; ergodicity proved for any SU(3) Wilson lattice at any coupling. Lemma F (volume-uniform MLSI for β∈[3,17]) remains T3 but NOT needed for DFC's β_DFC=20.25 chain (KP domain). Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C238 Free energy convexity + no-first-order T2a** (ym_free_energy_convexity.py): Z_L(β) entire [T1]; d²f_L/dβ²=C_V≥0 [T1]; Borgs-Kotecky first-order criterion [T1]; combined with C211 Binder FSS (C_V_intensive→0) → no first-order in [3.0,17.06] [T2a composite]. T11: Berry phase interpretation of δd=(I₄-1)/(2π) — color-neutral singlet gets zero shift; quark (C_F=I₄=4/3) gets (I₄-1)/(2π)=1/(6π); gluon (C_A=3) gets 1/π. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 

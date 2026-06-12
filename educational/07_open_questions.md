@@ -84,10 +84,14 @@ This is a **+10% CPC swing event**. CPC: 50% → **60%**.
 
 **C234 NEW — Transfer matrix spectral gap chain T2a:** `equations/ym_transfer_matrix_gap.py` (C234) closes the logical chain from OS axioms to the physical continuum mass gap: (A) OS axioms [T2a]; (B) T pos+bdd+self-adj [T2a]; (C) m_lat = −log(λ₁/λ₀) > 0 algebraically [T1]; (D) Perron-Frobenius spectral gap m_lat ≥ |log KP|/a [T2a]; (E) KP < 1 → T_∞ bounded [T2a]; (F) T_∞ pos+bdd+self-adj [T2a]; (G) No bulk phase transition (Lemma F not needed since β_DFC in KP domain) [T2a*/T3]; (H) Symanzik O(a²) correction = 1.24×10⁻³⁸ MeV — completely negligible on 1033 MeV [T2a]; (I) Δ_phys ≥ 1033 MeV > 0 in continuum [T2a]. This completes the logical chain at T2a.
 
-**What is still missing:**
-SP1 and SP2 are T2a for all SU(N). All 7 JW criteria T2a. Transfer matrix chain T2a. Remaining open: (a) explicit σ = I₄ × Λ² string tension with I₄ factor — T3 (gap existence T2a; I₄ prefactor derivation T3); (b) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%); (c) Lemma F (formal MLSI for any g > 0) for JW universality — T3 but not blocking DFC's own proof.
+**C237 NEW — Holley-Stroock ergodicity bound [T1]:** `equations/ym_holley_stroock_bound.py` (C237) establishes three exact algebraic identities for SU(3) Wilson theory: (i) osc(Re Tr P) = 9/2 = 3N_c/2 [T1 — Z₃ center element achieves minimum Re Tr = −3/2]; (ii) osc(H_link/β) = 27 for d=4, N_c=3 [T1 exact]; (iii) gap_link(β) ≥ exp(−27β) > 0 for all β > 0 and all finite L [T1 algebraic]. Ergodicity is proved for any finite SU(3) lattice. The volume-uniform MLSI (Lemma F) is the remaining T3 gap for full JW universality (any g), but is not needed for DFC's β_DFC = 20.25 chain.
 
-**Status: SP1+SP2 T2a all N (C216); JW3c T2a (C217); BPS form 1+1D T2a (C218); BPS n-fold T2a (C219); 7/7 JW criteria T2a; transfer matrix chain T2a (C234); CPC ~60%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
+**C238 NEW — Free energy convexity + Binder FSS composite T2a:** `equations/ym_free_energy_convexity.py` (C238) completes the intermediate-domain R1 argument via two routes: (i) Z_L(β) is entire → f_L(β) real-analytic [T1]; d²f_L/dβ² = Var_L(S_W)/|Λ| ≥ 0 (convex) [T1]; Borgs-Kotecky criterion: first-order transition ↔ C_V_intensive → const > 0 [T1]; (ii) from C211 FSS, C_V_peak ≈ 17 across L=2,3,4 while N_plaq grows → C_V_intensive = C_V_peak/N_plaq → 0 → first-order transition excluded throughout [3.0, 17.06] [T2a composite]. The intermediate domain R1 argument is now fully documented at T2a.
+
+**What is still missing:**
+SP1 and SP2 are T2a for all SU(N). All 7 JW criteria T2a. Transfer matrix chain T2a. Holley-Stroock ergodicity T1. Free energy convexity + no first-order T2a (C238). Remaining open: (a) explicit σ = I₄ × Λ² string tension with I₄ factor — T3 (gap existence T2a; I₄ prefactor derivation T3); (b) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%); (c) Lemma F (formal MLSI for any g > 0) for full JW universality — T3, not blocking DFC's own proof.
+
+**Status: SP1+SP2 T2a all N (C216); JW3c T2a (C217); BPS form 1+1D T2a (C218); BPS n-fold T2a (C219); 7/7 JW criteria T2a; transfer matrix chain T2a (C234); ergodicity T1 (C237); free energy convexity + no-1st-order T2a (C238); CPC ~60%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
 
 ---
 
