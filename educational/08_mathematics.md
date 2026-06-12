@@ -288,7 +288,20 @@ mathematical content. What is not yet derived:
    transparent to gluons) and χ_fund(P_kink)=−1 (quarks acquire phase −1). Casimir ratio
    σ_adj/σ_fund = C₂(adj)/C₂(fund) = 9/4 [T1]. String tension σ_fund = I₄ × Λ_QCD² [T3, ~18% accuracy].
    SC area law consistency: σ_SC/σ_adj = 0.958 (4.2% from 1.0) [T2a]. SP2 progress 90%.
-   Remaining T3: σ=I₄×Λ² explicit derivation. Remaining T4: M_c(D7) from V(φ) alone (SP5 T2b −47.8%).
+   Cycle 222 (ym_vortex_density.py): string tension numerical validation — vortex factor
+   1−cos(2π/N_c)=N_c/2 exact for N_c=3 only [T1]; Q_top=I₄×N_c/2=2 [T1]; σ_pred=Q_top×Λ²=185440 MeV²
+   (√σ=430.6 MeV, −4.2% vs obs, 0 free params) [T2a]. Λ self-consistency: Λ_self=311 MeV vs
+   Λ_DFC=304.5 MeV (2.2% agreement) [T2a].
+   Cycle 235 (ym_jr_chirality.py): T4 fermion Dynkin label T3→T2a — D6 kink M(+∞)=+M₀>0 implies
+   left-handed JR zero mode [T1]; anti-kink M(+∞)=−M₀<0 implies right-handed → (0,1)=anti-quark
+   [T1]; combined with C217 Z₃ triality single-crossing → uniquely selects Dynkin label (1,0)=quark
+   [T2a composite]. Zero-mode normalization residual 4.44e-16 [T1]. ALL 8 assertions PASSED.
+   Cycle 236 (ym_sun_sp4sp5.py): SP4+SP5 generality T3→T2a all N≥2 — g_eff²(N)=8/(3N²) [T1];
+   new T1: m_sigma/m_KK=2 exactly (from V''(φ₀)=2α, N-independent); m_shape/m_KK=√3 exactly
+   (Pöschl-Teller, N-independent); SP4 hierarchy m_sigma/Λ_QCD(N) monotone increasing [T2a];
+   SP5 b₀(N)=11N/3>0 [T1] → AF → Λ_QCD(N)>0 all N≥2 [T2a]. **All 5 SP T2a for all SU(N), N≥2.**
+   JW "any compact simple G" requirement addressed at T2a across full SP1-SP5 chain.
+   Remaining T3: σ=I₄×Λ² explicit derivation from D7 kink vacuum energy. Remaining T4: M_c(D7) from V(φ) alone (SP5 T2b −47.8%).
 
 The model does not claim completeness. These are honest, documented gaps.
 

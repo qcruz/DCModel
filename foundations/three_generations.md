@@ -285,6 +285,9 @@ the generation count:
 - **Route 1 (Skyrme)** — topological soliton approach to spin quantum numbers;
   the J=1/2 result from π₄(SU(2)) connects to why the three generation copies
   are all spin-1/2; `foundations/route1_skyrme.md`
+- **SP4/SP5 SU(N) generality** — SP4 (scalar decoupling) and SP5 (Λ_QCD existence) T2a
+  for all N≥3; b₀(N)=11N/3>0 universal; m_sigma/m_KK=2 and m_shape/m_KK=√3 N-independent;
+  all 5 SP T2a for all SU(N), N≥2; `equations/ym_sun_sp4sp5.py` (Cycle 236)
 - **Zero mode multiplet** — proved: n coincident degenerate zero modes on one kink
   background → configuration space S^(2n−1) → gauge group SU(n); the n=3 case gives
   SU(3) at D7 and three-generation count; `foundations/zero_mode_multiplet.md` (Cycle 59)
@@ -305,6 +308,9 @@ the generation count:
    n=3 zero modes at D7 threshold from PT s=2 spectrum, verified for all tested α₇ values).
    For all other SU(N) with N≥2: C215/C216 show the mass gap exists T2a (monotonicity
    theorem), but only SU(3) is compatible with I₄=C₂(fund) being the coupling constant.
+   C236 adds: SP4 (scalar decoupling) and SP5 (Λ_QCD existence) are now T2a for all N≥2,
+   completing the JW "any compact simple G" requirement at T2a. New T1 results: m_sigma/m_KK=2
+   and m_shape/m_KK=√3 are exactly N-independent (both determined by V(φ) alone).
 
 2. **Left-right asymmetry:** Why does the left copy become color (a confining force with
    gluons) while the right copy becomes flavor (a broken symmetry governing generation

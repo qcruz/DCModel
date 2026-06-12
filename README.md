@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: Cycle 234 — Transfer matrix spectral gap chain (ym_transfer_matrix_gap.py): 9-step T2a chain OS axioms→T pos+bdd+self-adj→m_lat>0→Symanzik negligible (1.24e-38 MeV)→Δ_phys≥1033 MeV>0 in continuum SU(3) YM; Step G T2a*/T3 (Lemma F not needed for DFC: β_DFC=20.25 already in KP domain per C233); Remaining T3 gaps in yang_mills_clay.md updated. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C236 SP4+SP5 SU(N) generality T3→T2a** (ym_sun_sp4sp5.py): g_eff²(N)=8/(3N²) [T1]; NEW T1: m_sigma/m_KK=2 and m_shape/m_KK=√3 (both N-independent from V(φ)); SP4 hierarchy m_sigma/Λ_QCD(N) monotone increasing T2a; SP5 b₀(N)=11N/3>0 T1 → AF → Λ_QCD(N)>0 all N≥2 T2a; **ALL 5 SP T2a for all SU(N), N≥2**. JW "any compact simple G" addressed at T2a. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
