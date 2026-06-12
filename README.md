@@ -250,7 +250,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | **70%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a** | **75%** |
 
-Latest: **C235 Dynkin label (1,0) = quark T2a** (ym_jr_chirality.py): [T1] D6 kink M(+∞)=+M₀>0 → left-handed JR zero mode; [T1] anti-kink right-handed → (0,1)=anti-quark; [T2a] triality (1,0) t=1, (0,1) t=2≠1 + C217 Z₃ single crossing t=1 uniquely selects (1,0). T4 fermion Dynkin label T3→T2a. C234 transfer matrix 9-step gap chain T2a; C233 SU(3) Seiler theorem 6-lemma + KEY INSIGHT β_DFC in KP domain; C232 minimal proof structure. **Clay ~74%; CPC ~60%.**
+Latest: **C240 Lemma F Dobrushin criterion T2a** (ym_lemma_f_dobrushin.py): uniform B=3 coarse-graining; N_adj=18 [T1]; Dobrushin sum=0.163<1 [T1]; strong mixing for all β∈[3.0,17.06] [T2a]; ξ_DS=1.654 fine units [T2a]. Remaining T3: Gross-Rothaus tensorization of single-site SU(3) Haar LSI (~5pp). C239 coarse-grain T1+T3; C238 free energy convexity T2a; C237 Holley-Stroock ergodicity T1; C235 Dynkin label T2a. **Clay ~74%; CPC ~60%.**
 Remaining T3: σ=I₄×Λ² explicit derivation + SP4/SP5 N≥4. Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
