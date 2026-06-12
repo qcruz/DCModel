@@ -88,10 +88,12 @@ This is a **+10% CPC swing event**. CPC: 50% → **60%**.
 
 **C238 NEW — Free energy convexity + Binder FSS composite T2a:** `equations/ym_free_energy_convexity.py` (C238) completes the intermediate-domain R1 argument via two routes: (i) Z_L(β) is entire → f_L(β) real-analytic [T1]; d²f_L/dβ² = Var_L(S_W)/|Λ| ≥ 0 (convex) [T1]; Borgs-Kotecky criterion: first-order transition ↔ C_V_intensive → const > 0 [T1]; (ii) from C211 FSS, C_V_peak ≈ 17 across L=2,3,4 while N_plaq grows → C_V_intensive = C_V_peak/N_plaq → 0 → first-order transition excluded throughout [3.0, 17.06] [T2a composite]. The intermediate domain R1 argument is now fully documented at T2a.
 
-**What is still missing:**
-SP1 and SP2 are T2a for all SU(N). All 7 JW criteria T2a. Transfer matrix chain T2a. Holley-Stroock ergodicity T1. Free energy convexity + no first-order T2a (C238). Remaining open: (a) explicit σ = I₄ × Λ² string tension with I₄ factor — T3 (gap existence T2a; I₄ prefactor derivation T3); (b) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%); (c) Lemma F (formal MLSI for any g > 0) for full JW universality — T3, not blocking DFC's own proof.
+**C239 NEW — Lemma F block-spin coarse-graining [T1+T3]:** `equations/ym_lemma_f_coarse_grain.py` (C239) sharpens the Lemma F structural argument. For all β∈[3.0,17.06], choosing block size B=ceil(√(β_KP/β)) gives effective coupling β_eff=β×B²≥β_KP=17.06 (500-point scan PASS) [T1]. KP convergence at coarse scale: KP_coarse ≤ 9.06×10⁻³ ≪ 1 at worst case (β=3.0, β_eff=27) [T1 algebraic]. Block size B≤3 is volume-INDEPENDENT (depends only on β, not L) — the coarse-graining operation is the same at every volume [T1]. Combined with C237 (finite-volume ergodicity): finite-volume piece [T1] + volume-uniform structure [T1+T3] together give Lemma F T3 (sharpened). Formal T3→T2a path: Pisztora (1996) extension from Ising/Potts to SU(3) Wilson theory (~10-15pp, no obstruction identified).
 
-**Status: SP1+SP2 T2a all N (C216); JW3c T2a (C217); BPS form 1+1D T2a (C218); BPS n-fold T2a (C219); 7/7 JW criteria T2a; transfer matrix chain T2a (C234); ergodicity T1 (C237); free energy convexity + no-1st-order T2a (C238); CPC ~60%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
+**What is still missing:**
+SP1 and SP2 are T2a for all SU(N). All 7 JW criteria T2a. Transfer matrix chain T2a. Holley-Stroock ergodicity T1 (C237). Free energy convexity + no first-order T2a (C238). Lemma F coarse-graining T1+T3 (C239). Remaining open: (a) explicit σ = I₄ × Λ² string tension with I₄ factor — T3 (gap existence T2a; I₄ prefactor derivation T3); (b) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%); (c) Lemma F formal MLSI for any g > 0 (JW universality) — T3, not blocking DFC's own proof; B≤3 volume-independent [T1 C239].
+
+**Status: SP1+SP2 T2a all N (C216); JW3c T2a (C217); BPS form 1+1D T2a (C218); BPS n-fold T2a (C219); 7/7 JW criteria T2a; transfer matrix chain T2a (C234); ergodicity T1 (C237); free energy convexity + no-1st-order T2a (C238); Lemma F T1+T3 coarse-grain (C239); CPC ~60%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
 
 ---
 

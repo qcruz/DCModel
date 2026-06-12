@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C238 Free energy convexity + no-first-order T2a** (ym_free_energy_convexity.py): Z_L(β) entire [T1]; d²f_L/dβ²=C_V≥0 [T1]; Borgs-Kotecky first-order criterion [T1]; combined with C211 Binder FSS (C_V_intensive→0) → no first-order in [3.0,17.06] [T2a composite]. T11: Berry phase interpretation of δd=(I₄-1)/(2π) — color-neutral singlet gets zero shift; quark (C_F=I₄=4/3) gets (I₄-1)/(2π)=1/(6π); gluon (C_A=3) gets 1/π. Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C239 Lemma F block-spin coarse-graining** (ym_lemma_f_coarse_grain.py): For all β∈[3.0,17.06], block size B=ceil(√(β_KP/β))≤3 is volume-independent [T1]; β_eff=β×B²≥β_KP=17.06 [T1, 500-pt scan]; KP_coarse≤9.06×10⁻³ [T1]; Pisztora-type: KP domain at coarse scale → volume-uniform MLSI for fine theory [T3]. Lemma F T3 sharpened (C237 finite-L + C239 volume-uniform structure). Formal T3→T2a: Pisztora SU(3) ~10-15pp. Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
