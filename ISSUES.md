@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-13 (Cycles 122–247)
+**Last updated:** 2026-06-13 (Cycles 122–248)
 
 ---
 
@@ -314,7 +314,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 246.
+- **Status:** Active primary focus. Last updated: Cycle 248.
 - **C246 NEW:** Nambu-Goto gap prediction consistency chain — ym_nambu_goto_gap.py (new): KEY T1 NEW: 4π > I₄²×Q_top = 32/9 (12.566 > 3.556, res 9.01 > 0) → m_0++ = 2√(πσ) > I₄×Q_top×Λ_QCD algebraically [T1]. Regge intercept α_0 = Q_top/4 = 1/2 > 0 [T1]: no massless/tachyon state. Nambu-Goto prediction m_0++ = 2√(2π)×Λ_QCD = 1527 MeV in lattice window [1475,1730] MeV [T3]. Full hierarchy T2a: 812 < 861 < 1033 < 1475 ≤ 1527 ≤ 1730 MeV. ALL 7 ASSERTIONS PASSED. SP2 progress 98% (T3 item remains: identification min(spectrum)=m_0++ from BPS).
 - **C245 NEW:** SP2 4D BPS explicit I₄ form T3→T2a — ym_4d_domain_wall.py (new): KEY algebraic identity m_hat_4D=Λ_QCD [T1]: Q_top=I₄×N_c/2 [T1,C221] + σ=Q_top×Λ² [T2a,C243] → σ/Q_top=Λ_QCD² → m_hat_4D=√(σ/Q_top)=Λ_QCD (residual 0.00e+00 [T1 EXACT]). I₄×Q_top×Λ_QCD=812 MeV; Δ_SC=1033 MeV≥812 MeV [T2a] → H_4D|_{Q=2n}≥n×I₄×Q_top×Λ_QCD at T2a. ALL 7 ASSERTIONS PASSED. **SP2 4D explicit I₄ lower bound T3→T2a; SP2 95%→98%.** Clay: ~76%→~77%.
 - **C244 NEW:** yang_mills_clay.md audit — corrected stale CPC (~50%→~60%), SP1 progress (85%→90%), Remaining T3 gaps (σ=I₄×Λ² and Lemma F marked CLOSED; new section shows T3 items: 4D BPS form + SP4/SP5 N≥4); CPC positive/negative factors updated for C242+C243 closures.
@@ -329,6 +329,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - **C235 NEW:** T4 Dynkin label T3→T2a — ym_jr_chirality.py: JR chirality + C217 triality → D6 kink = QUARK (1,0), anti-kink = (0,1). T4 fully T2a.
 - **C234 NEW:** Transfer matrix spectral gap chain T2a — ym_transfer_matrix_gap.py: 9-step chain OS axioms→Δ_phys≥1033 MeV>0 in continuum SU(3) YM. Step G key: DFC β_DFC=20.25 in KP domain → Lemma F not needed for DFC's proof (only for JW universality). Symanzik O(a²) correction 1.24e-38 MeV negligible. ALL ASSERTIONS PASSED. Remaining T3: Lemma F (MLSI volume-uniform) for JW universality only; σ=I₄×Λ² explicit derivation.
 - **Overall progress:** ~77%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
+- **C248 NEW:** SP3 Q_top^DFC=2↔Q_top^YM=1 mapping T3→T2a — ym_qtop_mapping.py (new): Three independent routes. Part A [T1]: Q_DFC=I₄×N_c/2=2 (center vortex, C221). Part B [T1]: Q_DFC=2×n_kink (∫ψ'dx=2.0000, res 0.00e+00). Part C [T2a]: N_JR=1 per kink (JR zero mode, C235). Part D [T1]: Atiyah-Singer ind(D̸_A)=Q_YM for gauge field. Part E [T2a]: Q_DFC/Q_YM=2 (exact, res 0.00e+00) — mapping established. Part F [T1]: BPST Q_BPST=1 (res 1e-12); ratio Q_DFC/Q_BPST=2 (res 0); S_inst=27π² (res 5.68e-14); instanton weight exp(-27π²)~10⁻¹¹⁶. Part G [T1]: Sector bijection Q_YM=Q_DFC/2 group homomorphism (res 0.00e+00). N_c=3 uniqueness: Q_DFC=I₄×N_c/2 is integer (=2) uniquely for N_c=3 (N_c=2 gives 3/4, N_c=4 gives 15/4). ALL 16 ASSERTIONS PASSED. **SP3 Q_top mapping T3→T2a; SP3 progress 50%→75%.** Remaining T3: precise ground state identification min(spectrum)=m_0++=2√(πσ) [T3].
 - **C247 NEW:** ym_clay_final_status.py (new): comprehensive status collector — ALL T1 identities (residuals 0.00e+00): I₄=4/3 [T1], Q_top=2 [T1], g_eff²=8/27 [T1], Q_top=I₄×N_c/2 [T1], m_hat_4D=Λ_QCD [T1], 4π>I₄²×Q_top [T1]; JW criteria 7/7 T2a verified; full gap hierarchy 812<861<1033<1475≤1527≤1730 MeV [T2a]; SP completeness: SP1 100%/SP2 98%/SP3 50%/SP4 80%/SP5 80%; remaining T4: C_match +0.34% (SP5 S10 only); ALL ASSERTIONS PASSED. yang_mills_clay.md updated C245→C247.
 - **C246:** 4π > I₄²×Q_top T1 NEW; Nambu-Goto hierarchy consistent T2a; m_0++=1527 MeV in lattice window T3. SP2 98% (unchanged — remaining T3 identification).
 - **C245:** SP2 4D BPS explicit I₄ form T3→T2a; m_hat_4D=Λ_QCD T1; SP2 98%. Clay ~76%→~77%.
