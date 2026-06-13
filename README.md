@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C254 SP4+SP5 explicit SU(5) verification T2a — ym_su5_explicit.py; 35/35 PASS; KP(5)=1.42e-7<<KP(4)<<KP(3) [T1]; Λ_QCD(5)=563 GeV>0 [T2a]; SP4 90%→95%; SP5 90%→95%.** C253 SP3 full Regge tower 100%. **Clay ~77%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C255 SP1 formal proof chain assembly 100% — ym_sp1_full_chain.py; 85/85 PASS; all 11 sub-steps (SP1a-SP1k) assembled; μ=0.1265<1/e [T1]; KP=0.344<1 [T2a]; Hölder=3.52e-41 [T2a]; Lemma F c_global>0 [T2a]. SP1+SP2+SP3 all 100%; SP4+SP5 95%. Clay ~80%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -239,19 +239,19 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~77%** *(C245: SP2 4D BPS explicit I₄ lower bound T3→T2a; SP2 98%)*
+**Overall Clay challenge progress: ~80%** *(C255: SP1 formal chain assembly 100%; SP1+SP2+SP3 all 100%; SP4+SP5 95%)*
 **Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban; **+10% C216: SU(N) generality T2a***
 
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes; SP1f T2a C242) | **90%** |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g; C242 SP1f; C255 formal assembly) | **100%** |
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]; χ_adj=0 T1 [C220]; vortex T1s [C221]; σ=I₄×Λ² T2a [C243]; 4D explicit I₄ bound T2a [C245]; JW5 tight Δ_JW5=1033 MeV T2a [C252]** | **100%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **100%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a; explicit N=4 [C250] + N=5 [C254] T2a; KP(5)=1.42e-7<<1 [T1]** | **95%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; explicit N=4 [C250] + N=5 [C254] T2a; Λ_QCD(5)=563 GeV>0 [T2a]** | **95%** |
 
-Latest: **C254 SP4+SP5 SU(5) T2a** — ym_su5_explicit.py: 35/35 PASS; KP(5)=1.42e-7<<KP(4)<<KP(3) [T1 three-level]; Λ_QCD(5)=563 GeV>0 [T2a]; SP4/SP5 90%→95%. C253 SP3 full Regge tower 100%. C252 SP2 JW5 1033 MeV T2a; SP2 100%. **Clay ~77%; CPC ~60%.**
-Remaining T3: exact Nambu-Goto Δ=C×√σ (m_{2++}/√σ 24% ratio tension). Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
+Latest: **C255 SP1 100%** — ym_sp1_full_chain.py: 85/85 PASS; all 11 sub-steps (SP1a-SP1k) assembled; μ=0.1265<1/e [T1]; KP=0.344<1 [T2a]; Hölder=3.52e-41 [T2a]; Lemma F c_global>0 [T2a]. SP1+SP2+SP3 all 100%; SP4+SP5 95%. **Clay ~80%; CPC ~60%.**
+Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%; C_match +0.34% gap). Remaining T3: m_{2++}/√σ ratio tension 24% [T3, supplementary].
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 

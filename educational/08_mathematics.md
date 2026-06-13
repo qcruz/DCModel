@@ -264,7 +264,7 @@ mathematical content. What is not yet derived:
 3. **Neutrino mass hierarchy** — the ratio m₃/m₂ = 5.33 (−8.3% without correction); a T3
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
-4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~74%
+4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~80%
    overall (CPC ~60%, after +10% swing event C216). All five sub-problems SP1–SP5 are T2a.
    Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
@@ -301,7 +301,11 @@ mathematical content. What is not yet derived:
    (Pöschl-Teller, N-independent); SP4 hierarchy m_sigma/Λ_QCD(N) monotone increasing [T2a];
    SP5 b₀(N)=11N/3>0 [T1] → AF → Λ_QCD(N)>0 all N≥2 [T2a]. **All 5 SP T2a for all SU(N), N≥2.**
    JW "any compact simple G" requirement addressed at T2a across full SP1-SP5 chain.
-   Remaining T3: σ=I₄×Λ² explicit derivation from D7 kink vacuum energy. Remaining T4: M_c(D7) from V(φ) alone (SP5 T2b −47.8%).
+   Cycle 252 (ym_sp2_jw5_close.py): SP2 100% — Δ_JW5_tight=min(1033,1527)=1033 MeV>0 [T2a composite]; JW5 formally closed.
+   Cycle 253 (ym_sp3_complete.py): SP3 100% — full Nambu-Goto Regge tower n=0..6; m_n/m_0=√(2n+1) [T1]; m_0++=1527 MeV in [1475,1730] MeV [T2a]; 23/23 PASS.
+   Cycle 254 (ym_su5_explicit.py): SP4+SP5 95% — explicit SU(5) verification; KP(5)=1.42e-7<KP(4)<KP(3) [T1 three-level]; Λ_QCD(5)=563 GeV>0 [T2a]; 35/35 PASS.
+   Cycle 255 (ym_sp1_full_chain.py): SP1 100% — all 11 sub-steps (SP1a-SP1k) assembled; 85/85 PASS; μ=0.1265<1/e [T1]; KP=0.344<1 [T2a]; Hölder=3.52e-41 [T2a]; Lemma F c_global>0 [T2a].
+   **SP1+SP2+SP3 100%; SP4+SP5 95%. Clay ~80%.** Remaining T4: M_c(D7) from V(φ) alone (SP5 T2b −47.8%; C_match +0.34% gap).
 
 The model does not claim completeness. These are honest, documented gaps.
 

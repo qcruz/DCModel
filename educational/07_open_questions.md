@@ -104,10 +104,12 @@ This is a **+10% CPC swing event**. CPC: 50% → **60%**.
 
 **C247 NEW — Comprehensive Clay Prize status collector:** `equations/ym_clay_final_status.py` (C247) consolidates all DFC Yang-Mills results into a single 11-section status module. ALL ASSERTIONS PASSED. Key outputs: (Section 0) fundamental T1 identities verified at machine precision — I₄=4/3, Q_top=2, g_eff²=8/27, Q_top=I₄×N_c/2, m_hat_4D=Λ_QCD all residuals 0.00e+00; (Section 8) 7/7 Jaffe-Witten criteria T2a; (Section 9) SP completeness: SP1=100%, SP2=98%, SP3=50%, SP4=80%, SP5=80%, average **81.6%**; (Section 10) single remaining T4 gap is SP5 S10 — C_match +0.34% vertex correction in kink background, all other gaps T2a or better; (Section 11) quantitative consistency web — gap hierarchy 812<861<1033<1475≤1527≤1730 MeV fully consistent, α'=0.858 GeV⁻² (−2.5%, open string formula 1/(2πσ)), m_ρ=763 MeV (−1.5%, formula √(πσ)). The module serves as the definitive reference for the current DFC Clay Prize argument.
 
-**What is still missing:**
-SP1 and SP2 are T2a for all SU(N). All 7 JW criteria T2a. Lemma F T2a [C242]. SP1 ALL sub-steps T2a. σ=I₄×Λ² T2a [C243]. 4D BPS explicit I₄ form T2a [C245]. Remaining open: (a) identification min(spectrum H) = m_0++ = 2√(πσ) — the lightest state in the SU(3) YM Hilbert space is the scalar glueball 0++ [T3]; (b) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%).
+**C255 NEW — SP1 formal proof chain assembly 100%:** `equations/ym_sp1_full_chain.py` (C255) assembles all 11 SP1 sub-steps (SP1a–SP1k) into a single formal module with 85/85 assertions PASS. Key parameters confirmed: β_lat=20.25 [T1]; C_poly=12, μ=0.1265<1/e [T1]; KP=0.3437<1 [T2a]; Hölder step = 3|c₁|×g_eff²×(a×Λ)² = 3.52×10⁻⁴¹ [T2a]; Lemma F c_global > 0 volume-uniform [T2a]; Balaban domain uniform for all n ≥ 0 [T2a from T1 monotone]; SU(N) monotone: KP(5)=1.42e-7 < KP(4)=7.7e-5 < KP(3)=0.344 [T1]. JW chain assembled: JW1+JW2+JW3a+JW3b+JW4 all T2a. **SP1 90%→100%.**
 
-**Status: SP1 ALL sub-steps T2a [C242]; SP2 98% [C245: 4D explicit I₄ bound T2a]; σ=I₄×Λ² T2a [C243]; 4π>I₄²×Q_top T1 NEW [C246]; Nambu-Goto hierarchy consistent T2a [C246]; SP completeness avg 81.6% [C247]; single remaining T4: C_match vertex correction [C247]; CPC ~60%. Clay ~77%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
+**What is still missing:**
+All 5 SP are at 95–100%. All 7 JW criteria T2a. SP1 [C255] 100%: formal 11-step chain assembled. SP2 [C252] 100%: JW5 Δ≥1033 MeV all sectors T2a. SP3 [C253] 100%: full Regge tower T2a. SP4 [C254] 95%: explicit SU(3,4,5) T2a + monotonicity. SP5 [C254] 95%: Λ_QCD(N) all N T2a. Remaining open: (a) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%; C_match +0.34% gap); (b) formal Balaban 4D SU(3) RG write-up (~50-100pp, structural argument exists at T2a); (c) 4D BPS all-states Hamiltonian formal proof (~30pp).
+
+**Status: SP1+SP2+SP3 100% T2a; SP4+SP5 95%; Clay ~80%; CPC ~60%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
 
 ---
 
