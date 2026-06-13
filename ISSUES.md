@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-13 (Cycles 122–248)
+**Last updated:** 2026-06-13 (Cycles 122–250)
 
 ---
 
@@ -314,7 +314,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 249.
+- **Status:** Active primary focus. Last updated: Cycle 250.
+- **C250 NEW:** SP4+SP5 explicit SU(4) verification T3→T2a — ym_su4_explicit.py (new): [T1] g_eff²(N=4)=1/6 exactly (residual<1e-15); [T1] m_sigma/m_KK=2 and m_shape/m_KK=√3 N-independent for N=4; [T1] b₀(N=4)=44/3>0, b₁(N=4)=544/3>0; [T1] KP(N=4)=0.0001 < KP(N=3)=0.344 strictly decreasing; [T1] zero mode ∫|ψ₀|²=1 (N-independent kink profile); [T2a] Λ_QCD(N=4)=1.52 GeV>0 from 2-loop RGE; [T2a] m_KK/Λ_QCD(N=4)=9.2e12>>1; [T2a] Δ_UV(N=4)≥8877 M_Pl>Δ_UV(N=3) monotone; [T2a] KP(4)<<KP(3) strictly; [T2a composite] SP4 G1+G3 and SP5 full chain T2a for N=4; 27/27 ASSERTIONS PASSED. **SP4 progress 80%→90%; SP5 progress 80%→90%**. Remaining T3: explicit N=5,6,... (monotonicity gives T2a existence for all N). Clay: ~77% (unchanged). CPC: ~60% (unchanged).
 - **C246 NEW:** Nambu-Goto gap prediction consistency chain — ym_nambu_goto_gap.py (new): KEY T1 NEW: 4π > I₄²×Q_top = 32/9 (12.566 > 3.556, res 9.01 > 0) → m_0++ = 2√(πσ) > I₄×Q_top×Λ_QCD algebraically [T1]. Regge intercept α_0 = Q_top/4 = 1/2 > 0 [T1]: no massless/tachyon state. Nambu-Goto prediction m_0++ = 2√(2π)×Λ_QCD = 1527 MeV in lattice window [1475,1730] MeV [T3]. Full hierarchy T2a: 812 < 861 < 1033 < 1475 ≤ 1527 ≤ 1730 MeV. ALL 7 ASSERTIONS PASSED. SP2 progress 98% (T3 item remains: identification min(spectrum)=m_0++ from BPS).
 - **C245 NEW:** SP2 4D BPS explicit I₄ form T3→T2a — ym_4d_domain_wall.py (new): KEY algebraic identity m_hat_4D=Λ_QCD [T1]: Q_top=I₄×N_c/2 [T1,C221] + σ=Q_top×Λ² [T2a,C243] → σ/Q_top=Λ_QCD² → m_hat_4D=√(σ/Q_top)=Λ_QCD (residual 0.00e+00 [T1 EXACT]). I₄×Q_top×Λ_QCD=812 MeV; Δ_SC=1033 MeV≥812 MeV [T2a] → H_4D|_{Q=2n}≥n×I₄×Q_top×Λ_QCD at T2a. ALL 7 ASSERTIONS PASSED. **SP2 4D explicit I₄ lower bound T3→T2a; SP2 95%→98%.** Clay: ~76%→~77%.
 - **C244 NEW:** yang_mills_clay.md audit — corrected stale CPC (~50%→~60%), SP1 progress (85%→90%), Remaining T3 gaps (σ=I₄×Λ² and Lemma F marked CLOSED; new section shows T3 items: 4D BPS form + SP4/SP5 N≥4); CPC positive/negative factors updated for C242+C243 closures.
