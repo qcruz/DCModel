@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C248 SP3 Q_top^DFC=2↔Q_top^YM=1 mapping T3→T2a — ym_qtop_mapping.py; 16/16 PASS; SP3 50%→75%.** C247 comprehensive status module; SP completeness avg 81.6%. C245 m_hat_4D=Λ_QCD [T1 EXACT]; SP2 98%. **Clay ~77%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C249 SP3 sector decomposition T3→T2a — ym_sector_decomposition.py; 20/20 PASS; Q_DFC∈2ℤ T1; H=⊕H_n T2a; JW5 Δ≥812 MeV T2a composite; J^{PC}=0++ T2a; SP3 75%→87%.** C248 Q_top mapping T2a. C245 m_hat_4D=Λ_QCD [T1 EXACT]; SP2 98%. **Clay ~77%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
