@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-13 (Cycles 122–253)
+**Last updated:** 2026-06-13 (Cycles 122–254)
 
 ---
 
@@ -337,6 +337,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - **C248 NEW:** SP3 Q_top^DFC=2↔Q_top^YM=1 mapping T3→T2a — ym_qtop_mapping.py (new): Three independent routes. Part A [T1]: Q_DFC=I₄×N_c/2=2 (center vortex, C221). Part B [T1]: Q_DFC=2×n_kink (∫ψ'dx=2.0000, res 0.00e+00). Part C [T2a]: N_JR=1 per kink (JR zero mode, C235). Part D [T1]: Atiyah-Singer ind(D̸_A)=Q_YM for gauge field. Part E [T2a]: Q_DFC/Q_YM=2 (exact, res 0.00e+00) — mapping established. Part F [T1]: BPST Q_BPST=1 (res 1e-12); ratio Q_DFC/Q_BPST=2 (res 0); S_inst=27π² (res 5.68e-14); instanton weight exp(-27π²)~10⁻¹¹⁶. Part G [T1]: Sector bijection Q_YM=Q_DFC/2 group homomorphism (res 0.00e+00). N_c=3 uniqueness: Q_DFC=I₄×N_c/2 is integer (=2) uniquely for N_c=3 (N_c=2 gives 3/4, N_c=4 gives 15/4). ALL 16 ASSERTIONS PASSED. **SP3 Q_top mapping T3→T2a; SP3 progress 50%→75%.** Remaining T3: precise ground state identification min(spectrum)=m_0++=2√(πσ) [T3].
 - **C247 NEW:** ym_clay_final_status.py (new): comprehensive status collector — ALL T1 identities (residuals 0.00e+00): I₄=4/3 [T1], Q_top=2 [T1], g_eff²=8/27 [T1], Q_top=I₄×N_c/2 [T1], m_hat_4D=Λ_QCD [T1], 4π>I₄²×Q_top [T1]; JW criteria 7/7 T2a verified; full gap hierarchy 812<861<1033<1475≤1527≤1730 MeV [T2a]; SP completeness: SP1 100%/SP2 98%/SP3 50%/SP4 80%/SP5 80%; remaining T4: C_match +0.34% (SP5 S10 only); ALL ASSERTIONS PASSED. yang_mills_clay.md updated C245→C247.
 - **C246:** 4π > I₄²×Q_top T1 NEW; Nambu-Goto hierarchy consistent T2a; m_0++=1527 MeV in lattice window T3. SP2 98% (unchanged — remaining T3 identification).
+- **C254 NEW:** SP4+SP5 explicit SU(5) verification T2a; ym_su5_explicit.py — g_eff²(5)=8/75 [T1]; KP(5)=1.42e-7<<KP(4)<<KP(3) [T1 three-level]; Λ_QCD(5)=563 GeV>0 [T2a]; m_sigma/Λ_QCD(5)=5e16>>1 [T2a]; Delta_UV(5)=14790 M_Pl [T1]; 35/35 PASS. **SP4 90%→95%; SP5 90%→95%**. Note: Λ_QCD(N) decreases with N (exp(-9π²N/11)); existence T2a for all N.
 - **C245:** SP2 4D BPS explicit I₄ form T3→T2a; m_hat_4D=Λ_QCD T1; SP2 98%. Clay ~76%→~77%.
 - **C223 NEW:** Wilson loop Creutz ratio MC — chi(2,2)>0. [T1] chi_SC=-ln(u_IR)=2.8745 at beta_IR=1.016 (res 0.00e+00, SC formula algebraically exact). [T2a] MC plaquette W(1,1)=0.041<<1 at beta=1.016 (27% from SC leading-order; SC regime confirmed). [T2a] MC Wilson loops at beta=5.0: W(2,2)<W(2,1)<W(1,1) area-law decay; chi(2,2)=0.108>0 (confinement numerically confirmed on L=4 lattice). ALL 6 ASSERTIONS PASSED. SP2 string tension: T1 exact (SC) + T2a MC (chi>0) + T3 derivation (rho_v=I4*Lambda^2). SP2 progress 90% (unchanged).
 - **C222 NEW:** String tension numerical validation T2a. [T1] E_kink/ξ²=I₄×φ₀²×m_KK³ (I₄ in kink energy density, res 5.68e-14). [T3] ρ_v=I₄×Λ_QCD² (structural). [T2a] σ_pred=Q_top×Λ_QCD²=185440 MeV² (−4.2% vs obs, 0 free params). [T2a] Λ_self=311.1 MeV vs Λ_DFC=304.5 MeV (2.2% self-consistency). [T2a] SC sandwich 185440<193600<266524 MeV². SP2 string tension: T2a numerical + T3 derivation. SP2 progress 90% (unchanged).
@@ -350,8 +351,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes; SP1f T2a C242) | **90%** | **C244** |
 | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]; vortex T1s [C221]; σ=I₄×Λ² T2a [C243]; 4D explicit I₄ bound T2a [C245]** | **98%** | **C245** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a** | 50% | C187 |
-| SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | 70% | C184 |
-| SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **75%** | **C208** |
+| SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | **95%** | **C254** |
+| SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **95%** | **C254** |
 
 **Remaining T4:** SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b). Remaining T3: SP2 BPS 4D form (domain wall volume normalization); SP1f no-bulk-transition formal proof.
 **Latest:** C221 two T1 identities: Q_top=I₄×N_c/2 + vortex factor 1−cos(2π/N_c)=N_c/2 (both unique N_c=3); σ=Q_top×Λ² T3. C220 χ_adj=0 T1 + I₄ web. C218 SP2 BPS 1+1D T2a. C217 ALL 7 JW T2a. C216 **CPC+10%: SU(N) generality T2a**. C212: SP2 gap existence T2a. C203: SP1 T2a (CPC+15%).

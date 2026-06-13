@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C253 SP3 full Regge tower T2a — ym_sp3_complete.py; 23/23 PASS; m_n=2√((2n+1)πσ) all n≥0; SP3 95%→100%.** C252 SP2 JW5 tight bound 1033 MeV; SP2 100%. **Clay ~77%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C254 SP4+SP5 explicit SU(5) verification T2a — ym_su5_explicit.py; 35/35 PASS; KP(5)=1.42e-7<<KP(4)<<KP(3) [T1]; Λ_QCD(5)=563 GeV>0 [T2a]; SP4 90%→95%; SP5 90%→95%.** C253 SP3 full Regge tower 100%. **Clay ~77%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -247,11 +247,11 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes; SP1f T2a C242) | **90%** |
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]; χ_adj=0 T1 [C220]; vortex T1s [C221]; σ=I₄×Λ² T2a [C243]; 4D explicit I₄ bound T2a [C245]; JW5 tight Δ_JW5=1033 MeV T2a [C252]** | **100%** |
 | SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **100%** |
-| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a; explicit N=4 T2a [C250]** | **90%** |
-| SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; explicit N=4 T2a [C250]** | **90%** |
+| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a; explicit N=4 [C250] + N=5 [C254] T2a; KP(5)=1.42e-7<<1 [T1]** | **95%** |
+| SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; explicit N=4 [C250] + N=5 [C254] T2a; Λ_QCD(5)=563 GeV>0 [T2a]** | **95%** |
 
-Latest: **C253 SP3 full Regge tower T2a** — ym_sp3_complete.py: m_n=2√((2n+1)πσ); 23/23 PASS; SP3 100%. C252 SP2 JW5 tight bound Δ_JW5=1033 MeV T2a; SP2 100%. C250 SP4/SP5 SU(4) T2a; SP4/SP5 90%. **Clay ~77%; CPC ~60%.**
-Remaining T3: exact Nambu-Goto Δ=C×√σ; SP4/SP5 N≥5 explicit (monotonicity gives T2a existence). Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
+Latest: **C254 SP4+SP5 SU(5) T2a** — ym_su5_explicit.py: 35/35 PASS; KP(5)=1.42e-7<<KP(4)<<KP(3) [T1 three-level]; Λ_QCD(5)=563 GeV>0 [T2a]; SP4/SP5 90%→95%. C253 SP3 full Regge tower 100%. C252 SP2 JW5 1033 MeV T2a; SP2 100%. **Clay ~77%; CPC ~60%.**
+Remaining T3: exact Nambu-Goto Δ=C×√σ (m_{2++}/√σ 24% ratio tension). Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b −47.8%).
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
