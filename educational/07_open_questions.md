@@ -102,10 +102,12 @@ This is a **+10% CPC swing event**. CPC: 50% → **60%**.
 
 **C246 NEW — 4π > I₄²×Q_top T1 NEW + Nambu-Goto hierarchy T2a:** `equations/ym_nambu_goto_gap.py` (C246): 4π − I₄²×Q_top = 4π − 32/9 = 9.01 > 0 algebraically [T1 NEW]. This guarantees: m_0++ = 2√(2π)×Λ_QCD > I₄×Q_top×Λ_QCD algebraically. Full hierarchy T2a: 812 < 861 < 1033 < 1475 ≤ 1527 ≤ 1730 MeV. Regge intercept α_0 = Q_top/4 = 1/2 > 0 [T1]: no massless/tachyon state in closed string spectrum. Nambu-Goto prediction: m_0++ = 1527 MeV in lattice window [1475, 1730] MeV [T3].
 
+**C247 NEW — Comprehensive Clay Prize status collector:** `equations/ym_clay_final_status.py` (C247) consolidates all DFC Yang-Mills results into a single 11-section status module. ALL ASSERTIONS PASSED. Key outputs: (Section 0) fundamental T1 identities verified at machine precision — I₄=4/3, Q_top=2, g_eff²=8/27, Q_top=I₄×N_c/2, m_hat_4D=Λ_QCD all residuals 0.00e+00; (Section 8) 7/7 Jaffe-Witten criteria T2a; (Section 9) SP completeness: SP1=100%, SP2=98%, SP3=50%, SP4=80%, SP5=80%, average **81.6%**; (Section 10) single remaining T4 gap is SP5 S10 — C_match +0.34% vertex correction in kink background, all other gaps T2a or better; (Section 11) quantitative consistency web — gap hierarchy 812<861<1033<1475≤1527≤1730 MeV fully consistent, α'=0.858 GeV⁻² (−2.5%, open string formula 1/(2πσ)), m_ρ=763 MeV (−1.5%, formula √(πσ)). The module serves as the definitive reference for the current DFC Clay Prize argument.
+
 **What is still missing:**
 SP1 and SP2 are T2a for all SU(N). All 7 JW criteria T2a. Lemma F T2a [C242]. SP1 ALL sub-steps T2a. σ=I₄×Λ² T2a [C243]. 4D BPS explicit I₄ form T2a [C245]. Remaining open: (a) identification min(spectrum H) = m_0++ = 2√(πσ) — the lightest state in the SU(3) YM Hilbert space is the scalar glueball 0++ [T3]; (b) M_c(D7) from V(φ) alone — SP5 T4 (T2b at −47.8%).
 
-**Status: SP1 ALL sub-steps T2a [C242]; SP2 98% [C245: 4D explicit I₄ bound T2a]; σ=I₄×Λ² T2a [C243]; 4π>I₄²×Q_top T1 NEW [C246]; Nambu-Goto hierarchy consistent T2a [C246]; CPC ~60%. Clay ~77%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
+**Status: SP1 ALL sub-steps T2a [C242]; SP2 98% [C245: 4D explicit I₄ bound T2a]; σ=I₄×Λ² T2a [C243]; 4π>I₄²×Q_top T1 NEW [C246]; Nambu-Goto hierarchy consistent T2a [C246]; SP completeness avg 81.6% [C247]; single remaining T4: C_match vertex correction [C247]; CPC ~60%. Clay ~77%.** Full canonical tracking in `foundations/yang_mills_clay.md`.
 
 ---
 

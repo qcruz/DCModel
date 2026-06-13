@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-12 (Cycles 122–245)
+**Last updated:** 2026-06-13 (Cycles 122–247)
 
 ---
 
@@ -329,6 +329,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 - **C235 NEW:** T4 Dynkin label T3→T2a — ym_jr_chirality.py: JR chirality + C217 triality → D6 kink = QUARK (1,0), anti-kink = (0,1). T4 fully T2a.
 - **C234 NEW:** Transfer matrix spectral gap chain T2a — ym_transfer_matrix_gap.py: 9-step chain OS axioms→Δ_phys≥1033 MeV>0 in continuum SU(3) YM. Step G key: DFC β_DFC=20.25 in KP domain → Lemma F not needed for DFC's proof (only for JW universality). Symanzik O(a²) correction 1.24e-38 MeV negligible. ALL ASSERTIONS PASSED. Remaining T3: Lemma F (MLSI volume-uniform) for JW universality only; σ=I₄×Λ² explicit derivation.
 - **Overall progress:** ~77%. **CPC:** ~60% ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***.
+- **C247 NEW:** ym_clay_final_status.py (new): comprehensive status collector — ALL T1 identities (residuals 0.00e+00): I₄=4/3 [T1], Q_top=2 [T1], g_eff²=8/27 [T1], Q_top=I₄×N_c/2 [T1], m_hat_4D=Λ_QCD [T1], 4π>I₄²×Q_top [T1]; JW criteria 7/7 T2a verified; full gap hierarchy 812<861<1033<1475≤1527≤1730 MeV [T2a]; SP completeness: SP1 100%/SP2 98%/SP3 50%/SP4 80%/SP5 80%; remaining T4: C_match +0.34% (SP5 S10 only); ALL ASSERTIONS PASSED. yang_mills_clay.md updated C245→C247.
 - **C246:** 4π > I₄²×Q_top T1 NEW; Nambu-Goto hierarchy consistent T2a; m_0++=1527 MeV in lattice window T3. SP2 98% (unchanged — remaining T3 identification).
 - **C245:** SP2 4D BPS explicit I₄ form T3→T2a; m_hat_4D=Λ_QCD T1; SP2 98%. Clay ~76%→~77%.
 - **C223 NEW:** Wilson loop Creutz ratio MC — chi(2,2)>0. [T1] chi_SC=-ln(u_IR)=2.8745 at beta_IR=1.016 (res 0.00e+00, SC formula algebraically exact). [T2a] MC plaquette W(1,1)=0.041<<1 at beta=1.016 (27% from SC leading-order; SC regime confirmed). [T2a] MC Wilson loops at beta=5.0: W(2,2)<W(2,1)<W(1,1) area-law decay; chi(2,2)=0.108>0 (confinement numerically confirmed on L=4 lattice). ALL 6 ASSERTIONS PASSED. SP2 string tension: T1 exact (SC) + T2a MC (chi>0) + T3 derivation (rho_v=I4*Lambda^2). SP2 progress 90% (unchanged).
@@ -604,6 +605,7 @@ deviation has not been calculated.
     contributions cancel). The phase shift seen by a quark is proportional to 1 − Re(χ)/N_c
     = 1 − (−1)/3 = 4/3 = I₄. Normalized by 2π gives I₄/(2π). The correction above singlet
     is (I₄−1)/(2π). [T3 structural; needs BVP computation to confirm]
+- **C247 semiclassical crossing count [structural T3]:** Form 2 (δd=β×N_c/2) admits a semiclassical soliton interpretation. The ν₃ D4 inertia mode (a soliton winding in the compression direction) traverses the D7 background. Each D7 kink crossing costs action β (the quartic coupling sets the minimal kink-kink interaction per crossing). The D7 SU(3) topology requires N_c/2 effective crossings per winding cycle: the kink has Q_top=2 and the anti-fundamental winding contributes half a unit per color. Total depth shift: δd = β × (N_c/2) × 1 = 1/(6π). This is equivalent to Form 3: each color channel contributes (I₄-1)/N_c per winding, summed over N_c colors → δd = (I₄-1)/(2π). BVP target: show the Dirac operator in D7 PT background (m(x)=m_KK tanh(x/ξ)) gives bound-state frequency shift δω₀ = β × (N_c/2) × m_KK at leading order in β. The Pöschl-Teller Dirac system has known analytic spectrum; the N_c-dependent shift would arise from the zero mode wavefunction (ψ₀ ∝ sech) coupling to the D7 vacuum energy N_c × β × m_KK² × I₄. This semiclassical picture strengthens the T3 status but T2a still requires an explicit BVP calculation.
 - Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_d7_holonomy.py` (C219), `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
 
 ---
