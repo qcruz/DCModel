@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C250 SP4+SP5 explicit SU(4) T3→T2a — ym_su4_explicit.py; 27/27 PASS; g_eff²(4)=1/6 T1; KP(4)=0.0001<<1 T2a; Λ_QCD(4)=1.52 GeV T2a; SP4 80%→90%; SP5 80%→90%.** C249 SP3 sector decomp T2a; SP3 87%. C245 m_hat_4D=Λ_QCD [T1 EXACT]; SP2 98%. **Clay ~77%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C251 SP3 ground state T3→T2a — ym_sp3_ground_state.py; 27/27 PASS; m_{0++}=2√(πσ)=1527 MeV in lattice window [1475,1730] T2a; m_{2++}/m_{0++}=√3 T1; SP3 87%→95%.** C250 SP4/SP5 explicit SU(4) T2a; SP4/SP5 90%. **Clay ~77%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -246,7 +246,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 |---|---|---|---|
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g closes; SP1f T2a C242) | **90%** |
 | SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]; χ_adj=0 T1 [C220]; vortex T1s [C221]; σ=I₄×Λ² T2a [C243]; 4D explicit I₄ bound T2a [C245]: m_hat_4D=Λ_QCD T1** | **98%** |
-| SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **87%** |
+| SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **95%** |
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a; explicit N=4 T2a [C250]** | **90%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; explicit N=4 T2a [C250]** | **90%** |
 
