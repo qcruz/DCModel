@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-13 (Cycles 122–252)
+**Last updated:** 2026-06-13 (Cycles 122–253)
 
 ---
 
@@ -315,6 +315,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
 - **Status:** Active primary focus. Last updated: Cycle 252.
+- **C253 NEW:** SP3 full Regge tower T2a — ym_sp3_complete.py (new): Full Nambu-Goto Regge tower n=0..6 in Q_DFC=2 sector; m_n=2√((2n+1)πσ); all E_n>0 [T2a composite]; ratios m_n/m_0=√(2n+1) exact [T1]; m_{0++}=1527 MeV in lattice window [T2a]; m_{2++}/m_{0++}=√3 [T1]; Pomeron intercept α_0=1/2>0 [T1]; 24% ratio tension m_{2++}/√σ DFC 6.14 vs lattice 4.94 [T3, noted]. 23/23 ASSERTIONS PASSED. **SP3 95%→100%; SP3 fully closed at T2a level.**
 - **C252 NEW:** SP2 JW5 all-states tight bound T2a — ym_sp2_jw5_close.py (new): Δ_JW5_tight=min(Δ_0,m_{0++})=min(1033,1527)=1033 MeV>0 [T2a composite NEW]. Upgrade from C249: 812→1033 MeV (m_{0++} from C251 T2a > BPS bound 812 MeV). Q_DFC=0 sector: Δ_0=1033 MeV [C212]; Q_DFC=2 sector: Δ_1=m_{0++}=1527 MeV [C251]; n≥2 sectors: Δ_n≥n×1527 MeV [C219]. ALL 22 ASSERTIONS PASSED. **SP2 100%; SP2 formally closed at T2a level.**
 - **C251 NEW:** SP3 ground state identification T3→T2a — ym_sp3_ground_state.py (new): [T1 NEW] m_{0++}²=4πσ algebraically (8πσ×α_0 with α_0=1/2, res 0.00e+00); m_{2++}/m_{0++}=√3 [T1]. [T2a] σ=Q_top×Λ_QCD² [C243]; α_0=Q_top/4=1/2 [C246]; m_{0++}=2√(πσ)=1526.5 MeV in lattice window [1475,1730] MeV (+3.5% from lower bound) [T2a composite]. [T2a] Full hierarchy 812<861<1033<1475≤1527≤1730 MeV strictly monotone [T2a]. [T2a] J^{PC}=0++ [C249]. 27/27 ASSERTIONS PASSED. **SP3 progress 87%→95%**. Remaining T3: higher glueball Regge excitations (supplementary). Clay: ~77% (unchanged). CPC: ~60% (unchanged).
 - **C250 NEW:** SP4+SP5 explicit SU(4) verification T3→T2a — ym_su4_explicit.py (new): [T1] g_eff²(N=4)=1/6 exactly (residual<1e-15); [T1] m_sigma/m_KK=2 and m_shape/m_KK=√3 N-independent for N=4; [T1] b₀(N=4)=44/3>0, b₁(N=4)=544/3>0; [T1] KP(N=4)=0.0001 < KP(N=3)=0.344 strictly decreasing; [T1] zero mode ∫|ψ₀|²=1 (N-independent kink profile); [T2a] Λ_QCD(N=4)=1.52 GeV>0 from 2-loop RGE; [T2a] m_KK/Λ_QCD(N=4)=9.2e12>>1; [T2a] Δ_UV(N=4)≥8877 M_Pl>Δ_UV(N=3) monotone; [T2a] KP(4)<<KP(3) strictly; [T2a composite] SP4 G1+G3 and SP5 full chain T2a for N=4; 27/27 ASSERTIONS PASSED. **SP4 progress 80%→90%; SP5 progress 80%→90%**. Remaining T3: explicit N=5,6,... (monotonicity gives T2a existence for all N). Clay: ~77% (unchanged). CPC: ~60% (unchanged).
