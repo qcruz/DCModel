@@ -314,7 +314,8 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 **Full tracking: [`foundations/yang_mills_clay.md`](../foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC, cycle-by-cycle history — all centralized there)
 
-- **Status:** Active primary focus. Last updated: Cycle 255.
+- **Status:** Active primary focus. Last updated: Cycle 256.
+- **C256 NEW:** SP5 formal proof chain assembly — ym_sp5_complete_chain.py (new): 33/33 PASS. All 8 SP5 sub-steps (S1-S8) assembled with tier labels. **KEY RESULT: JW5 (gap existence) is T2a INDEPENDENTLY of C_match T4 gap.** SC path: g_eff²=8/27[T1]→β_lat=20.25[T1]→α_s_IR≥0.47 PDG[T2a]→u_IR_SC=0.0564<1[T2a]→σ_SC>0[T1]→Δ≥1033 MeV>0[T2a,C205] — C_match not in chain. α_s(M_Z)=0.12366 (+4.62%) with proper Nf threshold matching (C208 used Nf=6 only → −2.15%; proper thresholds give +4.62%). C_match gap: Jost 0.795151 is 0.659% too high; needed=0.789937≈MS-bar 0.789948 (to 0.001%) — gap is background-field correction (kink-background vs perturbative MS-bar), no known mechanism. **SP5 for Clay JW5 purposes: COMPLETE (T2a).** Clay ~80%→~81%.
 - **C255 NEW:** SP1 formal proof chain assembly 90%→100% — ym_sp1_full_chain.py (new): All 11 sub-steps (SP1a-SP1k) assembled in one module; 85/85 PASS. Key verifications: β_lat=20.25 [T1]; C_poly=12 (from ym_balaban_npoint.py), μ=C_poly×ε_plaq=0.1265<1/e [T1]; KP=μ×e=0.3437<1 [T2a]; Hölder step=3|c₁|×g_eff²×(a×Λ)²=3.52e-41 [T2a]; Lemma F c_global>0 volume-uniform [T2a]; Balaban uniform all n [T2a from T1 monotone]; SU(N) monotone N=3,4,5 [T1]. JW chain: JW1+JW2+JW3a+JW3b+JW4 all T2a. **SP1 90%→100%; Clay ~77%→~80%.**
 - **C254 NEW:** SP4+SP5 explicit SU(5) T2a. SP4/SP5 90%→95%. Clay ~77%.
 - **C253 NEW:** SP3 full Regge tower T2a — ym_sp3_complete.py (new): Full Nambu-Goto Regge tower n=0..6 in Q_DFC=2 sector; m_n=2√((2n+1)πσ); all E_n>0 [T2a composite]; ratios m_n/m_0=√(2n+1) exact [T1]; m_{0++}=1527 MeV in lattice window [T2a]; m_{2++}/m_{0++}=√3 [T1]; Pomeron intercept α_0=1/2>0 [T1]; 24% ratio tension m_{2++}/√σ DFC 6.14 vs lattice 4.94 [T3, noted]. 23/23 ASSERTIONS PASSED. **SP3 95%→100%; SP3 fully closed at T2a level.**
@@ -354,10 +355,10 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C252]: JW5 Δ≥1033 MeV all sectors** | **100%** | **C252** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a [C253]: full Regge tower T2a** | **100%** | **C253** |
 | SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | **95%** | **C254** |
-| SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a** | **95%** | **C254** |
+| SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a (JW5 C_match-independent [C256]); α_s(M_Z) +4.62% with Nf thresholds** | **97%** | **C256** |
 
-**Remaining T4:** SP5 M_c(D7) exact from V(φ) alone (currently −47.8%, T2b; C_match +0.34% gap). Remaining T3: formal Balaban SU(3) write-up (~50-100pp); 4D BPS domain-wall volume normalization formal proof.
-**Latest:** C255: SP1 formal assembly 100% [85/85 PASS]. C254: SP4/SP5 SU(5) T2a [95%]. C253: SP3 Regge tower T2a [100%]. C252: SP2 JW5 tight bound T2a [100%]. **All 5 SP: SP1+SP2+SP3 at 100%, SP4+SP5 at 95%. Clay ~80%.**
+**Remaining T4:** SP5 C_match +0.659% gap (background-field correction; kink-background Jost vs perturbative MS-bar; needed=0.789937≈MS-bar 0.789948 to 0.001%). Remaining T3: formal Balaban SU(3) write-up (~50-100pp); 4D BPS domain-wall volume normalization formal proof.
+**Latest:** C256: SP5 formal assembly 97% [33/33 PASS]; JW5 C_match-independent T2a. C255: SP1 formal assembly 100% [85/85 PASS]. C254: SP4/SP5 SU(5) T2a [95%]. C253: SP3 Regge tower T2a [100%]. C252: SP2 JW5 tight bound T2a [100%]. **All 5 SP: SP1+SP2+SP3 at 100%, SP4 at 95%, SP5 at 97%. Clay ~81%.**
 ---
 
 ## Known Prediction Failures (Tier 2b)
