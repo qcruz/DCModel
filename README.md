@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C256 SP5 formal proof chain assembly 95%→97% — ym_sp5_complete_chain.py; 33/33 PASS. KEY: JW5 T2a independently of C_match T4 gap (SC path g_eff²→β_lat→u_IR_SC=0.0564<1→Δ_SC≥1033 MeV>0; C_match not in chain). α_s(M_Z)=0.12366 (+4.62%) with proper Nf thresholds. SP1+SP2+SP3 100%; SP4 95%; SP5 97%. Clay ~81%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C257 FP ghost threshold correction to C_match — ym_ghost_threshold.py; 7/7 PASS. s=1 PT ghost Jost ODE verified [T1]; ghost even-parity → 2cos(ky+arctan(κ/k)) [T1]; ghost correction structurally negative [T3 Grassmann]; C_match_tree=0.789948 is 0.001% from C_match_needed [T2a confirmed]. SP1+SP2+SP3 100%; SP4 95%; SP5 97%. Clay ~81%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -250,7 +250,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a; explicit N=4 [C250] + N=5 [C254] T2a; KP(5)=1.42e-7<<1 [T1]** | **95%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; Λ_QCD(5)=563 GeV>0 [T2a]; 33/33 PASS** | **97%** |
 
-Latest: **C256 SP5 97%** — ym_sp5_complete_chain.py: 33/33 PASS. KEY: JW5 T2a independently of C_match T4 gap — SC path g_eff²→β_lat=20.25→u_IR_SC=0.0564<1→Δ_SC≥1033 MeV>0 (C_match not in chain). α_s(M_Z)=0.12366 (+4.62%) with proper Nf thresholds. C_match gap = background-field correction 0.66%. SP1+SP2+SP3 100%; SP4 95%; SP5 97%. **Clay ~81%; CPC ~60%.**
+Latest: **C257 ghost threshold correction** — ym_ghost_threshold.py: 7/7 PASS. Ghost Jost ODE T1; ghost correction negative [T3]; C_match_tree 0.001% from needed [T2a]. C256: SP5 formal chain 97% — JW5 C_match-independent T2a. SP1+SP2+SP3 100%; SP4 95%; SP5 97%. **Clay ~81%; CPC ~60%.**
 Remaining T4: SP5 M_c(D7) from V(φ) alone (C_match background-field correction 0.66%). Remaining T3: m_{2++}/√σ ratio tension 24% [T3, supplementary].
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
