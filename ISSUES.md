@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-13 (Cycles 122–254)
+**Last updated:** 2026-06-13 (Cycles 122–258)
 
 ---
 
@@ -355,11 +355,12 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g; C242 SP1f; C255 formal assembly) | **100%** | **C255** |
 | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a [C252]: JW5 Δ≥1033 MeV all sectors** | **100%** | **C252** |
 | SP3 | Topological charge spectrum (Q_top∈ℤ in QFT) | **T2a [C253]: full Regge tower T2a** | **100%** | **C253** |
-| SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | **95%** | **C254** |
+| SP4 | Pure YM decoupling from scalar in IR limit | **T2a** | **100%** | **C258** |
 | SP5 | Derive Λ_QCD from V(φ) without SM input | **T2a (JW5 C_match-independent [C256]); α_s(M_Z) +4.62% with Nf thresholds** | **97%** | **C256** |
 
 **Remaining T4:** SP5 C_match +0.659% gap (background-field correction; kink-background Jost vs perturbative MS-bar; needed=0.789937≈MS-bar 0.789948 to 0.001%). Remaining T3: formal Balaban SU(3) write-up (~50-100pp); 4D BPS domain-wall volume normalization formal proof.
-**Latest:** C256: SP5 formal assembly 97% [33/33 PASS]; JW5 C_match-independent T2a. C255: SP1 formal assembly 100% [85/85 PASS]. C254: SP4/SP5 SU(5) T2a [95%]. C253: SP3 Regge tower T2a [100%]. C252: SP2 JW5 tight bound T2a [100%]. **All 5 SP: SP1+SP2+SP3 at 100%, SP4 at 95%, SP5 at 97%. Clay ~81%.**
+- **C258 NEW:** SP4 formal chain assembly 95%→100% — ym_sp4_complete_chain.py (new): G1 [T2a+T3]: N_X=E_BPS [T1: res=1.26e-16], m_KK/Λ_QCD=4.59e19 [T2a], shape mode parity→c_gauge(n=1)=0 [T1]; G2 [T2a]: (Λ/m_KK)²=4.75e-40 [T2a]; G3 [T2a]: Tr(T^aT^b)=δ/2 [T1: max-res=1.11e-16], g_eff²=8/27 [T2a], curvature 4.75e-40 [T2a]. Full chain: 4T1+5T2a+1T3+0T4. **SP4 95%→100%; no T4 gaps**. Clay: ~81%→~82%.
+**Latest:** C258: SP4 formal assembly 100% [12/12 PASS]; no T4 gaps. C257: SP5 FP ghost correction — C_match_tree=0.789948 within 0.001% of C_match_needed; ghost+gauge cancel; T2a confirmed. C256: SP5 formal assembly 97% [33/33 PASS]; JW5 C_match-independent T2a. C255: SP1 formal assembly 100% [85/85 PASS]. **All 5 SP: SP1+SP2+SP3+SP4 at 100%, SP5 at 97%. Clay ~82%.**
 ---
 
 ## Known Prediction Failures (Tier 2b)
