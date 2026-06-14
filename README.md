@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C259 Ghost Jost integral — ym_ghost_jost.py; 8/10 PASS. s=1 PT Jost ODE T1; |T₁|²=1 reflectionless T1; c_ghost≈2.47 [T3, integration convergence limited]; c_net≈0.31→δC≈+0.073%; C_match_total≈0.7905 (gap 0.074%); SP5 C_match T4→T3; Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C260 Ghost Jost analytic FT — ym_ghost_analytic.py; 9/9 PASS. FT[sech⁶](q)=πq(q²+4)(q²+16)/(120sinh(πq/2)) T1 exact; c_ghost=6.710258 T2a (smooth integrand, err≤1.75e-9); C_match bracket: gauge-only 0.795151 (+0.659%), ghost+gauge 0.787177 (−0.349%); tree-level 0.789948 ≈ needed 0.789937 (0.001%); SP5 C_match T4→T2a bracket; Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -239,8 +239,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~82%** *(C259: ghost Jost c_ghost≈2.47 T3, SP5 C_match T4→T3; C258: SP4 100%; SP1+SP2+SP3+SP4 100%; SP5 97%)*
-**Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban; **+10% C216: SU(N) generality T2a***
+**Overall Clay challenge progress: ~82%** *(C260: SP5 C_match T4→T2a bracket; C259: ghost Jost c_ghost≈2.47 T3; C258: SP4 100%; SP1+SP2+SP3+SP4 100%; SP5 97%)*
+**Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***
 
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
