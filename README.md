@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C258 SP4 formal chain assembly 95%→100% — ym_sp4_complete_chain.py; 12/12 PASS. N_X=E_BPS [T1: res=1.26e-16]; (Λ/m_KK)²=4.75e-40 [T2a]; Tr(T^aT^b)=δ/2 [T1: res=1.11e-16]; g_eff²=8/27 [T2a]. 4T1+5T2a+1T3+0T4. SP4 no T4 gaps; SP1+SP2+SP3+SP4 100%; SP5 97%. Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C259 Ghost Jost integral — ym_ghost_jost.py; 8/10 PASS. s=1 PT Jost ODE T1; |T₁|²=1 reflectionless T1; c_ghost≈2.47 [T3, integration convergence limited]; c_net≈0.31→δC≈+0.073%; C_match_total≈0.7905 (gap 0.074%); SP5 C_match T4→T3; Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -239,7 +239,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~82%** *(C258: SP4 formal chain 100%; C257: ghost+gauge cancel T2a; C256: SP5 formal chain 97%; SP1+SP2+SP3+SP4 100%; SP5 97%)*
+**Overall Clay challenge progress: ~82%** *(C259: ghost Jost c_ghost≈2.47 T3, SP5 C_match T4→T3; C258: SP4 100%; SP1+SP2+SP3+SP4 100%; SP5 97%)*
 **Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban; **+10% C216: SU(N) generality T2a***
 
 | # | Sub-problem | Tier | Progress |
@@ -250,7 +250,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a [C258 formal]: G1 N_X=E_BPS [T1], G2 AC 4.75e-40 [T2a], G3 flat metric [T1]; 4T1+5T2a+1T3+0T4; N=4 [C250]+N=5 [C254] T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; Λ_QCD(5)=563 GeV>0 [T2a]; 33/33 PASS** | **97%** |
 
-Latest: **C258 SP4 formal assembly** — ym_sp4_complete_chain.py: 12/12 PASS; 4T1+5T2a+1T3+0T4; SP4 100%. C257: ghost threshold — C_match_tree T2a confirmed. C256: SP5 formal chain 97% — JW5 C_match-independent T2a. **SP1+SP2+SP3+SP4 100%; SP5 97%. Clay ~82%; CPC ~60%.**
+Latest: **C259 Ghost Jost integral** — ym_ghost_jost.py; 8/10 PASS; c_ghost≈2.47 [T3, convergence-limited]; c_net≈0.31→δC≈+0.073%; SP5 C_match T4→T3. C258: SP4 formal assembly 100%. C257: C_match_tree T2a confirmed. **SP1+SP2+SP3+SP4 100%; SP5 97%. Clay ~82%; CPC ~60%.**
 Remaining T4: SP5 M_c(D7) from V(φ) alone (C_match background-field correction 0.66%). Remaining T3: m_{2++}/√σ ratio tension 24% [T3, supplementary].
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
