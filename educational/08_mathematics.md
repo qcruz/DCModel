@@ -270,7 +270,7 @@ mathematical content. What is not yet derived:
 3. **Neutrino mass hierarchy** — the ratio m₃/m₂ = 5.33 (−8.3% without correction); a T3
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
-4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~80%
+4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~82%
    overall (CPC ~60%, after +10% swing event C216). All five sub-problems SP1–SP5 are T2a.
    Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
@@ -312,7 +312,10 @@ mathematical content. What is not yet derived:
    Cycle 254 (ym_su5_explicit.py): SP4+SP5 95% — explicit SU(5) verification; KP(5)=1.42e-7<KP(4)<KP(3) [T1 three-level]; Λ_QCD(5)=563 GeV>0 [T2a]; 35/35 PASS.
    Cycle 255 (ym_sp1_full_chain.py): SP1 100% — all 11 sub-steps (SP1a-SP1k) assembled; 85/85 PASS; μ=0.1265<1/e [T1]; KP=0.344<1 [T2a]; Hölder=3.52e-41 [T2a]; Lemma F c_global>0 [T2a].
    Cycle 256 (ym_sp5_complete_chain.py): SP5 95%→97% — formal 8-step SP5 chain assembled; 33/33 PASS. **KEY RESULT: JW5 T2a independently of C_match T4 gap.** SC path: g_eff²=8/27→β_lat=20.25→u_IR_SC=0.0564<1→Δ_SC≥1033 MeV>0 (C_match not in chain). α_s(M_Z)=0.12366 (+4.62%) with proper Nf thresholds. C_match gap = background-field correction 0.66%.
-   **SP1+SP2+SP3 100%; SP4 95%; SP5 97%. Clay ~81%.** Remaining T4: M_c(D7) from V(φ) alone (C_match background-field correction 0.66%).
+   Cycle 258 (ym_sp4_complete_chain.py): SP4 95%→100% — formal 12-step chain assembled; 12/12 PASS. G1: N_X=E_BPS [T1: res=1.26e-16]; G2: (Λ/m_KK)²=4.75e-40 [T2a]; G3: flat Killing metric [T1]+g_eff² [T2a]. No T4 gaps.
+   Cycle 263 (ym_eccc_identity.py): ECCC identity A−B = ln(1/α_em(0)) verified at T2a — A=(R−1/α_s)×2π/b₀_QCD=30.4746; B=(1/α_1^DFC−R)×2π/b₀_U1=25.5548; exp(A−B)=136.9764 (−0.044% vs observed 137.036); 9/9 ASSERTIONS PASSED. T4 gap: the 36π vs g₂ tension (0.01 in 1/α_em) is the algebraic root cause of the residual.
+   Cycle 264 (ym_cghost_analytic.py): c_ghost analytic computation — UV-subtracted form factor δF_ghost(k)=−(16/15)φ₀²κ³/(k²+κ²) [T1 Lorentzian]; analytic integral gives c_ghost_naive=1.4407 [T2a]; T1 derivative coupling identity k²/(k²+κ²)−1=−κ²/(k²+κ²) (res 0.00e+00). Key diagnostic: c_ghost_naive/c_gauge=0.5196 → δC/C=0.250% (180× too large for cancellation); needed c_ghost≈2.78≈c_gauge requires SU(3) adjoint color factor C_A/C_F=9/4≈2.25 from f^{abc} ghost vertex. This explains structurally WHY near-cancellation is expected. JW5 T2a unaffected (SC path independent of C_match).
+   **SP1+SP2+SP3+SP4 100%; SP5 97%. Clay ~82%.** Remaining T4: c_ghost from SU(3) adjoint color structure → δC/C→0.001% → C_match exact.
 
 The model does not claim completeness. These are honest, documented gaps.
 

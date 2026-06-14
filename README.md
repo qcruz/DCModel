@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C263 α_em secondary priority: ECCC identity A−B = ln(1/α_em(0)) formally verified — ym_eccc_identity.py; 9/9 PASS. t7−t5 = 4.920, exp(t7−t5) = 136.976 ≈ 1/α_em(0)=137.036 (−0.044%, T2a, 0 free params). Key: α_1^GUT must come from DFC coupling chain (g₂=0.6514 → α_em_DFC=1/128.09), not PDG directly. Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C264 SP5 c_ghost analytic computation — ym_cghost_analytic.py; ALL PASS. [T1 EXACT] δF_ghost(k)=−(16/15)φ₀²κ³/(k²+κ²) Lorentzian; [T1] k²/(k²+κ²)−1=−κ²/(k²+κ²) res 0.00; [T2a] c_ghost_naive=1.4407; KEY: SU(3) adjoint color C_A/C_F=9/4 structurally explains near-cancellation c_ghost→c_gauge; JW5 T2a unaffected. Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 

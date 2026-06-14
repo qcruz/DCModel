@@ -1,11 +1,13 @@
 # Coupling Emergence in the DFC Framework
 
-**Status:** Active — quantitative results documented through Cycle 219. Coupling emergence
+**Status:** Active — quantitative results documented through Cycle 264. Coupling emergence
 chain is Tier 2a for g_eff, α_em(M_Z), sin²θ_W, α_s. Open derivations: D5 holonomy from
 KK reduction (Open 1), 36π route consistency (Open 2), SU(N) structure constants from winding
 (Open 3, partial T2a for D7 kinetic sector via SP4 G3 Cycle 184).
 C219: δd = β × N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1] — the neutrino mass correction uses
 the same β and I₄ that govern the gauge sector, suggesting a common geometric origin.
+C263: ECCC identity A−B = ln(1/α_em(0)) verified numerically to 0.044% [T2a] —
+A=(R−1/α_s)×2π/b₀_QCD=30.4746, B=(1/α_1^DFC−R)×2π/b₀_U1=25.5548, exp(A−B)=136.976.
 
 ---
 
@@ -194,6 +196,11 @@ This would simultaneously close the ECCC residual 0.044% gap and the 36π chain'
 0.15% discrepancy. It requires deriving the precise relationship between the
 g₂ = √(8/27 × ...) chain and the 36π closure condition from first principles.
 
+**Cycle 263 update:** The ECCC identity A−B = ln(1/α_em(0)) has been verified
+numerically at T2a (0.044% error), establishing that the gap lives entirely in the
+0.01 tension at 1/α_em(M_Z) between the 36π and g₂ routes. Closing this one
+algebraic relation would prove the identity exactly (Tier 4 → 1 target).
+
 ### Open 3: Derive SU(N) structure from winding integrals
 
 **Statement:** Show that the closure topology at D6 depth produces SU(2) structure
@@ -249,3 +256,5 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 - `equations/ym_c_gauge_explicit.py` — c_gauge parity argument, Z_KK/Z_0=1/3 (Cycle 196, T1)
 - `equations/ym_jost_function.py` — c_gauge(cont)=2.773063, C_match=0.795151 (Cycle 197, T2a)
 - `equations/neutrino_d7_holonomy.py` — δd = β×N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1 C219]; β and I₄ also govern neutrino depth correction
+- `equations/ym_eccc_identity.py` — ECCC identity A−B = ln(1/α_em(0)) verified T2a (−0.044%, C263)
+- `equations/ym_cghost_analytic.py` — c_ghost_naive=1.4407 [T2a]; δF_ghost Lorentzian T1; SU(3) color factor C_A/C_F=9/4 needed for cancellation (C264)
