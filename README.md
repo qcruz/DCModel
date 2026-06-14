@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C262 SP5 S10 ECCC vs Wilsonian M_c(D7) resolution — ym_sp5_eccc_resolution.py; 8/8 PASS. Factor ~2.6 between C144 M_c=1.566e15 and C261 M_c=5.97e14 GeV explained geometrically: exp(t7+delta_t−ln(m_KK/M_Z))=2.79. Two different questions: ECCC (where α_s=α_comm from M_Z up, T2a) vs Wilsonian (where QCD returns to α_comm from m_KK down, T2a). For Clay JW5: M_c not needed (Λ_QCD from Landau pole, JW5 via SC area law). SP5 S10 remains T2b; Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C263 α_em secondary priority: ECCC identity A−B = ln(1/α_em(0)) formally verified — ym_eccc_identity.py; 9/9 PASS. t7−t5 = 4.920, exp(t7−t5) = 136.976 ≈ 1/α_em(0)=137.036 (−0.044%, T2a, 0 free params). Key: α_1^GUT must come from DFC coupling chain (g₂=0.6514 → α_em_DFC=1/128.09), not PDG directly. Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 

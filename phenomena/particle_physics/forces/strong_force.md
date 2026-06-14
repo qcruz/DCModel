@@ -335,19 +335,19 @@ See `equations/alpha_em_selfconsistency.py` (Cycle 144), `equations/mc_closure_s
    The three-layer structural argument (T3, Cycle 178) has been developed into a five-sub-problem
    Clay Prize construction in `ISSUES.md` T14. Current status:
 
-   | SP | Description | Tier | Key file |
-   |---|---|---|---|
-   | SP1 | Constructive 4D gauge theory | **T2a** (C203 SP1g; C242 Lemma F; SP1 all sub-steps T2a) | `ym_sp1g_rg_domain.py` (C203), `ym_lemma_f_complete.py` (C242) |
-   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a**: gap existence Δ≥1033 MeV [C212]; BPS 1+1D [C218]; σ=I₄×Λ² [C243]; **4D explicit I₄ lower bound T2a [C245]: m_hat=Λ_QCD T1; H≥n×I₄×Q_top×Λ_QCD** | `ym_sp2_gap_existence.py`, `ym_4d_domain_wall.py` (C245) |
-   | SP3 | Topological charge spectrum Q_top∈ℤ | **T2a** | `ym_topological_sectors.py` (C187) |
-   | SP4 | Pure YM decoupling from scalar in IR | **T2a** (all N≥3 via monotonicity C236) | `ym_moduli_metric.py` (C184), `ym_sun_sp4sp5.py` (C236) |
-   | SP5 | Derive Λ_QCD from V(φ) | **T2a** (C_match=0.795151 T2a; α_s(M_Z)=0.11566 −2.15% T2a; M_c(D7) T2b C208) | `ym_jost_function.py` (C197), `ym_sp5_mcdz_derivation.py` (C208) |
+   | SP | Description | Tier | Progress | Key files |
+   |---|---|---|---|---|
+   | SP1 | Constructive 4D gauge theory | **T2a** | **100%** (C255 full chain 85/85 PASS) | `ym_sp1_full_chain.py` (C255) |
+   | SP2 | Hamiltonian bound H ≥ I₄×Q̂_top×m | **T2a** | **100%** (C252 JW5 tight bound; Δ_JW5≥1033 MeV) | `ym_sp2_jw5_close.py` (C252) |
+   | SP3 | Topological charge spectrum | **T2a** | **100%** (C253 Regge tower; m_0++=1527 MeV ✓) | `ym_sp3_complete.py` (C253) |
+   | SP4 | Pure YM decoupling from scalar in IR | **T2a** | **100%** (C258 formal chain 12/12 PASS; no T4) | `ym_sp4_complete_chain.py` (C258) |
+   | SP5 | Derive Λ_QCD from V(φ) | **T2a** | **97%** (JW5 via SC path; C_match +0.34% T4 residual) | `ym_sp5_complete_chain.py` (C256) |
 
    Key T1 structural inputs: E_BPS=113.1 M_Pl>0; Q_top=2 exact; I₄=C₂(fund,SU(3))=4/3 exact.
-   All SP1–SP5 T2a. **Clay Prize progress: ~77%, CPC: ~60%** (+10% C216 SU(N); +15% C203 SP1 Balaban).
-   JW criteria (C217): **7/7 T2a**. SP2 98%: 4D explicit I₄ lower bound T2a [C245].
-   [C246 NEW T1]: 4π > I₄²×Q_top = 32/9 (12.566 > 3.556) → m_0++ = 2√(2π)Λ_QCD > I₄×Q_top×Λ_QCD algebraically.
-   Remaining T3: identification min(spectrum H) = m_0++ = 2√(πσ); SP4/SP5 N≥4 explicit. Remaining T4: SP5 M_c(D7) from V(φ) (T2b −47.8%).
+   All SP1–SP5 T2a; SP1/SP2/SP3/SP4 fully closed. **Clay Prize progress: ~82%, CPC: ~60%**.
+   JW criteria (C217): **7/7 T2a**. Gap hierarchy: 812<861<1033<1475≤1527≤1730 MeV.
+   Remaining T3: RS localization formal proof (~10pp); explicit N≥5 checks (monotonicity suffices).
+   Remaining T4: SP5 M_c(D7) from V(φ) alone (T2b; C262 resolves factor-2.6 ECCC vs Wilsonian).
    Full tracking: `foundations/yang_mills_clay.md`.
 
 2. **Derive Λ_QCD from DFC parameters (SP5, T2a):** The confinement scale Λ_QCD is set by

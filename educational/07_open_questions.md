@@ -134,7 +134,9 @@ SP1 [C255] 100%, SP2 [C252] 100%, SP3 [C253] 100%, SP4 [C258] 100%, SP5 [C257] 9
 
 **What would close it:** Derive the ρ meson electromagnetic decay width from D7 vacuum dynamics, connect it to the photon self-energy via vector meson dominance, and show the resulting Δα_had matches the measured value.
 
-**Status:** The identity 1/α_em(M_Z) = 36π is Tier 2a confirmed. The α_em(0) derivation is Tier 4 (the hadronic piece).
+**C263 NEW:** The ECCC identity A−B = ln(1/α_em(0)) is now formally stated and verified (`equations/ym_eccc_identity.py`, 9/9 PASS, T2a). The identity says M_c(D7)/M_c(D5) = exp(A−B) = 136.98, which is 1/α_em(0) = 137.036 to −0.044% (Tier 2a). Key structural insight: the identity only holds when the U(1) coupling α_1^GUT(M_Z) is derived from the DFC coupling chain (g₂=0.6514, sin²θ_W=0.2312), which implies α_em(M_Z)_DFC = 1/128.09 (+0.15% from PDG 1/127.95). Using the PDG value directly amplifies the 0.15% discrepancy to an 11% ratio error via the exponential. This means the T12 blocking gap and the A−B identity residual are the same T4 problem: why does the DFC predict α_em(M_Z) = 1/128.09 rather than 1/127.95? Equivalently: close the internal 36π vs g₂ tension from Cycle 144. The hadronic VP piece (δΔα_had^NP = 0.00102) remains separately T4.
+
+**Status:** The ECCC identity A−B = ln(1/α_em(0)) is Tier 2a (C263). The α_em(0) derivation has two remaining T4 gaps: (1) close the DFC α_em(M_Z) tension (0.15%); (2) hadronic VP from D7 spectral density.
 
 ---
 
