@@ -9,7 +9,7 @@ README.md, ISSUES.md, and CLAUDE.md point to this document.
 
 ## Executive Summary
 
-**Overall Clay challenge progress: ~80%**
+**Overall Clay challenge progress: ~82%**
 **Clay Prize Confidence Score (CPC): ~60%**  ← +15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a**
 
 CPC is distinct from progress %: it measures P(the DFC framework, continued to completion,
