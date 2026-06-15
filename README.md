@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C264 SP5 c_ghost analytic computation — ym_cghost_analytic.py; ALL PASS. [T1 EXACT] δF_ghost(k)=−(16/15)φ₀²κ³/(k²+κ²) Lorentzian; [T1] k²/(k²+κ²)−1=−κ²/(k²+κ²) res 0.00; [T2a] c_ghost_naive=1.4407; KEY: SU(3) adjoint color C_A/C_F=9/4 structurally explains near-cancellation c_ghost→c_gauge; JW5 T2a unaffected. Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C265 ECCC algebraic structure — eccc_algebraic_structure.py; 9/9 PASS. [T1 EXACT] Term1_DFC=27π²×111/287=103.063 from V(φ) only; [T2a] closure residual 0.009%; [T2a] ECCC circle self-consistent |Δα_s|<0.001%; T4 gap = {α_s, α₁} from V(φ) alone. Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -250,7 +250,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a [C258 formal]: G1 N_X=E_BPS [T1], G2 AC 4.75e-40 [T2a], G3 flat metric [T1]; 4T1+5T2a+1T3+0T4; N=4 [C250]+N=5 [C254] T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; Λ_QCD(5)=563 GeV>0 [T2a]; 33/33 PASS** | **97%** |
 
-Latest: **C259 Ghost Jost integral** — ym_ghost_jost.py; 8/10 PASS; c_ghost≈2.47 [T3, convergence-limited]; c_net≈0.31→δC≈+0.073%; SP5 C_match T4→T3. C258: SP4 formal assembly 100%. C257: C_match_tree T2a confirmed. **SP1+SP2+SP3+SP4 100%; SP5 97%. Clay ~82%; CPC ~60%.**
+Latest: **C265 ECCC algebraic structure** — eccc_algebraic_structure.py; 9/9 PASS; Term1_DFC=27π²×111/287 [T1, V(φ) only]; closure residual 0.009% [T2a]; T4 gap = {α_s,α₁} from V(φ). C264: c_ghost_naive=1.4407 [T2a]; C_A/C_F=9/4 structurally explains near-cancellation. C263: ECCC identity A−B=ln(1/α_em(0)) T2a (−0.044%). C258: SP4 100%. **SP1+SP2+SP3+SP4 100%; SP5 97%. Clay ~82%; CPC ~60%.**
 Remaining T4: SP5 M_c(D7) from V(φ) alone (C_match background-field correction 0.66%). Remaining T3: m_{2++}/√σ ratio tension 24% [T3, supplementary].
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*

@@ -1,6 +1,6 @@
 # Coupling Emergence in the DFC Framework
 
-**Status:** Active — quantitative results documented through Cycle 264. Coupling emergence
+**Status:** Active — quantitative results documented through Cycle 265. Coupling emergence
 chain is Tier 2a for g_eff, α_em(M_Z), sin²θ_W, α_s. Open derivations: D5 holonomy from
 KK reduction (Open 1), 36π route consistency (Open 2), SU(N) structure constants from winding
 (Open 3, partial T2a for D7 kinetic sector via SP4 G3 Cycle 184).
@@ -8,6 +8,9 @@ C219: δd = β × N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1] — the neutrino mass co
 the same β and I₄ that govern the gauge sector, suggesting a common geometric origin.
 C263: ECCC identity A−B = ln(1/α_em(0)) verified numerically to 0.044% [T2a] —
 A=(R−1/α_s)×2π/b₀_QCD=30.4746, B=(1/α_1^DFC−R)×2π/b₀_U1=25.5548, exp(A−B)=136.976.
+C265: ECCC algebraic decomposition — Term1_DFC = 27π²×111/287 = 103.063 [T1 exact,
+V(φ) only]; closure residual 0.009% [T2a]; T4 gap = derive {α_s, α₁} from V(φ) alone;
+sensitivity: +0.006% Δα_s or −0.0005% Δ(1/α₁) closes identity exactly.
 
 ---
 
@@ -258,3 +261,4 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 - `equations/neutrino_d7_holonomy.py` — δd = β×N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1 C219]; β and I₄ also govern neutrino depth correction
 - `equations/ym_eccc_identity.py` — ECCC identity A−B = ln(1/α_em(0)) verified T2a (−0.044%, C263)
 - `equations/ym_cghost_analytic.py` — c_ghost_naive=1.4407 [T2a]; δF_ghost Lorentzian T1; SU(3) color factor C_A/C_F=9/4 needed for cancellation (C264)
+- `equations/eccc_algebraic_structure.py` — ECCC decomposition Term1_DFC=27π²×111/287 [T1]; closure residual 0.009%; T4 gap characterisation (C265)
