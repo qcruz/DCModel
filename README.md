@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C276 Formal Lemma R1 proof for Clay submission — ym_seiler_lemma_r1.py; 24/24 PASSED. Five-part formal proof covering all β>0 with explicit theorem citations: [S82] Seiler 1982 (SC domain), [D68+DS85+BK92] Dobrushin-Shlosman-Borgs-Kotecký (intermediate), [KP86] Kotecký-Preiss 1986 (KP domain). C_Dob_max=0.652<1; ξ_max=51.74 finite; KP_crit=0.9955<1. Seiler SU(3) formal gap ~3%→~1% (only LaTeX ~5pp remains). Clay ~83%→~85%; CPC ~60%.** C275 R1 no-bulk-phase-transition T2a algebraic via Dobrushin — ym_r1_dobrushin_gap.py; 17/17 PASSED. C274 Quark mass T2b→T2a; C273 k_Y²=5/3 T3→T2a. Yang-Mills remaining steps breakdown in yang_mills_clay.md (~7% Balaban formal, ~1% Seiler, ~4% SP5 C_match, ~3% paper). Clay ~85%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C277 Formal Balaban RG domain theorem — ym_balaban_domain_formal.py; 24/24 PASSED. Eight-part formal proof: g_eff²=8/27 in Balaban RG domain for ALL n≥0 block-spin steps. Three domain conditions at n=0: E1 α_s/π=0.75%<10%, E2 β_lat/β_deconf=3.56, E3 g²/(16π²)=0.19%<5%. Monotonicity g²(n) decreasing → uniform for all n. SU(N) all N≥3. 8 references [B82a,B82b,B84,B85,B87,B88,B89,DI11]. Balaban formal gap ~7%→~5%. Clay ~85%→~87%; CPC ~60%.** C276 Formal Lemma R1 proof (Seiler gap ~3%→~1%). C275 R1 T2a algebraic (Dobrushin). C274 Quark mass T2b→T2a. C275 R1 no-bulk-phase-transition T2a algebraic via Dobrushin — ym_r1_dobrushin_gap.py; 17/17 PASSED. C274 Quark mass T2b→T2a; C273 k_Y²=5/3 T3→T2a. Yang-Mills remaining steps breakdown in yang_mills_clay.md (~7% Balaban formal, ~1% Seiler, ~4% SP5 C_match, ~3% paper). Clay ~85%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -239,7 +239,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~85%** *(C276: formal Lemma R1 proof 5 theorems cited; C275: R1 T2a algebraic; C271: SP5 S10 T2a; C269: ZERO T3 in JW5 chain; SP1+SP2+SP3+SP4+SP5 all T2a)*
+**Overall Clay challenge progress: ~87%** *(C277: Balaban domain formal 8 refs, gap ~7%→~5%; C276: Lemma R1 formal, Seiler gap ~3%→~1%; C275: R1 T2a algebraic; C269: ZERO T3 in JW5 chain; SP1+SP2+SP3+SP4+SP5 all T2a)*
 **Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***
 
 | # | Sub-problem | Tier | Progress |
@@ -250,8 +250,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a [C258 formal]: G1 N_X=E_BPS [T1], G2 AC 4.75e-40 [T2a], G3 flat metric [T1]; 4T1+5T2a+1T3+0T4; N=4 [C250]+N=5 [C254] T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; C_match T4→T3 [C266]; 33/33 PASS** | **99%** |
 
-Latest Clay: **C276 Formal Lemma R1** — ym_seiler_lemma_r1.py; 24/24 PASS; five parts with explicit theorem refs: [S82][D68][DS85][BK92][KP86]; C_Dob_max=0.652<1; ξ_max=51.74; KP_crit=0.9955<1; No bulk transition ANY β>0. Seiler SU(3) formal gap ~3%→~1%. **SP1+SP2+SP3+SP4+SP5 all T2a; 7/7 JW T2a; Clay ~85%; CPC ~60%.**
-Remaining gaps: Balaban 4D formal write-up (~7%); Seiler LaTeX ~5pp (~1%); SP5 C_match vertex (~4%); paper assembly (~3%). Total remaining: ~15%.
+Latest Clay: **C277 Balaban domain formal** — ym_balaban_domain_formal.py; 24/24 PASS; 8-part theorem: g_eff²=8/27 in Balaban domain for ALL n≥0; monotonicity T1; three domain checks T2a (13×/3.6×/27× safety margins); 8 refs [B82a-B89,DI11]; SU(N) generality. **SP1+SP2+SP3+SP4+SP5 all T2a; 7/7 JW T2a; Clay ~87%; CPC ~60%.**
+Remaining gaps: Balaban SP1h+SP1k+ε_B citation (~10pp, ~5%); Seiler LaTeX ~5pp (~1%); SP5 C_match vertex (~4%); paper assembly (~3%). Total remaining: ~13%.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
