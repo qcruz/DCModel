@@ -146,7 +146,9 @@ SP1 [C255] 100%, SP2 [C252] 100%, SP3 [C253] 100%, SP4 [C268] 100% T2a, SP5 [C26
 
 **C272 NEW — k_Y² = 5/3 T4→T3:** `equations/ky_hypercharge.py` (C272, 7/7 PARTS PASSED) derives k_Y² from DFC first-generation fermion content rather than treating it as a free input. Key result: over one complete left-handed fermion generation (15 Weyl spinors), k_Y² = Σ(Y/2)²/Σ T₃² = (10/3)/2 = 5/3 exactly (residual 0.00e+00, T1 given DFC assignments). The 4 SU(2) doublets (1 lepton doublet + 3 quark-color doublets) each contribute 2×(1/2)² = 1/2 to Σ T₃² = 2. The ECCC chain consequence: 1/α_em = (1+k_Y²)/α_common = (8/3)×(27π/2) = 36π (rel-res 1.26e-16, T1). This means k_Y is NOT a free parameter in the 36π formula — it is fixed by the DFC generation content (T3, since the assignments themselves are T2a from C59–74). ECCC impact: the Term2_SM α₁ piece (which requires k_Y) is now T3 (was T4); the remaining T4 in the ECCC identity is only the α_s piece (C_match +0.34% from V(φ)).
 
-**Status:** The ECCC identity A−B = ln(1/α_em(0)) is Tier 2a (C263). k_Y² = 5/3 is T3 from DFC fermion content (C272 — no longer a free parameter). The α_em(0) derivation has two remaining T4 gaps: (1) close the DFC α_em(M_Z) tension (0.15%) — equivalently, derive k_Y from D5 winding numbers to T2a; (2) hadronic VP from D7 spectral density.
+**C273 NEW — k_Y² = 5/3 T3→T2a (uniqueness theorem):** `equations/ky_from_nc.py` (C273, 7/7 PARTS PASSED) closes the remaining gap in C272. Key theorem: k_Y²(N_c) = (11N_c/9 + 3)/(N_c + 1) equals 5/3 **if and only if N_c = 3** (T1 algebraic: solving 3(11N_c/9+3) = 5(N_c+1) gives unique N_c = 3; residual 0.00e+00). DFC chain: D7=SU(3)[T2a, Cycles 59–74] forces N_c=3[T1] forces k_Y²=5/3[T1] = **T2a composite**. This realizes the SU(5) GUT hypercharge normalization (k_Y²=5/3) from DFC topology alone, without assuming SU(5). Cross-checks: (1+k_Y²)/α_common=36π [T1, rel-res 0.00e+00]; sin²θ_W(M_c)=3/8 [T1, res 5.55e-17]. **ECCC impact: Term2_SM α₁ piece upgrades T3→T2a.** The two remaining T4 gaps in the full ECCC identity are now: (1) the α_s piece (C_match +0.34% from V(φ) alone); (2) hadronic VP Δα^NP=0.00102 from D7 spectral density.
+
+**Status:** The ECCC identity A−B = ln(1/α_em(0)) is Tier 2a (C263). k_Y² = 5/3 is **T2a** from N_c=3 uniqueness (C273 — uniquely forced by D7=SU(3), no free parameters). The ECCC Term2_SM α₁ piece is T2a (C273). Two remaining T4 gaps: (1) α_s piece of ECCC Term2_SM (C_match +0.34% from V(φ)); (2) hadronic VP non-perturbative contribution δΔα^NP=0.00102.
 
 ---
 
@@ -232,7 +234,7 @@ All three residuals < 10⁻¹⁵. Notably, form (3) shows that the same I₄ = C
 | Gap | Description | Current tier | What closes it |
 |---|---|---|---|
 | Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a SP1+SP2+SP3+SP4 100%; SP5 97% (C259); 7/7 JW T2a; CPC ~60%; Clay ~82%** | M_c(D7) from V(φ) alone T4; formal Balaban write-up; 4D BPS all-states proof; c_ghost analytic FT T3 (upgraded from T4); SP4 RS formal proof T3 |
-| α_em(0) hadronic VP | Non-perturbative Δα_had | T4 | f_ρ from D7 dynamics + VMD |
+| α_em(0) hadronic VP | Non-perturbative Δα_had; k_Y² T2a (C273) | T4 (hadronic VP); T2a (k_Y²) | α_s piece of ECCC T4; f_ρ from D7 dynamics + VMD |
 | Charm/strange quark masses | 15% below observed | T2b | D6/D7 Yukawa overlap integral |
 | Neutrino mass ratio | −8.3% uncorrected; +0.010% with color correction (T3) | T2b/T3 | D4/D7 BVP for δd=1/(6π) formal derivation |
 | M_c(D7) from substrate | QCD scale from V(φ) alone | T4 | Substrate depth dynamics → M_c(D7) |
