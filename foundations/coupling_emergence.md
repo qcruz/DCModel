@@ -1,9 +1,13 @@
 # Coupling Emergence in the DFC Framework
 
-**Status:** Active — quantitative results documented through Cycle 265. Coupling emergence
+**Status:** Active — quantitative results documented through Cycle 272. Coupling emergence
 chain is Tier 2a for g_eff, α_em(M_Z), sin²θ_W, α_s. Open derivations: D5 holonomy from
 KK reduction (Open 1), 36π route consistency (Open 2), SU(N) structure constants from winding
 (Open 3, partial T2a for D7 kinetic sector via SP4 G3 Cycle 184).
+C272: k_Y² = 5/3 T4→T3 — derived from DFC first-generation hypercharge content via
+Q=T₃+Y/2; Σ(Y/2)²/Σ T₃² = (10/3)/2 = 5/3 (res 0.00e+00, T1 given assignments); see
+`equations/ky_hypercharge.py`. ECCC impact: Term2_SM α₁ piece now T3 (was T4); remaining
+T4 = Term2_SM α_s piece (C_match +0.34%).
 C219: δd = β × N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1] — the neutrino mass correction uses
 the same β and I₄ that govern the gauge sector, suggesting a common geometric origin.
 C263: ECCC identity A−B = ln(1/α_em(0)) verified numerically to 0.044% [T2a] —
@@ -67,11 +71,14 @@ which all three SM couplings meet.
 
 ### The Electroweak Coupling Ratio (Tier 2a, Route 3B)
 
-The hypercharge coupling constant relates to the SU(2) coupling by a factor that reflects
-the ratio of U(1) to SU(2) winding numbers. In DFC terms, the k_Y = 3/5 factor arises
-from the count of charged degrees of freedom at D5 vs. D6 depths across the three
-fermion generations. Combined with the DFC closure condition at M_c (Weinberg angle route),
-this gives sin²θ_W = 0.2312 (0.01% match, Tier 2a).
+The hypercharge coupling constant relates to the SU(2) coupling by a factor k_Y that reflects
+the ratio of U(1) to SU(2) winding numbers. In DFC terms, k_Y² = 5/3 arises from the
+count of charged degrees of freedom in one complete left-handed fermion generation (15 Weyl
+spinors): k_Y² = Σ(Y/2)² / Σ T₃² = (10/3)/2 = 5/3 (T3, Cycle 272; T1 given DFC
+fermion assignments; see `equations/ky_hypercharge.py`). This means k_Y is not a free
+parameter — it is determined by the DFC generation content. Combined with the DFC closure
+condition at M_c (Weinberg angle route), this gives sin²θ_W = 1/(1+k_Y²) = 3/8 at
+unification, running to 0.2312 at M_Z (0.01% match, Tier 2a).
 
 ### The Fine Structure Constant (Tier 2a via 36π chain)
 
@@ -172,7 +179,7 @@ determines the coupling running, which in turn fixes all the closure scales.
 
 ```
 β = 1/(9π)               [Tier 2a, Cycle 117]
-k_Y² = 5/3               [Tier 2a, Cycle 30]
+k_Y² = 5/3               [T3, Cycle 272 — from DFC fermion generation content]
 ECCC: α₁ = α₂ at M_c(EW) → sin²θ_W = 1/(1+k_Y²) = 3/8
 1/α_em = (1+k_Y²)/α_common = (8/3)×(27π/2) = 36π    [exact, 0 free params]
 4/β = 4×9π = 36π  [algebraically exact, residual 0]
@@ -262,3 +269,4 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 - `equations/ym_eccc_identity.py` — ECCC identity A−B = ln(1/α_em(0)) verified T2a (−0.044%, C263)
 - `equations/ym_cghost_analytic.py` — c_ghost_naive=1.4407 [T2a]; δF_ghost Lorentzian T1; SU(3) color factor C_A/C_F=9/4 needed for cancellation (C264)
 - `equations/eccc_algebraic_structure.py` — ECCC decomposition Term1_DFC=27π²×111/287 [T1]; closure residual 0.009%; T4 gap characterisation (C265)
+- `equations/ky_hypercharge.py` — k_Y² = 5/3 from DFC first-generation hypercharge content; Q=T₃+Y/2 verified all 15 Weyl spinors; k_Y T4→T3 (C272)

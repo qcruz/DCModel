@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C271 SP5 S10 α_s(M_Z) T2b→T2a — ym_sp5_alpha_s_nf.py; 19/21 ASSERTIONS PASSED. C_match_Jost=0.795151 [C197, DFC-first-principles] + 2-loop Nf=6→5 threshold at m_top → α_s(M_Z)=0.11566 (−2.15%) [T2a]. SP5 S10 T2b→T2a. SC path (JW5) unaffected. Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C272 k_Y² = 5/3 T4→T3 — ky_hypercharge.py; 7/7 PARTS PASSED. k_Y² = Σ(Y/2)²/Σ T₃² = (10/3)/2 = 5/3 (res 0.00e+00, T1). Q=T₃+Y/2 verified all 15 first-gen Weyl spinors. k_Y is NOT a free parameter — fixed by DFC fermion content. ECCC Term2_SM α₁ piece T4→T3. Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
