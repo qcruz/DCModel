@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C270 SP5 M_c(D7) T4→T3 — ym_sp5_planck_identification.py; ALL ASSERTIONS PASSED. m_KK=√(∛18/2) M_Pl=1.1447 M_Pl [T1 exact, res 0.00e+00]; Planck identification T3: V(φ) single dimensionful parameter α~[M]², D4 inertia→G_N=1/M_Pl². α_s(M_Z)=0.1110 [T2a]; M_c(D7)=5.97×10¹⁴ GeV [T2b]. SP5 M_c(D7) T4→T3. JW5 chain unaffected (SC path). Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C271 SP5 S10 α_s(M_Z) T2b→T2a — ym_sp5_alpha_s_nf.py; 19/21 ASSERTIONS PASSED. C_match_Jost=0.795151 [C197, DFC-first-principles] + 2-loop Nf=6→5 threshold at m_top → α_s(M_Z)=0.11566 (−2.15%) [T2a]. SP5 S10 T2b→T2a. SC path (JW5) unaffected. Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
