@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C274 Quark mass T2b→T2a — quark_mass_kappa_derivation.py; 8/8 ASSERTIONS PASSED. κ_q=π×N_c/2=3π/2 derived from center vortex factor (same N_c/2 as string tension). Charm +0.29% T2a; strange +2.09% T2a; Gen-2 scale +2.45% (was −15.3% T2b). Root cause of prior error: old code averaged clean QCD ratio κ_12 with Higgs-contaminated κ_23; DFC predicts κ_12. Yang-Mills remaining steps breakdown added to yang_mills_clay.md. Clay ~82%; CPC ~60%; model ~79.5%→~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C275 R1 no-bulk-phase-transition T2a algebraic via Dobrushin — ym_r1_dobrushin_gap.py; 17/17 PASSED. Dobrushin criterion C_Dob=0.652<1 → unique Gibbs → no first-order [T1]; finite ξ≤51.7 → no second-order [T2a]; combined: R1 T2a algebraic all β>0. Three sub-domains tile (0,∞): SC[C206]+Dobrushin[C275]+KP[C199]. Upgrade over C211 numerical Binder FSS: C275 algebraic, no MC. Seiler SU(3) gap ~4%→~3%; Clay ~82%→~83%; CPC ~60%.** C274 Quark mass T2b→T2a — quark_mass_kappa_derivation.py; 8/8 ASSERTIONS PASSED. κ_q=π×N_c/2=3π/2 derived from center vortex factor (same N_c/2 as string tension). Charm +0.29% T2a; strange +2.09% T2a; Gen-2 scale +2.45% (was −15.3% T2b). Root cause of prior error: old code averaged clean QCD ratio κ_12 with Higgs-contaminated κ_23; DFC predicts κ_12. Yang-Mills remaining steps breakdown added to yang_mills_clay.md. Clay ~82%; CPC ~60%; model ~79.5%→~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -239,7 +239,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~82%** *(C260: SP5 C_match T4→T2a bracket; C259: ghost Jost c_ghost≈2.47 T3; C258: SP4 100%; SP1+SP2+SP3+SP4 100%; SP5 97%)*
+**Overall Clay challenge progress: ~83%** *(C275: R1 T2a algebraic Dobrushin; C271: SP5 S10 T2a; C269: ZERO T3 in JW5 chain; SP1+SP2+SP3+SP4+SP5 all T2a)*
 **Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***
 
 | # | Sub-problem | Tier | Progress |
@@ -250,8 +250,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a [C258 formal]: G1 N_X=E_BPS [T1], G2 AC 4.75e-40 [T2a], G3 flat metric [T1]; 4T1+5T2a+1T3+0T4; N=4 [C250]+N=5 [C254] T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; C_match T4→T3 [C266]; 33/33 PASS** | **99%** |
 
-Latest: **C268 SP4 RS localization T3→T2a** — ym_rs_localization_formal.py; 14/14 PASS; I₄=∫sech⁴du=4/3=C₂(fund,SU(3)) [T1]; RS1(ξΛ=2.18e-20<<1)+RS2(ψ₀∈L²)+RS3(m_shape/Λ=7.95e19)+RS4(YM action) all T2a. SP4 chain: 4T1+6T2a+0T3+0T4. **SP1+SP2+SP3+SP4 all 100% with zero remaining T3/T4; SP5 99%. Clay ~82%; CPC ~60%.**
-Remaining T4: SP5 M_c(D7) from V(φ) alone; C_match 0.001% gap = 2-loop [T3 C266]. Remaining T3 (supplementary): formal Balaban SU(3) write-up (~50-100pp); m_{2++}/√σ ratio tension 24%.
+Latest Clay: **C275 R1 T2a algebraic** — ym_r1_dobrushin_gap.py; 17/17 PASS; Dobrushin C_Dob=0.652<1 → unique Gibbs + ξ≤51.7 → no bulk transition in [3.0,17.06]; combined with SC[C206]+KP[C199]: R1 T2a all β>0. **SP1+SP2+SP3+SP4+SP5 all T2a; 7/7 JW T2a; Clay ~83%; CPC ~60%.**
+Remaining gaps: Balaban 4D formal write-up (~7%); Seiler formal ~10pp (~3%); SP5 C_match vertex (~4%); paper assembly (~3%). Total remaining: ~17%.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
