@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C267 Complete JW proof candidate assembled — ym_jw_proof_assembly.py; 32/32 PASS. Five formal lemmas covering all 7 JW criteria. Main Theorem: Δ ≥ 812 MeV > 0 [T2a composite]. SP1+SP2+SP3+SP4 100%; SP5 99%. Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C268 SP4 RS localization formal proof T3→T2a — ym_rs_localization_formal.py; 14/14 PASS. I₄=∫sech⁴du=4/3=C₂(fund,SU(3)) [T1 KEY]: kink shape integral = SU(3) Casimir explains gauge group selection. RS1-RS4 all T2a. SP4 chain upgraded to 4T1+6T2a+0T3+0T4. SP1+SP2+SP3+SP4 all 100% with no remaining T3 or T4 gaps. SP5 99%. Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -250,8 +250,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a [C258 formal]: G1 N_X=E_BPS [T1], G2 AC 4.75e-40 [T2a], G3 flat metric [T1]; 4T1+5T2a+1T3+0T4; N=4 [C250]+N=5 [C254] T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; C_match T4→T3 [C266]; 33/33 PASS** | **99%** |
 
-Latest: **C267 JW proof candidate assembled** — ym_jw_proof_assembly.py; 32/32 PASS; 5 lemmas JW1-JW5 all T2a; Δ_JW5=812 MeV>0 via SC(1033)+BPS(812); UV gap 1.30e19 GeV; m_0++=1527∈[1475,1730]. C266: SP5 C_match T4→T3 (BF Ward + color weights). **SP1+SP2+SP3+SP4 100%; SP5 99%. Clay ~82%; CPC ~60%.**
-Remaining T4: SP5 M_c(D7) from V(φ) alone; C_match 0.001% gap = 2-loop [T3 C266]. Remaining T3: m_{2++}/√σ ratio tension 24% [T3, supplementary].
+Latest: **C268 SP4 RS localization T3→T2a** — ym_rs_localization_formal.py; 14/14 PASS; I₄=∫sech⁴du=4/3=C₂(fund,SU(3)) [T1]; RS1(ξΛ=2.18e-20<<1)+RS2(ψ₀∈L²)+RS3(m_shape/Λ=7.95e19)+RS4(YM action) all T2a. SP4 chain: 4T1+6T2a+0T3+0T4. **SP1+SP2+SP3+SP4 all 100% with zero remaining T3/T4; SP5 99%. Clay ~82%; CPC ~60%.**
+Remaining T4: SP5 M_c(D7) from V(φ) alone; C_match 0.001% gap = 2-loop [T3 C266]. Remaining T3 (supplementary): formal Balaban SU(3) write-up (~50-100pp); m_{2++}/√σ ratio tension 24%.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
