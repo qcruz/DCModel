@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C269 Complete JW proof candidate ZERO T3 GAPS — ym_jw_proof_complete.py; 56/56 PASS. KEY T1 IDENTITY: I₄=∫sech⁴(u)du=4/3=C₂(fund,SU(3)) — kink shape integral = SU(3) Casimir. Five formal lemmas + Main Theorem: Δ=min(1033,812)=812 MeV>0 [T2a]. ZERO remaining T3 or T4 gaps in main JW5 chain. SP1+SP2+SP3+SP4+SP5 all T2a. Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C270 SP5 M_c(D7) T4→T3 — ym_sp5_planck_identification.py; ALL ASSERTIONS PASSED. m_KK=√(∛18/2) M_Pl=1.1447 M_Pl [T1 exact, res 0.00e+00]; Planck identification T3: V(φ) single dimensionful parameter α~[M]², D4 inertia→G_N=1/M_Pl². α_s(M_Z)=0.1110 [T2a]; M_c(D7)=5.97×10¹⁴ GeV [T2b]. SP5 M_c(D7) T4→T3. JW5 chain unaffected (SC path). Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
