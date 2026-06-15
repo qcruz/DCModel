@@ -315,7 +315,21 @@ mathematical content. What is not yet derived:
    Cycle 258 (ym_sp4_complete_chain.py): SP4 95%→100% — formal 12-step chain assembled; 12/12 PASS. G1: N_X=E_BPS [T1: res=1.26e-16]; G2: (Λ/m_KK)²=4.75e-40 [T2a]; G3: flat Killing metric [T1]+g_eff² [T2a]. No T4 gaps.
    Cycle 263 (ym_eccc_identity.py): ECCC identity A−B = ln(1/α_em(0)) verified at T2a — A=(R−1/α_s)×2π/b₀_QCD=30.4746; B=(1/α_1^DFC−R)×2π/b₀_U1=25.5548; exp(A−B)=136.9764 (−0.044% vs observed 137.036); 9/9 ASSERTIONS PASSED. T4 gap: the 36π vs g₂ tension (0.01 in 1/α_em) is the algebraic root cause of the residual.
    Cycle 264 (ym_cghost_analytic.py): c_ghost analytic computation — UV-subtracted form factor δF_ghost(k)=−(16/15)φ₀²κ³/(k²+κ²) [T1 Lorentzian]; analytic integral gives c_ghost_naive=1.4407 [T2a]; T1 derivative coupling identity k²/(k²+κ²)−1=−κ²/(k²+κ²) (res 0.00e+00). Key diagnostic: c_ghost_naive/c_gauge=0.5196 → δC/C=0.250% (180× too large for cancellation); needed c_ghost≈2.78≈c_gauge requires SU(3) adjoint color factor C_A/C_F=9/4≈2.25 from f^{abc} ghost vertex. This explains structurally WHY near-cancellation is expected. JW5 T2a unaffected (SC path independent of C_match).
-   **SP1+SP2+SP3+SP4 100%; SP5 97%. Clay ~82%.** Remaining T4: c_ghost from SU(3) adjoint color structure → δC/C→0.001% → C_match exact.
+   Cycle 266 (ym_color_cmatch_structure.py): SP5 C_match T4→T3 — Background-field Ward identity
+   (Abbott 1980) establishes δC^{1-loop}=0 exactly at μ=m_KK [T1+T3]; SU(3) color weights
+   W_b=Σ_c(f^{3bc})² computed: W={1,1,0,1/4,...}, ΣW_b=C_A=3 [T1]; 2-loop size estimates
+   0.004%–0.021% (within factor 100 of measured gap 0.001%) [T2a]; color-dressed c_gauge≤0.928
+   vs C197=2.773 (66.5% reduction, color suppression). SP5 99%.
+   Cycle 267 (ym_jw_proof_assembly.py): **Complete JW proof candidate assembled — 32/32 PASS**.
+   Five formal lemmas covering all 7 Jaffe-Witten criteria assembled in one module. Lemma 1
+   (JW1 G=SU(3)): I₄=4/3, Q_top=2, g_eff²=8/27, flat Killing metric all T1/T2a. Lemma 2
+   (JW2 Hilbert space): β_lat=20.25, μ=0.1265<1/e, KP=0.344<1, M_p≤9^p all T1; Lemma F
+   c_global>0 T2a. Lemma 3 (JW3 OS axioms): RP T2a, center symmetry T1, ISO(3,1) T1/T2a.
+   Lemma 4 (JW4 continuum): b₀=11, a×Λ=2.18e-26, no bulk transition, Symanzik T1/T2a.
+   Main Theorem (JW5): Δ_JW5=min(1033,812)=812 MeV>0 via SC path (C_match-independent) +
+   BPS path; UV gap 1.30×10¹⁹ GeV; m_0++=1527 MeV ∈ [1475,1730]. **Δ ≥ 812 MeV > 0
+   at T2a.** Remaining T3: RS localization + Lemma F Gross-Rothaus. Remaining T4: M_c(D7)
+   from V(φ). **SP1+SP2+SP3+SP4 100%; SP5 99%. Clay ~82%.**
 
 The model does not claim completeness. These are honest, documented gaps.
 

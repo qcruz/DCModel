@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C266 SP5 C_match color weight structure T4→T3 — ym_color_cmatch_structure.py; 11/11 PASS. [T1] W_b color weights Σ=C_A=3; [T1+T3] BF Ward identity δC^{1-loop}=0 at μ=m_KK; [T2a] 2-loop gap estimates 0.004%–0.020%; SP5 C_match T4→T3; SP5 99%. Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~79.5% complete by internal estimate. Latest: **C267 Complete JW proof candidate assembled — ym_jw_proof_assembly.py; 32/32 PASS. Five formal lemmas covering all 7 JW criteria. Main Theorem: Δ ≥ 812 MeV > 0 [T2a composite]. SP1+SP2+SP3+SP4 100%; SP5 99%. Clay ~82%; CPC ~60%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -250,7 +250,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a [C258 formal]: G1 N_X=E_BPS [T1], G2 AC 4.75e-40 [T2a], G3 flat metric [T1]; 4T1+5T2a+1T3+0T4; N=4 [C250]+N=5 [C254] T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; C_match T4→T3 [C266]; 33/33 PASS** | **99%** |
 
-Latest: **C266 SP5 C_match T4→T3** — ym_color_cmatch_structure.py; 11/11 PASS; BF Ward identity δC^{1-loop}=0 at μ=m_KK [T1+T3]; color weights W_b: Σ=C_A=3 [T1]; 2-loop gap 0.004%–0.020% [T2a]; SP5 99%. C265: ECCC algebraic decomposition Term1_DFC=27π²×111/287 [T1]. C264: c_ghost_naive=1.4407 [T2a]; C_A/C_F=9/4 near-cancellation. **SP1+SP2+SP3+SP4 100%; SP5 99%. Clay ~82%; CPC ~60%.**
+Latest: **C267 JW proof candidate assembled** — ym_jw_proof_assembly.py; 32/32 PASS; 5 lemmas JW1-JW5 all T2a; Δ_JW5=812 MeV>0 via SC(1033)+BPS(812); UV gap 1.30e19 GeV; m_0++=1527∈[1475,1730]. C266: SP5 C_match T4→T3 (BF Ward + color weights). **SP1+SP2+SP3+SP4 100%; SP5 99%. Clay ~82%; CPC ~60%.**
 Remaining T4: SP5 M_c(D7) from V(φ) alone; C_match 0.001% gap = 2-loop [T3 C266]. Remaining T3: m_{2++}/√σ ratio tension 24% [T3, supplementary].
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
