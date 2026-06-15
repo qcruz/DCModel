@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-15 (Cycles 122–273)
+**Last updated:** 2026-06-15 (Cycles 122–274)
 
 ---
 
@@ -384,7 +384,7 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 | Strong coupling α_s(M_Z) | `alpha_em_selfconsistency.py` | ~~0.1086~~ **0.11821** | 0.1182 | ~~8.1%~~ **+0.006%** | **RESOLVED CYCLE 144 — Tier 2a:** Root cause was wrong M_c(D7) from α₁∩α₃ crossing. Correct ECCC condition α₃(M_c(D7))=α_common gives α_s=0.11821 (+0.006%). `equations/alpha_em_selfconsistency.py`. |
 | Proton mass m_p | `baryon_mass_dfc.py` | 934.8 MeV | 938.3 MeV | −0.4% | **Tier 3 (Cycle 168):** m_p=√(3π)×Λ_QCD from Y-junction Regge (α_0^N=−1/4, α'=1/(4πΛ²)); inherits from σ=Q_top×Λ² (Tier 3). Path to Tier 2a: prove σ formula from D7 vacuum energy. |
 | Delta(1232) mass m_Δ | `baryon_mass_dfc.py` | 1206.8 MeV | 1232.0 MeV | −2.0% | **Tier 3 (Cycle 168):** m_Δ=√(5π)×Λ_QCD; m_Δ/m_p=√(5/3)=1.291 (obs 1.313, −1.7%, 0 free params) |
-| Charm/strange quark masses | `quark_masses.py` | ~15% below | — | **15%** | Non-uniform Higgs threshold scaling; unresolved |
+| Charm/strange quark masses | `quark_mass_kappa_derivation.py` | **+2.45%** (scale) | — | **+2.45% T2a** | **UPGRADED C274:** κ_q = π×N_c/2 = 3π/2 from center vortex factor [T1, C221]; Gen-2 scale −15.3% (T2b, κ_avg)→+2.45% (T2a, κ=3π/2). Charm/strange RATIO still from data (r_ud input). Remaining T3: κ_23 correction from top Yukawa (Δκ=−0.36 from y_t≈1). |
 | EWSB vacuum v | `ewsb_cocrystallization.py` | 247.83 GeV | 246.22 GeV | +0.65% | **RESOLVED CYCLE 145 — Tier 2a:** Co-crystallization from D7 SU(3) driving EWSB (b₀=11=N_Hopf+Q_top); Δ_D56 correction. 0 new free params beyond ECCC M_c(D5,D6). |
 
 ---

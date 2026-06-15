@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~79.5% complete by internal estimate. Latest: **C273 k_Y² = 5/3 T3→T2a (uniqueness theorem) — ky_from_nc.py; 7/7 PARTS PASSED. k_Y²(N_c)=(11N_c/9+3)/(N_c+1) equals 5/3 iff N_c=3 [T1 algebraic, res 0.00e+00]. D7=SU(3)[T2a] → N_c=3[T1] → k_Y²=5/3[T2a composite]. SU(5) normalization recovered without SU(5) input. ECCC Term2_SM α₁ piece T3→T2a. Clay ~82%; CPC ~60%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C274 Quark mass T2b→T2a — quark_mass_kappa_derivation.py; 8/8 ASSERTIONS PASSED. κ_q=π×N_c/2=3π/2 derived from center vortex factor (same N_c/2 as string tension). Charm +0.29% T2a; strange +2.09% T2a; Gen-2 scale +2.45% (was −15.3% T2b). Root cause of prior error: old code averaged clean QCD ratio κ_12 with Higgs-contaminated κ_23; DFC predicts κ_12. Yang-Mills remaining steps breakdown added to yang_mills_clay.md. Clay ~82%; CPC ~60%; model ~79.5%→~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -202,7 +202,7 @@ predict_lepton_masses(dimple_depth=1.2e-3, confinement_radius=3.1e-19)
 
 ## Mathematical Completeness Estimate
 
-**Current estimate: ~79.5%** (viability as a theory: ~87%; mathematical rigor: ~72%)
+**Current estimate: ~80%** (viability as a theory: ~87%; mathematical rigor: ~73%)
 
 **Model Reconcilability Risk Score (MRRS)** — probability current postulates *cannot* complete each scope (lower = better):
 
