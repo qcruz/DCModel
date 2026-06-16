@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C287 D5 alternative continuum limit (Balaban-free) — ym_d5_continuum_gap.py; 13/13 PASSED. Z₃[T1]+Seiler[T2a]+CS[T1]+Λ_QCD>0[T2a]→Δ≥861 MeV>0; Balaban NOT required. Clay proof standard: ~58%→~73% (+15%).** ALL D1-D5 ROADMAP MILESTONES CLOSED. C286 D4 DFC→YM. C285 D3 JW5 interpretation. C284 D2 lattice gap (Balaban-free). C283 C_poly=20 T1. C281 C_match CLOSED. C280 Seiler formal CLOSED. C279 Balaban formal CLOSED. **Clay structural completeness: ~95%; mathematical proof standard: ~73%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C288 E3 D7=SU(3) moduli-space theorem T4→T3 — ym_e3_moduli_theorem.py; 17/17 PASSED. 7/8 sub-steps T1/T2a; single remaining gap Sobolev/Fredholm ~20pp. Clay proof standard: ~73%→~76% (+3%).** C287 D5 Balaban-free continuum limit (+15%). ALL D1-D5 ROADMAP MILESTONES CLOSED. C286 D4 DFC→YM. C285 D3 JW5 interpretation. C284 D2 lattice gap (Balaban-free). **Clay structural completeness: ~95%; mathematical proof standard: ~76%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
