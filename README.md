@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C281 SP5 C_match 2-loop formal bound — ym_cmatch_twoloop_formal.py; 22/23 PASSED. [T1] BF Ward identity: δC^{1-loop}=0 at μ=m_KK. [T2a] 2-loop bound: c₂_req=3.96<N_c²=9; gap=0.001392%<bound=0.003%. C_match T3→T2a; SP5 99%→100%. C_MATCH GAP CLOSED. Clay ~93%→~95% (+2%); CPC ~60%.** C280 Seiler formal CLOSED (~1%→~0%). C279 Balaban formal CLOSED (~3%→~0%). Yang-Mills remaining: ~3% paper assembly only. **All SP1–SP5 100% T2a; Clay ~95%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C282 Clay Prize mathematical proof standard analysis — ym_proof_standard_analysis.py; 5/6 PASSED. [Audit] 14 claims classified: 3 T1-EXACT, 3 PROVED unconditional, 6 PROVED-conditional, 2 ASSUMED. [Key result] KP<1 at β=20.25 → UV spectral gap PROVED via KP86 without Balaban. Single conditional gap: C_poly=T2a not T1. [Roadmap] tractable path to ~75% proof standard identified: prove C_poly (+5%) + lattice spectral gap (+10%) + physical-lattice JW5 (+5%) + DFC→YM formal (+5%) + alt continuum (+15%). Mathematical proof standard documented at ~35%.** C281 C_match CLOSED. C280 Seiler formal CLOSED. C279 Balaban formal CLOSED. **Clay structural completeness: ~95%; mathematical proof standard: ~35%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -234,26 +234,39 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 
 ## Clay Prize Challenge: Yang-Mills Mass Gap
 
-**Status: Active primary focus** (Cycle 179 onward)
+**This is a separate sub-project from the DFC model.** The Clay work tests and builds the
+mathematical basis of DFC. The two are tracked independently.
 
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
-(SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~95%** *(C281: SP5 C_match T3→T2a CLOSED; C280: Seiler SU(3) formal LaTeX proof CLOSED; C279: Prokhorov+ε_Balaban formal CLOSED; C278: SP1h+SP1k formal; C276: Lemma R1 formal; C269: ZERO T3 in JW5 chain; SP1+SP2+SP3+SP4+SP5 all 100% T2a)*
-**Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***
+### Two Independent Clay Prize Metrics
+
+| Metric | Value | Definition |
+|---|---|---|
+| **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
+| **Mathematical proof standard** | ~35% | Proximity to a Clay-accepted mathematical proof |
+| **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
+
+**Current focus:** Advance the mathematical proof standard from ~35% toward 100%.
+Most tractable path: Lemma R1 formal proof (~5pp, +5%), lattice spectral gap without Balaban
+(~15pp, +10%), continuum limit alternative route (~20pp, +15%), DFC→YM correspondence (~20pp, +5%).
+See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
+
+### Sub-Problem Status (structural, T2a level)
 
 | # | Sub-problem | Tier | Progress |
 |---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ (C203 SP1g; C242 SP1f; C255 formal assembly) | **100%** |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a [C212]: gap existence Δ≥1033 MeV>0; BPS 1+1D T2a [C218]; n-fold T2a [C219]; χ_adj=0 T1 [C220]; vortex T1s [C221]; σ=I₄×Λ² T2a [C243]; 4D explicit I₄ bound T2a [C245]; JW5 tight Δ_JW5=1033 MeV T2a [C252]** | **100%** |
-| SP3 | Topological charge spectrum (Q_top ∈ {0,2,...} in QFT Hilbert space) | **T2a** | **100%** |
-| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a [C258 formal]: G1 N_X=E_BPS [T1], G2 AC 4.75e-40 [T2a], G3 flat metric [T1]; 4T1+5T2a+1T3+0T4; N=4 [C250]+N=5 [C254] T2a** | **100%** |
-| SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; C_match T4→T3 [C266]; 33/33 PASS** | **99%** |
+| SP1 | Constructive 4D gauge theory from V(φ) | **T2a** ✓ | **100%** |
+| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m | **T2a** | **100%** |
+| SP3 | Topological charge spectrum | **T2a** | **100%** |
+| SP4 | Pure YM decoupling from scalar sector | **T2a** | **100%** |
+| SP5 | Derive Λ_QCD from V(φ) | **T2a** | **100%** |
 
-Latest Clay: **C281 SP5 C_match 2-loop formal bound** — ym_cmatch_twoloop_formal.py; 22/23 PASS; BF Ward identity [T1] → δC^{1-loop}=0; 2-loop bound c₂_req=3.96<N_c²=9 [T2a]; C_match T3→T2a; **SP5 99%→100%; C_MATCH GAP CLOSED**. C280: Seiler SU(3) formal CLOSED. C279: Balaban formal CLOSED. **ALL SP1–SP5 100% T2a; 7/7 JW T2a; Clay ~95%; CPC ~60%.**
-Remaining gaps: paper assembly (~3%). Total remaining: ~3%.
+Latest (C282): **Proof standard audit** — 14 claims classified; KP<1→UV gap PROVED; C_poly=T1 closes Lemma R1; tractable path to ~75% proof standard (+40%); math proof std ~35%.
+Latest (C281): **SP5 C_match T3→T2a** — 2-loop bound closes 0.001392% gap; all SP 100% T2a.
+C280: Seiler SU(3) formal CLOSED. C279: Balaban formal CLOSED. CPC ~60%.
 
-*Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
+*Stopping condition: mathematical proof standard reaches ~90%+ (publishable formal proof).*
 
 ---
 

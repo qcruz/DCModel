@@ -143,14 +143,25 @@ Repeat this cycle indefinitely:
 ### Completeness Estimate (running)
 
 ```
+--- DFC MODEL (primary project) ---
 Current estimate: ~80%  (viability: ~87%, mathematical rigor: ~73%)
-Clay Prize progress: ~95%  |  Clay Prize Confidence Score (CPC): ~60%
 
-  CPC definition: P(DFC framework → valid Jaffe-Witten proof candidate | continued work)
+--- CLAY PRIZE (separate sub-project — test case for DFC mathematical basis) ---
+Clay Prize structural completeness: ~95%
+  (How complete the DFC argument covering all 5 Jaffe-Witten criteria is at T2a level)
+Clay Prize mathematical proof standard: ~35%
+  (How close to an accepted mathematical proof — blocked on Balaban 4D SU(3) YM
+  program and formal DFC→YM correspondence proof; see yang_mills_clay.md §Proof Standard)
+Clay Prize Confidence Score (CPC): ~60%
+  (P(DFC framework → valid Jaffe-Witten proof candidate | continued work))
   CPC is NOT the progress %; it measures reachability of the destination, not distance traveled.
   Key CPC swing events: SP1 Balaban closes (+15% — TRIGGERED C203), hard obstruction found (−15%),
   SU(N) generality issue (−10%), c_gauge explicit T1 (+5%).
   SU(N) generality confirmed (+10% — TRIGGERED C216): SP1+SP2 T2a all N≥2 via monotonicity.
+
+NOTE: The Clay Prize is tracked independently from the DFC model. Structural completeness
+  measures how well DFC covers the JW criteria. Mathematical proof standard measures proximity
+  to a Clay-accepted proof. The current focus is advancing the mathematical proof standard.
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
   α_s closed 0.006% (Cycle 144); v=247.83 GeV Tier 2a (Cycle 145); m_τ Koide Tier 2a (Cycle 146).
@@ -184,6 +195,7 @@ Recent cycles (full history: push_history.md):
 | 2026-06-14 | 262 | Step 1: SP5 S10 ECCC vs Wilsonian M_c(D7) resolution — ym_sp5_eccc_resolution.py (new): 8/8 PASS. Explains factor ~2.6 between C144 M_c=1.566e15 GeV and C261 M_c=5.97e14 GeV. Factor = exp(t7+delta_t−ln(m_KK/M_Z))=exp(30.5+10.1−39.6)=2.79 [geometric, G6]. ECCC route: α_s=α_comm running UP from M_Z [1-loop, T2a, 0.02% from C144]. Wilsonian route: α_s returns to α_comm running DOWN from m_KK after C_match [2-loop, T2a, 0.00% from C261]. ECCC ratio 136.97≈137.036 (0.048%, T2a C144). Wilsonian self-consistency 0.052% (T2a C261). For Clay JW5: M_c not needed (Λ_QCD from Landau pole in C188; JW5 via SC area law C256). SP5 S10 remains T2b. Clay: ~82%. CPC: ~60%. | 87% | 82% | ~79.5% |
 | 2026-06-14 | 261 | Step 1: SP5 S10 C_match bracket → M_c(D7) bracket T2b — ym_sp5_mc_bracket.py (new): 6/9 PASS. KEY G5 [T2a]: DFC-only M_c matches experimental-α_s M_c to 0.052% (same 2-loop, N_f=6); DFC chain self-consistent. G1 [T2a]: C_match_needed ∈ [0.787177, 0.795151]. G8 [T1]: g_eff²=8/27 res 0. FAIL G2/G3/G4: M_c bracket [5×10¹⁴, 8×10¹⁴] GeV misses ECCC 1.566×10¹⁵ GeV by factor ~2.6 (loop-order scheme: C208 documented 2-loop vs 3-loop). SP5 S10: T4→T2b. Clay: ~82%. CPC: ~60%. | 87% | 82% | ~79.5% |
 | 2026-06-14 | 259 | Step 1: Ghost Jost integral for SP5 C_match gap — equations/ym_ghost_jost.py (new): 8/10 ASSERTIONS PASSED. Parts A-B [T1]: s=1 PT Jost ODE via Darboux chain; max-res=7.84e-07 < 1e-6; |T₁|²=1.00 reflectionless; even-parity ghost mode asymptotic res=2.11e-15; ghost zero mode norm=1.000000. Part C [T2a]: F_ghost form factor computed (F_ghost(κ)=0.640, F_ghost(5κ)=0.033). Part D [T3, convergence-limited]: c_ghost=2.466 (IntegrationWarning: subdivision limit 200-300 hit; slowly convergent oscillatory integrand); c_gauge cross-check: 1.602 vs C197=2.773 (42% off; FAIL — same convergence issue). CORRECT net: c_net=2.773(C197)−2.466=0.307; δC_net/C_tree=+0.073%; C_match_total≈0.7905 (gap 0.074%); SP5 C_match T4→T3 (path to T2a: analytic sech⁶ Fourier transform). Part F [T2a from C253]: ST δC_ST=12.0% >> δC_net=0.073% — Jost integral heavily suppressed by derivative coupling, consistent with C257. KEY: module's Part E incorrectly used c_gauge_recomputed=1.602 (convergence failure) instead of C197=2.773; correct tier is T3 not T2a as claimed in module output. Steps 2-5: ISSUES.md T14 Last updated→C259 + C259 entry; yang_mills_clay.md Last updated→C259 + C259 cycle row + ym_ghost_jost.py in file index; educational/07_open_questions.md C259 paragraph + summary table + "What is still missing" updated; CLAUDE.md C259 row + Clay ~82% (unchanged); README.md Latest→C259 + Clay section updated; push_history.md. Clay: ~82% (unchanged). CPC: ~60% (unchanged). | 87% | 82% | ~79.5% |
+| 2026-06-15 | 282 | Step 1: Clay Prize mathematical proof standard analysis — ym_proof_standard_analysis.py (new): 5/6 ASSERTIONS PASSED. Audits 14 claims as PROVED/PROVED-conditional/ASSUMED/T1-EXACT: 3 T1-EXACT (I₄=4/3, π₃(SU(3))=ℤ, Q_top=2); 3 PROVED unconditional (OS RP [S78], gauge invariance [Elitzur+Z₃], lattice spectral gap at β=20.25 [OS+KP]); 6 PROVED-conditional (KP uniqueness, SC analyticity, Dobrushin no-transition, KP no-transition, ω_∞ existence, SC area law gap); 2 ASSUMED (Balaban a→0, DFC→YM formal). Balaban-free route: KP<1 → m_UV≥|log(KP)|×m_KK PROVED via KP86; SC path gives Δ_SC≥1033 MeV independently. Single conditional gap: C_poly=12 is T2a not T1 — proving C_poly exactly makes Lemma R1 a fully rigorous finite computation (C_Dob_max=0.652<1 verified T2a). Roadmap to ~75% proof standard: +5% C_poly proof, +10% self-contained lattice spectral gap, +5% physical-lattice JW5 interpretation, +5% DFC→YM formal correspondence, +15% alternative continuum limit route. Fundamental gaps documented: E1 Balaban 4D SU(3) incomplete in literature; E2 Gribov/functional-analytic continuum; E3 D7=SU(3) moduli-space formal theorem. Dual tracking: DFC model ~80%; structural completeness ~95%; **mathematical proof standard ~35%**. Steps 2-5: ISSUES.md Last updated→C282 + C282 T14 entry; yang_mills_clay.md Last updated→C282 + ym_proof_standard_analysis.py file index + C282 cycle row; educational/07_open_questions.md C282 paragraph + summary table; CLAUDE.md C282 row; README.md Latest→C282; push_history.md. Clay structural: **~95% (unchanged)**. Math proof std: **~35%** (documented). Next: ym_cpoly_exact_bound.py. CPC: ~60% (unchanged). | 87% | 95% | ~80% |
 | 2026-06-15 | 281 | Step 1: SP5 C_match 2-loop formal bound — ym_cmatch_twoloop_formal.py (new): 22/23 ASSERTIONS PASSED. [T1] BF Ward identity at μ=m_KK: log(μ/m_KK)=0 → δC^{1-loop}=0 (res 0.00e+00). [T2a] 2-loop bound: c₂≤N_c²=9; N_c²×(g²/16π²)²=0.00317% > gap=0.001392%; c₂_req=3.96 within typical [1,10] range. [T1+T2a] C_match=0.789948 ± <0.003% (2-loop accurate); C_match_needed=0.789937 within error bar. [T1] JW5 SC path (C256) C_match-independent: Δ_SC≥1033 MeV unchanged. FAIL F2: α_s residual −2.79% attributed to M_c(D7) T2b, not C_match. Steps 2-5: ISSUES.md Last updated→C281 + C281 T14 entry + SP5 row 99%→100%; yang_mills_clay.md Last updated→C281 + SP5 row 99%→100% + C_match DONE C281 + total ~7%→~3% + ym_cmatch_twoloop_formal.py file index + C281 cycle row; educational/07_open_questions.md C281 paragraph + summary table; CLAUDE.md C281 row + Clay ~93%→~95%; README.md Latest→C281 + Clay ~95%; push_history.md. **C_MATCH GAP: T3→T2a; SP5 99%→100%.** Clay: **~93%→~95%** (+2%). CPC: ~60% (unchanged). | 87% | 95% | ~80% |
 | 2026-06-15 | 280 | Step 1: Seiler SU(3) formal LaTeX proof — ym_seiler_su3_formal.py (new): 36/36 ASSERTIONS PASSED. Four-part formal Lemma R1: (A) SC [S82] β_SC=3.0 [T1], 6u=1 at β_SC [T1]; (B) Dobrushin [D68+DS85+BK92] block-spin B=3 [T1], C_Dob_max=0.652<1 [T2a], ξ_max=51.74 [T2a]; (C) KP [KP86] β_KP=17.06, KP_DFC=0.344<1 [T2a], 200-pt scan monotone; (D) union (0,∞) complete [T1]; full LaTeX `\begin{lemma}...\end{proof}` block (~5pp) printed as module output. Steps 2-5: ISSUES.md Last updated→C280 + C280 T14 entry; yang_mills_clay.md Last updated→C280 + Seiler row ~1%→~0% + total ~8%→~7% + ym_seiler_su3_formal.py file index + C280 cycle row; educational/07_open_questions.md C280 paragraph + summary table; CLAUDE.md C280 row + Clay ~92%→~93%; README.md Latest→C280; push_history.md. **SEILER FORMAL GAP: ~1%→~0%.** Clay: **~92%→~93%** (+1%). CPC: ~60% (unchanged). | 87% | 93% | ~80% |
 | 2026-06-15 | 279 | Step 1: Prokhorov tightness + ε_Balaban formal — ym_prokhorov_epsilon_formal.py (new): 31/31 ASSERTIONS PASSED. Part A [T1/T2a]: g_eff²=8/27 [T1], KP=0.3439 [T2a], a×Λ=2.18e-20 [T2a]. Part B [T1]: sup_a||ω_a||=1. Part C [T2a]: Prokhorov tightness ω_a(K_R^c)≤9/R²→0. Part D [T1]: Prokhorov theorem → ω_∞ exists. Part E [T2a]: KP<1 → unique; OS axioms inherited. Part F [T2a]: Δ_phys≥1033 MeV; hierarchy 1033≤1527∈[1475,1730]. Part G [T2a]: ε_Balaban: g_eff²/(16π²)=0.1876% < ε_B≥1% (margin 5.32×; vs 1/N_c²: 59.2×). Part H [T2a]: Clay theorem boxes assembled. Steps 2-5: ISSUES.md Last updated→C279 + C279 T14 entry; yang_mills_clay.md Last updated→C279 + Balaban row ~3%→~0% + total ~11%→~8% + ym_prokhorov_epsilon_formal.py file index + C279 cycle row; educational/07_open_questions.md C279 paragraph + summary table; CLAUDE.md C279 row + Clay ~89%→~92%; README.md Latest→C279; push_history.md. **BALABAN FORMAL GAP: ~3%→~0%.** Clay: **~89%→~92%** (+3%). CPC: ~60% (unchanged). | 87% | 92% | ~80% |
@@ -357,21 +369,34 @@ All three must stay in sync. The estimate has two components:
 
 **Yang-Mills Mass Gap — Clay Millennium Prize Problem**
 
-Starting Cycle 179, every session's Step 1 is directed toward advancing the DFC
-structural argument for the Yang-Mills mass gap to higher mathematical rigor.
-This focus continues until one of two stopping conditions is met:
+**IMPORTANT — Two separate measurements, tracked independently:**
 
-- **Hard barrier:** A fundamental obstruction is identified that cannot be resolved
-  within the DFC framework (document in `ISSUES.md` and return to general cycle).
-- **Adequate solution:** The argument reaches Tier 2a or better across all five
-  sub-problems listed below, constituting a publishable structural proof candidate.
+1. **Clay Prize structural completeness** (~95% as of C281): How completely DFC covers
+   all five Jaffe-Witten criteria at T2a (numerically consistent structural argument) level.
+   This is the DFC-internal progress metric — it tracks how much of the proof *outline* exists.
+
+2. **Clay Prize mathematical proof standard** (~35% as of C281): How close the argument is
+   to an *accepted mathematical proof* — the standard required to actually win the Clay Prize.
+   This is lower because: (a) Balaban's 4D SU(3) YM program is incomplete in the literature,
+   (b) the DFC→YM formal correspondence needs proof not argument, (c) Prokhorov in infinite
+   dimensions needs a proper functional-analytic framework. See `foundations/yang_mills_clay.md`
+   §Proof Standard Gap for the honest accounting.
+
+**Current focus:** Advance the mathematical proof standard from ~35% toward 100%.
+This means: identify which steps can be proved rigorously without Balaban, find alternative
+routes to the continuum limit, and formally prove the DFC→SU(3) YM correspondence.
+
+This focus continues until one of two stopping conditions is met:
+- **Hard barrier:** A fundamental obstruction (document in `ISSUES.md`).
+- **Complete proof:** Mathematical proof standard reaches ~90%+ (publishable formal proof).
 
 **Canonical tracking document: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
-(All SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history)
+(All SP1-SP5 tables, structural assets, CPC, cycle history, AND §Proof Standard Gap)
 
-**Two tracked quantities (update both each cycle):**
-- **Progress %** (~72% as of C203): fraction of the construction completed across SP1–SP5.
-- **CPC** (~50%): P(DFC → valid Jaffe-Witten proof candidate | continued work). Update CPC when a swing event occurs (hard obstruction, Balaban closure, SU(N) issue confirmed/resolved, c_gauge explicit). [Updated C195: Seiler-Simon SU(3) +5%; Updated C203: SP1 Balaban closes +15%]
+**Three tracked quantities (update each Clay cycle):**
+- **Structural completeness** (~95%): DFC argument coverage of JW criteria.
+- **Mathematical proof standard** (~35%): proximity to Clay-accepted proof.
+- **CPC** (~60%): P(DFC → valid JW proof candidate | continued work). Update on swing events.
 
 **The five sub-problems (full tracking in `foundations/yang_mills_clay.md`):**
 

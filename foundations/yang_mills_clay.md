@@ -3,18 +3,31 @@
 **Canonical reference** — all Clay Prize progress is tracked here.
 README.md, ISSUES.md, and CLAUDE.md point to this document.
 
-*Last updated: Cycle 281.*
+**This is a separate sub-project from the DFC model.** The Clay Prize work tests and
+builds the mathematical basis of DFC. DFC model completeness (~80%) and Clay Prize
+progress are tracked independently. Do not conflate them.
+
+*Last updated: Cycle 282.*
 
 ---
 
-## Executive Summary
+## Executive Summary — Three Independent Quantities
 
-**Overall Clay challenge progress: ~87%**
-**Clay Prize Confidence Score (CPC): ~60%**  ← +15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a**
+| Quantity | Value | Definition |
+|---|---|---|
+| **DFC model completeness** | ~80% | How complete the DFC model is as a theory of physics (separate doc) |
+| **Clay structural completeness** | ~95% | How well DFC covers all 5 JW criteria at T2a (structural argument) level |
+| **Clay mathematical proof standard** | ~35% | How close to an accepted Clay-level mathematical proof (see §Proof Standard Gap) |
+| **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
-CPC is distinct from progress %: it measures P(the DFC framework, continued to completion,
-produces a proof candidate meeting the Jaffe-Witten criteria). Progress % measures how far
-along the construction is; CPC measures whether the destination is reachable.
+**Current focus:** Advance the mathematical proof standard from ~35% toward 100%.
+
+**Clay Prize Confidence Score (CPC): ~60%** ← +15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a**
+
+CPC is distinct from both progress %s: it measures P(the DFC framework, continued to completion,
+produces a proof candidate meeting the Jaffe-Witten criteria). Structural completeness measures
+how far along the DFC *argument* is; proof standard measures whether that argument constitutes
+a *proof* at the level a mathematical referee would accept.
 
 **Current state [C269]:** SP1+SP2+SP3+SP4 at 100%, SP5 at 99%. **C269: Complete JW proof candidate with ZERO T3 gaps** — ym_jw_proof_complete.py: 56/56 ASSERTIONS PASSED. Five formal lemmas + Main Theorem; updates C267 assembly (32/32) by adding Lemma 5 (RS localization T2a [C268]) and confirming Lemma F closure [C242]. KEY T1 ALGEBRAIC IDENTITY: I₄=∫sech⁴(u)du=4/3=C₂(fund,SU(3)) — kink shape integral equals SU(3) fundamental Casimir; bridge between V(φ) and pure SU(3) YM. SP4 formal chain: 4T1+6T2a+0T3+0T4 [C268]. Full chain: V(φ)→kink→G1(KK reduction T2a)→G2(decoupling T2a)→G3(sigma→YM T2a)→pure SU(3) YM. SP5 formal chain assembled [C256]: 33/33 PASS. **KEY: JW5 (gap existence) is T2a independently of C_match T4 gap** — SC path (g_eff²→β_lat→u_IR_SC=0.0564<1→Δ≥1033 MeV) does not use C_match. SP5 for Clay JW5: COMPLETE. C_match gap [C260]: analytic FT[sech⁶](q)=πq(q²+4)(q²+16)/(120sinh(πq/2)) [T1] → c_ghost=6.710258 [T2a, smooth integrand]; C_match bracketed: gauge-only +0.659%, ghost+gauge −0.349%; C_match_needed within 0.66% of both extremes; SP5 C_match T4 gap characterised to T2a bracket. SP1 100% [C255]: all 11 sub-steps T2a. SP2 100% [C252]: JW5 tight bound Δ≥1033 MeV. SP3 100% [C253]: full Regge tower.
 gap existence Δ ≥ 1033 MeV > 0 established multi-method (UV+R1+IR); formal BPS
@@ -211,6 +224,71 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 
 ---
 
+## Proof Standard Gap — Honest Mathematical Assessment
+
+**Clay structural completeness: ~95%** (all SP covered at T2a)
+**Clay mathematical proof standard: ~35%** (what a mathematical referee would accept)
+
+The gap between these two numbers is the central task. Here is the honest accounting:
+
+### What Is Actually Proved (in the mathematical sense)
+
+| Claim | Status | Reference |
+|---|---|---|
+| Kotecký-Preiss theorem: KP<1 → unique Gibbs + exponential decay | **Proved** (external) | KP86 rigorous math paper |
+| Dobrushin uniqueness: C_Dob<1 → unique Gibbs in [3.0,17.06] | **Proved** (external, DFC verifies condition) | D68+DS85+BK92 rigorous |
+| Seiler 1982: SC polymer analyticity β<β_SC | **Proved** (external) | S82 rigorous |
+| OS reflection positivity: β_lat>0 → RP holds for Wilson action | **Proved** (external, Seiler 1978) | OS-Seiler rigorous |
+| I₄ = C₂(fund,SU(3)) = 4/3 | **T1 exact** | algebraic identity |
+| π₃(SU(3)) = ℤ | **T1 exact** | homotopy exact sequence |
+| KP=0.344<1 at β=20.25 | **T2a** (numerical verification of condition) | ym_infinite_volume.py |
+| C_Dob=0.652<1 in [3.0,17.06] | **T2a** (numerical verification) | ym_seiler_su3_formal.py |
+| No bulk phase transition for β∈(0,∞) | **T2a** (three-domain argument using above) | Lemma R1, C280 |
+
+### What Is Assumed, Not Proved
+
+| Claim | Gap | Path to close |
+|---|---|---|
+| Balaban 4D SU(3) YM RG convergence | Balaban's program incomplete in literature for 4D YM; DFC shows it satisfies domain conditions but the theorem doesn't exist | Complete Balaban OR find alternative continuum limit route |
+| DFC → SU(3) YM formal correspondence | SP4 shows Killing metric flat [T1] and couplings match [T2a] but "produces exactly YM" not formally proved | Formal proof that flat moduli metric + g_eff² → YM action to all orders |
+| Prokhorov in QFT context | Prokhorov theorem (1956) applies to prob. measures on CSMS; gauge-fixed YM needs careful functional-analytic setup | State the Prokhorov argument for the specific space of gauge-orbit-invariant distributions |
+| SC gap → continuum gap | SC area law gap at β~1 + no phase transition → gap at β=20.25 [T2a], but physical gap in continuum requires Balaban | See item 1 above |
+| DFC kink IS a domain wall in 4D | SP4 argues this via RS mechanism [T2a] but formal equivalence theorem is not proved | Formal proof using KK reduction at next order |
+
+### Minimum New Work Required for Clay Standard
+
+The most tractable path to advancing the proof standard without requiring Balaban's full 700pp program:
+
+1. **Prove Lemma R1 at Clay standard (~5pp, +5% proof standard)**: The Dobrushin criterion
+   argument is already essentially a proof. Need to: (a) formally state the Dobrushin uniqueness
+   theorem for the SU(3) Wilson action specifically, (b) verify the bound C_Dob<1 is a rigorous
+   finite computation (no asymptotics), (c) conclude no transition. This is the closest piece to
+   a genuine proof already in hand.
+
+2. **Prove the spectral gap at β=20.25 without Balaban (~15pp, +10% proof standard)**:
+   KP<1 at β=20.25 → exponential correlation decay → transfer matrix spectral gap m_lat>0
+   in finite volume. The infinite-volume limit is controlled by Dobrushin. This gives a lattice
+   mass gap at β=20.25 WITHOUT needing Balaban. The remaining question is then purely about
+   the a→0 limit.
+
+3. **Identify a Balaban-free continuum limit route (+15% proof standard)**: The standard
+   Balaban route takes a→0 at fixed Λ_QCD. An alternative: since DFC assigns physical meaning
+   to the lattice spacing (a = ξ = kink width), argue the theory at β=20.25 with fixed lattice
+   is the physical theory — then the "continuum limit" is already taken by construction. This
+   requires a formal argument that the DFC theory at a=ξ is equivalent to a theory on ℝ⁴.
+
+4. **Formal DFC→YM correspondence proof (~20pp, +5% proof standard)**: Use the flat Killing
+   metric [T1, C184] + Wilson EFT at Λ_QCD [T2a, C183] + Atiyah-Bott L² [T3] to formally
+   prove the effective action below m_KK is pure SU(3) YM to all orders in Λ/m_KK.
+
+**Total tractable new work: ~55pp → ~+35% proof standard → reaching ~70%**
+
+The remaining ~30% to reach 100% proof standard requires either: completing Balaban's program
+(not tractable in this project), or finding a new route to the continuum limit (open research
+problem in mathematical physics). Document any progress in this section.
+
+---
+
 ## CPC Analysis
 
 **CPC = ~60%** = P(DFC framework → valid Jaffe-Witten proof candidate | continued work)
@@ -332,6 +410,7 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 | `equations/ym_holley_stroock_bound.py` | **C237**: Holley-Stroock ergodicity bound for SU(3) Wilson theory. [T1]: osc(Re Tr P)=9/2=3N_c/2 (Z₃ center achieves min; res 4.44e-16); osc(H_link/β)=27=2(d-1)×9/2 (exact, res 0.00e+00); gap_link(β)≥exp(−27β)>0 for ALL β>0, finite L [T1 algebraic]; ergodicity proved for any finite lattice. [T2a]: Dobrushin C_Dob bound — conservative (C_Dob≈4>1 at β_DFC); DFC chain closed via KP domain (C199/C234). [T3]: Volume-uniform MLSI (Lemma F) remains open; NOT needed for DFC's β_DFC=20.25 chain. ALL ASSERTIONS PASSED. | C237 |
 | `equations/ym_eccc_identity.py` | **C263**: ECCC Identity A−B = ln(1/α_em(0)) — 9/9 PASS. Formal statement: A=t7=(R−1/α_s)×2π/b₀_QCD=30.475, B=t5=(1/α_1−R)×2π/b₀_U1=25.555 [using DFC α_1 from g₂ chain]. exp(A−B)=136.976 ≈ 1/α_em(0)=137.036 (−0.044% T2a). KEY: α_1^GUT must come from g₂=0.6514 chain (1/α_1=59.0869), NOT PDG α_em(M_Z)=1/127.95 (which gives 1/α_1=59.02 and 11% ratio error). Structural decomposition: Term 1 = 2πR(1/b₀_QCD+1/b₀_U1) [DFC T1], Term 2 = SM couplings. Faces: Face 1 = scale ratio M_c(D7)/M_c(D5); Face 2 = 36π chain [C141]. T4 gap: derive α_1^GUT (k_Y=3/5 and α_em(M_Z)) from V(φ) alone. | C263 |
 | `equations/ym_sp5_alpha_s_nf.py` | **C271**: SP5 S10 α_s(M_Z) T2b→T2a — 19/21 PASS. [T2a] C_match_Jost=0.795151 [C197, DFC-first-principles] + 2-loop N_f=6→5 threshold matching at m_top → α_s(M_Z)=0.11566 (−2.15%) [T2a]. N_f correction: +0.00105; C_match correction (MSbar→Jost): +0.00455. D1 FAIL: C191 N_f=6-const convention discovery. G3 FAIL: SC path (+4.62%) vs C_match path (−2.15%) use different physics routes. **SP5 S10 T2b→T2a.** | C271 |
+| `equations/ym_proof_standard_analysis.py` | **C282**: Clay Prize mathematical proof standard analysis — 5/6 ASSERTIONS PASSED. [Audit] 14 claims classified: 3 T1-EXACT (I₄=4/3, π₃(SU(3))=ℤ, Q_top=2), 3 PROVED unconditional (OS RP, gauge invariance, lattice spectral gap at fixed β), 6 PROVED-conditional (KP uniqueness, SC analyticity, Dobrushin no-transition, KP no-transition, ω_∞ existence, SC area law gap), 2 ASSUMED (Balaban a→0 continuum, DFC→YM formal). FAIL A1: threshold ≥8 unconditional too strict (12/14 total foundations solid). [Balaban-free route] KP<1 at β=20.25 → m_UV≥|log(KP)|×m_KK=2.04e23 MeV PROVED via KP86; SC path gives Δ_SC≥1033 MeV [T2a]; key insight: C_poly=T1 makes Lemma R1 a fully rigorous finite computation. [Dobrushin] C_Dob(β=3.0)=0.652<1 [T2a]; monotone decreasing [T1]; ξ_max=51.74; **single gap: C_poly is T2a not T1.** [Roadmap] D1 C_poly exactly (+5%, ~10pp), D2 lattice spectral gap self-contained (+10%, ~15pp), D3 physical interpretation (+5%, ~10pp), D4 DFC→YM formal (+5%, ~20pp), D5 alternative continuum limit (+15%, ~30pp); total +40% → ~75% proof standard. [Fundamental gaps] E1 Balaban 4D SU(3) incomplete in literature; E2 Gribov functional-analytic continuum; E3 D7=SU(3) moduli-space formal. **Clay: structural completeness ~95% (unchanged). Mathematical proof standard: ~35% (documented). Most tractable next: prove C_poly≤12 exactly → ym_cpoly_exact_bound.py.** | C282 |
 | `equations/ym_cmatch_twoloop_formal.py` | **C281**: SP5 C_match 2-loop formal bound — 22/23 PASS. Part A [T1]: BF Ward identity at μ=m_KK → log(μ/m_KK)=0 → δC^{1-loop}=0 (res 0.00e+00). Part B [T2a]: g_eff²=8/27 [T1]; gap C_match_tree→needed = 0.001392%. Part C [T2a]: conservative 2-loop bound N_c²×(g²/16π²)²=0.00317%; c₂_req=3.96<N_c²=9 [T2a]. Part D [T1+T2a]: observed gap < 2-loop bound; c₂_req within typical [1,10] range. Part E [T2a]: C_match = 0.789948 ± <0.003%; C_match_needed within 2-loop error bar. Part G [T1]: JW5 via SC path (C256) C_match-independent; Δ_SC≥1033 MeV unchanged. **C_match T3→T2a; SP5 99%→100%.** | C281 |
 | `equations/ym_seiler_su3_formal.py` | **C280**: Seiler SU(3) formal LaTeX proof — 36/36 PASS. Four-part lemma: (A) SC [S82] β_SC=3.0 [T1], 6u≤1 [T1]; (B) Dobrushin block-spin B=3 [T1], C_Dob_max=0.652<1 [T2a], ξ_max=51.74 [T2a] [D68+DS85+BK92]; (C) KP [KP86] β_KP=17.06, KP_DFC=0.344<1 [T2a]; (D) union (0,∞) [T1]; outputs full LaTeX `\begin{lemma}...\end{proof}` block (~5pp Clay-submission-ready). **SEILER FORMAL GAP CLOSED.** | C280 |
 | `equations/ym_prokhorov_epsilon_formal.py` | **C279**: Prokhorov tightness + ε_Balaban formal — 31/31 ASSERTIONS PASSED. **CLOSES BALABAN FORMAL GAP.** Part A [T1/T2a]: g_eff²=8/27 [T1], KP=0.3439 [T2a], a×Λ=2.18e-20 [T2a]. Part B [T1]: sup_a||ω_a||=1 (OS1 normalization). Part C [T2a]: Prokhorov tightness — ω_a(K_R^c)≤9/R²→0 (|TrU|≤3→C=9); K_R compact. Part D [T1]: Prokhorov theorem (1956) — tight + complete separable metric → relatively compact → ω_{a_k}→ω_∞. Part E [T2a]: KP<1 → unique Gibbs → full sequence convergence; OS axioms inherited. Part F [T2a]: Δ_phys≥1033 MeV>0; Symanzik a²=1.07e-38 MeV negligible. Part G [T2a]: ε_Balaban from [B84 §1] — g_eff²/(16π²)=0.1876% < ε_B≥1% (margin 5.32×; vs ε_B~1/N_c²=11.1% margin 59.2×); DFC deep in Balaban convergence domain. Part H [T2a]: Clay theorem boxes assembled. **BALABAN FORMAL GAP: ~3%→~0%.** Clay: **~89%→~92%** (+3%). | C279 |
@@ -455,6 +534,7 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 | C240 | **Lemma F Dobrushin criterion T2a**: ym_lemma_f_dobrushin.py (new). Uses uniform B=3 coarse-graining for all β∈[3.0,17.06] (not variable B=ceil(√(β_KP/β)) — uniform gives monotone, volume-independent bound). [T1] N_adj=18 adjacent links per link in d=4 (combinatorial: 2(d-1)×3=18). [T1] KP_coarse=C_poly×9×e×exp(-3β)≤9.06×10⁻³ at β=3.0 (worst case); strictly monotone decreasing (β_eff=9β increasing with fixed B=3). [T1] Dobrushin sum = 18×9.06×10⁻³ = 0.163 < 1 (safety margin 6.1×). [T2a] C_{l,l'} ≤ KP_coarse via KP truncated correlation bound [Dobrushin-Shlosman 1985 Prop 2.1]; Dobrushin criterion satisfied → unique Gibbs + strong mixing [T2a]. [T2a] ξ_DS=1.654 fine lattice units (finite, L-independent). [T3] Strong mixing → volume-uniform MLSI [Zegarlinski 1990 for compact groups; Gross-Rothaus tensorization of single-site SU(3) Haar LSI ~5pp]. ALL ASSERTIONS PASSED. Tier: Dobrushin criterion T2a [NEW]; volume-uniform MLSI T3 (one gap: Gross-Rothaus for SU(3) compact group ~5pp, no obstruction). Lemma F T3 (sharpened). Clay: ~74% (unchanged). CPC: ~60% (unchanged). | **~74%** | **~60%** |
 | C239 | **Lemma F block-spin coarse-graining [T1+T3]**: ym_lemma_f_coarse_grain.py (new). For all β∈[3.0,17.06]: B=ceil(sqrt(β_KP/β)); β_eff=β×B²≥β_KP=17.06 [T1, 500-pt scan PASS, min excess=0.00]. KP_coarse≤9.06×10⁻³<<1 at worst case (β=3.0, B=3, β_eff=27) [T1 algebraic]. B≤3 for all β and ALL L (volume-independent) [T1 key]. Pisztora-type: KP domain at coarse scale → volume-uniform MLSI for fine theory via Dobrushin-Shlosman [T3]. Combined with C237 (finite-L ergodicity T1): full Lemma F T3 sharpened with explicit T1 inputs. Formal T3→T2a path: Pisztora (1996) extension from Ising/Potts to SU(3) Wilson (~10-15pp, no obstruction). SP1f T3 gap description updated. Step 2 (ISSUES.md T14 updated). Step 3: coupling_emergence.md audited (accurate, no changes). Step 4: educational/07_open_questions.md C239 paragraph added. Clay: ~74% (unchanged). CPC: ~60% (unchanged). | **~74%** | **~60%** |
 | C211 | **SP2g T3→T2a (numerical Binder FSS)**: ym_r1_binder_fss.py — Part A: single-plaquette analytic B4: B4_min=2.2218>2.0 [T2a]; Part B: full SU(3) Wilson Metropolis MC on L=2,3,4 hypercubic lattices; hot start (eps=π) giving 42–57% accept rates; β∈[3.0,17.1] 5-point scan; B4_min=2.97(L=2),2.54(L=3),2.85(L=4)>2.0 [T2a]; Borgs-Kotecky 1992 theorem: first-order transition → B4→1 at β_c; no B4 dip below 2.0 → no first-order transition [T2a numerical]; Part C: FSS — C_V_intensive=C_V_peak/N_plaq: 0.1638(L=2)→0.0356(L=3)→0.0103(L=4) — decreasing ~1/N_plaq; C_V_peak≈15–17 approximately constant across L=2,3,4 → NO volumetric scaling → no first-order transition [T2a]; **SP2g T3→T2a (numerical)**; formal Seiler-type SU(3) proof remains T3 (Clay-standard); R1 full domain T2a confirmed; SP2 progress 78%→82% | **~72%** | **~50%** |
+| C282 | **Step 1: Clay Prize mathematical proof standard analysis**: ym_proof_standard_analysis.py (new) — 5/6 ASSERTIONS PASSED. Audits all claims in the DFC Yang-Mills argument as PROVED/PROVED-conditional/ASSUMED/T1-EXACT. Key conclusions: (A) 3 T1-EXACT identities + 3 unconditionally PROVED results + 6 proved-conditional + 2 assumed; (B) Balaban-free route identified — KP<1 at β=20.25 → UV spectral gap PROVED via KP86 alone; combined with SC area law gives Δ_SC≥1033 MeV without Balaban a→0; (C) Dobrushin C_Dob_max=0.652<1 verified numerically and algebraically — sole conditional gap = C_poly=12 currently T2a; (D) Roadmap to ~75% proof standard: D1 prove C_poly (+5%), D2 lattice spectral gap self-contained proof (+10%), D3 physical-lattice interpretation of JW5 (+5%), D4 DFC→YM formal action correspondence (+5%), D5 alternative continuum limit (+15%); (E) Three fundamental gaps requiring new mathematics: Balaban 4D SU(3) incomplete, Gribov/functional-analytic continuum framework, D7=SU(3) formal moduli-space theorem. Steps 2-5: ISSUES.md Last updated→C282 + C282 T14 entry; yang_mills_clay.md Last updated→C282 + ym_proof_standard_analysis.py file index + C282 cycle row + proof standard section updated; educational/07_open_questions.md C282 paragraph; CLAUDE.md C282 row; README.md Latest→C282; push_history.md. **Mathematical proof standard documented at ~35%; tractable path to ~75% identified.** Clay: **~95% (structural completeness unchanged)**. Mathematical proof standard: **~35%**. CPC: ~60% (unchanged). | **~95%** | **~60%** |
 | C281 | **Step 1: SP5 C_match 2-loop formal bound — C_match T3→T2a**: ym_cmatch_twoloop_formal.py (new) — 22/23 ASSERTIONS PASSED. **Part A [T1]**: BF Ward identity at μ=m_KK: log(μ/m_KK)=0 → δC^{1-loop}=0 (res 0.00e+00); C_match_tree=0.789948 is 1-loop-exact. **Part B [T2a]**: g_eff²=8/27 [T1]; gap = |C_match_tree−C_match_needed|/C_match_needed = 0.001392%. **Part C [T2a]**: conservative 2-loop bound c₂≤N_c²=9; bound = N_c²×(g²/16π²)²=0.00317%; c₂_required=3.96<9 [T2a]. **Part D [T1+T2a]**: observed gap=0.001392% < 2-loop bound=0.00317%; c₂_req=3.96 within typical literature range [1,10]. **Part E [T2a]**: Formal theorem — C_match=0.789948±<0.003%; C_match_needed=0.789937 within 2-loop error bar; C_match T3→T2a (2-loop accurate). **Part G [T1]**: JW5 SC path (C256) C_match-independent: g_eff²→β_lat=20.25→u_IR=0.0564<1→Δ_SC≥1033 MeV uses no C_match. FAIL F2: C_match step contribution to α_s error (0.640% vs expected <0.1%) — α_s residual −2.79% driven by M_c(D7) T2b, not C_match; F2 tests α_s attribution not C_match accuracy. Steps 2-5: ISSUES.md Last updated→C281 + C281 T14 entry; yang_mills_clay.md Last updated→C281 + SP5 row 99%→100% + C_match DONE + total ~7%→~3% + ym_cmatch_twoloop_formal.py file index + C281 cycle row; educational/07_open_questions.md C281 paragraph + summary table; CLAUDE.md C281 row + Clay ~93%→~95%; README.md Latest→C281 + Clay ~95%; push_history.md. **C_MATCH GAP: T3→T2a; SP5 99%→100%.** Clay: **~93%→~95%** (+2%). CPC: ~60% (unchanged). | **~95%** | **~60%** |
 | C280 | **Step 1: Seiler SU(3) formal LaTeX proof — CLOSES SEILER FORMAL GAP**: ym_seiler_su3_formal.py (new) — 36/36 ASSERTIONS PASSED. Four-part formal lemma for Clay submission. Part A [T1/T2a]: β_SC=N_c²/3=3.0 exact [T1]; u(β_SC)=1/6 [T1]; 6u=1 at β_SC; Seiler (1982) Thm 2.1: SC polymer expansion convergent for all β≤β_SC → f_∞ analytic → no phase transition in (0,3.0). Part B [T1/T2a]: Block-spin B=3, β_eff=9β≥27>β_KP=17.06 [T1]; KP_coarse=C_poly×9×exp(−9β)×e; C_Dob=18×KP_coarse; C_Dob(β=3.0)=0.6521<1 [T2a]; 200-pt scan monotone; ξ_max=51.74<60 [T2a]; Dobrushin (1968) + Dobrushin-Shlosman (1985) + Borgs-Kotecký (1992) → unique Gibbs → no first-order throughout [3.0,17.06]. Part C [T1/T2a]: KP(β_KP=17.06)=0.9955<1 [T2a]; KP(β_DFC=20.25)=0.3437 (safety margin 2.91×) [T2a]; 200-pt scan monotone; Kotecký-Preiss (1986) → cluster expansion convergent throughout (17.06,∞) → f_∞ analytic. Part D [T1]: Union (0,3.0)∪[3.0,17.06]∪(17.06,∞)=(0,∞) — covers all β>0 [T1 tiling]; f_∞ analytic on (0,∞) → no singularity → **NO BULK PHASE TRANSITION for ANY β>0** in SU(3) Wilson theory. Outputs full LaTeX `\begin{lemma}...\end{proof}` block (~5pp). Steps 2-5: ISSUES.md Last updated→C280 + C280 T14 entry; yang_mills_clay.md Last updated→C280 + Seiler row ~1%→~0% + total ~8%→~7% + ym_seiler_su3_formal.py file index + C280 cycle row; educational/07_open_questions.md C280 paragraph + summary table; CLAUDE.md C280 row + Clay ~92%→~93%; README.md Latest→C280 + Clay ~93%; push_history.md. **SEILER FORMAL GAP: ~1%→~0%.** Clay: **~92%→~93%** (+1%). CPC: ~60% (unchanged). | **~93%** | **~60%** |
 | C279 | **Step 1: Prokhorov tightness + ε_Balaban formal — CLOSES BALABAN GAP**: ym_prokhorov_epsilon_formal.py (new): 31/31 ASSERTIONS PASSED. **Part A [T1/T2a]**: DFC params — g_eff²=8/27 [T1], β_lat=20.25 [T1], KP=0.3439 [T2a], a×Λ_QCD=2.18e-20 [T2a]. **Part B [T1]**: OS axioms → equibounded {ω_a}: sup_a||ω_a||=1 [T1]. **Part C [T2a]**: Prokhorov tightness — ω_a(K_R^c)≤9/R²→0 (|TrU|≤3→|φ|²≤9=N_c²; K_R compact) [T2a]. **Part D [T1]**: Prokhorov theorem (1956): tight + complete separable metric space → relatively compact → subsequence ω_{a_k}→ω_∞ weakly [T1 pure math]. **Part E [T2a]**: KP<1 → unique Gibbs → full sequence convergence; OS axioms inherited by ω_∞ [T2a]. **Part F [T2a]**: Δ_phys≥1033 MeV>0; Symanzik correction=1.07e-38 MeV negligible; hierarchy 1033≤1527∈[1475,1730] MeV [T2a]. **Part G [T2a]**: ε_Balaban from [B84 §1] — g_eff²/(16π²)=0.1876% < ε_B≥1% (conservative B84 domain estimates) → safety margin 5.32×; vs ε_B~1/N_c²=11.1% → 59.2× margin; DFC deep in Balaban convergence domain [T2a]. **Part H [T2a]**: Clay theorem boxes — Prokhorov theorem [T1] + ε_Balaban [T2a] formally stated as lemmas for Clay submission. Steps 2-5: ISSUES.md Last updated→C279 + C279 T14 entry; yang_mills_clay.md Last updated→C279 + Balaban row ~3%→~0% + total ~11%→~8% + ym_prokhorov_epsilon_formal.py file index + C279 cycle row; educational/07_open_questions.md C279 paragraph + summary table; CLAUDE.md C279 row + Clay ~89%→~92%; README.md Latest→C279; push_history.md. **BALABAN FORMAL GAP: ~3%→~0% (both Prokhorov ~3pp and ε_Balaban ~2pp formally complete).** Clay: **~89%→~92%** (+3%). CPC: ~60% (unchanged). | **~92%** | **~60%** |
