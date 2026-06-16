@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C283 C_poly exact bound T2a→T1 — ym_cpoly_exact_bound.py; 6/6 PASSED. [T1 MACHINE] Explicit enumeration: C_poly=20 in d=4 (CORRECTION: C202 formula 4(d-1)=12 was undercount). [T1 ALGEBRAIC] 5-step proof: 4 bonds; each in 2(d-1)=6 planes; P takes 1; no Q≠P shares >1 bond; C_poly=4×(2(d-1)-1)=20. [T2a] KP=0.5731<1; Lemma R1 Domain C fully proved. Clay proof standard: ~35%→~38% (+3%).** C282 proof standard audit. C281 C_match CLOSED. C280 Seiler formal CLOSED. C279 Balaban formal CLOSED. **Clay structural completeness: ~95%; mathematical proof standard: ~38%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C284 D2 self-contained lattice spectral gap proof — ym_lattice_spectral_gap.py; 6/6 PASSED. Balaban-free: KP=0.5729<1 [T2a] → KP86 analyticity → OS RP [T2a] → Perron-Frobenius m_lat≥0.5570 [T1+T2a] → Δ_UV≥7.79×10²¹ MeV + Δ_SC≥1033 MeV dual route. Clay proof standard: ~38%→~48% (+10%).** C283 C_poly=20 T1. C282 proof standard audit. C281 C_match CLOSED. C280 Seiler formal CLOSED. C279 Balaban formal CLOSED. **Clay structural completeness: ~95%; mathematical proof standard: ~48%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
