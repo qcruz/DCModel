@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C282 Clay Prize mathematical proof standard analysis — ym_proof_standard_analysis.py; 5/6 PASSED. [Audit] 14 claims classified: 3 T1-EXACT, 3 PROVED unconditional, 6 PROVED-conditional, 2 ASSUMED. [Key result] KP<1 at β=20.25 → UV spectral gap PROVED via KP86 without Balaban. Single conditional gap: C_poly=T2a not T1. [Roadmap] tractable path to ~75% proof standard identified: prove C_poly (+5%) + lattice spectral gap (+10%) + physical-lattice JW5 (+5%) + DFC→YM formal (+5%) + alt continuum (+15%). Mathematical proof standard documented at ~35%.** C281 C_match CLOSED. C280 Seiler formal CLOSED. C279 Balaban formal CLOSED. **Clay structural completeness: ~95%; mathematical proof standard: ~35%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C283 C_poly exact bound T2a→T1 — ym_cpoly_exact_bound.py; 6/6 PASSED. [T1 MACHINE] Explicit enumeration: C_poly=20 in d=4 (CORRECTION: C202 formula 4(d-1)=12 was undercount). [T1 ALGEBRAIC] 5-step proof: 4 bonds; each in 2(d-1)=6 planes; P takes 1; no Q≠P shares >1 bond; C_poly=4×(2(d-1)-1)=20. [T2a] KP=0.5731<1; Lemma R1 Domain C fully proved. Clay proof standard: ~35%→~38% (+3%).** C282 proof standard audit. C281 C_match CLOSED. C280 Seiler formal CLOSED. C279 Balaban formal CLOSED. **Clay structural completeness: ~95%; mathematical proof standard: ~38%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,12 +244,12 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~35% | Proximity to a Clay-accepted mathematical proof |
+| **Mathematical proof standard** | ~38% | Proximity to a Clay-accepted mathematical proof |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
-**Current focus:** Advance the mathematical proof standard from ~35% toward 100%.
-Most tractable path: Lemma R1 formal proof (~5pp, +5%), lattice spectral gap without Balaban
-(~15pp, +10%), continuum limit alternative route (~20pp, +15%), DFC→YM correspondence (~20pp, +5%).
+**Current focus:** Advance the mathematical proof standard from ~38% toward 100%.
+C_poly=20 T1 CLOSED [C283]. Most tractable path: lattice spectral gap without Balaban
+(~15pp, +10%), physical-lattice JW5 interpretation (~10pp, +5%), DFC→YM correspondence (~20pp, +5%), alternative continuum limit route (~30pp, +15%).
 See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 
 ### Sub-Problem Status (structural, T2a level)
