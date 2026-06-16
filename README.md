@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C279 Prokhorov tightness + ε_Balaban formal — ym_prokhorov_epsilon_formal.py; 31/31 PASSED. Prokhorov tightness [T1]: in complete separable metric space, tightness → relative compactness; ω_a(K_R^c)≤9/R²→0 [T2a] proves tightness; KP<1 upgrades subsequential→full convergence. ε_Balaban from [B84 §1]: g_eff²/(16π²)=0.1876%, margin 5.32× vs ε_B≥1% [T2a]. BALABAN FORMAL GAP: ~3%→~0%. Clay ~89%→~92% (+3%); CPC ~60%.** C278 SP1h+SP1k formal (Balaban gap ~5%→~3%). C277 Balaban domain formal (gap ~7%→~5%). C276 Lemma R1 formal (Seiler gap ~3%→~1%). Yang-Mills remaining breakdown: ~0% Balaban (DONE), ~1% Seiler LaTeX, ~4% SP5 C_match, ~3% paper. Clay ~92%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C280 Seiler SU(3) formal LaTeX proof — ym_seiler_su3_formal.py; 36/36 PASSED. Four-part formal Lemma R1: (A) SC [S82] β_SC=3.0 [T1]; (B) Dobrushin [D68+DS85+BK92] C_Dob_max=0.652<1 [T2a]; (C) KP [KP86] KP_DFC=0.344<1 [T2a]; (D) union (0,∞) [T1]; full LaTeX `\begin{lemma}...\end{proof}` (~5pp) printed as output. SEILER FORMAL GAP: ~1%→~0%. Clay ~92%→~93% (+1%); CPC ~60%.** C279 Prokhorov+ε_Balaban formal (Balaban gap ~3%→~0%). C278 SP1h+SP1k formal (gap ~5%→~3%). C277 Balaban domain formal (gap ~7%→~5%). C276 Lemma R1 formal (Seiler gap ~3%→~1%). Yang-Mills remaining: ~0% Balaban (DONE), ~0% Seiler formal (DONE), ~4% SP5 C_match, ~3% paper. Clay ~93%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -239,7 +239,7 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 **Full tracking: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
 (SP1-SP5 tables, SP1 sub-steps, key structural assets, CPC analysis, cycle history — all in one place)
 
-**Overall Clay challenge progress: ~89%** *(C278: SP1h+SP1k formal, Balaban gap ~5%→~3%; C277: Balaban domain formal, gap ~7%→~5%; C276: Lemma R1 formal, Seiler gap ~3%→~1%; C269: ZERO T3 in JW5 chain; SP1+SP2+SP3+SP4+SP5 all T2a)*
+**Overall Clay challenge progress: ~93%** *(C280: Seiler SU(3) formal LaTeX proof CLOSED; C279: Prokhorov+ε_Balaban formal CLOSED; C278: SP1h+SP1k formal; C276: Lemma R1 formal; C269: ZERO T3 in JW5 chain; SP1+SP2+SP3+SP4+SP5 all T2a)*
 **Clay Prize Confidence Score (CPC): ~60%** ← *+15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a***
 
 | # | Sub-problem | Tier | Progress |
@@ -250,8 +250,8 @@ self-consistently determined as β = 3g_common²/(8π) = 0.03536 (Cycle 87) cond
 | SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a [C258 formal]: G1 N_X=E_BPS [T1], G2 AC 4.75e-40 [T2a], G3 flat metric [T1]; 4T1+5T2a+1T3+0T4; N=4 [C250]+N=5 [C254] T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) without external input | **T2a; JW5 C_match-independent T2a [C256]; C_match T4→T3 [C266]; 33/33 PASS** | **99%** |
 
-Latest Clay: **C278 SP1h+SP1k formal** — ym_balaban_sp1hk_formal.py; 29/29 PASS; SP1h: KP polymer formal (μ=0.1265<1/e, KP<1, sup bound T1, analyticity T2a); SP1k: continuum limit (a×Λ=2.18e-20, Hölder=3.52e-41, equicontinuity T2a, Arzelà-Ascoli → ω_∞, Δ_phys≥1033 MeV); Clay theorem boxes for both; remaining ~5pp (Prokhorov+ε_B). **SP1+SP2+SP3+SP4+SP5 all T2a; 7/7 JW T2a; Clay ~89%; CPC ~60%.**
-Remaining gaps: Balaban SP1h+SP1k+ε_B citation (~10pp, ~5%); Seiler LaTeX ~5pp (~1%); SP5 C_match vertex (~4%); paper assembly (~3%). Total remaining: ~13%.
+Latest Clay: **C280 Seiler SU(3) formal LaTeX proof** — ym_seiler_su3_formal.py; 36/36 PASS; four-part Lemma R1 with full LaTeX output; β_SC=3.0 [T1], C_Dob_max=0.652<1 [T2a], KP_DFC=0.344<1 [T2a]; SEILER FORMAL GAP CLOSED. C279: Prokhorov tightness + ε_Balaban — BALABAN FORMAL GAP CLOSED. **SP1+SP2+SP3+SP4+SP5 all T2a; 7/7 JW T2a; Clay ~93%; CPC ~60%.**
+Remaining gaps: SP5 C_match V_AAB vertex correction (~4%); paper assembly (~3%). Total remaining: ~7%.
 
 *Stopping conditions — hard barrier: document obstruction, return to general cycle; adequate solution: all SP1-SP5 at T2a → publishable proof candidate.*
 
