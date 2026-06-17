@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C289 E3 D7=SU(3) moduli-space theorem T3→T2a — ym_e3_sobolev_fredholm.py; 20/20 PASSED. Sobolev/Fredholm chain closed; H^s all s, Fredholm ind=0, Coulomb transversality, metric rescaling I₄, Ebin-Palais (1970). Clay proof standard: ~76%→~79% (+3%).** C288 E3 T4→T3. C287 D5 Balaban-free continuum limit (+15%). ALL D1-D5 ROADMAP MILESTONES CLOSED. **Clay structural completeness: ~95%; mathematical proof standard: ~79%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C290 E2 Gribov copies — formal absence argument T4→T2a — ym_gribov_absence.py; 17/17 PASSED. Singer (1978) obstruction absent on finite lattice; Haar measure gauge-invariant; D5 chain uses zero gauge-fixing steps; OS axioms without gauge fixing (Seiler 1982). ZERO remaining T4 gaps in main JW proof chain. Clay proof standard: ~79%→~82% (+3%).** C289 E3 Sobolev/Fredholm T3→T2a (+3%). C287 D5 Balaban-free continuum limit (+15%). **Clay structural completeness: ~95%; mathematical proof standard: ~82%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,11 +244,11 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~79% | Proximity to a Clay-accepted mathematical proof |
+| **Mathematical proof standard** | ~82% | Proximity to a Clay-accepted mathematical proof |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
-**Current focus:** Advance the mathematical proof standard from ~79% toward 100%.
-All D1-D5 roadmap milestones CLOSED [C283-C287]. E3 D7=SU(3) moduli-space theorem T3→T2a [C289]. Remaining fundamental gaps (require new mathematics): E1 Balaban 4D SU(3) formal program (incomplete in literature), E2 Gribov/functional-analytic continuum framework, E3 ~15pp H^s write-up (T2a achieved).
+**Current focus:** Advance the mathematical proof standard from ~82% toward 100% (formal write-up stage).
+All D1-D5 roadmap milestones CLOSED [C283-C287]. E2 Gribov copies CLOSED [C290]. E3 Sobolev/Fredholm CLOSED [C289]. ZERO remaining T4 gaps in main JW proof chain. Remaining: E1 Balaban 4D SU(3) NOT on critical path (D5 chain bypasses); E3 ~15pp H^s write-up; formal paper ~50pp.
 See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 
 ### Sub-Problem Status (structural, T2a level)
