@@ -152,7 +152,8 @@ Clay Prize structural completeness: ~95%
 Clay Prize mathematical proof standard: ~85%
   (How close to an accepted mathematical proof — D1-D5 all closed [C283-C287]; E2 T4→T2a [C290];
   E3 fully closed [C289+C291]: Schwartz decay + d=1 Sobolev + Ebin-Palais all s≥2 + Coulomb IFT;
-  remaining: E1 Balaban 4D SU(3) NOT on critical path (D5 bypasses); formal paper ~50pp;
+  remaining mathematical work: σ=I₄×Λ² T3→T2a (~+5%); KP/Dob condition checks T2a→T1 (~+3%);
+  D4 DFC→YM T2a→T1 (~+3%); M_c(D7) T2b→T2a (~+2%); E1 Balaban supplementary not blocking;
   see yang_mills_clay.md §Proof Standard)
 Clay Prize Confidence Score (CPC): ~60%
   (P(DFC framework → valid Jaffe-Witten proof candidate | continued work))

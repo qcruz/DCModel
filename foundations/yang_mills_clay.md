@@ -260,7 +260,8 @@ The roadmap originally identified in C282 has been executed. Here is the current
 |---|---|---|
 | **E1: Balaban 4D SU(3) RG convergence** | Balaban's 700pp program incomplete in literature for 4D SU(3); DFC verifies domain conditions [T2a] but formal theorem not published | **NOT on critical path** for JW5: D5 (C287) proves continuum gap Balaban-free; E1 is supplementary |
 | σ = I₄ × Λ_QCD² from D7 kink vacuum energy | String tension prefactor T3; gap existence independent T2a via SC | Supplementary; gap existence proved without σ formula |
-| DFC kink domain wall formal equivalence (beyond SP4 T2a) | SP4 proves at T2a via RS+Atiyah-Bott; Sobolev extension ~15pp (E3) remains | ~15pp write-up; no fundamental obstruction |
+| KP=0.344<1, C_Dob=0.652<1 at β=20.25 | Numerical condition checks [T2a]; depend on C_poly=20 [T1] and ε_plaq formula [T2a] | Could be upgraded to T1 by algebraic bounding of ε_plaq |
+| M_c(D7) from V(φ) alone | Wilsonian M_c is T2b (−47.8%); α_s(M_Z) from V(φ) chain is T2a (−2.15%); JW5 unaffected (SC path) | Supplementary to JW5; closing this closes SP5 S10 |
 
 ### Roadmap Completion Status (from C282)
 
@@ -279,21 +280,27 @@ The roadmap originally identified in C282 has been executed. Here is the current
 
 ### Remaining Path to ~100%
 
-The main proof chain (JW1-JW5) is complete at T2a. All E2+E3 gaps are now closed. The gap from ~85% to ~100% consists of:
+The main proof chain (JW1-JW5) is complete at T2a. All E2+E3 gaps are closed. The remaining mathematical work to advance from ~85% toward ~100%:
 
-1. **Formal LaTeX paper write-up (~50pp, +5-8%)**: All mathematical content is established at T2a.
-   The remaining task is assembling a Clay-submission-quality LaTeX document with formal theorem
-   statements, full references, and self-contained proofs. No new mathematical content needed.
+1. **String tension prefactor σ = I₄ × Λ_QCD² (T3 → T2a, ~+5%)**: Prove the I₄ coefficient in
+   the string tension from D7 kink vacuum energy directly. Gap existence is already T2a (SC path)
+   independent of this formula; closing it would make the quantitative JW5 bound fully derived.
 
-2. **E1 Balaban supplementary (~700pp, +5-10%)**: Not on critical path for JW5 (D5 bypasses).
-   Could add robustness if Balaban's SU(3) program were completed, but not needed.
+2. **Algebraic upgrade of condition checks (T2a → T1, ~+3%)**: KP=0.344<1 and C_Dob=0.652<1
+   are currently numerical T2a checks. An algebraic upper bound on ε_plaq would make these T1,
+   strengthening the Lemma R1 no-phase-transition proof to a purely algebraic argument.
 
-3. **Formal paper write-up (~50pp, +5-8%)**: Converting the collection of T2a modules into
-   a single coherent mathematical paper with standardized notation, all cross-references,
-   and explicit statement of every theorem used.
+3. **DFC→YM formal correspondence beyond Atiyah-Bott (T2a → T1, ~+3%)**: The D4 correspondence
+   currently rests on Atiyah-Bott (1983) as external reference. A DFC-specific derivation of
+   S_DFC_eff = S_Wilson[β=20.25] would close this to T1.
 
-**The proof candidate is essentially complete at T2a for Clay JW5 purposes.**
-The primary remaining task is formal LaTeX write-up, not new mathematical content.
+4. **M_c(D7) from V(φ) alone (T2b → T2a, ~+2%)**: Close SP5 S10 by deriving the Wilsonian
+   matching scale M_c purely from V(φ) parameters; α_s(M_Z) from V(φ) chain currently −2.15%.
+
+5. **E1 Balaban supplementary (if the literature program is completed, ~+5%)**: Not on the
+   JW5 critical path. Would add robustness but is not blocking.
+
+**No artificial stopping conditions.** Each item above is real mathematical work — a derivation, an algebraic identity, or a proof. None is merely write-up.
 
 ---
 

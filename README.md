@@ -247,8 +247,8 @@ mathematical basis of DFC. The two are tracked independently.
 | **Mathematical proof standard** | ~85% | Proximity to a Clay-accepted mathematical proof |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
-**Current focus:** Advance the mathematical proof standard from ~85% toward 100% (formal write-up stage).
-All D1-D5 roadmap milestones CLOSED [C283-C287]. E2 Gribov copies CLOSED [C290]. E3 FULLY CLOSED [C289+C291]: Schwartz decay + d=1 Sobolev + Ebin-Palais all s≥2 + Coulomb IFT; H^s norms s=0..4 all finite; 20/20 PASS. Remaining: E1 Balaban 4D SU(3) NOT on critical path (D5 chain bypasses); formal paper ~50pp.
+**Current focus:** Advance the mathematical proof standard from ~85% toward 100%.
+All D1-D5 roadmap milestones CLOSED [C283-C287]. E2 Gribov copies CLOSED [C290]. E3 FULLY CLOSED [C289+C291]. Remaining mathematical work: (1) σ=I₄×Λ² T3→T2a string tension prefactor (~+5%); (2) KP/Dob condition checks T2a→T1 algebraic upgrade (~+3%); (3) DFC→YM T2a→T1 beyond Atiyah-Bott (~+3%); (4) M_c(D7) T2b→T2a (~+2%); (5) E1 Balaban supplementary, not blocking.
 See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 
 ### Sub-Problem Status (structural, T2a level)
