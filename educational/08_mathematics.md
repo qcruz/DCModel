@@ -271,9 +271,10 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~85% mathematical proof standard (CPC ~60%). All five sub-problems
+   structural completeness, ~88% mathematical proof standard (CPC ~60%). All five sub-problems
    SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space, full Sobolev tower) closed
-   C289+C291; E1 (Balaban 4D SU(3)) not on critical path for JW5 (bypassed by D5 chain).
+   C289+C291; KP<1 upgraded T2a→T1 C292 (rational arithmetic, KP<125/196<1, 28/28 PASS);
+   E1 (Balaban 4D SU(3)) not on critical path for JW5 (bypassed by D5 chain).
    Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
    hardest case, and passing at N=3 (T2a) implies passing for all N≥3. N=2 is covered by
@@ -353,6 +354,15 @@ mathematical content. What is not yet derived:
    all T1 [T1+T2a]. Coulomb slice smooth for all s≥2 via ω₁²=3.93>0 IFT [T2a]. E3 complete
    — M_DFC≅A_flat/G smooth Hilbert manifold for all s≥2; C^∞ Fréchet limit as s→∞ [T1].
    **E3 fully closed (C289+C291). Clay proof standard: ~82%→~85%. Clay structural: ~95%.**
+
+   Cycle 292 (ym_algebraic_kp_bound.py): **KP<1 algebraic T1 proof — KP condition check T2a→T1**.
+   28/28 PASS. β_lat=81/4 exact from g_eff²=8/27 [T1]. Taylor lower bound e>163/60 [T1].
+   Upper bound e<1631/600<3 via geometric tail sum_{k≥6}1/k!<1/600 [T1]. Integer arithmetic:
+   163^5=115063617043>147×60^5 → e^5>147 [T1]. Combined: e^{23/4}>7056/25=282.24>180 [T1].
+   KP<180/(7056/25)=4500/7056=125/196<1 [T1 MAIN, rational arithmetic only].
+   μ=KP/e<7500/31948<1/3<1/e [T1, e<3 proved above]. No floating-point anywhere in the proof.
+   Lemma R1 KP sub-domain (C276 Part C) is now fully algebraic [T1].
+   **KP condition T2a→T1 (C292). Clay proof standard: ~85%→~88%. Clay structural: ~95%.**
 
 The model does not claim completeness. These are honest, documented gaps.
 
