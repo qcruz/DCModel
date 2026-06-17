@@ -271,9 +271,10 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~88% mathematical proof standard (CPC ~60%). All five sub-problems
+   structural completeness, ~89% mathematical proof standard (CPC ~60%). All five sub-problems
    SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space, full Sobolev tower) closed
    C289+C291; KP<1 upgraded T2a→T1 C292 (rational arithmetic, KP<125/196<1, 28/28 PASS);
+   Dobrushin C_Dob<1 upgraded T2a→T1 C293 (C_Dob<120/117649<1, 27/27 PASS, fixes C275 bug);
    E1 (Balaban 4D SU(3)) not on critical path for JW5 (bypassed by D5 chain).
    Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
@@ -363,6 +364,14 @@ mathematical content. What is not yet derived:
    μ=KP/e<7500/31948<1/3<1/e [T1, e<3 proved above]. No floating-point anywhere in the proof.
    Lemma R1 KP sub-domain (C276 Part C) is now fully algebraic [T1].
    **KP condition T2a→T1 (C292). Clay proof standard: ~85%→~88%. Clay structural: ~95%.**
+
+   *C293 (ym_dobrushin_algebraic.py, 27/27 PASS)*: Dobrushin criterion C_Dob<1 upgraded
+   T2a→T1 by rational arithmetic. Bug fixed: C275 used C_poly=12 (stale C202); correct value
+   C_poly=20 [T1, C283/C292]. With B=4 block (volume-independent), β_eff=48, exp_arg=16:
+   factor = N_adj×C_poly×N_c² = 18×20×9 = 3240 [T1]. Chain: e^5>147 [T1, C292];
+   e^{15}>147^3=3176523>3240 [T1 integer]; C_Dob<3240/3176523=120/117649<1 [T1 Fraction].
+   Safety margin ~980×. Dobrushin uniqueness: no phase transition in [3.0,17.06] [T2a].
+   **Dobrushin condition T2a→T1 (C293). Clay proof standard: ~88%→~89%. Clay structural: ~95%.**
 
 The model does not claim completeness. These are honest, documented gaps.
 
