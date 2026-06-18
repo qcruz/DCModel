@@ -391,6 +391,17 @@ mathematical content. What is not yet derived:
    σ_reconstructed=185440 MeV² (−4.21% vs σ_obs; within T2a 5% threshold).
    **σ=I₄×Λ² T3→T2a (C295). Clay proof standard: ~92%→~97% (+5%). Clay structural: ~95%.**
 
+   *C296 (ym_mc_d7_twoloop.py, 10/11 PASS)*: M_c(D7) two-loop self-consistency analysis.
+   Two routes to M_c from V(φ) via 2-loop RGE: (A) ECCC_DFC running UP from M_Z until
+   α_s=α_common=2/(27π) gives M_c^A=5.432×10¹⁴ GeV; (B) Wilsonian running DOWN from
+   m_KK with C_match_Jost=0.795151 gives M_c^B=8.675×10¹⁴ GeV. Internal gap: 37.4%
+   (fails 5% T2a threshold → M_c remains T2b). Root cause: exponential sensitivity
+   d(ln M_c)/d(α_s) ≈ −1614/unit at m_top scale — the 2.15% α_s(M_Z) discrepancy
+   between the DFC chain and PDG amplifies to ~37% in M_c. JW5 is unaffected (SC path
+   gives Δ≥1033 MeV without M_c). Closing M_c requires a T1-level derivation of
+   α_s(M_Z) from V(φ) alone.
+   **M_c(D7) T2b confirmed (C296). Clay proof standard: ~97% (unchanged). Clay structural: ~95%.**
+
 The model does not claim completeness. These are honest, documented gaps.
 
 ---

@@ -7,7 +7,7 @@ README.md, ISSUES.md, and CLAUDE.md point to this document.
 builds the mathematical basis of DFC. DFC model completeness (~80%) and Clay Prize
 progress are tracked independently. Do not conflate them.
 
-*Last updated: Cycle 295.*
+*Last updated: Cycle 296.*
 
 ---
 
@@ -20,7 +20,7 @@ progress are tracked independently. Do not conflate them.
 | **Clay mathematical proof standard** | ~97% | How close to an accepted Clay-level mathematical proof (see §Proof Standard Gap) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
-**Current focus:** Advance the mathematical proof standard from ~97% toward 100%. C295: σ=I₄×Λ² string tension prefactor T3→T2a — ym_sigma_i4_formal.py: 20/20 PASS; F_v=N_c/2=3/2 unique to N_c=3 [T1 Fraction]; Q_top=I₄×F_v=2 [T1]; dilute gas S_inst=27π²>>1 [T2a]; F_v cancels algebraically → ρ_v=I₄×Λ² [T2a composite]. Remaining: M_c(D7) T2b→T2a (~+2%); E1 Balaban supplementary (not on critical path); paper assembly (~1%).
+**Current focus:** Advance the mathematical proof standard from ~97% toward 100%. C296: M_c(D7) two-loop self-consistency — ym_mc_d7_twoloop.py: 10/11 PASS; ECCC_DFC route M_c=5.432×10¹⁴ GeV; Wilsonian(C_match_Jost) route M_c=8.675×10¹⁴ GeV; internal gap 37.4% (T2b confirmed); root cause: exponential sensitivity d(ln M_c)/d(α_s)≈−1614/unit amplifies 2.15% α_s(M_Z) error to ~37%; JW5 unaffected (SC path). Remaining: M_c(D7) T2b→T2a (~+2%); E1 Balaban supplementary (not on critical path); paper assembly (~1%).
 
 **Clay Prize Confidence Score (CPC): ~60%** ← +15% C203: SP1 Balaban closes; **+10% C216: SU(N) generality T2a**
 
@@ -228,7 +228,7 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 
 **Clay structural completeness: ~95%** (all SP covered at T2a)
 **Clay mathematical proof standard: ~97%** (what a mathematical referee would accept)
-*(Last updated: C295. Was ~35% at C282; D1-D5 closed C283-C287; E2 closed C290; E3 complete C289+C291; KP T2a→T1 C292; Dobrushin T2a→T1 C293; D4 T2a→T1 C294; σ=I₄×Λ² T3→T2a C295.)*
+*(Last updated: C296. Was ~35% at C282; D1-D5 closed C283-C287; E2 closed C290; E3 complete C289+C291; KP T2a→T1 C292; Dobrushin T2a→T1 C293; D4 T2a→T1 C294; σ=I₄×Λ² T3→T2a C295; M_c T2b confirmed C296.)*
 
 The roadmap originally identified in C282 has been executed. Here is the current accounting:
 
@@ -303,6 +303,9 @@ The main proof chain (JW1-JW5) is complete at T2a. All E2+E3 gaps are closed. D4
 
 4. **M_c(D7) from V(φ) alone (T2b → T2a, ~+2%)**: Close SP5 S10 by deriving the Wilsonian
    matching scale M_c purely from V(φ) parameters; α_s(M_Z) from V(φ) chain currently −2.15%.
+   C296: two-route internal check confirms M_c T2b — ECCC_DFC gives 5.432×10¹⁴ GeV, Wilsonian
+   (C_match_Jost) gives 8.675×10¹⁴ GeV, internal gap 37.4%. Root cause: exponential sensitivity
+   d(ln M_c)/d(α_s)≈−1614/unit — closing this requires T1-level α_s(M_Z) derivation from V(φ).
 
 5. **E1 Balaban supplementary (if the literature program is completed, ~+5%)**: Not on the
    JW5 critical path. Would add robustness but is not blocking.
@@ -424,6 +427,7 @@ The main proof chain (JW1-JW5) is complete at T2a. All E2+E3 gaps are closed. D4
 | `equations/ym_nambu_goto_gap.py` | **C246**: 4π>I₄²×Q_top T1 NEW; Nambu-Goto gap prediction m_0++=1527 MeV in lattice window [T3]; α_0=1/2>0 [T1]; full hierarchy T2a | C246 |
 | `equations/ym_4d_domain_wall.py` | **C245**: SP2 4D BPS explicit I₄ lower bound T2a. [T1] T_DW=I₄×m₀=113.097 M_Pl; N_X=E_BPS (res 0.00e+00); Q_top=I₄×N_c/2 (res 0.00e+00). **[T1 NEW]** m_hat_4D=√(σ/Q_top)=Λ_QCD=304.5 MeV (res 0.00e+00) — algebraic cancellation of I₄ and N_c/2 in σ/Q_top. [T2a] I₄×Q_top×Λ_QCD=812 MeV (explicit I₄ formula). [T2a composite] H_4D|_{Q=2n}≥n×I₄×Q_top×Λ_QCD via C212(1033≥812). ALL 7 ASSERTIONS PASSED. SP2 4D BPS form T3→T2a; SP2 95%→98%. | C245 |
 | `equations/ym_sigma_i4_formal.py` | **C295**: Formal proof ρ_v=I₄×Λ_QCD² T3→T2a. [T1 Fraction] F_v=1−cos(2π/3)=3/2=N_c/2 (unique to N_c=3; N_c=2,4 fail). [T1 Fraction] Q_top=I₄×F_v=(4/3)×(3/2)=2. [T2a] σ=Q_top×Λ²=185440 MeV² [C243] within 5% of σ_obs. [T2a] Dilute gas: S_inst=27π²=266.48>>1; z_vortex<1e-116<1e-100; σ=ρ_v×F_v [Poisson]. [T1] F_v cancels: ρ_v=σ/F_v=(I₄×F_v×Λ²)/F_v=I₄×Λ² (Fraction exact). [T2a composite] ρ_v_DFC=123627 MeV²; σ_reconstructed=185440 MeV² (res 0.00e+00). Clay Theorem C295 box printed. 20/20 PASS. **σ=I₄×Λ² T3→T2a. Clay proof standard: ~92%→~97% (+5%).** | C295 |
+| `equations/ym_mc_d7_twoloop.py` | **C296**: M_c(D7) two-loop self-consistency check — 10/11 ASSERTIONS PASSED. Two independent DFC routes to M_c. [T2a] Route A (ECCC_DFC): 2-loop α_s UP from M_Z until α_s=α_common=2/(27π); M_c^A=5.432×10¹⁴ GeV. [T2a] Route B (Wilsonian): 2-loop α_s DOWN from m_KK=1.397×10¹⁹ GeV with C_match_Jost=0.795151; M_c^B=8.675×10¹⁴ GeV. Internal gap: |M_c^B−M_c^A|/M_c^A=37.4% (fails 5% T2a threshold → M_c T2b confirmed). Root cause documented: d(ln M_c)/d(α_s)≈−1614/unit at m_top scale; 2.15% α_s(M_Z) error amplifies to ~37% M_c uncertainty. Closed loop B (ECCC→M_c^A→run down→α_s=0.11566) exact by construction [T1 self-consistency]. FAIL G2: Wilsonian M_c^B vs C261 M_c: C261 used C_match_tree=0.789948 (not C_match_Jost=0.795151); two C_match values give different M_c (factor ~1.45). JW5 unaffected: SC path (C256/C287) Δ≥1033 MeV requires no M_c input. **M_c(D7) T2b confirmed. Clay proof standard: ~97% (unchanged).** | C296 |
 | `equations/ym_sigma_i4_chain.py` | **C243**: SP2 string tension ρ_v=I₄×Λ_QCD² T3→T2a. [T1, C221] vortex factor=N_c/2 (res 2.22e-16); Q_top=I₄×N_c/2=2 (res 0.00e+00). [T2a, C222] σ=Q_top×Λ²=185440 MeV² (−4.21%). [T2a composite] σ=I₄×(N_c/2)×Λ²; ρ_v=I₄×Λ² by algebra. [T1] I₄ appears in BPS ΔW=I₄×m₀ (res 0.00e+00). [T1] χ_adj(P_kink)=0 → σ_adj=0. [T1] N_c=3 uniqueness: vortex factor=N_c/2 unique to N_c=3. SC sandwich + m_0++>Δ_SC + Λ_self consistency [T2a]. ALL 9 ASSERTIONS PASSED. **ρ_v=I₄×Λ² T3→T2a. SP2 string tension fully T2a.** | C243 |
 | `equations/ym_lemma_f_complete.py` | **C242**: Lemma F T3→T2a CLOSED. [T1] Gross (1975) product tensorization c_product=c₀=4/3 volume-independent. [T1+T2a] Holley-Stroock: c_cond(β,η)≥(4/3)×exp(−12β)>0 uniformly in η and L (osc_per_plaq=2, n_plaq=6). Worst case β=3.0: c_cond_min=3.09e-16>0 [T1+T2a]. [T2a] Stroock-Zegarlinski (1992): c_global≥c_cond×(1−α_D)=2.59e-16>0, volume-independent for all L [T2a]. Domain coverage: all β∈[3.0,17.06] PASS [T2a]. Domain tiling: SC (0,3.0) [T2a,C206] + LF [3.0,17.06] [T2a,C242] + KP (17.06,∞) [T2a,C199] = (0,∞) complete [T1]. ALL ASSERTIONS PASSED. **SP1f T3→T2a. SP1 ALL sub-steps T2a for any g>0.** | C242 |
 | `equations/ym_single_site_lsi.py` | **C241**: Single-site SU(3) Haar LSI constant T4→T2a. [T1] Killing form B(T^a,T^b)=2N_c×Tr(T^aT^b)=N_c×δ^{ab} (from C184, residual 8.88e-16). [T1] Ric=B/4→κ=N_c/4=0.75>0 (SU(3) bi-invariant metric, Milnor 1976; min eigenvalue=0.75 exact). [T2a] Bakry-Émery: Ric≥κ>0 on compact manifold → c₀(Haar_SU(3))≥1/(2κ)=4/N_c=4/3≈0.667>0. [T2a] MC Poincaré ratio=0.776>0 (numerical confirmation, 20k samples). Preview: c_MLSI(L)≥1.73e-319>0 volume-independently via Holley-Stroock[T1,C237]×c₀[T2a]×Gross-Rothaus[T3→next cycle]. ALL ASSERTIONS PASSED. Single-site c₀ T4→T2a. Lemma F T3 sharpened (Gross-Rothaus ~2pp remaining). | C241 |

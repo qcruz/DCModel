@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C295 σ=I₄×Λ² string tension prefactor T3→T2a — ym_sigma_i4_formal.py; 20/20 PASSED. F_v=N_c/2 Fraction[T1]; ρ_v=I₄×Λ² algebraic cancellation[T1]; dilute gas z=exp(−27π²)[T2a]. Clay proof standard: ~92%→~97% (+5%).** C294 DFC→YM T2a→T1. C293 Dobrushin T2a→T1. **Clay structural completeness: ~95%; mathematical proof standard: ~97%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C296 M_c(D7) two-loop self-consistency — ym_mc_d7_twoloop.py; 10/11 PASSED. ECCC_DFC M_c=5.432×10¹⁴ GeV; Wilsonian M_c=8.675×10¹⁴ GeV; gap 37.4% (T2b confirmed); root cause d(ln M_c)/d(α_s)≈−1614/unit; JW5 unaffected. Clay proof standard: ~97% (unchanged).** C295 σ=I₄×Λ² T3→T2a (+5%). C294 DFC→YM T2a→T1. **Clay structural completeness: ~95%; mathematical proof standard: ~97%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
