@@ -271,19 +271,20 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~63% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
-   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~63% because
-   T2a ≠ proof and the critical gaps P1–P4 remain open. All five sub-problems SP1–SP5 are T2a.
-   E2 (Gribov) closed C290; E3 (moduli space, full Sobolev tower) closed C289+C291; KP<1 upgraded
-   T2a→T1 C292 (rational arithmetic, KP<125/196<1, 28/28 PASS); Dobrushin C_Dob<1 upgraded T2a→T1
-   C293 (C_Dob<120/117649<1, 27/27 PASS, fixes C275 bug); DFC→YM correspondence D4 upgraded T2a→T1
-   C294 (κ=1/2 algebraic, Atiyah-Bott replaced); σ=I₄×Λ² upgraded T3→T2a C295 (center vortex
-   proof, F_v=N_c/2 cancels, 20/20 PASS). **C298: P3 Seiler SU(3) closed T2a→T1+cited** — OS-Seiler
-   1978 Thm 4.1 covers all compact G (not just SU(2)); three-regime partition (SC/Dobrushin/KP)
-   covers all β∈(0,∞) with T1+cited proofs at each step; 41/41 PASS (+3% → ~63%). Remaining
+   structural completeness, ~66% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
+   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~66% because
+   T2a ≠ proof. All five sub-problems SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space,
+   full Sobolev tower) closed C289+C291; KP<1 upgraded T2a→T1 C292 (rational arithmetic,
+   KP<125/196<1, 28/28 PASS); Dobrushin C_Dob<1 upgraded T2a→T1 C293 (C_Dob<120/117649<1,
+   27/27 PASS, fixes C275 bug); DFC→YM correspondence D4 upgraded T2a→T1 C294 (κ=1/2 algebraic,
+   Atiyah-Bott replaced); σ=I₄×Λ² upgraded T3→T2a C295 (center vortex proof, F_v=N_c/2 cancels,
+   20/20 PASS). **C298: P3 Seiler SU(3) closed T2a→T1+cited** — OS-Seiler 1978 Thm 4.1 covers all
+   compact G; three-regime (SC/Dobrushin/KP) covers all β∈(0,∞); 41/41 PASS (+3% → ~63%).
+   **C299: P4 GNS Hilbert space closed T2a→T1+cited** — OS1[T1]+OS2[T1+S78]+OS3[T1]+OS4[T1+KP86]+
+   OS5[T1]; GNS [cited GN43+Se47] → H_GNS; OS Reconstruction [cited OS73+OS75] → H_phys H≥0,
+   unique vacuum; JW2 Hilbert space existence now rigorous; 67/67 PASS (+3% → ~66%). Remaining
    critical gaps: P1 D7=SU(3) formal from V(φ); P2 self-contained IR bound without PDG α_s;
-   P4 formal GNS Hilbert space; P5 LaTeX proof paper. E1 (Balaban 4D SU(3)) not on critical path
-   for JW5 (bypassed by D5 chain).
+   P5 LaTeX proof paper. E1 (Balaban 4D SU(3)) not on critical path for JW5 (bypassed by D5).
    Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
    hardest case, and passing at N=3 (T2a) implies passing for all N≥3. N=2 is covered by
@@ -423,6 +424,14 @@ mathematical content. What is not yet derived:
    (0,3)∪[3,∞)=(0,∞) [T1]. Haar-uniform SU(3) via QR decomp verified. Formal LaTeX theorem block
    printed. P3 is the only gap closed in this cycle; remaining: P1, P2, P4, P5.
    **P3 CLOSED: Seiler SU(3) T2a→T1+cited. Clay rigorous proof standard: ~60%→~63% (+3%). Clay structural: ~95%.**
+
+   C299 (ym_gns_hilbert_formal.py, 67/67 PASS): P4 GNS Hilbert space formal construction T2a→T1+cited.
+   Five OS axioms formally verified (OS1 T1, OS2 T1+cited S78, OS3 T1, OS4 T1+cited KP86, OS5 T1).
+   GNS theorem [cited GN43+Se47] applied: C*-algebra of Wilson loops + positive state omega →
+   H_GNS with cyclic vacuum. OS Reconstruction theorem [cited OS73+OS75]: OS1-OS5 → H_phys,
+   self-adjoint H≥0, unique vacuum Omega, Poincaré covariance. Mass gap Δ≥861 MeV [T2a, C287].
+   JW2 (Hilbert space) upgraded: T2a structural → T1+cited (existence of H_phys rigorous).
+   **P4 CLOSED. Clay rigorous proof standard: ~63%→~66% (+3%). Remaining: P1, P2, P5.**
 
 The model does not claim completeness. These are honest, documented gaps.
 

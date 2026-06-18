@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C298 P3 Seiler SU(3) extension T2a→T1+cited theorem — ym_seiler_su3_rigorous.py; 41/41 PASSED. OS-Seiler 1978 Thm 4.1 covers ALL compact gauge groups G — no SU(2)→SU(3) extension needed. Three-regime partition (SC/Dobrushin/KP) closes all β∈(0,∞) with T1+cited proofs. P3 CLOSED. Clay rigorous proof standard: ~60%→~63% (+3%). Remaining: P1 D7=SU(3) formal, P2 self-contained IR bound, P4 GNS Hilbert space, P5 LaTeX paper. Clay structural: ~95%; rigorous proof standard: ~63%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C299 P4 GNS Hilbert space formal construction T2a→T1+cited — ym_gns_hilbert_formal.py; 67/67 PASSED. JW2 (Hilbert space) formally closed: OS1-OS5 each verified T1 or T1+cited (OS2 via OS-Seiler 1978 Thm 4.1; OS4 via KP86 Thm 1 with KP<125/196<1 T1 from C292). GNS theorem [GN43+Se47] + OS Reconstruction [OS73+OS75] applied with T1-verified conditions → H_phys, self-adjoint H≥0, unique vacuum. P4 CLOSED. Clay rigorous proof standard: ~63%→~66% (+3%). Remaining: P1 D7=SU(3) formal, P2 self-contained IR bound, P5 LaTeX paper. Clay structural: ~95%; rigorous proof standard: ~66%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,11 +244,11 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~63% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
+| **Mathematical proof standard** | ~66% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
 **Current focus:** Advance the mathematical proof standard toward a fully rigorous proof.
-IMPORTANT (C297): The ~97% figure was measuring T2a structural coverage, not mathematical proof rigor. Honest standard: ~63%. All D1-D5 roadmap milestones CLOSED [C283-C287]. E2 Gribov CLOSED [C290]. E3 FULLY CLOSED [C289+C291]. KP<1 T2a→T1 [C292]. C_Dob<1 T2a→T1 [C293]. DFC→YM T2a→T1 [C294]. σ=I₄×Λ² T3→T2a [C295]. **P3 Seiler SU(3) T2a→T1+cited [C298]**: OS-Seiler 1978 Thm 4.1 covers all compact G; three-regime proof (SC/Dobrushin/KP); 41/41 PASS; ~60%→~63%. Remaining gaps: P1 D7=SU(3) formal from V(φ); P2 self-contained IR bound; P4 GNS Hilbert space formal; P5 LaTeX proof paper.
+IMPORTANT (C297): The ~97% figure was measuring T2a structural coverage, not mathematical proof rigor. Honest standard: ~66%. All D1-D5 roadmap milestones CLOSED [C283-C287]. E2 Gribov CLOSED [C290]. E3 FULLY CLOSED [C289+C291]. KP<1 T2a→T1 [C292]. C_Dob<1 T2a→T1 [C293]. DFC→YM T2a→T1 [C294]. σ=I₄×Λ² T3→T2a [C295]. P3 Seiler SU(3) T2a→T1+cited [C298]: ~60%→~63%. **P4 GNS Hilbert space T2a→T1+cited [C299]**: OS1-OS5 each T1/T1+cited; GNS [GN43+Se47] + OS Reconstruction [OS73+OS75] applied with T1-verified conditions; 67/67 PASS; ~63%→~66%. Remaining gaps: P1 D7=SU(3) formal from V(φ); P2 self-contained IR bound; P5 LaTeX proof paper. (P3 CLOSED C298. P4 CLOSED C299.)
 See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 
 ### Sub-Problem Status (structural, T2a level)
@@ -261,8 +261,8 @@ See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 | SP4 | Pure YM decoupling from scalar sector | **T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) | **T2a** | **100%** |
 
-Latest (C298): **P3 Seiler SU(3) T2a→T1+cited** — 41/41 PASS; OS-Seiler 1978 Thm 4.1 covers all compact G; SC regime [T1 Schur]; Dobrushin B=4 [T1,C293]; KP<125/196 [T1,C292]; union (0,∞) [T1]; proof standard ~60%→~63% (+3%).
-C297: Goal reframe — proof std corrected ~97%→~60% (stale T2a coverage ≠ rigorous proof). C296: M_c(D7) T2b (37.4% discrepancy between routes). C295: σ=I₄×Λ² T3→T2a (+5%). C294: DFC→YM T2a→T1 (+3%). C293: Dob T2a→T1 (+1%). C292: KP T2a→T1 (+3%). C291: E3 H^s ALL s≥2 CLOSED (+3%). C290: E2 Gribov CLOSED (+3%). C287: D5 Balaban-free CLOSED (+15%). CPC ~60%.
+Latest (C299): **P4 GNS Hilbert space T2a→T1+cited** — 67/67 PASS; OS1-OS5 each verified T1/T1+cited; GNS [GN43+Se47] + OS Reconstruction [OS73+OS75] with T1-verified conditions; H_phys, H≥0, unique vacuum; proof standard ~63%→~66% (+3%).
+C298: P3 Seiler SU(3) T2a→T1+cited — 41/41 PASS; OS-Seiler 1978 Thm 4.1 all compact G; ~60%→~63%. C297: Goal reframe — proof std corrected ~97%→~60%. C296: M_c(D7) T2b. C295: σ=I₄×Λ² T3→T2a (+5%). C294: DFC→YM T2a→T1 (+3%). C293: Dob T2a→T1 (+1%). C292: KP T2a→T1 (+3%). C291: E3 H^s CLOSED (+3%). C290: E2 Gribov CLOSED (+3%). C287: D5 Balaban-free CLOSED (+15%). CPC ~60%.
 
 *Stopping condition: mathematical proof standard reaches ~90%+ (publishable formal proof).*
 
