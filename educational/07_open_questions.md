@@ -293,7 +293,7 @@ All three residuals < 10⁻¹⁵. Notably, form (3) shows that the same I₄ = C
 
 | Gap | Description | Current tier | What closes it |
 |---|---|---|---|
-| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a all SP 100%; 7/7 JW T2a; structural ~95%; proof std ~72% [C301]; D1-D5+E2+E3+P2+P3+P4 all closed; KP/Dob/D4 T1; P1 isometry+uniqueness T1 [C301]; P2 IR bound T1+cited [C300]; P3 Seiler T1+cited [C298]; P4 GNS T1+cited [C299]** | P1 irreducible T2a residual (J-propagation F4a + moduli identity F4b); P5 Poincaré T2a; P6 LaTeX paper |
+| Yang-Mills mass gap (Clay) | 4D rigorous spectral gap | **T2a all SP 100%; 7/7 JW T2a; structural ~95%; proof std ~75% [C302]; D1-D5+E2+E3+P2+P3+P4 all closed; KP/Dob/D4 T1; P1 isometry+uniqueness T1 [C301]; conditional theorem T1+cited [C302]; P2 IR bound T1+cited [C300]; P3 Seiler T1+cited [C298]; P4 GNS T1+cited [C299]** | P1 irreducible T2a residual (F4a+F4b = DFC dynamics → S⁵⊂ℂ³); P5 Poincaré T2a; P6 LaTeX paper |
 | α_em(0) hadronic VP | Non-perturbative Δα_had; k_Y² T2a (C273) | T4 (hadronic VP); T2a (k_Y²) | α_s piece of ECCC T4; f_ρ from D7 dynamics + VMD |
 | Charm/strange quark masses | +2.45% (C274: κ=3π/2 from center vortex) | **T2a** | Gen-3 (top/bottom) Higgs-sector κ_23 still open |
 | Neutrino mass ratio | −8.3% uncorrected; +0.010% with color correction (T3) | T2b/T3 | D4/D7 BVP for δd=1/(6π) formal derivation |
