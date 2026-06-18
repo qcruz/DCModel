@@ -226,11 +226,23 @@ The Clay problem (Jaffe-Witten) requires seven criteria (see `equations/ym_clay_
 
 ## Proof Standard Gap — Honest Mathematical Assessment
 
-**Clay structural completeness: ~95%** (all SP covered at T2a)
-**Clay mathematical proof standard: ~97%** (what a mathematical referee would accept)
-*(Last updated: C296. Was ~35% at C282; D1-D5 closed C283-C287; E2 closed C290; E3 complete C289+C291; KP T2a→T1 C292; Dobrushin T2a→T1 C293; D4 T2a→T1 C294; σ=I₄×Λ² T3→T2a C295; M_c T2b confirmed C296.)*
+**Clay structural completeness: ~95%** (all five JW criteria covered at T2a level)
+**Clay rigorous proof standard: ~60%** (what a mathematical referee would actually accept)
+**NOTE:** The ~97% figure used in C283–C296 measured *structural coverage with T2a steps
+counting as progress*. T2a ("numerically consistent structural argument") is NOT a
+mathematical proof. The correct rigorous proof standard, counting only T1 exact steps
+and correctly cited external theorems with T1-verified conditions, is ~60%.
+The 40% gap is real mathematical work, not write-up.
+*(Last updated: C297. D1-D5 closed C283-C287; E2 T2a C290; E3 T2a C289+C291;
+KP T1 C292; Dob T1 C293; D4 T1 C294; σ T2a C295; M_c T2b C296. Framing corrected C297.)*
 
-The roadmap originally identified in C282 has been executed. Here is the current accounting:
+**Objective (updated C297):** Fully rigorous proof — every critical-path step must be
+T1 (exact algebra/rational arithmetic) or a published theorem with T1-verified conditions.
+No T2a steps remain on the critical path. No external experimental inputs (PDG α_s, etc.)
+on the critical path. The proof must be self-contained from V(φ).
+
+The roadmap originally identified in C282 has been executed at the T2a level. The remaining
+work is formalizing each T2a step to genuine mathematical rigor.
 
 ### What Is Actually Proved (in the mathematical sense)
 
@@ -280,37 +292,60 @@ The roadmap originally identified in C282 has been executed. Here is the current
 | **D4 T1** | DFC→YM plaquette proof T2a→T1 | **DONE C294** (T1, κ=1/2 exact rational; Atiyah-Bott replaced by algebraic derivation) | +3% |
 | **E1** | Balaban 4D SU(3) formal | NOT on critical path (D5 bypasses) | — |
 
-**Current: ~35% → ~97% from C282 roadmap execution (D1+D2+D3+D4+D5+E2+E3+KP-T1+Dob-T1+D4-T1+σ-T2a)**
+**C282 roadmap executed at T2a level (D1+D2+D3+D4+D5+E2+E3+KP-T1+Dob-T1+D4-T1+σ-T2a).**
+**This constitutes a complete structural argument — not a rigorous proof.**
 
-### Remaining Path to ~100%
+---
 
-The main proof chain (JW1-JW5) is complete at T2a. All E2+E3 gaps are closed. D4 upgraded to T1 (C294). The remaining mathematical work to advance from ~92% toward ~100%:
+### Path to Full Rigor (updated C297)
 
-1. ~~**String tension prefactor σ = I₄ × Λ_QCD² (T3 → T2a, ~+5%)**~~: **DONE C295** —
-   ym_sigma_i4_formal.py 20/20 PASS. Chain: F_v=N_c/2=3/2 [T1 unique to N_c=3] + Q_top=I₄×F_v=2 [T1]
-   + σ=Q_top×Λ² [T2a,C243] + dilute gas S_inst=27π²>>1 [T2a,C187] + F_v cancels algebraically [T1]
-   → ρ_v=I₄×Λ_QCD² [T2a composite]. σ=I₄×Λ² T3→T2a (+5%). Proof standard ~92%→~97%.
+**Goal: rigorous proof standard ~60% → 100%.**
+The C282 roadmap advanced the *structural* argument. The remaining work is different in
+character: it requires genuine mathematical formalization, not more Python modules.
 
-2. ~~**Algebraic upgrade of KP condition check (T2a → T1, ~+3%)**~~: **DONE C292** — KP<125/196<1
-   proved by rational arithmetic (β_lat=81/4 exact, Taylor partial sum e>163/60, upper bound e<1631/600<3,
-   integer arithmetic 163^5=115063617043). ~~C_Dob=0.652<1 (intermediate domain) remains T2a~~:
-   **DONE C293** — C_Dob<120/117649<1 algebraic T1 via B=4 block, e^{15}>147^3=3176523>3240 [T1 integer].
+| Priority | Gap | Current status | Path to rigorous |
+|---|---|---|---|
+| **P1** | **D7=SU(3) formal derivation from V(φ)** | T2a (C59–74 structural) | Prove that V(φ) compression cascade terminates at SU(3) — derive the gauge group, not assume it. This is the foundational claim of the DFC→YM route. |
+| **P2** | **Self-contained IR mass gap** | T2a with PDG α_s input | The SC path (Δ_SC≥1033 MeV) uses α_s(1 GeV)≥0.47 from PDG. For a standalone proof, derive the IR coupling bound from V(φ) alone via b₀=11>0 and g_eff²=8/27. Alternatively, use D5 path (Δ_D5≥861 MeV) exclusively — but Seiler 1982 SU(2)→SU(3) extension needs formal proof. |
+| **P3** | **Seiler 1982 SU(3) extension** | T2a (cited theorem for SU(2)) | Seiler 1982 proves SC polymer analyticity for SU(2). The D5 path extends this to SU(3) at T2a. Need: formal proof or published reference for SU(N) generalization. This closes the D5 gap without PDG input. |
+| **P4** | **Formal Hilbert space (JW2)** | T2a — OS axioms structural | Write the explicit GNS construction: verify OS1–OS5 conditions for the DFC Wilson action at T1/cited-theorem level, derive the Hilbert space H, identify H_0=Ω. |
+| **P5** | **JW3c Poincaré covariance formal** | T2a (C214/C217) | Spacetime (1,3) signature follows from BPS bound H≥0 (T2a). Needs: formal theorem that the worldvolume inherits full ISO(3,1). |
+| **P6** | **LaTeX proof document** | Not started | The deliverable. Can only be written after P1–P4 are resolved. Self-contained: V(φ) as input; published theorems cited; no external experimental numbers on critical path. |
 
-3. ~~**DFC→YM formal correspondence beyond Atiyah-Bott (T2a → T1, ~+3%)**~~: **DONE C294** —
-   ym_dfc_ym_algebraic.py: κ=β_lat×g_eff²/(4N_c)=(81/4)×(8/27)/12=1/2 exact rational [T1 Fraction];
-   S_W[β=81/4]→(1/4g_eff²)∫F² algebraically via plaquette expansion; Atiyah-Bott (1983) replaced
-   by T1 algebraic proof. 17/17 ASSERTIONS PASSED. D4 T2a→T1.
+**Honest accounting of the 40% rigorous gap:**
 
-4. **M_c(D7) from V(φ) alone (T2b → T2a, ~+2%)**: Close SP5 S10 by deriving the Wilsonian
-   matching scale M_c purely from V(φ) parameters; α_s(M_Z) from V(φ) chain currently −2.15%.
-   C296: two-route internal check confirms M_c T2b — ECCC_DFC gives 5.432×10¹⁴ GeV, Wilsonian
-   (C_match_Jost) gives 8.675×10¹⁴ GeV, internal gap 37.4%. Root cause: exponential sensitivity
-   d(ln M_c)/d(α_s)≈−1614/unit — closing this requires T1-level α_s(M_Z) derivation from V(φ).
+Steps that are already rigorous (T1 exact or cited theorem + T1 condition):
+- I₄=4/3, Q_top=2, β_lat=81/4, κ=1/2: all **T1 exact**
+- KP<125/196<1, C_Dob<120/117649<1: **T1 rational arithmetic**
+- OS-Seiler RP: **cited theorem** + T1 condition (β_lat=81/4>0)
+- |1−z₃|=√3≠0 → ⟨P⟩=0: **T1 exact**
+- Elitzur theorem: **cited theorem**
+- Kotecký-Preiss 1986: **cited theorem** + T2a condition verification
 
-5. **E1 Balaban supplementary (if the literature program is completed, ~+5%)**: Not on the
-   JW5 critical path. Would add robustness but is not blocking.
+Steps that are T2a and need formalization (the 40% gap):
+- D7=SU(3) from V(φ): **T2a** (most fundamental)
+- Seiler 1982 → SU(3) area law: **T2a** (SU(2) theorem extended)
+- Prokhorov → unique ω_∞: **T2a** (infinite-dimensional framework informal)
+- GNS → Hilbert space H: **T2a** (construction sketched not written)
+- Poincaré covariance JW3c: **T2a** (structural argument)
+- Mass gap Δ>0 as inf-spectrum statement: **T2a** (D5+SC combined)
 
-**No artificial stopping conditions.** Each item above is real mathematical work — a derivation, an algebraic identity, or a proof. None is merely write-up.
+**Priority order for rigorous proof work:**
+P1 (D7=SU(3)) → P3 (Seiler SU(3)) → P2 (IR bound) → P4 (Hilbert space) → P6 (paper).
+P5 (Poincaré) can proceed in parallel.
+
+---
+
+### Historical Roadmap Completion (from C282)
+
+Previously completed at T2a level (not rigorous proof — structural coverage):
+
+1. ~~σ=I₄×Λ² (T3→T2a)~~: DONE C295. ym_sigma_i4_formal.py 20/20 PASS.
+2. ~~KP<125/196<1 (T2a→T1)~~: DONE C292. Rational arithmetic.
+3. ~~C_Dob<120/117649<1 (T2a→T1)~~: DONE C293. Rational arithmetic.
+4. ~~DFC→YM κ=1/2 (T2a→T1)~~: DONE C294. Algebraic plaquette.
+5. M_c(D7) T2b: characterized C296. Supplementary — not on JW5 critical path.
+6. E1 Balaban supplementary: NOT on critical path (D5 bypasses).
 
 ---
 

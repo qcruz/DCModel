@@ -149,15 +149,17 @@ Current estimate: ~80%  (viability: ~87%, mathematical rigor: ~73%)
 --- CLAY PRIZE (separate sub-project — test case for DFC mathematical basis) ---
 Clay Prize structural completeness: ~95%
   (How complete the DFC argument covering all 5 Jaffe-Witten criteria is at T2a level)
-Clay Prize mathematical proof standard: ~97%
-  (How close to an accepted mathematical proof — D1-D5 all closed [C283-C287]; E2 T4→T2a [C290];
-  E3 fully closed [C289+C291]: Schwartz decay + d=1 Sobolev + Ebin-Palais all s≥2 + Coulomb IFT;
-  KP<1 upgraded T2a→T1 [C292]: β_lat=81/4, KP<125/196, μ<1/3<1/e all exact rational;
-  Dobrushin C_Dob<1 upgraded T2a→T1 [C293]: C_Dob<120/117649, B=4 block, e^{15}>3240, 27/27 PASS;
-  DFC→YM upgraded T2a→T1 [C294]: κ=1/2 exact Fraction, S_DFC=S_YM algebraically, 17/17 PASS;
-  σ=I₄×Λ² upgraded T3→T2a [C295]: F_v=N_c/2 unique to N_c=3, dilute gas S_inst=27π²>>1, 20/20 PASS;
-  remaining mathematical work: M_c(D7) T2b→T2a (~+2%); E1 Balaban supplementary not blocking;
-  see yang_mills_clay.md §Proof Standard)
+Clay Prize rigorous proof standard: ~60%
+  (CORRECTED C297: ~97% figure measured T2a structural coverage, not actual mathematical rigor.
+  T2a = numerically-consistent structural argument — NOT an accepted mathematical proof.
+  Honest accounting: D7=SU(3) is T2a structural [C59–74]; Seiler SU(3) cites SU(2) theorem [T2a];
+  IR bound uses PDG α_s input [not self-contained]; GNS Hilbert space is structural [T2a].
+  Rigorous steps (T1 or cited theorem with T1-verified conditions): β_lat=81/4 [T1]; g_eff²=8/27
+  [T2a]; KP<125/196 [T1, C292]; C_Dob<120/117649 [T1, C293]; κ=1/2 DFC→YM [T1, C294];
+  σ=I₄×Λ² F_v cancellation [T1 step in C295]; E3 Hilbert manifold [T2a, C289+C291].
+  Critical gaps to full rigor: P1 D7=SU(3) formal from V(φ); P2 self-contained IR bound;
+  P3 Seiler 1982 SU(3) formal extension; P4 GNS Hilbert space explicit; P5 LaTeX paper.
+  See yang_mills_clay.md §Path to Full Rigor)
 Clay Prize Confidence Score (CPC): ~60%
   (P(DFC framework → valid Jaffe-Witten proof candidate | continued work))
   CPC is NOT the progress %; it measures reachability of the destination, not distance traveled.
@@ -166,8 +168,10 @@ Clay Prize Confidence Score (CPC): ~60%
   SU(N) generality confirmed (+10% — TRIGGERED C216): SP1+SP2 T2a all N≥2 via monotonicity.
 
 NOTE: The Clay Prize is tracked independently from the DFC model. Structural completeness
-  measures how well DFC covers the JW criteria. Mathematical proof standard measures proximity
-  to a Clay-accepted proof. The current focus is advancing the mathematical proof standard.
+  measures how well DFC covers the JW criteria. Rigorous proof standard measures proximity
+  to a Clay-accepted mathematical proof (requires T1 or cited theorem, not T2a).
+  OBJECTIVE (C297): Achieve a fully rigorous mathematical proof before any DFC publication.
+  No paper or broader publication moves forward until the rigorous proof is complete.
 
 Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4 open);
   α_s closed 0.006% (Cycle 144); v=247.83 GeV Tier 2a (Cycle 145); m_τ Koide Tier 2a (Cycle 146).
@@ -198,6 +202,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   α=∛18 TIER 2a (Cycle 172): derived from β[T2a]+S_kink×α_D5=1[T1]+BPS saturation[T1].
 
 Recent cycles (full history: push_history.md):
+| 2026-06-17 | 297 | Step 1: Goal reframe + formal proof assembly — equations/ym_clay_proof_final.py (new): 43/43 ASSERTIONS PASSED. Complete proof chain: 9 T1 exact + 10 T2a structural. All 5 JW criteria covered. Δ_phys≥861 MeV>0. **GOAL REFRAME:** Objective is a fully rigorous mathematical proof; T2a ≠ proof. Honest rigorous proof standard: ~60% (corrected from stale ~97%). No DFC paper until proof complete. Critical gaps P1–P5: D7=SU(3) formal; self-contained IR bound; Seiler SU(3); GNS Hilbert space; LaTeX paper. Steps 2-5: ISSUES.md C297 framing entry + Last updated→C297; CLAUDE.md rigor corrected ~60%; README.md Latest→C297 + ~60%; push_history.md C297. **Rigorous proof standard: ~60% (corrected).** Clay structural: ~95%. CPC: ~60%. | 87% | 95% | ~80% |
 | 2026-06-17 | 296 | Step 1: M_c(D7) two-loop self-consistency check — equations/ym_mc_d7_twoloop.py (new): 10/11 ASSERTIONS PASSED. Two independent 2-loop DFC routes to M_c(D7). Route A (ECCC_DFC): 2-loop α_s run UP from M_Z until α_s=α_common=2/(27π); M_c^A=5.432×10¹⁴ GeV [T2a]. Route B (Wilsonian): 2-loop α_s run DOWN from m_KK=1.397×10¹⁹ GeV with C_match_Jost=0.795151; M_c^B=8.675×10¹⁴ GeV [T2a]. Internal gap: 37.4% (fails 5% T2a threshold → M_c T2b confirmed). Root cause: d(ln M_c)/d(α_s)≈−1614/unit at m_top scale amplifies 2.15% α_s(M_Z) error to ~37% M_c discrepancy between routes. Closed loop B exact by construction [T1 self-consistency]. FAIL G2: Wilsonian M_c^B vs C261 — C261 used C_match_tree, not C_match_Jost. JW5 unaffected (SC path C256/C287 independent of M_c). Steps 2-5: ISSUES.md Last updated→C296+entry; yang_mills_clay.md Last updated→C296+file index+Remaining Path item 4 updated; 07_open_questions.md C296 paragraph+status; 08_mathematics.md C296 paragraph; README.md Latest→C296; push_history.md. **M_c(D7) T2b confirmed. Clay proof standard: ~97% (unchanged).** Clay structural: ~95% (unchanged). CPC: ~60% (unchanged). | 87% | 95% | ~80% |
 | 2026-06-17 | 295 | Step 1: σ=I₄×Λ² string tension prefactor T3→T2a — equations/ym_sigma_i4_formal.py (new): 20/20 ASSERTIONS PASSED. Center vortex formal proof that ρ_v=I₄×Λ_QCD² (string tension = Casimir × Λ²). Eight-part chain using fractions.Fraction exact arithmetic. Part A [T1]: F_v=1−cos(2π/N_c)=N_c/2=Fraction(3,2) unique to N_c=3 (N_c=2→2≠1, N_c=4→1≠2). Part B [T1]: Q_top=I₄×N_c/2=Fraction(2) exact. Part C [T1 algebraic cancellation]: σ=ρ_v×F_v and σ=I₄×F_v×Λ² → ρ_v=σ/F_v=I₄×Λ² (F_v cancels exactly in Fraction arithmetic, res 0). Part D [T2a]: dilute vortex gas justified — S_inst=8π²/g_eff²=27π²=266.48>>1; fugacity z=exp(−27π²)≈1.86×10⁻¹¹⁶<<10⁻¹⁰⁰ [Poisson statistics T2a]. Part E [T2a]: σ_phys=Q_top×Λ_QCD²=185440 MeV² (−4.21%), consistent with C222. Part F [T1]: uniqueness — I₄=C₂(fund,SU(3))=4/3 exact, algebraically unique to SU(3). Part G [T1]: ρ_v=I₄×Λ² is dimensionally correct, N_c=3 specific. Part H [T2a composite]: ρ_v=I₄×Λ_QCD² fully proved. Steps 2-5: yang_mills_clay.md Last updated→C295+proof std ~92%→~97%+σ T2a+file index+C295 row; ISSUES.md C295 entry; 07_open_questions.md C295 paragraph+"What is still missing" updated; 08_mathematics.md ~97%+C295 paragraph; CLAUDE.md C295 row+proof std ~97%; README.md Latest→C295+~97%; push_history.md. **σ=I₄×Λ² T3→T2a. Clay proof standard: ~92%→~97% (+5%).** Clay structural: ~95% (unchanged). CPC: ~60% (unchanged). | 87% | 95% | ~80% |
 | 2026-06-17 | 294 | Step 1: DFC→YM algebraic plaquette proof T2a→T1 — equations/ym_dfc_ym_algebraic.py (new): 17/17 ASSERTIONS PASSED. D4 (DFC→YM formal action correspondence) upgraded T2a→T1. Key: κ=β_lat×g_eff²/(4N_c)=(81/4)×(8/27)/12=Fraction(1,2) exactly — g_eff² cancels algebraically; S_W[β=81/4]→(1/4g²)∫F²=S_YM is T1. Replaces Atiyah-Bott (1983). Seven-part chain: β_lat=81/4[T1]→κ=1/2[T1]→S_DFC=S_YM[T1]. Steps 2-5: yang_mills_clay.md Last updated→C294+proof std ~89%→~92%+D4 T1+file index+C294 row; ISSUES.md C294 entry; 07_open_questions.md C294 paragraph+"What is still missing" updated; 08_mathematics.md ~92%+C294 paragraph; CLAUDE.md C294 row+proof std ~92%; README.md Latest→C294+~92%; push_history.md. **DFC→YM T2a→T1. Clay proof standard: ~89%→~92% (+3%).** Clay structural: ~95% (unchanged). CPC: ~60% (unchanged). | 87% | 95% | ~80% |
@@ -389,85 +394,122 @@ All three must stay in sync. The estimate has two components:
 
 **Yang-Mills Mass Gap — Clay Millennium Prize Problem**
 
-**IMPORTANT — Two separate measurements, tracked independently:**
+**The objective is a fully rigorous mathematical proof of the Yang-Mills mass gap** —
+not a structural argument, not a T2a chain, not a high "coverage percentage." The
+standard is: every step in the critical path is either (a) an exact algebraic identity
+verifiable by hand or rational arithmetic (T1), or (b) a direct application of a
+published mathematical theorem with all conditions formally verified (cited theorem).
+T2a structural arguments ("numerically consistent structural claim") do **not** satisfy
+this standard. The proof must be writable as a standalone LaTeX paper that could pass
+peer review in a mathematics journal without reference to DFC numerics.
 
-1. **Clay Prize structural completeness** (~95% as of C281): How completely DFC covers
-   all five Jaffe-Witten criteria at T2a (numerically consistent structural argument) level.
-   This is the DFC-internal progress metric — it tracks how much of the proof *outline* exists.
-
-2. **Clay Prize mathematical proof standard** (~35% as of C281): How close the argument is
-   to an *accepted mathematical proof* — the standard required to actually win the Clay Prize.
-   This is lower because: (a) Balaban's 4D SU(3) YM program is incomplete in the literature,
-   (b) the DFC→YM formal correspondence needs proof not argument, (c) Prokhorov in infinite
-   dimensions needs a proper functional-analytic framework. See `foundations/yang_mills_clay.md`
-   §Proof Standard Gap for the honest accounting.
-
-**Current focus:** Advance the mathematical proof standard from ~35% toward 100%.
-This means: identify which steps can be proved rigorously without Balaban, find alternative
-routes to the continuum limit, and formally prove the DFC→SU(3) YM correspondence.
-
-This focus continues until one of two stopping conditions is met:
-- **Hard barrier:** A fundamental obstruction (document in `ISSUES.md`).
-- **Complete proof:** Mathematical proof standard reaches ~90%+ (publishable formal proof).
-
-**Canonical tracking document: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
-(All SP1-SP5 tables, structural assets, CPC, cycle history, AND §Proof Standard Gap)
-
-**Three tracked quantities (update each Clay cycle):**
-- **Structural completeness** (~95%): DFC argument coverage of JW criteria.
-- **Mathematical proof standard** (~35%): proximity to Clay-accepted proof.
-- **CPC** (~60%): P(DFC → valid JW proof candidate | continued work). Update on swing events.
-
-**The five sub-problems (full tracking in `foundations/yang_mills_clay.md`):**
-
-| # | Sub-problem | Current tier | Target |
-|---|---|---|---|
-| SP1 | Constructive 4D gauge theory from V(φ) — derive Yang-Mills Hilbert space | **T2a** ✓ (C203 SP1g closes) | T2a |
-| SP2 | Hamiltonian bound H ≥ I₄ × Q̂_top × m (BPS→quantum) | **T3 (4D chain); UV gap T2a** | T2a (4D rigorous) |
-| SP3 | Topological charge spectrum gap (Q_top ∈ {0,2,4,...} in QFT Hilbert space) | **T2a** | T2a |
-| SP4 | Pure Yang-Mills decoupling from scalar sector in IR limit | **T2a** | T2a |
-| SP5 | Derive Λ_QCD (and hence Δ) from V(φ) without external input | **T2a** | T2a |
-
-**Workflow within PRIMARY FOCUS:**
-
-Step 1 of each cycle must advance at least one sub-problem. Priority order:
-SP2 4D rigorous gap chain (T3→T2a): derive σ = Q_top × Λ_QCD² from D7 kink vacuum energy → SP5 M_c(D7) from V(φ) substrate dynamics alone (T4)
-(C203: **SP1g T3→T2a** — SP1 overall T2a — +15% CPC swing event; Clay 69%→72%; CPC 35%→50%).
-(C202: SP1k equicontinuity T3→T2a — μ=0.1265<1/e → sup_n(n×μ^n)=μ; uniform bound 4.45e-42; SP1 progress 72%→78%).
-
-Each new equation module addressing the Clay challenge goes in `equations/`
-with prefix `ym_` (e.g., `ym_hamiltonian_bound.py`, `ym_hilbert_space.py`).
-
-Each conceptual argument goes in `phenomena/particle_physics/forces/` or a new
-`foundations/yang_mills/` directory if the argument grows to multiple documents.
-
-**Key structural assets available (do not re-derive):**
-(Full list with files: `foundations/yang_mills_clay.md` § Key Structural Assets)
-- BPS lower bound E_kink > 0: **T1** (`equations/yang_mills_mass_gap.py`)
-- I₄ = C₂(fund, SU(3)) = 4/3: **exact identity**, residual 0.00e+00
-- Q_top = 2: **T1 exact**
-- D7 = SU(3): **T2a** (Cycles 59–74)
-- g_eff² = 2I₄/N_Hopf = 8/27: **T2a**
-- KP = 0.3437 < 1; μ = 0.1265 < 1/e: **T2a/T1** (`ym_infinite_volume.py`, `ym_balaban_npoint.py`)
-- Flat Killing metric Tr(T^aT^b)=(1/2)δ^{ab}: **T1** (`ym_moduli_metric.py`, C184)
-- UV spectral gap Δ_UV ≥ 1.22 M_Pl = 1.49×10¹⁹ GeV: **T2a** (`ym_sp2_perron_frobenius.py`, C201)
-- IR mass gap Δ_4D ≥ 861 MeV: **T3** (`ym_4d_gap_extension.py`, C189)
-- C_match = 0.795151: **T2a** (`ym_jost_function.py`, C197)
-- **SP1 overall T2a** (C203): Balaban RG domain uniform all n [T1+T2a], all 11 sub-steps SP1a-SP1k T2a (`ym_sp1g_rg_domain.py`)
+**No DFC paper or broader publication will move forward until this proof is complete.**
+This is an independent sub-project; it must be fully resolved on its own terms first.
 
 ---
 
-**Secondary priorities (when no Clay sub-problem is tractable in a session):**
+**IMPORTANT — Three independent quantities, tracked separately:**
 
-1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically to close α_em and
-   α_s gaps simultaneously (equations/alpha_em_eccc.py, Cycle 139).
+1. **Clay Prize structural completeness** (~95%): How completely DFC covers all five
+   Jaffe-Witten criteria at T2a level (numerically consistent structural argument).
+   This is high. It does NOT mean the proof is rigorous.
 
-2. **Strong CP formation argument** — formal nucleation path from D7 formation dynamics
-   showing energy minimum at theta=0 vs theta=pi; promote theta=0 selection Tier 3→2a
-   (equations/strong_cp_theta.py, Cycle 147).
+2. **Clay Prize rigorous proof standard** (~60%): How close the argument is to a
+   proof that a mathematical referee would accept in a mathematics journal. This is
+   the number that matters for actually winning the Clay Prize. It is lower than the
+   structural completeness because T2a ≠ proof. See §Proof Standard Gap in
+   `foundations/yang_mills_clay.md` for the step-by-step honest accounting.
 
-3. **Quark mass matrix phase** — derive arg(det M_q)=0 from D6/D7 interface to close
-   the theta-bar = theta_QCD + arg(det M_q) equation.
+3. **CPC** (~60%): P(DFC framework, continued to completion, produces an accepted
+   proof candidate). Update only on listed swing events.
+
+**Canonical tracking document: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
+(All SP tables, structural assets, CPC, cycle history, §Proof Standard Gap, §Path to Full Rigor)
+
+---
+
+**What counts as rigorous (the standard every step must meet):**
+- **T1**: Exact algebraic identity — verifiable by rational arithmetic or direct computation,
+  zero free parameters, reproducible without numeric approximation.
+- **Cited theorem**: A published mathematical theorem (e.g., KP86, OS-Seiler 1978, Seiler 1982,
+  Ebin-Palais 1970) applied to the DFC setting with all conditions formally verified at T1 level.
+- **NOT sufficient**: T2a ("numerically verified structural argument"), "structurally expected,"
+  estimates with tolerance, or "consistent with" claims.
+
+---
+
+**Current honest status of the critical path steps:**
+
+| Step | Claim | Status | Gap |
+|---|---|---|---|
+| JW1 | D7 = SU(3) gauge group from V(φ) | **T2a** — structural (C59–74) | Formal derivation from V(φ) → SU(3) needed |
+| JW2 | Quantum Hilbert space H on ℝ⁴ | **T2a** — OS+KP+GNS structural | OS axiom conditions need formal verification |
+| JW3a | Reflection positivity | **Cited theorem** — OS-Seiler 1978 (β>0 → RP) | Condition β_lat=81/4>0 is T1; **step is rigorous** |
+| JW3b | Gauge invariance SU(3) | **T1+T2a** — Elitzur+Z₃ | Elitzur exact; flat Killing T1; **step is rigorous** |
+| JW3c | Poincaré covariance | **T2a** — structural C214/C217 | Spacetime emergence needs formal argument |
+| JW4 | Continuum limit | **T1+T2a** — κ=1/2 T1; KP<125/196 T1; D5 T2a | D5 gap existence uses Seiler 1982 for SU(2); SU(3) extension T2a |
+| JW5 | Mass gap Δ > 0 | **T2a** — D5+SC multi-method | SC path uses PDG α_s(1 GeV)≥0.47 as external input |
+
+**Critical rigorous proof gaps (ordered by priority):**
+
+1. **D7=SU(3) formal derivation** (most fundamental): The entire proof depends on the
+   D7 compression threshold producing exactly SU(3). Currently T2a from structural arguments
+   in Cycles 59–74. Needs: formal proof that V(φ) compression cascade terminates at SU(3)
+   and no other gauge group.
+
+2. **Self-contained IR mass gap bound** (remove external input): The SC path Δ_SC ≥ 1033 MeV
+   uses α_s(μ<1 GeV) ≥ 0.47 from PDG. A DFC-standalone proof cannot have external experimental
+   inputs on the critical path. Need: derive the IR coupling lower bound from V(φ) alone using
+   only b₀=11>0 and g_eff²=8/27, or use the D5 path (Δ_D5≥861 MeV) which is PDG-free but
+   currently T2a via Seiler 1982 SU(2)→SU(3) extension.
+
+3. **Formal Hilbert space construction** (JW2): The GNS construction from OS axioms to a
+   Hilbert space H on ℝ⁴. The individual OS axiom verifications need to be step-by-step
+   formal with each condition checked at T1 level.
+
+4. **Seiler 1982 SU(3) extension for D5**: Seiler 1982 proves SC polymer analyticity for
+   SU(2). The SU(3) extension used in the D5 path (C287) is T2a structural. Need formal
+   theorem or proof that Seiler 1982 extends to SU(N) for all N≥2.
+
+5. **LaTeX proof document**: The formal paper assembling all rigorous steps. This is the
+   deliverable that constitutes an actual proof candidate. Cannot be written until steps 1–4
+   are resolved.
+
+---
+
+**This focus continues until one stopping condition is met:**
+- **Hard barrier**: A fundamental obstruction (document in `ISSUES.md`; return to DFC).
+- **Complete rigorous proof**: Every critical-path step is T1 or cited theorem; LaTeX paper
+  written; proof is self-contained from V(φ) without external experimental inputs.
+
+---
+
+**Key structural assets available (do not re-derive):**
+(Full list: `foundations/yang_mills_clay.md` §Key Structural Assets)
+- I₄ = C₂(fund, SU(3)) = 4/3: **T1 exact** (`fermion_representation.py`)
+- Q_top = 2: **T1 exact** (`yang_mills_mass_gap.py`)
+- β_lat = 81/4: **T1 exact Fraction** (from g_eff²=8/27)
+- KP < 125/196 < 1: **T1 rational arithmetic** (`ym_algebraic_kp_bound.py`, C292)
+- C_Dob < 120/117649 < 1: **T1 rational arithmetic** (`ym_dobrushin_algebraic.py`, C293)
+- κ = 1/2: **T1 exact Fraction** DFC→YM plaquette (`ym_dfc_ym_algebraic.py`, C294)
+- |1−z₃|=√3≠0 → ⟨P⟩=0 algebraically: **T1** (`ym_sp2_elitzur_confinement.py`, C204)
+- σ = I₄×Λ²: **T2a** (`ym_sigma_i4_formal.py`, C295)
+- Flat Killing metric Tr(T^aT^b)=(1/2)δ^{ab}: **T1** (`ym_moduli_metric.py`, C184)
+- OS-Seiler RP (β_lat=81/4>0): **cited theorem** (Seiler 1978) + T1 condition check
+- Δ_D5 ≥ 861 MeV Balaban-free: **T2a** (`ym_d5_continuum_gap.py`, C287)
+- Δ_SC ≥ 1033 MeV: **T2a** but uses PDG α_s input — NOT standalone rigorous
+- E3 moduli M_DFC≅A_flat/G all s≥2: **T2a** (`ym_e3_hs_extension.py`, C291)
+- E2 Gribov not an obstruction: **T2a** (`ym_gribov_absence.py`, C290)
+
+Each new Clay equation module goes in `equations/` with prefix `ym_`.
+
+---
+
+**Secondary priorities (when no Clay rigorous-proof step is tractable):**
+
+1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically (Cycle 139).
+2. **Strong CP formation** — formal D7 dynamics → θ=0 selection T3→T2a (Cycle 147).
+3. **Quark mass matrix phase** — derive arg(det M_q)=0 from D6/D7 interface (Cycle 153).
 
 **After every push, also check `ISSUES.md`** — centralized tracker for open questions,
 known failures, internal tensions, retracted claims, and blocked derivations.

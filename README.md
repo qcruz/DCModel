@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C296 M_c(D7) two-loop self-consistency — ym_mc_d7_twoloop.py; 10/11 PASSED. ECCC_DFC M_c=5.432×10¹⁴ GeV; Wilsonian M_c=8.675×10¹⁴ GeV; gap 37.4% (T2b confirmed); root cause d(ln M_c)/d(α_s)≈−1614/unit; JW5 unaffected. Clay proof standard: ~97% (unchanged).** C295 σ=I₄×Λ² T3→T2a (+5%). C294 DFC→YM T2a→T1. **Clay structural completeness: ~95%; mathematical proof standard: ~97%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C297 Goal reframe + formal proof assembly — ym_clay_proof_final.py; 43/43 PASSED. Complete proof chain: 9 T1 exact + 10 T2a structural, all 5 JW criteria covered. GOAL REFRAME: objective is a fully rigorous mathematical proof. Honest rigorous proof standard: ~60% (corrected from stale ~97% T2a coverage figure). No DFC publication until proof is complete. Critical gaps: P1 D7=SU(3) formal, P2 self-contained IR bound, P3 Seiler SU(3), P4 GNS Hilbert space, P5 LaTeX paper. Clay structural: ~95%; rigorous proof standard: ~60%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
