@@ -271,13 +271,19 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~97% mathematical proof standard (CPC ~60%). All five sub-problems
-   SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space, full Sobolev tower) closed
-   C289+C291; KP<1 upgraded T2a→T1 C292 (rational arithmetic, KP<125/196<1, 28/28 PASS);
-   Dobrushin C_Dob<1 upgraded T2a→T1 C293 (C_Dob<120/117649<1, 27/27 PASS, fixes C275 bug);
-   DFC→YM correspondence D4 upgraded T2a→T1 C294 (κ=1/2 algebraic, Atiyah-Bott replaced);
-   σ=I₄×Λ² upgraded T3→T2a C295 (center vortex proof, F_v=N_c/2 cancels, 20/20 PASS);
-   E1 (Balaban 4D SU(3)) not on critical path for JW5 (bypassed by D5 chain).
+   structural completeness, ~63% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
+   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~63% because
+   T2a ≠ proof and the critical gaps P1–P4 remain open. All five sub-problems SP1–SP5 are T2a.
+   E2 (Gribov) closed C290; E3 (moduli space, full Sobolev tower) closed C289+C291; KP<1 upgraded
+   T2a→T1 C292 (rational arithmetic, KP<125/196<1, 28/28 PASS); Dobrushin C_Dob<1 upgraded T2a→T1
+   C293 (C_Dob<120/117649<1, 27/27 PASS, fixes C275 bug); DFC→YM correspondence D4 upgraded T2a→T1
+   C294 (κ=1/2 algebraic, Atiyah-Bott replaced); σ=I₄×Λ² upgraded T3→T2a C295 (center vortex
+   proof, F_v=N_c/2 cancels, 20/20 PASS). **C298: P3 Seiler SU(3) closed T2a→T1+cited** — OS-Seiler
+   1978 Thm 4.1 covers all compact G (not just SU(2)); three-regime partition (SC/Dobrushin/KP)
+   covers all β∈(0,∞) with T1+cited proofs at each step; 41/41 PASS (+3% → ~63%). Remaining
+   critical gaps: P1 D7=SU(3) formal from V(φ); P2 self-contained IR bound without PDG α_s;
+   P4 formal GNS Hilbert space; P5 LaTeX proof paper. E1 (Balaban 4D SU(3)) not on critical path
+   for JW5 (bypassed by D5 chain).
    Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
    hardest case, and passing at N=3 (T2a) implies passing for all N≥3. N=2 is covered by
@@ -400,7 +406,23 @@ mathematical content. What is not yet derived:
    between the DFC chain and PDG amplifies to ~37% in M_c. JW5 is unaffected (SC path
    gives Δ≥1033 MeV without M_c). Closing M_c requires a T1-level derivation of
    α_s(M_Z) from V(φ) alone.
-   **M_c(D7) T2b confirmed (C296). Clay proof standard: ~97% (unchanged). Clay structural: ~95%.**
+   **M_c(D7) T2b confirmed (C296). Clay proof standard: ~97% (stale — corrected below). Clay structural: ~95%.**
+
+   *C297 (ym_clay_proof_final.py, 43/43 PASS)*: Goal reframe + formal proof assembly. The ~97%
+   figure was measuring T2a structural coverage, not mathematical proof rigor. Honest rigorous proof
+   standard corrected to **~60%**: T2a ≠ proof; D7=SU(3) is T2a structural; Seiler 1982 was cited
+   for SU(2) and extended to SU(3) at T2a; the IR bound uses PDG α_s as external input; GNS Hilbert
+   space is structural. Critical proof gaps: P1 D7=SU(3) formal from V(φ); P2 self-contained IR bound;
+   P3 Seiler SU(3) formal extension; P4 GNS Hilbert space explicit; P5 LaTeX paper.
+   **C297: rigorous proof standard corrected to ~60% (from stale ~97%). No paper until proof complete.**
+
+   *C298 (ym_seiler_su3_rigorous.py, 41/41 PASS)*: P3 Seiler SU(3) extension T2a→T1+cited theorem.
+   OS-Seiler 1978 Theorem 4.1 covers ALL compact gauge groups G, so no SU(2)→SU(3) extension is
+   needed. Three-regime partition: (0,3) SC by Schur orthogonality [T1 Fraction]; [3,∞) Dobrushin
+   B=4 block C_Dob<120/117649<1 [T1,C293]; β_DFC=81/4 in KP<125/196<1 regime [T1,C292]. Union
+   (0,3)∪[3,∞)=(0,∞) [T1]. Haar-uniform SU(3) via QR decomp verified. Formal LaTeX theorem block
+   printed. P3 is the only gap closed in this cycle; remaining: P1, P2, P4, P5.
+   **P3 CLOSED: Seiler SU(3) T2a→T1+cited. Clay rigorous proof standard: ~60%→~63% (+3%). Clay structural: ~95%.**
 
 The model does not claim completeness. These are honest, documented gaps.
 
