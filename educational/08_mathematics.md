@@ -271,8 +271,8 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~69% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
-   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~69% because
+   structural completeness, ~72% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
+   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~72% because
    T2a ≠ proof. All five sub-problems SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space,
    full Sobolev tower) closed C289+C291; KP<1 upgraded T2a→T1 C292 (rational arithmetic,
    KP<125/196<1, 28/28 PASS); Dobrushin C_Dob<1 upgraded T2a→T1 C293 (C_Dob<120/117649<1,
@@ -285,8 +285,19 @@ mathematical content. What is not yet derived:
    unique vacuum; JW2 Hilbert space existence now rigorous; 67/67 PASS (+3% → ~66%).
    **C300: P2 self-contained IR mass gap closed T2a→T1+cited** — β_lat=81/4[T1]+KP<125/196[T1,
    C292]+KP86 Thm 1[cited]→m_lat≥log(196/125)>0[T1+cited]; zero PDG inputs; JW5 lattice mass
-   gap existence rigorous; 44/44 PASS (+3% → ~69%). Remaining critical gaps: P1 D7=SU(3)
-   formal from V(φ) [most fundamental]; P5 Poincaré covariance JW3c [T2a]; P6 LaTeX paper.
+   gap existence rigorous; 44/44 PASS (+3% → ~69%).
+   **C301: P1 complex isometry theorem T1** — ym_p1_complex_isometry.py (new): 26/26 PASS.
+   Formalizes the P1 gap (D7=SU(3) from V(φ)) by isolating T1-provable isometry from irreducible
+   T2a residual. Part A+B [T1 constructive]: SU(3) transitivity on S⁵ via Gram-Schmidt + S⁵≅SU(3)/SU(2)
+   dim check 8−3=5. Part C [T1 algebraic]: Isom_J(S⁵⊂ℂ³)=SU(3) — SU(3) is ℂ-linear and isometric;
+   complex conjugation is a real isometry but NOT ℂ-linear (conj(iv)=−i·conj(v)≠i·conj(v)), proving
+   the complex structure J is essential. Part D [T1 Fraction]: C₂(fund,SU(n))=(n²−1)/(2n)=4/3=I₄
+   forces n=3 uniquely; discriminant=100, n₊=3, n₋=−1/3. Part E [T1 Fraction]: self-consistency
+   web g_eff²=8/27, β_lat=81/4, κ=1/2, Q_top=2 all Fraction arithmetic. Part F [T2a]: irreducible
+   residual = F4a (J-propagation D5→D7 through bifurcation cascade) + F4b (kink moduli ≅ S⁵⊂ℂ³
+   identification). P1 tier: T2a composite (advance: isometry and uniqueness now T1; prior T2a was
+   qualitative winding argument). +3% → ~72%. Remaining critical gaps: P1 residual (F4a+F4b);
+   P5 Poincaré covariance JW3c [T2a]; P6 LaTeX paper.
    E1 (Balaban 4D SU(3)) not on critical path for JW5 (bypassed by D5).
    Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
