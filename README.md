@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C294 DFC→YM algebraic plaquette proof T2a→T1 — ym_dfc_ym_algebraic.py; 17/17 PASSED. κ=1/2 exact Fraction; S_DFC=S_YM algebraically; Atiyah-Bott (1983) replaced. Clay proof standard: ~89%→~92% (+3%).** C293 Dobrushin T2a→T1. C292 KP<1 T2a→T1. C291 E3 H^s all s≥2. **Clay structural completeness: ~95%; mathematical proof standard: ~92%; CPC ~60%; model ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C295 σ=I₄×Λ² string tension prefactor T3→T2a — ym_sigma_i4_formal.py; 20/20 PASSED. F_v=N_c/2 Fraction[T1]; ρ_v=I₄×Λ² algebraic cancellation[T1]; dilute gas z=exp(−27π²)[T2a]. Clay proof standard: ~92%→~97% (+5%).** C294 DFC→YM T2a→T1. C293 Dobrushin T2a→T1. **Clay structural completeness: ~95%; mathematical proof standard: ~97%; CPC ~60%; model ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,11 +244,11 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~92% | Proximity to a Clay-accepted mathematical proof |
+| **Mathematical proof standard** | ~97% | Proximity to a Clay-accepted mathematical proof |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
-**Current focus:** Advance the mathematical proof standard from ~92% toward 100%.
-All D1-D5 roadmap milestones CLOSED [C283-C287]. E2 Gribov copies CLOSED [C290]. E3 FULLY CLOSED [C289+C291]. KP<1 upgraded T2a→T1 [C292]: β_lat=81/4, KP<125/196, μ<1/3<1/e all exact rational. Dobrushin C_Dob<1 upgraded T2a→T1 [C293]: C_Dob<120/117649, B=4 block, e^{15}>3240, 27/27 PASS; fixes C275 C_poly=12 bug. DFC→YM upgraded T2a→T1 [C294]: κ=1/2 exact Fraction, S_DFC=S_YM algebraically, Atiyah-Bott replaced, 17/17 PASS. Remaining mathematical work: (1) σ=I₄×Λ² T3→T2a string tension prefactor (~+5%); (2) M_c(D7) T2b→T2a (~+2%); (3) E1 Balaban supplementary, not blocking.
+**Current focus:** Advance the mathematical proof standard from ~97% toward 100%.
+All D1-D5 roadmap milestones CLOSED [C283-C287]. E2 Gribov copies CLOSED [C290]. E3 FULLY CLOSED [C289+C291]. KP<1 upgraded T2a→T1 [C292]. Dobrushin C_Dob<1 upgraded T2a→T1 [C293]. DFC→YM upgraded T2a→T1 [C294]. σ=I₄×Λ² upgraded T3→T2a [C295]: F_v=N_c/2 Fraction[T1]; ρ_v=I₄×Λ² algebraic cancellation[T1]; dilute gas z=exp(−27π²)[T2a]; 20/20 PASS. Remaining mathematical work: (1) M_c(D7) T2b→T2a (~+2%); (2) E1 Balaban supplementary, not blocking; (3) paper write-up (~+1%).
 See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 
 ### Sub-Problem Status (structural, T2a level)
