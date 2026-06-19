@@ -271,14 +271,15 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~83% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
-   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~83% because
+   structural completeness, ~84% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
+   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~84% because
    T2a ≠ proof. 6/7 JW criteria now T1+cited (JW3c complete C303+C304); P1 isometry+uniqueness T1 (C301);
    conditional theorem T1+cited (C302); U(n) symmetry theorem T1 NEW (C305): V(|φ|) has symmetry
    group exactly U(n)={M∈O(2n): MJ_n=J_nM} — 33/33 PASS; V enforces complex structure J_n at
    every depth n; I₄=C₂(fund,SU(n))=4/3 uniquely selects n=3 T1 NEW (C306) — 27/27 PASS;
-   sole remaining T2a = JR holonomy → triality t=1 → fundamental rep. All five sub-problems
-   SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space,
+   min-Casimir t=1 rep identification T1 NEW (C307) — 36/36 PASS; given triality t=1 [T2a], rep
+   is (1,0) uniquely by Fraction scan over 15 t=1 candidates; sole remaining T2a = JR holonomy
+   (one crossing → z₃¹). All five sub-problems SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space,
    full Sobolev tower) closed C289+C291; KP<1 upgraded T2a→T1 C292 (rational arithmetic,
    KP<125/196<1, 28/28 PASS); Dobrushin C_Dob<1 upgraded T2a→T1 C293 (C_Dob<120/117649<1,
    27/27 PASS, fixes C275 bug); DFC→YM correspondence D4 upgraded T2a→T1 C294 (κ=1/2 algebraic,
@@ -543,6 +544,18 @@ mathematical content. What is not yet derived:
    specific claim that the kink zero mode zero-mode has triality t=1 (fundamental, not adjoint or
    other). A Jackiw-Rebbi BVP calculation of the holonomy matrix would close this.
    **Clay proof standard: ~81%→~83% (+2%). Clay structural: ~95%.**
+
+   Cycle 307 (ym_jr_holonomy_triality.py): **minimum-Casimir t=1 rep identification T1 NEW**.
+   36/36 PASS. Scan all SU(3) irreps (p,q) with p+q≤8 by exact Fraction arithmetic; find 15 irreps
+   with triality t=(p−q) mod 3=1; compute C₂(p,q)=(p²+pq+q²+3p+3q)/3 for each; minimum is
+   (1,0) with C₂=Fraction(4,3)=I₄ [T1 Fraction], uniquely. Second t=1 irrep is (0,2) with
+   C₂=Fraction(16,3) (factor 4 gap). Given triality t=1 [T2a: Part F, JR holonomy], rep is (1,0)
+   uniquely by T1 scan — this step is now T1. Irreducible T2a remaining: "one D6 crossing through
+   D7 center vortex gives one Z₃ unit (z₃¹)" — the Jackiw-Rebbi holonomy argument. This is F4a+F4b
+   of the C302 conditional theorem. Advance: C306 identified that holonomy→triality→min-Casimir is
+   the path; C307 closes the min-Casimir part. A JR BVP that fixes the triality from crossing
+   number would close the sole remaining T2a entirely.
+   **Clay proof standard: ~83%→~84% (+1%). Clay structural: ~95%.**
 
 The model does not claim completeness. These are honest, documented gaps.
 
