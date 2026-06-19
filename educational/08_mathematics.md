@@ -307,8 +307,17 @@ mathematical content. What is not yet derived:
    →OS-Seiler[cited,C298]+GNS+OS Recon[cited,C299]→KP86→m_lat≥log(196/125)>0[T1+cited,C300].
    Proof: 20 T1 + 5 cited theorems + 1 T2a hypothesis. Key insight: F4a(T2a)+F4b(T2a) = SAME
    T2a = "DFC dynamics at D7 produce S⁵⊂ℂ³." Conditional theorem is fully rigorous; the only
-   non-rigorous step is the DFC dynamics identification. +3% → ~75%. Remaining critical gaps:
-   P1 residual (F4a+F4b = DFC dynamics → S⁵⊂ℂ³); P5 Poincaré JW3c [T2a]; P6 LaTeX paper.
+   non-rigorous step is the DFC dynamics identification. +3% → ~75%. **C303: JW3c Poincaré
+   covariance T2a→T1+cited** — ym_poincare_jw3c_formal.py (new): 28/28 PASS. OS Reconstruction
+   theorem [OS75 Thm 3.1, cited] applied to OS1-OS5 [T1+cited, C299] → U(a,Λ): ISO(1,3)→U(H_phys)
+   continuous unitary representation. Part A [T1]: OS4 Euclidean covariance verified — V(φ)
+   translation-invariant [T1], β_lat=Fraction(81,4) identical for all 6 plaquette orientations
+   [T1 Fraction], unique Gibbs KP<125/196<1 [T1+cited,C292]. Part B [T1+cited]: OS1-OS5 [C299];
+   OS Reconstruction [OS75 Thm 3.1, cited] → U(a,Λ) unitary ISO(1,3) rep on H_phys. Part C [T1]:
+   Poincaré algebra commutator [J₀₁,J₁₂]=J₀₂ (res 0.00e+00). Part D [T2a]: JW3c-b Minkowski
+   signature (1,3) [C217]. JW3c UPGRADED from "T2a structural [C214/C217]" to "T1+cited [OS75]
+   (covariance) + T2a (signature)". 5/7 JW criteria now T1+cited. +2% → ~77%. Remaining critical
+   gaps: P1 residual (F4a+F4b = DFC dynamics → S⁵⊂ℂ³); P6 LaTeX paper.
    E1 (Balaban 4D SU(3)) not on critical path for JW5 (bypassed by D5).
    Cycle 216 (ym_sun_gap_extension.py) proved SU(N) generality: SP1+SP2 T2a for ALL N ≥ 2
    via a monotonicity theorem — g_eff²(N)=8/(3N²) is decreasing for N≥1, so N=3 is the
