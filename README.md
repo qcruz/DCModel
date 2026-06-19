@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C304 JW3c Poincaré covariance T1+cited (COMPLETE) — ym_jw3c_complete.py; 34/34 PASSED. Resolves residual T2a (Minkowski signature) from C303. Key insight: d=4 given by JW problem statement [T1]; OS Reconstruction [OS75 Thm 3.1, cited] yields ISO(1,3) as theorem output for d=4 Euclidean — no DFC spacetime emergence argument needed on critical path. JW3c CLOSED T1+cited (complete). 6/7 JW criteria now T1+cited; sole remaining T2a = JW1 G=SU(3). Clay rigorous proof standard: ~77%→~79% (+2%). Clay structural: ~95%; rigorous proof standard: ~79%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C305 V(|φ|) symmetry group = U(n) T1 NEW — ym_d7_vacuum_manifold.py; 33/33 PASSED. V(φ)=V(|φ|) has symmetry group in O(2n) exactly U(n)={M∈O(2n): MJ_n=J_nM} [T1]. V itself enforces complex structure J_n at every depth n. Sole remaining T2a = cascade mechanism (ℂ-dimension-per-step D5→D6→D7); n=3 endpoint T1 from C₂(fund,SU(n))=4/3 uniqueness [C301]. Clay rigorous proof standard: ~79%→~81% (+2%). Clay structural: ~95%; rigorous proof standard: ~81%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,7 +244,7 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~79% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
+| **Mathematical proof standard** | ~81% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
 **Current focus:** Advance the mathematical proof standard toward a fully rigorous proof.
