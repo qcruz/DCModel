@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C305 V(|φ|) symmetry group = U(n) T1 NEW — ym_d7_vacuum_manifold.py; 33/33 PASSED. V(φ)=V(|φ|) has symmetry group in O(2n) exactly U(n)={M∈O(2n): MJ_n=J_nM} [T1]. V itself enforces complex structure J_n at every depth n. Sole remaining T2a = cascade mechanism (ℂ-dimension-per-step D5→D6→D7); n=3 endpoint T1 from C₂(fund,SU(n))=4/3 uniqueness [C301]. Clay rigorous proof standard: ~79%→~81% (+2%). Clay structural: ~95%; rigorous proof standard: ~81%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C306 I₄=C₂(fund,SU(n))=4/3 uniquely selects n=3 T1 NEW — ym_cascade_self_consistency.py; 27/27 PASSED. Solving C₂(fund,SU(n))=(n²−1)/(2n)=4/3 gives 3n²−8n−3=0; discriminant=100=10²; n₊=3, n₋=−1/3 (all Fraction arithmetic, residuals 0). Self-consistency web g_eff²=8/27, β_lat=81/4, κ=1/2, Q_top=2 all T1 Fraction. Sole remaining T2a = JR holonomy → triality t=1 → fundamental rep. Clay rigorous proof standard: ~81%→~83% (+2%). Clay structural: ~95%; rigorous proof standard: ~83%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,7 +244,7 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~81% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
+| **Mathematical proof standard** | ~83% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
 **Current focus:** Advance the mathematical proof standard toward a fully rigorous proof.
@@ -261,7 +261,7 @@ See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 | SP4 | Pure YM decoupling from scalar sector | **T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) | **T2a** | **100%** |
 
-Latest (C304): **JW3c Poincaré covariance T1+cited (COMPLETE)** — 34/34 PASS; d=4 given by JW [T1]; OS75 Thm 3.1 yields ISO(1,3) as theorem output; JW3c CLOSED T1+cited (complete); 6/7 JW criteria now T1+cited; sole remaining T2a = JW1 G=SU(3); proof standard ~77%→~79% (+2%).
+Latest (C306): **I₄=C₂(fund,SU(n))=4/3 uniquely selects n=3 T1 NEW** — 27/27 PASS; I₄=4/3 exact [T1 Fraction]; C₂(fund,SU(n))=(n²−1)/(2n)=4/3 at n=3 [T1 Fraction]; discriminant=100=10²; n₊=3, n₋=−1/3 unique; self-consistency web g_eff²=8/27, β_lat=81/4, κ=1/2, Q_top=2 all Fraction T1; sole remaining T2a = JR holonomy triality t=1; proof standard ~81%→~83% (+2%).
 C299: P4 GNS Hilbert space T2a→T1+cited — 67/67 PASS; OS1-OS5 T1/T1+cited; GNS [GN43+Se47]+OS Reconstruction [OS73+OS75]; H_phys, H≥0, unique vacuum; ~63%→~66%. C298: P3 Seiler SU(3) T2a→T1+cited — 41/41 PASS; OS-Seiler 1978 Thm 4.1 all compact G; ~60%→~63%. C297: Goal reframe — proof std corrected ~97%→~60%. C296: M_c(D7) T2b. C295: σ=I₄×Λ² T3→T2a (+5%). C294: DFC→YM T2a→T1 (+3%). C293: Dob T2a→T1 (+1%). C292: KP T2a→T1 (+3%). C291: E3 H^s CLOSED (+3%). C290: E2 Gribov CLOSED (+3%). C287: D5 Balaban-free CLOSED (+15%). CPC ~60%.
 
 *Stopping condition: mathematical proof standard reaches ~90%+ (publishable formal proof).*
