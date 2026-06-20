@@ -149,7 +149,7 @@ Current estimate: ~80%  (viability: ~87%, mathematical rigor: ~73%)
 --- CLAY PRIZE (separate sub-project — test case for DFC mathematical basis) ---
 Clay Prize structural completeness: ~95%
   (How complete the DFC argument covering all 5 Jaffe-Witten criteria is at T2a level)
-Clay Prize rigorous proof standard: ~86%
+Clay Prize rigorous proof standard: ~87%
   (CORRECTED C297: ~97% figure measured T2a structural coverage, not actual mathematical rigor.
   T2a = numerically-consistent structural argument — NOT an accepted mathematical proof.
   Honest accounting: D7=SU(3) is T2a structural [C59–74]; P2 IR bound CLOSED C300 (zero PDG
@@ -158,6 +158,7 @@ Clay Prize rigorous proof standard: ~86%
   JW3c Poincaré covariance T1+cited COMPLETE C304 (d=4 given by JW [T1]; OS75 Thm 3.1 yields ISO(1,3) as theorem output; 6/7 JW criteria T1+cited; sole remaining T2a = JW1 G=SU(3));
   I₄=C₂(fund,SU(n))=4/3 uniquely selects n=3 T1 C306 (27/27 PASS; discriminant=100, n₊=3 unique; sole T2a = JR holonomy triality t=1).
   F4b T2a→T1+cited given F4a C309 (38/38 PASS; Q_top^{D6}=1 T1 Fraction + triality t=1 [T1,C307] + π₁(S⁵/Z₃)=Z₃ [T1+cited,C308] → Z₃ charge=generator [T1+cited]; T2a count 2→1; sole T2a = F4a alone).
+  F4a cascade decomposition T1 C310 (59/59 PASS; F4a-end [T1 Fraction: n=3 from C₂=4/3]; F4a-incl [T1: equatorial inclusions norm-preserving]; F4a-J [T1+cited: J-compatibility]; F4a-gold [T1 Fraction: dim(U(n)/U(n-1))=2n−1]; 6 T1/T1+cited + 2 T2a → 1 irreducible T2a = cascade dynamics; proof std ~86%→~87%).
 
   Rigorous steps (T1 or cited theorem with T1-verified conditions): β_lat=81/4 [T1]; g_eff²=8/27
   [T2a]; KP<125/196 [T1, C292]; C_Dob<120/117649 [T1, C293]; κ=1/2 DFC→YM [T1, C294];
