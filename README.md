@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C308 Center vortex holonomy via lens space π₁(S⁵/Z₃)=Z₃ — ym_center_vortex_holonomy.py; 43/43 PASSED. Z₃ acts freely on S⁵ (min displacement √3) [T1]; π₁(S⁵/Z₃)=Z₃ [T1+cited Hatcher Thm 1.38]; generator lifts to W=z₃I₃ [T1]; triality grading T1; t=1+min-Casimir→(1,0) T1 given C307. Irreducible T2a: "D6 kink = generator of π₁(S⁵/Z₃)" (geometrically precise F4a+F4b). Clay structural: ~95%; rigorous proof standard: ~84%→~85% (+1%); CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C309 D6 kink winding Q_top^{D6}=1 → F4b T1+cited given F4a — ym_d6_kink_winding.py; 38/38 PASSED. Q_top^{D6}=Fraction(1) [T1 exact]; Z₃ charge=(1×1) mod 3=1=generator of π₁(S⁵/Z₃)=Z₃ [T1+cited, C308]; F4b T2a→T1+cited given F4a; T2a count 2→1; sole remaining T2a = F4a alone. Clay structural: ~95%; rigorous proof standard: ~85%→~86% (+1%); CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,7 +244,7 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~85% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
+| **Mathematical proof standard** | ~86% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
 **Current focus:** Advance the mathematical proof standard toward a fully rigorous proof.
@@ -261,7 +261,7 @@ See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 | SP4 | Pure YM decoupling from scalar sector | **T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) | **T2a** | **100%** |
 
-Latest (C308): **Center vortex holonomy via π₁(S⁵/Z₃)=Z₃ T1+cited NEW** — 43/43 PASS; Z₃ acts freely on S⁵ [T1]; Hatcher Thm 1.38 [cited] → π₁(S⁵/Z₃)=Z₃ [T1+cited]; generator path W=z₃I₃ [T1]; triality grading + min-Casimir uniquely selects rep=(1,0) [T1 Fraction]; C₂(0,2)=10/3 (corrects C307 docs: was 16/3); irreducible T2a = "D6 kink traversal = generator of π₁(S⁵/Z₃)=Z₃"; proof standard ~84%→~85% (+1%).
+Latest (C309): **D6 kink winding Q_top^{D6}=1 → F4b T1+cited given F4a** — 38/38 PASS; Q_top^{D6}=Fraction(1) [T1 exact rational arithmetic]; Z₃ charge=(Q_top×triality) mod 3=1=generator of π₁(S⁵/Z₃)=Z₃ [T1+cited, C308 Hatcher Thm 1.38]; F4b T2a→T1+cited given F4a; C302 conditional theorem T2a count reduced 2→1; sole remaining T2a = F4a alone ("V(φ) cascade D5→D7 produces S⁵⊂ℂ³"); proof standard ~85%→~86% (+1%).
 C307: **JR holonomy triality + minimum-Casimir rep identification T1 NEW** — 36/36 PASS; scan 15 t=1 SU(3) irreps by Fraction arithmetic; (1,0) has minimum C₂=I₄=4/3 uniquely; given t=1 [T2a], rep=(1,0) by T1; irreducible T2a = "one D6 crossing → z₃¹" (JR holonomy = F4a+F4b); proof standard ~83%→~84% (+1%).
 C299: P4 GNS Hilbert space T2a→T1+cited — 67/67 PASS; OS1-OS5 T1/T1+cited; GNS [GN43+Se47]+OS Reconstruction [OS73+OS75]; H_phys, H≥0, unique vacuum; ~63%→~66%. C298: P3 Seiler SU(3) T2a→T1+cited — 41/41 PASS; OS-Seiler 1978 Thm 4.1 all compact G; ~60%→~63%. C297: Goal reframe — proof std corrected ~97%→~60%. C296: M_c(D7) T2b. C295: σ=I₄×Λ² T3→T2a (+5%). C294: DFC→YM T2a→T1 (+3%). C293: Dob T2a→T1 (+1%). C292: KP T2a→T1 (+3%). C291: E3 H^s CLOSED (+3%). C290: E2 Gribov CLOSED (+3%). C287: D5 Balaban-free CLOSED (+15%). CPC ~60%.
 

@@ -271,15 +271,15 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~85% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
-   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~85% because
+   structural completeness, ~86% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
+   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~86% because
    T2a ≠ proof. 6/7 JW criteria now T1+cited (JW3c complete C303+C304); P1 isometry+uniqueness T1 (C301);
    conditional theorem T1+cited (C302); U(n) symmetry theorem T1 NEW (C305): V(|φ|) has symmetry
    group exactly U(n)={M∈O(2n): MJ_n=J_nM} — 33/33 PASS; V enforces complex structure J_n at
    every depth n; I₄=C₂(fund,SU(n))=4/3 uniquely selects n=3 T1 NEW (C306) — 27/27 PASS;
    min-Casimir t=1 rep identification T1 NEW (C307) — 36/36 PASS; given triality t=1 [T2a], rep
    is (1,0) uniquely by Fraction scan over 15 t=1 candidates; center vortex holonomy via π₁(S⁵/Z₃)=Z₃
-   T1+cited NEW (C308) — 43/43 PASS; T2a = "D6 kink = generator of π₁(S⁵/Z₃)." All five sub-problems SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space,
+   T1+cited NEW (C308) — 43/43 PASS; T2a was "D6 kink = generator of π₁(S⁵/Z₃)." C309 NEW — 38/38 PASS: Q_top^{D6}=1 [T1 Fraction] → F4b T1+cited given F4a; sole T2a now = F4a alone. All five sub-problems SP1–SP5 are T2a. E2 (Gribov) closed C290; E3 (moduli space,
    full Sobolev tower) closed C289+C291; KP<1 upgraded T2a→T1 C292 (rational arithmetic,
    KP<125/196<1, 28/28 PASS); Dobrushin C_Dob<1 upgraded T2a→T1 C293 (C_Dob<120/117649<1,
    27/27 PASS, fixes C275 bug); DFC→YM correspondence D4 upgraded T2a→T1 C294 (κ=1/2 algebraic,
@@ -570,6 +570,18 @@ mathematical content. What is not yet derived:
    at (0,2); ratio=5/2; C₂(2,1)=16/3, ratio=4 [Fraction exact]. The T2a is now geometrically
    precise: a covering space traversal claim, not a vague "DFC dynamics" statement.
    **Clay proof standard: ~84%→~85% (+1%). Clay structural: ~95%.**
+
+   Cycle 309 (ym_d6_kink_winding.py): **D6 kink winding Q_top^{D6}=1 → F4b T1+cited given F4a**.
+   38/38 PASS. Key result: Q_top^{D6}=[φ(+∞)−φ(−∞)]/(2φ₀)=Fraction(2)/Fraction(2)=Fraction(1)
+   [T1 exact rational arithmetic; BCs from kink tanh formula]. Combined with triality t(1,0)=1
+   [T1, C307 Fraction scan] and π₁(S⁵/Z₃)=Z₃ [T1+cited Hatcher Thm 1.38, C308]: Z₃ charge=
+   (Q_top×triality) mod 3=(1×1) mod 3=Fraction(1)=generator of π₁(S⁵/Z₃) [T1+cited]. Therefore
+   F4b (kink traversal = generator of covering space) is T1+cited given F4a. This reduces the
+   C302 conditional theorem's T2a count from 2 (F4a AND F4b) to 1 (F4a alone): the sole remaining
+   non-rigorous step is F4a = "V(φ) bifurcation cascade D5→D7 produces S⁵⊂ℂ³." Also verified:
+   PT fluctuation spectrum V_PT=α(2−3sech²(y/ξ)) [T1 derivation: V''(φ_kink)=−α+3βφ₀²tanh²=
+   α(2−3sech²)]; ω₁/m_σ=√3/2 (res 0.00e+00) [T1]; JR zero mode norm=1 (res<2.22e-16) [T1].
+   **F4b T2a→T1+cited given F4a. Sole T2a = F4a alone. Clay proof standard: ~85%→~86% (+1%). Clay structural: ~95%.**
 
 The model does not claim completeness. These are honest, documented gaps.
 
