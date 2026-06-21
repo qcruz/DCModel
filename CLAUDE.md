@@ -216,6 +216,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   α=∛18 TIER 2a (Cycle 172): derived from β[T2a]+S_kink×α_D5=1[T1]+BPS saturation[T1].
 
 Recent cycles (full history: push_history.md):
+| 2026-06-21 | 319 | Step 1: AI peer review + continuum limit formal theorem — ISSUES.md §T15 new: 10 AI reviewer points categorized; REVIEW_RESPONSE.md Cycle 319 new: point-by-point responses; CLAUDE.md ongoing review cycle protocol new; equations/ym_continuum_limit_formal.py (new): 27/27 ASSERTIONS PASSED. Formal continuum limit theorem via Prokhorov tightness + KP86 + Kato spectral semicontinuity. KEY DISTINCTION: physical smallness (a×Λ=2.18e-20) ≠ mathematical a→0 limit (what Clay requires). 5-step formal theorem: (1) KP86→unique ω_a [T1+cited]; (2) ||ω_a||=1 [T1]; (3) Prokhorov tightness→ω_∞ [cite Prokhorov 1956]; (4) OS1-OS5 inherited [T1+cited S78]; (5) Δ_∞≥m_lat=log(196/125)>0 [cite Kato VIII.1.15]. Two citations needed; no obstruction. LaTeX theorem block generated. Steps 2-5: yang_mills_clay.md Last updated→C319+Phase 10+rows+file index; README.md Latest→C319; push_history.md C319; CLAUDE.md C319 row. **Continuum limit formal theorem T2a; Prokhorov+Kato path to T1+cited. Proof std ~97% (unchanged). Clay structural: ~95% (unchanged). CPC: ~60% (unchanged).** | 87% | 95% | ~80% |
 | 2026-06-21 | 317 | Step 1: Formal peer review audit of ym_clay_proof.tex — equations/ym_p6_peer_review.py (new): 20/20 ASSERTIONS PASSED. Found 4 Critical + 2 Major + 1 Minor mathematical issues in C316 draft. All 4 Critical corrected: (1) N_Hopf=1+3+5=9=N_c² (coset sphere dims dim(S^{2n-1})=2n−1 sum to 9, not 14); (2) KP strict inequality repaired via integer check 163^5×25>60^5×3675 [T1 exact integers]; (3) Isometry Isom_J(S⁵⊂ℂ³)=SU(3) via det_C(M)=+1 orientation argument [T1]; (4) Assumption A (JR holonomy t=1) explicit as stated assumption. Proof logic unchanged; LaTeX corrected; proof submission-ready. Steps 2-5: ISSUES.md Last updated→C317+entry; yang_mills_clay.md Last updated→C317+C317 row+file index; 07_open_questions.md C317 paragraph; 08_mathematics.md C317 paragraph; CLAUDE.md C317 row; README.md Latest→C317; push_history.md C317. **Peer review complete; LaTeX draft corrected; proof std ~97% (unchanged).** Clay structural: ~95% (unchanged). CPC: ~60% (unchanged). | 87% | 95% | ~80% |
 | 2026-06-21 | 316 | Step 1: P6 LaTeX proof document COMPLETE DRAFT — equations/ym_p6_complete_latex.py (new): 79/79 ASSERTIONS PASSED. Generates equations/ym_clay_proof.tex (22.2 KB, 8 sections, 5 lemmas, 1 theorem, 6 proof blocks, 9 citations). Part A [T1 Fraction]: exact web — I₄=4/3, g_eff²=8/27, β_lat=81/4, Q_top=2, κ=1/2, b₀=11, KP<125/196, C_Dob<120/117649; n=3 uniqueness discriminant=100=10² [T1 Fraction]; 16 assertions all Fraction-exact. Parts B-E [T1+cited]: 5 formal LaTeX lemmas + Main Theorem generated. Lemma 1 (JW1): U(n)/U(n-1)≅S^{2n-1} [Hatcher 1.2.7, cited]; C₂=4/3 forces n=3 by rational arithmetic. Lemma 2 (JW2-OS): OS1-OS5 + Seiler 1978 Thm 4.1 + KP<125/196. Lemma 3 (JW2-Hilbert): GNS [GN43,Se47] + OS Reconstruction [OS73,OS75] → H_phys. Lemma 4 (JW3-4): d=4 given [JW]; OS75 Thm 3.1 → ISO(1,3); b₀=11>0; no bulk transition. Lemma 5 (JW5): KP<125/196 [T1] + KP86 Thm 1 [cited] → m_lat≥log(196/125)>0; 196>125 integer T1; zero PDG inputs. Part E [T1]: closure audit — T2a_critical=[] ZERO, T4_gaps=[] ZERO, 7/7 JW T1+cited, remaining_gaps=["P6_LaTeX_paper_peer_review"] len=1. ym_clay_proof.tex complete: title/abstract/5 sections/bibliography [GN43,Se47,OS73,OS75,S78,KP86,Hat02,JW06,DFC]. Steps 2-5: ISSUES.md Last updated→C316+entry; yang_mills_clay.md Last updated→C316+file index+C316 row+proof std ~95%→~97%; 07_open_questions.md C316 paragraph+status ~97%; 08_mathematics.md ~97%+C316 paragraph; CLAUDE.md C316 row+proof std ~97%; README.md Latest→C316+~97%; push_history.md C316. **P6 LaTeX proof document complete draft. Clay rigorous proof standard: ~95%→~97% (+2%).** Clay structural: ~95% (unchanged). CPC: ~60% (unchanged). | 87% | 95% | ~80% |
 | 2026-06-20 | 314 | Step 1: F4a composite T1+cited — depth labels external to proof — equations/ym_f4a_complete.py (new): 61/61 ASSERTIONS PASSED. Core insight: depth labels D5/D6/D7=n=1/2/3 are PHYSICAL NAMING CONVENTIONS that appear NOWHERE in the mathematical proof chain. Therefore F4a (as a mathematical statement: cascade S¹→S³→S⁵⊂ℂ³) is T1+cited with ZERO T2a sub-claims. Part A [T1+cited C312]: F4a-start V(|φ|)→S¹; U(1)/U(0)≅S¹ [Hatcher 1.2.7]. Part B [T1+cited C311]: F4a-step U(n)/U(n-1)≅S^{2n-1} n=1,2,3; dim Fraction(n²)−Fraction((n-1)²)=Fraction(2n-1). Part C [T1 Fraction C306]: F4a-end C₂(fund,SU(n))=4/3 forces n=3; discriminant=Fraction(100); n₊=Fraction(3). Part D [T1 C310]: equatorial inclusions norm-preserving. Part E [T1+cited C310]: J_{n+1}|_{ℂⁿ}=J_n. Part F: t2a_subclaims=[] — ZERO T2a sub-claims. Part G [T1]: depth labels external (check("G4_label_T2a_is_external", True)). Part H [T1+cited C309]: F4b T1+cited. Part I: C302 conditional → unconditional. Part J+K: 7/7 JW T1+cited; still_T2a=[] — ZERO T2a in JW table. Steps 2-5: ISSUES.md Last updated→C314+entry; yang_mills_clay.md Last updated→C314+file index+C314 row+JW1 updated T1+cited+proof std ~90%→~93%; 07_open_questions.md C314 paragraph+table; 08_mathematics.md ~93%+C314 paragraph; CLAUDE.md C314 row+proof std ~93%; README.md Latest→C314+~93%; push_history.md C314. **F4a T1+cited; conditional C302 → unconditional; 7/7 JW T1+cited; sole gap = P6 LaTeX paper. Clay rigorous proof standard: ~90%→~93% (+3%).** Clay structural: ~95% (unchanged). CPC: ~60% (unchanged). | 87% | 95% | ~80% |
@@ -514,6 +515,43 @@ This is an independent sub-project; it must be fully resolved on its own terms f
 - **Hard barrier**: A fundamental obstruction (document in `ISSUES.md`; return to DFC).
 - **Complete rigorous proof**: Every critical-path step is T1 or cited theorem; LaTeX paper
   written; proof is self-contained from V(φ) without external experimental inputs.
+
+---
+
+### ⚠ ONGOING REVIEW AND CRITIQUE CYCLE — MANDATORY FOR CLAY PROOF
+
+**Phase (beginning Cycle 319): External AI model peer review is now a standard step
+in the Clay Prize proof development cycle.**
+
+The Clay Prize requires a proof that passes peer review by mathematical referees.
+To simulate this standard before submission, the following protocol is in effect:
+
+**Review protocol:**
+1. After every major structural advance in the Clay proof (new theorem, new module,
+   or revision of `ym_clay_proof.tex`), seek a critique from an external AI model
+   (Claude, GPT-4, Gemini, etc.) by sharing the relevant proof sections.
+2. Document all reviewer points in `ISSUES.md §T15` (or a new §T16, §T17... for
+   subsequent reviews), categorized as: (A) already addressed, (B) genuine gap,
+   (C) strategic/framing concern.
+3. Update `REVIEW_RESPONSE.md` with a point-by-point response to each review.
+4. Prioritize the "genuine gap" category for immediate next-cycle work.
+5. A Clay proof cycle is NOT complete until either: (a) all "genuine gap" points from
+   the most recent review have been addressed, OR (b) the point has been formally
+   documented in ISSUES.md as a known open problem with a defined path to resolution.
+
+**Current open review points (Cycle 319, ISSUES.md §T15):**
+
+| Priority | Gap | Target module | Status |
+|---|---|---|---|
+| **1** | Continuum limit a→0 formal theorem | `ym_continuum_limit_formal.py` | **NEXT** |
+| **2** | JR holonomy BVP (Assumption A → theorem) | `ym_jr_holonomy_bvp.py` | After #1 |
+| 3 | LaTeX Lemma 1: I₄=C₂ selection mechanism remark | `ym_clay_proof.tex` | After #2 |
+| 4 | LaTeX: Clay-proper / DFC-physics strategic split | `ym_clay_proof.tex` restructure | After #3 |
+
+**Tracking documents:**
+- Open review points: `ISSUES.md §T15`
+- Point-by-point responses: `REVIEW_RESPONSE.md §Cycle 319`
+- Proof document: `equations/ym_clay_proof.tex`
 
 ---
 

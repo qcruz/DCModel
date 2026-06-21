@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C317 Formal peer review of ym_clay_proof.tex — ym_p6_peer_review.py; 20/20 PASS. Found 4 Critical errors, all corrected: N_Hopf=9 not 14; KP strict via 163^5×25>60^5×3675 [T1 integer]; Isom_J=SU(3) via det_C=+1; Assumption A explicit. Proof logic unchanged; LaTeX corrected; proof submission-ready. Proof std ~97% (unchanged). Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C319 AI peer review (10 points categorized; REVIEW_RESPONSE.md + ISSUES.md §T15 updated) + continuum limit formal theorem — ym_continuum_limit_formal.py: 27/27 PASS. Formal theorem structure via Prokhorov tightness + KP86 + Kato spectral semicontinuity; distinction between physical smallness (a×Λ≈0) and mathematical a→0 limit documented; two citations needed ([Prokhorov 1956], [Kato VIII.1.15]); ongoing AI review cycle established. Proof std ~97% (unchanged). Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 

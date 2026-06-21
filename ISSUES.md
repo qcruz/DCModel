@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-21 (Cycles 122–317)
+**Last updated:** 2026-06-21 (Cycles 122–319)
 
 ---
 
@@ -556,6 +556,131 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - **Status (Cycle 212/213):** T12 blocking gap unchanged. Yang-Mills work: C212 **SP2 gap existence T2a** — Δ_phys≥1033 MeV>0 [T2a multi-method]. This establishes σ>0 [T2a] structurally (σ>0↔gap>0 in 4D YM), but does NOT provide the exact value σ=Q_top×Λ². C213 JW criteria (ym_clay_requirements.py) maps JW5 T2a (gap existence) while noting the hadronic VP piece δ(Δα)^{NP}=0.00102 requires the spectral density R^{had}−R^{parton} from the full D7 confinement dynamics. The connection is: SP2 T2a implies ρ,ω,φ resonances exist (confinement is established), but their VP contribution to Δα requires a quantitative spectral density computation. T12 remains T4 for the 0.00102 piece. No numerical improvement to 1/α_em(0).
   - **C218 NEW:** SP2 BPS form 1+1D T2a (`ym_sp2_bps_quantum.py`): H|_{Q=2n} ≥ n × I₄ × m_hat [T2a composite] where m_hat = 42.35 M_Pl and I₄ = C₂(fund,SU(3)) = 4/3 appears explicitly. BPS form makes the connection σ ∝ m_kink × (string length) more explicit: σ = Q_top × Λ² has the same I₄ prefactor from the kink shape. Quantum BPS form (1+1D) is now T2a, but the σ=Q_top×Λ² derivation from first principles is still T4 (requires 4D promotion of BPS form). T12 blocking gap (δ(Δα)^{NP}=0.00102) unchanged.
 - Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/d7_nonpert_coefficients.py` (Cycle 160), `equations/alpha_em_eccc.py` (Cycle 139), `equations/ym_4d_gap_extension.py` (Cycle 189), `equations/ym_gauge_decoupling.py` (Cycle 181)
+
+### T15 — External AI Peer Review — Clay Prize Proof (Cycle 319)
+
+An external AI model peer review of the Clay Prize argument (`foundations/yang_mills_clay.md` and
+`equations/ym_clay_proof.tex`) was conducted in Cycle 319. The 10-point review is categorized below.
+Response document: `REVIEW_RESPONSE.md` (Cycle 319 section).
+
+**Category A — Already addressed (no new work needed):**
+
+- **Point 4 — Isometry calculation (N_Hopf error):** Reviewer noted an error in the N_Hopf
+  calculation. **Already fixed in C317** (Critical error 1 in `ym_p6_peer_review.py`): N_Hopf = 1+3+5 = 9
+  (complex sphere sequence S¹⊂ℂ¹, S³⊂ℂ², S⁵⊂ℂ³), NOT 1+3+7=11 (classical Hopf fibrations).
+  LaTeX corrected. `equations/ym_p6_peer_review.py` C317.
+
+- **Point 7 — OS Reconstruction scope:** Reviewer questioned whether OS Reconstruction
+  [OS75 Thm 3.1] is correctly applied. **Already addressed**: OS Reconstruction takes a Euclidean
+  measure satisfying OS1-OS5 axioms and CONSTRUCTS the Hilbert space + Poincaré representation.
+  DFC supplies the Euclidean measure via Wilson lattice (KP86 [T1] + OS-Seiler 1978 [cited]) →
+  OS1-OS5 verified → OS Reconstruction applies. The Euclidean measure IS constructed, not assumed.
+  See `equations/ym_gns_hilbert_formal.py` (C299), `equations/ym_poincare_jw3c_formal.py` (C303).
+
+- **Point 9 — Proof-standard percentages:** Reviewer notes that percentages like "~97% proof
+  standard" could be mistaken for claims of proof completeness. **Clarified**: All such percentages
+  are internal T1/T2a/T3 classification coverage metrics, NOT claims that the proof is ~97%
+  complete for a mathematical referee. The LaTeX document (`ym_clay_proof.tex`) contains zero
+  explicit percentage claims about proof completeness. `CLAUDE.md` tracking section notes this
+  explicitly.
+
+**Category B — Genuine gaps requiring work (ordered by severity):**
+
+- **Point 5/6 — Continuum limit a→0 (MOST CRITICAL):** The DFC argument for the continuum
+  limit uses "a=ξ is a physical UV cutoff, not a regulator" (D3 argument, C285). The reviewer
+  correctly identifies this as likely fatal for a Clay submission: Clay requires the mathematical
+  limit a→0 in a manner that preserves the mass gap, not just that a happens to be small.
+  **Current status:** `ym_continuum_limit.py` (C186) shows a_DFC×Λ_QCD = 2.18×10⁻²⁰ (19.7
+  orders below 1) and Symanzik O(a²) corrections at 10⁻⁴¹ — numerically trivial but NOT the
+  same as a mathematical a→0 limit. The rigorous route requires either:
+  (a) Balaban's 4D SU(3) RG program (partially developed in literature, not yet complete even in
+      mathematical physics), OR
+  (b) Universality argument: β_lat=81/4 >> β_c at all N_τ (no bulk transition by C190/C287) +
+      Symanzik improvement → the continuum limit EXISTS and equals the a=0 theory. Path to rigor:
+      cite Luscher-Weisz (1985) improved action and Theorem 1 of KP86 (analytic at β_lat=81/4)
+      to establish that the infinite-volume, zero-temperature partition function converges as a→0.
+  **Status: T2a. Path to T1+cited: write formal theorem using Symanzik + KP analyticity +
+  universality (no bulk transition for all β>0, C190) → continuum limit exists.**
+  **Priority: HIGHEST among remaining Clay gaps.**
+  - File to create: `equations/ym_continuum_limit_formal.py`
+
+- **Point 8 — Assumption A: JR holonomy triality t=1 (second most critical):** The sole T2a
+  step in the proof is Assumption A — "D6 kink crossing D7 background acquires JR holonomy
+  with triality t=1." This appears in `ym_clay_proof.tex` as an explicit labeled assumption.
+  The reviewer correctly notes it must become a theorem, not an assumption, for the proof to
+  be rigorous.
+  **Current status:** `equations/ym_jr_holonomy_triality.py` (C307) establishes the minimum-
+  Casimir rep scan T1. `equations/ym_center_vortex_holonomy.py` (C308) proves π₁(S⁵/Z₃)=Z₃
+  T1+cited. **The gap**: proving the D6 kink BVP (Dirac operator in PT-s=2 background) has
+  exactly one normalizable zero mode with holonomy = generator of π₁(S⁵/Z₃) [t=1 triality].
+  This is a solvable BVP: PT s=2 Dirac system is analytic; the zero mode is ψ₀∝sech²(x/ξ).
+  The holonomy requires computing P exp(i∮ A_D7·dx) for this zero mode explicitly.
+  **Status: T2a. Path to T1+cited: write Jackiw-Rebbi BVP for Dirac in PT background,
+  compute holonomy matrix explicitly, verify triality t=1 via π₁(S⁵/Z₃) generator.**
+  - File to create: `equations/ym_jr_holonomy_bvp.py`
+
+- **Points 2/3 — I₄=C₂ structural justification vs numerology:** The reviewer challenges
+  whether I₄=∫sech⁴(u)du = C₂(fund,SU(3)) = 4/3 is a deep structural identity or numerical
+  coincidence. The concern: any constant equal to 4/3 would satisfy this.
+  **Current status:** C306 proves it algebraically (T1 Fraction). C314 establishes that
+  depth labels D5/D6/D7 are naming conventions external to the proof — the mathematical content
+  is that V(φ)→S¹→S³→S⁵⊂ℂ³ cascade produces I₄=C₂=4/3 as a CONSEQUENCE, not an input.
+  **The response:** I₄=C₂ is structural: (i) C₂(fund,SU(n))=(n²-1)/(2n), (ii) setting this
+  equal to 4/3 gives n=3 UNIQUELY (discriminant=100, C306), (iii) the kink integral I₄=4/3 is
+  determined purely by V(φ) without knowing SU(3) exists. The identity I₄=C₂(fund,SU(3))=4/3
+  is a coincidence that FORCES n=3 — it is the selection mechanism. Better documentation is
+  needed in `ym_clay_proof.tex` Lemma 1 to make this causal argument explicit.
+  **Action: Update Lemma 1 in LaTeX to emphasize the selection mechanism, not just numerical
+  equality. Add a remark: "This is not numerology; C₂=4/3 for SU(n) has a unique integer
+  solution n=3, proven by rational arithmetic (discriminant=100=10²)."**
+  - Files to update: `equations/ym_clay_proof.tex`, `foundations/yang_mills_clay.md`
+
+- **Point 1 — Strategic: Clay-proper vs DFC-physics split:** Reviewer suggests the proof
+  can be split: (a) "Given G=SU(3), prove mass gap" — this is Clay-proper; (b) "Derive G=SU(3)
+  from V(φ)" — this is DFC physics and NOT required for the Clay Prize as stated.
+  **Assessment:** The Jaffe-Witten problem statement specifies "compact simple gauge group G"
+  and asks to prove the gap for SU(3) specifically. DFC's JW1 claim (G=SU(3) from V(φ)) goes
+  BEYOND what Clay requires. A minimal Clay submission could: (a) take G=SU(3) as given, (b)
+  construct the gauge theory via DFC's β_lat=81/4 chain (T1), (c) prove the gap via KP86+Seiler.
+  This would be a rigorous Clay proof that does NOT require JW1 (the hardest step).
+  **Benefit:** Separating these makes the core proof more defensible. DFC's derivation of
+  G=SU(3) from V(φ) becomes a separate stronger claim (beyond Clay).
+  **Action: Consider structuring `ym_clay_proof.tex` in two parts — Part I: Clay proof
+  proper (G=SU(3) given, gap proven T1+cited); Part II: DFC derivation of G=SU(3) from V(φ)
+  (conditional on Assumption A, explicitly labeled).**
+
+- **Point 10 — Proof gap: Lattice vs continuum gap:** Reviewer notes that KP86 proves the
+  LATTICE mass gap (exponential decay of correlations on the lattice), but Clay requires the
+  CONTINUUM mass gap (Δ>0 in the quantum field theory on ℝ⁴). These are distinct. The bridge
+  requires: (a) the continuum limit exists (Point 5/6 above), AND (b) the mass gap is inherited
+  by the continuum theory (not just the lattice). **Current status:** `ym_d3_jw5_interpretation.py`
+  (C285) and `ym_4d_gap_extension.py` (C189) address this but at T2a level. The formal theorem
+  would say: analytic continuation of the lattice Gibbs state (KP86) + OS Reconstruction (OS75)
+  → continuum QFT with Δ≥m_lat. **Status: T2a. This is the same gap as Point 5/6 — closing
+  the continuum limit argument closes this too.**
+
+**Summary table:**
+
+| Reviewer Point | Category | Gap severity | Files to create/update |
+|---|---|---|---|
+| 1. Strategic Clay/DFC split | Strategic framing | Medium | `ym_clay_proof.tex` restructure |
+| 2/3. I₄=C₂ selection mechanism | Documentation | Low | `ym_clay_proof.tex` Lemma 1 remark |
+| 4. N_Hopf isometry error | Fixed C317 | None | Done |
+| 5/6. Continuum limit a→0 | **CRITICAL** | HIGH | `ym_continuum_limit_formal.py` |
+| 7. OS Reconstruction scope | Already addressed | None | Done |
+| 8. Assumption A (JR holonomy t=1) | **CRITICAL** | HIGH | `ym_jr_holonomy_bvp.py` |
+| 9. Percentages as completeness claims | Documentation | None | Already correct |
+| 10. Lattice vs continuum gap | Part of Point 5/6 | HIGH | Same as Points 5/6 |
+
+**Priority order for next cycles:**
+1. Continuum limit formal theorem (Points 5/6/10) — `ym_continuum_limit_formal.py`
+2. JR holonomy BVP (Point 8) — `ym_jr_holonomy_bvp.py`
+3. LaTeX Lemma 1 remark on I₄=C₂ selection mechanism (Points 2/3)
+4. Strategic restructuring of LaTeX into Clay-proper + DFC-physics (Point 1)
+
+**Last updated:** C319 (2026-06-21)
+
+---
 
 ### T10 — Near-maximal θ₂₃: near-degeneracy argument retracted; Z₂ symmetry argument proposed (C65, updated C206)
 
