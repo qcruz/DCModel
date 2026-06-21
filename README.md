@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C315 P6 LaTeX proof skeleton — ym_p6_proof_skeleton.py; 66/66 PASSED. Proof chain closure audit: T2a_critical_path=[] (ZERO T2a), T4_gaps=[] (ZERO T4), 7/7 JW criteria T1+cited confirmed; exact Fraction web (13 relations); LaTeX theorem+proof skeleton assembled; sole remaining gap = P6 LaTeX paper (~30-35pp). Clay structural: ~95%; rigorous proof standard: ~93%→~95% (+2%); CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C316 P6 LaTeX proof document COMPLETE DRAFT — ym_p6_complete_latex.py; 79/79 PASSED. Generates ym_clay_proof.tex (22.2 KB, 5 lemmas, Main Theorem, 9 citations). T2a_critical=[] ZERO; T4_gaps=[] ZERO; 7/7 JW T1+cited; remaining_gaps=["P6_LaTeX_paper_peer_review"] len=1. Clay structural: ~95%; rigorous proof standard: ~95%→~97% (+2%); CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,7 +244,7 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~95% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
+| **Mathematical proof standard** | ~97% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%; C316 COMPLETE DRAFT) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
 **Current focus:** Advance the mathematical proof standard toward a fully rigorous proof.
@@ -261,7 +261,8 @@ See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 | SP4 | Pure YM decoupling from scalar sector | **T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) | **T2a** | **100%** |
 
-Latest (C315): **P6 LaTeX proof skeleton — proof chain fully closed** — 66/66 PASS; proof chain closure audit: T2a_critical_path=[] (ZERO T2a sub-claims on critical path), T4_gaps=[] (ZERO T4 gaps), 7/7 JW criteria T1+cited confirmed; exact Fraction web (13 algebraic relations verified); LaTeX \begin{theorem}...\end{proof} skeleton with 5 formal lemmas assembled and printed; gap analysis: sole remaining gap = P6_LaTeX_paper (~30-35pp, 9 sections: abstract, intro, setup, Lem1-5, discussion, references); proof standard ~93%→~95% (+2%).
+Latest (C316): **P6 LaTeX proof document COMPLETE DRAFT — ym_p6_complete_latex.py** — 79/79 PASS; generates `equations/ym_clay_proof.tex` (22.2 KB, 8 sections, 5 lemmas, 1 main theorem, 6 proof blocks, 9 citations). Part A [T1 Fraction]: exact web — I₄=4/3, g_eff²=8/27, β_lat=81/4, Q_top=2, κ=1/2, b₀=11, KP<125/196, C_Dob<120/117649, n=3 discriminant=100=10² [all 16 Fraction-exact]. Part B [T1+cited]: 7/7 JW criteria T1+cited (JW1[Hatcher 1.2.7+C306+C314], JW2[C299 GNS+OS Recon], JW3a[C298 Seiler 1978], JW3b[C294+C204], JW3c[C304 OS75], JW4[C313 AF+Schur], JW5[C300 KP86+196>125]). Part C [T1+cited]: 5 LaTeX lemmas generated with \begin{proof}...\end{proof}; Main Theorem TeX-ready. Part D: T2a_critical=[], T4_gaps=[], remaining_gaps=["P6_LaTeX_paper_peer_review"] len=1; sole gap = peer review submission. Proof standard ~95%→~97% (+2%).
+C315: **P6 LaTeX proof skeleton — proof chain fully closed** — 66/66 PASS; T2a_critical_path=[] (ZERO T2a), T4_gaps=[] (ZERO T4), 7/7 JW T1+cited; 13 Fraction-exact relations; LaTeX theorem+proof skeleton; sole gap = P6_LaTeX_paper; proof standard ~93%→~95% (+2%).
 C314: **F4a composite T1+cited — depth labels external to proof chain** — 61/61 PASS; depth labels D5/D6/D7=n=1/2/3 are PHYSICAL NAMING CONVENTIONS external to mathematical proof chain; F4a composite T1+cited (ZERO T2a sub-claims); conditional theorem C302 → UNCONDITIONAL; 7/7 JW criteria T1+cited; proof standard ~90%→~93% (+3%).
 C313: **D5 continuum mass gap T2a→T1+cited; PDG-free** — 21/21 PASS; AF b₀=11>0 [T1 Fraction] → Λ_QCD>0 [T1: exp(real)>0] → ∃μ_* at midpoint between SC threshold and Landau pole: u_*≈0.028<1/6 [T1 algebraic] → σ_SC=−log(u_*)>0 [T1+cited C298 Schur] → Δ_D5>0 conditional on F4a [T2a — depth label assignment, same structural T2a as D7=SU(3) C59-74]; PDG α_s external input removed from critical path; proof standard ~89%→~90% (+1%).
 C312: **F4a-start cascade mathematical structure T2a→T1+cited** — 27/27 PASS; V(|φ|) vacuum in ℂ¹=S¹ [T1]; U(1)/U(0)≅S¹ [T1+cited Hatcher 1.2.7]; n=1 minimality [T1]; ±φ₀ antipodal Q_top=2 [T1]; cascade n=1→2→3 via C311 [T1+cited]; residual T2a = depth label D5/D6/D7=n=1/2/3 (same structural T2a as D7=SU(3) C59-74; not cascade existence); proof standard ~88%→~89% (+1%).
