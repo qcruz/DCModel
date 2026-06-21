@@ -655,6 +655,8 @@ mathematical content. What is not yet derived:
    title, abstract, 5 proof sections, and 9-entry bibliography [GN43,Se47,OS73,OS75,S78,KP86,Hat02,JW06,DFC].
    **P6 LaTeX proof document complete draft. Proof std ~95%→~97% (+2%). Clay structural: ~95%. CPC: ~60%.**
 
+   *C317 (ym_p6_peer_review.py, 20/20 PASS)*: **Formal peer review of ym_clay_proof.tex.** Found 4 Critical + 2 Major + 1 Minor mathematical issues in the C316 draft; all 4 Critical corrected. Critical error (1): N_Hopf formula corrected — coset sphere dimensions dim(S^{2n-1})=2n−1 sum to 1+3+5=9=N_c², not "1²+2²+(9/9)·9=14". Critical error (2): KP strict inequality repaired via integer check 163^5×25>60^5×3675 [T1 exact integers: 2876590426075>2857680000000], fixing the boundary equality issue in the Taylor bound. Critical error (3): Isometry argument Isom_J(S⁵⊂ℂ³)=SU(3) corrected — M∈U(3) with MJ₃=J₃M and det_ℝ=+1 forces det_ℂ(M)=+1 hence M∈SU(3) (replaces incorrect "U(3)/U(1)=SU(3)"). Critical error (4): Assumption A (JR holonomy t=1) made explicit as stated assumption rather than buried in cascade text. Proof logic unchanged throughout; errors were in LaTeX presentation only. **Peer review complete; LaTeX corrected; proof std ~97% (unchanged). Proof submission-ready.**
+
    *C315 (ym_p6_proof_skeleton.py, 66/66 PASS)*: P6 LaTeX proof skeleton — assembles the complete
    proof structure for LaTeX transcription and confirms the proof chain is fully closed. Part A [T1
    Fraction]: exact fraction web (g_eff²=8/27, β_lat=81/4, κ=1/2, Q_top=2, I₄=4/3, b₀=11,

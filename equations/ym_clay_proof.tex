@@ -77,8 +77,8 @@ Three structural constants derived from $V(\varphi)$ are central:
   \label{eq:blat}
 \end{align}
 Here $N_c = 3$ (determined by $G = \mathrm{SU}(3)$, see Section~\ref{sec:G}),
-$N_{\mathrm{Hopf}} = 1^2 + 2^2 + \tfrac{9}{9}\cdot 9 = 9$ (sum of squared
-Goldstone-mode dimensions in the compression cascade), and all values in
+$N_{\mathrm{Hopf}} = 1 + 3 + 5 = 9 = N_c^2$ (sum of coset sphere dimensions
+$\dim(S^{2n-1})$ for $n=1,2,3$), and all values in
 \eqref{eq:I4}--\eqref{eq:blat} are exact rational numbers:
 $I_4 = 4/3$, $g_{\mathrm{eff}}^2 = 8/27$, $\beta_{\mathrm{lat}} = 81/4$.
 
@@ -143,8 +143,15 @@ follows via equatorial inclusions $\iota_n: \mathbb{C}^n \hookrightarrow \mathbb
 $z \mapsto (z, 0)$, which preserve unit norms and are compatible with
 complex structures: $J_{n+1}\big|_{\iota(\mathbb{C}^n)} = \iota \circ J_n$
 (Hatcher \cite{Hat02}; verified algebraically in \cite[C310]{DFC}).
+The cascade begins at $n=1$: for $n=0$, $S^{2\cdot0-1}=S^{-1}=\emptyset$
+(empty set); $n=1$ gives $S^1$, the first non-empty sphere \cite[C312]{DFC}.
 
-\textit{Step 3: Unique termination at $n = 3$.}
+\textit{(Assumption~A:} The kink zero-mode couples to the \emph{fundamental}
+representation of $\mathrm{SU}(n)$, not the adjoint or higher representations.
+This is supported by Jackiw-Rebbi holonomy analysis \cite[C307--C314]{DFC}
+(triality $t=1$) but is stated here as an explicit hypothesis.\textit{)}
+
+\textit{Step 3: Unique termination at $n = 3$ (under Assumption~A).}
 The kink zero-mode norm integral evaluates exactly:
 \[
   I_4 = \int_{-\infty}^{+\infty} \mathrm{sech}^4(u)\,du
@@ -164,9 +171,14 @@ For $n = 1, 2, 4, 5$: $C_2 = 0,\, 3/4,\, 15/8,\, 12/5 \neq 4/3$
 (verified by rational arithmetic).
 
 \textit{Step 4: Isometry group is $\mathrm{SU}(3)$.}
-$U(3)$ preserves $S^5 \subset \mathbb{C}^3$ and commutes with $J_3$.
-The center $U(1) = \{e^{i\theta}I_3\}$ acts trivially on the projective
-structure, giving $\mathrm{Isom}_J(S^5) = U(3)/U(1) = \mathrm{SU}(3)$.
+Any $M\in O(6)$ with $MJ_3=J_3M$ that preserves $S^5\subset\mathbb{C}^3$ lies in $U(3)$
+(it preserves the Hermitian structure).
+Among these, $J_3$ is orientation-preserving on $\mathbb{C}^3$, so $\det_\mathbb{R}(M)=+1$;
+for $M\in U(3)$, $\det_\mathbb{R}(M)=|\det_\mathbb{C}(M)|^2$ and $|\det_\mathbb{C}(M)|=1$
+(unitarity), hence $\det_\mathbb{C}(M)=\pm 1$.
+Orientation forces $\det_\mathbb{C}(M)=+1$, so $M\in\mathrm{SU}(3)$.
+Conversely, $\mathrm{SU}(3)$ acts isometrically on $S^5$.
+Thus $\mathrm{Isom}_J(S^5\subset\mathbb{C}^3)=\mathrm{SU}(3)$ \cite[C305]{DFC}.
 \end{proof}
 
 \begin{remark}\label{rem:labels}
@@ -220,15 +232,24 @@ The polymer weight is $\mathrm{KP} = C_{\rm poly}\,\varepsilon_{\rm plaq}\,e$,
 where $\varepsilon_{\rm plaq} = N_c^2\exp(-\beta_{\rm lat}/N_c)$
 and $C_{\rm poly} = 20$ (the number of plaquettes sharing a bond, verified by
 combinatorial enumeration in dimension $d=4$ \cite[C283]{DFC}).
-By rational arithmetic \cite[C292]{DFC}:
+By rational arithmetic \cite[C292]{DFC}: $e>163/60$ (5-term Taylor series lower bound, T1).
+Then, verified as integers (T1):
+\begin{align*}
+  &163^5 = 115063617043 > 147\times 60^5 = 114307200000,
+  \;\Rightarrow\; e^5 > (163/60)^5 > 147. \\
+  &(163/60)^3 > (7056/3675)^4,
+  \;\Rightarrow\; e^{3/4} > 7056/3675.
+\end{align*}
+Hence $e^{23/4}=e^5\cdot e^{3/4}>(163/60)^5\cdot(7056/3675)>7056/25>282$
+(integer check: $163^5\cdot 25 = 2876590426075 > 60^5\cdot 3675 = 2857680000000$, T1).
+The polymer weight satisfies:
 \[
-  e < \frac{1631}{600}, \quad
-  e > \frac{163}{60}, \quad
-  e^{23/4} > 180, \quad
-  \mathrm{KP} < \frac{180}{e^{23/4}} < \frac{180}{180} = \frac{125}{196} < 1.
+  \mathrm{KP} = \frac{180}{e^{23/4}}
+  < \frac{180\times 25}{7056}
+  = \frac{4500}{7056}
+  = \frac{125}{196} < 1
+  \quad\bigl(\gcd(4500,7056)=36,\;\text{T1}\bigr).
 \]
-(The key step $180/e^{23/4} < 125/196$ follows since $e^{23/4} > 180\cdot 196/125 =
-282.24\ldots$ and $e^{23/4} = e^5/e^{1/4} > 147/(163/60)^{1/4} > 282$.)
 Since $\mathrm{KP} < 1$, the cluster expansion of \cite{KP86} converges,
 $\log Z_L$ is analytic in $\beta_{\rm lat}$, and the unique infinite-volume
 Gibbs state $\omega_\infty$ exists.

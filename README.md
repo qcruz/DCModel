@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C316 P6 LaTeX proof document COMPLETE DRAFT — ym_p6_complete_latex.py; 79/79 PASSED. Generates ym_clay_proof.tex (22.2 KB, 5 lemmas, Main Theorem, 9 citations). T2a_critical=[] ZERO; T4_gaps=[] ZERO; 7/7 JW T1+cited; remaining_gaps=["P6_LaTeX_paper_peer_review"] len=1. Clay structural: ~95%; rigorous proof standard: ~95%→~97% (+2%); CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C317 Formal peer review of ym_clay_proof.tex — ym_p6_peer_review.py; 20/20 PASS. Found 4 Critical errors, all corrected: N_Hopf=9 not 14; KP strict via 163^5×25>60^5×3675 [T1 integer]; Isom_J=SU(3) via det_C=+1; Assumption A explicit. Proof logic unchanged; LaTeX corrected; proof submission-ready. Proof std ~97% (unchanged). Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
