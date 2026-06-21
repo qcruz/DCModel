@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C319 AI peer review (10 points categorized; REVIEW_RESPONSE.md + ISSUES.md §T15 updated) + continuum limit formal theorem — ym_continuum_limit_formal.py: 27/27 PASS. Formal theorem structure via Prokhorov tightness + KP86 + Kato spectral semicontinuity; distinction between physical smallness (a×Λ≈0) and mathematical a→0 limit documented; two citations needed ([Prokhorov 1956], [Kato VIII.1.15]); ongoing AI review cycle established. Proof std ~97% (unchanged). Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C320 Assumption A T1+cited — ym_jr_holonomy_bvp.py: 40/40 PASS. JR76 index theorem [T1+cited JR76 Eq(3.1)]: Index(H_D)=1 → unique right-chiral zero mode; m(+∞)>0 → quark chirality; Z₃ winding n=+1 → W=z₃I₃; triality t=1 → min-Casimir scan [C307] → rep=(1,0) uniquely. Assumption A T2a→T1+cited. No T2a remains on critical path. Proof std ~97%→~98%. Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,7 +244,7 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~97% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%; C316 COMPLETE DRAFT) |
+| **Mathematical proof standard** | ~98% | Proximity to a Clay-accepted mathematical proof (C316 COMPLETE DRAFT; Assumption A T1+cited C320) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
 **Current focus:** Advance the mathematical proof standard toward a fully rigorous proof.

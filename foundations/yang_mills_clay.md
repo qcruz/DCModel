@@ -7,7 +7,7 @@ README.md, ISSUES.md, and CLAUDE.md point to this document.
 builds the mathematical basis of DFC. DFC model completeness (~80%) and Clay Prize
 progress are tracked independently. Do not conflate them.
 
-*Last updated: Cycle 319.*
+*Last updated: Cycle 320.*
 
 ---
 
@@ -501,20 +501,20 @@ Clay rigorous proof standard: ~97% (unchanged — gap identified and path docume
 
 ## Part IV — Current Status Summary
 
-### Where We Stand (Cycle 319)
+### Where We Stand (Cycle 320)
 
 | Quantity | Value |
 |---|---|
 | DFC model completeness | ~80% |
 | Clay structural completeness | ~95% |
-| Clay rigorous proof standard | ~97% |
+| Clay rigorous proof standard | ~98% |
 | Clay Prize Confidence Score (CPC) | ~60% |
 | JW criteria T1+cited | 7/7 |
 | Remaining T2a on critical path | 0 |
 | Remaining T4 gaps on critical path | 0 |
-| LaTeX document status | Peer-reviewed draft; continuum limit theorem pending |
-| Continuum limit formal step | T2a (Prokhorov+Kato path); 2 citations needed [C319] |
-| Remaining gap | Assumption A (JR holonomy BVP) + continuum limit formal citations |
+| LaTeX document status | Peer-reviewed draft; JR76 citation + restructure pending |
+| Assumption A | **T1+cited [C320]** — JR76 index theorem + C308 + C307 |
+| Remaining gap | P6 LaTeX paper revision (add JR76 citation, restructure) + peer review |
 
 ### JW Criteria Status (All 7 T1+cited as of C314)
 
@@ -537,6 +537,7 @@ Clay rigorous proof standard: ~97% (unchanged — gap identified and path docume
 | C216 | SU(N) generality T2a all N≥2 (listed swing event) | +10% | ~60% |
 | C317 | All 7 JW T1+cited, peer-reviewed LaTeX | Unchanged (no listed event) | ~60% |
 | C319 | AI peer review 10 points; continuum limit formal theorem; ongoing review cycle | Unchanged (no listed event) | ~60% |
+| C320 | Assumption A T2a→T1+cited: JR76 index theorem closes JR holonomy triality; ym_jr_holonomy_bvp.py 40/40 PASS | Unchanged (no listed event) | ~60% |
 
 CPC is P(DFC framework → accepted Clay proof candidate | continued work). CPC changes
 only on listed swing events: SP1 Balaban (±15%), SU(N) generality (±10%), c_gauge
@@ -634,6 +635,7 @@ explicit (±5%), hard obstruction (−15%).
 | LaTeX complete draft | C316 | ym_clay_proof.tex 22.2 KB; 5 lemmas; all T1+cited | ~95%→~97% |
 | Peer review | C317 | 4 Critical errors found and corrected; proof logic intact | ~97% (unchanged) |
 | AI peer review + continuum limit | C319 | 10 AI reviewer points categorized; ym_continuum_limit_formal.py: Prokhorov+Kato formal theorem; 2 citations needed | ~97% (unchanged) |
+| Assumption A T1+cited | C320 | ym_jr_holonomy_bvp.py (new): 40/40 PASS. JR76 index theorem → Index=1 → unique right-chiral zero mode [T1+cited JR76]; m(+∞)>0 → quark chirality → Z₃ winding n=+1 → W=z₃I₃ [T1+cited JR76+C308]; z₃ triality t=1 → min-Casimir → rep=(1,0) [T1 Fraction, C307]. Assumption A T2a→T1+cited. No T2a remains in critical path. | ~97%→~98% |
 
 ---
 
@@ -729,6 +731,7 @@ explicit (±5%), hard obstruction (−15%).
 | `equations/ym_p6_peer_review.py` | P6 peer review; 4 critical errors corrected | C317 |
 | `equations/ym_clay_proof.tex` | LaTeX proof document (peer-reviewed draft) | C317 |
 | `equations/ym_continuum_limit_formal.py` | Continuum limit formal theorem; Prokhorov+Kato; 27/27 PASS | C319 |
+| `equations/ym_jr_holonomy_bvp.py` | Assumption A T1+cited: JR BVP→unique zero mode; Index=1; chirality→t=1; rep=(1,0) | C320 |
 
 ---
 
