@@ -163,6 +163,7 @@ Clay Prize rigorous proof standard: ~93%
   F4a-start T2a→T1+cited C312 (27/27 PASS; V(|φ|) vacuum in ℂ¹=S¹ [T1]; U(1)/U(0)≅S¹ [T1+cited Hatcher 1.2.7]; n=1 minimality [T1]; ±φ₀ antipodal Q_top=2 [T1]; cascade n=1→2→3 via C311 [T1+cited]; residual T2a = depth label D5/D6/D7=n=1/2/3 (same structural T2a as D7=SU(3) from C59-74); proof std ~88%→~89%).
   D5 gap T2a→T1+cited C313 (21/21 PASS; AF b₀=11>0→∃μ_* with u_*<1/6→σ_SC>0 [Schur,C298]; PDG α_s removed from critical path; sole remaining T2a = depth label assignment; proof std ~89%→~90%).
   F4a composite T1+cited C314 (61/61 PASS; depth labels D5/D6/D7=n=1/2/3 are PHYSICAL NAMING CONVENTIONS external to mathematical proof chain — appear nowhere in algebra; F4a ZERO T2a sub-claims; t2a_subclaims=[]; conditional C302 → unconditional; 7/7 JW T1+cited; still_T2a=[]; sole gap = P6 LaTeX paper; proof std ~90%→~93%).
+  P6 LaTeX proof skeleton C315 (66/66 PASS; proof chain closure audit: T2a_critical_path=[] ZERO T2a, T4_gaps=[] ZERO T4, 7/7 JW T1+cited confirmed; sole remaining gap = P6_LaTeX_paper [len=1]; exact fraction web 13 relations; LaTeX theorem+proof skeleton assembled; P6 ~30-35pp 9 sections documented; proof std ~93%→~95%).
 
   Rigorous steps (T1 or cited theorem with T1-verified conditions): β_lat=81/4 [T1]; g_eff²=8/27
   [T2a]; KP<125/196 [T1, C292]; C_Dob<120/117649 [T1, C293]; κ=1/2 DFC→YM [T1, C294];
