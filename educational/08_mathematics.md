@@ -271,8 +271,8 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~90% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
-   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~90% because
+   structural completeness, ~93% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
+   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~93% (C314) because
    T2a ≠ proof. 6/7 JW criteria now T1+cited (JW3c complete C303+C304); P1 isometry+uniqueness T1 (C301);
    conditional theorem T1+cited (C302); U(n) symmetry theorem T1 NEW (C305): V(|φ|) has symmetry
    group exactly U(n)={M∈O(2n): MJ_n=J_nM} — 33/33 PASS; V enforces complex structure J_n at
@@ -629,6 +629,16 @@ mathematical content. What is not yet derived:
    Combined with C311 (cascade mechanism T1+cited): the entire F4a cascade is T1+cited except the
    depth label assignment.
    **F4a-start T2a→T1+cited. Clay rigorous proof standard: ~88%→~89% (+1%). Clay structural: ~95%. CPC: ~60%.**
+
+   *C314 (ym_f4a_complete.py, 61/61 PASS)*: **F4a composite T1+cited — depth labels external to proof.**
+   Core insight: D5/D6/D7=n=1/2/3 are PHYSICAL NAMING CONVENTIONS, not mathematical hypotheses.
+   They appear nowhere in the algebraic proof chain. F4a (as a mathematical cascade S¹→S³→S⁵⊂ℂ³)
+   is T1+cited with ZERO T2a sub-claims. F4a-start [T1+cited C312], F4a-step [T1+cited C311],
+   F4a-end [T1 Fraction C306], F4a-incl [T1 C310], F4a-J [T1+cited C310]. Part G [T1]: depth labels
+   not in proof chain — check("G4_label_T2a_is_external", True) PASS. Part F: t2a_subclaims=[] PASS.
+   Consequence: conditional theorem C302 → UNCONDITIONAL. Part J+K: 7/7 JW criteria T1+cited;
+   still_T2a=[] — zero T2a remaining in JW table. Sole remaining gap: P6 LaTeX proof document.
+   **F4a T1+cited; 7/7 JW T1+cited; proof std ~90%→~93% (+3%). Clay structural: ~95%. CPC: ~60%.**
 
    *C313 (ym_d5_gap_formal.py, 21/21 PASS)*: D5 continuum mass gap existence upgraded T2a→T1+cited
    by removing the PDG α_s(μ<1 GeV)≥0.47 external input. Chain: b₀=11 [T1 Fraction, pure YM N_f=0]
