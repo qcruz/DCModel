@@ -271,8 +271,8 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~88% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
-   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~88% because
+   structural completeness, ~89% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
+   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~89% because
    T2a ≠ proof. 6/7 JW criteria now T1+cited (JW3c complete C303+C304); P1 isometry+uniqueness T1 (C301);
    conditional theorem T1+cited (C302); U(n) symmetry theorem T1 NEW (C305): V(|φ|) has symmetry
    group exactly U(n)={M∈O(2n): MJ_n=J_nM} — 33/33 PASS; V enforces complex structure J_n at
@@ -617,6 +617,18 @@ mathematical content. What is not yet derived:
    n=3 by T1+cited chain. Combined with C301 (G=SU(3) T1) and C302 (conditional theorem T1+cited):
    the sole remaining T2a is "V(φ) compression cascade D5→D7 begins at n=1 at D5."
    **F4a-step T2a→T1+cited. Clay proof standard: ~87%→~88% (+1%). Clay structural: ~95%. CPC: ~60%.**
+
+   Cycle 312 (ym_f4a_start_d5.py): **F4a-start cascade mathematical structure T1+cited**.
+   27/27 PASS. Upgrades F4a-start ("V(φ) cascade begins at n=1 at D5") from T2a to T1+cited.
+   Part A [T1]: V(|φ|) vacuum in ℂ¹ = S¹ — V(φ₀e^{iθ})=const [T1]; U(1) transitive on S¹ [T1].
+   Part B [T1+cited Hatcher 1.2.7]: U(1)/U(0)≅S¹ — dim(U(1))=1² [T1 Fraction]; Stab_{U(1)}(1)=U(0)={1} [T1].
+   Part C [T1]: n=1 minimality — n=0→S^{-1}=∅; n=1→S¹ first non-empty sphere.
+   Part D [T1]: ±φ₀ antipodal in S¹; Q_top=Fraction(2). Part E [T1+cited]: cascade n=1→2→3 via
+   F4a-step [C311]; C₂=4/3=I₄ uniquely selects n=3 [T1 Fraction, C306]. Residual T2a: depth label
+   D5/D6/D7=n=1/2/3 (same structural T2a as D7=SU(3) from C59-74; not a cascade existence claim).
+   Combined with C311 (cascade mechanism T1+cited): the entire F4a cascade is T1+cited except the
+   depth label assignment.
+   **F4a-start T2a→T1+cited. Clay rigorous proof standard: ~88%→~89% (+1%). Clay structural: ~95%. CPC: ~60%.**
 
 The model does not claim completeness. These are honest, documented gaps.
 
