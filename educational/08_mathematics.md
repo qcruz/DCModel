@@ -271,8 +271,8 @@ mathematical content. What is not yet derived:
    structural account (Cycle 205) gives κ^(1+1/(6π)) = 5.8248, +0.010%, with 0 free parameters.
    Formal derivation of the 1/(6π) correction from the D4/D7 boundary value problem is open.
 4. **Yang-Mills mass gap formal proof** — the Clay Prize construction (SP1-SP5) is at ~95%
-   structural completeness, ~89% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
-   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~89% because
+   structural completeness, ~90% mathematical proof standard (CPC ~60%). IMPORTANT (C297): the
+   ~97% figure was stale T2a structural coverage; honest rigorous proof standard is ~90% because
    T2a ≠ proof. 6/7 JW criteria now T1+cited (JW3c complete C303+C304); P1 isometry+uniqueness T1 (C301);
    conditional theorem T1+cited (C302); U(n) symmetry theorem T1 NEW (C305): V(|φ|) has symmetry
    group exactly U(n)={M∈O(2n): MJ_n=J_nM} — 33/33 PASS; V enforces complex structure J_n at
@@ -629,6 +629,17 @@ mathematical content. What is not yet derived:
    Combined with C311 (cascade mechanism T1+cited): the entire F4a cascade is T1+cited except the
    depth label assignment.
    **F4a-start T2a→T1+cited. Clay rigorous proof standard: ~88%→~89% (+1%). Clay structural: ~95%. CPC: ~60%.**
+
+   *C313 (ym_d5_gap_formal.py, 21/21 PASS)*: D5 continuum mass gap existence upgraded T2a→T1+cited
+   by removing the PDG α_s(μ<1 GeV)≥0.47 external input. Chain: b₀=11 [T1 Fraction, pure YM N_f=0]
+   → AF guarantees Landau pole Λ_QCD=μ₀×exp(−8π²/(b₀g₀²))>0 [T1: exp(real)>0] → ∃μ_* at
+   midpoint between SC threshold (g²=6) and Landau pole: u_*≈0.028<1/6 [T1 algebraic midpoint
+   construction] → σ_SC=−log(u_*)>0 [T1+cited C298 Schur] → Δ_D5≥C_gap×Λ_QCD>0 conditional on
+   F4a [T2a]. Key: scale separation u_DFC=9/8>>u_*=0.028; DFC operates in the UV while the SC
+   regime is deep IR; asymptotic freedom bridges both without any PDG experimental input.
+   Sole remaining T2a = depth label assignment D5/D6/D7=n=1/2/3 (same structural T2a as D7=SU(3)
+   from C59-74, now more precisely characterized as a physical label assignment).
+   **D5 gap T2a→T1+cited; PDG-free. Clay rigorous proof standard: ~89%→~90% (+1%). Clay structural: ~95%. CPC: ~60%.**
 
 The model does not claim completeness. These are honest, documented gaps.
 

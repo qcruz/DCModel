@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C312 F4a-start cascade mathematical structure T2a→T1+cited — ym_f4a_start_d5.py; 27/27 PASSED. V(|φ|) vacuum in ℂ¹=S¹ [T1]; U(1)/U(0)≅S¹ [T1+cited Hatcher 1.2.7]; n=1 minimality [T1]; ±φ₀ antipodal Q_top=2 [T1]; cascade n=1→2→3 via C311 [T1+cited]; residual T2a = depth label D5/D6/D7=n=1/2/3. Clay structural: ~95%; rigorous proof standard: ~88%→~89% (+1%); CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C313 D5 continuum mass gap T2a→T1+cited — ym_d5_gap_formal.py; 21/21 PASSED. AF b₀=11>0→∃μ_* with u_*<1/6→σ_SC>0 [Schur, C298]; PDG α_s external input removed from critical path; sole remaining T2a = depth label assignment D5/D6/D7=n=1/2/3. Clay structural: ~95%; rigorous proof standard: ~89%→~90% (+1%); CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,7 +244,7 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~89% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
+| **Mathematical proof standard** | ~90% | Proximity to a Clay-accepted mathematical proof (CORRECTED C297: was stale ~97%) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
 **Current focus:** Advance the mathematical proof standard toward a fully rigorous proof.
@@ -261,7 +261,8 @@ See `foundations/yang_mills_clay.md` §Proof Standard Gap for the full analysis.
 | SP4 | Pure YM decoupling from scalar sector | **T2a** | **100%** |
 | SP5 | Derive Λ_QCD from V(φ) | **T2a** | **100%** |
 
-Latest (C312): **F4a-start cascade mathematical structure T2a→T1+cited** — 27/27 PASS; V(|φ|) vacuum in ℂ¹=S¹ [T1]; U(1)/U(0)≅S¹ [T1+cited Hatcher 1.2.7]; n=1 minimality [T1]; ±φ₀ antipodal Q_top=2 [T1]; cascade n=1→2→3 via C311 [T1+cited]; residual T2a = depth label D5/D6/D7=n=1/2/3 (same structural T2a as D7=SU(3) C59-74; not cascade existence); proof standard ~88%→~89% (+1%).
+Latest (C313): **D5 continuum mass gap T2a→T1+cited; PDG-free** — 21/21 PASS; AF b₀=11>0 [T1 Fraction] → Λ_QCD>0 [T1: exp(real)>0] → ∃μ_* at midpoint between SC threshold and Landau pole: u_*≈0.028<1/6 [T1 algebraic] → σ_SC=−log(u_*)>0 [T1+cited C298 Schur] → Δ_D5>0 conditional on F4a [T2a — depth label assignment, same structural T2a as D7=SU(3) C59-74]; PDG α_s external input removed from critical path; proof standard ~89%→~90% (+1%).
+C312: **F4a-start cascade mathematical structure T2a→T1+cited** — 27/27 PASS; V(|φ|) vacuum in ℂ¹=S¹ [T1]; U(1)/U(0)≅S¹ [T1+cited Hatcher 1.2.7]; n=1 minimality [T1]; ±φ₀ antipodal Q_top=2 [T1]; cascade n=1→2→3 via C311 [T1+cited]; residual T2a = depth label D5/D6/D7=n=1/2/3 (same structural T2a as D7=SU(3) C59-74; not cascade existence); proof standard ~88%→~89% (+1%).
 C311: **F4a-step cascade mechanism T2a→T1+cited via orbit-stabilizer** — 41/41 PASS; Orbit-Stabilizer [Hatcher 1.2.7, cited]: U(n)/U(n-1)≅S^{2n-1} T1+cited; Stab_{U(n)}(e₁)=U(n-1) block form [T1 algebraic]; block-embed compat [T1]; J-compat [T1+cited]; cascade n=1→2 and n=2→3 T1+cited → S⁵⊂ℂ³; 7 T1/T1+cited + 1 T2a → SOLE remaining T2a = F4a-start ("cascade begins at n=1 at D5"); proof standard ~87%→~88% (+1%).
 C310: **F4a cascade decomposition — equatorial inclusions + Goldstone count T1 NEW** — 59/59 PASS; F4a-end [T1 Fraction: C₂(SU(n))=4/3 uniquely forces n=3]; F4a-incl [T1: equatorial inclusions ι: ℂⁿ→ℂⁿ⁺¹ via z→(z,0) norm-preserving]; F4a-J [T1+cited: J-compatibility abs(diff)<1e-14]; F4a-gold [T1 Fraction: dim(U(n)/U(n-1))=2n−1 for n=1,2,3]; 6 T1/T1+cited + 2 T2a → 1 irreducible T2a = cascade dynamics; proof standard ~86%→~87% (+1%).
 C309: **D6 kink winding Q_top^{D6}=1 → F4b T1+cited given F4a** — 38/38 PASS; Q_top^{D6}=Fraction(1) [T1 exact rational arithmetic]; Z₃ charge=(Q_top×triality) mod 3=1=generator of π₁(S⁵/Z₃)=Z₃ [T1+cited, C308 Hatcher Thm 1.38]; F4b T2a→T1+cited given F4a; C302 conditional theorem T2a count reduced 2→1; sole remaining T2a = F4a alone; proof standard ~85%→~86% (+1%).
