@@ -7,8 +7,8 @@
 > symmetry actions — one becomes color, the other forces matter into triplets, and the
 > dimension of SU(3)'s fundamental representation is fixed at 3 by mathematics alone.
 > The chain from substrate to SU(3) is: n coincident D7 zero modes → configuration space
-> S^(2n−1) → gauge group SU(n) → n=3 at D7 (Bottleneck 1 closed, Cycles 59–74, Tier 1).
-> The D7=SU(3) assignment is Tier 2a (Cycles 59–74: PT s=2 → exactly 2 bound states →
+> S^(2n−1) → gauge group SU(n) → n=3 at D7 (Tier 1).
+> The D7=SU(3) assignment is Tier 2a (PT s=2 → exactly 2 bound states →
 > SU(3) zero-mode counting from V(φ)).
 
 ---
@@ -71,7 +71,7 @@ of that group. The smallest non-trivial representation of SU(3) is the **fundame
 representation**, which is exactly 3-dimensional.
 
 **Why the fundamental representation (not adjoint)?** The D7 SU(3) kink background
-carries Z₃ center symmetry — a T1 result (C204: <P>=0 algebraically). A D6 kink
+carries Z₃ center symmetry — a T1 result (<P>=0 algebraically). A D6 kink
 traversing the D7 background in a single crossing (n=1 winding) acquires Z₃ charge 1.
 By the triality formula t = (p−q) mod 3 for Dynkin label (p,q):
 - Adjoint (1,1) has triality 0 → center-neutral → cannot acquire Z₃ charge
@@ -79,13 +79,13 @@ By the triality formula t = (p−q) mod 3 for Dynkin label (p,q):
 - Minimum-dimension irrep with triality 1 = fundamental (3) with dim=3
 
 This selects the fundamental representation from the Z₃ structure of the D7 background.
-(Tier 2a, Cycle 217 Step 2: `equations/ym_jackiw_rebbi_su3_gauge.py`. Explicit holonomy
+(Tier 2a; `equations/ym_jackiw_rebbi_su3_gauge.py`. Explicit holonomy
 matrix computation remains T3.)
 
 **Structural self-check:** The DFC kink shape integral I₄ = ∫sech⁴(u) du = 4/3 equals
 C₂(fund, SU(3)) = 4/3 exactly — and this equality holds for N=3 and ONLY N=3. Solving
 I₄ = (N²−1)/(2N) gives 3N²−8N−3=0 with unique positive integer root N=3 (polynomial
-residual 0.00e+00, T1, Cycle 215). This means the BPS bound H ≥ I₄×Q̂_top×m is an SU(3)
+residual 0.00e+00, T1). This means the BPS bound H ≥ I₄×Q̂_top×m is an SU(3)
 Casimir eigenvalue equation for the fundamental representation.
 
 **Conclusion:** Matter particles charged under flavor-SU(3) automatically come in triplets.
@@ -266,7 +266,7 @@ the generation count:
 - **Dimensional stack** — D5/D6/D7 closure depths and their physical assignments;
   `foundations/dimensional_stack.md`
 - **Bifurcation dynamics** — kink bifurcation mechanics; depth-running of closure scales
-  (M_c per D-depth); NOTE: γ_D = (16/3)√β was retracted in Cycle 48 (wrong E_kink formula);
+  (M_c per D-depth); NOTE: γ_D = (16/3)√β was retracted (wrong E_kink formula);
   depth-running integration remains valid with γ_space as fitted input;
   `foundations/bifurcation_dynamics.md`
 - **Higgs geometry** — the S³ closure at D6 and its role in mass generation;
@@ -278,8 +278,8 @@ the generation count:
 - **Full fermion spectrum (stubs + failures)** — τ mass 8.4× failure in dimple model;
   `equations/fermion_spectrum_full.py`
 - **Koide formula and tau mass** — m_τ predicted from m_e, m_μ via Z₃/Koide; < 0.006% error;
-  Tier 2a (Step 4d C146: canonical phase vertex 1/√Q_top); `equations/tau_mass_koide.py` (Cycle 122),
-  `equations/koide_phase_coupling.py` (Cycle 146)
+  Tier 2a (canonical phase vertex 1/√Q_top); `equations/tau_mass_koide.py`,
+  `equations/koide_phase_coupling.py`
 - **Proton stability** — product geometry forbids X/Y bosons and proton decay;
   `phenomena/particle_physics/proton_stability.md`
 - **Route 1 (Skyrme)** — topological soliton approach to spin quantum numbers;
@@ -287,12 +287,12 @@ the generation count:
   are all spin-1/2; `foundations/route1_skyrme.md`
 - **SP4/SP5 SU(N) generality** — SP4 (scalar decoupling) and SP5 (Λ_QCD existence) T2a
   for all N≥3; b₀(N)=11N/3>0 universal; m_sigma/m_KK=2 and m_shape/m_KK=√3 N-independent;
-  all 5 SP T2a for all SU(N), N≥2; `equations/ym_sun_sp4sp5.py` (Cycle 236)
+  all 5 SP T2a for all SU(N), N≥2; `equations/ym_sun_sp4sp5.py`
 - **Zero mode multiplet** — proved: n coincident degenerate zero modes on one kink
   background → configuration space S^(2n−1) → gauge group SU(n); the n=3 case gives
-  SU(3) at D7 and three-generation count; `foundations/zero_mode_multiplet.md` (Cycle 59)
+  SU(3) at D7 and three-generation count; `foundations/zero_mode_multiplet.md`
 - **Mode count threshold** — proved numerically: D7 (n=3) has exactly 3 zero modes across
-  all tested α₇ values; SU(3) confirmed; `foundations/mode_count_threshold.md` (Cycles 72–74)
+  all tested α₇ values; SU(3) confirmed; `foundations/mode_count_threshold.md`
 - **Hierarchy problem** — Higgs mass from D6 S³ geometry; the three-generation structure
   underpins the CKM phase and baryogenesis; `foundations/hierarchy_problem.md`
 
@@ -301,14 +301,14 @@ the generation count:
 ## Open Questions
 
 1. **Why SU(3) specifically:** The kink shape integral I₄=4/3 = C₂(fund,SU(N)) is
-   algebraically unique to N=3 (T1, C215: solving 4/3=(N²−1)/(2N) gives 3N²−8N−3=0,
+   algebraically unique to N=3 (T1: solving 4/3=(N²−1)/(2N) gives 3N²−8N−3=0,
    only positive integer root N=3). This means the DFC substrate dynamics (via the BPS
    identity g₁²=2I₄) structurally encode SU(3) and no other gauge group. The formal
-   derivation of D7=SU(3) from the compression cascade is Tier 2a (Cycles 59–74:
-   n=3 zero modes at D7 threshold from PT s=2 spectrum, verified for all tested α₇ values).
-   For all other SU(N) with N≥2: C215/C216 show the mass gap exists T2a (monotonicity
+   derivation of D7=SU(3) from the compression cascade is Tier 2a (PT s=2 spectrum →
+   n=3 zero modes at D7 threshold, verified for all tested α₇ values).
+   For all other SU(N) with N≥2: the mass gap exists T2a (monotonicity
    theorem), but only SU(3) is compatible with I₄=C₂(fund) being the coupling constant.
-   C236 adds: SP4 (scalar decoupling) and SP5 (Λ_QCD existence) are now T2a for all N≥2,
+   Additionally: SP4 (scalar decoupling) and SP5 (Λ_QCD existence) are T2a for all N≥2,
    completing the JW "any compact simple G" requirement at T2a. New T1 results: m_sigma/m_KK=2
    and m_shape/m_KK=√3 are exactly N-independent (both determined by V(φ) alone).
 
@@ -332,7 +332,7 @@ the generation count:
    explanation in the current model. A geometric mechanism at D7 that produces
    non-uniform squashing across the flavor triplet is needed.
 
-6. **Koide formula and the tau mass (Cycle 122):** The empirical Koide relation states that
+6. **Koide formula and the tau mass:** The empirical Koide relation states that
    the sum of the three charged lepton masses divided by the square of the sum of their
    square roots equals two-thirds: (m_e + m_μ + m_τ)/(√m_e + √m_μ + √m_τ)² = 2/3.
    This holds to < 10 ppm and is unexplained in the Standard Model. Given m_e and m_μ,
@@ -347,28 +347,28 @@ the generation count:
    constraint. Equivalently: the mass-amplitude vector makes exactly 45° with the democratic
    direction (1,1,1) in square-root space, verified to < 10 ppm.
 
-   Status: **Tier 2a** (Step 4d promoted Cycle 146: m_τ=1776.97 MeV +0.006%, 0 free params).
+   Status: **Tier 2a** (m_τ=1776.97 MeV +0.006%, 0 free params).
    The Z₃ symmetry of three coincident kinks is structurally expected from the SU(3) isometry
-   (Cycle 59: n coincident kinks → SU(n) symmetry, which includes Z₃ ⊂ S₃). The remaining
+   (n coincident kinks → SU(n) symmetry, which includes Z₃ ⊂ S₃). The remaining
    open step is showing the Yukawa matrix from D7-D6 zero mode overlap is specifically circulant
    (not just Z₃-symmetric) — path to T1 for the full Koide chain.
 
-   Koide proof chain status (Cycles 122–126):
-   - Step 0: V(φ) → W(ψ)=1−ψ²                Tier 1  [Cycle 111]
-   - Step 1: η₀ ∝ sech²(u), unique zero mode   Tier 1  [Cycles 33, 73]
-   - Step 2: n=3 kinks → SU(3) isometry        Tier 1  [Cycles 59, 73, 74]
-   - Step 3: Z₃ ⊂ SU(3) → Y circulant         Tier 3  [Cycle 124; `equations/koide_step3_yukawa.py`]
-   - Step 4: Q_top=2 → r²=Q_top → K=2/3       Tier 3  [Cycles 125–126]
-     Step 4a: γ=2π/3 from D5 π₁(S¹)=ℤ + Z₃ positions    Tier 1  [Cycle 126]
-     Step 4b: K=1/3+2t²/3 at γ=2π/3 (algebraic)          Tier 1  [Cycle 126]
+   Koide proof chain status:
+   - Step 0: V(φ) → W(ψ)=1−ψ²                Tier 1
+   - Step 1: η₀ ∝ sech²(u), unique zero mode   Tier 1
+   - Step 2: n=3 kinks → SU(3) isometry        Tier 1
+   - Step 3: Z₃ ⊂ SU(3) → Y circulant         Tier 3  [`equations/koide_step3_yukawa.py`]
+   - Step 4: Q_top=2 → r²=Q_top → K=2/3       Tier 3
+     Step 4a: γ=2π/3 from D5 π₁(S¹)=ℤ + Z₃ positions    Tier 1
+     Step 4b: K=1/3+2t²/3 at γ=2π/3 (algebraic)          Tier 1
               Eigenvalues: (1−t, 1−t, 1+2t); S=3 t-independent; K=M/S²
-     Step 4c: K=2/3 ↔ t²=1/Q_top=1/2 ↔ t=1/√Q_top        Tier 1  [Cycle 126; error 1.11e-16]
+     Step 4c: K=2/3 ↔ t²=1/Q_top=1/2 ↔ t=1/√Q_top        Tier 1  [error 1.11e-16]
               r=√Q_top universal on K=2/3 curve for all γ near 2π/3 (PASS)
-     Step 4d: t=1/√Q_top from canonical phase vertex 1/√Q_top   Tier 2a [Cycle 146]
+     Step 4d: t=1/√Q_top from canonical phase vertex 1/√Q_top   Tier 2a
               Z₃ charge counting → exactly one phase insertion per off-diagonal →
               t=1/√Q_top; m_τ=1776.97 MeV (+0.006%, 0 free params) [koide_phase_coupling.py]
               Formal open: ∫η₀*(x)·e^{iΔθ(x)}·φ_H(x)·η₀(x)dx/∫|η₀|²·φ_H dx = 1/√Q_top
-     Central formula (Cycle 125): |F₀|/|F₁| = 2/√Q_top = √2 (error 3.55e-15)
+     Central formula: |F₀|/|F₁| = 2/√Q_top = √2 (error 3.55e-15)
 
    See `equations/tau_mass_koide.py`, `equations/koide_yukawa_circulant.py`,
    `equations/koide_step3_yukawa.py`, `equations/koide_step4_bps.py`,
