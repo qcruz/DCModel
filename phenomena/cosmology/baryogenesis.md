@@ -205,15 +205,20 @@ open question.
 
 ## Consistency Checks
 
-| Requirement | DFC mechanism | Status |
-|---|---|---|
-| B violation during generation | D7 winding numbers not yet conserved during formation | ✓ structural |
-| B−L conservation after formation | Product topology + no cross-closure carriers | ✓ (from proton_stability.md) |
-| CP violation source | D7 closure chirality / CKM phase as frozen imprint | structural (undetermined) |
-| Out-of-equilibrium | First-order D7 buckling instability | ✓ structural |
-| Sphaleron washout avoided | B−L is conserved by sphalerons | ✓ (from proton_stability.md) |
-| Magnitude η_B ≈ 6×10⁻¹⁰ | Requires D7 closure CP asymmetry calculation | **open** |
-| BBN consistency | η_B is input, not output | ✓ (consistent by construction) |
+| Requirement | DFC mechanism | Tier | Status |
+|---|---|---|---|
+| E_sph = 72π M_Pl > 0 | S_kink×α_D5=1, β=1/(9π), pair cost | T1 | ✓ exact |
+| ΔB = 4 per 3 kink pairs | ΔQ_top/N_c × 3 = 4 algebraically | T1 | ✓ exact |
+| B violation exists | E_sph finite + D7 dynamics | T2a | ✓ structural |
+| J_CP ≠ 0 (CP violation) | D6 JR zero mode left-handed, C217/C235 | T2a | ✓ structural |
+| D7 transition first-order | Svetitsky-Yaffe Z₃ Potts Q=3, C231 | T2a | ✓ structural |
+| All 3 Sakharov conditions | composite of above | T2a | ✓ structural |
+| B−L conserved by sphalerons | Z₃ center + product topology | T2a | ✓ structural |
+| η_B > 0 structurally | CP violation + first-order PT | T3 | ✓ structural |
+| Direct route insufficient | Jarlskog suppression (m_c/T_c)² ~ 10⁻³⁰ | T3 | ✓ (gap identified) |
+| Leptogenesis route viable | D6 heavy fermion + sphaleron B−L; m_KK > T_c | T3 | ✓ structural |
+| Magnitude η_B ≈ 6×10⁻¹⁰ | Requires ε_D7 CP asymmetry derivation | T4 | **open** |
+| BBN consistency | η_B is input, not output | — | ✓ by construction |
 
 ---
 
@@ -224,11 +229,13 @@ open question.
    transition. Whether DFC predicts η_B ≈ 6 × 10⁻¹⁰ or whether this number is an
    input is not yet determined.
 
-2. **Is the D7 closure first-order?** QCD lattice simulations suggest the confinement
-   transition at zero baryon density is actually a crossover (not first-order) for
-   physical quark masses. If so, it does not strongly satisfy Condition 3. Whether the
-   DFC D7 closure is first-order for the initial closure conditions (which differ from
-   equilibrium QCD) requires analysis of the closure dynamics.
+2. **D7 transition first-order — formal proof needed.** Cycle 231 established via
+   Svetitsky-Yaffe → 3D Z₃ Potts universality that the D7 SU(3) deconfinement transition
+   is weakly first-order [T2a]. The DFC D7 closure occurs at T_c(D7) ≈ 6.35×10¹⁴ GeV
+   (well above the QCD crossover regime), so the equilibrium QCD crossover result for
+   physical quark masses does not apply here. Upgrading from T2a to T1 requires a formal
+   proof that SU(3) deconfinement is in the Z₃ Potts universality class — the remaining
+   GAP 5 identified in `equations/baryon_asymmetry_dfc.py`.
 
 3. **CKM phase from D7 closure geometry.** The CP-violating phase δ_CKM ≈ 1.2 rad in
    the CKM matrix might be a residual imprint of the D7 closure chirality. Deriving
@@ -264,3 +271,6 @@ open question.
   `phenomena/particle_physics/forces/strong_force.md`
 - **Cosmic expansion** — dilution of the baryon asymmetry during expansion;
   `phenomena/cosmology/cosmic_expansion.md`
+- **Equation module** — tier-labelled numerical verification of all three Sakharov
+  conditions, sphaleron parameters, Jarlskog suppression analysis, and leptogenesis
+  route; `equations/baryon_asymmetry_dfc.py` (Cycle 324)

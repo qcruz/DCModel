@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C323 educational/12_substrate_topology.md — Module 12 "Topology of the Substrate" written; Q_top=2 (T1), [H,Q̂_top]=0 (T1), winding at D5/D6/D7, topological particle stability. Project refocused to four tracks: (A) math formalization, (B) educational, (C) practical applications, (D) new open problem. Yang-Mills proof declared internally complete (~99% proof standard). Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C324 equations/baryon_asymmetry_dfc.py (new): 3-layer DFC baryogenesis account, all assertions PASS. Layer 1 [T1]: E_sph=72π M_Pl>0 → B-violating transitions exist. Layer 2 [T2a]: first-order D7 PT (C231) + J_CP≠0 (C217) → all 3 Sakharov conditions met. Layer 3 [T3]: η_B>0 structurally; Jarlskog suppression (m_c/T_c)²~10⁻³⁰ rules out direct route; leptogenesis via D6 heavy fermion decay proposed. Open T4: magnitude η_B~6×10⁻¹⁰ not yet derived. baryogenesis.md consistency checks updated with tier labels. Track D (baryon asymmetry) established. Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
