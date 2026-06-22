@@ -429,165 +429,97 @@ All three must stay in sync. The estimate has two components:
 
 ---
 
-### ⭐ PRIMARY FOCUS (overrides Step 1 priority until resolved)
+### ⭐ PRIMARY OBJECTIVES
 
-**Yang-Mills Mass Gap — Clay Millennium Prize Problem**
+The Yang-Mills mass gap proof is considered **internally complete** as of Cycle 322
+(`equations/ym_clay_proof.tex`, 12 cited references, no T2a on critical path).
+The proof document is available for external submission when ready. No further
+Yang-Mills cycles are planned unless a substantive mathematical issue is discovered.
 
-**The objective is a fully rigorous mathematical proof of the Yang-Mills mass gap** —
-not a structural argument, not a T2a chain, not a high "coverage percentage." The
-standard is: every step in the critical path is either (a) an exact algebraic identity
-verifiable by hand or rational arithmetic (T1), or (b) a direct application of a
-published mathematical theorem with all conditions formally verified (cited theorem).
-T2a structural arguments ("numerically consistent structural claim") do **not** satisfy
-this standard. The proof must be writable as a standalone LaTeX paper that could pass
-peer review in a mathematics journal without reference to DFC numerics.
-
-**No DFC paper or broader publication will move forward until this proof is complete.**
-This is an independent sub-project; it must be fully resolved on its own terms first.
+The project now returns to its broader mandate: **developing the DFC model as a
+complete, rigorous, and communicable physical theory.** Four parallel tracks run
+each cycle — choose whichever is most tractable given current project state:
 
 ---
 
-**IMPORTANT — Three independent quantities, tracked separately:**
+**Track A — Mathematical Formalization**
 
-1. **Clay Prize structural completeness** (~95%): How completely DFC covers all five
-   Jaffe-Witten criteria at T2a level (numerically consistent structural argument).
-   This is high. It does NOT mean the proof is rigorous.
+Deepen and tighten the DFC mathematical foundations. Every quantitative claim in
+`foundations/` and `phenomena/` should eventually be backed by a verified equation
+module in `equations/`. Priority areas:
 
-2. **Clay Prize rigorous proof standard** (~60%): How close the argument is to a
-   proof that a mathematical referee would accept in a mathematics journal. This is
-   the number that matters for actually winning the Clay Prize. It is lower than the
-   structural completeness because T2a ≠ proof. See §Proof Standard Gap in
-   `foundations/yang_mills_clay.md` for the step-by-step honest accounting.
+- **α_em(0) identity**: prove A−B = ln(1/α_em(0)) algebraically (Tier 4→T1; Cycle 139)
+- **Strong CP**: formal D7 dynamics → θ̄=0 selection (Cycles 147, 156–157)
+- **Quark mass matrix phase**: arg(det M_q)=0 from D6/D7 interface (Cycle 153)
+- **Neutrino mass hierarchy**: m₃/m₂ ratio −8.3% gap (Cycles 165, 205)
+- **Hadronic VP**: δ(Δα)^{NP}=0.00102 from D7 confinement (Cycle 158)
+- Any foundation or phenomenon document whose equation backing is missing or T3/T4
 
-3. **CPC** (~60%): P(DFC framework, continued to completion, produces an accepted
-   proof candidate). Update only on listed swing events.
-
-**Canonical tracking document: [`foundations/yang_mills_clay.md`](foundations/yang_mills_clay.md)**
-(All SP tables, structural assets, CPC, cycle history, §Proof Standard Gap, §Path to Full Rigor)
+Standard: prefer upgrading T3→T2a→T1 on existing derivations over adding new T3 claims.
 
 ---
 
-**What counts as rigorous (the standard every step must meet):**
-- **T1**: Exact algebraic identity — verifiable by rational arithmetic or direct computation,
-  zero free parameters, reproducible without numeric approximation.
-- **Cited theorem**: A published mathematical theorem (e.g., KP86, OS-Seiler 1978, Seiler 1982,
-  Ebin-Palais 1970) applied to the DFC setting with all conditions formally verified at T1 level.
-- **NOT sufficient**: T2a ("numerically verified structural argument"), "structurally expected,"
-  estimates with tolerance, or "consistent with" claims.
+**Track B — Educational Development**
+
+Build a complete, standalone educational series for DFC. Modules 00–11 exist.
+Continue with new modules covering advanced topics:
+
+```
+educational/
+├── 00–11   ← complete
+├── 12_substrate_topology.md    ← kink topology, Q_top, winding numbers
+├── 13_mass_from_compression.md ← how mass emerges at D4; inertia as fold resistance
+├── 14_spacetime_emergence.md   ← D3 localization → apparent 3D space
+├── 15_dark_matter.md           ← what DFC predicts for DM (or absence thereof)
+├── 16_cosmology.md             ← Hubble constant, compression at cosmic scale
+├── 17_quantum_mechanics.md     ← measurement, interference from fold perspective
+└── 18_open_problems.md         ← honest map of what remains underived
+```
+
+Rules: plain English first, equations second; Tier-honest; 500–1500 words per module;
+self-contained (readable without reading other modules).
 
 ---
 
-**Current honest status of the critical path steps:**
+**Track C — Practical Applications and Predictions**
 
-| Step | Claim | Status | Gap |
-|---|---|---|---|
-| JW1 | D7 = SU(3) gauge group from V(φ) | **T1+cited [C314]**: cascade V(φ)→S¹→S³→S⁵⊂ℂ³ [T1+cited C310-C312]; Isom_J(S⁵⊂ℂ³)=SU(3) [T1 C301]; I₄=C₂(fund,SU(n))=4/3 forces n=3 [T1 Fraction C306]; depth labels D5/D6/D7 are naming conventions external to proof | ~~Formal derivation needed~~ **CLOSED C314** |
-| JW2 | Quantum Hilbert space H on ℝ⁴ | **T2a** — OS+KP+GNS structural | OS axiom conditions need formal verification |
-| JW3a | Reflection positivity | **Cited theorem** — OS-Seiler 1978 (β>0 → RP) | Condition β_lat=81/4>0 is T1; **step is rigorous** |
-| JW3b | Gauge invariance SU(3) | **T1+T2a** — Elitzur+Z₃ | Elitzur exact; flat Killing T1; **step is rigorous** |
-| JW3c | Poincaré covariance | **T1+cited (complete)** — OS Reconstruction [OS75] C303+C304 | d=4 given by JW problem [T1]; OS75 Thm 3.1 yields ISO(1,3) as theorem output; **step is rigorous** |
-| JW4 | Continuum limit | **T1+T2a** — κ=1/2 T1; KP<125/196 T1; D5 T2a | D5 gap existence uses Seiler 1982 for SU(2); SU(3) extension T2a |
-| JW5 | Mass gap Δ > 0 | **T2a** — D5+SC multi-method | SC path uses PDG α_s(1 GeV)≥0.47 as external input |
+Derive engineering-relevant limits and falsifiable predictions from verified DFC results.
+Each entry in `practical_applications/` should follow the format in `OVERVIEW.md`.
 
-**Critical rigorous proof gaps (ordered by priority):**
-
-1. **D7=SU(3) formal derivation** (most fundamental): The entire proof depends on the
-   D7 compression threshold producing exactly SU(3). Currently T2a from structural arguments
-   in Cycles 59–74. Needs: formal proof that V(φ) compression cascade terminates at SU(3)
-   and no other gauge group.
-
-2. **Self-contained IR mass gap bound** (remove external input): The SC path Δ_SC ≥ 1033 MeV
-   uses α_s(μ<1 GeV) ≥ 0.47 from PDG. A DFC-standalone proof cannot have external experimental
-   inputs on the critical path. Need: derive the IR coupling lower bound from V(φ) alone using
-   only b₀=11>0 and g_eff²=8/27, or use the D5 path (Δ_D5≥861 MeV) which is PDG-free but
-   currently T2a via Seiler 1982 SU(2)→SU(3) extension.
-
-3. **Formal Hilbert space construction** (JW2): The GNS construction from OS axioms to a
-   Hilbert space H on ℝ⁴. The individual OS axiom verifications need to be step-by-step
-   formal with each condition checked at T1 level.
-
-4. **Seiler 1982 SU(3) extension for D5**: Seiler 1982 proves SC polymer analyticity for
-   SU(2). The SU(3) extension used in the D5 path (C287) is T2a structural. Need formal
-   theorem or proof that Seiler 1982 extends to SU(N) for all N≥2.
-
-5. **LaTeX proof document**: The formal paper assembling all rigorous steps. This is the
-   deliverable that constitutes an actual proof candidate. Cannot be written until steps 1–4
-   are resolved.
+Priority topics:
+- Absolute energy density limits from kink width ξ (T1 structural)
+- Communication speed limits from substrate propagation
+- Precision measurement predictions: g−2 electron/muon from DFC α_em chain
+- What DFC predicts for upcoming experiments (LHC Run 4, CMB-S4, etc.)
+- Absence predictions: no axion (T2a), no proton decay (T1), no SUSY (T3)
 
 ---
 
-**This focus continues until one stopping condition is met:**
-- **Hard barrier**: A fundamental obstruction (document in `ISSUES.md`; return to DFC).
-- **Complete rigorous proof**: Every critical-path step is T1 or cited theorem; LaTeX paper
-  written; proof is self-contained from V(φ) without external experimental inputs.
+**Track D — New Open Problem Exploration**
+
+Identify a significant open problem in mathematics or physics that DFC can address
+as a framework, analogous to how Yang-Mills was addressed. The test is not whether
+DFC *solves* the problem immediately, but whether it provides a *novel structural
+angle* — a new connection that existing approaches lack.
+
+**Candidate problems to evaluate** (spend one cycle on each to assess viability):
+
+| Problem | DFC angle | Priority |
+|---|---|---|
+| Navier-Stokes regularity (Clay) | Substrate field equation □φ=V'(φ) as a nonlinear wave; kink turbulence | Explore |
+| Baryon asymmetry | D6/D7 CP-phase asymmetry → matter dominance | Explore |
+| Dark matter identity | Stable kink configurations at intermediate depths | Explore |
+| Cosmological constant problem | Vacuum energy from substrate compression depth | Explore |
+| Proton spin crisis | Spin from Jackiw-Rebbi zero modes vs. parton contribution | Explore |
+| Quantum gravity / Planck scale | D4 inertia → G_N; Planck scale from ξ≈l_Pl | Explore |
+
+For each: write a one-page structural argument (`foundations/new_problem_NAME.md`),
+identify what DFC predicts, identify the key T2a→T1 upgrade path, and record
+honestly where DFC has nothing new to say vs. existing approaches.
 
 ---
 
-### ⚠ ONGOING REVIEW AND CRITIQUE CYCLE — MANDATORY FOR CLAY PROOF
-
-**Phase (beginning Cycle 319): External AI model peer review is now a standard step
-in the Clay Prize proof development cycle.**
-
-The Clay Prize requires a proof that passes peer review by mathematical referees.
-To simulate this standard before submission, the following protocol is in effect:
-
-**Review protocol:**
-1. After every major structural advance in the Clay proof (new theorem, new module,
-   or revision of `ym_clay_proof.tex`), seek a critique from an external AI model
-   (Claude, GPT-4, Gemini, etc.) by sharing the relevant proof sections.
-2. Document all reviewer points in `ISSUES.md §T15` (or a new §T16, §T17... for
-   subsequent reviews), categorized as: (A) already addressed, (B) genuine gap,
-   (C) strategic/framing concern.
-3. Update `REVIEW_RESPONSE.md` with a point-by-point response to each review.
-4. Prioritize the "genuine gap" category for immediate next-cycle work.
-5. A Clay proof cycle is NOT complete until either: (a) all "genuine gap" points from
-   the most recent review have been addressed, OR (b) the point has been formally
-   documented in ISSUES.md as a known open problem with a defined path to resolution.
-
-**Current open review points (Cycle 319, ISSUES.md §T15):**
-
-| Priority | Gap | Target module | Status |
-|---|---|---|---|
-| **1** | Continuum limit a→0 formal theorem | `ym_continuum_limit_formal.py` | **NEXT** |
-| **2** | JR holonomy BVP (Assumption A → theorem) | `ym_jr_holonomy_bvp.py` | After #1 |
-| 3 | LaTeX Lemma 1: I₄=C₂ selection mechanism remark | `ym_clay_proof.tex` | After #2 |
-| 4 | LaTeX: Clay-proper / DFC-physics strategic split | `ym_clay_proof.tex` restructure | After #3 |
-
-**Tracking documents:**
-- Open review points: `ISSUES.md §T15`
-- Point-by-point responses: `REVIEW_RESPONSE.md §Cycle 319`
-- Proof document: `equations/ym_clay_proof.tex`
-
----
-
-**Key structural assets available (do not re-derive):**
-(Full list: `foundations/yang_mills_clay.md` §Key Structural Assets)
-- I₄ = C₂(fund, SU(3)) = 4/3: **T1 exact** (`fermion_representation.py`)
-- Q_top = 2: **T1 exact** (`yang_mills_mass_gap.py`)
-- β_lat = 81/4: **T1 exact Fraction** (from g_eff²=8/27)
-- KP < 125/196 < 1: **T1 rational arithmetic** (`ym_algebraic_kp_bound.py`, C292)
-- C_Dob < 120/117649 < 1: **T1 rational arithmetic** (`ym_dobrushin_algebraic.py`, C293)
-- κ = 1/2: **T1 exact Fraction** DFC→YM plaquette (`ym_dfc_ym_algebraic.py`, C294)
-- |1−z₃|=√3≠0 → ⟨P⟩=0 algebraically: **T1** (`ym_sp2_elitzur_confinement.py`, C204)
-- σ = I₄×Λ²: **T2a** (`ym_sigma_i4_formal.py`, C295)
-- Flat Killing metric Tr(T^aT^b)=(1/2)δ^{ab}: **T1** (`ym_moduli_metric.py`, C184)
-- OS-Seiler RP (β_lat=81/4>0): **cited theorem** (Seiler 1978) + T1 condition check
-- Δ_D5 ≥ 861 MeV Balaban-free: **T2a** (`ym_d5_continuum_gap.py`, C287)
-- Δ_SC ≥ 1033 MeV: **T2a** but uses PDG α_s input — NOT standalone rigorous
-- E3 moduli M_DFC≅A_flat/G all s≥2: **T2a** (`ym_e3_hs_extension.py`, C291)
-- E2 Gribov not an obstruction: **T2a** (`ym_gribov_absence.py`, C290)
-
-Each new Clay equation module goes in `equations/` with prefix `ym_`.
-
----
-
-**Secondary priorities (when no Clay rigorous-proof step is tractable):**
-
-1. **α_em(0) derivation** — prove A−B = ln(1/α_em(0)) algebraically (Cycle 139).
-2. **Strong CP formation** — formal D7 dynamics → θ=0 selection T3→T2a (Cycle 147).
-3. **Quark mass matrix phase** — derive arg(det M_q)=0 from D6/D7 interface (Cycle 153).
-
-**After every push, also check `ISSUES.md`** — centralized tracker for open questions,
+**After every push, check `ISSUES.md`** — centralized tracker for open questions,
 known failures, internal tensions, retracted claims, and blocked derivations.
 
 ---
@@ -602,24 +534,32 @@ implied by the substrate structure.
 
 ---
 
-### Step 1 — Critical Step (bottleneck-focused)
+### Step 1 — Main Work (choose one track per cycle)
 
-Identify a physics phenomenon not yet in `phenomena/` (or a placeholder needing content),
-or a derivation step that advances one of the three bottlenecks above. Choose one with
-preferential weight toward phenomena that connect to the three bottlenecks.
+Each cycle, choose **one** of the four tracks from the PRIMARY OBJECTIVES section above.
+Do not combine tracks in one cycle. Suggested rotation: A → B → C → D → A → ...
+but any order is fine — follow whatever is most tractable.
 
-1. Write the **conceptual document** in `phenomena/` following the standard format:
-   - One-Sentence Synthesis (DFC account, not a placeholder)
-   - Observation (what is measured/observed)
-   - Standard Explanation (SM account, concise)
-   - Dimensional Folding Explanation (DFC account — structural, specific, no anthropomorphism)
-   - Formal Equations (key equations, even if some are stubs)
-   - Consistency Checks table
-   - Open Questions (honest about what is not yet derived)
-   - Connections (links to related docs)
-2. Write or update the **equation module** in `equations/` with numerical verification.
-   Every quantitative claim in a phenomenon doc should have a backing Python calculation.
-   Run it and record the output in the document.
+**Track A (Math Formalization):** Pick one open derivation from the priority list
+and advance it. Write or update the equation module in `equations/`. Run it and
+record tier upgrades honestly.
+
+**Track B (Educational):** Create the next missing educational module from the list
+in PRIMARY OBJECTIVES, or substantially expand an existing one. Follow writing rules:
+plain English first, equations second, Tier-honest, 500–1500 words, self-contained.
+
+**Track C (Practical Applications):** Write one entry in `practical_applications/`
+following `OVERVIEW.md` format, derived from a verified (T1 or T2a) DFC result.
+
+**Track D (New Open Problem):** Write a one-page structural argument in
+`foundations/` evaluating one candidate problem from the table above. Identify
+what DFC predicts, the path to T2a, and honestly where DFC adds nothing new.
+
+**If doing a phenomena document** (supplement to any track), follow the standard format:
+- One-Sentence Synthesis (DFC account, not a placeholder)
+- Observation / Standard Explanation / DFC account
+- Consistency Checks table with at least one ✗ if any prediction fails
+- Open Questions / Connections
 
 ### Step 2 — Continue with a Random Open Issue
 
@@ -656,19 +596,29 @@ The model must be teachable to someone with no physics background. Educational m
 live in `educational/` and will form a complete course in the model. Each session,
 either create the next module that does not yet exist or update an existing one.
 
-**Planned module list** (work through in order; create if missing, update if exists):
+**Module list** (00–11 complete; continue from 12):
 
 ```
 educational/
-├── 00_overview.md          ← What is DFC? One-page answer.
-├── 01_the_substrate.md     ← The one object, V(φ), kinks
-├── 02_compression.md       ← Why it compresses; what bifurcation means
-├── 03_depth_map.md         ← D1-D7 as compression stages (provisional)
-├── 04_forces.md            ← How U(1)/SU(2)/SU(3) appear from fold topology
-├── 05_particles.md         ← Electrons, quarks, neutrinos as kink configurations
-├── 06_predictions.md       ← What the model predicts; how to test it
-├── 07_open_questions.md    ← What is not yet derived; honest gaps
-└── 08_mathematics.md       ← The key equations, explained in plain language
+├── 00_overview.md          ← complete
+├── 01_the_substrate.md     ← complete
+├── 02_compression.md       ← complete (stub — expand)
+├── 03_depth_map.md         ← complete
+├── 04_forces.md            ← complete
+├── 05_particles.md         ← complete
+├── 06_predictions.md       ← complete
+├── 07_open_questions.md    ← complete (update each cycle)
+├── 08_mathematics.md       ← complete
+├── 09_i4_identity.md       ← complete (C321)
+├── 10_cascade_uniqueness.md← complete (C321)
+├── 11_36pi_topology.md     ← complete (C321)
+├── 12_substrate_topology.md    ← NEXT: kink topology, Q_top, winding numbers
+├── 13_mass_from_compression.md ← mass at D4; inertia as fold resistance
+├── 14_spacetime_emergence.md   ← D3 localization → apparent 3D space
+├── 15_dark_matter.md           ← DFC predictions / absence
+├── 16_cosmology.md             ← Hubble constant, cosmic compression
+├── 17_quantum_mechanics.md     ← measurement, interference from fold perspective
+└── 18_open_problems.md         ← honest map of remaining gaps
 ```
 
 **Writing rules for educational modules:**
