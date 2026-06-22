@@ -586,8 +586,15 @@ Audit scope is the full repository — `foundations/`, `phenomena/`, `equations/
    - Derivation steps marked as "established" that are actually assumptions or postulates
    - Tier assignments inconsistent with the Scientific Merit Criteria (foundations/scientific_merit.md)
    - Stale, missing, or outdated cross-references
-   - Items marked "OPEN" that were resolved in a later cycle
+   - Items marked "OPEN" that were resolved in a later development cycle
    - Mathematical relations in prose without a prior natural-language statement
+   - **Internal processing notes visible in the document** — any "Wait —", "Let me", "Actually,",
+     "More directly:", or live self-correction text that was written during drafting and not removed.
+     These must be deleted and replaced with clean, final prose.
+   - **Cycle numbers in public-facing documents** — `(Cycle XX)`, `(Cycle XX; ...)`, `CLOSED Cycle XX`,
+     "Cycle 144", etc. Cycle tracking belongs in `push_history.md` only. Remove from README.md,
+     educational modules, phenomena docs, and foundations docs. Keep in CLAUDE.md (this file),
+     ISSUES.md, push_history.md, and yang_mills_clay.md where they serve as internal tracking.
 4. Update the document to match the current state of the model.
 
 ### Step 4 — Create or Update a Random Educational/Teaching Document
@@ -646,7 +653,7 @@ Then return to Step 1.
 
 ## Document Standards
 
-### Conceptual Documents (foundations/, phenomena/)
+### Conceptual Documents (foundations/, phenomena/, educational/)
 
 - The **One-Sentence Synthesis** must state the DFC account, not be a placeholder.
 - The **Consistency Checks** table must include at least one row marked ✗ if any
@@ -654,6 +661,13 @@ Then return to Step 1.
 - **Open Questions** must be specific and actionable.
 - Never mark something as "established" unless there is a completed equation or
   formal argument.
+- **No internal processing text.** Documents must read as finished, public-facing writing.
+  Do not leave in: self-corrections mid-paragraph ("Wait —", "Actually,", "More directly:"),
+  tentative drafting language ("Let me state this more carefully"), or live revision notes.
+  Write the correct version; remove the path to it.
+- **No cycle numbers in public documents.** Cycle tracking is for `push_history.md`,
+  `ISSUES.md`, `yang_mills_clay.md`, and `CLAUDE.md` only. `README.md`, `educational/`,
+  `phenomena/`, and `foundations/` documents must not contain "(Cycle XX)" references.
 
 ### Equation Modules (equations/)
 
