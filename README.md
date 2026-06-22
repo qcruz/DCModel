@@ -175,6 +175,7 @@ educational/              Step-by-step modules teaching the model from scratch
   14_spacetime_emergence.md   D3 localization → apparent 3D space; gravity; H₀=67.26
   15_dark_matter.md        DFC dark matter as D4–D5 intermediate closure; ~35 keV candidate
   16_cosmology.md          Hubble constant, cosmic expansion from substrate localization
+  17_quantum_mechanics.md  Measurement as localization event; interference from field propagation
   ...
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories
