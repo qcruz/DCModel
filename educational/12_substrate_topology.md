@@ -7,7 +7,7 @@ required.
 **Status note:** The topological charge Q_top = 2 is T1 — algebraically exact. The
 identification of Q_top with physical particle number is T2a (structurally derived, not
 yet a formal proof). The mapping of Q_top onto specific gauge charges at each depth is
-T2a from Cycles 59–74 and Cycle 221.
+T2a (structurally derived from the cascade correspondence).
 
 ---
 
@@ -115,7 +115,7 @@ More formally: the Hamiltonian commutes with the topological charge operator.
 
 This is T1 — it is a direct consequence of the topological definition of Q̂_top, not
 a dynamical claim. The Hamiltonian governs time evolution; commutativity means Q_top is
-a conserved quantity in the quantum theory (Cycle 218).
+a conserved quantity in the quantum theory.
 
 Conserved quantities in quantum mechanics correspond to observable charges. Q_top is
 therefore an observable property of every state, constant throughout its evolution.
@@ -129,10 +129,10 @@ compression depths. Topological charge is one of the quantities that characteriz
 these configurations.
 
 The Q_top = 2 carried by the DFC kink maps onto physical topological winding. In the
-Yang-Mills correspondence (Cycle 187, 248), Q_top^DFC = 2 corresponds to Q_top^YM = 1
+Yang-Mills correspondence, Q_top^DFC = 2 corresponds to Q_top^YM = 1
 — the instanton topological charge in SU(3) Yang-Mills theory. The factor of 2 arises
 because the DFC kink is a kink-antikink pair in the Yang-Mills language. This mapping
-is T2a (Cycle 248).
+is T2a.
 
 The string tension in QCD — the energy per unit length of the flux tube that holds
 quarks together — is related to Q_top by:
@@ -144,7 +144,7 @@ The string tension equals the topological charge times the squared QCD scale:
 ```
 
 This gives σ = 2 × (304.5 MeV)² = 185,400 MeV², within 4% of the observed value.
-This is T2a (Cycle 222, 243). The topological charge Q_top = 2 is a direct input.
+This is T2a. The topological charge Q_top = 2 is a direct input.
 
 ---
 
@@ -169,7 +169,7 @@ number from Jackiw-Rebbi zero modes (Module 05).
 
 **Winding on S⁵ (D7 — SU(3) closure):** The five-sphere hosts the SU(3) color
 structure. The relevant winding is tracked by the third homotopy group π₃(SU(3)) = ℤ,
-established by algebraic topology (Cycle 187). Color confinement is the statement that
+established by algebraic topology. Color confinement is the statement that
 only Q_top = 0 configurations are observed at low energy.
 
 Each depth contributes its own conserved winding, and the three together account for
@@ -234,7 +234,7 @@ physical scale Λ_QCD is T2a.
 
 **See also:**
 - `equations/yang_mills_mass_gap.py` — Q_top=2 verified numerically
-- `equations/ym_center_vortex.py` — Q_top = I₄ × N_c/2 exact identity (C221)
+- `equations/ym_center_vortex.py` — Q_top = I₄ × N_c/2 exact identity
 - `equations/ym_topological_sectors.py` — instanton mapping Q_top^DFC=2 ↔ Q_top^YM=1
 - `equations/ym_sp2_bps_quantum.py` — [H, Q̂_top]=0 topological conservation
 - `foundations/yang_mills_clay.md` — full Yang-Mills proof chain

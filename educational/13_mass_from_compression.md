@@ -57,7 +57,7 @@ mass-like quantity in the model.
 
 The kink rest energy is determined entirely by the potential V(φ) and by the parameter
 β = 1/(9π) derived from the compression cascade self-consistency condition (Module 11).
-The result, worked out exactly in Module 01 and verified in Cycle 171, is:
+The result, worked out exactly in Module 01, is:
 
 The kink rest energy equals thirty-six times pi in units where the Planck mass is one.
 
@@ -114,7 +114,7 @@ roots, equals exactly two-thirds.
 (m_e + m_μ + m_τ) / (√m_e + √m_μ + √m_τ)² = 2/3
 ```
 
-In DFC, this relation is a structural identity of the D6 winding sector (T2a, Cycle 146).
+In DFC, this relation is a structural identity of the D6 winding sector (T2a).
 It predicts:
 
 ```
@@ -149,12 +149,12 @@ The neutrino masses are far smaller than the charged lepton masses — by a fact
 least a billion. In DFC, this extreme hierarchy is accounted for by the **depth correction**
 at D7: the neutrino's depth configuration at the SU(3) threshold receives a multiplicative
 shift of magnitude 1/(6π) — a small but nonzero correction from the center vortex
-structure at D7 (T3, Cycle 205). This shifts the neutrino mass eigenvalues by a fractional
+structure at D7 (T3). This shifts the neutrino mass eigenvalues by a fractional
 amount that is naturally small, producing the observed hierarchy without fine-tuning.
 
 The neutrino mass ratio m₃/m₂ is currently predicted at a level that matches observation
 to within 8.3% — an open discrepancy that tracks the T2b status of the neutrino mass
-account (Cycle 165).
+account (Tier 2b).
 
 ---
 

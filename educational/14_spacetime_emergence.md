@@ -8,7 +8,7 @@ the idea of a counting sequence is required.
 structurally motivated and consistent with all verified DFC results, but not yet a
 formal derivation. The count of three apparent spatial directions from the Hopf
 cascade S¹→S³→S⁵ is T2a. The derivation of Minkowski signature (1,3) — one time
-direction and three spatial — is T2a from Cycle 217 (stability argument). The Hubble
+direction and three spatial — is T2a (stability argument). The Hubble
 constant prediction H₀ = 67.26 km/s/Mpc (0.2% error) is T2a.
 
 ---
@@ -93,7 +93,7 @@ configurations correspond to deeper compression or to the consequences of bifurc
 events that have already occurred.
 
 The stability argument for why there is exactly **one** such direction (and not two
-or three) is worked out in Cycle 217 at T2a: requiring that the kink's energy be
+or three) is at T2a: requiring that the kink's energy be
 bounded below — that the Bogomolny inequality holds and there is a true vacuum —
 forces the metric signature to be (1, 3), meaning one time-like direction and three
 space-like. With two or more time-like directions, the kink energy is not bounded
@@ -128,8 +128,7 @@ threshold parameter α, measured in Planck length units.
 ξ = √(2/α) ≈ 0.87 l_Pl
 ```
 
-This is T2a (Cycles 169–172, using α = ∛18 from the compression self-consistency
-condition). The kink width is approximately one Planck length — which means the
+This is T2a (using α = ∛18 from the compression self-consistency condition). The kink width is approximately one Planck length — which means the
 Planck scale is not a free parameter in DFC, but a structural consequence of the
 compression dynamics.
 
@@ -204,6 +203,6 @@ Three specific gaps remain:
 
 **See also:**
 - `equations/cosmology.py` — Hubble constant T2a derivation
-- `equations/ym_spacetime_signature.py` — Minkowski (1,3) stability argument (Cycle 217)
+- `equations/ym_spacetime_signature.py` — Minkowski (1,3) stability argument
 - `phenomena/cosmology/cosmic_expansion.md` — full cosmological account
 - `foundations/dimensional_stack.md` — D1–D7 depth behavior map
