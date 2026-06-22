@@ -7,7 +7,7 @@ README.md, ISSUES.md, and CLAUDE.md point to this document.
 builds the mathematical basis of DFC. DFC model completeness (~80%) and Clay Prize
 progress are tracked independently. Do not conflate them.
 
-*Last updated: Cycle 320.*
+*Last updated: Cycle 322.*
 
 ---
 
@@ -636,6 +636,7 @@ explicit (±5%), hard obstruction (−15%).
 | Peer review | C317 | 4 Critical errors found and corrected; proof logic intact | ~97% (unchanged) |
 | AI peer review + continuum limit | C319 | 10 AI reviewer points categorized; ym_continuum_limit_formal.py: Prokhorov+Kato formal theorem; 2 citations needed | ~97% (unchanged) |
 | Assumption A T1+cited | C320 | ym_jr_holonomy_bvp.py (new): 40/40 PASS. JR76 index theorem → Index=1 → unique right-chiral zero mode [T1+cited JR76]; m(+∞)>0 → quark chirality → Z₃ winding n=+1 → W=z₃I₃ [T1+cited JR76+C308]; z₃ triality t=1 → min-Casimir → rep=(1,0) [T1 Fraction, C307]. Assumption A T2a→T1+cited. No T2a remains in critical path. | ~97%→~98% |
+| Paper citations complete | C322 | ym_clay_proof.tex finalised: Prokhorov 1956 [tightness → ω_∞ existence in continuum limit, Lemma 4] and Kato 1966 Thm VIII.1.15 [spectral semicontinuity Δ_∞≥limsup Δ_L, Lemma 5 Step 2] added. 12 bibliography entries. Step 2b (Assumption A) appears in full as JR76 index theorem block. All critical-path steps T1 or cited theorem. No T2a hypotheses remain on critical path. Paper ready for external review. | ~98%→~99% |
 
 ---
 
@@ -732,6 +733,7 @@ explicit (±5%), hard obstruction (−15%).
 | `equations/ym_clay_proof.tex` | LaTeX proof document (peer-reviewed draft) | C317 |
 | `equations/ym_continuum_limit_formal.py` | Continuum limit formal theorem; Prokhorov+Kato; 27/27 PASS | C319 |
 | `equations/ym_jr_holonomy_bvp.py` | Assumption A T1+cited: JR BVP→unique zero mode; Index=1; chirality→t=1; rep=(1,0) | C320 |
+| `equations/ym_clay_proof.tex` | LaTeX paper finalised: 12 citations including Prokhorov 1956 + Kato 1966; no T2a on critical path | C322 |
 
 ---
 

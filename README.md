@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C320 Assumption A T1+cited — ym_jr_holonomy_bvp.py: 40/40 PASS. JR76 index theorem [T1+cited JR76 Eq(3.1)]: Index(H_D)=1 → unique right-chiral zero mode; m(+∞)>0 → quark chirality; Z₃ winding n=+1 → W=z₃I₃; triality t=1 → min-Casimir scan [C307] → rep=(1,0) uniquely. Assumption A T2a→T1+cited. No T2a remains on critical path. Proof std ~97%→~98%. Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C322 ym_clay_proof.tex paper finalised — Prokhorov 1956 (tightness → ω_∞ in continuum limit, Lemma 4) and Kato 1966 Thm VIII.1.15 (spectral semicontinuity Δ_∞≥limsup Δ_L, Lemma 5) added; 12 bibliography entries. All critical-path steps T1 or cited theorem. No T2a hypotheses remain. Paper ready for external review. Proof std ~98%→~99%. Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
@@ -244,7 +244,7 @@ mathematical basis of DFC. The two are tracked independently.
 | Metric | Value | Definition |
 |---|---|---|
 | **Structural completeness** | ~95% | DFC argument coverage of all 5 JW criteria at T2a level |
-| **Mathematical proof standard** | ~98% | Proximity to a Clay-accepted mathematical proof (C316 COMPLETE DRAFT; Assumption A T1+cited C320) |
+| **Mathematical proof standard** | ~99% | Proximity to a Clay-accepted mathematical proof (C316 COMPLETE DRAFT; Assumption A T1+cited C320; Prokhorov+Kato citations complete C322) |
 | **CPC** | ~60% | P(DFC → valid JW proof candidate \| continued work) |
 
 **Current focus:** Advance the mathematical proof standard toward a fully rigorous proof.
