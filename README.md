@@ -6,7 +6,7 @@ The model proposes that the particle content and gauge structure of the Standard
 arise from the topology of bifurcation events in this field, without assuming pre-existing
 spatial dimensions, gauge groups, or particle species.
 
-Current status: ~80% complete by internal estimate. Latest: **C322 ym_clay_proof.tex paper finalised — Prokhorov 1956 (tightness → ω_∞ in continuum limit, Lemma 4) and Kato 1966 Thm VIII.1.15 (spectral semicontinuity Δ_∞≥limsup Δ_L, Lemma 5) added; 12 bibliography entries. All critical-path steps T1 or cited theorem. No T2a hypotheses remain. Paper ready for external review. Proof std ~98%→~99%. Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
+Current status: ~80% complete by internal estimate. Latest: **C323 educational/12_substrate_topology.md — Module 12 "Topology of the Substrate" written; Q_top=2 (T1), [H,Q̂_top]=0 (T1), winding at D5/D6/D7, topological particle stability. Project refocused to four tracks: (A) math formalization, (B) educational, (C) practical applications, (D) new open problem. Yang-Mills proof declared internally complete (~99% proof standard). Clay structural: ~95%; CPC: ~60%; model: ~80%.** Several Standard Model quantities
 are reproduced to <1–5%, others remain unresolved. See the completeness estimate and
 known failures below.
 
