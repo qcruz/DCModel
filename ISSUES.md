@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-21 (Cycles 122–319)
+**Last updated:** 2026-06-22 (Cycles 122–328)
 
 ---
 
@@ -556,6 +556,28 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - **Status (Cycle 212/213):** T12 blocking gap unchanged. Yang-Mills work: C212 **SP2 gap existence T2a** — Δ_phys≥1033 MeV>0 [T2a multi-method]. This establishes σ>0 [T2a] structurally (σ>0↔gap>0 in 4D YM), but does NOT provide the exact value σ=Q_top×Λ². C213 JW criteria (ym_clay_requirements.py) maps JW5 T2a (gap existence) while noting the hadronic VP piece δ(Δα)^{NP}=0.00102 requires the spectral density R^{had}−R^{parton} from the full D7 confinement dynamics. The connection is: SP2 T2a implies ρ,ω,φ resonances exist (confinement is established), but their VP contribution to Δα requires a quantitative spectral density computation. T12 remains T4 for the 0.00102 piece. No numerical improvement to 1/α_em(0).
   - **C218 NEW:** SP2 BPS form 1+1D T2a (`ym_sp2_bps_quantum.py`): H|_{Q=2n} ≥ n × I₄ × m_hat [T2a composite] where m_hat = 42.35 M_Pl and I₄ = C₂(fund,SU(3)) = 4/3 appears explicitly. BPS form makes the connection σ ∝ m_kink × (string length) more explicit: σ = Q_top × Λ² has the same I₄ prefactor from the kink shape. Quantum BPS form (1+1D) is now T2a, but the σ=Q_top×Λ² derivation from first principles is still T4 (requires 4D promotion of BPS form). T12 blocking gap (δ(Δα)^{NP}=0.00102) unchanged.
 - Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/d7_nonpert_coefficients.py` (Cycle 160), `equations/alpha_em_eccc.py` (Cycle 139), `equations/ym_4d_gap_extension.py` (Cycle 189), `equations/ym_gauge_decoupling.py` (Cycle 181)
+
+### T16 — Cosmological Constant Problem: Track D Structural Exploration (Cycle 328)
+
+- **Status:** Track D exploration — T3 structural argument. No quantitative prediction.
+- **DFC angle:** Two distinct energy scales at different substrate compression depths:
+  (1) Deep compression (D4–D7): energy density set by kink structure at Planck scale → M_Pl⁴ scale
+  (2) Shallow compression (cosmic, D1–D3): energy density at cosmological depth → (2.3 meV)⁴
+  These are not additive (different depths, not modes in the same background); eliminates
+  the 10¹²³ cancellation problem structurally.
+- **What DFC adds:** Reframes the problem — Λ_cosm is the substrate's energy density at
+  cosmic compression depth, not a sum of QFT zero-point modes. Comparable to extra-dimension
+  approaches at T3. Does NOT derive ρ_Λ = (2.3 meV)⁴ from V(φ).
+- **T3 speculative connection:** ρ_Λ^(1/4) ≈ 2.3 meV ≈ m_ν (lightest) — both may arise
+  from the same D7 depth correction δd = 1/(6π). Not proved.
+- **File:** `foundations/cosmological_constant_dfc.md` (Cycle 328)
+- **Path to T2a:** Identify substrate energy density at D1–D2 cosmic compression depth
+  from V(φ) dynamics; show this is parametrically (2.3 meV)⁴.
+- **Honest assessment:** DFC reframes the cosmological constant problem; it does not solve it.
+  The reframed question may be more tractable than mode-sum cancellation, but this has not
+  been demonstrated quantitatively.
+
+---
 
 ### T15 — External AI Peer Review — Clay Prize Proof (Cycle 319)
 
