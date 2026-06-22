@@ -518,10 +518,23 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   single crossing t=1 uniquely selects (1,0). Chirality provides independent confirmation.
   ALL ASSERTIONS PASSED. T4 Dynkin label: T3 → **T2a [C235]**.
 
-- **Updated status:** T4 fully T2a [C235].
-  - Rep TYPE T2a [C217]: Z₃ triality t=1 → fundamental (dim=3)
-  - Dynkin label T2a [C235]: triality (1,0)≠(0,1) + chirality left-handed = quark
-  - Remaining T3 bonus: explicit holonomy P exp(i∮A·dx) giving Dynkin (1,0) [not blocking T2a]
+- **C320 UPGRADE [T1+cited]: Assumption A closed — T4 now T1+cited.**
+  `equations/ym_jr_holonomy_bvp.py` (C320):
+  Assumption A = "D6 kink crossing D7 background acquires JR zero mode with triality t=1"
+  is now T1+cited via JR76 index theorem:
+  (A) Index(H_D) = (sign(m+)−sign(m−))/2 = 1 → exactly one right-chiral zero mode [T1+cited JR76]
+  (B) m_0 > 0, φ_0 > 0 → M(+∞) > 0 → right-chiral → quark [T1]
+  (C) JR fermion number F = +1/2 [T1+cited JR76]
+  (D) Z₃ winding n=+1 → W = z₃I₃ generator of π₁(S⁵/Z₃)=Z₃ [T1+cited C308 Hatcher 1.38]
+  (E) F=+1/2 → Z₃ winding n=+1 → generator → triality t=1 [T1+cited JR76]
+  (F) t=1 scan → min-Casimir = (1,0), C₂=4/3=I₄ [T1 Fraction, C307]
+  Assumption A T2a→T1+cited. The triality t=1 determination is now T1+cited.
+
+- **Updated status (C320): T4 T1+cited.**
+  - Assumption A (JR holonomy t=1) T1+cited [C320]: JR76 index theorem → right-chiral zero mode → Z₃ winding n=+1 → t=1
+  - Rep TYPE T1+cited [C217+C320]: Z₃ triality t=1 T1+cited → fundamental (dim=3) T1
+  - Dynkin label T1+cited [C235+C320]: triality (1,0) T1+cited + chirality left-handed T1 → quark
+  - Remaining T3 bonus: explicit holonomy P exp(i∮A·dx) giving Dynkin (1,0) [not blocking T1+cited]
 
 - **Files:** `equations/fermion_representation.py` (C177), `equations/ym_jackiw_rebbi_su3.py` (C203), `equations/ym_poincare_covariance.py` (C214), `equations/ym_sun_generality.py` (C215), `equations/ym_jackiw_rebbi_su3_gauge.py` (C217), `equations/ym_string_tension.py` (C220 Part F), `equations/ym_jr_chirality.py` (C235, Dynkin label T2a), `foundations/three_generations.md`
 

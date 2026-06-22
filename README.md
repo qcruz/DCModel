@@ -170,6 +170,11 @@ educational/              Step-by-step modules teaching the model from scratch
   09_i4_identity.md       I₄=4/3 Casimir identity and its five structural roles
   10_cascade_uniqueness.md  S¹→S³→S⁵ cascade: why SU(3) and not something else
   11_36pi_topology.md     Why 1/α_em = 36π: sphere dimensions, kink action, closure
+  12_substrate_topology.md  Kink topology, Q_top=2, winding numbers, particle stability
+  13_mass_from_compression.md  Mass from D4 inertia; E_kink=36π M_Pl; Koide; lepton ratios
+  14_spacetime_emergence.md   D3 localization → apparent 3D space; gravity; H₀=67.26
+  15_dark_matter.md        DFC dark matter as D4–D5 intermediate closure; ~35 keV candidate
+  16_cosmology.md          Hubble constant, cosmic expansion from substrate localization
   ...
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories
