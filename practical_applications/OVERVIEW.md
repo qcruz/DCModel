@@ -106,7 +106,8 @@ These are not predictions — they are engineering thought experiments.
 | File | Limit | Confidence | Status |
 |---|---|---|---|
 | `fundamental_limits.md` | Five canonical engineering limits from DFC | Pool A/B | Complete |
-| `absence_predictions.md` | No axion (T2a), no proton decay (T1), no SUSY (T3), no monopoles (T2a) | Pool A/B | Complete (Cycle 326) |
+| `absence_predictions.md` | No axion (T2a), no proton decay (T1), no SUSY (T3), no monopoles (T2a) | Pool A/B | Complete |
+| `localization_rate_ceiling.md` | Maximum measurement frequency: f_max ~ 10^43 Hz (spinodal collapse timescale) | Pool A | Complete |
 
 ---
 

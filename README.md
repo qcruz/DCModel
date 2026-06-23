@@ -187,6 +187,8 @@ comparisons/              This model vs. Standard Model, String Theory, GR, GUT
 practical_applications/   Engineering limits and implications derived from DFC
   OVERVIEW.md             Document type protocol and rotation guide
   fundamental_limits.md   Five canonical engineering ceilings from substrate structure
+  absence_predictions.md  No axion (T2a), no proton decay (T1), no SUSY (T3), no monopoles (T2a)
+  localization_rate_ceiling.md  Maximum measurement frequency: f_max ~ 10^43 Hz from spinodal collapse timescale
 archive/                  Original source documents
 data/                     Observational reference values (PDG, cosmological)
 ```
