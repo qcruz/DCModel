@@ -53,18 +53,25 @@ formal derivation of the depth correction formula from the substrate dynamics.
 
 ## Category 2 — Quantum Mechanics
 
-**The Born rule (T4)**
+**The Born rule (T3)**
 
 As described in Module 17, the quantum wave function is identified with the slow
 envelope of a kink's fast internal oscillation. This explains why quantum mechanics
-has complex numbers and the Schrödinger equation. But it does not explain why the
+has complex numbers and the Schrödinger equation. But it does not yet explain why the
 probability of finding a particle at a given location is the *square* of the wave
 function amplitude rather than the amplitude itself.
 
-This rule — P = |ψ|² — is the link between the wave function and any experiment.
-Without a derivation of it, the DFC quantum account is incomplete. The gap is genuine:
-no structural argument currently exists for why the substrate sampling statistics would
-naturally produce |ψ|² rather than |ψ|.
+Progress has been made. From V(φ), the slow-envelope derivation establishes the
+Schrödinger equation as a direct consequence of the field equation (the Compton frequency
+satisfies ω_c² = 2α exactly, so the fast-oscillation terms cancel identically). The
+time-averaged energy density at each point then satisfies ⟨ε(x)⟩ ∝ |ψ(x)|² exactly —
+energy density is proportional to the square of the wave function. This derivation chain,
+V(φ)→Schrödinger→⟨ε⟩∝|ψ|², is established at T2a (see `equations/born_rule_schrodinger.py`).
+
+The remaining gap is Step 6: showing that the D3 localization rate at a point x is
+proportional to the local energy density ⟨ε(x)⟩ there. If this coupling follows from
+V(φ), Born rule closes to T2a. This step is T3 — structurally motivated but not yet
+derived from the field equation.
 
 **The collapse mechanism (T3)**
 
@@ -164,7 +171,7 @@ For each open problem, there is a specific kind of progress that would close it:
 | Problem | What would close it |
 |---|---|
 | Electron mass (T4) | Derive α (Planck units) → m_e from substrate + Planck scale identification |
-| Born rule (T4) | Show substrate sampling statistics naturally give |ψ|² weighting |
+| Born rule (T3) | Derive D3 localization rate ∝ ⟨ε(x)⟩ from V(φ) — Step 6 of established T2a chain |
 | Cosmological constant (T4) | Derive D1–D3 cosmic compression energy density from V(φ) |
 | Dark matter abundance (T4) | Derive D4-depth closure production rate in early substrate |
 | α_em(0) identity (T4) | Derive hadronic VP contribution from D7 confinement dynamics |

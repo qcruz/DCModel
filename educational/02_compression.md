@@ -28,7 +28,7 @@ near −φ₀, connected by narrow transition zones called kinks. Those transiti
 where the field varies steeply. They have higher energy density than the surrounding flat
 regions.
 
-The substrate reduces its total energy by making the transition zones as narrow as possible.
+The substrate reduces its energy by making the transition zones as narrow as possible.
 The width of a kink — the length over which the field changes from −φ₀ to +φ₀ — is set by
 the balance between two competing effects:
 
@@ -39,7 +39,7 @@ the balance between two competing effects:
   minimize the time the field spends near φ = 0.
 
 These two effects balance at a characteristic width ξ = √(2/α) — called the correlation
-length. For the DFC substrate, with α = ∛18 (derived, Tier 2a, Cycle 172), this gives
+length. For the DFC substrate, with α = ∛18 (derived, Tier 2a), this gives
 ξ ≈ 0.874 in Planck units. This is the natural length scale of the substrate.
 
 The process of energy minimization — the substrate continuously reducing its gradient and
@@ -125,12 +125,51 @@ quantities from it:
 - **The kink energy** E_kink = (4/3) × α^(3/2) / (β√2) ≈ 113 M_Pl, which sets the
   ultraviolet scale of the substrate. (Tier 1 exact given α, β.)
 - **The quartic coupling** β = 1/(9π) ≈ 0.0354, derived from the instability threshold
-  condition at D5 depth (Tier 2a, Cycle 117).
+  condition at D5 depth (Tier 2a).
 - **The compression threshold** α = ∛18 ≈ 2.621 in Planck units, derived from requiring
-  the D5 closure condition to be self-consistent (Tier 2a, Cycle 172).
+  the D5 closure condition to be self-consistent (Tier 2a).
 - **The kink width** ξ = √(2/α) ≈ 0.874 l_Pl — the substrate's fundamental length scale.
 
 These are not free parameters. They are outputs of the compression logic.
+
+---
+
+## What Compression Produces at the Quantum Level
+
+Compression and bifurcation are large-scale descriptions. They tell us how the substrate
+reorganizes its topology. But the same field equation V(φ) also describes what happens
+at small scales — near a stable vacuum, far from any kink.
+
+A small disturbance away from the stable vacuum φ₀ obeys a linearized field equation.
+The second derivative of V at the stable point, V''(φ₀) = 2α, acts as a squared mass
+for the disturbance. This is the field at rest in the compressed phase.
+
+Now write that small disturbance as a product of a rapidly oscillating carrier wave at
+frequency ω_c = √(2α) — the **Compton frequency** of the substrate — multiplied by a
+slowly varying envelope ψ(x, t). Because the substrate parameters satisfy ω_c² = 2α
+exactly, the rapidly oscillating terms cancel when you substitute this form into the
+linearized field equation. What remains is:
+
+> The time derivative of the envelope equals the spatial curvature of the envelope,
+> divided by twice the Compton frequency.
+
+This is the Schrödinger equation. It is not added to the model as a separate
+postulate — it is a direct consequence of V(φ) and the cancellation ω_c² = 2α. The
+effective mass of excitations is the Compton frequency ω_c = √(2α). (Tier 2a; see
+`equations/born_rule_schrodinger.py`.)
+
+This means quantum wave behavior — superposition, interference, free propagation of
+probability amplitudes — is what small fluctuations of the compressed substrate
+necessarily do. The compression process that stabilizes the vacuum is the same process
+that produces wave mechanics.
+
+A further consequence: the time-averaged energy density of a wave configuration ψ is
+proportional to |ψ|² everywhere. This is the foundation of the Born rule — the quantum
+mechanical rule that says the probability of finding a particle at a location is
+proportional to the squared amplitude of the wave function there. The derivation chain
+from V(φ) to this proportionality is now established at Tier 2a. The remaining step
+(how D3 localization events — measurements — couple to this energy density) is Tier 3
+and open.
 
 ---
 
@@ -143,8 +182,8 @@ they appear at the observed coupling strengths. But we have not yet derived:
 - The exact mechanism by which each closure event occurs (the bifurcation dynamics at
   each D-depth threshold are Tier 3 or below).
 - Why the compression stops at D7 — why there is no D8 interaction regime corresponding
-  to a new gauge group. (A Tier 3 argument exists: D7 confinement blocks further closure;
-  see Open Questions, Module 07.)
+  to a new gauge group. A structural argument exists: D7 confinement blocks further
+  closure (Tier 3; see Open Questions, Module 18).
 - The time-ordering of bifurcations within the compression cascade (this connects to
   the early-universe evolution, not yet formally addressed).
 
@@ -156,13 +195,20 @@ they appear at the observed coupling strengths. But we have not yet derived:
 |---|---|
 | V(φ) instability drives compression | Tier 1 (algebraic consequence of V(φ)) |
 | Kink width ξ = √(2/α) | Tier 1 given α |
-| Quartic coupling β = 1/(9π) | Tier 2a (Cycle 117) |
-| Compression threshold α = ∛18 | Tier 2a (Cycle 172) |
+| Quartic coupling β = 1/(9π) | Tier 2a |
+| Compression threshold α = ∛18 | Tier 2a |
 | Topological charge Q_top = 2 | Tier 1 exact |
+| Compton frequency ω_c = √(2α) from V''(φ₀) | Tier 1 exact |
+| Schrödinger equation from V(φ) slow envelope | Tier 2a (chain V(φ)→□σ+2ασ=0→Schrödinger) |
+| ⟨ε(x)⟩ ∝ \|ψ(x)\|² (Born rule foundation) | Tier 2a given slow-envelope limit |
 | Cascade produces D5/D6/D7 closures | Tier 3 structural account |
-| Why D7 is the final closure depth | Tier 3 (Cycle 182 confinement argument) |
+| Why D7 is the final closure depth | Tier 3 (confinement blocks D8 closure) |
 
 ---
 
 **Next:** Module 03 walks through the D1–D7 depth map — what each compression stage
 produces and what evidence we have for each assignment.
+
+**See also:**
+- `educational/17_quantum_mechanics.md` — measurement and wave behavior in DFC
+- `equations/born_rule_schrodinger.py` — Schrödinger derivation from V(φ)

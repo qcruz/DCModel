@@ -3,11 +3,14 @@
 **Audience:** This module assumes you have read Module 01 (the substrate and kinks) and
 Module 03 (the depth map). No mathematics is required.
 
-**Status note:** The identification of the quantum wave function with the slow-envelope
-dynamics of a fast internal oscillation is T2a — structurally motivated and consistent
-with all verified DFC results, but not yet a formal derivation. The measurement account
-(D3 localization event) is T3. The Born rule (why probability is |ψ|² and not |ψ|) is
-not yet derived from DFC — this is an open problem.
+**Status note:** The slow-envelope derivation of the Schrödinger equation from V(φ) is
+T2a — based on an exact algebraic cancellation (ω_c² = 2α) that causes the fast-oscillation
+terms to drop out identically, leaving the Schrödinger equation as a direct consequence of
+V(φ). The time-averaged energy density ⟨ε(x)⟩ ∝ |ψ(x)|² is T1 exact. Together these
+establish the derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|² at T2a. The measurement account
+(D3 localization event) is T3. The Born rule (why localization probability is proportional
+to |ψ|²) is T3: the derivation chain is established, but the remaining step — showing that
+D3 localization rate is proportional to local energy density ⟨ε(x)⟩ from V(φ) — is open.
 
 ---
 
@@ -59,8 +62,15 @@ and how likely it is to be found in a given region. Because the fast carrier rot
 at a constant rate, stripping it away leaves an envelope that evolves with an imaginary
 unit multiplying time — and that is exactly the imaginary unit in the Schrödinger
 equation. The complex structure of quantum mechanics is the inevitable result of
-describing a slow process that is riding on a fast oscillation. This is T2a — a
-structural argument consistent with the DFC framework, not yet a complete derivation.
+describing a slow process that is riding on a fast oscillation.
+
+This is not merely a structural argument — it is a derivation. The key step is an exact
+algebraic identity: the Compton frequency ω_c satisfies ω_c² = V''(φ₀) = 2α exactly.
+When the slow-envelope form is substituted into the linearized field equation, the terms
+proportional to the fast carrier cancel identically because −ω_c² + 2α = 0. What remains
+is the Schrödinger equation — no approximation beyond the slow-envelope assumption that the
+envelope varies slowly compared to the carrier. This derivation is T2a (see
+`equations/born_rule_schrodinger.py`).
 
 ---
 
@@ -123,9 +133,18 @@ measurement. Two important things remain underived:
 
 **The Born rule.** Quantum mechanics says the probability of finding a particle at a
 given location is the square of the wave function amplitude there — P = |ψ|², not
-P = |ψ|. Why is probability quadratic in the amplitude? DFC has no current derivation
-of this from the substrate dynamics. The Born rule connects the wave function to
-experiment, and without it the account is incomplete. This is an open problem (T4).
+P = |ψ|. DFC now has a partial derivation of this from the substrate.
+
+The first part is established: from V(φ), the slow-envelope derivation (T2a) gives the
+Schrödinger equation, and the time-averaged energy density of any wave configuration ψ
+satisfies ⟨ε(x)⟩ = (φ_c²ω_c²/2)|ψ(x)|² exactly — energy density is proportional to |ψ|²
+at every point, as a T1 algebraic consequence of V(φ).
+
+The remaining step is: why does the localization rate at a point equal the energy density
+there? If D3 localization — the process by which a spreading field commits to a definite
+location — occurs with probability proportional to ⟨ε(x)⟩, then Born rule follows
+immediately from the energy density result. This coupling has not yet been derived from
+V(φ). It is T3 — a structurally motivated picture with a clearly identified gap.
 
 **The collapse mechanism in detail.** DFC describes measurement as a localization event,
 but the specific dynamics by which the substrate field transitions from a spread-out
@@ -136,8 +155,9 @@ from V(φ). This remains T3.
 These gaps do not mean the DFC account is wrong. They mean it is incomplete. The
 structural picture — wave function as slow envelope, interference as field propagation,
 measurement as localization — is consistent with all quantum mechanical observations.
-Making it rigorous would require a formal derivation starting from the field equation
-and arriving at the Schrödinger equation plus Born rule.
+Making it complete would require deriving the D3 localization rate from V(φ) — the
+remaining gap between the established derivation chain (V(φ)→Schrödinger→⟨ε⟩∝|ψ|²,
+T2a) and the full Born rule.
 
 ---
 
@@ -151,7 +171,9 @@ and arriving at the Schrödinger equation plus Born rule.
 | Interference is real | Substrate field propagates through all paths simultaneously | T2a |
 | Measurement destroys interference | Localization event at D3 forces field to commit to one location | T3 |
 | Uncertainty principle is structural | Kink width and energy set by the same parameters α, β | T2a |
-| Born rule P = |ψ|² | Not yet derived from DFC | Open (T4) |
+| Schrödinger equation from V(φ) | Exact cancellation ω_c²=2α → slow envelope drops constant terms | T2a |
+| ⟨ε(x)⟩ ∝ \|ψ(x)\|² (Born rule foundation) | Time-averaged energy density from V(φ) slow-envelope | T2a |
+| Born rule P = \|ψ\|² | Derivation chain T2a; Step 6 (D3 localization rate ∝ ⟨ε⟩) open | Open (T3) |
 | Collapse mechanism in detail | Not yet derived from V(φ) | Open (T3) |
 
 ---
@@ -160,10 +182,10 @@ and arriving at the Schrödinger equation plus Born rule.
 
 The two deepest open problems in the DFC quantum mechanics account are:
 
-1. **The Born rule** — deriving why probability is quadratic in the wave function amplitude
-   from the substrate dynamics. This would require showing that the sampling statistics of
-   localization events on the substrate field naturally produce |ψ|² statistics, not |ψ|
-   statistics.
+1. **The Born rule** — the derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|² is established
+   at T2a. The remaining step is deriving from V(φ) that the D3 localization rate at
+   a point x is proportional to the local energy density ⟨ε(x)⟩ there. If this coupling
+   follows from the substrate dynamics, Born rule closes to T2a.
 
 2. **The collapse mechanism** — showing formally that sufficient interaction with a
    localized structure forces the propagating field to undergo localization. This is
@@ -185,3 +207,5 @@ rather than from structural argument.
 - `phenomena/quantum/interference.md` — double-slit interference from substrate field
 - `phenomena/quantum/decoherence.md` — environment-induced localization
 - `foundations/dimensional_stack.md` — D1–D7 depth behavior map
+- `equations/born_rule_schrodinger.py` — Schrödinger derivation and energy density from V(φ)
+- `educational/02_compression.md` — how the Compton frequency and Schrödinger equation emerge from compression
