@@ -151,10 +151,16 @@ therefore uniquely selected by V(φ), and the localization rate is proportional 
 This is the Born rule — established at T2a, with no free parameters.
 
 **The collapse mechanism in detail.** DFC describes measurement as a localization event,
-but the specific dynamics by which the substrate field transitions from a spread-out
-configuration to a localized one — the speed of collapse, the conditions under which
-it occurs, the role of entanglement with the measuring apparatus — are not yet derived
-from V(φ). This remains T3.
+and a structural T3 account of the dynamics now exists. The V(φ) double-well has an
+unstable equilibrium at φ = 0 and a spinodal threshold at φ_sp = φ₀/√3 (where the
+curvature V''(φ) changes sign). A measurement perturbation displaces the field slightly
+from φ = 0; the field then grows exponentially at rate γ = √α until it passes the
+spinodal, after which it commits irreversibly to one of the two wells ±φ₀. The collapse
+timescale is roughly two Planck times — effectively instantaneous compared to any
+laboratory process. What remains to be derived is the precise coupling between the
+measurement interaction and the substrate field (which determines the sign of the
+perturbation and hence the outcome), and the formal role of entanglement. These are T3
+— a structural account is in place, but the derivation from V(φ) is not complete.
 
 These gaps do not mean the DFC account is wrong. They mean it is incomplete. The
 structural picture — wave function as slow envelope, interference as field propagation,
@@ -178,7 +184,7 @@ T2a) and the full Born rule.
 | Schrödinger equation from V(φ) | Exact cancellation ω_c²=2α → slow envelope drops constant terms | T2a |
 | ⟨ε(x)⟩ ∝ \|ψ(x)\|² (Born rule foundation) | Time-averaged energy density from V(φ) slow-envelope | T2a |
 | Born rule P = \|ψ\|² | Z₂ symmetry + σ² uniqueness from V(φ); full chain T2a | T2a |
-| Collapse mechanism in detail | Not yet derived from V(φ) | Open (T3) |
+| Collapse mechanism in detail | V(φ) spinodal φ_sp=φ₀/√3; γ=√α; τ~2t_Pl; selection T3 | T3 |
 
 ---
 
@@ -186,12 +192,12 @@ T2a) and the full Born rule.
 
 The two deepest open problems in the DFC quantum mechanics account are:
 
-1. **The collapse mechanism in detail** — DFC identifies measurement as a D3 localization
-   event, and the Born rule for the probability of its outcome is now established at T2a.
-   What remains open is the dynamics of the transition itself: the speed of collapse, the
-   conditions under which an interaction is "sufficient" to trigger localization, and the
-   role of entanglement with the measuring apparatus. These are T3 — structurally motivated
-   by the substrate picture, but not yet derived from V(φ).
+1. **The collapse mechanism in detail** — a structural T3 account now exists
+   (`equations/collapse_mechanism.py`). The spinodal threshold φ_sp = φ₀/√3 and growth
+   rate γ = √α are T1 exact from V(φ); the collapse timescale (~2 Planck times) is T1+T2a.
+   What remains T3: the signed coupling between measurement interaction and substrate
+   displacement (which determines the outcome), and the formal entanglement constraint
+   from substrate connectivity below D3.
 
 2. **The Born rule** — now closed at T2a. The derivation chain
    V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|² is established from V(φ) alone, with no free

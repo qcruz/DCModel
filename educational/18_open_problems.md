@@ -72,13 +72,19 @@ coupling is ruled out by interference fringe shape (it would produce cos⁴ frin
 observed cos²) and suppressed by a factor of 10⁻⁶ at atomic energies. The complete chain
 V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|² is now T2a (see `equations/born_rule_frequency_selection.py`).
 
-**The collapse mechanism (T3)**
+**The collapse mechanism (T3 — structural account formalized)**
 
-Module 17 identifies measurement as a D3 localization event — an interaction that forces
-the substrate field to commit to a particular location. The structural picture is
-consistent, but the specific dynamics by which this happens — the speed of the
-transition, the role of entanglement with the measuring apparatus, the threshold for
-when an interaction is "sufficient" — are not derived from the field equation.
+Module 17 identifies measurement as a D3 localization event. A structural T3 account
+now exists. The V(φ) double-well has a spinodal threshold at φ_sp = φ₀/√3 — the
+field value where the curvature V''(φ) changes sign from negative to positive. A
+measurement perturbation seeds exponential growth at rate γ = √α near the unstable
+equilibrium φ = 0. Once past the spinodal, the field commits irreversibly to ±φ₀.
+The timescale is ~2 Planck times — effectively instantaneous in any laboratory frame.
+
+What remains T3: the precise coupling between the measurement interaction and the
+substrate displacement (which sets the sign of the perturbation and hence the outcome),
+and the formal account of entanglement from substrate connectivity below D3. These are
+structural arguments without a derivation directly from V(φ).
 
 ---
 
@@ -174,6 +180,7 @@ For each open problem, there is a specific kind of progress that would close it:
 | Cosmological constant (T4) | Derive D1–D3 cosmic compression energy density from V(φ) |
 | Dark matter abundance (T4) | Derive D4-depth closure production rate in early substrate |
 | α_em(0) identity (T4) | Derive hadronic VP contribution from D7 confinement dynamics |
+| Collapse mechanism (T3) | Derive signed coupling between measurement interaction and substrate displacement from V(φ) |
 | Neutrino hierarchy (T2b) | Formal derivation of depth correction δd=1/(6π) from V(φ) |
 | G_N from V(φ) (T3) | Derive Einstein-Hilbert action as low-energy limit of substrate dynamics |
 | Cascade termination (T3) | Formal proof that D7 mass gap prevents D8 closures |
