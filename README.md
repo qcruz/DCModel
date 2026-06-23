@@ -177,6 +177,8 @@ educational/              Step-by-step modules teaching the model from scratch
   16_cosmology.md          Hubble constant, cosmic expansion from substrate localization
   17_quantum_mechanics.md  Measurement as localization event; interference from field propagation
   18_open_problems.md      Honest map of T4/T3 open problems; what would close each one
+  analogies/               Physical analogies for substrate behavior — what DFC structures are closest to
+    01_the_kink.md         Domain walls, solitons, dislocations: what kinks are most like (and where each fails)
   ...
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories
