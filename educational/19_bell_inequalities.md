@@ -7,8 +7,9 @@ and Module 17 (quantum mechanics and measurement). No mathematics is required.
 D3 localization depth — is T2a: structurally motivated and consistent with DFC's
 verified results. The formal derivation connecting substrate topology to Bell
 statistics has not been completed. The Born rule (why measurement probabilities
-are |ψ|²) remains T4. The mechanism described here is a structural account,
-not a completed proof.
+are |ψ|²) is T3: the derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|² is now T2a,
+with the remaining gap being the D3 coupling to energy density (Step 6). The
+mechanism described here is a structural account, not a completed proof.
 
 **Why this module exists:** Bell's inequalities and the problem they solve were
 a primary motivation for the DFC framework. This module explains what the problem
@@ -153,21 +154,22 @@ outcome is the square of the wave function amplitude at that outcome. Without
 deriving P = |ψ|² from the substrate dynamics, the DFC account cannot quantitatively
 reproduce the specific correlations Bell's theorem is about.
 
-**Status update (Cycle 334):** Three independent structural arguments now establish
-Born rule as T3 (upgraded from T4):
+**Status update:** Three independent structural arguments establish Born rule at T3,
+with the derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|² now T2a:
 - **Interference uniqueness (T1 given experimental input):** the observed cos² fringe
-  pattern in double-slit experiments is the unique pattern produced by P ∝ |ψ|². Any
-  other power n ≠ 2 produces a visibly different fringe shape. Since DFC predicts linear
-  superposition of amplitudes (from the linear field equation), n=2 is algebraically
-  selected.
-- **Energy density (T3):** the time-averaged energy density of any wave field is
-  quadratic in its amplitude. If D3 localization couples to local energy density,
-  Born rule follows.
-- **Fermi's golden rule analog (T3):** localization rate at x ∝ |⟨x|H_D3|ψ⟩|² ∝ |ψ(x)|².
+  pattern is uniquely selected by P ∝ |ψ|². Any other power n ≠ 2 produces a
+  visibly different fringe shape. See `equations/born_rule_derivation.py` (9/9 PASS).
+- **Schrödinger equation from V(φ) (T2a):** linearizing V(φ) around φ₀ gives
+  □σ + 2ασ = 0. Writing the slow envelope σ = φ_c Re[ψ e^{-iω_c t}] with
+  ω_c = √(2α), the exact cancellation -ω_c² + 2α = 0 drops the constant terms,
+  leaving i∂_tψ = -(1/2ω_c)∂²_xψ. This is the Schrödinger equation — derived,
+  not postulated. The effective mass is m_eff = ω_c = √(2α) = 2.29 M_Pl.
+- **Time-averaged energy density (T1):** ⟨ε(x)⟩ = (φ_c²ω_c²/2)|ψ(x)|² exactly.
+  See `equations/born_rule_schrodinger.py` (11/11 PASS).
 
-The remaining T4 gap is a formal derivation: show from V(φ) dynamics that the D3
-localization mechanism produces cos² statistics, without taking the fringe shape from
-experiment. See `equations/born_rule_derivation.py` (9/9 PASS).
+The remaining gap (Step 6, T3): show from V(φ) that D3 localization rate is
+proportional to local energy density ⟨ε(x)⟩, which would close the Born rule
+to T2a. This is the single remaining structural link.
 
 **2. The localization mechanism in detail.** When a measurement forces the substrate
 to commit to a definite configuration, the precise dynamics of that transition —
