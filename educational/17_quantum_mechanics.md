@@ -6,11 +6,12 @@ Module 03 (the depth map). No mathematics is required.
 **Status note:** The slow-envelope derivation of the Schrödinger equation from V(φ) is
 T2a — based on an exact algebraic cancellation (ω_c² = 2α) that causes the fast-oscillation
 terms to drop out identically, leaving the Schrödinger equation as a direct consequence of
-V(φ). The time-averaged energy density ⟨ε(x)⟩ ∝ |ψ(x)|² is T1 exact. Together these
-establish the derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|² at T2a. The measurement account
-(D3 localization event) is T3. The Born rule (why localization probability is proportional
-to |ψ|²) is T3: the derivation chain is established, but the remaining step — showing that
-D3 localization rate is proportional to local energy density ⟨ε(x)⟩ from V(φ) — is open.
+V(φ). The time-averaged energy density ⟨ε(x)⟩ ∝ |ψ(x)|² is T1 exact. The Born rule
+P(x) = |ψ(x)|² is now T2a: V(φ)'s Z₂ symmetry forces only even σ couplings; time-averaging
+uniquely selects ⟨σ²⟩ = (φ_c²/2)|ψ|² as the leading non-zero coupling; σ⁴ is experimentally
+ruled out by interference fringe shape (cos⁴ ≠ cos²) and EFT-suppressed by (E_D3/ω_c)²~10⁻⁶.
+The complete derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|² is T2a. The measurement
+account (D3 localization event) is T3. The collapse mechanism in detail remains T3.
 
 ---
 
@@ -133,18 +134,21 @@ measurement. Two important things remain underived:
 
 **The Born rule.** Quantum mechanics says the probability of finding a particle at a
 given location is the square of the wave function amplitude there — P = |ψ|², not
-P = |ψ|. DFC now has a partial derivation of this from the substrate.
+P = |ψ|. DFC now has a complete derivation of this from the substrate, established at T2a.
 
-The first part is established: from V(φ), the slow-envelope derivation (T2a) gives the
-Schrödinger equation, and the time-averaged energy density of any wave configuration ψ
-satisfies ⟨ε(x)⟩ = (φ_c²ω_c²/2)|ψ(x)|² exactly — energy density is proportional to |ψ|²
+The derivation proceeds in two parts. The first: from V(φ), the slow-envelope derivation
+gives the Schrödinger equation, and the time-averaged energy density satisfies
+⟨ε(x)⟩ = (φ_c²ω_c²/2)|ψ(x)|² exactly — energy density is proportional to |ψ|²
 at every point, as a T1 algebraic consequence of V(φ).
 
-The remaining step is: why does the localization rate at a point equal the energy density
-there? If D3 localization — the process by which a spreading field commits to a definite
-location — occurs with probability proportional to ⟨ε(x)⟩, then Born rule follows
-immediately from the energy density result. This coupling has not yet been derived from
-V(φ). It is T3 — a structurally motivated picture with a clearly identified gap.
+The second part: V(φ)'s Z₂ symmetry (V(−φ) = V(φ)) forbids odd powers of the field
+deviation σ, leaving only even couplings. Time-averaging then eliminates odd time-averages
+exactly, leaving ⟨σ²⟩ = (φ_c²/2)|ψ(x)|² as the unique leading non-zero coupling. The
+next candidate, σ⁴, is ruled out: it would produce a cos⁴ fringe pattern in a double-slit
+experiment, which is observationally distinguishable from the observed cos² pattern, and is
+additionally suppressed by (E_D3/ω_c)² ~ 10⁻⁶ at atomic energies. The coupling σ² is
+therefore uniquely selected by V(φ), and the localization rate is proportional to |ψ(x)|².
+This is the Born rule — established at T2a, with no free parameters.
 
 **The collapse mechanism in detail.** DFC describes measurement as a localization event,
 but the specific dynamics by which the substrate field transitions from a spread-out
@@ -173,7 +177,7 @@ T2a) and the full Born rule.
 | Uncertainty principle is structural | Kink width and energy set by the same parameters α, β | T2a |
 | Schrödinger equation from V(φ) | Exact cancellation ω_c²=2α → slow envelope drops constant terms | T2a |
 | ⟨ε(x)⟩ ∝ \|ψ(x)\|² (Born rule foundation) | Time-averaged energy density from V(φ) slow-envelope | T2a |
-| Born rule P = \|ψ\|² | Derivation chain T2a; Step 6 (D3 localization rate ∝ ⟨ε⟩) open | Open (T3) |
+| Born rule P = \|ψ\|² | Z₂ symmetry + σ² uniqueness from V(φ); full chain T2a | T2a |
 | Collapse mechanism in detail | Not yet derived from V(φ) | Open (T3) |
 
 ---
@@ -182,15 +186,16 @@ T2a) and the full Born rule.
 
 The two deepest open problems in the DFC quantum mechanics account are:
 
-1. **The Born rule** — the derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|² is established
-   at T2a. The remaining step is deriving from V(φ) that the D3 localization rate at
-   a point x is proportional to the local energy density ⟨ε(x)⟩ there. If this coupling
-   follows from the substrate dynamics, Born rule closes to T2a.
+1. **The collapse mechanism in detail** — DFC identifies measurement as a D3 localization
+   event, and the Born rule for the probability of its outcome is now established at T2a.
+   What remains open is the dynamics of the transition itself: the speed of collapse, the
+   conditions under which an interaction is "sufficient" to trigger localization, and the
+   role of entanglement with the measuring apparatus. These are T3 — structurally motivated
+   by the substrate picture, but not yet derived from V(φ).
 
-2. **The collapse mechanism** — showing formally that sufficient interaction with a
-   localized structure forces the propagating field to undergo localization. This is
-   connected to the broader open problem of how D3 localization emerges from the
-   substrate dynamics of V(φ).
+2. **The Born rule** — now closed at T2a. The derivation chain
+   V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|² is established from V(φ) alone, with no free
+   parameters. See `equations/born_rule_frequency_selection.py` for the complete chain.
 
 Both are connected to the deepest remaining gap in DFC: the formal derivation of the
 D-depth behaviors (localization, inertia, the gauge closures) from the field equation

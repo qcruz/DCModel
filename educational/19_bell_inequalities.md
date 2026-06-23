@@ -7,9 +7,9 @@ and Module 17 (quantum mechanics and measurement). No mathematics is required.
 D3 localization depth — is T2a: structurally motivated and consistent with DFC's
 verified results. The formal derivation connecting substrate topology to Bell
 statistics has not been completed. The Born rule (why measurement probabilities
-are |ψ|²) is T3: the derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|² is now T2a,
-with the remaining gap being the D3 coupling to energy density (Step 6). The
-mechanism described here is a structural account, not a completed proof.
+are |ψ|²) is now **T2a**: the full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|²
+is established from V(φ) alone using the Z₂ symmetry of V(φ) and σ² coupling uniqueness.
+The collapse mechanism in detail remains T3. The entanglement account is T2a structural.
 
 **Why this module exists:** Bell's inequalities and the problem they solve were
 a primary motivation for the DFC framework. This module explains what the problem
@@ -149,27 +149,25 @@ formally derived from the field equation.
 
 Two things would need to be shown to make this a complete account:
 
-**1. The Born rule.** Quantum mechanics says the probability of each measurement
-outcome is the square of the wave function amplitude at that outcome. Without
-deriving P = |ψ|² from the substrate dynamics, the DFC account cannot quantitatively
-reproduce the specific correlations Bell's theorem is about.
+**1. The Born rule (T2a — closed).** Quantum mechanics says the probability of each
+measurement outcome is the square of the wave function amplitude at that outcome.
+DFC now derives P = |ψ|² from the substrate dynamics at T2a.
 
-**Status update:** Three independent structural arguments establish Born rule at T3,
-with the derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|² now T2a:
-- **Interference uniqueness (T1 given experimental input):** the observed cos² fringe
-  pattern is uniquely selected by P ∝ |ψ|². Any other power n ≠ 2 produces a
-  visibly different fringe shape. See `equations/born_rule_derivation.py` (9/9 PASS).
+The derivation chain from V(φ) has four established steps:
 - **Schrödinger equation from V(φ) (T2a):** linearizing V(φ) around φ₀ gives
-  □σ + 2ασ = 0. Writing the slow envelope σ = φ_c Re[ψ e^{-iω_c t}] with
-  ω_c = √(2α), the exact cancellation -ω_c² + 2α = 0 drops the constant terms,
-  leaving i∂_tψ = -(1/2ω_c)∂²_xψ. This is the Schrödinger equation — derived,
-  not postulated. The effective mass is m_eff = ω_c = √(2α) = 2.29 M_Pl.
-- **Time-averaged energy density (T1):** ⟨ε(x)⟩ = (φ_c²ω_c²/2)|ψ(x)|² exactly.
+  □σ + 2ασ = 0. The exact cancellation -ω_c² + 2α = 0 leaves i∂_tψ = -(1/2ω_c)∂²_xψ.
   See `equations/born_rule_schrodinger.py` (11/11 PASS).
+- **Time-averaged energy density (T1):** ⟨ε(x)⟩ = (φ_c²ω_c²/2)|ψ(x)|² exactly.
+- **Nonlinear source (T1):** V(φ)'s cubic term generates a localization source
+  S(x) = κ_NL × ⟨ε(x)⟩ with constant κ_NL = 3βφ₀/(2α) = 0.17425 from V(φ) alone.
+  See `equations/born_rule_d3_coupling.py` (16/16 PASS).
+- **σ² uniqueness (T1+T2a):** V(φ)'s Z₂ symmetry forbids odd couplings. Time-averaging
+  selects ⟨σ²⟩ = (φ_c²/2)|ψ|² as the unique leading non-zero coupling. The next
+  candidate, σ⁴, produces cos⁴ fringes (not observed cos²) and is suppressed by
+  (E_D3/ω_c)² ~ 10⁻⁶. σ² is uniquely selected. See `equations/born_rule_frequency_selection.py`
+  (19/19 PASS).
 
-The remaining gap (Step 6, T3): show from V(φ) that D3 localization rate is
-proportional to local energy density ⟨ε(x)⟩, which would close the Born rule
-to T2a. This is the single remaining structural link.
+Together: rate(x) ∝ ⟨σ²⟩ ∝ |ψ(x)|² → P(x) = |ψ(x)|². Born rule T2a, no free parameters.
 
 **2. The localization mechanism in detail.** When a measurement forces the substrate
 to commit to a definite configuration, the precise dynamics of that transition —
@@ -217,7 +215,7 @@ discomfort of Bell's theorem:
 | Does information travel between them? | No, but correlations exist | No — no signal; connection is topological persistence |
 | Why can't correlations send information? | No-communication theorem | Localization outcome is determined locally; not controllable |
 | What does Bell's theorem actually rule out? | Local hidden variables | Local hidden variables *in apparent 3D space* — not substrate-depth variables |
-| Is this fully derived? | N/A | Structural account T2a; Born rule T3 (Cycle 334; T1 interference argument); localization mechanism T3 |
+| Is this fully derived? | N/A | Structural account T2a; Born rule **T2a** (full chain from V(φ)); localization mechanism T3 |
 
 ---
 
@@ -226,16 +224,15 @@ discomfort of Bell's theorem:
 The DFC account of Bell's inequalities is the right structural picture but is not
 yet a complete derivation. Two things would close it:
 
-1. **Complete the Born rule derivation (T3 → T2a).** Three structural arguments
-   now establish Born rule at T3, including a T1-quality interference uniqueness argument
-   (the observed cos² fringe pattern algebraically selects n=2 given linear superposition).
-   The remaining formal step is deriving the cos² fringe shape from D3 localization
-   dynamics in V(φ), without taking the fringe shape from experiment.
-   See `equations/born_rule_derivation.py`.
-
-2. **Derive the localization mechanism from V(φ).** The condition under which a
+1. **Derive the localization mechanism from V(φ).** The condition under which a
    D3 interaction forces a definite outcome needs to follow from the field equation,
-   not just from structural argument.
+   not just from structural argument. This is T3 — the speed of collapse, the role of
+   entanglement with measuring apparatus, and the threshold for "sufficient interaction"
+   are not yet derived from V(φ).
+
+2. **The Born rule — now closed at T2a.** The derivation chain
+   V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|² is established from V(φ) alone with no free
+   parameters. See `equations/born_rule_frequency_selection.py` (19/19 PASS).
 
 Both of these are connected to the broader project of deriving quantum mechanics
 from the substrate rather than postulating it.

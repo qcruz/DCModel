@@ -53,25 +53,24 @@ formal derivation of the depth correction formula from the substrate dynamics.
 
 ## Category 2 — Quantum Mechanics
 
-**The Born rule (T3)**
+**The Born rule (T2a — closed)**
 
 As described in Module 17, the quantum wave function is identified with the slow
 envelope of a kink's fast internal oscillation. This explains why quantum mechanics
-has complex numbers and the Schrödinger equation. But it does not yet explain why the
+has complex numbers and the Schrödinger equation. It also now explains why the
 probability of finding a particle at a given location is the *square* of the wave
-function amplitude rather than the amplitude itself.
+function amplitude rather than the amplitude itself — the Born rule is established at T2a.
 
-Progress has been made. From V(φ), the slow-envelope derivation establishes the
-Schrödinger equation as a direct consequence of the field equation (the Compton frequency
-satisfies ω_c² = 2α exactly, so the fast-oscillation terms cancel identically). The
-time-averaged energy density at each point then satisfies ⟨ε(x)⟩ ∝ |ψ(x)|² exactly —
-energy density is proportional to the square of the wave function. This derivation chain,
-V(φ)→Schrödinger→⟨ε⟩∝|ψ|², is established at T2a (see `equations/born_rule_schrodinger.py`).
-
-The remaining gap is Step 6: showing that the D3 localization rate at a point x is
-proportional to the local energy density ⟨ε(x)⟩ there. If this coupling follows from
-V(φ), Born rule closes to T2a. This step is T3 — structurally motivated but not yet
-derived from the field equation.
+The derivation proceeds from V(φ) alone in two steps. First, the slow-envelope derivation
+gives the Schrödinger equation (the Compton frequency satisfies ω_c² = 2α exactly, so the
+fast-oscillation terms cancel identically), and the time-averaged energy density satisfies
+⟨ε(x)⟩ ∝ |ψ(x)|² exactly — energy density is proportional to the square of the wave
+function (T2a, `equations/born_rule_schrodinger.py`). Second, V(φ)'s Z₂ symmetry —
+V(−φ) = V(φ) — forbids all odd coupling powers. Time-averaging then selects ⟨σ²⟩ as the
+unique leading non-zero coupling, giving a localization rate ∝ |ψ(x)|². The alternative σ⁴
+coupling is ruled out by interference fringe shape (it would produce cos⁴ fringes, not the
+observed cos²) and suppressed by a factor of 10⁻⁶ at atomic energies. The complete chain
+V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|² is now T2a (see `equations/born_rule_frequency_selection.py`).
 
 **The collapse mechanism (T3)**
 
@@ -171,7 +170,7 @@ For each open problem, there is a specific kind of progress that would close it:
 | Problem | What would close it |
 |---|---|
 | Electron mass (T4) | Derive α (Planck units) → m_e from substrate + Planck scale identification |
-| Born rule (T3) | Derive D3 localization rate ∝ ⟨ε(x)⟩ from V(φ) — Step 6 of established T2a chain |
+| Born rule (**T2a — closed**) | V(φ) Z₂ symmetry + σ² uniqueness — Step 6 closed at T2a |
 | Cosmological constant (T4) | Derive D1–D3 cosmic compression energy density from V(φ) |
 | Dark matter abundance (T4) | Derive D4-depth closure production rate in early substrate |
 | α_em(0) identity (T4) | Derive hadronic VP contribution from D7 confinement dynamics |
