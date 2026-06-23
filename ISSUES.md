@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-22 (Cycles 122–334)
+**Last updated:** 2026-06-23 (Cycles 122–335)
 
 ---
 
@@ -838,6 +838,15 @@ deviation has not been calculated.
     = 1 − (−1)/3 = 4/3 = I₄. Normalized by 2π gives I₄/(2π). The correction above singlet
     is (I₄−1)/(2π). [T3 structural; needs BVP computation to confirm]
 - **C247 semiclassical crossing count [structural T3]:** Form 2 (δd=β×N_c/2) admits a semiclassical soliton interpretation. The ν₃ D4 inertia mode (a soliton winding in the compression direction) traverses the D7 background. Each D7 kink crossing costs action β (the quartic coupling sets the minimal kink-kink interaction per crossing). The D7 SU(3) topology requires N_c/2 effective crossings per winding cycle: the kink has Q_top=2 and the anti-fundamental winding contributes half a unit per color. Total depth shift: δd = β × (N_c/2) × 1 = 1/(6π). This is equivalent to Form 3: each color channel contributes (I₄-1)/N_c per winding, summed over N_c colors → δd = (I₄-1)/(2π). BVP target: show the Dirac operator in D7 PT background (m(x)=m_KK tanh(x/ξ)) gives bound-state frequency shift δω₀ = β × (N_c/2) × m_KK at leading order in β. The Pöschl-Teller Dirac system has known analytic spectrum; the N_c-dependent shift would arise from the zero mode wavefunction (ψ₀ ∝ sech) coupling to the D7 vacuum energy N_c × β × m_KK² × I₄. This semiclassical picture strengthens the T3 status but T2a still requires an explicit BVP calculation.
+- **C335 connectivity note [T3]:** The substrate field connectivity picture (see `educational/analogies/03_entanglement.md`)
+  provides a structural reason for the δd selectivity: ν₃ sits closest to the D7/SU(3) closure threshold.
+  At that depth, its kink configuration overlaps with the D7 color field topology — it shares substrate
+  field connectivity with the color sector in a way that ν₁ and ν₂ do not. This is the same topological
+  persistence that produces entanglement between kinks produced at the same substrate event. The δd correction
+  is the depth-space analog of the correlation: not a signal from D7 to ν₃, but the consequence of ν₃
+  being embedded in a substrate field that is continuously connected to the D7 winding. No new calculation
+  — this is a conceptual cross-reference clarifying why the BVP should show a ν₃-specific correction.
+  T11 tier: T3 (unchanged).
 - Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_d7_holonomy.py` (C219), `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
 
 ---

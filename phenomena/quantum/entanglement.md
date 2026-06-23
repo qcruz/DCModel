@@ -292,3 +292,8 @@ configuration, which would require energy that the measurement device does not p
   `phenomena/quantum/interference.md`
 - **Wave-particle duality** — the buckling threshold that connects extended field to
   point-like detection; `phenomena/quantum/wave_particle_duality.md`
+- **Bell inequalities (educational)** — why entanglement is not spooky in DFC; substrate
+  connectivity below D3 localization depth; `educational/19_bell_inequalities.md`
+- **Entanglement analogy** — field connectivity picture explained through crystal dislocations
+  and the photon-planet picture; contrast with Bohmian non-locality;
+  `educational/analogies/03_entanglement.md`
