@@ -182,6 +182,8 @@ educational/              Step-by-step modules teaching the model from scratch
     01_the_kink.md         Domain walls, solitons, dislocations: what kinks are most like (and where each fails)
     02_the_photon_planet.md  Observation as field collision not delivery; the substrate as gas giant
     03_entanglement.md     Entanglement as field connectivity; crystal dislocation analogy; no signal needed
+    04_the_prism.md        D3 localization as prism: one substrate → three symmetric spatial components (stub)
+    05_the_ocean_current.md  Tri-folding at depth: compression mechanism that produces three spatial components (stub)
 comparisons/              This model vs. Standard Model, String Theory, GR, GUT
   swot.md                 SWOT analysis: DFC strengths/weaknesses vs. all major theories
 practical_applications/   Engineering limits and implications derived from DFC
