@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-22 (Cycles 122–328)
+**Last updated:** 2026-06-22 (Cycles 122–334)
 
 ---
 
@@ -860,7 +860,7 @@ deviation has not been calculated.
 | r_U1/λ = 3/(4β) from substrate | Real φ⁴ has no localizable U(1) phase; Routes A and B both blocked | `phase_stiffness_derivation.md` | Complex scalar or gauge field in substrate |
 | M_c(D7) from substrate | **PARTIALLY UNBLOCKED (Cycle 208, T2b):** `ym_sp5_mcdz_derivation.py` gives first DFC-alone derivation. M_c(D7)_DFC = 8.17×10¹⁴ GeV (−47.8% vs ECCC 1.566×10¹⁵ GeV) [T2b]. NEW T2a: α_s(M_Z)_DFC = 0.11566 (−2.15%, zero experimental inputs) [T2a]. C_match sensitivity: exact α_s(M_Z) match requires C_match=0.797849 vs Jost value 0.795151; residual = +0.34% (= 2-loop threshold correction). Path to T2a for M_c: compute 2-loop C_match correction (+0.34% closes gap). | `equations/ym_sp5_mcdz_derivation.py` (C208), `depth_running.py`, `mc_closure_scales.py`, `equations/ym_cmatch_msbar.py` (C191), `equations/ym_jost_function.py` (C197) | Compute 2-loop threshold correction to C_match (+0.34% needed) from KK tower + shape mode loops |
 | β ≈ 0.035 from pre-substrate principle | No pre-substrate condition identified that selects β | `beta_substrate.py` [STUB] | New theoretical input (pre-bifurcation stability condition) |
-| Born rule for position | Spin case DERIVED (Cycle 38); Kramers escape rate Γ(x) ∝ \|φ(x)\|² not rigorously derived | `measurement.md`, `born_rule_derivation.md` | Escape rate calculation from V(φ) saddle topology |
+| Born rule for position | **T3 (Cycle 334):** interference uniqueness argument T1 (cos² fringe uniquely selects n=2); energy density argument T3; Fermi golden rule analog T3. Remaining T4: derive cos² fringe shape from D3 localization mechanism in V(φ). Module: `equations/born_rule_derivation.py` (9/9 PASS). | `measurement.md`, `equations/born_rule_derivation.py` | Formal derivation of slow-envelope Schrödinger equation from V(φ) |
 | ℏ from (α, β, c) | S_kink(D1)/ℏ = 4×10³⁹ — 13.2 bifurcations needed to reach ℏ scale; model has only 4 | `planck_constant_derivation.md` | Either additional sub-bifurcation structure or route via α_em derivation |
 | Confinement formal proof / Yang-Mills mass gap | **Cycle 178 (T3 structural argument):** Three-layer DFC argument `equations/yang_mills_mass_gap.py`. Layer 1 (T1): BPS lower bound E_kink > 0 from V(φ) two-well — Q_top=2 exact, I₄=4/3 exact, E_BPS=113.1 M_Pl. Layer 2 (T2a): D7=SU(3) (Cycles 59-74) → D7 kinks carry this bound at the QCD scale. Layer 3 (T3): closed flux tubes (glueballs) have E ≥ σ×C_min = Q_top×Λ_QCD = 609 MeV > 0. Pomeron intercept α_0^P = Q_top/2 = 1.0. Glueball 2++ = 2159 MeV (−10% vs lattice 2400 MeV); 0++ Nambu-Goto = 2159 MeV (+33% vs lattice 1625 MeV). ρ meson check −1.5% (same Q_top input). **Remaining for rigorous proof (T4):** constructive 4D QFT from V(φ), prove ALL gauge-invariant states have E ≥ Δ, derive Δ purely from V(φ) without Λ_QCD as external input. | `equations/yang_mills_mass_gap.py` (Cycle 178), `strong_force.md` (Open Q1), `equations/confinement.py` | Constructive 4D QFT from DFC substrate; prove all non-vacuum states satisfy BPS-topological energy lower bound |
 | v = 246 GeV from substrate | **TIER 2a (Cycle 145):** v=247.83 GeV (+0.65%) from EWSB co-crystallization. Remaining open: derive M_c(D5), M_c(D6) from substrate (currently from ECCC+SM inputs). | `equations/ewsb_cocrystallization.py` | Promote M_c(D5), M_c(D6) from ECCC condition to pure substrate derivation |
@@ -907,7 +907,7 @@ deviation has not been calculated.
 ### foundations/
 
 **`substrate.md`**
-- Born rule for position (from Kramers escape rate) — OPEN
+- Born rule for position — T3 (Cycle 334): interference uniqueness T1, energy density T3, Fermi golden rule T3; remaining T4 = formal V(φ) derivation; `equations/born_rule_derivation.py`
 - ℏ from substrate — OPEN (T8)
 
 **`higgs_geometry.md`**
@@ -945,8 +945,10 @@ deviation has not been calculated.
 **`kink_nucleation.md`**
 - Born rule from first-passage / nucleation statistics — structural argument only
 
-**`born_rule_derivation.md`**
-- Position Born rule (Kramers escape rate) — OPEN; spin case complete
+**`equations/born_rule_derivation.py`** (Cycle 334)
+- Position Born rule — T3: interference uniqueness (T1), energy density (T3), Fermi golden rule (T3)
+- Remaining T4: derive cos² fringe shape formally from D3 localization mechanism in V(φ)
+- Path to T2a: Schrödinger equation derivation from V(φ) slow-envelope expansion
 
 **`DFC_master_equations.md`**
 - Step 4: Formal derivation that D7 zero mode moduli carry complex (not real) structure → SU(3) not SO(6) [T4 OPEN — see Blocked Derivations above]
@@ -993,7 +995,7 @@ deviation has not been calculated.
 - τ mass: Koide formula Tier 2a (Cycle 146): m_τ=1776.97 MeV (+0.006%, `equations/koide_phase_coupling.py`). Dimple model SUPERSEDED. Document updated Cycle 148.
 
 **`quantum/quantum_mechanics.md`**
-- Born rule for position — OPEN (spin case derived, Cycle 38)
+- Born rule for position — T3 (Cycle 334); spin case T1 (Cycle 38). See `equations/born_rule_derivation.py`.
 
 **`cosmology/big_bang.md` / `dark_energy.md`**
 - Λ from substrate parameters — OPEN (displaced from fine-tuning to initial-conditions problem)
