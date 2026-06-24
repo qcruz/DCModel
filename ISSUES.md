@@ -570,6 +570,37 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
   - **C218 NEW:** SP2 BPS form 1+1D T2a (`ym_sp2_bps_quantum.py`): H|_{Q=2n} ≥ n × I₄ × m_hat [T2a composite] where m_hat = 42.35 M_Pl and I₄ = C₂(fund,SU(3)) = 4/3 appears explicitly. BPS form makes the connection σ ∝ m_kink × (string length) more explicit: σ = Q_top × Λ² has the same I₄ prefactor from the kink shape. Quantum BPS form (1+1D) is now T2a, but the σ=Q_top×Λ² derivation from first principles is still T4 (requires 4D promotion of BPS form). T12 blocking gap (δ(Δα)^{NP}=0.00102) unchanged.
 - Files: `equations/alpha_em_identity_proof.py` (Cycle 155), `equations/alpha_em_hadronic.py` (Cycle 158), `equations/rho_meson_dfc.py` (Cycle 159), `equations/d7_nonpert_coefficients.py` (Cycle 160), `equations/alpha_em_eccc.py` (Cycle 139), `equations/ym_4d_gap_extension.py` (Cycle 189), `equations/ym_gauge_decoupling.py` (Cycle 181)
 
+### T17 — Nuclear Physics Spoke: Foundation for Element Prediction (Cycle 342)
+
+- **Status:** Spoke established at T3 level. Foundation module `equations/nuclear_dfc_params.py`
+  operational (15/15 PASS).
+- **What DFC has derived:**
+  - a_C = 0.7203 MeV [T3, +0.85%] — Coulomb SEMF coefficient from DFC α_em(0)
+  - f_π = 96.9 MeV [T3, +5.2%] — pion decay constant from Λ_QCD/π
+  - m_π ≈ 139.57 MeV [T3, GOR self-consistency] — consistency check, not independent
+  - g_NN = 12.31 [T3, −8.5%] — Goldberger-Treiman coupling; error driven by f_π overestimate
+  - SEMF + DFC a_C validated on ¹²C, ¹⁶O, ⁵⁶Fe, ¹³²Sn, ²⁰⁸Pb (all within 5%)
+- **Island of stability target:** ²⁹⁸Fl (Z=114, N=184) — doubly-magic superheavy nucleus
+  - SEMF prediction: B/A ≈ 7.15 MeV/nucleon (without shell corrections)
+  - Shell model bonus estimated +1–3 MeV/nucleon → total ~7.5–8.2 MeV/nucleon
+  - Coulomb contribution fully DFC-derived: U_C = 1389 MeV [T3]
+- **What DFC needs (T4 open):**
+  - a_V from D7 bulk binding energy (σ = Q_top×Λ_QCD² is T3; path: D7 many-body kink dynamics)
+  - a_S from D7 surface/bulk mode ratio
+  - a_A from D7 isospin SU(2) flavor structure
+  - Magic numbers Z=114, N=184 from D7 composite orbital angular momentum structure
+  - Full ²⁹⁸Fl stability prediction requires all four above
+- **Path to T2a:**
+  - Step 2: Connect string tension σ = Q_top×Λ² to nuclear volume binding → a_V [T4→T3]
+  - Step 3: Surface/bulk ratio from D7 kink geometry → a_S [T4→T3]
+  - Step 4: D7 isospin → a_A [T4→T3]
+  - Step 5: D7 composite orbital spectrum → magic numbers [T4]
+- **File:** `equations/nuclear_dfc_params.py` (Cycle 342, 15/15 PASS)
+- **Document:** `phenomena/particle_physics/nuclear_binding.md` — updated with DFC parameters,
+  island of stability open question, nuclear_dfc_params.py in Connections
+
+---
+
 ### T16 — Cosmological Constant Problem: Track D Structural Exploration (Cycle 328)
 
 - **Status:** Track D exploration — T3 structural argument. No quantitative prediction.

@@ -241,7 +241,10 @@ that binds the lightest nuclei. Verified in `equations/nuclear_binding.py`.
 | Fission releases energy for A > 56 | Moving down binding curve toward Fe-56 | Nuclear reactors | ✓ structural |
 | Saturation of nuclear force | Short-range Yukawa (~4 neighbors per nucleon) | Constant B/A for A > 20 | ✓ structural |
 | Deuteron binding (A=2) | B-W formula predicts B ≈ −5.9 MeV | +2.22 MeV | ✗ B-W fails for A ≤ 4 (known limitation) |
-| B-W coefficients aV, aS, aC, aA from DFC | Not yet derived from D7 SU(3) dynamics | Empirical fits | ✗ OPEN — blocked at 11% α_s error |
+| a_C from DFC α_em | a_C = (3/5)α_em ℏc/r₀ = 0.720 MeV [T3] | 0.714 MeV | ✓ +0.85% [T3] |
+| f_π from DFC Λ_QCD | f_π = Λ_QCD/π = 96.9 MeV [T3] | 92.1 MeV | ✗ +5.2% [T3] |
+| g_NN from Goldberger-Treiman | g_NN = g_A m_p / f_π = 12.31 [T3] | 13.45 | ✗ −8.5% [T3]; error from f_π overestimate |
+| a_V, a_S, a_A from DFC | Not yet derived from D7 SU(3) many-body dynamics | Empirical fits | ✗ OPEN [T4] |
 
 ---
 
@@ -273,6 +276,16 @@ that binds the lightest nuclei. Verified in `equations/nuclear_binding.py`.
    closure at these specific numbers (from the 3D harmonic oscillator + spin-orbit coupling
    potential inside the nucleus) is an open structural question.
 
+5. **Island of stability: ²⁹⁸Fl (Z=114, N=184).** Nuclear shell model calculations predict
+   the next doubly-magic superheavy nucleus at proton magic Z=114 and neutron magic N=184.
+   The SEMF with DFC a_C predicts B(²⁹⁸Fl)/A ≈ 7.15 MeV/nucleon; shell model stability
+   corrections (estimated +1–3 MeV/nucleon from doubly-magic closures) could bring this
+   to ~7.5–8.2 MeV/nucleon, comparable to Pb-208 (7.867 MeV/nucleon). DFC currently
+   contributes the Coulomb term a_C [T3]. Full stability prediction requires: a_V and a_S
+   from D7 many-body binding energy [T4], a_A from D7 isospin structure [T4], and shell
+   model magic numbers from D7 composite orbital angular momentum [T4]. See
+   `equations/nuclear_dfc_params.py` for the current partial prediction.
+
 ---
 
 ## Connections
@@ -288,4 +301,7 @@ that binds the lightest nuclei. Verified in `equations/nuclear_binding.py`.
 - **Pauli exclusion** — nuclear saturation and asymmetry term from fermion exclusion;
   `phenomena/quantum/pauli_exclusion.md`
 - `equations/nuclear_binding.py` — Bethe-Weizsäcker formula, deuteron failure documented,
-  empirical inputs clearly labeled; α_s(M_Z) error noted (Cycle 68 audit)
+  empirical inputs clearly labeled
+- `equations/nuclear_dfc_params.py` — DFC-derived nuclear parameters: a_C [T3], f_π [T3],
+  m_π GOR consistency [T3], g_NN Goldberger-Treiman [T3]; SEMF validation on key nuclei;
+  island of stability ²⁹⁸Fl framework (15/15 PASS)
