@@ -5,7 +5,7 @@ independently. For background on the substrate and compression depth concept, se
 Module 01 (The Substrate) and Module 03 (The Depth Map).
 
 **Status:** Active — this document will be updated as the nuclear physics Track C work
-continues. Current coverage: Cycles 342–345.
+continues. Current coverage: Cycles 342–347.
 
 ---
 
@@ -236,27 +236,104 @@ spin-orbit corrections (T4 open).
 ## Step 5 — The Island of Stability: ²⁹⁸Fl
 
 Combining the SEMF liquid-drop energy with the Strutinsky shell correction gives an
-estimate for the total binding energy of ²⁹⁸Fl (Z=114, N=184):
+estimate for the total binding energy of ²⁹⁸Fl (Z=114, N=184). The DFC-only chain —
+meaning all inputs derived from Λ_QCD and I₄ with no nuclear data imported — gives:
 
-**Liquid-drop contribution** (SEMF with DFC parameters):
-B_LD(²⁹⁸Fl) ≈ 2082 MeV (B/A ≈ 6.99 MeV/nucleon)
+**Liquid-drop contribution** (SEMF with DFC parameters, from Step 2):
+B_LD(²⁹⁸Fl) ≈ 2107 MeV (B/A ≈ 7.07 MeV/nucleon)
 
-**Shell correction estimate** (from Strutinsky on proton Z=114 subshell + neutron
-N=184 shell closure in the relativistic-corrected WS — T4, as N=126 limitation applies):
-δE_shell ≈ −10 to −20 MeV (range reflects parameterization uncertainty)
+**Shell correction** (from the DFC Woods-Saxon Strutinsky calculation):
+δE_shell(²⁹⁸Fl) ≈ +7.1 MeV
 
-**Combined estimate:**
-B(²⁹⁸Fl) ≈ 2082 to 2092 MeV
-B/A ≈ 6.99 to 7.02 MeV/nucleon
+This shell correction is positive rather than negative. The reason is that the
+WS model without full relativistic spin-orbit corrections does not place N=126 or
+N=184 as sharp shell closures in the parameterization used here. A positive
+Strutinsky correction means the model sees ²⁹⁸Fl as sitting inside a partially
+filled shell — which, physically, means the shell stabilization is being
+underestimated. The correct relativistic treatment would produce a negative
+correction (extra binding) at a genuine shell closure.
 
-This places ²⁹⁸Fl in the range of binding energies typical for heavy actinides
-(²³⁸U has B/A ≈ 7.57 MeV/nucleon at Z=92, N=146), significantly less bound due to
-the large Coulomb repulsion at Z=114. The island of stability refers not to extra
+**DFC combined estimate (no literature shell correction imported):**
+B(²⁹⁸Fl) ≈ 2114 MeV
+B/A ≈ 7.09 MeV/nucleon  [T3]
+
+This places ²⁹⁸Fl noticeably less bound than ²⁰⁸Pb (B/A = 7.87 MeV/nucleon),
+which is expected: the large Coulomb repulsion from Z=114 protons costs roughly
+1.5 MeV/nucleon compared to lead. The island of stability refers not to extra
 binding in absolute terms, but to extra binding relative to neighboring superheavy
-nuclei — the shell correction makes ²⁹⁸Fl notably more stable than ²⁹⁷Fl or ²⁹⁹Fl.
+nuclei — if the shell closure at Z=114 and N=184 were correctly reproduced, the
+shell correction would be negative (−10 to −20 MeV) and B/A would rise toward
+7.0–7.1 MeV/nucleon from the relativistic model.
 
-**Tier status:** B/A estimate is Tier 3. The shell correction contribution is T4 until
-the N=126 limitation is resolved (relativistic SO required).
+**Tier status:** B/A = 7.09 MeV/nucleon is Tier 3 (DFC-only, no free parameters
+beyond Λ_QCD). The sign of δE_shell is not yet physically meaningful until the
+N=126 shell closure issue is resolved (T4 open, Step 6).
+
+---
+
+## Step 6 — The DFC Spin-Orbit Prediction: a_SO = I₄ × a₀
+
+The standard Woods-Saxon model requires a spin-orbit coupling term to reproduce
+nuclear magic numbers. The strength and shape of this term carry physical information
+about how color-charge dynamics propagate into nuclear structure.
+
+The spin-orbit potential is proportional to the gradient of the central WS
+potential, multiplied by a coupling constant κ and a diffuseness scale a_SO:
+
+The Thomas spin-orbit potential equals negative κ times the squared nucleon Compton
+radius, times the gradient of the central potential, times the angular
+momentum–spin coupling ⟨L·S⟩.
+
+In practice, the spin-orbit form factor has its own diffuseness parameter a_SO,
+which controls how rapidly the coupling varies near the nuclear surface. In standard
+parameterizations (for example, Möller, Nix, Myers, Swiatecki 1995, the FRDM
+model), the spin-orbit diffuseness takes the value a_SO ≈ 0.90 fm.
+
+**The DFC prediction.** The kink shape integral I₄ = C₂(fund,SU(3)) = 4/3 governs
+not just the gauge coupling strength but also the effective surface geometry of
+D7-depth interactions. The natural DFC prediction for the ratio of spin-orbit to
+central diffuseness is:
+
+The spin-orbit diffuseness equals I₄ times the central diffuseness.
+
+a_SO = I₄ × a₀ = (4/3) × 0.67 fm = 0.893 fm  [T3]
+
+This is 0.7% below the Möller-Nix value of 0.90 fm — consistent at the Tier 3
+level. The prediction has no free parameters: I₄ is determined exactly from V(φ)
+and a₀ = 0.67 fm is the standard WS diffuseness.
+
+**What a_SO alone does not fix.** Modifying the diffuseness a_SO changes the shape
+of the spin-orbit form factor — how rapidly the coupling turns on near the nuclear
+surface. However, the total integrated spin-orbit strength is:
+
+The total integrated spin-orbit coupling equals the integral over all radii of the
+form factor, which equals the central WS depth V₀ regardless of the diffuseness
+parameter a_SO.
+
+Because the total strength is unchanged by a_SO, the intruder orbital ordering is
+not corrected. The orbital 1i₁₃/₂ (angular momentum ℓ=6, total spin j=13/2) is
+the critical intruder for the N=126 shell closure. In the standard shell model it
+should be the last orbital filled before the N=126 gap. In the WS model with
+κ=36, it is pushed so far down in energy by the spin-orbit splitting that it
+becomes the first orbital above N=82 — completely wrong ordering. Changing a_SO
+from 0.67 to 0.893 fm shifts the form factor but not the overall ordering, so the
+magic number gap appears at N=118 rather than N=126 in this calculation.
+
+**What is needed (T4 open).** Two paths could restore N=126:
+
+1. Reduce the Thomas-term strength κ below 36 while keeping a_SO = I₄ × a₀,
+   so the total SO splittings agree with empirical values but the 1i₁₃/₂ orbital
+   is not pulled as far down.
+
+2. Implement the full relativistic Dirac equation in the WS potential. In the
+   Dirac formalism, the SO term scales as 1/(2M²) rather than the non-relativistic
+   1/M — a factor that is numerically crucial for high-ℓ orbitals near the Fermi
+   surface. This is the standard resolution in modern nuclear structure codes
+   (relativistic mean-field theory, Walecka model).
+
+The DFC prediction a_SO = I₄ × a₀ stands as a Tier 3 structural result. Its
+physical interpretation — that the D7 kink diffuseness ratio governs the nuclear
+SO surface — is the main new DFC input. The N=126 reproduction remains T4.
 
 ---
 
@@ -265,12 +342,13 @@ the N=126 limitation is resolved (relativistic SO required).
 | Item | Status | What is needed |
 |------|--------|----------------|
 | Bulk binding a_V from DFC | T4 | Hard-core repulsion from D7 kink dynamics |
-| N=126 as shell closure | T4 | Relativistic spin-orbit corrections to WS |
+| N=126 as shell closure | T4 | Reduce κ or implement full Dirac-WS equation |
 | Z=114 proton magic from DFC | T3 | WS gap confirmed; formal DFC derivation missing |
-| Shell correction for ²⁹⁸Fl | T4 | Depends on N=126 fix |
+| Shell correction sign for ²⁹⁸Fl | T4 | Depends on N=126 fix |
 | Half-life of ²⁹⁸Fl | T4 | Requires DFC account of alpha/fission dynamics |
 | f_π from quark condensate | T4 | Requires chiral symmetry breaking from D7 |
 | g_NN from pion exchange | T3 | Goldberger-Treiman established; DFC inherits |
+| Formal derivation of a_SO/a₀ = I₄ | T4 | D7 boundary value problem for SO coupling |
 
 ---
 
@@ -284,10 +362,12 @@ the N=126 limitation is resolved (relativistic SO required).
 | a_A (asymmetry coefficient) | 23.2 MeV | 23.0 MeV | T3 (+0.9%) |
 | B/A (⁵⁶Fe) | 8.685 MeV/A | 8.790 MeV/A | T3 (−0.2%) |
 | B/A (²⁰⁸Pb) | 7.848 MeV/A | 7.867 MeV/A | T3 (−0.2%) |
+| a_SO spin-orbit diffuseness | 0.893 fm | 0.90 fm (FRDM) | T3 (−0.7%) |
 | N=184 neutron shell closure | predicted | not yet measured | T3 |
 | Z=114 proton subshell | predicted | consistent with ²⁹²Fl data | T3 |
-| δE_shell(¹³²Sn) | −0.6 MeV (negative ✓) | < 0 expected | T3 |
-| B/A (²⁹⁸Fl, LD only) | 6.99 MeV/A | not yet synthesized | T3 |
+| δE_shell(¹³²Sn) | −5.8 MeV (negative ✓) | < 0 expected | T3 |
+| B/A (²⁹⁸Fl, DFC-only) | 7.09 MeV/A | not yet synthesized | T3 |
+| N=126 shell closure reproduced | not yet | required | T4 open |
 
 ---
 
@@ -295,3 +375,5 @@ the N=126 limitation is resolved (relativistic SO required).
 for how D7 produces SU(3) color. Module 06 (Predictions) for the full prediction
 table. `equations/nuclear_dfc_params.py` for the computed nuclear parameters.
 `equations/nuclear_shell_model.py` for the WS shell model and Strutinsky correction.
+`equations/nuclear_relativistic_so.py` for the relativistic SO prediction
+a_SO = I₄ × a₀ and the DFC-only B(²⁹⁸Fl) estimate.

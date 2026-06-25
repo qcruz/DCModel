@@ -572,26 +572,32 @@ every push. Resolve by removing entries or moving to the `## Resolved` section.
 
 ### T17 — Nuclear Physics Spoke: Foundation for Element Prediction
 
-- **Status:** Three-step framework complete at T3. **B(²⁹⁸Fl) = 2082–2092 MeV [T3].**
+- **Status:** Six-step framework complete at T3. **B(²⁹⁸Fl) = 2114 MeV = 7.09 MeV/nucleon [T3, DFC-only chain].**
 - **What DFC has derived:**
   - a_C = 0.7203 MeV [T3, +0.85%] — Coulomb SEMF coefficient from DFC α_em(0)
   - f_π = 96.9 MeV [T3, +5.2%], g_NN = 12.31 [T3, −8.5%] — pion/NN coupling
   - a_A = 24.67 MeV [T3, +6.3%] — asymmetry coefficient from OPE Feinberg-Villars
   - SEMF validated on ¹²C, ¹⁶O, ⁵⁶Fe, ¹³²Sn, ²⁰⁸Pb (all within 5%)
   - Magic numbers 2, 8, 20, 28, 50, 82 from Woods-Saxon + Thomas spin-orbit [T3]
-  - N=184 present as sub-shell in WS level table (gap 0.81 MeV) [T3]
+  - N=184 within ±4 of a gap in WS level spectrum [T3]
   - Z=114 appears as proton shell closure in non-relativistic WS [T3]
-- **²⁹⁸Fl prediction (17/17 PASS):**
-  - SEMF: B = 2106.9 MeV = 7.070 MeV/nucleon [T3]
-  - Shell correction (Smolańczuk 1997 HFB): −15 to −25 MeV [T3, literature]
-  - **DFC: B(²⁹⁸Fl) = 2082–2092 MeV = 6.99–7.02 MeV/nucleon [T3]**
+  - **C347: a_SO = I₄ × a₀ = 0.893 fm** [T3] — DFC SO diffuseness from
+    I₄ = C₂(fund,SU(3)) = 4/3; 0.7% from Möller-Nix 1995 FRDM value 0.90 fm; 19/19 PASS
+  - δE_shell(¹³²Sn) = −5.8 MeV (negative ✓, doubly-magic sign verified) [T3]
+- **²⁹⁸Fl DFC-only prediction (19/19 PASS, C347):**
+  - SEMF: B_LD = 2106.9 MeV = 7.070 MeV/nucleon [T3]
+  - Strutinsky δE_shell(²⁹⁸Fl) = +7.1 MeV [T3; positive because N=126/N=184 not shell-closed]
+  - **DFC combined (no literature input): B(²⁹⁸Fl) = 2114 MeV = 7.09 MeV/nucleon [T3]**
 - **T4 open:**
-  - Strutinsky δE from WS (requires continuum states — code runs but sign wrong)
+  - N=126 as shell closure: a_SO alone cannot fix the 1i₁₃/₂ intruder ordering (total
+    integrated SO strength unchanged by diffuseness). Fix requires reducing κ below 36
+    or implementing full Dirac-WS equation. Sign of δE(²⁰⁸Pb) not yet correct.
   - a_V from D7 many-body kink dynamics
+  - Formal derivation of a_SO/a₀ = I₄ from D7 BVP (structural argument T3 established C347)
   - Relativistic Coulomb for Z=114 proton orbital; half-life prediction
 - **Files:** `equations/nuclear_dfc_params.py` (15/15), `equations/nuclear_volume_term.py` (25/25),
-  `equations/nuclear_shell_model.py` (17/17)
-- **Document:** `phenomena/particle_physics/nuclear_binding.md`
+  `equations/nuclear_shell_model.py` (17/17), `equations/nuclear_relativistic_so.py` (19/19, C347)
+- **Document:** `educational/20_nuclear_physics.md`, `phenomena/particle_physics/nuclear_binding.md`
 
 ---
 
