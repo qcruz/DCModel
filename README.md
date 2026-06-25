@@ -178,6 +178,7 @@ educational/              Step-by-step modules teaching the model from scratch
   17_quantum_mechanics.md  Measurement as localization event; interference from field propagation
   18_open_problems.md      Honest map of T4/T3 open problems; what would close each one
   19_bell_inequalities.md  Why entanglement is not spooky in DFC; substrate connectivity below D3
+  20_nuclear_physics.md    Nuclear parameters from Λ_QCD, SEMF, shell model, island of stability (active)
   analogies/               Physical analogies for substrate behavior — what DFC structures are closest to
     01_the_kink.md         Domain walls, solitons, dislocations: what kinks are most like (and where each fails)
     02_the_photon_planet.md  Observation as field collision not delivery; the substrate as gas giant
