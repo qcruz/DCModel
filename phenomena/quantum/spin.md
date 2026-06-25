@@ -278,9 +278,8 @@ the same D6 SU(2) closure topology.
    corresponds to the D6 kink's fold orientation angle precessing in the external D5
    gauge field. The tree-level g = 2 follows from the Dirac structure of the Jackiw-Rebbi
    zero mode. The one-loop Schwinger correction (g−2)/2 = α_em/(2π) has been computed
-   from the DFC coupling chain (Cycle 55): predicted a_e = 0.001136, observed 0.001160
-   (−2.01% systematic error tracing to the same α_em gap as all electromagnetic predictions).
-   See `phenomena/quantum/anomalous_magnetic_moment.md`.
+   from the DFC α_em chain (36π identity): predicted a_e ≈ 0.001158, observed 0.001160
+   (−0.14%, Tier 2b). See `phenomena/quantum/anomalous_magnetic_moment.md`.
 
 ---
 

@@ -880,7 +880,21 @@ deviation has not been calculated.
   being embedded in a substrate field that is continuously connected to the D7 winding. No new calculation
   — this is a conceptual cross-reference clarifying why the BVP should show a ν₃-specific correction.
   T11 tier: T3 (unchanged).
-- Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_d7_holonomy.py` (C219), `equations/neutrino_oscillations.py`, `phenomena/particle_physics/particles/neutrinos.md`
+- **C349: `equations/neutrino_casimir_depth.py` (new)** — Casimir-depth universality formalized. New T1 algebraic content:
+  - **Unifying identity [T1]:** N_c/N_Hopf = I₄ − 1 = 1/3 (residual 0.00e+00). All three δd forms
+    trace to this single fact; the 2π comes only from the winding phase normalization.
+  - **Casimir-depth formula [T1]:** δd = (C_F − 1)/(2π × Q_top^YM) for any representation with C_F ≥ 1.
+    For fundamental: δd = (4/3 − 1)/(2π × 1) = 1/(6π) [T1 exact].
+  - **Adjoint prediction [T1 formula]:** δd(adj) = (C_A − 1)/(2π) = 2/(2π) = 1/π ≈ 0.318.
+    Ratio δd(adj)/δd(fund) = (C_A−1)/(C_F−1) = 2/(1/3) = **6 exactly** [T1; NOT 3].
+  - **Singlet: δd = 0 [T3]:** Color-neutral states (C_F=0 or C_F=1 singlet) acquire no depth shift.
+    Non-coupling to D7 holonomy is the structural T3 argument; BVP would confirm.
+  - **JR zero-mode connection [T1]:** JR zero-mode norm = ξ × I₄ (C320). Excess over free winding
+    (norm ξ×1) is ξ(I₄−1). Depth shift = excess/(2π × Q_top^YM) = (I₄−1)/(2π) = Form 3.
+  - Neutrino prediction: m₃/m₂ = 5.33^(1+1/(6π)) = 5.8248, observed 5.8242, error +0.010% [T3].
+  - 10/10 assertions PASS. T11 tier: T3 (unchanged; new T1 algebraic content formalizes all prior C219/C238 structural claims).
+  - Falsifiable: δd(adj)/δd(fund) = 6 exactly; adjoint modes should show 6× larger depth shift.
+- Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_d7_holonomy.py` (C219), `equations/neutrino_oscillations.py`, `equations/neutrino_casimir_depth.py` (C349), `phenomena/particle_physics/particles/neutrinos.md`
 
 ---
 
