@@ -120,15 +120,32 @@ representation of SU(3):
 
 I₄ = ∫ sech⁴(u) du = 4/3 = C₂(fund, SU(3))
 
-This is not a coincidence. It is an algebraic identity (exact, zero error, no parameters)
-that appears in three independent contexts:
+**This is not numerology — it is a selection mechanism.** The two quantities are
+determined by entirely independent means:
+
+1. **I₄ = 4/3 from V(φ) alone.** The kink profile is sech²(u/ξ), so the fourth power
+   integrates to ∫sech⁴(u)du = [tanh u − tanh³(u)/3]₋∞^{+∞} = (1−1/3)−(−1+1/3) = 4/3.
+   No Lie group, no representation theory, and no prior knowledge of SU(3) enters this
+   computation. The value 4/3 is fixed entirely by V(φ).
+
+2. **C₂(fund,SU(n)) = 4/3 forces n = 3.** The quadratic Casimir of the fundamental
+   representation of SU(n) is (n²−1)/(2n). Setting this equal to 4/3 gives the
+   polynomial 3n²−8n−3 = 0 with discriminant = 100 = 10² (rational arithmetic, T1
+   exact). The unique positive integer solution is n = 3; no other positive integer satisfies
+   C₂ = 4/3 (verified: n=1→0, n=2→3/4, n=4→15/8, n=5→12/5, all ≠ 4/3).
+
+The causal chain is: V(φ) determines I₄; I₄ forces n; n determines G = SU(3). V(φ)
+selects the gauge group.
+
+This structural identity appears in three further independent contexts, each
+using the same 4/3:
 - The kink energy: E_kink = I₄ × φ₀² × m₀ (where m₀ = √(α/β) × ξ⁻¹)
 - The moduli metric: g_ab = (I₄/ξ) × δ_ab (flat; governs how the kink rotates in SU(3))
 - The BPS bound: H ≥ I₄ × Q_top × m (minimum energy in any topological sector)
 
 The same number 4/3 is the Casimir invariant that enters quark-gluon scattering
-calculations throughout QCD. Its appearance here as a structural identity — not as a
-fitted parameter — is the foundation of the DFC mass gap argument.
+calculations throughout QCD. Its appearance here as a structural consequence of V(φ) —
+not as a fitted parameter — is the foundation of the DFC mass gap argument.
 
 ### How SU(3) Appears from V(φ)
 

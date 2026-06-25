@@ -694,12 +694,14 @@ Response document: `REVIEW_RESPONSE.md` (Cycle 319 section).
   **The response:** I₄=C₂ is structural: (i) C₂(fund,SU(n))=(n²-1)/(2n), (ii) setting this
   equal to 4/3 gives n=3 UNIQUELY (discriminant=100, C306), (iii) the kink integral I₄=4/3 is
   determined purely by V(φ) without knowing SU(3) exists. The identity I₄=C₂(fund,SU(3))=4/3
-  is a coincidence that FORCES n=3 — it is the selection mechanism. Better documentation is
-  needed in `ym_clay_proof.tex` Lemma 1 to make this causal argument explicit.
-  **Action: Update Lemma 1 in LaTeX to emphasize the selection mechanism, not just numerical
-  equality. Add a remark: "This is not numerology; C₂=4/3 for SU(n) has a unique integer
-  solution n=3, proven by rational arithmetic (discriminant=100=10²)."**
-  - Files to update: `equations/ym_clay_proof.tex`, `foundations/yang_mills_clay.md`
+  is a coincidence that FORCES n=3 — it is the selection mechanism.
+  **ADDRESSED C348**: `ym_clay_proof.tex` updated with a new `\begin{remark}[Selection mechanism,
+  not numerology]` after Lemma 1 that explicitly states the two-step causal argument: (1) I₄=4/3
+  from V(φ) alone (antiderivative of sech⁴, no Lie theory), (2) C₂=4/3 forces n=3 uniquely
+  (discriminant=100=10², rational arithmetic). `foundations/yang_mills_clay.md` "Key Bridge"
+  section rewritten to lead with "This is not numerology — it is a selection mechanism" and make
+  the V(φ)→I₄→n→G causal chain explicit.
+  - Files updated: `equations/ym_clay_proof.tex`, `foundations/yang_mills_clay.md` (C348)
 
 - **Point 1 — Strategic: Clay-proper vs DFC-physics split:** Reviewer suggests the proof
   can be split: (a) "Given G=SU(3), prove mass gap" — this is Clay-proper; (b) "Derive G=SU(3)
@@ -730,7 +732,7 @@ Response document: `REVIEW_RESPONSE.md` (Cycle 319 section).
 | Reviewer Point | Category | Gap severity | Files to create/update |
 |---|---|---|---|
 | 1. Strategic Clay/DFC split | Strategic framing | Medium | `ym_clay_proof.tex` restructure |
-| 2/3. I₄=C₂ selection mechanism | Documentation | Low | `ym_clay_proof.tex` Lemma 1 remark |
+| 2/3. I₄=C₂ selection mechanism | Documentation | **Done C348** | `ym_clay_proof.tex` new Remark 2; `yang_mills_clay.md` Key Bridge rewritten |
 | 4. N_Hopf isometry error | Fixed C317 | None | Done |
 | 5/6. Continuum limit a→0 | **CRITICAL** | HIGH | `ym_continuum_limit_formal.py` |
 | 7. OS Reconstruction scope | Already addressed | None | Done |
@@ -741,7 +743,7 @@ Response document: `REVIEW_RESPONSE.md` (Cycle 319 section).
 **Priority order for next cycles:**
 1. Continuum limit formal theorem (Points 5/6/10) — `ym_continuum_limit_formal.py`
 2. JR holonomy BVP (Point 8) — `ym_jr_holonomy_bvp.py`
-3. LaTeX Lemma 1 remark on I₄=C₂ selection mechanism (Points 2/3)
+3. ~~LaTeX Lemma 1 remark on I₄=C₂ selection mechanism (Points 2/3)~~ **DONE C348** — `ym_clay_proof.tex` Remark 2 added; `yang_mills_clay.md` Key Bridge rewritten.
 4. Strategic restructuring of LaTeX into Clay-proper + DFC-physics (Point 1)
 
 **Last updated:** C319 (2026-06-21)
