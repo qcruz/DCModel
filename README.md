@@ -317,10 +317,11 @@ phenomena/            Natural-language accounts of observations
   quantum/            Spin, entanglement, measurement, g-2
   condensed_matter/   Superconductivity, QHE, Josephson
 
-educational/          22 modules from layman to technical
+educational/          23 modules from layman to technical
   00_overview.md      Start here (no physics background required)
   08_mathematics.md   Technical summary for physicists
   18_open_problems.md Honest map of what remains unresolved
+  22_yang_mills_proof.md Yang-Mills mass gap: DFC proof candidate explained
 
 ISSUES.md             All open questions, failures, tensions, retractions
 push_history.md       Full development log — every cycle documented

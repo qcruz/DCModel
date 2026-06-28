@@ -106,7 +106,7 @@ character." The spatial appearance is downstream; the substrate behavior is prim
 
 ### Why Bosons Are Symmetric
 
-Gauge bosons (photon, W, Z, gluons) are connection 1-forms on the D5/D6/D7 closure structures.
+Gauge bosons (photon, W, Z, gluons) are connection 1-forms on the D5/D6/D7 closure behaviors.
 They are not kinks — they do not have D6 SU(2) winding. A 2π rotation of a gauge
 boson is trivially contractible. The exchange phase is +1. Bose-Einstein statistics
 follow.
@@ -239,3 +239,6 @@ If any two rows are equal (two particles in same state): det = 0
   `phenomena/particle_physics/forces/weak_force.md`
 - **Proton stability** — neutron stars sustained by neutron degeneracy pressure;
   `phenomena/particle_physics/proton_stability.md`
+- **Yang-Mills and the mass gap** — the boson/fermion distinction in DFC maps to
+  the same topology that determines G=SU(3); gauge bosons are topologically distinct
+  from kinks in the same framework; `educational/22_yang_mills_proof.md`
