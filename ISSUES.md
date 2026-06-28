@@ -814,8 +814,11 @@ deviation has not been calculated.
   1. **CKM-like D6/D7 interface mixing:** D7 closure couples asymmetrically to μ vs τ winding.
      Required: D6 Dirac operator in D7 SU(3) kink background with flavor labeling.
   2. **D4/D6 BC asymmetry:** winding-number-dependent BCs for 2nd vs 3rd generation winding.
-  3. **CP phase from π₃(S³)=ℤ:** Dirac CP phase δ_CP ≈ −90° (T2K/NOvA) contributes to
-     apparent θ₂₃ shift through PMNS marginalization. DFC account of CP violation open.
+  3. **CP phase from π₃(S³)=ℤ:** Dirac CP phase δ_CP ≈ −90° (T2K/NOvA). **NOTE: This
+     candidate is effectively ruled out as a mechanism.** Modern oscillation fits (T2K,
+     NOvA, IceCube) simultaneously fit θ₂₃ and δ_CP; the quoted θ₂₃ = 49° is already
+     the CP-marginalized best-fit value. The CP phase does not shift the reported θ₂₃.
+     Candidates 1 and 2 remain as the only viable T4 routes.
 - Quantitative: θ₂₃ derivation from D4/D6 projection geometry is T4 (no formula yet)
 
 **Files:** `phenomena/particle_physics/neutrino_oscillations.md` (updated C206), `equations/neutrino_oscillations.py`, `equations/neutrino_theta23_correction.py` (C209)

@@ -88,7 +88,7 @@ g_eff   =  0.54433           observed: 0.5443     error: +0.006%
 
 1/α_em(M_c)  =  36π  ≈  113.1     [sphere dims 1+3+5=9=N_c²; S_kink=36π]
 1/α_em(M_Z)  =  128.09            observed: 127.95   error: +0.15%
-1/α_em(0)    =  137.23            observed: 137.036  error: +0.14%
+1/α_em(0)    =  137.034           observed: 137.036  error: −0.001%  [T2a; error cancellation T1]
 
 α_s(M_Z)  =  0.11821      observed: 0.11820   error: +0.006%  [ECCC self-consistency]
 
@@ -317,11 +317,12 @@ phenomena/            Natural-language accounts of observations
   quantum/            Spin, entanglement, measurement, g-2
   condensed_matter/   Superconductivity, QHE, Josephson
 
-educational/          23 modules from layman to technical
+educational/          24 modules from layman to technical
   00_overview.md      Start here (no physics background required)
   08_mathematics.md   Technical summary for physicists
   18_open_problems.md Honest map of what remains unresolved
   22_yang_mills_proof.md Yang-Mills mass gap: DFC proof candidate explained
+  23_coupling_constants.md From 36π to 1/α_em(0)=137.034 — the complete coupling chain
 
 ISSUES.md             All open questions, failures, tensions, retractions
 push_history.md       Full development log — every cycle documented

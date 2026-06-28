@@ -1,9 +1,9 @@
 # Coupling Emergence in the DFC Framework
 
-**Status:** Active — quantitative results documented through Cycle 272. Coupling emergence
-chain is Tier 2a for g_eff, α_em(M_Z), sin²θ_W, α_s. Open derivations: D5 holonomy from
+**Status:** Active — quantitative results documented through C351. Coupling emergence
+chain is Tier 2a for g_eff, α_em(M_Z), sin²θ_W, α_s, α_em(0). Open derivations: D5 holonomy from
 KK reduction (Open 1), 36π route consistency (Open 2), SU(N) structure constants from winding
-(Open 3, partial T2a for D7 kinetic sector via SP4 G3 Cycle 184).
+(Open 3, partial T2a for D7 kinetic sector via SP4 G3).
 C272: k_Y² = 5/3 T4→T3 — derived from DFC first-generation hypercharge content via
 Q=T₃+Y/2; Σ(Y/2)²/Σ T₃² = (10/3)/2 = 5/3 (res 0.00e+00, T1 given assignments); see
 `equations/ky_hypercharge.py`. ECCC impact: Term2_SM α₁ piece now T3 (was T4); remaining
@@ -91,8 +91,10 @@ The inverse of the fine structure constant at the electroweak closure scale M_c(
 
 This follows from the EM coupling being the residual U(1) coupling after electroweak
 symmetry is broken at M_c(EW). Running from M_c(EW) to M_Z via standard QED/EW gives
-1/α_em(M_Z) = 128.09 (+0.15%, Tier 2a). Running further to zero momentum transfer
-gives 1/α_em(0) = 137.23 (+0.14%, Tier 2b using observed hadronic vacuum polarization).
+1/α_em(M_Z) = 128.09 (+0.15%, Tier 2a). Running further to zero momentum transfer via
+the full VP budget (Δα_lep + Δα_pQCD T2a; δ(Δα)_NP T4 open) gives 1/α_em(0) = 137.034
+(−0.001%, Tier 2a); a DFC overshoot at M_Z and the missing hadronic VP nearly cancel
+algebraically — see `equations/alpha_em_dfc_chain.py`.
 
 ### The Strong Coupling (Tier 2a candidate via ECCC)
 
@@ -122,8 +124,8 @@ V(φ) = −α/2 φ² + β/4 φ⁴
 g_eff² = 8πβ/3 = 8/27                    [Tier 2a]
     ↓ closure at D5: U(1) winding closes
 α_em(M_c) = 1/(36π)                      [Tier 2a]
-    ↓ RG running to M_Z, then to q=0
-α_em(0) ≈ 1/137                          [Tier 2b, 0.14%]
+    ↓ RG running to M_Z, then to q=0 via VP budget
+α_em(0) = 1/137.034                      [Tier 2a, −0.001%; error cancellation T1]
     ↓ closure at D7: SU(3) winding closes
 α_s(M_Z) ≈ 0.1182                        [Tier 2a candidate, 0.006%]
 ```
@@ -235,6 +237,7 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 | α_em(M_Z) from 36π chain | 1/128.09 | 1/127.9 | ✓ +0.15% |
 | sin²θ_W from Route 3B | 0.2312 | 0.2312 | ✓ 0.01% |
 | α_s from ECCC+α_em(0) | 0.11821 | 0.11820 | ✓ +0.006% |
+| α_em(0) full VP chain (C351) | 1/137.034 | 1/137.036 | ✓ −0.001% Tier 2a |
 | α_em(0) from ECCC+α_s | 1/136.98 | 1/137.04 | ✓ −0.044% |
 | EW VEV v (EWSB co-crystallization) | 247.83 GeV | 246.22 GeV | ✓ +0.65% |
 | f_ρ from large-N_c VMD (N_c=3, m_ρ Tier 3) | 148.8 MeV | 156 MeV | ✓ Tier 3, −4.9% |
@@ -269,4 +272,5 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 - `equations/ym_eccc_identity.py` — ECCC identity A−B = ln(1/α_em(0)) verified T2a (−0.044%, C263)
 - `equations/ym_cghost_analytic.py` — c_ghost_naive=1.4407 [T2a]; δF_ghost Lorentzian T1; SU(3) color factor C_A/C_F=9/4 needed for cancellation (C264)
 - `equations/eccc_algebraic_structure.py` — ECCC decomposition Term1_DFC=27π²×111/287 [T1]; closure residual 0.009%; T4 gap characterisation (C265)
-- `equations/ky_hypercharge.py` — k_Y² = 5/3 from DFC first-generation hypercharge content; Q=T₃+Y/2 verified all 15 Weyl spinors; k_Y T4→T3 (C272)
+- `equations/ky_hypercharge.py` — k_Y² = 5/3 from DFC first-generation hypercharge content; Q=T₃+Y/2 verified all 15 Weyl spinors; k_Y T4→T3
+- `equations/alpha_em_dfc_chain.py` — complete α_em(0) chain from 36π; 24/24 PASS; 36 T1 exact; VP budget T2a; 1/α_em(0)=137.034 (−0.001%); error cancellation T1; Problems #1+#4 unified T4 gap

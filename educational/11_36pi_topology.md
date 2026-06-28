@@ -257,7 +257,12 @@ derivations in the model.
 
 **Previous:** [Module 10 — The Cascade Uniqueness](10_cascade_uniqueness.md)
 
+**Next:** [Module 23 — Coupling Constants: From 36π to 1/137](23_coupling_constants.md) —
+how the coupling runs from M_c through M_Z down to zero energy, the VP budget, and the
+error cancellation that gives 1/α_em(0) = 137.034 (−0.001%).
+
 **See also:**
+- `equations/alpha_em_dfc_chain.py` — complete chain from 36π to 1/α_em(0)=137.034; 24/24 PASS
 - `equations/alpha_em_selfconsistency.py` — ECCC circle closing at 0.006% for α_s
 - `equations/alpha_em_prediction.py` — 1/α_em(M_Z) = 128.09, +0.15% from observation
 - `equations/d5_complex_from_instability.py` — β = 1/(9π) derivation chain
