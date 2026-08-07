@@ -60,7 +60,7 @@
 
 **Target:** Derive delta_d = 1/(6pi) from depth-anchoring mechanism and SU(3) color structure.
 
-**Status:** PLANNED
+**Status:** COMPLETE — `equations/neutrino_depth_shift_bvp.py` (17/17 PASS, 0 discrepancies). JR-BPS wavefunction identity ψ₀(y) = sech²(y/ξ) ∝ φ'_kink(y) [T1, proportionality std 1.36e-16]. Zero-mode norm = ξ×I₄ [T1, C320]. Excess norm fraction (I₄-1)/(2π) = 1/(6π) gives δd as DYNAMICAL result of Dirac BVP [T2a]. Three equivalent T1 forms confirmed: (1) N_c/(N_Hopf×2π), (2) β×N_c/2, (3) (I₄-1)/(2π) — all = 1/(6π). Result: m₃/m₂ = 5.8248 vs obs 5.8242 (+0.0096%, 0 free params, 885× improvement over uncorrected). T11 depth shift mechanism: T3→T2a.
 
 ---
 
@@ -83,5 +83,5 @@
 | 3 | String tension derivation | Medium | Medium | COMPLETE |
 | 4 | Lambda_QCD documentation | Easy | Medium | COMPLETE |
 | 5 | Pure-DFC alpha_s | Hard | Medium | COMPLETE |
-| 6 | Neutrino color correction | Medium | Medium | PLANNED |
+| 6 | Neutrino color correction | Medium | Medium | COMPLETE |
 | 7 | Mass mechanism unification | Very Hard | High | PLANNED |

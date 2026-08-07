@@ -4,7 +4,7 @@ Centralized tracker for all known failures, internal tensions, blocked derivatio
 retracted claims, and open questions across the repository. Check and update after
 every push. Resolve by removing entries or moving to the `## Resolved` section.
 
-**Last updated:** 2026-06-23 (Cycles 122–336)
+**Last updated:** 2026-08-07 (Cycles 122–354)
 
 ---
 
@@ -923,7 +923,15 @@ deviation has not been calculated.
   - Neutrino prediction: m₃/m₂ = 5.33^(1+1/(6π)) = 5.8248, observed 5.8242, error +0.010% [T3].
   - 10/10 assertions PASS. T11 tier: T3 (unchanged; new T1 algebraic content formalizes all prior C219/C238 structural claims).
   - Falsifiable: δd(adj)/δd(fund) = 6 exactly; adjoint modes should show 6× larger depth shift.
-- Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_d7_holonomy.py` (C219), `equations/neutrino_oscillations.py`, `equations/neutrino_casimir_depth.py` (C349), `phenomena/particle_physics/particles/neutrinos.md`
+- **C354: `equations/neutrino_depth_shift_bvp.py` (new)** — JR-BPS derivation upgrades T11 depth shift T3→T2a.
+  - **Part A [T1]:** JR-BPS wavefunction identity ψ₀(y) = sech²(y/ξ) ∝ φ'_kink(y) (proportionality std 1.36e-16).
+  - **Part B [T1]:** Zero-mode norm = ξ×I₄ from BVP solution [C320]. Excess fraction = I₄−1 = 1/3 (Fraction exact).
+  - **Part C [T2a]:** δd = (I₄−1)/(2π) = 1/(6π) — dynamical result from Dirac BVP, not algebraic identity.
+  - **Part D [T1]:** Three equivalent forms all = 1/(6π); S_kink = 36π cross-check exact.
+  - **Part E [T2a]:** m₃/m₂ = κ^(1+δd) = 5.8248 vs obs 5.8242 (+0.0096%, 0 free params, 885× improvement).
+  - **Part F:** Tier chain: 7 T1 + 2 T2a + 1 T3. T11 depth shift mechanism: T3→T2a.
+  - 17/17 assertions PASS, 0 FAIL.
+- Files: `equations/neutrino_masses.py`, `equations/neutrino_color_correction.py` (C205), `equations/neutrino_d7_holonomy.py` (C219), `equations/neutrino_oscillations.py`, `equations/neutrino_casimir_depth.py` (C349), `equations/neutrino_depth_shift_bvp.py` (C354), `phenomena/particle_physics/particles/neutrinos.md`
 
 ---
 
