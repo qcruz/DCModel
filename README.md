@@ -374,11 +374,11 @@ phenomena/             74 natural-language accounts of observations
   quantum/              Spin, entanglement, measurement, Bell
   condensed_matter/     Superconductivity, QHE, Josephson
 
-educational/           25 modules from layman to expert
+educational/           26 modules from layman to expert
   00_overview.md        Start here (no physics background needed)
   08_mathematics.md     Technical summary for physicists
   22_yang_mills_proof.md  Yang-Mills mass gap explained
-  23_coupling_constants.md  From 36pi to 1/137
+  24_strong_cp_problem.md  Why QCD conserves CP without an axion
 
 comparisons/           DFC vs. String Theory, GUT, LQG, SM
 practical_applications/ Engineering limits from verified results

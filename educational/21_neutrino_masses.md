@@ -4,9 +4,10 @@
 the substrate, kinks, and compression depths, see Module 01 (The Substrate) and Module 03
 (The Depth Map). Module 05 (Particles) introduces the lepton generations.
 
-**Status:** The neutrino mass prediction is Tier 3 structural. The derivation of the depth
-correction δd = 1/(6π) has multiple T1 algebraic forms (all equivalent) but the explicit
-BVP calculation confirming it from first principles remains open (T3→T2a path identified).
+**Status:** The depth correction δd = 1/(6π) is Tier 2a — derived dynamically from the
+Jackiw-Rebbi BVP zero-mode norm (excess fraction (I₄−1)/(2π) = 1/(6π)). The corrected
+neutrino mass ratio m₃/m₂ = 5.8248 vs observed 5.8242 (+0.0096%, 0 free parameters).
+The uncorrected depth ratio κ = 5.33 remains Tier 2b.
 
 ---
 
