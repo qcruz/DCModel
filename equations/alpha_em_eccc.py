@@ -69,7 +69,7 @@ R            = 1.0 / ALPHA_COMMON      # = 27π/2 — DFC target inverse couplin
 M_Z         = 91.1876    # GeV
 ALPHA_S_MZ  = 0.1182     # α_s(M_Z) [PDG 2022; NOT from α_em chain]
 SIN2_TW     = 0.2312     # sin²θ_W [DFC Route 3B, Cycle 30, <0.01% error]
-G2_MZ       = 0.6514     # g₂(M_Z) [DFC coupling chain, Cycle 51]
+G2_MZ       = 0.6514     # g₂(M_Z) [DFC coupling chain, T2a C353]
 
 # ─── SM one-loop beta coefficients ────────────────────────────────────────────
 # The beta coefficients arise from the SM matter content: N_gen=3, N_H=1.
@@ -326,7 +326,7 @@ if __name__ == '__main__':
     print('  This identity holds to within 0.045% using:')
     print('   – g_eff² = 8/27 from V(φ) (DFC, Tier 2a)')
     print('   – α_s(M_Z) = 0.1182 (SM input)')
-    print('   – α₁(M_Z) from g₂, sin²θ_W (DFC chain, Tier 2b)')
+    print('   – α₁(M_Z) from g₂, sin²θ_W (DFC chain, T2a C353)')
     print('   – b₁, b₃ (SM one-loop beta functions)')
 
     # ── Step 5: DFC prediction for α_em(0) ───────────────────────────────────
