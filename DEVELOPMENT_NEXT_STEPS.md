@@ -21,7 +21,7 @@ string tension σ = Q_top × Λ_QCD² and the DFC ρ meson (m_ρ = 763 MeV, f_ρ
 This closes T12 and achieves 99.9%+ accuracy for α_em(0).
 
 **Effort:** Hard | **Impact:** Very High (closes the model's last precision coupling gap)
-**ISSUES.md:** T12 | **Status:** IN PROGRESS (C356: δ(Δα) = 0.004158, 4× target; T3)
+**ISSUES.md:** T12 | **Status:** IN PROGRESS (C358: global +4.08× / local −0.35× bracket target; T3)
 
 ---
 
@@ -168,7 +168,7 @@ equation layer inventory.
 
 | # | Item | Effort | Impact | Status | ISSUES |
 |---|------|--------|--------|--------|--------|
-| 1 | Hadronic VP (δΔα^NP) | Hard | Very High | IN PROGRESS (C356: 4× target, T3) | T12 |
+| 1 | Hadronic VP (δΔα^NP) | Hard | Very High | IN PROGRESS (C358: brackets target, T3) | T12 |
 | 2 | Born rule Step 6b | Medium | High | PLANNED | — |
 | 3 | Collapse mechanism T3→T2a | Hard | Medium-High | PLANNED | — |
 | 4 | θ₂₃ mixing angle 4° gap | Hard | Medium | PLANNED | T10 |

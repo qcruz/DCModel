@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 356 (2026-08-07)
+**Last updated:** Cycle 358 (2026-08-07)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -63,12 +63,15 @@ resonances below √s ≈ 2 GeV. This same gap blocks the ECCC identity (Problem
 #4 unified, proved T1 in C351). VP budget: DFC accounts for 98.5% of total VP at M_Z.
 
 C356 computed the first quantitative dispersive integral: δ(Δα) = 0.004158 (4.08× target).
-Overshoot from constant C_dual duality model. T3 overall — correct sign and order of
-magnitude; quantitative match requires per-resonance duality or D7 confinement spectral
-density.
+Overshoot from constant C_dual global duality model. C357–C358 attempted per-resonance
+local duality: C357 narrow windows gave −0.63× (wrong sign); C358 wider windows (s_boundary
+= 1.0 GeV, s_upper = 1.5 GeV) gave −0.35× (still wrong sign, improved). The two models
+bracket the target: global +4.08× (too little subtraction) vs local −0.35× (too much
+subtraction). Root cause: constant-C_dual model fundamentally over-subtracts when
+C_dual > R_parton; exact closure requires D7 confinement spectral density (T4).
 
-**Status:** T3 (C356 approximation 4× target); T4 for exact 0.00102 piece.
-**Files:** `equations/hadronic_vp_dispersive.py` (C356), `equations/alpha_em_dfc_chain.py` (C351),
+**Status:** T3 (two models bracket target; 4× and −0.35×); T4 for exact 0.00102 piece.
+**Files:** `equations/hadronic_vp_dispersive.py` (C358), `equations/alpha_em_dfc_chain.py` (C351),
 `equations/alpha_em_hadronic.py` (C158)
 
 ---
