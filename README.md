@@ -374,16 +374,17 @@ phenomena/             74 natural-language accounts of observations
   quantum/              Spin, entanglement, measurement, Bell
   condensed_matter/     Superconductivity, QHE, Josephson
 
-educational/           26 modules from layman to expert
+educational/           27 modules from layman to expert
   00_overview.md        Start here (no physics background needed)
   08_mathematics.md     Technical summary for physicists
   22_yang_mills_proof.md  Yang-Mills mass gap explained
   24_strong_cp_problem.md  Why QCD conserves CP without an axion
+  25_nuclear_shell_n126.md  How QCD screening fixes the N=126 mystery
 
 comparisons/           DFC vs. String Theory, GUT, LQG, SM
 practical_applications/ Engineering limits from verified results
 ISSUES.md              All open questions, failures, and tensions
-push_history.md        Full development log (353 cycles)
+push_history.md        Full development log (361 cycles)
 ```
 
 **For non-physicists:** Start with `educational/00_overview.md`
@@ -393,7 +394,7 @@ push_history.md        Full development log (353 cycles)
 
 ---
 
-*Development began April 3, 2026. 353 development cycles completed. Every claim
+*Development began April 3, 2026. 361 development cycles completed. Every claim
 is tiered, every prediction is testable, and every failure is documented.
 Open problems: `ISSUES.md`. Full history: `push_history.md`. Yang-Mills proof:
 `foundations/yang_mills_clay.md`.*

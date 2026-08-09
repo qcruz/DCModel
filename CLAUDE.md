@@ -658,7 +658,14 @@ educational/
 ├── 15_dark_matter.md           ← complete (C323)
 ├── 16_cosmology.md             ← complete (C323)
 ├── 17_quantum_mechanics.md     ← complete (C330)
-└── 18_open_problems.md         ← complete (C331)
+├── 18_open_problems.md         ← complete (C331)
+├── 19_bell_inequalities.md     ← complete (C333)
+├── 20_nuclear_physics.md       ← complete (C346)
+├── 21_neutrino_masses.md       ← complete (C349)
+├── 22_yang_mills_proof.md      ← complete (C350)
+├── 23_coupling_constants.md    ← complete (C352)
+├── 24_strong_cp_problem.md     ← complete (C355)
+└── 25_nuclear_shell_n126.md    ← complete (C361, journaling format)
 ```
 
 **Writing rules for educational modules:**
@@ -667,7 +674,14 @@ educational/
 - Each module must be readable without reading any other module first.
 - Accuracy is non-negotiable: if something is Tier 3 or open, say so plainly.
   ("We believe X, but have not yet proved it" is the correct phrasing.)
-- Length: 500–1500 words per module. Dense is fine; imprecise is not.
+- Length: 500–1500 words per module (journaling modules may be longer). Dense is fine; imprecise is not.
+- **Preferred format for milestone modules:** When documenting a notable result or
+  breakthrough (e.g., closing a T4 gap, completing a priority item), use a journaling
+  style that captures the discovery process — the problem, how we approached it, what
+  we found, and what it means. This format serves dual purpose: it records the reasoning
+  at the moment of discovery (valuable for future reference) while being educational and
+  informative for readers. See `educational/25_nuclear_shell_n126.md` as the reference
+  example of this format.
 
 ### Step 5 — Propagate Updates (MANDATORY every session)
 

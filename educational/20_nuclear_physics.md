@@ -174,11 +174,12 @@ in the DFC WS calculation. The gap above the proton 2f₇/₂ manifold at Z=114 
 approximately 1.8× larger than typical proton orbital spacings. The element with
 Z=114, flerovium (Fl), has been synthesized in laboratory experiments. Tier 3.
 
-**The N=126 limitation.** The non-relativistic WS does not reproduce N=126 as a
-shell closure in the DFC parameterization. The gap appears at N=118 instead, because
-the 1j₁₅/₂ orbital (a very high-angular-momentum state) is placed too low in energy
-without relativistic corrections. Reproducing N=126 requires relativistic spin-orbit
-enhancement. This is a T4 open problem.
+**The N=126 closure.** The non-relativistic WS with the standard Thomas SO strength
+κ = 36 does not reproduce N=126 — the gap appears at N=118 instead. However, DFC
+predicts an effective SO strength κ_DFC = 33 = 36 × b₀/(4N_c) = 36 × 11/12, where
+b₀ = 11 is the pure SU(3) one-loop beta coefficient and 4N_c = 12 counts the total
+D7 modes. At κ = 33, N=126 is correctly reproduced with a gap of 1.07 MeV. See
+Module 25 for a detailed account of this result.
 
 ---
 
@@ -342,7 +343,7 @@ SO surface — is the main new DFC input. The N=126 reproduction remains T4.
 | Item | Status | What is needed |
 |------|--------|----------------|
 | Bulk binding a_V from DFC | T4 | Hard-core repulsion from D7 kink dynamics |
-| N=126 as shell closure | T4 | Reduce κ or implement full Dirac-WS equation |
+| N=126 as shell closure | **T3 CLOSED** (C361) | κ_DFC = 33 = 36 × 11/12; see Module 25 |
 | Z=114 proton magic from DFC | T3 | WS gap confirmed; formal DFC derivation missing |
 | Shell correction sign for ²⁹⁸Fl | T4 | Depends on N=126 fix |
 | Half-life of ²⁹⁸Fl | T4 | Requires DFC account of alpha/fission dynamics |
@@ -367,13 +368,15 @@ SO surface — is the main new DFC input. The N=126 reproduction remains T4.
 | Z=114 proton subshell | predicted | consistent with ²⁹²Fl data | T3 |
 | δE_shell(¹³²Sn) | −5.8 MeV (negative ✓) | < 0 expected | T3 |
 | B/A (²⁹⁸Fl, DFC-only) | 7.09 MeV/A | not yet synthesized | T3 |
-| N=126 shell closure reproduced | not yet | required | T4 open |
+| N=126 shell closure (κ=33) | reproduced (gap 1.07 MeV) | reproduced | T3 (C361) |
 
 ---
 
 **See also:** Module 01 (The Substrate) for V(φ) and kink solutions. Module 04 (Forces)
 for how D7 produces SU(3) color. Module 06 (Predictions) for the full prediction
-table. `equations/nuclear_dfc_params.py` for the computed nuclear parameters.
+table. Module 25 (N=126 Shell Closure) for the detailed account of the κ_DFC = 33
+result. `equations/nuclear_dfc_params.py` for the computed nuclear parameters.
 `equations/nuclear_shell_model.py` for the WS shell model and Strutinsky correction.
 `equations/nuclear_relativistic_so.py` for the relativistic SO prediction
 a_SO = I₄ × a₀ and the DFC-only B(²⁹⁸Fl) estimate.
+`equations/nuclear_shell_kappa.py` for the κ scan and N=126 verification.
