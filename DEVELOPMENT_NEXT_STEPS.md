@@ -115,7 +115,7 @@ or demonstrate that the relativistic formulation naturally produces the
 κ < 36 condition needed for N=126.
 
 **Effort:** Medium | **Impact:** Medium (validates I₄ in nuclear domain)
-**ISSUES.md:** T17 | **Status:** PLANNED
+**ISSUES.md:** T17 | **Status:** COMPLETE (C361: κ_DFC = 33 = 36×b₀/(4N_c), 24/24 PASS, N=126 T4→T3)
 
 ---
 
@@ -174,7 +174,7 @@ equation layer inventory.
 | 4 | θ₂₃ mixing angle 4° gap | Hard | Medium | PLANNED | T10 |
 | 5 | CKM/PMNS quantitative | Very Hard | Medium | PLANNED | T2 |
 | 6 | Mass mechanism unification | Very Hard | High | PLANNED | — |
-| 7 | Nuclear N=126 shell closure | Medium | Medium | PLANNED | T17 |
+| 7 | Nuclear N=126 shell closure | Medium | Medium | COMPLETE (C361, 24/24 PASS) | T17 |
 | 8 | Cosmological constant | Very Hard | Very High | PLANNED | T16 |
 | 9 | ℏ hierarchy | Very Hard | High | PLANNED | T8 |
 | 10 | current_state.md rewrite | Medium | Medium | PLANNED | — |

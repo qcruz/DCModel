@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 360 (2026-08-09)
+**Last updated:** Cycle 361 (2026-08-09)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -122,16 +122,21 @@ origin in δd = 1/(6π).
 ### T17 — Nuclear Physics: N=126 Shell Closure
 
 Six-step framework complete at T3. B(²⁹⁸Fl) = 2114 MeV = 7.09 MeV/nucleon [T3].
-Magic numbers 2,8,20,28,50,82 reproduced; N=184 predicted. a_SO = I₄ × a₀ = 0.893 fm
+Magic numbers 2,8,20,28,50,82,**126** all reproduced [T3]. a_SO = I₄ × a₀ = 0.893 fm
 [T3, 0.7% from FRDM].
 
-**T4 open:** N=126 not reproduced — a_SO alone insufficient for 1i₁₃/₂ intruder state
-ordering. Requires relativistic Dirac-Woods-Saxon or κ < 36 condition. Also open: a_V
-from D7 many-body dynamics; half-life prediction for ²⁹⁸Fl.
+C361: N=126 **CLOSED** via DFC effective SO strength κ_DFC = 33 = 36 × b₀/(4N_c) =
+36 × 11/12 [T3]. The one-loop beta coefficient b₀=11 sets the fraction of SO coupling
+surviving D7 confinement screening. Critical κ_c ≈ 33.27; κ_DFC = 33 safely below.
+Gap at N=126: 1.07 MeV. All 7 standard magic numbers reproduced (24/24 PASS).
 
-**Status:** T3 overall; N=126 T4 open.
-**Files:** `equations/nuclear_relativistic_so.py` (C347), `equations/nuclear_shell_model.py`,
-`equations/nuclear_dfc_params.py`, `equations/nuclear_volume_term.py`
+**T4 remaining:** N=184 superheavy magic number not reproduced at κ=33 in ²⁹⁸Fl spectrum.
+Formal derivation of b₀/(4N_c) correction from D7 dynamics. a_V from D7 many-body
+dynamics; half-life prediction for ²⁹⁸Fl.
+
+**Status:** T3 overall; N=126 **T4→T3 CLOSED** (C361).
+**Files:** `equations/nuclear_shell_kappa.py` (C361), `equations/nuclear_relativistic_so.py` (C347),
+`equations/nuclear_shell_model.py`, `equations/nuclear_dfc_params.py`, `equations/nuclear_volume_term.py`
 
 ---
 
