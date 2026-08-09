@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 358 (2026-08-07)
+**Last updated:** Cycle 359 (2026-08-09)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -178,7 +178,7 @@ from D7 many-body dynamics; half-life prediction for ²⁹⁸Fl.
 
 Major issues resolved during model development (newest first):
 
-- **Born rule P(x)=|ψ(x)|²** — T2a (C339): full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→σ² unique coupling from V(φ) Z₂ symmetry + fringe shape + EFT suppression.
+- **Born rule P(x)=|ψ(x)|²** — T2a (C339/C359): full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|². Two independent Step 6b routes: (A) σ² coupling selection from Z₂ + averaging + EFT (C339); (B) barrier dynamics — DC response Σ(x)=−S(x)/(2α) reduces spinodal distance, δΓ∝|Σ|∝|ψ|² in linear regime (C359, 14/14 PASS).
 - **Strong CP (θ̄=0)** — T2a (C147/C157): S⁵ CP isometry → θ=0; real amplitude preservation theorem → arg(det M_q)=0; interface overlap integral Im(Y)=0. No axion prediction.
 - **Tau lepton mass** — T2a (C146): Koide formula m_τ = 1776.97 MeV (+0.006%, 0 free params). Dimple model (8.4× off) superseded.
 - **EWSB vacuum v** — T2a (C145): co-crystallization v = 247.83 GeV (+0.65%).

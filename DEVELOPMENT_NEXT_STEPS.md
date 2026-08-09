@@ -38,7 +38,7 @@ events at D3 depth occur at a rate proportional to local time-averaged energy
 density ⟨ε(x)⟩ ∝ |ψ(x)|². This upgrades Born rule from T2a to T1/T2a throughout.
 
 **Effort:** Medium | **Impact:** High (foundational quantum mechanics from V(φ))
-**ISSUES.md:** Born rule entries | **Status:** PLANNED
+**ISSUES.md:** Born rule entries | **Status:** COMPLETE (C359: barrier dynamics route, 14/14 PASS)
 
 ---
 
@@ -169,7 +169,7 @@ equation layer inventory.
 | # | Item | Effort | Impact | Status | ISSUES |
 |---|------|--------|--------|--------|--------|
 | 1 | Hadronic VP (δΔα^NP) | Hard | Very High | IN PROGRESS (C358: brackets target, T3) | T12 |
-| 2 | Born rule Step 6b | Medium | High | PLANNED | — |
+| 2 | Born rule Step 6b | Medium | High | COMPLETE (C359, 14/14 PASS) | — |
 | 3 | Collapse mechanism T3→T2a | Hard | Medium-High | PLANNED | — |
 | 4 | θ₂₃ mixing angle 4° gap | Hard | Medium | PLANNED | T10 |
 | 5 | CKM/PMNS quantitative | Very Hard | Medium | PLANNED | T2 |

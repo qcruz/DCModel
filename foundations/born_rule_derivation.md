@@ -212,7 +212,7 @@ Given 1, 2, 3: P(x)dx = Γ(x)dx / ∫Γ(x')dx' = |ψ(x)|²dx. Born rule. ✓
 |---|---|---|
 | Spin Born rule: P(↑,θ)=cos²(θ/2) | SU(2) spinor geometry + binary nucleation | **Derived ✓** |
 | General spin Born rule: P(i)=\|⟨i\|ψ⟩\|² | Gleason's theorem on 2D SU(2) Hilbert space | **Structural ✓** |
-| Position Born rule: P(x)=\|ψ(x)\|² | Nucleation rate ∝ \|φ\|² (quantum-noise regime) | Structural; formal derivation OPEN |
+| Position Born rule: P(x)=\|ψ(x)\|² | Two routes: (A) σ² coupling selection C339; (B) barrier dynamics C359 | **T2a ✓** (two independent derivations) |
 | Energy Born rule: P(E)=\|⟨E\|ψ⟩\|² | Energy eigenstates = stable compression modes | Structural argument; OPEN |
 | Born rule for general observables | Spectral decomposition of Hermitian operators | Follows from position/spin cases if complete |
 
@@ -270,4 +270,5 @@ confirming that the SU(2) spinor Born rule is self-consistent.
 - `foundations/tsirelson_bound.md` — CHSH ≤ 2√2 relies on Born rule for spin (now derived)
 - `foundations/spin_emergence.md` — Jackiw-Rebbi spinor; SU(2) state space at D6
 - `equations/bell_correlations.py` — E(a,b) = −cos(θ) verified; uses spin Born rule
+- `equations/born_rule_barrier_dynamics.py` — Step 6b Route B: DC response Σ(x) reduces spinodal distance; δΓ∝|ψ|² (C359)
 - `equations/quantum_emergence.py` — Schrödinger equation derived; Born rule open problem noted
