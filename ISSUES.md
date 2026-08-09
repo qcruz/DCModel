@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 359 (2026-08-09)
+**Last updated:** Cycle 360 (2026-08-09)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -146,7 +146,7 @@ from D7 many-body dynamics; half-life prediction for ²⁹⁸Fl.
 | SU(3) vs SO(6) | Largely resolved C117/C177; J propagation proof open | `equations/d5_complex_from_instability.py` |
 | Koide t = 1/√Q_top derivation | T4; 5D Yukawa vortex integral open | `equations/koide_phase_coupling.py` |
 | Series holonomy (Step 9c) | T3; KK reduction formal derivation open | — |
-| Collapse mechanism | T3 (C340); spinodal dynamics formalized | `equations/collapse_mechanism.py` |
+| Collapse mechanism | T2a (C360); trigger+selection upgraded; entanglement T3 | `equations/collapse_trigger_condition.py` (C360), `equations/collapse_mechanism.py` (C340) |
 
 ---
 

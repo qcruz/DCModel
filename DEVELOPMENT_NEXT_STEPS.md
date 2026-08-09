@@ -54,7 +54,7 @@ interaction between a delocalized kink mode and a localized kink configuration
 above a critical field overlap threshold initiates the spinodal collapse.
 
 **Effort:** Hard | **Impact:** Medium-High (resolves measurement problem structurally)
-**ISSUES.md:** Collapse mechanism | **Status:** PLANNED
+**ISSUES.md:** Collapse mechanism | **Status:** COMPLETE (C360: trigger+selection T2a, 18/18 PASS; entanglement T3 remains)
 
 ---
 
@@ -170,7 +170,7 @@ equation layer inventory.
 |---|------|--------|--------|--------|--------|
 | 1 | Hadronic VP (δΔα^NP) | Hard | Very High | IN PROGRESS (C358: brackets target, T3) | T12 |
 | 2 | Born rule Step 6b | Medium | High | COMPLETE (C359, 14/14 PASS) | — |
-| 3 | Collapse mechanism T3→T2a | Hard | Medium-High | PLANNED | — |
+| 3 | Collapse mechanism T3→T2a | Hard | Medium-High | COMPLETE (C360, 18/18 PASS) | — |
 | 4 | θ₂₃ mixing angle 4° gap | Hard | Medium | PLANNED | T10 |
 | 5 | CKM/PMNS quantitative | Very Hard | Medium | PLANNED | T2 |
 | 6 | Mass mechanism unification | Very Hard | High | PLANNED | — |
