@@ -160,7 +160,7 @@ to ℏ via α_em = e²/(4πε₀ℏc).
 equation layer inventory.
 
 **Effort:** Medium | **Impact:** Medium (internal clarity, onboarding)
-**ISSUES.md:** — | **Status:** PLANNED
+**ISSUES.md:** — | **Status:** COMPLETE (C363: full rewrite, ~61.5%→~80% completeness, all sections updated)
 
 ---
 
@@ -177,7 +177,7 @@ equation layer inventory.
 | 7 | Nuclear N=126 shell closure | Medium | Medium | COMPLETE (C361, 24/24 PASS) | T17 |
 | 8 | Cosmological constant | Very Hard | Very High | COMPLETE (C362, 13/13 PASS) | T16 |
 | 9 | ℏ hierarchy | Very Hard | High | PLANNED | T8 |
-| 10 | current_state.md rewrite | Medium | Medium | PLANNED | — |
+| 10 | current_state.md rewrite | Medium | Medium | COMPLETE (C363) | — |
 
 **Ongoing (no priority number — part of regular cycle rotation):**
 
