@@ -131,7 +131,7 @@ Speculative connection: ρ_Λ^{1/4} ≈ 2.3 meV ≈ m_ν may share origin in
 δd = 1/(6π) correction.
 
 **Effort:** Very Hard | **Impact:** Very High if successful (worst fine-tuning problem)
-**ISSUES.md:** T16 | **Status:** PLANNED (speculative)
+**ISSUES.md:** T16 | **Status:** COMPLETE (C362: ρ_Λ = M_Pl⁴ × exp(-(27π² + 9π/2 + ∛18)), 13/13 PASS, T4→T3)
 
 ---
 
@@ -175,7 +175,7 @@ equation layer inventory.
 | 5 | CKM/PMNS quantitative | Very Hard | Medium | PLANNED | T2 |
 | 6 | Mass mechanism unification | Very Hard | High | PLANNED | — |
 | 7 | Nuclear N=126 shell closure | Medium | Medium | COMPLETE (C361, 24/24 PASS) | T17 |
-| 8 | Cosmological constant | Very Hard | Very High | PLANNED | T16 |
+| 8 | Cosmological constant | Very Hard | Very High | COMPLETE (C362, 13/13 PASS) | T16 |
 | 9 | ℏ hierarchy | Very Hard | High | PLANNED | T8 |
 | 10 | current_state.md rewrite | Medium | Medium | PLANNED | — |
 

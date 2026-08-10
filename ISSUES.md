@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 361 (2026-08-09)
+**Last updated:** Cycle 362 (2026-08-09)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -110,12 +110,18 @@ peer review. No further cycles planned unless a mathematical issue is found.
 ### T16 — Cosmological Constant
 
 DFC reframes the 10¹²³ cancellation problem: deep-substrate and cosmic-scale energies
-are at different compression depths and not additive. T3 structural argument. Does NOT
-derive ρ_Λ = (2.3 meV)⁴ from V(φ). Speculative connection: ρ_Λ^{1/4} ≈ m_ν may share
-origin in δd = 1/(6π).
+are at different compression depths and not additive. T3 structural argument.
 
-**Status:** T3 structural reframe; T4 for quantitative prediction.
-**Files:** `foundations/cosmological_constant_dfc.md` (C328)
+C362: Quantitative prediction achieved (T3, 0 free parameters):
+ρ_Λ = M_Pl⁴ × exp(-(27π² + 9π/2 + ∛18)). Exponent = 283.24 vs observed 283.09
+(+0.05%). ρ_Λ^{1/4} = 2.16 meV vs observed 2.24 meV (−3.5%). Three terms:
+S_inst = 27π² (instanton action, T2a), S_inst×δd = 9π/2 (neutrino depth correction,
+T2a), α = ∛18 (compression parameter, T2a). Formula is T3 (structural, not derived
+from V(φ)). Neutrino mass scale connection ρ_Λ^{1/4} ≈ m_ν noted but not derived.
+
+**Status:** T3 quantitative prediction (was T4); structural reframe unchanged (T3, C328).
+**Files:** `equations/cosmological_constant_prediction.py` (C362, 13/13 PASS),
+`foundations/cosmological_constant_dfc.md` (C328)
 
 ---
 
