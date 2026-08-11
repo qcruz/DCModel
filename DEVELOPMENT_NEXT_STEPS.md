@@ -70,7 +70,7 @@ the μ↔τ Z₂ symmetry. Two T4 candidates remain: (1) CKM-like D6/D7 interfac
 mixing, (2) winding-number-dependent D4/D6 boundary condition asymmetry.
 
 **Effort:** Hard | **Impact:** Medium (neutrino mixing from first principles)
-**ISSUES.md:** T10 | **Status:** PLANNED
+**ISSUES.md:** T10 | **Status:** IN PROGRESS (C364: Z₃ mechanism identified T1, formula T4)
 
 ---
 
@@ -171,7 +171,7 @@ equation layer inventory.
 | 1 | Hadronic VP (δΔα^NP) | Hard | Very High | IN PROGRESS (C358: brackets target, T3) | T12 |
 | 2 | Born rule Step 6b | Medium | High | COMPLETE (C359, 14/14 PASS) | — |
 | 3 | Collapse mechanism T3→T2a | Hard | Medium-High | COMPLETE (C360, 18/18 PASS) | — |
-| 4 | θ₂₃ mixing angle 4° gap | Hard | Medium | PLANNED | T10 |
+| 4 | θ₂₃ mixing angle 4° gap | Hard | Medium | IN PROGRESS (C364: Z₃ mechanism T1) | T10 |
 | 5 | CKM/PMNS quantitative | Very Hard | Medium | PLANNED | T2 |
 | 6 | Mass mechanism unification | Very Hard | High | PLANNED | — |
 | 7 | Nuclear N=126 shell closure | Medium | Medium | COMPLETE (C361, 24/24 PASS) | T17 |

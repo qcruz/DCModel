@@ -26,13 +26,23 @@ DFC predicts θ₂₃ = 45° from Z₂ (μ↔τ) symmetry at D6 [T3]. Observed �
 The C205 color correction δd = 1/(6π) does NOT shift θ₂₃ [T1 proved, C209] — T10 and
 T11 are independent problems. Required asymmetry: ε_d ≈ 0.144 depth units (~2.7× δd).
 
-**T4 candidates (2 remaining):**
-1. CKM-like D6/D7 interface mixing
+**C364 Z₃ holonomy mechanism [T1 structural]:**
+D7 SU(3) center Z₃ distinguishes tau (n=3, q=0, Z₃-neutral) from muon (n=2, q=2,
+Z₃-charged). Center vortex factor F(q) = 1−cos(2πq/3): F(0)=0 for tau, F(2)=3/2
+for muon. Asymmetry F(μ)−F(τ) = 3/2 is parameter-free [T1]. Sign prediction correct:
+θ₂₃ > 45°. Multiple candidate formulas within 1σ of observed 49.26°: best candidates
+ε_d = N_c/(2N_Hopf) = 1/6 → θ₂₃ = 49.75° (+0.49°), and ε_d = 1/(2π) → θ₂₃ = 49.54°
+(+0.28°). Structural formula ε_d = F(2)/(2πI₄) = 9/(16π) → θ₂₃ = 50.1° (+0.84°).
+
+**T4 candidates (2 remaining, mechanism identified):**
+1. CKM-like D6/D7 interface mixing — Z₃ holonomy provides the structural source
 2. Winding-number-dependent D4/D6 boundary condition asymmetry
 
 (Candidate 3, CP phase shift, effectively ruled out — modern fits already marginalize δ_CP.)
 
-**Status:** T4 open. **Files:** `equations/neutrino_theta23_correction.py` (C209),
+**Status:** T4 open (mechanism identified T1, formula not derived from V(φ)).
+**Files:** `equations/neutrino_theta23_z3_mechanism.py` (C364),
+`equations/neutrino_theta23_correction.py` (C209),
 `phenomena/particle_physics/neutrino_oscillations.md`
 
 ---
