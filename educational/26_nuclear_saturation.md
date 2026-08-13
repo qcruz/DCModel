@@ -223,12 +223,39 @@ All five SEMF coefficients now have DFC structural accounts at T3 or better. The
 nuclear binding energy formula — the single most important equation in nuclear
 physics — is fully covered.
 
+### Update: Omega Coupling and Sigma Mass Pinned
+
+The KSRF (Kawarabayashi-Suzuki-Riazuddin-Fayyazuddin) relation connects the
+omega-nucleon coupling to the pion decay constant and the omega mass:
+
+The omega coupling equals the square root of the number of colors, times the
+omega mass, divided by the square root of two times the pion decay constant.
+
+g_omega = sqrt(N_c) * m_omega / (sqrt(2) * f_pi)
+
+Substituting the three DFC-derived quantities — m_omega = sqrt(2 pi) Lambda_QCD,
+M_N = sqrt(3 pi) Lambda_QCD, and f_pi = Lambda_QCD / pi — produces an algebraic
+identity: the Lambda_QCD factors cancel exactly, and the result simplifies to
+pi times the square root of three pi. This is the same expression as the sigma
+coupling g_sigma = M_N / f_pi from the linear sigma model.
+
+g_omega = g_sigma = pi * sqrt(3*pi) = 9.645
+
+This is not an approximation. It is a T1 algebraic consequence of DFC's mass
+relations: the omega mass, the nucleon mass, and the pion decay constant all
+share a common Lambda_QCD factor that cancels in the KSRF ratio.
+
+With g_omega = g_sigma, the saturation curve from the previous section is pinned
+at a single point. The sigma mass follows uniquely:
+
+m_sigma = 648 MeV
+
+The scalar and vector potentials at saturation density are 272 MeV (attractive)
+and 196 MeV (repulsive) — each individually large, with the small difference
+producing the observed 16 MeV/A binding. This is nuclear saturation in action.
+
 ### What remains open (T4)
 
-- **Sigma mass from DFC.** The sigma (or f_0(500)) mass is not yet derived from D7
-  spectroscopy. It is constrained by the saturation curve but not uniquely determined.
-- **Omega coupling from DFC.** The vector coupling g_omega is similarly constrained
-  but not derived.
 - **Shell corrections.** The magic numbers require the nuclear spin-orbit coupling,
   which is partially addressed (Module 25 covers N=126).
 - **r_0 from DFC.** The nuclear radius parameter 1.2 fm enters a_S and a_C as an
@@ -237,5 +264,6 @@ physics — is fully covered.
 ---
 
 **See also:** `equations/nuclear_saturation_dfc.py` (C369, 16/16 PASS),
+`equations/nuclear_omega_coupling_dfc.py` (C370, 14/14 PASS),
 `equations/nuclear_volume_term.py` (C343), `equations/nuclear_dfc_params.py` (C342),
 Module 20 (Nuclear Physics), Module 25 (N=126 Shell Closure).
