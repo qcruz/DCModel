@@ -254,16 +254,44 @@ The scalar and vector potentials at saturation density are 272 MeV (attractive)
 and 196 MeV (repulsive) — each individually large, with the small difference
 producing the observed 16 MeV/A binding. This is nuclear saturation in action.
 
+### Update: Full Relativistic Walecka Model — QHD-I Limitation
+
+With all four Walecka parameters now determined from DFC, the full relativistic
+self-consistent mean-field calculation can be run with zero free parameters. The
+result reveals a known limitation of the linear Walecka model (QHD-I):
+
+The model predicts saturation, but at too high a density (0.23 fm⁻³ vs observed
+0.16 fm⁻³, about 42% high) and with too shallow binding (−9.4 MeV vs −15.8 MeV).
+The nuclear incompressibility K comes out at about 1650 MeV — far above the
+observed range of 200–300 MeV. The equation of state is too stiff.
+
+This is not a DFC-specific failure. The linear Walecka model with equal scalar and
+vector couplings (g_omega = g_sigma) always produces a stiff equation of state. The
+standard resolution, due to Boguta and Bodmer (1977), is to add nonlinear sigma
+self-coupling terms — cubic and quartic sigma interactions that soften the equation
+of state and bring K down to realistic values.
+
+The nuclear radius parameter r_0 = (3/(4πρ_0))^(1/3) therefore cannot be predicted
+from the linear model: the predicted value of 1.02 fm is 15% below the observed
+1.2 fm, directly because the predicted saturation density is too high.
+
+The path forward is to derive the nonlinear sigma self-coupling from the DFC
+substrate potential V(φ). The double-well V(φ) = −α/2 φ² + β/4 φ⁴ naturally
+contains higher-order terms when expanded around the kink background — these could
+provide the Boguta-Bodmer terms needed to soften the equation of state.
+
 ### What remains open (T4)
 
 - **Shell corrections.** The magic numbers require the nuclear spin-orbit coupling,
   which is partially addressed (Module 25 covers N=126).
 - **r_0 from DFC.** The nuclear radius parameter 1.2 fm enters a_S and a_C as an
-  empirical input — it is not yet derived from D7 dynamics.
+  empirical input. The linear Walecka model gives r_0 = 1.02 fm (−15%); nonlinear
+  sigma terms from V(φ) are needed to soften the equation of state.
 
 ---
 
 **See also:** `equations/nuclear_saturation_dfc.py` (C369, 16/16 PASS),
 `equations/nuclear_omega_coupling_dfc.py` (C370, 14/14 PASS),
+`equations/nuclear_walecka_prediction.py` (C371, 11/17 PASS — QHD-I limitation),
 `equations/nuclear_volume_term.py` (C343), `equations/nuclear_dfc_params.py` (C342),
 Module 20 (Nuclear Physics), Module 25 (N=126 Shell Closure).
