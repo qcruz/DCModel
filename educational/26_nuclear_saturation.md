@@ -324,16 +324,45 @@ This path connects the nuclear saturation problem directly to the DFC substrate:
 the same V(φ) that produces particles, forces, and gauge structure also
 determines the nonlinear nuclear force through its kink-fluctuation expansion.
 
+### Update: V(φ) Kink-Fluctuation Cubic Coupling — g₂ Sign and Magnitude
+
+The kink-fluctuation expansion confirms two key results:
+
+**Sign argument (T1 algebraic).** The Walecka scalar sigma represents a DECREASE
+in the scalar field from its vacuum value: sigma_Walecka equals negative delta_phi.
+The substrate potential V(φ) has V'''(φ₀) = 6βφ₀ > 0 at the vacuum. But because
+sigma_Walecka = −delta_phi, the effective cubic coupling picks up a sign flip:
+
+g₂ = −3βφ₀ < 0
+
+This is negative — exactly the sign needed for nuclear binding. The kink background
+breaks the Z₂ symmetry φ → −φ, and the asymmetric fluctuation potential naturally
+produces the attractive cubic self-interaction that softens the equation of state.
+
+**Structural estimate (T3, 0 free parameters).** Dimensional analysis gives:
+
+g₂ = −g_σ × m_σ / N_c = −9.645 × 648 / 3 = −2083 MeV
+
+The observed value (NL3 parameterization) is −2058 MeV. The DFC estimate is 1.2%
+high — a T3 result with zero free parameters.
+
+With g₂ = −2083 MeV, nuclear binding is restored: the energy per nucleon is −29.1 MeV
+(vs the chiral potential's E/A > 0 everywhere). However, the quantitative saturation
+properties remain off — the saturation density is too high (0.29 vs 0.16 fm⁻³) and
+the incompressibility K = 4088 MeV is even stiffer than linear QHD-I. The root cause
+is the quartic coupling g₃ = 22.35 from the chiral potential, which is too large.
+The same lesson applies: the Walecka sigma is not the chiral sigma, and g₃ must also
+come from the V(φ) kink-fluctuation expansion.
+
 ### What remains open (T4)
 
-- **V(φ) kink-fluctuation nonlinear terms.** Extract the effective cubic and
-  quartic sigma self-coupling from V(φ) expanded around phi_kink(y). Verify
-  that g2 is negative and in the range needed for nuclear saturation.
+- **Quartic coupling g₃ from V(φ).** The chiral g₃ = 22.35 is too large. Extract
+  the correct quartic sigma self-coupling from V(φ) expanded around the kink background.
 - **Shell corrections.** The magic numbers require the nuclear spin-orbit coupling,
   which is partially addressed (Module 25 covers N=126).
 - **r_0 from DFC.** The nuclear radius parameter 1.2 fm enters a_S and a_C as an
-  empirical input. The linear Walecka model gives r_0 = 1.02 fm (−15%); nonlinear
-  sigma terms from V(φ) are needed to soften the equation of state.
+  empirical input. Nonlinear sigma terms with correct g₃ are needed to soften the
+  equation of state and predict saturation density.
 
 ---
 
@@ -341,5 +370,6 @@ determines the nonlinear nuclear force through its kink-fluctuation expansion.
 `equations/nuclear_omega_coupling_dfc.py` (C370, 14/14 PASS),
 `equations/nuclear_walecka_prediction.py` (C371, 11/17 PASS — QHD-I limitation),
 `equations/nuclear_nonlinear_walecka.py` (C372, 9/14 PASS — chiral path closed),
+`equations/nuclear_kink_fluctuation.py` (C373, 10/15 PASS — g₂ sign T1, magnitude T3),
 `equations/nuclear_volume_term.py` (C343), `equations/nuclear_dfc_params.py` (C342),
 Module 20 (Nuclear Physics), Module 25 (N=126 Shell Closure).
