@@ -275,13 +275,60 @@ The nuclear radius parameter r_0 = (3/(4πρ_0))^(1/3) therefore cannot be predi
 from the linear model: the predicted value of 1.02 fm is 15% below the observed
 1.2 fm, directly because the predicted saturation density is too high.
 
-The path forward is to derive the nonlinear sigma self-coupling from the DFC
-substrate potential V(φ). The double-well V(φ) = −α/2 φ² + β/4 φ⁴ naturally
-contains higher-order terms when expanded around the kink background — these could
-provide the Boguta-Bodmer terms needed to soften the equation of state.
+### Update: Chiral Potential Test — A Closed Path
+
+The obvious DFC candidate for nonlinear sigma terms is the chiral potential:
+
+V_chiral = (lambda/4)(sigma squared plus pi squared minus f_pi squared) squared
+
+where lambda = m_sigma squared divided by two f_pi squared = 22.35. Expanding
+around the vacuum sigma = f_pi gives cubic and quartic self-coupling terms with
+coefficients:
+
+g2 = 3 m_sigma squared divided by 2 f_pi = 6498 MeV (cubic)
+g3 = lambda = 22.35 (quartic)
+
+Both are POSITIVE. This is the problem. Successful Walecka parameterizations
+(NL3, FSUGold) require a NEGATIVE cubic coupling — typically g2 around minus
+2000 MeV. The positive g2 from the chiral potential over-softens the equation
+of state so severely that nuclear matter becomes completely unbound: the energy
+per nucleon is positive everywhere, with no saturation minimum at any density.
+
+A diagnostic sign-flip test confirms this: setting g2 = minus 1950 MeV (with
+the same g3) immediately restores nuclear binding with the energy per nucleon
+around minus 27 MeV. The sign of g2 is the entire issue.
+
+This is not a surprise. The distinction between the Walecka scalar sigma (which
+mediates the intermediate-range nuclear attraction) and the chiral sigma (the
+partner of the pion under chiral symmetry) has been understood since Lee and
+Wick (1974) and was clarified by Furnstahl and Serot (1991). The two fields
+have different quantum numbers, different mass scales, and — critically —
+different self-coupling signs. The chiral potential is the wrong source for
+the nonlinear Walecka terms.
+
+### The Correct DFC Path: V(φ) Kink-Fluctuation Expansion
+
+The DFC substrate potential V(φ) = minus alpha over two times phi squared plus
+beta over four times phi to the fourth has a kink solution phi_kink(y) = phi_0
+times tanh(y/xi). Small fluctuations around this background see an effective
+potential — the asymmetric Pöschl-Teller potential — that naturally contains
+ODD powers of the fluctuation field sigma.
+
+The key feature is that the kink background breaks the Z_2 symmetry
+phi to minus phi. The fluctuation potential around a kink is NOT symmetric
+in sigma — it has a cubic term with a NEGATIVE coefficient. This is exactly
+the physics needed: the kink background generates an effective attractive
+cubic sigma self-interaction that softens the equation of state.
+
+This path connects the nuclear saturation problem directly to the DFC substrate:
+the same V(φ) that produces particles, forces, and gauge structure also
+determines the nonlinear nuclear force through its kink-fluctuation expansion.
 
 ### What remains open (T4)
 
+- **V(φ) kink-fluctuation nonlinear terms.** Extract the effective cubic and
+  quartic sigma self-coupling from V(φ) expanded around phi_kink(y). Verify
+  that g2 is negative and in the range needed for nuclear saturation.
 - **Shell corrections.** The magic numbers require the nuclear spin-orbit coupling,
   which is partially addressed (Module 25 covers N=126).
 - **r_0 from DFC.** The nuclear radius parameter 1.2 fm enters a_S and a_C as an
@@ -293,5 +340,6 @@ provide the Boguta-Bodmer terms needed to soften the equation of state.
 **See also:** `equations/nuclear_saturation_dfc.py` (C369, 16/16 PASS),
 `equations/nuclear_omega_coupling_dfc.py` (C370, 14/14 PASS),
 `equations/nuclear_walecka_prediction.py` (C371, 11/17 PASS — QHD-I limitation),
+`equations/nuclear_nonlinear_walecka.py` (C372, 9/14 PASS — chiral path closed),
 `equations/nuclear_volume_term.py` (C343), `equations/nuclear_dfc_params.py` (C342),
 Module 20 (Nuclear Physics), Module 25 (N=126 Shell Closure).
