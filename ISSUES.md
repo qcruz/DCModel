@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 362 (2026-08-09)
+**Last updated:** Cycle 386 (2026-08-15)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -153,6 +153,170 @@ dynamics; half-life prediction for ²⁹⁸Fl.
 **Status:** T3 overall; N=126 **T4→T3 CLOSED** (C361).
 **Files:** `equations/nuclear_shell_kappa.py` (C361), `equations/nuclear_relativistic_so.py` (C347),
 `equations/nuclear_shell_model.py`, `equations/nuclear_dfc_params.py`, `equations/nuclear_volume_term.py`
+
+---
+
+### T18 — f_pi: DFC Overshoot (+5.3%)
+
+DFC predicts f_pi = Λ/π = 96.9 MeV vs observed 92.07 MeV (+5.3%). This propagates
+into g_piNN via Goldberger-Treiman (g_piNN = g_A × M_N / f_pi), making g_piNN too LOW
+(12.28 vs 13.12, −6.4%). The f_pi overshoot is the single largest source of error in the
+nuclear force sector.
+
+**Impact chain:** f_pi +5.3% → g_piNN −6.4% → deuteron underbinding (−49%) → all nuclear
+force predictions systematically weakened.
+
+**Path to close:** f_pi = Λ/π is a leading-order chiral relation. Higher-order corrections
+include: (1) NLO chiral perturbation (m_pi^2 log corrections), (2) finite quark mass
+corrections to PCAC, (3) DFC interpretation — Λ/π may be the chiral-limit value; physical
+f_pi requires m_pi ≠ 0 correction.
+
+**Status:** T3 (structural). **Files:** `equations/prediction_tests_phase1.py` (C384),
+`equations/nuclear_ab_initio_inputs.py` (C382)
+
+---
+
+### T19 — Deuteron Binding Energy: −49% Underbinding
+
+DFC sigma+omega central potential gives B_d = 1.14 MeV vs observed 2.2246 MeV (−49%).
+Ground state exists but is too weakly bound.
+
+**Root causes (3 identified):**
+1. g_piNN = 12.28 is 6.4% low (from f_pi overshoot T18) — reduces potential depth
+2. Tensor OPE force not included — provides ~50% of deuteron binding in full NN calculations;
+   central OPE alone is repulsive in ³S₁ channel
+3. No short-range regularization — unphysical excited state at B = 4.6 MeV appears
+
+**Path to close:**
+- **Immediate (tensor):** Implement coupled ³S₁-³D₁ Numerov solver with DFC OPE tensor force.
+  Standard nuclear physics: tensor force is essential for deuteron, not optional.
+- **Medium-term (f_pi):** Closing T18 would increase g_piNN toward 13.12, deepening potential.
+- **Full solution:** sigma+omega+pion (central+tensor) with DFC couplings, plus hard-core
+  or form-factor regularization at r < 0.5 fm.
+
+**Status:** T4 open. **Files:** `equations/prediction_tests_phase2.py` (C386)
+
+---
+
+### T20 — Nucleon Magnetic Moment Ratio: SU(6) Preservation
+
+DFC dressed-quark model gives mu_p = 2.833 (+1.4%) and mu_n = −1.888 (−1.3%) individually,
+but the ratio mu_p/mu_n = −1.500 is unchanged from the NRQM SU(6) value (obs: −1.460, +2.7%).
+
+The ratio is preserved because both mu_p and mu_n scale as 1/m_q in the constituent quark model.
+Breaking the ratio requires isospin-violating physics.
+
+**Path to close:**
+1. **Strange quark sea:** s-sbar loop contributes to kappa_S (isoscalar anomalous moment).
+   kappa_S(obs) = −0.060 ≠ 0 directly measures strange sea. DFC has m_s from C274.
+2. **m_u ≠ m_d:** Different u,d quark masses give different magnetic moments.
+   DFC needs light quark mass splitting (blocked by quark mass derivation T4).
+3. **Pion cloud isospin asymmetry:** pi+ vs pi0 exchange contributes differently to p vs n.
+
+**Status:** T4 open. **Files:** `equations/prediction_tests_phase2.py` (C386)
+
+---
+
+### T21 — Nolen-Schiffer Residual: ~7% from CSB Forces
+
+After exchange + proton-size corrections, DFC still overshoots mirror nuclei CDEs by
+7.2% RMS for A ≥ 11 (6.3% for A ≥ 20). This is the "true" Nolen-Schiffer anomaly
+attributed to charge-symmetry breaking (CSB) nuclear forces.
+
+**Three CSB sources (all derivable from DFC in principle):**
+1. **ρ⁰-ω mixing** (~3-5%): mixing amplitude ε ∝ (m_d − m_u)/Λ_QCD produces isospin-
+   violating nuclear potential. DFC has m_ω = √(2π)Λ. Needs m_d − m_u.
+2. **Pion mass splitting** (~1-2%): m(π±) − m(π⁰) = 4.6 MeV from EM self-energy.
+   DFC has α_em from D5; Cottingham formula is tractable.
+3. **Neutron-proton mass difference** (~1%): m_n − m_p = 1.293 MeV affects kinetic terms.
+   Requires both EM and quark mass contributions (blocked by light quark masses).
+
+**Path to close:**
+- **Highest impact:** Compute ρ-ω mixing correction to CDE using DFC meson masses.
+  Even with empirical mixing amplitude, this would close ~3-5% of the residual.
+- **Tractable now:** Pion EM mass splitting from α_em + Cottingham formula.
+
+**Status:** T3 (residual correctly matches literature expectation; CSB sources identified
+but not computed from DFC). **Files:** `equations/nuclear_nolen_schiffer.py` (C385)
+
+---
+
+### T22 — Nuclear Saturation: Linear Walecka Failures
+
+Linear QHD-I model with DFC couplings (g_sigma = g_omega = 9.645) fails quantitatively:
+- ρ₀ = 0.228 fm⁻³ (+42% from obs 0.16)
+- r₀ = 1.016 fm (−15% from SEMF 1.20)
+- E/A = −9.4 MeV (+40% from obs −15.8)
+- K = 1646 MeV (+600% from obs 230)
+
+These are known QHD-I limitations (not DFC-specific), but DFC must provide the path
+to the correct nuclear EOS if its couplings are to be validated.
+
+**Path to close:**
+- **Nonlinear sigma terms from V(φ):** C373-C375 derived g₂ = −2083 MeV (T3, +1.2%
+  of NL3) and g₃ from V(φ) quartic identity. g₂ sign is correct (T1, kink Z₂ breaking).
+  But g₃ = 2.30 is too small for quantitative saturation.
+- **Beyond mean-field:** Multi-loop corrections, Fock terms, or RPA correlations
+  may tame the overbinding/stiffness.
+- **Key test:** If V(φ) nonlinear terms can bring K from 1646 → ~250 MeV while keeping
+  E/A ~ −16 MeV, the nuclear saturation problem is closed.
+
+**Status:** T4 open (C371-C375). **Files:** `equations/nuclear_walecka_prediction.py` (C371),
+`equations/nuclear_kink_fluctuation.py` (C373), `equations/nuclear_kink_g3_vphi.py` (C374)
+
+---
+
+### T23 — DFC Surface Diffuseness: −20% Below Empirical
+
+DFC predicts nuclear surface diffuseness a = r_σ = ħc/m_σ = 0.432 fm vs empirical
+Woods-Saxon a = 0.54 fm (−20%). The 20% gap means the DFC bare sigma mass (456.8 MeV)
+produces a surface that is too sharp.
+
+**Path to close:**
+- The empirical 0.54 fm includes beyond-mean-field effects (pairing, shell structure)
+  not in the bare sigma exchange range. The gap may be physical (bare vs dressed).
+- Alternatively, if m_σ(effective) < m_σ(bare) at nuclear densities (as seen in
+  C377's EOM analysis), the effective range lengthens toward 0.54 fm.
+- Test: compute density-dependent m_σ(eff) at ρ₀ and check if a(eff) → 0.54 fm.
+
+**Status:** T3 (−20%, within structural tolerance, origin identified).
+**Files:** `equations/nuclear_nolen_schiffer.py` (C385), `equations/nuclear_msigma_resolution.py` (C377)
+
+---
+
+### T24 — M_W: DFC Undershoots by −0.88%
+
+DFC predicts M_W = 79.67 GeV vs observed 80.377 GeV (−0.88%). This comes from the
+DFC EWSB calculation. The gap is likely from missing one-loop EW radiative corrections
+(Δρ_top, etc.) which shift M_W by ~1%.
+
+**Path to close:** Compute one-loop EW corrections to M_W using DFC Higgs/top parameters.
+Standard SM calculation with DFC inputs.
+
+**Status:** T3 (structural). Linked to Open Blocked Derivations (EW loop corrections).
+**Files:** `equations/muon_lifetime.py`
+
+---
+
+### T25 — Quantities Not Yet Derived from DFC
+
+Observed values that DFC should eventually predict but currently uses as empirical inputs
+or has not yet addressed:
+
+| Quantity | Observed | DFC Status | Blocking Issue |
+|---|---|---|---|
+| m_pi | 139.57 MeV | Empirical input | Chiral symmetry breaking mechanism from DFC not derived |
+| m_u, m_d (light quarks) | 2.2, 4.7 MeV | Not derived | Chiral SB + Yukawa coupling from substrate |
+| r_p (proton charge radius) | 0.8409 fm | Empirical input | Pion cloud integral with DFC g_piNN (Phase 3 test) |
+| m_n − m_p | 1.293 MeV | Not derived | Needs m_d − m_u + EM self-energy |
+| Δ(1232) − N splitting | 293 MeV | Rough estimate only | Needs α_s at 1 GeV scale (running) |
+| N=184 (superheavy magic) | Predicted by some models | Not reproduced at κ=33 | SO strength or deformation physics |
+| CKM matrix elements | 4 params | Not derived | D6/D7 overlap integral |
+| PMNS matrix (θ₁₂, θ₁₃) | Known | Not derived | D6 holonomy mechanism |
+| Absolute neutrino masses | Constrained | Not derived | f_ν from substrate dynamics |
+| σ_piN (sigma term) | 52 MeV | Blocked | Needs m_hat = (m_u+m_d)/2 |
+
+**Status:** T4 for all. These are targets for future cycles.
 
 ---
 
