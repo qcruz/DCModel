@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 391 (2026-08-16)
+**Last updated:** Cycle 392 (2026-08-16)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
