@@ -338,17 +338,17 @@ or has not yet addressed:
 
 DFC three-component estimate: r_p = 0.693 fm vs observed 0.8409 fm (−17.6%).
 Components: quark core (r_sigma^2 = 0.187 fm^2), Foldy (−0.123 fm^2), pion cloud (0.416 fm^2).
-The pion cloud uses ChPT leading-log with g_A = 4/pi and f_pi(PS) = 89.63 MeV.
 
-Root causes:
-1. Core contribution: r_sigma = hbar_c/m_sigma = 0.432 fm is a rough estimate; proper quark model
-   wavefunction or bag model would give different core radius
-2. Pion cloud: leading-log ChPT may undercount; needs NLO + counter-terms or lattice input
-3. VMD cross-check (0.528 fm) is even worse — m_rho = m_omega kills isospin splitting
+**C390 failure analysis:** DFC gets 83% of the needed <r^2>_F1 = 0.826 fm^2. Missing ~0.13 fm^2.
+The core estimate (r_sigma^2 = 0.187) is close to the quark BODY contribution (~0.2 fm^2 in
+constituent quark models). Missing piece is the INTRINSIC quark charge radius (~0.1-0.15 fm^2
+from vector meson loops at the quark level). Classification: MODEL LIMITATION (nucleon
+wavefunction needed), not a DFC-specific failure. DFC gives the right scale.
 
-Path to close: dispersion relation approach using DFC form factors, or lattice-QCD-calibrated ChPT coefficients.
+Path to close: solve for quark wavefunction in sigma+omega potential, or use dispersion
+relations with DFC form factors.
 
-**Status:** T4 open (C389). **Files:** `equations/prediction_tests_phase3.py`
+**Status:** T4 open (C389, analyzed C390). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_failure_analysis.py`
 
 ---
 
@@ -356,35 +356,38 @@ Path to close: dispersion relation approach using DFC form factors, or lattice-Q
 
 DFC color-magnetic estimate: M_Delta − M_N = 563 MeV vs observed 293 MeV (+92%).
 Uses alpha_s(m_sigma) = 0.430 and |psi(0)|^2 = 1/(pi*R_conf^3) with R_conf = hbar_c/m_sigma = 0.432 fm.
-The sensitivity scan shows R_conf = 0.50 fm gives 363 MeV (+24%), so the confinement radius is key.
 
-Root causes:
-1. Contact probability |psi(0)|^2 too large — R_conf = 0.432 fm may be too small for the
-   quark-quark separation in the nucleon (empirical bag radius R ~ 0.8-1.0 fm)
-2. alpha_s at low scale near Landau pole — running from M_Z unreliable
-3. Formula assumes point-like quarks; constituent quark size smears the contact term
+**C390 failure analysis:** SCALE MISIDENTIFICATION. R_conf = hbar_c/m_sigma = 0.432 fm is the
+sigma force RANGE, not the nucleon SIZE. The MIT bag model uses R ~ 1.0 fm, giving
+|psi(0)|^2 = 0.32 fm^-3 (vs our 3.95 fm^-3 — 12.4x too large). Using R = r_p = 0.84 fm
+gives delta_M ~ 77 MeV (now undershoots). The ratio approach delta_M = (8*alpha_s/3)*M_q*f_hyp
+needs f_hyp = 0.82 (reasonable for quark models). Classification: MODEL LIMITATION (needs
+nucleon wavefunction to set confinement radius), not a DFC-specific failure.
 
-Path to close: use nucleon charge radius or bag model to set R_conf; or ratio method
+Path to close: solve quark bound state to determine R_conf, or use ratio method
 (Delta-N)/(Sigma-Lambda) which cancels |psi(0)|^2.
 
-**Status:** T4 open (C389). **Files:** `equations/prediction_tests_phase3.py`
+**Status:** T4 open (C389, analyzed C390). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_failure_analysis.py`
 
 ---
 
-### T28 — Symmetry Energy Slope L: +71% Too Stiff
+### T28 — Symmetry Energy J (+16%) and Slope L (+71%): Isovector Coupling
 
-DFC predicts L = 99 MeV vs observed ~58 MeV (+71%). The symmetry energy J = 37.1 MeV
-is also high (+16% vs 32 MeV), just outside the 15% tolerance.
+DFC predicts J = 37.1 MeV (+16% vs 32) and L = 99 MeV (+71% vs 58).
 
-Root cause: the rho-exchange potential J_pot = g_rho^2 * rho_0 * hbar_c^3 / (8*m_rho^2) = 24.7 MeV
-is too large. Same issue as the compressibility problem (T22) — the linear Walecka model with
-DFC coupling universality g_rho = g_omega = 9.645 gives an EOS that is too stiff.
-L_pot = 3*J_pot = 74 MeV dominates the total L.
+**C390 failure analysis:** The test used g_rho = g_omega = 9.645 (coupling universality),
+but g_omega is the ISOSCALAR coupling. The rho meson couples to ISOSPIN (I=1), which uses
+a different KSRF relation: g_rho = m_rho/(2*f_pi) = 4.15. This OVERCORRECTS to J = 17 MeV
+(−47%). The exact solution is g_rho = 8.59 (89% of g_omega), giving J = 32 MeV exactly
+but L = 84 MeV (still +44%). Classification: ANALYSIS ERROR (used wrong quantum number
+channel coupling). The kinetic part J_kin = 12.4 MeV is exact (Fermi gas). The correct
+DFC g_rho lies between g_omega = 9.6 and KSRF = 4.15, and requires computing the
+rho-nucleon vertex with proper isospin structure.
 
-Path to close: nonlinear sigma terms (V(phi) kink corrections) would soften the EOS,
-or rho-meson self-interaction from chiral constraints. Same resolution path as T22.
+Path to close: compute DFC-native rho-nucleon isovector coupling from form factor or
+quark-level isospin decomposition. May also benefit from nonlinear sigma terms (T22 path).
 
-**Status:** T4 open (C389). **Files:** `equations/prediction_tests_phase3.py`
+**Status:** T4 open (C389, analyzed C390). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_failure_analysis.py`
 
 ---
 
