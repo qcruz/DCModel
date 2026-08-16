@@ -1,222 +1,357 @@
 # The D4 Gap: Deriving Gravity from the Substrate
 
 **Status:** Active exploration (T4 open — deepest structural gap in DFC)
-**Purpose:** Map precisely what is known, what is assumed, and what paths exist
-toward deriving G_N from V(φ) parameters (α, β, c).
+**Purpose:** Map precisely what is known, what is assumed, and what remains to
+be derived in order for gravity to emerge from V(phi) = -alpha/2 phi^2 + beta/4 phi^4.
 
 ---
 
 ## 1. The Problem
 
-DFC claims that all physics emerges from V(φ) = −α/2 φ² + β/4 φ⁴. This includes
-gravity. Yet Newton's gravitational constant G_N currently enters DFC as an input
-(through the use of Planck units), not as an output.
+DFC claims that all physics emerges from V(phi). This includes gravity. Yet
+Newton's gravitational constant G_N currently enters DFC as an input (through
+the use of Planck units), not as an output.
 
-Specifically:
-- DFC works in Planck units where G_N = ℏ = c = 1
-- The kink width ξ = √(2/α) = 0.874 l_Pl ≈ l_Pl "by construction"
-- The identification ξ ~ l_Pl sets the energy scale but does not derive G_N
-
-**What "closing the D4 gap" means:** Express G_N as a function of α and β (and
-possibly c), with no external input. Equivalently, derive the Planck mass M_Pl
-from V(φ) parameters alone: M_Pl = f(α, β, c).
+The D4 gap is not one problem but **four distinct sub-problems** that must be
+solved in sequence. Solving one does not automatically solve the others.
 
 ---
 
-## 2. What V(φ) Already Provides
+## 2. The Four Sub-Gaps
 
-### 2a. A natural length scale
+### D4-A: Scale Generation
 
-The kink width ξ = √(2/α) = √(2/∛18) = 0.874 in whatever units α carries.
-If α has dimensions [mass²], then ξ has dimensions [1/mass] — it is a length.
+**Question:** What establishes the absolute gravitational scale?
 
-Currently α = ∛18 M_Pl² — but this includes M_Pl as an input. The dimensionless
-content is: α = ∛18 × (some mass scale)². The D4 gap is: what determines that
-mass scale?
+The potential V(phi) has intrinsic scales: phi_0 = sqrt(alpha/beta) and
+xi = sqrt(2/alpha). But these carry the dimensions of whatever units alpha
+has. Writing alpha = cuberoot(18) times M_Pl squared does not derive M_Pl
+from the substrate — it merely parameterizes the relationship between the
+substrate scale and the gravitational scale.
 
-### 2b. A natural energy scale
+A dimensionful parameter is not automatically a prediction.
 
-The kink energy E_kink = (4/3) c α^(3/2) / (β√2) = 36π M_Pl in Planck units.
-This is a large number — the kink is 113 Planck masses. The fact that this
-number comes out as 36π (= S_kink = 1/α_em(M_c)) is a highly non-trivial
-structural result.
+The dimensionless content is alpha times G_N = cuberoot(18), but this is a
+**consistency relation**, not an **independent prediction**. The real target
+is to derive the absolute scale:
 
-### 2c. A self-interaction structure
+```
+M_Pl^2 = alpha * F(beta, substrate structure)
+```
 
-V(φ) contains both attraction (−α/2 φ²) and repulsion (+β/4 φ⁴). At small φ,
-attraction dominates; at large φ, repulsion wins. This is structurally identical
-to gravity at small scales (attraction) being arrested by some mechanism at the
-Planck scale (quantum pressure / substrate rigidity).
+and then demonstrate that F = 1/cuberoot(18) from the substrate dynamics.
 
-### 2d. Inertia from fold resistance
+**Status:** T4 open. Dimensional analysis guarantees G_N is proportional
+to 1/alpha; the dimensionless coefficient is the actual content.
 
-The D4 interpretive role: "mass is the degree to which a structure is anchored
-against dimensional reconfiguration." In V(φ) language:
+### D4-B: Metric Emergence
 
-- A kink at φ₀ sits in a potential well with curvature V''(φ₀) = 2α
-- Displacing the kink from equilibrium requires energy proportional to 2α × (δφ)²
-- This resistance to displacement IS inertia
-- The oscillation frequency ω_c = √(2α) = √(V''(φ₀)) IS the Compton frequency
+**Question:** How does apparent spacetime geometry emerge from the substrate?
 
-The Compton frequency of a kink is determined by V''(φ₀). This is established
-(T1). What is NOT established: the connection between this oscillation frequency
-(inertia) and the long-range 1/r gravitational field that the kink produces.
+The phrase "geometry is downstream" must eventually become an equation of
+the form:
+
+```
+g_muv^eff = eta_muv + F_muv[phi, d phi, d^2 phi, ...]
+```
+
+A kink (closure) locally deforms the substrate. Other substrate excitations
+then propagate not through the bare substrate coordinates, but through an
+effective geometry determined by the deformation. The conceptual chain is:
+
+```
+phi -> substrate deformation -> g_muv^eff -> geodesic motion
+```
+
+This is substantially more promising than trying to make the kink profile
+itself behave as 1/r (which it cannot — it falls off exponentially).
+
+**Status:** T4 open. No explicit construction of g_muv^eff from V(phi)
+exists. This is the most fundamental of the four sub-gaps.
+
+### D4-C: Graviton Emergence
+
+**Question:** Does the DFC substrate possess a genuine massless propagating
+mode with the correct gravitational degrees of freedom?
+
+This requires establishing a hierarchy of properties:
+
+1. **Existence:** Does the substrate have a massless mode? (m = 0)
+2. **Propagation:** Does it propagate at the invariant speed? (omega^2 = c^2 k^2)
+3. **Polarization:** Does it have the correct number of physical polarizations?
+   A four-dimensional massless spin-2 field has exactly two helicity states.
+4. **Coupling:** Does the mode couple universally to energy-momentum?
+5. **Long-range potential:** Does its exchange produce V(r) = -G_N m_1 m_2 / r?
+
+**Critical distinction:** T_muv being a rank-2 object does NOT mean that the
+field carrying gravitational interactions is rank-2. A scalar field has a
+rank-2 energy-momentum tensor; that does not turn the scalar into a spin-2
+particle. The actual question is whether fluctuations of the DFC substrate
+can transform as a massless spin-2 representation — whether an emergent h_muv
+exists with the appropriate gauge redundancy (h_muv -> h_muv + d_mu xi_v + d_v xi_mu).
+
+**Masslessness protection:** The model proposes that microscopic massive scalar
+dynamics produce macroscopic massless tensor dynamics. This can happen in
+emergent systems, but is not generic. The model must identify what symmetry
+or critical phenomenon protects the gravitational mode from acquiring a mass.
+Otherwise the natural expectation is a finite correlation length giving
+V(r) ~ exp(-m_g r)/r rather than exactly 1/r.
+
+**Status:** T4 open. The kink zero-mode (omega_0 = 0) is massless but scalar.
+No spin-2 mode has been identified in the substrate spectrum. This may be the
+single hardest sub-gap.
+
+### D4-D: Coupling Emergence
+
+**Question:** How strongly does emergent geometry respond to substrate energy?
+
+This is the numerical coupling problem: derive G_N = f(alpha, beta) with a
+specific coefficient. The target is not simply G_N ~ 1/alpha (which dimensional
+analysis guarantees), but rather:
+
+```
+M_Pl^2 = alpha * F(beta, substrate structure)
+```
+
+where F must be computed from the dynamics, producing F = 1/cuberoot(18).
+
+The scalar zero-mode exchange gives G_eff = G_N/23, capturing only 4.4% of the
+gravitational coupling. The remaining 95.6% is non-perturbative content that
+cannot be obtained from linearized kink-kink exchange.
+
+**Status:** T3 (scalar fraction characterized). T4 for the full coupling.
 
 ---
 
-## 3. What Is Missing
+## 3. What V(phi) Already Provides
 
-### 3a. The 1/r potential
+### 3a. Intrinsic scales
 
-Gravity produces a 1/r potential at long distances. DFC kinks produce a localized
-profile φ_kink(x) = φ₀ tanh(x/ξ) that falls off exponentially, not as 1/r.
+The kink width xi = sqrt(2/alpha) and vacuum phi_0 = sqrt(alpha/beta) are
+determined by V(phi). In Planck units, xi = 0.874 l_Pl. The oscillation
+frequency omega_c = sqrt(2 alpha) = sqrt(V''(phi_0)) is the Compton frequency
+of a kink — this is established (T1).
 
-The missing step: how does a localized kink produce a long-range 1/r field?
+### 3b. BPS saturation
 
-In standard physics, the 1/r potential arises from a massless spin-2 field
-(graviton) mediating the interaction. In DFC, the massless spin-2 mode should
-be a D2 propagating excitation of the substrate. The zero-mode ω₀ = 0 of the
-Pöschl-Teller spectrum (the translational mode of the kink) is massless — but
-it is a scalar mode, not spin-2.
-
-### 3b. Spin-2 from substrate
-
-Where does the spin-2 character of gravity come from? In DFC:
-- The substrate field φ is a scalar
-- Gravity requires a rank-2 tensor (metric perturbation h_μν)
-- The bridge: the energy-momentum tensor T_μν of the kink IS a rank-2 object
-- T_μν couples to the metric g_μν, which is the substrate's geometric structure
-
-But this assumes a pre-existing metric, which contradicts DFC's claim that
-geometry is downstream. The correct DFC picture: the metric IS the substrate's
-configuration at D3/D4 depths, and gravity is the response of this configuration
-to the presence of a kink (closure).
-
-### 3c. G_N as a coupling constant
-
-In standard GR, G_N is the coupling constant between matter and geometry:
-G_μν = 8πG_N T_μν. In DFC, both sides of this equation are substrate behavior.
-The "coupling constant" G_N should be a derived quantity measuring how strongly
-one part of the substrate (a closure) affects another part (the background
-configuration).
-
-**Dimensional analysis argument:** G_N has dimensions [length³ / (mass × time²)]
-or equivalently [1/mass²] in natural units. The only mass² scale in V(φ) is α.
-So G_N ~ 1/α up to dimensionless factors of β. Since α = ∛18 M_Pl² and
-G_N = 1/M_Pl², we need:
+The kink satisfies (1/2)(phi')^2 = V_ren(phi) at every point along its profile,
+where V_ren = V(phi) - V(phi_0) is the renormalized potential. This is the
+Bogomolny-Prasad-Sommerfield property (T1). The energy density is:
 
 ```
-G_N = c_G / α
+eps(y) = alpha^2 / (2 beta) * sech^4(y/xi)
 ```
 
-where c_G is a dimensionless constant. In current Planck units:
-G_N = 1/M_Pl² and α = ∛18 M_Pl², so c_G = α × G_N = ∛18 ≈ 2.62.
+and the total energy is E_kink = 36 pi M_Pl.
 
-This is tantalizingly simple: **G_N = ∛18 / α = 1/M_Pl²**, which is just the
-definition. But if we can derive WHY c_G = ∛18 (= α itself in Planck units),
-we would have a closed formula: G_N = α/α² = 1/α.
+### 3c. The sech-integral hierarchy
 
-Wait — let's be more careful. In DFC natural units where c = 1 but M_Pl is NOT
-set to 1, the relationship is:
+Overlap integrals involving higher powers of sech are computed exactly via
+Fraction arithmetic:
 
 ```
-α = ∛18 × M_Pl²
-G_N = 1/M_Pl²
-Therefore: α × G_N = ∛18 (dimensionless)
+I_4  = 4/3       I_6  = 16/15     I_8  = 32/35
+I_10 = 256/315   I_12 = 512/693
 ```
 
-So the content of the D4 gap is: **why does α × G_N equal a specific
-dimensionless number (∛18)?** Or equivalently: why is α = ∛18 in units where
-G_N = 1?
+The profile ratio (I_10/I_6)^2 = 0.58 is less than 1, meaning that the
+sech^8 graviton vertex profile is NARROWER than the sech^4 scalar vertex.
+Profile effects reduce rather than enhance the coupling (T1).
+
+### 3d. The scalar zero-mode fraction
+
+The enhancement factor F = G_N/G_eff = (25/12) times 4 pi xi = 22.87 (T1 exact).
+The rational prefactor 25/12 = I_4^3 / I_6^2 is a pure sech-integral identity.
+The scalar zero-mode captures 1/F = 4.4% of G_N (T3).
 
 ---
 
-## 4. Paths Forward
+## 4. What Is Missing — and Why Each Matters
 
-### Path A: Self-gravity of the kink
+### 4a. The 1/r potential (relates to D4-C)
 
-A kink of energy E_kink = 113 M_Pl and width ξ = 0.874 l_Pl has an enormous
-energy density concentrated at the Planck scale. Its own gravitational field
-(in the Newtonian limit) would be:
+The kink profile phi_kink(x) = phi_0 tanh(x/xi) falls off exponentially, not
+as 1/r. The 1/r potential requires a massless mode with a 1/k^2 propagator.
+
+The kink-kink interaction at large separation through exponential tail overlap
+gives V_int(R) ~ exp(-R/xi) — a Yukawa interaction from a massive mediator.
+The claim that 1/r behavior emerges at D3 localization scales is currently a
+hypothesis, not a derived consequence. The model needs to explain **why
+localization produces a massless mode** and what protects its masslessness.
+
+### 4b. Spin-2 from a scalar substrate (relates to D4-C)
+
+The substrate field phi is a scalar. Gravity requires a rank-2 tensor
+perturbation h_muv with specific gauge symmetry and two physical polarizations.
+
+The scientifically interesting question is:
+
+> Can a sufficiently structured scalar substrate possess an emergent tensor
+> collective mode?
+
+If yes, DFC has something genuinely novel. If no, the theory has identified
+a fundamental obstruction. Either result is scientifically valuable.
+
+The mathematical target is concrete: determine whether the linear response
+kernel of the DFC substrate around its vacuum or localized background contains
+a pole with the structure:
 
 ```
-Φ_grav ~ G_N × E_kink / ξ ~ (1/M_Pl²) × (113 M_Pl) / (0.874 l_Pl)
-       ~ 113 / (0.874 M_Pl) ~ 129 / M_Pl
+D_muv_ab(k) ~ P^(2)_muv_ab / k^2
 ```
 
-In natural units this is ~129, which is large — the kink is a strongly
-self-gravitating object. This suggests that the kink IS in the nonlinear
-gravity regime, consistent with the Jormungandr picture.
+where P^(2) is the spin-2 projection operator. The 1/k^2 gives long-range
+behavior; P^(2) gives spin-2 behavior. D4 needs to derive both.
 
-**Key question:** Does the self-gravitational energy of the kink equal some
-known DFC quantity? If E_grav ~ G_N E_kink² / ξ = (113)² / 0.874 ≈ 14600
-M_Pl, this is much larger than E_kink itself — indicating that the simple
-Newtonian estimate breaks down and the full nonlinear regime is relevant.
+### 4c. Strong-field consistency (relates to D4-A)
 
-### Path B: Kink-kink interaction
+The kink has energy E_kink = 113 M_Pl and width xi = 0.874 l_Pl. Its
+Schwarzschild radius r_s = 2 G_N E_kink = 226 l_Pl is vastly larger than
+its width. If interpreted as an ordinary gravitating object using standard
+GR, the kink lies deep inside its own gravitational radius.
 
-Two kinks separated by distance R interact through the substrate. At large
-R >> ξ, the interaction should reduce to the gravitational potential
-V(R) = −G_N m₁ m₂ / R if gravity is substrate-mediated.
+This is not merely "strong self-gravity." It creates a fundamental DFC
+consistency test: either (1) standard gravitational reasoning fails at the
+D4 scale, (2) the kink's gravitational mass differs radically from its
+field energy, (3) the effective gravitational coupling is scale-dependent,
+(4) the kink is not a conventional localized object, or (5) the proposed
+parameter values are inconsistent.
 
-The DFC kink-kink interaction at large separation comes from the overlap of
-exponential tails: V_int(R) ~ exp(−R/ξ) for R >> ξ. This is a YUKAWA
-interaction (massive mediator), not a 1/r interaction (massless mediator).
+**Important circularity:** E_kink = 36 pi / sqrt(G_N) in natural units.
+Using this energy to derive a gravitational field inserts G_N through M_Pl,
+then uses the same G_N to calculate gravity. This is a valid consistency
+check, but it is not evidence for deriving G_N. The distinction between
+"consistency relation" and "independent prediction" must be maintained.
 
-The resolution: at distances R >> ξ but still in the "substrate interior"
-(D1-D4 depths), the interaction is Yukawa. The 1/r behavior emerges at D3
-localization scales where the substrate's geometry becomes effectively flat
-and a massless spin-2 mode propagates. The crossover scale is somewhere
-between ξ ~ l_Pl and l_D3 ~ (particle Compton wavelength).
+### 4d. The 36 pi / alpha_em connection (relates to D4-A, D4-D)
 
-### Path C: Compression → curvature feedback
+The identity S_kink = 4/beta = 36 pi = 1/alpha_em(M_c) is numerically
+striking. But its evidentiary value depends on whether the number is
+predicted before fitting. The strongest sequence would be:
 
-The DFC interpretive dictionary identifies:
-- Spacetime curvature = irreducible misalignment of folding orientation after transport
-- Gravity = coherent re-tiling induced by closure density
+```
+V(phi) -> alpha, beta -> S_kink -> alpha_em(M_c)
+```
 
-If a closure (kink) locally compresses the substrate, the surrounding substrate
-must accommodate this compression. The accommodation propagates outward as a
-coherent distortion of the D3 localization structure — this IS curvature.
-
-The strength of this propagation (how much curvature per unit compression) is
-G_N. Deriving it requires computing the substrate's response function:
-how much does the D3 localization geometry distort in response to a localized
-compression of magnitude E_kink at width ξ?
-
-### Path D: Jormungandr endpoint (see jormungandr_double_well.md)
-
-The Jormungandr picture reverses the problem: instead of deriving G_N from V(φ)
-forward (substrate → gravity), it derives V(φ) from G_N backward (gravity at
-maximal compression → double-well). If the endpoint of gravitational collapse
-naturally produces a double-well effective potential, then G_N and α are related
-by the self-consistency condition that the collapse endpoint reproduces V(φ).
+with no adjustable parameter. If alpha, beta, or M_c were partly chosen
+because they produce 36 pi, the evidentiary value is weaker. Currently,
+beta = 1/(9 pi) is derived (T2a) and S_kink = 4/beta = 36 pi follows
+as a T1 algebraic consequence, so this chain is legitimate.
 
 ---
 
-## 5. Connections to Other Open Problems
+## 5. Research Program — Ordered by Priority
+
+### Primary: Induced Gravity via Substrate Response (D4-B + D4-C)
+
+The most promising mathematical program. Suppose integrating out the
+substrate degrees of freedom around the kink background generates an
+effective gravitational action:
+
+```
+S_eff = integral d^4x sqrt(-g) [Lambda + M_eff^2/2 R + a R^2 + ...]
+```
+
+Then M_eff^2 = M_Pl^2 gives G_N = 1/M_eff^2. The D4 problem becomes:
+
+> Can integrating out DFC substrate modes generate an Einstein-Hilbert
+> term, and what coefficient does it produce?
+
+**The critical next calculation:** Start with the DFC substrate action,
+find the background solution, perturb it (phi = phi_bg + delta phi),
+compute the quadratic action S^(2)[delta phi], construct the stress-energy
+response delta T_muv, and determine whether there exists a collective
+variable h_muv = F_muv[delta phi, ...] whose effective quadratic action
+becomes S^(2)[h] ~ integral h_muv E^muv_ab h_ab where E is the linearized
+Einstein operator.
+
+If that structure emerges, the D4 problem reduces to a coupling-normalization
+problem. If it does not, DFC has identified exactly where its scalar
+architecture fails to reproduce gravity.
+
+### Secondary: Jormungandr Self-Consistency (D4-A + D4-D)
+
+Rather than deriving G_N from V(phi) forward, or V(phi) from G_N backward,
+the two may be constrained by a self-consistency loop:
+
+```
+V(phi) -> matter/closure -> compression -> effective geometry
+  -> collapse -> endpoint -> V_eff(phi)
+```
+
+Requiring V_eff(phi) = V(phi) at the fixed point would make the double-well
+not an arbitrary starting assumption but an attractor of the substrate's
+gravitational dynamics. If demonstrated mathematically, this would turn
+Jormungandr from an interpretive narrative into an actual mechanism.
+
+### Tertiary: Masslessness Protection (D4-C)
+
+Identify the symmetry or critical phenomenon that protects the gravitational
+mode from acquiring a mass. Candidate mechanisms:
+- Diffeomorphism invariance as an emergent gauge symmetry
+- Goldstone mechanism from spontaneous breaking of a substrate symmetry
+- Critical behavior at the D3/D4 boundary
+
+---
+
+## 6. Connections to Other Open Problems
 
 | Problem | Connection to D4 |
 |---|---|
-| T8 (ℏ derivation) | G_N and ℏ are linked via M_Pl = √(ℏc/G). Deriving G_N may require or enable deriving ℏ. |
-| T16 (Λ_cosm) | The cosmological constant prediction ρ_Λ ~ M_Pl⁴ exp(−283) uses M_Pl as input. Deriving M_Pl makes this a pure DFC prediction. |
+| T8 (hbar derivation) | G_N and hbar are linked via M_Pl = sqrt(hbar c/G). Deriving G_N may require or enable deriving hbar. |
+| T16 (Lambda_cosm) | The cosmological constant prediction rho_Lambda ~ M_Pl^4 exp(-283) uses M_Pl as input. Deriving M_Pl makes this a pure DFC prediction. |
 | Jormungandr | D4 gap and Jormungandr are the same problem from different directions. |
 | D3 localization | Gravity requires D3 (apparent space) to propagate through. D4 may depend on D3 being established first. |
 
 ---
 
-## 6. Status
+## 7. What "D4 Closed" Would Mean
 
-- **What is established:** ξ ~ l_Pl (structural identification, T1); ω_c = √(2α) as
-  Compton frequency (T1); inertia as fold resistance (conceptual, T3); kink is
-  strongly self-gravitating (dimensional analysis)
-- **What is missing:** 1/r potential from substrate dynamics; spin-2 mode identification;
-  G_N = f(α, β) explicit formula; kink-kink long-range interaction
-- **Most promising path:** Path C (compression → curvature response function) combined
-  with Path D (Jormungandr self-consistency)
+Not merely finding G_N = cuberoot(18)/alpha (which is dimensional fitting).
+Five requirements:
+
+| Requirement | Needed result |
+|---|---|
+| D4-A: Scale | M_Pl = f(alpha, beta) derived from dynamics |
+| D4-B: Geometry | g_muv = g_muv[phi, d phi, ...] explicit construction |
+| D4-C: Propagation | Massless long-range mode with two spin-2 polarizations |
+| D4-C: Coupling | Universal coupling to energy-momentum (h_muv T^muv) |
+| D4-D: Coefficient | G_N = f(alpha, beta) with predicted coefficient |
+
+Ideally: DFC -> Einstein equations + Newtonian limit, with the coefficient
+of the Einstein-Hilbert term predicted rather than inserted.
 
 ---
 
-**See also:** `foundations/jormungandr_double_well.md` for the cyclical compression
-hypothesis. `equations/quantum_gravity.py` for current Planck-scale computations.
-`foundations/dimensional_stack.md` for D4 interpretive framework.
+## 8. Current Status Summary
+
+**Established:**
+- xi ~ l_Pl (structural identification, T1)
+- omega_c = sqrt(2 alpha) as Compton frequency (T1)
+- BPS saturation: KE = V_ren at each point (T1)
+- alpha times G_N = cuberoot(18) (consistency relation, T1)
+- Scalar zero-mode gives G_eff = G_N/23 (T3)
+- Profile narrowing REDUCES coupling: (I_10/I_6)^2 = 0.58 (T1)
+- Enhancement is dominantly non-perturbative: 96% (T3)
+- F = (25/12) times 4 pi xi = 22.87 exact decomposition (T1)
+- Kink r_s/xi = 226/0.874 >> 1: deep inside own gravitational radius (T1)
+
+**Open:**
+- D4-A: Absolute scale generation (T4)
+- D4-B: Metric emergence from substrate (T4 — most fundamental)
+- D4-C: Massless spin-2 mode from scalar substrate (T4 — hardest)
+- D4-D: Numerical coupling coefficient (T4)
+- Masslessness protection mechanism (T4)
+- Strong-field consistency resolution (T4)
+
+**Most promising path:** Induced gravity via substrate response function
+(Primary program above), combined with Jormungandr self-consistency as
+a nonlinear boundary condition.
+
+---
+
+**See also:** `foundations/jormungandr_double_well.md` for the cyclical
+compression hypothesis. `equations/d4_gravity_spin2_enhancement.py` (C392)
+for the spin-2 enhancement analysis. `equations/d4_zero_mode_gravity.py`
+(C367) for the scalar zero-mode calculation. `equations/d4_gravity_dimensional.py`
+(C366b) for dimensional analysis and the omega_c bridge.
