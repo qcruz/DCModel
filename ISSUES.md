@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 386 (2026-08-15)
+**Last updated:** Cycle 389 (2026-08-15)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -331,6 +331,74 @@ or has not yet addressed:
 | σ_piN (sigma term) | 52 MeV | Blocked | Needs m_hat = (m_u+m_d)/2 |
 
 **Status:** T4 for all. These are targets for future cycles.
+
+---
+
+### T26 — Proton Charge Radius: −18% Undershoot
+
+DFC three-component estimate: r_p = 0.693 fm vs observed 0.8409 fm (−17.6%).
+Components: quark core (r_sigma^2 = 0.187 fm^2), Foldy (−0.123 fm^2), pion cloud (0.416 fm^2).
+The pion cloud uses ChPT leading-log with g_A = 4/pi and f_pi(PS) = 89.63 MeV.
+
+Root causes:
+1. Core contribution: r_sigma = hbar_c/m_sigma = 0.432 fm is a rough estimate; proper quark model
+   wavefunction or bag model would give different core radius
+2. Pion cloud: leading-log ChPT may undercount; needs NLO + counter-terms or lattice input
+3. VMD cross-check (0.528 fm) is even worse — m_rho = m_omega kills isospin splitting
+
+Path to close: dispersion relation approach using DFC form factors, or lattice-QCD-calibrated ChPT coefficients.
+
+**Status:** T4 open (C389). **Files:** `equations/prediction_tests_phase3.py`
+
+---
+
+### T27 — Delta-N Splitting: +92% Overshoot
+
+DFC color-magnetic estimate: M_Delta − M_N = 563 MeV vs observed 293 MeV (+92%).
+Uses alpha_s(m_sigma) = 0.430 and |psi(0)|^2 = 1/(pi*R_conf^3) with R_conf = hbar_c/m_sigma = 0.432 fm.
+The sensitivity scan shows R_conf = 0.50 fm gives 363 MeV (+24%), so the confinement radius is key.
+
+Root causes:
+1. Contact probability |psi(0)|^2 too large — R_conf = 0.432 fm may be too small for the
+   quark-quark separation in the nucleon (empirical bag radius R ~ 0.8-1.0 fm)
+2. alpha_s at low scale near Landau pole — running from M_Z unreliable
+3. Formula assumes point-like quarks; constituent quark size smears the contact term
+
+Path to close: use nucleon charge radius or bag model to set R_conf; or ratio method
+(Delta-N)/(Sigma-Lambda) which cancels |psi(0)|^2.
+
+**Status:** T4 open (C389). **Files:** `equations/prediction_tests_phase3.py`
+
+---
+
+### T28 — Symmetry Energy Slope L: +71% Too Stiff
+
+DFC predicts L = 99 MeV vs observed ~58 MeV (+71%). The symmetry energy J = 37.1 MeV
+is also high (+16% vs 32 MeV), just outside the 15% tolerance.
+
+Root cause: the rho-exchange potential J_pot = g_rho^2 * rho_0 * hbar_c^3 / (8*m_rho^2) = 24.7 MeV
+is too large. Same issue as the compressibility problem (T22) — the linear Walecka model with
+DFC coupling universality g_rho = g_omega = 9.645 gives an EOS that is too stiff.
+L_pot = 3*J_pot = 74 MeV dominates the total L.
+
+Path to close: nonlinear sigma terms (V(phi) kink corrections) would soften the EOS,
+or rho-meson self-interaction from chiral constraints. Same resolution path as T22.
+
+**Status:** T4 open (C389). **Files:** `equations/prediction_tests_phase3.py`
+
+---
+
+### T29 — Neutron Charge Radius: −89% Undershoot
+
+DFC estimate: <r^2>_n = −0.012 fm^2 vs observed −0.116 fm^2 (magnitude 89% too small).
+The pion cloud contribution (−0.139 fm^2) nearly cancels the Foldy term (+0.126 fm^2),
+leaving a tiny residual. The observed value requires stronger pion cloud or additional
+negative contributions from strange quarks or higher-order effects.
+
+Root cause: the simple 1/3 isospin decomposition of the pion cloud underestimates the
+neutron's negative charge distribution. Full ChPT or dispersion relation treatment needed.
+
+**Status:** T4 open (C389). **Files:** `equations/prediction_tests_phase3.py`
 
 ---
 
