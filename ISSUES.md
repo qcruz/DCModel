@@ -180,25 +180,35 @@ With M_N(obs) + 1% pion mass correction: f_pi ~ 90.7 MeV (−1.5%).
 
 ---
 
-### T19 — Deuteron Binding Energy: −49% Underbinding
+### T19 — Deuteron Binding Energy: −48% Underbinding
 
-DFC sigma+omega central potential gives B_d = 1.14 MeV vs observed 2.2246 MeV (−49%).
+DFC sigma+omega central potential gives B_d = 1.15 MeV vs observed 2.2246 MeV (−48%).
 Ground state exists but is too weakly bound.
 
-**Root causes (3 identified):**
-1. g_piNN = 12.28 is 6.4% low (from f_pi overshoot T18) — reduces potential depth
-2. Tensor OPE force not included — provides ~50% of deuteron binding in full NN calculations;
-   central OPE alone is repulsive in ³S₁ channel
-3. No short-range regularization — unphysical excited state at B = 4.6 MeV appears
+**C388 update (corrected f_pi):** Reran with Pagels-Stokar f_pi = 89.63 MeV (C387).
+Couplings increase: g_sigma = g_omega = 10.43 (was 9.645), g_piNN = 13.28 (was 12.28).
+Potential deepens 17%, but B_d barely changes (1.143 → 1.150 MeV). ROOT CAUSE: coupling
+universality g_sigma = g_omega means both scale identically, preserving the sigma-omega
+cancellation pattern. Binding controlled by range difference (m_sigma < m_omega), not depth.
+
+**Root causes (2 remaining):**
+1. **Tensor OPE force not included** — provides ~50-70% of deuteron binding in full NN
+   calculations; central OPE alone is repulsive in ³S₁ channel. This is the dominant gap.
+2. No short-range regularization — unphysical excited state at B = 4.6 MeV appears
+
+**Eliminated root cause:** g_piNN was 6.4% low from f_pi overshoot (T18). With PS f_pi,
+g_piNN = 13.28 (+1.2% vs obs 13.12). However, this does not affect the central-only
+calculation because g_sigma = g_omega preserves the cancellation.
 
 **Path to close:**
-- **Immediate (tensor):** Implement coupled ³S₁-³D₁ Numerov solver with DFC OPE tensor force.
-  Standard nuclear physics: tensor force is essential for deuteron, not optional.
-- **Medium-term (f_pi):** Closing T18 would increase g_piNN toward 13.12, deepening potential.
+- **Primary (tensor):** Implement coupled ³S₁-³D₁ Numerov solver with DFC OPE tensor force.
+  The tensor force depends on g_piNN independently of g_sigma/g_omega, so the PS correction
+  to g_piNN (−6.4% → +1.2%) will directly improve the tensor contribution.
 - **Full solution:** sigma+omega+pion (central+tensor) with DFC couplings, plus hard-core
   or form-factor regularization at r < 0.5 fm.
 
-**Status:** T4 open. **Files:** `equations/prediction_tests_phase2.py` (C386)
+**Status:** T4 open. **Files:** `equations/prediction_tests_phase2.py` (C386),
+`equations/deuteron_corrected_fpi.py` (C388)
 
 ---
 
