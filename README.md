@@ -374,7 +374,7 @@ phenomena/             74 natural-language accounts of observations
   quantum/              Spin, entanglement, measurement, Bell
   condensed_matter/     Superconductivity, QHE, Josephson
 
-educational/           29 modules from layman to expert
+educational/           30 modules from layman to expert
   00_overview.md        Start here (no physics background needed)
   08_mathematics.md     Technical summary for physicists
   22_yang_mills_proof.md  Yang-Mills mass gap explained

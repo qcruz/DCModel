@@ -434,26 +434,34 @@ The D4 gravity gap has four sub-problems (see `foundations/d4_gravity_gap.md`):
 substrate has NO propagating massless spin-2 mode:
 - Vacuum T_muv-T_muv correlator has two-particle threshold at 2*m_sigma, no 1/k^2 pole [T1]
 - 1+1D bubble integral Pi(k) computed explicitly — smooth, monotonically decreasing [T1]
-- Sakharov induced gravity: M_eff^2 = m_sigma^2/(16*pi) * ln(Lambda^2/m_sigma^2) = −0.145
-  **WRONG SIGN** — vacuum scalar fluctuations give repulsive gravity [T1]
+- Sakharov induced gravity in 1+1D: M_eff^2 = −0.145 **WRONG SIGN** [T1]
 - Kink zero mode is massless but scalar (spin-0), not spin-2 [T1]
 
+**C394 WRONG-SIGN RESOLVED:** Worldvolume Sakharov mechanism in 4D:
+- 4D quadratic divergence (Schwinger proper-time) always positive [T1] — resolves C393 wrong sign
+- Worldvolume spectrum: 8 gauge (massless, 16 DOF) + 1 translational (massless, 1 DOF) + 1 shape (massive, 1 DOF)
+- M²_ind = 2.35% of M_Pl² from 17 massless + 1 massive DOF [T3]
+- Total perturbative: scalar 4.4% + induced 2.35% = ~6.7%; non-perturbative ~93% [T3]
+
 **Resolution paths (ordered by promise):**
-1. Induced gravity via worldvolume effective action (D4-B): integrate out massive PT modes
-   around kink background → check for Einstein-Hilbert term with correct sign
+1. Full Sakharov induced gravity (D4-B): extend C394 to all substrate modes, non-perturbative
 2. Jormungandr self-consistency (D4-A + D4-D)
-3. Emergent metric from substrate deformation pattern (D4-B)
+3. Strong-field boundary condition (kink inside own r_s)
+4. Lattice/numerical substrate response
 
 **Established results:**
 - Scalar zero-mode gives G_eff = G_N/23 (4.4% of full coupling) [T3, C367]
 - Enhancement factor F = (25/12)*4*pi*xi = 22.87 [T1 exact, C392]
 - Profile narrowing REDUCES coupling: (I_10/I_6)^2 = 0.58 [T1, C392]
-- Non-perturbative content ~96% of G_N [T4, C392]
+- Sakharov wrong-sign RESOLVED in 4D [T1, C394]
+- M²_ind = 2.35% M_Pl² (correct sign, 4D worldvolume) [T3, C394]
+- Non-perturbative content ~93% of G_N [T3, C394]
 - alpha*G_N = cuberoot(18) consistency relation [T1]
 
-**Files:** `equations/d4_substrate_response.py` (C393), `equations/d4_gravity_spin2_enhancement.py`
-(C392), `equations/d4_zero_mode_gravity.py` (C367), `equations/d4_gravity_dimensional.py` (C366b),
-`foundations/d4_gravity_gap.md`
+**Files:** `equations/d4_induced_gravity_worldvolume.py` (C394), `equations/d4_substrate_response.py`
+(C393), `equations/d4_gravity_spin2_enhancement.py` (C392), `equations/d4_zero_mode_gravity.py` (C367),
+`equations/d4_gravity_dimensional.py` (C366b), `foundations/d4_gravity_gap.md`,
+`educational/28_gravity_gap.md`
 
 ---
 
