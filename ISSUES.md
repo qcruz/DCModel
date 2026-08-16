@@ -156,23 +156,27 @@ dynamics; half-life prediction for ²⁹⁸Fl.
 
 ---
 
-### T18 — f_pi: DFC Overshoot (+5.3%)
+### T18 — f_pi: DFC Overshoot (reduced from +5.3% to −2.7%)
 
-DFC predicts f_pi = Λ/π = 96.9 MeV vs observed 92.07 MeV (+5.3%). This propagates
-into g_piNN via Goldberger-Treiman (g_piNN = g_A × M_N / f_pi), making g_piNN too LOW
-(12.28 vs 13.12, −6.4%). The f_pi overshoot is the single largest source of error in the
-nuclear force sector.
+**Original:** f_pi = Λ/π = 96.9 MeV vs observed 92.07 MeV (+5.3%).
 
-**Impact chain:** f_pi +5.3% → g_piNN −6.4% → deuteron underbinding (−49%) → all nuclear
-force predictions systematically weakened.
+**C387 progress:** Pagels-Stokar formula with DFC inputs (0 free parameters):
+f_pi = Λ × √((ln 7 − 6/7)/(4π)) = 89.63 MeV (−2.7%). Uses M_q = M_N/3
+as constituent quark mass and Λ_UV = m_ω as UV cutoff. Key algebraic result:
+m_ω/M_q = √6 exactly from DFC mass relations, giving PS integral I = ln(7) − 6/7.
 
-**Path to close:** f_pi = Λ/π is a leading-order chiral relation. Higher-order corrections
-include: (1) NLO chiral perturbation (m_pi^2 log corrections), (2) finite quark mass
-corrections to PCAC, (3) DFC interpretation — Λ/π may be the chiral-limit value; physical
-f_pi requires m_pi ≠ 0 correction.
+**Impact chain (updated):** f_pi −2.7% → g_piNN +1.2% (was −6.4%) → nuclear force
+predictions dramatically improved. BUT a_pair = f_pi/(N_c²−1) worsens to −6.6%
+(pairing formula may need independent derivation).
 
-**Status:** T3 (structural). **Files:** `equations/prediction_tests_phase1.py` (C384),
-`equations/nuclear_ab_initio_inputs.py` (C382)
+**Remaining gap (2.7%):** Constant M_q approximation (QCD has momentum-dependent
+quark mass), M_N(DFC) vs M_N(obs) (−0.45%), finite m_pi corrections (~1-2%).
+
+**Path to full closure:** Momentum-dependent constituent mass M(p) in PS integral.
+With M_N(obs) + 1% pion mass correction: f_pi ~ 90.7 MeV (−1.5%).
+
+**Status:** T3 (improved from +5.3% to −2.7%; formula derived, not fitted).
+**Files:** `equations/fpi_correction_t18.py` (C387), `equations/pion_decay_constant.py` (C166)
 
 ---
 
