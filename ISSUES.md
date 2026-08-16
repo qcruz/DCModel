@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 392 (2026-08-16)
+**Last updated:** Cycle 393 (2026-08-16)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -417,6 +417,43 @@ the degeneracy: <r^2>_F1,n = −<r^2>_pion/2 = −0.210 fm^2.
 With Foldy (+0.128) and BW rho width correction: <r^2>_n = −0.082 fm^2 (−29%, PASS at 30% tol).
 
 **Status:** CLOSED (C391, PASS at −29%). **Files:** `equations/phase3_corrections.py`
+
+---
+
+### T30 — D4 Gravity Gap: No Spin-2 Mode in Scalar Substrate
+
+**Status:** T4 open (deepest structural gap in DFC)
+
+The D4 gravity gap has four sub-problems (see `foundations/d4_gravity_gap.md`):
+- **D4-A** (Scale): M_Pl = f(alpha, beta) — T4 open
+- **D4-B** (Metric emergence): g_muv^eff from substrate — T4 open, **most promising path**
+- **D4-C** (Graviton emergence): massless spin-2 mode — T4 open, **hardest sub-gap**
+- **D4-D** (Coupling coefficient): G_N = f(alpha, beta) with predicted coefficient — T4 open
+
+**C393 KEY NEGATIVE RESULT:** Linear response kernel analysis establishes that the DFC
+substrate has NO propagating massless spin-2 mode:
+- Vacuum T_muv-T_muv correlator has two-particle threshold at 2*m_sigma, no 1/k^2 pole [T1]
+- 1+1D bubble integral Pi(k) computed explicitly — smooth, monotonically decreasing [T1]
+- Sakharov induced gravity: M_eff^2 = m_sigma^2/(16*pi) * ln(Lambda^2/m_sigma^2) = −0.145
+  **WRONG SIGN** — vacuum scalar fluctuations give repulsive gravity [T1]
+- Kink zero mode is massless but scalar (spin-0), not spin-2 [T1]
+
+**Resolution paths (ordered by promise):**
+1. Induced gravity via worldvolume effective action (D4-B): integrate out massive PT modes
+   around kink background → check for Einstein-Hilbert term with correct sign
+2. Jormungandr self-consistency (D4-A + D4-D)
+3. Emergent metric from substrate deformation pattern (D4-B)
+
+**Established results:**
+- Scalar zero-mode gives G_eff = G_N/23 (4.4% of full coupling) [T3, C367]
+- Enhancement factor F = (25/12)*4*pi*xi = 22.87 [T1 exact, C392]
+- Profile narrowing REDUCES coupling: (I_10/I_6)^2 = 0.58 [T1, C392]
+- Non-perturbative content ~96% of G_N [T4, C392]
+- alpha*G_N = cuberoot(18) consistency relation [T1]
+
+**Files:** `equations/d4_substrate_response.py` (C393), `equations/d4_gravity_spin2_enhancement.py`
+(C392), `equations/d4_zero_mode_gravity.py` (C367), `equations/d4_gravity_dimensional.py` (C366b),
+`foundations/d4_gravity_gap.md`
 
 ---
 
