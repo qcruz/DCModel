@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 389 (2026-08-15)
+**Last updated:** Cycle 391 (2026-08-16)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -348,11 +348,15 @@ wavefunction needed), not a DFC-specific failure. DFC gives the right scale.
 Path to close: solve for quark wavefunction in sigma+omega potential, or use dispersion
 relations with DFC form factors.
 
-**Status:** T4 open (C389, analyzed C390). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_failure_analysis.py`
+**C391 correction:** VMD+pion cloud+BW gives r_p = 0.701 fm (−16.7%). BW width correction
+is negligible (+0.95%). The VMD approach fundamentally undershoots because m_rho = m_omega
+kills the isovector enhancement from two-pion continuum below rho peak.
+
+**Status:** T4 open (C389-C391). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_corrections.py`
 
 ---
 
-### T27 — Delta-N Splitting: +92% Overshoot
+### T27 — Delta-N Splitting: +92% -> −40%
 
 DFC color-magnetic estimate: M_Delta − M_N = 563 MeV vs observed 293 MeV (+92%).
 Uses alpha_s(m_sigma) = 0.430 and |psi(0)|^2 = 1/(pi*R_conf^3) with R_conf = hbar_c/m_sigma = 0.432 fm.
@@ -367,11 +371,16 @@ nucleon wavefunction to set confinement radius), not a DFC-specific failure.
 Path to close: solve quark bound state to determine R_conf, or use ratio method
 (Delta-N)/(Sigma-Lambda) which cancels |psi(0)|^2.
 
-**Status:** T4 open (C389, analyzed C390). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_failure_analysis.py`
+**C391 correction:** Using R_conf from nucleon F1 radius (0.78 fm) with relative
+coordinate r_rel = R*sqrt(2/3) = 0.64 fm gives delta_M = 176 MeV (−40%). Swung through
+the right answer: now undershoots. Need alpha_s ~ 0.72 (vs 0.43) for exact match.
+alpha_s ~ 0.7 is reasonable for frozen infrared coupling at ~500 MeV (lattice: 0.5-1.0).
+
+**Status:** T4 open (C389-C391). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_corrections.py`
 
 ---
 
-### T28 — Symmetry Energy J (+16%) and Slope L (+71%): Isovector Coupling
+### T28 — Symmetry Energy J (−36%) and Slope L (−15%, PASS): Isovector Coupling
 
 DFC predicts J = 37.1 MeV (+16% vs 32) and L = 99 MeV (+71% vs 58).
 
@@ -384,24 +393,30 @@ channel coupling). The kinetic part J_kin = 12.4 MeV is exact (Fermi gas). The c
 DFC g_rho lies between g_omega = 9.6 and KSRF = 4.15, and requires computing the
 rho-nucleon vertex with proper isospin structure.
 
-Path to close: compute DFC-native rho-nucleon isovector coupling from form factor or
-quark-level isospin decomposition. May also benefit from nonlinear sigma terms (T22 path).
+**C391 correction:** g_rho = g_omega/sqrt(N_c) = 5.57 from KSRF isovector sum rule.
+L FIXED: 99 → 49.5 MeV (−15%, now PASS within 30% tolerance).
+J OVERCORRECTED: 37.1 → 20.6 MeV (−36%). Hartree rho exchange alone is too weak.
+Fock/tensor contributions add ~7-10 MeV but OPE Fock is repulsive (−10.5 MeV),
+making J worse. The exact J = 32 needs g_rho = 8.59 (89% of g_omega), between
+g_omega = 9.64 (isoscalar) and g_rho(KSRF) = 5.57 (bare isovector).
 
-**Status:** T4 open (C389, analyzed C390). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_failure_analysis.py`
+Path to close: compute rho-nucleon vertex with medium polarization effects
+(short-range correlations enhance bare KSRF coupling). Or include tensor
+rho exchange which contributes ~5 MeV to J.
+
+**Status:** L CLOSED (PASS at −15%). J still T4 (−36%). **Files:** `equations/phase3_corrections.py`
 
 ---
 
-### T29 — Neutron Charge Radius: −89% Undershoot
+### T29 — Neutron Charge Radius: −89% -> −29% (PASS)
 
-DFC estimate: <r^2>_n = −0.012 fm^2 vs observed −0.116 fm^2 (magnitude 89% too small).
-The pion cloud contribution (−0.139 fm^2) nearly cancels the Foldy term (+0.126 fm^2),
-leaving a tiny residual. The observed value requires stronger pion cloud or additional
-negative contributions from strange quarks or higher-order effects.
+**C391 FIXED.** Proper isovector/isoscalar form factor decomposition:
+F1_n = (F1_S − F1_V)/2, where pion cloud contributes ONLY to isovector F1_V.
+In DFC isospin limit (m_rho = m_omega), F1_S = F1_V(VMD), so pion cloud breaks
+the degeneracy: <r^2>_F1,n = −<r^2>_pion/2 = −0.210 fm^2.
+With Foldy (+0.128) and BW rho width correction: <r^2>_n = −0.082 fm^2 (−29%, PASS at 30% tol).
 
-Root cause: the simple 1/3 isospin decomposition of the pion cloud underestimates the
-neutron's negative charge distribution. Full ChPT or dispersion relation treatment needed.
-
-**Status:** T4 open (C389). **Files:** `equations/prediction_tests_phase3.py`
+**Status:** CLOSED (C391, PASS at −29%). **Files:** `equations/phase3_corrections.py`
 
 ---
 
