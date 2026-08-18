@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 393 (2026-08-16)
+**Last updated:** Cycle 395 (2026-08-18)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -449,16 +449,28 @@ substrate has NO propagating massless spin-2 mode:
 3. Strong-field boundary condition (kink inside own r_s)
 4. Lattice/numerical substrate response
 
+**C395 CONTINUUM SPECTRAL DENSITY:** PT s=2 phase shifts confirm C394 is robust:
+- delta(q) = arctan(1/q) + arctan(2/q), reflectionless [T1]
+- Levinson theorem: integral Delta_rho = -2 = -n_bound [T1 exact]
+- Continuum correction Delta_M^2 = -5.14e-05 M_Pl^2 (NEGATIVE, reduces perturbative account) [T1]
+- |Continuum|/Bound = 0.22% — exponentially suppressed at m^2/Lambda^2 = 4 [T1]
+- Complete one-loop: 2.3474% M_Pl^2 (net -0.22% shift from C394) [T3]
+- Total perturbative tightened: 6.72%; non-perturbative: 93.28% [T3]
+- Deficit factor ~40x confirms gap is inherently non-perturbative (r_s/xi = 259 >> 1)
+
 **Established results:**
 - Scalar zero-mode gives G_eff = G_N/23 (4.4% of full coupling) [T3, C367]
 - Enhancement factor F = (25/12)*4*pi*xi = 22.87 [T1 exact, C392]
 - Profile narrowing REDUCES coupling: (I_10/I_6)^2 = 0.58 [T1, C392]
 - Sakharov wrong-sign RESOLVED in 4D [T1, C394]
 - M²_ind = 2.35% M_Pl² (correct sign, 4D worldvolume) [T3, C394]
-- Non-perturbative content ~93% of G_N [T3, C394]
+- Continuum correction NEGATIVE and SMALL (0.22% of bound) [T1, C395]
+- Complete one-loop: 2.3474% M_Pl² [T3, C395]
+- Non-perturbative content 93.28% of G_N — ROBUST against perturbative corrections [T3, C395]
 - alpha*G_N = cuberoot(18) consistency relation [T1]
 
-**Files:** `equations/d4_induced_gravity_worldvolume.py` (C394), `equations/d4_substrate_response.py`
+**Files:** `equations/d4_continuum_spectral_gravity.py` (C395),
+`equations/d4_induced_gravity_worldvolume.py` (C394), `equations/d4_substrate_response.py`
 (C393), `equations/d4_gravity_spin2_enhancement.py` (C392), `equations/d4_zero_mode_gravity.py` (C367),
 `equations/d4_gravity_dimensional.py` (C366b), `foundations/d4_gravity_gap.md`,
 `educational/28_gravity_gap.md`
