@@ -5,9 +5,9 @@ independently. For background on forces, see Module 04. For the I₄ identity, s
 Module 09. For open problems, see Module 18.
 
 **Context:** This module documents the status of gravity within DFC as of Cycles
-366–394. It covers what has been established, what has been tried, what failed,
-what partially worked, and what the realistic paths forward are. Written in
-journaling style to capture the reasoning at the current frontier.
+366–399. It covers what has been established, what has been tried, what failed,
+what partially worked, and what the breakthroughs of C396–C399 changed. Written
+in journaling style to capture the reasoning at the current frontier.
 
 ---
 
@@ -71,8 +71,10 @@ phi → substrate deformation → g_muv^eff → geodesic motion
 This is substantially more promising than trying to make the kink profile itself
 behave as 1/r (which it cannot — it falls off exponentially).
 
-**Status:** T4 open. No explicit construction of g_muv^eff from V(phi) exists.
-This is the most fundamental of the four sub-gaps.
+**Status:** T3 partially addressed (C396). An analog metric was constructed from the
+kink background: the position-dependent effective propagation speed V''(phi_bg) =
+alpha times (2 - 3 sech²) produces a geometry that confines excitations to the
+worldvolume and gives 1/r for localized sources. See Section 5 for details.
 
 ### D4-C: Graviton Emergence
 
@@ -98,7 +100,20 @@ cannot emerge from the linearized substrate spectrum — it must emerge from a d
 mechanism. But it does mean that a direct "graviton from substrate fluctuations"
 approach is obstructed.
 
-**Status:** T4 open. The single hardest sub-gap.
+**C398 Update:** The gravitational wave polarization problem was stress-tested.
+Candidate A (composite tensor from scalar gradients) was proven to fail — the
+tensor d_mu(dphi) d_v(dphi) is purely longitudinal for any plane wave and has zero
+spin-2 content. Candidate B (spin-2 from worldvolume gauge fields) is viable: the
+16 SU(3) gauge DOF produce spin-2 through their tensor products (1 tensor 1 = 0+1+2),
+and the Sakharov induced gravity mechanism generates a standard Einstein-Hilbert
+action whose linearized fluctuations have exactly two transverse-traceless
+polarizations propagating at c. The scalar breathing mode is Planck-mass-gapped
+and unobservable at LIGO frequencies.
+
+**Status:** T3 (Candidate B structurally viable; coupling-dependent). The polarization
+problem is downgraded from "critical tension" to "coupling-dependent" — the mechanism
+exists, the remaining question is whether the non-perturbative 93% preserves the
+tensor structure.
 
 ### D4-D: Coupling Emergence
 
@@ -106,15 +121,25 @@ approach is obstructed.
 
 Even if gravity emerges through some mechanism, the coupling strength must be predicted.
 The scalar zero-mode exchange between two kinks gives an effective gravitational
-coupling G_eff = G_N/23, capturing only 4.4% of the observed gravitational coupling.
-The remaining 95.6% is non-perturbative content that cannot be obtained from
-linearized kink-kink exchange.
+coupling G_eff = G_N/22.9 for extended (sech⁴) sources, with the profile factor
+(I_6/I_4)² = 16/25 accounting for the source profile. The enhancement factor F =
+(25/12) times 4 pi xi = 22.87 has been verified exactly. The total perturbative
+account is approximately 6.7% of G_N. The remaining approximately 93% is
+non-perturbative.
 
-**Status:** T3 (scalar fraction characterized). T4 for the full coupling.
+**C397 Update:** The full worldvolume Green's function was computed as a mode sum
+over the Poeschl-Teller spectrum. The n=1 bound state contributes zero (odd parity,
+vanishes at y=0). The continuum contributes less than 6% at the kink center and is
+exponentially suppressed beyond 2 xi. The perturbative total of 6.72% is confirmed
+robust. Self-gravitational energy |U_self|/E_kink = 59 >> 1 confirms the deep
+nonlinear regime.
+
+**Status:** T1 (scalar fraction and mode sum verified exactly). T4 for the full
+non-perturbative coupling.
 
 ---
 
-## 3. What Has Been Established (C366b–C394)
+## 3. What Has Been Established (C366b–C395)
 
 ### The Scalar Fraction (C367, C392)
 
@@ -190,13 +215,12 @@ coupling is scale-dependent, or the kink is not a conventional localized object.
 
 ---
 
-## 4. Conceptual Reframing (C395b): Gravity Is Compression Geometry
+## 4. Conceptual Reframing (C395b–C396): Gravity Is Compression Geometry
 
-Before listing the options, a critical reframing is needed. Cycles C392-C395
-approached the D4 gap from the conventional physics direction: looking for
-graviton-like modes, computing Sakharov induced gravity, analyzing spectral
-densities. This produced useful bounds (the perturbative sector accounts for
-only ~7% of gravity) but was asking the wrong question from DFC's perspective.
+Cycles C392–C395 approached the D4 gap from the conventional physics direction:
+looking for graviton-like modes, computing Sakharov induced gravity, analyzing
+spectral densities. This produced useful bounds (the perturbative sector accounts
+for only ~7% of gravity) but was asking the wrong question from DFC's perspective.
 
 DFC does not claim gravity is a force mediated by spin-2 particle exchange.
 DFC claims gravity is what the substrate's natural compression looks like from
@@ -211,84 +235,172 @@ This means:
 - The right question is not "where is the graviton?" but "how does non-uniform
   compression create effective geometry?"
 
-### Option 1: Analog Metric from Substrate Compression (Most Promising — DFC-native)
-
-A kink deforms the substrate. Small perturbations propagate through the deformed
-region according to a wave equation whose coefficients depend on the background.
-Those coefficients define an effective metric — the geometry that perturbations
-experience. This is the technique of analog gravity (Unruh 1981). The question
-is whether the DFC kink background produces an effective metric with 1/r behavior
-at long distances.
-
-**Difficulty:** Moderate. The mathematical tools exist (analog gravity literature).
-The conceptual framework is DFC-native. The calculation is concrete.
-
-**What success looks like:** An explicit g_muv^eff[phi_bg] that reduces to flat
-space far from the kink, shows 1/r behavior at intermediate distances, and
-couples universally to substrate excitations.
-
-### Option 2: Sakharov Induced Gravity (Perturbative — COMPLETED)
-
-C392-C395 characterized this channel completely. Scalar zero-mode gives 4.4%
-of G_N. Worldvolume Sakharov gives 2.35% of M_Pl². Continuum correction is
-negligible. Total perturbative: ~6.7%. This sector is complete and should not
-be extended further.
-
-### Option 3: Jormungandr Self-Consistency
-
-Rather than deriving G_N from V(phi) forward, or V(phi) from G_N backward, the two
-may be constrained by a self-consistency loop:
-
-V(phi) → matter/closure → compression → effective geometry → collapse → endpoint → V_eff(phi)
-
-Requiring V_eff(phi) = V(phi) at the fixed point would make the double-well not an
-arbitrary starting assumption but an attractor of the substrate's gravitational
-dynamics. If demonstrated mathematically, this would turn the Jormungandr hypothesis
-from an interpretive narrative into an actual mechanism.
-
-The connection to D4 is direct: Jormungandr and the D4 gap are the **same problem
-from different directions**. Solving either provides leverage on the other.
-
-**Difficulty:** Very high. Requires solving a nonlinear self-consistency equation
-for V(phi) coupled to its own gravitational back-reaction.
-
-**What success looks like:** A fixed-point equation whose unique solution is
-V = -alpha/2 phi² + beta/4 phi⁴ with alpha = cuberoot(18).
-
-### Option 3: Strong-Field Boundary Condition
-
-The kink sits deep inside its own gravitational radius (r_s/xi = 259). Standard GR
-cannot apply at this scale. The resolution may come from treating the kink not as an
-object within spacetime but as a structure that **defines** the transition between
-spacetime regions.
-
-The idea: the kink IS the boundary between the two wells of V(phi). The Z₂ symmetry
-of V(phi) corresponds to the two sheets of the maximal Schwarzschild extension
-(Einstein-Rosen bridge). The BPS bound (E_kink = S_kink) corresponds to the
-extremal black hole bound (M = |Q|).
-
-**Difficulty:** Moderate to high. Requires connecting the DFC kink mathematics to the
-known physics of extremal black holes and Einstein-Rosen bridges.
-
-**What success looks like:** A derivation showing that the kink width xi and the
-Schwarzschild radius r_s are related by the kink's own field equations, producing
-G_N as a derived quantity.
-
-### Option 4: Lattice/Numerical Substrate Response
-
-Compute the full nonlinear response of the DFC substrate to a localized energy
-perturbation numerically, on a lattice. Measure how other substrate excitations
-propagate through the deformed region. Extract the effective metric and determine
-whether it has the form predicted by GR at long distances.
-
-**Difficulty:** Moderate (computational, not conceptual).
-
-**What success looks like:** Numerical evidence that 1/r behavior emerges at scales
-much larger than xi, with the correct coefficient.
+C396 turned this conceptual reframing into a concrete calculation.
 
 ---
 
-## 5. Honest Assessment
+## 5. The C396–C399 Breakthroughs
+
+### C396: The Analog Metric — Gravity from Position-Dependent Speed
+
+The kink background phi_bg(y) = phi_0 tanh(y/xi) modifies the effective
+propagation speed for small perturbations. The effective "mass-squared" seen by
+fluctuations is V''(phi_bg) = alpha times (2 - 3 sech²(y/xi)). This function
+is positive far from the kink (propagation allowed) and dips negative near it
+(binding region). It defines a position-dependent geometry.
+
+**Key result:** The transverse potential is **linear** — it describes a domain
+wall that confines excitations to the worldvolume with constant acceleration
+g = 710 per Planck length. This is the D3 localization mechanism: the kink
+itself produces the confinement that makes three apparent spatial dimensions.
+
+**The 1/r result:** For **localized** sources on the wall (closures = particles),
+the effective gravitational potential falls off as 1/r. This is not imposed —
+it follows from the dimensionality of the worldvolume. A 3-dimensional Laplacian
+has Green's function 1/(4 pi r), so any localized source interacting through a
+field on the wall produces a 1/r potential automatically.
+
+This is the first time 1/r has been derived rather than assumed in DFC. It is
+not gravity yet — the coupling coefficient and spin-2 structure are separate
+questions — but the spatial dependence emerges from the substrate geometry.
+
+The profile ratio I_8/I_4² = 18/35 sets the coupling for this channel. The
+Shapiro time delay is positive and decreasing with frequency, qualitatively
+correct. The Born approximation overestimates the phase by a factor of 2,
+indicating a strong-potential regime.
+
+### C397: The Full Mode Sum — Quantifying What Perturbation Theory Can See
+
+With the analog metric in hand, the next step was to compute the complete
+perturbative Green's function by summing over all Poeschl-Teller modes.
+
+The kink's transverse fluctuation spectrum has:
+- A zero mode (n=0): massless, sech² profile — this is the translational mode
+- A bound state (n=1): massive at sqrt(3/2) times m_KK, with a sech times tanh
+  profile — this is the shape mode, **odd** in the transverse coordinate
+
+Because the n=1 mode is odd, it vanishes at y=0 (the kink center). Its
+contribution to the Green's function between symmetric sources is exactly zero.
+The continuum modes (above the gap at 2 times m_KK) contribute less than 6% at
+the kink center and are exponentially suppressed beyond 2 times xi.
+
+The result: G_eff = G_N/22.9 for extended (sech⁴) sources, with the profile
+factor (I_6/I_4)² = 16/25 = 0.64 accounting for the source distribution. The
+Jormungandr self-consistency formula F = 150 pi sqrt(2)/alpha^(7/2) = 22.87 was
+verified exactly.
+
+The self-gravitational energy tells a dramatic story. The ratio |U_self|/E_kink =
+59, far greater than 1. This means the kink's own gravitational self-energy (even
+using only the perturbative fraction) exceeds its rest energy by a factor of 59.
+The system is inherently non-perturbative — no finite number of perturbative
+corrections can account for the full gravitational coupling. The 93% non-perturbative
+fraction is not an error bar; it is the dominant physics.
+
+### C398: The Polarization Problem — How Tensor Gravity Emerges from a Scalar
+
+General relativity predicts two transverse-traceless tensor polarizations for
+gravitational waves: the + and cross modes observed by LIGO. DFC's compression
+field phi is a scalar. How does a scalar substrate produce tensor gravitational
+waves?
+
+C398 stress-tested two candidate mechanisms:
+
+**Candidate A (composite tensor):** Build a tensor from scalar gradients,
+d_mu(dphi) d_v(dphi) / phi_0². This object is a rank-2 tensor, but for any
+plane wave delta phi proportional to exp(ikx), it is **purely longitudinal** —
+all transverse components vanish identically. A scalar field's energy-momentum
+tensor has zero spin-2 content. This is a theorem, not a numerical result.
+Candidate A fails.
+
+**Candidate B (worldvolume gauge fields):** The kink's moduli space is SU(3),
+giving 16 gauge degrees of freedom on the worldvolume. Each gauge field is
+spin-1. The tensor product of two spin-1 representations decomposes as
+1 tensor 1 = 0 + 1 + 2 — producing spin-2 content. The Sakharov induced gravity
+mechanism integrates out these worldvolume fields to generate an effective
+Einstein-Hilbert action. The linearized fluctuations of this induced metric have
+exactly two transverse-traceless polarizations propagating at c. Candidate B is
+viable.
+
+The scalar substrate also has a breathing polarization mode, but it is gapped
+at the Planck mass (m_sigma = sqrt(2 alpha) approximately 2.3 M_Pl). At LIGO
+frequencies of 10 to 1000 Hz, this mode is exponentially damped — only tensor
+polarizations propagate to the detector, consistent with observations.
+
+This is a structural resolution, not a complete derivation. The remaining question
+is whether the non-perturbative 93% of the gravitational coupling preserves the
+tensor structure that the perturbative 7% produces.
+
+### C399: 1/r Verified Across Intermediate Scales
+
+The final module of the gravity spoke stress-tested the 1/r result at intermediate
+distances — the regime between the kink width xi and asymptotically large separations.
+
+**Result:** 1/r is exact to machine precision across more than 7 orders of magnitude,
+from 0.01 xi to 10⁶ xi. The logarithmic derivative d(ln G)/d(ln r) = -1.000 to
+10⁻⁹ at all tested points. This is not approximately 1/r — it is exactly 1/r, because
+it follows from the dimensionality of the worldvolume (3D Laplacian), not from any
+approximation.
+
+The effective coupling G_eff converges to its asymptotic value G_N/22.9 within 0.1%
+at r = 10 xi. The continuum modes, which could in principle modify the power law,
+are suppressed by less than 10⁻¹⁰ at 10 xi. At intermediate distances r comparable
+to xi, there are small deviations from the asymptotic G_eff (the continuum contributes
+up to 6%), but the power law remains exactly 1/r throughout.
+
+Newton's law V(r) = -G_eff M₁ M₂ / r was verified for the DFC system. The deep
+nonlinear regime (r_s/xi >> 1) was confirmed — the kink sits far inside its own
+gravitational radius, and the perturbative gravitational dynamics do not capture
+this regime.
+
+---
+
+## 6. The Current Landscape After C399
+
+### What the C396–C399 breakthroughs established
+
+The analog metric approach (Option 1 from the original assessment) has been pursued
+and has produced concrete results:
+
+1. **1/r derived, not assumed.** The spatial dependence of gravity follows from
+   worldvolume dimensionality — the Green's function of a 3D Laplacian is 1/(4 pi r).
+   This is T1.
+
+2. **Perturbative sector fully characterized.** The complete mode sum gives
+   G_eff = G_N/22.9 with no remaining perturbative corrections to compute. The
+   continuum is negligible. This is T1.
+
+3. **GW polarizations structurally explained.** Worldvolume gauge fields produce
+   spin-2 through tensor products. The scalar breathing mode is Planck-mass-gapped.
+   This is T3 (viable mechanism, coupling-dependent).
+
+4. **Deep nonlinear regime confirmed.** Self-gravitational energy 59 times the
+   kink rest energy. The perturbative fraction is inherently limited to ~7%.
+
+### What remains open
+
+The Sakharov/perturbative channel (Option 2) is complete. The analog metric
+(Option 1) has been explored and yields 1/r with a coupling that is 1/22.9 of
+the observed value. The remaining 93% requires one of:
+
+**Jormungandr Self-Consistency (highest potential).** The kink's gravitational
+self-energy exceeds its rest energy by 59 times. This means the kink cannot exist
+without accounting for its own gravity. A self-consistency equation — requiring
+that the kink's gravitational back-reaction reproduces the potential V(phi) that
+produced the kink — would close the loop. This is the Jormungandr fixed-point
+equation (C400, planned).
+
+**Strong-Field Boundary Condition.** The kink sits deep inside its own gravitational
+radius (r_s/xi = 259). Standard GR cannot apply at this scale. The kink IS the
+boundary between the two wells of V(phi), analogous to an Einstein-Rosen bridge.
+The BPS bound corresponds to the extremal black hole bound. Connecting these
+structures could produce G_N as a derived quantity.
+
+**Lattice/Numerical.** Compute the full nonlinear substrate response numerically
+and extract the effective metric coefficient.
+
+---
+
+## 7. Honest Assessment
 
 ### What is established
 
@@ -298,23 +410,35 @@ much larger than xi, with the correct coefficient.
 | omega_c = sqrt(2 alpha) as Compton frequency | T1 | C366b |
 | BPS saturation: KE = V_ren at each point | T1 | substrate.md |
 | alpha times G_N = cuberoot(18) (consistency relation) | T1 | C366b |
-| Scalar zero-mode gives G_eff = G_N/23 | T3 | C367 |
-| Profile narrowing reduces coupling: (I_10/I_6)² = 0.58 | T1 | C392 |
 | F = (25/12) times 4 pi xi = 22.87 exact decomposition | T1 | C392 |
+| Profile narrowing reduces coupling: (I_10/I_6)² = 0.58 | T1 | C392 |
 | No massless spin-2 mode in scalar substrate | T1 | C393 |
 | Sakharov wrong-sign resolved in 4D | T1 | C394 |
+| Continuum spectral correction negative, -0.22% | T1 | C395 |
+| Analog metric: transverse confinement (domain wall) | T1 | C396 |
+| 1/r from worldvolume dimensionality (3D Laplacian) | T1 | C396, C399 |
+| Full mode sum: G_eff = G_N/22.9 for extended sources | T1 | C397 |
+| Profile factor (I_6/I_4)² = 16/25 exact | T1 | C397 |
+| n=1 bound state zero at y=0 (odd parity) | T1 | C397 |
+| 1/r exact across 7+ orders of magnitude | T1 | C399 |
+| G_eff convergence within 0.1% at 10 xi | T1 | C399 |
+| Candidate A (composite tensor) FAILS: purely longitudinal | T1 | C398 |
+| Candidate B (worldvolume gauge fields) VIABLE: spin-2 via 1 tensor 1 | T3 | C398 |
+| Scalar breathing mode Planck-mass-gapped | T1 | C398 |
 | M²_ind = 2.35% of M_Pl² from worldvolume modes | T3 | C394 |
-| Non-perturbative fraction approximately 93% | T3 | C394 |
+| Total perturbative fraction approximately 6.7% | T3 | C395, C397 |
+| Non-perturbative fraction approximately 93% | T3 | C395, C397 |
+| Self-gravitational energy |U_self|/E_kink = 59 >> 1 | T3 | C397 |
 
 ### What is open
 
 | Gap | Status | Difficulty |
 |---|---|---|
 | D4-A: Absolute scale generation | T4 open | High |
-| D4-B: Analog metric from compression | T4 open, PRIMARY | Moderate (DFC-native) |
-| D4-C: Spin-2 as metric fluctuation | T4 open, deprioritized | May resolve from D4-B |
-| D4-D: Numerical coupling coefficient | T4 open | Downstream of D4-B |
-| Strong-field consistency resolution | T4 open | Moderate |
+| D4-B: Analog metric from compression | T3 partially addressed | Moderate — 1/r derived |
+| D4-C: Spin-2 polarizations | T3 coupling-dependent | Candidate B viable |
+| D4-D: Full coupling coefficient (93% non-perturbative) | T4 open, PRIMARY | High — Jormungandr path |
+| Jormungandr fixed-point equation | T4 open, NEXT | Very high |
 
 ### What "D4 Closed" would mean
 
@@ -322,17 +446,18 @@ Not merely finding G_N = cuberoot(18)/alpha (which is dimensional fitting). Five
 requirements, all needed:
 
 1. **Scale:** M_Pl = f(alpha, beta) derived from dynamics
-2. **Geometry:** g_muv = g_muv[phi, d phi, ...] explicit construction
-3. **Propagation:** Massless long-range mode with two spin-2 polarizations
-4. **Coupling:** Universal coupling to energy-momentum
-5. **Coefficient:** G_N = f(alpha, beta) with predicted coefficient
+2. **Geometry:** g_muv = g_muv[phi, d phi, ...] explicit construction — **partially addressed (C396)**
+3. **Propagation:** Massless long-range mode with two spin-2 polarizations — **structurally viable (C398)**
+4. **Coupling:** Universal coupling to energy-momentum — **open**
+5. **Coefficient:** G_N = f(alpha, beta) with predicted coefficient — **open (93% non-perturbative)**
 
-Ideally: DFC → Einstein equations + Newtonian limit, with the coefficient of the
-Einstein-Hilbert term predicted rather than inserted.
+Progress since the original assessment: items 2 and 3 have moved from "T4 open" to
+"T3 partially addressed." The primary remaining challenge is item 5 — accounting
+for the non-perturbative 93% of the gravitational coupling.
 
 ---
 
-## 6. Why This Is Hard — and Why It Matters
+## 8. Why This Is Hard — and Why It Matters
 
 The D4 gap is the deepest gap in DFC for a reason. Every other force in the model
 emerges from the **internal** structure of kinks — their winding, topology, and
@@ -344,37 +469,61 @@ The other forces are about what kinks do to each other. Gravity is about what en
 does to the substrate. This requires understanding the substrate at a level deeper
 than the kink solutions that sit on top of it.
 
-The conceptual reframing of C395b clarifies the path. The original approach (C392-
-C395) asked a conventional question: "where is the graviton in the substrate spectrum?"
-and found it was not there. But DFC never claimed gravity works through particle
-exchange. DFC claims gravity IS the substrate's compression geometry — non-uniform
-folding near closures that other excitations experience as curved space.
+### What C392–C399 changed
 
-The analog metric approach makes this concrete. A kink deforms the substrate. Small
-perturbations see position-dependent propagation speeds, which defines an effective
-geometry. If that geometry has 1/r behavior at long distances, gravity emerges
-naturally without needing a fundamental spin-2 mode. The tensor structure of gravity
-would emerge from the effective metric itself — the same way that a scalar
-displacement field in a crystal produces effective tensor elasticity.
+The first phase (C392–C395) asked the conventional question: "where is the graviton
+in the substrate spectrum?" and found it was not there. This was the right question
+to eliminate: DFC never claimed gravity works through particle exchange. Establishing
+this took four modules and produced the definitive answer — the perturbative channel
+accounts for exactly 6.7% of gravity, no more.
 
-If DFC can derive gravity from V(phi) through this mechanism, it will be the first
-framework to unify all four forces from a single starting point without pre-existing
-spatial dimensions or gauge groups. If it cannot, then gravity may require additional
-structure beyond the double-well potential — which would mean DFC, while powerful for
-the other three forces, is incomplete as a theory of everything.
+The second phase (C396–C399) asked the DFC-native question: "how does the kink's
+compression geometry produce 1/r?" and found the answer — worldvolume dimensionality.
+A localized source on a 3-dimensional wall produces a 1/r potential as a consequence
+of the Green's function of the 3D Laplacian. The spatial dependence of gravity is
+derived, not assumed.
 
-Either result is scientifically valuable. The D4 gap is not a flaw in the model —
-it is the frontier.
+The gravitational wave polarization question was also addressed: the scalar substrate
+cannot produce spin-2 modes directly (proven), but the worldvolume gauge fields can
+(structurally viable). The scalar breathing mode is gapped at the Planck mass and
+invisible at detector frequencies.
+
+### What remains
+
+The gap has narrowed from "how does gravity work in DFC?" to "how does the non-
+perturbative 93% of the gravitational coupling arise?" This is still a hard problem,
+but it is now a **quantitative** problem rather than a **conceptual** one. The
+mechanism is identified (compression geometry on the worldvolume). The spatial
+dependence is derived (1/r exact). The polarization structure is structurally viable
+(worldvolume gauge fields). What is missing is the full coupling strength.
+
+The Jormungandr fixed-point equation is the most promising path. The kink's self-
+gravitational energy exceeds its rest energy by a factor of 59. This means the kink
+cannot exist self-consistently without accounting for its own gravity. A fixed-point
+condition — requiring that the gravitational back-reaction reproduces V(phi) — would
+close the loop and determine the full coupling.
+
+If DFC can close this loop, it will be the first framework to derive all four forces
+from a single starting point without pre-existing spatial dimensions or gauge groups.
+If the 93% cannot be accounted for, gravity may require additional structure beyond
+the double-well potential.
+
+Either result is scientifically valuable. The D4 gap is no longer the frontier in
+the dark — it is a well-characterized quantitative challenge.
 
 ---
 
-**See also:** `foundations/d4_gravity_gap.md` for the full technical analysis
-(including C395b conceptual reframing).
+**See also:** `foundations/d4_gravity_gap.md` for the full technical analysis.
 `foundations/jormungandr_double_well.md` for the cyclical compression hypothesis.
 `equations/d4_gravity_spin2_enhancement.py` (C392) for the spin-2 enhancement analysis.
 `equations/d4_substrate_response.py` (C393) for the key negative result.
 `equations/d4_induced_gravity_worldvolume.py` (C394) for the worldvolume Sakharov
 calculation. `equations/d4_continuum_spectral_gravity.py` (C395) for the continuum
-spectral density analysis. `equations/d4_zero_mode_gravity.py` (C367) for the scalar
-zero-mode calculation. `equations/d4_gravity_dimensional.py` (C366b) for dimensional
-analysis and the omega_c bridge.
+spectral density analysis. `equations/d4_analog_metric.py` (C396) for the analog metric
+construction and 1/r derivation. `equations/d4_worldvolume_green.py` (C397) for the full
+perturbative mode sum and self-energy quantification. `equations/d4_gw_polarization_test.py`
+(C398) for the GW polarization stress test. `equations/d4_1r_intermediate_test.py` (C399)
+for the 1/r verification across intermediate scales. `equations/d4_zero_mode_gravity.py`
+(C367) for the scalar zero-mode calculation. `equations/d4_gravity_dimensional.py`
+(C366b) for dimensional analysis and the omega_c bridge.
+`phenomena/gravity/gravitational_waves.md` for the GW polarization problem update.
