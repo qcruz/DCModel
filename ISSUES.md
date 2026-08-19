@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 399 (2026-08-19)
+**Last updated:** Cycle 400 (2026-08-19)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -425,10 +425,10 @@ With Foldy (+0.128) and BW rho width correction: <r^2>_n = −0.082 fm^2 (−29%
 **Status:** T4 open (deepest structural gap in DFC)
 
 The D4 gravity gap has four sub-problems (see `foundations/d4_gravity_gap.md`):
-- **D4-A** (Scale): M_Pl = f(alpha, beta) — T4 open
+- **D4-A** (Scale): M_Pl = f(alpha, beta) — T3 (gravitational argument for α = cuberoot(18), C400)
 - **D4-B** (Metric emergence): g_muv^eff from substrate — T4 open, **most promising path**
 - **D4-C** (Graviton emergence): massless spin-2 mode — T4 open, **hardest sub-gap**
-- **D4-D** (Coupling coefficient): G_N = f(alpha, beta) with predicted coefficient — T4 open
+- **D4-D** (Coupling coefficient): G_N = f(alpha, beta) with predicted coefficient — T3 (F uniquely determined by fixed-point condition, C400)
 
 **C393 KEY NEGATIVE RESULT:** Linear response kernel analysis establishes that the DFC
 substrate has NO propagating massless spin-2 mode:
@@ -518,7 +518,32 @@ if gravity is emergent compression, not problematic.
   must preserve tensor structure (assumed, not proven)
 - Polarization problem DOWNGRADED from "critical tension" to "coupling-dependent"
 
-**Files:** `equations/d4_gw_polarization_test.py` (C398),
+**C399 1/r INTERMEDIATE SCALE STRESS TEST** (23/23 PASS):
+- 1/r from worldvolume dimensionality — Green's function of 3D Laplacian = 1/(4πr) [T1]
+- Zero-mode exact 1/r to machine precision across 7 orders of magnitude [T1]
+- Massive mode suppression: n=1 zero at y=0 (odd), continuum <6% at ξ, <10⁻¹⁰ at 10ξ [T1]
+- Full G(r) positive, monotone, power law d(ln G)/d(ln r) = −1.000 to 10⁻⁹ [T1]
+- G_eff(r) converges to G_N/22.9 asymptotic within 0.1% at 10ξ [T1]
+- Enhancement factor F = (25/12)×4πξ = 22.87 verified [T1]
+- Newton's law V(r) = −G_eff M₁M₂/r verified; deep nonlinear regime r_s/ξ >> 1 [T1/T3]
+
+**C400 JORMUNGANDR FIXED-POINT EQUATION** (24/24 PASS):
+- Self-consistency condition: V(φ) → kink → self-gravity → V_eff(φ) = V(φ)
+- Fixed-point equation F_mode_sum(α) = F_self_consistency(α) gives α³ = 18 as UNIQUE
+  real positive solution [T1 algebraic]
+- Three INDEPENDENT derivation chains for α³ = 18:
+  (1) Topological: Q_top × N_Hopf = 2 × 9 = 18 [T1]
+  (2) BPS/coupling: S_kink × α_D5 = 1 → α³ = 18 [T1]
+  (3) Gravitational: Jormungandr fixed-point [T3 — this cycle]
+- Enhancement factor F = (25/12)×4πξ = 22.87 uniquely determined at fixed point [T1]
+- Perturbative fraction 1/F = 4.4%; non-perturbative 93.28% [T3]
+- Self-gravitational energy |U_self|/E_kink >> 1 confirms deep nonlinear regime [T3]
+- D4-A UPGRADED: T4 → T3 (gravitational argument independently recovers α³ = 18)
+- D4-D UPGRADED: T4 → T3 (F uniquely determined by fixed-point condition)
+
+**Files:** `equations/d4_jormungandr_fixed_point.py` (C400),
+`equations/d4_1r_intermediate_test.py` (C399),
+`equations/d4_gw_polarization_test.py` (C398),
 `equations/d4_worldvolume_green.py` (C397),
 `equations/d4_analog_metric.py` (C396),
 `equations/d4_continuum_spectral_gravity.py` (C395),
