@@ -45,8 +45,11 @@ P = −(G / 5c⁵) d³Q_ij/dt³ d³Q_ij/dt³
 where Q_ij is the reduced mass quadrupole moment. The waves travel at c and carry
 energy away from the source, causing orbital inspiral.
 
-The spin-2 nature of the graviton — consistent with + and × polarizations — follows
-from the fact that the gravitational field in GR is a rank-2 symmetric tensor.
+The observed + and × polarizations are consistent with a rank-2 symmetric tensor
+perturbation of the metric. In DFC, the spin-2 character of gravitational waves
+is an open problem (T4): the substrate field is scalar, and how the effective
+metric's tensor polarizations emerge from compression geometry is not yet derived.
+See the Polarization Problem section below.
 
 ---
 
@@ -136,9 +139,20 @@ intrinsic orientation structure that carries spin-2 modes independently of the s
 In this picture, the scalar φ drives the energy redistribution and sets the wave speed,
 but the polarization pattern is determined by the D3 geometric structure.
 
-Both candidates require formal derivation. Until resolved, the DFC dispersion relation
-(ω² = c²k² + 2α) should be read as giving the propagation speed of the compression
-perturbation, not as a complete derivation of gravitational wave polarizations.
+**C398 stress test results:** Candidate A FAILS — the composite tensor ∂_μ(δφ)∂_ν(δφ)
+is purely longitudinal (zero transverse components) for any plane wave. The scalar
+field's energy-momentum tensor has NO spin-2 content (theorem). Candidate B is VIABLE:
+the worldvolume gauge fields (16 SU(3) DOF from kink moduli) produce spin-2 through
+their tensor products (1⊗1 = 0+1+2). The Sakharov induced gravity mechanism (C394)
+integrates these out to generate a standard Einstein-Hilbert action whose linearized
+fluctuations have exactly 2 TT polarizations (h_+ and h_×) propagating at c.
+
+Additionally, the scalar substrate has a breathing polarization mode, but it is
+Planck-mass-gapped (m_σ = √(2α) ≈ 2.3 M_Pl). At LIGO frequencies, this mode is
+exponentially damped — only tensor polarizations propagate to the detector, matching
+observations. The polarization problem is downgraded from "critical tension" to
+"coupling-dependent" (T3): the mechanism exists, the remaining question is whether
+the non-perturbative 93% of the gravitational coupling preserves the tensor structure.
 
 ---
 

@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 397 (2026-08-18)
+**Last updated:** Cycle 398 (2026-08-18)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -502,7 +502,24 @@ if gravity is emergent compression, not problematic.
 - F decomposes: structural I₄³/I₆² = 25/12 (T1) × scale 4πξ (T1)
 - NEXT: Jormungandr fixed-point equation V_eff(φ) = V(φ)
 
-**Files:** `equations/d4_worldvolume_green.py` (C397),
+**C398 GW POLARIZATION STRESS TEST** (15/15 PASS):
+- Candidate A (composite tensor from scalar gradients): FAILS [T1]
+  d_mu(dphi)d_v(dphi) is purely longitudinal, zero transverse components
+  Scalar T_muv has NO spin-2 content — this is a theorem, not approximation
+- Candidate B (gauge field products): VIABLE [T3]
+  Worldvolume 16 gauge DOF (SU(3)) produce spin-2 via 1⊗1 = 0+1+2
+  Sakharov mechanism integrates these out → Einstein-Hilbert effective action
+  Linearized fluctuations: 10 - 4(gauge) - 4(EOM) = 2 DOF = h_+ and h_x
+  v_gw = c exactly (massless induced graviton, satisfies GW170817)
+- DFC PREDICTION: scalar breathing mode exists but Planck-mass-gapped
+  m_sigma = √(2α) = 2.29 M_Pl → unobservable at terrestrial frequencies
+  At LIGO bands: only tensor modes propagate, matching GR
+- REMAINING: Sakharov accounts for 2.35% of M_Pl^2; non-perturbative 93%
+  must preserve tensor structure (assumed, not proven)
+- Polarization problem DOWNGRADED from "critical tension" to "coupling-dependent"
+
+**Files:** `equations/d4_gw_polarization_test.py` (C398),
+`equations/d4_worldvolume_green.py` (C397),
 `equations/d4_analog_metric.py` (C396),
 `equations/d4_continuum_spectral_gravity.py` (C395),
 `equations/d4_induced_gravity_worldvolume.py` (C394), `equations/d4_substrate_response.py`
