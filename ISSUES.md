@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 396 (2026-08-18)
+**Last updated:** Cycle 397 (2026-08-18)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -492,7 +492,18 @@ if gravity is emergent compression, not problematic.
 - Domain wall confines → D3 localization; closures on wall → 3+1D 1/r gravity
 - G_N_wv (worldvolume Newton constant) is next target (C397)
 
-**Files:** `equations/d4_analog_metric.py` (C396),
+**C397 WORLDVOLUME GREEN'S FUNCTION:** Full PT mode sum (15/15 PASS):
+- Reproduces C367: G_eff = G_N/22.9 for extended (sech^4) sources [T1]
+- Profile factor (I_6/I_4)^2 = 16/25 distinguishes point vs extended sources [T1]
+- n=1 bound state ψ₁(0)=0 — odd function, no contribution at wall center [T1]
+- Continuum: 6% at r=ξ, exponentially suppressed at r>2ξ, 1/m_σ = ξ/2 [T1]
+- Self-gravitational energy |U_self|/E_kink = 59 >> 1, DEEP nonlinear regime [T3]
+- Jormungandr condition: F = 150π√2/α^(7/2) = 22.87 verified self-consistent [T1]
+- F decomposes: structural I₄³/I₆² = 25/12 (T1) × scale 4πξ (T1)
+- NEXT: Jormungandr fixed-point equation V_eff(φ) = V(φ)
+
+**Files:** `equations/d4_worldvolume_green.py` (C397),
+`equations/d4_analog_metric.py` (C396),
 `equations/d4_continuum_spectral_gravity.py` (C395),
 `equations/d4_induced_gravity_worldvolume.py` (C394), `equations/d4_substrate_response.py`
 (C393), `equations/d4_gravity_spin2_enhancement.py` (C392), `equations/d4_zero_mode_gravity.py` (C367),
