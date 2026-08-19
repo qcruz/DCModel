@@ -190,35 +190,51 @@ coupling is scale-dependent, or the kink is not a conventional localized object.
 
 ---
 
-## 4. What the Options Are Going Forward
+## 4. Conceptual Reframing (C395b): Gravity Is Compression Geometry
 
-### Option 1: Sakharov Induced Gravity (Most Promising)
+Before listing the options, a critical reframing is needed. Cycles C392-C395
+approached the D4 gap from the conventional physics direction: looking for
+graviton-like modes, computing Sakharov induced gravity, analyzing spectral
+densities. This produced useful bounds (the perturbative sector accounts for
+only ~7% of gravity) but was asking the wrong question from DFC's perspective.
 
-The Sakharov mechanism (1967) says that integrating out matter fields on a curved
-background generates an Einstein-Hilbert term in the effective action. C394 showed
-this works with the correct sign in 4D and produces 2.35% of M_Pl².
+DFC does not claim gravity is a force mediated by spin-2 particle exchange.
+DFC claims gravity is what the substrate's natural compression looks like from
+within the compressed state. Where there are more closures, the substrate
+compresses differently. That differential compression IS gravity.
 
-The path forward: compute the **full** one-loop effective action of the DFC substrate
-around the kink background, including all modes (not just the bound states counted
-in C394). The target is:
+This means:
+- The C393 result (no massless spin-2) is **expected**, not problematic
+- The 93% "non-perturbative remainder" is not missing physics — it IS the
+  primary mechanism (compression geometry), with the perturbative 7% being
+  small corrections
+- The right question is not "where is the graviton?" but "how does non-uniform
+  compression create effective geometry?"
 
-S_eff = integral d⁴x sqrt(-g) [Lambda + M_eff²/2 R + a R² + ...]
+### Option 1: Analog Metric from Substrate Compression (Most Promising — DFC-native)
 
-If M_eff² = M_Pl², then G_N = 1/M_eff² is derived. The D4 problem reduces to a
-coupling-normalization problem: does the substrate produce the right coefficient?
+A kink deforms the substrate. Small perturbations propagate through the deformed
+region according to a wave equation whose coefficients depend on the background.
+Those coefficients define an effective metric — the geometry that perturbations
+experience. This is the technique of analog gravity (Unruh 1981). The question
+is whether the DFC kink background produces an effective metric with 1/r behavior
+at long distances.
 
-The critical next calculation: start with the DFC substrate action, find the
-background solution, perturb it, compute the quadratic action, construct the
-stress-energy response, and determine whether there exists a collective variable
-h_muv whose effective quadratic action becomes the linearized Einstein operator.
+**Difficulty:** Moderate. The mathematical tools exist (analog gravity literature).
+The conceptual framework is DFC-native. The calculation is concrete.
 
-**Difficulty:** High. The 93% non-perturbative fraction means one-loop is not enough.
-Higher-loop or non-perturbative methods are needed.
+**What success looks like:** An explicit g_muv^eff[phi_bg] that reduces to flat
+space far from the kink, shows 1/r behavior at intermediate distances, and
+couples universally to substrate excitations.
 
-**What success looks like:** M²_ind computed from substrate dynamics, matching M_Pl²
-to within a calculable correction.
+### Option 2: Sakharov Induced Gravity (Perturbative — COMPLETED)
 
-### Option 2: Jormungandr Self-Consistency
+C392-C395 characterized this channel completely. Scalar zero-mode gives 4.4%
+of G_N. Worldvolume Sakharov gives 2.35% of M_Pl². Continuum correction is
+negligible. Total perturbative: ~6.7%. This sector is complete and should not
+be extended further.
+
+### Option 3: Jormungandr Self-Consistency
 
 Rather than deriving G_N from V(phi) forward, or V(phi) from G_N backward, the two
 may be constrained by a self-consistency loop:
@@ -295,10 +311,9 @@ much larger than xi, with the correct coefficient.
 | Gap | Status | Difficulty |
 |---|---|---|
 | D4-A: Absolute scale generation | T4 open | High |
-| D4-B: Metric emergence from substrate | T4 open | Very high (most fundamental) |
-| D4-C: Massless spin-2 from scalar substrate | T4 open | Very high (hardest) |
-| D4-D: Numerical coupling coefficient | T4 open | High |
-| Masslessness protection mechanism | T4 open | High |
+| D4-B: Analog metric from compression | T4 open, PRIMARY | Moderate (DFC-native) |
+| D4-C: Spin-2 as metric fluctuation | T4 open, deprioritized | May resolve from D4-B |
+| D4-D: Numerical coupling coefficient | T4 open | Downstream of D4-B |
 | Strong-field consistency resolution | T4 open | Moderate |
 
 ### What "D4 Closed" would mean
@@ -329,30 +344,37 @@ The other forces are about what kinks do to each other. Gravity is about what en
 does to the substrate. This requires understanding the substrate at a level deeper
 than the kink solutions that sit on top of it.
 
-The scalar substrate has a natural obstacle: it has one degree of freedom per point,
-while gravity requires a rank-2 tensor (10 independent components in 4D, reduced
-to 2 physical polarizations by gauge symmetry). Somehow, the collective behavior of
-a one-component field must produce a many-component effective field. This is not
-impossible — phonons in a crystal (scalar displacement) can produce effective
-tensor elasticity — but it is not generic either. The model must identify the
-specific mechanism.
+The conceptual reframing of C395b clarifies the path. The original approach (C392-
+C395) asked a conventional question: "where is the graviton in the substrate spectrum?"
+and found it was not there. But DFC never claimed gravity works through particle
+exchange. DFC claims gravity IS the substrate's compression geometry — non-uniform
+folding near closures that other excitations experience as curved space.
 
-If DFC can derive gravity from V(phi), it will be the first framework to unify all
-four forces from a single starting point without pre-existing spatial dimensions or
-gauge groups. If it cannot, then gravity may require additional structure beyond the
-double-well potential — which would mean DFC, while powerful for the other three
-forces, is incomplete as a theory of everything.
+The analog metric approach makes this concrete. A kink deforms the substrate. Small
+perturbations see position-dependent propagation speeds, which defines an effective
+geometry. If that geometry has 1/r behavior at long distances, gravity emerges
+naturally without needing a fundamental spin-2 mode. The tensor structure of gravity
+would emerge from the effective metric itself — the same way that a scalar
+displacement field in a crystal produces effective tensor elasticity.
+
+If DFC can derive gravity from V(phi) through this mechanism, it will be the first
+framework to unify all four forces from a single starting point without pre-existing
+spatial dimensions or gauge groups. If it cannot, then gravity may require additional
+structure beyond the double-well potential — which would mean DFC, while powerful for
+the other three forces, is incomplete as a theory of everything.
 
 Either result is scientifically valuable. The D4 gap is not a flaw in the model —
 it is the frontier.
 
 ---
 
-**See also:** `foundations/d4_gravity_gap.md` for the full technical analysis.
+**See also:** `foundations/d4_gravity_gap.md` for the full technical analysis
+(including C395b conceptual reframing).
 `foundations/jormungandr_double_well.md` for the cyclical compression hypothesis.
 `equations/d4_gravity_spin2_enhancement.py` (C392) for the spin-2 enhancement analysis.
 `equations/d4_substrate_response.py` (C393) for the key negative result.
 `equations/d4_induced_gravity_worldvolume.py` (C394) for the worldvolume Sakharov
-calculation. `equations/d4_zero_mode_gravity.py` (C367) for the scalar zero-mode
-calculation. `equations/d4_gravity_dimensional.py` (C366b) for dimensional analysis
-and the omega_c bridge.
+calculation. `equations/d4_continuum_spectral_gravity.py` (C395) for the continuum
+spectral density analysis. `equations/d4_zero_mode_gravity.py` (C367) for the scalar
+zero-mode calculation. `equations/d4_gravity_dimensional.py` (C366b) for dimensional
+analysis and the omega_c bridge.

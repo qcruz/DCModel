@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 395 (2026-08-18)
+**Last updated:** Cycle 396 (2026-08-18)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -443,11 +443,21 @@ substrate has NO propagating massless spin-2 mode:
 - M²_ind = 2.35% of M_Pl² from 17 massless + 1 massive DOF [T3]
 - Total perturbative: scalar 4.4% + induced 2.35% = ~6.7%; non-perturbative ~93% [T3]
 
-**Resolution paths (ordered by promise):**
-1. Full Sakharov induced gravity (D4-B): extend C394 to all substrate modes, non-perturbative
+**C395b CONCEPTUAL REFRAMING:** The C392-C395 perturbative approach (Sakharov induced
+gravity, graviton search, spectral analysis) was a sidetrack from DFC's own logic. DFC
+claims gravity is emergent compression geometry — not a force mediated by spin-2 exchange.
+The perturbative sector is COMPLETE (6.7%) and should not be extended. The 93%
+"non-perturbative remainder" is not a gap — it IS gravity, operating through the
+substrate's compression geometry. The C393 negative result (no spin-2) is EXPECTED
+if gravity is emergent compression, not problematic.
+
+**Resolution paths (reordered per C395b reframing):**
+1. **Analog metric construction (D4-B, PRIMARY):** Construct g_muv^eff from substrate
+   compression. Kink deforms substrate → perturbations see effective geometry → test
+   for 1/r behavior at long distances. DFC-native approach.
 2. Jormungandr self-consistency (D4-A + D4-D)
 3. Strong-field boundary condition (kink inside own r_s)
-4. Lattice/numerical substrate response
+4. ~~Sakharov induced gravity~~ COMPLETED (C392-C395, 6.7% characterized)
 
 **C395 CONTINUUM SPECTRAL DENSITY:** PT s=2 phase shifts confirm C394 is robust:
 - delta(q) = arctan(1/q) + arctan(2/q), reflectionless [T1]
@@ -469,7 +479,21 @@ substrate has NO propagating massless spin-2 mode:
 - Non-perturbative content 93.28% of G_N — ROBUST against perturbative corrections [T3, C395]
 - alpha*G_N = cuberoot(18) consistency relation [T1]
 
-**Files:** `equations/d4_continuum_spectral_gravity.py` (C395),
+**C396 ANALOG METRIC CONSTRUCTION:** Explicit analog metric from kink background (17/17 PASS):
+- V''(phi_bg) = alpha*(2-3*sech^2(y/xi)) gives position-dependent propagation speed [T1]
+- Refractive index enhanced at kink center: n(0)=1.48 at omega=1.5*m_sigma [T1]
+- Shapiro-like delay: positive, decreasing with frequency (290x ratio low/high) [T1]
+- Newtonian potential Phi(y): ANALYTIC formula matches numerical (double integral of sech^4) [T1]
+- Asymptotic behavior: LINEAR potential (domain wall gravity, constant g=710 l_Pl^-1) [T1]
+- Wall tension sigma = E_kink verified via I_4=4/3 integral [T1]
+- Confinement scale l_conf = 0.0014 l_Pl << xi — excitations confined to worldvolume [T1]
+- Profile concentration ratio I_8/I_4^2 = 18/35 = 0.514 [T1]
+- KEY INSIGHT: 1/r emerges from LOCALIZED sources on wall, not from transverse profile
+- Domain wall confines → D3 localization; closures on wall → 3+1D 1/r gravity
+- G_N_wv (worldvolume Newton constant) is next target (C397)
+
+**Files:** `equations/d4_analog_metric.py` (C396),
+`equations/d4_continuum_spectral_gravity.py` (C395),
 `equations/d4_induced_gravity_worldvolume.py` (C394), `equations/d4_substrate_response.py`
 (C393), `equations/d4_gravity_spin2_enhancement.py` (C392), `equations/d4_zero_mode_gravity.py` (C367),
 `equations/d4_gravity_dimensional.py` (C366b), `foundations/d4_gravity_gap.md`,

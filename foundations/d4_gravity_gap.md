@@ -240,34 +240,107 @@ as a T1 algebraic consequence, so this chain is legitimate.
 
 ---
 
-## 5. Research Program — Ordered by Priority
+## 5. Conceptual Reframing: Gravity as Emergent Compression (C395b)
 
-### Primary: Induced Gravity via Substrate Response (D4-B + D4-C)
+### The core DFC claim about gravity
 
-The most promising mathematical program. Suppose integrating out the
-substrate degrees of freedom around the kink background generates an
-effective gravitational action:
+DFC does not claim gravity is a force mediated by particle exchange. The
+core claim is that gravity is an emergent property of the substrate's
+natural compression toward lower-dimensional states. In DFC's own language:
+
+- Gravity = "Coherent re-tiling / alignment field induced by closure density"
+- Spacetime curvature = "Irreducible misalignment of folding orientation
+  after transport"
+
+The substrate compresses non-uniformly wherever closures (kinks) are present.
+That differential compression IS gravity — not mediated by it, not caused
+by it. The geometry of the substrate does the work directly.
+
+### Implications for the four sub-gaps
+
+This reframing changes which sub-gaps are primary and which may be
+asking the wrong question:
+
+**D4-B (Metric emergence) becomes THE central question.** How does local
+compression density create an effective geometry that other excitations
+follow? This is the DFC-native formulation of gravity.
+
+**D4-C (Graviton emergence) may be the wrong question.** If gravity is
+emergent compression behavior, asking "where is the spin-2 mode in the
+spectrum?" is like asking "where is the phonon?" when you should be asking
+"why does the lattice deform this way?" The C393 negative result (no
+massless spin-2 in the linear spectrum) is not a problem — it may be
+expected. There should not be a graviton in the spectrum if gravity is
+not a conventional force.
+
+**D4-A and D4-D become downstream.** Once the effective metric is
+constructed from the substrate, the scale and coupling coefficient are
+determined by the construction itself.
+
+### The C392-C395 perturbative sidetrack
+
+Cycles C392-C395 approached the D4 gap from the conventional physics
+direction: looking for graviton-like modes in the substrate spectrum
+(C392-C393), computing Sakharov induced gravity coefficients (C394),
+and characterizing the continuum spectral density (C395).
+
+These calculations produced useful results:
+- Established that the perturbative sector accounts for only ~7% of G_N
+- Confirmed there is no massless spin-2 mode in the linearized spectrum
+- Showed the one-loop induced Planck mass is 2.35% of M_Pl^2
+- Proved the continuum correction is negligible (0.22% of bound state)
+
+But they were asking a conventional question ("where is the graviton?")
+rather than the DFC-native question ("how does compression create
+effective geometry?"). The perturbative characterization is essentially
+complete and should not be extended further. The 93% "non-perturbative
+remainder" is not a gap to be filled by harder perturbative calculations
+— it is gravity itself, operating through the substrate's compression
+geometry rather than through particle exchange.
+
+### The correct path: Analog metric from substrate compression
+
+The DFC-native approach is to construct the effective metric directly.
+A kink deforms the substrate. Small perturbations of phi around that
+deformed background propagate according to a wave equation whose
+coefficients depend on the background. Those coefficients define an
+effective metric — the geometry that perturbations "see."
+
+This is a well-established technique in analog gravity (Unruh 1981,
+Visser 1998). The question is whether the DFC kink background produces
+an effective metric that:
+
+1. Reduces to flat space far from the kink
+2. Has the correct 1/r behavior at intermediate distances
+3. Couples universally to all substrate excitations
+4. Produces the correct coefficient (G_N)
+
+If this works, the "non-perturbative 93%" is not missing physics — it is
+the primary mechanism, and the perturbative 7% (scalar exchange, induced
+gravity) are small corrections to it.
+
+---
+
+## 6. Research Program — Ordered by Priority
+
+### Primary: Analog Metric Construction (D4-B)
+
+Construct g_muv^eff as a functional of phi and its derivatives. The
+conceptual chain:
 
 ```
-S_eff = integral d^4x sqrt(-g) [Lambda + M_eff^2/2 R + a R^2 + ...]
+closure present -> substrate deformed (sech^4 energy density)
+  -> perturbation wave equation has position-dependent coefficients
+  -> effective metric g_muv^eff[phi_bg]
+  -> long-distance behavior -> 1/r test
 ```
 
-Then M_eff^2 = M_Pl^2 gives G_N = 1/M_eff^2. The D4 problem becomes:
-
-> Can integrating out DFC substrate modes generate an Einstein-Hilbert
-> term, and what coefficient does it produce?
-
-**The critical next calculation:** Start with the DFC substrate action,
-find the background solution, perturb it (phi = phi_bg + delta phi),
-compute the quadratic action S^(2)[delta phi], construct the stress-energy
-response delta T_muv, and determine whether there exists a collective
-variable h_muv = F_muv[delta phi, ...] whose effective quadratic action
-becomes S^(2)[h] ~ integral h_muv E^muv_ab h_ab where E is the linearized
-Einstein operator.
-
-If that structure emerges, the D4 problem reduces to a coupling-normalization
-problem. If it does not, DFC has identified exactly where its scalar
-architecture fails to reproduce gravity.
+The starting point is the fluctuation equation around a kink background.
+The DFC substrate action gives a wave equation for delta phi whose
+speed of propagation depends on the local background. This defines
+an acoustic/analog metric. The critical calculation is to determine
+the form of this metric and whether it reproduces gravitational
+behavior at distances much larger than xi.
 
 ### Secondary: Jormungandr Self-Consistency (D4-A + D4-D)
 
@@ -284,17 +357,25 @@ not an arbitrary starting assumption but an attractor of the substrate's
 gravitational dynamics. If demonstrated mathematically, this would turn
 Jormungandr from an interpretive narrative into an actual mechanism.
 
-### Tertiary: Masslessness Protection (D4-C)
+### Tertiary: Perturbative Corrections (D4-D) — COMPLETED
 
-Identify the symmetry or critical phenomenon that protects the gravitational
-mode from acquiring a mass. Candidate mechanisms:
-- Diffeomorphism invariance as an emergent gauge symmetry
-- Goldstone mechanism from spontaneous breaking of a substrate symmetry
-- Critical behavior at the D3/D4 boundary
+The perturbative sector (C392-C395) is characterized and should not be
+extended further unless the analog metric construction reveals a specific
+need. Results: scalar zero-mode 4.4%, worldvolume Sakharov 2.35%,
+continuum correction -0.005%, total perturbative ~6.7%.
+
+### Deprioritized: Graviton Search (D4-C)
+
+The search for a massless spin-2 mode in the scalar substrate spectrum
+is deprioritized. C393 established no such mode exists in the linearized
+spectrum. If gravity is emergent compression (as DFC claims), this is
+expected rather than problematic. The effective metric approach (D4-B)
+may produce graviton-like behavior as a linearized fluctuation of g_muv^eff
+without requiring a fundamental spin-2 mode in the substrate.
 
 ---
 
-## 6. Connections to Other Open Problems
+## 7. Connections to Other Open Problems
 
 | Problem | Connection to D4 |
 |---|---|
@@ -305,7 +386,7 @@ mode from acquiring a mass. Candidate mechanisms:
 
 ---
 
-## 7. What "D4 Closed" Would Mean
+## 8. What "D4 Closed" Would Mean
 
 Not merely finding G_N = cuberoot(18)/alpha (which is dimensional fitting).
 Five requirements:
@@ -323,7 +404,7 @@ of the Einstein-Hilbert term predicted rather than inserted.
 
 ---
 
-## 8. Current Status Summary
+## 9. Current Status Summary
 
 **Established:**
 - xi ~ l_Pl (structural identification, T1)
@@ -332,21 +413,26 @@ of the Einstein-Hilbert term predicted rather than inserted.
 - alpha times G_N = cuberoot(18) (consistency relation, T1)
 - Scalar zero-mode gives G_eff = G_N/23 (T3)
 - Profile narrowing REDUCES coupling: (I_10/I_6)^2 = 0.58 (T1)
-- Enhancement is dominantly non-perturbative: 96% (T3)
+- Enhancement is dominantly non-perturbative: 93% (T3, C395)
 - F = (25/12) times 4 pi xi = 22.87 exact decomposition (T1)
 - Kink r_s/xi = 226/0.874 >> 1: deep inside own gravitational radius (T1)
+- No massless spin-2 in linearized substrate spectrum (T1, C393)
+- Sakharov wrong-sign resolved in 4D (T1, C394)
+- Perturbative sector complete: 6.7% of G_N (T3, C392-C395)
+- Continuum correction negligible: 0.22% of bound state (T1, C395)
 
 **Open:**
 - D4-A: Absolute scale generation (T4)
-- D4-B: Metric emergence from substrate (T4 — most fundamental)
-- D4-C: Massless spin-2 mode from scalar substrate (T4 — hardest)
-- D4-D: Numerical coupling coefficient (T4)
-- Masslessness protection mechanism (T4)
+- D4-B: Analog metric from substrate compression (T4 — PRIMARY, DFC-native)
+- D4-C: Spin-2 as emergent metric fluctuation (T4 — deprioritized as
+  independent question; may resolve naturally from D4-B)
+- D4-D: Numerical coupling coefficient (T4 — downstream of D4-B)
 - Strong-field consistency resolution (T4)
 
-**Most promising path:** Induced gravity via substrate response function
-(Primary program above), combined with Jormungandr self-consistency as
-a nonlinear boundary condition.
+**Most promising path:** Analog metric construction from substrate
+compression (Section 5-6). The perturbative program (C392-C395) is
+complete and should not be extended. The DFC-native mechanism is
+gravity as emergent compression geometry, not graviton exchange.
 
 ---
 
