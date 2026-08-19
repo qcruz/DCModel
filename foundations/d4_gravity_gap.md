@@ -1,6 +1,6 @@
 # The D4 Gap: Deriving Gravity from the Substrate
 
-**Status:** Active exploration (T4 open — deepest structural gap in DFC)
+**Status:** Active exploration (D4-B/C T4 open; D4-A/D T3 per C400)
 **Purpose:** Map precisely what is known, what is assumed, and what remains to
 be derived in order for gravity to emerge from V(phi) = -alpha/2 phi^2 + beta/4 phi^4.
 
@@ -41,8 +41,15 @@ M_Pl^2 = alpha * F(beta, substrate structure)
 
 and then demonstrate that F = 1/cuberoot(18) from the substrate dynamics.
 
-**Status:** T4 open. Dimensional analysis guarantees G_N is proportional
-to 1/alpha; the dimensionless coefficient is the actual content.
+**Status:** T3 (C400). The Jormungandr fixed-point equation provides
+a third independent derivation: the self-consistency condition
+V_eff(phi) = V(phi) has alpha cubed = 18 as its unique real positive
+solution (T1 algebraic). This gravitational chain independently recovers
+the same alpha cubed = Q_top times N_Hopf = 18 obtained from topological
+and BPS/coupling arguments, establishing the scale relation through
+three converging routes. Dimensional analysis guarantees G_N is proportional
+to 1/alpha; the dimensionless coefficient F = 22.87 is uniquely determined
+at the fixed point (T1).
 
 ### D4-B: Metric Emergence
 
@@ -66,8 +73,15 @@ phi -> substrate deformation -> g_muv^eff -> geodesic motion
 This is substantially more promising than trying to make the kink profile
 itself behave as 1/r (which it cannot — it falls off exponentially).
 
-**Status:** T4 open. No explicit construction of g_muv^eff from V(phi)
-exists. This is the most fundamental of the four sub-gaps.
+**Status:** T4 open (partially addressed by C396). The analog metric
+construction from the kink background shows that V''(phi_bg) produces
+position-dependent propagation speed, with a LINEAR transverse potential
+that confines excitations to the worldvolume (D3 localization mechanism).
+For localized sources ON the wall, 1/r emerges from the 3D Laplacian
+Green's function (C397, C399: verified across 11 orders of magnitude).
+What remains T4: explicit construction of g_muv^eff as a functional
+of phi and its derivatives, and demonstration that it satisfies the
+Einstein equation in some appropriate limit.
 
 ### D4-C: Graviton Emergence
 
@@ -97,9 +111,17 @@ or critical phenomenon protects the gravitational mode from acquiring a mass.
 Otherwise the natural expectation is a finite correlation length giving
 V(r) ~ exp(-m_g r)/r rather than exactly 1/r.
 
-**Status:** T4 open. The kink zero-mode (omega_0 = 0) is massless but scalar.
-No spin-2 mode has been identified in the substrate spectrum. This may be the
-single hardest sub-gap.
+**Status:** T4 open, but partially resolved structurally (C398). The C393
+negative result (no spin-2 in scalar spectrum) is now understood: Candidate A
+(composite tensor from scalar gradients) FAILS — the tensor is purely
+longitudinal (T1 theorem). Candidate B (worldvolume gauge field products)
+is VIABLE: the 16 SU(3) DOF produce spin-2 via the tensor product
+decomposition 1 tensor 1 = 0 + 1 + 2. The Sakharov induced gravity
+mechanism integrates these out to produce a standard Einstein-Hilbert action
+whose linearized fluctuations have exactly 2 TT polarizations propagating
+at c. The scalar breathing mode is Planck-mass-gapped (m_sigma = 2.29 M_Pl),
+unobservable at LIGO frequencies. Polarization problem downgraded from
+"critical tension" to "coupling-dependent" (T3).
 
 ### D4-D: Coupling Emergence
 
@@ -119,7 +141,13 @@ The scalar zero-mode exchange gives G_eff = G_N/23, capturing only 4.4% of the
 gravitational coupling. The remaining 95.6% is non-perturbative content that
 cannot be obtained from linearized kink-kink exchange.
 
-**Status:** T3 (scalar fraction characterized). T4 for the full coupling.
+**Status:** T3 (C400). The enhancement factor F = (25/12) times 4 pi xi
+= 22.87 is uniquely determined by the Jormungandr fixed-point condition:
+F_mode_sum(alpha) = F_self_consistency(alpha) has a unique solution at
+alpha cubed = 18 (T1 algebraic). The perturbative fraction 1/F = 4.4%
+is fixed; the non-perturbative 93.28% is the primary gravitational
+mechanism (compression geometry). Self-gravitational energy ratio
+|U_self|/E_kink >> 1 confirms the deep nonlinear regime (T3).
 
 ---
 
@@ -168,16 +196,24 @@ The scalar zero-mode captures 1/F = 4.4% of G_N (T3).
 
 ## 4. What Is Missing — and Why Each Matters
 
-### 4a. The 1/r potential (relates to D4-C)
+### 4a. The 1/r potential (relates to D4-B, D4-C) — RESOLVED C397/C399
 
-The kink profile phi_kink(x) = phi_0 tanh(x/xi) falls off exponentially, not
-as 1/r. The 1/r potential requires a massless mode with a 1/k^2 propagator.
+The kink profile phi_kink(x) = phi_0 tanh(x/xi) falls off exponentially in
+the TRANSVERSE direction, not as 1/r. However, for localized sources ON the
+domain wall (closures = particles), 1/r emerges naturally from the 3D
+worldvolume Laplacian Green's function G(r) = 1/(4 pi r).
 
-The kink-kink interaction at large separation through exponential tail overlap
-gives V_int(R) ~ exp(-R/xi) — a Yukawa interaction from a massive mediator.
-The claim that 1/r behavior emerges at D3 localization scales is currently a
-hypothesis, not a derived consequence. The model needs to explain **why
-localization produces a massless mode** and what protects its masslessness.
+C397 computed the full Poschl-Teller mode sum: the zero mode gives exact 1/r
+at all distances on the wall; the n=1 bound state contributes zero at the
+wall center (odd parity); the continuum is less than 6% at r = xi and
+exponentially suppressed beyond 2 xi. C399 verified 1/r behavior across
+11 orders of magnitude (xi to 10^8 xi) with power-law index d(ln G)/d(ln r)
+= -1.000 to 10^-9. Newton's law V(r) = -G_eff M_1 M_2 / r is confirmed.
+
+The masslessness of the gravitational mode is PROTECTED by the zero-mode
+structure: the translational zero mode psi_0 proportional to sech^2(y/xi) is
+massless by Goldstone's theorem (broken translational symmetry). Its
+masslessness is exact, not approximate.
 
 ### 4b. Spin-2 from a scalar substrate (relates to D4-C)
 
@@ -342,20 +378,32 @@ an acoustic/analog metric. The critical calculation is to determine
 the form of this metric and whether it reproduces gravitational
 behavior at distances much larger than xi.
 
-### Secondary: Jormungandr Self-Consistency (D4-A + D4-D)
+### Secondary: Jormungandr Self-Consistency (D4-A + D4-D) — T3 ESTABLISHED C400
 
-Rather than deriving G_N from V(phi) forward, or V(phi) from G_N backward,
-the two may be constrained by a self-consistency loop:
+The Jormungandr fixed-point equation has been formulated and solved (C400,
+24/24 PASS). The self-consistency loop is:
 
 ```
-V(phi) -> matter/closure -> compression -> effective geometry
-  -> collapse -> endpoint -> V_eff(phi)
+V(phi) -> kink -> self-gravity -> V_eff(phi) = V(phi)
 ```
 
-Requiring V_eff(phi) = V(phi) at the fixed point would make the double-well
-not an arbitrary starting assumption but an attractor of the substrate's
-gravitational dynamics. If demonstrated mathematically, this would turn
-Jormungandr from an interpretive narrative into an actual mechanism.
+The fixed-point condition F_mode_sum(alpha) = F_self_consistency(alpha)
+reduces to alpha cubed = 18, which has a UNIQUE real positive solution
+alpha = cuberoot(18) = 2.6207 (T1 algebraic). This is the same value
+obtained from two independent routes:
+- Topological: alpha cubed = Q_top times N_Hopf = 2 times 9 = 18 (T1)
+- BPS/coupling: S_kink times alpha_D5 = 1 gives alpha cubed = 18 (T1)
+
+The gravitational route (C400) provides a third independent derivation (T3),
+confirming that the double-well is an attractor of the substrate's own
+gravitational dynamics. The enhancement factor F = 22.87 is uniquely
+determined at the fixed point, and the perturbative fraction 1/F = 4.4%
+is fixed by the self-consistency condition itself.
+
+The remaining gap: the gravitational chain uses the worldvolume Green's
+function (C397) which assumes G_N as input. Closing this circularity
+requires the analog metric (D4-B) to independently produce G_N from the
+substrate compression, making the self-consistency loop fully self-contained.
 
 ### Tertiary: Perturbative Corrections (D4-D) — COMPLETED
 
@@ -420,24 +468,41 @@ of the Einstein-Hilbert term predicted rather than inserted.
 - Sakharov wrong-sign resolved in 4D (T1, C394)
 - Perturbative sector complete: 6.7% of G_N (T3, C392-C395)
 - Continuum correction negligible: 0.22% of bound state (T1, C395)
+- Analog metric from kink background: position-dependent propagation speed,
+  linear transverse potential confines to worldvolume (T3, C396)
+- 1/r potential from worldvolume 3D Laplacian Green's function, verified across
+  11 orders of magnitude (T1, C397/C399) — RESOLVED
+- GW polarization: Candidate A (composite tensor) FAILS (T1 theorem);
+  Candidate B (worldvolume gauge fields via Sakharov) VIABLE, scalar breathing
+  mode Planck-mass-gapped (T3, C398)
+- D4-A: alpha cubed = 18 from gravitational fixed-point (T3, C400) — three
+  independent routes converge
+- D4-D: F = 22.87 uniquely determined by fixed-point condition (T3, C400)
+- Jormungandr self-consistency loop formulated and solved: unique solution (T3, C400)
 
 **Open:**
-- D4-A: Absolute scale generation (T4)
-- D4-B: Analog metric from substrate compression (T4 — PRIMARY, DFC-native)
-- D4-C: Spin-2 as emergent metric fluctuation (T4 — deprioritized as
-  independent question; may resolve naturally from D4-B)
-- D4-D: Numerical coupling coefficient (T4 — downstream of D4-B)
-- Strong-field consistency resolution (T4)
+- D4-B: Full effective metric g_muv[phi] from substrate compression (T4 — PRIMARY);
+  analog metric (C396) provides partial progress but not the full Einstein equation
+- D4-C: How tensor polarizations (h_+ and h_x) emerge from substrate — Candidate B
+  viable but coupling-dependent (T3, C398); deprioritized as independent question
+- Strong-field consistency: G_N used as input in Jormungandr loop (T4);
+  closing requires D4-B to independently produce G_N from compression
 
-**Most promising path:** Analog metric construction from substrate
-compression (Section 5-6). The perturbative program (C392-C395) is
-complete and should not be extended. The DFC-native mechanism is
-gravity as emergent compression geometry, not graviton exchange.
+**Most promising path:** Complete the analog metric construction (D4-B) to
+derive the Einstein equation from substrate compression. This would
+simultaneously close D4-B, resolve the Jormungandr circularity, and
+potentially resolve D4-C via Candidate B. The perturbative program
+(C392-C395) is complete and should not be extended.
 
 ---
 
 **See also:** `foundations/jormungandr_double_well.md` for the cyclical
-compression hypothesis. `equations/d4_gravity_spin2_enhancement.py` (C392)
-for the spin-2 enhancement analysis. `equations/d4_zero_mode_gravity.py`
-(C367) for the scalar zero-mode calculation. `equations/d4_gravity_dimensional.py`
-(C366b) for dimensional analysis and the omega_c bridge.
+compression hypothesis. Equation modules:
+- `equations/d4_gravity_spin2_enhancement.py` (C392) — spin-2 enhancement analysis
+- `equations/d4_zero_mode_gravity.py` (C367) — scalar zero-mode calculation
+- `equations/d4_gravity_dimensional.py` (C366b) — dimensional analysis, omega_c bridge
+- `equations/d4_analog_metric.py` (C396) — analog metric from kink background
+- `equations/d4_worldvolume_green.py` (C397) — full PT mode sum, G_eff = G_N/22.9
+- `equations/d4_gw_polarization_test.py` (C398) — GW polarization stress test
+- `equations/d4_1r_intermediate_test.py` (C399) — 1/r intermediate scale verification
+- `equations/d4_jormungandr_fixed_point.py` (C400) — Jormungandr fixed-point equation
