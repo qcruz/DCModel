@@ -73,15 +73,42 @@ phi -> substrate deformation -> g_muv^eff -> geodesic motion
 This is substantially more promising than trying to make the kink profile
 itself behave as 1/r (which it cannot — it falls off exponentially).
 
-**Status:** T4 open (partially addressed by C396). The analog metric
+**Status:** T4 open (partially addressed by C396, C403). The analog metric
 construction from the kink background shows that V''(phi_bg) produces
 position-dependent propagation speed, with a LINEAR transverse potential
 that confines excitations to the worldvolume (D3 localization mechanism).
 For localized sources ON the wall, 1/r emerges from the 3D Laplacian
 Green's function (C397, C399: verified across 11 orders of magnitude).
-What remains T4: explicit construction of g_muv^eff as a functional
-of phi and its derivatives, and demonstration that it satisfies the
-Einstein equation in some appropriate limit.
+
+C403 establishes the weak-field metric chain from V(phi):
+
+```
+Mass -> delta_phi(r) -> delta_V''(r) -> delta_c_eff(r) -> g_00(r)
+```
+
+A mass M sources a zero-mode perturbation delta_phi(r) = N_0 times
+g_source times M / (4 pi r times E_kink). This perturbation shifts V''
+at the vacuum, producing a position-dependent effective propagation
+speed. The key identity V''(phi_0) = 2 alpha = omega_c squared makes
+the resulting metric perturbation frequency-independent (T1) — slow
+probes and fast probes see the same geometry, as required for a
+genuine metric rather than a dispersive medium.
+
+The metric approach gives G_eff(metric) = 9.81 times 10 to the minus 5,
+while the force approach (C367 scalar exchange) gives G_eff(force) =
+0.0437. The ratio is 0.0022 — the metric approach captures only 0.1%
+of even the perturbative gravitational coupling. The discrepancy factor
+of approximately 446 is traced to the metric coupling through V'''(phi_0)
+divided by V''(phi_0) rather than through the direct mass-coupling of
+the force approach. Equivalence of the two approaches requires the
+spin-2 sector (D4-C), which mediates metric-type gravity with a
+different coupling strength than scalar exchange.
+
+What remains T4: explicit construction of the full g_muv^eff as a
+functional of phi and its derivatives, and demonstration that it
+satisfies the Einstein equation in some appropriate limit. The C403
+chain provides the zero-order structure but the coupling coefficient
+is not yet correct.
 
 ### D4-C: Graviton Emergence
 
@@ -479,6 +506,11 @@ of the Einstein-Hilbert term predicted rather than inserted.
   independent routes converge
 - D4-D: F = 22.87 uniquely determined by fixed-point condition (T3, C400)
 - Jormungandr self-consistency loop formulated and solved: unique solution (T3, C400)
+- Weak-field metric chain: Mass -> delta_phi(r) -> delta_V''(r) -> delta_c_eff(r) -> g_00(r) (T1/T3, C403)
+- KEY IDENTITY: V''(phi_0) = omega_c squared makes metric perturbation frequency-independent (T1, C403)
+- Two-approach discrepancy quantified: G_eff(metric) / G_eff(force) = 0.0022 (T1, C403)
+- Enhancement factor decomposition: F = 22.87, perturbative 4.4%, non-perturbative 95.6% (T1/T3, C403)
+- G_N = 18/alpha cubed self-consistent identification (Jormungandr, T1, C403)
 
 **Open:**
 - D4-B: Full effective metric g_muv[phi] from substrate compression (T4 — PRIMARY);
@@ -506,3 +538,4 @@ compression hypothesis. Equation modules:
 - `equations/d4_gw_polarization_test.py` (C398) — GW polarization stress test
 - `equations/d4_1r_intermediate_test.py` (C399) — 1/r intermediate scale verification
 - `equations/d4_jormungandr_fixed_point.py` (C400) — Jormungandr fixed-point equation
+- `equations/d4_metric_from_compression.py` (C403) — weak-field metric from V(phi)
