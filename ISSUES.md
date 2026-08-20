@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 400 (2026-08-19)
+**Last updated:** Cycle 402 (2026-08-19)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -541,7 +541,20 @@ if gravity is emergent compression, not problematic.
 - D4-A UPGRADED: T4 → T3 (gravitational argument independently recovers α³ = 18)
 - D4-D UPGRADED: T4 → T3 (F uniquely determined by fixed-point condition)
 
-**Files:** `equations/d4_jormungandr_fixed_point.py` (C400),
+**C402 GRAVITATIONAL REDSHIFT PREDICTIONS** (15/15 PASS):
+- Pound-Rebka: Δν/ν = 2.455e-15 (−0.20% vs observed 2.46e-15) [T4 — uses assumed Φ=-GM/r]
+- GPS: grav +45.7 μs/day (−0.39%), vel −7.2 μs/day (+0.19%), net +38.5 μs/day (−0.49%) [T4/T1]
+- Solar: z = 2.12e-6 (+0.15%) [T4]
+- Sirius B: z = 2.57e-4 (−14.2%, weak-field only, R very small) [T4]
+- Neutron star: weak-field z=0.207 vs exact z=0.306 (32% nonlinear correction needed) [T4]
+- KEY FINDING: All predictions numerically identical to GR in weak-field regime
+  DFC adds 1/r derivation [T1] + compression gradient mechanism, but G_N and (2Φ/c²)
+  metric modification are NOT derived from V(φ) — these remain D4-B and D4-D open gaps
+- Gravitational redshift does NOT distinguish DFC from GR at current experimental reach
+- First distinguishing test: Planck-scale deviations where massive modes contribute
+
+**Files:** `equations/d4_gravitational_redshift.py` (C402),
+`equations/d4_jormungandr_fixed_point.py` (C400),
 `equations/d4_1r_intermediate_test.py` (C399),
 `equations/d4_gw_polarization_test.py` (C398),
 `equations/d4_worldvolume_green.py` (C397),
