@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 409 (2026-08-21)
+**Last updated:** Cycle 410 (2026-08-21)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -129,8 +129,15 @@ S_inst = 27π² (instanton action, T2a), S_inst×δd = 9π/2 (neutrino depth cor
 T2a), α = ∛18 (compression parameter, T2a). Formula is T3 (structural, not derived
 from V(φ)). Neutrino mass scale connection ρ_Λ^{1/4} ≈ m_ν noted but not derived.
 
+C410: Full derivation chain traced from V(phi). All three exponent terms individually
+at T2a: S_inst = 27*pi^2 [T2a from g_eff^2 = 8/27], delta_d = 1/(6*pi) [T2a from
+N_c=3, N_Hopf=9], alpha = 18^(1/3) [T2a from BPS]. The T3 gap is the COMBINATION RULE:
+why rho_Lambda = M_Pl^4 * exp(-(T1+T2+T3)). Path to T2a: derive from substrate path
+integral at cosmological scales.
+
 **Status:** T3 quantitative prediction (was T4); structural reframe unchanged (T3, C328).
-**Files:** `equations/cosmological_constant_prediction.py` (C362, 13/13 PASS),
+**Files:** `equations/cosmological_predictions.py` (C410, 15/15 PASS — includes CMB),
+`equations/cosmological_constant_prediction.py` (C362, 13/13 PASS),
 `foundations/cosmological_constant_dfc.md` (C328)
 
 ---
@@ -146,6 +153,24 @@ effect (Planck-scale only). Remaining T4: derive Omega_b*h^2 and Q = m_n - m_p f
 
 **Status:** PASS (consistency test). Y_p at T2a, D/H at T3, He-3 at T3, Li-7 at T4.
 **Files:** `equations/bbn_predictions.py` (C409, 13/13 PASS)
+
+---
+
+### T32 — CMB First Acoustic Peak
+
+C410: CMB first peak position computed from standard cosmological parameters.
+theta_* = r_s / chi(z_*) = 1.0375 (-0.35% vs Planck 1.0411). ell_1 = 222
+(+0.89% vs Planck 220). Sound horizon r_s = 143.87 Mpc (-0.39% vs 144.43).
+Recombination z_* = 1091.9 (+0.18% vs 1089.92). Flat geometry Omega_k = 0
+consistent with Planck |Omega_k| < 0.0007. N_eff = 3.044 consistent (0.3 sigma).
+Scale-dependent G_eff has no CMB effect (exponentially suppressed at CMB scales).
+
+NOTE: Uses Omega_b*h^2 and Omega_m as external inputs (not DFC-derived).
+DFC contribution: flat geometry from D3 [T2a], 3 generations from S^3 [T1],
+no Planck-scale modifications at CMB scales [T3].
+
+**Status:** PASS (consistency test). ell_1 at T2a, flat geometry T2a, N_eff T1.
+**Files:** `equations/cosmological_predictions.py` (C410, 15/15 PASS)
 
 ---
 
