@@ -73,7 +73,7 @@ phi -> substrate deformation -> g_muv^eff -> geodesic motion
 This is substantially more promising than trying to make the kink profile
 itself behave as 1/r (which it cannot — it falls off exponentially).
 
-**Status:** T4 open (partially addressed by C396, C403). The analog metric
+**Status:** T4 open (partially addressed by C396, C403, C405). The analog metric
 construction from the kink background shows that V''(phi_bg) produces
 position-dependent propagation speed, with a LINEAR transverse potential
 that confines excitations to the worldvolume (D3 localization mechanism).
@@ -94,21 +94,31 @@ the resulting metric perturbation frequency-independent (T1) — slow
 probes and fast probes see the same geometry, as required for a
 genuine metric rather than a dispersive medium.
 
-The metric approach gives G_eff(metric) = 9.81 times 10 to the minus 5,
-while the force approach (C367 scalar exchange) gives G_eff(force) =
-0.0437. The ratio is 0.0022 — the metric approach captures only 0.1%
-of even the perturbative gravitational coupling. The discrepancy factor
-of approximately 446 is traced to the metric coupling through V'''(phi_0)
-divided by V''(phi_0) rather than through the direct mass-coupling of
-the force approach. Equivalence of the two approaches requires the
-spin-2 sector (D4-C), which mediates metric-type gravity with a
-different coupling strength than scalar exchange.
+C405 explains WHY the C403 metric coupling is so weak: the Gordon-Unruh
+analog metric is TRIVIAL for the standard DFC kinetic term (L_XX = 0).
+The V''' potential-sector coupling is the only scalar metric channel,
+and it captures only 0.0098% of G_N — 241 times weaker than the
+Sakharav induced metric (2.36% of G_N). Three perturbative channels:
+
+```
+Channel 1 (scalar exchange, C367):   4.37% of G_N  [tree-level, spin-0]
+Channel 2 (V''' analog metric, C403): 0.01% of G_N  [potential-sector]
+Channel 3 (Sakharav induced, C394):  2.36% of G_N  [one-loop, spin-2]
+```
+
+The REAL force-metric gap is factor 1.84 (scalar force vs Sakharav
+metric), not 446 (scalar force vs V''' metric). The perturbative
+equivalence principle is violated by this factor of 1.84, but this is
+DILUTED by non-perturbative dominance (93%): the non-perturbative
+force-metric mismatch is only 2.1%. EP restoration is a mild constraint
+on the compression geometry.
 
 What remains T4: explicit construction of the full g_muv^eff as a
 functional of phi and its derivatives, and demonstration that it
-satisfies the Einstein equation in some appropriate limit. The C403
-chain provides the zero-order structure but the coupling coefficient
-is not yet correct.
+satisfies the Einstein equation in some appropriate limit. The
+non-perturbative sector must provide 95.6% of force AND 97.6% of
+metric stiffness simultaneously — a testable constraint on any
+proposed compression geometry mechanism.
 
 ### D4-C: Graviton Emergence
 
@@ -511,6 +521,12 @@ of the Einstein-Hilbert term predicted rather than inserted.
 - Two-approach discrepancy quantified: G_eff(metric) / G_eff(force) = 0.0022 (T1, C403)
 - Enhancement factor decomposition: F = 22.87, perturbative 4.4%, non-perturbative 95.6% (T1/T3, C403)
 - G_N = 18/alpha cubed self-consistent identification (Jormungandr, T1, C403)
+- Gordon metric TRIVIAL for standard DFC kinetic term: L_XX = 0 (T1, C405)
+- V''' channel negligible: 0.0098% of G_N, 241 times weaker than Sakharav (T1, C405)
+- Sakharav dominates perturbative metric (2.36% vs V''' 0.01%) (T1, C405)
+- Perturbative force/metric ratio = 1.84 = 576 pi / (425 sqrt(2 alpha)) (T1, C405)
+- Non-perturbative force-metric mismatch only 2.1% — EP restoration mild constraint (T3, C405)
+- Sakharav/Scalar ratio = 0.54 constrains worldvolume spectrum (T1, C405)
 
 **Open:**
 - D4-B: Full effective metric g_muv[phi] from substrate compression (T4 — PRIMARY);
@@ -538,4 +554,5 @@ compression hypothesis. Equation modules:
 - `equations/d4_gw_polarization_test.py` (C398) — GW polarization stress test
 - `equations/d4_1r_intermediate_test.py` (C399) — 1/r intermediate scale verification
 - `equations/d4_jormungandr_fixed_point.py` (C400) — Jormungandr fixed-point equation
+- `equations/d4_metric_force_equivalence.py` (C405) — three perturbative channels, EP constraint
 - `equations/d4_metric_from_compression.py` (C403) — weak-field metric from V(phi)

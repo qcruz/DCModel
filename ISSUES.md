@@ -426,7 +426,7 @@ With Foldy (+0.128) and BW rho width correction: <r^2>_n = −0.082 fm^2 (−29%
 
 The D4 gravity gap has four sub-problems (see `foundations/d4_gravity_gap.md`):
 - **D4-A** (Scale): M_Pl = f(alpha, beta) — T3 (gravitational argument for α = cuberoot(18), C400)
-- **D4-B** (Metric emergence): g_muv^eff from substrate — T4 open (weak-field chain established C403), **most promising path**
+- **D4-B** (Metric emergence): g_muv^eff from substrate — T4 open (weak-field chain C403; Gordon metric trivial, Sakharav dominates perturbative metric C405), **most promising path**
 - **D4-C** (Graviton emergence): massless spin-2 mode — T4 open, **hardest sub-gap**
 - **D4-D** (Coupling coefficient): G_N = f(alpha, beta) with predicted coefficient — T3 (F uniquely determined by fixed-point condition, C400)
 
@@ -541,6 +541,18 @@ if gravity is emergent compression, not problematic.
 - D4-A UPGRADED: T4 → T3 (gravitational argument independently recovers α³ = 18)
 - D4-D UPGRADED: T4 → T3 (F uniquely determined by fixed-point condition)
 
+**C405 METRIC-FORCE EQUIVALENCE** (24/24 PASS):
+- Gordon metric TRIVIAL for DFC standard kinetic term: L_XX = 0 [T1]
+- V''' channel negligible: 0.0098% of G_N, 241x weaker than Sakharav [T1]
+- Three perturbative channels: scalar 4.37%, Sakharav 2.36%, V''' 0.01% [T1]
+- Perturbative force/metric ratio = 1.84 (EP violated perturbatively) [T1]
+- Analytic ratio: 576*pi/(425*sqrt(2*alpha)) [T1]
+- Non-perturbative force-metric mismatch only 2.1% [T3]
+- EP restoration is a MILD constraint on non-perturbative sector [T3]
+- Sakharav/Scalar ratio = 0.54 constrains worldvolume spectrum [T1]
+- C403 discrepancy (446x) EXPLAINED: V''' is the wrong channel; Gordon metric trivial
+- REAL force-metric gap is factor 1.84, diluted to 2.1% at NP level
+
 **C403 WEAK-FIELD METRIC FROM V(φ)** (18/18 PASS):
 - Chain: Mass → δφ(r) → δV''(r) → δc_eff(r) → g₀₀(r) [T1/T3]
 - Zero-mode perturbation δφ(r) = N₀ × g_source × M / (4πr × E_kink) [T1]
@@ -564,7 +576,8 @@ if gravity is emergent compression, not problematic.
 - Gravitational redshift does NOT distinguish DFC from GR at current experimental reach
 - First distinguishing test: Planck-scale deviations where massive modes contribute
 
-**Files:** `equations/d4_metric_from_compression.py` (C403),
+**Files:** `equations/d4_metric_force_equivalence.py` (C405),
+`equations/d4_metric_from_compression.py` (C403),
 `equations/d4_gravitational_redshift.py` (C402),
 `equations/d4_jormungandr_fixed_point.py` (C400),
 `equations/d4_1r_intermediate_test.py` (C399),
