@@ -196,6 +196,47 @@ The equal-spacing depth prediction gives κ = 5.33, while the observation is 5.8
 ### Charm and strange quark masses
 The model predicts charm and strange quark masses about 15% below the observed values. The Higgs coupling threshold for second-generation quarks is not yet well derived.
 
+### Deuteron binding energy
+The central-force (sigma + omega) calculation gives B_d = 1.14 MeV, undershooting the observed 2.22 MeV by 49%. The tensor OPE force (not yet included) provides 50-70% of deuteron binding in realistic potentials. This is a model limitation, not a structural failure — DFC predicts the right couplings but the calculation is incomplete.
+
+### Proton charge radius
+r_p = 0.701 fm (−17% vs observed 0.841 fm). The pion cloud + core + Foldy decomposition captures 83% of the Dirac form factor but misses the two-pion continuum spectral weight.
+
+---
+
+## Nuclear and Cosmological Predictions (C384-C410)
+
+Three phases of prediction tests plus cosmological predictions have been computed using DFC parameters with zero free parameters beyond V(φ).
+
+### Nuclear predictions (C384-C391)
+| Observable | DFC | Observed | Error | Tier |
+|---|---|---|---|---|
+| τ_n (full DFC g_A, G_F) | 878.0 s | 878.4 s | −0.05% | T2a |
+| M_N (proton mass) | 934.8 MeV | 938.3 MeV | −0.37% | T3 |
+| m_ω (omega meson) | 763.3 MeV | 782.7 MeV | −2.48% | T3 |
+| g_piNN (pion-nucleon) | 12.28 | 13.12 | −6.4% | T3 |
+| f_pi (pion decay const) | 96.9 MeV | 92.1 MeV | +5.3% | T3 |
+| mu_p (proton mag moment) | 2.833 n.m. | 2.793 n.m. | +1.4% | T2a |
+| mu_n (neutron mag moment) | −1.888 n.m. | −1.913 n.m. | −1.3% | T2a |
+| Nuclear symmetry energy J | 37.1 MeV | 32 MeV | +16% | T3 |
+| pp fusion S(0) | 3.99e-25 | 4.01e-25 | −0.4% | T2a |
+| Mirror nuclei CDEs (A≥11) | — | — | 7.2% RMS | T3 |
+| Nolen-Schiffer anomaly | — | — | 67% closed | T3 |
+
+### Cosmological predictions (C409-C410)
+| Observable | DFC | Observed | Error | Tier |
+|---|---|---|---|---|
+| Y_p (He-4, BBN) | 0.2475 | 0.2449 | +1.05% | T2a |
+| D/H (BBN) | 2.438e-5 | 2.527e-5 | −3.5% | T3 |
+| He-3/H (BBN) | 1.04e-5 | 1.1e-5 | −5.5% | T3 |
+| ρ_Λ^{1/4} (cosm const) | 2.16 meV | 2.24 meV | −3.5% | T3 |
+| ρ_Λ exponent | 283.24 | 283.09 | +0.05% | T3 |
+| CMB ℓ_1 (first peak) | 222 | 220 | +0.9% | T2a |
+| θ_* (CMB angular scale) | 1.0375 | 1.0411 | −0.35% | T2a |
+| r_s (sound horizon) | 143.87 Mpc | 144.43 Mpc | −0.39% | T2a |
+| Ω_k (spatial flatness) | 0 | <0.0007 | — | T2a |
+| N_eff (neutrino species) | 3.044 | 2.99±0.17 | 0.3σ | T1 |
+
 ---
 
 ## What Would Falsify the Model
