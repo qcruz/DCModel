@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 408 (2026-08-21)
+**Last updated:** Cycle 409 (2026-08-21)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -132,6 +132,20 @@ from V(φ)). Neutrino mass scale connection ρ_Λ^{1/4} ≈ m_ν noted but not d
 **Status:** T3 quantitative prediction (was T4); structural reframe unchanged (T3, C328).
 **Files:** `equations/cosmological_constant_prediction.py` (C362, 13/13 PASS),
 `foundations/cosmological_constant_dfc.md` (C328)
+
+---
+
+### T31 — BBN Consistency
+
+C409: DFC BBN predictions computed (13/13 PASS). Semi-analytic BBN with DFC inputs
+(g_A = 4/pi, tau_n = 878.0 s, N_gen = 3). Y_p(DFC) = 0.2475 (+1.05% vs obs, 0.64 sigma).
+D/H = 2.438e-5 (-3.5%). He-3/H = 1.04e-5 (-5.5%). Li-7/H = 4.7e-10 (lithium problem
+NOT resolved). Total DFC BBN shift = 12% of 1-sigma Y_p error — unobservable. DFC is
+FULLY CONSISTENT with BBN observational constraints. Scale-dependent G_eff has no BBN
+effect (Planck-scale only). Remaining T4: derive Omega_b*h^2 and Q = m_n - m_p from V(phi).
+
+**Status:** PASS (consistency test). Y_p at T2a, D/H at T3, He-3 at T3, Li-7 at T4.
+**Files:** `equations/bbn_predictions.py` (C409, 13/13 PASS)
 
 ---
 
