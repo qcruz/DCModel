@@ -204,7 +204,7 @@ r_p = 0.701 fm (−17% vs observed 0.841 fm). The pion cloud + core + Foldy deco
 
 ---
 
-## Nuclear and Cosmological Predictions (C384-C410)
+## Nuclear and Cosmological Predictions (C384-C412)
 
 Three phases of prediction tests plus cosmological predictions have been computed using DFC parameters with zero free parameters beyond V(φ).
 
@@ -223,7 +223,7 @@ Three phases of prediction tests plus cosmological predictions have been compute
 | Mirror nuclei CDEs (A≥11) | — | — | 7.2% RMS | T3 |
 | Nolen-Schiffer anomaly | — | — | 67% closed | T3 |
 
-### Cosmological predictions (C409-C410)
+### Cosmological predictions (C409-C412)
 | Observable | DFC | Observed | Error | Tier |
 |---|---|---|---|---|
 | Y_p (He-4, BBN) | 0.2475 | 0.2449 | +1.05% | T2a |
@@ -236,6 +236,11 @@ Three phases of prediction tests plus cosmological predictions have been compute
 | r_s (sound horizon) | 143.87 Mpc | 144.43 Mpc | −0.39% | T2a |
 | Ω_k (spatial flatness) | 0 | <0.0007 | — | T2a |
 | N_eff (neutrino species) | 3.044 | 2.99±0.17 | 0.3σ | T1 |
+| w_Λ (equation of state) | −0.992 | −1.03±0.03 | 1.3σ | T3 |
+| r_drag (BAO scale) | 146.70 Mpc | 147.09 Mpc | −0.27% | T2a |
+| t_0 (age of universe) | 13.780 Gyr | 13.797 Gyr | −0.12% | T3 |
+| m_DM (dark matter mass) | 35.6 keV | >5.2 keV | WDM | T4 |
+| λ_fs (free-streaming) | 1.0 kpc | — | safe | T4 |
 
 ---
 
