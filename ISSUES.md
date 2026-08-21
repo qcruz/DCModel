@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 412 (2026-08-21)
+**Last updated:** Cycle 414 (2026-08-21)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -201,6 +201,34 @@ Relic abundance OPEN — non-thermal production mechanism needed.
 
 **Status:** PASS (15/15). w_Lambda T3, r_drag T2a, Hubble tension T3, m_DM T4.
 **Files:** `equations/cosmological_predictions_2.py` (C412, 15/15 PASS)
+
+---
+
+### T34 — Inflation, Baryon Asymmetry, and Absence Predictions
+
+C414: Inflation + baryon asymmetry + absence predictions (16/16 PASS):
+
+**Part A — Inflation:**
+n_s = 0.9667 at N_e = 60 (+0.4 sigma from Planck 0.9649) [T3].
+N_e mechanism OPEN (naive gives 10.5, need 60). r prediction BLOCKED.
+Flatness/horizon/monopole dissolved structurally [T1].
+T_reheat ~ M_c(D4) safely above BBN [T2a].
+
+**Part B — Baryon asymmetry:**
+All 3 Sakharov conditions satisfied at T2a: E_sph = 72*pi M_Pl (B-violation, T1),
+J_CP > 0 (D6 chirality, T2a), first-order D7 PT (Svetitsky-Yaffe, T2a).
+eta_B > 0 structural [T3]. Magnitude not derived [T4].
+
+**Part C — Absence predictions (6 items, all confirmed):**
+- Proton stability: tau_p = infinity [T1, product topology D7 x D5]
+- No QCD axion: theta_bar = 0 from S^5 CP isometry [T2a]
+- d_n = 0: from theta_bar = 0 [T2a]
+- No SUSY partners: spectrum fixed by PT zero modes [T3]
+- Exactly 3 generations: pi_3(S^3) at D6 [T1]
+- Omega_k = 0: D3 flat localization [T2a]
+
+**Status:** PASS (16/16). n_s T3, Sakharov T2a, absences T1-T3.
+**Files:** `equations/cosmological_predictions_3.py` (C414, 16/16 PASS)
 
 ---
 
