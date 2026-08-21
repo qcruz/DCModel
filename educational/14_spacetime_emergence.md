@@ -188,7 +188,12 @@ Three specific gaps remain:
    compression gradient implies that the gravitational coupling G_N is set by the
    kink's D4 inertia behavior. The explicit formula G_N = 1/φ₀² (or a modification)
    has not been derived at better than T3. This is the deepest open problem in the
-   DFC model's gravity sector.
+   DFC model's gravity sector. Recent progress (C407-C408): the Einstein equation
+   structure has been established at T3 (Sakharav EH term, Noether conservation,
+   alpha^3 = 18 coupling), and the strong-field metric has been constructed using
+   TOV equations with scale-dependent G_eff(r). The kink's compactness is reduced
+   23x from GR (151 to 6.6) but remains > 1, showing the GR metric framework is
+   insufficient at the kink core — the full substrate dynamics are needed.
 
 3. **The cosmological constant** — the observed dark energy density Λ_cosm is
    extraordinarily small compared to the substrate's energy density. DFC has no
@@ -204,5 +209,7 @@ Three specific gaps remain:
 **See also:**
 - `equations/cosmology.py` — Hubble constant T2a derivation
 - `equations/ym_spacetime_signature.py` — Minkowski (1,3) stability argument
+- `equations/d4_einstein_from_jormungandr.py` (C407) — Einstein equation from substrate self-consistency
+- `equations/d4_strong_field_metric.py` (C408) — TOV with scale-dependent G_eff
 - `phenomena/cosmology/cosmic_expansion.md` — full cosmological account
 - `foundations/dimensional_stack.md` — D1–D7 depth behavior map

@@ -138,6 +138,29 @@ in prose was preceded by a natural language statement. If not, add the natural l
 > that completes cleanly is always better than a long cycle that risks context overflow
 > or incomplete execution. When in doubt, stop earlier and push.
 
+### Current Development Phase: PREDICTION MAXIMIZATION
+
+**Priority:** Maximize the number of derivations and testable predictions that DFC
+accurately produces from V(φ). The model's credibility rests on concrete, quantitative
+predictions that can be compared against observation — not on structural exploration alone.
+
+**Hierarchy of value (highest first):**
+1. **New testable predictions** — compute a number from DFC parameters that can be compared
+   to experiment (e.g., cosmological observables, particle masses, cross-sections)
+2. **Improving existing predictions** — tighten derivation chains, reduce tier levels
+   (T3→T2a, T2a→T1), fix known failures
+3. **Cosmological predictions** — DFC has structural accounts of H₀, Λ_cosm, dark matter,
+   and CMB but most remain at T3/T4. Upgrading these to quantitative T2a predictions
+   would significantly strengthen the model
+4. **Structural exploration** — understanding D4 gravity gap, metric emergence, etc.
+   is valuable but should serve prediction goals, not be an end in itself
+
+**Cosmology is the primary growth area for predictions.** DFC already has 17/21 PASS
+in particle/nuclear prediction tests (C384-C391). The next frontier is cosmological
+predictions: Friedmann equation from substrate dynamics, Λ_cosm from V(φ), dark matter
+abundance, CMB power spectrum features, BBN constraints. Each of these would be a
+high-impact test of the model.
+
 Repeat this cycle indefinitely:
 
 ### Completeness Estimate (running)

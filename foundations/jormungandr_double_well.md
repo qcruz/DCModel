@@ -306,6 +306,29 @@ provides leverage on the other:
 
 This makes simultaneous exploration of both directions a productive strategy.
 
+### Recent progress (C400, C407, C408)
+
+The Jormungandr fixed-point equation was formulated and solved in C400: the
+self-consistency condition V_eff(phi) = V(phi) has alpha^3 = 18 as its unique
+real positive solution (T1 algebraic), providing a third independent route to
+the DFC compression parameter.
+
+C407 reformulated the Jormungandr self-consistency in metric language, establishing
+the Einstein equation structure: Sakharav EH term (T1), Noether conservation (T1),
+alpha^3 = 18 coupling (T1). Strong-field breakdown was identified: r_s/xi = 259,
+linearized metric gives g_00(xi) = +258 (wrong sign). Scale-dependent coupling
+G_eff(r) proposed: G_N/23 at core, transitioning to full G_N asymptotically.
+
+C408 constructed the strong-field effective metric using TOV equations with
+scale-dependent G_eff(r). Key finding: even with G_eff = G_N/23, the kink
+compactness is 6.6 (23x reduction from GR's 151) but still > 1. The GR metric
+framework (TOV with modified G) is INSUFFICIENT at the kink core. The substrate
+IS smooth (sech^4 energy density), so the actual effective metric is regular —
+but deriving it requires the full substrate dynamics, not just a modified Newton's
+constant. This directly confirms the Jormungandr picture: the kink's self-gravity
+is non-perturbative, and the metric emerges from the substrate's compression, not
+from a force mediated by particle exchange.
+
 ---
 
 **See also:** `foundations/substrate.md` for the V(φ) postulate and kink solutions.
@@ -313,3 +336,6 @@ This makes simultaneous exploration of both directions a productive strategy.
 `foundations/cosmological_constant_dfc.md` for the relationship between substrate
 energy density and cosmological observations.
 `equations/quantum_gravity.py` for Planck scale parameters and BH thermodynamics.
+`equations/d4_jormungandr_fixed_point.py` (C400) for the fixed-point equation.
+`equations/d4_einstein_from_jormungandr.py` (C407) for Einstein equation from substrate.
+`equations/d4_strong_field_metric.py` (C408) for strong-field TOV with G_eff(r).
