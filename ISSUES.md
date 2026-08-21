@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 410 (2026-08-21)
+**Last updated:** Cycle 412 (2026-08-21)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -171,6 +171,36 @@ no Planck-scale modifications at CMB scales [T3].
 
 **Status:** PASS (consistency test). ell_1 at T2a, flat geometry T2a, N_eff T1.
 **Files:** `equations/cosmological_predictions.py` (C410, 15/15 PASS)
+
+---
+
+### T33 — Cosmological Predictions Part 2: w_Lambda, BAO, Hubble Tension, Dark Matter
+
+C412: Four additional cosmological predictions (15/15 PASS):
+
+**Part A — Dark energy equation of state:**
+DFC structural prediction: w > -1 (epsilon > 0, irreversible compression) [T2a].
+Measured epsilon = 0.0077 from Hubble tension → w = -0.992.
+Within 1.3 sigma of Planck (-1.03 ± 0.03), within 1 sigma of DESI (-0.99 ± 0.05).
+Testable by Stage IV experiments (need sigma_w < 0.008).
+
+**Part B — BAO sound horizon:**
+r_drag = 146.70 Mpc (-0.27% vs Planck 147.09 Mpc) [T2a].
+r_drag/r_s = 1.0184 matches Planck ratio exactly.
+
+**Part C — Hubble tension resolution:**
+DFC evolving dark energy (w = -1 + epsilon) produces higher H at intermediate z.
+Age of universe t_0 = 13.780 Gyr (-0.12% vs Planck 13.797) [T3].
+Deceleration-acceleration transition z = 0.631 (observed 0.6-0.8) [T3].
+
+**Part D — Dark matter mass from depth model:**
+m_DM = 35.6 keV from depth interpolation d_DM = 4.5, kappa = 5.33 [T4].
+Satisfies all WDM lower bounds (Lyman-alpha, satellites, strong lensing).
+Free-streaming lambda_fs = 1 kpc. Thermal relic excluded (overclosed 1446x).
+Relic abundance OPEN — non-thermal production mechanism needed.
+
+**Status:** PASS (15/15). w_Lambda T3, r_drag T2a, Hubble tension T3, m_DM T4.
+**Files:** `equations/cosmological_predictions_2.py` (C412, 15/15 PASS)
 
 ---
 
