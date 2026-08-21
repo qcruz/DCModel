@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 402 (2026-08-19)
+**Last updated:** Cycle 408 (2026-08-21)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -576,7 +576,32 @@ if gravity is emergent compression, not problematic.
 - Gravitational redshift does NOT distinguish DFC from GR at current experimental reach
 - First distinguishing test: Planck-scale deviations where massive modes contribute
 
-**Files:** `equations/d4_metric_force_equivalence.py` (C405),
+**C407 EINSTEIN FROM JORMUNGANDR** (22/22 PASS):
+- Jormungandr self-consistency in metric language: V(phi) -> kink -> self-gravity -> V_eff = V [T3]
+- Einstein equation structure: Sakharav EH term (T1) + Noether conservation (T1) + alpha^3=18 (T1) [T3]
+- STRONG-FIELD BREAKDOWN: r_s/xi = 259 >> 1, weak-field g_00(xi) = +258 (WRONG SIGN) [T1]
+- Linearization catastrophically fails at kink scale — perturbative metric invalid at r < r_s [T1]
+- Scale-dependent coupling proposed: G_eff(r) = G_N/23 at r~xi, transitions to G_N at r>>r_s [T3]
+- Einstein emergence checklist: metric response T3, universal coupling T3 (2.1% NP mismatch),
+  coupling determined T3 (alpha^3=18), Bianchi identity T1 (Noether), second-order T1 (Sakharav EH)
+- REMAINING: full non-perturbative metric construction at r < r_s (T4)
+- D4-B narrowed to: construct strong-field effective metric from substrate compression dynamics
+
+**C408 STRONG-FIELD EFFECTIVE METRIC** (20/20 PASS):
+- TOV equations with scale-dependent G_eff(r) = G_N * [1/F + (1-1/F) * r^2/(r^2+r_s^2)] [T3]
+- GR compactness at xi: 2*G_N*m(xi)/xi = 151.2 >> 1 (deep inside horizon) [T1]
+- DFC compactness at xi: 6.6 (23x reduction, G_eff = G_N/23 at core) [T3]
+- KEY FINDING: compactness STILL > 1 even with G_eff — TOV-with-G_eff ansatz INSUFFICIENT [T3]
+- TOV g_00(xi) = -0.001130 (timelike from inward integration) [T3]
+- z_grav at core: 28.75 (finite, vs GR infinity) [T3]
+- Newtonian recovery: 3.72% match at 10*r_s, asymptotic g_00 match 0.16% [T3]
+- Substrate is smooth (sech^4 energy density) — actual effective metric is regular [T3]
+- Simple sigmoid G_eff interpolation insufficient; full substrate dynamics needed [T3]
+- D4-B STATUS: T4 (further narrowed — derive G_eff(r) transition from V(phi) dynamics)
+
+**Files:** `equations/d4_strong_field_metric.py` (C408),
+`equations/d4_einstein_from_jormungandr.py` (C407),
+`equations/d4_metric_force_equivalence.py` (C405),
 `equations/d4_metric_from_compression.py` (C403),
 `equations/d4_gravitational_redshift.py` (C402),
 `equations/d4_jormungandr_fixed_point.py` (C400),

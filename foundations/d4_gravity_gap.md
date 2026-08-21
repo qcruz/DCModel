@@ -73,7 +73,7 @@ phi -> substrate deformation -> g_muv^eff -> geodesic motion
 This is substantially more promising than trying to make the kink profile
 itself behave as 1/r (which it cannot — it falls off exponentially).
 
-**Status:** T4 open (partially addressed by C396, C403, C405). The analog metric
+**Status:** T4 open (partially addressed by C396, C403, C405, C407, C408). The analog metric
 construction from the kink background shows that V''(phi_bg) produces
 position-dependent propagation speed, with a LINEAR transverse potential
 that confines excitations to the worldvolume (D3 localization mechanism).
@@ -113,9 +113,26 @@ DILUTED by non-perturbative dominance (93%): the non-perturbative
 force-metric mismatch is only 2.1%. EP restoration is a mild constraint
 on the compression geometry.
 
-What remains T4: explicit construction of the full g_muv^eff as a
-functional of phi and its derivatives, and demonstration that it
-satisfies the Einstein equation in some appropriate limit. The
+C407 reformulates the Jormungandr self-consistency in metric language,
+establishing the Einstein equation structure (Sakharav EH T1, Noether
+conservation T1, alpha cubed = 18 coupling T1). Strong-field breakdown
+identified: r_s/xi = 259 >> 1, weak-field g_00(xi) = +258 (wrong sign,
+linearization fails catastrophically). Scale-dependent coupling proposed:
+G_eff transitions from G_N/23 at r ~ xi to G_N at r >> r_s.
+
+C408 constructs the strong-field effective metric using TOV equations
+with scale-dependent G_eff(r). GR predicts compactness 151 at xi (deep
+inside horizon). DFC with G_eff = G_N/23 gives compactness 6.6 (23x
+reduction) — but this is STILL > 1. KEY FINDING: the simple TOV-with-
+G_eff ansatz is INSUFFICIENT at the kink core. The substrate IS smooth
+(sech^4 energy density), so the actual effective metric is regular, but
+deriving it requires the full substrate dynamics, not just a modified
+Newton's constant in the Schwarzschild/TOV framework.
+
+What remains T4: derive the G_eff(r) transition from V(phi) dynamics
+(i.e., explain WHY G_eff transitions from G_N/F to G_N). The simple
+sigmoid interpolation is insufficient; the full substrate compression
+dynamics must determine the actual effective metric at r < r_s. The
 non-perturbative sector must provide 95.6% of force AND 97.6% of
 metric stiffness simultaneously — a testable constraint on any
 proposed compression geometry mechanism.
@@ -527,10 +544,16 @@ of the Einstein-Hilbert term predicted rather than inserted.
 - Perturbative force/metric ratio = 1.84 = 576 pi / (425 sqrt(2 alpha)) (T1, C405)
 - Non-perturbative force-metric mismatch only 2.1% — EP restoration mild constraint (T3, C405)
 - Sakharav/Scalar ratio = 0.54 constrains worldvolume spectrum (T1, C405)
+- Einstein equation structure: Sakharav EH + Noether conservation + alpha^3=18 (T3, C407)
+- Strong-field breakdown: r_s/xi = 259 >> 1, linearization fails at kink scale (T1, C407)
+- Scale-dependent coupling: G_eff(r) from G_N/23 at core to G_N asymptotically (T3, C407)
+- DFC compactness 6.6 at xi vs GR 151 (23x reduction, still > 1) (T3, C408)
+- TOV-with-G_eff ansatz INSUFFICIENT: compactness > 1 despite G_eff reduction (T3, C408)
+- Substrate smooth (sech^4): actual effective metric regular despite TOV breakdown (T3, C408)
 
 **Open:**
-- D4-B: Full effective metric g_muv[phi] from substrate compression (T4 — PRIMARY);
-  analog metric (C396) provides partial progress but not the full Einstein equation
+- D4-B: Derive G_eff(r) transition from V(phi) dynamics (T4 — PRIMARY);
+  TOV-with-G_eff constructed (C408) but compactness > 1; full substrate dynamics needed
 - D4-C: How tensor polarizations (h_+ and h_x) emerge from substrate — Candidate B
   viable but coupling-dependent (T3, C398); deprioritized as independent question
 - Strong-field consistency: G_N used as input in Jormungandr loop (T4);
@@ -554,5 +577,7 @@ compression hypothesis. Equation modules:
 - `equations/d4_gw_polarization_test.py` (C398) — GW polarization stress test
 - `equations/d4_1r_intermediate_test.py` (C399) — 1/r intermediate scale verification
 - `equations/d4_jormungandr_fixed_point.py` (C400) — Jormungandr fixed-point equation
+- `equations/d4_strong_field_metric.py` (C408) — TOV with scale-dependent G_eff, compactness > 1
+- `equations/d4_einstein_from_jormungandr.py` (C407) — Einstein from Jormungandr, strong-field breakdown
 - `equations/d4_metric_force_equivalence.py` (C405) — three perturbative channels, EP constraint
 - `equations/d4_metric_from_compression.py` (C403) — weak-field metric from V(phi)
