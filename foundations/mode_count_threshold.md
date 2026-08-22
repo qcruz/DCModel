@@ -2,24 +2,23 @@
 
 ## Status
 
-> **Cycle 72:** Tier 4 item — the last remaining open question in Bottleneck 1.
-> The derivation chain (Cycles 59–71) proves that n zero modes → SU(n), and that the
-> modes are complex (Cycles 70–71). What is not yet proved: why D(4+n) opens exactly n
-> zero modes in total (not n−1 or n+1) from the substrate field equation. This document
-> maps the precise computation required, carries it out for the n=1→n=2 step (D5→D6),
-> and identifies what is established vs. what remains.
+> **Current status:** Tier 4 item — the last remaining open question in Bottleneck 1.
+> The derivation chain proves that n zero modes → SU(n), and that the modes are complex.
+> What is not yet proved: why D(4+n) opens exactly n zero modes in total (not n−1 or n+1)
+> from the substrate field equation. This document maps the precise computation required,
+> carries it out for the n=1→n=2 step (D5→D6), and identifies what is established vs.
+> what remains.
 >
-> **Result (Cycle 72):** At the D6 threshold in the gauge-coupled 2-field system, the
-> full fluctuation operator has exactly **2 zero modes** — one from the D5 translation
-> (inherited) and one from the D6 threshold crossing under gauge coupling. The D6 threshold
-> zero mode exists if and only if the gauge coupling is nonzero (A_x background from D5
-> half-vortex phase profile). Scalar coupling does not produce the second zero mode (it
-> shifts the threshold without adding a mode). Verified numerically in
-> `equations/mode_count_threshold.py`.
+> **Result:** At the D6 threshold in the gauge-coupled 2-field system, the full fluctuation
+> operator has exactly **2 zero modes** — one from the D5 translation (inherited) and one
+> from the D6 threshold crossing under gauge coupling. The D6 threshold zero mode exists if
+> and only if the gauge coupling is nonzero (A_x background from D5 half-vortex phase
+> profile). Scalar coupling does not produce the second zero mode (it shifts the threshold
+> without adding a mode). Verified numerically in `equations/mode_count_threshold.py`.
 >
-> **Cycle 74 update:** n=3 at D7 VERIFIED. L₇₇^solo (PT operator for D7 field, α₇>0)
-> has exactly 1 zero mode for all α₇ tested (same PT s=2 argument). Combined with
-> D5 and D6 translations: total = 3 zero modes → SU(3). ✓ ALL CHECKS PASS.
+> **n=3 at D7 VERIFIED.** L₇₇^solo (PT operator for D7 field, α₇>0) has exactly 1 zero
+> mode for all α₇ tested (same PT s=2 argument). Combined with D5 and D6 translations:
+> total = 3 zero modes → SU(3). ✓ ALL CHECKS PASS.
 >
 > **Remaining open:** Threshold positions α₅, α₆, α₇ from substrate dynamics;
 > termination at D7 (confinement formal derivation).
@@ -29,7 +28,7 @@
 ## The Open Problem
 
 The mode count at each depth is the one unproven assumption in the Bottleneck 1 chain. The
-argument from Cycle 62 (codimension-1 bifurcation) is structural: each threshold crossing is
+codimension-1 bifurcation argument is structural: each threshold crossing is
 a codimension-1 bifurcation, so exactly one new flat direction opens. But this argument
 applies to the single-field system. At D6, the full system includes the D5 background. The
 question is whether the coupled 2-field fluctuation operator at D6 threshold has 2 zero modes
@@ -147,7 +146,7 @@ In the convention eA_x → ∂_x θ₅:
 L₆₆^gauge η₆ = [−∂²_x + 2i(∂_x θ₅)∂_x + i(∂²_x θ₅) + (∂_x θ₅)²] η₆
 ```
 
-This operator has an exact zero mode. To see why: the dressed zero mode from Cycle 67c is:
+This operator has an exact zero mode. To see why: the dressed zero mode is:
 
 ```
 η₆^dressed(x) = η₆^real(x) × e^{iθ₅(x)}
@@ -263,7 +262,7 @@ The argument above reveals the correct mechanism for the mode count:
 At D(4+k), the substrate has k kink backgrounds: φ₅, φ₆, ..., φ_{4+k}, each centered at
 some position x_{4+k}. The full system has translational invariance in each kink's position
 independently (in the gauge-coupled case, because gauge coupling cannot create a static
-kink-kink potential — proved in Cycle 67). Therefore:
+kink-kink potential). Therefore:
 
 ```
 k kinks (at D(4+k)) → k independent translation zero modes → SU(k)
@@ -294,13 +293,13 @@ ruled out from the field equation alone.
 
 | Check | Status |
 |---|---|
-| L₅₅ has exactly 1 zero mode (D5 translation) | ✓ PT uniqueness, Cycle 59 |
+| L₅₅ has exactly 1 zero mode (D5 translation) | ✓ PT uniqueness |
 | Scalar coupling: L₆₆^scal has 0 zero modes at threshold | ✓ proved above (no solution to zero mode condition for g>0) |
 | Gauge coupling: L₆₆^gauge has 1 zero mode at threshold | ✓ translation symmetry argument; verified numerically in mode_count_threshold.py |
 | Total at D6: 2 zero modes → SU(2) | ✓ (1 D5 translation + 1 D6 translation) |
-| Gauge coupling cannot create static kink-kink potential | ✓ proved Cycle 67 (rigid shift argument) |
-| n independent translations → n independent zero modes | ✓ proved Cycle 67 (gauge decoupling) |
-| D7 threshold: 3 zero modes → SU(3) | ✓ numerical verified Cycle 74 (L₇₇^solo: 1 ZM all α₇>0; total=3) |
+| Gauge coupling cannot create static kink-kink potential | ✓ proved (rigid shift argument) |
+| n independent translations → n independent zero modes | ✓ proved (gauge decoupling) |
+| D7 threshold: 3 zero modes → SU(3) | ✓ numerical verified (L₇₇^solo: 1 ZM all α₇>0; total=3) |
 | One new kink per threshold (not two or zero) | ✗ Tier 4 — non-degeneracy of bifurcation not proved from field equation |
 
 ---
@@ -314,7 +313,7 @@ ruled out from the field equation alone.
    has exactly one zero eigenvalue at each threshold and the associated eigenfunction is
    normalizable.
 
-2. **D6→D7 threshold (n=2→n=3) — VERIFIED Cycle 74:** The L₇₇ PT operator (solo, α₇>0)
+2. **D6→D7 threshold (n=2→n=3) — VERIFIED:** The L₇₇ PT operator (solo, α₇>0)
    has exactly 1 zero mode for all α₇ tested (Step 6–7 in mode_count_threshold.py).
    Total at D7 = 3 → SU(3) confirmed numerically. ✓
 
@@ -328,9 +327,9 @@ ruled out from the field equation alone.
 ## Connections
 
 - `foundations/bifurcation_mode_count.md` — Complete Bottleneck 1 chain; this doc addresses the Tier 4 remaining item
-- `foundations/d5_complex_structure.md` — J from U(1) gauge action (Cycle 71); motivates gauge coupling structure
-- `equations/mode_count_threshold.py` — Numerical verification of zero mode count at D5, D6 thresholds (Cycle 72)
-- `equations/gauge_coupling_zero_modes.py` — Gauge coupling preserves zero modes (Cycle 67); rigid shift argument
-- `equations/complex_structure_derivation.py` — D5 phase profile θ₅(x); dressed zero mode (Cycle 67c)
-- `foundations/zero_mode_multiplet.md` — n modes → SU(n) (Cycle 59)
-- `foundations/complex_zero_mode_gap.md` — 2 DOFs/mode from PDE; commutant (Cycle 70)
+- `foundations/d5_complex_structure.md` — J from U(1) gauge action; motivates gauge coupling structure
+- `equations/mode_count_threshold.py` — Numerical verification of zero mode count at D5, D6 thresholds
+- `equations/gauge_coupling_zero_modes.py` — Gauge coupling preserves zero modes; rigid shift argument
+- `equations/complex_structure_derivation.py` — D5 phase profile θ₅(x); dressed zero mode
+- `foundations/zero_mode_multiplet.md` — n modes → SU(n)
+- `foundations/complex_zero_mode_gap.md` — 2 DOFs/mode from PDE; commutant

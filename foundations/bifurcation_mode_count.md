@@ -12,34 +12,34 @@
 
 ## Status
 
-**Cycle 71 update:** The Complex Structure Gap (why each mode is COMPLEX rather than REAL)
+The Complex Structure Gap (why each mode is COMPLEX rather than REAL)
 is now CLOSED. See `foundations/d5_complex_structure.md` and `equations/d5_j_connection.py`.
 
 The complete Bottleneck 1 derivation chain is now:
-1. [Cycle 59] n coincident degenerate zero modes → SU(n): proved algebraically
-2. [Cycles 66–67c] Scalar coupling excluded; gauge coupling required; D6 kink IS complex (∫j_x exact)
-3. [Cycle 70] D5=U(1) from real substrate: second-order PDE → 2 DOFs/mode → SO(2)=U(1) at D5
-4. **[Cycle 71] U(1) gauge action = complex structure J: J_q²=−I for |q|=1; verified numerically**
-5. [Cycle 70] SO(4)∩Aut(J)=U(2) dim=4; SO(6)∩Aut(J)=U(3) dim=9; → SU(2) and SU(3)
+1. n coincident degenerate zero modes → SU(n): proved algebraically
+2. Scalar coupling excluded; gauge coupling required; D6 kink IS complex (∫j_x exact)
+3. D5=U(1) from real substrate: second-order PDE → 2 DOFs/mode → SO(2)=U(1) at D5
+4. **U(1) gauge action = complex structure J: J_q²=−I for |q|=1; verified numerically**
+5. SO(4)∩Aut(J)=U(2) dim=4; SO(6)∩Aut(J)=U(3) dim=9; → SU(2) and SU(3)
 
 D5, D6, D7 are now **Tier 2 candidates** (derivation chain complete assuming mode count n).
 
 **What is proved:**
-- The φ⁴ kink has exactly one zero mode (Pöschl-Teller uniqueness; Cycle 59)
-- n coincident degenerate zero modes → configuration space S^(2n-1) → SU(n) (Cycle 59)
+- The φ⁴ kink has exactly one zero mode (Pöschl-Teller uniqueness)
+- n coincident degenerate zero modes → configuration space S^(2n-1) → SU(n)
 - The U(1), SU(2), SU(3) gauge groups require n = 1, 2, 3 coincident modes respectively
 - Biquadratic (Z₂×Z₂) coupling V = gφ₅²φ₆²: diagonal corrections V_eff_5 = V_eff_6 exactly
-  for all g — proved analytically; verified numerically to floating-point precision (Cycle 66)
+  for all g — proved analytically; verified numerically to floating-point precision
 - For non-zero scalar (biquadratic) coupling: the Goldstone theorem protects exactly 1 zero mode
-  (the center-of-mass translation); the relative mode is lifted by off-diagonal coupling 4gφ₀²tanh²
-  (Cycle 66). n zero modes require g = 0 (decoupled) or gauge coupling.
-- D5=U(1) from real substrate: second-order PDE → 2 real DOFs per zero mode → SO(2)=U(1) (Cycle 70)
-- **U(1) gauge action on charged zero modes = complex structure J: J²=−I (Cycle 71)**
+  (the center-of-mass translation); the relative mode is lifted by off-diagonal coupling 4gφ₀²tanh².
+  n zero modes require g = 0 (decoupled) or gauge coupling.
+- D5=U(1) from real substrate: second-order PDE → 2 real DOFs per zero mode → SO(2)=U(1)
+- **U(1) gauge action on charged zero modes = complex structure J: J²=−I**
   Derivation: φ→e^{iqθ}φ → J_q(A,B)=(−qB,qA) → J_q²=q²(−I)=−I for |q|=1. Verified for n=1,2,3.
-- **Complex structure gap CLOSED: D6 modes carry D5 U(1) charge [Cycle 67c] + U(1) action = J [Cycle 71]**
+- **Complex structure gap CLOSED: D6 modes carry D5 U(1) charge + U(1) action = J**
 
 **What is not yet proved (Tier 4):**
-- **[CLOSED Cycle 73]** Why D(4+n) opens exactly n modes — proved via PT s=2 non-degeneracy:
+- **[CLOSED]** Why D(4+n) opens exactly n modes — proved via PT s=2 non-degeneracy:
   each φ⁴ kink has exactly one zero mode (U₀ξ² = 6 → s=2 → exactly 2 bound states; lowest
   is ω²=0, unique by Sturm-Liouville). Combined with gauge decoupling: n thresholds → n
   independent zero modes. See `foundations/threshold_nondegeneracy.md`.
@@ -171,7 +171,7 @@ self-energy integral and showing its infrared divergence prevents D8 closure.
 The linearized fluctuation spectrum of the φ⁴ kink background:
 
 ```
-Pöschl-Teller operator (Cycle 59):
+Pöschl-Teller operator:
 L η = −∂²_x η + [V''(φ_kink)] η = ω² η
 
 V''(φ_kink) = −α + 3β φ₀² tanh²(x/ξ) = α(3 tanh²(x/ξ) − 1)
@@ -205,7 +205,7 @@ Configuration space at D(4+n) (requires complex structure from D5):
 
 The following computations would complete Bottleneck 1:
 
-**Computation 1 — Coupled D5/D6 spectrum [COMPLETED Cycle 66]:**
+**Computation 1 — Coupled D5/D6 spectrum [COMPLETED]:**
 
 The two-component substrate fluctuation system (φ₅, φ₆) with biquadratic coupling
 V_c = g φ₅² φ₆² (the unique Z₂×Z₂-preserving interaction) was analyzed numerically in
@@ -234,7 +234,7 @@ of each kink field → physically excluded.
 *Precise remaining gap:* Derive from the substrate field equation that the D5/D6/D7 inter-depth
 coupling emerges as gauge coupling (minimal coupling D_μ = ∂_μ − igA_μ), not scalar coupling.
 
-**Computation 2 — Gauge coupling preserves n zero modes [COMPLETED Cycle 67]:**
+**Computation 2 — Gauge coupling preserves n zero modes [COMPLETED]:**
 
 `equations/gauge_coupling_zero_modes.py` proves that gauge (derivative) coupling between
 depth sectors preserves each kink's translation zero mode, while scalar coupling does not.
@@ -271,7 +271,7 @@ kink acquires a U(1) phase DOF (complex structure) through coupling to the D5 A_
 i.e., derive that the D6 kink is a complex, charged object rather than a neutral real kink.
 This is the complex structure derivation (Section 3 of this document).
 
-**Computation 3 — Complex structure derivation [COMPLETED Cycle 67]:**
+**Computation 3 — Complex structure derivation [COMPLETED]:**
 
 `equations/complex_structure_derivation.py` proves that the D6 kink is complex
 (charged under U(1)) in the D5 half-vortex background.
@@ -313,27 +313,27 @@ half-winding each → integer total charge. ✓
 
 | Check | Status |
 |---|---|
-| Pöschl-Teller zero mode is unique (1 per kink) | ✓ proved Cycle 59 |
-| n coincident zero modes → SU(n) | ✓ proved Cycle 59 |
+| Pöschl-Teller zero mode is unique (1 per kink) | ✓ proved |
+| n coincident zero modes → SU(n) | ✓ proved |
 | One codimension-1 bifurcation → one new soft mode | ✓ structural (codimension-1 theorem) |
 | D5 U(1) imposes complex structure on D6/D7 modes | ✓ structural (charge coupling argument) |
-| Biquadratic coupling: diagonal V_eff_5 = V_eff_6 exactly | ✓ proved and verified Cycle 66 |
-| Scalar coupling reduces n zero modes to 1 (Goldstone, not n) | ✓ proved numerically Cycle 66 |
-| Gauge coupling (real kink): j_μ=0 → zero coupling → n modes trivially | ✓ proved Cycle 67 |
-| Gauge coupling (complex kink): dE/da=0 by rigid shift → n modes | ✓ proved Cycle 67 |
-| Scalar δω²=−2gα/(5β) ≠ 0 at coincidence (exact, 4/15÷4/3=1/5) | ✓ proved Cycle 67 |
-| D6 kink complex: dressed mode carries U(1) current ∫j_x=−2π/(5ξ) exact | ✓ proved Cycle 67 |
-| D5=U(1) from real substrate (SO(2)=U(1) from 2 DOFs/mode) | ✓ proved Cycle 70 |
-| U(1) gauge action = complex structure J: J²=−I for |q|=1 | ✓ proved Cycle 71 |
-| Complex structure gap closed: D6/D7 modes inherit complex structure from D5 | ✓ Cycles 67c+71 |
-| Mode count n from substrate field equation: PT s=2 non-degeneracy | ✓ proved Cycle 73 |
+| Biquadratic coupling: diagonal V_eff_5 = V_eff_6 exactly | ✓ proved and verified |
+| Scalar coupling reduces n zero modes to 1 (Goldstone, not n) | ✓ proved numerically |
+| Gauge coupling (real kink): j_μ=0 → zero coupling → n modes trivially | ✓ proved |
+| Gauge coupling (complex kink): dE/da=0 by rigid shift → n modes | ✓ proved |
+| Scalar δω²=−2gα/(5β) ≠ 0 at coincidence (exact, 4/15÷4/3=1/5) | ✓ proved |
+| D6 kink complex: dressed mode carries U(1) current ∫j_x=−2π/(5ξ) exact | ✓ proved |
+| D5=U(1) from real substrate (SO(2)=U(1) from 2 DOFs/mode) | ✓ proved |
+| U(1) gauge action = complex structure J: J²=−I for |q|=1 | ✓ proved |
+| Complex structure gap closed: D6/D7 modes inherit complex structure from D5 | ✓ proved |
+| Mode count n from substrate field equation: PT s=2 non-degeneracy | ✓ proved |
 | Termination at SU(3): no D8 free gauge group | ✓ structural (confinement argument) |
 
 ---
 
 ## Open Questions
 
-1. **Gauge vs. scalar coupling (Computation 1 follow-up):** Computation 1 (Cycle 66) showed
+1. **Gauge vs. scalar coupling (Computation 1 follow-up):** Computation 1 showed
    that scalar biquadratic coupling reduces n zero modes to 1. The precise remaining gap:
    derive from the substrate field equation that the D5/D6/D7 coupling is gauge coupling
    (minimal coupling D_μ = ∂_μ − igA_μ). Approach: at the D6 threshold, the D5 U(1) gauge
@@ -361,14 +361,14 @@ half-winding each → integer total charge. ✓
 
 ---
 
-## n-Field Picture (Cycle 63)
+## n-Field Picture
 
-The coupled_fluctuation.py module (Cycle 63) demonstrates the n-field mechanism numerically:
+The coupled_fluctuation.py module demonstrates the n-field mechanism numerically:
 
 **Result:** n independent φ⁴ kink fields, each with a kink at position x=0, have n IDENTICAL
 zero modes with profile η₀(x) ∝ sech²(x/ξ). Because all n zero mode profiles are identical
 (same frequency ω=0, same spatial form, same norm), they satisfy the "coincident and degenerate"
-condition proved in zero_mode_multiplet.md (Cycle 59) → SU(n).
+condition proved in zero_mode_multiplet.md → SU(n).
 
 **Overlap degrades with separation:** When the n kinks are at different positions x₁,...,xₙ,
 the zero mode profiles differ: η_k(x) ∝ sech²((x-xₖ)/ξ). Their overlap decays exponentially
@@ -386,30 +386,22 @@ theorem but has not been derived from the coupled D5+D6 field equations.
 
 ## Connections
 
-- `equations/coupled_fluctuation.py` — n-field zero mode coincidence verified (Cycle 63)
-- `equations/d5_d6_coupling.py` — Computation 1: biquadratic/linear coupling zero mode analysis (Cycle 66)
-- `equations/gauge_coupling_zero_modes.py` — Computation 2: gauge coupling preserves n zero modes (Cycle 67)
-- `equations/complex_structure_derivation.py` — Computation 3: D6 kink is complex; ∫j_x=−2π/(5ξ) exact (Cycle 67c)
-- `foundations/complex_zero_mode_gap.md` — D5=U(1) from real substrate; 2 DOFs/mode; commutant U(n) (Cycle 70)
-- `equations/u1_from_paired_modes.py` — SO(2)=U(1), so(4)≅su(2)⊕su(2), commutant dims verified (Cycle 70)
-- `foundations/d5_complex_structure.md` — U(1) gauge action = complex structure J; full Bottleneck 1 chain (Cycle 71)
-- `equations/d5_j_connection.py` — J²=−I, antisymmetric, commutant dims, J_gauge=J_Cycle70, fractional charges (Cycle 71)
-- `foundations/threshold_nondegeneracy.md` — PT s=2 non-degeneracy; exactly 1 zero mode per kink; Bottleneck 1 Tier 4 closed (Cycle 73)
-- `equations/threshold_nondegeneracy.py` — s=2 verified all α; 1 zero mode per kink; n blocks → n zero modes (Cycle 73)
-- `foundations/mode_count_threshold.md` — n=2 at D6; scalar coupling excluded; gauge coupling gives exactly 1 new mode (Cycle 72)
-- `equations/mode_count_threshold.py` — D5 1 ZM, D6 total 2 ZM, scalar 0 new modes verified (Cycle 72)
-- `foundations/zero_mode_multiplet.md` — second half proved (n modes → SU(n); Cycle 59)
+- `equations/coupled_fluctuation.py` — n-field zero mode coincidence verified
+- `equations/d5_d6_coupling.py` — Computation 1: biquadratic/linear coupling zero mode analysis
+- `equations/gauge_coupling_zero_modes.py` — Computation 2: gauge coupling preserves n zero modes
+- `equations/complex_structure_derivation.py` — Computation 3: D6 kink is complex; ∫j_x=−2π/(5ξ) exact
+- `foundations/complex_zero_mode_gap.md` — D5=U(1) from real substrate; 2 DOFs/mode; commutant U(n)
+- `equations/u1_from_paired_modes.py` — SO(2)=U(1), so(4)≅su(2)⊕su(2), commutant dims verified
+- `foundations/d5_complex_structure.md` — U(1) gauge action = complex structure J; full Bottleneck 1 chain
+- `equations/d5_j_connection.py` — J²=−I, antisymmetric, commutant dims, J_gauge and fractional charges
+- `foundations/threshold_nondegeneracy.md` — PT s=2 non-degeneracy; exactly 1 zero mode per kink; Bottleneck 1 Tier 4 closed
+- `equations/threshold_nondegeneracy.py` — s=2 verified all α; 1 zero mode per kink; n blocks → n zero modes
+- `foundations/mode_count_threshold.md` — n=2 at D6; scalar coupling excluded; gauge coupling gives exactly 1 new mode
+- `equations/mode_count_threshold.py` — D5 1 ZM, D6 total 2 ZM, scalar 0 new modes verified
+- `foundations/zero_mode_multiplet.md` — second half proved (n modes → SU(n))
 - `foundations/depth_assignment.md` — Bottleneck 1 five constraints; Route B formalism
 - `foundations/hopf_fibration_geometry.md` — S^(2n-1) correspondence; Route B Hopf picture
 - `equations/hopf_dof_count.py` — numerical verification of n modes → SU(n); gauge boson counts
 - `foundations/kink_nucleation.md` — single-kink zero mode; Z₂ topology
 - `foundations/kink_scattering.md` — shape mode spectrum; Pöschl-Teller exact results
 
-Cycle 62–63 | n-field picture demonstrated; one open item remains
-Cycle 66 | Computation 1: scalar coupling eliminates n-mode structure; gauge coupling required
-Cycle 67 | Computation 2: gauge coupling preserves n modes (j_μ=0 real; rigid shift complex); δω²|_{a=0}=−2gα/(5β) exact
-Cycle 67c | Computation 3: D6 kink IS complex in D5 half-vortex background; ∫j_x=−2π/(5ξ) proved exactly
-Cycle 70 | D5=U(1) from real substrate: second-order PDE → 2 DOFs/mode → SO(2)=U(1); commutant U(2)/U(3) verified via SVD; complex_zero_mode_gap.md + u1_from_paired_modes.py
-Cycle 71 | U(1) gauge action = complex structure J: J²=−I proved algebraically + numerically; J_gauge = J_Cycle70 (diff 0.00e+00); complex structure gap CLOSED; D5/D6/D7 all Tier 2 candidates; d5_complex_structure.md + d5_j_connection.py
-Cycle 72 | Mode count n=2 at D6 verified numerically; ξ=√(2/α) convention confirmed; scalar coupling excluded analytically (8√(g/β)=0 unsolvable); mode_count_threshold.md + mode_count_threshold.py
-Cycle 73 | Non-degeneracy theorem PROVED: PT s=2 exact (U₀ξ²=6 for all α,β); exactly 1 zero mode per kink (Sturm-Liouville); n thresholds → n independent zero modes; Bottleneck 1 Tier 4 item CLOSED; threshold_nondegeneracy.md + threshold_nondegeneracy.py

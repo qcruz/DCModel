@@ -135,12 +135,12 @@ central ongoing work of the model.
 
 Since the initial writing of this document, two of the four central open problems have been resolved:
 
-- **The specific knot topologies U(1), SU(2), SU(3)** are now derived (Cycles 59–74, "Bottleneck 1").
+- **The specific knot topologies U(1), SU(2), SU(3)** are now derived.
   The chain: V(φ) → one zero mode per kink (Pöschl-Teller, exact) → n coincident modes → S^{2n-1}
   → SU(n) isometry. D5 produces U(1) (n=1), D6 produces SU(2) (n=2), D7 produces SU(3) (n=3).
   The complex structure J comes from the tachyonic instability of a real D5 kink — proved Tier 1.
 
-- **The coupling constant from bifurcation dynamics** is now derived (Cycles 100–117, "Bottleneck 2").
+- **The coupling constant from bifurcation dynamics** is now derived.
   The common gauge coupling g_eff = 0.54433 follows from V(φ) alone with zero free parameters.
   β = 1/(9π) is Tier 2a. This is the model's first Criterion A result: a SM input derived,
   not reconstructed.

@@ -1,6 +1,6 @@
 # The D4 Gap: Deriving Gravity from the Substrate
 
-**Status:** Active exploration (D4-B/C T4 open; D4-A/D T3 per C400)
+**Status:** Active exploration (D4-B/C T4 open; D4-A/D T3)
 **Purpose:** Map precisely what is known, what is assumed, and what remains to
 be derived in order for gravity to emerge from V(phi) = -alpha/2 phi^2 + beta/4 phi^4.
 
@@ -73,14 +73,13 @@ phi -> substrate deformation -> g_muv^eff -> geodesic motion
 This is substantially more promising than trying to make the kink profile
 itself behave as 1/r (which it cannot — it falls off exponentially).
 
-**Status:** T4 open (partially addressed by C396, C403, C405, C407, C408). The analog metric
-construction from the kink background shows that V''(phi_bg) produces
-position-dependent propagation speed, with a LINEAR transverse potential
-that confines excitations to the worldvolume (D3 localization mechanism).
-For localized sources ON the wall, 1/r emerges from the 3D Laplacian
-Green's function (C397, C399: verified across 11 orders of magnitude).
+**Status:** T4 open. The analog metric construction from the kink background shows
+that V''(phi_bg) produces position-dependent propagation speed, with a LINEAR
+transverse potential that confines excitations to the worldvolume (D3 localization
+mechanism). For localized sources ON the wall, 1/r emerges from the 3D Laplacian
+Green's function (verified across 11 orders of magnitude).
 
-C403 establishes the weak-field metric chain from V(phi):
+The weak-field metric chain from V(phi) is:
 
 ```
 Mass -> delta_phi(r) -> delta_V''(r) -> delta_c_eff(r) -> g_00(r)
@@ -94,16 +93,16 @@ the resulting metric perturbation frequency-independent (T1) — slow
 probes and fast probes see the same geometry, as required for a
 genuine metric rather than a dispersive medium.
 
-C405 explains WHY the C403 metric coupling is so weak: the Gordon-Unruh
-analog metric is TRIVIAL for the standard DFC kinetic term (L_XX = 0).
-The V''' potential-sector coupling is the only scalar metric channel,
-and it captures only 0.0098% of G_N — 241 times weaker than the
-Sakharav induced metric (2.36% of G_N). Three perturbative channels:
+Analysis of WHY the metric coupling is so weak: the Gordon-Unruh analog metric
+is TRIVIAL for the standard DFC kinetic term (L_XX = 0). The V''' potential-sector
+coupling is the only scalar metric channel, and it captures only 0.0098% of G_N
+— 241 times weaker than the Sakharav induced metric (2.36% of G_N). Three
+perturbative channels:
 
 ```
-Channel 1 (scalar exchange, C367):   4.37% of G_N  [tree-level, spin-0]
-Channel 2 (V''' analog metric, C403): 0.01% of G_N  [potential-sector]
-Channel 3 (Sakharav induced, C394):  2.36% of G_N  [one-loop, spin-2]
+Channel 1 (scalar exchange):   4.37% of G_N  [tree-level, spin-0]
+Channel 2 (V''' analog metric): 0.01% of G_N  [potential-sector]
+Channel 3 (Sakharav induced):  2.36% of G_N  [one-loop, spin-2]
 ```
 
 The REAL force-metric gap is factor 1.84 (scalar force vs Sakharav
@@ -113,21 +112,21 @@ DILUTED by non-perturbative dominance (93%): the non-perturbative
 force-metric mismatch is only 2.1%. EP restoration is a mild constraint
 on the compression geometry.
 
-C407 reformulates the Jormungandr self-consistency in metric language,
+The Jormungandr self-consistency has been reformulated in metric language,
 establishing the Einstein equation structure (Sakharav EH T1, Noether
 conservation T1, alpha cubed = 18 coupling T1). Strong-field breakdown
 identified: r_s/xi = 259 >> 1, weak-field g_00(xi) = +258 (wrong sign,
 linearization fails catastrophically). Scale-dependent coupling proposed:
 G_eff transitions from G_N/23 at r ~ xi to G_N at r >> r_s.
 
-C408 constructs the strong-field effective metric using TOV equations
-with scale-dependent G_eff(r). GR predicts compactness 151 at xi (deep
-inside horizon). DFC with G_eff = G_N/23 gives compactness 6.6 (23x
-reduction) — but this is STILL > 1. KEY FINDING: the simple TOV-with-
-G_eff ansatz is INSUFFICIENT at the kink core. The substrate IS smooth
-(sech^4 energy density), so the actual effective metric is regular, but
-deriving it requires the full substrate dynamics, not just a modified
-Newton's constant in the Schwarzschild/TOV framework.
+The strong-field effective metric was constructed using TOV equations with
+scale-dependent G_eff(r). GR predicts compactness 151 at xi (deep inside
+horizon). DFC with G_eff = G_N/23 gives compactness 6.6 (23x reduction)
+— but this is STILL > 1. KEY FINDING: the simple TOV-with-G_eff ansatz is
+INSUFFICIENT at the kink core. The substrate IS smooth (sech^4 energy density),
+so the actual effective metric is regular, but deriving it requires the full
+substrate dynamics, not just a modified Newton's constant in the Schwarzschild/TOV
+framework.
 
 What remains T4: derive the G_eff(r) transition from V(phi) dynamics
 (i.e., explain WHY G_eff transitions from G_N/F to G_N). The simple
@@ -165,17 +164,16 @@ or critical phenomenon protects the gravitational mode from acquiring a mass.
 Otherwise the natural expectation is a finite correlation length giving
 V(r) ~ exp(-m_g r)/r rather than exactly 1/r.
 
-**Status:** T4 open, but partially resolved structurally (C398). The C393
-negative result (no spin-2 in scalar spectrum) is now understood: Candidate A
-(composite tensor from scalar gradients) FAILS — the tensor is purely
-longitudinal (T1 theorem). Candidate B (worldvolume gauge field products)
-is VIABLE: the 16 SU(3) DOF produce spin-2 via the tensor product
-decomposition 1 tensor 1 = 0 + 1 + 2. The Sakharov induced gravity
-mechanism integrates these out to produce a standard Einstein-Hilbert action
-whose linearized fluctuations have exactly 2 TT polarizations propagating
-at c. The scalar breathing mode is Planck-mass-gapped (m_sigma = 2.29 M_Pl),
-unobservable at LIGO frequencies. Polarization problem downgraded from
-"critical tension" to "coupling-dependent" (T3).
+**Status:** T4 open, but partially resolved structurally. The earlier negative result
+(no spin-2 in scalar spectrum) is now understood: Candidate A (composite tensor from
+scalar gradients) FAILS — the tensor is purely longitudinal (T1 theorem). Candidate B
+(worldvolume gauge field products) is VIABLE: the 16 SU(3) DOF produce spin-2 via the
+tensor product decomposition 1 tensor 1 = 0 + 1 + 2. The Sakharov induced gravity
+mechanism integrates these out to produce a standard Einstein-Hilbert action whose
+linearized fluctuations have exactly 2 TT polarizations propagating at c. The scalar
+breathing mode is Planck-mass-gapped (m_sigma = 2.29 M_Pl), unobservable at LIGO
+frequencies. Polarization problem downgraded from "critical tension" to
+"coupling-dependent" (T3).
 
 ### D4-D: Coupling Emergence
 

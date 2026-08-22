@@ -2,7 +2,7 @@
 
 ## Status
 
-> **Cycle 47:** Formal derivation of the kink phase stiffness f² = (4/3)φ₀²/λ
+> Formal derivation of the kink phase stiffness f² = (4/3)φ₀²/λ
 > from the DFC substrate field equation — this part is exact. Maps the connection
 > between f² and the gauge coupling g² = 8πβ/3, identifying precisely where the
 > derivation is rigorous and where the gap lies. Two candidate routes to closing
@@ -13,7 +13,7 @@
 > but not yet formally proved. The gap is precisely located and is a single,
 > specific calculation.
 >
-> **Cycle 85 update:** The compact form g² = 2π × β × I₄ (where I₄ = 4/3) is the
+> **Update:** The compact form g² = 2π × β × I₄ (where I₄ = 4/3) is the
 > most transparent reformulation: the gauge coupling equals 2π times the quartic
 > coupling times the kink shape integral. α-independence is proved exactly across
 > three decades of α (error < 10⁻¹⁰) — any formal derivation must be β-only.
@@ -22,7 +22,7 @@
 > r_U1/λ = 1/(β × I₄) from the substrate field equation V(φ) = −α/2 φ² + β/4 φ⁴.
 > See `equations/bottleneck2_coupling_integral.py` for the full systematic analysis.
 >
-> **Cycle 88 update:** The worldvolume coupling analysis (`equations/worldvolume_coupling.py`)
+> **Further update:** The worldvolume coupling analysis (`equations/worldvolume_coupling.py`)
 > maps the Route B gap precisely. Key new results: (1) all D5 vortex integrals are O(1)
 > in units of ξ — the vortex geometry alone cannot produce r_U1/λ ≈ 21.4; (2) the
 > uniqueness of r_U1 = φ₀²/(β×f²) = 3λ/(4β) as the only α-independent length is proved
@@ -39,7 +39,7 @@
 The gauge coupling g_common ≈ 0.543 at the D5/D6 closure scale satisfies:
 
 ```
-g² = 8πβ/3    [Cycle 42 result; 0.3% match with SM; heuristic]
+g² = 8πβ/3    [0.3% match with SM; heuristic]
 ```
 
 where β ≈ 0.035 is the substrate quartic coupling. The derivation chain is:
@@ -225,7 +225,7 @@ r_U1/lambda = 2π / g_common² = 2π / 0.295 ≈ 21.3   [numerical target]
 
 ## Step 3: The Missing Connection — Exactly Located
 
-The Cycle 42 heuristic set:
+The heuristic set:
 
 ```
 r_U1 / lambda = 1 / (beta × 4/3) = 3 / (4 beta)   [heuristic identification]
@@ -456,8 +456,8 @@ Consequence:
 - `foundations/kink_nucleation.md` — kink energy and barrier height from same integral
 - `equations/kink_model.py` — numerical verification of kink profile and energy
 - `equations/coupling_derivation.py` — g² = 8πβ/3 implemented and verified
-- `equations/bottleneck2_coupling_integral.py` — Cycle 85: compact form g²=2π×β×I₄;
+- `equations/bottleneck2_coupling_integral.py` — compact form g²=2π×β×I₄;
   α-independence proved; 8 candidate r_U1 definitions tested; Route B norm=(64π/9)M_c verified
-- `equations/worldvolume_coupling.py` — Cycle 88: vortex integrals O(1) in ξ; r_U1/λ=3/(4β)
+- `equations/worldvolume_coupling.py` — vortex integrals O(1) in ξ; r_U1/λ=3/(4β)
   uniqueness proved algebraically; required KK mode normalization 9/(64π) identified; 2D
   coupling integral specified as the remaining calculation to close Route B

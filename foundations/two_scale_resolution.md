@@ -2,7 +2,7 @@
 
 ## Status
 
-> **Cycle 79:** This document formally analyzes the T9 internal tension
+> This document formally analyzes the T9 internal tension
 > (two closure scales: 10¹³ vs 10¹⁸ GeV) and argues that T9 is not a
 > genuine inconsistency but a labeling confusion — the two scales refer
 > to physically distinct depth events that have been assigned the same
@@ -77,8 +77,8 @@ E(D1) > E(D7) > E(D5/D6)
 
 D7 (SU(3)) closes at higher energy than D5/D6 (electroweak) because the
 color force is stronger — it requires more compression to generate three
-coincident zero modes than two. This non-monotonicity was established in
-Cycle 31 as the "depth-ordering ≠ energy-ordering" finding.
+coincident zero modes than two. This non-monotonicity is the
+"depth-ordering ≠ energy-ordering" finding.
 
 **Consequence:** The two scales in T9 are:
 - 10¹⁸ GeV = M_c(D1) — used by Higgs mass derivation as UV boundary

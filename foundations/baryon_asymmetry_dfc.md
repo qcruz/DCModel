@@ -2,7 +2,7 @@
 
 **Status:** Track D exploration — evaluating DFC's structural angle on the baryon asymmetry problem.
 **Tier:** T3 structural argument (quantitative prediction at T4).
-**Last updated:** Cycle 348.
+**Last updated:** Current.
 
 ---
 

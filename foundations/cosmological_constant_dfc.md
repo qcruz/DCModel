@@ -3,7 +3,7 @@
 **Status:** Track D exploration — structural argument at T3. No quantitative prediction.
 Identifies where DFC offers a novel angle and where it offers nothing new.
 
-**Last updated:** Cycle 408
+**Last updated:** August 2026
 
 ---
 
@@ -167,11 +167,11 @@ speculative (T3) but structurally suggestive.
 
 ## Connections
 
-- `educational/14_spacetime_emergence.md` — cosmological constant identified as open (Cycle 327)
+- `educational/14_spacetime_emergence.md` — cosmological constant identified as open
 - `equations/cosmology.py` — Hubble constant T2a derivation from DFC
 - `phenomena/cosmology/dark_matter.md` — related open problem
 - `foundations/mass_hierarchy.md` — neutrino mass scale connection
 - `foundations/d4_gravity_gap.md` — D4 gap and gravity emergence
-- `equations/d4_einstein_from_jormungandr.py` (C407) — Einstein equation from substrate
-- `equations/d4_strong_field_metric.py` (C408) — strong-field metric (TOV with G_eff)
+- `equations/d4_einstein_from_jormungandr.py` — Einstein equation from substrate
+- `equations/d4_strong_field_metric.py` — strong-field metric (TOV with G_eff)
 - `ISSUES.md` — T8 (ℏ hierarchy) — related hierarchy problem in DFC

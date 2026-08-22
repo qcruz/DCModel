@@ -1,20 +1,24 @@
 # Coupling Emergence in the DFC Framework
 
-**Status:** Active — quantitative results documented through C351. Coupling emergence
-chain is Tier 2a for g_eff, α_em(M_Z), sin²θ_W, α_s, α_em(0). Open derivations: D5 holonomy from
-KK reduction (Open 1), 36π route consistency (Open 2), SU(N) structure constants from winding
-(Open 3, partial T2a for D7 kinetic sector via SP4 G3).
-C272: k_Y² = 5/3 T4→T3 — derived from DFC first-generation hypercharge content via
-Q=T₃+Y/2; Σ(Y/2)²/Σ T₃² = (10/3)/2 = 5/3 (res 0.00e+00, T1 given assignments); see
-`equations/ky_hypercharge.py`. ECCC impact: Term2_SM α₁ piece now T3 (was T4); remaining
-T4 = Term2_SM α_s piece (C_match +0.34%).
-C219: δd = β × N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1] — the neutrino mass correction uses
-the same β and I₄ that govern the gauge sector, suggesting a common geometric origin.
-C263: ECCC identity A−B = ln(1/α_em(0)) verified numerically to 0.044% [T2a] —
+**Status:** Active. Coupling emergence chain is Tier 2a for g_eff, α_em(M_Z), sin²θ_W,
+α_s, α_em(0). Open derivations: D5 holonomy from KK reduction (Open 1), 36π route
+consistency (Open 2), SU(N) structure constants from winding (Open 3, partial T2a for
+D7 kinetic sector via SP4 G3).
+
+Key results: k_Y² = 5/3 T4→T3 — derived from DFC first-generation hypercharge content
+via Q=T₃+Y/2; Σ(Y/2)²/Σ T₃² = (10/3)/2 = 5/3 (res 0.00e+00, T1 given assignments);
+see `equations/ky_hypercharge.py`. ECCC impact: Term2_SM α₁ piece now T3 (was T4);
+remaining T4 = Term2_SM α_s piece (C_match +0.34%).
+
+The neutrino depth correction δd = β × N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1] uses the
+same β and I₄ that govern the gauge sector, suggesting a common geometric origin.
+
+ECCC identity A−B = ln(1/α_em(0)) verified numerically to 0.044% [T2a] —
 A=(R−1/α_s)×2π/b₀_QCD=30.4746, B=(1/α_1^DFC−R)×2π/b₀_U1=25.5548, exp(A−B)=136.976.
-C265: ECCC algebraic decomposition — Term1_DFC = 27π²×111/287 = 103.063 [T1 exact,
-V(φ) only]; closure residual 0.009% [T2a]; T4 gap = derive {α_s, α₁} from V(φ) alone;
-sensitivity: +0.006% Δα_s or −0.0005% Δ(1/α₁) closes identity exactly.
+
+ECCC algebraic decomposition: Term1_DFC = 27π²×111/287 = 103.063 [T1 exact, V(φ) only];
+closure residual 0.009% [T2a]; T4 gap = derive {α_s, α₁} from V(φ) alone; sensitivity:
++0.006% Δα_s or −0.0005% Δ(1/α₁) closes identity exactly.
 
 ---
 
@@ -56,7 +60,7 @@ The following results have been verified:
 ### The Common Gauge Coupling (Tier 2a)
 
 The substrate's quartic self-coupling β = 1/(9π) (derived from the kink instability
-threshold, Cycle 117). From β alone, the common gauge coupling at the ECCC scale is:
+threshold). From β alone, the common gauge coupling at the ECCC scale is:
 
 The square of the common gauge coupling equals eight times π times β, divided by three:
 
@@ -74,7 +78,7 @@ which all three SM couplings meet.
 The hypercharge coupling constant relates to the SU(2) coupling by a factor k_Y that reflects
 the ratio of U(1) to SU(2) winding numbers. In DFC terms, k_Y² = 5/3 arises from the
 count of charged degrees of freedom in one complete left-handed fermion generation (15 Weyl
-spinors): k_Y² = Σ(Y/2)² / Σ T₃² = (10/3)/2 = 5/3 (T3, Cycle 272; T1 given DFC
+spinors): k_Y² = Σ(Y/2)² / Σ T₃² = (10/3)/2 = 5/3 (T3; T1 given DFC
 fermion assignments; see `equations/ky_hypercharge.py`). This means k_Y is not a free
 parameter — it is determined by the DFC generation content. Combined with the DFC closure
 condition at M_c (Weinberg angle route), this gives sin²θ_W = 1/(1+k_Y²) = 3/8 at
@@ -108,7 +112,7 @@ condition α₃(M_c(D7)) = α_common and the observed α_em(0) as input:
 
 The 8.1% discrepancy of the earlier estimate (0.1086) came from incorrectly identifying
 M_c(D7) with the crossing point of the α₁ and α₃ running curves, rather than with the
-correct ECCC condition. See `equations/alpha_em_selfconsistency.py`, Cycle 144.
+correct ECCC condition. See `equations/alpha_em_selfconsistency.py`.
 
 ---
 
@@ -177,18 +181,18 @@ determines the coupling running, which in turn fixes all the closure scales.
 
 ### Open 1: Derive the 36π closure condition from the substrate
 
-**PARTIALLY CLOSED (Cycle 141, Tier 2a).** The algebraic chain is complete:
+**PARTIALLY CLOSED (Tier 2a).** The algebraic chain is complete:
 
 ```
-β = 1/(9π)               [Tier 2a, Cycle 117]
-k_Y² = 5/3               [T3, Cycle 272 — from DFC fermion generation content]
+β = 1/(9π)               [Tier 2a]
+k_Y² = 5/3               [T3 — from DFC fermion generation content]
 ECCC: α₁ = α₂ at M_c(EW) → sin²θ_W = 1/(1+k_Y²) = 3/8
 1/α_em = (1+k_Y²)/α_common = (8/3)×(27π/2) = 36π    [exact, 0 free params]
 4/β = 4×9π = 36π  [algebraically exact, residual 0]
-β = 4 × α_em(Mc)  [exact identity, Cycle 169/170]
+β = 4 × α_em(Mc)  [exact identity]
 ```
 
-**Cycle 170 update — BPS/duality mechanism (Tier 3):** The condition S_kink = 1/α_em
+**BPS/duality mechanism (Tier 3):** The condition S_kink = 1/α_em
 is now motivated by the D1/D5 electromagnetic BPS duality (Montonen-Olive analog):
 the D1 kink is the "magnetic" BPS soliton and the D5 U(1) is the "electric" gauge field;
 their couplings satisfy S_kink × α_D5 = 1 (exact, residual 0). This promotes the 36π
@@ -197,7 +201,7 @@ chain from "algebraic Tier 2a given k_Y" to a structural Tier 3 with explicit me
 **Remaining open (Tier 4 → 2a path):** Derive the holonomy weight α_D5 = 1/S_kink from
 the DFC 5D substrate KK reduction explicitly — show the D5 winding integral gives exactly
 this coupling. This would make the 36π chain Tier 2a without invoking k_Y as a separate
-input. See `equations/d5_closure_condition.py` (Cycle 170) for the current Tier 3 argument.
+input. See `equations/d5_closure_condition.py` for the current Tier 3 argument.
 
 ### Open 2: Derive WHY g₂ and 36π routes to α_em(M_Z) agree
 
@@ -208,7 +212,7 @@ This would simultaneously close the ECCC residual 0.044% gap and the 36π chain'
 0.15% discrepancy. It requires deriving the precise relationship between the
 g₂ = √(8/27 × ...) chain and the 36π closure condition from first principles.
 
-**Cycle 263 update:** The ECCC identity A−B = ln(1/α_em(0)) has been verified
+The ECCC identity A−B = ln(1/α_em(0)) has been verified
 numerically at T2a (0.044% error), establishing that the gap lives entirely in the
 0.01 tension at 1/α_em(M_Z) between the 36π and g₂ routes. Closing this one
 algebraic relation would prove the identity exactly (Tier 4 → 1 target).
@@ -218,7 +222,7 @@ algebraic relation would prove the identity exactly (Tier 4 → 1 target).
 **Statement:** Show that the closure topology at D6 depth produces SU(2) structure
 constants (not U(1)², not U(3), specifically SU(2)), and similarly for D7 and SU(3).
 
-**Partial progress (Cycles 183–184, Tier 2a for D7):** SP4 G3 shows that the DFC
+**Partial progress (Tier 2a for D7):** SP4 G3 shows that the DFC
 moduli metric for D7 zero modes is flat with Tr(T^a T^b) = (1/2)δ^{ab} (residual
 1.11e-16), consistent with SU(3) structure, and the Wilson EFT at Λ_QCD equals pure
 SU(3) Yang-Mills + O(10⁻⁴⁰) corrections. This advances D7=SU(3) to Tier 2a for the
@@ -237,14 +241,14 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 | α_em(M_Z) from 36π chain | 1/128.09 | 1/127.9 | ✓ +0.15% |
 | sin²θ_W from Route 3B | 0.2312 | 0.2312 | ✓ 0.01% |
 | α_s from ECCC+α_em(0) | 0.11821 | 0.11820 | ✓ +0.006% |
-| α_em(0) full VP chain (C351) | 1/137.034 | 1/137.036 | ✓ −0.001% Tier 2a |
+| α_em(0) full VP chain | 1/137.034 | 1/137.036 | ✓ −0.001% Tier 2a |
 | α_em(0) from ECCC+α_s | 1/136.98 | 1/137.04 | ✓ −0.044% |
 | EW VEV v (EWSB co-crystallization) | 247.83 GeV | 246.22 GeV | ✓ +0.65% |
 | f_ρ from large-N_c VMD (N_c=3, m_ρ Tier 3) | 148.8 MeV | 156 MeV | ✓ Tier 3, −4.9% |
 | Γ_ee from large-N_c f_ρ | 6.47 keV | 7.04 keV | ✓ Tier 3, −8.1% |
-| V(φ) form from 3 compression requirements | R1+R2+R3 → unique form | — | ✓ Tier 3, Cycle 170 |
-| β = 4 × α_em(Mc) | exact algebraic identity | — | ✓ Tier 1 given β, 36π (Cycle 169) |
-| α = ∛18 from BPS duality | ∛18 ≈ 2.621 [Planck units] | — | ✓ Tier 2a (Cycle 172, derived from β+BPS saturation) |
+| V(φ) form from 3 compression requirements | R1+R2+R3 → unique form | — | ✓ Tier 3 |
+| β = 4 × α_em(Mc) | exact algebraic identity | — | ✓ Tier 1 given β, 36π |
+| α = ∛18 from BPS duality | ∛18 ≈ 2.621 [Planck units] | — | ✓ Tier 2a (derived from β+BPS saturation) |
 | SU(N) structure from topology | not derived | — | ✗ open |
 | D5 holonomy weight from KK reduction | not derived | — | ✗ open (path to Tier 2a for 36π) |
 
@@ -252,25 +256,25 @@ This would promote the D5=U(1), D6=SU(2), D7=SU(3) assignments from Tier 3 to Ti
 
 ## Connections
 
-- `equations/d5_closure_condition.py` — V(φ) form, BPS/duality, D5 minimal winding (Cycle 170)
-- `equations/alpha_from_kink_action.py` — α=∛18 numerical, three-way identity (Cycle 169)
-- `equations/d5_complex_from_instability.py` — β and g_eff derivation (Cycle 117)
-- `equations/alpha_em_prediction.py` — 36π chain to α_em(M_Z) and α_em(0) (Cycle 142)
-- `equations/alpha_em_eccc.py` — ECCC structural identity (Cycle 139)
-- `equations/pion_decay_constant.py` — f_π=Λ/π, large-N_c f_ρ=√(N_c/(8π²))×m_ρ (Cycles 166–167)
-- `equations/alpha_em_selfconsistency.py` — joint α_em/α_s self-consistency (Cycle 144)
+- `equations/d5_closure_condition.py` — V(φ) form, BPS/duality, D5 minimal winding
+- `equations/alpha_from_kink_action.py` — α=∛18 numerical, three-way identity
+- `equations/d5_complex_from_instability.py` — β and g_eff derivation
+- `equations/alpha_em_prediction.py` — 36π chain to α_em(M_Z) and α_em(0)
+- `equations/alpha_em_eccc.py` — ECCC structural identity
+- `equations/pion_decay_constant.py` — f_π=Λ/π, large-N_c f_ρ=√(N_c/(8π²))×m_ρ
+- `equations/alpha_em_selfconsistency.py` — joint α_em/α_s self-consistency
 - `equations/weinberg_angle_rg.py` — sin²θ_W from Route 3B
 - `foundations/dimensional_stack.md` — D-depth closure hypothesis
 - `foundations/substrate.md` — V(φ), kink solution, β derivation
 - `phenomena/particle_physics/forces/strong_force.md`
 - `phenomena/electromagnetism/electromagnetic_coupling.md`
-- `equations/ym_sigma_to_ym.py` — SP4 G3: moduli sigma model = SU(3) YM kinetic term (Cycle 183, T3)
-- `equations/ym_moduli_metric.py` — SP4 G3 full: flat moduli metric Tr(T^a T^b)=(1/2)δ^{ab} (Cycle 184, T2a)
-- `equations/ym_c_gauge_explicit.py` — c_gauge parity argument, Z_KK/Z_0=1/3 (Cycle 196, T1)
-- `equations/ym_jost_function.py` — c_gauge(cont)=2.773063, C_match=0.795151 (Cycle 197, T2a)
-- `equations/neutrino_d7_holonomy.py` — δd = β×N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1 C219]; β and I₄ also govern neutrino depth correction
-- `equations/ym_eccc_identity.py` — ECCC identity A−B = ln(1/α_em(0)) verified T2a (−0.044%, C263)
-- `equations/ym_cghost_analytic.py` — c_ghost_naive=1.4407 [T2a]; δF_ghost Lorentzian T1; SU(3) color factor C_A/C_F=9/4 needed for cancellation (C264)
-- `equations/eccc_algebraic_structure.py` — ECCC decomposition Term1_DFC=27π²×111/287 [T1]; closure residual 0.009%; T4 gap characterisation (C265)
+- `equations/ym_sigma_to_ym.py` — SP4 G3: moduli sigma model = SU(3) YM kinetic term (T3)
+- `equations/ym_moduli_metric.py` — SP4 G3 full: flat moduli metric Tr(T^a T^b)=(1/2)δ^{ab} (T2a)
+- `equations/ym_c_gauge_explicit.py` — c_gauge parity argument, Z_KK/Z_0=1/3 (T1)
+- `equations/ym_jost_function.py` — c_gauge(cont)=2.773063, C_match=0.795151 (T2a)
+- `equations/neutrino_d7_holonomy.py` — δd = β×N_c/2 = (I₄-1)/(2π) = 1/(6π) [T1]; β and I₄ also govern neutrino depth correction
+- `equations/ym_eccc_identity.py` — ECCC identity A−B = ln(1/α_em(0)) verified T2a (−0.044%)
+- `equations/ym_cghost_analytic.py` — c_ghost_naive=1.4407 [T2a]; δF_ghost Lorentzian T1; SU(3) color factor C_A/C_F=9/4 needed for cancellation
+- `equations/eccc_algebraic_structure.py` — ECCC decomposition Term1_DFC=27π²×111/287 [T1]; closure residual 0.009%; T4 gap characterisation
 - `equations/ky_hypercharge.py` — k_Y² = 5/3 from DFC first-generation hypercharge content; Q=T₃+Y/2 verified all 15 Weyl spinors; k_Y T4→T3
-- `equations/alpha_em_dfc_chain.py` — complete α_em(0) chain from 36π; 24/24 PASS; 36 T1 exact; VP budget T2a; 1/α_em(0)=137.034 (−0.001%); error cancellation T1; Problems #1+#4 unified T4 gap
+- `equations/alpha_em_dfc_chain.py` — complete α_em(0) chain from 36π; 36 T1 exact; VP budget T2a; 1/α_em(0)=137.034 (−0.001%); error cancellation T1; Problems #1+#4 unified T4 gap

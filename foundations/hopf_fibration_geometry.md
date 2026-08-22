@@ -2,7 +2,7 @@
 
 ## Status
 
-> **Cycle 42:** Detailed analysis of Route B from `foundations/depth_assignment.md`.
+> Detailed analysis of Route B from `foundations/depth_assignment.md`.
 > The S¹→S³→S⁵ correspondence for D5/D6/D7 closures is the most structurally
 > compelling path to deriving the gauge group assignments. This document crystallizes
 > the geometric argument, computes the DOF counts precisely, identifies what the
@@ -13,25 +13,25 @@
 > bifurcation dynamics. The gap is precisely identified. The termination argument
 > (why not D8 = SU(4)) is sharpened.
 >
-> **Cycles 59–72 update (major progress):** The derivation gap for the DOF count is
+> **Update (major progress):** The derivation gap for the DOF count is
 > now substantially resolved:
-> - **Cycle 59:** n coincident zero modes → SU(n) proved algebraically (zero_mode_multiplet.md)
-> - **Cycles 66–67c:** Scalar coupling excluded; gauge coupling required; D6 kink IS complex
+> - n coincident zero modes → SU(n) proved algebraically (zero_mode_multiplet.md)
+> - Scalar coupling excluded; gauge coupling required; D6 kink IS complex
 >   (∫j_x = −2π/(5ξ) exact). Complex DOF origin identified.
-> - **Cycle 70:** D5=U(1) from real substrate — SO(2)=U(1) from 2 real DOFs/mode (no complex
+> - D5=U(1) from real substrate — SO(2)=U(1) from 2 real DOFs/mode (no complex
 >   structure needed at D5). complex_zero_mode_gap.md + u1_from_paired_modes.py.
-> - **Cycle 71:** U(1) gauge action on charged D6 modes IS the complex structure J; J²=−I
->   proved and verified; J_gauge = J_Cycle70 (identical). d5_complex_structure.md.
-> - **Cycle 72:** Mode count n=2 at D6 confirmed numerically — 2 independent translation zero
+> - U(1) gauge action on charged D6 modes IS the complex structure J; J²=−I
+>   proved and verified; J_gauge = J_gauge (identical). d5_complex_structure.md.
+> - Mode count n=2 at D6 confirmed numerically — 2 independent translation zero
 >   modes (D5 kink + D6 kink, each with its own PT zero mode). mode_count_threshold.md.
 >
-> **Cycles 73–74 update:** Bottleneck 1 fully closed. Non-degeneracy proved from PT s=2
-> spectrum (Cycle 73); D7 n=3 zero modes verified numerically (Cycle 74). D5=U(1),
+> **Update:** Bottleneck 1 fully closed. Non-degeneracy proved from PT s=2
+> spectrum; D7 n=3 zero modes verified numerically. D5=U(1),
 > D6=SU(2), D7=SU(3) now DERIVED from V(φ)=−α/2 φ²+β/4 φ⁴ with zero free parameters.
 >
-> **Cycle 101 update (β from Hopf structure):** The Hopf fiber dimension sum gives a
+> **β from Hopf structure:** The Hopf fiber dimension sum gives a
 > structural formula for the gauge coupling: g² = 2I₄/N_Hopf, where I₄ = ∫sech⁴(u)du
-> = 4/3 is the kink shape integral (from V(φ), proved Cycle 47) and N_Hopf = dim(S¹) +
+> = 4/3 is the kink shape integral (from V(φ)) and N_Hopf = dim(S¹) +
 > dim(S³) + dim(S⁵) = 1+3+5 = 9 is the total Hopf fiber dimension sum. This gives
 > g² = 8/27 exactly (=(2/3)³, π-independent). Equivalently: β = 1/(N_Hopf × π) = 1/(9π).
 > Matches SM g_common = 0.5443 to 0.006%. Status: Tier 3 — formal derivation from
@@ -482,11 +482,11 @@ r_S⁵/λ_D7 should also equal ~21 at their respective closure scales. This is a
 consistency prediction: the three coupling constants being equal at M_c is equivalent
 to the three sphere radii being equal in substrate-normalized units.
 
-### 2b. Structural formula: g² from Hopf fiber dimensions (Cycle 101)
+### 2b. Structural formula: g² from Hopf fiber dimensions
 
 The Hopf fiber dimension sum N_Hopf = dim(S¹) + dim(S³) + dim(S⁵) = 1 + 3 + 5 = 9
 connects the gauge group topology to the substrate kink shape integral I₄ = ∫sech⁴(u)du = 4/3
-(proved Cycle 47 from V(φ)). The structural formula is:
+(from V(φ)). The structural formula is:
 
 The square of the common gauge coupling equals twice the kink shape integral divided by
 the total Hopf fiber dimension sum across all three gauge depths:
@@ -538,22 +538,22 @@ representation being the physical quark color, not higher representations.
 
 | Statement | Status |
 |---|---|
-| S¹ at D5 → U(1) isometry | ✓ DERIVED — SO(2)=U(1) from 2 DOFs/mode (Cycle 70) |
-| S³ at D6 → SU(2) isometry (S³ ≅ SU(2)) | ✓ DERIVED — Cycles 67c+70+71+72 chain |
+| S¹ at D5 → U(1) isometry | ✓ DERIVED — SO(2)=U(1) from 2 DOFs/mode |
+| S³ at D6 → SU(2) isometry (S³ ≅ SU(2)) | ✓ DERIVED — full derivation chain |
 | S⁵ at D7 → SU(3) isometry | ✓ TIER 2 CANDIDATE — same chain; n=3 structural |
-| Gauge boson counts 1, 3, 8 reproduced | ✓ DERIVED — commutant dim verified via SVD (Cycle 70) |
+| Gauge boson counts 1, 3, 8 reproduced | ✓ DERIVED — commutant dim verified via SVD |
 | Three-generation count from SU(3) fundamental rep | ✓ CORRESPONDENCE (structural) |
 | No D8 closure (termination) | STRUCTURAL ARGUMENT — confinement blocks D8 |
-| D5 bifurcation opens 1 complex DOF | ✓ DERIVED — 2 DOFs/mode from PDE; SO(2)=U(1) (Cycle 70) |
-| U(1) gauge action = complex structure J | ✓ DERIVED — J²=−I from φ→e^{iqθ}φ (Cycle 71) |
-| D6 zero modes carry D5 U(1) charge | ✓ DERIVED — ∫j_x = −2π/(5ξ) exact (Cycle 67c) |
-| D6 threshold opens 2 zero modes | ✓ VERIFIED — 2 translation ZMs (Cycle 72 numerical) |
-| Scalar coupling cannot produce n≥2 | ✓ PROVED — analytic + numeric (Cycles 66 + 72) |
+| D5 bifurcation opens 1 complex DOF | ✓ DERIVED — 2 DOFs/mode from PDE; SO(2)=U(1) |
+| U(1) gauge action = complex structure J | ✓ DERIVED — J²=−I from φ→e^{iqθ}φ |
+| D6 zero modes carry D5 U(1) charge | ✓ DERIVED — ∫j_x = −2π/(5ξ) exact |
+| D6 threshold opens 2 zero modes | ✓ VERIFIED — 2 translation ZMs (numerical) |
+| Scalar coupling cannot produce n≥2 | ✓ PROVED — analytic + numeric |
 | D7 bifurcation opens 3 coupled complex DOFs | STRUCTURAL — same argument; numerical open |
 | Non-degeneracy: 1 kink per threshold from PDE | ✗ TIER 4 OPEN — codimension-1 assumed |
 | Equal-coupling at M_c ↔ equal sphere radii | PREDICTION — testable if coupling derived |
 | r_U1/λ_D5 ≈ 21 from substrate parameters | OPEN — Bottleneck 2 key unknown |
-| g² = 2I₄/N_Hopf = 8/27 (β=1/(9π)) | TIER 3 STRUCTURAL — Cycle 101; 0.006% vs SM (equations/beta_constraint.py) |
+| g² = 2I₄/N_Hopf = 8/27 (β=1/(9π)) | TIER 3 STRUCTURAL — 0.006% vs SM (equations/beta_constraint.py) |
 | r_U1/λ = 27π/4 ≈ 21.21 at β=1/(9π) | TIER 3 — 0.91% from holonomy target 21.4 |
 
 ---
@@ -561,15 +561,15 @@ representation being the physical quark color, not higher representations.
 ## Connections
 
 - `foundations/depth_assignment.md` — Route B: parent document; Bottleneck 1 five constraints
-- `foundations/bifurcation_mode_count.md` — complete Bottleneck 1 chain (Cycles 59–72)
-- `foundations/complex_zero_mode_gap.md` — D5=U(1) from real substrate; 2 DOFs/mode (Cycle 70)
-- `foundations/d5_complex_structure.md` — U(1) gauge action = complex structure J (Cycle 71)
-- `foundations/mode_count_threshold.md` — mode count n=2 at D6 confirmed; Tier 4 remaining (Cycle 72)
-- `foundations/zero_mode_multiplet.md` — n modes → SU(n) proved algebraically (Cycle 59)
-- `equations/u1_from_paired_modes.py` — SO(2)=U(1); commutant U(2)/U(3) via SVD (Cycle 70)
-- `equations/d5_j_connection.py` — J²=−I, J_gauge=J_Cycle70, fractional charges (Cycle 71)
-- `equations/mode_count_threshold.py` — zero mode count at D5, D6; scalar coupling exclusion (Cycle 72)
-- `equations/complex_structure_derivation.py` — D6 charge proved: ∫j_x=−2π/(5ξ) (Cycle 67c)
+- `foundations/bifurcation_mode_count.md` — complete Bottleneck 1 chain
+- `foundations/complex_zero_mode_gap.md` — D5=U(1) from real substrate; 2 DOFs/mode
+- `foundations/d5_complex_structure.md` — U(1) gauge action = complex structure J
+- `foundations/mode_count_threshold.md` — mode count n=2 at D6 confirmed; Tier 4 remaining
+- `foundations/zero_mode_multiplet.md` — n modes → SU(n) proved algebraically
+- `equations/u1_from_paired_modes.py` — SO(2)=U(1); commutant U(2)/U(3) via SVD
+- `equations/d5_j_connection.py` — J²=−I, J_gauge verified, fractional charges
+- `equations/mode_count_threshold.py` — zero mode count at D5, D6; scalar coupling exclusion
+- `equations/complex_structure_derivation.py` — D6 charge proved: ∫j_x=−2π/(5ξ)
 - `foundations/coupling_derivation.md` — g_common and the holonomy integral; r_U1/λ_D5 target
 - `foundations/three_generations.md` — three generations from SU(3) fundamental rep = 3
 - `foundations/embedding_geometry.md` — Route 3B sin²θ_W: D5/D6 Hopf fiber relationship
@@ -577,5 +577,5 @@ representation being the physical quark color, not higher representations.
 - `phenomena/particle_physics/forces/strong_force.md` — SU(3) structure, confinement, 8 gluons
 - `phenomena/particle_physics/forces/parity_violation.md` — left-handedness from D6 chirality
 - `equations/spin_zero_mode.py` — numerical verification of D6 two-component zero mode
-- `equations/beta_constraint.py` — all β derivation candidates; g²=2I₄/N_Hopf=8/27 verified; β=1/(9π) (Cycle 101)
+- `equations/beta_constraint.py` — all β derivation candidates; g²=2I₄/N_Hopf=8/27 verified; β=1/(9π)
 - `foundations/coupling_derivation.md` — full Bottleneck 2 chain; β=1/(9π) and β_B2 compared

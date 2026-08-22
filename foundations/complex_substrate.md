@@ -2,18 +2,18 @@
 
 ## Status
 
-> **Cycle 75:** Proposes and analyses the extension of the D5 substrate sector from a
+> Proposes and analyses the extension of the D5 substrate sector from a
 > real scalar φ to a complex scalar Φ = φ₁ + iφ₂ with potential
 > V = −α/2|Φ|² + β/4|Φ|⁴. This extension is exploratory — it is not yet a Tier 0 revision
 > but a candidate modification whose consequences are being mapped.
 >
-> **Motivation:** The gauge coupling g² = 8πβ/3 is computed heuristically with 0.37% match
-> (Cycle 42), but the step from phase stiffness f² to the closure fiber radius r_U1/λ = 3/(4β)
+> **Motivation:** The gauge coupling g² = 8πβ/3 is computed heuristically with 0.37% match,
+> but the step from phase stiffness f² to the closure fiber radius r_U1/λ = 3/(4β)
 > lacks a derivation from the field equation. Both candidate derivation routes (KK reduction,
 > domain-wall worldvolume) are blocked for a real scalar because real φ⁴ has no circle in
 > field space. The complex extension provides that circle.
 >
-> **Key structural result (new in Cycle 75):** The fluctuation operator for the transverse
+> **Key structural result:** The fluctuation operator for the transverse
 > (φ₂) direction around a real kink in the complex scalar is a Pöschl-Teller operator with
 > s = 1, giving one bound state at ω² = −α/2 < 0. This tachyonic mode is NOT a physical
 > instability of D6/D7 particles — it is the signature that D5 does not form real kinks at
@@ -37,7 +37,7 @@ The derivation chain for the U(1) gauge coupling g² runs:
 β → f² [kink phase stiffness, PROVED] → r_U1/λ [closure radius, GAP] → g² [holonomy]
 ```
 
-The phase stiffness of the kink is proved exactly (Cycle 47): the stiffness — the energy
+The phase stiffness of the kink is proved exactly: the stiffness — the energy
 cost per unit squared phase gradient — equals four-thirds times the vacuum field amplitude
 squared, divided by the kink half-width.
 
@@ -104,10 +104,10 @@ the BPS-correct energy E_kink = (4/3)c²φ₀²/ξ are all unchanged.
 **Longitudinal fluctuation spectrum:** The fluctuation operator L₁ in the φ₁ direction
 around the real kink is the PT operator with s = 2 — the same as for the real scalar.
 Exactly two bound states: a zero mode at ω² = 0 and a shape mode at ω² = (3/2)α.
-The zero mode non-degeneracy theorem (Cycle 73) holds unchanged.
+The zero mode non-degeneracy theorem holds unchanged.
 
 **SU(n) gauge group derivation:** The entire Bottleneck 1 derivation chain
-(Cycles 59–74) is preserved. The n zero modes at depth D(4+n), the 2n real DOFs from the
+is preserved. The n zero modes at depth D(4+n), the 2n real DOFs from the
 second-order PDE, the complex structure J from the D5 U(1) gauge action, and the
 SO(2n) ∩ Aut(J) = U(n) → SU(n) result are all independent of whether the D5 field is
 real or complex. The D6 and D7 kinks remain real scalar kinks in their respective
@@ -224,11 +224,11 @@ and is not equal to 3/(4β) in general. So r_U1 ≠ φ₀ (field-space radius).
 
 The phase stiffness identification: r_U1 = φ₀²/(β × f²) = φ₀² × ξ × 3/(4βφ₀²) = 3ξ/(4β)
 gives r_U1/ξ = 3/(4β) — a pure function of β, as required. This is the heuristic step
-(Cycle 42) that is motivated but not derived.
+that is motivated but not derived.
 
 **What must be computed to close the gap:** The effective coupling of the D5 Goldstone
 phase to a D6 kink, computed from the biquadratic inter-depth coupling V_56. The coupling
-integral ∫j_x dx = −2π/(5ξ) (Cycle 67c) gives the charge of the D6 kink in the D5 phase
+integral ∫j_x dx = −2π/(5ξ) gives the charge of the D6 kink in the D5 phase
 background. Converting this charge integral to a dimensionless coupling g² requires:
 
 1. Normalizing the photon propagator using the phase stiffness f²
@@ -285,7 +285,7 @@ g(0) = 0,  g(∞) = 1,  [g(ρ) ~ ρⁿ near ρ = 0]
 ### Phase stiffness and coupling chain
 
 ```
-f² = (4/3) φ₀² / ξ    [DERIVED, Cycle 47; ∫sech⁴ = 4/3]
+f² = (4/3) φ₀² / ξ    [DERIVED; ∫sech⁴ = 4/3]
 g² = 2π / (r_U1/λ)    [holonomy formula; r_U1 from vortex geometry — GAP]
 g² = 8πβ/3            [heuristic result, 0.37% match with SM; labeled RIGOROUSLY OPEN]
 ```
@@ -297,11 +297,11 @@ g² = 8πβ/3            [heuristic result, 0.37% match with SM; labeled RIGOROU
 | Check | Statement | Status |
 |---|---|---|
 | Real kink is solution | Φ = φ₀ tanh(x/ξ) satisfies complex scalar EOM | ✓ algebraic |
-| Longitudinal PT spectrum | L₁ has s=2, ω²₀=0 (zero mode), ω²₁=(3/2)α | ✓ Cycle 73 numerical |
+| Longitudinal PT spectrum | L₁ has s=2, ω²₀=0 (zero mode), ω²₁=(3/2)α | ✓ numerical |
 | Transverse PT parameter | s(s+1) = αξ² = 2 → s=1 | ✓ algebraic |
 | Transverse bound state tachyonic | ω²₀(L₂) = −α/2 < 0 | ✓ numerical (complex_substrate.py) |
 | Vortex profile solves ODE | g(ρ) from BVP: g(0)=0, g(∞)=1 | ✓ numerical |
-| Vortex core radius | r_v ≈ 1.1 ξ (Cycle 75 BVP solution) | ✓ numerical |
+| Vortex core radius | r_v ≈ 1.1 ξ (BVP solution) | ✓ numerical |
 | r_v ≠ r_U1 | r_v/ξ ≈ 1.1 ≪ 3/(4β) ≈ 21.4 | ✗ Gap confirmed — r_U1 not from vortex core |
 | g² = 8πβ/3 from field equation | Requires derivation of r_U1/λ = 3/(4β) from D5-D6 coupling | ✗ OPEN |
 
@@ -310,7 +310,7 @@ g² = 8πβ/3            [heuristic result, 0.37% match with SM; labeled RIGOROU
 ## Open Questions
 
 1. **Derive r_U1 from the D5-D6 coupling integral:** The charge of the D6 kink in the D5
-   background is ∫j_x dx = −2π/(5ξ) (Cycle 67c). The photon propagator normalization
+   background is ∫j_x dx = −2π/(5ξ). The photon propagator normalization
    involves f². Compute g² = (∫j_x dx)² × (photon normalization)⁻¹ × (kink normalization)⁻¹
    and check whether this equals 8πβ/3. This is the primary Bottleneck 2 computation.
 

@@ -2,7 +2,7 @@
 
 ## Status
 
-> **Cycle 70:** Formalizes the Bottleneck 1 Tier 3 remaining gap.
+> Formalizes the Bottleneck 1 Tier 3 remaining gap.
 >
 > **Result:** The second-order substrate field equation gives each zero mode TWO real
 > degrees of freedom — initial position and initial velocity along the zero mode direction.
@@ -17,7 +17,7 @@
 > structure J satisfying J² = −I on the D6/D7 zero mode spaces. This is the final step to
 > promote D5=U(1) and D6=SU(2) from Tier 3 to Tier 2.
 >
-> **Relationship to prior results:** The zero_mode_multiplet.md proof (Cycle 59) assumed
+> **Relationship to prior results:** The zero_mode_multiplet.md proof assumed
 > n complex modes giving S^(2n-1) ⊂ ℂⁿ. This document explains where those complex modes
 > come from: pairing of position and velocity DOFs at each threshold, organized by the D5
 > complex structure at D6/D7.
@@ -38,7 +38,7 @@ V(φ) = −α/2 φ² + β/4 φ⁴
 η₀(x) = ∂φ₀/∂x ∝ sech²(x/ξ)  [real, normalizable]
 ```
 
-The zero_mode_multiplet.md proof (Cycle 59) establishes: n coincident complex zero modes
+The zero_mode_multiplet.md proof establishes: n coincident complex zero modes
 → configuration space S^(2n-1) ⊂ ℂⁿ → SU(n) gauge group.
 
 **The gap:** The substrate is real. Real zero modes span a real vector space. n real
@@ -218,17 +218,17 @@ D7: dim(SU(3)) = 8 → 8 gluons  ✓
 
 This picture is consistent with and extends the prior Bottleneck 1 work:
 
-**Cycles 66–67c (bifurcation_mode_count.md, complex_structure_derivation.py):** Proved
+**bifurcation_mode_count.md + complex_structure_derivation.py:** Proved
 that scalar coupling between D5 and D6 lifts zero modes (reduces n), while gauge coupling
 preserves n independent zero modes. The current document explains why gauge coupling
 is the appropriate inter-depth coupling: the D5 U(1) gauge field acts on the D6 modes
 as a U(1) phase rotation, which is the source of the complex structure J.
 
-**Cycle 59 (zero_mode_multiplet.md):** Proved that n complex zero modes sharing a
+**zero_mode_multiplet.md:** Proved that n complex zero modes sharing a
 background give SU(n). The current document provides the physical origin of the complex
 structure that makes those n real mode pairs behave as n complex modes.
 
-**Cycles 62–63 (bifurcation_mode_count.md, coupled_fluctuation.py):** Proved that n
+**bifurcation_mode_count.md + coupled_fluctuation.py:** Proved that n
 independent kinks at the same depth have n coincident degenerate zero modes. The
 current document adds that each zero mode carries 2 real DOFs from the second-order PDE,
 giving 2n real DOFs total — matching the S^(2n-1) geometry of zero_mode_multiplet.md.
@@ -301,7 +301,7 @@ n=3: so(6) ≅ su(4)          [15-dimensional; complex structure selects su(3) �
 | so(4) ≅ su(2)_L ⊕ su(2)_R | Explicit generator decomposition; commutation table checked | ✓ verified (error < 10⁻¹⁵) |
 | SO(4) ∩ Aut(J) = U(2): dim 4 | u(2) = u(1) ⊕ su(2); complex-linear subgroup of SO(4) | ✓ verified |
 | SO(6) ∩ Aut(J) = U(3): dim 9 | u(3) = u(1) ⊕ su(3); dim 9 ✓ | ✓ verified |
-| Gauge boson counts from SU(n) | 1, 3, 8 for n=1,2,3 matching photon/W-Z/gluon | ✓ structural (Cycle 59) |
+| Gauge boson counts from SU(n) | 1, 3, 8 for n=1,2,3 matching photon/W-Z/gluon | ✓ structural |
 | D5 U(1) provides J: formal proof | That the D5 gauge field defines J on D6/D7 zero mode space | ✗ OPEN — Tier 3 gap |
 
 ---
@@ -313,7 +313,7 @@ n=3: so(6) ≅ su(4)          [15-dimensional; complex structure selects su(3) �
    the phase rotation. Making this rigorous requires computing the D5 gauge field coupling
    to the D6 zero mode fluctuations and showing it is exactly the complex structure J.
    Approach: Write the coupled D5+D6 field equations; compute the zero mode wavefunction
-   in the D5 gauge background (as started in complex_structure_derivation.py, Cycle 67c);
+   in the D5 gauge background (as started in complex_structure_derivation.py);
    show the U(1) phase acts as J on the D6 mode space.
 
 2. **Why does the second-order PDE pair (q, v) rather than producing independent modes?**
@@ -333,11 +333,11 @@ n=3: so(6) ≅ su(4)          [15-dimensional; complex structure selects su(3) �
 
 ## Connections
 
-- `foundations/zero_mode_multiplet.md` — proves n complex modes → SU(n) (Cycle 59)
-- `foundations/bifurcation_mode_count.md` — maps the full Bottleneck 1 gap (Cycles 62–67c)
-- `equations/complex_structure_derivation.py` — D5 half-vortex makes D6 kink complex (Cycle 67c)
-- `equations/u1_from_paired_modes.py` — numerical verification of SO(2n)/U(n) results (Cycle 70)
-- `equations/coupled_fluctuation.py` — n independent kinks → n degenerate zero modes (Cycle 63)
-- `equations/gauge_coupling_zero_modes.py` — gauge coupling preserves n zero modes (Cycle 67)
-- `foundations/hopf_fibration_geometry.md` — S¹/S³/S⁵ Hopf correspondence (Cycle 42)
+- `foundations/zero_mode_multiplet.md` — proves n complex modes → SU(n)
+- `foundations/bifurcation_mode_count.md` — maps the full Bottleneck 1 gap
+- `equations/complex_structure_derivation.py` — D5 half-vortex makes D6 kink complex
+- `equations/u1_from_paired_modes.py` — numerical verification of SO(2n)/U(n) results
+- `equations/coupled_fluctuation.py` — n independent kinks → n degenerate zero modes
+- `equations/gauge_coupling_zero_modes.py` — gauge coupling preserves n zero modes
+- `foundations/hopf_fibration_geometry.md` — S¹/S³/S⁵ Hopf correspondence
 - `foundations/depth_assignment.md` — Bottleneck 1 full map

@@ -2,7 +2,7 @@
 
 ## Status
 
-> **Cycle 38:** Mapping the Born rule derivation from DFC. The SU(2) spin
+> The Born rule derivation from DFC. The SU(2) spin
 > case is established from spinor geometry + binary nucleation (no free
 > parameters). The general position-space Born rule requires the Kramers
 > escape-rate argument (open).
@@ -270,5 +270,5 @@ confirming that the SU(2) spinor Born rule is self-consistent.
 - `foundations/tsirelson_bound.md` — CHSH ≤ 2√2 relies on Born rule for spin (now derived)
 - `foundations/spin_emergence.md` — Jackiw-Rebbi spinor; SU(2) state space at D6
 - `equations/bell_correlations.py` — E(a,b) = −cos(θ) verified; uses spin Born rule
-- `equations/born_rule_barrier_dynamics.py` — Step 6b Route B: DC response Σ(x) reduces spinodal distance; δΓ∝|ψ|² (C359)
+- `equations/born_rule_barrier_dynamics.py` — Step 6b Route B: DC response Σ(x) reduces spinodal distance; δΓ∝|ψ|²
 - `equations/quantum_emergence.py` — Schrödinger equation derived; Born rule open problem noted

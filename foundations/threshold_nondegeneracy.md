@@ -11,11 +11,11 @@
 
 ## Status
 
-**Cycle 73:** PROVED from the substrate field equation. This is the last remaining
+PROVED from the substrate field equation. This is the last remaining
 Tier 4 item from Bottleneck 1. The proof uses only:
 1. The exact kink solution φ_kink = φ₀ tanh(x/ξ) (a consequence of V(φ) = −α/2 φ² + β/4 φ⁴)
 2. The Pöschl-Teller spectral theorem (exactly solvable quantum mechanics)
-3. The gauge decoupling result (Cycle 67: gauge coupling cannot create static kink-kink potential)
+3. The gauge decoupling result (gauge coupling cannot create static kink-kink potential)
 
 **Result:** The non-degeneracy of each depth threshold is not a generic assumption — it is a
 provable consequence of the φ⁴ structure. After n threshold crossings (D4 → D(4+n)):
@@ -171,7 +171,7 @@ The zero mode eigenfunction is η_k(x) ∝ sech²(x/ξ_k) — normalizable.
 **Step 3 — Independence of zero modes (gauge decoupling).**
 In the gauge-coupled system (D5/D6/D7 depths):
 - The coupling between depth sectors is gauge coupling (minimal coupling D_μ = ∂_μ − igA_μ)
-- Gauge coupling cannot create a static kink-kink interaction energy (proved Cycle 67:
+- Gauge coupling cannot create a static kink-kink interaction energy (proved via
   rigid shift argument — the static energy E[a] is invariant under simultaneous shifts
   of all kink positions; dE/da = 0 → no kink-kink force)
 - Therefore the n kink zero modes do not mix: each kink retains its own translation
@@ -179,7 +179,7 @@ In the gauge-coupled system (D5/D6/D7 depths):
 
 **Step 4 — Conclusion.**
 n threshold crossings → n kinks → n independent zero modes (one each, PT-proved) →
-configuration space S^{2n−1} ⊂ ℂⁿ (with D5 complex structure, Cycles 70–71) →
+configuration space S^{2n−1} ⊂ ℂⁿ (with D5 complex structure) →
 isometry group U(n) → gauge group SU(n).
 
 ```
@@ -265,9 +265,9 @@ guarantees one zero mode in the fluctuation spectrum.
 | s=2 PT has exactly 2 bound states (not 1, not 3) | ✓ PT spectral theorem (Landau & Lifshitz §23) |
 | Zero mode ω²_0 = 0 (exact, all α) | ✓ proved above; verified numerically |
 | Shape mode ω²_1 = (3/2)α | ✓ proved above; verified numerically to <0.1% for all α tested |
-| Zero mode eigenfunction normalizable: ∫sech⁴ dx = 4/3 < ∞ | ✓ exact integral; proved Cycle 47 |
+| Zero mode eigenfunction normalizable: ∫sech⁴ dx = 4/3 < ∞ | ✓ exact integral; proved |
 | Non-degeneracy: zero mode is simple (Sturm-Liouville) | ✓ Sturm-Liouville theorem on ℝ: no degenerate levels |
-| n independent kinks → n independent zero modes | ✓ gauge decoupling proved Cycle 67 |
+| n independent kinks → n independent zero modes | ✓ gauge decoupling proved |
 | Non-degenerate pitchfork: V'''(0)=0, V''''(0)=6β>0 | ✓ proved; β>0 is Tier 0 postulate |
 | D7: 3 zero modes (n=3 case) | ✓ structural (same argument); full 3-field numerical: OPEN |
 
@@ -299,14 +299,12 @@ guarantees one zero mode in the fluctuation spectrum.
 
 - `equations/threshold_nondegeneracy.py` — Numerical verification of PT spectrum; s=2; zero mode count
 - `foundations/bifurcation_mode_count.md` — Complete Bottleneck 1 chain; this doc closes the Tier 4 item
-- `foundations/mode_count_threshold.md` — n=2 mode count at D6 (Cycle 72); numerical verification
-- `foundations/zero_mode_multiplet.md` — n zero modes → SU(n) (Cycle 59)
-- `foundations/d5_complex_structure.md` — Complex structure J from U(1) gauge action (Cycle 71)
-- `foundations/kink_scattering.md` — Shape mode ω₁² = (3/2)α (Cycle 33; exact PT result)
-- `foundations/phase_stiffness_derivation.md` — ∫sech⁴ = 4/3 integral (Cycle 47; same exact result)
-- `equations/coupled_fluctuation.py` — n coincident zero modes verified numerically (Cycle 63)
-- `equations/hopf_dof_count.py` — PT spectrum verified; zero mode normalization (Cycle 59)
+- `foundations/mode_count_threshold.md` — n=2 mode count at D6; numerical verification
+- `foundations/zero_mode_multiplet.md` — n zero modes → SU(n)
+- `foundations/d5_complex_structure.md` — Complex structure J from U(1) gauge action
+- `foundations/kink_scattering.md` — Shape mode ω₁² = (3/2)α; exact PT result
+- `foundations/phase_stiffness_derivation.md` — ∫sech⁴ = 4/3 integral; same exact result
+- `equations/coupled_fluctuation.py` — n coincident zero modes verified numerically
+- `equations/hopf_dof_count.py` — PT spectrum verified; zero mode normalization
 - `foundations/depth_assignment.md` — Bottleneck 1 structural constraints
 - `foundations/substrate.md` — V(φ) = −α/2 φ² + β/4 φ⁴ as Tier 0 postulate
-
-Cycle 73 | Non-degeneracy theorem proved from PT s=2 spectrum; Bottleneck 1 Tier 4 → closed

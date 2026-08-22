@@ -255,7 +255,7 @@ a free parameter — it is determined by:
 2. The scale where α₁ = α₂ in SM running (M_c ≈ 10¹³ GeV — self-consistent)
 3. Standard RG running below M_c
 
-**T9 RESOLVED (Cycle 79) — Two scales, two distinct D-depth events:**
+**T9 RESOLVED — Two scales, two distinct D-depth events:**
 
 The apparent tension between M_c ≈ 10¹³ GeV (Route 3B, this document) and M_c ≈ 10¹⁸ GeV
 (higgs_mass_derivation.md) is a D-labeling confusion, not a genuine inconsistency. The two
@@ -286,7 +286,7 @@ See `foundations/two_scale_resolution.md` for the full T9 resolution argument.
 | The closure scale M_c(12) | Self-consistent — determined by where α₁ = α₂ in SM running (~10¹³ GeV) |
 | α_U (coupling magnitude at M_c) | Determined by α_em(M_Z) and M_c — not a free parameter |
 | The 3/5 normalization factor | DERIVED ✓ — from equal-coupling + SM matter content (hypercharge_normalization.md) |
-| Tension with Higgs closure scale | RESOLVED (Cycle 79) — M_c(D5/D6)≈10¹³ GeV sets gauge IC; M_c(D1)≈10¹⁸ GeV sets λ₀ BC; see `two_scale_resolution.md` |
+| Tension with Higgs closure scale | RESOLVED — M_c(D5/D6)≈10¹³ GeV sets gauge IC; M_c(D1)≈10¹⁸ GeV sets λ₀ BC; see `two_scale_resolution.md` |
 
 **Verdict on free parameters:**
 
@@ -322,7 +322,7 @@ only on M_c. The primary remaining work is: (1) derive or constrain M_c from sub
 
 ## Open Problems
 
-1. ~~**Resolve the M_c tension**~~ **RESOLVED (Cycle 79)** — M_c(D5/D6) ≈ 10¹³ GeV and
+1. ~~**Resolve the M_c tension**~~ **RESOLVED** — M_c(D5/D6) ≈ 10¹³ GeV and
    M_c(D1) ≈ 10¹⁸ GeV refer to different D-depth events: electroweak closure scale vs. Higgs
    quartic boundary condition. Not a genuine inconsistency. See `foundations/two_scale_resolution.md`
    and `equations/two_scale_check.py` (α₁ = α₂ crossing verified at 1.03×10¹³ GeV).
@@ -356,6 +356,6 @@ only on M_c. The primary remaining work is: (1) derive or constrain M_c from sub
 | sin²θ_W(M_Z) = 0.231 self-consistently from M_c ≈ 10¹³ GeV | Derived (conditional on α₁=α₂ closure identification) ✓ |
 | Self-consistency of M_c(12) (no new free parameter) | Established ✓ — M_c determined by SM running |
 | Connection to ε squashing (higgs_geometry.md) | Consistent; quantitative tie OPEN |
-| Tension: Weinberg scale (10¹³ GeV) vs Higgs scale (10¹⁸ GeV) | RESOLVED (Cycle 79) — different D-depth events; see `two_scale_resolution.md` |
+| Tension: Weinberg scale (10¹³ GeV) vs Higgs scale (10¹⁸ GeV) | RESOLVED — different D-depth events; see `two_scale_resolution.md` |
 | Hypercharge normalization (3/5 factor) from geometry | DERIVED ✓ — see hypercharge_normalization.md |
 | M_c from DFC substrate parameters (α, β, c) | OPEN |

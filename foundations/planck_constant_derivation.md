@@ -2,9 +2,9 @@
 
 ## Status
 
-> **Cycle 39:** The Planck constant derivation chain is formalized here for the first time.
+> The Planck constant derivation chain is formalized here for the first time.
 >
-> **Cycle 75 audit:** E_kink formula corrected to BPS-correct form (Cycle 48 retraction
+> **Audit:** E_kink formula corrected to BPS-correct form (retraction
 > propagated). The retracted formula was E_kink = (4/3)c√(2α³/β); the BPS-correct formula
 > is E_kink = (4/3)c²φ₀²/ξ = (4/3)cα^(3/2)/(β√2). This changes S_kink(D1)/ℏ from
 > 4.24×10³⁹ to 1.13×10⁴⁰ and updates all numerical propagations. Qualitative conclusions
@@ -49,7 +49,7 @@ The kink solution φ_K(x) = φ₀ tanh(x/λ_kink) has:
 ```
 Kink width:   λ_kink = c √(2/α)                      [length scale; ξ = c√(2/α)]
 Kink energy:  E_kink = (4/3) c² φ₀² / ξ
-                     = (4/3) c × α^(3/2) / (β √2)    [BPS-correct; Cycle 48]
+                     = (4/3) c × α^(3/2) / (β √2)    [BPS-correct]
 ```
 
 The characteristic action of the substrate — kink energy times kink formation time — is:
@@ -64,7 +64,7 @@ S_substrate = E_kink × (λ_kink / c)
 In natural units (c = 1):
 
 ```
-S_substrate = (4/3) α / β    [BPS-correct; replaces retracted (8/3)α/√β from Cycle 32]
+S_substrate = (4/3) α / β    [BPS-correct; replaces retracted (8/3)α/√β]
 ```
 
 This is the "quantum of action" of the DFC substrate in terms of the dimensionful
@@ -72,7 +72,7 @@ parameters (α [energy/length²], c [speed]).
 
 ### Step 2: The D1 Planck length identification
 
-From `foundations/bifurcation_dynamics.md` (Cycle 32): the kink width at depth D1
+From `foundations/bifurcation_dynamics.md`: the kink width at depth D1
 coincides with the Planck length:
 
 ```
@@ -109,7 +109,7 @@ The cleanest computation is in natural units (ℏ = c = 1), using the values fro
 ```
 α_D1 = 2 M_P² = 2 × (1.22 × 10¹⁹ GeV)² = 2.977 × 10³⁸ GeV²
 λ_kink(D1) = √(2/α_D1) = 8.197 × 10⁻²⁰ GeV⁻¹ = 1.615 × 10⁻³⁵ m  ≈ ℓ_P ✓
-E_kink(D1) = (4/3) α_D1^(3/2) / (β √2) = 1.38 × 10⁵⁹ GeV    [BPS-correct; Cycle 48]
+E_kink(D1) = (4/3) α_D1^(3/2) / (β √2) = 1.38 × 10⁵⁹ GeV    [BPS-correct]
 β = 0.0351
 
 S_kink(D1) = E_kink × λ_kink  =  (4/3) α_D1 / β
@@ -122,7 +122,7 @@ S_kink(D1) = E_kink × λ_kink  =  (4/3) α_D1 / β
 Equivalently: S_substrate = (4/3)(α_D1/β) = (4/3)(2M_P²/β)
 = (4/3) × 2 × (1.22×10¹⁹)² / 0.0351 = 1.13 × 10⁴⁰ ℏ.
 
-[Cycle 75 correction: prior value 4.24×10³⁹ used the retracted formula (8/3)α/√β.
+[Correction: prior value 4.24×10³⁹ used the retracted formula (8/3)α/√β.
 BPS-correct (4/3)α/β gives 1.13×10⁴⁰, a factor ~2.7 larger. The hierarchy is slightly
 worse than previously stated. Qualitative conclusions are unchanged.]
 
@@ -237,7 +237,7 @@ S_kink scales linearly with α (since S = (4/3)α/β in natural units, c=1).
 The running is α(D_{n+1}) = α(D_n) × (1 − γ_space) ≈ α(D_n) × 10⁻³.
 
 ```
-S_kink(D1) = 1.13 × 10⁴⁰ ℏ    [BPS-correct; Cycle 75 update]
+S_kink(D1) = 1.13 × 10⁴⁰ ℏ    [BPS-correct]
 After n spacetime bifurcations: S_kink(D_n) = 1.13 × 10⁴⁰ × (10⁻³)ⁿ ℏ
 
 For S_kink(D_n) = 1 ℏ:
@@ -259,8 +259,8 @@ S_kink ≈ 10²⁸ ℏ to the observed action quantum ℏ.
 
 | Quantity | DFC computation | Observed | Status |
 |---|---|---|---|
-| D1 kink action / ℏ | 1.13 × 10⁴⁰ | 1 | ✗ (by construction; Cycle 75 update) |
-| D5 kink action / ℏ | 1.13 × 10²⁸ | 1 | ✗ (hierarchy residual; Cycle 75 update) |
+| D1 kink action / ℏ | 1.13 × 10⁴⁰ | 1 | ✗ (by construction) |
+| D5 kink action / ℏ | 1.13 × 10²⁸ | 1 | ✗ (hierarchy residual) |
 | Bifurcations needed for S = ℏ | ~13.4 | — | Only 4 spacetime bifurcations in model |
 | ℏ from fine structure constant | Possible if α_em derived | ℏ = 1.055×10⁻³⁴ J·s | Requires coupling_derivation.py |
 | ℏ as pure natural-units identity | Trivially satisfied | — | Not a DFC prediction |
@@ -354,7 +354,7 @@ The depth-running of α provides a partial mechanism: 4 bifurcations reduce this
 ## Connections
 
 - `foundations/substrate.md` — V(φ) = −α/2 φ² + β/4 φ⁴; kink solutions
-- `foundations/bifurcation_dynamics.md` — β ≈ 0.035; D1 kink width = Planck length; γ_D derivation RETRACTED (Cycle 48)
+- `foundations/bifurcation_dynamics.md` — β ≈ 0.035; D1 kink width = Planck length; γ_D derivation RETRACTED
 - `foundations/d_depth_lagrangians.md` — depth-running of α; closure scales
 - `equations/quantum_emergence.py` — Schrödinger equation derived; ℏ as free parameter noted
 - `foundations/substrate.md` Open Problem 2 — ℏ in SI units from (α, β, c) [this doc formalizes]

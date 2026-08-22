@@ -2,7 +2,7 @@
 
 ## Status
 
-> **Cycle 32 claim RETRACTED in Cycle 48.** The central result γ_D = (16/3)√β was
+> **RETRACTED.** The central result γ_D = (16/3)√β was
 > derived using an incorrect kink energy formula:
 >
 > **Wrong:** `E_kink = (4/3) c √(2α³/β)` — overstates E_kink by a factor of 2√β
@@ -59,7 +59,7 @@ key parameter in the depth-running equation α_{D+1} = α_D × (1 − γ_D).
 
 ---
 
-## γ_D Derivation Attempt and Retraction (Cycle 32 → Cycle 48)
+## γ_D Derivation Attempt and Retraction
 
 ### Step 1: Energy budget within one coherence volume
 
@@ -101,7 +101,7 @@ E_total(λ) = |V_min| × λ measure is smaller than E_kink: a single kink contai
 energy than the potential-energy-density × width product. This means E_total(λ) is not
 the right normalization for the compression budget.
 
-The Cycle 32 result γ_D = (16/3)√β arose from substituting the wrong E_kink formula
+The original result γ_D = (16/3)√β arose from substituting the wrong E_kink formula
 (which was smaller by a factor of 2√β). With the wrong formula, the ratio was
 (16/3)√β ≈ 0.999 at β = 0.035 — numerically close to 1 and physically plausible as
 a compression fraction, but built on an error. The derivation is **retracted**.
@@ -129,7 +129,7 @@ The depth-running model requires a compression fraction γ_space such that:
 M_c(D5) = M_Pl × (1 − γ_space)^2   →   γ_space ≈ 0.9991
 ```
 
-The Cycle 32 claim was that β could be inferred from γ_space via γ = (16/3)√β. This
+The original claim was that β could be inferred from γ_space via γ = (16/3)√β. This
 inference is **retracted**. The depth-running integration remains valid with γ_space
 treated as an independent fitted parameter. The M_c(D5) reproduction is self-consistent
 but does not derive β from first principles.
@@ -157,7 +157,7 @@ the γ_D retraction.
 The value β ≈ 0.035 is retained as a **Tier 3 reference value** — not derived from first
 principles. It was previously inferred from the (wrong) γ_D formula; it now stands only
 as a value consistent with: (a) the kink width at D1 = Planck length, and (b) the
-heuristic coupling derivation g² = 8πβ/3 (Cycle 42, also heuristic). Deriving β from
+heuristic coupling derivation g² = 8πβ/3 (also heuristic). Deriving β from
 a pre-substrate condition is the highest-priority open problem in the model.
 
 ---
@@ -223,7 +223,7 @@ use Scheme B. When reading `bifurcation.py` or `dimensional_stack.md`, mentally 
 
 ## What Remains Open
 
-Three open problems survive the Cycle 48 retraction:
+Three open problems survive the retraction:
 
 ### 1. γ_D from a valid energy normalization
 
@@ -280,9 +280,9 @@ the available closed manifolds at each compression depth.
 | Claim | Status |
 |---|---|
 | Bifurcation mechanism is buckling instability of kink potential | Established ✓ |
-| E_kink = (4/3) c² φ₀²/λ (BPS-correct, Bogomolny identity) | Proved ✓ (Cycle 48) |
-| γ_D = (16/3)√β derived from E_kink / E_total(λ) | **RETRACTED** (Cycle 48) — used wrong E_kink |
-| E_kink(BPS) / E_total(λ) = 8/3 exactly (universal constant) | Proved ✓ (Cycle 48) |
+| E_kink = (4/3) c² φ₀²/λ (BPS-correct, Bogomolny identity) | Proved ✓ |
+| γ_D = (16/3)√β derived from E_kink / E_total(λ) | **RETRACTED** — used wrong E_kink |
+| E_kink(BPS) / E_total(λ) = 8/3 exactly (universal constant) | Proved ✓ |
 | β ≈ 0.035 from γ_space ≈ 0.9991 requirement | RETRACTED as derivation — β is Tier 3 reference |
 | M_c(D5) ≈ 10^13 GeV from depth-running (γ_space as input) | Verified ✓ |
 | Kink width at D1 = Planck length (self-consistency) | Verified ✓ |

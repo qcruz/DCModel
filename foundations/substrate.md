@@ -100,12 +100,12 @@ The system admits **kink solutions** that interpolate between the two minima:
 
 where λ = √(2c²/α) is the kink width and x₀ is the kink center.
 
-The kink's energy (mass analog) — BPS-correct formula (Cycle 48):
+The kink's energy (mass analog) — BPS-correct formula:
 
 ```
 E_kink = (4/3) c² φ₀²/λ = (4/3) c α^(3/2)/(β√2)
 
-NOTE: An earlier formula (4/3) c √(2α³/β) was RETRACTED in Cycle 48 — it
+NOTE: An earlier formula (4/3) c √(2α³/β) was RETRACTED — it
 overstated E_kink by a factor of 2√β. The correct formula follows from the
 Bogomolny identity ∫sech⁴(u)du = 4/3. See foundations/phase_stiffness_derivation.md.
 ```
@@ -159,7 +159,7 @@ rigorously derived.
 - **Binary measurement outcomes from topology:** The φ⁴ kink has exactly two topological
   sectors (N=±1), and V''(0) = −α < 0 guarantees binary nucleation. See
   `foundations/kink_nucleation.md`. Status: PROVED (topology + instability analysis).
-- **γ_D = (16/3)√β:** **RETRACTED (Cycle 48).** The ratio E_kink/E_total(λ) = 8/3 exactly
+- **γ_D = (16/3)√β:** **RETRACTED.** The ratio E_kink/E_total(λ) = 8/3 exactly
   (not (16/3)√β) — the earlier result used a wrong E_kink formula. Since 8/3 > 1, this
   ratio cannot be a compression fraction. β ≈ 0.035 is now a Tier 3 reference value (not
   derived). A valid γ_D requires E_total(L) with macroscopic L from substrate dynamics.
@@ -182,36 +182,36 @@ rigorously derived.
   by three physical requirements (cannot reach zero, no preferred sign, stable rest state) as the
   lowest-order consistent polynomial (Tier 3 structural argument); formal derivation from near-D1
   mechanics open (Tier 4).
-- **β = 1/(9π): Tier 2a (Cycle 117).** From V(|Φ|²) + Hopf fiber dimension sum N_Hopf=9:
-  β = 1/(πN_Hopf). NOTE (Cycle 175): The original derivation claimed the L₂ tachyon
+- **β = 1/(9π): Tier 2a.** From V(|Φ|²) + Hopf fiber dimension sum N_Hopf=9:
+  β = 1/(πN_Hopf). NOTE: The original derivation claimed the L₂ tachyon
   'forces' complexification, but this was circular (L₂ uses V(|Φ|²) to derive V(|Φ|²)).
   Corrected chain: P4a (new DOF opens at D5) + P1 (one substrate → Q_top universal) →
   λ=2β → V=V(|Φ|²) [T1] → N_Hopf=9 → β=1/(9π) [T2a].
-  See `equations/p4_derivation_attempt.py` (Cycle 175) and `REVIEW_RESPONSE.md`.
-- **α = ∛18 ≈ 2.621: TIER 2a (Cycle 172).**
+  See `equations/p4_derivation_attempt.py` and `REVIEW_RESPONSE.md`.
+- **α = ∛18 ≈ 2.621: TIER 2a.**
   Derivation: β = 1/(9π) [T2a] → S_kink = 4/β [T2a, via T1 identity S_kink × α_D5 = 1] →
   BPS saturation E_kink = S_kink [T1] → (4/3)α^{3/2}/(β√2) = 4/β → α = ∛18.
   Equivalently: α = (Q_top × N_Hopf)^(1/3) = (2 × 9)^(1/3). Physical consequences:
   ξ = √(2/∛18) = (2/3)^{1/3} ≈ 0.874 l_Pl, E_kink = 36π M_Pl, φ₀ ≈ 8.608 M_Pl.
-  NOTE: Cycle 169 stated ξ = 18^{−1/6} ≈ 0.617 l_Pl — this was wrong (missing √2 factor).
+  NOTE: An earlier version stated ξ = 18^{−1/6} ≈ 0.617 l_Pl — this was wrong (missing √2 factor).
   Correct value: ξ = √2 × 18^{−1/6} ≈ 0.874 l_Pl. Retracted from all documents.
-  See `equations/v_phi_rg_analysis.py` (Cycle 172) for the tier-upgrade derivation.
+  See `equations/v_phi_rg_analysis.py` for the tier-upgrade derivation.
 
 **Medium priority:**
 - Connect closure stability to quantum error correction (suggestive formal parallels)
 - Derive Bekenstein entropy bounds from compression budget (`equations/holographic_entropy.py` — STUB)
 - Explain CP violation from DFC asymmetry principles
-- **Coupling constants — largely Tier 2a (Cycles 117–203):**
+- **Coupling constants — largely Tier 2a:**
   sin²θ_W = 0.231 (0.01%), α_em(M_Z) = 1/128.09 (+0.15%), g_eff = 0.5443 (+0.006%),
   α_s(M_Z) = 0.11821 (+0.006%), M_W = 79.67 GeV (−0.88%), M_Z = 90.86 GeV (−0.36%).
   Remaining: derive M_c(D7) from V(φ) alone (T4); hadronic VP 0.10% gap in α_em(0).
   See `foundations/yang_mills_clay.md` for the formal Yang-Mills / Λ_QCD construction.
-- **Yang-Mills mass gap (Clay Prize):** formal constructive QFT T2a (C203); see
-  `foundations/yang_mills_clay.md`. Progress ~74%, **CPC ~60%** [+15% C203: SP1 Balaban; +10% C216: SU(N) T2a].
-  **ALL 7 JW criteria T2a [C217]**: JW1–JW5 including Poincaré covariance (JW3c-b via hyperbolicity+Bogomolny+D3+D4).
-  C215 T1: I₄=C₂(fund,SU(N)) is algebraically unique to N=3 (polynomial residual 0.00e+00).
-  **SU(N) generality T2a [C216]**: monotonicity proof shows SP1+SP2 T2a for all N≥2 (Seiler 1982 for N=2).
-  C220 NEW [T1]: χ_adj(P_kink)=0 (D7 kink transparent to gluons); χ_fund(P_kink)=−1 (quarks acquire phase).
+- **Yang-Mills mass gap (Clay Prize):** formal constructive QFT T2a; see
+  `foundations/yang_mills_clay.md`. Progress ~74%, **CPC ~60%**.
+  **ALL 7 JW criteria T2a**: JW1–JW5 including Poincaré covariance (JW3c-b via hyperbolicity+Bogomolny+D3+D4).
+  I₄=C₂(fund,SU(N)) is algebraically unique to N=3 (polynomial residual 0.00e+00) [T1].
+  **SU(N) generality T2a**: monotonicity proof shows SP1+SP2 T2a for all N≥2 (Seiler 1982 for N=2).
+  χ_adj(P_kink)=0 (D7 kink transparent to gluons); χ_fund(P_kink)=−1 (quarks acquire phase) [T1].
   Remaining T3: SP2 BPS σ=I₄×Λ_QCD² (Casimir string tension). Remaining T4: SP5 M_c(D7) from V(φ).
 
 ---

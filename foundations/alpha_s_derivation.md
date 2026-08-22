@@ -2,12 +2,12 @@
 
 ## Status
 
-> **Cycle 77:** This document formally maps the α_s(M_Z) derivation problem.
+> This document formally maps the α_s(M_Z) derivation problem.
 > It identifies the derivation chain, shows where it breaks, quantifies the
 > gap numerically, and states precisely what substrate calculation is required
 > to close it.
 >
-> **Cycle 117 update:** Bottleneck 2 CLOSED. g_common² = 2I₄/N_Hopf = 8/27 is now
+> **Update:** Bottleneck 2 CLOSED. g_common² = 2I₄/N_Hopf = 8/27 is now
 > Tier 2a (0 free parameters). β = 1/(9π) is Tier 2a. This changes the initial
 > condition for the α_s running:
 > - Old: α_common = 8πβ/3/(4π) = 8×0.0351/12 = 0.02340 (Tier 3 reference)
@@ -22,7 +22,7 @@
 > **Blocking step:** Derive α_D7 (the D7 substrate coupling) from the substrate
 > field equation, not from SM running.
 >
-> **Cycle 130 — ECCC formalized:** The correct DFC closure condition for each
+> **ECCC formalized:** The correct DFC closure condition for each
 > gauge sector is that the SM running coupling for that sector reaches the common
 > substrate value at M_c(Di): α_i(M_c(Di)) = g_eff²/(4π) = 2/(27π). This is the
 > Equal-Coupling Closure Condition (ECCC). Applied to SU(3), it gives
@@ -40,7 +40,7 @@
 
 The chain from DFC substrate to α_s(M_Z) proceeds as follows:
 
-**Step 1 — Substrate β to g_common (DERIVED, Tier 2a as of Cycle 117).**
+**Step 1 — Substrate β to g_common (DERIVED, Tier 2a).**
 The substrate quartic coupling β determines the common gauge coupling at the
 closure scale. The square of the gauge coupling constant equals twice the kink
 shape integral I₄ = 4/3, divided by the Hopf fiber dimension sum N_Hopf = 9,
@@ -55,7 +55,7 @@ g_common = √(8/27) ≈ 0.54433  (SM: 0.5443, error 0.006%)
 ```
 
 The old formula g²=8πβ/3 is consistent: 8π/(9π)/3 = 8/27 ✓. The heuristic
-derivation (Cycle 42) is superseded by the rigorous chain in Cycle 117.
+derivation is superseded by the rigorous chain.
 
 **Step 2 — Equal-coupling initial condition (STRUCTURAL).**
 The three gauge closures at D5, D6, and D7 all emerge from the same compression
@@ -133,7 +133,7 @@ scale that satisfies:
 
 Solving: the natural log of the ratio of M_c(D7) to M_Z equals the difference
 between the inverse couplings divided by the beta function factor. Numerically
-(updated for Cycle 117 α_common):
+(updated for α_common):
 
 ```
 1/α_common = 27π/2 ≈ 42.41   [Tier 2a: exact from 8/27]
@@ -143,7 +143,7 @@ M_c(D7)_target = 91.19 × e^30.48 ≈ 1.57 × 10¹⁵ GeV   [one-loop, N_f=6]
 
 See `equations/alpha_s_target.py` for the full numerical computation (note:
 that module uses the old β=0.0351 reference value; update BETA to 1/(9π) for
-the Cycle 117 result). The updated target M_c(D7) ≈ 1.57×10¹⁵ GeV is a factor
+the updated result). The updated target M_c(D7) ≈ 1.57×10¹⁵ GeV is a factor
 of ~2.0 above the current equal-coupling-crossing estimate of 8×10¹⁴ GeV
 (reduced from the old factor of 2.62 since α_common is now slightly larger).
 
@@ -180,7 +180,7 @@ M_c(D7) / M_c(D5) = exp(γ_strong × N_depth_gap)
 ```
 
 With M_c(D5) = 1.02×10¹³ GeV and M_c(D7)_target = 1.57×10¹⁵ GeV (updated
-Cycle 117):
+updated):
 
 ```
 M_c(D7)/M_c(D5) ≈ 154     →     γ_strong × N_depth_gap ≈ ln(154) ≈ 5.04
@@ -200,7 +200,7 @@ in the scale is a factor of ~1.6% correction to the log, which is plausible
 for a non-perturbative threshold effect.
 
 **Route 3 — Derive α_D7 directly from the SU(3) closure topology.**
-The mode-count theorem (Cycle 73, `foundations/threshold_nondegeneracy.md`)
+The mode-count theorem (`foundations/threshold_nondegeneracy.md`)
 establishes that n=3 independent zero modes emerge at D7. This gives the
 gauge group SU(3) but not the scale M_c(D7). A complete derivation would
 compute the substrate field configuration at D7 (three coincident kinks,
@@ -216,7 +216,7 @@ coupling sector. The other couplings have the following errors:
 
 | Coupling | DFC value | Observed | Error | Status |
 |---|---|---|---|---|
-| g_common | 0.54433 | 0.5443 | 0.006% | Tier 2a (Cycle 117) |
+| g_common | 0.54433 | 0.5443 | 0.006% | Tier 2a |
 | sin²θ_W(M_Z) | 0.2312 | 0.2312 | 0.01% | Tier 2a |
 | α_em(M_Z) | 1/129.6 | 1/127.9 | 1.3% | Tier 2a |
 | M_W | 79.67 GeV | 80.38 GeV | 0.88% | Tier 2a |
@@ -240,11 +240,11 @@ Phase 3 of the completeness milestones.
 Let α_D7 be the substrate quadratic coupling at D7 depth. The DFC closure
 scale at D7 depth equals the square root of α_D7 divided by two. Given
 the observed strong coupling constant at the Z mass scale α_s(M_Z) = 0.1182
-and the known common coupling g_common = √(8/27) ≈ 0.54433 (Tier 2a, Cycle 117,
+and the known common coupling g_common = √(8/27) ≈ 0.54433 (Tier 2a,
 β = 1/(9π)), the required value of α_D7 satisfies:
 
 ```
-√(α_D7/2) = M_c(D7)_target ≈ 1.57 × 10¹⁵ GeV   [updated Cycle 117]
+√(α_D7/2) = M_c(D7)_target ≈ 1.57 × 10¹⁵ GeV
 → α_D7 ≈ 4.9 × 10³⁰ GeV²
 ```
 
@@ -261,7 +261,7 @@ calculation at D7.
 
 ---
 
-## Equal-Coupling Closure Condition (Cycle 130)
+## Equal-Coupling Closure Condition
 
 The DFC closure condition for each gauge sector Di is that the SM running coupling
 for sector i reaches the common substrate value at the closure scale M_c(Di).
@@ -336,10 +336,10 @@ See `equations/mc_closure_scales.py` for the complete ECCC calculation.
 - `foundations/coupling_derivation.md` — g_common from β; r_U1/λ holonomy
 - `foundations/depth_running.md` — two-scale model; M_c(D5) exact; γ_D7 open
 - `foundations/hopf_fibration_geometry.md` — S⁵ as D7 closure manifold
-- `foundations/mode_count_threshold.md` — SU(3) confirmed from n=3 at D7 (Cycle 74)
+- `foundations/mode_count_threshold.md` — SU(3) confirmed from n=3 at D7
 - `foundations/threshold_nondegeneracy.md` — non-degeneracy of n modes at D7
-- `phenomena/particle_physics/quark_gluon_plasma.md` — T_c error (−80%, corrected Cycle 120 RG bug) traces to α_s and one-loop breakdown
+- `phenomena/particle_physics/quark_gluon_plasma.md` — T_c error (−80%, corrected RG bug) traces to α_s and one-loop breakdown
 - `equations/coupling_derivation.py` — g² = 8πβ/3; current α_s = 0.1049 (11% off)
 - `equations/alpha_s_target.py` — target M_c(D7) computation; RG table
 - `equations/gauge_couplings.py` — SM running; M_c(D7) crossing estimate
-- `equations/mc_closure_scales.py` — ECCC full calculation: M_c(D5/D6/D7), co-crystallization, Δ_D67 (Cycle 130)
+- `equations/mc_closure_scales.py` — ECCC full calculation: M_c(D5/D6/D7), co-crystallization, Δ_D67

@@ -45,13 +45,13 @@ Current Tier 1 claims:
 | Claim | Logical basis | Status |
 |---|---|---|
 | Proton absolutely stable | Product topology U(1)×SU(2)×SU(3) has no baryon→lepton path | Argument written ✓ |
-| Exactly three fermion generations | SU(3) fundamental rep has dimension 3 | Argument written; Cycle 35 ✓ |
+| Exactly three fermion generations | SU(3) fundamental rep has dimension 3 | Argument written ✓ |
 | Photon is massless, propagates at c | Massless KG dispersion: ω∝k | Derived from field equation ✓ |
 | Exactly two photon polarizations | One angular DOF (S¹) has two transverse projections | Structural argument ✓ |
-| Parity violation in weak force | JR zero mode at positively wound D6 kink is left-handed | Cycle 41 ✓ |
-| Spin-1/2 is minimum spin | FR winding N=1 + JR zero mode | Cycle 33 ✓ |
+| Parity violation in weak force | JR zero mode at positively wound D6 kink is left-handed | Verified ✓ |
+| Spin-1/2 is minimum spin | FR winding N=1 + JR zero mode | Verified ✓ |
 | Space appears three-dimensional | Three DOFs emerge at D3 localization depth | Structural; not derived ✗ |
-| Binary measurement outcomes | Z₂ configuration space of substrate | Cycle 36 ✓ |
+| Binary measurement outcomes | Z₂ configuration space of substrate | Verified ✓ |
 
 ---
 

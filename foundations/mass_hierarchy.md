@@ -104,7 +104,7 @@ well. They are more likely ground states of three independent D6 winding sectors
 geometric differences between D6 sectors — not on the simple n²-spacing of an excited mode series.
 The dimple model successfully explains the electron/muon ratio but does not predict the tau mass.
 
-**Koide formula account (Tier 2a, Cycle 146):** An alternative mechanism accounts for the
+**Koide formula account (Tier 2a):** An alternative mechanism accounts for the
 tau mass with zero free parameters. The Koide formula is a mass relation connecting all three
 charged lepton masses: the sum of the three masses, divided by the square of the sum of the
 three square-root masses, equals two-thirds. Substituting the electron and muon masses, the
@@ -113,7 +113,7 @@ to 0.006% (+0.006%: predicted m_τ = 1776.97 MeV, observed 1776.86 MeV). The DFC
 the canonical normalization of the collective coordinate phase θ_can = √Q_top · θ produces a
 vertex factor 1/√Q_top per phase insertion; Z₃ charge counting shows all six off-diagonal lepton
 pairs have exactly one insertion; this uniquely selects t = 1/√Q_top, giving Koide K = 2/3 with
-error 1.11 × 10⁻¹⁶. Steps 0–2 and 4a–4c are Tier 1; Step 4d is Tier 2a (Cycle 146). Overall
+error 1.11 × 10⁻¹⁶. Steps 0–2 and 4a–4c are Tier 1; Step 4d is Tier 2a. Overall
 chain: Tier 2a. Step 3 (proving Z₃ symmetry from the D7 moduli space integral, not just by
 charge counting) remains the formal open derivation for this chain.
 
@@ -149,7 +149,7 @@ extra dimension. Overlap with the Higgs (located on one brane) determines the ma
 - **Known failure of dimple model:** The tau mass (the n=3 excited mode) is 8.4× off. The three
   generations are likely not excited modes of one potential but ground states of three independent
   D6 winding sectors. This invalidates the "generates all three" claim for the dimple model.
-- **Koide formula (Tier 2a, Cycle 146):** m_τ = 1776.97 MeV (+0.006%, 0 free params) from
+- **Koide formula (Tier 2a):** m_τ = 1776.97 MeV (+0.006%, 0 free params) from
   canonical phase vertex 1/√Q_top; Z₃ charge counting exact; K = 2/3 error 10⁻¹⁶. Step 3
   (formal Z₃ from D7 moduli integral) remains the open formal completion.
 - The dimple as a derived consequence of D7 SU(3) closure squashing is a working hypothesis,
@@ -203,7 +203,7 @@ See `../equations/quark_masses.py` for:
 
 See `../equations/fermion_spectrum_full.py` for:
 - Full fermion spectrum summary across all sectors
-- Known failure tracker: tau (8.4× for dimple model; 0.006% for Koide), charm/strange (15%), neutrino mass ratio: κ=5.33 (−8.3% uncorrected); corrected T3: κ^(1+1/(6π))=5.8248 (+0.010%, C205)
+- Known failure tracker: tau (8.4× for dimple model; 0.006% for Koide), charm/strange (15%), neutrino mass ratio: κ=5.33 (−8.3% uncorrected); corrected T3: κ^(1+1/(6π))=5.8248 (+0.010%)
 - Status of unpredicted masses (top, bottom, up, down, neutrinos)
 
 See `../equations/tau_mass_koide.py` for:
@@ -244,8 +244,8 @@ See `../equations/koide_yukawa_circulant.py` for:
 - `equations/mass_spectrum.py` — dimple model calculation (tau 8.4× failure documented)
 - `equations/quark_masses.py` — κ_q exponential depth-anchoring for quark hierarchy
 - `equations/fermion_spectrum_full.py` — full spectrum failure tracker
-- `equations/tau_mass_koide.py` — Koide formula: m_τ = 1776.97 MeV, 0 free params (Cycle 122)
-- `equations/koide_yukawa_circulant.py` — Koide algebraic structure, Theorems 1–3 (Cycle 123)
+- `equations/tau_mass_koide.py` — Koide formula: m_τ = 1776.97 MeV, 0 free params
+- `equations/koide_yukawa_circulant.py` — Koide algebraic structure, Theorems 1–3
 - `foundations/three_generations.md` — three independent D6 winding sectors
 - `foundations/higgs_geometry.md` — S³ squashing mechanism and top quark Yukawa
-- `equations/fermion_spectrum_full.py` — Cycles 59, 65, 69, 81
+- `equations/fermion_spectrum_full.py` — full spectrum failure tracker

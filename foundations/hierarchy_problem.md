@@ -106,7 +106,7 @@ the D1 scale. The D6 closure scale is the scale at which the D5/D6 gauge closure
 identified with M_c(D5/D6) ≈ 10¹³ GeV from the equal-coupling initial condition
 (see `foundations/embedding_geometry.md`).
 
-This is a consequence of T9 resolution (Cycle 79): the two scales in the DFC model refer
+This is a consequence of the T9 resolution: the two scales in the DFC model refer
 to different depth events, and the correct UV cutoff for Higgs mass sensitivity is the
 D6 closure scale, not the D1 scale. See `foundations/two_scale_resolution.md` for the
 full argument.
@@ -146,7 +146,7 @@ LHC data through Run 3 is consistent with this prediction.
 
 ## T9 Resolution and Its Consequence for the Hierarchy Problem
 
-The T9 tension (resolved Cycle 79) was: two scales appeared in DFC for "the closure scale,"
+The T9 tension was: two scales appeared in DFC for "the closure scale,"
 creating apparent confusion about which cutoff to use. The resolution:
 
 | Scale | Physical role | Relation to hierarchy problem |

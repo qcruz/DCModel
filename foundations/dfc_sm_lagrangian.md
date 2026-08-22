@@ -5,7 +5,7 @@ Lagrangian, term by term. Each sector records what has been derived from the sub
 what is structurally consistent but not yet derived, and what remains open. It is
 intended as the primary reference for Lagrangian completeness tracking.*
 
-*Companion module: `equations/lagrangian_verification.py` (Cycle 94)*
+*Companion module: `equations/lagrangian_verification.py`*
 
 ---
 
@@ -90,7 +90,7 @@ where f² ≡ ∫(∂_{x_⊥} φ_K)² dx_⊥ = (4/3)φ₀²/λ = (8/3)M_c³/β
 The phase stiffness f² equals four-thirds times the square of the vacuum amplitude
 divided by the kink half-width. It equals eight-thirds times the cube of the closure
 scale divided by the quartic coupling. The factor 4/3 is the exact value of the
-integral ∫sech⁴(u) du, verified to 10⁻¹⁴ (Cycle 47, Bogomolny identity).
+integral ∫sech⁴(u) du, verified to 10⁻¹⁴.
 
 The effective Lagrangian L_eff = f²/2 (∂_μ q)² is the kinetic term of a massless
 scalar field in the worldvolume dimensions — the gauge zero mode.
@@ -111,7 +111,7 @@ The resulting gauge kinetic term:
 ```
 L_eff → − 1/(4g²) F_μν F^μν
 
-with  g² = 2π × β × I₄ = 8πβ/3     [the compact form, Cycle 85]
+with  g² = 2π × β × I₄ = 8πβ/3     [the compact form]
 
 where I₄ = ∫sech⁴(u) du = 4/3  (exact)
 ```
@@ -126,7 +126,7 @@ from the sech⁴ profile of all φ⁴ kinks.
 | Step | Result | Status |
 |---|---|---|
 | Zero mode η₀ ∝ sech²(x/λ) | Pöschl-Teller n=2 exact spectrum | Derived ✓ |
-| f² = (4/3)φ₀²/λ = (8/3)M_c³/β | Bogomolny identity ∫sech⁴=4/3 | Derived ✓ (Cycle 47) |
+| f² = (4/3)φ₀²/λ = (8/3)M_c³/β | Bogomolny identity ∫sech⁴=4/3 | Derived ✓ |
 | L_eff = f²/2 (∂_μq)² | Zero mode collective coordinate action | Derived ✓ |
 | g² = 8πβ/3 compact form | Verified vs SM to 0.4% | Heuristic (Tier 3 → Tier 2a) |
 | KK reduction: L_eff → −1/4 F²  | Requires 2D coupling integral | **Open — Bottleneck 2** |
@@ -137,7 +137,7 @@ from the sech⁴ profile of all φ⁴ kinks.
 f²/2 (∂_μθ)² on the gauge orbit of radius r_U1 = φ₀²/(βf²) = 3λ/(4β) gives
 exactly g² = 8πβ/3. The naive KK formula g² = (2πf²λ)/r_U1 is α-dependent
 (wrong); the correct normalization requires the 2D coupling integral of the D6
-zero mode against the D5 vortex phase gradient (target: 9/(64π), Cycle 88).
+zero mode against the D5 vortex phase gradient (target: 9/(64π)).
 
 ---
 
@@ -168,9 +168,9 @@ The worldvolume kinetic term becomes L_f = ψ̄ iγ^μ ∂_μ ψ — the massles
 
 ### Gauge coupling minimal substitution
 
-The zero mode ψ_0 is bound to the kink and inherits the kink's gauge charge. From
-Cycle 67c (`equations/complex_structure_derivation.py`): the D6 zero mode dressed by
-the D5 vortex phase carries U(1) current j_x = η₀² ∂_x θ₅, with
+The zero mode ψ_0 is bound to the kink and inherits the kink's gauge charge. The D6
+zero mode dressed by the D5 vortex phase carries U(1) current j_x = η₀² ∂_x θ₅
+(`equations/complex_structure_derivation.py`), with
 ∫j_x dx = −2π/(5ξ) exactly. This shows the zero mode carries U(1) charge and therefore
 couples to the gauge field via minimal substitution:
 
@@ -185,10 +185,10 @@ spin structure of the substrate (documented in `foundations/spin_emergence.md`).
 
 | Step | Result | Status |
 |---|---|---|
-| Jackiw-Rebbi zero mode exists | ψ_0 ∝ cosh^{−Mλ}; Dirac residual 1.5×10⁻⁶ | Derived ✓ (Cycle 28) |
+| Jackiw-Rebbi zero mode exists | ψ_0 ∝ cosh^{−Mλ}; Dirac residual 1.5×10⁻⁶ | Derived ✓ |
 | Zero mode is normalizable | ∫|ψ_0|² dx = 1.000 | Derived ✓ |
-| Zero mode carries gauge charge | j_x = η₀² ∂_x θ₅; ∫j_x dx exact | Derived ✓ (Cycle 67c) |
-| FR theorem: fermion statistics | π₄(SU(2))=Z₂ → anticommuting | Derived ✓ (Cycle 28) |
+| Zero mode carries gauge charge | j_x = η₀² ∂_x θ₅; ∫j_x dx exact | Derived ✓ |
+| FR theorem: fermion statistics | π₄(SU(2))=Z₂ → anticommuting | Derived ✓ |
 | Worldvolume kinetic term L_f = ψ̄ i∂̸ ψ | Zero mode norm = 1 → coefficient = 1 | Structural ✓ |
 | Lorentz spin-1/2 from Clifford algebra | D3+D4 γ^μ generators | Structural (formal derivation open) |
 | Covariant derivative D_μ | U(1) charge from dressed zero mode | Partial ✓ (charge shown; full D_μ open) |
@@ -216,7 +216,7 @@ exactly the substrate potential restricted to the S³ manifold:
 V(H) = V(ε) = − μ²|H|² + λ_H|H|⁴
 
 with  μ² = α_D6/2 = M_c(D6)²   (from kink width formula)
-and   λ_H = β/4                  (from substrate quartic, exact — Cycle 58)
+and   λ_H = β/4                  (from substrate quartic, exact)
 ```
 
 The quartic coefficient of the Higgs potential equals one quarter of the substrate

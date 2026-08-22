@@ -61,7 +61,7 @@ This term makes ε = 0 unstable — the "top of the Mexican hat."
 
 ### Effect 2: Substrate Quartic Self-Coupling (Stabilizer)
 
-**Cycle 58 correction:** The Berger sphere Ricci scalar was computed exactly via Cartan
+The Berger sphere Ricci scalar was computed exactly via Cartan
 structure equations: R(ε) = 24 − 16ε − 8ε² (see `equations/berger_sphere.py`). The
 quartic coefficient R₄ = 0 exactly — the geometric curvature of S³ does not produce a
 quartic term in ε. The ε⁴ stabilizer comes instead from the substrate's quartic
@@ -93,7 +93,7 @@ competition between the SU(3) closure geometry's pressure and the S³'s resistan
 The minimum (the vacuum expectation value) sits at:
 
 ```
-ε₀ = μ / √(2λ)     ← the vev, v ≈ 247.83 GeV  [T2a, C145]
+ε₀ = μ / √(2λ)     ← the vev, v ≈ 247.83 GeV  [T2a]
 ```
 
 ---
@@ -118,7 +118,7 @@ scale. The derivation separates two regimes:
 m_H = √(2 × 0.129) × 246.22 GeV = 124.4 ± 3.7 GeV
 Observed: 125.25 ± 0.17 GeV  ✓  (−0.7%, within 1σ)
 ```
-(Uncertainty corrected in Cycle 38: σ_geom = ±3.4 GeV; total ±3.7 GeV; earlier ±1.5 GeV was wrong.)
+(Uncertainty: σ_geom = ±3.4 GeV; total ±3.7 GeV.)
 
 The dominant uncertainty is the top quark mass (δm_H/δm_t ≈ 1.2 GeV/GeV). The 30%
 discrepancy from the naive tree-level estimate (~91 GeV) is resolved by incorporating
@@ -155,7 +155,7 @@ the squashing axis encounter resistance (that's the mass of W⁺, W⁻, and Z⁰
 
 The W mass:
 ```
-m_W = (1/2) g₂ v    where  v_DFC = 247.83 GeV  [T2a, C145]
+m_W = (1/2) g₂ v    where  v_DFC = 247.83 GeV  [T2a]
 m_W^DFC = 79.67 GeV  (−0.88% vs 80.377 GeV observed; full chain in muon_lifetime.py)
 ```
 
@@ -177,25 +177,25 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 
 | Prediction | DFC value | Observed | Status |
 |---|---|---|---|
-| Higgs mass m_H | 124.4 ± 3.7 GeV (PDG m_t; Cycle 38) | 125.25 ± 0.17 GeV | ✓ (within 1σ) |
-| W mass m_W | (1/2)g₂ × 247.83 GeV = 79.67 GeV [T2a, C145] | 80.377 GeV | −0.88% (inputs: g₂, v_DFC) |
+| Higgs mass m_H | 124.4 ± 3.7 GeV (PDG m_t) | 125.25 ± 0.17 GeV | ✓ (within 1σ) |
+| W mass m_W | (1/2)g₂ × 247.83 GeV = 79.67 GeV [T2a] | 80.377 GeV | −0.88% (inputs: g₂, v_DFC) |
 | Z mass m_Z | m_W/cos(θ_W) = 91.2 GeV | 91.2 GeV | ✓ (inputs: θ_W, m_W) |
 | Weinberg angle sin²θ_W | 0.231 (Route 3B) | 0.231 | ✓ |
 | Mexican hat potential shape | V = −μ²ε² + λε⁴ derived from geometry | Observed SM form | ✓ (structural) |
 | λ₀ ≈ 0 at M_c | Protected by geometric modulus symmetry | λ(M_c) near 0 ✓ | Structural (not independently tested) |
 | m_H from M_c(D1) = M_Pl ≈ 10¹⁸ GeV | 125.1 GeV | 125.25 GeV | ✓ |
-| M_c(D1) vs M_c(D5/D6): two scales | D1 sets Higgs UV BC; D5/D6 sets gauge IC | RESOLVED Cycle 79 — see `two_scale_resolution.md` ✓ |
+| M_c(D1) vs M_c(D5/D6): two scales | D1 sets Higgs UV BC; D5/D6 sets gauge IC | RESOLVED — see `two_scale_resolution.md` ✓ |
 
 ---
 
 ## Open Questions
 
-1. **Two closure scale tension — RESOLVED (Cycle 79).** The two scales refer to different
+1. **Two closure scale tension — RESOLVED.** The two scales refer to different
    depth events on the same substrate: M_c(D1) = M_Pl ≈ 10¹⁸ GeV is the D1 maximum-compression
    boundary that sets the Higgs sector UV boundary condition λ₀ ≈ 0.013. M_c(D5/D6) ≈ 10¹³ GeV
    is the D5/D6 co-crystallization scale that sets the equal-coupling gauge initial condition.
    Both use the same substrate β. GUT-normalized α₁ = α₂ crossing verified numerically at
-   1.03×10¹³ GeV (Cycle 79). Residual open: λ normalization factor ~1.5 between λ_DFC = β/4 ≈ 0.0088
+   1.03×10¹³ GeV. Residual open: λ normalization factor ~1.5 between λ_DFC = β/4 ≈ 0.0088
    and λ_SM(M_Pl) ≈ 0.013; and μ² from D6/D7 overlap (see Open Question 2).
    See `foundations/two_scale_resolution.md`, `equations/two_scale_check.py`.
 
@@ -219,12 +219,12 @@ Route 3B's equal-coupling initial condition, not from a radius ratio calculation
 ## Equations and Cross-References
 
 - `equations/higgs_potential.py` — numerical V(ε), running of λ, W/Z mass predictions
-- `equations/berger_sphere.py` — R(ε) = 24−16ε−8ε² (Cycle 58); R₄ = 0 proved; λ = β/4 identified
+- `equations/berger_sphere.py` — R(ε) = 24−16ε−8ε²; R₄ = 0 proved; λ = β/4 identified
 - `foundations/higgs_mass_derivation.md` — full RG-improved derivation; uncertainty budget
 - `foundations/embedding_geometry.md` — sin²θ_W = 3/8 at closure scale (Route 3B)
 - `foundations/depth_assignment.md` — why SU(2) at D6 (Route B Hopf fibration candidate)
-- `foundations/bifurcation_dynamics.md` — NOTE: γ_D = (16/3)√β RETRACTED (Cycle 48); E_kink/E_total(λ) = 8/3 proved; M_c(D5) depth-running still valid
+- `foundations/bifurcation_dynamics.md` — NOTE: γ_D = (16/3)√β RETRACTED; E_kink/E_total(λ) = 8/3 proved; M_c(D5) depth-running still valid
 - `equations/weinberg_angle_rg.py` — self-consistent M_c(D5/D6) ≈ 10¹³ GeV; M_c(D1) vs M_c(D5/D6) distinction
-- `foundations/two_scale_resolution.md` — T9 resolution: M_c(D1) ≠ M_c(D5/D6) (Cycle 79)
-- `equations/two_scale_check.py` — GUT-normalized crossing verification (Cycle 79)
-- `foundations/yang_mills_clay.md` — SP1 T2a (C203): constructive 4D gauge theory established; mass gap lower bound Δ_4D ≥ 861 MeV T3; Higgs hierarchy problem context (gap between EW and Planck scales)
+- `foundations/two_scale_resolution.md` — T9 resolution: M_c(D1) ≠ M_c(D5/D6)
+- `equations/two_scale_check.py` — GUT-normalized crossing verification
+- `foundations/yang_mills_clay.md` — SP1 T2a: constructive 4D gauge theory established; mass gap lower bound Δ_4D ≥ 861 MeV T3; Higgs hierarchy problem context (gap between EW and Planck scales)

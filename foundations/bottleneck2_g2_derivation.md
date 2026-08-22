@@ -26,9 +26,9 @@ This must follow from V(φ) = −α/2 φ² + β/4 φ⁴ alone — no SM inputs. 
 
 ---
 
-## What Is Already Proved (Cycles 47–105)
+## What Is Already Proved
 
-### P1 — Phase stiffness (EXACT, Cycle 47)
+### P1 — Phase stiffness (EXACT)
 
 The phase stiffness of the kink field — the energy cost per unit area of a
 phase gradient — equals the kink shape integral times the square of the
@@ -42,7 +42,7 @@ where I₄ = ∫_{-∞}^{∞} sech⁴(u) du = 4/3 (the definite integral of sech
 real line equals four-thirds, proved via Bogomolny identity), φ₀ = √(α/β) is the
 vacuum field value, and λ = 1/√(α/2) = √(2/α) is the kink width. Error = 0.
 
-### P2 — Unique α-independent radius (EXACT, Cycle 85)
+### P2 — Unique α-independent radius (EXACT)
 
 The U(1) closure radius in units of the kink width is the only combination of
 substrate parameters (α, β, λ) with the dimensions of length that is independent
@@ -56,7 +56,7 @@ Verified across six decades of α (α ∈ [0.001, 100]): error < 10⁻¹⁰. Thi
 a pure algebraic identity — any formal derivation must produce this exact form,
 because it is the only α-independent combination available.
 
-### P3 — Compact KK coupling formula (EXACT, Cycle 85)
+### P3 — Compact KK coupling formula (EXACT)
 
 The gauge coupling squared equals two pi times the quartic coupling times the kink
 shape integral — a combination that is α-independent across three decades (error < 10⁻¹⁰):
@@ -67,7 +67,7 @@ g² = 2π × β × I₄ = 8πβ/3
 
 This follows from the KK holonomy formula g² = 2π / (r_U1/λ) combined with P2.
 
-### P4 — Mode normalization is β-independent (EXACT, Cycle 105)
+### P4 — Mode normalization is β-independent (EXACT)
 
 The required KK mode normalization equals nine divided by sixty-four pi, and this
 value is satisfied for ALL β — it is a β-independent algebraic identity:
@@ -145,14 +145,14 @@ on the substrate field. Candidates:
 - The circumference of the S¹ fiber at unit radius is 2π; at the closure scale
   r_U1, the circumference is 2πr_U1. The kink action over this path involves π
   through the BPS bound.
-- The phase of a half-vortex (the D5 kink as half-vortex, Cycle 67c: winding W=−1/2)
+- The phase of a half-vortex (the D5 kink as half-vortex: winding W=−1/2)
   winds by π (not 2π). This extra "1/π" in β could trace to the half-winding.
 - The Laplacian eigenvalue condition λ₁(S¹)=1 combined with the S¹ circumference
   2π gives a normalization factor of π through the eigenfunction normalization.
 
 ---
 
-## Series Holonomy Derivation (Cycle 106 — Tier 3 Structural)
+## Series Holonomy Derivation (Tier 3 Structural)
 
 ### The Formula (Verified: error = 0.00e+00)
 
@@ -164,12 +164,12 @@ R_n / λ = π × d_n / I₄
 ```
 
 The three components of this formula each have independent derivations:
-- **π**: the DFC kink is a half-vortex with winding W = −1/2 (proved Cycle 67c); the
+- **π**: the DFC kink is a half-vortex with winding W = −1/2 (proved); the
   kink winds by π over its full spatial extent
 - **d_n**: the Obata first Laplacian eigenvalue of S^{d_n} equals the sphere dimension
-  (proved Cycle 103, error = 0.00e+00)
-- **1/I₄**: the kink shape integral I₄ = 4/3 from V(φ) via Bogomolny identity (proved
-  Cycle 47, error = 0.00e+00)
+  (proved, error = 0.00e+00)
+- **1/I₄**: the kink shape integral I₄ = 4/3 from V(φ) via Bogomolny identity (proved,
+  error = 0.00e+00)
 
 The total holonomy path length is the series sum over all three fibers:
 
@@ -376,7 +376,7 @@ g² = 2π/(r₁+r₂) (arithmetic sum of radii) rather than the usual 2π/r₁ (
 
 ### Setup
 
-The D5 kink is a half-vortex (Cycle 67c: winding W = −1/2, proven by computing
+The D5 kink is a half-vortex (winding W = −1/2, proven by computing
 the phase profile θ₅(x) = (π/2)(1 − tanh(x/ξ)) that winds by π, not 2π). A full
 U(1) vortex winds by 2π. The Z₂ kink winds by π = 2π × (1/2).
 
@@ -468,7 +468,7 @@ g² = (2π)² / (2π × r_U1) = 2π / (r_U1/λ) × λ
 This is exactly P3 with the identification that gives P2: r_U1/λ = 1/(βI₄).
 
 Now, the 5D coupling g_5D = 2π is the statement that the D5 phase field winds
-by 2π over the full S¹. But from Cycle 67c, the D5 kink is a HALF-vortex with
+by 2π over the full S¹. But the D5 kink is a HALF-vortex with
 winding W = −1/2. The effective 5D coupling for a half-vortex is:
 
 ```
@@ -530,12 +530,12 @@ The M_W improvement from 0.88% (at β=0.035) to 0.50% (at β=1/(9π)) confirms
 
 | Route | Key idea | Status | Result |
 |---|---|---|---|
-| Vortex BVP integral → mode_norm | Show mode_norm=9/(64π) from field eq | BLOCKED (Cycle 105): β-independent trivially | — |
+| Vortex BVP integral → mode_norm | Show mode_norm=9/(64π) from field eq | BLOCKED: β-independent trivially | — |
 | Simple KK (β_B2) | Solve 4β/3 = 9/(64π) | WRONG CONDITION: g=0.5303 (−2.57%) | β_B2=27/(256π) |
 | Route A: Equal-coupling on product fiber | r_eff = Σ r_n → g²=2I₄/N_Hopf | PARTIAL: needs "additive radius" proof | β=1/(9π) |
 | Route B: Z₂ two-sided kink | Both vacua contribute additively | PARTIAL: factor-of-2 double-counting concern | β=1/(9π) |
 | Route C: Half-vortex KK | g_5D^eff = π from W=−1/2 | PARTIAL: β ambiguity factor 2; g²=8/27 ✓ | β=2/(9π) |
-| Hopf dim sum (Cycles 101–103) | β=1/(πN_Hopf) from λ₁(S^d)=d | BEST CANDIDATE: 0.006% vs SM; not yet proved | β=1/(9π) |
+| Hopf dim sum | β=1/(πN_Hopf) from λ₁(S^d)=d | BEST CANDIDATE: 0.006% vs SM; not yet proved | β=1/(9π) |
 
 ---
 
@@ -572,18 +572,18 @@ integral evaluates to N_Hopf/(2πβI₄), giving the target formula.
 
 ## Files
 
-| File | Content | Cycle |
-|---|---|---|
-| `equations/bottleneck2_coupling_integral.py` | compact form g²=2πβI₄; α-independence; r_U1 uniqueness | 85 |
-| `equations/worldvolume_coupling.py` | vortex integrals; r_U1 uniqueness proof | 88 |
-| `equations/bottleneck2_2d_integral.py` | mode_norm algebraic proof; seven vortex candidates | 96 |
-| `equations/bottleneck2_beta_selfconsistency.py` | B2↔β equivalence; β_B2 resolved wrong condition | 100 |
-| `equations/beta_constraint.py` | candidates (a)(b)(c) blocked; β=1/(9π) candidate | 101 |
-| `equations/beta_from_laplacian.py` | Laplacian self-consistency; Obata theorem; g²=8/27 | 103 |
-| `equations/gauge_coupling_from_fiber.py` | mode_norm β-independence; vortex BVP blocked; revised open step | 105 |
-| `equations/g2_selfconsistency_proof.py` | full self-consistency proof; series holonomy function; all steps verified | 106 |
-| `foundations/coupling_derivation.md` | full derivation history and status | 40–106 |
-| `foundations/phase_stiffness_derivation.md` | P1 proof; f²=I₄φ₀²/λ | 47 |
-| `foundations/complex_substrate.md` | D5 vortex; real kink metastability | 75 |
-| `foundations/hopf_fibration_geometry.md` | g²=2I₄/N_Hopf; Section 2b | 42–103 |
-| `ISSUES.md` | Bottleneck 2 comprehensive history | updated through 105 |
+| File | Content |
+|---|---|
+| `equations/bottleneck2_coupling_integral.py` | compact form g²=2πβI₄; α-independence; r_U1 uniqueness |
+| `equations/worldvolume_coupling.py` | vortex integrals; r_U1 uniqueness proof |
+| `equations/bottleneck2_2d_integral.py` | mode_norm algebraic proof; seven vortex candidates |
+| `equations/bottleneck2_beta_selfconsistency.py` | B2↔β equivalence; β_B2 resolved wrong condition |
+| `equations/beta_constraint.py` | candidates (a)(b)(c) blocked; β=1/(9π) candidate |
+| `equations/beta_from_laplacian.py` | Laplacian self-consistency; Obata theorem; g²=8/27 |
+| `equations/gauge_coupling_from_fiber.py` | mode_norm β-independence; vortex BVP blocked; revised open step |
+| `equations/g2_selfconsistency_proof.py` | full self-consistency proof; series holonomy function; all steps verified |
+| `foundations/coupling_derivation.md` | full derivation history and status |
+| `foundations/phase_stiffness_derivation.md` | P1 proof; f²=I₄φ₀²/λ |
+| `foundations/complex_substrate.md` | D5 vortex; real kink metastability |
+| `foundations/hopf_fibration_geometry.md` | g²=2I₄/N_Hopf; Section 2b |
+| `ISSUES.md` | Bottleneck 2 comprehensive history |

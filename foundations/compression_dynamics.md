@@ -77,7 +77,7 @@ In linear elasticity, the stress at a point in a material is proportional to the
 is quadratic in the displacement gradients (quadratic in the strain tensor). The DFC
 potential V(φ) at small displacements away from either vacuum minimum (±φ₀) is also
 quadratic — this is the DFC analog of the elastic restoring force. The shape mode of the
-kink (the bound state in the kink's fluctuation spectrum, ω₁ = (√3/2)m_σ, Cycle 33) is
+kink (the bound state in the kink's fluctuation spectrum, ω₁ = (√3/2)m_σ) is
 the DFC analog of an elastic normal mode.
 
 The key divergence: elasticity theory assumes a material with a rest configuration from
@@ -214,7 +214,7 @@ condition constrains the ratio of α to the Planck scale (see Tier 3 in CLAUDE.m
 The total energy stored in a kink equals the integral of the field's energy density across
 all of space. After evaluating this integral using the exact kink profile (the integral of
 the fourth power of the hyperbolic secant equals four-thirds — proved via the Bogomolny
-identity, Cycle 47), the kink energy is:
+identity), the kink energy is:
 
 The kink energy equals four-thirds times the wave propagation speed squared times the
 equilibrium field amplitude squared divided by the kink half-width. Equivalently, it equals
@@ -225,7 +225,7 @@ coupling raised to three-halves, divided by the square root of two:
 E_kink = (4/3) c² φ₀² / λ = (4/3) c α^(3/2) / (β √2)
 ```
 
-This is the BPS-correct formula, verified in Cycle 48. An earlier version of this formula
+This is the BPS-correct formula. An earlier version of this formula
 (containing a factor √(2α³/β) rather than α^(3/2)/(β√2)) was found to be incorrect by
 a factor of 2√β and was retracted. All documents citing E_kink use this corrected form.
 
@@ -260,7 +260,7 @@ for the complete derivation.
 The relationship between phase stiffness and gauge coupling is:
 
 ```
-g² = 8πβ/3     [heuristic derivation, Cycle 42]
+g² = 8πβ/3     [heuristic derivation]
 ```
 
 The square of the gauge coupling constant equals eight times pi times the quartic substrate
@@ -357,7 +357,7 @@ nucleation, definite outcome, irreversible state change. See `foundations/measur
 | Critical pressure (phase transition) | ΔV = α²/(4β) (nucleation barrier) | Direct analog |
 | Equation of state P(ρ,T) | V(φ) with φ playing the role of density | Analog; DFC has no temperature at D1 depth |
 | Bulk modulus B = −V dP/dV | Phase stiffness f² = (4/3)φ₀²/λ | Closest analog; f² sets resistance to field deformation |
-| Phonon (acoustic mode) | σ particle (kink shape mode) at ω₁ = (√3/2)m_σ | Direct analog with exact DFC value (Cycle 33) |
+| Phonon (acoustic mode) | σ particle (kink shape mode) at ω₁ = (√3/2)m_σ | Direct analog with exact DFC value |
 
 ---
 
@@ -415,15 +415,14 @@ The following compression relationships are motivated by the DFC framework but h
 been formally derived from the Tier 0 postulates.
 
 **1. g_1² from the DFC action (Bottleneck 2).**
-The gauge coupling g² = 8πβ/3 = 2πβI₄ (compact form, Cycle 85). Progress through Cycles
-100–111 has established the following:
-- The series holonomy r_U1/λ = πN_Hopf/I₄ = 27π/4 is verified (Cycle 106, error 0.00e+00).
-- The TB product formula: g_1² = Q_top × I₄ = 2 × 4/3 = 8/3 = 2I₄ (Cycles 110–111).
+The gauge coupling g² = 8πβ/3 = 2πβI₄ (compact form). The following have been established:
+- The series holonomy r_U1/λ = πN_Hopf/I₄ = 27π/4 is verified (error 0.00e+00).
+- The TB product formula: g_1² = Q_top × I₄ = 2 × 4/3 = 8/3 = 2I₄.
   Both factors derive from V(φ) via the BPS superpotential W(ψ) = 1-ψ²:
   - Q_top = ∫W du = 2 (FTC, exact — kink spans both Z₂ vacua)
   - I₄ = ∫W² du = 4/3 (Bogomolny identity, exact)
-- g_eff² = 2I₄/N_Hopf = 8/27 (parallel Hopf fiber combination, Cycle 107, exact).
-- β = 1/(9π) (self-consistent, Cycle 103; Route F agreement 0.01%, Cycle 87).
+- g_eff² = 2I₄/N_Hopf = 8/27 (parallel Hopf fiber combination, exact).
+- β = 1/(9π) (self-consistent; Route F agreement 0.01%).
 Remaining open step (Tier 4): identify which DFC KK action integral equals the TB product
 Q_top × I₄. Steps 0–3 (W(ψ), BPS, Q_top, I₄) are Tier 1 from V(φ); Step 4 (the product
 as the coupling formula) needs physical derivation from a specific DFC KK action term.
@@ -438,7 +437,7 @@ gravitational-analog self-interaction via a mean-field approximation.
 
 **3. β from Hopf fiber sum.**
 The quartic coupling β ≈ 0.035 has a leading Tier 3 candidate: β = 1/(9π) ≈ 0.03537 from
-Hopf fiber dimension sum dim(S¹)+dim(S³)+dim(S⁵) = 1+3+5 = N_Hopf = 9 (Cycle 101). This
+Hopf fiber dimension sum dim(S¹)+dim(S³)+dim(S⁵) = 1+3+5 = N_Hopf = 9. This
 gives g² = 8/27 exactly (error < 2×10⁻¹⁶) and g = 0.54433 (0.006% vs SM). The older
 Planck-scale kink width constraint fixes α not β. The Hopf sum candidate is Tier 3: it
 follows from the DFC depth structure but is not yet derived from the field equation alone.
@@ -464,15 +463,15 @@ stochastic φ⁴ field to cross threshold starting from φ = 0, using Kramers es
 - `foundations/phase_stiffness_derivation.md` — exact derivation of f² = (4/3)φ₀²/λ;
   gap in the r_U1/λ → g² step
 - `foundations/kink_nucleation.md` — buckling threshold; two-sector topology; ΔV/E_kink
-- `foundations/bifurcation_dynamics.md` — E_kink/E_total = 8/3 (Cycle 48 correction);
+- `foundations/bifurcation_dynamics.md` — E_kink/E_total = 8/3;
   γ_D retraction
 - `foundations/coupling_derivation.md` — g² = 8πβ/3 heuristic; gauge coupling chain
 - `foundations/depth_running.md` — depth ordering ≠ energy ordering; two-scale model
 - `foundations/planck_constant_derivation.md` — ℏ hierarchy; β from Planck-scale constraint
 - `foundations/measurement.md` — buckling as measurement mechanism; threshold condition
-- `foundations/kink_scattering.md` — kink S-matrix; shape mode ω₁ = (√3/2)m_σ (Cycle 33)
+- `foundations/kink_scattering.md` — kink S-matrix; shape mode ω₁ = (√3/2)m_σ
 - `equations/kink_model.py` — BPS-correct E_kink; ΔV/E_kink numerical verification
 - `equations/bifurcation_dynamics.py` — E_kink/E_total = 8/3 verified; retracted γ_D labeled
-- `equations/kk_action_coupling.py` — BPS superpotential W(ψ)=1-ψ², TB product g_1²=Q_top×I₄=2I₄ (Cycle 111)
-- `equations/g2_selfconsistency_proof.py` — series holonomy r_U1/λ=πN_Hopf/I₄ verified; g_eff²=8/27 (Cycle 106)
-- `equations/kk_fiber_coupling.py` — Hopf Killing vector |K|²=R², parallel combination g_eff²=8/27 (Cycle 107)
+- `equations/kk_action_coupling.py` — BPS superpotential W(ψ)=1-ψ², TB product g_1²=Q_top×I₄=2I₄
+- `equations/g2_selfconsistency_proof.py` — series holonomy r_U1/λ=πN_Hopf/I₄ verified; g_eff²=8/27
+- `equations/kk_fiber_coupling.py` — Hopf Killing vector |K|²=R², parallel combination g_eff²=8/27

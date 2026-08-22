@@ -2,19 +2,19 @@
 
 ## Status
 
-> **Cycle 53:** This document formally maps the v = 246 GeV derivation problem.
+> This document formally maps the v = 246 GeV derivation problem.
 > v is currently an experimental input to four Tier 2a predictions (M_W, M_Z, G_F, τ_μ).
 > Completing this derivation would promote those four predictions to fully first-principles
 > results, removing the last experimental input from the weak-sector coupling chain.
 >
-> **Cycle 58 — MAJOR CORRECTION:** The claim that λ_DFC = R₄/r_D6⁴ (the quartic
+> **MAJOR CORRECTION:** The claim that λ_DFC = R₄/r_D6⁴ (the quartic
 > coefficient of the Berger sphere Ricci scalar) is **wrong**. R₄ = 0 identically
 > for the biaxial Berger sphere with DFC parametrization a=1/2, b=(1+ε)/2. The exact
 > result is R(ε) = 24 − 16ε − 8ε² — a polynomial of degree 2. The quartic stabilizer
 > λ comes from the substrate quartic β, not from the Ricci geometry. See
 > `equations/berger_sphere.py` for the analytic derivation and numerical verification.
 >
-> **Cycle 79 update:** T9 is resolved — no longer a blocker for this derivation.
+> **Update:** T9 is resolved — no longer a blocker for this derivation.
 > M_c(D1) = M_Pl sets the Higgs quartic UV boundary; M_c(D5/D6) ≈ 10¹³ GeV sets gauge
 > couplings. The VEV derivation uses M_c(D5/D6) as the relevant scale (D6 is part of the
 > D5/D6 co-crystallization). Remaining gaps: (1) μ² from the D6/D7 overlap integral;
@@ -23,7 +23,7 @@
 > **Epistemic status: OPEN.** T9 blocker cleared. Two genuine open problems remain
 > before v can be predicted from substrate parameters.
 >
-> **Cycle 86 update:** `equations/vev_derivation.py` (new) provides quantitative
+> **Update:** `equations/vev_derivation.py` (new) provides quantitative
 > Bottleneck 3 analysis. New findings: (1) The SM quartic runs **negative** at
 > M_c(D5/D6) ≈ 9.70×10¹² GeV (SM vacuum metastable there), confirming that DFC must
 > provide a POSITIVE UV boundary condition λ_BC = β/4 ≈ 0.0088 at M_c. This is a
@@ -34,10 +34,10 @@
 > D6/D7 depth gap explains its smallness. Blockers: threshold positions (Bottleneck 1)
 > and M_c(D7) (depth-running).
 >
-> **Cycle 130–131 update (ECCC + gap analysis):** ECCC closure scales now available
+> **Update (ECCC + gap analysis):** ECCC closure scales now available
 > from `equations/mc_closure_scales.py`: M_c(D5)=1.14×10¹³ GeV, M_c(D6)=9.70×10¹² GeV,
 > M_c(D7)=1.57×10¹⁵ GeV, Δ_D67=5.085 (= log(M_c(D7)/M_c(D6))). **Gap analysis**
-> (`equations/d6_d7_overlap.py`, Cycle 131): the narrow-kink sech² profile overlap
+> (`equations/d6_d7_overlap.py`): the narrow-kink sech² profile overlap
 > gives I_sech ≈ ξ_D7/ξ_D6 = exp(−Δ_D67) ≈ 0.006, while the required I_D67 =
 > β v²/(4 M_c(D7)²) ≈ 2.18×10⁻²⁸. **Gap factor: 2.8×10²⁵ (25 orders of magnitude).**
 > All four candidate routes analyzed (cascade, power law, radiative, D6-anchored): none
@@ -46,7 +46,7 @@
 > promising but requires deriving p from the D6/D7 coupling structure. Bottleneck 3
 > remains Tier 4 open.
 >
-> **Cycle 132 update — EWSB root-cause analysis:** `equations/ewsb_mechanism.py` (new)
+> **Update — EWSB root-cause analysis:** `equations/ewsb_mechanism.py` (new)
 > **reframes Bottleneck 3** from "derive I_D67 from classical overlap" to "identify the
 > DFC mechanism that generates α_D6 ≈ 1070 GeV²." The DFC hierarchy problem is quantified:
 > α_D6^natural = 2M_c(D6)² ≈ 1.88×10²⁶ GeV², while α_D6^required = βv²/2 ≈ 1070 GeV²;
@@ -128,7 +128,7 @@ the D6 shape mode. This coupling is not yet computed numerically.
 
 ### 2.2 The quartic restoring term λ
 
-**Cycle 58 correction:** The pre-Cycle 58 account claimed that λ comes from the quartic
+**Correction:** The previous account claimed that λ comes from the quartic
 term in the Berger sphere Ricci scalar expansion. This is incorrect. The exact Ricci
 scalar for the biaxial Berger sphere is:
 
@@ -220,7 +220,7 @@ electroweak sector) to the observed VEV at low energy.
 
 ### 3.3 T9 resolved — scale identification for the VEV derivation
 
-**T9 is resolved (Cycle 79).** The two scales are physically distinct depth events and
+**T9 is resolved.** The two scales are physically distinct depth events and
 can both be correct simultaneously (see `foundations/two_scale_resolution.md`):
 
 - **M_c(D1) = M_Pl ≈ 10¹⁸ GeV:** D1 maximum-compression boundary. Sets the Higgs quartic
@@ -265,10 +265,10 @@ exp(−Δ_depth × L), where Δ_depth = depth separation and L = kink characteri
 units) is not known from substrate dynamics — it requires completing Bottleneck 1
 (D-depth assignment mechanism).
 
-### 4.2 Step 2 — Establish λ from substrate β (Cycle 58 result)
+### 4.2 Step 2 — Establish λ from substrate β
 
 **This step is now resolved.** The Berger sphere Ricci scalar has been computed exactly
-(Cycle 58, `equations/berger_sphere.py`):
+(`equations/berger_sphere.py`):
 
 The Ricci scalar equals twice the sum of sectional curvatures. For the biaxial Berger
 sphere with horizontal radius one-half and fiber radius one-half times one plus
@@ -366,7 +366,7 @@ compression state couples into the D6 shape mode:
 The quartic coupling — the positive coefficient of the fourth-order term in the squashing
 potential — comes directly from the substrate quartic coupling β (the Berger sphere Ricci
 scalar contributes only a quadratic destabilizing term; its quartic coefficient R₄ = 0
-exactly, proved in Cycle 58):
+exactly; see `equations/berger_sphere.py`):
 
 ```
 λ_DFC = β / 4 ≈ 0.0088
@@ -385,7 +385,7 @@ The consistency condition that both numbers must satisfy is:
 
 ## 7. Open Problems
 
-1. **~~Berger sphere quartic coefficient~~** — **RESOLVED (Cycle 58):** R₄ = 0 exactly.
+1. **~~Berger sphere quartic coefficient~~** — **RESOLVED:** R₄ = 0 exactly.
    The quartic stabilizer does NOT come from the Ricci scalar geometry. λ is identified
    as β/4 from the substrate potential. See `equations/berger_sphere.py`.
 
@@ -404,16 +404,16 @@ The consistency condition that both numbers must satisfy is:
    to GeV requires identifying M_c(D6) from Bottleneck 1. This is the last step
    once μ² and the normalization are resolved.
 
-5. ~~**Resolve T9.**~~ **RESOLVED (Cycle 79).** The VEV is evaluated at M_c(D5/D6) ≈
+5. ~~**Resolve T9.**~~ **RESOLVED.** The VEV is evaluated at M_c(D5/D6) ≈
    10¹³ GeV; M_c(D1) = M_Pl sets the Higgs λ₀ UV boundary only. See
    `foundations/two_scale_resolution.md`. The remaining issues are Items 2–4 above.
 
-6. **Non-perturbative EWSB mechanism (Cycles 132–133 — Tier 3 candidate).** The classical
+6. **Non-perturbative EWSB mechanism (Tier 3 candidate).** The classical
    overlap route (I_D67) cannot close the 2.8×10²⁵ gap. SM RGE cannot drive EWSB in DFC
-   (λ_DFC = β/4 > 0 is a positive UV BC — Tier 1 result, Cycle 132). The required b₀ for
+   (λ_DFC = β/4 > 0 is a positive UV BC — Tier 1 result). The required b₀ for
    a one-loop dimensional transmutation formula v = M_c(D6)×exp(−8π²/(b₀ g_eff²)) is
    b₀_needed ≈ 10.92, which EXCEEDS the SU(2) maximum of 22/3 ≈ 7.33 — SU(2) alone
-   cannot produce the EW scale (Tier 1 result). **Structural identity (Cycle 133):**
+   cannot produce the EW scale (Tier 1 result). **Structural identity:**
    b₀_needed ≈ N_Hopf + Q_top = 9 + 2 = 11 = b₀(SU(3) pure gauge). The formula
    v = M_c(D6)×exp(−27π²/(N_Hopf+Q_top)) gives v = 292 GeV (+19%, Tier 3 candidate,
    0 free parameters). With the one-instanton measure prefactor √(2π/11), v = 221 GeV
@@ -432,14 +432,14 @@ The consistency condition that both numbers must satisfy is:
 - `foundations/depth_assignment.md` — Route B: S³ at D6 (source of the curvature geometry)
 - `foundations/coupling_derivation.md` — coupling chain from β to M_W, M_Z, G_F, τ_μ
 - `foundations/hopf_fibration_geometry.md` — Berger sphere structure at D6 depth
-- `foundations/two_scale_resolution.md` — T9 RESOLVED (Cycle 79): M_c(D1) vs M_c(D5/D6)
+- `foundations/two_scale_resolution.md` — T9 RESOLVED: M_c(D1) vs M_c(D5/D6)
 - `foundations/tension_analysis.md` — T9 entry updated: Structurally Resolved
 - `phenomena/particle_physics/muon_decay.md` — M_W, M_Z, G_F, τ_μ predictions (v input)
 - `phenomena/particle_physics/forces/electroweak_precision.md` — five precision tests
-- `equations/vev_derivation.py` — Cycle 86: Bottleneck 3 quantitative analysis; SM running,
+- `equations/vev_derivation.py` — Bottleneck 3 quantitative analysis; SM running,
   DFC BC → m_H = 122.9 GeV, target μ = 23 GeV, D6/D7 overlap framework
-- `equations/mc_closure_scales.py` — Cycle 130: ECCC closure scales; M_c(D6)=9.70e12, M_c(D7)=1.57e15, Δ_D67=5.085
-- `equations/d6_d7_overlap.py` — Cycle 131: gap factor 2.8×10²⁵; power-law p≈2.16 route; hierarchy problem characterization
-- `equations/ewsb_mechanism.py` — Cycle 132: root-cause analysis; six routes; NP condensate exp(−c/g²) with c≈15.7 most promising; SM RGE BLOCKED (λ stays positive)
-- `equations/d6_gauge_beta.py` — Cycle 133: one-loop b₀ survey; SU(2) BLOCKED (b₀_max=7.33<10.92); SU(3) pure b₀=11=N_Hopf+Q_top; v=292 GeV (+19%, Tier 3); prefactor A≈0.842 gap remains
+- `equations/mc_closure_scales.py` — ECCC closure scales; M_c(D6)=9.70e12, M_c(D7)=1.57e15, Δ_D67=5.085
+- `equations/d6_d7_overlap.py` — gap factor 2.8×10²⁵; power-law p≈2.16 route; hierarchy problem characterization
+- `equations/ewsb_mechanism.py` — root-cause analysis; six routes; NP condensate exp(−c/g²) with c≈15.7 most promising; SM RGE BLOCKED (λ stays positive)
+- `equations/d6_gauge_beta.py` — one-loop b₀ survey; SU(2) BLOCKED (b₀_max=7.33<10.92); SU(3) pure b₀=11=N_Hopf+Q_top; v=292 GeV (+19%, Tier 3); prefactor A≈0.842 gap remains
 - `ISSUES.md` — T9 (Critical), Bottleneck 1 (D-depth assignment), Blocked: v = 246 GeV
