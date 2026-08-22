@@ -118,12 +118,7 @@ are a boundary condition from shared substrate kinetics, not the residue of a br
 Using the standard GUT-normalization relation (which correctly accounts for the different
 embedding dimensions of U(1)_Y vs SU(2)):
 
-```
-sin²θ_W = (3/5) α_Y / (α_Y + α₂)
-         = (3/5) × (3/5)⁻¹ α₁ / ((3/5)⁻¹ α₁ + α₂)
-```
-
-Wait — in GUT normalization α₁ = (5/3) α_Y, so α_Y = (3/5) α₁. Therefore:
+In GUT normalization α₁ = (5/3) α_Y, so α_Y = (3/5) α₁. Therefore:
 
 ```
 sin²θ_W = α_Y / (α_Y + α₂)

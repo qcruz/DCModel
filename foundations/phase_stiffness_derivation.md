@@ -178,7 +178,7 @@ Using the Bogomolny identity for φ⁴ solitons: (dφ/dx)² = 2V(φ), so:
 E_kink = integral of 2V(phi_K) dx = integral of (d phi_K/dx)² dx = f²
 ```
 
-Wait — for V(φ) = −α/2 φ² + β/4 φ⁴, we need to shift by the vacuum energy:
+For V(φ) = −α/2 φ² + β/4 φ⁴, the vacuum energy must be subtracted:
 V(phi) − V(phi_0) = −alpha/2 phi² + beta/4 phi⁴ − (−alpha²/(4beta))
                    = −alpha/2 phi² + beta/4 phi⁴ + alpha²/(4beta)
 

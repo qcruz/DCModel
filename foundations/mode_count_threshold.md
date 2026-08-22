@@ -155,15 +155,8 @@ This operator has an exact zero mode. To see why: the dressed zero mode from Cyc
 
 where η₆^real(x) ∝ sech²(x/ξ) is the real zero mode of L₆₆ when A_x = 0 and α₆ = 0.
 
-Substituting η₆ = f(x) × e^{iθ₅(x)} into L₆₆^gauge η₆ = ω² η₆:
-
-```
-e^{iθ₅}[−∂²_x + 2i(∂_x θ₅)∂_x + i(∂²_x θ₅) + (∂_x θ₅)²] f e^{iθ₅}
-
-= e^{2iθ₅} [−∂²_x f + 2i(∂_x θ₅)(∂_x f)e^{-iθ₅...}]
-```
-
-More directly: define ψ = η₆ × e^{−iθ₅}, so η₆ = ψ e^{iθ₅}. Then:
+Defining ψ = η₆ × e^{−iθ₅} (so η₆ = ψ e^{iθ₅}) and substituting into
+L₆₆^gauge η₆ = ω² η₆:
 
 ```
 ∂_x η₆ = (∂_x ψ + iψ ∂_x θ₅) e^{iθ₅}
@@ -171,12 +164,11 @@ More directly: define ψ = η₆ × e^{−iθ₅}, so η₆ = ψ e^{iθ₅}. The
 L₆₆^gauge η₆ = −∂²_x ψ × e^{iθ₅}
 ```
 
-So L₆₆^gauge η₆ = 0 is equivalent to −∂²_x ψ = 0, which has the normalizable solution
-ψ = const × sech²(x/ξ) if we work in the sector where the zero mode of −∂²_x + V''_PT is
-sech². Wait — at α₆ = 0, V'' = 0 for the φ₆ field alone, so −∂²_x has no normalizable
-zero mode (only plane waves).
+The equation L₆₆^gauge η₆ = 0 reduces to −∂²_x ψ = 0. However, at α₆ = 0
+with no coupling, −∂²_x has no normalizable zero mode (only plane waves — the
+constant function is not normalizable).
 
-**Corrected analysis:** At α₆ = 0 with no coupling, L₆₆ = −∂²_x has a zero mode only in a
+At α₆ = 0 with no coupling, L₆₆ = −∂²_x has a zero mode only in a
 distributional sense (the constant function, not normalizable). The gauge coupling changes
 this: the covariant operator −D²_x = −(∂_x − ieA_x)² creates a potential from A_x, so
 

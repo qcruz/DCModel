@@ -132,8 +132,7 @@ for three values:
 - n = 2: T_2 = 3 and 2! = 2 — does not match
 - n = 3: T_3 = 6 = 3!
 
-Wait — n = 2 fails. Let us check more carefully. T_1 = 1 = 1! (yes). T_2 = 3
-versus 2! = 2 (no). T_3 = 6 = 3! (yes). For n greater than or equal to 4:
+But n = 2 fails: T_2 = 3 while 2! = 2. And T_3 = 6 = 3!. For n greater than or equal to 4:
 T_n = n(n+1)/2 grows quadratically, while n! grows factorially, so T_n < n! for all
 n at least 4.
 

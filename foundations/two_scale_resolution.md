@@ -166,13 +166,10 @@ With Λ = M_c(D6) = 10¹³ GeV:   Δ_FT ≈ (3×1.7²/8π²) × (10¹³)²/(125 
                                       ≈ 7×10²⁰
 ```
 
-Wait — with M_c(D6) = 10¹³ GeV, the fine-tuning is actually *larger* than the
-Route 3B estimate, not smaller. The correct cutoff for the Higgs mass sensitivity
-is the scale at which the D6 modulus couples to UV physics — which is M_c(D6),
-not M_c(D1), since the Higgs is a D6 object.
-
-**Key finding:** The fine-tuning is reduced from the SM value (Λ = M_Pl) by
-using M_c(D6) instead:
+The correct cutoff for the Higgs mass sensitivity is the scale at which the D6
+modulus couples to UV physics — M_c(D6), not M_c(D1), since the Higgs is a D6
+object. The fine-tuning is reduced from the SM value (Λ = M_Pl) by using
+M_c(D6) instead:
 
 ```
 Δ_FT(SM, Λ=M_Pl):     3.56×10³²   [hierarchy_problem.py]

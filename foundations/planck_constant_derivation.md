@@ -292,7 +292,7 @@ stub), then combining with the measured Z boson mass (M_Z = 91.19 GeV) gives:
 ℏ = M_Z [in J] × λ_Compton(Z) [in m]    [requires M_Z in SI, which requires ℏ — circular]
 ```
 
-Actually, M_Z in SI requires ℏ via M_Z [kg] = M_Z [GeV/c²] × eV/(c²) × 10⁹. So
+However, M_Z in SI requires ℏ via M_Z [kg] = M_Z [GeV/c²] × eV/(c²) × 10⁹, so
 this route is also circular unless a mass is measured directly in kg (not GeV).
 
 **Non-circular version:** The second of the three independent dimensional constants
