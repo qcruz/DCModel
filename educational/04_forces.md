@@ -105,7 +105,7 @@ This equals 4/β = 4×9π, where β = 1/(9π) is the substrate's quartic self-co
 α_s(M_Z) ≈ 0.11821   (observed: 0.11820, +0.006%)
 ```
 
-This follows from requiring the D7 SU(3) closure scale to equal the common coupling value (ECCC condition, Cycle 144, Tier 2a).
+This follows from requiring the D7 SU(3) closure scale to equal the common coupling value (ECCC condition, Tier 2a).
 
 ---
 

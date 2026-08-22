@@ -6,7 +6,7 @@ the instanton action, see Module 22 (Yang-Mills Proof). For the neutrino depth
 correction, see Module 21 (Neutrino Masses).
 
 **Context:** This module documents the resolution of the cosmological constant
-quantitative prediction problem in Cycle 362. It is written in a journaling style —
+quantitative prediction problem. It is written in a journaling style —
 capturing the reasoning, discovery process, and physical interpretation at the moment
 the result was found.
 

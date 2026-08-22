@@ -30,7 +30,7 @@ An open gap is a step that is currently Tier 3 or Tier 4, where a completed deri
 - The 4D gauge theory lives on the kink worldvolume via Kaluza-Klein reduction. All non-zero Kaluza-Klein modes are heavier than the QCD scale by a factor of roughly 10²⁰, so they decouple and leave pure SU(3) Yang-Mills below that scale. This is Tier 2a (the scale separation) plus Tier 3 (the KK reduction itself).
 - The string tension and confinement argument give a lower bound on the 4D gap: the minimum glueball energy is at least 861 MeV (from the relation Δ ≥ 2√(Q_top) × Λ_QCD with Q_top = 2 and Λ_QCD = 304.5 MeV). The observed lightest glueball is around 1475–1730 MeV, which is consistent. This is Tier 3.
 
-**Progress through Cycle 212 (SP1 T2a; SP2 T2a gap existence; 88%):**
+**Progress (SP1 T2a; SP2 T2a gap existence; 88%):**
 - OS axioms inherited from DFC domain wall chain: Tier 3 (C185)
 - Kotecky-Preiss polymer expansion: KP = 0.344 < 1, converges at β_lat = 20.25 — Tier 2a (C199)
 - Infinite-volume Gibbs state unique (Dobrushin-Lanford-Ruelle): Tier 2a (C199)
@@ -45,7 +45,7 @@ An open gap is a step that is currently Tier 3 or Tier 4, where a completed deri
 - **SP2 gap existence T3→T2a (C212):** 7-step multi-method chain — Δ(β)=0↔transition [T1, C207] + R1 full no transition [T2a, C211] → Δ(β)>0 all β [T2a]; UV bound Δ_UV≥1.22 M_Pl [T2a, C201]; IR bound Δ_SC≥1033 MeV [T2a, C205]; SP4 pure SU(3) YM EFT below m_KK [T2a, C184] → **continuum Δ_phys≥1033 MeV>0 [T2a, multi-method]**
 - SP2 progress: 82% (C211) → **88%** (C212); **SP2 T2a overall**
 
-**Jaffe-Witten (JW) criteria status — Cycle 213/214:**
+**Jaffe-Witten (JW) criteria status:**
 
 All seven Jaffe-Witten criteria have been formally verified (`equations/ym_clay_requirements.py`, C213):
 
@@ -63,7 +63,7 @@ All seven Jaffe-Witten criteria have been formally verified (`equations/ym_clay_
 - **JW3c-a (worldvolume covariance, T2a):** Given a flat 4+1D substrate, the domain wall φ_kink(y) breaks only the y-translation, leaving ISO(3,1) intact on the worldvolume. The DFC worldvolume YM theory inherits this symmetry: A_μ^a transforms as a 4-vector (null wave boost residual 1.11×10⁻¹⁶, Tier 1), F^{μν}F_{μν} is Lorentz invariant (residual 5.51×10⁻¹⁶, Tier 1), and the Poincaré algebra closes exactly (Tier 1). **T2a established** (`equations/ym_poincare_covariance.py`, C214).
 - **JW3c-b (spacetime emergence, T2a C217):** `equations/ym_spacetime_signature.py` derives Minkowski signature (−,+,+,+) from two T1 constraints: (i) □φ=V'(φ) is hyperbolic → Courant-Hilbert theorem requires exactly 1 negative eigenvalue (Lorentzian); (ii) Bogomolny bound H≥36π M_Pl>0 requires the Hamiltonian to be bounded below → p≥2 timelike violates Bogomolny (H→−∞); and one T2a structural argument: (iii) 3 spatial from D3 Hopf closures (S¹,S³,S⁵) + 1 temporal from D4 inertia. **T2a (C217).** JW3c-a + JW3c-b → JW3c overall T2a.
 
-**C216 NEW — SU(N) generality T2a (+10% CPC swing):** Cycle 216 (ym_sun_gap_extension.py) proved SP1+SP2 T2a for ALL N ≥ 2 via a monotonicity theorem:
+**SU(N) generality T2a (+10% CPC swing):** `ym_sun_gap_extension.py` proved SP1+SP2 T2a for ALL N ≥ 2 via a monotonicity theorem:
 - g_eff²(N) = 8/(3N²) is strictly decreasing for N ≥ 1 [T1 algebraic]
 - N = 3 is the HARDEST case: all Balaban domain checks and KP < 1 are most stringent at N = 3
 - Since these pass at N = 3 (T2a, C203/C212), they pass for all N ≥ 3 by T1 monotonicity
@@ -281,13 +281,13 @@ All three residuals < 10⁻¹⁵. Notably, form (3) shows that the same I₄ = C
 
 **Why it matters:** C_match directly affects the quantitative prediction for Λ_QCD. The current two-loop Landau-pole calculation gives Λ_QCD ≈ 685 MeV, while the PDG value is Λ_MS^(3) ≈ 332 MeV. The factor-of-2 discrepancy is largely due to the Landau pole not being the same as the MS-bar scheme parameter (a known numerical artifact of scheme choice), not a fundamental failure.
 
-**Update (Cycle 197):** C_match has been computed from the Jost-function integral for the even-parity continuum modes of the Pöschl-Teller potential. Result: C_match = 0.795151. The full computation uses c₁ = −1/12 (Weisz coefficient, T1), two-loop MS-bar running α_s(M_Z→m_KK) (T2a), and the explicit Jost-function formula from Darboux chain (T2a). This gives C_match = 0.795151 to Tier 2a.
+C_match has been computed from the Jost-function integral for the even-parity continuum modes of the Pöschl-Teller potential. Result: C_match = 0.795151. The full computation uses c₁ = −1/12 (Weisz coefficient, T1), two-loop MS-bar running α_s(M_Z→m_KK) (T2a), and the explicit Jost-function formula from Darboux chain (T2a). This gives C_match = 0.795151 to Tier 2a.
 
 **What would close the remaining gap:** A derivation of M_c(D7) — the QCD closure scale — from V(φ) substrate dynamics alone, without requiring α_s(M_Z) as an external input. This is the remaining Tier 4 loop in the Λ_QCD chain.
 
 **Status:** C_match = 0.795151, Tier 2a (C197). M_c(D7) from substrate: Tier 4.
 
-**Update (Cycle 266):** The 0.001% gap between C_match_tree=0.789948 and C_match_needed=0.789937 is now structurally explained via two mechanisms. (1) Background-field Ward identity (Abbott 1980): at the matching scale μ=m_KK, the log factor log(μ/m_KK)=0, so the one-loop correction δC^{1-loop}=0 exactly — making C_match_tree the one-loop-exact value at this scale [T1+T3]. (2) SU(3) color weight structure: the kink sits in the T³ Cartan direction; the color weights W_b=Σ_c(f^{3bc})² are {1,1,0,1/4,1/4,1/4,1/4,0} with Σ W_b=C_A=3 [T1 exact], reducing the effective c_gauge to ≤0.928 (versus the C197 estimate of 2.773 which overcounted). The remaining 0.001% gap is classified as a 2-loop correction, with 2-loop estimates giving 0.004%–0.020% range — consistent with but not pinpointing the measured gap. C_match gap: T4→T3 [C266]. SP5 overall: 99%.
+The 0.001% gap between C_match_tree=0.789948 and C_match_needed=0.789937 is now structurally explained via two mechanisms. (1) Background-field Ward identity (Abbott 1980): at the matching scale μ=m_KK, the log factor log(μ/m_KK)=0, so the one-loop correction δC^{1-loop}=0 exactly — making C_match_tree the one-loop-exact value at this scale [T1+T3]. (2) SU(3) color weight structure: the kink sits in the T³ Cartan direction; the color weights W_b=Σ_c(f^{3bc})² are {1,1,0,1/4,1/4,1/4,1/4,0} with Σ W_b=C_A=3 [T1 exact], reducing the effective c_gauge to ≤0.928 (versus the C197 estimate of 2.773 which overcounted). The remaining 0.001% gap is classified as a 2-loop correction, with 2-loop estimates giving 0.004%–0.020% range — consistent with but not pinpointing the measured gap. C_match gap: T4→T3 [C266]. SP5 overall: 99%.
 
 ---
 

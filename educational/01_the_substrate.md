@@ -83,7 +83,7 @@ The field settles at values where V(φ) is minimized:
 This is the kink equilibrium: the two stable states the field can sit in.
 
 One crucial development from the model: β is not a free parameter. A derivation in
-the model (the key result of Cycle 117, the main "Bottleneck 2" result) shows that
+the model shows that
 the quartic self-interaction strength is:
 
 ```

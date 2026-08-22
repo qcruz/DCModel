@@ -128,7 +128,7 @@ This comes from the Y-junction Regge trajectory of three quarks at D7 depth, wit
 
 Neutrinos are electrically neutral and experience only the weak force. In DFC terms, they are defects that participate in the D6 SU(2) closure but fail to couple to D5 U(1). The absence of electric charge is not a separate assumption — it follows from the D5 coupling being zero for this configuration.
 
-The three neutrino mass eigenvalues are related to the three-generation structure of D6 topology. The equal-depth-spacing DFC prediction gives m₃/m₂ = κ = 5.33, which is −8.5% below the observed 5.824. A structural correction (Cycle 204, Tier 3) resolves this:
+The three neutrino mass eigenvalues are related to the three-generation structure of D6 topology. The equal-depth-spacing DFC prediction gives m₃/m₂ = κ = 5.33, which is −8.5% below the observed 5.824. A structural correction (Tier 3) resolves this:
 
 The third neutrino ν₃ sits nearest to the D7/SU(3) color threshold. The SU(3) color topology contributes a small additional depth shift δd = N_c/(N_Hopf × 2π) = 1/(6π) ≈ 0.053. This gives:
 
@@ -138,7 +138,7 @@ m₃/m₂ = κ^(1 + 1/(6π)) = 5.3253 = 5.8248    (observed: 5.824, +0.010%, Tie
 
 Zero free parameters: N_c = 3 and N_Hopf = 9 are both topological integers (Tier 1). The improvement is 885×. The formal derivation from the D4/D7 boundary value problem is the path to Tier 2a.
 
-(The old reported value of "4.3×" was a metric error corrected in Cycle 165; the actual uncorrected gap is −8.5%.)
+(The old reported value of "4.3×" was a metric error; the actual uncorrected gap is −8.5%.)
 
 ---
 

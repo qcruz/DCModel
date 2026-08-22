@@ -5,7 +5,7 @@ independently. For background on the nuclear physics framework, see Module 20
 (Nuclear Physics). For the I₄ identity, see Module 09.
 
 **Context:** This module documents the resolution of the N=126 shell closure problem
-in Cycle 361. It is written in a journaling style — capturing the reasoning,
+It is written in a journaling style — capturing the reasoning,
 discovery process, and physical interpretation at the moment the result was found.
 
 ---

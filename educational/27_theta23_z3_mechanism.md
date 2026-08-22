@@ -6,7 +6,7 @@ For the center vortex mechanism, see Module 09 (I₄ Identity) and Module 10 (Ca
 Uniqueness).
 
 **Context:** This module documents the identification of the Z₃ holonomy mechanism
-for the θ₂₃ neutrino mixing angle deviation in Cycle 364. It is written in a
+for the θ₂₃ neutrino mixing angle deviation. It is written in a
 journaling style — capturing the reasoning, discovery process, and physical
 interpretation at the moment the result was found.
 
@@ -27,7 +27,7 @@ The deviation is about 4°, and it is statistically significant.
 In DFC, the three neutrino generations correspond to three winding numbers (n = 1, 2, 3)
 on the S³ sphere at D6 depth. The muon (n = 2) and tau (n = 3) are related by a Z₂
 exchange symmetry of S³ — swapping the two hemispheres. This symmetry predicts
-θ₂₃ = 45° exactly. A previous analysis (Cycle 209) proved rigorously that the
+θ₂₃ = 45° exactly. A previous analysis proved rigorously that the
 neutrino depth correction δd = 1/(6π), which governs mass splittings, cannot shift
 θ₂₃ at all — it acts identically on both muon and tau because their D6 depths are
 equal. The mixing angle problem and the mass ratio problem are independent.

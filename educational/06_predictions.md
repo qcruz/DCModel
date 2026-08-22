@@ -38,7 +38,7 @@ The model predicts the fine structure constant at the Z boson mass scale from a 
 ### Strong coupling constant α_s at Z scale
 The model predicts the strength of the strong nuclear force at the Z boson mass.
 
-**ECCC route (Tier 2a, Cycle 144):**
+**ECCC route (Tier 2a):**
 - **Predicted:** α_s(M_Z) = 0.11821
 - **Observed:** α_s(M_Z) = 0.11820
 - **Error:** +0.006%
@@ -46,7 +46,7 @@ The model predicts the strength of the strong nuclear force at the Z boson mass.
 - **Free parameters used:** 0 (uses α_em(0) as one experimental input via ECCC mechanism)
 - **How to test:** Already confirmed. Higher-precision future measurements at future colliders.
 
-**DFC-alone route (Tier 2a, Cycle 208):**
+**DFC-alone route (Tier 2a):**
 Starting from V(φ) alone — with no experimental inputs at all — the chain is:
 V(φ) → ξ [T1] → m_KK=1/ξ [T1] → g_eff²=8/27 [T2a] → C_match=0.795151 [T2a, C197] → α_s(m_KK)=0.018748 [T2a] → 2-loop RGE → α_s(M_Z):
 
@@ -139,7 +139,7 @@ The model produces a lower bound on the lightest glueball mass from the confinem
 - **Observed lightest glueball:** 1475–1730 MeV (f₀(1500)/f₀(1710))
 - **Status:** Consistent — bound not violated
 - **Tier:** 3 (5-step chain: Δ_1D T2a → KK reduction T2a → decoupling T2a → pure SU(3) YM T2a → flux-tube bound T3)
-- **Note:** SP1 (constructive 4D gauge theory argument) reached Tier 2a in Cycle 203. The remaining step to a rigorous gap proof is deriving the QCD scale from V(φ) alone (SP5, T4).
+- **Note:** SP1 (constructive 4D gauge theory argument) has reached Tier 2a. The remaining step to a rigorous gap proof is deriving the QCD scale from V(φ) alone (SP5, T4).
 
 ---
 
@@ -152,7 +152,7 @@ The strong CP problem is solved by the CP isometry of the S⁵ geometry at D7 de
 
 **The model predicts no QCD axion exists.** If an axion is discovered, this would be a significant challenge to DFC.
 
-- **Status:** Tier 2a (S⁵ CP isometry argument, Cycle 147)
+- **Status:** Tier 2a (S⁵ CP isometry argument)
 - **Test:** ADMX, HAYSTAC, ABRACADABRA axion dark matter searches; IAXO solar axion search.
 
 ### No supersymmetric particles
@@ -191,7 +191,7 @@ Not everything works. These are predictions that are clearly wrong at the curren
 An earlier attempt to predict the tau mass from the depth-ratio mechanism gave 212 MeV, compared to the observed 1777 MeV — a factor of 8.4× wrong. This approach has been **superseded** by the Koide formula (above), which gives +0.006%. The dimple model is retracted for the tau mass.
 
 ### Neutrino mass ratio
-The equal-spacing depth prediction gives κ = 5.33, while the observation is 5.8242 — a −8.3% gap. A structural correction (Cycle 204, T3) accounts for this: neutrinos near the D7/SU(3) threshold acquire an additional depth correction δd = N_c/(N_Hopf × 2π) = 1/(6π), giving the formula m₃/m₂ = κ^(1 + 1/(6π)) = 5.8248. This agrees with observation at +0.010% (0 free parameters). The physical interpretation — SU(3) color structure modifying the D7 neutrino depth spacing — is T3 (structural, not yet derived from the boundary value problem). Path to T2a: formal D4/D7 BVP derivation of the depth correction.
+The equal-spacing depth prediction gives κ = 5.33, while the observation is 5.8242 — a −8.3% gap. A structural correction (T3) accounts for this: neutrinos near the D7/SU(3) threshold acquire an additional depth correction δd = N_c/(N_Hopf × 2π) = 1/(6π), giving the formula m₃/m₂ = κ^(1 + 1/(6π)) = 5.8248. This agrees with observation at +0.010% (0 free parameters). The physical interpretation — SU(3) color structure modifying the D7 neutrino depth spacing — is T3 (structural, not yet derived from the boundary value problem). Path to T2a: formal D4/D7 BVP derivation of the depth correction.
 
 ### Charm and strange quark masses
 The model predicts charm and strange quark masses about 15% below the observed values. The Higgs coupling threshold for second-generation quarks is not yet well derived.

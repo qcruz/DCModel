@@ -6,7 +6,7 @@ independently. For background on the nuclear physics framework, see Module 20
 
 **Context:** This module documents the resolution of three T4 gaps in the nuclear
 binding energy formula — the volume term mechanism (a_V), the surface term (a_S),
-and the pairing energy (a_pair) — from Cycle 369. It is written in a journaling
+and the pairing energy (a_pair). It is written in a journaling
 style, capturing the reasoning and discovery process.
 
 ---
@@ -42,7 +42,7 @@ DFC had already derived the Coulomb coefficient a_C from its electromagnetic cou
 volume term a_V, the surface term a_S, and the pairing energy were all marked T4 —
 open gaps with no DFC account.
 
-This module describes how all three were closed to T3 in Cycle 369.
+This module describes how all three were closed to T3.
 
 ---
 
@@ -209,7 +209,7 @@ interaction by a factor of 8.
 
 ## Where We Stand
 
-After Cycle 369, the DFC SEMF coefficient status is:
+The current DFC SEMF coefficient status is:
 
 | Coefficient | DFC value (MeV) | Observed (MeV) | Error | Tier | Source |
 |---|---|---|---|---|---|

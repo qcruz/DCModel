@@ -4,7 +4,7 @@
 **Prerequisite reading:** Module 01 (substrate and kinks), Module 04 (forces),
 Module 14 (spacetime emergence)
 
-**Last updated:** Cycle 414
+**Last updated:** August 2026
 
 ---
 
