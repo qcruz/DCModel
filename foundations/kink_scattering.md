@@ -2,7 +2,7 @@
 
 ## Status
 
-> **New in Cycle 33:** First derivation of an S-matrix element from DFC substrate
+> First derivation of an S-matrix element from DFC substrate
 > dynamics. Two results:
 >
 > 1. **Shape mode: ω₁ = (√3/2) m_σ** — parameter-free prediction from the
@@ -16,11 +16,11 @@
 > The 3+1D extension to pointlike particles requires the Skyrme/higher-dimensional
 > substrate treatment. Verified in `equations/kink_scattering.py`.
 >
-> **New in Cycle 89:** Exact T-matrix T(q) = (q+iM_c)(q+i2M_c)/[(q−iM_c)(q−i2M_c)]
+> **Exact T-matrix:** T(q) = (q+iM_c)(q+i2M_c)/[(q−iM_c)(q−i2M_c)]
 > derived from the reflectionless Pöschl-Teller n=2 potential. |T|²=1 exactly.
 > Levinson theorem verified: δ(0⁺) = 2π, δ(∞) = 0. See `equations/s_matrix.py`.
 >
-> **New in Cycle 91:** Effective range theory derived from the exact T-matrix.
+> **Effective range theory** derived from the exact T-matrix.
 > Scattering length a_s = 3/M_c = 3λ and effective range r₀ = 11/(6M_c) ≈ 1.833λ —
 > both exact, parameter-free. Wigner time delay τ_W(0) = −3/M_c = −a_s (exact
 > identity). The PT n=2 potential is time-advancing (always negative τ_W).
@@ -216,7 +216,7 @@ where n_bound counts the number of bound states of the **single-kink** fluctuati
 The PT n=2 potential has 2 bound states (zero mode + shape mode), giving:
 
 ```
-δ_exact(0⁺) = 2π,  δ_exact(∞) = 0   [from s_matrix.py — exact PT result, Cycle 89]
+δ_exact(0⁺) = 2π,  δ_exact(∞) = 0   [from s_matrix.py — exact PT result]
 ```
 
 For the **kink-antikink Born approximation** (Yukawa potential), the Born phase shift

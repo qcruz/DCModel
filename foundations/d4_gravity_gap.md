@@ -430,10 +430,10 @@ an acoustic/analog metric. The critical calculation is to determine
 the form of this metric and whether it reproduces gravitational
 behavior at distances much larger than xi.
 
-### Secondary: Jormungandr Self-Consistency (D4-A + D4-D) — T3 ESTABLISHED C400
+### Secondary: Jormungandr Self-Consistency (D4-A + D4-D) — T3 ESTABLISHED
 
-The Jormungandr fixed-point equation has been formulated and solved (C400,
-24/24 PASS). The self-consistency loop is:
+The Jormungandr fixed-point equation has been formulated and solved (24/24 PASS).
+The self-consistency loop is:
 
 ```
 V(phi) -> kink -> self-gravity -> V_eff(phi) = V(phi)
@@ -446,20 +446,20 @@ obtained from two independent routes:
 - Topological: alpha cubed = Q_top times N_Hopf = 2 times 9 = 18 (T1)
 - BPS/coupling: S_kink times alpha_D5 = 1 gives alpha cubed = 18 (T1)
 
-The gravitational route (C400) provides a third independent derivation (T3),
+The gravitational fixed-point provides a third independent derivation (T3),
 confirming that the double-well is an attractor of the substrate's own
 gravitational dynamics. The enhancement factor F = 22.87 is uniquely
 determined at the fixed point, and the perturbative fraction 1/F = 4.4%
 is fixed by the self-consistency condition itself.
 
 The remaining gap: the gravitational chain uses the worldvolume Green's
-function (C397) which assumes G_N as input. Closing this circularity
+function which assumes G_N as input. Closing this circularity
 requires the analog metric (D4-B) to independently produce G_N from the
 substrate compression, making the self-consistency loop fully self-contained.
 
 ### Tertiary: Perturbative Corrections (D4-D) — COMPLETED
 
-The perturbative sector (C392-C395) is characterized and should not be
+The perturbative sector is characterized and should not be
 extended further unless the analog metric construction reveals a specific
 need. Results: scalar zero-mode 4.4%, worldvolume Sakharov 2.35%,
 continuum correction -0.005%, total perturbative ~6.7%.
@@ -467,7 +467,7 @@ continuum correction -0.005%, total perturbative ~6.7%.
 ### Deprioritized: Graviton Search (D4-C)
 
 The search for a massless spin-2 mode in the scalar substrate spectrum
-is deprioritized. C393 established no such mode exists in the linearized
+is deprioritized. Prior analysis established no such mode exists in the linearized
 spectrum. If gravity is emergent compression (as DFC claims), this is
 expected rather than problematic. The effective metric approach (D4-B)
 may produce graviton-like behavior as a linearized fluctuation of g_muv^eff
@@ -513,47 +513,47 @@ of the Einstein-Hilbert term predicted rather than inserted.
 - alpha times G_N = cuberoot(18) (consistency relation, T1)
 - Scalar zero-mode gives G_eff = G_N/23 (T3)
 - Profile narrowing REDUCES coupling: (I_10/I_6)^2 = 0.58 (T1)
-- Enhancement is dominantly non-perturbative: 93% (T3, C395)
+- Enhancement is dominantly non-perturbative: 93% (T3)
 - F = (25/12) times 4 pi xi = 22.87 exact decomposition (T1)
 - Kink r_s/xi = 226/0.874 >> 1: deep inside own gravitational radius (T1)
-- No massless spin-2 in linearized substrate spectrum (T1, C393)
-- Sakharov wrong-sign resolved in 4D (T1, C394)
-- Perturbative sector complete: 6.7% of G_N (T3, C392-C395)
-- Continuum correction negligible: 0.22% of bound state (T1, C395)
+- No massless spin-2 in linearized substrate spectrum (T1)
+- Sakharov wrong-sign resolved in 4D (T1)
+- Perturbative sector complete: 6.7% of G_N (T3)
+- Continuum correction negligible: 0.22% of bound state (T1)
 - Analog metric from kink background: position-dependent propagation speed,
-  linear transverse potential confines to worldvolume (T3, C396)
+  linear transverse potential confines to worldvolume (T3)
 - 1/r potential from worldvolume 3D Laplacian Green's function, verified across
-  11 orders of magnitude (T1, C397/C399) — RESOLVED
+  11 orders of magnitude (T1) — RESOLVED
 - GW polarization: Candidate A (composite tensor) FAILS (T1 theorem);
   Candidate B (worldvolume gauge fields via Sakharov) VIABLE, scalar breathing
-  mode Planck-mass-gapped (T3, C398)
-- D4-A: alpha cubed = 18 from gravitational fixed-point (T3, C400) — three
+  mode Planck-mass-gapped (T3)
+- D4-A: alpha cubed = 18 from gravitational fixed-point (T3) — three
   independent routes converge
-- D4-D: F = 22.87 uniquely determined by fixed-point condition (T3, C400)
-- Jormungandr self-consistency loop formulated and solved: unique solution (T3, C400)
-- Weak-field metric chain: Mass -> delta_phi(r) -> delta_V''(r) -> delta_c_eff(r) -> g_00(r) (T1/T3, C403)
-- KEY IDENTITY: V''(phi_0) = omega_c squared makes metric perturbation frequency-independent (T1, C403)
-- Two-approach discrepancy quantified: G_eff(metric) / G_eff(force) = 0.0022 (T1, C403)
-- Enhancement factor decomposition: F = 22.87, perturbative 4.4%, non-perturbative 95.6% (T1/T3, C403)
-- G_N = 18/alpha cubed self-consistent identification (Jormungandr, T1, C403)
-- Gordon metric TRIVIAL for standard DFC kinetic term: L_XX = 0 (T1, C405)
-- V''' channel negligible: 0.0098% of G_N, 241 times weaker than Sakharav (T1, C405)
-- Sakharav dominates perturbative metric (2.36% vs V''' 0.01%) (T1, C405)
-- Perturbative force/metric ratio = 1.84 = 576 pi / (425 sqrt(2 alpha)) (T1, C405)
-- Non-perturbative force-metric mismatch only 2.1% — EP restoration mild constraint (T3, C405)
-- Sakharav/Scalar ratio = 0.54 constrains worldvolume spectrum (T1, C405)
-- Einstein equation structure: Sakharav EH + Noether conservation + alpha^3=18 (T3, C407)
-- Strong-field breakdown: r_s/xi = 259 >> 1, linearization fails at kink scale (T1, C407)
-- Scale-dependent coupling: G_eff(r) from G_N/23 at core to G_N asymptotically (T3, C407)
-- DFC compactness 6.6 at xi vs GR 151 (23x reduction, still > 1) (T3, C408)
-- TOV-with-G_eff ansatz INSUFFICIENT: compactness > 1 despite G_eff reduction (T3, C408)
-- Substrate smooth (sech^4): actual effective metric regular despite TOV breakdown (T3, C408)
+- D4-D: F = 22.87 uniquely determined by fixed-point condition (T3)
+- Jormungandr self-consistency loop formulated and solved: unique solution (T3)
+- Weak-field metric chain: Mass -> delta_phi(r) -> delta_V''(r) -> delta_c_eff(r) -> g_00(r) (T1/T3)
+- KEY IDENTITY: V''(phi_0) = omega_c squared makes metric perturbation frequency-independent (T1)
+- Two-approach discrepancy quantified: G_eff(metric) / G_eff(force) = 0.0022 (T1)
+- Enhancement factor decomposition: F = 22.87, perturbative 4.4%, non-perturbative 95.6% (T1/T3)
+- G_N = 18/alpha cubed self-consistent identification (Jormungandr, T1)
+- Gordon metric TRIVIAL for standard DFC kinetic term: L_XX = 0 (T1)
+- V''' channel negligible: 0.0098% of G_N, 241 times weaker than Sakharav (T1)
+- Sakharav dominates perturbative metric (2.36% vs V''' 0.01%) (T1)
+- Perturbative force/metric ratio = 1.84 = 576 pi / (425 sqrt(2 alpha)) (T1)
+- Non-perturbative force-metric mismatch only 2.1% — EP restoration mild constraint (T3)
+- Sakharav/Scalar ratio = 0.54 constrains worldvolume spectrum (T1)
+- Einstein equation structure: Sakharav EH + Noether conservation + alpha^3=18 (T3)
+- Strong-field breakdown: r_s/xi = 259 >> 1, linearization fails at kink scale (T1)
+- Scale-dependent coupling: G_eff(r) from G_N/23 at core to G_N asymptotically (T3)
+- DFC compactness 6.6 at xi vs GR 151 (23x reduction, still > 1) (T3)
+- TOV-with-G_eff ansatz INSUFFICIENT: compactness > 1 despite G_eff reduction (T3)
+- Substrate smooth (sech^4): actual effective metric regular despite TOV breakdown (T3)
 
 **Open:**
 - D4-B: Derive G_eff(r) transition from V(phi) dynamics (T4 — PRIMARY);
-  TOV-with-G_eff constructed (C408) but compactness > 1; full substrate dynamics needed
+  TOV-with-G_eff constructed but compactness > 1; full substrate dynamics needed
 - D4-C: How tensor polarizations (h_+ and h_x) emerge from substrate — Candidate B
-  viable but coupling-dependent (T3, C398); deprioritized as independent question
+  viable but coupling-dependent (T3); deprioritized as independent question
 - Strong-field consistency: G_N used as input in Jormungandr loop (T4);
   closing requires D4-B to independently produce G_N from compression
 
@@ -561,7 +561,7 @@ of the Einstein-Hilbert term predicted rather than inserted.
 derive the Einstein equation from substrate compression. This would
 simultaneously close D4-B, resolve the Jormungandr circularity, and
 potentially resolve D4-C via Candidate B. The perturbative program
-(C392-C395) is complete and should not be extended.
+is complete and should not be extended.
 
 ---
 

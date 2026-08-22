@@ -1,188 +1,162 @@
-# DFC Model — Development Next Steps
+# Development Next Steps: Prediction Accuracy & Mathematical Testing
 
-**Based on:** Full model review at Cycle 355 (2026-08-07). Priorities 1–6 from original
-verification all COMPLETE. New priorities derived from open issues in ISSUES.md,
-known T3/T4 gaps, and model completeness analysis (~80% overall).
-
-**Previous priorities (1–6):** All COMPLETE. See git history for details.
+**Status:** Active development roadmap
+**Last updated:** August 2026
 
 ---
 
-## Priority 1: Hadronic Vacuum Polarization — Close the Last Coupling Gap (High Impact)
+## Current Scorecard State
 
-**Problem:** The DFC 36π chain predicts 1/α_em(M_Z) = 128.09 (+0.15%). The residual
-gap traces to a single T4 quantity: δ(Δα)^{NP} = 0.00102, the non-perturbative
-hadronic vacuum polarization contribution from ρ/ω/φ resonances below √s ≈ 2 GeV.
-This same gap blocks both the ECCC identity (T12) and the α_em(0) prediction.
-Cycle 351 proved these are the same T4 gap (Problems #1 and #4 unified).
+The astrophysical scorecard (`equations/astrophysical_scorecard.py`) tests DFC-derived
+parameters against 15+ astrophysical observables across 9 categories (Parts A-I).
 
-**Target:** Compute the dispersive integral R^{had}(s) − R^{parton}(s) from D7
-string tension σ = Q_top × Λ_QCD² and the DFC ρ meson (m_ρ = 763 MeV, f_ρ = 149 MeV).
-This closes T12 and achieves 99.9%+ accuracy for α_em(0).
+### Results Summary
 
-**Effort:** Hard | **Impact:** Very High (closes the model's last precision coupling gap)
-**ISSUES.md:** T12 | **Status:** IN PROGRESS (C358: global +4.08× / local −0.35× bracket target; T3)
+| Part | Prediction | Error | Tier | Status |
+|------|-----------|-------|------|--------|
+| A | Chandrasekhar limit | <5% | T2a | PASS |
+| B | NS max mass (QHD-I) | ~20% high | T3 | PASS (within 50%) |
+| C1 | pp Gamow energy | <5% | T2a | PASS |
+| C2 | CNO Gamow energy | <5% | T2a | PASS |
+| C3 | Triple-alpha Q value | FAIL | -- | Known limitation |
+| D | NS radius | +16.5% | T3 | PASS (within 30%) |
+| E | SN bounce density | ~42% high | T3 | PASS (within factor 3) |
+| F1 | Thomson cross section | <5% | T2a | PASS |
+| F2 | Eddington luminosity | <1% | T2a | PASS |
+| G | Jeans mass (recombination) | ~OOM | T3 | PASS (within factor 10) |
+| H | Nuclear drip lines | Mixed | T3 | Partial PASS |
+| I | Stellar lifetime | ~factor 2 | T3 | PASS (within factor 3) |
 
----
+### Strengths
 
-## Priority 2: Born Rule — Complete the T2a Derivation Chain (High Impact)
+Strong predictions all trace to two T2a parameters: alpha_em = 1/136.98 and
+M_N = 934.8 MeV. Any classical formula depending primarily on these (Chandrasekhar
+limit, Gamow energies, Thomson cross section, Eddington luminosity) inherits their
+accuracy. This is genuine predictive reach -- DFC derives alpha_em from embedding
+geometry, then that value correctly propagates through astrophysics without adjustment.
 
-**Problem:** Born rule P(x) = |ψ(x)|² is T2a as of Cycle 339, but the derivation
-chain has a remaining structural step: Step 6b — show that D3 localization rate is
-proportional to the nonlinear source S(x) = κ_NL × ⟨ε(x)⟩. Steps 1–5 and Step 6a
-are all T1/T2a. The frequency selection rule (C339) establishes σ² as the unique
-D3 coupling from V(φ).
+### Weaknesses and Root Causes
 
-**Target:** Derive Step 6b from V(φ) dynamics — show that substrate localization
-events at D3 depth occur at a rate proportional to local time-averaged energy
-density ⟨ε(x)⟩ ∝ |ψ(x)|². This upgrades Born rule from T2a to T1/T2a throughout.
+**Root cause 1 -- QHD-I is too stiff:** The Walecka linear sigma-omega model produces
+a systematically stiff EOS at high density. Inflates NS max mass (~2.5 vs ~2.1 M_sun)
+and NS radius (~14.5 vs ~12.5 km). Fix: add nonlinear sigma self-interaction (sigma^3,
+sigma^4) from V(phi).
 
-**Effort:** Medium | **Impact:** High (foundational quantum mechanics from V(φ))
-**ISSUES.md:** Born rule entries | **Status:** COMPLETE (C359: barrier dynamics route, 14/14 PASS)
+**Root cause 2 -- SEMF for light nuclei:** The semi-empirical mass formula is a smooth
+liquid-drop model. Fails for A < 12 because shell effects, clustering, and tensor forces
+dominate. Triple-alpha Q value requires binding energies of He-4, Be-8, C-12 -- all
+where SEMF error is amplified by differences. Requires a different approach for light nuclei.
 
----
+**Root cause 3 -- Nuclear saturation density:** The 42% overshoot in n_0 connects to
+root cause 1. Linear QHD-I lacks scalar self-coupling that softens the EOS. Same fix.
 
-## Priority 3: Collapse Mechanism — Upgrade T3 to T2a (Medium Impact)
+### Caution on Overclaiming
 
-**Problem:** Collapse (wavefunction reduction) is T3 structural as of Cycle 340.
-The spinodal dynamics (γ = √α, τ ≈ 10⁻⁴³ s) are T1, but the connection to
-measurement outcomes — how interaction with a localized structure triggers the
-spinodal instability — remains T3.
-
-**Target:** Derive the D3 localization trigger condition from V(φ): show that
-interaction between a delocalized kink mode and a localized kink configuration
-above a critical field overlap threshold initiates the spinodal collapse.
-
-**Effort:** Hard | **Impact:** Medium-High (resolves measurement problem structurally)
-**ISSUES.md:** Collapse mechanism | **Status:** COMPLETE (C360: trigger+selection T2a, 18/18 PASS; entanglement T3 remains)
-
----
-
-## Priority 4: θ₂₃ Neutrino Mixing Angle — 4° Deviation from 45° (Medium Impact)
-
-**Problem:** DFC predicts θ₂₃ = 45° from Z₂ (μ↔τ) symmetry at D6 (T3), but
-observed θ₂₃ ≈ 49°. Cycle 209 proved the δd = 1/(6π) color correction cannot
-shift θ₂₃ — they are independent problems. The required asymmetry is
-ε_d ≈ 0.144 depth units (~2.7× δd).
-
-**Target:** Identify and compute the D6 flavor asymmetry mechanism that breaks
-the μ↔τ Z₂ symmetry. Two T4 candidates remain: (1) CKM-like D6/D7 interface
-mixing, (2) winding-number-dependent D4/D6 boundary condition asymmetry.
-
-**Effort:** Hard | **Impact:** Medium (neutrino mixing from first principles)
-**ISSUES.md:** T10 | **Status:** IN PROGRESS (C364: Z₃ mechanism identified T1, formula T4)
+Parts G (Jeans mass) and I (stellar lifetime) pass only at order-of-magnitude level.
+These use rough approximations where almost any reasonable M_N and alpha_em would pass.
+Should be tightened or flagged as "consistency checks" rather than "predictions."
 
 ---
 
-## Priority 5: CKM/PMNS Mixing Angles — Quantitative Derivation (Medium Impact)
+## Tier 1: High-Impact, Feasible Now
 
-**Problem:** DFC explains the qualitative asymmetry between CKM (small angles)
-and PMNS (large angles) via D6/D7 mismatch, but no formula derives any mixing
-angle value.
+### 1.1 Nonlinear Walecka EOS from V(phi)
 
-**Target:** Derive the Cabibbo angle θ_C ≈ 13° from D6 kink pair interaction
-amplitude. The off-diagonal mass matrix entry ε_mix should scale as
-(g_eff²/16π²) × geometric factor from D6/D7 overlap.
+Map the DFC substrate potential V(phi) = -alpha/2 phi^2 + beta/4 phi^4 onto the nuclear
+sigma field self-interaction. The beta/4 phi^4 term directly provides the nonlinear sigma
+coupling that softens the EOS.
 
-**Effort:** Very Hard | **Impact:** Medium (flavor physics from topology)
-**ISSUES.md:** T2 | **Status:** PLANNED
+**Expected impact:** NS radius drops from ~14.5 to ~12-13 km, NS max mass drops from
+~2.5 to ~2.1 M_sun, saturation density improves. Fixes Parts B, D, and E simultaneously.
 
----
+**Honest test:** The nonlinear coupling constants must come from beta, not be fitted.
 
-## Priority 6: Mass Mechanism Unification (High Impact, Ambitious)
+**Deliverable:** `equations/nonlinear_walecka_eos.py`
 
-**Problem:** Three separate mass mechanisms exist: Koide (tau, T2a), depth-anchoring
-κ = ln(m_μ/m_e) (neutrinos), center vortex κ = 3π/2 (quarks, T2a C274).
+### 1.2 Nuclear Binding for Light Nuclei (A <= 12)
 
-**Target:** Show all three κ values emerge from a single V(φ) mechanism at
-different depth levels. The unifying structure likely involves the D6 kink
-zero-mode overlap integral at three compression thresholds.
+Replace SEMF with a cluster model or variational calculation for He-4, Be-8, C-12.
+DFC's g_A = 4/pi and Lambda_QCD = 304.5 MeV should constrain the nucleon-nucleon potential.
 
-**Effort:** Very Hard | **Impact:** High (unifies mass generation)
-**ISSUES.md:** — | **Status:** PLANNED
+**Test:** Can DFC reproduce the Hoyle state energy (7.654 MeV above C-12 ground state)?
+Fixes the triple-alpha Q value and tests DFC at the nuclear structure level.
 
----
+**Deliverable:** `equations/light_nuclei_binding.py`
 
-## Priority 7: Nuclear Shell Closure N=126 — Relativistic SO (Medium Impact)
+### 1.3 Deuteron Binding Energy
 
-**Problem:** DFC nuclear spoke (T17) reproduces magic numbers 2,8,20,28,50,82
-and predicts N=184 (T3), but fails to reproduce N=126. The non-relativistic
-spin-orbit parameter a_SO = I₄ × a₀ = 0.893 fm is insufficient for the
-1i₁₃/₂ intruder state ordering.
+The simplest nuclear bound state. DFC should predict B_d = 2.224 MeV from its
+nucleon-nucleon interaction. Requires: DFC pion mass (from Lambda_QCD), DFC nucleon mass,
+Yukawa potential range.
 
-**Target:** Implement full Dirac-Woods-Saxon equation with DFC-derived a_SO,
-or demonstrate that the relativistic formulation naturally produces the
-κ < 36 condition needed for N=126.
+**Honest test:** Clean, unambiguous, no fitting freedom.
 
-**Effort:** Medium | **Impact:** Medium (validates I₄ in nuclear domain)
-**ISSUES.md:** T17 | **Status:** COMPLETE (C361: κ_DFC = 33 = 36×b₀/(4N_c), 24/24 PASS, N=126 T4→T3)
+**Deliverable:** `equations/deuteron_binding.py`
 
 ---
 
-## Priority 8: Cosmological Constant — Quantitative Prediction (Ambitious)
+## Tier 2: Extend to New Domains
 
-**Problem:** DFC reframes the cosmological constant problem (T16, C328): the
-10¹²³ cancellation dissolves because deep-substrate and cosmic-scale energies
-are at different compression depths and not additive. But ρ_Λ = (2.3 meV)⁴
-is not derived from V(φ).
+### 2.1 Atomic Physics Predictions
 
-**Target:** Compute substrate energy density at D1–D2 cosmic compression depth.
-Speculative connection: ρ_Λ^{1/4} ≈ 2.3 meV ≈ m_ν may share origin in
-δd = 1/(6π) correction.
+- Hydrogen ground state energy: E_1 = -alpha^2 m_e/2
+- Rydberg constant: R_inf = alpha^2 m_e/(2h)
+- Fine structure splitting: Delta_E = alpha^4 m_e/n^3 terms
+- Lamb shift: tests QED loop corrections
 
-**Effort:** Very Hard | **Impact:** Very High if successful (worst fine-tuning problem)
-**ISSUES.md:** T16 | **Status:** COMPLETE (C362: ρ_Λ = M_Pl⁴ × exp(-(27π² + 9π/2 + ∛18)), 13/13 PASS, T4→T3)
+**Gap:** DFC does not yet derive m_e independently (T3/T4 in mass hierarchy).
 
----
+### 2.2 Cosmological Predictions
 
-## Priority 9: ℏ Hierarchy — Planck Constant from V(φ) (Ambitious)
+- **BBN helium fraction:** eta + tau_n (DFC T2a) -> Y_p ~ 0.245. Low-hanging fruit.
+- **CMB acoustic peak positions:** First peak at l ~ 220 from sound horizon.
+- **BAO scale:** r_s ~ 147 Mpc from DFC parameters.
+- **Primordial helium fraction Y_p:** Y_p ~ 2n_n/(n_p + n_n) at freeze-out, directly
+  from DFC tau_n = 878.0 s.
 
-**Problem:** S_kink(D1) = 1.13×10⁴⁰ ℏ reduces through ~4 bifurcations to
-~10²⁸ ℏ residual. ℏ cannot be derived from (α, β, c) alone without SI
-unit system identification.
+### 2.3 Stellar Structure
 
-**Target:** Complete the coupling chain (α_em fully derived) and then connect
-to ℏ via α_em = e²/(4πε₀ℏc).
-
-**Effort:** Very Hard | **Impact:** High (action quantization from substrate)
-**ISSUES.md:** T8 | **Status:** PLANNED (blocked by T12)
+- Main sequence mass-luminosity relation: L proportional to M^3.5
+- White dwarf mass-radius relation: R proportional to M^{-1/3}
+- Minimum hydrogen-burning mass: ~0.08 M_sun from pp threshold
 
 ---
 
-## Priority 10: current_state.md Full Update (Maintenance)
+## Tier 3: Ambitious Stress Tests
 
-**Problem:** current_state.md was last reviewed at Cycles 96–148. It reports
-~61.5% completeness (actual ~80%), lists outdated failures (τ mass 8.4×,
-α_s 8.1%), and is missing ~200 cycles of progress.
+### 3.1 Proton-Neutron Mass Difference
 
-**Target:** Full rewrite reflecting current model state: ~80% completeness,
-87% viability, 73% rigor. Update all tables, strengths, weaknesses, and
-equation layer inventory.
+Delta_m = m_n - m_p = 1.293 MeV. Requires electromagnetic self-energy difference (from
+alpha_em) plus quark mass difference contribution. Extremely demanding.
 
-**Effort:** Medium | **Impact:** Medium (internal clarity, onboarding)
-**ISSUES.md:** — | **Status:** COMPLETE (C363: full rewrite, ~61.5%→~80% completeness, all sections updated)
+### 3.2 Pion Mass from Lambda_QCD
+
+m_pi ~ 135 MeV. As pseudo-Goldstone boson, m_pi^2 proportional to m_q Lambda_QCD. DFC
+gives Lambda_QCD = 304.5 MeV. Needs DFC quark masses.
+
+### 3.3 Nuclear Magic Numbers from DFC
+
+Shell closures at N,Z = 2, 8, 20, 28, 50, 82, 126. Arise from spin-orbit coupling in
+nuclear potential. DFC's spin emergence (D6 Jackiw-Rebbi) should connect to nuclear
+spin-orbit force. Extremely ambitious but would be a showpiece result.
 
 ---
 
-## Tracking
+## Priority Order
 
-| # | Item | Effort | Impact | Status | ISSUES |
-|---|------|--------|--------|--------|--------|
-| 1 | Hadronic VP (δΔα^NP) | Hard | Very High | IN PROGRESS (C358: brackets target, T3) | T12 |
-| 2 | Born rule Step 6b | Medium | High | COMPLETE (C359, 14/14 PASS) | — |
-| 3 | Collapse mechanism T3→T2a | Hard | Medium-High | COMPLETE (C360, 18/18 PASS) | — |
-| 4 | θ₂₃ mixing angle 4° gap | Hard | Medium | IN PROGRESS (C364: Z₃ mechanism T1) | T10 |
-| 5 | CKM/PMNS quantitative | Very Hard | Medium | PLANNED | T2 |
-| 6 | Mass mechanism unification | Very Hard | High | PLANNED | — |
-| 7 | Nuclear N=126 shell closure | Medium | Medium | COMPLETE (C361, 24/24 PASS) | T17 |
-| 8 | Cosmological constant | Very Hard | Very High | COMPLETE (C362, 13/13 PASS) | T16 |
-| 9 | ℏ hierarchy | Very Hard | High | PLANNED | T8 |
-| 10 | current_state.md rewrite | Medium | Medium | COMPLETE (C363) | — |
+1. BBN helium fraction from DFC tau_n -- quick win, genuine prediction, new scorecard Part J
+2. Nonlinear Walecka EOS from V(phi) -- fixes 3 existing predictions simultaneously
+3. Deuteron binding energy -- clean nuclear test, no fitting
+4. Tighten stellar lifetime -- replace factor-3 estimate with proper pp-chain luminosity
+5. CMB/BAO predictions -- extends reach to cosmological observables
 
-**Ongoing (no priority number — part of regular cycle rotation):**
+---
 
-- **Track B Educational**: Modules 00–24 complete. Continue with new topics as needed.
-- **Track C Practical Applications**: Add entries to `practical_applications/` from verified results.
-- **Track D Open Problems**: Evaluate candidate problems (Navier-Stokes, baryon asymmetry, etc.).
-- **Clay Prize**: Internally complete (~99% proof std). No further cycles unless mathematical issue found.
-- **Document audits**: Step 3 of every cycle — keep all docs current with model state.
+## Connections
+
+- `equations/astrophysical_scorecard.py` -- current scorecard implementation
+- `foundations/kink_nucleation.md` -- nuclear binding from kink structure
+- `foundations/cosmological_constant_dfc.md` -- cosmological sector
+- `foundations/mass_hierarchy.md` -- lepton/quark mass derivations needed for Tier 2-3
+- `equations/neutron_lifetime.py` -- tau_n derivation (input to BBN)
+- `equations/walecka_eos.py` -- current linear QHD-I (to be extended)
