@@ -374,7 +374,7 @@ phenomena/             74 natural-language accounts of observations
   quantum/              Spin, entanglement, measurement, Bell
   condensed_matter/     Superconductivity, QHE, Josephson
 
-educational/           30 modules from layman to expert
+educational/           31 modules from layman to expert
   00_overview.md        Start here (no physics background needed)
   08_mathematics.md     Technical summary for physicists
   22_yang_mills_proof.md  Yang-Mills mass gap explained
@@ -382,6 +382,7 @@ educational/           30 modules from layman to expert
   25_nuclear_shell_n126.md  How QCD screening fixes the N=126 mystery
   26_nuclear_saturation.md  Why nuclei don't collapse — sigma-omega mechanism
   27_theta23_z3_mechanism.md  Why the atmospheric mixing angle isn't 45°
+  29_mathematical_exploration.md  Hidden structure in DFC parameters
 
 comparisons/           DFC vs. String Theory, GUT, LQG, SM
 practical_applications/ Engineering limits from verified results
