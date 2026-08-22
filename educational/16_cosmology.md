@@ -5,9 +5,10 @@
 
 **Status note:** The Hubble constant prediction H₀ = 67.26 km/s/Mpc (0.2% error) is T2a.
 The identification of cosmic expansion with substrate localization dynamics is T2a.
-The cosmological constant problem — why the vacuum energy density Λ_cosm is so small —
-is an open problem (T4). The dark energy density parameter Ω_Λ is taken as an external
-input rather than derived from DFC parameters.
+The cosmological constant has a quantitative prediction: ρ_Λ^{1/4} = 2.16 meV (−3.5%,
+0 free parameters, T3). See Module 26 for the full derivation. DFC cosmological
+predictions — BBN abundances, CMB first peak, sound horizon, BAO drag scale, age of
+the universe — are all consistent with observation at the percent level.
 
 ---
 
@@ -113,35 +114,35 @@ billion years ago.
 
 ---
 
-## The Cosmological Constant Problem
+## The Cosmological Constant
 
-One of the deepest open problems in physics — and in DFC — is explaining why dark energy
-has the value it does.
+The observed dark energy density is extraordinarily small compared to what quantum field
+theory naively predicts. The ratio of the observed vacuum energy to the Planck-scale energy
+density is roughly 10⁻¹²³ — the largest quantitative discrepancy in physics.
 
-The observed dark energy density is:
+DFC resolves this structurally: the cosmological constant is not a sum over quantum field
+modes. It is the substrate's energy density at the cosmological compression depth — a depth
+far shallower than the D4–D7 thresholds where particle physics emerges. The deep-substrate
+energy density and the cosmic-scale energy density refer to different compression depths of
+the same object. They never add. The cancellation problem dissolves.
+
+**The quantitative prediction.** DFC predicts the cosmological constant from three
+independently derived parameters — the instanton action, the neutrino depth correction,
+and the compression parameter:
+
+The vacuum energy density equals the fourth power of the Planck mass, times the exponential
+of the negative sum of three terms: the instanton action (27π²), the depth correction
+(9π/2), and the compression parameter (∛18).
 
 ```
-Λ_cosm ≈ 2.9 × 10⁻³⁵ kg/m³
+ρ_Λ = M_Pl⁴ × exp(−(27π² + 9π/2 + ∛18))
 ```
 
-This is an extraordinarily small number compared to what quantum field theory would naively
-predict for the vacuum energy density. In standard quantum field theory, virtual particle
-fluctuations contribute to the vacuum energy at a scale set by the highest energy cutoff of
-the theory. If that cutoff is the Planck scale — the energy at which gravity becomes
-comparable to the other forces — the predicted vacuum energy is roughly 10¹²² times larger
-than what is observed.
-
-This discrepancy between the predicted and observed vacuum energy is the cosmological
-constant problem. It is one of the largest unsolved problems in fundamental physics.
-
-In DFC, the relevant energy cutoff is set by the kink width ξ ≈ 0.87 l_Pl — the
-Planck scale is indeed the natural UV cutoff of the model. This does not, by itself, solve
-the problem. DFC has no current derivation of why Λ_cosm takes its observed value. This
-remains T4 — not even a structural argument is available.
-
-The cosmological constant problem is the deepest open problem in the DFC cosmological
-account. Resolving it would require understanding why the substrate's baseline compression
-energy is so much smaller than the Planck-scale energy density of its kink configurations.
+The total exponent is 283.24, compared to the observed value of 283.09 — a match to
++0.05%. The predicted energy scale ρ_Λ^{1/4} = 2.16 meV, compared to the observed
+2.24 meV (−3.5%, 0 free parameters). This is T3 — the individual ingredients are each
+derived (T2a), but the combination rule is structural, not yet derived from V(φ). See
+Module 26 for the full account.
 
 ---
 
@@ -167,6 +168,24 @@ apparent space. Planck measurements confirm that apparent space is geometrically
 to high precision — a result consistent with the DFC picture in which three apparent
 spatial degrees of freedom emerge from D3 localization without any preferred curvature.
 
+**DFC CMB and cosmological predictions.** Using DFC-specific inputs (g_A = 4/π from D6
+topology, three generations from S³ topology, scale-dependent G_eff that is Planck-scale
+only), DFC produces quantitative cosmological predictions that are all consistent with
+observation:
+
+| Observable | DFC prediction | Observed | Error |
+|---|---|---|---|
+| Y_p (BBN helium-4 fraction) | 0.2475 | 0.2449 | +1.05% |
+| CMB first peak multipole ℓ₁ | 222 | 220 | +0.9% |
+| Sound horizon r_s | 143.87 Mpc | 144.43 Mpc | −0.39% |
+| BAO drag scale r_drag | 146.70 Mpc | 147.09 Mpc | −0.27% |
+| Age of universe t₀ | 13.780 Gyr | 13.797 Gyr | −0.12% |
+| Dark energy EOS w_Λ | −0.992 | −1.03 ± 0.03 | within 1.3σ |
+| Spatial flatness Ω_k | 0 (predicted) | < 0.0007 | consistent |
+
+All predictions use standard GR with DFC-derived inputs. The scale-dependent G_eff
+has no effect on any cosmological observable — it operates only at the Planck scale.
+
 ---
 
 ## Summary
@@ -180,29 +199,34 @@ spatial degrees of freedom emerge from D3 localization without any preferred cur
 | CMB acoustic peaks | Compression fluctuation oscillations at D3 epoch | T3 |
 | Flat spatial geometry | Three apparent degrees of freedom from D3, no preferred curvature | T2a |
 | Ω_DM = 0.265 | Not yet derived from DFC parameters | Open (T4) |
-| Λ_cosm = 2.9×10⁻³⁵ kg/m³ | Not yet derived; cosmological constant problem | Open (T4) |
+| Λ_cosm (ρ_Λ^{1/4} = 2.16 meV) | Instanton + depth + compression exponent | T3 (−3.5%) |
+| BBN Y_p = 0.2475 | g_A = 4/π, τ_n = 878.0 s | T2a (+1.05%) |
+| CMB first peak ℓ₁ = 222 | Standard recombination with DFC inputs | T2a (+0.9%) |
+| Dark energy EOS w_Λ = −0.992 | Structural: irreversible compression | T3 |
 
 ---
 
 ## What Remains Open
 
-DFC has a structural account of cosmic expansion that matches the Hubble constant to 0.2%
-once the energy budget is given. Three significant gaps remain:
+DFC has a structural account of cosmic expansion, a quantitative cosmological constant
+prediction (−3.5%), and percent-level BBN/CMB predictions. Three significant gaps remain:
 
-1. **The cosmological constant.** Why is Λ_cosm so small? DFC has no mechanism that
-   would suppress the baseline substrate compression energy to 10⁻¹²² of its naive
-   Planck-scale value. This is the deepest open problem.
+1. **The cosmological constant derivation.** The formula ρ_Λ = M_Pl⁴ × exp(−S_inst(1+δd)−α)
+   matches the observed value to −3.5% with 0 free parameters, but the combination rule
+   is structural (T3), not yet derived from V(φ). Upgrading to T2a requires showing from
+   substrate dynamics that the cosmological compression depth produces exactly this
+   exponential. See Module 26.
 
 2. **Dark matter abundance.** Module 15 describes the DFC dark matter candidate —
-   an incomplete-depth closure with mass but no charge. But DFC does not yet explain
-   why the ratio of dark matter to ordinary matter is approximately 5:1. This requires
-   understanding the production mechanism for D4-depth closures in the early substrate.
+   an incomplete-depth closure with mass ~35.6 keV but no charge. But DFC does not yet
+   explain why the ratio of dark matter to ordinary matter is approximately 5:1. This
+   requires understanding the production mechanism for D4-depth closures in the early
+   substrate.
 
-3. **Baryogenesis.** The universe appears to contain more matter than antimatter. In
-   DFC, matter and antimatter correspond to kinks and antikinks with opposite topological
-   charge. Why the substrate produced an asymmetry between them in the early universe
-   is an open question connected to the CP violation in the D7 closure and the dynamics
-   of the initial compression event.
+3. **Baryon asymmetry magnitude.** All three Sakharov conditions are structurally
+   satisfied in DFC (B violation via D7 sphalerons, CP violation from D6 three-generation
+   structure, out-of-equilibrium from irreversible compression cascade). But the
+   quantitative baryon-to-photon ratio η ≈ 6 × 10⁻¹⁰ is not yet derived (T4).
 
 ---
 
@@ -212,6 +236,12 @@ once the energy budget is given. Three significant gaps remain:
 
 **See also:**
 - `equations/cosmology.py` — Hubble constant T2a derivation
+- `equations/cosmological_constant_prediction.py` — Λ prediction (13/13 PASS)
+- `equations/bbn_predictions.py` — BBN predictions from DFC parameters
+- `equations/cosmological_predictions.py` — CMB first peak and Λ chain analysis
+- `equations/cosmological_predictions_2.py` — w_Λ, BAO, Hubble tension, dark matter mass
+- `equations/cosmological_predictions_3.py` — inflation, baryogenesis, absence predictions
 - `phenomena/cosmology/cosmic_expansion.md` — full cosmological account
 - `educational/15_dark_matter.md` — DFC dark matter candidate
+- `educational/26_cosmological_constant.md` — full Λ derivation account
 - `foundations/dimensional_stack.md` — D1–D7 depth behavior map

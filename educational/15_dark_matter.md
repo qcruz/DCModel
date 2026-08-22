@@ -106,19 +106,19 @@ m_DM ≈ m_e × exp(κ × (d_DM − d_e))
      ≈ 35 keV
 ```
 
-This is T3 — a structural order-of-magnitude estimate based on the depth scaling
-observed for ordinary matter. The specific depth d_DM ≈ 4.5 is not yet derived from
-V(φ); it is a plausible intermediate value.
+This has been formalized to m_DM = 35.6 keV with explicit PASS/FAIL assertions against
+warm dark matter observational bounds. The specific depth d_DM ≈ 4.5 is not yet derived
+from V(φ); it is a plausible intermediate value. The mass estimate remains T3/T4.
 
-The 35 keV estimate puts the DFC dark matter candidate in the **warm dark matter**
+The 35.6 keV estimate puts the DFC dark matter candidate in the **warm dark matter**
 regime — lighter than a WIMP (which would be at the GeV–TeV scale) but heavier than
 a neutrino (a few eV). This is important because:
 
-- Warm dark matter erases structure on small scales (below roughly 1 kiloparsec for
-  a 35 keV candidate), which qualitatively helps resolve the missing satellites problem
-  and core-cusp tension that plague cold dark matter.
+- Warm dark matter erases structure on small scales. For a 35.6 keV candidate, the
+  free-streaming length is λ_fs ≈ 1 kpc — which qualitatively helps resolve the
+  missing satellites problem and core-cusp tension that plague cold dark matter.
 - The Lyman-alpha forest observations constrain warm dark matter to be heavier than
-  about 3.5 keV. The DFC estimate of 35 keV satisfies this comfortably.
+  about 3.5 keV. The DFC estimate of 35.6 keV satisfies this comfortably (10× margin).
 
 ---
 
@@ -188,9 +188,9 @@ single species or a spectrum of dark matter candidates exists.
 | Dark matter has no electric charge | D5 U(1) winding not completed | T2a |
 | Dark matter has no color charge | D7 SU(3) winding not reached | T2a |
 | Dark matter gravitates | D3 localization + D4 inertia → couples to compression gradient | T2a |
-| Mass estimate ~35 keV | Depth scaling with d_DM ≈ 4.5 | T3 |
-| Warm dark matter regime | Free-streaming suppresses structure below ~1 kpc | T3 |
-| Lyman-alpha constraint m > 3.5 keV | 35 keV >> 3.5 keV ✓ | Consistent |
+| Mass estimate m_DM = 35.6 keV | Depth scaling with d_DM ≈ 4.5 | T3 |
+| Free-streaming length λ_fs ≈ 1 kpc | Warm dark matter suppresses small-scale structure | T3 |
+| Lyman-alpha constraint m > 3.5 keV | 35.6 keV >> 3.5 keV ✓ (10× margin) | Consistent |
 | Ω_DM = 0.265 | Not yet derived from DFC parameters | Open (T4) |
 | Self-interaction cross-section | Not yet calculated | Open |
 
@@ -215,4 +215,5 @@ potential, which is the model's deepest remaining derivation gap.
 - `phenomena/cosmology/dark_matter.md` — full DFC dark matter account with equations
 - `foundations/dimensional_stack.md` — D1–D7 depth behavior map
 - `equations/dark_matter.py` — compression threshold scales
+- `equations/cosmological_predictions_2.py` — formalized m_DM = 35.6 keV, λ_fs = 1 kpc
 - `foundations/mass_hierarchy.md` — depth-to-mass scaling used in the 35 keV estimate

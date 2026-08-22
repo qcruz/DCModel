@@ -198,9 +198,10 @@ Several important caveats:
    But we have not derived why the same depth correction should govern both. This
    remains a structural observation.
 
-3. **The equation of state is not predicted.** The formula gives the magnitude of
-   ρ_Λ but says nothing about whether w = −1 exactly or whether w evolves with
-   time. Dark energy dynamics remain open.
+3. **The equation of state is partially addressed.** DFC structurally predicts w > −1
+   (the substrate's compression is irreversible, so the dark energy density does not
+   increase). Combined with the Hubble tension measurement, w_DFC = −0.992, within
+   1.3 sigma of Planck and 1 sigma of DESI. See `equations/cosmological_predictions_2.py`.
 
 4. **The "why exponential?" question is unanswered.** Why should the cosmological
    constant be an exponential of the instanton action? The instanton action governs
@@ -221,10 +222,10 @@ Several important caveats:
   mass formula and the cosmological constant formula. If this connection is real, it
   would unify two of the most puzzling hierarchies in physics.
 
-- **Dark energy equation of state:** Determine whether the DFC substrate predicts
-  w = −1 exactly or w = −1 + ε with small corrections. The existing cosmology module
-  suggests ε ≈ 0.007 from Hubble tension considerations, but this is not derived from
-  the cosmological constant formula.
+- **Dark energy equation of state:** DFC structurally predicts w = −1 + ε with ε > 0
+  (irreversible compression). The value ε ≈ 0.008, giving w = −0.992, is computed from
+  the Hubble tension and is consistent with both Planck and DESI data. Deriving ε from
+  V(φ) alone remains open.
 
 - **Time dependence:** Does ρ_Λ evolve? If it is set by the instanton action, which
   is a fixed property of the gauge coupling, then ρ_Λ should be truly constant. But
@@ -250,9 +251,12 @@ Several important caveats:
 
 ---
 
-**See also:** Module 16 (Cosmology) for the DFC structural reframe of the
-cosmological constant. Module 21 (Neutrino Masses) for the depth correction
+**See also:** Module 16 (Cosmology) for the DFC cosmological predictions including
+BBN, CMB, and BAO. Module 21 (Neutrino Masses) for the depth correction
 δd = 1/(6π). Module 22 (Yang-Mills Proof) for the instanton action S_inst = 27π².
 `equations/cosmological_constant_prediction.py` for the full calculation
-(13/13 assertions passed). `foundations/cosmological_constant_dfc.md` for the
+(13/13 assertions passed). `equations/cosmological_predictions.py` for the Λ chain
+analysis confirming all three exponent terms individually T2a.
+`equations/cosmological_predictions_2.py` for w_Λ = −0.992, BAO r_drag, and dark
+matter mass predictions. `foundations/cosmological_constant_dfc.md` for the
 T3 structural reframe from which this quantitative result emerged.
