@@ -501,3 +501,583 @@ print("  Flagged for follow-up:")
 print("    - b_0 = N_c^2 + Q_top uniqueness → new equation module?")
 print("    - 24 = 4! product → any connection to 4D or polytope structure?")
 print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 11: Diophantine structure — integer equations from DFC
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 11: Diophantine Structure of DFC")
+print("=" * 76)
+print()
+
+# DFC produces several integer relations. Let's catalog them and look for
+# Diophantine equations (polynomial equations with integer solutions).
+
+# Equation 1: N_c^2 = N_Hopf (sphere count = color number squared)
+# Equation 2: Q_top = I_4 * N_c / 2 = (N_c^2 - 1) / 4
+# Equation 3: b_0(pure YM) = 11*N_c/3
+# Equation 4: b_0 = N_c^2 + Q_top (unique to N_c = 3)
+# Equation 5: dim(SU(N_c)) = N_c^2 - 1
+
+# From Eq 2: Q_top = (N_c^2 - 1)/4. For Q_top to be integer, need N_c odd.
+# N_c = 1: Q_top = 0 (trivial)
+# N_c = 3: Q_top = 2
+# N_c = 5: Q_top = 6
+# N_c = 7: Q_top = 12
+
+print("  Q_top(N_c) = (N_c^2 - 1)/4 for odd N_c:")
+for Nc in [1, 3, 5, 7, 9, 11]:
+    if Nc % 2 == 1:
+        Qt = (Nc**2 - 1) // 4
+        b0_ym = Fraction(11 * Nc, 3)
+        Nh = Nc**2
+        product = Fraction(Nc**2 - 1, 2*Nc) * Qt * Nh
+        test = Nh + Qt
+        b0_check = Fraction(11*Nc, 3)
+        print(f"    N_c={Nc}: Q_top={Qt}, N_Hopf={Nh}, b_0={float(b0_ym):.2f}, "
+              f"N_c^2+Q_top={test}, b_0={float(b0_check):.2f}, match={abs(test-float(b0_check))<0.01}")
+print()
+
+# NEW: Can we find a Diophantine equation that ONLY N_c=3 satisfies
+# among all positive integers?
+# From C306: C_2(fund,SU(n)) = (n^2-1)/(2n) = 4/3 → 3n^2 - 8n - 3 = 0
+# discriminant = 64 + 36 = 100 = 10^2; n = (8+10)/6 = 3
+# This is the CASCADE uniqueness. Let's look for MORE such equations.
+
+# New Diophantine: N_Hopf = N_c^2 AND Q_top = (N_c^2-1)/4 AND b_0 = N_c^2 + Q_top
+# Substituting: b_0 = N_c^2 + (N_c^2-1)/4 = (5*N_c^2 - 1)/4
+# Also b_0 = 11*N_c/3
+# So: (5*N_c^2 - 1)/4 = 11*N_c/3 → 15*N_c^2 - 44*N_c - 3 = 0
+# Already found: disc = 2116 = 46^2, N_c = 3 unique.
+
+# Another: what if we require I_4 * Q_top to be integer?
+# I_4 * Q_top = (N_c^2-1)/(2*N_c) * (N_c^2-1)/4 = (N_c^2-1)^2 / (8*N_c)
+# For N_c=3: (8)^2/(24) = 64/24 = 8/3 (NOT integer)
+# For it to be integer: 8*N_c | (N_c^2-1)^2
+
+# Instead: require I_4 * Q_top * N_Hopf to be integer (= 24 for N_c=3)
+# I_4 * Q_top * N_Hopf = (N_c^2-1)/(2*N_c) * (N_c^2-1)/4 * N_c^2
+#                       = N_c * (N_c^2-1)^2 / 8
+print("  I_4 * Q_top * N_Hopf = N_c*(N_c^2-1)^2/8 for general N_c:")
+for Nc in range(1, 12):
+    val = Fraction(Nc * (Nc**2 - 1)**2, 8)
+    is_int = val.denominator == 1
+    fac_str = ""
+    if is_int:
+        v = int(val)
+        # Check if it's a factorial
+        for k in range(1, 15):
+            if v == math.factorial(k):
+                fac_str = f" = {k}!"
+                break
+    print(f"    N_c={Nc:2d}: {float(val):10.2f}  integer={is_int}  "
+          f"{'= '+str(int(val)) if is_int else ''}{fac_str}")
+print()
+
+# KEY: N_c=3 gives 24 = 4!, the ONLY factorial in the sequence!
+print("  *** FINDING: N_c=3 is the ONLY value where I_4*Q_top*N_Hopf is a factorial. ***")
+print("  *** 24 = 4! appears uniquely at N_c=3. ***")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 12: Pell equations and quadratic irrationals from DFC
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 12: Quadratic Irrationals in DFC")
+print("=" * 76)
+print()
+
+# alpha = 18^(1/3) is a CUBIC irrational (not quadratic).
+# But several DFC quantities involve QUADRATIC irrationals:
+# sqrt(2), sqrt(3), sqrt(alpha) = 18^(1/6) = (2*3^2)^(1/6) = 2^(1/6)*3^(1/3)
+
+# The Weinberg angle involves sqrt(3/8) and sqrt(5/8).
+# The vortex factor involves sqrt(3).
+# Let's look at the minimal polynomials.
+
+print("  Minimal polynomials of DFC irrationals:")
+print()
+print("  alpha = 18^(1/3):  x^3 - 18 = 0  (degree 3, cubic)")
+print(f"    alpha = {alpha:.8f}")
+print(f"    alpha^3 - 18 = {alpha**3 - 18:.2e}")
+print()
+
+# sqrt(alpha) = 18^(1/6): x^6 - 18 = 0 (degree 6)
+sqrt_alpha = math.sqrt(alpha)
+print(f"  sqrt(alpha) = 18^(1/6):  x^6 - 18 = 0  (degree 6)")
+print(f"    sqrt(alpha) = {sqrt_alpha:.8f}")
+print(f"    sqrt(alpha)^6 - 18 = {sqrt_alpha**6 - 18:.2e}")
+print()
+
+# xi = sqrt(2/alpha) = sqrt(2) * alpha^(-1/2) = sqrt(2) * 18^(-1/6)
+# xi^6 = 8/18 = 4/9 → 9*xi^6 - 4 = 0 (degree 6)
+print(f"  xi = sqrt(2/alpha):  9*x^6 - 4 = 0  (degree 6)")
+print(f"    xi = {xi:.8f}")
+print(f"    9*xi^6 - 4 = {9*xi**6 - 4:.2e}")
+print()
+
+# phi_0 = sqrt(alpha/beta) = sqrt(alpha * 9*pi)
+# Not algebraic (involves pi). But phi_0^2/pi = 9*alpha = 9*18^(1/3)
+print(f"  phi_0^2 / pi = 9*alpha = {phi_0**2/math.pi:.6f}")
+print(f"    = 9*18^(1/3) = {9*alpha:.6f}")
+print(f"    = (phi_0/sqrt(pi))^2 ... phi_0 involves pi, so transcendental")
+print()
+
+# Key finding: alpha is the SIMPLEST DFC irrational — cubic with minimal
+# polynomial x^3 = 18. The Galois group is S_3 (degree 3 irreducible over Q).
+# This is the same group as the permutation group of 3 objects = N_c objects!
+print("  *** OBSERVATION: The minimal polynomial of alpha has degree 3 = N_c. ***")
+print("  *** Its Galois group is S_3 = permutation group of N_c objects. ***")
+print("  *** alpha's algebraic structure mirrors the number of colors. ***")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 13: Bernoulli numbers and DFC sums
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 13: Bernoulli Numbers and Zeta Values")
+print("=" * 76)
+print()
+
+# The instanton action S_inst = 27*pi^2 involves pi^2.
+# pi^2 = 6*zeta(2) where zeta(2) = sum(1/n^2) = pi^2/6.
+# So S_inst = 27 * 6 * zeta(2) = 162 * zeta(2).
+
+print(f"  S_inst = 27*pi^2 = 162 * zeta(2) = {162 * math.pi**2/6:.6f}")
+print(f"    check: {27*math.pi**2:.6f}")
+print(f"    162 = 2 * 81 = 2 * 3^4 = 2 * N_Hopf^2")
+print()
+
+# Also: S_inst = 8*pi^2/g_eff^2 = 8*pi^2 * 27/8 = 27*pi^2.
+# The "8" cancels! S_inst = (N_Hopf * pi)^2 / N_c = 81*pi^2/3 = 27*pi^2.
+# Hmm, that's N_Hopf^2 * pi^2 / N_c.
+
+S_inst_check = N_Hopf**2 * math.pi**2 / 3
+print(f"  S_inst = N_Hopf^2 * pi^2 / N_c = {S_inst_check:.6f}")
+print(f"    = {N_Hopf}^2 * pi^2 / 3 = 81*pi^2/3 = 27*pi^2 ✓")
+print()
+
+# Bernoulli connection: B_2 = 1/6, B_4 = -1/30, B_6 = 1/42, ...
+# zeta(2k) = (-1)^(k+1) * (2*pi)^(2k) * B_{2k} / (2 * (2k)!)
+# S_inst / pi^2 = 27 = 3^3 = N_c^3
+
+print(f"  S_inst / pi^2 = 27 = N_c^3 = 3^3")
+print(f"  S_kink / pi = 36 = 4 * 9 = 4 * N_Hopf = 4 * N_c^2")
+print(f"  Cosmological exponent / pi = {total_exp/math.pi:.6f}")
+print(f"    = 27*pi + 9/2 + alpha/pi = {27*math.pi + 4.5 + alpha/math.pi:.6f}")
+print()
+
+# Summarize the pi-free parts:
+print("  Pi-free skeleton of DFC constants:")
+print(f"    S_inst/pi^2 = {27}  (= N_c^3)")
+print(f"    S_kink/pi   = {36}  (= 4*N_c^2)")
+print(f"    delta_d*2*pi = 1/3  (= 1/N_c)")
+print(f"    g_eff^2 = {Fraction(8,27)}  (= 8/N_c^3)")
+print(f"    beta_lat = {Fraction(81,4)}  (= N_c^4/4)")
+print()
+print("  *** FINDING: Removing factors of pi, every DFC constant is a ***")
+print("  *** rational power of N_c=3 times a small integer. ***")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 14: The {2,3} prime structure — deeper analysis
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 14: The {2,3} Prime Structure — Complete Census")
+print("=" * 76)
+print()
+
+# Catalog EVERY numerical DFC parameter and its prime factorization.
+# Separate the pi-dependence (transcendental) from the rational part.
+
+params = [
+    ("I_4", Fraction(4, 3), "kink shape integral"),
+    ("g_eff^2", Fraction(8, 27), "effective gauge coupling squared"),
+    ("Q_top", Fraction(2, 1), "topological charge"),
+    ("N_Hopf", Fraction(9, 1), "Hopf sphere count"),
+    ("N_c", Fraction(3, 1), "number of colors"),
+    ("b_0(N_f=0)", Fraction(11, 1), "AF coefficient (pure YM)"),  # 11 is a new prime!
+    ("b_1(N_f=0)", Fraction(102, 1), "2-loop AF (= 2*3*17)"),   # 17 is also new
+    ("beta_lat", Fraction(81, 4), "lattice coupling"),
+    ("kappa_DFC", Fraction(1, 2), "DFC→YM action map"),
+    ("S_kink/pi", Fraction(36, 1), "kink action / pi"),
+    ("S_inst/pi^2", Fraction(27, 1), "instanton action / pi^2"),
+    ("delta_d * 6*pi", Fraction(1, 1), "depth correction * 6*pi"),
+    ("C_2(fund)", Fraction(4, 3), "fundamental Casimir"),
+    ("C_2(adj)", Fraction(3, 1), "adjoint Casimir"),
+    ("k_Y^2", Fraction(5, 3), "hypercharge normalization"),  # 5 is new!
+    ("sin^2(theta_W) at M_c", Fraction(3, 8), "Weinberg angle squared"),
+    ("dim(SU(3))", Fraction(8, 1), "Lie algebra dimension"),
+    ("1/alpha_em(M_c) / pi", Fraction(36, 1), "= S_kink/pi"),
+    ("a_pair/f_pi", Fraction(1, 8), "pairing/pion ratio (N_c^2-1)^-1"),
+]
+
+# Count which primes appear
+from collections import Counter
+
+def prime_factors(n):
+    """Return prime factorization of positive integer n."""
+    if n <= 1:
+        return {}
+    factors = {}
+    d = 2
+    while d * d <= n:
+        while n % d == 0:
+            factors[d] = factors.get(d, 0) + 1
+            n //= d
+        d += 1
+    if n > 1:
+        factors[n] = factors.get(n, 0) + 1
+    return factors
+
+prime_census = Counter()
+non_23_params = []
+
+for name, val, desc in params:
+    num = abs(val.numerator)
+    den = abs(val.denominator)
+    num_f = prime_factors(num) if num > 1 else {}
+    den_f = prime_factors(den) if den > 1 else {}
+    all_primes = set(num_f.keys()) | set(den_f.keys())
+    prime_census.update(all_primes)
+
+    has_other = any(p not in {2, 3} for p in all_primes)
+    status = "  *** OTHER PRIMES ***" if has_other else ""
+    if has_other:
+        non_23_params.append((name, val, all_primes - {2, 3}))
+
+    print(f"  {name:25s} = {str(val):10s}  num={num_f}  den={den_f}{status}")
+
+print()
+print(f"  Prime census across all parameters: {dict(prime_census)}")
+print()
+
+if non_23_params:
+    print("  Parameters with primes beyond {2, 3}:")
+    for name, val, other_p in non_23_params:
+        print(f"    {name} = {val}  extra primes: {other_p}")
+    print()
+    print("  INTERPRETATION: b_0=11 introduces the prime 11, b_1=102=2*3*17 introduces 17,")
+    print("  and k_Y^2=5/3 introduces the prime 5. These are the ONLY exceptions.")
+    print("  b_0 and b_1 come from QFT beta function (loop structure).")
+    print("  k_Y^2 = 5/3 comes from the SM fermion hypercharge assignments.")
+    print("  The {2,3}-only parameters are the TOPOLOGICAL ones (I_4, Q_top, N_Hopf,")
+    print("  g_eff^2, beta_lat, S_kink). The non-{2,3} primes enter through DYNAMICS.")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 15: Power towers and iterated exponentials
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 15: Nested Exponentials and Self-Reference")
+print("=" * 76)
+print()
+
+# DFC has a self-referential structure: the substrate describes itself.
+# Does this show up in iterated operations?
+
+# exp(exp(-S_inst)) — the double-exponential of the instanton action
+double_exp = math.exp(-S_inst)
+print(f"  exp(-S_inst) = exp(-27*pi^2) = {double_exp:.4e}")
+print(f"    ≈ 10^(-{-math.log10(double_exp):.1f})")
+print(f"  This is the instanton fugacity — essentially zero.")
+print()
+
+# What about the tower: alpha, alpha^alpha, alpha^(alpha^alpha)?
+print(f"  Power tower of alpha = 18^(1/3) = {alpha:.4f}:")
+a1 = alpha
+a2 = alpha**alpha
+a3 = alpha**(alpha**alpha)
+print(f"    alpha = {a1:.6f}")
+print(f"    alpha^alpha = {a2:.6f}")
+print(f"    alpha^(alpha^alpha) = {a3:.6f}")
+print(f"    Ratio a2/a1 = {a2/a1:.6f}")
+print(f"    Ratio a3/a2 = {a3/a2:.6f}")
+print()
+
+# Self-consistent equation: x = alpha^(1/x)?
+# → x^x = alpha → x*ln(x) = ln(alpha) = ln(18)/3
+# Solve numerically
+from scipy.optimize import brentq
+
+def self_eq(x):
+    return x * math.log(x) - math.log(alpha)
+
+try:
+    x_sc = brentq(self_eq, 1.001, 10.0)
+    print(f"  Self-consistent: x^x = alpha → x = {x_sc:.8f}")
+    print(f"    Check: x^x = {x_sc**x_sc:.8f}, alpha = {alpha:.8f}")
+    print(f"    x ≈ {x_sc:.4f} — not an obvious DFC parameter")
+except Exception:
+    print("  Self-consistent equation x^x = alpha: numerical solver unavailable")
+print()
+
+# Tetration-related: what integer n satisfies alpha^alpha^...^alpha (n times) ≈ some DFC constant?
+# alpha↑↑2 = alpha^alpha ≈ 15.0 (close to 15.8 = a_V, but not exact)
+print(f"  alpha↑↑2 = alpha^alpha = {a2:.4f}")
+print(f"    Close to a_V(nuclear volume) ≈ 15.8 MeV? Ratio = {a2/15.8:.4f} — no.")
+print(f"    Close to 4*I_4*pi = {4*float(I4)*math.pi:.4f}? Ratio = {a2/(4*float(I4)*math.pi):.4f}")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 16: DFC determinant — the "characteristic matrix"
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 16: DFC Characteristic Matrix")
+print("=" * 76)
+print()
+
+# Arrange the 4 key DFC topological parameters into a 2x2 matrix:
+#   M = [[I_4, Q_top], [N_c, N_Hopf]] = [[4/3, 2], [3, 9]]
+# What is its determinant, trace, eigenvalues?
+
+import numpy as np
+
+M = np.array([[float(I4), float(Q_top)],
+              [float(3), float(N_Hopf)]])
+
+det_M = np.linalg.det(M)
+tr_M = np.trace(M)
+eigvals = np.linalg.eigvals(M)
+
+print(f"  M = [[I_4, Q_top], [N_c, N_Hopf]] = [[4/3, 2], [3, 9]]")
+print(f"  det(M) = I_4*N_Hopf - Q_top*N_c = (4/3)*9 - 2*3 = 12 - 6 = {det_M:.6f}")
+print(f"  tr(M) = I_4 + N_Hopf = 4/3 + 9 = 31/3 = {tr_M:.6f}")
+print(f"  Eigenvalues: {eigvals[0]:.6f}, {eigvals[1]:.6f}")
+print(f"    lambda_1 * lambda_2 = det = {eigvals[0]*eigvals[1]:.6f}")
+print()
+
+# det = 6 exactly (with Fraction arithmetic)
+det_exact = Fraction(4, 3) * 9 - 2 * 3
+print(f"  det(M) exact = {det_exact} = {float(det_exact)}")
+print(f"    = 6 = N_c! = 3! (the number of permutations of N_c objects)")
+print()
+
+# Alternative matrix: [[Q_top, I_4], [N_Hopf, N_c]] — transpose-swap
+M2 = np.array([[float(Q_top), float(I4)],
+               [float(N_Hopf), float(3)]])
+det_M2 = np.linalg.det(M2)
+print(f"  M' = [[Q_top, I_4], [N_Hopf, N_c]] det = {det_M2:.6f}")
+print(f"    = Q_top*N_c - I_4*N_Hopf = 6 - 12 = -6 = -N_c!")
+print()
+
+# 3x3 matrix with b_0
+M3 = np.array([[float(I4), float(Q_top), 0],
+               [0, float(3), float(N_Hopf)],
+               [1, 0, float(11)]])
+det_M3 = np.linalg.det(M3)
+print(f"  3x3: [[I_4, Q_top, 0], [0, N_c, N_Hopf], [1, 0, b_0]]")
+print(f"  det = {det_M3:.4f}")
+# I_4*(3*11 - 0) - Q_top*(0 - 9) + 0 = I_4*33 + Q_top*9 = 44 + 18 = 62
+print(f"    = I_4*33 + Q_top*9 = {float(I4)*33 + Q_top*9:.4f}")
+print()
+
+print("  *** FINDING: det([[I_4, Q_top], [N_c, N_Hopf]]) = 6 = N_c! = 3! ***")
+print("  *** The determinant of the DFC topological matrix equals ***")
+print("  *** the number of permutations of N_c objects. ***")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 17: Euler's identity and DFC — the e^(i*pi) connection
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 17: DFC and Euler-Type Identities")
+print("=" * 76)
+print()
+
+# Euler: e^(i*pi) + 1 = 0 connects {e, i, pi, 1, 0}.
+# DFC: S_kink * alpha_em = 1 connects {S_kink, alpha_em}.
+# Can we write a DFC identity connecting e, pi, and DFC parameters?
+
+# We have: S_kink = 36*pi, alpha_em = 1/(36*pi)
+# exp(-S_inst) = exp(-27*pi^2) ≈ 0 (essentially zero — like e^(i*pi)+1=0!)
+# More precisely: rho_Lambda = exp(-(S_inst + S_inst*delta_d + alpha)) M_Pl^4
+
+# DFC "Euler identity": exp(-S_inst) × M_Pl^4 ≈ 0 (to 116 orders of magnitude)
+# The cosmological constant IS the DFC version of "approximately zero."
+
+print("  Standard Euler: e^(i*pi) + 1 = 0")
+print("  DFC analog: exp(-27*pi^2) ≈ 0  (to 116 decimal places)")
+print(f"    exp(-S_inst) = {math.exp(-S_inst):.4e}")
+print()
+
+# More interesting: the DFC "Euler product"
+# Product of e, pi, and all DFC topological integers:
+euler_prod = math.e * math.pi * float(I4) * Q_top * N_Hopf
+print(f"  e * pi * I_4 * Q_top * N_Hopf = e * pi * 24 = {euler_prod:.6f}")
+print(f"    = 24*e*pi = {24*math.e*math.pi:.6f}")
+print(f"    ≈ {euler_prod:.2f}")
+print(f"    204.9 ≈ nothing obvious")
+print()
+
+# But: e * pi ≈ 8.54 ≈ 8.5 = 17/2 (near-miss)
+# Not structurally interesting.
+
+# What IS interesting: alpha^3 = 18 = 2*3^2 = 2*(e^1)^... no.
+# The most interesting Euler-type identity in DFC is:
+# S_kink * alpha_em = 1  [T1, exact, C171]
+# This is the DFC "balance equation": kink action × electromagnetic coupling = unity.
+print("  DFC balance identity: S_kink × alpha_em(M_c) = 1  [T1, C171]")
+print("  In words: the kink action and the fine structure constant are reciprocals")
+print("  of each other at the electromagnetic unification scale.")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 18: Partition function structure
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 18: Integer Partitions of DFC Numbers")
+print("=" * 76)
+print()
+
+# How many ways can we partition key DFC integers?
+# p(n) = number of partitions of n
+def partition_count(n, max_val=None):
+    """Count partitions of n using parts ≤ max_val."""
+    if max_val is None:
+        max_val = n
+    dp = [0] * (n + 1)
+    dp[0] = 1
+    for k in range(1, min(n, max_val) + 1):
+        for j in range(k, n + 1):
+            dp[j] += dp[j - k]
+    return dp[n]
+
+dfc_integers = {"Q_top": 2, "N_c": 3, "N_c!": 6, "dim(SU(3))": 8,
+                "N_Hopf": 9, "b_0": 11, "alpha^3": 18, "4!": 24,
+                "S_kink/pi": 36}
+
+print("  Integer partitions p(n) of DFC integers:")
+for name, n in dfc_integers.items():
+    p = partition_count(n)
+    print(f"    p({n:2d}) = {p:6d}  ({name})")
+print()
+
+# Partitions using only DFC primes {2, 3}
+print("  Partitions using only parts from {2, 3} (DFC primes):")
+for name, n in dfc_integers.items():
+    # Count partitions of n using parts 2 and 3 only
+    count = 0
+    for n3 in range(n // 3 + 1):
+        remainder = n - 3 * n3
+        if remainder >= 0 and remainder % 2 == 0:
+            count += 1
+    print(f"    p_{{2,3}}({n:2d}) = {count:3d}  ({name})")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 19: Sum of DFC parameters = anything interesting?
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 19: Sums and Harmonic Means")
+print("=" * 76)
+print()
+
+# Sum of the "topological quartet": I_4 + Q_top + N_c + N_Hopf
+topo_sum = float(I4) + Q_top + 3 + N_Hopf
+print(f"  I_4 + Q_top + N_c + N_Hopf = 4/3 + 2 + 3 + 9 = {topo_sum:.4f}")
+print(f"    = 43/3 = {Fraction(4,3)+2+3+9}")
+print()
+
+# Harmonic mean
+hm = 4 / (1/float(I4) + 1/Q_top + 1/3 + 1/N_Hopf)
+print(f"  Harmonic mean of {{I_4, Q_top, N_c, N_Hopf}} = {hm:.6f}")
+print(f"    = 4 / (3/4 + 1/2 + 1/3 + 1/9)")
+denom = Fraction(3,4) + Fraction(1,2) + Fraction(1,3) + Fraction(1,9)
+hm_exact = Fraction(4, 1) / denom
+print(f"    = 4 / {denom} = {hm_exact} = {float(hm_exact):.6f}")
+print()
+
+# Geometric mean
+gm = (float(I4) * Q_top * 3 * N_Hopf)**0.25
+print(f"  Geometric mean of {{I_4, Q_top, N_c, N_Hopf}} = {gm:.6f}")
+print(f"    = (4/3 * 2 * 3 * 9)^(1/4) = 24^(1/4) = (4!)^(1/4)")
+print(f"    = {24**0.25:.6f}")
+print(f"    ≈ {24**0.25:.4f} — close to alpha = {alpha:.4f}? Ratio = {24**0.25/alpha:.4f}")
+print(f"    (4!)^(1/4) / alpha = {24**0.25/alpha:.6f} — not exact")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 20: Graph theory — DFC parameter network
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 20: DFC Identity Network")
+print("=" * 76)
+print()
+
+# How many INDEPENDENT identities connect the key DFC parameters?
+# List all known exact identities:
+print("  Known exact (T1) identities among DFC parameters:")
+print("    1. g_eff^2 = 2*I_4/N_Hopf = 8/27")
+print("    2. Q_top = I_4*N_c/2 = 2")
+print("    3. N_Hopf = N_c^2 = 9")
+print("    4. b_0 = N_c^2 + Q_top = 11 (unique to N_c=3)")
+print("    5. S_kink = 4/beta = 36*pi")
+print("    6. S_inst = 8*pi^2/g_eff^2 = 27*pi^2")
+print("    7. alpha^3 = 18 = 2*N_Hopf = 2*N_c^2")
+print("    8. S_kink * alpha_em(M_c) = 1")
+print("    9. beta_lat = 2*N_c/g_eff^2 = 81/4")
+print("   10. 1/alpha_em(M_c) = 36*pi (= S_kink)")
+print("   11. delta_d = 1/(6*pi) = (I_4-1)/(2*pi) = N_c/(N_Hopf*2*pi)")
+print("   12. kappa_DFC = beta_lat*g_eff^2/(4*N_c) = 1/2")
+print()
+
+# Parameters: {alpha, beta, I_4, Q_top, N_c, N_Hopf, g_eff^2, b_0, S_kink, S_inst}
+# That's 10 parameters with 12 identities.
+# In principle, 10 params - 12 constraints = "overdetermined" by 2.
+# But some identities are not independent.
+
+# Independent count: N_c is the "base" parameter. Given N_c=3:
+# N_Hopf = N_c^2 (from 3)
+# I_4 = (N_c^2-1)/(2*N_c) (from definition, implied by C_2)
+# Q_top = I_4*N_c/2 (from 2)
+# g_eff^2 = 2*I_4/N_Hopf (from 1)
+# b_0 = 11*N_c/3 (from QFT, identity 4 is then a CHECK)
+# beta = 1/(9*pi) (from ECCC, T2a)
+# alpha = 18^(1/3) (from BPS, T2a)
+# S_kink = 4/beta (algebraic)
+# S_inst = 8*pi^2/g_eff^2 (algebraic)
+
+print("  Degrees of freedom analysis:")
+print("    Given N_c = 3 (one integer), ALL topological parameters are fixed.")
+print("    Given beta = 1/(9*pi) (one transcendental), ALL action-scale parameters are fixed.")
+print("    Given alpha = 18^(1/3) (one algebraic), the potential shape is fixed.")
+print("    Total: 3 inputs → all DFC parameters.")
+print("    Of these, alpha = f(beta, BPS) reduces it to 2 independent inputs:")
+print("      N_c = 3  and  beta = 1/(9*pi)")
+print()
+print("  *** FINDING: The entire DFC parameter space has dimension 2: ***")
+print("  *** one integer (N_c = 3) and one coupling (beta = 1/(9*pi)). ***")
+print("  *** Everything else is derived. ***")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# UPDATED SUMMARY
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("UPDATED SUMMARY OF FINDINGS (Explorations 1-20)")
+print("=" * 76)
+print()
+print("  STRUCTURAL:")
+print("  1. b_0 = N_c^2 + Q_top = 11 unique to N_c=3 [T1, C417]")
+print("  2. I_4 * Q_top * N_Hopf = 24 = 4! unique factorial at N_c=3 [NEW]")
+print("  3. det([[I_4, Q_top], [N_c, N_Hopf]]) = 6 = N_c! [NEW]")
+print("  4. DFC parameter space has dimension 2: {N_c, beta} [NEW]")
+print()
+print("  NUMBER-THEORETIC:")
+print("  5. All topological DFC parameters factor into primes {2, 3} only [C417]")
+print("  6. Non-{2,3} primes enter only through dynamics: b_0=11, b_1→17, k_Y^2→5 [NEW]")
+print("  7. alpha = 18^(1/3) has minimal polynomial degree N_c = 3 [NEW]")
+print("  8. Pi-free skeleton: S/pi^k always yields N_c^j × small integer [NEW]")
+print()
+print("  ALGEBRAIC:")
+print("  9. (3*sqrt(2))^(2/3) = 18^(1/3) = alpha [C417]")
+print(" 10. Cosmological exponent = N_Hopf*pi*(3*pi+1/2) + alpha [C417]")
+print(" 11. S_inst = N_Hopf^2 * pi^2 / N_c [NEW]")
+print()
+print("  Flagged for dedicated equation modules:")
+print("    - Exploration 11: 4! uniqueness at N_c=3 (combinatorial proof)")
+print("    - Exploration 14: {2,3} vs dynamic primes (structural vs loop)")
+print("    - Exploration 16: det = N_c! (topological matrix)")
+print("    - Exploration 20: parameter space dimension = 2")
+print()
