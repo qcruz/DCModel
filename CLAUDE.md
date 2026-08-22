@@ -241,6 +241,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   α=∛18 TIER 2a (Cycle 172): derived from β[T2a]+S_kink×α_D5=1[T1]+BPS saturation[T1].
 
 Recent cycles (full history: push_history.md):
+| 2026-08-22 | 417 | Step 1 (Track E — Freeform Math Exploration): equations/freeform_math_exploration.py (new, 10 explorations). Step 2: CLAUDE.md updated — Track E added to PRIMARY OBJECTIVES as core interactive activity. Key findings: b₀=N_c²+Q_top=11 UNIQUE to N_c=3 (discriminant=46²=2116) [T1]; I₄×Q_top×N_Hopf=24=4! [T1]; all key DFC fractions use only primes {2,3}; (3√2)^(2/3)=18^(1/3)=α [T1]; cosmological exponent=N_Hopf×π×(3π+1/2)+α. Partial fixes to astrophysical_scorecard.py (Chandrasekhar scaling, CNO Gamow observed value). **Freeform exploration + CLAUDE.md update. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 95% | ~80% |
 | 2026-08-22 | 416 | Step 2 (Documentation): Four educational docs updated with C362-C414 results. 16_cosmology.md: Λ T4→T3 (−3.5%), BBN/CMB/BAO predictions table, updated "What Remains Open". 20_nuclear_physics.md: Walecka saturation section (a_V +0.7%, periodic table RMS 0.86%), 11 prediction tests table. 26_cosmological_constant.md: w_Λ=−0.992, EOS status updated. 15_dark_matter.md: m_DM=35.6 keV, λ_fs=1 kpc, updated summary table. **Documentation update. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 95% | ~80% |
 | 2026-08-21 | 415 | Step 2 (Documentation): educational/28_gravity_gap.md REWRITTEN FROM SCRATCH. Complete rewrite from journaling style (C366-C399) to clean current-state format covering C366b-C408 (15 modules, 258/258 PASS). 7 sections: derived results, open problems, DFC claims, cosmological implications, path forward, equation module table. **Documentation update. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 95% | ~80% |
 | 2026-08-21 | 414 | Step 1 (Prediction Maximization — Fundamental): equations/cosmological_predictions_3.py (new, 16/16 PASS). INFLATION + BARYON ASYMMETRY + ABSENCE PREDICTIONS. Part A: n_s = 0.9667 at N_e=60 (+0.4 sigma Planck). Flatness/horizon/monopole dissolved [T1]. T_reheat > T_BBN [T2a]. r BLOCKED. Part B: All 3 Sakharov conditions met [T2a]. E_sph=72*pi M_Pl, J_CP>0, first-order D7 PT. eta_B magnitude OPEN [T4]. Part C: 6 absence predictions — proton stable [T1], no axion [T2a], d_n=0 [T2a], no SUSY [T3], N_gen=3 [T1], Omega_k=0 [T2a]. All confirmed. **Cosmological+fundamental prediction module 4. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 95% | ~80% |
@@ -625,6 +626,39 @@ angle* — a new connection that existing approaches lack.
 For each: write a one-page structural argument (`foundations/new_problem_NAME.md`),
 identify what DFC predicts, identify the key T2a→T1 upgrade path, and record
 honestly where DFC has nothing new to say vs. existing approaches.
+
+---
+
+**Track E — Freeform Mathematical Exploration (core interactive activity)**
+
+A discovery-oriented activity: take DFC-derived identities, constants, and relations
+and subject them to random interesting mathematical transformations to see if new
+structure emerges. This is a **core interactive activity of the model going forward** —
+not supplementary, but a primary engine for discovering new connections.
+
+The workspace is `equations/freeform_math_exploration.py`. Each session may add new
+exploration sections. Techniques include:
+
+- **Continued fractions** of DFC constants (α, κ, g_eff, S_kink, etc.)
+- **Modular arithmetic** — what primes factor DFC integers? What residues appear?
+- **Algebraic identities** — products, ratios, sums of DFC parameters; look for
+  unexpected simplifications or integer relationships
+- **Number theory** — factorizations, discriminants, uniqueness theorems
+- **Exponential/log transformations** — exp(−S_inst), ln(α), etc.
+- **Trigonometric forms** — DFC angles (Weinberg, Z₃ center, θ₂₃)
+- **Mass ratio analysis** — generation scaling factor κ candidates
+- **Decomposition of known results** — e.g., cosmological exponent into substrate terms
+
+**Key findings so far (C417):**
+- b₀ = N_c² + Q_top = 11 is UNIQUE to N_c = 3 (discriminant = 46² = 2116)
+- I₄ × Q_top × N_Hopf = 24 = 4!
+- All key DFC fractions use only primes {2, 3}
+- (3√2)^(2/3) = 18^(1/3) = α (BPS saturation)
+- Cosmological exponent = N_Hopf × π × (3π + 1/2) + α
+
+When a freeform exploration yields a result that looks structurally significant
+(e.g., a new uniqueness theorem, an unexpected identity), promote it to a proper
+equation module in `equations/` for formal verification.
 
 ---
 
