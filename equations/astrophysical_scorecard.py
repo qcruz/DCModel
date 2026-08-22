@@ -273,29 +273,35 @@ check("C2: CNO Gamow energy within 5%", abs(error_CNO) < 5.0)
 # DFC prediction: the triple-alpha process requires the Hoyle state at
 # E ~ 3*m_alpha - m_C12 + E_Hoyle_excess. The DFC SEMF gives B(C-12).
 A_C, Z_C_12 = 12, 6
-B_C12_DFC = (a_V * A_C - a_S * A_C**(2.0/3.0)
-             - a_C * Z_C_12 * (Z_C_12 - 1) / A_C**(1.0/3.0)
-             - a_A * (A_C - 2*Z_C_12)**2 / A_C
-             + a_pair / math.sqrt(A_C))  # even-even
+B_C12_SEMF = (a_V * A_C - a_S * A_C**(2.0/3.0)
+              - a_C * Z_C_12 * (Z_C_12 - 1) / A_C**(1.0/3.0)
+              - a_A * (A_C - 2*Z_C_12)**2 / A_C
+              + a_pair / math.sqrt(A_C))  # even-even
+B_C12_obs = 92.162  # MeV (observed)
 B_He4_obs = 28.296  # MeV (observed; DFC SEMF poor for A=4)
-# 3 * He-4 total mass excess vs C-12
-# Q = 3*M(He4) - M(C12) = 3*(4*M_N - B_He4) - (12*M_N - B_C12)
-# Q = -3*B_He4 + B_C12 = B_C12 - 3*28.296
-Q_triple_alpha = B_C12_DFC - 3 * B_He4_obs
 
-# The Hoyle state is at E = 7.6542 MeV above C-12 ground state
-# For triple-alpha to work: Q + E_Hoyle ~ 0 (resonance condition)
-# Observed: Q = 92.16 - 84.89 = 7.27 MeV (deficit)
-# Hoyle state at 7.654 MeV above ground → 7.654 - 7.275 = 0.379 MeV above threshold
+# ROOT CAUSE: SEMF is a smooth liquid-drop model — it systematically
+# underbinds light nuclei where shell effects dominate. B(C-12) has a
+# large shell correction (~5 MeV) from the doubly-magic-like p-shell
+# closure. The DFC periodic table module (C380) handles this with
+# Strutinsky shell corrections, achieving RMS 0.86% for heavy nuclei.
+# For this scorecard, we use the DFC SEMF value but note the limitation.
+B_C12_error = (B_C12_SEMF / B_C12_obs - 1) * 100
+
+# Q = B(C-12) - 3*B(He-4)
+Q_triple_SEMF = B_C12_SEMF - 3 * B_He4_obs
 Q_triple_obs = 7.275  # MeV (3*alpha threshold above C-12 ground)
-error_Q3a = (Q_triple_alpha / Q_triple_obs - 1) * 100
+error_Q3a = (Q_triple_SEMF / Q_triple_obs - 1) * 100
 
-print(f"  B(C-12) DFC SEMF: {B_C12_DFC:.2f} MeV")
-print(f"  Triple-alpha Q value: {Q_triple_alpha:.2f} MeV (DFC)")
+print(f"  B(C-12) DFC SEMF: {B_C12_SEMF:.2f} MeV (obs: {B_C12_obs:.2f}, error: {B_C12_error:+.1f}%)")
+print(f"  NOTE: SEMF underbinds C-12 by {B_C12_obs - B_C12_SEMF:.1f} MeV (shell effects in light nuclei)")
+print(f"  Triple-alpha Q value: {Q_triple_SEMF:.2f} MeV (DFC SEMF)")
 print(f"  Triple-alpha Q value: {Q_triple_obs:.3f} MeV (observed)")
 print(f"  Error: {error_Q3a:+.1f}%")
+print(f"  ROOT CAUSE: {B_C12_error:+.1f}% B(C-12) error amplifies to {error_Q3a:+.1f}% in Q (difference of large numbers)")
 print()
 
+# FAIL expected — SEMF limitation, not DFC parameter error
 check("C3: Triple-alpha Q within 20%", abs(error_Q3a) < 20.0)
 print()
 
@@ -606,7 +612,7 @@ scorecard = [
     ("B", "NS max mass (QHD-I)",          M_max_NS_est, "M_sun",  M_max_NS_obs, error_NS,   "T3"),
     ("C1", "Gamow energy (pp)",           E_G_pp_keV,   "keV",    E_G_pp_obs,  error_Gamow, "T2a"),
     ("C2", "Gamow energy (CNO)",          E_G_CNO_keV,  "keV",    E_G_CNO_obs, error_CNO,   "T2a"),
-    ("C3", "Triple-alpha Q value",        Q_triple_alpha,"MeV",   Q_triple_obs, error_Q3a,  "T3"),
+    ("C3", "Triple-alpha Q value",        Q_triple_SEMF, "MeV",   Q_triple_obs, error_Q3a,  "T3"),
     ("D", "NS radius (QHD-I)",            R_NS_QHD1,    "km",     R_NS_obs,    error_R,     "T3"),
     ("E", "SN bounce density",            rho_0_DFC_cgs,"g/cm3",  rho_bounce_obs, error_bounce, "T3"),
     ("F1", "Thomson cross section",       sigma_T_DFC_cm2, "cm2", sigma_T_obs, error_sigma_T, "T2a"),
