@@ -1081,3 +1081,506 @@ print("    - Exploration 14: {2,3} vs dynamic primes (structural vs loop)")
 print("    - Exploration 16: det = N_c! (topological matrix)")
 print("    - Exploration 20: parameter space dimension = 2")
 print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 21: Eigenvalues of DFC matrices
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 21: Eigenvalues of DFC Matrices")
+print("=" * 76)
+print()
+
+# The 2x2 topological matrix from Exploration 16
+M_topo = np.array([[float(I4), float(Q_top)],
+                   [float(3), float(N_Hopf)]])
+eigenvalues = np.linalg.eigvals(M_topo)
+eigenvalues = sorted(eigenvalues)
+trace_M = float(I4) + N_Hopf  # = 4/3 + 9 = 31/3
+det_M = 6.0  # = N_c!
+
+print(f"  M = [[I_4, Q_top], [N_c, N_Hopf]] = [[4/3, 2], [3, 9]]")
+print(f"  Trace = I_4 + N_Hopf = {trace_M:.6f} = {Fraction(4,3) + 9} = 31/3")
+print(f"  Det = {det_M:.0f} = N_c! = 6")
+print(f"  Eigenvalues: lambda_1 = {eigenvalues[0]:.6f}, lambda_2 = {eigenvalues[1]:.6f}")
+print(f"  Characteristic polynomial: x^2 - (31/3)x + 6 = 0")
+# Discriminant: (31/3)^2 - 4*6 = 961/9 - 24 = 961/9 - 216/9 = 745/9
+disc = Fraction(31, 3)**2 - 4 * 6
+print(f"  Discriminant = (31/3)^2 - 24 = {disc} = {float(disc):.6f}")
+print(f"  sqrt(disc) = {math.sqrt(float(disc)):.6f}")
+print(f"  lambda_1 = (31/3 - sqrt(745/9)) / 2 = {(31/3 - math.sqrt(745/9))/2:.6f}")
+print(f"  lambda_2 = (31/3 + sqrt(745/9)) / 2 = {(31/3 + math.sqrt(745/9))/2:.6f}")
+print(f"  lambda_1 * lambda_2 = {eigenvalues[0]*eigenvalues[1]:.6f} = 6 = N_c! ✓")
+print(f"  lambda_1 + lambda_2 = {eigenvalues[0]+eigenvalues[1]:.6f} = 31/3 ✓")
+print()
+
+# 3x3 DFC matrix: rows = (I_4, Q_top, N_c), (N_c, N_Hopf, b_0), (Q_top, N_c, alpha^3)
+M3_dfc = np.array([[float(I4), float(Q_top), float(3)],
+                   [float(3), float(N_Hopf), float(11)],
+                   [float(Q_top), float(3), float(18)]])
+eig3 = sorted(np.linalg.eigvals(M3_dfc).real)
+det3 = np.linalg.det(M3_dfc)
+tr3 = float(I4) + N_Hopf + 18
+print(f"  3x3 DFC matrix [[I_4,Q_top,N_c],[N_c,N_Hopf,b_0],[Q_top,N_c,alpha^3]]:")
+print(f"  Trace = I_4 + N_Hopf + 18 = {tr3:.4f} = {Fraction(4,3)+9+18}")
+print(f"  Det = {det3:.4f}")
+det3_exact = (Fraction(4,3)*9*18 + 2*3*2 + 3*11*3
+              - 3*9*3 - Fraction(4,3)*11*3 - 2*2*18)
+print(f"  Det exact = {det3_exact} = {float(det3_exact):.4f}")
+print(f"  Eigenvalues: {eig3[0]:.4f}, {eig3[1]:.4f}, {eig3[2]:.4f}")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 22: Catalan numbers and DFC
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 22: Catalan Numbers and DFC Parameters")
+print("=" * 76)
+print()
+
+# C_n = (2n)! / ((n+1)! * n!)
+# C_0=1, C_1=1, C_2=2, C_3=5, C_4=14, C_5=42, C_6=132, ...
+catalan = [1, 1, 2, 5, 14, 42, 132, 429, 1430]
+print("  Catalan numbers: C_0=1, C_1=1, C_2=2, C_3=5, C_4=14, C_5=42, ...")
+print()
+
+# Any DFC parameters match Catalan numbers?
+print("  DFC integer matches with Catalan numbers:")
+print(f"    Q_top = {Q_top} = C_2 ✓ (2nd Catalan number)")
+print(f"    N_c! = 6: not a Catalan number")
+print(f"    N_Hopf = 9: not a Catalan number")
+print(f"    b_0 = 11: not a Catalan number")
+print(f"    C_4 = 14: 14 = 2*7 — introduces prime 7, not DFC")
+print(f"    C_5 = 42: 42 = 2*3*7 — introduces prime 7")
+print()
+
+# Catalan number C_n counts non-crossing partitions of {1,...,n+1}
+# C_2 = 2 = Q_top: the number of non-crossing partitions of {1,2,3}
+# (beyond the trivial partition)
+# This counts: {{1,2,3}} and {{1},{2,3}},{{1,2},{3}},{{1,3},{2}} minus crossing
+# Actually C_3 = 5, C_2 = 2
+print("  C_2 = 2 = Q_top: non-crossing pairings of 4 points on a circle")
+print("  Alternatively: Q_top = 2 is the number of Dyck paths of length 2")
+print("  (1 up-step then 1 down-step: UD)")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 23: Fibonacci/Lucas connections
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 23: Fibonacci and Lucas Numbers")
+print("=" * 76)
+print()
+
+fib = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+lucas = [2, 1, 3, 4, 7, 11, 18, 29, 47, 76, 123, 199]
+print("  Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...")
+print("  Lucas:     2, 1, 3, 4, 7, 11, 18, 29, 47, 76, 123, 199, ...")
+print()
+
+# Check DFC integers against these sequences
+print("  DFC parameters in Fibonacci sequence:")
+print(f"    Q_top = 2 = F_3 ✓")
+print(f"    N_c = 3 = F_4 ✓")
+print(f"    N_Hopf = 9: NOT Fibonacci")
+print(f"    b_0 = 11: NOT Fibonacci")
+print()
+
+print("  DFC parameters in Lucas sequence:")
+print(f"    Q_top = 2 = L_0 ✓")
+print(f"    N_c = 3 = L_2 ✓")
+print(f"    N_Hopf = 9: NOT Lucas")
+print(f"    b_0 = 11 = L_5 ✓ (!)")
+print(f"    alpha^3 = 18 = L_6 ✓ (!!)")
+print()
+
+print("  *** OBSERVATION: b_0=11 and alpha^3=18 are CONSECUTIVE Lucas numbers! ***")
+print(f"    L_5 = 11, L_6 = 18, and L_5 + L_6 = L_7 = 29")
+print(f"    b_0 + alpha^3 = 11 + 18 = 29 = L_7")
+print()
+
+# Is this a coincidence? Check:
+# L_n = phi^n + (-phi)^{-n} where phi = (1+sqrt(5))/2
+phi_gold = (1 + math.sqrt(5)) / 2
+L5 = phi_gold**5 + (-phi_gold)**(-5)
+L6 = phi_gold**6 + (-phi_gold)**(-6)
+print(f"  Verification: L_5 = phi^5 + (-phi)^(-5) = {L5:.6f} ≈ 11 ✓")
+print(f"  Verification: L_6 = phi^6 + (-phi)^(-6) = {L6:.6f} ≈ 18 ✓")
+print()
+
+# But note: 18 = 2*3^2 = 2*N_c^2 and 11 = N_c^2 + Q_top
+# The Lucas property L_5 + L_6 = L_7 would imply:
+# (N_c^2 + Q_top) + 2*N_c^2 = 3*N_c^2 + Q_top = 29
+# For N_c=3: 27 + 2 = 29 ✓
+# For N_c=4: 3*16 + (16-1)/(2*4)*4/2 ... this only works for N_c=3.
+print("  Structural interpretation:")
+print(f"    b_0 = N_c^2 + Q_top = 9 + 2 = 11")
+print(f"    alpha^3 = 2*N_c^2 = 18")
+print(f"    Sum = 3*N_c^2 + Q_top = 29 = L_7")
+print(f"    This is a NUMERICAL COINCIDENCE — Lucas numbers are not derived from DFC.")
+print(f"    But it's notable that two independent DFC quantities are consecutive Lucas.")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 24: Trigonometric values at DFC angles
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 24: Trigonometric Values at DFC Angles")
+print("=" * 76)
+print()
+
+# Z_3 center angle = 2*pi/3
+z3_angle = 2 * math.pi / 3
+print(f"  Z_3 center angle: 2*pi/3 = {z3_angle:.6f} rad = 120°")
+print(f"    cos(2*pi/3) = {math.cos(z3_angle):.6f} = -1/2")
+print(f"    sin(2*pi/3) = {math.sin(z3_angle):.6f} = sqrt(3)/2")
+print(f"    |1 - z_3| = sqrt(3) = {math.sqrt(3):.6f}")
+print()
+
+# Weinberg angle
+theta_W = math.asin(math.sqrt(0.2312))
+print(f"  Weinberg angle: sin^2(theta_W) = 0.2312")
+print(f"    theta_W = {math.degrees(theta_W):.4f}°")
+print(f"    sin(theta_W) = {math.sin(theta_W):.6f}")
+print(f"    cos(theta_W) = {math.cos(theta_W):.6f}")
+print(f"    tan(theta_W) = {math.tan(theta_W):.6f}")
+print()
+
+# At unification: sin^2(theta_W) = 3/8
+theta_W_unif = math.asin(math.sqrt(3/8))
+print(f"  At unification: sin^2(theta_W) = 3/8")
+print(f"    theta_W = {math.degrees(theta_W_unif):.4f}°")
+print(f"    cos(2*theta_W) = 1 - 2*sin^2 = 1 - 3/4 = 1/4")
+print(f"    Verification: {1 - 2*3/8:.6f} = 0.25 = 1/4 ✓")
+print()
+
+# Theta_23 neutrino mixing
+theta_23 = math.radians(49.0)
+print(f"  Neutrino theta_23 = 49° (observed)")
+print(f"    sin^2(2*theta_23) = {math.sin(2*theta_23)**2:.6f}")
+print(f"    If theta_23 = pi/4 (maximal): sin^2(2*theta_23) = 1.000")
+print(f"    Deviation from maximal: {49.0 - 45.0}° = 4°")
+print()
+
+# DFC angle: alpha_em_unif = beta/4 = 1/(36*pi)
+# arctan of alpha?
+print(f"  arctan(alpha) = arctan({alpha:.4f}) = {math.degrees(math.atan(alpha)):.4f}°")
+print(f"  arctan(1/alpha) = {math.degrees(math.atan(1/alpha)):.4f}°")
+print(f"  arctan(sqrt(alpha)) = {math.degrees(math.atan(math.sqrt(alpha))):.4f}°")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 25: Representation dimensions and DFC
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 25: Representation Theory Dimensions")
+print("=" * 76)
+print()
+
+# SU(3) representation dimensions via Weyl formula: dim(p,q) = (p+1)(q+1)(p+q+2)/2
+def su3_dim(p, q):
+    return (p + 1) * (q + 1) * (p + q + 2) // 2
+
+print("  SU(3) irrep dimensions dim(p,q) = (p+1)(q+1)(p+q+2)/2:")
+low_reps = [(0,0), (1,0), (0,1), (1,1), (2,0), (0,2), (3,0), (0,3),
+            (2,1), (1,2), (4,0), (0,4), (2,2)]
+for p, q in low_reps:
+    d = su3_dim(p, q)
+    c2 = Fraction(p**2 + q**2 + p*q + 3*p + 3*q, 3)
+    print(f"    ({p},{q}): dim = {d:4d}, C_2 = {c2} = {float(c2):.4f}")
+print()
+
+# Which DFC integers appear as SU(3) dimensions?
+print("  DFC integers as SU(3) representation dimensions:")
+dfc_check = {2: "Q_top", 3: "N_c", 6: "N_c!", 8: "dim(SU(3))",
+             9: "N_Hopf", 11: "b_0", 18: "alpha^3", 24: "4!"}
+for n, name in dfc_check.items():
+    found = []
+    for p in range(20):
+        for q in range(p + 1):  # avoid duplicates
+            if su3_dim(p, q) == n:
+                found.append((p, q))
+            if su3_dim(q, p) == n and q != p:
+                found.append((q, p))
+    if found:
+        reps = ", ".join(f"({p},{q})" for p, q in found)
+        print(f"    {n:3d} ({name:12s}): YES — {reps}")
+    else:
+        print(f"    {n:3d} ({name:12s}): NO")
+print()
+
+# KEY: 3 = dim(1,0) = fundamental
+#      8 = dim(1,1) = adjoint
+#     27 = dim(2,2) — and 27 = N_c^3 = g_eff^{-2}!
+print(f"  *** dim(2,2) = 27 = N_c^3 = 1/g_eff^2 (times 8) ***")
+print(f"  *** 27 is both a representation dimension and the gauge coupling denominator ***")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 26: Riemann zeta at even integers and DFC
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 26: Riemann Zeta Values and DFC")
+print("=" * 76)
+print()
+
+# zeta(2) = pi^2/6, zeta(4) = pi^4/90, zeta(6) = pi^6/945
+# From Exploration 13: S_inst = 27*pi^2 = 162*zeta(2)
+print("  Zeta values at even integers: zeta(2k) = (-1)^{k+1} B_{2k} (2pi)^{2k} / (2(2k)!)")
+print(f"    zeta(2) = pi^2/6 = {math.pi**2/6:.6f}")
+print(f"    zeta(4) = pi^4/90 = {math.pi**4/90:.6f}")
+print(f"    zeta(6) = pi^6/945 = {math.pi**6/945:.6f}")
+print()
+
+# Express DFC quantities in terms of zeta values
+print("  DFC quantities in terms of zeta values:")
+print(f"    S_inst = 27*pi^2 = 162*zeta(2)   [162 = 2*N_Hopf^2]")
+print(f"    S_kink^2 = (36*pi)^2 = 1296*pi^2 = 7776*zeta(2)")
+print(f"      7776 = 6^5 = (N_c!)^5")
+S_kink_sq = (36*math.pi)**2
+print(f"      Check: {S_kink_sq:.4f} vs 7776*zeta(2) = {7776*math.pi**2/6:.4f} ✓")
+print()
+
+# S_inst in terms of zeta(4):
+# S_inst = 27*pi^2 = 27*(pi^2/90)*90 = 27*90*zeta(4)/pi^2... no, wrong direction
+# Better: S_inst * zeta(2) = 27*pi^2 * pi^2/6 = 27*pi^4/6 = (27/6)*pi^4 = (9/2)*pi^4
+# = (N_Hopf/2)*pi^4 = 90*(9/2)*zeta(4)/pi^0... getting circular
+# Instead: S_inst/zeta(2) = 27*pi^2/(pi^2/6) = 162 = 2*9^2 = 2*N_Hopf^2
+print(f"    S_inst / zeta(2) = 162 = 2*N_Hopf^2 = 2*81 [ratio is integer!]")
+print(f"    S_inst / zeta(4) = {S_inst / (math.pi**4/90):.6f} = 27*90/pi^2 = {27*90/math.pi**2:.4f}")
+print(f"      = 2430/pi^2 — not clean")
+print()
+
+# What about: sum of DFC-weighted zeta values?
+weighted_sum = float(I4) * math.pi**2/6 + Q_top * math.pi**4/90 + 3 * math.pi**6/945
+print(f"  DFC-weighted zeta sum: I_4*zeta(2) + Q_top*zeta(4) + N_c*zeta(6)")
+print(f"    = {weighted_sum:.6f}")
+print(f"    = {float(I4)*math.pi**2/6:.4f} + {Q_top*math.pi**4/90:.4f} + {3*math.pi**6/945:.4f}")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 27: DFC as a lattice / polytope
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 27: Polytope Structure of DFC Parameter Space")
+print("=" * 76)
+print()
+
+# The 4 topological integers (I_4_num, Q_top, N_c, N_Hopf) = (4, 2, 3, 9)
+# with I_4 = 4/3 → numerator 4, denominator 3
+# Can we view these as coordinates of a point in Z^4?
+# Or: (I_4 * 3, Q_top, N_c, N_Hopf) = (4, 2, 3, 9) ∈ Z^4
+
+p = np.array([4, 2, 3, 9])  # DFC point in Z^4 (I_4_num, Q_top, N_c, N_Hopf)
+norm = np.linalg.norm(p)
+print(f"  DFC point in Z^4: (3*I_4, Q_top, N_c, N_Hopf) = (4, 2, 3, 9)")
+print(f"  Euclidean norm = sqrt(4^2 + 2^2 + 3^2 + 9^2) = sqrt(16+4+9+81)")
+print(f"    = sqrt(110) = {norm:.6f}")
+print(f"    = {math.sqrt(110):.6f}")
+print(f"    110 = 2 × 5 × 11 = Q_top × 5 × b_0 — introduces primes 5 and 11!")
+print()
+
+# L1 norm (Manhattan distance)
+l1 = sum(p)
+print(f"  L1 norm = 4 + 2 + 3 + 9 = {l1}")
+print(f"    = 18 = alpha^3 = 2*N_c^2")
+print()
+print("  *** FINDING: L1 norm of DFC Z^4 point = alpha^3 = 18 ***")
+print("  *** Sum of numerically natural DFC integers equals the cube of ***")
+print("  *** the compression parameter. ***")
+print()
+
+# L-infinity norm
+linf = max(p)
+print(f"  L-infinity norm = max(4, 2, 3, 9) = {linf} = N_Hopf")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 28: Generating functions for DFC sequences
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 28: DFC Sequences and Generating Functions")
+print("=" * 76)
+print()
+
+# The N_c-dependent DFC sequence:
+# a(N_c) = I_4(N_c) * Q_top(N_c) * N_Hopf(N_c) = N_c(N_c^2-1)^2/8
+print("  DFC product sequence a(N_c) = I_4 * Q_top * N_Hopf = N_c*(N_c^2-1)^2/8:")
+for n in range(1, 12):
+    I4_n = Fraction(n**2 - 1, 2*n) if n > 0 else 0
+    Qtop_n = Fraction(n**2 - 1, 4) if n % 2 == 1 else Fraction((n**2 - 1)*n, 2*n*2)
+    Nhopf_n = n**2
+    if n > 0:
+        prod_exact = Fraction(n * (n**2 - 1)**2, 8)
+        print(f"    a({n:2d}) = {float(prod_exact):12.2f}  =  {prod_exact}")
+
+print()
+
+# Differences of the sequence
+print("  First differences Δa(N_c) = a(N_c+1) - a(N_c):")
+for n in range(1, 10):
+    a_n = Fraction(n * (n**2 - 1)**2, 8)
+    a_n1 = Fraction((n+1) * ((n+1)**2 - 1)**2, 8)
+    diff = a_n1 - a_n
+    print(f"    Δa({n:2d}) = {float(diff):12.2f}")
+
+print()
+
+# Ratio test: a(N_c+1)/a(N_c)
+print("  Ratio a(N_c+1)/a(N_c):")
+for n in range(1, 10):
+    a_n = n * (n**2 - 1)**2 / 8
+    a_n1 = (n+1) * ((n+1)**2 - 1)**2 / 8
+    if a_n > 0:
+        ratio = a_n1 / a_n
+        print(f"    a({n+1:2d})/a({n:2d}) = {ratio:.6f}")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 29: Pell equation and sqrt(2) in DFC
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 29: sqrt(2) Appearances and Pell Equation")
+print("=" * 76)
+print()
+
+# sqrt(2) appears many places in DFC:
+# alpha = (2*9)^(1/3) = (2*N_c^2)^(1/3)
+# xi = sqrt(2/alpha)
+# phi_0 = sqrt(alpha/beta) involves sqrt
+# BPS: E_kink involves sqrt(2)
+# 2*sqrt(2) appears in flux tube gap
+
+print("  sqrt(2) appearances in DFC:")
+print(f"    xi = sqrt(2/alpha) = {math.sqrt(2/alpha):.6f}")
+print(f"    phi_0 = sqrt(alpha/beta) = {math.sqrt(alpha/beta):.6f}")
+print(f"    omega_c = sqrt(2*alpha) = {math.sqrt(2*alpha):.6f}")
+print(f"    alpha = (2*N_c^2)^(1/3): the factor of 2 under the cube root")
+print(f"    Flux tube gap: 2*sqrt(2)*Lambda_QCD = {2*math.sqrt(2):.6f} * Lambda")
+print()
+
+# Pell equation: x^2 - 2*y^2 = ±1
+# Solutions: (1,1), (3,2), (7,5), (17,12), (41,29), ...
+# x_n/y_n → sqrt(2)
+pell_x = [1, 3, 7, 17, 41, 99, 239]
+pell_y = [1, 2, 5, 12, 29, 70, 169]
+print("  Pell equation x^2 - 2*y^2 = ±1 solutions:")
+for i in range(len(pell_x)):
+    x, y = pell_x[i], pell_y[i]
+    val = x**2 - 2*y**2
+    print(f"    ({x:3d}, {y:3d}): {x}^2 - 2*{y}^2 = {val:+d}")
+
+print()
+print("  DFC integers in Pell solutions:")
+print(f"    y_1 = 1, y_2 = 2 = Q_top")
+print(f"    x_3 = 7 (not DFC), y_3 = 5 (appears in k_Y^2 = 5/3)")
+print(f"    x_4 = 17 (appears in b_1: b_1=102=6*17)")
+print(f"    y_5 = 29 = b_0 + alpha^3 = L_7 (Lucas, from Exp 23)")
+print()
+print("  *** OBSERVATION: 29 = b_0 + alpha^3 appears as Pell denominator y_5 ***")
+print("  *** and simultaneously as Lucas number L_7. ***")
+print("  *** 17 (from b_1=102=6*17) is Pell numerator x_4. ***")
+print()
+
+# The convergent 17/12 ≈ sqrt(2) to 0.03%
+print(f"  Best rational approx: 17/12 = {17/12:.6f} vs sqrt(2) = {math.sqrt(2):.6f}")
+print(f"    Error: {abs(17/12 - math.sqrt(2))/math.sqrt(2)*100:.4f}%")
+print(f"    12 = 4*N_c = 4*3")
+print(f"    17 = b_1/6 = 102/6")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLORATION 30: DFC parameter encoding and information content
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("EXPLORATION 30: Information Content of DFC Parameters")
+print("=" * 76)
+print()
+
+# How many bits to specify each DFC parameter?
+# For integers: log_2(n) bits
+# For rationals: log_2(num) + log_2(den) bits
+print("  Information content (bits) of DFC parameters:")
+params_info = [
+    ("N_c = 3", math.log2(3)),
+    ("Q_top = 2", math.log2(2)),
+    ("N_Hopf = 9 = N_c^2", math.log2(9)),
+    ("b_0 = 11", math.log2(11)),
+    ("I_4 = 4/3", math.log2(4) + math.log2(3)),
+    ("g_eff^2 = 8/27", math.log2(8) + math.log2(27)),
+    ("beta_lat = 81/4", math.log2(81) + math.log2(4)),
+    ("kappa = 1/2", math.log2(1) + math.log2(2)),
+]
+
+total_naive = 0
+for name, bits in params_info:
+    print(f"    {name:25s}: {bits:.2f} bits")
+    total_naive += bits
+
+print(f"    {'TOTAL (naive)':25s}: {total_naive:.2f} bits")
+print()
+
+# But most are derived from N_c alone! Independent content:
+ind_bits = math.log2(3) + math.log2(9) + math.log2(math.pi)  # N_c + pi
+# Actually beta = 1/(9*pi) uses pi, which has infinite information
+# But structurally, the "choice" is just 1/(N_c^2 * pi)
+print("  Independent information content:")
+print(f"    N_c = 3: {math.log2(3):.2f} bits (one integer choice)")
+print(f"    beta = 1/(9*pi): depends on pi (transcendental — infinite bits)")
+print(f"    But structurally: beta = 1/(N_c^2 * pi), so only N_c enters")
+print()
+print("  *** FINDING: The independent information content of DFC is ***")
+print("  *** approximately log_2(3) ≈ 1.58 bits — choosing N_c = 3 ***")
+print("  *** from the positive integers. Everything else follows. ***")
+print("  *** (Plus the structural choice of pi, which is universal.) ***")
+print()
+
+# Kolmogorov complexity estimate
+print("  Kolmogorov complexity estimate:")
+print("    The shortest program to generate all DFC parameters:")
+print("    'N=3; pi=acos(-1); beta=1/(N^2*pi); alpha=(2*N^2)^(1/3)'")
+print(f"    ~60 characters ≈ 480 bits")
+print(f"    This generates ALL {len(params_info)} fundamental DFC parameters")
+print(f"    and predicts ~25 physical observables to <5% accuracy.")
+print()
+
+# ═══════════════════════════════════════════════════════════════════════════
+# UPDATED SUMMARY (Explorations 1-30)
+# ═══════════════════════════════════════════════════════════════════════════
+print("=" * 76)
+print("UPDATED SUMMARY OF FINDINGS (Explorations 1-30)")
+print("=" * 76)
+print()
+print("  STRUCTURAL:")
+print("  1. b_0 = N_c^2 + Q_top = 11 unique to N_c=3 [T1, C417]")
+print("  2. I_4 * Q_top * N_Hopf = 24 = 4! unique factorial at N_c=3 [E11]")
+print("  3. det([[I_4, Q_top], [N_c, N_Hopf]]) = 6 = N_c! [E16]")
+print("  4. DFC parameter space has dimension 2: {N_c, beta} [E20]")
+print("  5. 27 = dim(2,2) of SU(3) = 1/g_eff^2 × 8 [E25]")
+print()
+print("  NUMBER-THEORETIC:")
+print("  6. All topological DFC parameters factor into primes {2, 3} only [E14]")
+print("  7. Non-{2,3} primes enter only through dynamics: b_0=11, b_1→17, k_Y^2→5 [E14]")
+print("  8. alpha = 18^(1/3) has minimal polynomial degree N_c = 3 [E12]")
+print("  9. Pi-free skeleton: S/pi^k always yields N_c^j × small integer [E13]")
+print(" 10. b_0=11 and alpha^3=18 are CONSECUTIVE Lucas numbers L_5, L_6 [E23]")
+print(" 11. Pell convergents contain 17 (from b_1) and 29 (b_0+alpha^3) [E29]")
+print()
+print("  ALGEBRAIC:")
+print(" 12. (3*sqrt(2))^(2/3) = 18^(1/3) = alpha [C417]")
+print(" 13. Cosmological exponent = N_Hopf*pi*(3*pi+1/2) + alpha [C417]")
+print(" 14. S_inst = N_Hopf^2 * pi^2 / N_c [E13]")
+print(" 15. L1 norm of DFC Z^4 point = 4+2+3+9 = 18 = alpha^3 [E27]")
+print()
+print("  META:")
+print(" 16. Independent information content: ~1.58 bits (choosing N_c=3) [E30]")
+print(" 17. Kolmogorov complexity: ~60 chars generates all DFC parameters [E30]")
+print()
+print("  Flagged for dedicated equation modules:")
+print("    - E11: 4! uniqueness at N_c=3 (combinatorial proof)")
+print("    - E14: {2,3} vs dynamic primes (structural vs loop)")
+print("    - E16: det = N_c! (topological matrix)")
+print("    - E20: parameter space dimension = 2")
+print("    - E23: Lucas number coincidence — assess structural vs numerical")
+print("    - E27: L1 norm = alpha^3 identity")
+print("    - E30: Information content analysis (potential educational doc)")
+print()
