@@ -327,18 +327,18 @@ g² = 8πβ/3            [heuristic result, 0.37% match with SM; labeled RIGOROU
 4. **Extend to D6/D7:** If D5 is complex (V_D5 = −α/2|Φ|² + β/4|Φ|⁴), D6 and D7
    may also benefit from complex field descriptions with higher-winding vortices
    (n=2 at D6 for SU(2), n=3 at D7 for SU(3)). Examine whether the Bottleneck 1
-   results (Cycles 59–74) are reproduced by this picture or require modification.
+   results are reproduced by this picture or require modification.
 
 ---
 
 ## Connections
 
-- `foundations/phase_stiffness_derivation.md` — f² = (4/3)φ₀²/ξ proved; gap precisely located (Cycle 47)
-- `foundations/coupling_derivation.md` — g² = 8πβ/3 heuristic derivation chain (Cycle 42)
-- `equations/complex_structure_derivation.py` — D6 kink charge in D5 background (Cycle 67c)
-- `equations/complex_substrate.py` — vortex profile, tachyonic L₂ mode, coupling candidates (Cycle 75)
-- `foundations/d5_complex_structure.md` — D5 U(1) complex structure from gauge action (Cycle 71)
-- `foundations/complex_zero_mode_gap.md` — SO(2n)∩Aut(J)=U(n) derivation (Cycle 70)
-- `foundations/hopf_fibration_geometry.md` — Hopf S¹/S³/S⁵ correspondence at D5/D6/D7 (Cycle 42)
-- `foundations/threshold_nondegeneracy.md` — PT s=2 unique zero mode (Cycle 73)
-- `foundations/zero_mode_multiplet.md` — n complex modes → SU(n) (Cycle 59)
+- `foundations/phase_stiffness_derivation.md` — f² = (4/3)φ₀²/ξ proved; gap precisely located
+- `foundations/coupling_derivation.md` — g² = 8πβ/3 heuristic derivation chain
+- `equations/complex_structure_derivation.py` — D6 kink charge in D5 background
+- `equations/complex_substrate.py` — vortex profile, tachyonic L₂ mode, coupling candidates
+- `foundations/d5_complex_structure.md` — D5 U(1) complex structure from gauge action
+- `foundations/complex_zero_mode_gap.md` — SO(2n)∩Aut(J)=U(n) derivation
+- `foundations/hopf_fibration_geometry.md` — Hopf S¹/S³/S⁵ correspondence at D5/D6/D7
+- `foundations/threshold_nondegeneracy.md` — PT s=2 unique zero mode
+- `foundations/zero_mode_multiplet.md` — n complex modes → SU(n)

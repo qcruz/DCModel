@@ -222,8 +222,8 @@ and   λ_H = β/4                  (from substrate quartic, exact)
 The quartic coefficient of the Higgs potential equals one quarter of the substrate
 quartic coupling β. This is an exact identification: the Berger sphere computation
 shows R₄ = 0 (the Ricci curvature contributes only to the quadratic term, not the
-quartic), so the quartic coupling comes entirely from the substrate β (Cycle 58,
-`equations/berger_sphere.py`).
+quartic), so the quartic coupling comes entirely from the substrate β
+(`equations/berger_sphere.py`).
 
 The Higgs VEV in substrate units:
 
@@ -235,7 +235,7 @@ This is approximately 10.68 in natural units at β = 0.035. To get the physical
 value v = 246 GeV, the substrate units must be converted: v_phys = v_sub × M_c(D6).
 This requires knowing M_c(D6) in GeV — which is Bottleneck 3.
 
-### Two-scale picture (T9 resolution, Cycle 79)
+### Two-scale picture
 
 There is an important distinction between two scales that share the same β:
 
@@ -264,10 +264,10 @@ and   v = √(μ_eff²/λ_H)     [requires μ_eff from Bottleneck 3]
 
 | Step | Result | Status |
 |---|---|---|
-| S³ squashing = Higgs mechanism | ε field on S³ has V(ε) = substrate potential | Derived ✓ (Cycle 38) |
-| λ_H = β/4 | Berger sphere R₄=0; quartic from substrate | Derived ✓ (Cycle 58) |
-| Higgs vacuum stabilization at M_c | λ_H = β/4 > 0 prevents SM instability | Tier 1 ✓ (Cycle 86) |
-| m_H ≈ 125 GeV from DFC | √(2λ_H) v = 124.4 ± 3.7 GeV | Tier 2a ✓ (Cycle 38) |
+| S³ squashing = Higgs mechanism | ε field on S³ has V(ε) = substrate potential | Derived ✓ |
+| λ_H = β/4 | Berger sphere R₄=0; quartic from substrate | Derived ✓ |
+| Higgs vacuum stabilization at M_c | λ_H = β/4 > 0 prevents SM instability | Tier 1 ✓ |
+| m_H ≈ 125 GeV from DFC | √(2λ_H) v = 124.4 ± 3.7 GeV | Tier 2a ✓ |
 | μ_eff² ≈ 89² GeV² | Requires D6/D7 overlap integral | **Open — Bottleneck 3** |
 | v = 246 GeV | Requires μ_eff from Bottleneck 3 | **Open — Bottleneck 3** |
 | DμH kinetic term | Higgs in SU(2) doublet representation | Structural ✓ |
@@ -350,7 +350,7 @@ or a non-uniform depth spacing.
 | Gauge | −1/4g² G_μν G^μν (SU(3)) | D7 kink zero mode → KK reduction | Same |
 | Gauge | Equal coupling g²=8πβ/3 | Single β; same substrate kinetics | Heuristic ✓ (0.4% match) |
 | Fermion | ψ̄ iγ^μ ∂_μ ψ (kinetic) | JR zero mode worldvolume action | Structural ✓ |
-| Fermion | ψ̄ iγ^μ A_μ ψ (coupling) | Zero mode U(1) charge from Cycle 67c | Partial ✓ |
+| Fermion | ψ̄ iγ^μ A_μ ψ (coupling) | Zero mode U(1) charge | Partial ✓ |
 | Fermion | Lorentz spin-1/2 | D3+D4 Clifford algebra | Structural ✓ |
 | Fermion | Right-handed singlet | JR without SU(2) charge | Open |
 | Higgs | (DμH)†(DμH) | H in SU(2) doublet on S³ | Structural ✓ |
@@ -376,14 +376,14 @@ or a non-uniform depth spacing.
 Show from the D5–D6 interaction Lagrangian that the physical orbit radius of D6
 kinks around D5 vortices equals r_U1 = 3λ/(4β). Concretely: compute the 2D coupling
 integral ∫∫ η₀²(r,x) × (∇θ_D5)² d²x with normalization (64π/9)M_c, and show it
-equals 9/(64π) (Cycle 88, Route B). If this integral closes, g² = 8πβ/3 becomes
-a Tier 2 derivation, and β ceases to be a free parameter (Cycle 87).
+equals 9/(64π). If this integral closes, g² = 8πβ/3 becomes a Tier 2 derivation,
+and β ceases to be a free parameter.
 
 ### Higgs sector — closes with Bottleneck 3
 Compute the D6/D7 overlap integral ∫ ψ_D6(x)† ψ_D7(x) d³x that generates μ_eff².
 This integral depends on the threshold positions α_D6, α_D7 — which requires the
 depth-running equation. The target: μ_eff = 23 GeV from the consistency condition
-v = √(2μ_eff²/λ_H) = 246 GeV with λ_H = β/4 (Cycle 86: μ = √(λ_H/2) × 246 GeV
+v = √(2μ_eff²/λ_H) = 246 GeV with λ_H = β/4 (μ = √(λ_H/2) × 246 GeV
 = √(β/8) × 246 GeV ≈ 23 GeV at β = 0.035).
 
 ### Fermion sector — closes with depth-running + full 3+1D Clifford derivation
@@ -408,9 +408,9 @@ non-uniform depth spacing or a different anchoring mechanism for the third gener
 - `foundations/higgs_geometry.md` — S³ squashing and Higgs mechanism
 - `foundations/spin_emergence.md` — Clifford algebra and Lorentz spin derivation
 - `equations/lagrangian_verification.py` — numerical verification of all derived coefficients
-- `equations/phase_stiffness_derivation.py` — f² = (4/3)φ₀²/λ exact (Cycle 47)
-- `equations/berger_sphere.py` — λ_H = β/4 exact (Cycle 58)
-- `equations/worldvolume_coupling.py` — Bottleneck 2 gap analysis (Cycle 88)
-- `equations/vev_derivation.py` — Bottleneck 3 gap analysis (Cycle 86)
+- `equations/phase_stiffness_derivation.py` — f² = (4/3)φ₀²/λ exact
+- `equations/berger_sphere.py` — λ_H = β/4 exact
+- `equations/worldvolume_coupling.py` — Bottleneck 2 gap analysis
+- `equations/vev_derivation.py` — Bottleneck 3 gap analysis
 - `equations/spin_zero_mode.py` — JR zero mode verification
 - `equations/coupling_derivation.py` — g² = 8πβ/3 coupling chain

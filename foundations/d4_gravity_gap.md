@@ -41,7 +41,7 @@ M_Pl^2 = alpha * F(beta, substrate structure)
 
 and then demonstrate that F = 1/cuberoot(18) from the substrate dynamics.
 
-**Status:** T3 (C400). The Jormungandr fixed-point equation provides
+**Status:** T3. The Jormungandr fixed-point equation provides
 a third independent derivation: the self-consistency condition
 V_eff(phi) = V(phi) has alpha cubed = 18 as its unique real positive
 solution (T1 algebraic). This gravitational chain independently recovers
@@ -193,7 +193,7 @@ The scalar zero-mode exchange gives G_eff = G_N/23, capturing only 4.4% of the
 gravitational coupling. The remaining 95.6% is non-perturbative content that
 cannot be obtained from linearized kink-kink exchange.
 
-**Status:** T3 (C400). The enhancement factor F = (25/12) times 4 pi xi
+**Status:** T3. The enhancement factor F = (25/12) times 4 pi xi
 = 22.87 is uniquely determined by the Jormungandr fixed-point condition:
 F_mode_sum(alpha) = F_self_consistency(alpha) has a unique solution at
 alpha cubed = 18 (T1 algebraic). The perturbative fraction 1/F = 4.4%
@@ -248,17 +248,17 @@ The scalar zero-mode captures 1/F = 4.4% of G_N (T3).
 
 ## 4. What Is Missing — and Why Each Matters
 
-### 4a. The 1/r potential (relates to D4-B, D4-C) — RESOLVED C397/C399
+### 4a. The 1/r potential (relates to D4-B, D4-C) — RESOLVED
 
 The kink profile phi_kink(x) = phi_0 tanh(x/xi) falls off exponentially in
 the TRANSVERSE direction, not as 1/r. However, for localized sources ON the
 domain wall (closures = particles), 1/r emerges naturally from the 3D
 worldvolume Laplacian Green's function G(r) = 1/(4 pi r).
 
-C397 computed the full Poschl-Teller mode sum: the zero mode gives exact 1/r
+The full Poschl-Teller mode sum establishes that the zero mode gives exact 1/r
 at all distances on the wall; the n=1 bound state contributes zero at the
 wall center (odd parity); the continuum is less than 6% at r = xi and
-exponentially suppressed beyond 2 xi. C399 verified 1/r behavior across
+exponentially suppressed beyond 2 xi. The 1/r behavior was verified across
 11 orders of magnitude (xi to 10^8 xi) with power-law index d(ln G)/d(ln r)
 = -1.000 to 10^-9. Newton's law V(r) = -G_eff M_1 M_2 / r is confirmed.
 
@@ -328,7 +328,7 @@ as a T1 algebraic consequence, so this chain is legitimate.
 
 ---
 
-## 5. Conceptual Reframing: Gravity as Emergent Compression (C395b)
+## 5. Conceptual Reframing: Gravity as Emergent Compression
 
 ### The core DFC claim about gravity
 
@@ -356,7 +356,7 @@ follow? This is the DFC-native formulation of gravity.
 **D4-C (Graviton emergence) may be the wrong question.** If gravity is
 emergent compression behavior, asking "where is the spin-2 mode in the
 spectrum?" is like asking "where is the phonon?" when you should be asking
-"why does the lattice deform this way?" The C393 negative result (no
+"why does the lattice deform this way?" The negative result (no
 massless spin-2 in the linear spectrum) is not a problem — it may be
 expected. There should not be a graviton in the spectrum if gravity is
 not a conventional force.
@@ -365,12 +365,12 @@ not a conventional force.
 constructed from the substrate, the scale and coupling coefficient are
 determined by the construction itself.
 
-### The C392-C395 perturbative sidetrack
+### The perturbative sidetrack
 
-Cycles C392-C395 approached the D4 gap from the conventional physics
-direction: looking for graviton-like modes in the substrate spectrum
-(C392-C393), computing Sakharov induced gravity coefficients (C394),
-and characterizing the continuum spectral density (C395).
+Earlier work approached the D4 gap from the conventional physics
+direction: looking for graviton-like modes in the substrate spectrum,
+computing Sakharov induced gravity coefficients,
+and characterizing the continuum spectral density.
 
 These calculations produced useful results:
 - Established that the perturbative sector accounts for only ~7% of G_N
