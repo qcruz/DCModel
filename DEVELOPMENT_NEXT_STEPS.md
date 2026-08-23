@@ -73,25 +73,25 @@ coupling that softens the EOS.
 
 **Deliverable:** `equations/nonlinear_walecka_eos.py`
 
-### 1.2 Nuclear Binding for Light Nuclei (A <= 12)
+### 1.2 Nuclear Binding for Light Nuclei (A <= 12) — COMPLETED (C418, NEGATIVE RESULT)
 
-Replace SEMF with a cluster model or variational calculation for He-4, Be-8, C-12.
-DFC's g_A = 4/pi and Lambda_QCD = 304.5 MeV should constrain the nucleon-nucleon potential.
+Coupled-channel deuteron (³S₁-³D₁ with tensor OPE) and He-4 variational Gaussian
+calculations implemented. **Neither binds with DFC bare couplings.** Root cause: coupling
+universality g_sigma = g_omega = M_N/f_pi from KSRF causes sigma-omega cancellation too
+strong for nuclear binding. Net central potential only −0.58 MeV at 1 fm. Tensor OPE
+improves slightly (E_min = −0.35 MeV) but insufficient.
 
-**Test:** Can DFC reproduce the Hoyle state energy (7.654 MeV above C-12 ground state)?
-Fixes the triple-alpha Q value and tests DFC at the nuclear structure level.
+**Resolution path:** Derive effective coupling asymmetry from V(φ) nonlinear sigma terms.
+g₂ from C373 shifts effective g_sigma at nuclear density. If g_sigma/g_omega increases
+by ~5-10% in medium, binding is restored.
 
-**Deliverable:** `equations/light_nuclei_binding.py`
+**Deliverable:** `equations/light_nuclei_binding.py` (completed)
 
-### 1.3 Deuteron Binding Energy
+### 1.3 Deuteron Binding Energy — SUBSUMED BY 1.2
 
-The simplest nuclear bound state. DFC should predict B_d = 2.224 MeV from its
-nucleon-nucleon interaction. Requires: DFC pion mass (from Lambda_QCD), DFC nucleon mass,
-Yukawa potential range.
-
-**Honest test:** Clean, unambiguous, no fitting freedom.
-
-**Deliverable:** `equations/deuteron_binding.py`
+The deuteron coupled-channel calculation is now part of `light_nuclei_binding.py` (C418).
+Same negative result: DFC bare couplings insufficient for binding. The path forward is
+the effective coupling asymmetry from V(φ) nonlinear terms, not a separate deuteron module.
 
 ---
 

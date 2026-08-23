@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 414 (2026-08-21)
+**Last updated:** Cycle 419 (2026-08-22)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -297,15 +297,26 @@ cancellation pattern. Binding controlled by range difference (m_sigma < m_omega)
 g_piNN = 13.28 (+1.2% vs obs 13.12). However, this does not affect the central-only
 calculation because g_sigma = g_omega preserves the cancellation.
 
+**C418 update (coupled-channel ³S₁-³D₁ with tensor OPE):**
+Full coupled-channel Numerov solver with DFC tensor OPE implemented in
+`equations/light_nuclei_binding.py`. Result: **still no bound state**. Coupled-channel
+finds E_min = −0.35 MeV (vs observed −2.2246 MeV). Tensor OPE improves binding
+(−0.0 → −0.35 MeV) but sigma-omega cancellation dominates: net central potential only
+−0.58 MeV at r = 1 fm. He-4 variational also unbound (system expands to b = 11.6 fm).
+
+**ROOT CAUSE CONFIRMED:** DFC coupling universality (g_sigma = g_omega = M_N/f_pi)
+prevents nuclear binding. Equal couplings with m_sigma < m_omega produce too-weak net
+potential. Real binding requires g_sigma/g_omega > 1 (about 1.05-1.10).
+
 **Path to close:**
-- **Primary (tensor):** Implement coupled ³S₁-³D₁ Numerov solver with DFC OPE tensor force.
-  The tensor force depends on g_piNN independently of g_sigma/g_omega, so the PS correction
-  to g_piNN (−6.4% → +1.2%) will directly improve the tensor contribution.
-- **Full solution:** sigma+omega+pion (central+tensor) with DFC couplings, plus hard-core
-  or form-factor regularization at r < 0.5 fm.
+- **Derive effective coupling asymmetry from V(φ):** Nonlinear sigma terms (g₂, g₃
+  from C373-C375) modify the effective sigma coupling at nuclear density. If effective
+  g_sigma increases relative to g_omega by ~5-10%, binding is restored.
+- **Alternative:** Nuclear medium modifications (Fock terms, RPA) that break bare
+  coupling universality at finite density.
 
 **Status:** T4 open. **Files:** `equations/prediction_tests_phase2.py` (C386),
-`equations/deuteron_corrected_fpi.py` (C388)
+`equations/deuteron_corrected_fpi.py` (C388), `equations/light_nuclei_binding.py` (C418)
 
 ---
 
