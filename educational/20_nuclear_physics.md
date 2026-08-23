@@ -5,8 +5,9 @@ independently. For background on the substrate and compression depth concept, se
 Module 01 (The Substrate) and Module 03 (The Depth Map).
 
 **Status:** Active — this document covers the nuclear physics Track C results through the
-complete prediction test suite. Coverage: foundation parameters, SEMF validation, shell
-model, Walecka saturation mechanism, periodic table validation, and 11 prediction tests.
+complete prediction test suite and light nuclei binding analysis. Coverage: foundation
+parameters, SEMF validation, shell model, Walecka saturation mechanism, periodic table
+validation, 11 prediction tests, and the coupling universality problem for light nuclei.
 
 ---
 
@@ -407,12 +408,50 @@ nuclei were tested: RMS 7.2% after exchange-Coulomb and finite-size corrections,
 
 ---
 
+## The Coupling Universality Problem
+
+A significant negative result: DFC's KSRF universality gives g_sigma = g_omega = M_N/f_pi
+— the sigma (scalar, attractive) and omega (vector, repulsive) meson-nucleon couplings are
+exactly equal. This creates a problem for light nuclei.
+
+**Why equal couplings prevent binding.** The nuclear force between two nucleons is the sum
+of sigma attraction (range ~1/m_sigma ≈ 0.43 fm) and omega repulsion (range ~1/m_omega
+≈ 0.26 fm). Because the sigma is lighter, its attraction extends to larger distances.
+The net potential is attractive at medium range (1–2 fm) and repulsive at short range.
+But when g_sigma = g_omega, the net attraction is extremely shallow — only about −0.6 MeV
+at r = 1 fm. This is too weak to bind either the deuteron or helium-4.
+
+**Coupled-channel deuteron test.** A full coupled-channel ³S₁-³D₁ Numerov solver with
+tensor one-pion exchange was implemented. The tensor force — which provides 50–70% of
+deuteron binding in realistic calculations — was included with the DFC-derived pion-nucleon
+coupling g_piNN = 13.28. Result: the deepest bound state found has E = −0.35 MeV,
+compared to the observed −2.2246 MeV. The sigma-omega cancellation dominates over any
+improvement from the tensor force.
+
+**He-4 variational test.** A Gaussian variational calculation for the alpha particle
+(4 nucleons with all pair interactions) found no bound state at all — the system expands
+to a width of 11.6 fm, far larger than the actual He-4 radius of ~1.7 fm.
+
+**Root cause.** The bare coupling universality g_sigma = g_omega is an exact consequence
+of KSRF (Kawarabayashi-Suzuki-Riazuddin-Fayyazuddin relation) applied to the D7 depth
+behavior. Real nuclear binding requires g_sigma/g_omega ≈ 1.05–1.10 — a modest asymmetry
+of 5–10%. The path to resolution: nonlinear sigma terms from V(φ) (the g₂ and g₃
+couplings derived in the nuclear saturation work) modify the effective sigma coupling at
+nuclear density. If this medium modification can break the bare universality by the
+needed 5–10%, nuclear binding is restored from first principles.
+
+This is a T4 open problem — one of the most important remaining gaps in the nuclear
+physics sector of DFC.
+
+---
+
 ## What Remains Open
 
 | Item | Status | What is needed |
 |------|--------|----------------|
-| Bulk binding a_V from DFC | T4 | Hard-core repulsion from D7 kink dynamics |
-| N=126 as shell closure | **T3 CLOSED** (C361) | κ_DFC = 33 = 36 × 11/12; see Module 25 |
+| Coupling universality → no binding | **T4 open** | Effective g_sigma/g_omega asymmetry from V(φ) nonlinear terms |
+| Bulk binding a_V from DFC | T3 closed | Walecka saturation with C_sat = m_sigma/m_omega |
+| N=126 as shell closure | **T3 CLOSED** | κ_DFC = 33 = 36 × 11/12; see Module 25 |
 | Z=114 proton magic from DFC | T3 | WS gap confirmed; formal DFC derivation missing |
 | Shell correction sign for ²⁹⁸Fl | T4 | Depends on N=126 fix |
 | Half-life of ²⁹⁸Fl | T4 | Requires DFC account of alpha/fission dynamics |
@@ -460,3 +499,4 @@ result. `equations/nuclear_dfc_params.py` for the computed nuclear parameters.
 `equations/prediction_tests_phase1.py` through `prediction_tests_phase3.py` for the
 full prediction test suite.
 `equations/fpi_correction_t18.py` for the Pagels-Stokar f_π correction.
+`equations/light_nuclei_binding.py` for the coupled-channel deuteron and He-4 binding tests.
