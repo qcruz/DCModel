@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 420 (2026-08-26)
+**Last updated:** Cycle 421 (2026-08-26)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -203,8 +203,12 @@ pushing the potential just below the binding threshold. DFC is at the binding ed
 - **V(φ) asymmetry for bulk matter:** The +48% enhancement at saturation IS significant
   for the nuclear EOS (T22), even though insufficient for the 2-body deuteron.
 
-**Status:** T4 open (bottleneck narrowed: f_pi = Λ/π 5.3% too high → 2PE 19% too weak).
-**Files:** `equations/nuclear_2pi_exchange.py` (C420),
+**C421 f_pi scan:** Binding threshold at f_pi < 96.5 MeV — DFC is only 0.4 MeV above.
+Best match to B_d = 2.22 MeV at f_pi ~ 94.5 MeV. The gap is now precisely quantified:
+a 0.4% reduction in f_pi (from 96.9 → 96.5 MeV) would produce deuteron binding.
+
+**Status:** T4 open (bottleneck narrowed: f_pi = Λ/π only 0.4 MeV above threshold).
+**Files:** `equations/nuclear_2pi_exchange.py` (C420-C421),
 `equations/nuclear_coupling_asymmetry.py` (C419),
 `equations/light_nuclei_binding.py` (C418), `equations/prediction_tests_phase2.py` (C386)
 

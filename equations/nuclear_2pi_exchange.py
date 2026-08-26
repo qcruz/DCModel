@@ -718,10 +718,62 @@ print()
 
 
 # =============================================================================
-# Part F: Assessment
+# Part F: f_pi scan — what value gives correct deuteron binding?
 # =============================================================================
 print("=" * 72)
-print("Part F: Assessment and tier assignment")
+print("Part F: f_pi critical value scan (S-wave)")
+print("=" * 72)
+print()
+
+print("  Scanning f_pi from 88 to 97 MeV to find binding threshold")
+print("  and value matching observed B_d = 2.2246 MeV:")
+print()
+print(f"{'f_pi (MeV)':>12s}  {'B_d (MeV)':>10s}  {'error':>8s}  {'note':>20s}")
+print("-" * 56)
+
+f_pi_crit = None
+f_pi_best = None
+B_best_err = 1e6
+for f_scan_10 in range(880, 971, 5):  # 88.0 to 97.0 in 0.5 MeV steps
+    f_scan = f_scan_10 / 10.0
+    rg, vg = build_V_2pe_grid(G_A_DFC, f_scan, n_r=200)
+    B_scan = find_swave_binding(rg, vg, n_scan=150)
+    if B_scan is not None:
+        err = (B_scan / B_D_OBS - 1.0) * 100
+        note = ""
+        if abs(f_scan - F_PI_OBS) < 0.3:
+            note = "<-- observed"
+        elif abs(f_scan - F_PI_PS) < 0.3:
+            note = "<-- Pagels-Stokar"
+        elif abs(f_scan - F_PI_DFC) < 0.3:
+            note = "<-- DFC Lambda/pi"
+        if abs(err) < abs(B_best_err):
+            B_best_err = err
+            f_pi_best = f_scan
+        print(f"{f_scan:>12.1f}  {B_scan:>10.3f}  {err:>+7.1f}%  {note:>20s}")
+    else:
+        if f_pi_crit is None:
+            f_pi_crit = f_scan
+        print(f"{f_scan:>12.1f}  {'NOT BOUND':>10s}  {'---':>8s}  {'<-- threshold' if f_pi_crit == f_scan else '':>20s}")
+
+print()
+if f_pi_crit is not None:
+    print(f"  Binding threshold: f_pi < ~{f_pi_crit:.1f} MeV")
+    print(f"  DFC f_pi = {F_PI_DFC:.1f} MeV is {F_PI_DFC - f_pi_crit:.1f} MeV above threshold")
+if f_pi_best is not None:
+    print(f"  Best match to B_d = 2.22 MeV: f_pi ~ {f_pi_best:.1f} MeV ({B_best_err:+.1f}%)")
+    print(f"  Observed f_pi = {F_PI_OBS:.2f} MeV ({(F_PI_OBS/f_pi_best-1)*100:+.1f}% from best)")
+print()
+
+check("F0: binding threshold identified", f_pi_crit is not None)
+print()
+
+
+# =============================================================================
+# Part G: Assessment
+# =============================================================================
+print("=" * 72)
+print("Part G: Assessment and tier assignment")
 print("=" * 72)
 print()
 
@@ -782,8 +834,8 @@ print("  Bottleneck: f_pi = Lambda/pi = 96.9 MeV (obs 92.07)")
 print("  Resolution path: chiral corrections to f_pi, or contact terms")
 print()
 
-check("F1: 2PE spectral function computed from DFC params", True)
-check("F2: 2PE provides longer-range attraction than bare sigma", True)
+check("G1: 2PE spectral function computed from DFC params", True)
+check("G2: 2PE provides longer-range attraction than bare sigma", True)
 
 print()
 
