@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 419 (2026-08-26)
+**Last updated:** Cycle 420 (2026-08-26)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -189,15 +189,23 @@ is NOT coupling universality but the bare sigma coupling strength: g_sigma = 9.6
 weak for single-Yukawa binding regardless of m_sigma. Binding threshold: g_sig/g_ome ~ 6.0.
 Even sigma-only (no omega cancellation) cannot bind the deuteron.
 
+**C420 two-pion exchange analysis:** 2PE spectral function computed from DFC g_A = 4/π
+and f_pi = Λ/π. The 2PE is 19x deeper than bare sigma at r = 1 fm (−14.1 vs −0.73 MeV).
+S-wave binding test: observed params (f_pi = 92.07) bind at B = 4.3 MeV; DFC params
+(f_pi = 96.9) do NOT bind. The 5.3% f_pi overshoot weakens 2PE by 19% (1/f_pi⁴ scaling),
+pushing the potential just below the binding threshold. DFC is at the binding edge.
+
 **Path to close:**
-- **Correlated two-pion exchange:** Real NN attraction operates through 2π exchange
-  (effective mass ~2m_π = 279 MeV threshold), not single sigma. Derive the 2π spectral
-  function from DFC g_piNN = 12.28.
+- **Tighten f_pi:** DFC f_pi = Λ/π = 96.9 MeV is 5.3% above observed 92.07 MeV.
+  Chiral corrections or improved Pagels-Stokar derivation could close this gap.
+- **Contact terms:** In chiral EFT, short-range contacts (C_S, C_T) are always needed.
+  DFC needs a principled derivation of contact terms from V(φ) short-range physics.
 - **V(φ) asymmetry for bulk matter:** The +48% enhancement at saturation IS significant
   for the nuclear EOS (T22), even though insufficient for the 2-body deuteron.
 
-**Status:** T4 open (bottleneck reidentified: sigma mass + coupling strength, not universality).
-**Files:** `equations/nuclear_coupling_asymmetry.py` (C419),
+**Status:** T4 open (bottleneck narrowed: f_pi = Λ/π 5.3% too high → 2PE 19% too weak).
+**Files:** `equations/nuclear_2pi_exchange.py` (C420),
+`equations/nuclear_coupling_asymmetry.py` (C419),
 `equations/light_nuclei_binding.py` (C418), `equations/prediction_tests_phase2.py` (C386)
 
 ---

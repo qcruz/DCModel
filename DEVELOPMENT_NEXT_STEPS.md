@@ -104,10 +104,14 @@ INSUFFICIENT for deuteron binding. The dominant bottleneck is not coupling unive
 but the bare sigma coupling strength: g_sigma = 9.645 is too weak for single-Yukawa
 binding regardless of sigma mass or coupling ratio (threshold: g_sig/g_ome ~ 6.0).
 
-**New resolution path:** Derive the NN attraction from correlated two-pion exchange
-using DFC g_piNN = 12.28. This replaces the single-sigma Yukawa with a spectral
-representation capturing the longer-range 2π continuum (threshold at 2m_π = 279 MeV).
-The V(φ) coupling asymmetry remains important for bulk nuclear matter (Item 1).
+**C420 2PE RESULT:** `equations/nuclear_2pi_exchange.py` computes the 2PE spectral
+function from DFC g_A = 4/π and f_pi = Λ/π. The 2PE is 19x deeper than bare sigma
+at r = 1 fm (−14.1 vs −0.73 MeV). S-wave binding with observed params: B = 4.3 MeV.
+S-wave binding with DFC params: NOT BOUND. The 5.3% f_pi overshoot weakens 2PE by
+19% (1/f_pi⁴ scaling), pushing the potential just below the binding threshold.
+
+**Narrowed bottleneck:** f_pi = Λ_QCD/π = 96.9 MeV (obs 92.07, +5.3%). Need chiral
+corrections to f_pi, or principled derivation of short-range contact terms from V(φ).
 
 **Connection:** Item 1 (nonlinear Walecka EOS) benefits from the +48% coupling
 enhancement at saturation density, even though Item 2 requires a different mechanism.
@@ -151,8 +155,9 @@ DFC gives Lambda_QCD = 304.5 MeV. Needs DFC quark masses.
 
 ## Priority Order
 
-1. Correlated 2π exchange NN potential — unblocks deuteron binding (C419 showed
-   single-sigma Yukawa cannot bind regardless of coupling ratio or mass)
+1. Tighten f_pi derivation — DFC f_pi = Λ/π = 96.9 MeV is 5.3% high; this
+   weakens 2PE by 19% (1/f_pi⁴), preventing deuteron binding (C420). Chiral
+   corrections or improved Pagels-Stokar could close the gap.
 2. Beyond-mean-field Walecka EOS with V(φ) asymmetry — +48% coupling enhancement at
    ρ₀ (C419); fixes NS radius, NS max mass, saturation density simultaneously
 3. Atomic physics predictions — straightforward if/when m_e is derived
