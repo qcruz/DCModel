@@ -95,15 +95,22 @@ nuclear density. This would fix NS radius, NS max mass, and saturation density
 
 **Expected impact:** NS radius ~14.5→~12-13 km, NS max mass ~2.5→~2.1 M_sun.
 
-### 2. Nuclear Binding from Effective Coupling Asymmetry
+### 2. Nuclear Binding — Correlated Two-Pion Exchange
 
-The key obstacle is coupling universality: g_sigma = g_omega from KSRF produces
-exact cancellation. The resolution path is to derive an effective g_sigma/g_omega
-ratio > 1 at nuclear density from V(φ) nonlinear sigma terms (g₂ from C373).
-A 5-10% increase in g_sigma/g_omega in-medium would restore deuteron binding.
+**C419 UPDATE:** The coupling asymmetry path was investigated in
+`equations/nuclear_coupling_asymmetry.py`. V(φ) nonlinear sigma terms DO create a
+structural asymmetry (+5.5% at deuteron density, +48% at saturation), but this is
+INSUFFICIENT for deuteron binding. The dominant bottleneck is not coupling universality
+but the bare sigma coupling strength: g_sigma = 9.645 is too weak for single-Yukawa
+binding regardless of sigma mass or coupling ratio (threshold: g_sig/g_ome ~ 6.0).
 
-**Connection:** This is the same physics as Item 1 — both require understanding
-how V(φ) nonlinear terms modify effective nuclear couplings at finite density.
+**New resolution path:** Derive the NN attraction from correlated two-pion exchange
+using DFC g_piNN = 12.28. This replaces the single-sigma Yukawa with a spectral
+representation capturing the longer-range 2π continuum (threshold at 2m_π = 279 MeV).
+The V(φ) coupling asymmetry remains important for bulk nuclear matter (Item 1).
+
+**Connection:** Item 1 (nonlinear Walecka EOS) benefits from the +48% coupling
+enhancement at saturation density, even though Item 2 requires a different mechanism.
 
 ### 3. Triple-Alpha Q Value
 
@@ -144,8 +151,10 @@ DFC gives Lambda_QCD = 304.5 MeV. Needs DFC quark masses.
 
 ## Priority Order
 
-1. Nuclear coupling asymmetry from V(φ) — unblocks deuteron binding AND nonlinear EOS
-2. Beyond-mean-field Walecka EOS — fixes 3 scorecard predictions simultaneously
+1. Correlated 2π exchange NN potential — unblocks deuteron binding (C419 showed
+   single-sigma Yukawa cannot bind regardless of coupling ratio or mass)
+2. Beyond-mean-field Walecka EOS with V(φ) asymmetry — +48% coupling enhancement at
+   ρ₀ (C419); fixes NS radius, NS max mass, saturation density simultaneously
 3. Atomic physics predictions — straightforward if/when m_e is derived
 4. Stellar structure relations — extends astrophysical reach
 5. Proton-neutron mass splitting — demanding but high-impact

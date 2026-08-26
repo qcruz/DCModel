@@ -176,20 +176,29 @@ DFC sigma+omega central potential gives B_d = 1.15 MeV vs observed 2.2246 MeV (�
 Ground state exists but is too weakly bound.
 
 **ROOT CAUSE CONFIRMED (C418):** DFC coupling universality (g_sigma = g_omega = M_N/f_pi)
-prevents nuclear binding. Equal couplings with m_sigma < m_omega produce too-weak net
-potential. Real binding requires g_sigma/g_omega > 1 (about 1.05-1.10). Full coupled-channel
-³S₁-³D₁ with tensor OPE still gives no bound state (E_min = −0.35 MeV). Net central
-potential only −0.58 MeV at r = 1 fm.
+prevents nuclear binding. Full coupled-channel ³S₁-³D₁ with tensor OPE still gives no
+bound state (E_min = −0.35 MeV).
+
+**C419 coupling asymmetry analysis:** V(φ) nonlinear sigma terms (g₂ < 0) DO create
+a structural coupling asymmetry (T1): sigma response enhanced at finite density while
+omega (gauge vector) remains linear. Enhancement: +5.5% at deuteron density, +48% at
+saturation. Effective m*_sigma drops from 456.8 → 155 MeV at ρ₀ (66% reduction).
+
+**HOWEVER:** The asymmetry is INSUFFICIENT for deuteron binding. The dominant bottleneck
+is NOT coupling universality but the bare sigma coupling strength: g_sigma = 9.645 is too
+weak for single-Yukawa binding regardless of m_sigma. Binding threshold: g_sig/g_ome ~ 6.0.
+Even sigma-only (no omega cancellation) cannot bind the deuteron.
 
 **Path to close:**
-- **Derive effective coupling asymmetry from V(φ):** Nonlinear sigma terms (g₂, g₃
-  from C373-C375) modify the effective sigma coupling at nuclear density. If effective
-  g_sigma increases relative to g_omega by ~5-10%, binding is restored.
-- **Alternative:** Nuclear medium modifications (Fock terms, RPA) that break bare
-  coupling universality at finite density.
+- **Correlated two-pion exchange:** Real NN attraction operates through 2π exchange
+  (effective mass ~2m_π = 279 MeV threshold), not single sigma. Derive the 2π spectral
+  function from DFC g_piNN = 12.28.
+- **V(φ) asymmetry for bulk matter:** The +48% enhancement at saturation IS significant
+  for the nuclear EOS (T22), even though insufficient for the 2-body deuteron.
 
-**Status:** T4 open. **Files:** `equations/prediction_tests_phase2.py` (C386),
-`equations/deuteron_corrected_fpi.py` (C388), `equations/light_nuclei_binding.py` (C418)
+**Status:** T4 open (bottleneck reidentified: sigma mass + coupling strength, not universality).
+**Files:** `equations/nuclear_coupling_asymmetry.py` (C419),
+`equations/light_nuclei_binding.py` (C418), `equations/prediction_tests_phase2.py` (C386)
 
 ---
 
