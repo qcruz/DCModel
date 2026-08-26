@@ -4,10 +4,10 @@
 independently. For background on the substrate and compression depth concept, see
 Module 01 (The Substrate) and Module 03 (The Depth Map).
 
-**Status:** Active — this document covers the nuclear physics Track C results through the
-complete prediction test suite and light nuclei binding analysis. Coverage: foundation
-parameters, SEMF validation, shell model, Walecka saturation mechanism, periodic table
-validation, 11 prediction tests, and the coupling universality problem for light nuclei.
+**Status:** Active — covers nuclear physics through the two-pion exchange analysis and
+f_pi binding threshold scan. Coverage: foundation parameters, SEMF validation, shell model,
+Walecka saturation, periodic table validation, 11 prediction tests, and the nuclear binding
+problem (coupling universality → V(φ) asymmetry → 2PE → f_pi bottleneck).
 
 ---
 
@@ -408,40 +408,46 @@ nuclei were tested: RMS 7.2% after exchange-Coulomb and finite-size corrections,
 
 ---
 
-## The Coupling Universality Problem
+## The Nuclear Binding Problem: From Coupling Universality to Two-Pion Exchange
 
-A significant negative result: DFC's KSRF universality gives g_sigma = g_omega = M_N/f_pi
-— the sigma (scalar, attractive) and omega (vector, repulsive) meson-nucleon couplings are
-exactly equal. This creates a problem for light nuclei.
+A systematic investigation of nuclear binding in DFC has progressed through four stages,
+each narrowing the problem.
 
-**Why equal couplings prevent binding.** The nuclear force between two nucleons is the sum
-of sigma attraction (range ~1/m_sigma ≈ 0.43 fm) and omega repulsion (range ~1/m_omega
-≈ 0.26 fm). Because the sigma is lighter, its attraction extends to larger distances.
-The net potential is attractive at medium range (1–2 fm) and repulsive at short range.
-But when g_sigma = g_omega, the net attraction is extremely shallow — only about −0.6 MeV
-at r = 1 fm. This is too weak to bind either the deuteron or helium-4.
+**Stage 1 — Coupling universality (C418).** DFC's KSRF universality gives g_sigma =
+g_omega = M_N/f_pi — the sigma (scalar, attractive) and omega (vector, repulsive)
+meson-nucleon couplings are exactly equal. With equal couplings, the net attraction at
+r = 1 fm is only −0.6 MeV — far too weak to bind the deuteron. A full coupled-channel
+³S₁-³D₁ solver with tensor one-pion exchange confirmed: no bound state. Even a He-4
+variational calculation found no binding.
 
-**Coupled-channel deuteron test.** A full coupled-channel ³S₁-³D₁ Numerov solver with
-tensor one-pion exchange was implemented. The tensor force — which provides 50–70% of
-deuteron binding in realistic calculations — was included with the DFC-derived pion-nucleon
-coupling g_piNN = 13.28. Result: the deepest bound state found has E = −0.35 MeV,
-compared to the observed −2.2246 MeV. The sigma-omega cancellation dominates over any
-improvement from the tensor force.
+**Stage 2 — V(φ) coupling asymmetry (C419).** The V(φ) nonlinear sigma self-coupling
+(g₂ < 0 from the kink potential) does break the universality: the sigma response is
+enhanced at finite density while the omega (gauge vector) has no self-coupling. The
+enhancement reaches +48% at saturation density. However, this asymmetry is insufficient
+for deuteron binding. The dominant bottleneck is not the coupling ratio but the absolute
+coupling strength: g_sigma = 9.645 is too weak for single-Yukawa binding at any mass.
 
-**He-4 variational test.** A Gaussian variational calculation for the alpha particle
-(4 nucleons with all pair interactions) found no bound state at all — the system expands
-to a width of 11.6 fm, far larger than the actual He-4 radius of ~1.7 fm.
+**Stage 3 — Two-pion exchange (C420).** In realistic nuclear physics, the intermediate-range
+NN attraction comes from correlated two-pion exchange (2PE), not single-sigma Yukawa. The
+2PE spectral function was computed from DFC-derived parameters (g_A = 4/π, f_pi = Λ/π)
+using NLO chiral effective field theory. Result: the 2PE is 19 times deeper than bare
+sigma at r = 1 fm (−14.1 vs −0.73 MeV). S-wave binding with observed parameters (f_pi =
+92.07 MeV) gives B = 4.3 MeV — the mechanism works. But with DFC f_pi = 96.9 MeV,
+binding does not occur.
 
-**Root cause.** The bare coupling universality g_sigma = g_omega is an exact consequence
-of KSRF (Kawarabayashi-Suzuki-Riazuddin-Fayyazuddin relation) applied to the D7 depth
-behavior. Real nuclear binding requires g_sigma/g_omega ≈ 1.05–1.10 — a modest asymmetry
-of 5–10%. The path to resolution: nonlinear sigma terms from V(φ) (the g₂ and g₃
-couplings derived in the nuclear saturation work) modify the effective sigma coupling at
-nuclear density. If this medium modification can break the bare universality by the
-needed 5–10%, nuclear binding is restored from first principles.
+**Stage 4 — f_pi as the precise bottleneck (C421).** A scan of f_pi from 88 to 97 MeV
+found the binding threshold at f_pi < 96.5 MeV. DFC f_pi = Λ/π = 96.9 MeV is only
+0.4 MeV above this threshold. The best match to the observed deuteron binding energy
+(B_d = 2.2246 MeV) occurs at f_pi ~ 94.5 MeV. The 1/f_pi⁴ sensitivity of the 2PE
+spectral function amplifies DFC's 5.3% f_pi overshoot into a 19% weakening of the
+nuclear attraction — just enough to prevent binding.
 
-This is a T4 open problem — one of the most important remaining gaps in the nuclear
-physics sector of DFC.
+**Current status.** The nuclear binding problem is now precisely quantified: DFC is
+0.4 MeV (0.4%) above the f_pi binding threshold. The Pagels-Stokar correction (f_pi =
+89.63 MeV, −2.7% from observed) overshoots in the other direction, giving B = 20.9 MeV
+(massively overbound). The ideal DFC f_pi derivation would give ~94.5 MeV (within
+~2.5% of observed 92.07 MeV). This is a T4 open problem — but one with a precisely
+identified resolution path.
 
 ---
 
@@ -449,13 +455,13 @@ physics sector of DFC.
 
 | Item | Status | What is needed |
 |------|--------|----------------|
-| Coupling universality → no binding | **T4 open** | Effective g_sigma/g_omega asymmetry from V(φ) nonlinear terms |
+| Deuteron binding from 2PE | **T4 open** | f_pi 0.4 MeV above threshold; tighten f_pi derivation |
 | Bulk binding a_V from DFC | T3 closed | Walecka saturation with C_sat = m_sigma/m_omega |
 | N=126 as shell closure | **T3 CLOSED** | κ_DFC = 33 = 36 × 11/12; see Module 25 |
 | Z=114 proton magic from DFC | T3 | WS gap confirmed; formal DFC derivation missing |
 | Shell correction sign for ²⁹⁸Fl | T4 | Depends on N=126 fix |
 | Half-life of ²⁹⁸Fl | T4 | Requires DFC account of alpha/fission dynamics |
-| f_π from quark condensate | T4 | Requires chiral symmetry breaking from D7 |
+| f_π from quark condensate | **T4 critical** | 96.9 → ~94.5 MeV needed for deuteron binding |
 | g_NN from pion exchange | T3 | Goldberger-Treiman established; DFC inherits |
 | Formal derivation of a_SO/a₀ = I₄ | T4 | D7 boundary value problem for SO coupling |
 
@@ -500,3 +506,5 @@ result. `equations/nuclear_dfc_params.py` for the computed nuclear parameters.
 full prediction test suite.
 `equations/fpi_correction_t18.py` for the Pagels-Stokar f_π correction.
 `equations/light_nuclei_binding.py` for the coupled-channel deuteron and He-4 binding tests.
+`equations/nuclear_coupling_asymmetry.py` for V(φ) coupling asymmetry analysis.
+`equations/nuclear_2pi_exchange.py` for two-pion exchange potential and f_pi scan.
