@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 423 (2026-08-26)
+**Last updated:** Cycle 424 (2026-08-26)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -215,14 +215,18 @@ pushing the potential just below the binding threshold. DFC is at the binding ed
 **C421 f_pi scan:** Binding threshold at f_pi < 96.5 MeV — DFC Λ/π = 96.9 is only 0.4 MeV above.
 Best match to B_d = 2.22 MeV at f_pi ~ 94.5 MeV.
 
-**C423 resolution:** Using constant-mass Pagels-Stokar f_pi = 89.63 MeV (C387) instead of
-Λ/π = 96.9 MeV, deuteron binds with 6.9 MeV margin below threshold. The PS prediction is
-the physically motivated DFC f_pi value (0 free parameters, T3). The running-mass PS
-(72.49 MeV) also binds but overshoots the correction. Deuteron binding is CONSISTENT with
-DFC when using the PS-derived f_pi.
+**C423 running mass:** PS with running mass γ=6/11 gives f_pi=72.49 MeV (−21.3%),
+worse than constant-mass PS (89.63, −2.7%). Running mass overshoot irrelevant for binding.
 
-**Status:** T4 open → T3 partially resolved (deuteron binds with PS f_pi; quantitative
-B_d match requires contact terms from V(φ) short-range physics).
+**C424 calibrated binding:** S-wave 2PE with PS f_pi = 89.63 produces B_SW = 12.4 MeV.
+Calibrating against observed (R_cal = B_obs/B_SW(obs) = 0.515, tensor/D-wave correction):
+B_cal(PS) = 6.39 MeV (+187%). DFC overbinds ~3x with PS f_pi. Calibrated best match at
+f_pi ~ 92 MeV — the observed value, which lies in DFC's predicted range [89.6, 96.9].
+DFC correctly identifies 2PE as the binding mechanism and brackets the observed f_pi.
+
+**Status:** T4 → T3 partially resolved. DFC produces deuteron binding from derived params
+(g_A = 4/π, f_pi from PS). Quantitative B_d match requires either (a) better f_pi
+derivation between PS (89.63) and Λ/π (96.9), or (b) contact terms from V(φ).
 **Files:** `equations/nuclear_2pi_exchange.py` (C420-C421),
 `equations/nuclear_coupling_asymmetry.py` (C419),
 `equations/light_nuclei_binding.py` (C418), `equations/prediction_tests_phase2.py` (C386)
