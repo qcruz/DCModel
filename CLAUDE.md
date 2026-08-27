@@ -155,11 +155,8 @@ predictions that can be compared against observation — not on structural explo
 4. **Structural exploration** — understanding D4 gravity gap, metric emergence, etc.
    is valuable but should serve prediction goals, not be an end in itself
 
-**Cosmology is the primary growth area for predictions.** DFC already has 17/21 PASS
-in particle/nuclear prediction tests (C384-C391). The next frontier is cosmological
-predictions: Friedmann equation from substrate dynamics, Λ_cosm from V(φ), dark matter
-abundance, CMB power spectrum features, BBN constraints. Each of these would be a
-high-impact test of the model.
+**All task priorities are tracked in `ROADMAP.md`.** That document is the single
+source of truth for what to do next. See "How continue Works" below.
 
 Repeat this cycle indefinitely:
 
@@ -407,149 +404,41 @@ equation module in `equations/` for formal verification.
 
 ---
 
-**After every push, check `ISSUES.md`** — centralized tracker for open questions,
-known failures, internal tensions, retracted claims, and blocked derivations.
-
 ---
 
-### Step 0 — Practical Applications (every ~5–10 cycles, optional)
+### How "continue" Works
 
-Before Step 1, consider whether to add a new entry in `practical_applications/`.
-See `practical_applications/OVERVIEW.md` for the document format and Pool A/B/C source
-selection. Use this step to explore engineering implications derived from verified DFC
-results — absolute limits, efficiency ceilings, or unusual technological possibilities
-implied by the substrate structure.
+**`ROADMAP.md` is the single source of truth for what to do next.**
 
----
+When the user says "continue":
+1. Open `ROADMAP.md` and find the highest-priority unchecked item.
+2. Do ONE focused sub-step from that item (one equation module, one document, one test).
+3. Update `ROADMAP.md`: check off completed sub-steps, add results, adjust priorities.
+4. Update `push_history.md` with the cycle entry.
+5. Commit all changed files and run `git push`. Confirm `main -> main`.
 
-### Step 1 — Main Work (choose one track per cycle)
+A cycle is NOT finished until the remote is updated. One sub-step per cycle.
+Do not combine multiple items. Short cycles that complete cleanly are always better
+than long cycles that risk context overflow.
 
-Each cycle, choose **one** of the four tracks from the PRIMARY OBJECTIVES section above.
-Do not combine tracks in one cycle. Suggested rotation: A → B → C → D → A → ...
-but any order is fine — follow whatever is most tractable.
+**Between main work cycles**, also do periodic maintenance:
+- **Document audits:** Pick a random document and check for accuracy, language compliance,
+  stale references, tier consistency, internal processing notes, and forbidden cycle numbers
+  in public-facing docs (cycle tracking belongs only in `push_history.md`, `ROADMAP.md`,
+  `CLAUDE.md`, and `yang_mills_clay.md`).
+- **Educational updates:** When a new prediction lands, update `educational/06_predictions.md`
+  and `educational/07_open_questions.md`.
+- **Practical applications:** Every ~5-10 cycles, consider adding an entry in
+  `practical_applications/` following `OVERVIEW.md` format.
 
-**Track A (Math Formalization):** Pick one open derivation from the priority list
-and advance it. Write or update the equation module in `equations/`. Run it and
-record tier upgrades honestly.
+### Propagate Updates (MANDATORY every session)
 
-**Track B (Educational):** Create the next missing educational module from the list
-in PRIMARY OBJECTIVES, or substantially expand an existing one. Follow writing rules:
-plain English first, equations second, Tier-honest, 500–1500 words, self-contained.
-
-**Track C (Practical Applications):** Write one entry in `practical_applications/`
-following `OVERVIEW.md` format, derived from a verified (T1 or T2a) DFC result.
-
-**Track D (New Open Problem):** Write a one-page structural argument in
-`foundations/` evaluating one candidate problem from the table above. Identify
-what DFC predicts, the path to T2a, and honestly where DFC adds nothing new.
-
-**If doing a phenomena document** (supplement to any track), follow the standard format:
-- One-Sentence Synthesis (DFC account, not a placeholder)
-- Observation / Standard Explanation / DFC account
-- Consistency Checks table with at least one ✗ if any prediction fails
-- Open Questions / Connections
-
-### Step 2 — Continue with a Random Open Issue
-
-Select a random open issue from `ISSUES.md` — an unresolved question, known failure,
-blocked derivation, or internal tension. Attempt to make progress on it:
-1. Read the issue entry and all linked files.
-2. Make the best available progress: run a new equation, tighten a logical argument,
-   identify the specific blocking step, or update the tier assignment if warranted.
-3. Update the `ISSUES.md` entry to reflect what was learned or resolved.
-
-### Step 3 — Update a Random Document
-
-**Goal:** Every document in the repository should be reviewed and updated periodically.
-Audit scope is the full repository — `foundations/`, `phenomena/`, `equations/`,
-`README.md`, `ISSUES.md`, `current_state.md`, `comparisons/`, `practical_applications/`,
-`educational/`.
-
-1. Select any document at random from anywhere in the project.
-2. Read it and the corresponding equation modules (if any).
-3. Check: does the document accurately reflect the current state of the model?
-   Flag any of these:
-   - Claims that go beyond what equations currently show
-   - Language that does not match the DFC framework (forbidden phrases, anthropomorphic agency)
-   - Derivation steps marked as "established" that are actually assumptions or postulates
-   - Tier assignments inconsistent with the Scientific Merit Criteria (foundations/scientific_merit.md)
-   - Stale, missing, or outdated cross-references
-   - Items marked "OPEN" that were resolved in a later development cycle
-   - Mathematical relations in prose without a prior natural-language statement
-   - **Internal processing notes visible in the document** — any "Wait —", "Let me", "Actually,",
-     "More directly:", or live self-correction text that was written during drafting and not removed.
-     These must be deleted and replaced with clean, final prose.
-   - **Cycle numbers in public-facing documents** — `(Cycle XX)`, `(Cycle XX; ...)`, `CLOSED Cycle XX`,
-     "Cycle 144", etc. Cycle tracking belongs in `push_history.md` only. Remove from README.md,
-     educational modules, phenomena docs, and foundations docs. Keep in CLAUDE.md (this file),
-     ISSUES.md, push_history.md, and yang_mills_clay.md where they serve as internal tracking.
-4. Update the document to match the current state of the model.
-
-### Step 4 — Create or Update a Random Educational/Teaching Document
-
-The model must be teachable to someone with no physics background. Educational modules
-live in `educational/` and will form a complete course in the model. Each session,
-either create the next module that does not yet exist or update an existing one.
-
-**Module list** (00–11 complete; continue from 12):
-
-```
-educational/
-├── 00_overview.md          ← complete
-├── 01_the_substrate.md     ← complete
-├── 02_compression.md       ← complete (stub — expand)
-├── 03_depth_map.md         ← complete
-├── 04_forces.md            ← complete
-├── 05_particles.md         ← complete
-├── 06_predictions.md       ← complete
-├── 07_open_questions.md    ← complete (update each cycle)
-├── 08_mathematics.md       ← complete
-├── 09_i4_identity.md       ← complete (C321)
-├── 10_cascade_uniqueness.md← complete (C321)
-├── 11_36pi_topology.md     ← complete (C321)
-├── 12_substrate_topology.md    ← complete (C323)
-├── 13_mass_from_compression.md ← complete (C323)
-├── 14_spacetime_emergence.md   ← complete (C323)
-├── 15_dark_matter.md           ← complete (C323)
-├── 16_cosmology.md             ← complete (C323)
-├── 17_quantum_mechanics.md     ← complete (C330)
-├── 18_open_problems.md         ← complete (C331)
-├── 19_bell_inequalities.md     ← complete (C333)
-├── 20_nuclear_physics.md       ← complete (C346)
-├── 21_neutrino_masses.md       ← complete (C349)
-├── 22_yang_mills_proof.md      ← complete (C350)
-├── 23_coupling_constants.md    ← complete (C352)
-├── 24_strong_cp_problem.md     ← complete (C355)
-└── 25_nuclear_shell_n126.md    ← complete (C361, journaling format)
-```
-
-**Writing rules for educational modules:**
-- Every concept introduced in plain English first; equation (if any) second.
-- No jargon without definition. Define every technical term in one sentence on first use.
-- Each module must be readable without reading any other module first.
-- Accuracy is non-negotiable: if something is Tier 3 or open, say so plainly.
-  ("We believe X, but have not yet proved it" is the correct phrasing.)
-- Length: 500–1500 words per module (journaling modules may be longer). Dense is fine; imprecise is not.
-- **Preferred format for milestone modules:** When documenting a notable result or
-  breakthrough (e.g., closing a T4 gap, completing a priority item), use a journaling
-  style that captures the discovery process — the problem, how we approached it, what
-  we found, and what it means. This format serves dual purpose: it records the reasoning
-  at the moment of discovery (valuable for future reference) while being educational and
-  informative for readers. See `educational/25_nuclear_shell_n126.md` as the reference
-  example of this format.
-
-### Step 5 — Propagate Updates (MANDATORY every session)
-
-After any new document or any audit:
-1. Update `current_state.md` if a new strength, weakness, or audit result warrants it.
-2. Update `MEMORY.md` if any project-level facts have changed.
-3. Check whether any linked documents need updating.
+After any new work:
+1. Update `ROADMAP.md` with results (check off items, add cycle numbers).
+2. Update `push_history.md` with the cycle entry.
+3. Update `current_state.md` if a new strength, weakness, or result warrants it.
 4. **Update the Completeness Estimate in CLAUDE.md and README.md** (both places).
-5. **Commit all changed files and run `git push`.** Confirm the remote accepted the push
-   (output must show `main -> main` or equivalent). This step is non-optional.
-   A session is NOT complete until the remote is updated.
-
-Then return to Step 1.
+5. **Commit all changed files and run `git push`.** Confirm `main -> main`.
 
 ---
 
