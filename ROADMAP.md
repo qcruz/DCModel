@@ -70,7 +70,6 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 - **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land
 - **Update open questions** — revise `educational/07_open_questions.md` when issues close
-- **Clean cycle numbers from 07_open_questions.md** — has dozens of (C###) references that violate the no-cycle-numbers-in-educational-docs rule. Needs full rewrite to remove cycle tracking and present current state cleanly.
 - **Document audits (continuous)** — every few cycles, pick 2-4 random docs and review for: stale tier labels, outdated references (e.g. ISSUES.md), cycle numbers in public docs, language rule violations, factual inconsistencies with current model state. This is a permanent item — never remove it.
 - **Practical applications** — add entries to `practical_applications/` from verified T1/T2a results
 
@@ -87,6 +86,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 | Item | Result | Cycle |
 |------|--------|-------|
+| Clean 07_open_questions.md | Full rewrite: 347→195 lines, 86 cycle refs removed, current-state format | C435 |
 | String tension tier fix | sigma = Q_top x Lambda^2 already T2a (C243), not T3; meson module updated | C433 |
 | Atomic physics predictions | R_inf -0.28%, a_0 +0.14%, fine struct -0.73%, hyperfine -0.50%, 11/11 PASS | C430 |
 | Stellar structure predictions | sigma_T +0.08%, WD R +0.62%, M_HBMM +0.40%, 12/12 PASS | C429 |
