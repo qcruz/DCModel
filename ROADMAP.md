@@ -17,9 +17,10 @@ do it in one focused cycle, commit, push, then check it off.
 - Each item has a checkbox: `[ ]` = open, `[x]` = done, `[-]` = blocked.
 - Sub-steps under each item are the concrete actions to take.
 - When an item is completed, check it off and add the cycle number + result.
-- **Task selection:** Pick randomly from the highest-priority tier with open items,
-  unless the user specifies a particular item. Random selection prevents tunnel
-  vision and ensures all areas get attention.
+- **Task selection:** Pick randomly from ANY open item across ALL priority tiers,
+  unless the user gives more specific instructions. Random selection prevents tunnel
+  vision and ensures all areas get attention. Priority tiers are for reference,
+  not strict ordering.
 - This file replaces both `ISSUES.md` and `DEVELOPMENT_NEXT_STEPS.md`.
 
 ---

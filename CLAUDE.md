@@ -411,9 +411,10 @@ equation module in `equations/` for formal verification.
 **`ROADMAP.md` is the single source of truth for what to do next.**
 
 When the user says "continue":
-1. Open `ROADMAP.md` and find the highest-priority tier with open items.
-2. **Pick randomly** from that tier's open items (unless the user specifies one).
-   Random selection prevents tunnel vision and ensures all areas get attention.
+1. Open `ROADMAP.md`.
+2. **Pick randomly** from ANY open item across ALL priority tiers (unless the user
+   gives more specific instructions). Random selection prevents tunnel vision and
+   ensures all areas get attention. Priority tiers are for reference, not strict ordering.
 3. Do ONE focused sub-step from that item (one equation module, one document, one test).
 4. Update `ROADMAP.md`: check off completed sub-steps, add results, adjust priorities.
    ROADMAP.md is a **living document** — add new items whenever they come up.
