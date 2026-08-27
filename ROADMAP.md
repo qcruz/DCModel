@@ -5,17 +5,21 @@
 When I say "continue," start here. Pick the highest-priority unchecked item,
 do it in one focused cycle, commit, push, then check it off.
 
-**Last updated:** Cycle 427 (2026-08-26)
+**Last updated:** Cycle 429 (2026-08-26)
 
 ---
 
 ## How This Document Works
 
+- **This is a living document.** Add new items whenever they come up during work.
+  Remove or archive items that become irrelevant. Keep it current.
 - Items are ordered by priority within each tier (P1 highest).
 - Each item has a checkbox: `[ ]` = open, `[x]` = done, `[-]` = blocked.
 - Sub-steps under each item are the concrete actions to take.
 - When an item is completed, check it off and add the cycle number + result.
-- When a new task is identified during work, add it to the appropriate priority tier.
+- **Task selection:** Pick randomly from the highest-priority tier with open items,
+  unless the user specifies a particular item. Random selection prevents tunnel
+  vision and ensures all areas get attention.
 - This file replaces both `ISSUES.md` and `DEVELOPMENT_NEXT_STEPS.md`.
 
 ---
@@ -53,14 +57,13 @@ These extend DFC's quantitative prediction count or close significant gaps.
 ### P1.3 — Stellar structure relations (new predictions)
 - **Goal:** Derive mass-luminosity relation, WD mass-radius, minimum H-burning mass from DFC
 - **Why:** New testable predictions using already-derived DFC parameters (alpha_em, M_N)
-- **Current:** Not started
+- **Current:** DONE (C429, 12/12 PASS)
 - **Sub-steps:**
-  - [ ] Main sequence mass-luminosity relation: L proportional to M^3.5
-  - [ ] White dwarf mass-radius relation: R proportional to M^{-1/3}
-  - [ ] Minimum hydrogen-burning mass: ~0.08 M_sun from pp threshold
-  - [ ] Create `equations/stellar_structure_predictions.py`
-- **Files:** None yet
-- **Blocking:** None — straightforward from existing DFC parameters
+  - [x] Main sequence mass-luminosity relation: sigma_T +0.08%, kappa_es +0.45%, L_Edd -0.45% (C429)
+  - [x] White dwarf mass-radius relation: R ~ M^{-1/3} (T1 exact), R_WD +0.62% (C429)
+  - [x] Minimum hydrogen-burning mass: M_HBMM = 0.0803 M_sun (+0.40%) (C429)
+  - [x] Create `equations/stellar_structure_predictions.py` (C429)
+- **Files:** `equations/stellar_structure_predictions.py`
 
 ### P1.4 — Atomic physics predictions
 - **Goal:** Hydrogen E_1, Rydberg constant, fine structure, Lamb shift from DFC alpha_em
@@ -286,6 +289,7 @@ These are predictions that are clearly wrong. Fix when an approach becomes avail
 
 | Item | Result | Cycle |
 |------|--------|-------|
+| Stellar structure predictions | sigma_T +0.08%, WD R +0.62%, M_HBMM +0.40%, 12/12 PASS | C429 |
 | M_W one-loop correction | 80.38 GeV (+0.009%), T24 CLOSED | C427 |
 | Meson Regge spectrum | m_rho -1.5%, m_a2 +0.3%, 4/4 within 2%, 0 free params | C425 |
 | Calibrated deuteron binding | B_cal = 6.39 MeV, DFC produces binding from derived params | C424 |

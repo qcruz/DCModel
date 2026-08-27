@@ -411,11 +411,14 @@ equation module in `equations/` for formal verification.
 **`ROADMAP.md` is the single source of truth for what to do next.**
 
 When the user says "continue":
-1. Open `ROADMAP.md` and find the highest-priority unchecked item.
-2. Do ONE focused sub-step from that item (one equation module, one document, one test).
-3. Update `ROADMAP.md`: check off completed sub-steps, add results, adjust priorities.
-4. Update `push_history.md` with the cycle entry.
-5. Commit all changed files and run `git push`. Confirm `main -> main`.
+1. Open `ROADMAP.md` and find the highest-priority tier with open items.
+2. **Pick randomly** from that tier's open items (unless the user specifies one).
+   Random selection prevents tunnel vision and ensures all areas get attention.
+3. Do ONE focused sub-step from that item (one equation module, one document, one test).
+4. Update `ROADMAP.md`: check off completed sub-steps, add results, adjust priorities.
+   ROADMAP.md is a **living document** — add new items whenever they come up.
+5. Update `push_history.md` with the cycle entry.
+6. Commit all changed files and run `git push`. Confirm `main -> main`.
 
 A cycle is NOT finished until the remote is updated. One sub-step per cycle.
 Do not combine multiple items. Short cycles that complete cleanly are always better
