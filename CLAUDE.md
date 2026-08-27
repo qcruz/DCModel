@@ -412,12 +412,13 @@ equation module in `equations/` for formal verification.
 
 When the user says "continue":
 1. Open `ROADMAP.md`.
-2. **Pick randomly** from ANY open item across ALL priority tiers (unless the user
+2. **Pick randomly** from ANY item across ALL priority tiers (unless the user
    gives more specific instructions). Random selection prevents tunnel vision and
    ensures all areas get attention. Priority tiers are for reference, not strict ordering.
-3. Do ONE focused sub-step from that item (one equation module, one document, one test).
-4. Update `ROADMAP.md`: check off completed sub-steps, add results, adjust priorities.
-   ROADMAP.md is a **living document** — add new items whenever they come up.
+3. Do ONE focused task from that item (one equation module, one document, one test).
+4. Update `ROADMAP.md`: remove completed items from the active lists and add them
+   to the Completed Items table. Add new items whenever they come up.
+   ROADMAP.md is a **living roadmap and todo list** — keep it current.
 5. Update `push_history.md` with the cycle entry.
 6. Commit all changed files and run `git push`. Confirm `main -> main`.
 

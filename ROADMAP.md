@@ -2,289 +2,83 @@
 
 **The single source of truth for what to do next.**
 
-When I say "continue," start here. Pick the highest-priority unchecked item,
-do it in one focused cycle, commit, push, then check it off.
-
-**Last updated:** Cycle 430 (2026-08-26)
+**Last updated:** Cycle 431 (2026-08-27)
 
 ---
 
 ## How This Document Works
 
-- **This is a living document.** Add new items whenever they come up during work.
-  Remove or archive items that become irrelevant. Keep it current.
-- Items are ordered by priority within each tier (P1 highest).
-- Each item has a checkbox: `[ ]` = open, `[x]` = done, `[-]` = blocked.
-- Sub-steps under each item are the concrete actions to take.
-- When an item is completed, check it off and add the cycle number + result.
-- **Task selection:** Pick randomly from ANY open item across ALL priority tiers,
-  unless the user gives more specific instructions. Random selection prevents tunnel
-  vision and ensures all areas get attention. Priority tiers are for reference,
-  not strict ordering.
-- This file replaces both `ISSUES.md` and `DEVELOPMENT_NEXT_STEPS.md`.
+- **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
+- **Task selection:** Pick randomly from ANY item across ALL priority tiers, unless the user gives more specific instructions.
+- Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
+- Each item should be readable at a glance: what will it add to project completeness?
+- Priority tiers are for reference, not strict ordering.
 
 ---
 
-## Priority 1 — High-Impact Predictions (do these first)
+## Priority 1 — High-Impact Predictions
 
 These extend DFC's quantitative prediction count or close significant gaps.
 
-### P1.1 — Derive contact terms from V(phi) for deuteron binding
-- **Goal:** Principled C_S, C_T values from V(phi) kink core to get quantitative B_d
-- **Why:** PS f_pi = 89.63 MeV produces binding (B_cal = 6.39 MeV, +187%) but overbinds 3x.
-  Contact terms would correct the short-range physics. Best calibrated match at f_pi ~ 92 MeV.
-- **Current:** T3 partial (DFC produces binding, mechanism correct, quantitative match needs work)
-- **Sub-steps:**
-  - [ ] Compute V(phi) kink core contribution to short-range NN potential
-  - [ ] Extract C_S, C_T contact parameters from kink profile
-  - [ ] Re-run 2PE + contacts binding calculation
-  - [ ] Compare B_d prediction to observed 2.2246 MeV
-- **Files:** `equations/nuclear_2pi_exchange.py`, `equations/nuclear_coupling_asymmetry.py`
-- **Blocking:** None — tractable with current tools
-
-### P1.2 — Beyond-mean-field Walecka EOS
-- **Goal:** Fix NS radius (~14.5 -> ~12-13 km), NS max mass (~2.5 -> ~2.1 M_sun), saturation density
-- **Why:** Fixes astrophysical scorecard Parts B, D, E simultaneously. +48% coupling enhancement
-  at saturation density (C419) is available but MF treatment is insufficient.
-- **Current:** T4 (g_2 from V(phi) +1.2% vs NL3, but g_3 too small; K=2947 MeV)
-- **Sub-steps:**
-  - [ ] Implement RPA correlations or beyond-MF corrections to nonlinear Walecka EOS
-  - [ ] Map V(phi) asymmetry to effective g_sigma/g_omega splitting at nuclear density
-  - [ ] Compute corrected saturation properties (rho_0, E/A, K)
-  - [ ] Recompute NS mass-radius relation with improved EOS
-- **Files:** `equations/nonlinear_walecka_eos.py`, `equations/nuclear_kink_fluctuation.py`
-- **Blocking:** May need new theoretical insight for V(phi) -> nuclear sigma mapping
-
-### P1.3 — Stellar structure relations (new predictions)
-- **Goal:** Derive mass-luminosity relation, WD mass-radius, minimum H-burning mass from DFC
-- **Why:** New testable predictions using already-derived DFC parameters (alpha_em, M_N)
-- **Current:** DONE (C429, 12/12 PASS)
-- **Sub-steps:**
-  - [x] Main sequence mass-luminosity relation: sigma_T +0.08%, kappa_es +0.45%, L_Edd -0.45% (C429)
-  - [x] White dwarf mass-radius relation: R ~ M^{-1/3} (T1 exact), R_WD +0.62% (C429)
-  - [x] Minimum hydrogen-burning mass: M_HBMM = 0.0803 M_sun (+0.40%) (C429)
-  - [x] Create `equations/stellar_structure_predictions.py` (C429)
-- **Files:** `equations/stellar_structure_predictions.py`
-
-### P1.4 — Atomic physics predictions
-- **Goal:** Hydrogen E_1, Rydberg constant, fine structure, Lamb shift from DFC alpha_em
-- **Why:** Clean T2b predictions using the 36pi chain alpha_em
-- **Current:** DONE (C430, 11/11 PASS)
-- **Sub-steps:**
-  - [x] Compute E_1 = -alpha^2 m_e/2 using DFC alpha_em: -13.568 eV (-0.22%) (C430)
-  - [x] Compute Rydberg constant R_inf: 10943365 m^-1 (-0.28%) (C430)
-  - [x] Compute fine structure splitting: 10889 MHz (-0.73%) (C430)
-  - [x] Assess Lamb shift: Bethe estimate 947 MHz (-10.5%, expected from leading-order) (C430)
-  - [x] Hyperfine 1S (21 cm): 1413.3 MHz (-0.50%) (C430)
-  - [x] Bohr radius, classical e- radius, Compton wavelength (C430)
-  - [x] Create `equations/atomic_physics_predictions.py` (C430)
-- **Files:** `equations/atomic_physics_predictions.py`
-- **Key result:** All errors trace to alpha_em(0) = 1/137.23 (+0.14%); amplify as alpha^n
-
-### P1.5 — Proton-neutron mass difference
-- **Goal:** Derive Delta_m = m_n - m_p = 1.293 MeV
-- **Why:** High-impact fundamental prediction; requires alpha_em + quark mass difference
-- **Current:** Not started (T4)
-- **Sub-steps:**
-  - [ ] Compute EM self-energy difference from DFC alpha_em
-  - [ ] Estimate quark mass contribution (m_d - m_u) from DFC quark mass derivation
-  - [ ] Compare to observed 1.293 MeV
-- **Files:** None yet
-- **Blocking:** Needs m_u, m_d from DFC (currently not derived for light quarks)
-
-### P1.6 — Pion mass from Lambda_QCD
-- **Goal:** Derive m_pi ~ 135 MeV from DFC parameters
-- **Why:** Fundamental prediction; m_pi^2 proportional to m_q Lambda_QCD
-- **Current:** Not started (T4)
-- **Sub-steps:**
-  - [ ] Derive chiral symmetry breaking condensate from DFC
-  - [ ] Compute m_pi via GMOR relation with DFC Lambda_QCD = 304.5 MeV
-  - [ ] Compare to observed 139.57 MeV
-- **Files:** None yet
-- **Blocking:** Needs m_q (light quark masses) from DFC
+- **Derive V(phi) contact terms for deuteron binding** — principled C_S, C_T from kink core to fix overbinding (currently +187%). Would give a quantitative B_d prediction.
+- **Beyond-mean-field Walecka EOS** — fix NS radius (14.5 -> 12-13 km), max mass (2.5 -> 2.1 M_sun), and nuclear saturation density. Needs RPA or beyond-MF corrections.
+- **Derive proton-neutron mass difference** — predict Delta_m = 1.293 MeV from DFC alpha_em + quark mass splitting. Blocked on light quark mass derivation.
+- **Derive pion mass from Lambda_QCD** — predict m_pi ~ 135 MeV via GMOR relation with DFC Lambda_QCD = 304.5 MeV. Blocked on chiral symmetry breaking mechanism.
 
 ---
 
-## Priority 2 — Tier Upgrades (improve existing predictions)
+## Priority 2 — Tier Upgrades
 
-These upgrade existing T3/T4 results toward T2a/T1.
+Upgrade existing T3/T4 results toward T2a/T1.
 
-### P2.1 — alpha_em(0) identity: A-B = ln(1/alpha_em(0))
-- **Goal:** Prove algebraically (T4 -> T1)
-- **Why:** Closes the oldest open bottleneck in the coupling chain
-- **Current:** T4 structural identity
-- **Sub-steps:**
-  - [ ] Identify algebraic form of A and B from DFC parameters
-  - [ ] Attempt proof from V(phi) structure
-- **Files:** `equations/alpha_em_dfc_chain.py`
-
-### P2.2 — Hadronic vacuum polarization: delta(Delta_alpha)^NP = 0.00102
-- **Goal:** Close the 1.5% gap in the 36pi alpha_em chain
-- **Why:** Would make alpha_em(0) fully derived; currently accounts for 98.5% of VP
-- **Current:** T3 (two models bracket target: global +4.08x, local -0.35x)
-- **Sub-steps:**
-  - [ ] Develop D7 confinement spectral density model
-  - [ ] Compute dispersive integral with improved spectral function
-  - [ ] Close the 0.00102 gap
-- **Files:** `equations/hadronic_vp_dispersive.py`, `equations/alpha_em_hadronic.py`
-
-### P2.3 — String tension sigma = Q_top x Lambda^2 (T3 -> T2a)
-- **Goal:** Derive string tension from D7 kink vacuum energy
-- **Why:** Would upgrade all meson Regge predictions from T3 to T2a
-- **Current:** T3 structural (-4.2% vs lattice)
-- **Sub-steps:**
-  - [ ] Derive sigma from Yang-Mills mass gap / D7 dynamics
-  - [ ] Verify against lattice value
-- **Files:** `equations/ym_string_tension.py`, `equations/meson_regge_spectrum.py`
-
-### P2.4 — Cosmological constant combination rule (T3 -> T2a)
-- **Goal:** Derive why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3))
-- **Why:** Exponent is +0.05% accurate; the T3 gap is just the combination rule
-- **Current:** T3 (each term individually T2a; combination T3)
-- **Sub-steps:**
-  - [ ] Derive the exponential suppression from substrate compression dynamics
-  - [ ] Prove the additive exponent structure
-- **Files:** `equations/cosmological_constant_prediction.py`
-
-### P2.5 — f_pi: close remaining 2.7% gap
-- **Goal:** Improve from -2.7% (PS) toward <1%
-- **Why:** f_pi propagates into nuclear force predictions via 1/f_pi^4
-- **Current:** T3 (PS gives 89.63 MeV, -2.7%; running mass worse at -21.3%)
-- **Sub-steps:**
-  - [ ] Investigate finite m_pi corrections (~1-2%)
-  - [ ] Account for M_N(DFC) vs M_N(obs) (-0.45%)
-  - [ ] Check higher-order PS corrections
-- **Files:** `equations/fpi_correction_t18.py`, `equations/fpi_running_mass.py`
+- **Prove alpha_em(0) identity A-B = ln(1/alpha_em(0))** — oldest open bottleneck. T4 -> T1 would make all atomic/EM predictions fully derived.
+- **Derive hadronic vacuum polarization delta(Delta_alpha)^NP = 0.00102** — close the 1.5% gap in the 36pi alpha_em chain. Needs D7 confinement spectral density.
+- **Derive string tension sigma = Q_top x Lambda^2 from D7 dynamics** — T3 -> T2a. Would upgrade all meson Regge predictions.
+- **Derive cosmological constant combination rule** — prove why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3)). Each term is T2a; combination is T3.
+- **Close f_pi 2.7% gap** — investigate finite m_pi corrections and higher-order PS corrections. f_pi propagates into nuclear predictions via 1/f_pi^4.
 
 ---
 
-## Priority 3 — Structural Gaps (deep theory work)
+## Priority 3 — Structural Gaps
 
-### P3.1 — D4 gravity gap: metric emergence
-- **Goal:** Derive g_mu_nu^eff from substrate dynamics
-- **Why:** Deepest structural gap in DFC; resolves how gravity emerges
-- **Current:** T4 (15 modules, many partial results, but no full metric)
-- **Sub-steps:**
-  - [ ] D4-B: Derive effective metric from substrate compression
-  - [ ] D4-C: Show massless spin-2 mode emerges (hardest sub-gap)
-  - [ ] D4-A: Connect M_Pl to V(phi) parameters (T3 via Jormungandr)
-  - [ ] D4-D: Derive G_N coefficient (T3 via fixed-point)
-- **Files:** `foundations/d4_gravity_gap.md`, 15 modules `equations/d4_*.py`
+Deep theory work on foundational questions.
 
-### P3.2 — Neutrino mixing angle theta_23: derive formula from V(phi)
-- **Goal:** Close the 4-degree deviation from 45 degrees
-- **Why:** Mechanism identified (Z_3 holonomy, T1 structural) but formula not derived
-- **Current:** T4 (best candidates within 1 sigma of observed 49.26 degrees)
-- **Sub-steps:**
-  - [ ] Derive epsilon_d from D6/D7 interface dynamics
-  - [ ] Select between candidate formulas using V(phi) arguments
-- **Files:** `equations/neutrino_theta23_z3_mechanism.py`
-
-### P3.3 — Nuclear saturation from DFC
-- **Goal:** Derive saturation properties (rho_0, E/A, K) from V(phi) couplings
-- **Why:** Connects DFC to bulk nuclear matter; validates coupling predictions
-- **Current:** T4 (linear Walecka fails: rho_0 +42%, E/A +40%, K +600%)
-- **Sub-steps:**
-  - [ ] Beyond-MF corrections with V(phi) nonlinear sigma
-  - [ ] RPA correlation energy
-  - [ ] Compute improved K, E/A, rho_0
-- **Files:** `equations/nuclear_walecka_prediction.py`
-- **Connection:** Overlaps with P1.2
-
-### P3.4 — Koide phase t = 1/sqrt(Q_top) derivation
-- **Goal:** Derive the Koide formula phase from substrate topology
-- **Why:** Would make tau mass prediction fully derived (currently uses Koide as structural input)
-- **Current:** T4 (5D Yukawa vortex integral open)
-- **Files:** `equations/koide_phase_coupling.py`
-
-### P3.5 — CKM/PMNS matrices from D6/D7 overlap
-- **Goal:** Derive mixing matrix elements from substrate geometry
-- **Why:** 4 CKM + 3 PMNS parameters currently not derived
-- **Current:** T4 (D6/D7 overlap integral not computed)
-- **Sub-steps:**
-  - [ ] Compute D6/D7 overlap integral
-  - [ ] Extract mixing angles
-- **Blocking:** Requires better understanding of D6/D7 interface
-
-### P3.6 — Planck constant from (alpha, beta, c)
-- **Goal:** Derive hbar from substrate parameters
-- **Why:** Would close the gap to fully self-contained unit system
-- **Current:** T4 (blocked by T12 / alpha_em chain)
-- **Blocking:** P2.1 must close first
+- **D4 gravity gap: derive effective metric from substrate** — deepest structural gap in DFC. Derive g_mu_nu, massless spin-2 mode, and G_N from V(phi).
+- **Derive neutrino theta_23 formula from V(phi)** — mechanism identified (Z_3 holonomy) but quantitative formula not derived. 4-degree deviation from 45 degrees.
+- **Derive nuclear saturation from DFC couplings** — connect V(phi) to bulk nuclear matter (rho_0, E/A, K). Overlaps with P1 Walecka work.
+- **Derive Koide phase t = 1/sqrt(Q_top)** — would make tau mass prediction fully derived instead of using Koide as structural input.
+- **Derive CKM/PMNS matrices from D6/D7 overlap** — 4 CKM + 3 PMNS parameters currently not derived. Needs D6/D7 interface computation.
+- **Derive Planck constant from (alpha, beta, c)** — close the gap to a fully self-contained unit system. Blocked on alpha_em(0) identity (P2).
 
 ---
 
-## Priority 4 — Known Limitations (acknowledge, fix when tractable)
+## Priority 4 — Known Failures
 
-These are predictions that are clearly wrong. Fix when an approach becomes available.
+Predictions that are clearly wrong. Fix when an approach becomes available.
 
-### P4.1 — Nucleon magnetic moment ratio (mu_p/mu_n = -1.500 vs obs -1.460, +2.7%)
-- **Current:** T4. SU(6) ratio preserved because both scale as 1/m_q. Breaking requires
-  isospin violation (strange sea, m_u != m_d, or pion cloud asymmetry).
-- **Files:** `equations/prediction_tests_phase2.py`
-
-### P4.2 — Proton charge radius (-17.6%)
-- **Current:** T4. Missing ~0.13 fm^2 from intrinsic quark charge radius.
-  MODEL LIMITATION — needs nucleon wavefunction.
-- **Files:** `equations/prediction_tests_phase3.py`
-
-### P4.3 — Delta-N mass splitting (+92% -> -40%)
-- **Current:** T4. Need frozen infrared alpha_s ~ 0.72 (vs 0.43 from perturbative).
-- **Files:** `equations/prediction_tests_phase3.py`
-
-### P4.4 — Symmetry energy J (-36%)
-- **Current:** T4. g_rho = g_omega/sqrt(N_c) = 5.57 gives J = 20.6 MeV vs obs 32 MeV.
-  Needs g_rho = 8.59 for exact match.
-- **Files:** `equations/phase3_corrections.py`
-
-### P4.5 — Nuclear surface diffuseness (-20%)
-- **Current:** T3. DFC bare m_sigma = 456.8 MeV gives surface too sharp.
-  May resolve if m_sigma(effective) < m_sigma(bare) at nuclear density.
-- **Files:** `equations/nuclear_msigma_resolution.py`
-
-### P4.6 — Nolen-Schiffer residual (~7%)
-- **Current:** T3. Three CSB sources identified (rho-omega mixing, pion mass splitting,
-  neutron-proton mass difference) but not computed from DFC.
-- **Files:** `equations/nuclear_nolen_schiffer.py`
-
-### P4.7 — Triple-alpha Q value (FAIL)
-- **Current:** Blocked by SEMF failure for A < 12. Needs light nuclei binding (P1.1).
-- **Blocking:** P1.1
+- **Nucleon magnetic moment ratio** — mu_p/mu_n = -1.500 vs obs -1.460 (+2.7%). Needs isospin violation.
+- **Proton charge radius** — -17.6% off. Missing intrinsic quark charge radius. Needs nucleon wavefunction.
+- **Delta-N mass splitting** — +92% -> -40% range. Needs frozen infrared alpha_s ~ 0.72.
+- **Nuclear symmetry energy J** — -36%. Needs larger g_rho (8.59 vs predicted 5.57).
+- **Nuclear surface diffuseness** — -20%. DFC bare m_sigma = 456.8 MeV too heavy.
+- **Nolen-Schiffer residual** — ~7% CSB sources identified but not computed from DFC.
+- **Triple-alpha Q value** — blocked by SEMF failure for A < 12.
 
 ---
 
-## Priority 5 — Documentation and Communication
+## Priority 5 — Documentation
 
-### P5.1 — Educational modules (ongoing)
-- Modules 00-28 exist. Continue adding new topics as predictions are made.
-- [ ] Update `educational/06_predictions.md` when new predictions land
-- [ ] Update `educational/07_open_questions.md` when issues close
-- [ ] Create new modules for major breakthroughs (journaling format)
-
-### P5.2 — Document audits (periodic)
-- Every document should be reviewed periodically for accuracy, language compliance,
-  stale references, and tier consistency.
-- Pick a random document each cycle and audit it.
-
-### P5.3 — Practical applications (every ~5-10 cycles)
-- Entries in `practical_applications/` following `OVERVIEW.md` format.
-- Derive engineering-relevant limits from verified (T1/T2a) DFC results.
+- **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land
+- **Update open questions** — revise `educational/07_open_questions.md` when issues close
+- **Document audits** — periodically review random docs for accuracy, language compliance, stale refs
+- **Practical applications** — add entries to `practical_applications/` from verified T1/T2a results
 
 ---
 
-## Priority 6 — Exploratory (when other priorities are blocked)
+## Priority 6 — Exploratory
 
-### P6.1 — Freeform mathematical exploration
-- Workspace: `equations/freeform_math_exploration.py`
-- Techniques: continued fractions, modular arithmetic, algebraic identities,
-  number theory, exponential/log transforms, mass ratio analysis
-- Promote significant findings to proper equation modules
-
-### P6.2 — New open problem evaluation
-- Candidates: Navier-Stokes, baryon asymmetry, dark matter identity,
-  proton spin crisis, quantum gravity
-- One cycle per candidate: write structural argument, identify DFC angle,
-  record honestly where DFC adds nothing new
+- **Freeform mathematical exploration** — continued fractions, modular arithmetic, algebraic identities on DFC constants. Workspace: `equations/freeform_math_exploration.py`
+- **Evaluate new open problems for DFC** — candidates: Navier-Stokes, baryon asymmetry, dark matter identity, proton spin crisis, quantum gravity. One cycle per candidate.
 
 ---
 
@@ -292,6 +86,7 @@ These are predictions that are clearly wrong. Fix when an approach becomes avail
 
 | Item | Result | Cycle |
 |------|--------|-------|
+| Atomic physics predictions | R_inf -0.28%, a_0 +0.14%, fine struct -0.73%, hyperfine -0.50%, 11/11 PASS | C430 |
 | Stellar structure predictions | sigma_T +0.08%, WD R +0.62%, M_HBMM +0.40%, 12/12 PASS | C429 |
 | M_W one-loop correction | 80.38 GeV (+0.009%), T24 CLOSED | C427 |
 | Meson Regge spectrum | m_rho -1.5%, m_a2 +0.3%, 4/4 within 2%, 0 free params | C425 |
@@ -333,7 +128,7 @@ These are predictions that are clearly wrong. Fix when an approach becomes avail
 
 ---
 
-## Known Equation Module Issues
+## Reference: Known Module Issues
 
 | Module | Issue |
 |---|---|
@@ -346,31 +141,31 @@ These are predictions that are clearly wrong. Fix when an approach becomes avail
 
 ---
 
-## Quantities Not Yet Derived
+## Reference: Quantities Not Yet Derived
 
 | Quantity | Observed | Blocking Issue |
 |---|---|---|
-| m_pi | 139.57 MeV | Chiral SB mechanism from DFC (see P1.6) |
+| m_pi | 139.57 MeV | Chiral SB mechanism from DFC |
 | m_u, m_d | 2.2, 4.7 MeV | Chiral SB + Yukawa from substrate |
-| r_p | 0.8409 fm | Pion cloud integral (see P4.2) |
-| m_n - m_p | 1.293 MeV | Needs m_d - m_u + EM (see P1.5) |
-| Delta(1232)-N | 293 MeV | Frozen IR alpha_s (see P4.3) |
+| r_p | 0.8409 fm | Pion cloud integral |
+| m_n - m_p | 1.293 MeV | Needs m_d - m_u + EM |
+| Delta(1232)-N | 293 MeV | Frozen IR alpha_s |
 | N=184 magic | Predicted by some | SO strength / deformation |
-| CKM elements | 4 params | D6/D7 overlap (see P3.5) |
-| PMNS (theta_12, theta_13) | Known | D6 holonomy (see P3.5) |
+| CKM elements | 4 params | D6/D7 overlap |
+| PMNS (theta_12, theta_13) | Known | D6 holonomy |
 | Absolute neutrino masses | Constrained | f_nu from substrate |
 | sigma_piN | 52 MeV | Needs m_hat = (m_u+m_d)/2 |
 
 ---
 
-## Open Blocked Derivations
+## Reference: Open Blocked Derivations
 
 | Target | Status | Key file |
 |---|---|---|
 | M_c(D7) from substrate | T2b; needs 2-loop C_match | `ym_sp5_mcdz_derivation.py` |
-| hbar from (alpha, beta, c) | T4; blocked by P2.1 | -- |
-| CKM/PMNS matrices | T4; see P3.5 | -- |
+| hbar from (alpha, beta, c) | T4; blocked by alpha_em identity | -- |
+| CKM/PMNS matrices | T4 | -- |
 | SU(3) vs SO(6) | Largely resolved; J propagation proof open | `d5_complex_from_instability.py` |
-| Koide t derivation | T4; see P3.4 | `koide_phase_coupling.py` |
+| Koide t derivation | T4 | `koide_phase_coupling.py` |
 | Series holonomy (Step 9c) | T3; KK reduction formal | -- |
 | Collapse mechanism | T2a (C360) | `collapse_trigger_condition.py` |
