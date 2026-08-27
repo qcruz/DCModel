@@ -3,7 +3,7 @@ Meson Regge Spectrum from DFC String Tension (C425)
 ====================================================
 
 Physical question:
-    DFC predicts the QCD string tension sigma = Q_top x Lambda_QCD^2 (T3, C160)
+    DFC predicts the QCD string tension sigma = Q_top x Lambda_QCD^2 (T2a, C243)
     and the ρ meson mass m_rho = sqrt(2*pi) * Lambda_QCD = 763.3 MeV (-1.58%, T3).
     Can DFC predict the FULL meson Regge trajectory — not just the ground state
     rho, but the entire tower of excited states (rho_3, rho_5, a_2, f_2, ...)?
@@ -24,7 +24,7 @@ DFC mechanism:
       m_rho = sqrt(2*pi) * Lambda = 763.3 MeV  (obs 775.5 MeV, -1.58%)
 
     This gives a TOWER of predictions with 0 free nuclear parameters:
-      - alpha' from sigma = Q_top * Lambda^2 (T3)
+      - alpha' from sigma = Q_top * Lambda^2 (T2a, C243)
       - alpha_0 = 1/2 from DFC kink structure (T3)
       - All masses from Lambda_QCD = 304.5 MeV (T2a)
 
@@ -68,7 +68,7 @@ I4 = 4.0 / 3.0           # C_2(fund, SU(3)) (T1)
 N_C = 3                  # SU(3) color
 
 # Derived quantities
-SIGMA_DFC = Q_TOP * LAMBDA_QCD**2          # string tension, MeV^2 (T3)
+SIGMA_DFC = Q_TOP * LAMBDA_QCD**2          # string tension, MeV^2 (T2a, C243)
 ALPHA_PRIME = 1.0 / (2.0 * PI * SIGMA_DFC) # Regge slope, MeV^-2
 ALPHA_0 = 0.5            # Regge intercept (DFC structural, T3)
 

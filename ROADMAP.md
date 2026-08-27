@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 432 (2026-08-27)
+**Last updated:** Cycle 433 (2026-08-27)
 
 ---
 
@@ -33,7 +33,7 @@ Upgrade existing T3/T4 results toward T2a/T1.
 
 - **Prove alpha_em(0) identity A-B = ln(1/alpha_em(0))** — oldest open bottleneck. T4 -> T1 would make all atomic/EM predictions fully derived.
 - **Derive hadronic vacuum polarization delta(Delta_alpha)^NP = 0.00102** — close the 1.5% gap in the 36pi alpha_em chain. Needs D7 confinement spectral density.
-- **Derive string tension sigma = Q_top x Lambda^2 from D7 dynamics** — T3 -> T2a. Would upgrade all meson Regge predictions.
+- **Upgrade Regge intercept alpha_0 = 1/2 from T3 to T2a** — string tension is already T2a (C243), but the intercept remains T3 structural. Would upgrade all meson mass predictions.
 - **Derive cosmological constant combination rule** — prove why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3)). Each term is T2a; combination is T3.
 - **Close f_pi 2.7% gap** — investigate finite m_pi corrections and higher-order PS corrections. f_pi propagates into nuclear predictions via 1/f_pi^4.
 
@@ -46,7 +46,7 @@ Deep theory work on foundational questions.
 - **D4 gravity gap: derive effective metric from substrate** — deepest structural gap in DFC. Derive g_mu_nu, massless spin-2 mode, and G_N from V(phi).
 - **Derive neutrino theta_23 formula from V(phi)** — mechanism identified (Z_3 holonomy) but quantitative formula not derived. 4-degree deviation from 45 degrees.
 - **Derive nuclear saturation from DFC couplings** — connect V(phi) to bulk nuclear matter (rho_0, E/A, K). Overlaps with P1 Walecka work.
-- **Derive Koide phase t = 1/sqrt(Q_top)** — would make tau mass prediction fully derived instead of using Koide as structural input.
+- **Upgrade Koide phase t = 1/sqrt(Q_top) from T2a to T1** — current T2a derivation uses canonical vertex factor argument (C146). T1 upgrade requires computing the 5D Yukawa vortex integral directly from the D5/D6 kink overlap, bypassing the perturbative vertex expansion.
 - **Derive CKM/PMNS matrices from D6/D7 overlap** — 4 CKM + 3 PMNS parameters currently not derived. Needs D6/D7 interface computation.
 - **Derive Planck constant from (alpha, beta, c)** — close the gap to a fully self-contained unit system. Blocked on alpha_em(0) identity (P2).
 
@@ -86,6 +86,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 | Item | Result | Cycle |
 |------|--------|-------|
+| String tension tier fix | sigma = Q_top x Lambda^2 already T2a (C243), not T3; meson module updated | C433 |
 | Atomic physics predictions | R_inf -0.28%, a_0 +0.14%, fine struct -0.73%, hyperfine -0.50%, 11/11 PASS | C430 |
 | Stellar structure predictions | sigma_T +0.08%, WD R +0.62%, M_HBMM +0.40%, 12/12 PASS | C429 |
 | M_W one-loop correction | 80.38 GeV (+0.009%), T24 CLOSED | C427 |

@@ -14,7 +14,7 @@ DFC mechanism:
   Casimir of the source representation. Casimir scaling (lattice-supported):
     σ_R / σ_fund = C₂(R) / C₂(fund) = C₂(R) / I₄
 
-  Absolute string tension:  σ_fund = I₄ × Λ_QCD²  [T3]
+  Absolute string tension:  σ_fund = I₄ × (N_c/2) × Λ_QCD² = Q_top × Λ_QCD²  [T2a, C243]
   Casimir ratio (exact):    σ_adj/σ_fund = C₂(adj)/I₄ = N_c/I₄ = 9/4  [T1]
 
 Key references:

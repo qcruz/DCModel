@@ -278,7 +278,7 @@ print("\n=== PART G [T1]: What DFC needs to close identity exactly ===")
 
 # The T4 gap for both Problem #1 and Problem #4:
 # Compute R^{had}(s) below 2 GeV from D7 confinement string tension sigma.
-# sigma = Q_top × Lambda_QCD² = 185440 MeV² [T3, C243]
+# sigma = Q_top × Lambda_QCD² = 185440 MeV² [T2a, C243]
 # The non-pert hadronic VP integral:
 #   delta_alpha^NP = (alpha/3pi) × integral_0^{2 GeV} ds/s × R^{had}(s) + subtraction
 # where R^{had}(s) = sigma_{e+e-→had}(s) / sigma_{e+e-→mu+mu-}(s)
