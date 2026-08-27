@@ -71,7 +71,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 - **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land
 - **Update open questions** — revise `educational/07_open_questions.md` when issues close
 - **Clean cycle numbers from 07_open_questions.md** — has dozens of (C###) references that violate the no-cycle-numbers-in-educational-docs rule. Needs full rewrite to remove cycle tracking and present current state cleanly.
-- **Document audits** — periodically review random docs for accuracy, language compliance, stale refs
+- **Document audits (continuous)** — every few cycles, pick 2-4 random docs and review for: stale tier labels, outdated references (e.g. ISSUES.md), cycle numbers in public docs, language rule violations, factual inconsistencies with current model state. This is a permanent item — never remove it.
 - **Practical applications** — add entries to `practical_applications/` from verified T1/T2a results
 
 ---

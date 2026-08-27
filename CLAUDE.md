@@ -426,13 +426,16 @@ A cycle is NOT finished until the remote is updated. One sub-step per cycle.
 Do not combine multiple items. Short cycles that complete cleanly are always better
 than long cycles that risk context overflow.
 
-**Between main work cycles**, also do periodic maintenance:
-- **Document audits:** Pick a random document and check for accuracy, language compliance,
-  stale references, tier consistency, internal processing notes, and forbidden cycle numbers
-  in public-facing docs (cycle tracking belongs only in `push_history.md`, `ROADMAP.md`,
-  `CLAUDE.md`, and `yang_mills_clay.md`).
-- **Educational updates:** When a new prediction lands, update `educational/06_predictions.md`
-  and `educational/07_open_questions.md`.
+**Document review is a continuous part of the development cycle**, not a separate
+maintenance task. It is a permanent item on the ROADMAP and should be randomly selected
+like any other work item. When selected:
+- Pick 2-4 random docs from `educational/`, `foundations/`, or `phenomena/`.
+- Check for: stale tier labels, outdated file references, cycle numbers in public docs,
+  language rule violations, factual inconsistencies with current model state.
+- Fix issues found; add newly-discovered open items to ROADMAP.
+
+**Other periodic tasks:**
+- **Educational updates:** When a new prediction lands, update `educational/06_predictions.md`.
 - **Practical applications:** Every ~5-10 cycles, consider adding an entry in
   `practical_applications/` following `OVERVIEW.md` format.
 
