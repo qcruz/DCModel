@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 437 (2026-08-27)
+**Last updated:** Cycle 438 (2026-08-27)
 
 ---
 
@@ -33,7 +33,7 @@ Upgrade existing T3/T4 results toward T2a/T1.
 
 - **Prove alpha_em(0) identity A-B = ln(1/alpha_em(0))** — oldest open bottleneck. T4 -> T1 would make all atomic/EM predictions fully derived.
 - **Derive hadronic vacuum polarization delta(Delta_alpha)^NP = 0.00102** — close the 1.5% gap in the 36pi alpha_em chain. Needs D7 confinement spectral density.
-- **Upgrade Regge intercept alpha_0 = 1/2 from T3 to T2a** — string tension is already T2a (C243), but the intercept remains T3 structural. Would upgrade all meson mass predictions.
+- ~~**Upgrade Regge intercept alpha_0 = 1/2 from T3 to T2a**~~ — DONE C438. JR endpoint spin derivation + numerical verification (15/15 PASS). All meson predictions upgraded to T2a.
 - **Derive cosmological constant combination rule** — prove why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3)). Each term is T2a; combination is T3.
 - **Close f_pi 1.6% gap** — reduced from 2.7% via finite m_pi correction (C436). Remaining gap traces to DFC m_rho undershoot (-1.6% vs obs). T2a upgrade needs m_rho gap closure or momentum-dependent M(p).
 
@@ -86,6 +86,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 | Item | Result | Cycle |
 |------|--------|-------|
+| Regge intercept T3→T2a | alpha_0 = 1/2 from JR endpoint spin; 15/15 PASS, 4/4 mesons within 2.5% | C438 |
 | Clean 07_open_questions.md | Full rewrite: 347→195 lines, 86 cycle refs removed, current-state format | C435 |
 | String tension tier fix | sigma = Q_top x Lambda^2 already T2a (C243), not T3; meson module updated | C433 |
 | Atomic physics predictions | R_inf -0.28%, a_0 +0.14%, fine struct -0.73%, hyperfine -0.50%, 11/11 PASS | C430 |

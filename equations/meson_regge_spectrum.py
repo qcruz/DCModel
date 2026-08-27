@@ -70,7 +70,7 @@ N_C = 3                  # SU(3) color
 # Derived quantities
 SIGMA_DFC = Q_TOP * LAMBDA_QCD**2          # string tension, MeV^2 (T2a, C243)
 ALPHA_PRIME = 1.0 / (2.0 * PI * SIGMA_DFC) # Regge slope, MeV^-2
-ALPHA_0 = 0.5            # Regge intercept (DFC structural, T3)
+ALPHA_0 = 0.5            # Regge intercept (JR endpoint spin, T2a; see regge_intercept_derivation.py)
 
 # Convert to GeV for comparison with data
 SIGMA_DFC_GEV2 = SIGMA_DFC * 1e-6          # GeV^2
@@ -150,7 +150,7 @@ print("  Alternatively, alpha_0 = 1/2 follows from the BPS kink structure:")
 print("    Each kink has S_kink x alpha_D5 = 1 (T1, C171)")
 print("    The intercept is alpha_0 = S_kink x alpha_D5 / Q_top = 1/Q_top = 1/2")
 print()
-print("  This gives alpha_0 = 1/Q_top = 1/2 for mesons (T3 structural).")
+print("  This gives alpha_0 = 1/Q_top = 1/2 for mesons (T2a, see regge_intercept_derivation.py).")
 print()
 
 alpha_0_formula = 1.0 / Q_TOP
@@ -471,15 +471,15 @@ print(f"  m_a4/m_rho  = sqrt(7) = {math.sqrt(7):.4f}  (obs {1995.0/775.26:.4f}, 
 print()
 
 print("TIER ASSIGNMENTS:")
-print("  sigma = Q_top x Lambda^2:              T3 (structural, -4.2%)")
-print("  alpha_0 = 1/Q_top = 1/2:               T3 (structural argument)")
-print("  m_rho = sqrt(2*pi) x Lambda:            T3 (0 free params, -1.6%)")
-print("  m_a2 = sqrt(6*pi) x Lambda:             T3 (0 free params, prediction)")
-print("  m_rho3 = sqrt(10*pi) x Lambda:           T3 (0 free params, prediction)")
-print("  Mass ratios sqrt(2J-1):                 T3 (from alpha_0 = 1/2)")
+print("  sigma = Q_top x Lambda^2:              T2a (-2.2%)")
+print("  alpha_0 = s_endpoint = 1/2:            T2a (JR spin, C438)")
+print("  m_rho = sqrt(2*pi) x Lambda:            T2a (0 free params, -1.5%)")
+print("  m_a2 = sqrt(6*pi) x Lambda:             T2a (0 free params, +0.3%)")
+print("  m_rho3 = sqrt(10*pi) x Lambda:           T2a (0 free params, +1.1%)")
+print("  Mass ratios sqrt(2J-1):                 T2a (from alpha_0 = 1/2)")
 print()
 print("  All predictions flow from DFC parameters alone:")
-print("    Lambda_QCD = 304.5 MeV [T2a] + Q_top = 2 [T1] + alpha_0 = 1/2 [T3]")
+print("    Lambda_QCD = 304.5 MeV [T2a] + Q_top = 2 [T1] + alpha_0 = 1/2 [T2a]")
 print()
 
 n_good = sum(1 for _, J, m_obs, _, _ in observed_mesons[:4]
