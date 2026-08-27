@@ -5,7 +5,7 @@
 When I say "continue," start here. Pick the highest-priority unchecked item,
 do it in one focused cycle, commit, push, then check it off.
 
-**Last updated:** Cycle 429 (2026-08-26)
+**Last updated:** Cycle 430 (2026-08-26)
 
 ---
 
@@ -68,16 +68,18 @@ These extend DFC's quantitative prediction count or close significant gaps.
 
 ### P1.4 — Atomic physics predictions
 - **Goal:** Hydrogen E_1, Rydberg constant, fine structure, Lamb shift from DFC alpha_em
-- **Why:** Clean T2a predictions using the 36pi chain alpha_em
-- **Current:** Not started
+- **Why:** Clean T2b predictions using the 36pi chain alpha_em
+- **Current:** DONE (C430, 11/11 PASS)
 - **Sub-steps:**
-  - [ ] Compute E_1 = -alpha^2 m_e/2 using DFC alpha_em (m_e as input)
-  - [ ] Compute Rydberg constant R_inf
-  - [ ] Compute fine structure splitting
-  - [ ] Assess Lamb shift (tests QED loops — may need DFC-specific QED)
-  - [ ] Create `equations/atomic_physics_predictions.py`
-- **Files:** None yet
-- **Blocking:** m_e not independently derived (T3/T4) — use as input for now
+  - [x] Compute E_1 = -alpha^2 m_e/2 using DFC alpha_em: -13.568 eV (-0.22%) (C430)
+  - [x] Compute Rydberg constant R_inf: 10943365 m^-1 (-0.28%) (C430)
+  - [x] Compute fine structure splitting: 10889 MHz (-0.73%) (C430)
+  - [x] Assess Lamb shift: Bethe estimate 947 MHz (-10.5%, expected from leading-order) (C430)
+  - [x] Hyperfine 1S (21 cm): 1413.3 MHz (-0.50%) (C430)
+  - [x] Bohr radius, classical e- radius, Compton wavelength (C430)
+  - [x] Create `equations/atomic_physics_predictions.py` (C430)
+- **Files:** `equations/atomic_physics_predictions.py`
+- **Key result:** All errors trace to alpha_em(0) = 1/137.23 (+0.14%); amplify as alpha^n
 
 ### P1.5 — Proton-neutron mass difference
 - **Goal:** Derive Delta_m = m_n - m_p = 1.293 MeV
