@@ -4,10 +4,10 @@
 the substrate, kinks, and compression depths, see Module 01 (The Substrate) and Module 03
 (The Depth Map). Module 05 (Particles) introduces the lepton generations.
 
-**Status:** The depth correction δd = 1/(6π) is Tier 2a — derived dynamically from the
-Jackiw-Rebbi BVP zero-mode norm (excess fraction (I₄−1)/(2π) = 1/(6π)). The corrected
-neutrino mass ratio m₃/m₂ = 5.8248 vs observed 5.8242 (+0.0096%, 0 free parameters).
-The uncorrected depth ratio κ = 5.33 remains Tier 2b.
+**Status:** The depth correction δd = 1/(6π) is Tier 3 — derived algebraically from three
+independent T1 routes, but the formal derivation from the D7 Dirac boundary value problem
+is not yet complete. The corrected neutrino mass ratio m₃/m₂ = 5.8248 vs observed 5.8242
+(+0.010%, 0 free parameters). The uncorrected depth ratio κ = 5.33 remains Tier 2b.
 
 ---
 
