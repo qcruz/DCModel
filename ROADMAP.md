@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 434 (2026-08-27)
+**Last updated:** Cycle 436 (2026-08-27)
 
 ---
 
@@ -35,7 +35,7 @@ Upgrade existing T3/T4 results toward T2a/T1.
 - **Derive hadronic vacuum polarization delta(Delta_alpha)^NP = 0.00102** — close the 1.5% gap in the 36pi alpha_em chain. Needs D7 confinement spectral density.
 - **Upgrade Regge intercept alpha_0 = 1/2 from T3 to T2a** — string tension is already T2a (C243), but the intercept remains T3 structural. Would upgrade all meson mass predictions.
 - **Derive cosmological constant combination rule** — prove why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3)). Each term is T2a; combination is T3.
-- **Close f_pi 2.7% gap** — investigate finite m_pi corrections and higher-order PS corrections. f_pi propagates into nuclear predictions via 1/f_pi^4.
+- **Close f_pi 1.6% gap** — reduced from 2.7% via finite m_pi correction (C436). Remaining gap traces to DFC m_rho undershoot (-1.6% vs obs). T2a upgrade needs m_rho gap closure or momentum-dependent M(p).
 
 ---
 
