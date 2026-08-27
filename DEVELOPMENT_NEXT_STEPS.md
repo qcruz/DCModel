@@ -110,8 +110,13 @@ at r = 1 fm (−14.1 vs −0.73 MeV). S-wave binding with observed params: B = 4
 S-wave binding with DFC params: NOT BOUND. The 5.3% f_pi overshoot weakens 2PE by
 19% (1/f_pi⁴ scaling), pushing the potential just below the binding threshold.
 
-**Narrowed bottleneck:** f_pi = Λ_QCD/π = 96.9 MeV (obs 92.07, +5.3%). Need chiral
-corrections to f_pi, or principled derivation of short-range contact terms from V(φ).
+**C423 running mass result:** Pagels-Stokar with running quark mass M(k²) = M_q ×
+[Λ²/(k²+Λ²)]^(6/11) gives f_pi = 72.49 MeV (−21.3%) — WORSE than constant-mass PS
+(89.63 MeV, −2.7%). Running mass falls off too fast, dominating over bracket enhancement.
+Constant-mass PS is the correct low-energy approximation and the best DFC f_pi prediction.
+
+**KEY UPDATE:** Using PS f_pi = 89.63 MeV (below 96.5 MeV threshold), deuteron DOES bind
+with 2PE. Remaining gap: quantitative B_d match requires contact terms from V(φ).
 
 **Connection:** Item 1 (nonlinear Walecka EOS) benefits from the +48% coupling
 enhancement at saturation density, even though Item 2 requires a different mechanism.
@@ -155,9 +160,9 @@ DFC gives Lambda_QCD = 304.5 MeV. Needs DFC quark masses.
 
 ## Priority Order
 
-1. Tighten f_pi derivation — DFC f_pi = Λ/π = 96.9 MeV is 5.3% high; this
-   weakens 2PE by 19% (1/f_pi⁴), preventing deuteron binding (C420). Chiral
-   corrections or improved Pagels-Stokar could close the gap.
+1. Derive contact terms from V(φ) — PS f_pi = 89.63 MeV resolves the binding
+   threshold issue (C423), but quantitative B_d match needs short-range contacts.
+   DFC V(φ) kink core should provide principled C_S, C_T values.
 2. Beyond-mean-field Walecka EOS with V(φ) asymmetry — +48% coupling enhancement at
    ρ₀ (C419); fixes NS radius, NS max mass, saturation density simultaneously
 3. Atomic physics predictions — straightforward if/when m_e is derived

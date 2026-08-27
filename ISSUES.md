@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 421 (2026-08-26)
+**Last updated:** Cycle 423 (2026-08-26)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -162,11 +162,20 @@ m_ω/M_q = √6 exactly from DFC mass relations, giving PS integral I = ln(7) �
 predictions dramatically improved. BUT a_pair = f_pi/(N_c²−1) worsens to −6.6%
 (pairing formula may need independent derivation).
 
-**Remaining gap (2.7%):** Constant M_q approximation (QCD has momentum-dependent
-quark mass), M_N(DFC) vs M_N(obs) (−0.45%), finite m_pi corrections (~1-2%).
+**C423 running mass test:** Pagels-Stokar with running quark mass M(k²) = M_q × [Λ²/(k²+Λ²)]^γ,
+γ = 6/b₀ = 6/11 (one-loop anomalous dimension, 0 free parameters). Result: f_pi = 72.49 MeV
+(−21.3%), WORSE than constant-mass. The mass falloff at high momenta dominates over the
+bracket enhancement factor. Running mass does NOT improve f_pi; the constant-mass PS (89.63 MeV)
+remains the best DFC prediction. Both predictions are below the deuteron binding threshold
+(96.5 MeV), so deuteron binds with either.
+
+**Remaining gap (2.7%):** Finite m_pi corrections (~1-2%), M_N(DFC) vs M_N(obs) (−0.45%),
+possible higher-order PS corrections. The NJL/constant-mass limit appears to be the
+appropriate low-energy approximation for f_pi.
 
 **Status:** T3 (improved from +5.3% to −2.7%; formula derived, not fitted).
-**Files:** `equations/fpi_correction_t18.py` (C387), `equations/pion_decay_constant.py` (C166)
+**Files:** `equations/fpi_correction_t18.py` (C387), `equations/fpi_running_mass.py` (C423),
+`equations/pion_decay_constant.py` (C166)
 
 ---
 
@@ -203,11 +212,17 @@ pushing the potential just below the binding threshold. DFC is at the binding ed
 - **V(φ) asymmetry for bulk matter:** The +48% enhancement at saturation IS significant
   for the nuclear EOS (T22), even though insufficient for the 2-body deuteron.
 
-**C421 f_pi scan:** Binding threshold at f_pi < 96.5 MeV — DFC is only 0.4 MeV above.
-Best match to B_d = 2.22 MeV at f_pi ~ 94.5 MeV. The gap is now precisely quantified:
-a 0.4% reduction in f_pi (from 96.9 → 96.5 MeV) would produce deuteron binding.
+**C421 f_pi scan:** Binding threshold at f_pi < 96.5 MeV — DFC Λ/π = 96.9 is only 0.4 MeV above.
+Best match to B_d = 2.22 MeV at f_pi ~ 94.5 MeV.
 
-**Status:** T4 open (bottleneck narrowed: f_pi = Λ/π only 0.4 MeV above threshold).
+**C423 resolution:** Using constant-mass Pagels-Stokar f_pi = 89.63 MeV (C387) instead of
+Λ/π = 96.9 MeV, deuteron binds with 6.9 MeV margin below threshold. The PS prediction is
+the physically motivated DFC f_pi value (0 free parameters, T3). The running-mass PS
+(72.49 MeV) also binds but overshoots the correction. Deuteron binding is CONSISTENT with
+DFC when using the PS-derived f_pi.
+
+**Status:** T4 open → T3 partially resolved (deuteron binds with PS f_pi; quantitative
+B_d match requires contact terms from V(φ) short-range physics).
 **Files:** `equations/nuclear_2pi_exchange.py` (C420-C421),
 `equations/nuclear_coupling_asymmetry.py` (C419),
 `equations/light_nuclei_binding.py` (C418), `equations/prediction_tests_phase2.py` (C386)
