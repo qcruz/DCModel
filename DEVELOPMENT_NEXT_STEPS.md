@@ -77,6 +77,7 @@ Items that were previously on the roadmap and have been delivered:
 | Nuclear magic numbers | `nuclear_shell_kappa.py` | All 7 standard magic numbers reproduced | C361 |
 | Cosmological constant | `cosmological_constant_prediction.py` | ρ_Λ^{1/4}=2.16 meV (−3.5%, 0 free params) | C362 |
 | Dark energy EOS | `cosmological_predictions_2.py` | w_Λ=−0.992 (within 1.3σ Planck) | C412 |
+| Meson Regge spectrum | `meson_regge_spectrum.py` | m_ρ −1.5%, m_a₂ +0.3%, 4/4 within 2%, 0 free params | C425 |
 
 ---
 
