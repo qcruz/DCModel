@@ -44,10 +44,12 @@ absolute masses of quarks, the W and Z bosons, or the Higgs.
 
 DFC gives a structural argument for why neutrinos are much lighter than other fermions:
 they acquire mass through a depth correction from the D7 confinement dynamics, rather
-than through the direct D4 inertia mechanism. The predicted correction gives a mass ratio
-m₃/m₂ = 5.33, compared to the observed 5.81 — an 8.3% error. This is T2b (a real
-prediction that is close but outside the T2a threshold). What remains missing is a
-formal derivation of the depth correction formula from the substrate dynamics.
+than through the direct D4 inertia mechanism. The uncorrected depth-spacing prediction
+gives a mass ratio m₃/m₂ = 5.33, compared to the observed 5.82 — an 8.3% error (T2b).
+A structural correction using the SU(3) color threshold — δd = 1/(6π) — gives
+m₃/m₂ = κ^(1+1/(6π)) = 5.8248, matching observation at +0.010% (T3, 0 free parameters).
+What remains missing is a formal derivation of the depth correction δd from the
+substrate boundary value problem (T3 → T2a path).
 
 ---
 
@@ -90,7 +92,7 @@ structural arguments without a derivation directly from V(φ).
 
 ## Category 3 — Cosmology
 
-**The cosmological constant (T4)**
+**The cosmological constant (T3)**
 
 The observed dark energy density — the energy per cubic meter of empty space driving
 the accelerating expansion of the universe — is roughly 10¹²³ times smaller than the
@@ -101,9 +103,10 @@ DFC reframes the problem: the observed dark energy density is the substrate's en
 density at cosmic compression depth (the D1–D3 shallow regime), not a sum of virtual
 particle modes. The two scales — deep compression (kink energy, Planck scale) and
 shallow compression (cosmic scale) — refer to different depth behaviors of the same
-object and need not cancel. But DFC has no current derivation of *why* the cosmic
-compression energy is as small as it is. The reframing is structural (T3); the
-quantitative prediction is T4.
+object and need not cancel. DFC now derives ρ_Λ^{1/4} = 2.16 meV (−3.5% vs observed,
+0 free parameters) from an exponential suppression chain: M_Pl⁴ × exp(−(T1+T2+T3))
+where each exponent term is individually T2a. The combination rule — why the three
+terms add in the exponent — remains T3.
 
 **Dark matter abundance (T4)**
 
@@ -120,13 +123,14 @@ early universe — is an open problem, and the cosmological abundance is T4.
 
 **The electromagnetic coupling at zero energy (T4)**
 
-DFC derives the gauge coupling at the unification scale from the substrate's compression
-topology: 1/α_em = 36π at the D5 closure threshold. Running this down to laboratory
-energies gives 1/α_em(0) ≈ 137.04, with a 0.044% error using standard model inputs
-for the running. The deeper structural identity connecting the running of α_em to DFC
-parameters — the algebraic reason the number 137 emerges — is an open problem (T4).
-Closing it would require deriving the hadronic contribution to the running of α_em from
-the D7 confinement dynamics alone, without experimental input.
+DFC derives the gauge coupling at the compression threshold from the substrate's topology:
+1/α_em(M_c) = 36π. Running this down to the Z boson mass gives 1/α_em(M_Z) = 128.09
+(+0.15%, T2a, 0 free parameters). Running further to zero energy using observed QED
+running gives 1/α_em(0) = 137.23 (+0.14%, T2b). The 0.14% residual propagates into all
+atomic physics predictions. The deeper structural identity A−B = ln(1/α_em(0)) — which
+would close this gap algebraically — is an open problem (T4). Closing it would require
+deriving the hadronic contribution to the running of α_em from the D7 confinement
+dynamics alone, without experimental input.
 
 **Newton's constant from the field equation (T3)**
 
@@ -177,11 +181,11 @@ For each open problem, there is a specific kind of progress that would close it:
 |---|---|
 | Electron mass (T4) | Derive α (Planck units) → m_e from substrate + Planck scale identification |
 | Born rule (**T2a — closed**) | V(φ) Z₂ symmetry + σ² uniqueness — Step 6 closed at T2a |
-| Cosmological constant (T4) | Derive D1–D3 cosmic compression energy density from V(φ) |
+| Cosmological constant (T3) | Derive the combination rule for the exponential suppression |
 | Dark matter abundance (T4) | Derive D4-depth closure production rate in early substrate |
 | α_em(0) identity (T4) | Derive hadronic VP contribution from D7 confinement dynamics |
 | Collapse mechanism (T3) | Derive signed coupling between measurement interaction and substrate displacement from V(φ) |
-| Neutrino hierarchy (T2b) | Formal derivation of depth correction δd=1/(6π) from V(φ) |
+| Neutrino hierarchy (T3) | Formal derivation of depth correction δd=1/(6π) from V(φ) BVP |
 | G_N from V(φ) (T3) | Derive Einstein-Hilbert action as low-energy limit of substrate dynamics |
 | Cascade termination (T3) | Formal proof that D7 mass gap prevents D8 closures |
 
@@ -211,7 +215,7 @@ and cosmological abundances.
 **Previous:** [Module 17 — Quantum Mechanics: Measurement from Fold Topology](17_quantum_mechanics.md)
 
 **See also:**
-- `ISSUES.md` — full tracker of open problems with equations and file references
+- `ROADMAP.md` — development roadmap with open problems and priorities
 - `foundations/scientific_merit.md` — tier system and completeness milestones
 - `phenomena/cosmology/dark_matter.md` — dark matter account in detail
 - `equations/` — runnable modules for all verified predictions

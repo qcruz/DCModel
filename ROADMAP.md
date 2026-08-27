@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 433 (2026-08-27)
+**Last updated:** Cycle 434 (2026-08-27)
 
 ---
 
@@ -70,6 +70,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 - **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land
 - **Update open questions** — revise `educational/07_open_questions.md` when issues close
+- **Clean cycle numbers from 07_open_questions.md** — has dozens of (C###) references that violate the no-cycle-numbers-in-educational-docs rule. Needs full rewrite to remove cycle tracking and present current state cleanly.
 - **Document audits** — periodically review random docs for accuracy, language compliance, stale refs
 - **Practical applications** — add entries to `practical_applications/` from verified T1/T2a results
 

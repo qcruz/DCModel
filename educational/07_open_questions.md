@@ -315,7 +315,7 @@ The 0.001% gap between C_match_tree=0.789948 and C_match_needed=0.789937 is now 
 
 **What it is:** The gravitational coupling constant G_N = M_Pl^{-2} relates to the Planck mass. DFC treats the Planck mass as the natural unit of the substrate (where α ≈ 2.62 and β = 1/(9π) are dimensionless), but has not yet derived the precise ratio between the DFC Planck units and the SI value of G_N.
 
-**Status:** Tier 4. The model sets G_N = 1 in Planck units by construction; deriving the SI value requires identifying how the DFC unit system maps to measured SI units, which depends on resolving the ℏ hierarchy (Gap T8 in ISSUES.md).
+**Status:** Tier 4. The model sets G_N = 1 in Planck units by construction; deriving the SI value requires identifying how the DFC unit system maps to measured SI units, which depends on resolving the ℏ hierarchy (see ROADMAP.md, P3: Planck constant derivation).
 
 ---
 
@@ -344,4 +344,4 @@ A model that is honest about gaps is more trustworthy, not less.
 
 ---
 
-*Module 07 — Open Questions. See Module 06 (predictions) for what works. See `ISSUES.md` for the full technical gap tracker.*
+*Module 07 — Open Questions. See Module 06 (predictions) for what works. See `ROADMAP.md` for the full development roadmap and open problems.*
