@@ -71,12 +71,13 @@ The model derives the tau lepton mass from the electron and muon masses via a ma
 ### W boson mass
 Predicted from the electroweak symmetry-breaking scale and gauge coupling chain.
 
-- **Predicted:** M_W = 79.67 GeV
+- **Tree-level:** M_W = 80.10 GeV (−0.34%)
+- **One-loop corrected:** M_W = 80.38 GeV (+0.009%, Sirlin Δr with m_t, m_H inputs)
 - **Observed:** M_W = 80.377 GeV
-- **Error:** −0.88%
 - **Tier:** 2a
-- **Free parameters used:** 2 (crystallization scales M_c(D5), M_c(D6))
+- **Free parameters used:** 2 (crystallization scales M_c(D5), M_c(D6)); m_t, m_H for one-loop
 - **How to test:** Already measured. Upcoming HL-LHC precision measurements.
+- **Note:** The tree-level gap is fully explained by standard EW radiative corrections (97% closed).
 
 ### Z boson mass and decay properties
 Predicted from the same gauge coupling chain as the W boson.
@@ -278,7 +279,8 @@ The clearest tests:
 | α_s(M_Z) ECCC | 0.11821 | +0.006% | T2a | Confirmed (uses α_em(0) input) |
 | α_s(M_Z) DFC-alone | 0.11566 | −2.15% | T2a | C208, zero experimental inputs |
 | m_τ (Koide) | 1776.97 MeV | +0.006% | T2a | Confirmed |
-| M_W | 79.67 GeV | −0.88% | T2a | Confirmed |
+| M_W (tree) | 80.10 GeV | −0.34% | T2a | Confirmed |
+| M_W (1-loop) | 80.38 GeV | +0.009% | T2a | Confirmed (Sirlin Δr) |
 | M_Z | 90.86 GeV | −0.36% | T2a | Confirmed |
 | τ_n (neutron lifetime) | 878.4 s | +0.07% | T2a | Confirmed |
 | H_0 | 67.26 km/s/Mpc | −0.21% | T2a | Confirmed |

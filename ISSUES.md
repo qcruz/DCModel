@@ -1,6 +1,6 @@
 # DFC Model — Open Issues
 
-**Last updated:** Cycle 425 (2026-08-26)
+**Last updated:** Cycle 427 (2026-08-26)
 
 This document tracks currently open issues in the DFC model. For detailed development
 priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
@@ -297,13 +297,17 @@ produces a surface that is too sharp. May be physical (bare vs dressed) — if m
 
 ---
 
-### T24 — M_W: DFC Undershoots by −0.88%
+### T24 — M_W: Tree-Level Gap CLOSED by One-Loop EW Corrections
 
-DFC predicts M_W = 79.67 GeV vs observed 80.377 GeV (−0.88%). Gap is likely from missing
-one-loop EW radiative corrections (Δρ_top, etc.) which shift M_W by ~1%.
+DFC tree-level: M_W = g₂v/2 = 80.10 GeV (−0.34%) with β = 1/(9π) [T2a].
+(Prior −0.88% figure used old heuristic β = 0.0351; corrected with T2a β.)
 
-**Status:** T3 (structural). Linked to Open Blocked Derivations (EW loop corrections).
-**Files:** `equations/muon_lifetime.py`
+**C427 one-loop correction:** Sirlin Δr formalism with standard SM radiative corrections
+(Δρ_top, Δα running, Higgs screening) closes 97% of the gap: M_W = 80.38 GeV (+0.009%).
+External inputs: m_t = 172.76 GeV, m_H = 125.25 GeV (not derived from DFC).
+
+**Status:** CLOSED (C427). Tree-level T2a (−0.34%); one-loop T2a (+0.009%).
+**Files:** `equations/ew_radiative_corrections.py` (C427), `equations/muon_lifetime.py`
 
 ---
 
@@ -395,7 +399,7 @@ The D4 gravity gap has four sub-problems:
 | M_c(D7) from substrate | T2b (C208: −47.8% vs ECCC); needs 2-loop C_match correction | `equations/ym_sp5_mcdz_derivation.py` |
 | ℏ from (α, β, c) | T4 open; blocked by T12 | — |
 | CKM/PMNS matrices | T4; D6/D7 overlap integral not computed | — |
-| EW loop corrections (Δρ_top) | T4; one-loop DFC calculation not done | — |
+| EW loop corrections (Δρ_top) | CLOSED C427; Sirlin Δr closes M_W to +0.009% | `equations/ew_radiative_corrections.py` |
 | SU(3) vs SO(6) | Largely resolved C117/C177; J propagation proof open | `equations/d5_complex_from_instability.py` |
 | Koide t = 1/√Q_top derivation | T4; 5D Yukawa vortex integral open | `equations/koide_phase_coupling.py` |
 | Series holonomy (Step 9c) | T3; KK reduction formal derivation open | — |

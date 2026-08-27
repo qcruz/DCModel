@@ -628,7 +628,7 @@ Full criteria, tier system explanations, completeness milestones, and evaluation
 | α_em(M_Z) — fine structure at Z scale | alpha_em_prediction.py | 1/128.09 | 1/127.9 | +0.15% | 0 (36π chain) |
 | Common gauge coupling g_eff (0.5443) | d5_complex_from_instability.py | 0.54433 | 0.5443 | 0.006% | 0 |
 | Quartic coupling β | d5_complex_from_instability.py | 1/(9π) | 1/(9π) | 0.000% | 0 |
-| W boson mass (80.38 GeV) | muon_lifetime.py | 79.67 GeV | 80.377 GeV | −0.88% | 2 |
+| W boson mass (80.38 GeV) | ew_radiative_corrections.py | 80.38 GeV | 80.377 GeV | +0.009% | 2 (+m_t,m_H) |
 | Z boson mass (91.19 GeV) | muon_lifetime.py | 90.86 GeV | 91.1876 GeV | −0.36% | 2 |
 | Fermi constant G_F | muon_lifetime.py | 1.168×10⁻⁵ GeV⁻² | 1.166×10⁻⁵ | +0.18% | 2 |
 | Muon lifetime (2.197 μs) | muon_lifetime.py | 2.180 μs | 2.197 μs | −0.80% | 3 |
