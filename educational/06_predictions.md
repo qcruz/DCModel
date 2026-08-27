@@ -123,14 +123,25 @@ The model predicts the proton mass from the QCD string tension and Regge traject
 - **Tier:** 3
 - **Status:** The formula is right; the full proof from V(φ) requires proving the string tension from the substrate (Yang-Mills mass gap level difficulty).
 
-### ρ meson mass and hadronic spectrum
-The rho meson mass and string tension emerge from the topological charge Q_top = 2.
+### Meson Regge spectrum (0 free nuclear parameters)
+The full meson mass spectrum emerges from the DFC string tension σ = Q_top × Λ² and the Regge intercept α₀ = 1/Q_top = 1/2. All masses are predicted from Λ_QCD = 304.5 MeV alone.
 
-- **Predicted:** m_ρ = √(2π) × Λ_QCD = 763 MeV
-- **Observed:** m_ρ = 775 MeV
-- **Error:** −1.6%
-- **Tier:** 3
-- **Status:** The Regge slope and intercept follow from Q_top. Full proof needs the Yang-Mills mass gap.
+| Meson | DFC | Observed | Error | Tier |
+|---|---|---|---|---|
+| ρ(770) | 763.3 MeV | 775.3 MeV | −1.5% | T3 |
+| a₂(1320) | 1322 MeV | 1318 MeV | +0.3% | T3 |
+| ρ₃(1690) | 1707 MeV | 1689 MeV | +1.1% | T3 |
+| a₄(2040) | 2019 MeV | 1995 MeV | +1.2% | T3 |
+
+All four established mesons within 2% of PDG values.
+
+**Parameter-free mass ratios** (independent of Λ_QCD, depend only on α₀ = 1/2):
+- m_a₂/m_ρ = √3 = 1.732 (observed 1.700, +1.9%)
+- m_ρ₃/m_ρ = √5 = 2.236 (observed 2.178, +2.7%)
+
+The isoscalar trajectory (ω, f₂, ω₃, f₄) uses the same α' and α₀, all within 4%.
+
+- **Status:** The σ = Q_top × Λ² derivation and α₀ = 1/2 structural argument are T3. Full proof requires deriving string tension from the substrate (Yang-Mills mass gap level).
 
 ### Yang-Mills mass gap lower bound
 The model produces a lower bound on the lightest glueball mass from the confinement chain.
@@ -197,7 +208,7 @@ The equal-spacing depth prediction gives κ = 5.33, while the observation is 5.8
 The model predicts charm and strange quark masses about 15% below the observed values. The Higgs coupling threshold for second-generation quarks is not yet well derived.
 
 ### Deuteron binding energy
-The central-force (sigma + omega) calculation gives B_d = 1.14 MeV, undershooting the observed 2.22 MeV by 49%. The tensor OPE force (not yet included) provides 50-70% of deuteron binding in realistic potentials. This is a model limitation, not a structural failure — DFC predicts the right couplings but the calculation is incomplete.
+The central-force (sigma + omega) calculation gives B_d = 1.14 MeV (−49%). However, with two-pion exchange (2PE) using DFC-derived g_A = 4/π and Pagels-Stokar f_pi = 89.63 MeV, DFC produces deuteron binding: B_cal = 6.39 MeV (+187%, overbinds ~3×). The best calibrated match occurs at f_pi ~ 92 MeV — the observed value, which lies within DFC's predicted range [89.6, 96.9]. DFC correctly identifies 2PE as the binding mechanism but quantitative agreement requires either a tighter f_pi derivation or contact terms from V(φ).
 
 ### Proton charge radius
 r_p = 0.701 fm (−17% vs observed 0.841 fm). The pion cloud + core + Foldy decomposition captures 83% of the Dirac form factor but misses the two-pion continuum spectral weight.
@@ -214,6 +225,10 @@ Three phases of prediction tests plus cosmological predictions have been compute
 | τ_n (full DFC g_A, G_F) | 878.0 s | 878.4 s | −0.05% | T2a |
 | M_N (proton mass) | 934.8 MeV | 938.3 MeV | −0.37% | T3 |
 | m_ω (omega meson) | 763.3 MeV | 782.7 MeV | −2.48% | T3 |
+| m_ρ (rho meson) | 763.3 MeV | 775.3 MeV | −1.5% | T3 |
+| m_a₂ (a₂ meson) | 1322 MeV | 1318 MeV | +0.3% | T3 |
+| m_ρ₃ (ρ₃ meson) | 1707 MeV | 1689 MeV | +1.1% | T3 |
+| m_a₄ (a₄ meson) | 2019 MeV | 1995 MeV | +1.2% | T3 |
 | g_piNN (pion-nucleon) | 12.28 | 13.12 | −6.4% | T3 |
 | f_pi (pion decay const) | 96.9 MeV | 92.1 MeV | +5.3% | T3 |
 | mu_p (proton mag moment) | 2.833 n.m. | 2.793 n.m. | +1.4% | T2a |
@@ -268,8 +283,12 @@ The clearest tests:
 | τ_n (neutron lifetime) | 878.4 s | +0.07% | T2a | Confirmed |
 | H_0 | 67.26 km/s/Mpc | −0.21% | T2a | Confirmed |
 | m_p (proton mass) | 934.8 MeV | −0.4% | T3 | Consistent |
-| m_ρ (rho meson) | 763 MeV | −1.6% | T3 | Consistent |
-| Glueball gap Δ_4D | ≥ 861 MeV | ≤ 1475 MeV obs | T3 | Consistent (SP1 T2a C203) |
+| m_ρ (rho meson) | 763.3 MeV | −1.5% | T3 | Consistent |
+| m_a₂ (a₂ meson) | 1322 MeV | +0.3% | T3 | Consistent |
+| m_ρ₃ (ρ₃ meson) | 1707 MeV | +1.1% | T3 | Consistent |
+| m_a₄ (a₄ meson) | 2019 MeV | +1.2% | T3 | Consistent |
+| m_a₂/m_ρ = √3 | 1.732 | +1.9% | T3 | Consistent |
+| Glueball gap Δ_4D | ≥ 861 MeV | ≤ 1475 MeV obs | T3 | Consistent (SP1 T2a) |
 | No axion | — | — | T2a | Untested |
 | No proton decay | ∞ lifetime | — | T1 | Consistent |
 | d_n = 0 | 0 exactly | — | T2a | Consistent |
