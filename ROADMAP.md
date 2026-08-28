@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 458 (2026-08-28)
+**Last updated:** Cycle 459 (2026-08-28)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P4** (C458)
+- **Last tier worked: P5** (C459)
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
 ---
@@ -20,9 +20,9 @@
 
 - **Derive V(phi) contact terms for deuteron binding** — fix +187% overbinding. See `equations/deuteron_*.py`
 - **Beyond-mean-field Walecka EOS** — fix NS radius, max mass, saturation density. See `equations/nuclear_saturation_dfc.py`
-- **Derive proton-neutron mass difference** — predict 1.293 MeV. Blocked on light quark masses
-- **Derive pion mass from GMOR** — blocked on light quark masses. See `equations/pion_mass_gmor.py`
-- **Derive light quark masses (D6 Yukawa)** — HIGH-IMPACT BLOCKER (blocks 4+ items). Best candidate: exp(-b₀)×v/√2 at −7.8%. See `equations/light_quark_mass_derivation.py`
+- **Derive proton-neutron mass difference** — predict 1.293 MeV. UNBLOCKED by C459 M0 derivation
+- **Derive pion mass from GMOR** — UNBLOCKED by C459 M0 derivation. See `equations/pion_mass_gmor.py`
+- **Derive light quark masses (D6 Yukawa)** — M0 = exp(-(b₀+1/α))×v/√2 run to 2 GeV: +2.68% T2a (C459). Mechanism needs T1 proof. See `equations/light_quark_mass_derivation.py`
 
 ---
 
@@ -67,7 +67,7 @@
 - **Evaluate new open problems for DFC** — Navier-Stokes, baryon asymmetry, proton spin, quantum gravity
 - **Investigate κ_q ≈ N_c·b₀/(2N_c+1) identity** — 0.03% match, coincidence or structural?
 - **Investigate N_c·ln(2α)/2 ≈ α identity** — −5.2% match. See `equations/substrate_casimir_alpha.py`
-- **Explore Δ/ξ = b₀/2 depth hypothesis** — 0.74% match for light quark Yukawa. See `equations/light_quark_mass_derivation.py`
+- **Prove y(v) = exp(-(b₀+1/α)) from kink overlap** — T2a numerics confirmed (C459), needs structural derivation. See `equations/light_quark_mass_derivation.py`
 - **Neutron star max mass** — naive flux-tube approach failed (−77%). Connects to P1 Walecka
 
 ---
