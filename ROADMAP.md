@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 442 (2026-08-27)
+**Last updated:** Cycle 445 (2026-08-28)
 
 ---
 
@@ -35,7 +35,7 @@ Upgrade existing T3/T4 results toward T2a/T1.
 - **Derive hadronic vacuum polarization delta(Delta_alpha)^NP = 0.00102** — close the 1.5% gap in the 36pi alpha_em chain. Needs D7 confinement spectral density.
 - **Derive cosmological constant combination rule** — prove why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3)). Each term is T2a; combination is T3.
 - **Close f_pi 1.6% gap** — reduced from 2.7% via finite m_pi correction (C436). E43 (C440) confirmed: PS cutoff IS the vector meson mass (VMD). Remaining gap traces exactly to DFC m_rho undershoot (-1.5%). Path: close m_rho gap → f_pi gap closes automatically.
-- **Upgrade baryon Regge intercept alpha_0^N from T3 to T2a** — same JR endpoint spin approach as meson intercept (C438). Baryons have 3 kink endpoints → alpha_0^N = -1/4 (T3). Formal derivation + numerical verification needed.
+- **Upgrade baryon Regge intercept alpha_0^N from T3 to T2a** — C445 extended regge_intercept_derivation.py with baryon Part H. JR endpoint spin applies (T1), but Y-junction penalty Δ=-1 is T3 bottleneck. Proton -0.37%, Delta -2.04%. REMAINS T3. Upgrade path: derive Δ=-1 from Nambu-Goto junction zero-point energy (same as P3 Y-junction item).
 
 ---
 
