@@ -109,6 +109,18 @@ The model predicts the current expansion rate of the universe.
 - **Free parameters used:** 2 (Ω_m, Ω_Λ inputs)
 - **How to test:** Euclid, CMB-S4, DESI for improved H_0 from CMB/BAO.
 
+### Light quark mass scale
+The model predicts the geometric mean of the up and down quark masses from a Yukawa coupling suppressed by both the asymptotic freedom coefficient and the substrate self-coupling. The Yukawa at the electroweak scale is exponentially suppressed by the sum of the one-loop beta function coefficient and the inverse substrate coupling. Standard QCD mass running then gives the mass at the PDG reference scale of two gigaelectronvolts.
+
+- **Formula:** y(v) = exp(−(b₀ + 1/α)), then M0 = y × v/√2 run to 2 GeV
+- **Predicted:** M0 = 3.261 MeV
+- **Observed:** M0 = √(m_u × m_d) = 3.176 MeV
+- **Error:** +2.68%
+- **Tier:** 2a
+- **Free parameters used:** 0 (b₀ = 11 [T1], α = 18^(1/3) [T2a], v = 247.83 GeV [T2a], α_s for running [T2a])
+- **How to test:** Lattice QCD improvements to light quark masses; FLAG working group averages.
+- **Significance:** Unblocks pion mass (GMOR), proton-neutron mass difference, pion-nucleon sigma term.
+
 ---
 
 ## Structural Predictions (Tier 3 — approximately right)
@@ -376,6 +388,7 @@ The clearest tests:
 | m_τ (dimple) | 212 MeV | 8.4× wrong | — | **RETRACTED** |
 | m_ν ratio (corrected) | 5.8248 = 5.33^(1+1/(6π)) | +0.010% | T3 | Structural account (C204) |
 | m_ν ratio (uncorrected) | 5.33 | −8.3% | T2b | Without color correction |
+| M0 = √(m_u·m_d) | 3.261 MeV | +2.68% | T2a | Confirmed (C459) |
 | m_c, m_s | ~15% low | 15% | T2b | Open |
 
 ---
