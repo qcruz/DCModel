@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 455 (2026-08-28)
+**Last updated:** Cycle 456 (2026-08-28)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P1** (C455)
+- **Last tier worked: P2** (C456)
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
 ---
@@ -30,7 +30,7 @@
 
 - **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — oldest open bottleneck (T4→T1)
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — close 1.5% gap in 36π chain
-- **Upgrade cosmological constant combination rule** — T2b→T2a. See `equations/lambda_combination_rule.py`
+- **Upgrade cosmological constant combination rule** — gap (i) PI factorization CLOSED (C456, 12/12). Two gaps remain: (ii) depth attenuation, (iii) Casimir=α. See `equations/lambda_pi_factorization.py`
 - **Close f_pi 1.6% gap** — traces to m_rho undershoot. See `equations/fpi_gap_closure.py`
 - **Upgrade baryon Regge intercept to T2a** — Y-junction penalty Δ=−1 is T3 bottleneck. See `equations/regge_intercept_derivation.py`
 
