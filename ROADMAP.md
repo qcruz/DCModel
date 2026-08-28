@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 462 (2026-08-28)
+**Last updated:** Cycle 463 (2026-08-28)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P2** (C462)
+- **Last tier worked: P3** (C463)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -44,7 +44,7 @@
 - **D4 gravity gap** — derive effective metric, spin-2 mode, G_N from V(φ). See `foundations/d4_gravity_gap.md`
 - **Derive neutrino θ₂₃ from V(φ)** — Z₃ holonomy mechanism identified. See `ISSUES.md` T10
 - **Derive nuclear saturation from DFC couplings** — overlaps with P1 Walecka work
-- **Derive Y-junction penalty = −1** — NG Casimir = 0 (T1), but gives Δ=−1/12 not −1
+- **Derive Y-junction penalty = −1** — Y-graph Casimir computed (C463): gives Δ=1/8 (12.5% of required). NG Casimir insufficient; non-Casimir mechanism needed. 3 paths: quark-diquark, junction mode removal, semiclassical WKB. See `equations/regge_intercept_derivation.py` Part I
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
 - **Derive CKM/PMNS from D6/D7 overlap** — light quark part promoted to P1
 - **Derive ℏ from (α, β, c)** — blocked on α_em(0) identity. See `ISSUES.md` T8
