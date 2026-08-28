@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 439 (2026-08-27)
+**Last updated:** Cycle 440 (2026-08-27)
 
 ---
 
