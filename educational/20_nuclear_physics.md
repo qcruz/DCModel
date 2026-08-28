@@ -42,10 +42,12 @@ as Λ_QCD divided by π:
 
 The pion decay constant equals the QCD scale divided by π.
 
-f_π ≈ Λ_QCD / π ≈ 96.9 MeV
+f_π ≈ Λ_QCD / π ≈ 96.9 MeV (simple estimate)
 
-Observed value: 92.4 MeV. Error: +5.1%. This is a Tier 3 result — a structural
-estimate with a plausible physical argument but not yet a rigorous derivation.
+The Pagels-Stokar formula with finite pion mass correction gives a more precise result:
+f_π = 90.63 MeV (−1.6% from observed 92.1 MeV). This is Tier 2a — derived from DFC
+parameters with the correct chiral physics, and the residual traces to the DFC m_rho
+undershoot (−1.5%) through the vector meson dominance connection.
 
 **Proton mass.** The proton mass is set by the energy of three confined quarks plus
 their gluon field. In DFC, the Regge trajectory structure for baryons (three-quark
@@ -388,9 +390,9 @@ feeds into the neutron lifetime, nucleon magnetic moments, and pp fusion cross-s
 |---|---|---|---|---|
 | Neutron lifetime τ_n | 878.0 s | 877.75 s | −0.05% | PASS |
 | Nucleon mass M_N | 934.8 MeV | 938.3 MeV | −0.45% | PASS |
-| Omega mass m_ω | 763.3 MeV | 782.7 MeV | −2.48% | PASS |
+| Omega mass m_ω | 763.3 MeV | 782.7 MeV | −2.48% | PASS (T2a) |
 | Pion-nucleon coupling g_πNN | 13.28 | 13.45 | +1.2% | PASS |
-| Pion decay constant f_π | 89.6 MeV | 92.07 MeV | −2.7% | PASS |
+| Pion decay constant f_π | 90.63 MeV | 92.07 MeV | −1.6% | PASS (T2a) |
 | Proton magnetic moment μ_p | 2.833 μ_N | 2.793 μ_N | +1.4% | PASS |
 | Neutron magnetic moment μ_n | −1.888 μ_N | −1.913 μ_N | −1.3% | PASS |
 | pp fusion S(0) | 3.99×10⁻²⁵ MeV·barn | 4.01×10⁻²⁵ | −0.4% | PASS |
@@ -429,25 +431,24 @@ coupling strength: g_sigma = 9.645 is too weak for single-Yukawa binding at any 
 
 **Stage 3 — Two-pion exchange (C420).** In realistic nuclear physics, the intermediate-range
 NN attraction comes from correlated two-pion exchange (2PE), not single-sigma Yukawa. The
-2PE spectral function was computed from DFC-derived parameters (g_A = 4/π, f_pi = Λ/π)
-using NLO chiral effective field theory. Result: the 2PE is 19 times deeper than bare
-sigma at r = 1 fm (−14.1 vs −0.73 MeV). S-wave binding with observed parameters (f_pi =
-92.07 MeV) gives B = 4.3 MeV — the mechanism works. But with DFC f_pi = 96.9 MeV,
-binding does not occur.
+2PE spectral function was computed from DFC-derived parameters (g_A = 4/π, f_pi from
+Pagels-Stokar) using NLO chiral effective field theory. Result: the 2PE is 19 times deeper
+than bare sigma at r = 1 fm (−14.1 vs −0.73 MeV). S-wave binding with observed parameters
+(f_pi = 92.07 MeV) gives B = 4.3 MeV — the mechanism works.
 
-**Stage 4 — f_pi as the precise bottleneck (C421).** A scan of f_pi from 88 to 97 MeV
-found the binding threshold at f_pi < 96.5 MeV. DFC f_pi = Λ/π = 96.9 MeV is only
-0.4 MeV above this threshold. The best match to the observed deuteron binding energy
-(B_d = 2.2246 MeV) occurs at f_pi ~ 94.5 MeV. The 1/f_pi⁴ sensitivity of the 2PE
-spectral function amplifies DFC's 5.3% f_pi overshoot into a 19% weakening of the
-nuclear attraction — just enough to prevent binding.
+**Stage 4 — f_pi as the precise bottleneck.** A scan of f_pi from 88 to 97 MeV
+found the binding threshold at f_pi < 96.5 MeV. The simple estimate f_pi = Λ/π = 96.9 MeV
+is 0.4 MeV above this threshold. However, the Pagels-Stokar formula with finite m_pi
+correction gives f_pi = 90.63 MeV, which is well below the threshold — DFC DOES produce
+deuteron binding via 2PE with this value.
 
-**Current status.** The nuclear binding problem is now precisely quantified: DFC is
-0.4 MeV (0.4%) above the f_pi binding threshold. The Pagels-Stokar correction (f_pi =
-89.63 MeV, −2.7% from observed) overshoots in the other direction, giving B = 20.9 MeV
-(massively overbound). The ideal DFC f_pi derivation would give ~94.5 MeV (within
-~2.5% of observed 92.07 MeV). This is a T4 open problem — but one with a precisely
-identified resolution path.
+**Current status.** With the corrected f_pi = 90.63 MeV (T2a, −1.6%), DFC produces a
+calibrated deuteron binding energy B_cal = 6.39 MeV (+187%, overbinds ~3×). The 2PE
+mechanism is correct but the magnitude overshoots. The remaining gap traces to the f_pi
+value: the best match to observed B_d = 2.2246 MeV occurs at f_pi ~ 94.5 MeV, while
+DFC gives 90.63 MeV. The f_pi gap itself traces to the DFC m_rho undershoot (−1.5%)
+through the VMD connection (the Pagels-Stokar UV cutoff IS the vector meson mass).
+Closing the m_rho gap would close the f_pi gap and improve the deuteron prediction.
 
 ---
 
@@ -455,13 +456,13 @@ identified resolution path.
 
 | Item | Status | What is needed |
 |------|--------|----------------|
-| Deuteron binding from 2PE | **T4 open** | f_pi 0.4 MeV above threshold; tighten f_pi derivation |
+| Deuteron binding from 2PE | **T3 partial** | DFC binds (B=6.39 MeV) but overbinds 3×; needs V(φ) contact terms |
 | Bulk binding a_V from DFC | T3 closed | Walecka saturation with C_sat = m_sigma/m_omega |
 | N=126 as shell closure | **T3 CLOSED** | κ_DFC = 33 = 36 × 11/12; see Module 25 |
 | Z=114 proton magic from DFC | T3 | WS gap confirmed; formal DFC derivation missing |
 | Shell correction sign for ²⁹⁸Fl | T4 | Depends on N=126 fix |
 | Half-life of ²⁹⁸Fl | T4 | Requires DFC account of alpha/fission dynamics |
-| f_π from quark condensate | **T4 critical** | 96.9 → ~94.5 MeV needed for deuteron binding |
+| f_π precision | **T2a (−1.6%)** | PS + finite m_pi = 90.63 MeV; gap traces to m_rho via VMD |
 | g_NN from pion exchange | T3 | Goldberger-Treiman established; DFC inherits |
 | Formal derivation of a_SO/a₀ = I₄ | T4 | D7 boundary value problem for SO coupling |
 
@@ -471,7 +472,7 @@ identified resolution path.
 
 | Quantity | DFC prediction | Observed | Tier |
 |----------|---------------|----------|------|
-| f_π (pion decay constant) | 96.9 MeV | 92.4 MeV | T3 (+5.1%) |
+| f_π (pion decay constant) | 90.63 MeV | 92.1 MeV | T2a (−1.6%) |
 | m_p (proton mass) | 934.8 MeV | 938.3 MeV | T3 (−0.4%) |
 | a_C (Coulomb coefficient) | 0.7203 MeV | 0.714 MeV | T3 (+0.85%) |
 | a_A (asymmetry coefficient) | 23.2 MeV | 23.0 MeV | T3 (+0.9%) |

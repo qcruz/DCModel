@@ -244,7 +244,7 @@ With the five numbers above determined, the model predicts:
 | Observable | DFC | Observed | Error | Status |
 |---|---|---|---|---|
 | Neutron lifetime | 878.4 s | 877.8 s | 0.1% | Tier 2a |
-| W boson mass | 79.67 GeV | 80.38 GeV | −0.88% | Tier 2a |
+| W boson mass (tree) | 80.10 GeV | 80.38 GeV | −0.34% | Tier 2a |
 | Z boson mass | 90.86 GeV | 91.19 GeV | −0.36% | Tier 2a |
 | EW vacuum v | 247.83 GeV | 246.22 GeV | +0.65% | Tier 2a |
 | Tau mass (Koide) | 1776.97 MeV | 1776.86 MeV | +0.006% | Tier 2a |
