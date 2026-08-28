@@ -10,7 +10,7 @@
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
-- **Last tier worked: P3** (C446)
+- **Last tier worked: P4** (C447)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
 
@@ -59,7 +59,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 - **Nucleon magnetic moment ratio** — mu_p/mu_n = -1.500 vs obs -1.460 (+2.7%). Needs isospin violation.
 - **Proton charge radius** — -17.6% off. Missing intrinsic quark charge radius. Needs nucleon wavefunction.
-- **Delta-N mass splitting** — +92% -> -40% range. Needs frozen infrared alpha_s ~ 0.72.
+- **Delta-N mass splitting** — Regge route gives -7.4% (C447), largely resolving the old "+92% to -40%" hyperfine range. Error inherited from m_rho -1.5% undershoot. Upgrade path: close m_rho gap → splitting improves automatically. Consider moving to P2.
 - **Nuclear symmetry energy J** — -36%. Needs larger g_rho (8.59 vs predicted 5.57).
 - **Nuclear surface diffuseness** — -20%. DFC bare m_sigma = 456.8 MeV too heavy.
 - **Nolen-Schiffer residual** — ~7% CSB sources identified but not computed from DFC.
@@ -89,6 +89,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 | Item | Result | Cycle |
 |------|--------|-------|
+| Delta-N splitting (Regge route) | -7.4% with 0 free params; resolves old +92%/-40% hyperfine failure; m_Delta/m_N = sqrt(5/3) (-1.68%) | C447 |
 | Y-junction E_0 = 0 (N_c=3 selection) | E_0 exactly zero for 3-string junction (T1), selects N_c=3; NG gives Delta=-1/12 only; penalty remains T3 | C446 |
 | M_N/m_rho = sqrt(N_c/Q_top) | Formalized: 13/13 PASS, +1.20%, unique to N_c=3, new equation module | C441 |
 | Regge intercept T3→T2a | alpha_0 = 1/2 from JR endpoint spin; 15/15 PASS, 4/4 mesons within 2.5% | C438 |
