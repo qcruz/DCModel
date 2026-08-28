@@ -33,9 +33,9 @@ Upgrade existing T3/T4 results toward T2a/T1.
 
 - **Prove alpha_em(0) identity A-B = ln(1/alpha_em(0))** — oldest open bottleneck. T4 -> T1 would make all atomic/EM predictions fully derived.
 - **Derive hadronic vacuum polarization delta(Delta_alpha)^NP = 0.00102** — close the 1.5% gap in the 36pi alpha_em chain. Needs D7 confinement spectral density.
-- ~~**Upgrade Regge intercept alpha_0 = 1/2 from T3 to T2a**~~ — DONE C438. JR endpoint spin derivation + numerical verification (15/15 PASS). All meson predictions upgraded to T2a.
 - **Derive cosmological constant combination rule** — prove why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3)). Each term is T2a; combination is T3.
-- **Close f_pi 1.6% gap** — reduced from 2.7% via finite m_pi correction (C436). Remaining gap traces to DFC m_rho undershoot (-1.6% vs obs). T2a upgrade needs m_rho gap closure or momentum-dependent M(p).
+- **Close f_pi 1.6% gap** — reduced from 2.7% via finite m_pi correction (C436). E43 (C440) confirmed: PS cutoff IS the vector meson mass (VMD). Remaining gap traces exactly to DFC m_rho undershoot (-1.5%). Path: close m_rho gap → f_pi gap closes automatically.
+- **Upgrade baryon Regge intercept alpha_0^N from T3 to T2a** — same JR endpoint spin approach as meson intercept (C438). Baryons have 3 kink endpoints → alpha_0^N = -1/4 (T3). Formal derivation + numerical verification needed.
 
 ---
 
@@ -46,6 +46,7 @@ Deep theory work on foundational questions.
 - **D4 gravity gap: derive effective metric from substrate** — deepest structural gap in DFC. Derive g_mu_nu, massless spin-2 mode, and G_N from V(phi).
 - **Derive neutrino theta_23 formula from V(phi)** — mechanism identified (Z_3 holonomy) but quantitative formula not derived. 4-degree deviation from 45 degrees.
 - **Derive nuclear saturation from DFC couplings** — connect V(phi) to bulk nuclear matter (rho_0, E/A, K). Overlaps with P1 Walecka work.
+- **Formalize M_N/m_rho = sqrt(N_c/Q_top)** — E44 (C440) found the baryon-to-meson mass ratio equals sqrt(3/2). Derive this from the Regge trajectory structure (baryon Y-junction vs meson linear string). Would connect baryon and meson sectors through topology alone.
 - **Upgrade Koide phase t = 1/sqrt(Q_top) from T2a to T1** — current T2a derivation uses canonical vertex factor argument (C146). T1 upgrade requires computing the 5D Yukawa vortex integral directly from the D5/D6 kink overlap, bypassing the perturbative vertex expansion.
 - **Derive CKM/PMNS matrices from D6/D7 overlap** — 4 CKM + 3 PMNS parameters currently not derived. Needs D6/D7 interface computation.
 - **Derive Planck constant from (alpha, beta, c)** — close the gap to a fully self-contained unit system. Blocked on alpha_em(0) identity (P2).
@@ -68,7 +69,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 ## Priority 5 — Documentation
 
-- **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land
+- **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land. Pending: Regge intercept T3→T2a upgrade (C438), meson mass tier updates.
 - **Update open questions** — revise `educational/07_open_questions.md` when issues close
 - **Document audits (continuous)** — every few cycles, pick 2-4 random docs and review for: stale tier labels, outdated references (e.g. ISSUES.md), cycle numbers in public docs, language rule violations, factual inconsistencies with current model state. This is a permanent item — never remove it.
 - **Practical applications** — add entries to `practical_applications/` from verified T1/T2a results
@@ -79,6 +80,8 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 - **Freeform mathematical exploration** — continued fractions, modular arithmetic, algebraic identities on DFC constants. Workspace: `equations/freeform_math_exploration.py`
 - **Evaluate new open problems for DFC** — candidates: Navier-Stokes, baryon asymmetry, dark matter identity, proton spin crisis, quantum gravity. One cycle per candidate.
+- **Investigate kappa_q = N_c*b_0/(2*N_c+1) identity** — E42 (C440) found the quark generation scaling factor 3*pi/2 is approximated to 0.03% by the rational N_c*b_0/(2*N_c+1) = 33/7. Explore whether this is coincidental or structural (b_0 enters the quark mass running).
+- **Neutron star max mass from DFC string tension** — extend the tensile strength result (C439) to predict maximum NS mass. DFC sigma = Q_top*Lambda^2 constrains the nuclear EOS stiffness. Connects to P1 Walecka item.
 
 ---
 
