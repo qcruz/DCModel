@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 450 (2026-08-28)
+**Last updated:** Cycle 451 (2026-08-28)
 
 ---
 
@@ -10,7 +10,7 @@
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
-- **Last tier worked: P1** (C450)
+- **Last tier worked: P2** (C451)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
 
@@ -34,7 +34,7 @@ Upgrade existing T3/T4 results toward T2a/T1.
 
 - **Prove alpha_em(0) identity A-B = ln(1/alpha_em(0))** — oldest open bottleneck. T4 -> T1 would make all atomic/EM predictions fully derived.
 - **Derive hadronic vacuum polarization delta(Delta_alpha)^NP = 0.00102** — close the 1.5% gap in the 36pi alpha_em chain. Needs D7 confinement spectral density.
-- **Derive cosmological constant combination rule** — prove why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3)). Each term is T2a; combination is T3.
+- **Derive cosmological constant combination rule** — prove why rho_Lambda = M_Pl^4 x exp(-(T1+T2+T3)). C451: lambda_combination_rule.py (18/18 PASS). Sector independence argument: gauge (S_inst), fermion (S_inst*delta_d), scalar (alpha) act on different fields at different depths => path integral factorizes. T3 -> T2b. Three remaining gaps for T2a: (i) formal PI factorization, (ii) depth attenuation law, (iii) substrate Casimir energy = alpha.
 - **Close f_pi 1.6% gap** — reduced from 2.7% via finite m_pi correction (C436). E43 (C440) confirmed: PS cutoff IS the vector meson mass (VMD). Remaining gap traces exactly to DFC m_rho undershoot (-1.5%). Path: close m_rho gap → f_pi gap closes automatically.
 - **Upgrade baryon Regge intercept alpha_0^N from T3 to T2a** — C445 extended regge_intercept_derivation.py with baryon Part H. JR endpoint spin applies (T1), but Y-junction penalty Δ=-1 is T3 bottleneck. Proton -0.37%, Delta -2.04%. REMAINS T3. Upgrade path: derive Δ=-1 from Nambu-Goto junction zero-point energy (same as P3 Y-junction item).
 
@@ -51,6 +51,8 @@ Deep theory work on foundational questions.
 - **Upgrade Koide phase t = 1/sqrt(Q_top) from T2a to T1** — current T2a derivation uses canonical vertex factor argument (C146). T1 upgrade requires computing the 5D Yukawa vortex integral directly from the D5/D6 kink overlap, bypassing the perturbative vertex expansion.
 - **Derive CKM/PMNS matrices from D6/D7 overlap** — 4 CKM + 3 PMNS parameters currently not derived. Needs D6/D7 interface computation. Light quark mass part promoted to P1 (C450) since it blocks 4+ predictions.
 - **Derive Planck constant from (alpha, beta, c)** — close the gap to a fully self-contained unit system. Blocked on alpha_em(0) identity (P2).
+- **Derive depth attenuation law exp(-S*d) from substrate propagator** — the Lambda combination rule (C451) uses exp(-S_inst * delta_d) for the depth modulation, but this exponential attenuation of the instanton barrier with depth is assumed (T3), not derived. Proving this from the substrate propagator would upgrade the Lambda combination rule toward T2a.
+- **Prove substrate Casimir self-energy = alpha** — the Lambda combination rule (C451) uses exp(-alpha) as the substrate zero-point energy contribution. The claim that the Casimir energy of the substrate mode equals alpha exactly needs formal verification from V(phi).
 
 ---
 
