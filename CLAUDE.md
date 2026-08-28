@@ -452,7 +452,8 @@ the tier rotation reaches P5. When selected:
 ### Propagate Updates (MANDATORY every session)
 
 After any new work:
-1. Update `ROADMAP.md` with results (check off items, add cycle numbers).
+1. Update `ROADMAP.md` with results (check off items, add cycle numbers,
+   update the `Last updated:` line and `Last tier worked:` marker).
 2. Update `push_history.md` with the cycle entry.
 3. Update `current_state.md` if a new strength, weakness, or result warrants it.
 4. **Update the Completeness Estimate in CLAUDE.md and README.md** (both places).
