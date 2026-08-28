@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 454 (2026-08-28)
+**Last updated:** Cycle 455 (2026-08-28)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P5** (C454)
+- **Last tier worked: P1** (C455)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
 
@@ -25,7 +25,7 @@ These extend DFC's quantitative prediction count or close significant gaps.
 - **Beyond-mean-field Walecka EOS** — fix NS radius (14.5 -> 12-13 km), max mass (2.5 -> 2.1 M_sun), and nuclear saturation density. Needs RPA or beyond-MF corrections.
 - **Derive proton-neutron mass difference** — predict Delta_m = 1.293 MeV from DFC alpha_em + quark mass splitting. Blocked on light quark mass derivation.
 - **Derive pion mass from Lambda_QCD** — predict m_pi ~ 135 MeV via GMOR relation. C450: explored GMOR chain. C453: condensate undershoot is NJL limitation (DFC outperforms standard NJL). With correct condensate + PDG m_hat, GMOR gives m_pi = 149.5 MeV (+7.1%). PRIMARY BLOCKER: light quark masses (see next item), not condensate.
-- **Derive light quark masses from D6 Yukawa couplings** — m_u = 2.2 MeV, m_d = 4.7 MeV. HIGH-IMPACT BLOCKER: blocks m_pi (this tier), m_n-m_p (this tier), sigma_piN, CKM/PMNS (P3). The Gen-1 scale M0 = sqrt(m_u*m_d) = 3.18 MeV is currently an input in quark_mass_kappa_derivation.py. Deriving it from the D5/D6 kink overlap would unlock 4+ predictions. Promoted from P3 (C450) because it blocks multiple P1 items.
+- **Derive light quark masses from D6 Yukawa couplings** — m_u = 2.2 MeV, m_d = 4.7 MeV. HIGH-IMPACT BLOCKER: blocks m_pi (this tier), m_n-m_p (this tier), sigma_piN, CKM/PMNS (P3). C455: light_quark_mass_derivation.py (9/12 PASS). Best candidate: M0 = exp(-b₀) × v/√2 = 2.93 MeV (−7.8%). Key insight: required kink overlap Delta/xi = 5.459 matches b₀/2 = 5.5 to 0.74%. S_kink × δ_d = 6 exactly [T1]. No candidate reaches T2a yet. Follow-up: radiative corrections to exp(-b₀) candidate, D6 SU(2) instanton Yukawa.
 
 ---
 
@@ -78,6 +78,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 - **Evaluate new open problems for DFC** — candidates: Navier-Stokes, baryon asymmetry, dark matter identity, proton spin crisis, quantum gravity. One cycle per candidate.
 - **Investigate kappa_q = N_c*b_0/(2*N_c+1) identity** — E42 (C440) found the quark generation scaling factor 3*pi/2 is approximated to 0.03% by the rational N_c*b_0/(2*N_c+1) = 33/7. Explore whether this is coincidental or structural (b_0 enters the quark mass running).
 - **Investigate N_c * ln(2*alpha)/2 ≈ alpha identity** — C452 found that 3 * ln(2*18^(1/3))/2 = 2.485 matches alpha = 2.621 to -5.2%. The required n_modes = 2*alpha/ln(2*alpha) = 3.16 ≈ N_c. Is this coincidental or structural? Could higher-loop or non-gaussian corrections close the gap?
+- **Explore Delta/xi = b_0/2 depth hypothesis** — C455 found that the kink overlap separation required to reproduce M0 is Delta/xi = 5.459 ≈ b_0/2 = 5.5 (0.74% match). If true, this connects the Yukawa suppression directly to asymptotic freedom. Test: can radiative corrections (anomalous dimension, threshold matching) close the 7.8% gap in M0 = exp(-b_0)*v/sqrt(2)?
 - **Neutron star max mass — beyond string tension** — C443 NEGATIVE RESULT: naive flux-tube deconfinement gives M_max = 0.48 M_sun (-77%). String tension sets max force, not deconfinement threshold. Need percolation-based transition density (~2-3 rho_0) or full EOS from DFC couplings. Connects to P1 Walecka item.
 
 ---
