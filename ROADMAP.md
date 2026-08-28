@@ -81,7 +81,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 - **Freeform mathematical exploration** — continued fractions, modular arithmetic, algebraic identities on DFC constants. Workspace: `equations/freeform_math_exploration.py`
 - **Evaluate new open problems for DFC** — candidates: Navier-Stokes, baryon asymmetry, dark matter identity, proton spin crisis, quantum gravity. One cycle per candidate.
 - **Investigate kappa_q = N_c*b_0/(2*N_c+1) identity** — E42 (C440) found the quark generation scaling factor 3*pi/2 is approximated to 0.03% by the rational N_c*b_0/(2*N_c+1) = 33/7. Explore whether this is coincidental or structural (b_0 enters the quark mass running).
-- **Neutron star max mass from DFC string tension** — extend the tensile strength result (C439) to predict maximum NS mass. DFC sigma = Q_top*Lambda^2 constrains the nuclear EOS stiffness. Connects to P1 Walecka item.
+- **Neutron star max mass — beyond string tension** — C443 NEGATIVE RESULT: naive flux-tube deconfinement gives M_max = 0.48 M_sun (-77%). String tension sets max force, not deconfinement threshold. Need percolation-based transition density (~2-3 rho_0) or full EOS from DFC couplings. Connects to P1 Walecka item.
 
 ---
 
