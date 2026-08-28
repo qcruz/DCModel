@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 451 (2026-08-28)
+**Last updated:** Cycle 452 (2026-08-28)
 
 ---
 
@@ -10,7 +10,7 @@
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
-- **Last tier worked: P2** (C451)
+- **Last tier worked: P3** (C452)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
 
@@ -52,7 +52,7 @@ Deep theory work on foundational questions.
 - **Derive CKM/PMNS matrices from D6/D7 overlap** — 4 CKM + 3 PMNS parameters currently not derived. Needs D6/D7 interface computation. Light quark mass part promoted to P1 (C450) since it blocks 4+ predictions.
 - **Derive Planck constant from (alpha, beta, c)** — close the gap to a fully self-contained unit system. Blocked on alpha_em(0) identity (P2).
 - **Derive depth attenuation law exp(-S*d) from substrate propagator** — the Lambda combination rule (C451) uses exp(-S_inst * delta_d) for the depth modulation, but this exponential attenuation of the instanton barrier with depth is assumed (T3), not derived. Proving this from the substrate propagator would upgrade the Lambda combination rule toward T2a.
-- **Prove substrate Casimir self-energy = alpha** — the Lambda combination rule (C451) uses exp(-alpha) as the substrate zero-point energy contribution. The claim that the Casimir energy of the substrate mode equals alpha exactly needs formal verification from V(phi).
+- **Prove substrate Casimir self-energy = alpha** — C452: substrate_casimir_alpha.py (11/11 PASS). Six mechanisms tested: harmonic ZPE, barrier tunneling, kink action fractions, Euclidean action, determinant modes, exact identities. NONE give alpha exactly. Best: N_c * ln(2*alpha)/2 = 2.485 (-5.2%), suggestive of N_c=3 determinant but not exact. Key insight: alpha may enter as the primitive compression parameter itself, not as a derived quantity. REMAINS T3. Three future paths: full one-loop det, Coleman-Weinberg, BPS bound mechanism.
 
 ---
 
@@ -85,6 +85,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 - **Freeform mathematical exploration** — continued fractions, modular arithmetic, algebraic identities on DFC constants. Workspace: `equations/freeform_math_exploration.py`
 - **Evaluate new open problems for DFC** — candidates: Navier-Stokes, baryon asymmetry, dark matter identity, proton spin crisis, quantum gravity. One cycle per candidate.
 - **Investigate kappa_q = N_c*b_0/(2*N_c+1) identity** — E42 (C440) found the quark generation scaling factor 3*pi/2 is approximated to 0.03% by the rational N_c*b_0/(2*N_c+1) = 33/7. Explore whether this is coincidental or structural (b_0 enters the quark mass running).
+- **Investigate N_c * ln(2*alpha)/2 ≈ alpha identity** — C452 found that 3 * ln(2*18^(1/3))/2 = 2.485 matches alpha = 2.621 to -5.2%. The required n_modes = 2*alpha/ln(2*alpha) = 3.16 ≈ N_c. Is this coincidental or structural? Could higher-loop or non-gaussian corrections close the gap?
 - **Neutron star max mass — beyond string tension** — C443 NEGATIVE RESULT: naive flux-tube deconfinement gives M_max = 0.48 M_sun (-77%). String tension sets max force, not deconfinement threshold. Need percolation-based transition density (~2-3 rho_0) or full EOS from DFC couplings. Connects to P1 Walecka item.
 
 ---
