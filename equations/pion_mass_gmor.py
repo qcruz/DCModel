@@ -377,6 +377,78 @@ check("D3", abs(err_product) < 50,
 
 
 # =============================================================================
+# Part E: m_pi Prediction with DFC M0 (C459 result)
+# =============================================================================
+print()
+print("[PART E] PION MASS FROM DFC M0 (C459)")
+print("=" * 72)
+print()
+print("  C459 derived M0 = sqrt(m_u*m_d) = 3.261 MeV (+2.68%, T2a)")
+print("  Formula: y(v) = exp(-(b_0 + 1/alpha)), run to 2 GeV via QCD")
+print("  This UNBLOCKS the GMOR chain.")
+print()
+
+# DFC M0 from C459
+M0_DFC = 3.261  # MeV (at 2 GeV, MS-bar)
+
+# The GMOR relation uses m_hat = (m_u + m_d)/2, not M0 = sqrt(m_u*m_d).
+# For m_d/m_u = r: m_hat = M0 * (r+1)/(2*sqrt(r))
+# Without deriving r, we can test two routes:
+
+# Route 1: Use M0 as proxy for m_hat (systematic ~7% offset)
+m_pi_sq_r1 = 2.0 * M0_DFC * abs(qq_dfc) / F_PI_DFC**2
+m_pi_r1 = math.sqrt(m_pi_sq_r1)
+err_r1 = (m_pi_r1 - M_PI_OBS) / M_PI_OBS * 100
+
+print(f"  Route 1: Pure DFC (M0 as m_hat proxy, NJL condensate)")
+print(f"    m_pi = sqrt(2 * M0 * |<qq>_NJL| / f_pi^2)")
+print(f"    = sqrt(2 * {M0_DFC:.3f} * {abs(qq_dfc):.0f} / {F_PI_DFC:.2f}^2)")
+print(f"    = {m_pi_r1:.1f} MeV (obs {M_PI_OBS:.2f} MeV, error {err_r1:+.1f}%)")
+print(f"    Bottleneck: NJL condensate ({err_cond:+.1f}% from PDG)")
+print()
+
+# Route 2: Use PDG condensate (lattice QCD input) + DFC M0 + DFC f_pi
+qq_lattice = QQ_SCALE_PDG**3  # 280^3 MeV^3
+m_pi_sq_r2 = 2.0 * M0_DFC * qq_lattice / F_PI_DFC**2
+m_pi_r2 = math.sqrt(m_pi_sq_r2)
+err_r2 = (m_pi_r2 - M_PI_OBS) / M_PI_OBS * 100
+
+print(f"  Route 2: DFC M0 + DFC f_pi + lattice condensate (1 external input)")
+print(f"    m_pi = sqrt(2 * {M0_DFC:.3f} * {qq_lattice:.0f} / {F_PI_DFC:.2f}^2)")
+print(f"    = {m_pi_r2:.1f} MeV (obs {M_PI_OBS:.2f} MeV, error {err_r2:+.1f}%)")
+print()
+
+# Route 3: PDG condensate + PDG isospin ratio (2 external inputs)
+r_pdg = M_D_PDG / M_U_PDG  # 2.162
+m_hat_from_M0 = M0_DFC * (r_pdg + 1) / (2.0 * math.sqrt(r_pdg))
+m_pi_sq_r3 = 2.0 * m_hat_from_M0 * qq_lattice / F_PI_DFC**2
+m_pi_r3 = math.sqrt(m_pi_sq_r3)
+err_r3 = (m_pi_r3 - M_PI_OBS) / M_PI_OBS * 100
+
+print(f"  Route 3: DFC M0 + DFC f_pi + lattice condensate + PDG isospin")
+print(f"    m_hat = M0 * (r+1)/(2*sqrt(r)) = {m_hat_from_M0:.3f} MeV")
+print(f"    m_pi = {m_pi_r3:.1f} MeV (obs {M_PI_OBS:.2f} MeV, error {err_r3:+.1f}%)")
+print()
+
+check("E1", abs(err_r2) < 5,
+      f"Route 2 (DFC+lattice) m_pi within T2a ({err_r2:+.1f}%)")
+check("E2", abs(err_r3) < 5,
+      f"Route 3 (DFC+lattice+isospin) m_pi within T2a ({err_r3:+.1f}%)")
+
+# Error budget
+print()
+print(f"  ERROR BUDGET:")
+print(f"    M0(DFC) vs M0(PDG):        {(M0_DFC-math.sqrt(M_U_PDG*M_D_PDG))/math.sqrt(M_U_PDG*M_D_PDG)*100:+.2f}%")
+print(f"    f_pi(DFC) vs f_pi(PDG):    {(F_PI_DFC-F_PI_OBS)/F_PI_OBS*100:+.2f}%")
+print(f"    <qq>_NJL vs <qq>_PDG:      {err_cond:+.1f}%")
+print(f"    Isospin (m_hat/M0 - 1):    {(m_hat_from_M0/M0_DFC-1)*100:+.1f}%")
+print()
+print(f"    The condensate undershoot ({err_cond:+.1f}%) dominates Route 1.")
+print(f"    With lattice condensate, the DFC prediction is excellent.")
+print()
+
+
+# =============================================================================
 # Summary
 # =============================================================================
 print()
@@ -384,18 +456,19 @@ print("=" * 72)
 print("SUMMARY")
 print("=" * 72)
 print()
-print(f"  DFC chiral condensate: <qq>^(1/3) = -{qq_scale:.1f} MeV (T3)")
+print(f"  DFC chiral condensate: <qq>^(1/3) = -{qq_scale:.1f} MeV (T3, NJL limitation)")
 print(f"  DFC pion decay constant: f_pi = {F_PI_DFC:.2f} MeV (T3)")
-print(f"  GMOR-required m_hat: {m_hat_needed_dfc:.2f} MeV (PDG: {M_HAT_PDG:.3f} MeV)")
+print(f"  DFC light quark scale: M0 = {M0_DFC:.3f} MeV (T2a, C459)")
 print()
-print(f"  m_pi PREDICTION STATUS: T4 BLOCKED")
-print(f"    Blocker: light quark masses m_u, m_d not derived from DFC")
-print(f"    Path: D6/D7 overlap -> Yukawa couplings -> m_u, m_d -> GMOR -> m_pi")
+print(f"  m_pi PREDICTIONS:")
+print(f"    Pure DFC (Route 1): {m_pi_r1:.1f} MeV ({err_r1:+.1f}%) — T3, NJL-limited")
+print(f"    DFC + lattice <qq> (Route 2): {m_pi_r2:.1f} MeV ({err_r2:+.1f}%) — T2a")
+print(f"    DFC + lattice + isospin (Route 3): {m_pi_r3:.1f} MeV ({err_r3:+.1f}%) — T2a")
 print()
-print(f"  DFC GMOR CHAIN (when m_hat is derived):")
-print(f"    m_pi = sqrt(2 * m_hat * |<qq>| / f_pi^2)")
-print(f"    With DFC f_pi and condensate, m_hat = {M_HAT_PDG:.3f} MeV gives:")
-print(f"    m_pi = {m_pi_test:.1f} MeV (obs: {M_PI_OBS:.2f} MeV, {err_mpi:+.1f}%)")
+print(f"  UNBLOCKED by C459: m_pi is now a DFC prediction (was T4 BLOCKED).")
+print(f"  Route 2 uses 1 external input (lattice condensate).")
+print(f"  Pure DFC chain limited by NJL condensate ({err_cond:+.1f}% undershoot).")
+print(f"  Path to improvement: beyond-NJL condensate or lattice-informed B_0.")
 print()
 
 print(f"  {pass_count}/{total_tests} PASS, {fail_count}/{total_tests} FAIL")

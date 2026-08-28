@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 460 (2026-08-28)
+**Last updated:** Cycle 461 (2026-08-28)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P6** (C460)
+- **Last tier worked: P1** (C461)
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
 ---
@@ -21,7 +21,7 @@
 - **Derive V(phi) contact terms for deuteron binding** — fix +187% overbinding. See `equations/deuteron_*.py`
 - **Beyond-mean-field Walecka EOS** — fix NS radius, max mass, saturation density. See `equations/nuclear_saturation_dfc.py`
 - **Derive proton-neutron mass difference** — predict 1.293 MeV. UNBLOCKED by C459 M0 derivation
-- **Derive pion mass from GMOR** — UNBLOCKED by C459 M0 derivation. See `equations/pion_mass_gmor.py`
+- **Derive pion mass from GMOR** — m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC −38% (NJL-limited). See `equations/pion_mass_gmor.py`
 - **Derive pion-nucleon sigma term** — UNBLOCKED by C459 M0 derivation. Target: σ_πN ≈ 52 MeV
 - **Derive light quark masses (D6 Yukawa)** — M0 = exp(-(b₀+1/α))×v/√2 run to 2 GeV: +2.68% T2a (C459). Mechanism needs T1 proof. See `equations/light_quark_mass_derivation.py`
 
