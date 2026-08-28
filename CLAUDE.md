@@ -331,6 +331,11 @@ educational/
 Rules: plain English first, equations second; Tier-honest; 500–1500 words per module;
 self-contained (readable without reading other modules).
 
+**Continual check:** When concrete high-confidence derivations, connections, or predictions
+are completed and no existing educational module covers the topic, create a new module.
+This check runs every documentation cycle (P6) — review recent completed items and
+equation modules to identify topics deserving their own educational doc.
+
 ---
 
 **Track C — Practical Applications and Predictions**

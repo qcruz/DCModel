@@ -10,6 +10,7 @@
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
+- **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
 - **Last tier worked: P5** (C454)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
@@ -71,22 +72,24 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 ---
 
-## Priority 5 — Documentation
-
-- **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land.
-- **Update open questions** — revise `educational/07_open_questions.md` when issues close
-- **Document audits (continuous)** — every few cycles, pick 2-4 random docs and review for: stale tier labels, outdated references (e.g. ISSUES.md), cycle numbers in public docs, language rule violations, factual inconsistencies with current model state. This is a permanent item — never remove it.
-- **Practical applications** — add entries to `practical_applications/` from verified T1/T2a results
-
----
-
-## Priority 6 — Exploratory
+## Priority 5 — Exploratory
 
 - **Freeform mathematical exploration** — continued fractions, modular arithmetic, algebraic identities on DFC constants. Workspace: `equations/freeform_math_exploration.py`
 - **Evaluate new open problems for DFC** — candidates: Navier-Stokes, baryon asymmetry, dark matter identity, proton spin crisis, quantum gravity. One cycle per candidate.
 - **Investigate kappa_q = N_c*b_0/(2*N_c+1) identity** — E42 (C440) found the quark generation scaling factor 3*pi/2 is approximated to 0.03% by the rational N_c*b_0/(2*N_c+1) = 33/7. Explore whether this is coincidental or structural (b_0 enters the quark mass running).
 - **Investigate N_c * ln(2*alpha)/2 ≈ alpha identity** — C452 found that 3 * ln(2*18^(1/3))/2 = 2.485 matches alpha = 2.621 to -5.2%. The required n_modes = 2*alpha/ln(2*alpha) = 3.16 ≈ N_c. Is this coincidental or structural? Could higher-loop or non-gaussian corrections close the gap?
 - **Neutron star max mass — beyond string tension** — C443 NEGATIVE RESULT: naive flux-tube deconfinement gives M_max = 0.48 M_sun (-77%). String tension sets max force, not deconfinement threshold. Need percolation-based transition density (~2-3 rho_0) or full EOS from DFC couplings. Connects to P1 Walecka item.
+
+---
+
+## Priority 6 — Documentation
+
+- **Create new educational modules** — when a concrete high-confidence derivation, connection, or prediction has been made and no existing module covers it, write a new `educational/` doc. This is a **continual check**: every P6 cycle, review recent completed items and equation modules to identify topics that deserve their own educational module.
+- **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land.
+- **Update open questions** — revise `educational/07_open_questions.md` when issues close
+- **Document audits (continuous)** — every few cycles, pick 2-4 random docs and review for: stale tier labels, outdated references (e.g. ISSUES.md), cycle numbers in public docs, language rule violations, factual inconsistencies with current model state. This is a permanent item — never remove it.
+- **Practical applications** — add entries to `practical_applications/` from verified T1/T2a results
+- **Archive/organize project docs as needed** — look for areas where files can be consolidated, redundant docs merged, stale files archived, or directory structure cleaned up. Keep the project lean and navigable.
 
 ---
 
