@@ -423,9 +423,9 @@ When the user says "continue":
    and adding new actionable items to ROADMAP.md.
    After completing the task, update the `Last tier worked:` marker to the tier you just did.
 3. Do ONE focused task from that item (one equation module, one document, one test).
-4. Update `ROADMAP.md`: remove completed items from the active lists and add them
-   to the Completed Items table. Add new items whenever they come up.
-   ROADMAP.md is a **living roadmap and todo list** — keep it current.
+4. Update `ROADMAP.md`: remove completed items from the active lists. Add new items
+   whenever they come up. Keep bullet points short — detailed notes go in equation
+   modules, `ISSUES.md`, or `push_history.md`, not in ROADMAP.
 5. Update `push_history.md` with the cycle entry.
 6. Commit all changed files and run `git push`. Confirm `main -> main`.
 

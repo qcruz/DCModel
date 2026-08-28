@@ -2,9 +2,9 @@
 
 **Last updated:** Cycle 427 (2026-08-26)
 
-This document tracks currently open issues in the DFC model. For detailed development
-priorities, see `DEVELOPMENT_NEXT_STEPS.md`. For cycle-by-cycle history, see
-`push_history.md` and `CLAUDE.md`.
+This document tracks currently open issues, known failures, blocked derivations,
+retracted claims, and module issues in the DFC model. For development priorities,
+see `ROADMAP.md`. For cycle-by-cycle history, see `push_history.md`.
 
 ---
 
