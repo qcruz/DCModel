@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 453 (2026-08-28)
+**Last updated:** Cycle 454 (2026-08-28)
 
 ---
 
@@ -10,7 +10,7 @@
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
-- **Last tier worked: P4** (C453)
+- **Last tier worked: P5** (C454)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
 

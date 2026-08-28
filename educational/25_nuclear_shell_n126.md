@@ -5,8 +5,8 @@ independently. For background on the nuclear physics framework, see Module 20
 (Nuclear Physics). For the I₄ identity, see Module 09.
 
 **Context:** This module documents the resolution of the N=126 shell closure problem
-It is written in a journaling style — capturing the reasoning,
-discovery process, and physical interpretation at the moment the result was found.
+— how DFC's confinement screening predicts a spin-orbit strength that reproduces all
+seven nuclear magic numbers, including the previously problematic N=126.
 
 ---
 
@@ -200,8 +200,8 @@ Several things make this result notable:
   but not yet derived from V(φ) dynamics. A formal T2a derivation would require
   showing how the D7 one-loop beta function enters the effective nuclear potential.
 
-- **Bulk binding energy a_V:** Still T4 — requires understanding hard-core repulsion
-  from D7 kink dynamics.
+- **Bulk binding energy a_V:** T2a via Walecka sigma-omega saturation mechanism
+  (a_V = 15.57 MeV, −1.7%, 0 free parameters). See Module 20 for details.
 
 - **Half-life of ²⁹⁸Fl:** Requires DFC account of alpha decay and fission barriers,
   which depend on the shell correction sign (now partially addressed with κ = 33).

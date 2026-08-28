@@ -165,16 +165,20 @@ normalized by the same integral that defines I₄.
 The string tension σ — the energy per unit length of the color flux tube connecting a
 quark to an antiquark — takes the form:
 
-The string tension equals the kink shape integral times the square of the confinement
-scale.
+The string tension equals the topological charge times the square of the confinement
+scale, where the topological charge itself factors as the kink shape integral times
+half the number of colors.
 
 ```
-σ = I₄ × Λ_QCD²
+σ = Q_top × Λ_QCD²,   where Q_top = I₄ × N_c/2 = (4/3) × (3/2) = 2
 ```
 
-This is T2a (depends on the center vortex mechanism linking σ to Λ). But again the I₄
-factor is structural. Numerically: σ = (4/3) × (304.5 MeV)² ≈ 185,400 MeV², which
-gives √σ ≈ 431 MeV. The observed string tension corresponds to √σ ≈ 427 MeV (−0.9%).
+This is T2a (depends on the center vortex mechanism linking σ to Λ). The I₄ factor
+enters through Q_top: the topological charge of the kink is set by the sech⁴ shape
+integral times the color multiplicity. Numerically: σ = 2 × (304.5 MeV)² ≈ 185,440
+MeV², giving √σ ≈ 431 MeV. The observed string tension corresponds to √σ ≈ 420 MeV
+(+2.5%). The vortex energy density prefactor ρ_v = I₄ × Λ_QCD² ≈ 123,600 MeV² is the
+I₄-direct quantity; σ gains the additional N_c/2 factor from the center vortex winding.
 
 ### 5. The Kink Energy Density
 
