@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 457 (2026-08-28)
+**Last updated:** Cycle 458 (2026-08-28)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P3** (C457)
+- **Last tier worked: P4** (C458)
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
 ---
@@ -33,6 +33,7 @@
 - **Upgrade cosmological constant combination rule** — gaps (i) PI factorization CLOSED (C456), (ii) depth attenuation CLOSED (C457). One gap remains: (iii) Casimir=α. See `equations/lambda_pi_factorization.py`, `equations/depth_attenuation_law.py`
 - **Close f_pi 1.6% gap** — traces to m_rho undershoot. See `equations/fpi_gap_closure.py`
 - **Upgrade baryon Regge intercept to T2a** — Y-junction penalty Δ=−1 is T3 bottleneck. See `equations/regge_intercept_derivation.py`
+- **Upgrade Delta-N splitting to T2b** — currently −7.4%, inherited from m_rho undershoot. See `equations/delta_n_splitting.py`
 
 ---
 
@@ -52,13 +53,10 @@
 
 ## Priority 4 — Known Failures
 
-- **Nucleon magnetic moment ratio** — +2.7% off, needs isospin violation
+- **Nucleon magnetic moment ratio** — +2.7% off, SU(6) limit; needs isospin violation (blocked on light quark masses)
 - **Proton charge radius** — −17.6% off, needs nucleon wavefunction
-- **Delta-N mass splitting** — −7.4%, inherited from m_rho undershoot
 - **Nuclear symmetry energy J** — −36%, needs larger g_rho
 - **Nuclear surface diffuseness** — −20%, DFC m_sigma too heavy
-- **Nolen-Schiffer residual** — ~7% CSB sources not computed
-- **Chiral condensate undershoot** — −30% but NJL limitation, not DFC-specific. See `equations/chiral_condensate_running.py`
 - **Triple-alpha Q value** — blocked by SEMF failure for A < 12
 
 ---
