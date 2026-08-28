@@ -9,10 +9,10 @@
 ## How This Document Works
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
-- **Task selection:** Pick randomly from ANY item across ALL priority tiers, unless the user gives more specific instructions.
+- **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. Skip tiers with no actionable items. Update the marker after each cycle.
+- **Last tier worked: P2** (C445)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
-- Priority tiers are for reference, not strict ordering.
 
 ---
 
