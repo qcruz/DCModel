@@ -423,6 +423,11 @@ When the user says "continue":
    and adding new actionable items to ROADMAP.md.
    After completing the task, update the `Last tier worked:` marker to the tier you just did.
 3. Do ONE focused task from that item (one equation module, one document, one test).
+   **Never skip an item because it is difficult.** Always attempt to make incremental
+   progress. Ruling out incorrect approaches, documenting blockers in more detail,
+   outlining the specific steps needed, and narrowing the solution space are all
+   valid and valuable progress. A cycle that identifies three wrong paths and clarifies
+   what remains is a successful cycle.
 4. Update `ROADMAP.md`: remove completed items from the active lists. Add new items
    whenever they come up. Keep bullet points short — detailed notes go in equation
    modules, `ISSUES.md`, or `push_history.md`, not in ROADMAP.
