@@ -23,7 +23,8 @@ These extend DFC's quantitative prediction count or close significant gaps.
 - **Derive V(phi) contact terms for deuteron binding** — principled C_S, C_T from kink core to fix overbinding (currently +187%). Would give a quantitative B_d prediction.
 - **Beyond-mean-field Walecka EOS** — fix NS radius (14.5 -> 12-13 km), max mass (2.5 -> 2.1 M_sun), and nuclear saturation density. Needs RPA or beyond-MF corrections.
 - **Derive proton-neutron mass difference** — predict Delta_m = 1.293 MeV from DFC alpha_em + quark mass splitting. Blocked on light quark mass derivation.
-- **Derive pion mass from Lambda_QCD** — predict m_pi ~ 135 MeV via GMOR relation. C450: pion_mass_gmor.py (8/10 PASS) explored GMOR chain. DFC condensate <qq>^(1/3) = -210.5 MeV (-24.8% vs PDG -280 MeV). With PDG m_hat, gives m_pi = 88 MeV (-36.9%). Condensate undershoot is root cause. BLOCKED on light quark masses (D6 Yukawa couplings, same as CKM derivation in P3).
+- **Derive pion mass from Lambda_QCD** — predict m_pi ~ 135 MeV via GMOR relation. C450: pion_mass_gmor.py (8/10 PASS) explored GMOR chain. DFC condensate <qq>^(1/3) = -210.5 MeV (-24.8% vs PDG -280 MeV). With PDG m_hat, gives m_pi = 88 MeV (-36.9%). Condensate undershoot is root cause. BLOCKED on light quark masses (see next item).
+- **Derive light quark masses from D6 Yukawa couplings** — m_u = 2.2 MeV, m_d = 4.7 MeV. HIGH-IMPACT BLOCKER: blocks m_pi (this tier), m_n-m_p (this tier), sigma_piN, CKM/PMNS (P3). The Gen-1 scale M0 = sqrt(m_u*m_d) = 3.18 MeV is currently an input in quark_mass_kappa_derivation.py. Deriving it from the D5/D6 kink overlap would unlock 4+ predictions. Promoted from P3 (C450) because it blocks multiple P1 items.
 
 ---
 
@@ -48,7 +49,7 @@ Deep theory work on foundational questions.
 - **Derive nuclear saturation from DFC couplings** — connect V(phi) to bulk nuclear matter (rho_0, E/A, K). Overlaps with P1 Walecka work.
 - **Derive Y-junction penalty = -1 from DFC dynamics** — C446 proved the NG Casimir energy of a Y-junction is EXACTLY ZERO (T1), and this uniquely selects N_c = 3 (new selection criterion). But NG gives only Delta = -1/12, not -1. The remaining -11/12 must come from DFC-specific physics: color antisymmetrization, spin-orbit coupling, or junction winding topology. Remains T3.
 - **Upgrade Koide phase t = 1/sqrt(Q_top) from T2a to T1** — current T2a derivation uses canonical vertex factor argument (C146). T1 upgrade requires computing the 5D Yukawa vortex integral directly from the D5/D6 kink overlap, bypassing the perturbative vertex expansion.
-- **Derive CKM/PMNS matrices from D6/D7 overlap** — 4 CKM + 3 PMNS parameters currently not derived. Needs D6/D7 interface computation.
+- **Derive CKM/PMNS matrices from D6/D7 overlap** — 4 CKM + 3 PMNS parameters currently not derived. Needs D6/D7 interface computation. Light quark mass part promoted to P1 (C450) since it blocks 4+ predictions.
 - **Derive Planck constant from (alpha, beta, c)** — close the gap to a fully self-contained unit system. Blocked on alpha_em(0) identity (P2).
 
 ---
@@ -63,6 +64,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 - **Nuclear symmetry energy J** — -36%. Needs larger g_rho (8.59 vs predicted 5.57).
 - **Nuclear surface diffuseness** — -20%. DFC bare m_sigma = 456.8 MeV too heavy.
 - **Nolen-Schiffer residual** — ~7% CSB sources identified but not computed from DFC.
+- **Chiral condensate undershoot** — DFC NJL condensate <qq>^(1/3) = -210.5 MeV vs PDG -280 MeV (-24.8%). Root cause of m_pi = 88 MeV (-36.9%) failure. May need beyond-NJL treatment or running to mu=2 GeV scale. Added C450.
 - **Triple-alpha Q value** — blocked by SEMF failure for A < 12.
 
 ---
@@ -177,4 +179,6 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 | SU(3) vs SO(6) | Largely resolved; J propagation proof open | `d5_complex_from_instability.py` |
 | Koide t derivation | T4 | `koide_phase_coupling.py` |
 | Series holonomy (Step 9c) | T3; KK reduction formal | -- |
+| m_pi from GMOR | T4; blocked by m_u, m_d; condensate -24.8% | `pion_mass_gmor.py` |
+| Light quark masses | T4; D6 Yukawa; blocks m_pi, m_n-m_p, sigma_piN | -- |
 | Collapse mechanism | T2a (C360) | `collapse_trigger_condition.py` |

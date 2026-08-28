@@ -436,6 +436,17 @@ updates triggered by new results, and any newly-discovered connections or open q
 The goal is to capture all downstream implications while they are fresh — not just the
 item that was worked on.
 
+**ROADMAP item management (MANDATORY every cycle):**
+- **Add new items:** If a cycle reveals a new blocker, open question, or derivation
+  target that is not already on ROADMAP, add it to the appropriate priority tier.
+- **Promote recurring blockers:** If the same blocker appears across multiple items
+  or keeps coming up in successive cycles, promote it to a higher priority tier.
+  A blocker that blocks 3+ items should be at least P2; one that blocks 5+ should be P1.
+- **Add new failure items to P4:** If a cycle produces a quantitative result that
+  clearly fails (>10% error), add it to P4 Known Failures.
+- The ROADMAP should grow organically as work reveals new connections. A cycle that
+  discovers nothing new to add is rare — most work reveals at least one follow-on.
+
 **Document review is a continuous part of the development cycle**, not a separate
 maintenance task. It is a permanent item on ROADMAP P5 and will be selected when
 the tier rotation reaches P5. When selected:
