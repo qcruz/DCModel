@@ -109,6 +109,7 @@ These are not predictions — they are engineering thought experiments.
 | `absence_predictions.md` | No axion (T2a), no proton decay (T1), no SUSY (T3), no monopoles (T2a) | Pool A/B | Complete |
 | `localization_rate_ceiling.md` | Maximum measurement frequency: f_max ~ 10^43 Hz (spinodal collapse timescale) | Pool A | Complete |
 | `quantum_resistance_standard.md` | Minimum channel resistance R_K = h/e² from α_em(0) = 1/137.034 [T2a]; −0.003% from SI | Pool B | Complete |
+| `maximum_tensile_strength.md` | Maximum material stress: 6.8×10³⁴ Pa from D7 string tension σ = Q_top×Λ² [T2a] | Pool A | Complete |
 
 ---
 
