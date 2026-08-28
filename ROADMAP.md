@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 449 (2026-08-28)
+**Last updated:** Cycle 450 (2026-08-28)
 
 ---
 
@@ -10,7 +10,7 @@
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
-- **Last tier worked: P6** (C449)
+- **Last tier worked: P1** (C450)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
 
@@ -23,7 +23,7 @@ These extend DFC's quantitative prediction count or close significant gaps.
 - **Derive V(phi) contact terms for deuteron binding** — principled C_S, C_T from kink core to fix overbinding (currently +187%). Would give a quantitative B_d prediction.
 - **Beyond-mean-field Walecka EOS** — fix NS radius (14.5 -> 12-13 km), max mass (2.5 -> 2.1 M_sun), and nuclear saturation density. Needs RPA or beyond-MF corrections.
 - **Derive proton-neutron mass difference** — predict Delta_m = 1.293 MeV from DFC alpha_em + quark mass splitting. Blocked on light quark mass derivation.
-- **Derive pion mass from Lambda_QCD** — predict m_pi ~ 135 MeV via GMOR relation with DFC Lambda_QCD = 304.5 MeV. Blocked on chiral symmetry breaking mechanism.
+- **Derive pion mass from Lambda_QCD** — predict m_pi ~ 135 MeV via GMOR relation. C450: pion_mass_gmor.py (8/10 PASS) explored GMOR chain. DFC condensate <qq>^(1/3) = -210.5 MeV (-24.8% vs PDG -280 MeV). With PDG m_hat, gives m_pi = 88 MeV (-36.9%). Condensate undershoot is root cause. BLOCKED on light quark masses (D6 Yukawa couplings, same as CKM derivation in P3).
 
 ---
 
@@ -154,8 +154,8 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 | Quantity | Observed | Blocking Issue |
 |---|---|---|
-| m_pi | 139.57 MeV | Chiral SB mechanism from DFC |
-| m_u, m_d | 2.2, 4.7 MeV | Chiral SB + Yukawa from substrate |
+| m_pi | 139.57 MeV | Light quark masses (D6 Yukawa); DFC condensate -24.8%; GMOR gives 88 MeV with PDG m_hat (C450) |
+| m_u, m_d | 2.2, 4.7 MeV | D6 Yukawa couplings; same blocker as CKM/PMNS |
 | r_p | 0.8409 fm | Pion cloud integral |
 | m_n - m_p | 1.293 MeV | Needs m_d - m_u + EM |
 | Delta(1232)-N | 293 MeV | Frozen IR alpha_s |
