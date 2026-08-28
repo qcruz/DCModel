@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 461 (2026-08-28)
+**Last updated:** Cycle 462 (2026-08-28)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P1** (C461)
+- **Last tier worked: P2** (C462)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -49,7 +49,7 @@
 - **Derive CKM/PMNS from D6/D7 overlap** — light quark part promoted to P1
 - **Derive ℏ from (α, β, c)** — blocked on α_em(0) identity. See `ISSUES.md` T8
 - **Derive depth attenuation law exp(−S·d)** — gap (ii) CLOSED (C457, 9/10). Action density argument: instanton confined to kink core → dS/dd = S_inst/ξ → WKB gives exp(-S*d). See `equations/depth_attenuation_law.py`
-- **Prove substrate Casimir self-energy = α** — six mechanisms tested, none exact. See `equations/substrate_casimir_alpha.py`
+- **Prove substrate Casimir self-energy = α** — 12 mechanisms tested (C462), 5 ruled out, none exact. Best: I₄×Q_top=8/3 (+1.8%). New identity: α×√(2α)/2=N_c [T1]. Most promising path: show V''/2 enters as effective action (non-perturbative), or BPS saturation. See `equations/substrate_casimir_alpha.py`
 
 ---
 
