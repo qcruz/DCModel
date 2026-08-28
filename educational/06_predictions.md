@@ -125,14 +125,14 @@ The model predicts the proton mass from the QCD string tension and Regge traject
 - **Status:** The formula is right; the full proof from V(φ) requires proving the string tension from the substrate (Yang-Mills mass gap level difficulty).
 
 ### Meson Regge spectrum (0 free nuclear parameters)
-The full meson mass spectrum emerges from the DFC string tension σ = Q_top × Λ² and the Regge intercept α₀ = 1/Q_top = 1/2. All masses are predicted from Λ_QCD = 304.5 MeV alone.
+The full meson mass spectrum emerges from the DFC string tension σ = Q_top × Λ² (T2a) and the Regge intercept α₀ = 1/Q_top = 1/2 (T2a, derived from Jackiw-Rebbi endpoint spin). All masses are predicted from Λ_QCD = 304.5 MeV alone.
 
 | Meson | DFC | Observed | Error | Tier |
 |---|---|---|---|---|
-| ρ(770) | 763.3 MeV | 775.3 MeV | −1.5% | T3 |
-| a₂(1320) | 1322 MeV | 1318 MeV | +0.3% | T3 |
-| ρ₃(1690) | 1707 MeV | 1689 MeV | +1.1% | T3 |
-| a₄(2040) | 2019 MeV | 1995 MeV | +1.2% | T3 |
+| ρ(770) | 763.3 MeV | 775.3 MeV | −1.5% | T2a |
+| a₂(1320) | 1322 MeV | 1318 MeV | +0.3% | T2a |
+| ρ₃(1690) | 1707 MeV | 1689 MeV | +1.1% | T2a |
+| a₄(2040) | 2019 MeV | 1995 MeV | +1.2% | T2a |
 
 All four established mesons within 2% of PDG values.
 
@@ -142,7 +142,15 @@ All four established mesons within 2% of PDG values.
 
 The isoscalar trajectory (ω, f₂, ω₃, f₄) uses the same α' and α₀, all within 4%.
 
-- **Status:** The σ = Q_top × Λ² derivation and α₀ = 1/2 structural argument are T3. Full proof requires deriving string tension from the substrate (Yang-Mills mass gap level).
+### Baryon-meson mass ratio
+The ratio of the nucleon mass to the rho meson mass equals the square root of the number of colors divided by the topological charge — a parameter-free prediction connecting the baryon and meson sectors through topology alone.
+
+- **Predicted:** m_N/m_ρ = √(N_c/Q_top) = √(3/2) = 1.2247
+- **Observed:** m_N/m_ρ = 938.3/775.3 = 1.2103
+- **Error:** +1.20%
+- **Tier:** T3 (inherits from baryon Regge intercept; meson side is T2a)
+- **Free parameters:** 0 (ratio is independent of Λ_QCD)
+- **Note:** This identity holds ONLY for N_c = 3, providing a third independent algebraic selection of the number of colors.
 
 ### Yang-Mills mass gap lower bound
 The model produces a lower bound on the lightest glueball mass from the confinement chain.
@@ -263,13 +271,14 @@ Three phases of prediction tests plus cosmological predictions have been compute
 |---|---|---|---|---|
 | τ_n (full DFC g_A, G_F) | 878.0 s | 878.4 s | −0.05% | T2a |
 | M_N (proton mass) | 934.8 MeV | 938.3 MeV | −0.37% | T3 |
-| m_ω (omega meson) | 763.3 MeV | 782.7 MeV | −2.48% | T3 |
-| m_ρ (rho meson) | 763.3 MeV | 775.3 MeV | −1.5% | T3 |
-| m_a₂ (a₂ meson) | 1322 MeV | 1318 MeV | +0.3% | T3 |
-| m_ρ₃ (ρ₃ meson) | 1707 MeV | 1689 MeV | +1.1% | T3 |
-| m_a₄ (a₄ meson) | 2019 MeV | 1995 MeV | +1.2% | T3 |
+| m_ω (omega meson) | 763.3 MeV | 782.7 MeV | −2.48% | T2a |
+| m_ρ (rho meson) | 763.3 MeV | 775.3 MeV | −1.5% | T2a |
+| m_a₂ (a₂ meson) | 1322 MeV | 1318 MeV | +0.3% | T2a |
+| m_ρ₃ (ρ₃ meson) | 1707 MeV | 1689 MeV | +1.1% | T2a |
+| m_a₄ (a₄ meson) | 2019 MeV | 1995 MeV | +1.2% | T2a |
+| m_N/m_ρ = √(3/2) | 1.2247 | 1.2103 | +1.20% | T3 |
 | g_piNN (pion-nucleon) | 12.28 | 13.12 | −6.4% | T3 |
-| f_pi (pion decay const) | 96.9 MeV | 92.1 MeV | +5.3% | T3 |
+| f_pi (pion decay const) | 90.63 MeV | 92.1 MeV | −1.6% | T2a |
 | mu_p (proton mag moment) | 2.833 n.m. | 2.793 n.m. | +1.4% | T2a |
 | mu_n (neutron mag moment) | −1.888 n.m. | −1.913 n.m. | −1.3% | T2a |
 | Nuclear symmetry energy J | 37.1 MeV | 32 MeV | +16% | T3 |
@@ -323,11 +332,12 @@ The clearest tests:
 | τ_n (neutron lifetime) | 878.4 s | +0.07% | T2a | Confirmed |
 | H_0 | 67.26 km/s/Mpc | −0.21% | T2a | Confirmed |
 | m_p (proton mass) | 934.8 MeV | −0.4% | T3 | Consistent |
-| m_ρ (rho meson) | 763.3 MeV | −1.5% | T3 | Consistent |
-| m_a₂ (a₂ meson) | 1322 MeV | +0.3% | T3 | Consistent |
-| m_ρ₃ (ρ₃ meson) | 1707 MeV | +1.1% | T3 | Consistent |
-| m_a₄ (a₄ meson) | 2019 MeV | +1.2% | T3 | Consistent |
-| m_a₂/m_ρ = √3 | 1.732 | +1.9% | T3 | Consistent |
+| m_ρ (rho meson) | 763.3 MeV | −1.5% | T2a | Confirmed |
+| m_a₂ (a₂ meson) | 1322 MeV | +0.3% | T2a | Confirmed |
+| m_ρ₃ (ρ₃ meson) | 1707 MeV | +1.1% | T2a | Confirmed |
+| m_a₄ (a₄ meson) | 2019 MeV | +1.2% | T2a | Confirmed |
+| m_a₂/m_ρ = √3 | 1.732 | +1.9% | T2a | Confirmed |
+| m_N/m_ρ = √(3/2) | 1.2247 | +1.20% | T3 | Consistent |
 | Glueball gap Δ_4D | ≥ 861 MeV | ≤ 1475 MeV obs | T3 | Consistent (SP1 T2a) |
 | No axion | — | — | T2a | Untested |
 | No proton decay | ∞ lifetime | — | T1 | Consistent |

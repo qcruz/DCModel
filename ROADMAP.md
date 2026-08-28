@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 440 (2026-08-27)
+**Last updated:** Cycle 442 (2026-08-27)
 
 ---
 
@@ -69,7 +69,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 ## Priority 5 — Documentation
 
-- **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land. Pending: Regge intercept T3→T2a upgrade (C438), meson mass tier updates.
+- **Update prediction scorecard** — add new predictions to `educational/06_predictions.md` as they land.
 - **Update open questions** — revise `educational/07_open_questions.md` when issues close
 - **Document audits (continuous)** — every few cycles, pick 2-4 random docs and review for: stale tier labels, outdated references (e.g. ISSUES.md), cycle numbers in public docs, language rule violations, factual inconsistencies with current model state. This is a permanent item — never remove it.
 - **Practical applications** — add entries to `practical_applications/` from verified T1/T2a results
