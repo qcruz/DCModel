@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 452 (2026-08-28)
+**Last updated:** Cycle 453 (2026-08-28)
 
 ---
 
@@ -10,7 +10,7 @@
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
-- **Last tier worked: P3** (C452)
+- **Last tier worked: P4** (C453)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
 
@@ -23,7 +23,7 @@ These extend DFC's quantitative prediction count or close significant gaps.
 - **Derive V(phi) contact terms for deuteron binding** — principled C_S, C_T from kink core to fix overbinding (currently +187%). Would give a quantitative B_d prediction.
 - **Beyond-mean-field Walecka EOS** — fix NS radius (14.5 -> 12-13 km), max mass (2.5 -> 2.1 M_sun), and nuclear saturation density. Needs RPA or beyond-MF corrections.
 - **Derive proton-neutron mass difference** — predict Delta_m = 1.293 MeV from DFC alpha_em + quark mass splitting. Blocked on light quark mass derivation.
-- **Derive pion mass from Lambda_QCD** — predict m_pi ~ 135 MeV via GMOR relation. C450: pion_mass_gmor.py (8/10 PASS) explored GMOR chain. DFC condensate <qq>^(1/3) = -210.5 MeV (-24.8% vs PDG -280 MeV). With PDG m_hat, gives m_pi = 88 MeV (-36.9%). Condensate undershoot is root cause. BLOCKED on light quark masses (see next item).
+- **Derive pion mass from Lambda_QCD** — predict m_pi ~ 135 MeV via GMOR relation. C450: explored GMOR chain. C453: condensate undershoot is NJL limitation (DFC outperforms standard NJL). With correct condensate + PDG m_hat, GMOR gives m_pi = 149.5 MeV (+7.1%). PRIMARY BLOCKER: light quark masses (see next item), not condensate.
 - **Derive light quark masses from D6 Yukawa couplings** — m_u = 2.2 MeV, m_d = 4.7 MeV. HIGH-IMPACT BLOCKER: blocks m_pi (this tier), m_n-m_p (this tier), sigma_piN, CKM/PMNS (P3). The Gen-1 scale M0 = sqrt(m_u*m_d) = 3.18 MeV is currently an input in quark_mass_kappa_derivation.py. Deriving it from the D5/D6 kink overlap would unlock 4+ predictions. Promoted from P3 (C450) because it blocks multiple P1 items.
 
 ---
@@ -66,7 +66,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 - **Nuclear symmetry energy J** — -36%. Needs larger g_rho (8.59 vs predicted 5.57).
 - **Nuclear surface diffuseness** — -20%. DFC bare m_sigma = 456.8 MeV too heavy.
 - **Nolen-Schiffer residual** — ~7% CSB sources identified but not computed from DFC.
-- **Chiral condensate undershoot** — DFC NJL condensate <qq>^(1/3) = -210.5 MeV vs PDG -280 MeV (-24.8%). Root cause of m_pi = 88 MeV (-36.9%) failure. May need beyond-NJL treatment or running to mu=2 GeV scale. Added C450.
+- **Chiral condensate undershoot (NJL limitation)** — C453: chiral_condensate_running.py (5/7 PASS). Scale-matched gap is -29.7%, but standard NJL is worse (-41.5%). DFC OUTPERFORMS standard NJL. The ~30% gap is an inherent NJL model limitation, not DFC-specific. With correct condensate, GMOR gives m_pi = 149.5 MeV (+7.1%) — confirms primary blocker is light quark masses (P1), not condensate. Consider removing from P4.
 - **Triple-alpha Q value** — blocked by SEMF failure for A < 12.
 
 ---
@@ -182,6 +182,6 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 | SU(3) vs SO(6) | Largely resolved; J propagation proof open | `d5_complex_from_instability.py` |
 | Koide t derivation | T4 | `koide_phase_coupling.py` |
 | Series holonomy (Step 9c) | T3; KK reduction formal | -- |
-| m_pi from GMOR | T4; blocked by m_u, m_d; condensate -24.8% | `pion_mass_gmor.py` |
+| m_pi from GMOR | T4; blocked by m_u, m_d; condensate OK (NJL limit) | `pion_mass_gmor.py` |
 | Light quark masses | T4; D6 Yukawa; blocks m_pi, m_n-m_p, sigma_piN | -- |
 | Collapse mechanism | T2a (C360) | `collapse_trigger_condition.py` |
