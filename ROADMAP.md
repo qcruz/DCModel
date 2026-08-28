@@ -9,8 +9,8 @@
 ## How This Document Works
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
-- **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. Skip tiers with no actionable items. Update the marker after each cycle.
-- **Last tier worked: P2** (C445)
+- **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
+- **Last tier worked: P3** (C446)
 - Completed items are removed from the active lists and recorded in the Completed Items table at the bottom.
 - Each item should be readable at a glance: what will it add to project completeness?
 
@@ -46,7 +46,7 @@ Deep theory work on foundational questions.
 - **D4 gravity gap: derive effective metric from substrate** — deepest structural gap in DFC. Derive g_mu_nu, massless spin-2 mode, and G_N from V(phi).
 - **Derive neutrino theta_23 formula from V(phi)** — mechanism identified (Z_3 holonomy) but quantitative formula not derived. 4-degree deviation from 45 degrees.
 - **Derive nuclear saturation from DFC couplings** — connect V(phi) to bulk nuclear matter (rho_0, E/A, K). Overlaps with P1 Walecka work.
-- **Derive Y-junction penalty = -1 from Nambu-Goto string** — the baryon Regge intercept alpha_0^N = -1/4 uses a junction penalty of -1 (T3 structural). Formal derivation from three-string Nambu-Goto junction dynamics would upgrade baryon masses and M_N/m_rho = sqrt(N_c/Q_top) from T3 to T2a.
+- **Derive Y-junction penalty = -1 from DFC dynamics** — C446 proved the NG Casimir energy of a Y-junction is EXACTLY ZERO (T1), and this uniquely selects N_c = 3 (new selection criterion). But NG gives only Delta = -1/12, not -1. The remaining -11/12 must come from DFC-specific physics: color antisymmetrization, spin-orbit coupling, or junction winding topology. Remains T3.
 - **Upgrade Koide phase t = 1/sqrt(Q_top) from T2a to T1** — current T2a derivation uses canonical vertex factor argument (C146). T1 upgrade requires computing the 5D Yukawa vortex integral directly from the D5/D6 kink overlap, bypassing the perturbative vertex expansion.
 - **Derive CKM/PMNS matrices from D6/D7 overlap** — 4 CKM + 3 PMNS parameters currently not derived. Needs D6/D7 interface computation.
 - **Derive Planck constant from (alpha, beta, c)** — close the gap to a fully self-contained unit system. Blocked on alpha_em(0) identity (P2).
@@ -89,6 +89,7 @@ Predictions that are clearly wrong. Fix when an approach becomes available.
 
 | Item | Result | Cycle |
 |------|--------|-------|
+| Y-junction E_0 = 0 (N_c=3 selection) | E_0 exactly zero for 3-string junction (T1), selects N_c=3; NG gives Delta=-1/12 only; penalty remains T3 | C446 |
 | M_N/m_rho = sqrt(N_c/Q_top) | Formalized: 13/13 PASS, +1.20%, unique to N_c=3, new equation module | C441 |
 | Regge intercept T3→T2a | alpha_0 = 1/2 from JR endpoint spin; 15/15 PASS, 4/4 mesons within 2.5% | C438 |
 | Clean 07_open_questions.md | Full rewrite: 347→195 lines, 86 cycle refs removed, current-state format | C435 |

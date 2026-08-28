@@ -414,7 +414,8 @@ When the user says "continue":
 1. Open `ROADMAP.md`.
 2. **Cycle through tiers in order.** Check the `Last tier worked:` marker at the top
    of ROADMAP.md. Pick an item from the NEXT tier (P1→P2→P3→P4→P5→P6→P1→...).
-   If the next tier has no actionable items, skip to the one after it.
+   If the next tier has no actionable items, spend the cycle researching that tier
+   and adding new actionable items to ROADMAP.md.
    After completing the task, update the `Last tier worked:` marker to the tier you just did.
 3. Do ONE focused task from that item (one equation module, one document, one test).
 4. Update `ROADMAP.md`: remove completed items from the active lists and add them
