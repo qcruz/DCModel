@@ -426,6 +426,14 @@ A cycle is NOT finished until the remote is updated. One sub-step per cycle.
 Do not combine multiple items. Short cycles that complete cleanly are always better
 than long cycles that risk context overflow.
 
+**Cross-application sweep (end of every session):** Before the final push, review
+what was accomplished in the session and ask: does this result suggest follow-on work
+in other areas? Add new ROADMAP items for: parallel updates to similar files/modules,
+cross-applications of the same technique to other predictions, scorecard or documentation
+updates triggered by new results, and any newly-discovered connections or open questions.
+The goal is to capture all downstream implications while they are fresh — not just the
+item that was worked on.
+
 **Document review is a continuous part of the development cycle**, not a separate
 maintenance task. It is a permanent item on the ROADMAP and should be randomly selected
 like any other work item. When selected:
