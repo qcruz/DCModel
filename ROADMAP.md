@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 463 (2026-08-28)
+**Last updated:** Cycle 464 (2026-08-29)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P3** (C463)
+- **Last tier worked: P4** (C464)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -55,7 +55,7 @@
 
 ## Priority 4 — Known Failures
 
-- **Nucleon magnetic moment ratio** — +2.7% off, SU(6) limit; needs isospin violation. Partially UNBLOCKED by C459 M0
+- **Nucleon magnetic moment ratio** — +2.75% off. C464: isospin violation from DFC M0 gives WRONG SIGN (ratio moves further from obs). Blocked on: Dirac equation in PT kink potential with EM field. See `equations/nucleon_magnetic_moments.py`
 - **Proton charge radius** — −17.6% off, needs nucleon wavefunction
 - **Nuclear symmetry energy J** — −36%, needs larger g_rho
 - **Nuclear surface diffuseness** — −20%, DFC m_sigma too heavy
