@@ -149,7 +149,8 @@ Zero free parameters: N_c = 3 and N_Hopf = 9 are both topological integers (Tier
 | Electron mass m_e | Set by D4/D5 dimple depth — not yet derived | 2 free params; Tier 3 mechanism |
 | Muon/electron mass ratio | 206.77 from local/global D4 geometry ratio | Tier 2a (0.0%) |
 | Tau lepton mass | 1776.97 MeV from Koide + D6 phase vertex | Tier 2a (+0.006%) |
-| Quark masses (u, d, s, c) | Light quarks 15% below observed | Tier 2b — unresolved |
+| Light quark mass M0 = √(m_u m_d) | 3.261 MeV from y(v) = exp(−(b₀+1/α)) | Tier 2a (+2.68%) |
+| Charm, strange quark masses | κ_q = π×N_c/2 from center vortex; charm +0.29%, strange +2.09% | Tier 2a |
 | Neutrino mass ratio m₃/m₂ | κ^(1+1/(6π)) = 5.8248; color correction for ν₃ | Tier 3 (+0.010%) |
 | Proton mass | 934.8 MeV, 0 free params | Tier 3 (−0.4%) |
 | Spin-1/2 | Jackiw-Rebbi zero mode on φ⁴ kink | Tier 2a (verified) |
