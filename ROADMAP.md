@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 470 (2026-08-29)
+**Last updated:** Cycle 471 (2026-08-29)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P4** (C470)
+- **Last tier worked: P5** (C471)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -65,7 +65,6 @@
 
 ## Priority 5 — Exploratory
 
-- **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`. Feed blocked items here: when a derivation is stuck, add its equations/targets as exploration candidates. Queued from blocked work: Γ(ρ→ee) VMD 30% gap, δ(Δα)^NP parton subtraction, mu_p/mu_n ≈ −3/2+1/(8π), D4 enhancement F=(25π/3)√(2/α)=22.87 algebraic decomposition, F/C=25/(54α) identity
 - **Evaluate new open problems for DFC** — Navier-Stokes, baryon asymmetry, proton spin, quantum gravity
 - **Investigate κ_q ≈ N_c·b₀/(2N_c+1) identity** — 0.03% match, coincidence or structural?
 - **Investigate N_c·ln(2α)/2 ≈ α identity** — −5.2% match. See `equations/substrate_casimir_alpha.py`
@@ -73,6 +72,7 @@
 - **Investigate mu_p/mu_n ≈ −3/2 + 1/(8π)** — 0.022% match on ratio. Is 1/(8π) derivable from kink binding? See `equations/freeform_math_exploration.py` E54
 - **Investigate π+√N_c ≈ ln(1/α_em)** — −0.95% match. See E57
 - **Neutron star max mass** — naive flux-tube approach failed (−77%). Connects to P1 Walecka
+- **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`. Feed blocked items here. C471: E59-E63 explored queued items. Key finding: F*C = 300π² (T1 identity). F irreducible (factor 5 from I_6=16/15). kS has no DFC algebraic form. VMD gap traces to g_rho 19% too large. BW integral needed for δ(Δα)^NP.
 
 ---
 
