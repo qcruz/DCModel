@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 466 (2026-08-29)
+**Last updated:** Cycle 467 (2026-08-29)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P6** (C466)
+- **Last tier worked: P1** (C467)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -21,7 +21,7 @@
 
 - **Derive V(phi) contact terms for deuteron binding** — fix +187% overbinding. See `equations/deuteron_*.py`
 - **Beyond-mean-field Walecka EOS** — fix NS radius, max mass, saturation density. See `equations/nuclear_saturation_dfc.py`
-- **Derive proton-neutron mass difference** — predict 1.293 MeV. UNBLOCKED by C459 M0 derivation
+- **Derive proton-neutron mass difference** — 1.289 MeV (−0.4%, T2b with GL coeff C=0.50). Blocked on: derive C from DFC confinement. See `equations/proton_neutron_mass_difference.py`
 - **Derive pion mass from GMOR** — m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC −38% (NJL-limited). See `equations/pion_mass_gmor.py`
 - **Derive pion-nucleon sigma term** — UNBLOCKED by C459 M0 derivation. Target: σ_πN ≈ 52 MeV
 - **Derive light quark masses (D6 Yukawa)** — M0 = exp(-(b₀+1/α))×v/√2 run to 2 GeV: +2.68% T2a (C459). Mechanism needs T1 proof. See `equations/light_quark_mass_derivation.py`
@@ -79,6 +79,8 @@
 ## Priority 6 — Documentation
 
 - **Create new educational modules** — continual check: review recent results for topics deserving new `educational/` docs
+  - **Hadron spectroscopy module** — Regge trajectories, string tension, mass ratios as √(rational), Y-junction intercepts. No existing module covers meson/baryon mass spectrum.
+  - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|². Only mentioned in passing in modules 17/19 despite being a major result.
 - **Update prediction scorecard** — `educational/06_predictions.md`
 - **Update open questions** — `educational/07_open_questions.md`
 - **Document audits (continuous)** — pick 2-4 random docs, check for stale tiers/refs/language
