@@ -407,6 +407,12 @@ When a freeform exploration yields a result that looks structurally significant
 (e.g., a new uniqueness theorem, an unexpected identity), promote it to a proper
 equation module in `equations/` for formal verification.
 
+**Feed blocked items into exploration:** When working on a ROADMAP item that is
+blocked (e.g., a derivation that can't proceed, a formula that doesn't match),
+add the relevant equations, parameters, and target values as new exploration
+candidates in `equations/freeform_math_exploration.py`. Freeform manipulation
+of blocked quantities may reveal relationships useful for later development.
+
 ---
 
 ---

@@ -65,7 +65,7 @@
 
 ## Priority 5 — Exploratory
 
-- **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`
+- **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`. Feed blocked items here: when a derivation is stuck, add its equations/targets as exploration candidates. Queued from blocked work: Γ(ρ→ee) VMD 30% gap, δ(Δα)^NP parton subtraction, mu_p/mu_n ≈ −3/2+1/(8π)
 - **Evaluate new open problems for DFC** — Navier-Stokes, baryon asymmetry, proton spin, quantum gravity
 - **Investigate κ_q ≈ N_c·b₀/(2N_c+1) identity** — 0.03% match, coincidence or structural?
 - **Investigate N_c·ln(2α)/2 ≈ α identity** — −5.2% match. See `equations/substrate_casimir_alpha.py`
