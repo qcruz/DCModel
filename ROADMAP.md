@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 471 (2026-08-29)
+**Last updated:** Cycle 472 (2026-08-30)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P5** (C471)
+- **Last tier worked: P6** (C472)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -78,11 +78,10 @@
 
 ## Priority 6 — Documentation
 
-- **Create new educational modules** — continual check: review recent results for topics deserving new `educational/` docs
-  - **Hadron spectroscopy module** — Regge trajectories, string tension, mass ratios as √(rational), Y-junction intercepts. No existing module covers meson/baryon mass spectrum.
-  - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|². Only mentioned in passing in modules 17/19 despite being a major result.
 - **Update prediction scorecard** — `educational/06_predictions.md`
 - **Update open questions** — `educational/07_open_questions.md`
 - **Document audits (continuous)** — pick 2-4 random docs, check for stale tiers/refs/language
 - **Practical applications** — add entries to `practical_applications/`
 - **Archive/organize project docs** — consolidate, merge redundant docs, clean up structure
+- **Create new educational modules** — continual check: review recent results for topics deserving new `educational/` docs. Hadron spectroscopy DONE (C472, module 30). Remaining:
+  - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|². Only mentioned in passing in modules 17/19 despite being a major result.
