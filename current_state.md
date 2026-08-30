@@ -224,7 +224,7 @@ See `ISSUES.md` for full details. Currently open:
 | T23: surface diffuseness −20% | T3 | Nuclear |
 | T24: M_W −0.88% | T3 | EW |
 | T25: underived quantities | T4 (10 items) | Various |
-| T26: proton charge radius −18% | T4 | Hadrons |
+| T26: proton charge radius +1.5% (was −18%, sign bug) | T3 | Hadrons |
 | T27: Delta-N splitting | T4 | Hadrons |
 | T28: symmetry energy J −36% | T4 (L PASS) | Nuclear |
 | T30: D4 gravity gap | T4 (extensive T3 framework) | Gravity |

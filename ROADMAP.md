@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 475 (2026-08-30)
+**Last updated:** Cycle 476 (2026-08-30)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P3** (C475)
+- **Last tier worked: P4** (C476)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -36,6 +36,7 @@
 - **Upgrade Delta-N splitting to T2b** — currently −7.4%, inherited from m_rho undershoot. See `equations/delta_n_splitting.py`
 - **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — oldest open bottleneck (T4→T1). Blocked on hadronic VP (same T4 gap). See `equations/alpha_em_dfc_chain.py`
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C474: Fixed π-factor NW bug. BW integral implemented (BW/NW=1.01 for ρ). ρ VP=0.00377 matches Davier 2π data. Parton subtraction framework gives NEGATIVE result — target requires R(s)−R_pQCD(s) difference, not BW−parton. Need dispersive approach. See `equations/hadronic_vp_dfc.py`
+- **Upgrade proton charge radius to T2a** — C476: Foldy sign bug found (−17.6% was WRONG). Corrected: r_p=0.854 fm (+1.5%, emp κ_p) or 0.862 fm (+2.5%, SU(6) κ_p). Needs: derive κ_p from DFC, regularize pion cloud. See `equations/proton_charge_radius_dfc.py`
 
 ---
 
@@ -55,7 +56,6 @@
 
 ## Priority 4 — Known Failures
 
-- **Proton charge radius** — −17.6% off, needs nucleon wavefunction
 - **Nuclear symmetry energy J** — −36%, needs larger g_rho
 - **Nuclear surface diffuseness** — −20%, DFC m_sigma too heavy
 - **Triple-alpha Q value** — blocked by SEMF failure for A < 12

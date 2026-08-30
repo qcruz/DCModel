@@ -338,14 +338,21 @@ or has not yet addressed:
 
 ---
 
-### T26 — Proton Charge Radius: −18% Undershoot
+### T26 — Proton Charge Radius: SIGN BUG FIXED (−18% → +1.5%)
 
-DFC three-component estimate: r_p = 0.693 fm vs observed 0.8409 fm (−17.6%).
-Missing ~0.13 fm² from intrinsic quark charge radius (~0.1-0.15 fm² from vector
-meson loops at the quark level). Classification: MODEL LIMITATION (nucleon
-wavefunction needed), not a DFC-specific failure.
+**C476: The −17.6% failure was a SIGN ERROR in the Foldy term.**
+C391 used ⟨r²⟩_Foldy = −3κ/(2M²), but the correct Sachs form factor
+decomposition gives ⟨r²⟩_Foldy = +3κ/(2M²) (positive for proton).
 
-**Status:** T4 open (C389-C391). **Files:** `equations/prediction_tests_phase3.py`, `equations/phase3_corrections.py`
+Corrected results:
+- VMD + LNA pion cloud + Foldy (emp κ_p=1.793): r_p = 0.854 fm (+1.5%)
+- VMD + LNA pion cloud + Foldy (SU(6) κ_p=2.0): r_p = 0.862 fm (+2.5%)
+- VMD + empirical pion cloud + Foldy: r_p = 0.782 fm (−7.1%)
+
+Remaining: derive κ_p from DFC, regularize pion cloud NLO counter-terms.
+
+**Status:** RECLASSIFIED P4→P2. T3 (+1.5% with emp κ_p, 0 free params beyond κ_p).
+**Files:** `equations/proton_charge_radius_dfc.py` (C476), `equations/phase3_corrections.py` (C391, sign bug)
 
 ---
 
