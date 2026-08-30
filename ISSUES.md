@@ -40,8 +40,13 @@ for muon. Asymmetry F(μ)−F(τ) = 3/2 is parameter-free [T1]. Sign prediction 
 
 (Candidate 3, CP phase shift, effectively ruled out — modern fits already marginalize δ_CP.)
 
-**Status:** T4 open (mechanism identified T1, formula not derived from V(φ)).
-**Files:** `equations/neutrino_theta23_z3_mechanism.py` (C364),
+**C475 mass matrix formalization [T3 structural]:**
+2×2 atmospheric mass matrix with Z₃ perturbation: M²=[[A+F(2)Δ_V, B],[B, A]].
+tan(2θ₂₃) = −2B/(F(2)Δ_V) [T1]. Problem reduced to one unknown: Δ_V/(2B)=0.0995.
+Perturbation theory valid (ε_d~0.15 << 1). Same D6/D7 overlap integral needed for CKM.
+
+**Status:** T4 open (mechanism T1, mass matrix T1, overlap integral Δ_V not computed).
+**Files:** `equations/neutrino_theta23_z3_mechanism.py` (C364, C475),
 `equations/neutrino_theta23_correction.py` (C209),
 `phenomena/particle_physics/neutrino_oscillations.md`
 

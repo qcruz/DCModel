@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 474 (2026-08-30)
+**Last updated:** Cycle 475 (2026-08-30)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P2** (C474)
+- **Last tier worked: P3** (C475)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -41,15 +41,15 @@
 
 ## Priority 3 — Structural Gaps
 
-- **Derive neutrino θ₂₃ from V(φ)** — Z₃ holonomy mechanism identified. See `ISSUES.md` T10
 - **Derive nuclear saturation from DFC couplings** — overlaps with P1 Walecka work
 - **Derive Y-junction penalty = −1** — Y-graph Casimir computed (C463): gives Δ=1/8 (12.5% of required). NG Casimir insufficient; non-Casimir mechanism needed. 3 paths: quark-diquark, junction mode removal, semiclassical WKB. See `equations/regge_intercept_derivation.py` Part I
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
-- **Derive CKM/PMNS from D6/D7 overlap** — light quark part promoted to P1
+- **Derive CKM/PMNS from D6/D7 overlap** — light quark part promoted to P1. NOTE: same D6/D7 overlap integral needed for θ₂₃ (see below)
 - **Derive ℏ from (α, β, c)** — blocked on α_em(0) identity. See `ISSUES.md` T8
 - **Derive depth attenuation law exp(−S·d)** — gap (ii) CLOSED (C457, 9/10). Action density argument: instanton confined to kink core → dS/dd = S_inst/ξ → WKB gives exp(-S*d). See `equations/depth_attenuation_law.py`
 - **Prove substrate Casimir self-energy = α** — 12 mechanisms tested (C462), 5 ruled out, none exact. Best: I₄×Q_top=8/3 (+1.8%). New identity: α×√(2α)/2=N_c [T1]. Most promising path: show V''/2 enters as effective action (non-perturbative), or BPS saturation. See `equations/substrate_casimir_alpha.py`
 - **D4 gravity gap** — derive effective metric, spin-2 mode, G_N from V(φ). C469: G_eff(r) transition question MISCONCEIVED — perturbative coupling flat at G_N/F=G_N/22.87 at all r>>ξ. No gradual transition exists. 95.6% non-perturbative at ALL scales. Path: derive G_N from compression geometry directly (not from perturbative enhancement). See `equations/d4_geff_transition.py`, `foundations/d4_gravity_gap.md`
+- **Derive neutrino θ₂₃ from V(φ)** — C475: mass matrix formalized. tan(2θ₂₃)=−2B/(F(2)×Δ_V) [T1]. Reduced to one unknown: Δ_V/(2B)=0.0995 (D7 kink-vortex overlap integral). Same BVP as CKM. See `equations/neutrino_theta23_z3_mechanism.py`
 
 ---
 
