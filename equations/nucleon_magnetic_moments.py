@@ -540,14 +540,332 @@ print()
 
 
 # =============================================================================
-# Summary
+# Part G: ChPT Pion Cloud with DFC Parameters (C470)
+# =============================================================================
+print("[PART G] PION CLOUD CORRECTION WITH DFC PARAMETERS (C470)")
+print("=" * 72)
+print()
+
+# The dominant correction to the SU(6) magnetic moments comes from the
+# pion cloud. In heavy baryon ChPT at NLO, the isovector anomalous
+# magnetic moment receives a leading non-analytic (LNA) correction:
+#
+#   delta_kappa_V^{LNA} = -(g_A^2 * M_N * m_pi) / (4 * pi^2 * f_pi^2)
+#
+# This is the part that cannot be absorbed into counterterms and is
+# model-independent. The counterterm contribution partially cancels it.
+#
+# DFC-specific inputs: g_A = 4/pi (T2a), f_pi = 91 MeV (DFC, ~1.6% gap)
+
+# --- DFC parameters ---
+g_A_DFC = 4.0 / PI          # 1.2732 (obs: 1.2764, T2a)
+f_pi_DFC = 91.0              # MeV (DFC value)
+f_pi_PDG = 92.1              # MeV (PDG)
+m_pi = 139.57                # MeV (observed)
+
+# SU(6) baseline for kappa (anomalous magnetic moment)
+# kappa_p = mu_p - 1, kappa_n = mu_n - 0
+# kappa_V = (kappa_p - kappa_n)/2 (isovector)
+# kappa_S = (kappa_p + kappa_n)/2 (isoscalar)
+kappa_V_SU6 = (mu_p_SU6 - 1 - mu_n_SU6) / 2.0  # = (3-1-(-2))/2 = 2.0
+kappa_S_SU6 = (mu_p_SU6 - 1 + mu_n_SU6) / 2.0  # = (3-1+(-2))/2 = 0.0
+
+kappa_V_obs = (MU_P_OBS - 1 - MU_N_OBS) / 2.0   # = (2.793-1-(-1.913))/2 = 1.853
+kappa_S_obs = (MU_P_OBS - 1 + MU_N_OBS) / 2.0   # = (2.793-1+(-1.913))/2 = -0.060
+
+print(f"  Isovector kappa_V:")
+print(f"    SU(6) = {kappa_V_SU6:.3f}")
+print(f"    Observed = {kappa_V_obs:.3f}")
+print(f"    Needed shift = {kappa_V_obs - kappa_V_SU6:.3f}")
+print()
+print(f"  Isoscalar kappa_S:")
+print(f"    SU(6) = {kappa_S_SU6:.3f}")
+print(f"    Observed = {kappa_S_obs:.3f}")
+print(f"    Needed shift = {kappa_S_obs - kappa_S_SU6:.3f}")
+print()
+
+# --- LNA correction with DFC g_A ---
+delta_kV_LNA_DFC = -(g_A_DFC**2 * M_N * m_pi) / (4.0 * PI**2 * f_pi_DFC**2)
+delta_kV_LNA_PDG = -(1.2764**2 * M_N * m_pi) / (4.0 * PI**2 * f_pi_PDG**2)
+
+print(f"  LNA pion cloud correction to kappa_V:")
+print(f"    DFC (g_A=4/pi, f_pi=91):  delta_kV = {delta_kV_LNA_DFC:.3f}")
+print(f"    PDG (g_A=1.276, f_pi=92): delta_kV = {delta_kV_LNA_PDG:.3f}")
+print(f"    Needed shift:              delta_kV = {kappa_V_obs - kappa_V_SU6:.3f}")
+print()
+print(f"    LNA alone overshoots by factor {abs(delta_kV_LNA_DFC)/(kappa_V_SU6 - kappa_V_obs):.2f}x")
+print(f"    This is expected: counterterms cancel ~50-60% of LNA at NLO.")
+print()
+
+# --- NLO counterterm estimate ---
+# At NLO in ChPT, the counterterm contribution to kappa_V is:
+#   delta_kV_CT = c_V * (m_pi / Lambda_chi)^2
+# where Lambda_chi = 4*pi*f_pi ≈ 1.15 GeV is the chiral symmetry breaking scale.
+# The counterterm coefficient c_V is determined by the UV physics (here, DFC).
+#
+# From lattice QCD / phenomenological fits: c_V ≈ +3.5 to +4.5 n.m.
+# The total NLO correction: delta_kV = delta_kV_LNA + delta_kV_CT
+#
+# For DFC, we can estimate c_V from the condition that the total correction
+# reproduces the observed kappa_V:
+Lambda_chi_DFC = 4.0 * PI * f_pi_DFC  # chiral scale
+x_chi = (m_pi / Lambda_chi_DFC)**2
+c_V_needed = (kappa_V_obs - kappa_V_SU6 - delta_kV_LNA_DFC) / x_chi
+
+print(f"  NLO counterterm estimate:")
+print(f"    Lambda_chi = 4*pi*f_pi = {Lambda_chi_DFC:.0f} MeV")
+print(f"    x = (m_pi/Lambda_chi)^2 = {x_chi:.5f}")
+print(f"    c_V needed = {c_V_needed:.2f} n.m. (to match obs)")
+print(f"    Typical lattice/pheno: c_V ≈ 3.5 to 4.5 n.m.")
+print()
+
+check("G1: c_V in expected phenomenological range",
+      2.5 < c_V_needed < 6.0)
+
+# --- Estimate total NLO correction using c_V = 4.0 ---
+# This is NOT a DFC prediction — it uses a phenomenological input.
+# The point is to test the STRUCTURE: with DFC g_A and f_pi, does the
+# ChPT framework reproduce the observed kappa_V?
+c_V_pheno = 4.0  # typical value
+delta_kV_CT = c_V_pheno * x_chi
+delta_kV_NLO = delta_kV_LNA_DFC + delta_kV_CT
+
+kappa_V_NLO = kappa_V_SU6 + delta_kV_NLO
+# Reconstruct moments: kappa_V = (kappa_p - kappa_n)/2
+# Keep kappa_S = kappa_S_SU6 = 0 (isoscalar correction is suppressed)
+kappa_p_NLO = 1.0 + kappa_V_NLO + kappa_S_SU6
+kappa_n_NLO = kappa_S_SU6 - kappa_V_NLO
+mu_p_NLO = 1.0 + kappa_p_NLO - 1.0  # mu_p = 1 + kappa_p
+mu_n_NLO = kappa_n_NLO
+
+# Wait — more carefully:
+# mu_p = 1 + kappa_p, mu_n = kappa_n (in nuclear magnetons)
+# kappa_p = kappa_V + kappa_S, kappa_n = kappa_S - kappa_V
+kappa_p_NLO = kappa_V_NLO + kappa_S_SU6
+kappa_n_NLO = kappa_S_SU6 - kappa_V_NLO
+mu_p_NLO = 1.0 + kappa_p_NLO
+mu_n_NLO = kappa_n_NLO
+ratio_NLO = mu_p_NLO / mu_n_NLO
+
+print(f"  NLO reconstruction (c_V = {c_V_pheno:.1f}, kappa_S = 0):")
+print(f"    delta_kV_LNA = {delta_kV_LNA_DFC:.3f}")
+print(f"    delta_kV_CT  = {delta_kV_CT:+.3f}")
+print(f"    delta_kV_NLO = {delta_kV_NLO:.3f}")
+print(f"    kappa_V = {kappa_V_NLO:.3f}  (obs: {kappa_V_obs:.3f})")
+print(f"    mu_p = {mu_p_NLO:.4f}  (obs: {MU_P_OBS:.4f})")
+print(f"    mu_n = {mu_n_NLO:.4f}  (obs: {MU_N_OBS:.4f})")
+print(f"    ratio = {ratio_NLO:.4f}  (obs: {RATIO_OBS:.4f})")
+print(f"    ratio error: {(ratio_NLO/RATIO_OBS - 1)*100:+.3f}%")
+print()
+
+check("G2: NLO ratio closer to obs than SU(6)",
+      abs(ratio_NLO - RATIO_OBS) < abs(ratio_SU6 - RATIO_OBS))
+print()
+
+
+# =============================================================================
+# Part H: Algebraic Form mu_p/mu_n = -3/2 + 1/(8*pi) (C470)
+# =============================================================================
+print("[PART H] ALGEBRAIC FORM TEST: mu_p/mu_n = -3/2 + 1/(8*pi)")
+print("=" * 72)
+print()
+
+# From freeform exploration E54: the observed ratio matches
+# -3/2 + 1/(8*pi) to 0.022%. Is this derivable from DFC?
+
+ratio_algebraic = -1.5 + 1.0 / (8.0 * PI)
+print(f"  Algebraic candidate: -3/2 + 1/(8*pi)")
+print(f"    = -1.5 + {1/(8*PI):.6f}")
+print(f"    = {ratio_algebraic:.6f}")
+print(f"    Observed: {RATIO_OBS:.6f}")
+print(f"    Match: {(ratio_algebraic/RATIO_OBS - 1)*100:+.4f}%")
+print()
+
+check("H1: algebraic form matches obs to < 0.05%",
+      abs(ratio_algebraic/RATIO_OBS - 1) < 0.0005)
+
+# Physical interpretation of 1/(8*pi):
+# In ChPT, the pion loop integral produces factors of 1/(4*pi*f_pi)^2.
+# The chiral correction to kappa_V at NLO has the form:
+#   delta_kV = -(g_A^2/(8*pi^2)) * (M_N*m_pi/f_pi^2) + counterterms
+#
+# The 1/(8*pi) appearing in the ratio correction would correspond to:
+#   delta(ratio) = 1/(8*pi) ≈ 0.0398
+#
+# For this to arise from the pion cloud with DFC parameters:
+#   delta(ratio) ≈ (pion cloud correction to kappa_V) / (denominator factor)
+#
+# The key question: does the DFC combination g_A^2 * m_pi * M_N / f_pi^2
+# produce a correction to the RATIO that equals 1/(8*pi)?
+
+# The ratio correction from kappa_V shift (keeping kappa_S = 0):
+# ratio = mu_p/mu_n = (1 + kappa_V)/(−kappa_V)
+# = −1 − 1/kappa_V
+# At SU(6): kappa_V = 2, ratio = −1−1/2 = −3/2 (correct)
+# With shift delta_kV:
+# ratio = −1 − 1/(kappa_V + delta_kV)
+# ≈ −1 − 1/kappa_V × (1 − delta_kV/kappa_V + ...)
+# = −3/2 + delta_kV/(kappa_V^2) + ...
+# = −3/2 + delta_kV/4
+#
+# So: delta(ratio) = delta_kV / 4
+# For delta(ratio) = 1/(8*pi):
+#   delta_kV = 4/(8*pi) = 1/(2*pi) ≈ 0.159 n.m.
+
+delta_kV_for_algebraic = 4.0 / (8.0 * PI)
+print(f"\n  For ratio = -3/2 + 1/(8*pi):")
+print(f"    Required delta_kV = 4/(8*pi) = 1/(2*pi) = {delta_kV_for_algebraic:.4f} n.m.")
+print(f"    LNA alone gives: {delta_kV_LNA_DFC:.4f} n.m. (wrong sign, too large)")
+print(f"    NLO total needs: {kappa_V_obs - kappa_V_SU6:.4f} n.m.")
+print()
+
+# More precisely: the observed kappa_V = 1.853 vs SU(6) = 2.000
+# delta_kV_obs = -0.147
+# The ratio correction: delta(ratio) = delta_kV/kappa_V^2 ≈ -0.147/4 = -0.037
+# Compare to 1/(8*pi) = 0.0398
+# Sign is WRONG in this approximation because the full formula is nonlinear.
+
+# Full ratio from kappa_V:
+# ratio = (1 + kV + kS) / (kS - kV)
+# With kS = 0: ratio = (1 + kV) / (-kV) = -1 - 1/kV
+# At kV = 2.0: ratio = -1.5
+# At kV = 1.853: ratio = -1 - 1/1.853 = -1.5397
+
+# Wait, that doesn't give the right ratio either. Let me redo:
+# mu_p = 1 + kappa_p, mu_n = kappa_n
+# kappa_p = kV + kS, kappa_n = kS - kV
+# mu_p = 1 + kV + kS
+# mu_n = kS - kV
+# ratio = (1 + kV + kS) / (kS - kV)
+
+# SU(6): kV=2.0, kS=0.0 -> ratio = (1+2)/(0-2) = 3/(-2) = -3/2 ✓
+# Obs: kV=1.853, kS=-0.060 -> ratio = (1+1.853-0.060)/(-0.060-1.853) = 2.793/(-1.913) = -1.460 ✓
+
+# So the ratio depends on BOTH kV and kS.
+# Setting kS = 0 and varying kV alone:
+# ratio(kV) = (1+kV)/(-kV) = -1 - 1/kV
+# For ratio = -3/2 + 1/(8pi): -1 - 1/kV = -3/2 + 1/(8pi)
+# => 1/kV = 1/2 - 1/(8pi) = (4pi - 1)/(8pi)
+# => kV = 8pi/(4pi - 1) = 8pi/11.566 = 2.172
+
+kV_for_ratio = 8.0 * PI / (4.0 * PI - 1.0)
+print(f"  With kS = 0: ratio = -1 - 1/kV")
+print(f"    For ratio = -3/2 + 1/(8pi): kV = 8pi/(4pi-1) = {kV_for_ratio:.4f}")
+print(f"    SU(6) kV = 2.000")
+print(f"    Shift: delta_kV = {kV_for_ratio - 2.0:+.4f}")
+print(f"    Direction: {'POSITIVE (larger kV)' if kV_for_ratio > 2 else 'NEGATIVE (smaller kV)'}")
+print()
+
+# BUT observed kV = 1.853 is SMALLER than 2.0, not larger!
+# The algebraic form -3/2 + 1/(8pi) gives ratio MORE negative than -3/2,
+# while the observation is LESS negative. Let me check:
+
+print(f"  VALUE CHECK:")
+print(f"    -3/2 + 1/(8pi) = {ratio_algebraic:.6f}")
+print(f"    observed ratio  = {RATIO_OBS:.6f}")
+print(f"    SU(6) ratio     = {ratio_SU6:.6f}")
+print()
+
+# -3/2 + 1/(8pi) = -1.5 + 0.0398 = -1.4602
+# observed = -1.4599
+# Both are LESS negative than -3/2 = -1.5
+# So the shift is in the POSITIVE direction (+0.0398)
+# And the observed kV = 1.853 < 2.0 means kV DECREASED
+# How does a DECREASE in kV make the ratio LESS negative?
+# ratio = (1+kV)/(-kV) — as kV decreases from 2, the numerator decreases
+# and the denominator becomes less negative. Let's check:
+# kV=2.0: (1+2)/(-2) = -1.5
+# kV=1.8: (1+1.8)/(-1.8) = -1.556 MORE negative
+# kV=1.5: (1+1.5)/(-1.5) = -1.667 MORE negative
+# So DECREASING kV makes ratio MORE negative, not less!
+
+# The resolution: kS ≠ 0. The observed kS = -0.060.
+# With kS = -0.060:
+# ratio = (1 + kV + kS)/(kS - kV) = (1 + kV - 0.060)/(-0.060 - kV)
+# SU(6) with kS=0: -1.5
+# kV=1.853, kS=-0.060: (1+1.853-0.060)/(-0.060-1.853) = 2.793/(-1.913) = -1.4599
+
+# So the ratio depends critically on BOTH kV and kS.
+# The isoscalar anomalous moment kS = -0.060 is what makes the ratio
+# less negative than -3/2.
+
+print(f"  CRITICAL: The ratio depends on BOTH kV and kS.")
+print(f"    Obs kV = {kappa_V_obs:.3f} (decreased from SU6: makes ratio MORE negative)")
+print(f"    Obs kS = {kappa_S_obs:.3f} (decreased from 0: makes ratio LESS negative)")
+print(f"    The observed ratio being LESS negative than -3/2 is driven")
+print(f"    primarily by the isoscalar shift kS = {kappa_S_obs:.3f}.")
+print()
+
+# Can we decompose the 1/(8pi) shift?
+# ratio_obs - ratio_SU6 = 0.0401
+# From kV: delta_ratio(kV) = d(ratio)/d(kV) * delta_kV
+#   = [(-kV) - (1+kV)(-1)] / kV^2 * delta_kV  [kS=0 version]
+#   = [-kV + 1 + kV] / kV^2 * delta_kV
+#   = 1/kV^2 * delta_kV
+#   At kV=2: d(ratio)/d(kV) = 1/4
+#   delta_kV = -0.147, contribution = -0.147/4 = -0.037
+
+# From kS: delta_ratio(kS) = d(ratio)/d(kS)
+#   ratio = (1+kV+kS)/(kS-kV)
+#   d/dkS = [(kS-kV) - (1+kV+kS)] / (kS-kV)^2
+#         = [kS-kV-1-kV-kS] / (kS-kV)^2
+#         = [-1-2kV] / (kS-kV)^2
+#   At kV=2, kS=0: d/dkS = -5/4 = -1.25
+#   delta_kS = -0.060, contribution = -0.060 * (-1.25) = +0.075
+
+delta_ratio_from_kV = 1.0/4.0 * (kappa_V_obs - kappa_V_SU6)
+delta_ratio_from_kS = (-1.0 - 2.0 * kappa_V_SU6) / kappa_V_SU6**2 * kappa_S_obs
+
+print(f"  DECOMPOSITION of ratio shift (+0.0401):")
+print(f"    From kV shift ({kappa_V_obs - kappa_V_SU6:+.3f}): {delta_ratio_from_kV:+.4f}")
+print(f"    From kS shift ({kappa_S_obs:+.3f}):  {delta_ratio_from_kS:+.4f}")
+print(f"    Sum (linear):                 {delta_ratio_from_kV + delta_ratio_from_kS:+.4f}")
+print(f"    Exact shift:                  {RATIO_OBS - ratio_SU6:+.4f}")
+print(f"    (Linearization error: {abs(delta_ratio_from_kV + delta_ratio_from_kS - (RATIO_OBS - ratio_SU6)):.4f})")
+print()
+
+check("H2: kS is primary driver of ratio shift (|kS contrib| > |kV contrib|)",
+      abs(delta_ratio_from_kS) > abs(delta_ratio_from_kV))
+print()
+
+# --- Connection to DFC ---
+# The isoscalar anomalous moment kS = -0.060 is small but crucial.
+# In the quark model: kS = (sum of ALL quark magnetic moments) / 2
+# For SU(6): kS = 0 because the u and d contributions cancel exactly.
+# The observed kS = -0.060 comes from:
+#   1. Strange quark sea: s-bar quarks contribute negatively
+#   2. Orbital angular momentum
+#   3. Gluon spin contribution
+#
+# In DFC, the strange sea is suppressed by exp(-m_s/Lambda) ~ exp(-0.3) ~ 0.74.
+# A non-zero kS from DFC would require computing the sea quark contribution.
+
+print(f"  DFC STATUS for mu_p/mu_n ratio:")
+print(f"    The +2.75% deviation from -3/2 decomposes into:")
+print(f"      (a) kV shift (-0.147): pion cloud, counterterms needed")
+print(f"      (b) kS shift (-0.060): sea quarks, orbital AM")
+print(f"    The kS shift DOMINATES the ratio change.")
+print(f"    DFC does not yet predict kS from first principles.")
+print(f"    The algebraic form -3/2 + 1/(8pi) matches to 0.022%")
+print(f"    but its physical origin is unclear — it would require")
+print(f"    kS = -0.060 to emerge from a DFC calculation.")
+print()
+
+check("H3: algebraic form -3/2+1/(8pi) matches ratio to 0.03%",
+      abs(ratio_algebraic/RATIO_OBS - 1) < 0.0003)
+print()
+
+
+# =============================================================================
+# Summary (updated C470)
 # =============================================================================
 print("=" * 72)
 print(f"TOTAL: {n_pass}/{n_total} PASS")
 print("=" * 72)
 print()
 print(f"  mu_p/mu_n = -3/2 (SU(6)) is +2.75% off from observed -1.4599.")
-print(f"  DFC M0 quark mass splitting (m_d - m_u = {delta_m_current:.1f} MeV)")
-print(f"  gives the WRONG SIGN correction (+0.17% further from obs).")
-print(f"  The ratio requires relativistic kink binding effects, not")
-print(f"  simple mass splitting. Path forward: Dirac-in-PT calculation.")
+print(f"  C464: isospin violation gives WRONG SIGN.")
+print(f"  C470: The ratio deviation decomposes into kV shift (pion cloud,")
+print(f"  counterterm-dependent) and kS shift (sea quarks). The kS shift")
+print(f"  DOMINATES. Algebraic form -3/2 + 1/(8pi) matches to 0.022%")
+print(f"  but origin is unclear. REMAINS P4: needs kS prediction from DFC.")
