@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 467 (2026-08-29)
+**Last updated:** Cycle 468 (2026-08-29)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P1** (C467)
+- **Last tier worked: P2** (C468)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -30,12 +30,12 @@
 
 ## Priority 2 — Tier Upgrades
 
-- **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — oldest open bottleneck (T4→T1)
-- **Derive hadronic VP δ(Δα)^NP = 0.00102** — close 1.5% gap in 36π chain
+- **Derive hadronic VP δ(Δα)^NP = 0.00102** — close 1.5% gap in 36π chain. C468: NW approximation overshoots 4-7x (ρ too broad for NW). Need full BW integral. See `equations/hadronic_vp_dfc.py`
 - **Upgrade cosmological constant combination rule** — gaps (i) PI factorization CLOSED (C456), (ii) depth attenuation CLOSED (C457). One gap remains: (iii) Casimir=α. See `equations/lambda_pi_factorization.py`, `equations/depth_attenuation_law.py`
 - **Close f_pi 1.6% gap** — traces to m_rho undershoot. See `equations/fpi_gap_closure.py`
 - **Upgrade baryon Regge intercept to T2a** — Y-junction penalty Δ=−1 is T3 bottleneck. See `equations/regge_intercept_derivation.py`
 - **Upgrade Delta-N splitting to T2b** — currently −7.4%, inherited from m_rho undershoot. See `equations/delta_n_splitting.py`
+- **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — oldest open bottleneck (T4→T1). Blocked on hadronic VP (same T4 gap). See `equations/alpha_em_dfc_chain.py`
 
 ---
 
