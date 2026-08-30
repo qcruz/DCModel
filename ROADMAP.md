@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 468 (2026-08-29)
+**Last updated:** Cycle 469 (2026-08-29)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P2** (C468)
+- **Last tier worked: P3** (C469)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -41,7 +41,6 @@
 
 ## Priority 3 — Structural Gaps
 
-- **D4 gravity gap** — derive effective metric, spin-2 mode, G_N from V(φ). See `foundations/d4_gravity_gap.md`
 - **Derive neutrino θ₂₃ from V(φ)** — Z₃ holonomy mechanism identified. See `ISSUES.md` T10
 - **Derive nuclear saturation from DFC couplings** — overlaps with P1 Walecka work
 - **Derive Y-junction penalty = −1** — Y-graph Casimir computed (C463): gives Δ=1/8 (12.5% of required). NG Casimir insufficient; non-Casimir mechanism needed. 3 paths: quark-diquark, junction mode removal, semiclassical WKB. See `equations/regge_intercept_derivation.py` Part I
@@ -50,6 +49,7 @@
 - **Derive ℏ from (α, β, c)** — blocked on α_em(0) identity. See `ISSUES.md` T8
 - **Derive depth attenuation law exp(−S·d)** — gap (ii) CLOSED (C457, 9/10). Action density argument: instanton confined to kink core → dS/dd = S_inst/ξ → WKB gives exp(-S*d). See `equations/depth_attenuation_law.py`
 - **Prove substrate Casimir self-energy = α** — 12 mechanisms tested (C462), 5 ruled out, none exact. Best: I₄×Q_top=8/3 (+1.8%). New identity: α×√(2α)/2=N_c [T1]. Most promising path: show V''/2 enters as effective action (non-perturbative), or BPS saturation. See `equations/substrate_casimir_alpha.py`
+- **D4 gravity gap** — derive effective metric, spin-2 mode, G_N from V(φ). C469: G_eff(r) transition question MISCONCEIVED — perturbative coupling flat at G_N/F=G_N/22.87 at all r>>ξ. No gradual transition exists. 95.6% non-perturbative at ALL scales. Path: derive G_N from compression geometry directly (not from perturbative enhancement). See `equations/d4_geff_transition.py`, `foundations/d4_gravity_gap.md`
 
 ---
 
@@ -65,7 +65,7 @@
 
 ## Priority 5 — Exploratory
 
-- **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`. Feed blocked items here: when a derivation is stuck, add its equations/targets as exploration candidates. Queued from blocked work: Γ(ρ→ee) VMD 30% gap, δ(Δα)^NP parton subtraction, mu_p/mu_n ≈ −3/2+1/(8π)
+- **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`. Feed blocked items here: when a derivation is stuck, add its equations/targets as exploration candidates. Queued from blocked work: Γ(ρ→ee) VMD 30% gap, δ(Δα)^NP parton subtraction, mu_p/mu_n ≈ −3/2+1/(8π), D4 enhancement F=(25π/3)√(2/α)=22.87 algebraic decomposition, F/C=25/(54α) identity
 - **Evaluate new open problems for DFC** — Navier-Stokes, baryon asymmetry, proton spin, quantum gravity
 - **Investigate κ_q ≈ N_c·b₀/(2N_c+1) identity** — 0.03% match, coincidence or structural?
 - **Investigate N_c·ln(2α)/2 ≈ α identity** — −5.2% match. See `equations/substrate_casimir_alpha.py`
