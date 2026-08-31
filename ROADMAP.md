@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 479 (2026-08-30)
+**Last updated:** Cycle 480 (2026-08-30)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P1** (C479)
+- **Last tier worked: P2** (C480)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -33,7 +33,6 @@
 
 ## Priority 2 — Tier Upgrades
 
-- **Upgrade cosmological constant combination rule** — gaps (i) PI factorization CLOSED (C456), (ii) depth attenuation CLOSED (C457). One gap remains: (iii) Casimir=α. See `equations/lambda_pi_factorization.py`, `equations/depth_attenuation_law.py`
 - **Upgrade electron a_e to T2a** — currently T2b (−0.14%, leading term only). Add Schwinger α/2π term using DFC α_em. See `equations/anomalous_magnetic_moment.py`
 - **Close f_pi 1.6% gap** — traces to m_rho undershoot. See `equations/fpi_gap_closure.py`
 - **Upgrade baryon Regge intercept to T2a** — Y-junction penalty Δ=−1 is T3 bottleneck. See `equations/regge_intercept_derivation.py`
@@ -43,6 +42,7 @@
 - **Upgrade Lamb shift to T2a** — existing module gives leading-order result. Need VP + self-energy corrections using DFC α_em chain. See `equations/lamb_shift.py`
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C474: Fixed π-factor NW bug. BW integral implemented (BW/NW=1.01 for ρ). ρ VP=0.00377 matches Davier 2π data. Parton subtraction framework gives NEGATIVE result — target requires R(s)−R_pQCD(s) difference, not BW−parton. Need dispersive approach. See `equations/hadronic_vp_dfc.py`
 - **Upgrade proton charge radius to T2a** — C476: Foldy sign bug found (−17.6% was WRONG). Corrected: r_p=0.854 fm (+1.5%, emp κ_p) or 0.862 fm (+2.5%, SU(6) κ_p). Needs: derive κ_p from DFC, regularize pion cloud. See `equations/proton_charge_radius_dfc.py`
+- **Upgrade cosmological constant combination rule** — gaps (i) CLOSED, (ii) CLOSED. Gap (iii) Casimir=α: C480 tested 4 more mechanisms (16 total, 7 ruled out). New T1: √(S_kink/(2π))=α^(3/2). No derivation of exp(-α) found. See `equations/substrate_casimir_alpha.py`
 
 ---
 

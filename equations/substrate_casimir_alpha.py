@@ -936,6 +936,240 @@ check("I2", True,
       "3 promising paths forward identified for future work")
 
 # =============================================================================
+# Part J: Non-perturbative effective action — V''/2 path (C480)
+# =============================================================================
+print()
+print("[PART J] NON-PERTURBATIVE EFFECTIVE ACTION — V''/2 PATH (C480)")
+print("=" * 72)
+print()
+
+# The key observation: V''(phi_0)/2 = alpha EXACTLY.
+# In standard QFT (Coleman-Weinberg), the one-loop vacuum energy per mode is
+#   E_CW = (1/2) ln(V''/mu^2)  [logarithmic in the curvature]
+# which gives exp(-ln(V'')/2) = 1/sqrt(V'') per mode.
+#
+# But the substrate is NOT a standard QFT. It is the single fundamental
+# object from which QFT emerges. The substrate's self-energy could be
+# governed by a DIFFERENT prescription.
+#
+# PROPOSAL: For a substrate mode confined to one kink width xi,
+# the effective action is the WKB PHASE INTEGRAL of the fluctuation
+# over one kink width, which equals V''/2 in the harmonic limit.
+#
+# Argument:
+#   1. The substrate fluctuation around phi_0 has frequency omega = sqrt(V'')
+#   2. The kink width is xi = 1/sqrt(alpha)
+#   3. The WKB phase accumulated over one kink width:
+#      S_WKB = omega * xi = sqrt(V'') * 1/sqrt(alpha)
+#            = sqrt(2*alpha) / sqrt(alpha) = sqrt(2)
+#
+# This gives exp(-sqrt(2)), not exp(-alpha). Not exact.
+
+omega_sub = math.sqrt(2.0 * alpha)
+S_WKB = omega_sub * xi
+print(f"  Test J1: WKB phase over one kink width")
+print(f"    omega = sqrt(2*alpha) = {omega_sub:.6f}")
+print(f"    xi = 1/sqrt(alpha) = {xi:.6f}")
+print(f"    S_WKB = omega * xi = sqrt(2) = {S_WKB:.6f}")
+print(f"    alpha = {alpha:.6f}")
+print(f"    Error: {(S_WKB/alpha-1)*100:+.1f}% — NOT alpha. RULED OUT.")
+print()
+
+check("J1", abs(S_WKB - math.sqrt(2.0)) < 1e-10,
+      f"S_WKB = sqrt(2) = {S_WKB:.6f}, not alpha")
+
+# Alternative: the instanton action density times the kink width.
+# S_inst_dens = V(0) - V(phi_0) = alpha^2/(4*beta)
+# Over xi: S_inst_dens * xi^3... no, this is what Part D already tested.
+
+# PROPOSAL 2: The depth attenuation law exp(-S*d) from C457 gives
+# each depth level a suppression factor. The substrate's self-energy
+# at depth d=0 (Planck) is exp(-alpha * d_substrate) where
+# d_substrate is the substrate's intrinsic depth.
+#
+# What if d_substrate = 1? Then the factor is simply exp(-alpha).
+# The question reduces to: WHY IS d_substrate = 1?
+#
+# The depth attenuation argument from C457:
+#   - Action density S confined to kink core of width xi
+#   - Tunneling amplitude: exp(-S * d) where d is the depth
+#   - S_kink = 4/beta = 36*pi [T1]
+#   - alpha_D5 = 1/S_kink [T1]
+#
+# For the substrate's own self-energy, the relevant "depth" is NOT
+# a D-label depth but the NUMBER OF COMPRESSION EVENTS (bifurcations)
+# the substrate has undergone. At the Planck scale, this is d=0.
+# The substrate's vacuum energy has a suppression factor exp(-S_self)
+# where S_self is the Euclidean action of the substrate's ground state
+# fluctuation over one characteristic time.
+
+# PROPOSAL 3: The substrate's ground state in the double-well V(phi)
+# has a WKB tunneling amplitude between the two minima. The
+# tunneling action (bounce) is S_bounce = S_kink * alpha / S_kink = ?
+# No, the bounce action is related to the kink action by:
+# S_bounce = 2 * S_kink (kink + antikink)... that's too large.
+
+# Let me try: what if the relevant quantity is the RATIO of the kink
+# action to the number of substrate modes?
+# S_kink / N_modes where N_modes is the number of independent substrate
+# fluctuation modes.
+# If N_modes = S_kink / alpha, then S_kink / N_modes = alpha.
+# What would N_modes = S_kink / alpha = 36*pi / 18^(1/3) mean?
+
+N_modes_candidate = S_kink / alpha
+print(f"  Test J2: N_modes = S_kink/alpha")
+print(f"    S_kink / alpha = 36*pi / 18^(1/3) = {N_modes_candidate:.4f}")
+print(f"    = 4*pi * N_Hopf / alpha = 4*pi * 9 / 18^(1/3)")
+print(f"    = 36*pi * (18^(-1/3))")
+print(f"    ≈ {N_modes_candidate:.2f} modes — NOT a recognizable integer")
+print()
+
+# PROPOSAL 4: V''/2 directly as action.
+# The critical observation: V''(phi_0) = 2*alpha.
+# The substrate's contribution to the vacuum energy is:
+#   rho_sub = M_Pl^4 * exp(-V''(phi_0)/2)
+#           = M_Pl^4 * exp(-alpha)
+# This is TAUTOLOGICALLY true given V'' = 2*alpha.
+# The question is: WHY does V''/2 enter as the action?
+#
+# In the STEEPEST DESCENT approximation of the path integral:
+#   Z = integral D[phi] exp(-S_E[phi])
+# around phi = phi_0, the Gaussian integral gives:
+#   Z_0 = exp(-S_E[phi_0]) * (det V'')^{-1/2}
+#
+# But det V'' = (V'')^N for N modes, so:
+#   ln Z_0 = -S_E[phi_0] - (N/2) ln(V'')
+#
+# The vacuum energy is -ln(Z_0)/Vol, which contains ln(V''), not V''.
+# Getting V''/2 directly requires a NON-GAUSSIAN mechanism.
+#
+# KEY INSIGHT (C480): In 1+1D, for a CONFINING potential, the
+# exact ground state energy is:
+#   E_0 = omega/2 = sqrt(V'')/2  [harmonic oscillator]
+# This is NOT V''/2 either. It's sqrt(V'')/2.
+#
+# But for a LATTICE of kinks spaced by L, the Bloch band width is:
+#   Delta_E ~ omega * exp(-omega * L / 2)
+# If the relevant "action" is the EXPONENT in the band width:
+#   S_band = omega * L / 2 = sqrt(2*alpha) * L / 2
+# For L = xi (one kink width): S_band = sqrt(2) / 2 = 0.707 (not alpha)
+# For L = alpha * xi (alpha kink widths): S_band = alpha * sqrt(2)/2
+# Still not alpha.
+
+# PROPOSAL 5: Functional integral over the kink moduli space.
+# The substrate at the cosmological scale has a DILUTE GAS of kinks.
+# The partition function of the kink gas is:
+#   Z = sum_n (1/n!) * (K * exp(-S_kink))^n
+# where K is the fluctuation determinant prefactor.
+# For one kink: K * exp(-S_kink).
+# For the substrate's vacuum energy, we need:
+#   rho_vac ~ M_Pl^4 * exp(-S_eff)
+# where S_eff includes ALL three suppression factors.
+# The third factor exp(-alpha) could arise from the kink TRANSLATIONAL
+# zero mode integral.
+#
+# For a single kink in a box of size L:
+#   Z_kink = L * sqrt(S_kink/(2*pi)) * exp(-S_kink)
+# The prefactor sqrt(S_kink/(2*pi)) = sqrt(36*pi/(2*pi)) = sqrt(18) = alpha^(3/2)
+# AHA! sqrt(S_kink/(2*pi)) = sqrt(18) = alpha^(3/2)!
+
+sqrt_ratio = math.sqrt(S_kink / (2.0 * PI))
+print(f"  Test J3: Kink translational zero-mode prefactor")
+print(f"    sqrt(S_kink / (2*pi)) = sqrt(36*pi / (2*pi)) = sqrt(18)")
+print(f"    = 18^(1/2) = {sqrt_ratio:.6f}")
+print(f"    alpha^(3/2) = 18^(1/2) = {alpha**(1.5):.6f}")
+print(f"    Match: {abs(sqrt_ratio - alpha**1.5):.2e}")
+print()
+
+check("J3", abs(sqrt_ratio - alpha**1.5) < 1e-10,
+      f"sqrt(S_kink/(2*pi)) = alpha^(3/2) = sqrt(18) EXACTLY [T1]")
+
+# So Z_kink = L * alpha^(3/2) * exp(-S_kink).
+# If the vacuum energy density is rho_vac = -ln(Z)/Vol, the
+# the kink gas contribution per unit volume introduces a factor
+# alpha^(3/2) inside the exponential? Not directly — alpha^(3/2)
+# is a PREFACTOR, not in the exponent.
+#
+# However, if the vacuum energy involves exp(-S_kink) * alpha^(3/2),
+# and we DEFINE the effective action as the full log:
+#   S_eff = S_kink - (3/2) ln(alpha)
+#
+# Then S_eff - S_kink = -(3/2) ln(alpha) = -(3/2) * (1/3) * ln(18)
+#                     = -(1/2) * ln(18) = -ln(sqrt(18)) = -ln(alpha^(3/2))
+# This is the LOGARITHM of alpha, not alpha itself.
+
+S_prefactor_correction = -1.5 * math.log(alpha)
+print(f"  The zero-mode prefactor contributes -(3/2)*ln(alpha) = {S_prefactor_correction:.4f}")
+print(f"  to the effective action. This is logarithmic, not linear in alpha.")
+print(f"  Does NOT produce exp(-alpha). RULED OUT as direct mechanism.")
+print()
+
+# PROPOSAL 6: The substrate's contribution is exp(-alpha) because
+# alpha is the instanton action DENSITY at the vacuum.
+# The instanton action is S_inst = 27*pi^2 (for gauge fields).
+# The kink action is S_kink = 36*pi.
+# The action per unit "depth" at D5 is alpha_D5 = 1/S_kink.
+# The substrate's self-energy per kink width is:
+#   S_self = action_density * volume = ?
+# In the depth attenuation picture:
+#   exp(-S * d) is the suppression at depth d.
+# At depth 0 (Planck), d = 0, so no suppression... unless the
+# substrate itself sits at an effective depth.
+#
+# WHAT IF the substrate's "self-depth" is d_self = alpha / S_inst?
+# Then exp(-S_inst * d_self) = exp(-alpha).
+# d_self = alpha / S_inst = 18^(1/3) / (27*pi^2) = 0.00983
+# This is very small — the substrate sits just barely below the
+# surface. Is there a structural argument for this?
+
+S_inst = 27.0 * PI**2
+d_self = alpha / S_inst
+print(f"  Test J4: Substrate self-depth")
+print(f"    If exp(-S_inst * d_self) = exp(-alpha):")
+print(f"    d_self = alpha / S_inst = {alpha:.4f} / {S_inst:.2f} = {d_self:.6f}")
+print(f"    In units of d_1 (depth step = 1): d_self = {d_self:.6f}")
+print(f"    = alpha^(-2) * (alpha/S_inst) * alpha^2")
+print(f"    = (alpha^3/S_inst) * alpha^(-2) = (18/266.5) * alpha^(-2)")
+print(f"    ≈ 0.0675 / alpha^2")
+print()
+
+# Alternatively: is d_self related to alpha_D5?
+# alpha_D5 = 1/S_kink = 1/(36*pi)
+alpha_D5 = 1.0 / S_kink
+print(f"    alpha_D5 = 1/S_kink = {alpha_D5:.6f}")
+print(f"    d_self / alpha_D5 = {d_self / alpha_D5:.4f}")
+print(f"    = alpha * S_kink / S_inst = {alpha * S_kink / S_inst:.4f}")
+print(f"    = 36*pi*alpha / (27*pi^2) = 4*alpha/(3*pi) = {4*alpha/(3*PI):.4f}")
+print(f"    ≈ 4 * 18^(1/3) / (3*pi) — no obvious simplification.")
+print()
+
+check("J4", True,
+      f"Substrate self-depth d_self = {d_self:.6f} — exploratory, no derivation")
+
+print()
+print(f"  PART J CONCLUSION (C480):")
+print(f"    Tested 4 new mechanisms (WKB phase, mode counting, zero-mode")
+print(f"    prefactor, self-depth). None produce exp(-alpha) directly.")
+print()
+print(f"    KEY FINDING: sqrt(S_kink/(2*pi)) = alpha^(3/2) = sqrt(18) [T1]")
+print(f"    The kink translational zero-mode prefactor equals alpha^(3/2).")
+print(f"    This connects alpha to the kink gas partition function but")
+print(f"    as a PREFACTOR, not an exponent.")
+print()
+print(f"    UPDATED ASSESSMENT:")
+print(f"    - 16 mechanisms now tested total (12 from C462 + 4 new)")
+print(f"    - 7 definitively ruled out")
+print(f"    - V''/2 = alpha remains tautologically true but no path-integral")
+print(f"      derivation found that selects V''/2 over ln(V'')/2")
+print(f"    - New T1 identity: sqrt(S_kink/(2*pi)) = alpha^(3/2)")
+print(f"    - Gap (iii) REMAINS OPEN. Status: T3.")
+print()
+
+check("J5", True,
+      "16 mechanisms tested total (C462+C480), 7 ruled out, gap (iii) open")
+
+
+# =============================================================================
 # Summary
 # =============================================================================
 print()
