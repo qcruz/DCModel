@@ -1,17 +1,18 @@
 # DFC Model — Claude Instructions
 
-This project is a theoretical physics model called **Dimensional Folding Compression (DFC)**.
-It proposes that all known physics emerges from one self-compressing object: a continuous
-field that pulls inward on itself, driving toward a near-1D state through compression and
-bifurcation, whose self-closing bifurcation events form the topological structures we observe
-as particles and forces. There are no pre-existing spatial dimensions, gauge groups, or
-separate forces. What appears as "3D space," "gauge structure," or "three distinct forces"
-is the downstream appearance of the substrate's fold topology at different compression depths.
-The substrate is the only thing that exists. Forces are not fragments of a broken symmetry —
-they are the interaction behaviors between different fold topologies of this one object.
-This is a deeper unity than gauge unification: the forces were never three separate things
-at any energy; they were always fold interactions of the same object, appearing topologically
-distinct because they closed at different compression thresholds.
+This project is an exploratory theoretical physics model called **Dimensional Folding
+Compression (DFC)**. It investigates what emerges from a single continuous scalar field
+with a double-well potential V(φ) = −α/2 φ² + β/4 φ⁴ undergoing self-compression.
+The field pulls inward on itself, driving toward a near-1D state through compression
+and bifurcation. Self-closing bifurcation events form topological structures that
+correspond to observed particles and forces. The project explores the consequences of
+this setup — no pre-existing spatial dimensions, gauge groups, or separate forces are
+assumed. What appears as "3D space," "gauge structure," or "three distinct forces" is
+the downstream appearance of the substrate's fold topology at different compression depths.
+
+**Project tone:** This is an exploratory project. Frame findings as interesting results,
+not claims of truth. Let numbers speak for themselves. Do not be defensive or grandiose.
+Avoid "Why should you take this seriously?" framing — just present what was found.
 
 ---
 
