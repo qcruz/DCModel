@@ -425,7 +425,7 @@ of blocked quantities may reveal relationships useful for later development.
 When the user says "continue":
 1. Open `ROADMAP.md`.
 2. **Cycle through tiers in order.** Check the `Last tier worked:` marker at the top
-   of ROADMAP.md. Pick an item from the NEXT tier (P1→P2→P3→P4→P5→P6→P1→...).
+   of ROADMAP.md. Pick an item from the NEXT tier (P1→P2→P3→P4→P5→P6→P7→P1→...).
    **Within each tier, always work the FIRST bullet point item.** After completing
    work on an item, move it to the BOTTOM of that tier's bullet list. This ensures
    systematic coverage of all items rather than random selection.
