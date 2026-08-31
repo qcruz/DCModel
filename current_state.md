@@ -1,7 +1,7 @@
 # Current State of the DFC Model
 
 *Living document — updated periodically as the model develops.*
-*Last reviewed: 2026-08-26 (Cycle 419)*
+*Last reviewed: 2026-08-30 (Cycle 481)*
 
 ---
 
@@ -17,16 +17,17 @@ all SM particles, quantum mechanics, cosmology, nuclear physics, precision tests
 (Zeeman, Stark, fine structure, Wiedemann-Franz, Josephson, quantum Hall, Casimir),
 and exotic phenomena (Hawking radiation, Aharonov-Bohm, quark-gluon plasma).
 
-**Equations (354 runnable Python modules):** Every quantitative claim is backed by a
+**Equations (383 runnable Python modules):** Every quantitative claim is backed by a
 runnable module in `equations/`. Major groups include the complete Yang-Mills proof chain
 (~50 modules), Born rule derivation chain (5 modules), nuclear physics spoke (15+ modules),
 D4 gravity gap spoke (15 modules), coupling constant chains, cosmological predictions
 (4 modules), astrophysical scorecard, collapse mechanism, and neutrino depth correction.
 See `equations/INDEX.md` for a categorized index.
 
-**Educational series (28 modules, Modules 00–28):** A complete self-contained course
+**Educational series (34 modules, Modules 00–31):** A complete self-contained course
 covering the model from overview through advanced topics including the Yang-Mills proof
-candidate, nuclear shell closures, the cosmological constant, and the D4 gravity gap.
+candidate, nuclear shell closures, the cosmological constant, the D4 gravity gap,
+hadron spectroscopy, and the proton spin puzzle.
 
 **Practical applications (3 entries):** Engineering-relevant limits derived from verified
 DFC results, including localization rate ceiling and measurement frequency bounds.
@@ -55,7 +56,8 @@ v=247.83 GeV (+0.65%), Γ_Z=2456 MeV (−1.56%), R_l=20.75 (−0.10%), g₂=0.65
 **5. Tau lepton mass — Koide formula m_τ = 1776.97 MeV (+0.006%, 0 free params, Tier 2a).**
 
 **6. Quark masses — κ_q = π×N_c/2 from center vortex (Tier 2a).**
-Charm +0.29%, strange +2.09%.
+Charm +0.29%, strange +2.09%. Light quark masses: M₀ = exp(−(b₀+1/α))×v/√2 gives
+m_u/m_d at 2 GeV with +2.68% (T2a).
 
 **7. Neutrino mass ratio — m₃/m₂ = 5.8248 vs observed 5.8242 (+0.0096%, 0 free params, Tier 2a).**
 Color depth correction δd = 1/(6π) from JR-BPS derivation. 885× improvement over uncorrected.
@@ -73,6 +75,7 @@ Threshold: N_crit ≈ 32 coherent kinks. Entanglement account remains T3.
 **11. Nuclear physics — all 7 standard magic numbers reproduced.**
 Six-step framework. a_SO = I₄ × a₀ = 0.893 fm (0.7% from FRDM). N=126 closed via
 κ_DFC = 33. Astrophysical scorecard: 12/15 PASS across 9 categories (A-I).
+New: nonlinear Walecka from kink background gives correct sign for g₂ < 0 (T3).
 
 **12. Cosmological constant — ρ_Λ predicted with 0 free parameters (Tier 3).**
 ρ_Λ = M_Pl⁴ × exp(−(27π² + 9π/2 + ∛18)). ρ_Λ^{1/4} = 2.16 meV (−3.5%).
@@ -97,40 +100,54 @@ magnetic monopoles absent, Tsirelson bound, R-ratio = 11/3, reflectionless kink 
 flux quantization, resistance quantum, superfluid circulation, Wiedemann-Franz universality,
 k_Y² = 5/3 uniquely from N_c = 3, I₄ = C₂(fund,SU(3)) = 4/3 uniquely selects n = 3.
 
+**17. Hadron predictions from V(φ).**
+Proton charge radius: 0.854 fm (+1.5%, T3) — sign bug corrected from −17.6%.
+Pion mass via GMOR: 136.9 MeV (−1.9%, T2a with lattice condensate).
+Proton-neutron mass difference: 1.289 MeV (−0.4%, T2b).
+Axial coupling g_A = 4/π = 1.2732 (−0.19%, T2a).
+Proton spin fraction Σ = 4/(3π) = 0.424 (+29%, 2.4σ COMPASS; natural 1/N_c suppression).
+
 ---
 
 ## Structural Weaknesses and Open Gaps
 
 **1. Nuclear binding — coupling universality blocks deuteron (T4).**
-DFC coupling universality g_sigma = g_omega prevents nuclear binding. Coupled-channel
-with tensor OPE still fails (E_min = −0.35 MeV vs observed −2.22 MeV). Effective
-coupling asymmetry from V(φ) nonlinear sigma terms needed. See T19/T22 in ISSUES.md.
+DFC coupling universality g_sigma = g_omega prevents nuclear binding. Deuteron tensor OPE
+analysis shows bare tensor coupling ~30-60 MeV (overbinds); short-range kink-kink overlap
+potential at r<1/Λ_QCD needed. Central-only B_d = 1.15 MeV (−48%).
 
-**2. Hadronic vacuum polarization — T3.**
+**2. Nonlinear nuclear EOS — correct sign but 14× too weak (T3).**
+Kink background expansion V(φ₀−δφ) gives g₂ < 0 (correct sign) and g₃ > 0.
+Magnitude deficit: |C₂_DFC/C₂_NL3| = 0.07. Root cause: nuclear sigma is composite
+qq̄, not direct substrate mode. Perturbative RG insufficient (β too small).
+Path: NJL gap equation with DFC condensate.
+
+**3. Hadronic vacuum polarization — T3/T4.**
 The 36π chain accounts for 98.5% of VP at M_Z. The remaining δ(Δα)^{NP} = 0.00102
-from hadronic resonances is bracketed but not closed. See T12 in ISSUES.md.
+from hadronic resonances: ρ VP = 0.00377 matches Davier 2π data, but parton subtraction
+framework gives negative result. Need dispersive approach.
 
-**3. θ₂₃ neutrino mixing angle — 4° deviation from 45° (T4).**
-Z₃ holonomy mechanism identified [T1 structural] but formula not derived from V(φ).
+**4. θ₂₃ neutrino mixing angle — reduced to one unknown (T4).**
+Z₃ holonomy mechanism identified. Mass matrix: tan(2θ₂₃) = −2B/(F(2)×Δ_V) [T1].
+Reduced to Δ_V/(2B) = 0.0995 (D7 kink-vortex overlap integral). Same BVP as CKM.
 
-**4. CKM/PMNS mixing angles — no quantitative derivation (T4).**
+**5. CKM/PMNS mixing angles — no quantitative derivation (T4).**
 
-**5. ℏ hierarchy — T4 (blocked by T12).**
+**6. ℏ hierarchy — T4 (blocked by α_em(0) identity).**
 
-**6. D3 and D4 remain partly qualitative.**
+**7. D3 and D4 remain partly qualitative.**
 D5/D6/D7 have clean mathematical structures. D3 (localization/3D space) is behavioral.
 D4 (gravity) has extensive structural framework (15 modules) but the full non-perturbative
 metric at strong field remains T4.
 
-**7. Cosmological constant combination rule — T3.**
+**8. Cosmological constant combination rule — T3.**
 Individual terms each T2a, but combination formula not derived from V(φ).
-
-**8. Light quark masses and pion mass — not derived.**
-m_u, m_d, m_pi all used as empirical inputs. Chiral symmetry breaking from DFC not derived.
+16 mechanisms tested for Casimir = α gap; 7 ruled out, none exact.
+New T1 identity: √(S_kink/(2π)) = α^(3/2).
 
 ---
 
-## Key Equation Modules (selected from 354 total)
+## Key Equation Modules (selected from 383 total)
 
 ### Tier 1 Exact Results
 
@@ -163,6 +180,8 @@ m_u, m_d, m_pi all used as empirical inputs. Chiral symmetry breaking from DFC n
 | bbn_predictions.py | Y_p=0.2475 | 0.2449 | +1.05% |
 | cosmological_predictions.py | ℓ₁=222, r_s=143.87 Mpc | 220, 144.43 | +0.89%, −0.39% |
 | cosmological_predictions_2.py | r_drag=146.70 Mpc | 147.09 | −0.27% |
+| light_quark_mass_derivation.py | M₀ from exp(−(b₀+1/α))×v/√2 | m_u,m_d at 2 GeV | +2.68% |
+| pion_mass_gmor.py | m_π=136.9 MeV | 139.6 | −1.9% |
 
 ### Yang-Mills Proof Chain (selected from ~50 modules)
 
@@ -181,7 +200,8 @@ m_u, m_d, m_pi all used as empirical inputs. Chiral symmetry breaking from DFC n
 | nuclear_shell_kappa.py | All 7 magic numbers; κ_DFC=33 | T3 |
 | nuclear_relativistic_so.py | a_SO=I₄×a₀=0.893 fm (0.7%) | T3 |
 | astrophysical_scorecard.py | 12/15 PASS across 9 categories | T2a-T3 |
-| light_nuclei_binding.py | Negative result: bare couplings don't bind | T4 |
+| nuclear_kink_nonlinear_eos.py | Kink g₂<0 correct sign; 14× too weak | T3 |
+| deuteron_tensor_ope.py | Tensor OPE analysis; short-range blocker | T4 |
 
 ### Cosmological Predictions (4 modules)
 
@@ -191,6 +211,15 @@ m_u, m_d, m_pi all used as empirical inputs. Chiral symmetry breaking from DFC n
 | cosmological_predictions.py | CMB ℓ₁=222, Λ chain, r_s | T2a-T3 |
 | cosmological_predictions_2.py | w_Λ=−0.992, BAO r_drag, m_DM | T2a-T4 |
 | cosmological_predictions_3.py | n_s=0.9667, Sakharov, absences | T1-T3 |
+
+### Hadron Predictions
+
+| Module | Key result | Tier |
+|---|---|---|
+| proton_charge_radius_dfc.py | r_p=0.854 fm (+1.5%, sign bug corrected) | T3 |
+| pion_mass_gmor.py | m_π=136.9 MeV (−1.9%) | T2a |
+| proton_neutron_mass_difference.py | Δm=1.289 MeV (−0.4%) | T2b |
+| proton_spin_dfc.py | Σ=4/(3π)=0.424, g_A=4/π (−0.19%) | T2a/T3 |
 
 ### D4 Gravity Gap (15 modules)
 
@@ -210,22 +239,22 @@ See `ISSUES.md` for full details. Currently open:
 | Issue | Status | Category |
 |---|---|---|
 | T8: ℏ hierarchy | T4 (blocked by T12) | Foundations |
-| T10: θ₂₃ mixing angle 4° gap | T4 (mechanism T1) | Neutrinos |
+| T10: θ₂₃ mixing angle 4° gap | T4 (reduced to one unknown) | Neutrinos |
 | T11: neutrino κ=5.33 | δd T2a; κ itself T2b | Neutrinos |
-| T12: hadronic VP δ(Δα)^NP | T3 (brackets target) | Coupling chain |
+| T12: hadronic VP δ(Δα)^NP | T3/T4 (ρ VP matches data) | Coupling chain |
 | T14: Yang-Mills Clay Prize | ~99%; sole gap = peer review | Clay Prize |
-| T16: cosmological constant | T3 prediction | Cosmology |
+| T16: cosmological constant | T3 prediction; Casimir=α gap open | Cosmology |
 | T17: nuclear N=126 | T3 closed; N=184 T4 | Nuclear |
 | T18: f_pi −2.7% | T3 | Nuclear |
-| T19: deuteron binding −48% | T4 (coupling universality) | Nuclear |
-| T20: mag. moment ratio +2.7% | T4 | Nuclear |
+| T19: deuteron binding −48% | T4 (tensor OPE analyzed) | Nuclear |
+| T20: mag. moment ratio +2.7% | T4 (isoscalar κ_S dominates) | Nuclear |
 | T21: Nolen-Schiffer ~7% | T3 | Nuclear |
-| T22: nuclear saturation | T4 (linear Walecka) | Nuclear |
+| T22: nuclear saturation | T3 (correct sign; magnitude 14× weak) | Nuclear |
 | T23: surface diffuseness −20% | T3 | Nuclear |
 | T24: M_W −0.88% | T3 | EW |
 | T25: underived quantities | T4 (10 items) | Various |
-| T26: proton charge radius +1.5% (was −18%, sign bug) | T3 | Hadrons |
-| T27: Delta-N splitting | T4 | Hadrons |
+| T26: proton charge radius +1.5% | T3 (sign bug corrected) | Hadrons |
+| T27: Delta-N splitting | T4 (inherits m_ρ) | Hadrons |
 | T28: symmetry energy J −36% | T4 (L PASS) | Nuclear |
 | T30: D4 gravity gap | T4 (extensive T3 framework) | Gravity |
 
@@ -233,28 +262,31 @@ See `ISSUES.md` for full details. Currently open:
 
 ## Development Priorities
 
-See `DEVELOPMENT_NEXT_STEPS.md` for detailed tracking. Summary:
+See `ROADMAP.md` for detailed tracking (single source of truth). Summary:
 
-**High priority:**
-1. Nuclear coupling asymmetry from V(φ) — unblocks deuteron AND nonlinear EOS
-2. Beyond-mean-field Walecka EOS — fixes 3 scorecard predictions
-3. Triple-alpha Q value — blocked by items 1-2
+**P1 — High-Impact Predictions:**
+Proton-neutron mass difference, muon g−2, pion mass GMOR, top quark Koide,
+light quark masses, deuteron contact terms, W mass tension, beyond-mean-field Walecka.
 
-**Medium priority:**
-4. Atomic physics predictions (needs m_e derivation)
-5. Stellar structure relations
-6. Proton-neutron mass difference
-7. Pion mass from Λ_QCD
+**P2 — Tier Upgrades:**
+Electron a_e T2a upgrade, f_pi gap closure, baryon Regge intercept,
+cosmological predictions T2a, alpha_em(0) identity, Lamb shift, hadronic VP,
+proton charge radius, cosmological constant combination rule.
+
+**P3 — Structural Gaps:**
+Y-junction penalty, dark matter, Koide phase, CKM/PMNS, Bekenstein-Hawking,
+ℏ derivation, depth attenuation, Casimir=α, D4 gravity, baryon asymmetry,
+heavy quarkonium, neutrino θ₂₃, nuclear saturation from composite coupling.
 
 ---
 
-## Viability Assessment (Cycle 419)
+## Viability Assessment (Cycle 481)
 
 **Overall completeness: ~80%** (viability: ~87%, mathematical rigor: ~73%)
 
 Key landmarks:
-- **354 runnable equation modules** (was 113 at C362)
-- **28 educational modules** (complete series 00–28)
+- **383 runnable equation modules** (was 354 at C419)
+- **34 educational modules** (complete series 00–31)
 - **25+ Tier 2a verified predictions** (all <5% error)
 - **15+ Tier 1 structural proofs**
 - **4 cosmological prediction modules** (BBN, CMB, BAO, inflation — all PASS)
@@ -265,5 +297,5 @@ Key landmarks:
 **Clay Prize:** Structural completeness ~95%. Rigorous proof standard ~99%.
 CPC (confidence score) ~60%.
 
-Primary remaining gaps: nuclear coupling universality (T4), hadronic VP (T3/T4),
-D4 strong-field metric (T4), light quark masses (T4), CKM/PMNS (T4).
+Primary remaining gaps: nuclear coupling magnitude (T3), hadronic VP (T3/T4),
+D4 strong-field metric (T4), CKM/PMNS (T4), cosmological constant combination (T3).
