@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 480 (2026-08-30)
+**Last updated:** Cycle 481 (2026-08-30)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P2** (C480)
+- **Last tier worked: P3** (C481)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -48,7 +48,6 @@
 
 ## Priority 3 — Structural Gaps
 
-- **Derive nuclear saturation from DFC couplings** — overlaps with P1 Walecka work
 - **Derive Y-junction penalty = −1** — Y-graph Casimir computed (C463): gives Δ=1/8 (12.5% of required). NG Casimir insufficient; non-Casimir mechanism needed. 3 paths: quark-diquark, junction mode removal, semiclassical WKB. See `equations/regge_intercept_derivation.py` Part I
 - **Dark matter mass and relic abundance** — m_DM=35.6 keV (T4, depth model). Relic abundance OPEN. What DFC topology gives a stable DM candidate? See `equations/cosmological_predictions_2.py`
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
@@ -61,6 +60,7 @@
 - **Baryon asymmetry magnitude** — Sakharov conditions met (T2a, C414). η_B magnitude T4. Compute CP violation strength from D6/D7 topology → predict η_B ~ 6×10⁻¹⁰
 - **Heavy quarkonium spectrum** — charmonium (J/ψ, ψ') and bottomonium (Υ) from Regge + Coulomb. Test DFC string tension and α_s at different scales
 - **Derive neutrino θ₂₃ from V(φ)** — C475: mass matrix formalized. tan(2θ₂₃)=−2B/(F(2)×Δ_V) [T1]. Reduced to one unknown: Δ_V/(2B)=0.0995 (D7 kink-vortex overlap integral). Same BVP as CKM. See `equations/neutrino_theta23_z3_mechanism.py`
+- **Derive nuclear saturation from DFC couplings** — C481: kink g₂ sign correct, magnitude 14× too weak. Perturbative RG insufficient (β too small). Composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation with DFC condensate. See `equations/nuclear_kink_nonlinear_eos.py` Part F
 
 ---
 
