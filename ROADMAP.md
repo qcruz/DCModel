@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 476 (2026-08-30)
+**Last updated:** Cycle 477 (2026-08-30)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation.** Documentation is last so that new derivations and discoveries accumulate before the documentation pass, giving more material to document.
-- **Last tier worked: P4** (C476)
+- **Last tier worked: P5** (C477)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -79,8 +79,7 @@
 
 ## Priority 5 — Exploratory
 
-- **Evaluate new open problems for DFC** — Navier-Stokes, baryon asymmetry, proton spin, quantum gravity
-- **Proton spin puzzle** — DFC quarks have spin from JR zero modes. What fraction of proton spin is from quarks vs gluons vs orbital? Is there a DFC prediction for Δq?
+- **Proton spin puzzle** — C477: VIABLE. Σ=g_A/N_c=4/(3π)=0.424 (+29%, 2.4σ). Spin crisis natural from 1/N_c suppression. Next: compute I₀/I₁ from DFC Y-junction profile → refined Σ [T2b target]. See `equations/proton_spin_dfc.py`
 - **Investigate κ_q ≈ N_c·b₀/(2N_c+1) identity** — 0.03% match, coincidence or structural?
 - **DFC predictions for LHC Run 4** — what does DFC predict differently from SM for upcoming collider experiments? Any distinctive signatures?
 - **Investigate N_c·ln(2α)/2 ≈ α identity** — −5.2% match. See `equations/substrate_casimir_alpha.py`
@@ -93,6 +92,7 @@
 - **CMB-S4 predictions** — what does DFC predict for CMB-S4 sensitivity targets? n_s refinement, r upper bound, N_eff precision
 - **Condensed matter from V(φ)** — superconductivity, superfluidity modules exist. Can DFC predict BCS gap Δ or T_c for specific materials?
 - **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`. Feed blocked items here. C471: E59-E63 explored queued items. Key finding: F*C = 300π² (T1 identity). F irreducible (factor 5 from I_6=16/15). kS has no DFC algebraic form. VMD gap traces to g_rho 19% too large. BW integral needed for δ(Δα)^NP.
+- **Evaluate new open problems for DFC** — Navier-Stokes, baryon asymmetry, quantum gravity (proton spin DONE C477)
 
 ---
 
