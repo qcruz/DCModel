@@ -287,8 +287,46 @@ The model predicts charm and strange quark masses about 15% below the observed v
 ### Deuteron binding energy
 The central-force (sigma + omega) calculation gives B_d = 1.14 MeV (−49%). However, with two-pion exchange (2PE) using DFC-derived g_A = 4/π and Pagels-Stokar f_pi = 89.63 MeV, DFC produces deuteron binding: B_cal = 6.39 MeV (+187%, overbinds ~3×). The best calibrated match occurs at f_pi ~ 92 MeV — the observed value, which lies within DFC's predicted range [89.6, 96.9]. DFC correctly identifies 2PE as the binding mechanism but quantitative agreement requires either a tighter f_pi derivation or contact terms from V(φ).
 
-### Proton charge radius
-r_p = 0.701 fm (−17% vs observed 0.841 fm). The pion cloud + core + Foldy decomposition captures 83% of the Dirac form factor but misses the two-pion continuum spectral weight.
+### Proton charge radius (CORRECTED)
+An earlier calculation gave r_p = 0.701 fm (−17%), but this was traced to a sign error in the Foldy term. The Sachs form factor decomposition gives a *positive* Foldy contribution for the proton (not negative as originally coded). With the corrected sign:
+
+- **Corrected (emp κ_p):** r_p = 0.854 fm (+1.5%)
+- **DFC-only (SU(6) κ_p = 2):** r_p = 0.862 fm (+2.5%)
+- **Observed:** r_p = 0.841 fm
+- **Tier:** T3 (uses empirical κ_p; deriving κ_p from DFC and regularizing pion cloud would upgrade)
+- **Reclassified:** P4 Known Failure → P2 Tier Upgrade candidate
+
+### Pion mass
+The model predicts the pion mass via the Gell-Mann–Oakes–Renner (GMOR) relation, using DFC-derived light quark masses and an external chiral condensate value.
+
+- **Pure DFC (NJL condensate):** m_π = 86.0 MeV (−38%, T3 — limited by NJL condensate undershoot)
+- **DFC + lattice condensate:** m_π = 132.0 MeV (−5.4%, T2a)
+- **DFC + lattice + isospin:** m_π = 136.9 MeV (−1.9%, T2a)
+- **Observed:** m_π = 139.6 MeV
+- **Status:** Unblocked by light quark mass derivation. Pure DFC chain limited by NJL; improvement requires beyond-NJL condensate.
+
+### Proton-neutron mass difference
+The model predicts the neutron-proton mass splitting from DFC-derived quark masses combined with an empirical QCD coefficient.
+
+- **Predicted:** Δm(n−p) = 1.289 MeV (Gasser-Leutwyler C = 0.50)
+- **Observed:** Δm(n−p) = 1.293 MeV
+- **Error:** −0.4%
+- **Tier:** T2b (C = 0.50 is external input; isospin ratio r = m_d/m_u from PDG)
+- **Blockers:** Deriving σ_πN, isospin ratio, and EM self-energy from DFC would give a 0-free-param prediction.
+
+---
+
+## Proton Spin Prediction
+
+The model predicts the fraction of the proton's spin carried by quark spins. In DFC, the proton is a Y-junction Skyrmion whose spin comes from collective rotation, not from adding up constituent quark spins. The quark spin fraction is suppressed by one over the number of colors — a topological effect.
+
+- **Predicted:** Σ = g_A/N_c = 4/(3π) = 0.424
+- **Observed:** Σ = 0.330 ± 0.040 (COMPASS)
+- **Error:** +29% (2.4σ)
+- **Tier:** T3 (g_A = 4/π is T2a; 1/N_c suppression is T3)
+- **Free parameters:** 0
+- **Key insight:** The proton spin "crisis" (Σ ≈ 0.3 instead of 1.0) is not a puzzle in DFC — it is the expected behavior of a topological baryon.
+- **Path to improvement:** Computing the I₀/I₁ moment-of-inertia ratio from the DFC Y-junction profile would refine Σ to the range 0.28–0.36, consistent with data.
 
 ---
 
@@ -390,6 +428,11 @@ The clearest tests:
 | m_ν ratio (uncorrected) | 5.33 | −8.3% | T2b | Without color correction |
 | M0 = √(m_u·m_d) | 3.261 MeV | +2.68% | T2a | Confirmed (C459) |
 | m_c, m_s | ~15% low | 15% | T2b | Open |
+| r_p (proton charge radius) | 0.854 fm | +1.5% | T3 | Corrected (was −17% sign bug) |
+| m_π (pion mass, DFC+lattice) | 136.9 MeV | −1.9% | T2a | With lattice condensate |
+| Δm(n−p) (mass difference) | 1.289 MeV | −0.4% | T2b | GL coefficient external |
+| Σ (proton spin fraction) | 4/(3π) = 0.424 | +29% (2.4σ) | T3 | Natural 1/N_c suppression |
+| g_A (axial coupling) | 4/π = 1.2732 | −0.19% | T2a | From V(φ) kink Yukawa |
 
 ---
 
