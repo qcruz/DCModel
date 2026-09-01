@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P7** (C493)
+- **Last tier worked: P1** (C494)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -23,7 +23,6 @@
 
 ## Priority 1 — High-Impact Predictions
 
-- **Top quark mass from Koide** — UNBLOCKED. Koide formula with t=1/√Q_top gives m_t. Test against m_t = 172.69 GeV. Quick computation, high-impact if within 1%
 - **DFC prediction for W mass** — UNBLOCKED. M_W = 79.67 GeV (−0.88%). CDF anomaly at 80.4335 GeV, CMS at 80.360 GeV. Timely — active experimental tension. See `equations/ew_radiative_corrections.py`
 - **Muon anomalous magnetic moment (g−2)_μ** — major experimental target. C488: a_e upgraded to T2a. Compute a_μ through higher loops + hadronic LbL. High visibility. Partially blocked on hadronic VP
 - **Derive pion mass from GMOR** — m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC −38% (NJL-limited). See `equations/pion_mass_gmor.py`
@@ -31,6 +30,7 @@
 - **Derive proton-neutron mass difference from DFC** — C467: Δm=1.289 MeV (−0.4%, T2b). C487: σ_πN=50.9 MeV (−2.2%, T2b). BLOCKED: derive C_QCD from DFC isovector matrix element. See `equations/proton_neutron_mass_difference.py`, `equations/pion_nucleon_sigma_term.py`
 - **Beyond-mean-field Walecka EOS** — BLOCKED: C479 kink-background g₂ correct sign but 14× too weak. Need loop/resonance enhancement or NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
 - **Derive V(phi) contact terms for deuteron binding** — BLOCKED: C473 central B_d=1.15 MeV (−48%). Need kink-kink overlap potential at r<1/Λ_QCD. See `equations/deuteron_tensor_ope.py`
+- **Top quark mass from Koide** — C494: INVESTIGATED, NOT VIABLE. K=2/3 fails for all quark triplets. Best: (c,b,t) pole masses gives +17.7%. Quarks have QCD corrections + CKM mixing that leptons lack. t_actual=0.688 is 2.8% below lepton value — possible QCD correction but not derived. See `equations/top_quark_koide.py`
 
 ---
 
