@@ -320,13 +320,13 @@ The model predicts the neutron-proton mass splitting from DFC-derived quark mass
 
 The model predicts the fraction of the proton's spin carried by quark spins. In DFC, the proton is a Y-junction Skyrmion whose spin comes from collective rotation, not from adding up constituent quark spins. The quark spin fraction is suppressed by one over the number of colors — a topological effect.
 
-- **Predicted:** Σ = g_A/N_c = 4/(3π) = 0.424
+- **Naive (1/N_c):** Σ = g_A/N_c = 4/(3π) = 0.424 (+29%, 2.4σ)
+- **Refined (I₀/I₁):** Σ = g_A × (I₀/I₁) = 0.320 (−3.2%, 0.3σ)
 - **Observed:** Σ = 0.330 ± 0.040 (COMPASS)
-- **Error:** +29% (2.4σ)
-- **Tier:** T3 (g_A = 4/π is T2a; 1/N_c suppression is T3)
-- **Free parameters:** 0
+- **Tier:** T3 (g_A = 4/π is T2a; I₀/I₁ interpolated from Skyrme literature at m_π × R_B = 0.794)
+- **Free parameters:** 0 (R_B = √3·ξ from Y-junction geometry)
 - **Key insight:** The proton spin "crisis" (Σ ≈ 0.3 instead of 1.0) is not a puzzle in DFC — it is the expected behavior of a topological baryon.
-- **Path to improvement:** Computing the I₀/I₁ moment-of-inertia ratio from the DFC Y-junction profile would refine Σ to the range 0.28–0.36, consistent with data.
+- **Path to T2b:** Compute I₀/I₁ directly from DFC kink profile (numerical BVP).
 
 ---
 
@@ -349,7 +349,7 @@ Three phases of prediction tests plus cosmological predictions have been compute
 | f_pi (pion decay const) | 90.63 MeV | 92.1 MeV | −1.6% | T2a |
 | mu_p (proton mag moment) | 2.833 n.m. | 2.793 n.m. | +1.4% | T2a |
 | mu_n (neutron mag moment) | −1.888 n.m. | −1.913 n.m. | −1.3% | T2a |
-| Nuclear symmetry energy J | 37.1 MeV | 32 MeV | +16% | T3 |
+| Nuclear symmetry energy J | 34.9 MeV | 32 MeV | +9.2% | T3 |
 | pp fusion S(0) | 3.99e-25 | 4.01e-25 | −0.4% | T2a |
 | Mirror nuclei CDEs (A≥11) | — | — | 7.2% RMS | T3 |
 | Nolen-Schiffer anomaly | — | — | 67% closed | T3 |
@@ -431,7 +431,7 @@ The clearest tests:
 | r_p (proton charge radius) | 0.854 fm | +1.5% | T3 | Corrected (was −17% sign bug) |
 | m_π (pion mass, DFC+lattice) | 136.9 MeV | −1.9% | T2a | With lattice condensate |
 | Δm(n−p) (mass difference) | 1.289 MeV | −0.4% | T2b | GL coefficient external |
-| Σ (proton spin fraction) | 4/(3π) = 0.424 | +29% (2.4σ) | T3 | Natural 1/N_c suppression |
+| Σ (proton spin, refined) | 0.320 | −3.2% (0.3σ) | T3 | I₀/I₁ at DFC R_B = √3·ξ |
 | g_A (axial coupling) | 4/π = 1.2732 | −0.19% | T2a | From V(φ) kink Yukawa |
 
 ---
