@@ -27,13 +27,10 @@ measurements in different directions could not be as strong as quantum mechanics
 predicts. Experiments confirm the quantum predictions. The correlations are real
 and they are stronger than any pre-printed card can account for.
 
-The standard options are uncomfortable. Either something travels faster than light
-to coordinate the two particles (non-locality), or there is no pre-existing reality
-at all until a measurement is made (indeterminism). Neither option is satisfying.
-The first seems to violate special relativity. The second seems to say that physical
-reality is constituted by the act of looking at it.
-
-DFC proposes a third option: the apparent separation is not real separation.
+DFC proposes that the apparent separation between the two particles is not
+fundamental — they remain features of a single connected substrate configuration.
+Whether this proposal can quantitatively reproduce the Bell-violating correlations
+is an open mathematical question (see below).
 
 ---
 
@@ -150,24 +147,26 @@ information transfer.
 
 ## Where the Crystal Analogy Breaks Down
 
-The crystal dislocation lives in a pre-existing crystal lattice, which lives in
-pre-existing three-dimensional space. There is a background medium, and the
-dislocation is a defect in it.
+The crystal dislocation lives in a pre-existing crystal lattice in pre-existing
+three-dimensional space. There is a background medium, and the dislocation is a
+defect in it.
 
-In DFC, there is no background medium. There is no pre-existing space. The substrate
-is all there is, and what appears as space is what the substrate produces at D3
-localization depths. There is no lattice that the kinks live in — the kinks are
-features of the one field that produces the appearance of space.
-
-This means the DFC account is more fundamental than the crystal analogy in one
-critical way: the apparent separation of the particles is itself a product of the
-same substrate that connects them. The connection is not running through a
-background medium that is separate from the medium producing position. The
+In DFC, there is no background medium. The substrate is all there is, and what
+appears as space is what the substrate produces at D3 localization depths. The
 connectivity and the locality are both properties of the one substrate field.
 
-In the crystal, you can ask: where does the dislocation end and the crystal begin?
-In DFC, you cannot ask that question. The kink and the field it is embedded in are
-the same object at different scales of description.
+There is a more important limitation: a classical dislocation would satisfy Bell's
+inequality. The correlations from a classical shared object are not strong enough
+to match what quantum mechanics predicts. Bell's theorem specifically tests
+whether "they are one object" can quantitatively reproduce the observed statistics,
+and for classical objects the answer is no.
+
+So the DFC substrate must have properties beyond a classical extended object.
+The proposal is that the joint substrate state is irreducibly joint — it cannot
+be decomposed into independent local states associated with each particle. Whether
+this produces the correct Bell-violating statistics is the central open mathematical
+question. The analogy captures the right intuition (one connected object, no signal),
+but the quantitative derivation remains to be done.
 
 ---
 
@@ -185,22 +184,21 @@ the same object at different scales of description.
 
 ## What Is Still Open
 
-The structural account above — entanglement as substrate field connectivity below
-D3 localization — is T2a: consistent with DFC's framework and with all observations,
-but not yet formally derived from the field equation V(φ).
+The structural account — entanglement as substrate field connectivity below D3
+localization — is a T2a structural hypothesis: consistent with DFC's framework
+and with observations, but not yet derived from V(φ).
 
-Two things remain to be shown for a complete account:
+Three things remain for a complete account:
 
-**The Born rule.** Quantum mechanics says the probability of each measurement outcome
-is the square of the wave function amplitude. Three structural arguments establish
-this at T3 (including a T1-quality interference uniqueness argument — the observed
-cos² fringe pattern algebraically selects quadratic probability given linear
-superposition). The remaining gap is a formal derivation of the cos² shape from D3
-localization dynamics in V(φ). See `equations/born_rule_derivation.py`.
+**Joint measurement statistics.** Derive P(A,B|a,b) from substrate dynamics and
+show it matches the quantum prediction E(a,b) = −cos(θ), including Bell violation.
+This is the primary mathematical target.
 
-**The localization mechanism in detail.** What counts as "sufficient interaction" to
-force a definite outcome? The condition has not been derived from V(φ). This is T3
-— the structural account exists, but the formal threshold criterion is open.
+**No-signaling.** Show that P(A|a,b) = P(A|a) — neither party can extract
+information about the other's setting from their local outcomes alone.
+
+**The localization mechanism.** What counts as "sufficient interaction" to force a
+definite outcome? The condition has not been derived from V(φ). This is T3.
 
 ---
 

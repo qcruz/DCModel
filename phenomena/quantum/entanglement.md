@@ -275,8 +275,8 @@ configuration, which would require energy that the measurement device does not p
 
 ## Connections
 
-- **Bell hidden variables** — DFC Bell resolution: Assumption 2 violated by D1/D2 substrate
-  connectivity (not conspiracy); hidden variable λ = φ(D1..D4); `foundations/bell_hidden_variables.md`
+- **Bell hidden variables** — DFC proposes irreducibly joint substrate state (Λ_AB ≠ Λ_A ⊗ Λ_B)
+  rather than factorizable local hidden variables; `foundations/bell_hidden_variables.md`
 - **Tsirelson bound** — CHSH ≤ 2√2 proved algebraically from SU(2) closure algebra;
   `foundations/tsirelson_bound.md`
 - **Kink nucleation** — two-sector topology (N=±1); binary measurement outcomes from

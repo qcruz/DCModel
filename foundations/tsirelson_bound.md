@@ -225,7 +225,7 @@ formalism.
 
 ## Connections
 
-- `foundations/bell_hidden_variables.md` — DFC Bell resolution; Assumption 2 violation
+- `foundations/bell_hidden_variables.md` — Bell factorizability and irreducibly joint substrate state
 - `equations/bell_correlations.py` — CHSH = 2√2 verified (error 4×10^-16)
 - `foundations/spin_emergence.md` — D6 SU(2) closure; Jackiw-Rebbi spinors
 - `equations/quantum_emergence.py` — deriving quantum formalism from substrate (stub)

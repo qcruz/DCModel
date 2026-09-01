@@ -61,6 +61,7 @@
 - **Heavy quarkonium spectrum** — charmonium (J/ψ, ψ') and bottomonium (Υ) from Regge + Coulomb. Test DFC string tension and α_s at different scales
 - **Derive neutrino θ₂₃ from V(φ)** — C475: mass matrix formalized. tan(2θ₂₃)=−2B/(F(2)×Δ_V) [T1]. Reduced to one unknown: Δ_V/(2B)=0.0995 (D7 kink-vortex overlap integral). Same BVP as CKM. See `equations/neutrino_theta23_z3_mechanism.py`
 - **Derive nuclear saturation from DFC couplings** — C481: kink g₂ sign correct, magnitude 14× too weak. Perturbative RG insufficient (β too small). Composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation with DFC condensate. See `equations/nuclear_kink_nonlinear_eos.py` Part F
+- **Derive Bell-violating P(A,B|a,b) from substrate dynamics** — central open challenge. Must show irreducibly joint substrate state produces E(a,b)=−cos(θ), CHSH=2√2, while recovering no-signaling P(A|a,b)=P(A|a). See `foundations/bell_hidden_variables.md`, `educational/19_bell_inequalities.md`
 
 ---
 

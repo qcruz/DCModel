@@ -221,7 +221,7 @@ rigorously derived.
 - `foundations/kink_nucleation.md` — two-sector topology; binary outcomes; Born rule open
 - `foundations/bifurcation_dynamics.md` — γ_D = (16/3)√β; β ≈ 0.035; kink width = Planck length
 - `foundations/kink_scattering.md` — Pöschl-Teller spectrum; shape mode ω₁ = (√3/2)m_σ
-- `foundations/bell_hidden_variables.md` — Bell Assumption 2 violated by D1/D2 connectivity
+- `foundations/bell_hidden_variables.md` — Bell factorizability and irreducibly joint substrate state
 - `foundations/tsirelson_bound.md` — CHSH ≤ 2√2 proved from SU(2) closure algebra
 - `foundations/measurement.md` — measurement as buckling threshold crossing
 - `equations/quantum_emergence.py` — Schrödinger equation derived; Born rule open
