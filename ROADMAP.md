@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 486 (2026-09-01)
+**Last updated:** Cycle 487 (2026-09-01)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P7** (C486)
+- **Last tier worked: P1** (C487)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -19,15 +19,14 @@
 
 ## Priority 1 — High-Impact Predictions
 
-- **Derive proton-neutron mass difference** — 1.289 MeV (−0.4%, T2b with GL coeff C=0.50). Blocked on: derive C from DFC confinement. See `equations/proton_neutron_mass_difference.py`
 - **Muon anomalous magnetic moment (g−2)_μ** — major experimental target. DFC has α_em chain + leading-order a_e. Compute a_μ from 36π chain + hadronic LbL. Compare to Fermilab/J-PARC measurement. High visibility
 - **Derive pion mass from GMOR** — m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC −38% (NJL-limited). See `equations/pion_mass_gmor.py`
-- **Derive pion-nucleon sigma term** — UNBLOCKED by C459 M0 derivation. Target: σ_πN ≈ 52 MeV
 - **Top quark mass from Koide** — Koide formula with t=1/√Q_top gives m_t. Test against m_t = 172.69 GeV. High-impact if within 1%
 - **Derive light quark masses (D6 Yukawa)** — M0 = exp(-(b₀+1/α))×v/√2 run to 2 GeV: +2.68% T2a (C459). Mechanism needs T1 proof. See `equations/light_quark_mass_derivation.py`
 - **Derive V(phi) contact terms for deuteron binding** — C473: central B_d=1.15 MeV (−48%), bare tensor OPE overbinds ~30-60 MeV. Blocker: derive kink-kink overlap potential at r<1/Λ_QCD to determine NN form factor. See `equations/deuteron_tensor_ope.py`
 - **DFC prediction for W mass** — M_W = 79.67 GeV (−0.88%). CDF anomaly at 80.4335 GeV, CMS at 80.360 GeV. What does DFC predict for the current tension? See `equations/ew_radiative_corrections.py`
 - **Beyond-mean-field Walecka EOS** — C479: kink-background g₂<0 (correct sign!) but 14× too weak. Need loop/resonance enhancement. See `equations/nuclear_kink_nonlinear_eos.py`
+- **Derive proton-neutron mass difference from DFC** — C467: Δm=1.289 MeV (−0.4%, T2b). C487: σ_πN=50.9 MeV (−2.2%, T2b). GL coefficient C=0.50 is external (ChPT). Blocker: derive C_QCD from DFC isovector matrix element. See `equations/proton_neutron_mass_difference.py`, `equations/pion_nucleon_sigma_term.py`
 
 ---
 
