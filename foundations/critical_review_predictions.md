@@ -63,14 +63,34 @@ beyond parameter fitting.
 ## Category 4: Unfalsifiable or Ambiguous Claims
 
 These DFC claims are currently structured so that they cannot be tested or could
-accommodate any outcome.
+accommodate any outcome. **Updated C493** with full T3/T4 audit.
+
+### 4a: Genuinely unfalsifiable (no testable prediction exists)
 
 | Claim | Issue | How to sharpen |
 |---|---|---|
-| "Space is substrate localization behavior" | Untestable philosophical claim | Derive a *measurable consequence* that differs from GR at some scale |
-| D4 gravity gap | T4, no metric derived | Compute G_N or a gravitational observable from V(φ) |
-| Dark matter mass = 35.6 keV | T4, no relic abundance | Compute cross-section or decay rate; compare to X-ray searches |
-| Substrate at D1/D2 depths | No observational access | Identify whether D1/D2 produce any detectable signature |
+| "Space is substrate localization behavior" | Philosophical claim with no measurable difference from GR | Derive a *measurable consequence* that differs from GR at some scale — e.g., a modification to the dispersion relation at Planck energies, or a gravitational decoherence rate |
+| Substrate at D1/D2 depths | No observational access; these depths are below all known physics | Identify whether D1/D2 produce any detectable signature. If not, acknowledge as unfalsifiable axiom |
+| "Forces are fold interactions of one object" | Ontological framing; predictions are identical to SM gauge theory at all tested energies | Only falsifiable if DFC predicts different high-energy behavior from SM gauge unification. Does it? Currently no |
+| Compression as the origin of bifurcation | The claim that self-compression drives bifurcation is structural. No observation distinguishes "compression-caused" from "spontaneous" symmetry breaking | Derive a quantitative consequence of the compression dynamics that SSB alone does not produce |
+
+### 4b: Currently unfalsifiable but sharpening is possible
+
+| Claim | Issue | How to sharpen | Status |
+|---|---|---|---|
+| D4 gravity gap — G_N from V(φ) | T4, no metric or G_N derived. 12 modules explored, all fail to close the 23× spin-2 enhancement gap | Compute G_N or any gravitational observable. 3 candidate paths identified (Sakharov induced, Jormungandr, worldvolume) — none closed | Actively blocked |
+| Dark matter mass = 35.6 keV | T4, no relic abundance or decay rate computed. Depth model gives mass but no dynamics | Compute relic abundance from DFC cross-section; predict X-ray line at 35.6/2 = 17.8 keV; compare to NuSTAR/eROSITA limits | Partially testable if sharpened |
+| Cosmological constant combination rule | T3, exponent +0.05% but WHY multiply three exp() terms is not derived | Derive the combination rule from V(φ) thermodynamics or prove it from first principles. The 16 mechanisms tested (7 ruled out) are all attempts at this | Actively worked |
+| Baryon asymmetry η_B magnitude | T4, Sakharov conditions met (T2a) but CP violation strength not computed | Compute J_CP from D6/D7 topology → quantitative η_B. Currently structural-only | Needs new computation |
+| Skyrme parameter e mapping | T3, DFC gives e = π/√2 = 2.22 but standard Skyrme uses e ≈ 5.45. BVP gives different physics depending on which e is used | Derive e from V(φ) unambiguously, or show which mapping is correct | Newly identified C491 |
+
+### 4c: Claims that could accommodate any outcome (danger zone)
+
+| Claim | Risk | Mitigation |
+|---|---|---|
+| "D-depth assignments are provisional" | If D5=U(1), D6=SU(2), D7=SU(3) can be reassigned when predictions fail, the framework is unfalsifiable | Fix the assignments and accept failures as genuine. The current assignments have produced ~10 successful predictions — changing them would invalidate those |
+| "The gap traces to [future derivation]" | Many T3/T4 items defer to a future computation. If the computation always produces a new deferral, progress is illusory | Set deadlines: if a gap has been T4 for 100+ cycles with no progress toward T3, honestly reclassify as "no DFC account exists" |
+| "Composite dynamics needed" | Nuclear EOS, pion mass (pure DFC), magnetic moments all defer to NJL/composite dynamics. This is a legitimate physics argument but could become a permanent excuse | Attempt the NJL gap equation. If it fails to close any gap after serious effort, document honestly that DFC's nuclear predictions require external effective theory |
 
 ---
 
