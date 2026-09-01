@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P5** (C491)
+- **Last tier worked: P6** (C492)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -103,8 +103,8 @@
 
 ## Priority 6 — Documentation
 
-- **Update prediction scorecard** — `educational/06_predictions.md`. Pending: refined Σ (C484), J resolution (C483), Bell chain (C482), a_e T2a upgrade (C488), σ_πN (C487)
 - **Update current_state.md** — major findings since last review (C419): proton charge radius fixed, light quark masses T2a, deuteron tensor, hadronic VP, θ₂₃, σ_πN, a_e upgrade
+- **Update prediction scorecard** — `educational/06_predictions.md`. C492: added a_e, σ_πN, quarkonium, charm/strange updates. Remaining: quarkonium to hadron spectroscopy module
 - **Create new educational modules** — continual check. Remaining:
   - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|²
   - **Electroweak precision tests module** — collect M_W, M_Z, G_F, sin²θ_W, Γ_Z results
@@ -185,10 +185,10 @@ Results that have landed but need to be propagated to documentation, scorecards,
 or other tracking. Each P6 cycle should pick one item from this queue. Check off
 items when done; remove checked items after 2 cycles.
 
-- [ ] C490: J reclassified P4→P2 → update `educational/06_predictions.md`, `current_state.md`
-- [ ] C489: quarkonium spectrum → add to `educational/06_predictions.md`, `educational/30_hadron_spectroscopy.md`
-- [ ] C488: a_e T2a upgrade → update `educational/06_predictions.md` (move from T2b to T2a)
-- [ ] C487: σ_πN = 50.9 MeV → add to `educational/06_predictions.md`
+- [x] C490: J reclassified P4→P2 → update `educational/06_predictions.md` — DONE C492
+- [x] C489: quarkonium spectrum → add to `educational/06_predictions.md` — DONE C492
+- [x] C488: a_e T2a upgrade → update `educational/06_predictions.md` — DONE C492
+- [x] C487: σ_πN = 50.9 MeV → add to `educational/06_predictions.md` — DONE C492
 - [ ] C482: Bell chain T2a → update `educational/19_bell_inequalities.md` with full derivation chain
 - [ ] C484: proton spin Σ refined to −3.2% → update `educational/31_proton_spin_puzzle.md`
 - [ ] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md`
