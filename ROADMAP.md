@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 482 (2026-09-01)
+**Last updated:** Cycle 483 (2026-09-01)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P3** (C482)
+- **Last tier worked: P4** (C483)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -61,13 +61,15 @@
 - **Heavy quarkonium spectrum** — charmonium (J/ψ, ψ') and bottomonium (Υ) from Regge + Coulomb. Test DFC string tension and α_s at different scales
 - **Derive neutrino θ₂₃ from V(φ)** — C475: mass matrix formalized. tan(2θ₂₃)=−2B/(F(2)×Δ_V) [T1]. Reduced to one unknown: Δ_V/(2B)=0.0995 (D7 kink-vortex overlap integral). Same BVP as CKM. See `equations/neutrino_theta23_z3_mechanism.py`
 - **Derive nuclear saturation from DFC couplings** — C481: kink g₂ sign correct, magnitude 14× too weak. Perturbative RG insufficient (β too small). Composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation with DFC condensate. See `equations/nuclear_kink_nonlinear_eos.py` Part F
-- **Bell derivation chain — upgrade remaining T3 gaps** — V(φ) → Bell violation chain assembled T2a (bell_joint_derivation.py, 14/14 PASS). Three gaps remain: (1) measurement dynamics from V(φ) (T3→T2a), (2) joint Born rule substrate justification, (3) emergent relativistic locality. See `foundations/bell_hidden_variables.md`
+- **Bell: measurement dynamics from V(φ)** — how does kink nucleation implement spinor projection onto a measurement axis? Currently T3 structural. Need to derive from field equation dynamics how the D6 kink's SU(2) orientation interacts with the measurement device configuration. See `equations/bell_joint_derivation.py` Part F step 6
+- **Bell: joint Born rule substrate justification** — single-particle Born rule is T2a. Extending to tensor-product measurements on entangled pairs requires showing substrate dynamics reproduces P(A,B|a,b) = |⟨a,b|ψ⟩|². Currently assumed. See `equations/bell_joint_derivation.py` Part F step 7
+- **Bell: emergent relativistic locality** — show that the substrate connection produces no preferred frame for the emergent description. The connection is structural (not a propagating signal), but this needs demonstration. See `foundations/bell_hidden_variables.md`
 
 ---
 
 ## Priority 4 — Known Failures
 
-- **Nuclear symmetry energy J** — −36%, needs larger g_rho
+- **Nuclear symmetry energy J** — was −36% (bare mass), now +9.2% with m*=0.6M + Fock + pion (T3). Reclassify from known failure? See `equations/nuclear_symmetry_energy.py`
 - **Nuclear surface diffuseness** — −20%, DFC m_sigma too heavy
 - **M_W = 79.67 GeV (−0.88%)** — traces to sin²θ_W running or higher-order EW corrections. Investigate whether DFC Δr parameter differs from SM. See `equations/ew_radiative_corrections.py`
 - **Neutrino mass ratio m₃/m₂** — κ=5.33 vs observed 5.81 (−8.3%). Depth ratio needs refinement. See `equations/neutrino_masses.py`
