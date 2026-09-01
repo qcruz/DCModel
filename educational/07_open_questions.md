@@ -177,16 +177,57 @@ The atmospheric mixing angle theta_23 deviates from 45 degrees by about 4 degree
 | C_match scheme factor | 0.795151; 0.001% gap classified as two-loop | T2a/T3 | M_c(D7) from substrate dynamics |
 | Fermion representations | Quarks in fundamental rep (1,0) | T2a | Complete (chirality + triality) |
 | Newton's constant | G_N in SI units | T4 | DFC unit system to SI mapping |
+| Bell joint measurement | V(phi) to CHSH = 2sqrt(2) derivation chain | T2a (chain); T3 (measurement dynamics) | Measurement dynamics from V(phi); joint Born rule justification |
+| D4 gravity gap | Effective metric and spin-2 mode from V(phi) | T4 | Derive G_N from compression geometry |
+| Atmospheric mixing theta_23 | Deviation from maximal mixing | T3 (mass matrix formalized) | D7 kink-vortex overlap integral |
+
+---
+
+## Recently Resolved Items
+
+Several items that were previously listed as open gaps or known failures have been
+addressed:
+
+- **Proton charge radius**: was listed as a known failure at minus 17%. A sign bug in the
+  Foldy term was found and corrected; the result is now plus 1.5% (T3).
+  See `equations/proton_charge_radius_dfc.py`.
+
+- **Nuclear symmetry energy J**: was listed as a known failure at minus 36%. The old
+  calculation used the bare nucleon mass while DFC's own Walecka model gives an effective
+  mass ratio of about 0.6. With the effective mass plus Fock exchange corrections, J equals
+  34.9 MeV (plus 9.2%, T3). See `equations/nuclear_symmetry_energy.py`.
+
+- **Proton spin content Sigma**: the naive estimate of 0.424 (plus 29%) has been refined
+  using the DFC-constrained baryon radius. The Skyrmion moment of inertia ratio at the
+  DFC value of m_pi times R_B gives Sigma equals 0.320 (minus 3.2%, 0.3 sigma from
+  COMPASS). See `equations/proton_spin_dfc.py`.
+
+- **Bell violation derivation**: the chain from V(phi) to CHSH equals two times the square
+  root of two is now assembled and verified at T2a (14/14 PASS). Three remaining gaps:
+  measurement dynamics from V(phi) (T3), joint Born rule justification, and emergent
+  relativistic locality. See `equations/bell_joint_derivation.py`.
+
+- **Light quark masses**: the Yukawa coupling y(v) equals the exponential of minus the
+  quantity b_0 plus one over alpha has been confirmed at T2a, giving the light quark mass
+  scale M0 to plus 2.68%. See `equations/light_quark_mass_derivation.py`.
 
 ---
 
 ## What These Gaps Mean for the Model's Status
 
-The gaps above are derivation gaps, not failures. The charm and strange quark masses are T2a at +2.45% error from the center vortex factor. That is different from predicting a wrong proton decay rate (which the model says is zero, and no decay has been observed) or a wrong tau mass (which the Koide formula gets to 0.006%).
+The gaps listed in this module are derivation gaps, not failures. A derivation gap is a
+missing proof step; a failure is a wrong prediction. The distinction matters.
 
-The most significant structural achievement is the Yang-Mills mass gap proof reaching 99% mathematical proof standard with all seven Jaffe-Witten criteria at T1+cited — the highest possible tier. The fine structure constant chain achieves minus 0.001% accuracy through an error cancellation mechanism. The fermion representation question is now closed at T2a.
+The most significant structural achievement is the Yang-Mills mass gap proof reaching 99%
+mathematical proof standard with all seven Jaffe-Witten criteria at T1+cited. The fine
+structure constant chain achieves minus 0.001% accuracy. The fermion representation
+question is closed at T2a.
 
-The remaining T4 gaps are genuine open problems: the hadronic dispersive integral (closes both the alpha_em chain and the ECCC identity simultaneously), M_c(D7) from substrate dynamics, and Newton's constant in SI units.
+The remaining T4 gaps are genuine open problems: the hadronic dispersive integral, M_c(D7)
+from substrate dynamics, Newton's constant in SI units, and the D4 gravity gap. Several
+previously listed failures have been resolved by correcting inconsistent approximations
+or finding sign bugs — a reminder that careful derivation matters more than structural
+arguments.
 
 A model that is honest about gaps is more trustworthy, not less.
 

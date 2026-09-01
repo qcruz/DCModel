@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 484 (2026-09-01)
+**Last updated:** Cycle 485 (2026-09-01)
 
 ---
 
@@ -11,7 +11,7 @@
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P5** (C484)
+- **Last tier worked: P6** (C485)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -101,7 +101,6 @@
 
 ## Priority 6 — Documentation
 
-- **Update open questions** — `educational/07_open_questions.md`
 - **Document audits (continuous)** — pick 2-4 random docs, check for stale tiers/refs/language
 - **Practical applications** — add entries to `practical_applications/`. Candidates: nuclear energy density limits, particle accelerator predictions, astrophysical observables
 - **Update current_state.md** — major findings since last review (C419): proton charge radius fixed, light quark masses T2a, deuteron tensor analysis, hadronic VP corrections, θ₂₃ mass matrix
@@ -110,7 +109,8 @@
   - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|². Only mentioned in passing in modules 17/19 despite being a major result
   - **Proton charge radius module** — C476 sign bug discovery + corrected prediction. Good educational example of how careful derivation catches errors
   - **Electroweak precision tests module** — collect M_W, M_Z, G_F, sin²θ_W, Γ_Z results into one educational narrative
-- **Update prediction scorecard** — `educational/06_predictions.md`. C478: added r_p correction, m_π, Δm(n−p), proton spin Σ, g_A. Next: add proton spin module 31 link
+- **Update prediction scorecard** — `educational/06_predictions.md`. C478: added r_p correction, m_π, Δm(n−p), proton spin Σ, g_A. Next: add refined Σ (C484), J resolution (C483), Bell chain (C482)
+- **Update open questions** — `educational/07_open_questions.md`. C485: updated summary table (added Bell, D4, θ₂₃), added Recently Resolved section (r_p, J, Σ, Bell, M0)
 
 ---
 
