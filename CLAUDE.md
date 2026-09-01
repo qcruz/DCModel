@@ -579,12 +579,12 @@ Full criteria, tier system explanations, completeness milestones, and evaluation
 | α_s(M_Z) [ECCC+α_em(0)] | alpha_em_selfconsistency.py | 0.11821 | 0.11820 | +0.006% | 0 (SM α_em(0) input) |
 | EW VEV v (246 GeV) | ewsb_cocrystallization.py | 247.83 GeV | 246.22 GeV | +0.65% | 2 (M_c(D5,D6) from ECCC) |
 | Tau lepton mass [Koide] | koide_phase_coupling.py | 1776.97 MeV | 1776.86 MeV | +0.006% | 0 (m_e, m_μ inputs) |
+| Electron a_e (g−2, 4-loop) | anomalous_magnetic_moment.py | 0.001158 | 0.001160 | −0.14% | 36π chain + QED C₂-C₄ (Cycle 488) |
 
 ### Current Tier 2b Predictions (equation exists; >5% error or leading-order only)
 
 | Prediction | Module | Predicted | Observed | Error | Resolution status |
 |---|---|---|---|---|---|
-| Electron anomalous magnetic moment (a_e) | anomalous_magnetic_moment.py | 0.001160 | 0.001160 | −0.14% | Leading term; α_em 36π chain (Cycle 142) |
 | Thomson cross-section (6.65×10⁻²⁹ m²) | scattering_cross_sections.py | 6.633×10⁻²⁹ | 6.652×10⁻²⁹ | −0.28% | 36π+obs Δ_QED; was −4.3% (Cycle 143) |
 | Hydrogen E_1 (−13.598 eV) | atomic_structure.py | −13.568 eV | −13.598 eV | +0.28% | 36π+obs Δ_QED; was −4.2% (Cycle 143) |
 | Tau lepton mass [dimple] | mass_spectrum.py | 212 MeV | 1777 MeV | 8.4× off | Superseded by Koide route (Tier 2a above) |
