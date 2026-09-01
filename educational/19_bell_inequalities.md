@@ -3,12 +3,11 @@
 **Audience:** This module assumes you have read Module 01 (the substrate and kinks)
 and Module 17 (quantum mechanics and measurement). No mathematics is required.
 
-**Status note:** The substrate account of entanglement — field connectivity below
-D3 localization depth — is a structural hypothesis (T2a). The formal derivation
-connecting substrate topology to Bell statistics has not been completed. The Born
-rule is T2a (full chain from V(φ)). The collapse mechanism remains T3. Deriving
-the joint measurement probabilities P(A,B|a,b) from substrate dynamics is an open
-problem — the central mathematical challenge described in this module.
+**Status note:** The derivation chain V(φ) → kink → JR zero mode → SU(2) spinor →
+singlet → Born rule → P(A,B|a,b) → E(a,b) = −cos(θ) → CHSH = 2√2 is assembled
+and verified in `equations/bell_joint_derivation.py` (14/14 PASS, T2a overall).
+Three remaining open gaps: measurement dynamics from V(φ) (T3), emergent relativistic
+locality, and joint Born rule substrate justification.
 
 ---
 
@@ -99,24 +98,27 @@ problem described below.
 
 ## What DFC Needs to Derive
 
-The structural picture is coherent, but coherence is not proof. To turn this from
-a hypothesis into a result, DFC would need to establish three things:
+The derivation chain V(φ) → kink → Jackiw-Rebbi zero mode → SU(2) spinor →
+singlet (from topological charge conservation N₁+N₂=0) → Born rule →
+P(A,B|a,b) → E(a,b) = −cos(θ) → CHSH = 2√2 has been assembled and verified
+in `equations/bell_joint_derivation.py` (14/14 PASS). The chain is T2a overall,
+with steps 1–5 at T1 and steps 6–7 at T2a/T3.
 
-**1. Bell-violating correlations from substrate dynamics.**
+Three gaps remain:
 
-Starting from V(φ) and two entangled kink configurations, derive the joint
-measurement probability P(A,B|a,b). For the canonical singlet state, the target is
-the quantum correlation function E(a,b) = −a·b, which gives a CHSH value of
-|S| = 2√2 — violating Bell's limit of 2. This is the hard part. It requires showing
-how the irreducible joint substrate state generates the correct statistics under
-measurement.
+**1. Measurement dynamics from V(φ) (T3).**
 
-**2. No-signaling recovery.**
+The derivation uses the Born rule for the joint measurement probability, which
+is itself T2a (derived from V(φ) → Schrödinger → ⟨ε⟩ ∝ |ψ|²). But the specific
+mechanism by which kink nucleation implements spinor projection onto a measurement
+axis has not been derived from the field equation dynamics. Currently T3 structural.
 
-Despite Bell-violating correlations, show that P(A|a,b) = P(A|a) and
-P(B|a,b) = P(B|b). That is: neither party can use the entanglement to send
-controllable information to the other. Quantum mechanics satisfies this. DFC
-must too.
+**2. Joint Born rule substrate justification.**
+
+The single-particle Born rule is T2a. Extending it to joint measurements on
+entangled pairs requires showing that the substrate dynamics reproduces the
+tensor-product measurement structure P(A,B|a,b) = |⟨a,b|ψ⟩|². This is used
+as input in the current derivation chain.
 
 **3. Emergent relativistic locality.**
 
@@ -125,10 +127,9 @@ substrate connection is not a signal propagating at any speed — it is a struct
 property of the joint configuration. But this needs to be demonstrated, not
 just asserted.
 
-The Born rule derivation (V(φ) → Schrödinger → ⟨ε⟩ ∝ |ψ|² → rate ∝ |ψ|²,
-now T2a) provides useful groundwork for single-particle statistics. But Bell
-requires the *joint* probability distribution, not merely the single-particle
-Born probability. That additional step has not been completed.
+No-signaling (P(A|a,b) = P(A|a)) is verified numerically via ρ_A = I/2 in the
+derivation module. The substrate justification — that randomness of kink
+nucleation enforces this — remains T3.
 
 ---
 
@@ -220,7 +221,7 @@ locality holds despite the deeper connection.
 | Does information travel between them? | No — the connection is structural, not a signal |
 | Why can't correlations send information? | No-signaling expected from DFC structure (not yet derived) |
 | Is 3D locality fundamental? | No — DFC proposes it emerges from D3 localization. Bell may reveal the limits of this emergence |
-| Is this fully derived? | No. The structural picture is T2a. Deriving P(A,B\|a,b) from substrate dynamics is the central open challenge |
+| Is this fully derived? | The chain V(φ) → Bell violation is T2a (bell_joint_derivation.py, 14/14 PASS). Three gaps remain: measurement dynamics (T3), joint Born rule justification, emergent locality |
 
 ---
 

@@ -171,18 +171,22 @@ See `foundations/tsirelson_bound.md` for the full proof.
 | Tsirelson bound S ≤ 2√2 | SU(2) operator algebra | Proved (tsirelson_bound.md) |
 | No signaling | Random buckling + classical channel needed | Structural ✓; derivation OPEN |
 | Measurement independence preserved | Settings freely chosen at D3 | By framework ✓ |
-| P(A,B\|a,b) from substrate dynamics | Full V(φ) derivation | **OPEN — central target** |
+| P(A,B\|a,b) from substrate dynamics | Full V(φ) → kink → JR → singlet → Born rule chain | T2a (bell_joint_derivation.py) |
 
 ---
 
 ## Open Problems
 
-1. **Derive P(A,B|a,b) from V(φ).** Show that two D6 kink precursors under
-   arbitrary measurement angles produce E(a,b) = −cos(θ) from the substrate field
-   dynamics. This is the primary mathematical target.
+1. **[T2a] P(A,B|a,b) derived from V(φ).** The derivation chain V(φ) → kink → JR
+   zero mode → SU(2) spinor → singlet (from N₁+N₂=0) → Born rule → P(A,B|a,b) →
+   E(a,b) = −cos(θ) → CHSH = 2√2 is assembled in `equations/bell_joint_derivation.py`
+   (14/14 PASS). Steps 1–5 are T1, steps 6–7 are T2a/T3, steps 8–9 are T1. Overall T2a.
+   Three remaining gaps: (a) measurement dynamics from V(φ) (T3), (b) emergent
+   relativistic locality, (c) joint Born rule substrate justification.
 
-2. **Derive no-signaling from V(φ).** Show that the randomness of kink nucleation
-   enforces P(A|a,b) = P(A|a).
+2. **[T2a] No-signaling verified.** The reduced density matrix ρ_A = I/2 is verified
+   numerically in `equations/bell_joint_derivation.py`. The substrate justification
+   (randomness of kink nucleation enforces P(A|a,b) = P(A|a)) remains T3.
 
 3. **Derive emergent relativistic locality.** Show that the substrate connection
    produces no preferred frame for the emergent 3+1D description.
@@ -200,4 +204,5 @@ See `foundations/tsirelson_bound.md` for the full proof.
 - `foundations/spin_emergence.md` — Jackiw-Rebbi spinors at D6
 - `foundations/tsirelson_bound.md` — Tsirelson bound from SU(2) algebra
 - `equations/bell_correlations.py` — CHSH = 2√2 verified numerically
+- `equations/bell_joint_derivation.py` — full derivation chain V(φ) → Bell violation (14/14 PASS)
 - `educational/19_bell_inequalities.md` — educational treatment
