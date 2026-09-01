@@ -423,10 +423,9 @@ controlled environments, τ_dec can be seconds or longer.
   nucleation rate argument for Born rule
 - `foundations/born_rule_derivation.md` — spin Born rule derived (Cycle 38); position rule open
 - `foundations/tsirelson_bound.md` — CHSH ≤ 2√2 proved from SU(2) structure and binary outcomes
-- `foundations/bell_hidden_variables.md` — Bell inequality as DFC substrate nonlocality;
-  no collapse conspiracy required
+- `foundations/bell_hidden_variables.md` — Bell factorizability and irreducibly joint substrate state
 - `foundations/substrate.md` — V(φ) = −α/2 φ² + β/4 φ⁴; kink solutions; Schrödinger derived
 - `foundations/depth_assignment.md` — D5/D6/D7 provisional assignments; Route B
 - `equations/quantum_emergence.py` — Schrödinger derivation; born_rule_spin() verified
 - `equations/bell_correlations.py` — E(a,b) = −cos(θ) and CHSH = 2√2 verified numerically
-- `phenomena/quantum/entanglement.md` — Bell resolution; Tsirelson chain closed
+- `phenomena/quantum/entanglement.md` — entanglement as substrate connectivity; Bell derivation open

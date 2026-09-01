@@ -148,5 +148,5 @@ what the photon planet picture implies for particles that are "separated" across
 
 **See also:**
 - `educational/17_quantum_mechanics.md` — measurement as D3 localization event
-- `educational/19_bell_inequalities.md` — why entanglement is not spooky in DFC
+- `educational/19_bell_inequalities.md` — Bell's theorem and DFC entanglement
 - `educational/01_the_substrate.md` — the substrate field from first principles
