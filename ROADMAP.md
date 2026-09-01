@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 489 (2026-09-01)
+**Last updated:** Cycle 490 (2026-09-01)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P3** (C489)
+- **Last tier worked: P4** (C490)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 
@@ -42,6 +42,7 @@
 - **Upgrade baryon Regge intercept to T2a** — BLOCKED on Y-junction penalty Δ=−1 (P3 item). See `equations/regge_intercept_derivation.py`
 - **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — BLOCKED on hadronic VP (T4). Oldest open bottleneck. See `equations/alpha_em_dfc_chain.py`
 - **Upgrade cosmological constant combination rule** — STUCK. Gap (iii) Casimir=α: 16 mechanisms tested, 7 ruled out. No derivation of exp(-α) found. See `equations/substrate_casimir_alpha.py`
+- **Upgrade nuclear symmetry energy J to T2a** — C490: RECLASSIFIED from P4 (was −36% failure, now +9.2% T3). Path: self-consistent m* from DFC Walecka + explicit Fock integral with DFC g_ρ. See `equations/nuclear_symmetry_energy.py`
 
 ---
 
@@ -68,7 +69,6 @@
 
 ## Priority 4 — Known Failures
 
-- **Nuclear symmetry energy J** — NEARLY RESOLVED: was −36%, now +9.2% (T3). Reclassify? See `equations/nuclear_symmetry_energy.py`
 - **M_W = 79.67 GeV (−0.88%)** — close to threshold. Traces to sin²θ_W running or EW corrections. See `equations/ew_radiative_corrections.py`
 - **Charm/strange quark mass residual** — κ_q=πN_c/2: charm +0.29%, strange +2.09%. Small gap, may be closable
 - **Neutrino mass ratio m₃/m₂** — κ=5.33 vs observed 5.81 (−8.3%). Depth ratio needs refinement. See `equations/neutrino_masses.py`
