@@ -15,6 +15,9 @@
 - **Last tier worked: P4** (C490)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
+- **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
+- **Critical Blockers:** Updated when a blocker is resolved or a new multi-item blocker is discovered. When a blocker clears, promote newly-unblocked items upward in their tiers.
+- **Pending Propagation:** Each P6 cycle picks one item from this queue. New results that need doc updates get added here immediately. Checked-off items are removed after 2 cycles.
 
 ---
 
@@ -129,3 +132,63 @@ particular concept is not.
 - **Catalog what DFC cannot do** — maintain an honest list of phenomena that DFC has no account for, even in principle. This is different from P4 (known failures with partial results). This is about blind spots — things the framework does not even attempt
 - **External literature comparison** — when a DFC result matches observation, check whether the same result has been derived elsewhere from different premises. If so, what does that tell us about the uniqueness (or non-uniqueness) of the DFC derivation?
 - **Audit prediction quality vs. standard approaches** — C486: DONE. See `foundations/critical_review_predictions.md`. Four categories: SM-replicated (atomic, cosmo, EW), genuine value (couplings, N_c, strong CP, generations), SM-superior (loops, flavor), unfalsifiable (D1/D2, D4 gravity). Key finding: ~10 genuine predictions of SM free parameters from 2 inputs; rest is replication
+
+---
+
+## Spoke Coverage Dashboard
+
+The hub is V(φ). Each spoke is a physics domain radiating outward. This table tracks
+development breadth — which spokes are strong, which are neglected, and where the
+highest-leverage upgrades lie. Update this table whenever a spoke's best tier, gap
+status, or last-touched cycle changes.
+
+| # | Spoke | Best tier | Key modules | Key gaps | Last cycle |
+|---|---|---|---|---|---|
+| 1 | Coupling constants | T2a | alpha_em_prediction, alpha_em_selfconsistency, alpha_s_pure_dfc, d5_complex_from_instability | α_em(0) identity T4 (hadronic VP); Casimir=α T3 | C488 |
+| 2 | Electroweak | T2a | muon_lifetime, weinberg_angle_rg, z_boson_decays, ew_radiative_corrections, ewsb_cocrystallization, higgs_potential | Muon g−2 hadronic T4; M_W −0.88% | C488 |
+| 3 | Hadron spectroscopy | T2a | meson_regge_spectrum, baryon_mass_dfc, quarkonium_spectrum, pion_mass_gmor, rho_meson_dfc | Y-junction Δ=−1 T3; hadronic VP T4; quarkonium α_s T3 | C489 |
+| 4 | Nuclear physics | T3 | nuclear_symmetry_energy, nuclear_saturation_dfc, nuclear_dfc_periodic_table, deuteron_tensor_ope, nuclear_kink_nonlinear_eos | Deuteron B_d −48% T4; Walecka g₂ 14× weak T4; NJL gap eq. | C490 |
+| 5 | Cosmology | T2a | cosmological_predictions, cosmological_predictions_2, cosmological_predictions_3, bbn_predictions, cosmology | Λ combination rule T3; η_B magnitude T4; DM relic T4 | C414 |
+| 6 | Bell / QM foundations | T2a | bell_joint_derivation, born_rule_derivation, born_rule_schrodinger, collapse_mechanism | Measurement dynamics T3; joint Born rule T3; emergent locality T3 | C482 |
+| 7 | Neutrino physics | T3 | neutrino_masses, neutrino_theta23_z3_mechanism, neutrino_casimir_depth | θ₂₃ overlap integral T4; m₃/m₂ −8.3% T3; absolute mass scale T4 | C475 |
+| 8 | Atomic physics | T2b | atomic_structure, atomic_physics_predictions, lamb_shift, fine_structure | All predictions inherit α_em(0) T4 offset; Lamb shift higher-order T3 | C432 |
+| 9 | Gravity (D4) | T3 | d4_strong_field_metric, d4_einstein_from_jormungandr, d4_zero_mode_gravity, d4_gravity_spin2_enhancement | G_N spin-2 enhancement 22.9× T4; 1/r potential T4 | C469 |
+| 10 | Flavor / masses | T2a | koide_phase_coupling, light_quark_mass_derivation, quark_mass_kappa_derivation, generation_count_proof | CKM angles T4; top quark mass T4; τ dimple route 8.4× off | C459 |
+| 11 | Proton structure | T2a | proton_spin_dfc, proton_charge_radius_dfc, nucleon_magnetic_moments, pion_nucleon_sigma_term | μ_p/μ_n sea quarks T4; charge radius pion cloud T3 | C487 |
+
+**Reading this table:** Spokes at T2a are well-developed; T3 means structural account exists
+but quantitative precision is limited; T4 means major derivation gaps remain. Spokes not
+touched in 50+ cycles deserve priority attention. The "Key gaps" column shows what would
+upgrade the spoke's best tier.
+
+---
+
+## Critical Blockers
+
+Items that block 2 or more downstream tasks. Resolving these has outsized impact.
+When a blocker is resolved, update this table and promote unblocked items in P1-P3.
+
+| Blocker | Status | Unblocks |
+|---|---|---|
+| **Hadronic VP** δ(Δα)^NP = 0.00102 | T4 — dispersive approach needed | α_em(0) identity; muon g−2; all atomic physics T2b→T2a |
+| **D6/D7 overlap integral** (kink-vortex BVP) | T4 — reduced to one computable quantity | θ₂₃; CKM/PMNS; baryon asymmetry magnitude |
+| **Y-junction penalty Δ = −1** | T3 — Casimir gives 12.5% | Baryon Regge intercept T2a; Δ-N splitting T2b |
+| **NJL gap equation** with DFC condensate | T4 — composite σ dynamics | Walecka EOS; nuclear saturation; pion mass (pure DFC); μ_p/μ_n sea quarks |
+| **2-loop α_s running** | T3 — 1-loop implemented | Quarkonium absolute masses; charmonium M(1S) +22% gap |
+| **D4 spin-2 enhancement** (factor ~23) | T4 — non-perturbative | G_N derivation; gravitational predictions; Planck scale |
+
+---
+
+## Pending Propagation
+
+Results that have landed but need to be propagated to documentation, scorecards,
+or other tracking. Each P6 cycle should pick one item from this queue. Check off
+items when done; remove checked items after 2 cycles.
+
+- [ ] C490: J reclassified P4→P2 → update `educational/06_predictions.md`, `current_state.md`
+- [ ] C489: quarkonium spectrum → add to `educational/06_predictions.md`, `educational/30_hadron_spectroscopy.md`
+- [ ] C488: a_e T2a upgrade → update `educational/06_predictions.md` (move from T2b to T2a)
+- [ ] C487: σ_πN = 50.9 MeV → add to `educational/06_predictions.md`
+- [ ] C482: Bell chain T2a → update `educational/19_bell_inequalities.md` with full derivation chain
+- [ ] C484: proton spin Σ refined to −3.2% → update `educational/31_proton_spin_puzzle.md`
+- [ ] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md`
