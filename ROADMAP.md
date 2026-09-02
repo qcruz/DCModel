@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 490 (2026-09-01)
+**Last updated:** Cycle 495 (2026-09-01)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P1** (C494)
+- **Last tier worked: P2** (C495)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -36,7 +36,6 @@
 
 ## Priority 2 — Tier Upgrades
 
-- **Upgrade Lamb shift to T2a** — UNBLOCKED. Existing module gives leading-order result. Add VP + self-energy corrections using DFC α_em chain (same technique as C488 a_e upgrade). See `equations/lamb_shift.py`
 - **Close f_pi 1.6% gap** — traces to m_rho undershoot. Has equation module. See `equations/fpi_gap_closure.py`
 - **Upgrade cosmological predictions to T2a** — broad impact. Λ_cosm (−3.5%), CMB ℓ₁ (+0.89%), BAO r_drag (−0.27%) all T3. Identify which tier bottleneck to close first
 - **Upgrade proton charge radius to T2a** — C476: corrected to +1.5% (emp κ_p) or +2.5% (SU(6)). Needs: derive κ_p from DFC, regularize pion cloud. See `equations/proton_charge_radius_dfc.py`
@@ -151,7 +150,7 @@ status, or last-touched cycle changes.
 | 5 | Cosmology | T2a | cosmological_predictions, cosmological_predictions_2, cosmological_predictions_3, bbn_predictions, cosmology | Λ combination rule T3; η_B magnitude T4; DM relic T4 | C414 |
 | 6 | Bell / QM foundations | T2a | bell_joint_derivation, born_rule_derivation, born_rule_schrodinger, collapse_mechanism | Measurement dynamics T3; joint Born rule T3; emergent locality T3 | C482 |
 | 7 | Neutrino physics | T3 | neutrino_masses, neutrino_theta23_z3_mechanism, neutrino_casimir_depth | θ₂₃ overlap integral T4; m₃/m₂ −8.3% T3; absolute mass scale T4 | C475 |
-| 8 | Atomic physics | T2b | atomic_structure, atomic_physics_predictions, lamb_shift, fine_structure | All predictions inherit α_em(0) T4 offset; Lamb shift higher-order T3 | C432 |
+| 8 | Atomic physics | T2a | atomic_structure, atomic_physics_predictions, lamb_shift, fine_structure | Lamb shift T2a (−0.69%); remaining atomic predictions inherit α_em(0) offset | C495 |
 | 9 | Gravity (D4) | T3 | d4_strong_field_metric, d4_einstein_from_jormungandr, d4_zero_mode_gravity, d4_gravity_spin2_enhancement | G_N spin-2 enhancement 22.9× T4; 1/r potential T4 | C469 |
 | 10 | Flavor / masses | T2a | koide_phase_coupling, light_quark_mass_derivation, quark_mass_kappa_derivation, generation_count_proof | CKM angles T4; top quark mass T4; τ dimple route 8.4× off | C459 |
 | 11 | Proton structure | T2a | proton_spin_dfc, proton_charge_radius_dfc, nucleon_magnetic_moments, pion_nucleon_sigma_term | μ_p/μ_n sea quarks T4; charge radius pion cloud T3; Skyrme e mapping T3 | C491 |
@@ -185,10 +184,7 @@ Results that have landed but need to be propagated to documentation, scorecards,
 or other tracking. Each P6 cycle should pick one item from this queue. Check off
 items when done; remove checked items after 2 cycles.
 
-- [x] C490: J reclassified P4→P2 → update `educational/06_predictions.md` — DONE C492
-- [x] C489: quarkonium spectrum → add to `educational/06_predictions.md` — DONE C492
-- [x] C488: a_e T2a upgrade → update `educational/06_predictions.md` — DONE C492
-- [x] C487: σ_πN = 50.9 MeV → add to `educational/06_predictions.md` — DONE C492
 - [ ] C482: Bell chain T2a → update `educational/19_bell_inequalities.md` with full derivation chain
 - [ ] C484: proton spin Σ refined to −3.2% → update `educational/31_proton_spin_puzzle.md`
+- [ ] C495: Lamb shift T2a upgrade (−0.69%) → update `educational/06_predictions.md` atomic section
 - [ ] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md`

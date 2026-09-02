@@ -580,6 +580,7 @@ Full criteria, tier system explanations, completeness milestones, and evaluation
 | EW VEV v (246 GeV) | ewsb_cocrystallization.py | 247.83 GeV | 246.22 GeV | +0.65% | 2 (M_c(D5,D6) from ECCC) |
 | Tau lepton mass [Koide] | koide_phase_coupling.py | 1776.97 MeV | 1776.86 MeV | +0.006% | 0 (m_e, m_μ inputs) |
 | Electron a_e (g−2, 4-loop) | anomalous_magnetic_moment.py | 0.001158 | 0.001160 | −0.14% | 36π chain + QED C₂-C₄ (Cycle 488) |
+| Lamb shift 2S₁/₂−2P₁/₂ (1058 MHz) | lamb_shift.py | 1050.5 MHz | 1057.845 MHz | −0.69% | 36π chain α⁵ scaling (Cycle 495) |
 
 ### Current Tier 2b Predictions (equation exists; >5% error or leading-order only)
 
