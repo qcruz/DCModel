@@ -627,7 +627,8 @@ phi -> g_muv^eff -> R -> (M_Pl^2 / 2) R -> G_N
 | d4_sakharov_enhanced.py | Three enhancement mechanisms | xi_R=0.0126 fills gap | T3 |
 | d4_kink_bending_rigidity.py | Classical bending rigidity | κ_raw=27.83 M_Pl² (55.7×) | T1 |
 | d4_bending_prefactor.py | Prefactor mechanism search | G₅=0.136 self-consistent, nonpert. | T3 |
-| d4_coupled_kink_warp.py | Emergent AdS + RS2 gravity | κ=1/k=0.4972 (−0.57%, 0 free params) | T1 |
+| d4_coupled_kink_warp.py | Emergent AdS + RS2 gravity | κ_thin=1/k=0.4972 (−0.57%) | T1 |
+| d4_thick_wall_bvp.py | Self-consistent thick-wall BVP | κ_thick=2.04 (4.1× overshoot) | T2a |
 
 ---
 
@@ -643,11 +644,12 @@ phi -> g_muv^eff -> R -> (M_Pl^2 / 2) R -> G_N
 - The kink's classical bending rigidity κ_raw = 27.83 M_Pl² is 55.7×
   LARGER than M_Pl²/2 — the substrate has more than enough rigidity
   for gravity
-- **The gravitational coupling coefficient to −0.57% accuracy (T1):**
+- **The warp factor suppression mechanism (T1 structural, T2a numerical):**
   V(phi_0) < 0 creates an emergent AdS bulk; the kink localizes gravity
-  via the Randall-Sundrum mechanism; κ = 1/k = 4/(α√(3π)) = 0.4972
-  with ZERO free parameters. The "missing prefactor" from C504-505
-  (f ≈ 0.018) is the warp factor suppression
+  via the Randall-Sundrum mechanism. Thin-wall: κ = 1/k = 0.4972 (−0.57%).
+  Self-consistent thick-wall BVP: κ = 2.04 (4.1× overshoot). The thin-wall
+  approximation is poor (kξ = 1.76) — gravity back-reaction widens the kink
+  by 8×. Progress: raw rigidity 56× → thick-wall 4× overshoot
 
 **What DFC has NOT derived:**
 - An effective metric g_muv^eff as an explicit functional of phi

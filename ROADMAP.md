@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 507 (2026-09-03)
+**Last updated:** Cycle 508 (2026-09-03)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P6** (C507)
+- **Last tier worked: P3** (C508)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -55,7 +55,7 @@
 - **Baryon asymmetry magnitude** — Sakharov conditions met (T2a, C414). η_B magnitude T4. Compute CP violation strength from D6/D7 topology → predict η_B ~ 6×10⁻¹⁰
 - **Dark matter mass and relic abundance** — m_DM=35.6 keV (T4, depth model). Relic abundance OPEN. High visibility. See `equations/cosmological_predictions_2.py`
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
-- **D4 gravity gap — self-consistent thick-wall BVP** — C506: MAJOR BREAKTHROUGH. V(φ₀) < 0 → emergent AdS bulk [T1]. RS2 localization gives κ = 1/k = 4/(α√(3π)) = 0.4972 (−0.57% from 0.5) [T1]. ZERO free params. The "missing prefactor" from C504-505 IS the warp factor suppression. Remaining gap: α_DFC/α_exact = 1.006. Thick-wall correction requires relaxation BVP (shooting unstable). See `equations/d4_coupled_kink_warp.py`
+- **D4 gravity gap — factor-4 overshoot** — C508: Self-consistent thick-wall BVP (solve_bvp, 12/12 PASS) gives κ_thick = 2.04, factor 4.1× above target 0.5. Gravity back-reaction widens kink by 8× (xi_eff = 7.7 vs 0.87 l_Pl). Constraint verified to 10⁻¹² precision. Thin-wall (C506, κ = 0.497) was poor approximation (kξ = 1.76). Progress: raw rigidity 56× → thick-wall 4× overshoot. NEXT: investigate scalar-gravity coupling normalization; possible factor-of-4 from different 5D Planck mass identification. See `equations/d4_thick_wall_bvp.py`
 - **D4 gravity gap — emergent diffeomorphism** — identify symmetry protecting graviton mass. Priority C. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — non-perturbative enhancement** — derive G_eff(r) transition scale. Lower priority after C506 result. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — numerical kink-kink simulation** — simulate V(φ) with two kinks, measure mutual attraction profile and coefficient. Bypasses analytical blockers. Priority D. See `foundations/d4_gravity_gap.md` §9
