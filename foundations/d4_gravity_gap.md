@@ -626,6 +626,7 @@ phi -> g_muv^eff -> R -> (M_Pl^2 / 2) R -> G_N
 | d4_geff_transition.py | Scale-dependent G_eff model | Sigmoid interpolation | T3 |
 | d4_sakharov_enhanced.py | Three enhancement mechanisms | xi_R=0.0126 fills gap | T3 |
 | d4_kink_bending_rigidity.py | Classical bending rigidity | κ_raw=27.83 M_Pl² (55.7×) | T1 |
+| d4_bending_prefactor.py | Prefactor mechanism search | G₅=0.136 self-consistent, nonpert. | T3 |
 
 ---
 
