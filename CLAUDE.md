@@ -448,6 +448,14 @@ A cycle is NOT finished until the remote is updated. One sub-step per cycle.
 Do not combine multiple items. Short cycles that complete cleanly are always better
 than long cycles that risk context overflow.
 
+**Educational summary (MANDATORY end of every session):** After the final push of
+a session, write a short plain-English explanation of what was accomplished and why
+it matters. This should be 3-8 sentences aimed at building the user's deep understanding
+of the model over time. Cover: what physical question was addressed, what the DFC
+mechanism is, what the key numerical result was, and what it connects to. Avoid jargon
+where possible; when technical terms are unavoidable, define them inline. These summaries
+accumulate into a running education — each one should teach something new about DFC.
+
 **Cross-application sweep (end of every session):** Before the final push, review
 what was accomplished in the session and ask: does this result suggest follow-on work
 in other areas? Add new ROADMAP items for: parallel updates to similar files/modules,
