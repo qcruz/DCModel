@@ -1,7 +1,7 @@
 # The D4 Gap: Deriving Gravity from the Substrate
 
-**Status:** Active exploration — seven blockers identified, two partially resolved
-**Last reviewed:** Cycle 504
+**Status:** Active exploration — seven blockers identified, coefficient blocker largely resolved (−0.57%)
+**Last reviewed:** Cycle 506
 
 ---
 
@@ -627,6 +627,7 @@ phi -> g_muv^eff -> R -> (M_Pl^2 / 2) R -> G_N
 | d4_sakharov_enhanced.py | Three enhancement mechanisms | xi_R=0.0126 fills gap | T3 |
 | d4_kink_bending_rigidity.py | Classical bending rigidity | κ_raw=27.83 M_Pl² (55.7×) | T1 |
 | d4_bending_prefactor.py | Prefactor mechanism search | G₅=0.136 self-consistent, nonpert. | T3 |
+| d4_coupled_kink_warp.py | Emergent AdS + RS2 gravity | κ=1/k=0.4972 (−0.57%, 0 free params) | T1 |
 
 ---
 
@@ -641,17 +642,22 @@ phi -> g_muv^eff -> R -> (M_Pl^2 / 2) R -> G_N
   enhancement factor
 - The kink's classical bending rigidity κ_raw = 27.83 M_Pl² is 55.7×
   LARGER than M_Pl²/2 — the substrate has more than enough rigidity
-  for gravity. The problem is now the correct coupling prefactor
-  (factor needed ≈ 0.018 ≈ β/2), not insufficient rigidity
+  for gravity
+- **The gravitational coupling coefficient to −0.57% accuracy (T1):**
+  V(phi_0) < 0 creates an emergent AdS bulk; the kink localizes gravity
+  via the Randall-Sundrum mechanism; κ = 1/k = 4/(α√(3π)) = 0.4972
+  with ZERO free parameters. The "missing prefactor" from C504-505
+  (f ≈ 0.018) is the warp factor suppression
 
 **What DFC has NOT derived:**
 - An effective metric g_muv^eff as an explicit functional of phi
 - The Einstein-Hilbert action from substrate dynamics
 - The spin-2 nature of the gravitational mode (viable route exists,
   not computed)
-- The coupling coefficient G_N without circular use of Planck units
 - An emergent diffeomorphism symmetry protecting graviton masslessness
 - Universal coupling to all forms of energy-momentum
+- The thick-wall correction to the −0.57% thin-wall result (requires
+  relaxation BVP, not shooting)
 
 **The deepest issue:** DFC has a good description of microscopic substrate
 structures. General relativity describes macroscopic dynamical geometry.
