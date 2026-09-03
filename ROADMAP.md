@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 502 (2026-09-02)
+**Last updated:** Cycle 503 (2026-09-02)
 
 ---
 
@@ -55,7 +55,7 @@
 - **Baryon asymmetry magnitude** — Sakharov conditions met (T2a, C414). η_B magnitude T4. Compute CP violation strength from D6/D7 topology → predict η_B ~ 6×10⁻¹⁰
 - **Dark matter mass and relic abundance** — m_DM=35.6 keV (T4, depth model). Relic abundance OPEN. High visibility. See `equations/cosmological_predictions_2.py`
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
-- **D4 gravity gap — Sakharov effective action** — compute one-loop effective action for SU(3) gauge fields on D3 worldvolume in sech^2 kink background. Functional determinant calculation → M_Sakharav^2 as function of (α, β). Priority A of 6-step program. See `foundations/d4_gravity_gap.md` §8-9
+- **D4 gravity gap — derive xi_R from V(φ)** — C503: the missing 93% of G_N is equivalent to non-minimal coupling xi_R=0.0126. Does V(φ) dynamics generate this coupling? Three paths: classical (kink sech^4 → NMC), quantum (RG flow xi_R=0→0.0126), numerical. Priority A. See `equations/d4_sakharov_enhanced.py`
 - **D4 gravity gap — non-perturbative enhancement** — derive G_eff(r) transition from G_N/23 to G_N. Coupled field+metric BVP (numerical). Priority B. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — emergent diffeomorphism** — identify symmetry protecting graviton mass. Priority C. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — numerical kink-kink simulation** — simulate V(φ) with two kinks, measure mutual attraction profile and coefficient. Bypasses analytical blockers. Priority D. See `foundations/d4_gravity_gap.md` §9
