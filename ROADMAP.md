@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 495 (2026-09-01)
+**Last updated:** Cycle 497 (2026-09-02)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P3** (C496)
+- **Last tier worked: P4** (C497)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -23,7 +23,7 @@
 
 ## Priority 1 — High-Impact Predictions
 
-- **DFC prediction for W mass** — UNBLOCKED. M_W = 79.67 GeV (−0.88%). CDF anomaly at 80.4335 GeV, CMS at 80.360 GeV. Timely — active experimental tension. See `equations/ew_radiative_corrections.py`
+- **DFC prediction for W mass** — RESOLVED. Tree-level M_W = 80.10 GeV (−0.34%), one-loop corrected M_W = 80.38 GeV (+0.009%, T2a). 10/10 PASS. CDF anomaly at 80.4335 GeV, CMS at 80.360 GeV — DFC matches CMS. See `equations/ew_radiative_corrections.py`
 - **Muon anomalous magnetic moment (g−2)_μ** — major experimental target. C488: a_e upgraded to T2a. Compute a_μ through higher loops + hadronic LbL. High visibility. Partially blocked on hadronic VP
 - **Derive pion mass from GMOR** — m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC −38% (NJL-limited). See `equations/pion_mass_gmor.py`
 - **Derive light quark masses (D6 Yukawa)** — M0 = exp(-(b₀+1/α))×v/√2 run to 2 GeV: +2.68% T2a (C459). Mechanism needs T1 proof. See `equations/light_quark_mass_derivation.py`
@@ -71,13 +71,15 @@
 
 ## Priority 4 — Known Failures
 
-- **M_W = 79.67 GeV (−0.88%)** — close to threshold. Traces to sin²θ_W running or EW corrections. See `equations/ew_radiative_corrections.py`
-- **Charm/strange quark mass residual** — κ_q=πN_c/2: charm +0.29%, strange +2.09%. Small gap, may be closable
-- **Neutrino mass ratio m₃/m₂** — κ=5.33 vs observed 5.81 (−8.3%). Depth ratio needs refinement. See `equations/neutrino_masses.py`
-- **Nucleon magnetic moment ratio** — +2.75%. C470: dominated by isoscalar κ_S=−0.060 (sea quarks). −3/2+1/(8π) matches to 0.022%. BLOCKED on DFC sea quark content. See `equations/nucleon_magnetic_moments.py`
+- **Nucleon magnetic moment ratio** — +2.75%. C470: dominated by isoscalar κ_S=−0.060 (sea quarks). −3/2+1/(8π) matches to 0.022%. BLOCKED on DFC sea quark content (NJL blocker). See `equations/nucleon_magnetic_moments.py`
 - **Nuclear surface diffuseness** — −20%, DFC m_sigma too heavy
 - **Lithium problem** — BBN Li-7/H +194% vs obs. Same as standard BBN — DFC does not resolve. See `equations/bbn_predictions.py`
 - **Triple-alpha Q value** — BLOCKED by SEMF failure for A < 12
+
+**Resolved (removed from P4):**
+- ~~M_W = 79.67 GeV (−0.88%)~~ — RESOLVED C497: tree-level gap closed to +0.009% by standard one-loop Sirlin Δr corrections. See `equations/ew_radiative_corrections.py` (10/10 PASS, T2a)
+- ~~Charm/strange quark mass residual~~ — RESOLVED C274: κ_q=πN_c/2 gives charm +0.29%, strange +2.09% (both T2a). See `equations/quark_mass_kappa_derivation.py`
+- ~~Neutrino mass ratio m₃/m₂~~ — RESOLVED C204: color phase correction κ^(1+1/(6π)) = 5.8248 matches observed 5.8242 to +0.010% (T3, 0 free params). See `equations/neutrino_color_correction.py`
 
 ---
 
@@ -144,7 +146,7 @@ status, or last-touched cycle changes.
 | # | Spoke | Best tier | Key modules | Key gaps | Last cycle |
 |---|---|---|---|---|---|
 | 1 | Coupling constants | T2a | alpha_em_prediction, alpha_em_selfconsistency, alpha_s_pure_dfc, d5_complex_from_instability | α_em(0) identity T4 (hadronic VP); Casimir=α T3 | C488 |
-| 2 | Electroweak | T2a | muon_lifetime, weinberg_angle_rg, z_boson_decays, ew_radiative_corrections, ewsb_cocrystallization, higgs_potential | Muon g−2 hadronic T4; M_W −0.88% | C488 |
+| 2 | Electroweak | T2a | muon_lifetime, weinberg_angle_rg, z_boson_decays, ew_radiative_corrections, ewsb_cocrystallization, higgs_potential | Muon g−2 hadronic T4; ~~M_W~~ resolved +0.009% | C497 |
 | 3 | Hadron spectroscopy | T2a | meson_regge_spectrum, baryon_mass_dfc, quarkonium_spectrum, pion_mass_gmor, rho_meson_dfc | Y-junction Δ=−1 T3; hadronic VP T4; quarkonium α_s T3 | C489 |
 | 4 | Nuclear physics | T3 | nuclear_symmetry_energy, nuclear_saturation_dfc, nuclear_dfc_periodic_table, deuteron_tensor_ope, nuclear_kink_nonlinear_eos | Deuteron B_d −48% T4; Walecka g₂ 14× weak T4; NJL gap eq. | C490 |
 | 5 | Cosmology | T2a | cosmological_predictions, cosmological_predictions_2, cosmological_predictions_3, bbn_predictions, cosmology | Λ combination rule T3; η_B magnitude T4; DM relic T4 | C414 |
@@ -189,3 +191,4 @@ items when done; remove checked items after 2 cycles.
 - [ ] C496: θ₂₃ = arctan(exp(1/(2π))) = 49.54° (T4→T3) → update `educational/06_predictions.md` neutrino section
 - [ ] C495: Lamb shift T2a upgrade (−0.69%) → update `educational/06_predictions.md` atomic section
 - [ ] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md`
+- [ ] Stellar census module (`equations/stellar_census_dark_energy.py`) 15/17 PASS → add to prediction scorecard
