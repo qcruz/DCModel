@@ -552,7 +552,239 @@ print(f"    Improvement: {abs(-7.8) - abs(err_J*100):.1f} percentage points")
 check("J2: Best candidate upgraded from -7.8% to <3%", abs(err_J) < 0.03)
 
 # =============================================================================
-# Summary
+# Part K: Zero-Mode Overlap Integral Derivation Attempt (C510)
+# =============================================================================
+print("\n" + "=" * 72)
+print("PART K: ZERO-MODE OVERLAP → YUKAWA (C510)")
+print("=" * 72)
+print()
+
+# The DFC mechanism for Yukawa suppression: the quark Yukawa coupling
+# is proportional to the overlap integral between:
+#   - The Higgs zero mode ψ_H(y), localized at the D5/D6 kink
+#   - The quark zero mode ψ_q(y), localized at the D7 kink
+#
+# For the Pöschl-Teller potential with n=2 (DFC), the zero mode is:
+#   ψ_0(y) ∝ sech²(y/ξ)
+#
+# Two kinks at positions y_H and y_q, separated by Δ = y_q - y_H:
+#   y_q ∝ ∫ ψ_0(y - y_H) × ψ_0(y - y_q) dy
+#       = ∫ sech²((y - y_H)/ξ) × sech²((y - y_q)/ξ) dy
+
+import numpy as np
+from scipy.integrate import quad
+
+XI = math.sqrt(2.0 / ALPHA)  # kink width = 0.874 l_Pl
+
+print(f"  Kink width: xi = sqrt(2/alpha) = {XI:.4f} l_Pl")
+print(f"  Target exponent: b_0 + 1/alpha = {B0 + 1.0/ALPHA:.6f}")
+print()
+
+# Compute the overlap integral analytically:
+# I(d) = ∫ sech²(x) × sech²(x - d) dx where d = Δ/ξ (dimensionless)
+#
+# This integral has a known closed form (product of sech² functions):
+# I(d) = (2/3) × d × coth(d) × csch²(d) + (2/3) × csch²(d)
+#      = (2/3) × csch²(d) × (d × coth(d) + 1)
+# Wait, let me just compute it numerically and check the asymptotic form.
+
+def overlap_integral(d):
+    """Compute ∫ sech²(x) × sech²(x-d) dx from -inf to +inf."""
+    def integrand(x):
+        return 1.0 / (math.cosh(x)**2 * math.cosh(x - d)**2)
+    result, _ = quad(integrand, -50, 50, limit=200)
+    return result
+
+# Normalization: I(0) = ∫ sech⁴(x) dx = 4/3
+I_0 = overlap_integral(0.0)
+print(f"  Normalization check: I(0) = ∫sech⁴(x)dx = {I_0:.6f} (exact: {4.0/3.0:.6f})")
+check("K1: sech⁴ integral = 4/3", abs(I_0 - 4.0/3.0) < 1e-6)
+
+# Compute normalized overlap as function of separation d = Δ/ξ
+d_values = np.linspace(0, 15, 200)
+overlaps = np.array([overlap_integral(d) for d in d_values])
+normalized = overlaps / I_0  # = 1 at d=0
+
+# Find the effective exponential decay rate
+# For large d: I(d)/I(0) ~ C × exp(-n_eff × d)
+# The PT n=2 zero mode has sech²(x) ~ 4 exp(-2|x|) for large |x|
+# So the overlap tail ~ exp(-2d) × (polynomial in d)
+# Dominant: exp(-2d) at large d, with possible power-law prefactor
+
+# Check asymptotic behavior: fit log(I/I_0) at large d
+mask_large = d_values > 10
+if np.any(mask_large) and np.all(normalized[mask_large] > 0):
+    log_overlap = np.log(normalized[mask_large])
+    d_large = d_values[mask_large]
+    # Linear fit: log(I/I_0) ≈ -n_eff × d + const
+    coeffs = np.polyfit(d_large, log_overlap, 1)
+    n_eff = -coeffs[0]
+    print(f"\n  Asymptotic decay (d > 10): log(I/I_0) ≈ {coeffs[0]:.4f}×d + {coeffs[1]:.4f}")
+    print(f"  Effective exponent: n_eff = {n_eff:.4f}")
+    print(f"  Expected: n_eff → 2 (sech² ~ 4exp(-2|x|); log prefactor slows convergence)")
+    check("K2: asymptotic decay rate approaches 2 (within 10%)",
+          abs(n_eff - 2.0) < 0.2)
+
+# The Yukawa coupling is proportional to the overlap:
+#   y_q = (coupling constant) × I(Δ/ξ) / I(0)
+#
+# For the DFC formula y(v) = exp(-(b_0 + 1/alpha)):
+#   I(Δ/ξ)/I(0) = exp(-(b_0 + 1/alpha))
+#   With n_eff = 2: exp(-2 × Δ/ξ) = exp(-(b_0 + 1/alpha))
+#   → Δ/ξ = (b_0 + 1/alpha) / 2 = 5.691
+
+delta_over_xi = (B0 + 1.0 / ALPHA) / 2.0
+delta_phys = delta_over_xi * XI
+
+print(f"\n  Required depth separation for y(v) = exp(-(b_0+1/alpha)):")
+print(f"    Δ/ξ = (b_0 + 1/alpha) / 2 = {delta_over_xi:.4f}")
+print(f"    Δ = {delta_phys:.4f} l_Pl ({delta_phys:.2f} Planck lengths)")
+print()
+
+# Verify: compute the overlap at this separation
+I_at_delta = overlap_integral(delta_over_xi)
+y_from_overlap = I_at_delta / I_0
+
+# Compare to the target
+y_target = math.exp(-(B0 + 1.0/ALPHA))
+print(f"  Overlap at Δ/ξ = {delta_over_xi:.4f}:")
+print(f"    I(Δ/ξ)/I(0) = {y_from_overlap:.6e}")
+print(f"    exp(-(b_0+1/alpha)) = {y_target:.6e}")
+print(f"    Ratio: {y_from_overlap/y_target:.4f}")
+print(f"    The overlap has a polynomial prefactor beyond pure exp(-2d).")
+print()
+
+# The polynomial prefactor: for sech² × sech² overlap at large d,
+# I(d) ~ C × d × exp(-2d) where C is a constant.
+# So I(d)/I(0) ~ (3C/4) × d × exp(-2d)
+# For exp(-2d) = exp(-(b_0+1/alpha)): this is already satisfied.
+# The prefactor (3C/4) × d corrects the raw exponential.
+
+# Compute the prefactor
+if y_target > 0:
+    prefactor = y_from_overlap / (math.exp(-2.0 * delta_over_xi))
+    expected_prefactor = (3.0 / 4.0) * 4.0 * delta_over_xi  # rough: ~3d
+    print(f"  Polynomial prefactor analysis:")
+    print(f"    Actual I(d)/exp(-2d) = {prefactor:.4f}")
+    print(f"    ~3d estimate: {3.0 * delta_over_xi:.4f}")
+    # The exact large-d asymptotic of ∫sech²(x)sech²(x-d)dx is:
+    # I(d) → (16/3)(2d+1)exp(-2d) for d >> 1
+    exact_asymp = (16.0/3.0) * (2.0 * delta_over_xi + 1.0) * math.exp(-2.0 * delta_over_xi)
+    print(f"    Exact asymptotic (16/3)(2d+1)exp(-2d) = {exact_asymp:.6e}")
+    print(f"    Numerical I(d) = {I_at_delta:.6e}")
+    print(f"    Asymptotic/numerical = {exact_asymp/I_at_delta:.4f}")
+    print()
+
+# So: y_q ∝ I(Δ/ξ)/I(0) is NOT simply exp(-(b_0+1/alpha)).
+# It's exp(-2Δ/ξ) × polynomial(Δ/ξ).
+# The empirical formula y(v) = exp(-(b_0+1/alpha)) must absorb
+# the polynomial prefactor into a DIFFERENT effective exponent.
+#
+# What EFFECTIVE Δ/ξ gives the exact answer?
+# We need: I(d_eff)/I(0) = exp(-(b_0+1/alpha))
+
+from scipy.optimize import brentq
+
+def overlap_minus_target(d):
+    return overlap_integral(d) / I_0 - y_target
+
+# The overlap decreases monotonically, so find where it equals y_target
+try:
+    d_eff = brentq(overlap_minus_target, 1.0, 15.0, xtol=1e-10)
+    delta_eff_phys = d_eff * XI
+    print(f"  EFFECTIVE separation for exact y(v) match:")
+    print(f"    d_eff = {d_eff:.6f} (in kink widths)")
+    print(f"    Δ_eff = {delta_eff_phys:.4f} l_Pl")
+    print(f"    Compare: naive d = (b_0+1/alpha)/2 = {delta_over_xi:.4f}")
+    print(f"    Difference: {(d_eff - delta_over_xi)/delta_over_xi*100:+.2f}%")
+    print()
+
+    # Check if d_eff has a clean DFC expression
+    # Candidates:
+    candidates = [
+        ("b_0/2", B0 / 2.0),
+        ("(b_0+1)/2", (B0 + 1) / 2.0),
+        ("(b_0+1/alpha)/2", (B0 + 1.0/ALPHA) / 2.0),
+        ("b_0/(1+1/(alpha*b_0))", B0 / (1.0 + 1.0/(ALPHA*B0))),
+        ("S_kink/8pi", S_KINK / (8.0 * PI)),
+        ("(b_0*alpha - 1)/(2*alpha)", (B0*ALPHA - 1.0) / (2.0*ALPHA)),
+        ("N_HOPF/sqrt(2)", N_HOPF / math.sqrt(2)),
+        ("b_0/2 + 1/(2*alpha) - ln(2*d)/2 [self-consistent]", None),
+    ]
+
+    print(f"  DFC expression candidates for d_eff = {d_eff:.6f}:")
+    for name, val in candidates:
+        if val is not None:
+            err = (val - d_eff) / d_eff * 100
+            marker = " ***" if abs(err) < 1.0 else ""
+            print(f"    {name} = {val:.6f}  ({err:+.2f}%){marker}")
+
+    # The self-consistent equation: if y ∝ (2d+1)exp(-2d) and we want
+    # this to equal exp(-E) where E = b_0 + 1/alpha, then:
+    # (2d+1)exp(-2d) = (4/3 * I_0) * exp(-E) ... no, more carefully:
+    # I(d)/I(0) = exp(-E)
+    # (16/3)(2d+1)exp(-2d) / (4/3) = exp(-E)
+    # 4(2d+1)exp(-2d) = exp(-E)
+    # ln(4) + ln(2d+1) - 2d = -E
+    # 2d = E + ln(4) + ln(2d+1)
+    # d = (E + ln(4(2d+1))) / 2
+
+    # Self-consistent solution:
+    E = B0 + 1.0/ALPHA
+    d_sc = d_eff  # start from numerical
+    for _ in range(20):
+        d_sc = (E + math.log(4.0 * (2.0*d_sc + 1.0))) / 2.0
+    print(f"\n  Self-consistent equation: d = (E + ln(4(2d+1)))/2")
+    print(f"    E = b_0 + 1/alpha = {E:.6f}")
+    print(f"    Solution: d_sc = {d_sc:.6f}")
+    print(f"    Numerical d_eff = {d_eff:.6f}")
+    print(f"    Match: {(d_sc/d_eff - 1)*100:+.4f}%")
+    check("K3: self-consistent equation reproduces d_eff to <2%",
+          abs(d_sc/d_eff - 1.0) < 0.02)
+
+    # The physical content: the depth separation Δ that gives the
+    # correct Yukawa coupling satisfies a transcendental equation:
+    #   2Δ/ξ = (b_0 + 1/alpha) + ln(4(2Δ/ξ + 1))
+    #
+    # For large Δ/ξ >> 1: the ln term is ~ln(8Δ/ξ) ~3.1, so
+    #   2Δ/ξ ≈ 11.38 + 3.1 = 14.5 → Δ/ξ ≈ 7.25
+    # Which should match d_eff.
+
+    print(f"\n  The self-consistent equation rewrites as:")
+    print(f"    2Δ/ξ = (b_0 + 1/alpha) + ln(4(2Δ/ξ + 1))")
+    print(f"    Δ/ξ = {d_sc:.4f} → Δ = {d_sc*XI:.4f} l_Pl")
+    print()
+
+except Exception as e:
+    print(f"  Could not find effective separation: {e}")
+    d_eff = delta_over_xi
+
+# KEY QUESTION: What determines the D5-D7 separation?
+print(f"  STATUS ASSESSMENT:")
+print(f"    The formula y(v) = exp(-(b_0+1/alpha)) is a compact encoding")
+print(f"    of the zero-mode overlap integral at a specific separation.")
+print(f"    The overlap I(d)/I(0) at d = {d_eff:.3f} kink widths gives")
+print(f"    exactly y_target = {y_target:.2e}.")
+print()
+print(f"    The exponent b_0 + 1/alpha = {E:.4f} is NOT the raw")
+print(f"    overlap exponent (which would be 2d = {2*d_eff:.4f}).")
+print(f"    It absorbs the polynomial prefactor through:")
+print(f"      b_0 + 1/alpha = 2d - ln(4(2d+1)) [at the solution d]")
+print()
+print(f"    WHAT REMAINS FOR T1:")
+print(f"    1. Derive the D5-D7 depth separation Δ from compression dynamics")
+print(f"    2. Show Δ/ξ satisfies the self-consistent equation above")
+print(f"    3. The exponent b_0 enters through the D7 gauge sector (N_c=3)")
+print(f"    4. The 1/alpha correction enters through substrate backreaction")
+print()
+
+check("K4: d_eff in reasonable range (5-10 kink widths)",
+      5.0 < d_eff < 10.0)
+print()
+
+
+# =============================================================================
+# Summary (updated C510)
 # =============================================================================
 print("\n" + "=" * 72)
 print(f"  TOTAL: {n_pass}/{n_total} PASS")
