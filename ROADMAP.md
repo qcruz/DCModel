@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 508 (2026-09-03)
+**Last updated:** Cycle 509 (2026-09-03)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P3** (C508)
+- **Last tier worked: P4** (C509)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -74,10 +74,10 @@
 
 ## Priority 4 — Known Failures
 
-- **Nucleon magnetic moment ratio** — +2.75%. C470: dominated by isoscalar κ_S=−0.060 (sea quarks). −3/2+1/(8π) matches to 0.022%. BLOCKED on DFC sea quark content (NJL blocker). See `equations/nucleon_magnetic_moments.py`
 - **Nuclear surface diffuseness** — −20%, DFC m_sigma too heavy
 - **Lithium problem** — BBN Li-7/H +194% vs obs. Same as standard BBN — DFC does not resolve. See `equations/bbn_predictions.py`
 - **Triple-alpha Q value** — BLOCKED by SEMF failure for A < 12
+- **Nucleon magnetic moment ratio** — +2.75%. C509: ratio = −3/2 + g_A/32 matches to 0.022% (g_A = 4/π from DFC). Potential T2a upgrade if 1/32 coefficient derivable from NLO ChPT. Counterterm cancellation ~75% (upper edge of expected range). BLOCKED on deriving counterterm coefficient. See `equations/nucleon_magnetic_moments.py`
 
 **Resolved (removed from P4):**
 - ~~M_W = 79.67 GeV (−0.88%)~~ — RESOLVED C497: tree-level gap closed to +0.009% by standard one-loop Sirlin Δr corrections. See `equations/ew_radiative_corrections.py` (10/10 PASS, T2a)
@@ -93,7 +93,7 @@
 - **CMB-S4 predictions** — timely. n_s refinement, r upper bound, N_eff precision from DFC
 - **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`. Feed blocked items here. C471: F*C = 300π² (T1 identity). Always available
 - **Investigate κ_q ≈ N_c·b₀/(2N_c+1) identity** — 0.03% match, coincidence or structural?
-- **Investigate mu_p/mu_n ≈ −3/2 + 1/(8π)** — 0.022% match. Is 1/(8π) derivable from kink binding? See E54
+- **Investigate mu_p/mu_n = −3/2 + g_A/32** — 0.022% match. C509: 1/(8π) = g_A/32 since g_A = 4/π. Connects ratio to DFC axial coupling. Derive 1/32 coefficient from NLO ChPT? See `equations/nucleon_magnetic_moments.py` Part I
 - **Investigate π+√N_c ≈ ln(1/α_em)** — −0.95% match. See E57
 - **Investigate N_c·ln(2α)/2 ≈ α identity** — −5.2% match. See `equations/substrate_casimir_alpha.py`
 - **Gravitational wave spectrum from D4** — spin-2 composite tensor mode propagation. Any GR deviation?
@@ -165,7 +165,7 @@ status, or last-touched cycle changes.
 | 6 | Bell / QM foundations | T2a | bell_joint_derivation, born_rule_derivation, born_rule_schrodinger, collapse_mechanism | Measurement dynamics T3; joint Born rule T3; emergent locality T3 | C482 |
 | 7 | Neutrino physics | T3 | neutrino_masses, neutrino_theta23_z3_mechanism, neutrino_casimir_depth | θ₂₃ = 49.54° (+0.35σ, T3); m₃/m₂ −8.3% T3; absolute mass scale T4 | C496 |
 | 8 | Atomic physics | T2a | atomic_structure, atomic_physics_predictions, lamb_shift, fine_structure | Lamb shift T2a (−0.69%); remaining atomic predictions inherit α_em(0) offset | C495 |
-| 9 | Gravity (D4) | T3 | d4_strong_field_metric, d4_einstein_from_jormungandr, d4_zero_mode_gravity, d4_gravity_spin2_enhancement + 13 more | 7 blockers mapped (C501); Sakharav EH = 2.4% M_Pl²; non-pert 93% open; spin-2 Candidate B viable T3 | C501 |
+| 9 | Gravity (D4) | T1 | d4_coupled_kink_warp, d4_thick_wall_bvp, d4_strong_field_metric, d4_einstein_from_jormungandr + 14 more | Thin-wall κ=0.497 (−0.57% T1); thick-wall κ=2.04 (4.1× overshoot); factor-4 normalization gap | C508 |
 | 10 | Flavor / masses | T2a | koide_phase_coupling, light_quark_mass_derivation, quark_mass_kappa_derivation, generation_count_proof | CKM angles T4; top quark mass T4; τ dimple route 8.4× off | C459 |
 | 11 | Proton structure | T2a | proton_spin_dfc, proton_charge_radius_dfc, nucleon_magnetic_moments, pion_nucleon_sigma_term | μ_p/μ_n sea quarks T4; charge radius pion cloud T3; pure Skyrme Σ −28% (needs HLS/1/N_c) | C498 |
 
@@ -188,7 +188,7 @@ When a blocker is resolved, update this table and promote unblocked items in P1-
 | **Y-junction penalty Δ = −1** | T3 — Casimir gives 12.5% | Baryon Regge intercept T2a; Δ-N splitting T2b |
 | **NJL gap equation** with DFC condensate | T4 — composite σ dynamics | Walecka EOS; nuclear saturation; pion mass (pure DFC); μ_p/μ_n sea quarks |
 | **2-loop α_s running** | T3 — 1-loop implemented | Quarkonium absolute masses; charmonium M(1S) +22% gap |
-| **D4 spin-2 enhancement** (factor ~23) | T4 — non-perturbative | G_N derivation; gravitational predictions; Planck scale |
+| **D4 thick-wall factor-4 gap** | T3 — κ_thick=2.04 vs target 0.5 (C508) | G_N derivation; gravitational predictions; Planck scale |
 
 ---
 
@@ -204,3 +204,4 @@ items when done; remove checked items after 2 cycles.
 - [ ] C495: Lamb shift T2a upgrade (−0.69%) → update `educational/06_predictions.md` atomic section
 - [x] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md` (DONE C499)
 - [ ] Stellar census module (`equations/stellar_census_dark_energy.py`) 15/17 PASS → add to prediction scorecard
+- [ ] C508: thick-wall κ=2.04 (factor-4 overshoot) → update `educational/28_gravity_gap.md` §9c with BVP result

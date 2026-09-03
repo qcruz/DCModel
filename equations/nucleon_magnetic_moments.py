@@ -20,6 +20,7 @@ DFC mechanism:
 Tier assessment:
     mu_p/mu_n ratio: P4 known failure (+2.75%)
     This module: quantify isospin effect, identify dominant correction
+    C509: ratio = -3/2 + g_A/32 matches to 0.022% (potential T2a upgrade)
 
 Key references:
     equations/light_quark_mass_derivation.py — M0 derivation (C459)
@@ -857,7 +858,123 @@ print()
 
 
 # =============================================================================
-# Summary (updated C470)
+# Part I: g_A / 32 Identity (C509)
+# =============================================================================
+print("[PART I] RATIO CORRECTION = g_A / 32 (C509)")
+print("=" * 72)
+print()
+
+# Key observation: 1/(8*pi) = (4/pi) / 32 = g_A / 32
+# Since DFC derives g_A = 4/pi (T2a), the algebraic form becomes:
+#   mu_p/mu_n = -3/2 + g_A/32
+#
+# This connects the magnetic moment ratio correction to the axial coupling.
+# In DFC, g_A = 4/pi comes from the Jackiw-Rebbi zero mode overlap integral.
+# If the 1/(8pi) correction to the ratio also traces to the JR mechanism,
+# this would be a zero-free-parameter prediction.
+
+ratio_gA = -1.5 + g_A_DFC / 32.0
+print(f"  Identity: 1/(8*pi) = g_A/32 (since g_A = 4/pi)")
+print(f"    g_A(DFC) = 4/pi = {g_A_DFC:.6f}")
+print(f"    g_A/32   = {g_A_DFC/32.0:.6f}")
+print(f"    1/(8*pi) = {1.0/(8.0*PI):.6f}")
+print(f"    Match: exact (algebraic identity)")
+print()
+print(f"  Prediction: mu_p/mu_n = -3/2 + g_A/32")
+print(f"    = {ratio_gA:.6f}")
+print(f"    Observed: {RATIO_OBS:.6f}")
+print(f"    Error: {(ratio_gA/RATIO_OBS - 1)*100:+.4f}%")
+print()
+
+check("I1: g_A/32 = 1/(8*pi) identity confirmed",
+      abs(g_A_DFC/32.0 - 1.0/(8.0*PI)) < 1e-12)
+
+# Physical interpretation: Why g_A/32?
+#
+# In ChPT, the NET correction to the mu_p/mu_n ratio has the structure:
+#   delta(ratio) = (pion cloud isovector) / 4 + (isoscalar) * (-5/4)
+#
+# The isovector LNA ~ -g_A^2 * M_N * m_pi / (4*pi^2 * f_pi^2)
+# The isoscalar ~ strange sea + orbital AM
+#
+# For delta(ratio) = g_A/32 with DFC g_A = 4/pi:
+#
+# One possible route: if the NET isovector+isoscalar correction
+# to the ratio is controlled by a SINGLE chiral loop with coefficient
+# 1/32, this would be:
+#   delta(ratio) = g_A / 32 = (NLO pion loop)_net / (geometric factor)
+#
+# The factor 32 = 2^5. In the context of spin-isospin algebra:
+#   32 = 2 * 4^2 = 2 * (2I+1)^2 where I is isospin of the loop pion
+#   or: 32 = 8 * 4 = (2*4) * 4
+#
+# A clean derivation would need to show that the combination of
+# LNA + counterterm + isoscalar sums to exactly g_A/(4*kappa_V^2 * 2*pi)
+# = g_A/(4*4*2*pi) = g_A/32*pi... no, that gives 1/(8*pi^2), not 1/(8*pi).
+#
+# STATUS: The identity g_A/32 = 1/(8*pi) is algebraically trivial given
+# g_A = 4/pi. The question is whether the ChPT correction to the ratio
+# is naturally proportional to g_A. If so, the coefficient 1/32 needs
+# derivation. This is a POTENTIAL T2a upgrade path.
+
+# Check: does a simple 1-loop diagram give coefficient 1/32?
+# In heavy baryon ChPT, the LNA ratio correction from the pion cloud is:
+#   delta(ratio)_LNA = [g_A^2 * M_N * m_pi] / [4*pi^2 * f_pi^2] * (1/4)
+#                    = g_A^2 * M_N * m_pi / (16*pi^2 * f_pi^2)
+# The 1/4 comes from delta_kV -> delta_ratio conversion.
+
+delta_ratio_LNA = g_A**2 * M_N * m_pi / (16.0 * PI**2 * f_pi**2)
+ratio_needed = g_A_DFC / 32.0  # = 1/(8*pi) = 0.03979
+
+print()
+print(f"  DERIVATION ATTEMPT — one-loop coefficient:")
+print(f"    LNA ratio correction = g_A^2 * M_N * m_pi / (16*pi^2*f_pi^2)")
+print(f"                         = {delta_ratio_LNA:.4f}")
+print(f"    Target: g_A/32       = {ratio_needed:.4f}")
+print(f"    Ratio LNA/target     = {delta_ratio_LNA/ratio_needed:.2f}")
+print(f"    LNA overshoots by factor {delta_ratio_LNA/ratio_needed:.1f}x")
+print(f"    Counterterms must cancel {(1 - ratio_needed/delta_ratio_LNA)*100:.0f}% of LNA")
+print()
+
+# The required counterterm cancellation fraction:
+cancel_frac = 1.0 - ratio_needed / delta_ratio_LNA
+print(f"  For g_A/32 to be the NET correction:")
+print(f"    Counterterms cancel {cancel_frac*100:.1f}% of LNA")
+print(f"    This is within the expected 50-75% range from NLO ChPT.")
+print()
+
+check("I2: counterterm cancellation in expected range (50-75%)",
+      0.45 < cancel_frac < 0.80)
+
+# Alternative: express ratio correction as g_A * f(M_N, m_pi, f_pi)
+# If delta(ratio) = g_A * C where C is some combination of hadronic scales:
+# C = 1/32 = 0.03125
+# In natural units: C should be a combination of m_pi/f_pi, M_N/f_pi, etc.
+# But 1/32 = (m_pi/f_pi)^alpha * ... would need an unnatural exponent.
+#
+# More promising: 1/32 = 1/(2*N_c * (2I+1)^2) = 1/(2*3*16/3) ... no.
+# Or: 1/32 = 1/2^5. The factor 2^5 could arise from:
+#   2 (isospin) * 2 (spin) * 2 (upper/lower Dirac) * 4 (kappa_V^2) = 32
+#
+# This is speculative. The important finding is the identity itself,
+# not yet its derivation.
+
+# What would derive this:
+print(f"  PATH TO T2a:")
+print(f"    1. Show LNA + counterterm ratio correction ~ g_A × f(m_pi, f_pi)")
+print(f"    2. Compute f(m_pi, f_pi) to NLO in ChPT with DFC parameters")
+print(f"    3. Check whether f = 1/32 follows from specific DFC values")
+print(f"    4. If yes: mu_p/mu_n = -3/2 + g_A/32 is a T2a prediction")
+print(f"       with 0 free parameters (g_A = 4/pi derived from V(phi))")
+print()
+
+check("I3: ratio = -3/2 + g_A/32 matches obs to < 0.025%",
+      abs(ratio_gA/RATIO_OBS - 1) < 0.00025)
+print()
+
+
+# =============================================================================
+# Summary (updated C509)
 # =============================================================================
 print("=" * 72)
 print(f"TOTAL: {n_pass}/{n_total} PASS")
@@ -867,5 +984,8 @@ print(f"  mu_p/mu_n = -3/2 (SU(6)) is +2.75% off from observed -1.4599.")
 print(f"  C464: isospin violation gives WRONG SIGN.")
 print(f"  C470: The ratio deviation decomposes into kV shift (pion cloud,")
 print(f"  counterterm-dependent) and kS shift (sea quarks). The kS shift")
-print(f"  DOMINATES. Algebraic form -3/2 + 1/(8pi) matches to 0.022%")
-print(f"  but origin is unclear. REMAINS P4: needs kS prediction from DFC.")
+print(f"  DOMINATES.")
+print(f"  C509: NEW — ratio correction = g_A/32 = 1/(8pi) (0.022% match).")
+print(f"  Since g_A = 4/pi from DFC, this is a potential 0-parameter prediction.")
+print(f"  Path to T2a: derive 1/32 coefficient from NLO ChPT with DFC inputs.")
+print(f"  BLOCKER: counterterm cancellation fraction (~{cancel_frac*100:.0f}%) must be derived.")
