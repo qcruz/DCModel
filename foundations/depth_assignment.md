@@ -329,6 +329,46 @@ driving a further bifurcation.
 
 ---
 
+## Exhaustive Permutation Analysis (Critical Review, C500)
+
+There are six possible assignments of {U(1), SU(2), SU(3)} to {D5, D6, D7}.
+Two constraints are sufficient to select the current assignment uniquely:
+
+- **C1 (Complexity ordering):** Group dimension must increase with depth. The substrate
+  opens more degrees of freedom at each successive bifurcation.
+- **C4 (Three generations):** The deepest gauge group determines the generation count
+  via its fundamental representation dimension. Three observed generations require the
+  deepest group to have a 3-dimensional fundamental representation — only SU(3) qualifies.
+
+| # | D5 | D6 | D7 | C1 (monotone dim) | C4 (3 gens at deepest) | C5 (θ_W proximity) | Cascade n=1→2→3 | Viable? |
+|---|---|---|---|---|---|---|---|---|
+| 1 | U(1) | SU(2) | SU(3) | 1→3→8 ✓ | SU(3) at D7 ✓ | U(1),SU(2) adjacent ✓ | ✓ | **YES** |
+| 2 | U(1) | SU(3) | SU(2) | 1→8→3 ✗ | SU(2) at D7: 2 gens ✗ | U(1),SU(2) separated ✗ | ✗ | no |
+| 3 | SU(2) | U(1) | SU(3) | 3→1→8 ✗ | SU(3) at D7 ✓ | wrong order ✗ | ✗ | no |
+| 4 | SU(2) | SU(3) | U(1) | 3→8→1 ✗ | U(1) at D7: 1 gen ✗ | separated ✗ | ✗ | no |
+| 5 | SU(3) | U(1) | SU(2) | 8→1→3 ✗ | SU(2) at D7: 2 gens ✗ | wrong order ✗ | ✗ | no |
+| 6 | SU(3) | SU(2) | U(1) | 8→3→1 ✗ | U(1) at D7: 1 gen ✗ | inverted ✗ | ✗ | no |
+
+**Result:** C1 alone eliminates permutations 2–6 (only monotone sequence is 1→3→8).
+C4 alone eliminates 2, 4, 5, 6 (only 1 and 3 have SU(3) at D7). The conjunction C1 ∧ C4
+uniquely selects permutation 1. The cascade proof (C310–C314) provides an independent
+derivation of the same result via the algebraic chain U(1) → U(2) → U(3).
+
+**What could break this:** The assignment is robust against parameter changes but
+depends on two foundational assumptions: (a) complexity ordering holds (more DOFs open
+at deeper bifurcations), and (b) generation count is set by the deepest gauge group's
+fundamental representation. If either assumption were wrong — for example, if generations
+arose from a different mechanism entirely — alternative assignments could become viable.
+Neither assumption has been derived from V(φ); both are structural consistency arguments.
+
+**Weakest link:** The complexity ordering (C1) is the least rigorous constraint. It
+relies on the intuition that successive bifurcations open progressively more degrees
+of freedom. A substrate dynamics calculation showing the DOF count per bifurcation
+would either confirm or falsify this ordering. Without such a calculation, C1 remains
+a plausibility argument, not a derivation.
+
+---
+
 ## Summary
 
 | Constraint | Satisfied by D5=U(1), D6=SU(2), D7=SU(3) | Status |

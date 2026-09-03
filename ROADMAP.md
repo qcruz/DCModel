@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 499 (2026-09-02)
+**Last updated:** Cycle 500 (2026-09-02)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P6** (C499)
+- **Last tier worked: P7** (C500)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -125,7 +125,6 @@ approaches do better, question foundational assumptions, and adapt the model whe
 evidence warrants it. Mathematical verifiability is the standard; attachment to any
 particular concept is not.
 
-- **Compare D-depth assignments against alternatives** — the D5=U(1), D6=SU(2), D7=SU(3) mapping is a working hypothesis. Are there alternative assignments or reframings that fit the data equally well or better? What would break the current assignment?
 - **Evaluate practical relevance** — does DFC produce any result that is *useful* beyond matching existing measurements? Identify areas where DFC could inform experiment design, material science, engineering limits, or computational methods. If the answer is "not yet," document what would need to change
 - **Review mathematical rigor of key claims** — select 2-3 core derivations and examine them for hidden assumptions, circular reasoning, or unjustified steps. Are the tier assignments honest? Could a skeptical mathematician follow each T1 proof?
 - **Explore alternative frameworks** — are there other starting points (different potentials, different field content, different compression mechanisms) that could produce the same or better results? What is special about V(φ) = −α/2 φ² + β/4 φ⁴ vs. other double-well potentials?
@@ -133,6 +132,7 @@ particular concept is not.
 - **External literature comparison** — when a DFC result matches observation, check whether the same result has been derived elsewhere from different premises. If so, what does that tell us about the uniqueness (or non-uniqueness) of the DFC derivation?
 - **Audit prediction quality vs. standard approaches** — C486: DONE. See `foundations/critical_review_predictions.md`. Four categories: SM-replicated (atomic, cosmo, EW), genuine value (couplings, N_c, strong CP, generations), SM-superior (loops, flavor), unfalsifiable (D1/D2, D4 gravity). Key finding: ~10 genuine predictions of SM free parameters from 2 inputs; rest is replication
 - **Identify unfalsifiable claims** — C493: DONE. See `foundations/critical_review_predictions.md` Category 4 (expanded). 4 genuinely unfalsifiable (ontological framing), 5 currently unfalsifiable but sharpenable, 3 "danger zone" claims that could accommodate any outcome. Key action items: fix D-depth assignments, set T4 stagnation deadlines, attempt NJL gap equation
+- **Compare D-depth assignments against alternatives** — C500: DONE. Exhaustive 6-permutation analysis added to `foundations/depth_assignment.md`. C1 (complexity ordering) + C4 (3 generations) uniquely select current assignment. Weakest link: C1 not derived from V(φ). See depth_assignment.md §Exhaustive Permutation Analysis
 
 ---
 
