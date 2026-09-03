@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 497 (2026-09-02)
+**Last updated:** Cycle 498 (2026-09-02)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P4** (C497)
+- **Last tier worked: P5** (C498)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -85,7 +85,6 @@
 
 ## Priority 5 — Exploratory
 
-- **Proton spin puzzle — reconcile BVP vs interpolated I₀/I₁** — C491: BVP solved (B=1 confirmed), but DFC e=π/√2 gives I₀/I₁=0.158 (Σ=0.20, −39%) while literature interpolation at R_B gives 0.251 (Σ=0.32, −3.2%). Root cause: DFC e=2.22 vs fitted e=5.45. Next: determine correct e-to-DFC mapping or compute I₀/I₁ with modified Skyrme term. See `equations/proton_spin_dfc.py`
 - **Prove y(v) = exp(-(b₀+1/α)) from kink overlap** — T2a numerics confirmed (C459), needs structural derivation for T1. See `equations/light_quark_mass_derivation.py`
 - **DFC predictions for LHC Run 4** — high visibility. What does DFC predict differently from SM? Any distinctive signatures?
 - **CMB-S4 predictions** — timely. n_s refinement, r upper bound, N_eff precision from DFC
@@ -99,6 +98,7 @@
 - **Neutron star max mass** — naive flux-tube failed (−77%). Connects to P1 Walecka
 - **Condensed matter from V(φ)** — BCS gap, T_c predictions from existing modules
 - **Evaluate new open problems for DFC** — Navier-Stokes, quantum gravity (proton spin DONE C477)
+- **Proton spin puzzle — vector meson / 1/N_c corrections** — C498: e-scan shows I₀/I₁ saturates at ~0.186 for all e > 3. Pure ANW Skyrme gives Σ ≈ 0.23 regardless of e (systematic −28%). Next: include ρ/ω vector mesons (HLS) or compute 1/N_c corrections. See `equations/proton_spin_dfc.py`
 
 ---
 
@@ -155,7 +155,7 @@ status, or last-touched cycle changes.
 | 8 | Atomic physics | T2a | atomic_structure, atomic_physics_predictions, lamb_shift, fine_structure | Lamb shift T2a (−0.69%); remaining atomic predictions inherit α_em(0) offset | C495 |
 | 9 | Gravity (D4) | T3 | d4_strong_field_metric, d4_einstein_from_jormungandr, d4_zero_mode_gravity, d4_gravity_spin2_enhancement | G_N spin-2 enhancement 22.9× T4; 1/r potential T4 | C469 |
 | 10 | Flavor / masses | T2a | koide_phase_coupling, light_quark_mass_derivation, quark_mass_kappa_derivation, generation_count_proof | CKM angles T4; top quark mass T4; τ dimple route 8.4× off | C459 |
-| 11 | Proton structure | T2a | proton_spin_dfc, proton_charge_radius_dfc, nucleon_magnetic_moments, pion_nucleon_sigma_term | μ_p/μ_n sea quarks T4; charge radius pion cloud T3; Skyrme e mapping T3 | C491 |
+| 11 | Proton structure | T2a | proton_spin_dfc, proton_charge_radius_dfc, nucleon_magnetic_moments, pion_nucleon_sigma_term | μ_p/μ_n sea quarks T4; charge radius pion cloud T3; pure Skyrme Σ −28% (needs HLS/1/N_c) | C498 |
 
 **Reading this table:** Spokes at T2a are well-developed; T3 means structural account exists
 but quantitative precision is limited; T4 means major derivation gaps remain. Spokes not
