@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 498 (2026-09-02)
+**Last updated:** Cycle 499 (2026-09-02)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P5** (C498)
+- **Last tier worked: P6** (C499)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -104,7 +104,6 @@
 
 ## Priority 6 — Documentation
 
-- **Update current_state.md** — major findings since last review (C419): proton charge radius fixed, light quark masses T2a, deuteron tensor, hadronic VP, θ₂₃, σ_πN, a_e upgrade
 - **Update prediction scorecard** — `educational/06_predictions.md`. C492: added a_e, σ_πN, quarkonium, charm/strange updates. Remaining: quarkonium to hadron spectroscopy module
 - **Create new educational modules** — continual check. Remaining:
   - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|²
@@ -114,6 +113,7 @@
 - **Practical applications** — add entries to `practical_applications/`
 - **Archive/organize project docs** — consolidate, merge redundant docs
 - **Update open questions** — `educational/07_open_questions.md`. C485: updated recently
+- **Update current_state.md** — DONE C499: updated with C482–C498 results (θ₂₃, a_e, Lamb shift, M_W, σ_πN, Bell chain, e-scan, J reclassification)
 
 ---
 
@@ -190,5 +190,5 @@ items when done; remove checked items after 2 cycles.
 - [ ] C484: proton spin Σ refined to −3.2% → update `educational/31_proton_spin_puzzle.md`
 - [ ] C496: θ₂₃ = arctan(exp(1/(2π))) = 49.54° (T4→T3) → update `educational/06_predictions.md` neutrino section
 - [ ] C495: Lamb shift T2a upgrade (−0.69%) → update `educational/06_predictions.md` atomic section
-- [ ] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md`
+- [x] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md` (DONE C499)
 - [ ] Stellar census module (`equations/stellar_census_dark_energy.py`) 15/17 PASS → add to prediction scorecard

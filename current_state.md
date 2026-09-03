@@ -1,7 +1,7 @@
 # Current State of the DFC Model
 
 *Living document — updated periodically as the model develops.*
-*Last reviewed: 2026-08-30 (Cycle 481)*
+*Last reviewed: 2026-09-02 (Cycle 499)*
 
 ---
 
@@ -17,11 +17,12 @@ all SM particles, quantum mechanics, cosmology, nuclear physics, precision tests
 (Zeeman, Stark, fine structure, Wiedemann-Franz, Josephson, quantum Hall, Casimir),
 and exotic phenomena (Hawking radiation, Aharonov-Bohm, quark-gluon plasma).
 
-**Equations (383 runnable Python modules):** Every quantitative claim is backed by a
+**Equations (390+ runnable Python modules):** Every quantitative claim is backed by a
 runnable module in `equations/`. Major groups include the complete Yang-Mills proof chain
 (~50 modules), Born rule derivation chain (5 modules), nuclear physics spoke (15+ modules),
 D4 gravity gap spoke (15 modules), coupling constant chains, cosmological predictions
-(4 modules), astrophysical scorecard, collapse mechanism, and neutrino depth correction.
+(4 modules), astrophysical scorecard, stellar census, collapse mechanism, neutrino depth
+correction, and freeform mathematical exploration.
 See `equations/INDEX.md` for a categorized index.
 
 **Educational series (34 modules, Modules 00–31):** A complete self-contained course
@@ -50,8 +51,10 @@ and missing hadronic VP piece. VP budget: 98.5% accounted for from first princip
 ECCC self-consistency condition closes α_s to 6 parts per million.
 
 **4. Weak sector cluster — all predictions Tier 2a from β=1/(9π) alone.**
-M_W=79.67 GeV (−0.88%), M_Z=90.86 GeV (−0.36%), G_F (+0.18%), τ_μ (−0.80%),
-v=247.83 GeV (+0.65%), Γ_Z=2456 MeV (−1.56%), R_l=20.75 (−0.10%), g₂=0.6531 (+0.29%).
+M_W=80.38 GeV (+0.009% with one-loop Sirlin Δr), M_Z=90.86 GeV (−0.36%), G_F (+0.18%),
+τ_μ (−0.80%), v=247.83 GeV (+0.65%), Γ_Z=2456 MeV (−1.56%), R_l=20.75 (−0.10%),
+g₂=0.6531 (+0.29%). Tree-level M_W = 80.10 GeV (−0.34%) fully closed by standard EW
+radiative corrections.
 
 **5. Tau lepton mass — Koide formula m_τ = 1776.97 MeV (+0.006%, 0 free params, Tier 2a).**
 
@@ -59,8 +62,10 @@ v=247.83 GeV (+0.65%), Γ_Z=2456 MeV (−1.56%), R_l=20.75 (−0.10%), g₂=0.65
 Charm +0.29%, strange +2.09%. Light quark masses: M₀ = exp(−(b₀+1/α))×v/√2 gives
 m_u/m_d at 2 GeV with +2.68% (T2a).
 
-**7. Neutrino mass ratio — m₃/m₂ = 5.8248 vs observed 5.8242 (+0.0096%, 0 free params, Tier 2a).**
-Color depth correction δd = 1/(6π) from JR-BPS derivation. 885× improvement over uncorrected.
+**7. Neutrino mass ratio — m₃/m₂ = 5.8248 vs observed 5.8242 (+0.0096%, 0 free params, Tier 3).**
+Color depth correction δd = 1/(6π) from N_c/(N_Hopf×2π). 885× improvement over uncorrected.
+Atmospheric mixing angle θ₂₃ = arctan(exp(1/(2π))) = 49.54° (+0.28°, 0.35σ, 0 free params, T3).
+JR depth exponent n_ν ~ 10⁻¹² (flat profile) eliminates BVP obstacle.
 
 **8. Yang-Mills mass gap — proof candidate at ~99% standard.**
 Complete LaTeX proof (`ym_clay_proof.tex`, 12 citations). Zero T2a on critical path.
@@ -100,12 +105,15 @@ magnetic monopoles absent, Tsirelson bound, R-ratio = 11/3, reflectionless kink 
 flux quantization, resistance quantum, superfluid circulation, Wiedemann-Franz universality,
 k_Y² = 5/3 uniquely from N_c = 3, I₄ = C₂(fund,SU(3)) = 4/3 uniquely selects n = 3.
 
-**17. Hadron predictions from V(φ).**
+**17. Hadron and atomic predictions from V(φ).**
 Proton charge radius: 0.854 fm (+1.5%, T3) — sign bug corrected from −17.6%.
 Pion mass via GMOR: 136.9 MeV (−1.9%, T2a with lattice condensate).
 Proton-neutron mass difference: 1.289 MeV (−0.4%, T2b).
 Axial coupling g_A = 4/π = 1.2732 (−0.19%, T2a).
-Proton spin fraction Σ = 4/(3π) = 0.424 (+29%, 2.4σ COMPASS; natural 1/N_c suppression).
+Pion-nucleon sigma term: σ_πN = 50.9 MeV (−2.2%, T2b).
+Proton spin: pure ANW Skyrme gives Σ ≈ 0.23 (−28%, systematic for all e; e-scan C498).
+Electron anomalous magnetic moment: a_e = 0.001158 (−0.14%, T2a, 36π chain + 4-loop QED).
+Lamb shift 2S₁/₂−2P₁/₂: 1050.5 MHz (−0.69%, T2a, 36π chain α⁵ scaling).
 
 ---
 
@@ -127,9 +135,9 @@ The 36π chain accounts for 98.5% of VP at M_Z. The remaining δ(Δα)^{NP} = 0.
 from hadronic resonances: ρ VP = 0.00377 matches Davier 2π data, but parton subtraction
 framework gives negative result. Need dispersive approach.
 
-**4. θ₂₃ neutrino mixing angle — reduced to one unknown (T4).**
-Z₃ holonomy mechanism identified. Mass matrix: tan(2θ₂₃) = −2B/(F(2)×Δ_V) [T1].
-Reduced to Δ_V/(2B) = 0.0995 (D7 kink-vortex overlap integral). Same BVP as CKM.
+**4. θ₂₃ neutrino mixing angle — T3 (0.35σ from observation).**
+θ₂₃ = arctan(exp(1/(2π))) = 49.54° (+0.28°, 0 free params). JR excess-norm mechanism
+bypasses BVP. For T2a: prove JR excess-norm governs Yukawa perturbation formally.
 
 **5. CKM/PMNS mixing angles — no quantitative derivation (T4).**
 
@@ -172,7 +180,7 @@ New T1 identity: √(S_kink/(2π)) = α^(3/2).
 | alpha_em_selfconsistency.py | α_s=0.11821 | 0.11820 | +0.006% |
 | koide_phase_coupling.py | m_τ=1776.97 MeV | 1776.86 | +0.006% |
 | ewsb_cocrystallization.py | v=247.83 GeV | 246.22 | +0.65% |
-| muon_lifetime.py | M_W=79.67 GeV | 80.377 | −0.88% |
+| ew_radiative_corrections.py | M_W=80.38 GeV | 80.377 | +0.009% |
 | g2_mz_derivation.py | g₂=0.6531 | 0.6512 | +0.29% |
 | quark_mass_kappa_derivation.py | m_c=1280.7 MeV | 1277 | +0.29% |
 | neutrino_depth_shift_bvp.py | m₃/m₂=5.8248 | 5.8242 | +0.010% |
@@ -182,6 +190,8 @@ New T1 identity: √(S_kink/(2π)) = α^(3/2).
 | cosmological_predictions_2.py | r_drag=146.70 Mpc | 147.09 | −0.27% |
 | light_quark_mass_derivation.py | M₀ from exp(−(b₀+1/α))×v/√2 | m_u,m_d at 2 GeV | +2.68% |
 | pion_mass_gmor.py | m_π=136.9 MeV | 139.6 | −1.9% |
+| anomalous_magnetic_moment.py | a_e=0.001158 (4-loop) | 0.001160 | −0.14% |
+| lamb_shift.py | ΔE=1050.5 MHz | 1057.845 | −0.69% |
 
 ### Yang-Mills Proof Chain (selected from ~50 modules)
 
@@ -219,7 +229,10 @@ New T1 identity: √(S_kink/(2π)) = α^(3/2).
 | proton_charge_radius_dfc.py | r_p=0.854 fm (+1.5%, sign bug corrected) | T3 |
 | pion_mass_gmor.py | m_π=136.9 MeV (−1.9%) | T2a |
 | proton_neutron_mass_difference.py | Δm=1.289 MeV (−0.4%) | T2b |
-| proton_spin_dfc.py | Σ=4/(3π)=0.424, g_A=4/π (−0.19%) | T2a/T3 |
+| proton_spin_dfc.py | Σ≈0.23 (pure Skyrme, −28%), g_A=4/π (−0.19%) | T2a/T3 |
+| pion_nucleon_sigma_term.py | σ_πN=50.9 MeV (−2.2%) | T2b |
+| quarkonium_spectrum.py | Υ(1S) +3.3%, J/ψ +22% | T3 |
+| neutrino_theta23_z3_mechanism.py | θ₂₃=49.54° (+0.28°, 0.35σ) | T3 |
 
 ### D4 Gravity Gap (15 modules)
 
@@ -239,7 +252,7 @@ See `ISSUES.md` for full details. Currently open:
 | Issue | Status | Category |
 |---|---|---|
 | T8: ℏ hierarchy | T4 (blocked by T12) | Foundations |
-| T10: θ₂₃ mixing angle 4° gap | T4 (reduced to one unknown) | Neutrinos |
+| T10: θ₂₃ mixing angle | T3 (+0.28°, 0.35σ, C496) | Neutrinos |
 | T11: neutrino κ=5.33 | δd T2a; κ itself T2b | Neutrinos |
 | T12: hadronic VP δ(Δα)^NP | T3/T4 (ρ VP matches data) | Coupling chain |
 | T14: Yang-Mills Clay Prize | ~99%; sole gap = peer review | Clay Prize |
@@ -251,11 +264,11 @@ See `ISSUES.md` for full details. Currently open:
 | T21: Nolen-Schiffer ~7% | T3 | Nuclear |
 | T22: nuclear saturation | T3 (correct sign; magnitude 14× weak) | Nuclear |
 | T23: surface diffuseness −20% | T3 | Nuclear |
-| T24: M_W −0.88% | T3 | EW |
+| T24: M_W +0.009% | RESOLVED (one-loop Sirlin Δr) | EW |
 | T25: underived quantities | T4 (10 items) | Various |
 | T26: proton charge radius +1.5% | T3 (sign bug corrected) | Hadrons |
 | T27: Delta-N splitting | T4 (inherits m_ρ) | Hadrons |
-| T28: symmetry energy J −36% | T4 (L PASS) | Nuclear |
+| T28: symmetry energy J +9.2% | T3 (reclassified C490) | Nuclear |
 | T30: D4 gravity gap | T4 (extensive T3 framework) | Gravity |
 
 ---
@@ -280,19 +293,31 @@ heavy quarkonium, neutrino θ₂₃, nuclear saturation from composite coupling.
 
 ---
 
-## Viability Assessment (Cycle 481)
+## Viability Assessment (Cycle 499)
 
 **Overall completeness: ~80%** (viability: ~87%, mathematical rigor: ~73%)
 
 Key landmarks:
-- **383 runnable equation modules** (was 354 at C419)
+- **390+ runnable equation modules** (was 383 at C481)
 - **34 educational modules** (complete series 00–31)
-- **25+ Tier 2a verified predictions** (all <5% error)
+- **28+ Tier 2a verified predictions** (all <5% error; added a_e, Lamb shift, M_W corrected)
 - **15+ Tier 1 structural proofs**
 - **4 cosmological prediction modules** (BBN, CMB, BAO, inflation — all PASS)
 - **15 D4 gravity modules** (extensive structural framework, T3/T4)
 - **Astrophysical scorecard** (12/15 PASS across 9 categories)
+- **Stellar census module** (15/17 PASS; dark energy, IMF, BH spectrum)
 - **Yang-Mills proof candidate** (~99% proof standard, CPC ~60%)
+
+**Recent advances (C482–C498):**
+- Bell derivation chain V(φ)→CHSH=2√2 complete (T2a, C482)
+- Proton spin: e-scan shows pure Skyrme Σ ≈ 0.23 at all e (C498)
+- θ₂₃ = arctan(exp(1/(2π))) = 49.54° from JR excess-norm (T3, C496)
+- Lamb shift upgraded T2b→T2a (−0.69%, C495)
+- a_e upgraded T2b→T2a (−0.14%, 36π chain + 4-loop QED, C488)
+- σ_πN = 50.9 MeV (−2.2%, T2b, C487)
+- Nuclear symmetry energy reclassified: −36% → +9.2% (T3, C490)
+- M_W gap resolved: +0.009% with one-loop Sirlin Δr (C497)
+- 3 stale P4 items removed (M_W, charm/strange, neutrino ratio, C497)
 
 **Clay Prize:** Structural completeness ~95%. Rigorous proof standard ~99%.
 CPC (confidence score) ~60%.
