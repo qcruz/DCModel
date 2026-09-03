@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 503 (2026-09-02)
+**Last updated:** Cycle 504 (2026-09-02)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P5** (C501)
+- **Last tier worked: P3** (C504)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -55,7 +55,7 @@
 - **Baryon asymmetry magnitude** — Sakharov conditions met (T2a, C414). η_B magnitude T4. Compute CP violation strength from D6/D7 topology → predict η_B ~ 6×10⁻¹⁰
 - **Dark matter mass and relic abundance** — m_DM=35.6 keV (T4, depth model). Relic abundance OPEN. High visibility. See `equations/cosmological_predictions_2.py`
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
-- **D4 gravity gap — derive xi_R from V(φ)** — C503: the missing 93% of G_N is equivalent to non-minimal coupling xi_R=0.0126. Does V(φ) dynamics generate this coupling? Three paths: classical (kink sech^4 → NMC), quantum (RG flow xi_R=0→0.0126), numerical. Priority A. See `equations/d4_sakharov_enhanced.py`
+- **D4 gravity gap — derive correct bending prefactor** — C504: classical kink bending rigidity κ_raw=27.83 M_Pl² (55.7× M_Pl²/2). With 1/6 conformal factor: κ_geom=4.64 M_Pl² (9.3× overshoot). Problem is now: what is the correct prefactor? Factor needed=0.01797≈β/2. J₂=(π²−6)/9 exact [T1]. Three paths: (1) derive coupling prefactor from substrate self-gravity, (2) check if β=1/(9π) appears naturally, (3) numerical kink-on-curved-background. See `equations/d4_kink_bending_rigidity.py`, `equations/d4_sakharov_enhanced.py`
 - **D4 gravity gap — non-perturbative enhancement** — derive G_eff(r) transition from G_N/23 to G_N. Coupled field+metric BVP (numerical). Priority B. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — emergent diffeomorphism** — identify symmetry protecting graviton mass. Priority C. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — numerical kink-kink simulation** — simulate V(φ) with two kinks, measure mutual attraction profile and coefficient. Bypasses analytical blockers. Priority D. See `foundations/d4_gravity_gap.md` §9

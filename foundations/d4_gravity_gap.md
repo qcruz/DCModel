@@ -1,7 +1,7 @@
 # The D4 Gap: Deriving Gravity from the Substrate
 
 **Status:** Active exploration — seven blockers identified, two partially resolved
-**Last reviewed:** Cycle 501
+**Last reviewed:** Cycle 504
 
 ---
 
@@ -624,6 +624,8 @@ phi -> g_muv^eff -> R -> (M_Pl^2 / 2) R -> G_N
 | d4_induced_gravity_worldvolume.py | Sakharav one-loop | M_induced^2 = 0.0236 M_Pl^2 | T3 |
 | d4_gravitational_redshift.py | Redshift prediction | z(xi) from compression | T3 |
 | d4_geff_transition.py | Scale-dependent G_eff model | Sigmoid interpolation | T3 |
+| d4_sakharov_enhanced.py | Three enhancement mechanisms | xi_R=0.0126 fills gap | T3 |
+| d4_kink_bending_rigidity.py | Classical bending rigidity | κ_raw=27.83 M_Pl² (55.7×) | T1 |
 
 ---
 
@@ -636,6 +638,10 @@ phi -> g_muv^eff -> R -> (M_Pl^2 / 2) R -> G_N
 - A viable route to spin-2 (Sakharov from worldvolume gauge fields)
 - A self-consistency loop (Jormungandr) that uniquely determines the
   enhancement factor
+- The kink's classical bending rigidity κ_raw = 27.83 M_Pl² is 55.7×
+  LARGER than M_Pl²/2 — the substrate has more than enough rigidity
+  for gravity. The problem is now the correct coupling prefactor
+  (factor needed ≈ 0.018 ≈ β/2), not insufficient rigidity
 
 **What DFC has NOT derived:**
 - An effective metric g_muv^eff as an explicit functional of phi
