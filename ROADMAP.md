@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 510 (2026-09-03)
+**Last updated:** Cycle 511 (2026-09-03)
 
 ---
 
@@ -62,7 +62,9 @@
 - **Derive depth attenuation law exp(−S·d)** — gap (ii) CLOSED (C457). Action density argument gives WKB exp(-S*d). See `equations/depth_attenuation_law.py`
 - **Prove substrate Casimir self-energy = α** — STUCK. 16 mechanisms tested, 7 ruled out. Best: I₄×Q_top=8/3 (+1.8%). See `equations/substrate_casimir_alpha.py`
 - **Derive nuclear saturation from DFC couplings** — BLOCKED. C481: composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
-- **Derive Bekenstein-Hawking entropy from V(φ)** — can S_BH = A/(4G) be derived from kink thermodynamics?
+- **Derive Bekenstein-Hawking entropy from V(φ)** — C511: S/A = 1/(2k) = 0.2486 (-0.57%, inherits kappa gap). Not independent prediction. Can kink thermodynamics give deeper derivation?
+- **Warp-modified Yukawa overlap** — C511: warp factor reduces needed separation by 18% for e/t hierarchy. k*xi=1.76 is significant. Integrate warp into C510 overlap derivation
+- **Warp factor correction to generation spacing** — C511: spacing ratio 1.89 (not constant). Connects to kappa_q=3pi/2 generation parameter
 - **Derive ℏ from (α, β, c)** — BLOCKED on α_em(0) identity. See `ISSUES.md` T8
 - **Bell: measurement dynamics from V(φ)** — how does kink nucleation implement spinor projection? T3 structural. See `equations/bell_joint_derivation.py` Part F step 6
 - **Bell: joint Born rule substrate justification** — extend Born rule to tensor-product measurements. See `equations/bell_joint_derivation.py` Part F step 7
@@ -108,6 +110,8 @@
 - **Independent derivation paths** — for key results (α_s, sin²θ_W, m_p), find completely different derivation routes within DFC. Agreement = strong. Disagreement = hidden assumption exposed
 - **Rigorous free-parameter accounting** — count every place a value is taken from observation (even implicitly). Compare total free inputs vs total independent predictions. This is the model's actual information-theoretic score
 - **Phase diagram & extreme regime predictions** — QCD deconfinement T_c, quark-gluon plasma properties, neutron star max mass, EW phase transition order. Hard targets from lattice QCD and astrophysics
+- **Cosmological constant from RS2 brane-bulk** — C511: sigma_kink/sigma_RS = 6.25, Lambda_4 = 935 M_Pl^4 (10^124x too large). Correct sign (dS). The standard CC problem persists in DFC RS2 picture
+- **AdS/CFT dual of DFC bulk** — C511: central charge c = 19.4. What 4D theory does the D4 AdS describe? Is it the substrate dynamics itself?
 - **Analog system comparison** — identify condensed matter systems with double-well potentials and kink solutions (polyacetylene, ferroelectrics, superfluid ³He). Do they exhibit emergent gauge-like behaviors at domain boundaries?
 - **Prove y(v) = exp(-(b₀+1/α)) from kink overlap** — C510: PT zero-mode overlap sech²×sech² computed. Effective separation d_eff = 7.9 kink widths (6.9 l_Pl). Self-consistent equation d = (E + ln(4(2d+1)))/2 reproduces to 1.4%. BOTTLENECK: derive D5-D7 depth separation from compression dynamics. See `equations/light_quark_mass_derivation.py` Part K
 
@@ -165,7 +169,7 @@ status, or last-touched cycle changes.
 | 6 | Bell / QM foundations | T2a | bell_joint_derivation, born_rule_derivation, born_rule_schrodinger, collapse_mechanism | Measurement dynamics T3; joint Born rule T3; emergent locality T3 | C482 |
 | 7 | Neutrino physics | T3 | neutrino_masses, neutrino_theta23_z3_mechanism, neutrino_casimir_depth | θ₂₃ = 49.54° (+0.35σ, T3); m₃/m₂ −8.3% T3; absolute mass scale T4 | C496 |
 | 8 | Atomic physics | T2a | atomic_structure, atomic_physics_predictions, lamb_shift, fine_structure | Lamb shift T2a (−0.69%); remaining atomic predictions inherit α_em(0) offset | C495 |
-| 9 | Gravity (D4) | T1 | d4_coupled_kink_warp, d4_thick_wall_bvp, d4_strong_field_metric, d4_einstein_from_jormungandr + 14 more | Thin-wall κ=0.497 (−0.57% T1); thick-wall κ=2.04 (4.1× overshoot); factor-4 normalization gap | C508 |
+| 9 | Gravity (D4) | T1 | d4_coupled_kink_warp, d4_thick_wall_bvp, gravity_cross_applications + 15 more | Thin-wall κ=0.497 (−0.57% T1); thick-wall κ=2.04 (4.1× overshoot); cross-spoke connections mapped C511 | C511 |
 | 10 | Flavor / masses | T2a | koide_phase_coupling, light_quark_mass_derivation, quark_mass_kappa_derivation, generation_count_proof | CKM angles T4; top quark mass T4; τ dimple route 8.4× off | C459 |
 | 11 | Proton structure | T2a | proton_spin_dfc, proton_charge_radius_dfc, nucleon_magnetic_moments, pion_nucleon_sigma_term | μ_p/μ_n sea quarks T4; charge radius pion cloud T3; pure Skyrme Σ −28% (needs HLS/1/N_c) | C498 |
 
