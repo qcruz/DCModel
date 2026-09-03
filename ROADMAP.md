@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 501 (2026-09-02)
+**Last updated:** Cycle 502 (2026-09-02)
 
 ---
 
@@ -55,7 +55,10 @@
 - **Baryon asymmetry magnitude** — Sakharov conditions met (T2a, C414). η_B magnitude T4. Compute CP violation strength from D6/D7 topology → predict η_B ~ 6×10⁻¹⁰
 - **Dark matter mass and relic abundance** — m_DM=35.6 keV (T4, depth model). Relic abundance OPEN. High visibility. See `equations/cosmological_predictions_2.py`
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
-- **D4 gravity gap** — derive G_N from compression geometry. C469: perturbative approach misconceived (95.6% non-perturbative). BLOCKED on new approach. See `foundations/d4_gravity_gap.md`
+- **D4 gravity gap — Sakharov effective action** — compute one-loop effective action for SU(3) gauge fields on D3 worldvolume in sech^2 kink background. Functional determinant calculation → M_Sakharav^2 as function of (α, β). Priority A of 6-step program. See `foundations/d4_gravity_gap.md` §8-9
+- **D4 gravity gap — non-perturbative enhancement** — derive G_eff(r) transition from G_N/23 to G_N. Coupled field+metric BVP (numerical). Priority B. See `foundations/d4_gravity_gap.md` §9
+- **D4 gravity gap — emergent diffeomorphism** — identify symmetry protecting graviton mass. Priority C. See `foundations/d4_gravity_gap.md` §9
+- **D4 gravity gap — numerical kink-kink simulation** — simulate V(φ) with two kinks, measure mutual attraction profile and coefficient. Bypasses analytical blockers. Priority D. See `foundations/d4_gravity_gap.md` §9
 - **Derive depth attenuation law exp(−S·d)** — gap (ii) CLOSED (C457). Action density argument gives WKB exp(-S*d). See `equations/depth_attenuation_law.py`
 - **Prove substrate Casimir self-energy = α** — STUCK. 16 mechanisms tested, 7 ruled out. Best: I₄×Q_top=8/3 (+1.8%). See `equations/substrate_casimir_alpha.py`
 - **Derive nuclear saturation from DFC couplings** — BLOCKED. C481: composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
@@ -162,7 +165,7 @@ status, or last-touched cycle changes.
 | 6 | Bell / QM foundations | T2a | bell_joint_derivation, born_rule_derivation, born_rule_schrodinger, collapse_mechanism | Measurement dynamics T3; joint Born rule T3; emergent locality T3 | C482 |
 | 7 | Neutrino physics | T3 | neutrino_masses, neutrino_theta23_z3_mechanism, neutrino_casimir_depth | θ₂₃ = 49.54° (+0.35σ, T3); m₃/m₂ −8.3% T3; absolute mass scale T4 | C496 |
 | 8 | Atomic physics | T2a | atomic_structure, atomic_physics_predictions, lamb_shift, fine_structure | Lamb shift T2a (−0.69%); remaining atomic predictions inherit α_em(0) offset | C495 |
-| 9 | Gravity (D4) | T3 | d4_strong_field_metric, d4_einstein_from_jormungandr, d4_zero_mode_gravity, d4_gravity_spin2_enhancement | G_N spin-2 enhancement 22.9× T4; 1/r potential T4 | C469 |
+| 9 | Gravity (D4) | T3 | d4_strong_field_metric, d4_einstein_from_jormungandr, d4_zero_mode_gravity, d4_gravity_spin2_enhancement + 13 more | 7 blockers mapped (C501); Sakharav EH = 2.4% M_Pl²; non-pert 93% open; spin-2 Candidate B viable T3 | C501 |
 | 10 | Flavor / masses | T2a | koide_phase_coupling, light_quark_mass_derivation, quark_mass_kappa_derivation, generation_count_proof | CKM angles T4; top quark mass T4; τ dimple route 8.4× off | C459 |
 | 11 | Proton structure | T2a | proton_spin_dfc, proton_charge_radius_dfc, nucleon_magnetic_moments, pion_nucleon_sigma_term | μ_p/μ_n sea quarks T4; charge radius pion cloud T3; pure Skyrme Σ −28% (needs HLS/1/N_c) | C498 |
 
