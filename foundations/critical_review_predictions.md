@@ -128,6 +128,63 @@ then the claim is weaker than presented.
 
 ---
 
+## Category 5: Practical Relevance Assessment
+
+**Question:** Does DFC produce any result that is *useful* beyond matching existing
+measurements? Could it inform experiment design, material science, engineering limits,
+or computational methods?
+
+### 5a: Where DFC is practically useful RIGHT NOW
+
+| Application | What DFC provides | Value |
+|---|---|---|
+| **Experiment prioritization** | No axion (T2a), no SUSY (T3), no proton decay (T1), no 4th generation (T1). These are falsifiable absence predictions. If correct, they redirect billions of dollars in experimental programs away from fruitless searches. | **High** — but contingent on DFC being correct. The absence predictions stand on their own structural merits regardless. |
+| **Cross-coupling constraints** | DFC predicts that α_em, α_s, sin²θ_W, and g_A are all determined by two numbers. Any improved measurement of one constrains all others. This gives a consistency web: if a future α_s measurement moves, DFC predicts exactly how much α_em must shift. | **Moderate** — useful for experimental cross-checks, but only if the ECCC mechanism holds. |
+| **Parameter space guidance** | DFC predicts θ₂₃ = 49.54°, w_Λ = −0.992, m_DM = 35.6 keV. These are specific targets for DUNE, DESI, and X-ray telescopes. Even if DFC is wrong, having a specific theoretical target to test is useful for experiment design. | **Moderate** — provides falsifiable targets. |
+
+### 5b: What DFC CANNOT do practically (honest assessment)
+
+| Claim sometimes implied | Reality |
+|---|---|
+| "DFC will enable new technology" | No. DFC derives the same physics as the SM at all accessible energies. No new forces, particles, or interactions are predicted below the Planck scale. The engineering limits in `practical_applications/` (max tensile strength, max measurement rate, quantum resistance) are correct but not new — they follow from known physics that DFC happens to also derive. |
+| "Substrate engineering" | No. The substrate operates at the Planck scale (ξ ≈ 0.87 l_Pl ≈ 10⁻³⁵ m). There is no plausible path to manipulating substrate structure directly. This is not a near-term engineering deficit — it is ~20 orders of magnitude beyond any foreseeable technology. |
+| "Better computation from DFC" | No. DFC does not simplify QCD lattice calculations, does not speed up Feynman diagram evaluation, and does not provide computational shortcuts. When DFC needs loop corrections (M_W, g−2), it uses the same SM perturbation theory. |
+| "New materials or energy sources" | No. DFC's engineering limits (max tensile strength ~10³⁴ Pa, max energy density ~10¹¹⁴ J/m³) are far beyond any material. These limits are academically interesting but have zero practical engineering value because no material comes within 20 orders of magnitude. |
+| "DFC resolves the measurement problem" | Not yet. The Born rule derivation chain (V(φ) → Schrodinger → |ψ|²) exists at T3 level but does not produce a new measurable prediction. Until it does, this is Category 4a (unfalsifiable). |
+
+### 5c: The real practical value proposition
+
+DFC's practical value is **indirect and conditional**:
+
+1. **If DFC is correct**, it reduces the Standard Model's ~25 free parameters to 2 (α, β).
+   This is practically useful the same way that Maxwell's unification of electricity and
+   magnetism was useful — not because it immediately produced new devices, but because
+   it revealed that two apparently separate phenomena were one thing. That understanding
+   eventually led to radio, radar, telecommunications, and modern electronics. But
+   "eventually" was ~40 years (1865 → 1901).
+
+2. **If DFC is wrong**, the practical value is zero — it is a theoretical dead end.
+   The absence predictions (no axion, no SUSY) are the fastest falsification path.
+   Any one of those discoveries would force a major rethink.
+
+3. **The honest middle ground**: DFC is most practically useful as a *constraint engine*.
+   It says "the physical world cannot contain X" (no axion, no proton decay, no SUSY,
+   no 4th generation, d_n = 0 exactly). If these constraints hold up experimentally
+   over the next 10-20 years, the parameter-reduction framework gains credibility.
+   If any one fails, the framework needs repair or retirement.
+
+### 5d: What would change this assessment
+
+| Development | Impact on practical relevance |
+|---|---|
+| **DFC predicts a NEW observable** not in the SM | Transforms from "replication framework" to "discovery tool." Currently no such prediction exists at accessible energies. |
+| **α_em(0) identity proven algebraically** | Closes the strongest coupling prediction with zero inputs. Would make the 2→25 parameter reduction rigorous, upgrading DFC from "interesting coincidences" to "structural necessity." |
+| **Gravitational prediction derived** | G_N from V(φ) at T2a would be the first framework ever to derive a gravitational constant from non-gravitational physics. Enormous theoretical significance even if not practically useful. |
+| **D4 metric emergence solved** | Would connect quantum mechanics and gravity through substrate dynamics. Could predict Planck-scale deviations from GR testable by gravitational wave detectors. |
+| **A DFC prediction fails decisively** | Would sharpen the framework by identifying which structural assumptions are wrong. Honest failure is more useful than ambiguous success. |
+
+---
+
 ## Connections
 
 - `educational/06_predictions.md` — full prediction scorecard
