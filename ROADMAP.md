@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 516 (2026-09-04)
+**Last updated:** Cycle 517 (2026-09-04)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P5** (C516 — literature reframing exploration + ROADMAP items added)
+- **Last tier worked: P5** (C517 — AdS/CFT dictionary + topological insulator classification)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -91,8 +91,8 @@
 ## Priority 5 — Exploratory
 
 - **Literature reframing: Helfrich membrane → gravity** — compute DFC worldvolume bending rigidity using membrane physics. Sakharov perturbative = 2.36% of M_Pl²; non-perturbative membrane fluctuations may close gap. Crumpling transition → hierarchy problem? See `foundations/literature_reframing.md` §A3/C2
-- **Literature reframing: AdS/CFT dictionary** — write full translation: compression depth = radial coord = RG scale; worldvolume = boundary; bulk = substrate. Test by computing correlation function both ways. Viscosity bound η/s ≥ 1/(4π) → substrate transport prediction. See `foundations/literature_reframing.md` §A5
-- **Literature reframing: topological insulator classification** — map D5/D6/D7 depth sequence onto Kitaev periodic table. Does symmetry class progression (U(1)→SU(2)→SU(3)) predict allowed zero modes at each depth? Bulk-boundary correspondence = worldvolume physics from bulk topology. See `foundations/literature_reframing.md` §B3/D1
+- **Literature reframing: AdS/CFT dictionary** — C517: DONE (32/32 PASS). Full translation table written. Zero mode = T_muv (Delta=4, T1). Central charge c=0.19 (low-rank dual). Viscosity eta/s=0.94 with 't Hooft correction (QGP ~0.12 — lambda=8/9 too small for strong-coupling limit). RT entropy inherits kappa gap. See `equations/adscft_topo_insulator_dfc.py` Part A
+- **Literature reframing: topological insulator classification** — C517: DONE (32/32 PASS). Depth path AI→BDI→AIII identified. D5(AI): trivial in d=1 (no protected fermions — photon from Goldstone instead). D6(BDI): Z in d=1 (JR zero mode topologically protected — SAME as SSH!). D7(AIII): Z in d=1 (quarks protected by chiral index). Predicts fermion/boson split across depths. See `equations/adscft_topo_insulator_dfc.py` Part B
 - **Literature reframing: BCS gap → Λ_QCD** — formulate DFC BCS gap equation for D7 chiral condensate. Gap Δ → Λ_QCD, coupling G → f(α,β). Dual superconductor confinement: Meissner ↔ color confinement, Abrikosov vortex ↔ flux tube. See `foundations/literature_reframing.md` §C1
 - **Literature reframing: quantum Hall → coupling quantization** — compute Chern number of kink fluctuation operator in D5 background. If gauge coupling = topological invariant, it's exact (no perturbative corrections). Fractional QHE: e/3 quasiparticles ↔ quark charges, filling 1/3 ↔ SU(3). See `foundations/literature_reframing.md` §D3
 - **Literature reframing: analog gravity dispersive corrections** — derive DFC dispersion relation near kink (ω ~ 1/ξ). Subluminal vs superluminal determines Hawking radiation robustness. Acoustic horizon → Planck-scale GR corrections testable form. See `foundations/literature_reframing.md` §A4
