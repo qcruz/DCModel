@@ -207,11 +207,13 @@ g² = (2π)² / (2π r_U1 / lambda) = 2π lambda / r_U1 = 2π / (r_U1/lambda)
 
 where the circumference L = 2π r_U1 is measured in units of the kink width lambda.
 
-This formula follows from treating the D5 U(1) closure as a Kaluza-Klein compactification
-of the substrate field on the S¹ fiber. The 4D coupling g relates to the 5D coupling g_5
-and the compactification radius R by g² = g_5²/(2π R) (in appropriate units). For the
-DFC substrate, the effective 5D coupling is set by the kink width lambda, giving the
-formula above.
+This formula follows from treating the D5 U(1) closure as a periodic winding of the
+substrate field. The coupling along the winding direction relates to the coupling along
+the compression coordinate and the winding circumference R by g² = g_5²/(2π R). For
+the DFC substrate, the coupling along the compression coordinate is set by the kink
+width lambda, giving the formula above. (This is mathematically identical to
+Kaluza-Klein reduction, but the periodic direction is a substrate closure behavior,
+not a pre-existing compact spatial dimension.)
 
 **The holonomy formula is exact once r_U1 is known.** The entire derivation problem
 reduces to: what is r_U1/lambda from the substrate?
@@ -319,20 +321,21 @@ has a fiber radius in substrate units equal to 3/(4β).
 
 Two routes:
 
-### Route A: Kaluza-Klein reduction of the DFC substrate on S¹
+### Route A: Periodic winding reduction of the DFC substrate on S¹
 
-Write the DFC substrate field equation in 5D (treating the U(1) phase direction as a
-compact fifth dimension), and perform the standard Kaluza-Klein reduction on an S¹ of
-radius R_KK. The 4D effective theory will have a U(1) gauge field with coupling:
+Write the DFC substrate field equation with the U(1) phase direction treated as a
+periodic winding coordinate, and perform the standard mode decomposition on an S¹ of
+radius R_KK. The effective theory on the substrate's D3 localization worldvolume will
+have a U(1) gauge field with coupling:
 
 ```
 g_KK² = 1 / (M_5^(D-4) × R_KK × Vol(internal))
 ```
 
-where M_5 is the substrate's fundamental mass scale. In DFC, M_5 relates to M_Pl (from
-the D1 anchor). The calculation requires:
-1. Identifying the correct 5D embedding of the DFC substrate field
-2. Computing the spectrum of Kaluza-Klein modes
+where M_5 is the substrate's fundamental mass scale (from the D1 compression anchor).
+The calculation requires:
+1. Identifying the correct embedding of the DFC substrate field with the winding coordinate
+2. Computing the spectrum of periodic modes on the S¹
 3. Identifying which mode is the photon (massless U(1) gauge boson)
 4. Reading off the coupling g_KK
 
@@ -340,9 +343,9 @@ The target: show R_KK = r_U1 = (3/(4β)) × lambda from this computation.
 
 ### Route B: Worldvolume field theory on the kink domain wall
 
-Treat the D5 kink as a domain wall in 4+1D (the domain wall lives in 3+1D). The
-worldvolume theory of the domain wall is a 3+1D theory containing the Goldstone mode θ
-(the phase of the D5 U(1) closure) with effective Lagrangian:
+The D5 kink is a domain wall in the substrate; its worldvolume — the D3 localization
+surface — carries the Goldstone mode θ (the phase of the D5 U(1) closure) with
+effective Lagrangian:
 
 ```
 L_wall = (sigma/2)(∂_μ θ)² + (higher terms)
@@ -351,16 +354,17 @@ L_wall = (sigma/2)(∂_μ θ)² + (higher terms)
 where sigma = f² = E_kink/(unit transverse area) = (4/3)phi_0²/lambda is the domain
 wall tension.
 
-The Goldstone mode θ on the 3+1D worldvolume acts as a gauge scalar (the longitudinal
+The Goldstone mode θ on the worldvolume acts as a gauge scalar (the longitudinal
 mode of the photon). The transverse fluctuations of the domain wall give the photon's
-two transverse modes. The gauge coupling from this worldvolume theory is:
+two transverse modes. The gauge coupling from the worldvolume theory is:
 
 ```
 g_wall² = 1 / (sigma × lambda²) × normalization
 ```
 
 where sigma × lambda² is the dimensionless domain wall tension. Computing the precise
-normalization from the matching of bulk and worldvolume theories is the calculation needed.
+normalization from matching the substrate field equation to the worldvolume theory is
+the calculation needed.
 
 Substituting sigma = (4/3)phi_0²/lambda and phi_0² = alpha/beta = 2M_c²/beta:
 
@@ -428,12 +432,12 @@ Consequence:
 
 ## Open Questions
 
-1. **Route A calculation:** Embed the DFC substrate field in 5D with the U(1) phase as
-   the fifth dimension. Perform the KK reduction and compute r_KK in terms of (α, β, c).
-   Does the KK radius equal 3λ/(4β)?
+1. **Route A calculation:** Extend the DFC substrate field equation with the U(1) phase
+   as a periodic winding coordinate. Perform the mode decomposition and compute r_KK in
+   terms of (α, β, c). Does the winding radius equal 3λ/(4β)?
 
 2. **Route B calculation:** Derive the worldvolume effective theory of the D5 domain wall
-   from the bulk DFC field equation. Compute the normalization of the Goldstone kinetic
+   from the substrate field equation. Compute the normalization of the Goldstone kinetic
    term and show the worldvolume coupling gives g² = 8πβ/3.
 
 3. **Connection to beta:** Once r_U1/λ = 3/(4β) is proved formally, the formula g² = 8πβ/3

@@ -45,9 +45,11 @@ coupling requires several concrete steps.
 ## 3. The Kink as a Domain Wall
 
 The DFC kink — the localized solution phi(y) = phi_0 tanh(y/xi) — is not just
-a one-dimensional soliton. It is a domain wall: a three-dimensional surface
-separating two vacuum regions (phi = +phi_0 and phi = -phi_0). Particles and
-forces live ON this wall, in its three-dimensional worldvolume.
+a one-dimensional soliton. It is a domain wall: a localized region of the
+substrate separating two vacuum states (phi = +phi_0 and phi = -phi_0). What
+appears as three apparent spatial degrees of freedom is the D3 localization
+behavior on this wall. Particles and forces are closure behaviors concentrated
+on the wall.
 
 The wall has:
 
@@ -86,12 +88,13 @@ The DFC vacuum energy is:
 V(phi_0) = -alpha^2 / (4 beta) = -48.55 (in Planck units)
 
 This is **negative**. The substrate's equilibrium state has negative energy
-density. In the language of five-dimensional gravity, this is equivalent to
-a negative bulk cosmological constant — exactly the ingredient that creates
-an anti-de Sitter (AdS) geometry.
+density. The substrate's compression coordinate — the transverse direction
+away from the kink — acquires an exponentially decaying energy profile.
+This is mathematically identical to anti-de Sitter (AdS) geometry, but it
+emerges from V(phi), not from a pre-existing ambient space.
 
-The coupled equations for the domain wall in five-dimensional gravity (the
-DFGH formalism, after DeWolfe, Freedman, Gubser, and Horowitz) are:
+The coupled equations for the kink and its transverse compression profile
+(the DFGH formalism, after DeWolfe, Freedman, Gubser, and Horowitz) are:
 
 ```
 A'' = -(1/6)(phi')^2
@@ -99,9 +102,9 @@ phi'' + 4A' phi' = V'(phi)
 6(A')^2 = (1/4)(phi')^2 - (1/2)V(phi)     [constraint]
 ```
 
-where A(y) is the warp factor: the metric takes the form
-ds^2 = e^{2A(y)} eta_{mu nu} dx^mu dx^nu + dy^2. The exponential e^{2A}
-controls how strongly gravity is concentrated near the domain wall.
+where A(y) is the warp factor describing how the substrate's energy density
+varies along the compression coordinate y. The exponential e^{2A} controls
+how strongly gravitational perturbations are concentrated near the kink.
 
 At the vacuum (large y, where phi approaches phi_0 and phi' approaches zero),
 the constraint equation reduces to:
@@ -116,20 +119,23 @@ This is entirely determined by V(phi). No additional parameters are needed.
 
 ---
 
-## 6. Gravity Localization: The Randall-Sundrum Mechanism
+## 6. Gravity Localization
 
-In 1999, Randall and Sundrum showed that a domain wall (brane) embedded in
-an anti-de Sitter bulk automatically localizes gravity. The warp factor
-e^{2A} falls off exponentially away from the wall, confining the
-gravitational zero mode to the wall's vicinity. Observers on the wall
-experience four-dimensional gravity with a finite Planck mass, even though
-the extra dimension extends to infinity.
+In 1999, Randall and Sundrum demonstrated a mathematical result: when a
+localized structure (domain wall) exists in a geometry with exponentially
+decaying energy density, gravitational perturbations are automatically
+confined to the wall's vicinity. The warp factor e^{2A} falls off
+exponentially in the transverse direction, so the gravitational zero mode
+has finite norm even though the compression coordinate extends without bound.
 
-In DFC, this mechanism is not postulated — it is a consequence of V(phi).
-The negative vacuum energy creates the AdS bulk. The kink creates the
-domain wall. The Randall-Sundrum localization follows automatically.
+In DFC, this is not postulated — it is a consequence of V(phi). The
+negative vacuum energy produces the exponential decay profile. The kink
+produces the localized structure. The confinement of gravity follows
+automatically. The Randall-Sundrum result is used here as a mathematical
+theorem about exponential profiles and zero modes — not as a claim that
+the substrate lives inside a pre-existing higher-dimensional space.
 
-The four-dimensional Planck mass from this localization is:
+The effective Planck mass from this localization is:
 
 M_4^2 = M_5^3 / k
 
@@ -281,13 +287,13 @@ V(phi) = -alpha/2 phi^2 + beta/4 phi^4
 V(phi_0) = -alpha^2/(4*beta) < 0    [negative vacuum energy]
   |
   v
-Emergent AdS bulk with k = alpha*sqrt(3*pi)/4    [from DFGH constraint]
+Emergent AdS profile, k = alpha*sqrt(3*pi)/4    [from DFGH constraint]
   |
   v
-Kink = domain wall in AdS bulk    [V(phi) provides both]
+Kink in exponentially decaying substrate    [V(phi) provides both]
   |
   v
-RS2 gravity localization on wall    [automatic from AdS + wall]
+Gravity localization on kink    [automatic from AdS profile + kink]
   |
   v
 M_Pl^2 = M_5^3/k = 2/k = 0.994    [zero free parameters]
@@ -297,9 +303,9 @@ kappa = 1/k = 0.4972    [target: 0.5000, error: -0.57%]
 ```
 
 Every arrow in this chain is either a mathematical identity or a
-well-established physics result (DFGH equations, Randall-Sundrum
-localization). The only DFC-specific inputs are alpha = cuberoot(18)
-and beta = 1/(9 pi).
+well-established mathematical result (DFGH coupled equations, gravity
+localization on exponential profiles). The only DFC-specific inputs
+are alpha = cuberoot(18) and beta = 1/(9 pi).
 
 ---
 

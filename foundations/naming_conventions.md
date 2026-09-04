@@ -26,11 +26,11 @@ a topological soliton of V(φ) = −α/2 φ² + β/4 φ⁴. The term is mathemat
 - **"Kink" sounds trivial.** To a non-physicist, a "kink" is a minor flaw in a hose.
   It does not convey the significance of a topologically protected, energy-carrying,
   particle-like excitation.
-- **"Kink" is 1+1D specific.** In higher dimensions, the equivalent objects are domain
-  walls (2+1D) or domain wall junctions (3+1D). DFC uses the 1+1D kink as the
-  fundamental building block, but the physical particles it describes exist in 3+1D.
-  The KK reduction (Cycles 182-184) shows how the 1+1D kink becomes a 3-brane
-  (domain wall) whose worldvolume IS our 4D spacetime.
+- **"Kink" is specific to the compression coordinate.** The kink solution is
+  one-dimensional along the substrate's compression depth. But the substrate's
+  D3 localization behavior produces three apparent spatial degrees of freedom
+  on the kink. The kink's worldvolume — the apparent spatial extent of the
+  structure — is what observers experience as the physical world.
 
 ### Alternative: "Fold"
 "Fold" is used in the model's full name (Dimensional Folding Compression) and in

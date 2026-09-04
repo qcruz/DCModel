@@ -337,7 +337,7 @@ An earlier calculation gave r_p = 0.701 fm (−17%), but this was traced to a si
 - **Reclassified:** P4 Known Failure → P2 Tier Upgrade candidate
 
 ### Gravitational coupling (Planck mass)
-The model derives Newton's gravitational constant from V(φ) with zero free parameters. The substrate's vacuum energy is negative — V(φ₀) = −α²/(4β) — which creates an emergent anti-de Sitter geometry in five apparent spatial degrees of freedom. The kink acts as a domain wall in this geometry, and gravity is automatically localized to the wall's worldvolume via the Randall-Sundrum mechanism. The gravitational coupling equals one over the AdS curvature scale.
+The model derives Newton's gravitational constant from V(φ) with zero free parameters. The substrate's vacuum energy is negative — V(φ₀) = −α²/(4β) — which creates an exponentially decaying energy profile along the substrate's compression coordinate (an emergent anti-de Sitter geometry). The kink acts as a domain wall within this profile, and gravity is automatically localized to the wall's worldvolume — a mathematical consequence of exponential warp-factor confinement (the Randall-Sundrum result, used here as a theorem about zero modes on exponential profiles). The gravitational coupling equals one over the AdS curvature scale.
 
 - **Predicted:** κ = 1/k = 4/(α√(3π)) = 0.4972
 - **Target:** κ = 0.5000 (in Planck units)

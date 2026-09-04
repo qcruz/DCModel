@@ -53,8 +53,8 @@ The argument has three parts.
 
 In DFC, the strong force (SU(3) color) emerges as the third closure behavior of the
 substrate, at D7 compression depth (see Module 04). The D7 closure configuration is
-constrained to S⁵ — the five-dimensional unit sphere embedded in three-dimensional
-complex space (ℂ³). The condition defining S⁵ is simply that the squared magnitudes
+constrained to S⁵ — the unit sphere in three-dimensional complex space (ℂ³),
+a five-real-parameter manifold defined by the closure topology. The condition defining S⁵ is simply that the squared magnitudes
 of three complex coordinates sum to one.
 
 The gauge group SU(3) arises as the isometry group of this sphere — the set of

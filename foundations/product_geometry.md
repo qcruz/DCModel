@@ -17,8 +17,9 @@ Grand unified theories like SU(5) or SO(10) say: at high energies, there is *one
 symmetry group. As the universe cools, that symmetry breaks into three pieces — the electromagnetic,
 weak, and strong forces emerge as fragments of the original unified force.
 
-In geometric language: the extra dimensions form a single, connected space. All three forces live
-in the same room. At high energies they are indistinguishable; at low energies they separate.
+In geometric language: the internal closure degrees of freedom form a single, connected space.
+All three forces arise from the same structure. At high compression they are indistinguishable;
+at low compression they appear distinct.
 
 **Mathematical signature:** A *simple* gauge group — one that cannot be written as a direct product
 of smaller groups.

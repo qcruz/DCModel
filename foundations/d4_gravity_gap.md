@@ -645,8 +645,9 @@ phi -> g_muv^eff -> R -> (M_Pl^2 / 2) R -> G_N
   LARGER than M_Pl²/2 — the substrate has more than enough rigidity
   for gravity
 - **The warp factor suppression mechanism (T1 structural, T2a numerical):**
-  V(phi_0) < 0 creates an emergent AdS bulk; the kink localizes gravity
-  via the Randall-Sundrum mechanism. Thin-wall: κ = 1/k = 0.4972 (−0.57%).
+  V(phi_0) < 0 creates an emergent AdS profile along the compression
+  coordinate; the kink localizes gravity via exponential warp-factor
+  confinement (the Randall-Sundrum mathematical result). Thin-wall: κ = 1/k = 0.4972 (−0.57%).
   Self-consistent thick-wall BVP: κ = 2.04 (4.1× overshoot). The thin-wall
   approximation is poor (kξ = 1.76) — gravity back-reaction widens the kink
   by 8×. Progress: raw rigidity 56× → thick-wall 4× overshoot

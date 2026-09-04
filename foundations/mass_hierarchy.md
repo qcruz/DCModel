@@ -136,12 +136,13 @@ parameter ε = ⟨φ⟩/M.
 - Works well phenomenologically but adds new structure
 
 ### Randall-Sundrum Wavefunction Localization
-In a warped 5th dimension, different fermion species are localized at different positions along the
-extra dimension. Overlap with the Higgs (located on one brane) determines the mass.
+In a warped compression coordinate, different fermion species are localized at different
+positions along the transverse depth. Overlap with the Higgs (localized at the kink core)
+determines the mass.
 
 - Requires specifying each fermion's localization separately
 - The localizations must be chosen to reproduce the hierarchy
-- Requires a brane construction (separate extra structure)
+- Requires additional structure beyond the substrate itself
 
 ### This Model's Approach
 - **One geometric defect** (the dimple) accounts for the electron/muon ratio (206.77, 0.0% error)
