@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 515 (2026-09-04)
+**Last updated:** Cycle 516 (2026-09-04)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P6** (C515 — dimensional language audit, user priority)
+- **Last tier worked: P5** (C516 — literature reframing exploration + ROADMAP items added)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -90,6 +90,18 @@
 
 ## Priority 5 — Exploratory
 
+- **Literature reframing: Helfrich membrane → gravity** — compute DFC worldvolume bending rigidity using membrane physics. Sakharov perturbative = 2.36% of M_Pl²; non-perturbative membrane fluctuations may close gap. Crumpling transition → hierarchy problem? See `foundations/literature_reframing.md` §A3/C2
+- **Literature reframing: AdS/CFT dictionary** — write full translation: compression depth = radial coord = RG scale; worldvolume = boundary; bulk = substrate. Test by computing correlation function both ways. Viscosity bound η/s ≥ 1/(4π) → substrate transport prediction. See `foundations/literature_reframing.md` §A5
+- **Literature reframing: topological insulator classification** — map D5/D6/D7 depth sequence onto Kitaev periodic table. Does symmetry class progression (U(1)→SU(2)→SU(3)) predict allowed zero modes at each depth? Bulk-boundary correspondence = worldvolume physics from bulk topology. See `foundations/literature_reframing.md` §B3/D1
+- **Literature reframing: BCS gap → Λ_QCD** — formulate DFC BCS gap equation for D7 chiral condensate. Gap Δ → Λ_QCD, coupling G → f(α,β). Dual superconductor confinement: Meissner ↔ color confinement, Abrikosov vortex ↔ flux tube. See `foundations/literature_reframing.md` §C1
+- **Literature reframing: quantum Hall → coupling quantization** — compute Chern number of kink fluctuation operator in D5 background. If gauge coupling = topological invariant, it's exact (no perturbative corrections). Fractional QHE: e/3 quasiparticles ↔ quark charges, filling 1/3 ↔ SU(3). See `foundations/literature_reframing.md` §D3
+- **Literature reframing: analog gravity dispersive corrections** — derive DFC dispersion relation near kink (ω ~ 1/ξ). Subluminal vs superluminal determines Hawking radiation robustness. Acoustic horizon → Planck-scale GR corrections testable form. See `foundations/literature_reframing.md` §A4
+- **Literature reframing: SSH/polyacetylene → fermion zero modes** — map full SSH toolkit (fractional charge, topological protection indices, bulk-boundary) to DFC. Quark e/3 charge from domain wall fractionalization? See `foundations/literature_reframing.md` §B3
+- **Literature reframing: Skyrme e_sk from V(φ)** — derive Skyrme stabilization coefficient from substrate self-interaction at D6. Independent proton mass route vs current Regge. See `foundations/literature_reframing.md` §B2
+- **Literature reframing: graded elastic media → mode spectrum** — import transfer matrix, WKB, impedance matching methods from GRIN optics / metamaterials for kink fluctuation spectrum. See `foundations/literature_reframing.md` §C3
+- **Literature reframing: CDT spectral dimension flow** — does DFC predict spectral dimension 4→2 at short distances (ω ~ 1/ξ)? If so, matches CDT quantum gravity result. See `foundations/literature_reframing.md` §D2
+- **Literature reframing: Griffiths/FKG → substrate ordering** — Mermin-Wagner constraints on closure behaviors at each effective dimensionality. Kosterlitz-Thouless for topological ordering at D5. See `foundations/literature_reframing.md` §D4
+- **Literature reframing: Witten TFT → substrate invariants** — Chern-Simons invariant in D7 SU(3) closure determines θ_QCD. Topological invariants classify closure types. See `foundations/literature_reframing.md` §D5
 - **DFC predictions for LHC Run 4** — high visibility. What does DFC predict differently from SM? Any distinctive signatures?
 - **CMB-S4 predictions** — timely. n_s refinement, r upper bound, N_eff precision from DFC
 - **Freeform math exploration** — workspace: `equations/freeform_math_exploration.py`. Feed blocked items here. C471: F*C = 300π² (T1 identity). Always available
@@ -140,6 +152,7 @@ approaches do better, question foundational assumptions, and adapt the model whe
 evidence warrants it. Mathematical verifiability is the standard; attachment to any
 particular concept is not.
 
+- **Literature reframing: cohesion/conflict audit** — systematic review of all 62 borrowed frameworks (see `foundations/literature_reframing.md`). For each: identify where DFC substrate language aligns naturally vs. where it conflicts with the source framework's ontological assumptions. Priority areas: gravity/geometry cluster (RS, DFGH, Sakharov, AdS/CFT), gauge/topology cluster (KK, Skyrme, JR), condensed matter cluster (BCS, membrane, graded media). Goal: unify all borrowed math under substrate-native vocabulary without losing any mathematical content
 - **Evaluate practical relevance** — DONE C513. See `foundations/critical_review_predictions.md` Category 5. Honest answer: practical value is indirect and conditional. Main uses: experiment prioritization (absence predictions), cross-coupling constraints, parameter-space guidance. No new technology, no substrate engineering, no computational shortcuts. Value proposition is parameter reduction (25→2) analogous to Maxwell unification — useful eventually, not immediately
 - **Review mathematical rigor of key claims** — select 2-3 core derivations and examine them for hidden assumptions, circular reasoning, or unjustified steps. Are the tier assignments honest? Could a skeptical mathematician follow each T1 proof?
 - **Explore alternative frameworks** — are there other starting points (different potentials, different field content, different compression mechanisms) that could produce the same or better results? What is special about V(φ) = −α/2 φ² + β/4 φ⁴ vs. other double-well potentials?
@@ -209,3 +222,4 @@ items when done; remove checked items after 2 cycles.
 - [x] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md` (DONE C499)
 - [ ] Stellar census module (`equations/stellar_census_dark_energy.py`) 15/17 PASS → add to prediction scorecard
 - [ ] C508: thick-wall κ=2.04 (factor-4 overshoot) → update `educational/28_gravity_gap.md` §9c with BVP result
+- [ ] C516: `foundations/literature_reframing.md` created — 62 frameworks surveyed, 15 reframing targets, 5 very-high priority. Reference from `current_state.md` and relevant educational docs
