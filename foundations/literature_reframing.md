@@ -633,11 +633,11 @@ which DFC predicts is zero from the CP symmetry of S⁵).
 
 | Framework | DFC adaptation status | New connection potential | Priority |
 |---|---|---|---|
-| Randall-Sundrum | Language fixed (C515) | SSH/domain wall analogy | Medium |
-| DFGH coupled equations | Language fixed (C515) | Graded elastic media | High |
-| Sakharov induced gravity | Partially adapted | Helfrich membrane rigidity | **Very high** |
-| Gordon-Unruh analog gravity | Well adapted | Dispersive Hawking radiation | High |
-| AdS/CFT | Not yet adapted | Full dictionary translation | **Very high** |
+| Randall-Sundrum | Audited (C524): fully compatible, 0 substantive | SSH/domain wall analogy | Medium |
+| DFGH coupled equations | Audited (C524): compatible, M_5 gap | Graded elastic media | High |
+| Sakharov induced gravity | Audited (C524): conceptual match, 97.6% quantitative gap | Helfrich membrane rigidity | **Very high** |
+| Gordon-Unruh analog gravity | Audited (C524): perfect match, 0 conflicts | Dispersive Hawking radiation | High |
+| AdS/CFT | Audited (C524): structural only, 3 substantive conflicts | Limited quantitative use | **Downgraded** |
 | Kaluza-Klein | Language fixed (C515) | Closure topology = internal space | Medium |
 | Skyrme model | Well adapted | Derive e_sk from V(φ) | High |
 | Jackiw-Rebbi | Well adapted | Topological insulator classification | **Very high** |
@@ -681,3 +681,178 @@ The five "very high" priority items each represent potential breakthroughs:
    perturbative corrections and the 0.37% match becomes an exact prediction
    up to non-perturbative effects. The fractional QHE connection to quark
    charges (e/3 ↔ 1/3 filling fraction) deserves dedicated exploration.
+
+---
+
+## Cohesion/Conflict Audit — Cluster A (Gravity and Geometry)
+
+For each borrowed framework, this audit classifies every ontological assumption as:
+- **Coheres** — the source assumption maps naturally onto DFC substrate structure
+- **Cosmetic conflict** — the source uses different language but the mathematical content
+  transfers without modification
+- **Substantive conflict** — the source framework requires a structure that DFC does not
+  have, or DFC requires a structure the source does not provide. These are the load-bearing
+  joints where DFC must either derive the missing structure or acknowledge a gap
+
+### A1. Randall-Sundrum — Audit
+
+| Source assumption | DFC status | Type |
+|---|---|---|
+| 5D spacetime exists as a geometric container | DFC has no container; y is the compression coordinate of a 1D substrate profile | Cosmetic conflict |
+| 3-brane is a fundamental object embedded in the bulk | Kink IS the brane; it is a dynamical feature of V(phi), not an inserted boundary condition | Coheres (with reinterpretation) |
+| AdS₅ geometry with negative cosmological constant | V(phi_0) < 0 produces the exponential decay profile; the "AdS geometry" is an output, not an input | Coheres |
+| Graviton zero mode normalizable due to warp factor | Sturm-Liouville theorem on the kink profile; mathematical content identical | Coheres |
+| Continuum of massive KK gravitons | Poschl-Teller spectrum of the kink gives a discrete bound state + continuum; mathematical content identical | Coheres |
+| M_4^2 = M_5^3/k (dimensional reduction of Newton's constant) | DFC uses this as a relation between substrate parameters, not between dimensions | Cosmetic conflict |
+| Z₂ orbifold symmetry across the brane | Kink profile phi(y) is odd under y -> -y by construction; this is automatic from V(phi) | Coheres |
+
+**Summary:** 5 cohere, 2 cosmetic, 0 substantive. The RS framework is the most naturally
+DFC-compatible of the gravity/geometry cluster. The only conflicts are in language — "5D
+spacetime" becomes "compression coordinate," "brane" becomes "kink." No mathematical content
+is lost or strained in the translation.
+
+**Residual risk:** RS assumes the warp factor profile can be freely specified (via the bulk
+cosmological constant). DFC constrains it to follow from V(phi). If V(phi) does not produce
+a profile with the correct decay rate k to match M_Pl, the RS machinery breaks down. This
+is not a conflict with RS itself but a self-consistency check on DFC. Current status: the
+DFGH equations with DFC V(phi) do produce the right qualitative profile, but the quantitative
+match to M_Pl is only 2.36% (Sakharov perturbative calculation).
+
+---
+
+### A2. DFGH Coupled Equations — Audit
+
+| Source assumption | DFC status | Type |
+|---|---|---|
+| Scalar field phi and metric g_MN are independent dynamical fields in 5D | DFC has only phi; A(y) is derived from phi via DFGH first equation | Cosmetic conflict |
+| Einstein's equations hold in the bulk | DFC postulates V(phi) and derives the DFGH system; Einstein structure emerges | Cosmetic conflict |
+| The 5D Planck mass M_5 is a free parameter | In DFC, M_5 is determined by alpha and beta; not free | **Substantive conflict** |
+| Constraint equation (Hamiltonian constraint) must be satisfied | Identical mathematical requirement in DFC; same ODE | Coheres |
+| Scalar potential V(phi) is specified independently | DFC specifies V(phi) = -alpha/2 phi^2 + beta/4 phi^4; this IS the input | Coheres |
+| Solution is a domain wall interpolating between AdS vacua | Kink solution phi_0 tanh(y/xi) does this; mathematical content identical | Coheres |
+
+**Summary:** 3 cohere, 2 cosmetic, 1 substantive. The substantive conflict is important:
+standard DFGH treats M_5 as a free parameter set by the bulk theory. DFC must derive M_5
+from (alpha, beta). The Sakharov/Helfrich program (see A3, C2) addresses this — if it
+succeeds, the substantive conflict is resolved. If it fails, DFC has a genuine gap in
+its gravity sector.
+
+**Residual risk:** The DFGH equations assume that the metric g_MN and scalar phi are the
+only bulk fields. If the substrate has additional dynamical degrees of freedom at D4 depths
+(beyond what DFGH captures), the coupled system is incomplete. The D4 gravity gap program
+is investigating exactly this question.
+
+---
+
+### A3. Sakharov Induced Gravity — Audit
+
+| Source assumption | DFC status | Type |
+|---|---|---|
+| Gravity is not fundamental but emerges from matter loops | DFC agrees: gravity is bending rigidity of the worldvolume, sourced by closure modes | Coheres |
+| Background geometry must be specified first, then matter is integrated out | DFC's DFGH system determines geometry self-consistently; no prior geometry needed | Cosmetic conflict |
+| Species count N_s is a free parameter | DFC determines N_s from the closure mode spectrum at D5/D6/D7 | Coheres (DFC is more constrained) |
+| UV cutoff Lambda_UV is a free parameter | DFC has a natural cutoff at the kink width xi ~ l_Pl | Coheres |
+| One-loop calculation captures the essential physics | Perturbative result gives 2.36% of M_Pl^2; most of the Planck mass is non-perturbative | **Substantive conflict** |
+| The induced action has the Einstein-Hilbert form | Helfrich membrane analogy gives exactly this structure | Coheres |
+
+**Summary:** 3 cohere, 1 cosmetic, 1 substantive (but qualitatively different — it is a
+*quantitative* gap, not a conceptual one). The Sakharov mechanism works beautifully in DFC
+at the conceptual level. The problem is quantitative: the one-loop result is too small by
+a factor of ~40. This is not a failure of the Sakharov idea but a signal that
+non-perturbative physics (membrane fluctuations, topological contributions) dominates the
+Planck mass.
+
+**Key finding from audit:** The Sakharov-Helfrich synthesis is the single most important
+open problem in Cluster A. If non-perturbative membrane physics closes the 97.6% gap, DFC
+derives Newton's constant from V(phi). If it cannot, DFC must treat M_Pl (equivalently,
+M_5 or alpha) as a free parameter — which undermines the "everything from V(phi)" claim.
+
+---
+
+### A4. Gordon-Unruh Analog Gravity — Audit
+
+| Source assumption | DFC status | Type |
+|---|---|---|
+| A background medium (fluid, BEC, optical material) exists | The substrate IS the medium; no analogy needed | Coheres |
+| The medium has a wave equation with variable coefficients | V''(phi) varies along the kink profile; this IS the variable coefficient | Coheres |
+| The effective metric is defined by the medium's density and flow velocity | Substrate energy density and propagation speed define the effective metric | Coheres |
+| The acoustic metric is emergent, not fundamental | DFC agrees: the metric is the substrate's acoustic geometry | Coheres |
+| Lorentz invariance is an emergent low-energy symmetry | DFC claims exactly this: Lorentz symmetry emerges from substrate dynamics below the kink width scale | Coheres |
+| Dispersion corrections appear at the "atomic" scale of the medium | DFC predicts Planck-scale dispersion corrections from the kink width xi | Coheres |
+| Hawking radiation is a kinematic effect, independent of Einstein's equations | If DFC's effective metric has horizons, Hawking radiation follows from the kinematics alone | Coheres |
+| The medium must be non-dispersive at low energies for the analogy to work | V''(phi_0) = 2alpha = const in the vacuum: frequency-independent, non-dispersive | Coheres |
+
+**Summary:** 8 cohere, 0 cosmetic, 0 substantive. The analog gravity framework is the
+single best-adapted borrowed framework in DFC. There are zero conflicts — not even
+cosmetic ones. DFC IS an analog gravity system, with the substrate playing the role of
+the medium. The only difference from laboratory analog gravity (sonic black holes in BECs)
+is that DFC claims its medium is fundamental rather than emergent from a deeper substrate.
+
+**Key finding from audit:** The perfect cohesion suggests that DFC should more aggressively
+import results from the analog gravity literature: Hawking temperature from V(phi), trans-
+Planckian dispersion relations, superradiance conditions for rotating kink configurations.
+These are all predictions waiting to be computed.
+
+---
+
+### A5. AdS/CFT Correspondence — Audit
+
+| Source assumption | DFC status | Type |
+|---|---|---|
+| (d+1)-dimensional anti-de Sitter spacetime exists | DFC has no AdS spacetime; the compression coordinate plays the role of the radial direction | Cosmetic conflict |
+| A d-dimensional conformal field theory lives on the boundary | Closure modes on the kink worldvolume play this role; conformal invariance is approximate (broken by masses) | **Substantive conflict** |
+| The bulk theory is a consistent theory of quantum gravity | DFC's substrate dynamics plays this role; its consistency is assumed, not proven | Cosmetic conflict |
+| The radial coordinate z maps to the RG scale mu | Compression depth y maps to energy scale; this is a structural identification, not an analogy | Coheres |
+| Bulk fields at the boundary become sources for boundary operators | Substrate fluctuations at the kink become sources for worldvolume modes | Coheres |
+| Large N limit is required for classical gravity in the bulk | DFC has no large-N parameter; the substrate is always "classical" (one field, not N^2 fields) | **Substantive conflict** |
+| Conformal symmetry of the boundary theory is exact | Worldvolume theory has masses (from Poschl-Teller spectrum), breaking conformal symmetry | **Substantive conflict** |
+| The correspondence is a duality (two equivalent descriptions) | DFC claims the substrate description is primary; the worldvolume is derived, not dual | Cosmetic conflict |
+
+**Summary:** 2 cohere, 3 cosmetic, 3 substantive. AdS/CFT has the most substantive
+conflicts of any framework in Cluster A. The three substantive conflicts are:
+
+1. **No exact conformal symmetry.** The worldvolume theory is massive (particles have mass),
+   so it is not a CFT. The AdS/CFT dictionary assumes exact conformal invariance on the
+   boundary. DFC would need a deformed version — "AdS/massive-boundary" — which exists in
+   the literature (Karch-Randall 2001, "Locally localized gravity") but is less powerful
+   than the full AdS/CFT toolkit.
+
+2. **No large-N parameter.** Standard AdS/CFT requires the boundary theory to have a
+   large number of colors (large N) for the bulk to be well-described by classical gravity.
+   DFC has N_c = 3, which is not large. This means the substrate-as-bulk analogy is at
+   best approximate — quantum corrections to the substrate dynamics are not suppressed by
+   1/N^2 factors.
+
+3. **Broken conformal invariance.** Related to (1) but distinct: the Poschl-Teller bound
+   states introduce mass scales that explicitly break the conformal symmetry assumed by the
+   correspondence. DFC would inherit only the *structural* aspects of AdS/CFT (radial =
+   energy scale, bulk-boundary mapping) without the *quantitative* machinery (exact
+   correlation functions, conformal bootstrap).
+
+**Key finding from audit:** The AdS/CFT analogy is useful as structural intuition but
+cannot be imported as a computational tool without significant modification. DFC should
+use it for *qualitative* guidance (what corresponds to what) but not rely on it for
+*quantitative* predictions. The analog gravity framework (A4) is a better computational
+match.
+
+---
+
+### Cluster A Summary
+
+| Framework | Cohere | Cosmetic | Substantive | Overall assessment |
+|---|---|---|---|---|
+| A1. Randall-Sundrum | 5 | 2 | 0 | Fully compatible |
+| A2. DFGH | 3 | 2 | 1 | Compatible (M_5 gap) |
+| A3. Sakharov | 3 | 1 | 1 | Conceptually perfect; quantitative gap (97.6%) |
+| A4. Analog gravity | 8 | 0 | 0 | Perfect match — DFC IS this framework |
+| A5. AdS/CFT | 2 | 3 | 3 | Structural analogy only; quantitative use limited |
+
+**Overall Cluster A finding:** The gravity/geometry frameworks split cleanly into two
+groups. Frameworks that treat gravity as an emergent phenomenon of a medium or membrane
+(RS, analog gravity, Sakharov) cohere naturally with DFC — in some cases perfectly.
+Frameworks that treat gravity as a fundamental geometric structure and use dualities
+(AdS/CFT) have substantive conflicts that limit their applicability.
+
+The single most actionable result: **analog gravity has zero conflicts and should be
+exploited far more aggressively.** The single most important open problem: **Sakharov +
+Helfrich non-perturbative M_Pl derivation.**

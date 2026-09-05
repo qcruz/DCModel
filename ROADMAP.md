@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 523 (2026-09-04)
+**Last updated:** Cycle 524 (2026-09-05)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P6** (C523 — educational/14b_localization_deep_dive.md: detailed D3 localization explainer)
+- **Last tier worked: P7** (C524 — literature reframing cohesion/conflict audit, Cluster A complete)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -152,7 +152,6 @@ approaches do better, question foundational assumptions, and adapt the model whe
 evidence warrants it. Mathematical verifiability is the standard; attachment to any
 particular concept is not.
 
-- **Literature reframing: cohesion/conflict audit** — systematic review of all 62 borrowed frameworks (see `foundations/literature_reframing.md`). For each: identify where DFC substrate language aligns naturally vs. where it conflicts with the source framework's ontological assumptions. Priority areas: gravity/geometry cluster (RS, DFGH, Sakharov, AdS/CFT), gauge/topology cluster (KK, Skyrme, JR), condensed matter cluster (BCS, membrane, graded media). Goal: unify all borrowed math under substrate-native vocabulary without losing any mathematical content
 - **Evaluate practical relevance** — DONE C513. See `foundations/critical_review_predictions.md` Category 5. Honest answer: practical value is indirect and conditional. Main uses: experiment prioritization (absence predictions), cross-coupling constraints, parameter-space guidance. No new technology, no substrate engineering, no computational shortcuts. Value proposition is parameter reduction (25→2) analogous to Maxwell unification — useful eventually, not immediately
 - **Explore alternative frameworks** — are there other starting points (different potentials, different field content, different compression mechanisms) that could produce the same or better results? What is special about V(φ) = −α/2 φ² + β/4 φ⁴ vs. other double-well potentials?
 - **Catalog what DFC cannot do** — maintain an honest list of phenomena that DFC has no account for, even in principle. This is different from P4 (known failures with partial results). This is about blind spots — things the framework does not even attempt
@@ -162,6 +161,7 @@ particular concept is not.
 - **Rigorous free-parameter audit** — count every observational input across all equation modules. Compute true prediction-to-parameter ratio. Document where "0 free params" claims rely on implicit inputs
 - **Compare D-depth assignments against alternatives** — C500: DONE. Exhaustive 6-permutation analysis added to `foundations/depth_assignment.md`. C1 (complexity ordering) + C4 (3 generations) uniquely select current assignment. Weakest link: C1 not derived from V(φ). See depth_assignment.md §Exhaustive Permutation Analysis
 - **Review mathematical rigor of key claims** — C519: DONE. See `foundations/critical_review_rigor.md`. Audited g_eff²=8/27 chain (7 steps) and 36π α_em chain (5 steps). Tier 2a assignments are HONEST. Three load-bearing assumptions identified: (1) complexification at D5 via BPS/tachyon, (2) k_Y uses SM matter content, (3) ECCC is a postulate. The n=3 gauge depth count is not derived from V(φ). No tier changes recommended
+- **Literature reframing: cohesion/conflict audit** — C524: Cluster A (gravity/geometry) DONE. 5 frameworks audited: RS (fully compatible), DFGH (M_5 gap), Sakharov (97.6% quantitative gap), analog gravity (perfect match), AdS/CFT (3 substantive conflicts — downgraded). Key finding: analog gravity should be exploited more aggressively; Sakharov+Helfrich is highest-priority open problem. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
 
 ---
 
