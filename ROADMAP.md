@@ -71,6 +71,8 @@
 - **Heavy quarkonium spectrum** — C489: 5/7 PASS. Bottomonium M(1S) +3.3%, Δ(3S-1S) −18%. Charmonium splittings −7% to −16% but absolute mass +22% (α_s 25% low at m_c from 1-loop running). Path: 2-loop α_s. See `equations/quarkonium_spectrum.py`
 - **Upgrade neutrino θ₂₃ to T2a** — C496: θ₂₃ = arctan(exp(1/(2π))) = 49.54° (+0.28°, 0.35σ, T3). For T2a: prove JR excess-norm governs Yukawa perturbation formally. See `equations/neutrino_theta23_z3_mechanism.py`
 - **Derive CKM/PMNS from D6/D7 overlap** — C522: diagonal Z3 FAILS for θ₁₂ (F(1)=F(2), T1 proof). Must be off-diagonal. Best: sin(θ_C)=1/π (+43%). GST sin=√(m_d/m_s) works at -0.6% — path is through DFC quark mass ratio. BLOCKED: need formal off-diagonal BVP. See `equations/ckm_from_d6d7_overlap.py`
+- **Upgrade Lorentz emergence to T1 via analog gravity theorem** — Barcelo et al. (2001): non-dispersive medium => exact Lorentz invariance at low energy. DFC substrate is non-dispersive in vacuum (V''(phi_0)=const). Citation upgrades T3 -> T1. See `foundations/gravity_theory_integration.md`
+- **Derive Hawking temperature from V(phi)** — analog gravity gives T_H from surface gravity of effective metric horizon. Substrate profile determines all ingredients. See `foundations/gravity_theory_integration.md`
 
 ---
 
@@ -161,7 +163,7 @@ particular concept is not.
 - **Rigorous free-parameter audit** — count every observational input across all equation modules. Compute true prediction-to-parameter ratio. Document where "0 free params" claims rely on implicit inputs
 - **Compare D-depth assignments against alternatives** — C500: DONE. Exhaustive 6-permutation analysis added to `foundations/depth_assignment.md`. C1 (complexity ordering) + C4 (3 generations) uniquely select current assignment. Weakest link: C1 not derived from V(φ). See depth_assignment.md §Exhaustive Permutation Analysis
 - **Review mathematical rigor of key claims** — C519: DONE. See `foundations/critical_review_rigor.md`. Audited g_eff²=8/27 chain (7 steps) and 36π α_em chain (5 steps). Tier 2a assignments are HONEST. Three load-bearing assumptions identified: (1) complexification at D5 via BPS/tachyon, (2) k_Y uses SM matter content, (3) ECCC is a postulate. The n=3 gauge depth count is not derived from V(φ). No tier changes recommended
-- **Literature reframing: cohesion/conflict audit** — C524: Cluster A (gravity/geometry) DONE. 5 frameworks audited: RS (fully compatible), DFGH (M_5 gap), Sakharov (97.6% quantitative gap), analog gravity (perfect match), AdS/CFT (3 substantive conflicts — downgraded). Key finding: analog gravity should be exploited more aggressively; Sakharov+Helfrich is highest-priority open problem. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
+- **Literature reframing: cohesion/conflict audit** — C524: Cluster A (gravity/geometry) DONE. 5 frameworks audited: RS (fully compatible), DFGH (M_5 gap), Sakharov (97.6% quantitative gap), analog gravity (perfect match), AdS/CFT (3 substantive conflicts — downgraded). Gravity theory integration doc created: `foundations/gravity_theory_integration.md`. Key finding: analog gravity should be exploited more aggressively; Sakharov+Helfrich is highest-priority open problem. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
 
 ---
 
