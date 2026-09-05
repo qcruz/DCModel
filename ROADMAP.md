@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 524 (2026-09-05)
+**Last updated:** Cycle 525 (2026-09-05)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P7** (C524 — literature reframing cohesion/conflict audit, Cluster A complete)
+- **Last tier worked: P1** (C525 — alpha_em two-loop/threshold correction: path (a) RULED OUT)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -23,7 +23,6 @@
 
 ## Priority 1 — High-Impact Predictions
 
-- **Muon anomalous magnetic moment (g−2)_μ** — C514: Full QED 5-loop + EW + hadronic computed. DFC α offset (0.14%) produces 162,000×10⁻¹¹ shift — 642× larger than the g-2 anomaly. BLOCKED on α_em(0) identity. C520 KEY FINDING: hadronic VP is NOT the real blocker — the 0.190 gap in 1/α(0) comes from the 36π formula itself (+0.15% at M_Z). DFC VP overshoots data by +27%, worsening the gap. Closing requires modifying the 36π formula or finding a −0.190 running correction. See `equations/anomalous_magnetic_moment.py` Part F, `equations/hadronic_vp_dfc.py` Part G
 - **Derive pion mass from GMOR** — m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC −38% (NJL-limited). See `equations/pion_mass_gmor.py`
 - **Derive light quark masses (D6 Yukawa)** — M0 = exp(-(b₀+1/α))×v/√2 run to 2 GeV: +2.68% T2a (C459). Mechanism needs T1 proof. See `equations/light_quark_mass_derivation.py`
 - **Derive proton-neutron mass difference from DFC** — C467: Δm=1.289 MeV (−0.4%, T2b). C487: σ_πN=50.9 MeV (−2.2%, T2b). BLOCKED: derive C_QCD from DFC isovector matrix element. See `equations/proton_neutron_mass_difference.py`, `equations/pion_nucleon_sigma_term.py`
@@ -31,6 +30,7 @@
 - **Derive V(phi) contact terms for deuteron binding** — BLOCKED: C473 central B_d=1.15 MeV (−48%). Need kink-kink overlap potential at r<1/Λ_QCD. See `equations/deuteron_tensor_ope.py`
 - **Top quark mass from Koide** — C494: INVESTIGATED, NOT VIABLE. K=2/3 fails for all quark triplets. Best: (c,b,t) pole masses gives +17.7%. Quarks have QCD corrections + CKM mixing that leptons lack. t_actual=0.688 is 2.8% below lepton value — possible QCD correction but not derived. See `equations/top_quark_koide.py`
 - **DFC prediction for W mass** — RESOLVED. Tree-level M_W = 80.10 GeV (−0.34%), one-loop corrected M_W = 80.38 GeV (+0.009%, T2a). 10/10 PASS. CDF anomaly at 80.4335 GeV, CMS at 80.360 GeV — DFC matches CMS. See `equations/ew_radiative_corrections.py`
+- **Muon anomalous magnetic moment (g−2)_μ** — BLOCKED on α_em(0) identity. C525: Path (a) TWO-LOOP RULED OUT — correct two-loop effect via M_c shift is <0.004 (negligible); top threshold −0.18 (wrong direction). Gap is structural (+0.11%), not perturbative. Remaining paths: (b) new DFC-specific running effect, (c) sub-percent correction to ECCC or k_Y. See `equations/alpha_em_two_loop_correction.py`
 
 ---
 
@@ -41,7 +41,7 @@
 - **Upgrade Delta-N splitting to T2b** — currently −7.4%, inherited from m_rho undershoot. See `equations/delta_n_splitting.py`
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C520: REFRAMED. Gap is from 36π formula, not VP. DFC VP overshoots data +27%. See `equations/hadronic_vp_dfc.py`
 - **Upgrade baryon Regge intercept to T2a** — BLOCKED on Y-junction penalty Δ=−1 (P3 item). See `equations/regge_intercept_derivation.py`
-- **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — BLOCKED. C520: real blocker is 36π formula (+0.15% at M_Z). See `equations/alpha_em_dfc_chain.py`
+- **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — BLOCKED. C525: two-loop/threshold corrections RULED OUT (path a). Gap is structural (+0.11%), not perturbative. Remaining: path (b) DFC-specific running, path (c) sub-percent ECCC/k_Y correction. See `equations/alpha_em_two_loop_correction.py`
 - **Upgrade cosmological constant combination rule** — STUCK. Gap (iii) Casimir=α: 16 mechanisms tested, 7 ruled out. No derivation of exp(-α) found. See `equations/substrate_casimir_alpha.py`
 - **Upgrade nuclear symmetry energy J to T2a** — C490: RECLASSIFIED from P4 (was −36% failure, now +9.2% T3). Path: self-consistent m* from DFC Walecka + explicit Fock integral with DFC g_ρ. See `equations/nuclear_symmetry_energy.py`
 - **Close f_pi 1.6% gap** — C521: momentum-dependent M(p) RULED OUT (<0.1% effect). Gap traces ENTIRELY to m_rho undershoot (−1.6%). BLOCKED on m_rho/σ correction. See `equations/fpi_gap_closure.py`
