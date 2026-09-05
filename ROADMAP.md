@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 525 (2026-09-05)
+**Last updated:** Cycle 526 (2026-09-05)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P1** (C525 — alpha_em two-loop/threshold correction: path (a) RULED OUT)
+- **Last tier worked: P2** (C526 — depth bifurcation dynamics: V(φ) → gauge groups, 29/29 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -73,6 +73,9 @@
 - **Derive CKM/PMNS from D6/D7 overlap** — C522: diagonal Z3 FAILS for θ₁₂ (F(1)=F(2), T1 proof). Must be off-diagonal. Best: sin(θ_C)=1/π (+43%). GST sin=√(m_d/m_s) works at -0.6% — path is through DFC quark mass ratio. BLOCKED: need formal off-diagonal BVP. See `equations/ckm_from_d6d7_overlap.py`
 - **Upgrade Lorentz emergence to T1 via analog gravity theorem** — Barcelo et al. (2001): non-dispersive medium => exact Lorentz invariance at low energy. DFC substrate is non-dispersive in vacuum (V''(phi_0)=const). Citation upgrades T3 -> T1. See `foundations/gravity_theory_integration.md`
 - **Derive Hawking temperature from V(phi)** — analog gravity gives T_H from surface gravity of effective metric horizon. Substrate profile determines all ingredients. See `foundations/gravity_theory_integration.md`
+- **Derive open→closed mode transition from coupled PDE** — C526: structural argument in place (T2a). Need formal derivation showing kink formation creates bound states for subsequent fluctuations. See `equations/depth_bifurcation_dynamics.py` Part A
+- **Derive WHY SU(2) is broken but SU(3) is not from V(φ)** — C526: structural argument (EWSB vs confinement, T2a). Need to derive from substrate dynamics that D6 sector acquires VEV while D7 does not. See `equations/depth_bifurcation_dynamics.py` Part D
+- **Derive threshold positions α₅, α₆, α₇** — C526: currently T4. Compute compression budget per bifurcation from V(φ). See `equations/depth_bifurcation_dynamics.py` Part F
 
 ---
 
