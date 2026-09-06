@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 533 (2026-09-06)
+**Last updated:** Cycle 534 (2026-09-06)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P4** (C533 — in-medium sigma mass derivation, diffuseness gap 20%→7%)
+- **Last tier worked: P5** (C534 — Helfrich membrane → gravity exploration)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -54,7 +54,7 @@
 - **Baryon asymmetry magnitude** — Sakharov conditions met (T2a, C414). η_B magnitude T4. Compute CP violation strength from D6/D7 topology → predict η_B ~ 6×10⁻¹⁰
 - **Dark matter mass and relic abundance** — m_DM=35.6 keV (T4, depth model). Relic abundance OPEN. High visibility. See `equations/cosmological_predictions_2.py`
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
-- **D4 gravity gap — factor-4 overshoot** — C508: Self-consistent thick-wall BVP (solve_bvp, 12/12 PASS) gives κ_thick = 2.04, factor 4.1× above target 0.5. Gravity back-reaction widens kink by 8× (xi_eff = 7.7 vs 0.87 l_Pl). Constraint verified to 10⁻¹² precision. Thin-wall (C506, κ = 0.497) was poor approximation (kξ = 1.76). Progress: raw rigidity 56× → thick-wall 4× overshoot. NEXT: investigate scalar-gravity coupling normalization; possible factor-of-4 from different 5D Planck mass identification. See `equations/d4_thick_wall_bvp.py`
+- **D4 gravity gap — factor-4 to 9× overshoot** — C508: thick-wall BVP κ_thick = 2.04 (4.1×). C534: Helfrich classical bending rigidity κ_class = 4.64 M_Pl² (9.3×, no backreaction). Backreaction reduces overshoot (9.3→4.1). Prior "missing 93%" narrative REVERSED: problem is excess, not deficit. NEXT: investigate what reduces κ from 4.64 to 0.5 — gravitational self-consistency, 5D→4D normalization, or profile deformation. See `equations/d4_thick_wall_bvp.py`, `equations/helfrich_membrane_gravity.py`
 - **D4 gravity gap — emergent diffeomorphism** — identify symmetry protecting graviton mass. Priority C. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — non-perturbative enhancement** — derive G_eff(r) transition scale. Lower priority after C506 result. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — numerical kink-kink simulation** — C528: 17/17 PASS. Screening length = 1/m_σ (0.06% error). V_int ∝ exp(-m_σ d) confirmed (Yukawa). Manton ratio 1.15 stable (0.1% spread). |A|/E_BPS² = 0.106 (1+1D coupling). FINDING: 1+1D interaction is exponential, not 1/r. Power-law gravity requires transverse integration over D1-D3 open modes. See `equations/kink_kink_potential.py`
@@ -98,7 +98,7 @@
 
 ## Priority 5 — Exploratory
 
-- **Literature reframing: Helfrich membrane → gravity** — compute DFC worldvolume bending rigidity using membrane physics. Sakharov perturbative = 2.36% of M_Pl²; non-perturbative membrane fluctuations may close gap. Crumpling transition → hierarchy problem? See `foundations/literature_reframing.md` §A3/C2
+- **Literature reframing: Helfrich membrane → gravity** — C534: DONE (14/14 PASS). SURPRISE: classical kink bending rigidity κ_class = 4.64 M_Pl² OVERSHOOTS M_Pl²/2 by 9.3×. Prior narrative (Sakharov 2.36%, need 97.6% more) was incomplete — omitted classical term. Peliti-Leibler = Sakharov for codim-1 (T1). Self-avoiding → no crumpling (T1). Problem is REDUCING κ, not increasing it. C508 BVP also overshoots (4.1×, backreaction helps). Gap: derive reduction mechanism. See `equations/helfrich_membrane_gravity.py`
 - **Literature reframing: AdS/CFT dictionary** — C517: DONE (32/32 PASS). Full translation table written. Zero mode = T_muv (Delta=4, T1). Central charge c=0.19 (low-rank dual). Viscosity eta/s=0.94 with 't Hooft correction (QGP ~0.12 — lambda=8/9 too small for strong-coupling limit). RT entropy inherits kappa gap. See `equations/adscft_topo_insulator_dfc.py` Part A
 - **Literature reframing: topological insulator classification** — C517: DONE (32/32 PASS). Depth path AI→BDI→AIII identified. D5(AI): trivial in d=1 (no protected fermions — photon from Goldstone instead). D6(BDI): Z in d=1 (JR zero mode topologically protected — SAME as SSH!). D7(AIII): Z in d=1 (quarks protected by chiral index). Predicts fermion/boson split across depths. See `equations/adscft_topo_insulator_dfc.py` Part B
 - **Literature reframing: BCS gap → Λ_QCD** — formulate DFC BCS gap equation for D7 chiral condensate. Gap Δ → Λ_QCD, coupling G → f(α,β). Dual superconductor confinement: Meissner ↔ color confinement, Abrikosov vortex ↔ flux tube. See `foundations/literature_reframing.md` §C1
