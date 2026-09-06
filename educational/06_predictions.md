@@ -345,7 +345,27 @@ The model derives Newton's gravitational constant from V(φ) with zero free para
 - **Tier:** T1 (algebraic — the entire chain is V(φ) → negative vacuum energy → AdS curvature → RS2 localization → κ)
 - **Free parameters used:** 0
 - **How to test:** This is an internal consistency check — does DFC reproduce G_N from α and β alone? The answer is yes, to −0.57%.
-- **Note:** The thick-wall correction (self-gravitating kink BVP) gives κ = 2.04 — a factor 4.1× overshoot. The thin-wall and thick-wall results bracket the target; the resolution likely involves the correct scalar-gravity coupling normalization.
+- **Note:** The thick-wall correction (self-gravitating kink BVP) gives κ = 2.04 — a factor 4.1× overshoot. The classical kink bending rigidity (Helfrich membrane analysis) gives κ_class = 4.64 M_Pl² — 9.3× overshoot before backreaction. Backreaction reduces this from 9.3× to 4.1×. The gravity gap is an *excess*, not a deficit — the kink is too stiff, not too soft. The thin-wall result (−0.57%) likely captures the correct answer through a different (algebraic, not BVP) pathway.
+
+### Nuclear surface diffuseness
+The model predicts nuclear surface diffuseness — the width of the transition region between the nuclear interior and the vacuum — from the sigma meson's Compton wavelength. In vacuum, a = ℏc/m_σ = 0.432 fm, which is 20% below the observed 0.54 fm. Including in-medium chiral condensate reduction (Hellmann-Feynman theorem, model-independent) reduces the effective sigma mass at the nuclear surface to m*_σ ≈ 342 MeV, giving a = 0.577 fm.
+
+- **Vacuum prediction:** a = 0.432 fm (−20%)
+- **In-medium corrected:** a = 0.577 fm (+7%)
+- **Observed:** a = 0.54 fm
+- **Tier:** T3 (condensate reduction T1; mean-field approximation T3)
+- **Free parameters:** 0 (m_σ = 3Λ/2, σ_πN from DFC Skyrmion)
+- **Gap closure:** 65% of original gap closed by chiral dynamics
+
+### Inflationary spectral index n_s
+The model predicts the spectral index of primordial density perturbations from slow-roll on V(φ).
+
+- **Predicted:** n_s = 0.9667 (at N_e = 60 e-folds)
+- **Observed:** n_s = 0.9649 ± 0.0042 (Planck 2018)
+- **Error:** +0.4σ
+- **Tier:** T2a
+- **Free parameters:** 1 (N_e)
+- **How to test:** CMB-S4 will narrow the n_s error bar by ~4×.
 
 ### Pion mass
 The model predicts the pion mass via the Gell-Mann–Oakes–Renner (GMOR) relation, using DFC-derived light quark masses and an external chiral condensate value.
@@ -495,6 +515,10 @@ The clearest tests:
 | Lamb shift 2S-2P | 1050.5 MHz | −0.69% | T2a | Full QED α⁵ (C495) |
 | θ₂₃ (atm mixing angle) | 49.54° | +0.28° (0.35σ) | T3 | JR zero-mode + Z₃ (C496) |
 | μ_p/μ_n ratio | −1.4598 | +0.022% | T2a | −3/2 + g_A/32 identity (C509) |
+| n_s (spectral index) | 0.9667 | +0.4σ Planck | T2a | Slow-roll V(φ), N_e=60 |
+| Surface diffuseness (vacuum) | 0.432 fm | −20% | T3 | a = ℏc/m_σ |
+| Surface diffuseness (in-medium) | 0.577 fm | +7% | T3 | Chiral condensate reduction |
+| κ_class (bending rigidity) | 4.64 M_Pl² | 9.3× overshoot | T2a | Helfrich kink profile (C534) |
 
 ---
 
