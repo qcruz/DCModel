@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 527 (2026-09-05)
+**Last updated:** Cycle 528 (2026-09-05)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P3** (C527 — first substrate simulation + educational doc 32)
+- **Last tier worked: P3** (C528 — kink-kink interaction potential simulation)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -57,7 +57,7 @@
 - **D4 gravity gap — factor-4 overshoot** — C508: Self-consistent thick-wall BVP (solve_bvp, 12/12 PASS) gives κ_thick = 2.04, factor 4.1× above target 0.5. Gravity back-reaction widens kink by 8× (xi_eff = 7.7 vs 0.87 l_Pl). Constraint verified to 10⁻¹² precision. Thin-wall (C506, κ = 0.497) was poor approximation (kξ = 1.76). Progress: raw rigidity 56× → thick-wall 4× overshoot. NEXT: investigate scalar-gravity coupling normalization; possible factor-of-4 from different 5D Planck mass identification. See `equations/d4_thick_wall_bvp.py`
 - **D4 gravity gap — emergent diffeomorphism** — identify symmetry protecting graviton mass. Priority C. See `foundations/d4_gravity_gap.md` §9
 - **D4 gravity gap — non-perturbative enhancement** — derive G_eff(r) transition scale. Lower priority after C506 result. See `foundations/d4_gravity_gap.md` §9
-- **D4 gravity gap — numerical kink-kink simulation** — simulate V(φ) with two kinks, measure mutual attraction profile and coefficient. Bypasses analytical blockers. Priority D. See `foundations/d4_gravity_gap.md` §9
+- **D4 gravity gap — numerical kink-kink simulation** — C528: 17/17 PASS. Screening length = 1/m_σ (0.06% error). V_int ∝ exp(-m_σ d) confirmed (Yukawa). Manton ratio 1.15 stable (0.1% spread). |A|/E_BPS² = 0.106 (1+1D coupling). FINDING: 1+1D interaction is exponential, not 1/r. Power-law gravity requires transverse integration over D1-D3 open modes. See `equations/kink_kink_potential.py`
 - **Derive depth attenuation law exp(−S·d)** — gap (ii) CLOSED (C457). Action density argument gives WKB exp(-S*d). See `equations/depth_attenuation_law.py`
 - **Prove substrate Casimir self-energy = α** — STUCK. 16 mechanisms tested, 7 ruled out. Best: I₄×Q_top=8/3 (+1.8%). See `equations/substrate_casimir_alpha.py`
 - **Derive nuclear saturation from DFC couplings** — BLOCKED. C481: composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
