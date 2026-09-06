@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 531 (2026-09-05)
+**Last updated:** Cycle 532 (2026-09-06)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P3** (C531 — gauge emergence exploration)
+- **Last tier worked: P4** (C532 — nuclear surface diffuseness investigation)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -84,7 +84,7 @@
 
 ## Priority 4 — Known Failures
 
-- **Nuclear surface diffuseness** — −20%, DFC m_sigma too heavy
+- **Nuclear surface diffuseness** — −20%, DFC m_σ = 457 MeV (vacuum) vs in-medium m*_σ ≈ 365 MeV needed. Gap closable by ~20% chiral mass reduction at ρ₀. See `equations/nuclear_surface_diffuseness.py` (12/12 PASS, C532). Path: derive m*_σ(ρ₀) from DFC chiral dynamics → connects to P5 BCS/NJL item
 - **Lithium problem** — BBN Li-7/H +194% vs obs. Same as standard BBN — DFC does not resolve. See `equations/bbn_predictions.py`
 - **Triple-alpha Q value** — BLOCKED by SEMF failure for A < 12
 - **Nucleon magnetic moment ratio** — +2.75%. C509: ratio = −3/2 + g_A/32 matches to 0.022% (g_A = 4/π from DFC). Potential T2a upgrade if 1/32 coefficient derivable from NLO ChPT. Counterterm cancellation ~75% (upper edge of expected range). BLOCKED on deriving counterterm coefficient. See `equations/nucleon_magnetic_moments.py`
