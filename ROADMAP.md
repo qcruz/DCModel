@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 537 (2026-09-06)
+**Last updated:** Cycle 539 (2026-09-07)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P1** (C537 — pion mass GMOR investigation, NJL-limited)
+- **Last tier worked: P3** (C539 — Y-junction penalty: massive-endpoint path ruled out)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -50,7 +50,6 @@
 
 ## Priority 3 — Structural Gaps
 
-- **Derive Y-junction penalty = −1** — critical blocker for baryon Regge, Δ-N splitting. C463: NG Casimir gives Δ=1/8 (12.5%). 3 paths: quark-diquark, junction mode removal, WKB. See `equations/regge_intercept_derivation.py`
 - **Baryon asymmetry magnitude** — Sakharov conditions met (T2a, C414). η_B magnitude T4. Compute CP violation strength from D6/D7 topology → predict η_B ~ 6×10⁻¹⁰
 - **Dark matter mass and relic abundance** — m_DM=35.6 keV (T4, depth model). Relic abundance OPEN. High visibility. See `equations/cosmological_predictions_2.py`
 - **Upgrade Koide phase t = 1/√Q_top to T1** — needs 5D Yukawa vortex integral
@@ -79,6 +78,7 @@
 - **GAUGE EMERGENCE: zero-mode degeneracy → local gauge symmetry** — C531: ENERGETIC ARGUMENT COMPLETE (24/24 PASS). Global vortex E=∞ (log divergence) → gauge field A_μ REQUIRED for finite E → δE/δA=0 gives Maxwell → e²=8/27 from moduli metric. 6-step chain F1-F6, steps F1-F5 T1, F6 T2a. Remaining gaps: G3 dynamical mechanism (Anderson-type, T3), G4 codimension 2+1D→3+1D (T3). See `equations/gauge_emergence_exploration.py`
 - **U(n) → SU(n) FACTORING: derive why overall U(1) phase is redundant** — C529: U(n) isometry of S^{2n-1} is mathematical fact; factoring to SU(n) needs dynamical principle. Must show overall phase is D5 symmetry (already counted) via topological or conservation argument. See `educational/32_depth_bifurcation.md` §What Remains Open item 2
 - **CHARGE INHERITANCE: prove D(n+1) modes transform under G_n** — C529: termination argument assumes D8 modes carry SU(3) charge. Need substrate derivation that deeper modes necessarily couple to shallower gauge structure. See `educational/32_depth_bifurcation.md` §What Remains Open item 6
+- **Derive Y-junction penalty = −1** — critical blocker for baryon Regge, Δ-N splitting. C463: NG Casimir gives Δ=1/8 (12.5%). C539: quark-diquark massive-endpoint path RULED OUT (requires m_D=148 MeV, unphysically small; classical formula double-counts kink mass already in JR mode). Remaining paths: junction mode quantization, WKB, Y-junction BVP. See `equations/regge_intercept_derivation.py` Part J
 
 ---
 
