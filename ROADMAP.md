@@ -36,7 +36,6 @@
 
 ## Priority 2 — Tier Upgrades
 
-- **Upgrade cosmological predictions to T2a** — broad impact. Λ_cosm (−3.5%), CMB ℓ₁ (+0.89%), BAO r_drag (−0.27%) all T3. Identify which tier bottleneck to close first
 - **Upgrade proton charge radius to T2a** — C476: corrected to +1.5% (emp κ_p) or +2.5% (SU(6)). Needs: derive κ_p from DFC, regularize pion cloud. See `equations/proton_charge_radius_dfc.py`
 - **Upgrade Delta-N splitting to T2b** — currently −7.4%, inherited from m_rho undershoot. See `equations/delta_n_splitting.py`
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C520: REFRAMED. Gap is from 36π formula, not VP. DFC VP overshoots data +27%. See `equations/hadronic_vp_dfc.py`
@@ -45,6 +44,7 @@
 - **Upgrade cosmological constant combination rule** — STUCK. Gap (iii) Casimir=α: 16 mechanisms tested, 7 ruled out. No derivation of exp(-α) found. See `equations/substrate_casimir_alpha.py`
 - **Upgrade nuclear symmetry energy J to T2a** — C490: RECLASSIFIED from P4 (was −36% failure, now +9.2% T3). Path: self-consistent m* from DFC Walecka + explicit Fock integral with DFC g_ρ. See `equations/nuclear_symmetry_energy.py`
 - **Close f_pi 1.6% gap** — C521: momentum-dependent M(p) RULED OUT (<0.1% effect). Gap traces ENTIRELY to m_rho undershoot (−1.6%). BLOCKED on m_rho/σ correction. See `equations/fpi_gap_closure.py`
+- **Upgrade cosmological predictions to T2a** — C537: CMB ℓ₁ (+0.89%) and BAO r_drag (−0.27%) are ALREADY T2a. Only Λ_cosm remains T3 — bottleneck is the combination rule (why 3 terms add in exponent). BLOCKED on substrate_casimir_alpha (16 mechanisms tested, 7 ruled out, STUCK). See `equations/cosmological_predictions.py`, `equations/substrate_casimir_alpha.py`
 
 ---
 
