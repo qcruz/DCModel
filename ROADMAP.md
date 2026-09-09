@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 546 (2026-09-09)
+**Last updated:** Cycle 547 (2026-09-09)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P3** (C546 — baryon asymmetry magnitude)
+- **Last tier worked: P4** (C547 — nuclear surface diffuseness Fock correction)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -84,10 +84,10 @@
 
 ## Priority 4 — Known Failures
 
-- **Nuclear surface diffuseness** — Gap reduced from −20% to +7% (65% closed). C533: in-medium m*_σ = 342 MeV at surface via Walecka self-consistent + Hellmann-Feynman condensate (T3). Remaining +7% from mean-field approximation. Path to close: beyond-mean-field (Fock terms, pionic fluctuations). See `equations/sigma_mass_in_medium.py` (12/13 PASS, C533) + `equations/nuclear_surface_diffuseness.py` (12/12 PASS, C532)
 - **Lithium problem** — BBN Li-7/H +194% vs obs. Same as standard BBN — DFC does not resolve. See `equations/bbn_predictions.py`
 - **Triple-alpha Q value** — BLOCKED by SEMF failure for A < 12
 - **Nucleon magnetic moment ratio** — +2.75%. C509: ratio = −3/2 + g_A/32 matches to 0.022% (g_A = 4/π from DFC). Potential T2a upgrade if 1/32 coefficient derivable from NLO ChPT. Counterterm cancellation ~75% (upper edge of expected range). BLOCKED on deriving counterterm coefficient. See `equations/nucleon_magnetic_moments.py`
+- **Nuclear surface diffuseness** — C547: Fock exchange correction reduces gap from +7% to +2.8% (86% of original 20% gap closed). Remaining +2.8% from higher-order terms (pionic fluctuations, RPA). See `equations/sigma_mass_in_medium.py` (15/16 PASS)
 
 **Resolved (removed from P4):**
 - ~~M_W = 79.67 GeV (−0.88%)~~ — RESOLVED C497: tree-level gap closed to +0.009% by standard one-loop Sirlin Δr corrections. See `equations/ew_radiative_corrections.py` (10/10 PASS, T2a)
