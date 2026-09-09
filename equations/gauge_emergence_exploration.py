@@ -44,24 +44,20 @@ All parameters from DFC: α = ∛18, β = 1/(9π). Zero SM/PDG inputs.
 import numpy as np
 from scipy.integrate import solve_bvp
 from scipy.integrate import quad
+import os, sys
+
+# Import shared DFC constants from dfc_core
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from dfc_core import (ALPHA, BETA, PHI_0, XI, M_SIGMA, I4, Q_TOP, G_EFF_SQ, G_EFF)
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# DFC substrate parameters (all derived, zero SM inputs)
+# DFC substrate parameters — imported from dfc_core.py
+# To test alternatives: import dfc_core; dfc_core.ALPHA = ...; dfc_core.recompute()
 # ═══════════════════════════════════════════════════════════════════════════════
-
-ALPHA = 18.0**(1.0/3.0)       # α = ∛18 (Tier 2a)
-BETA = 1.0 / (9.0 * np.pi)   # β = 1/(9π) (Tier 2a)
-PHI_0 = np.sqrt(ALPHA / BETA)  # vacuum amplitude
-XI = np.sqrt(2.0 / ALPHA)      # kink half-width
-M_SIGMA = np.sqrt(2.0 * ALPHA) # scalar mass
-I4 = 4.0 / 3.0                 # Bogomolny integral
-Q_TOP = 2.0                    # Topological index
-G_EFF_SQ = 8.0 / 27.0          # DFC gauge coupling squared
-G_EFF = np.sqrt(G_EFF_SQ)
 
 
 def V(phi_sq):
-    """Potential as function of |φ|²"""
+    """Potential as function of |phi|^2 (for complex field vortex analysis)"""
     return -ALPHA / 2.0 * phi_sq + BETA / 4.0 * phi_sq**2
 
 

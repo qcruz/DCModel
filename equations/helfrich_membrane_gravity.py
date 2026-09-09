@@ -47,25 +47,23 @@ import math
 import numpy as np
 from fractions import Fraction
 from scipy import integrate
-
-# =============================================================================
-# DFC PARAMETERS
-# =============================================================================
+import os, sys
 
 PI = math.pi
-ALPHA = 18.0 ** (1.0 / 3.0)     # ~2.6207  [T2a]
-BETA = 1.0 / (9.0 * PI)          # ~0.03537 [T2a]
-PHI_0 = math.sqrt(ALPHA / BETA)  # ~8.608 M_Pl
-XI = math.sqrt(2.0 / ALPHA)      # ~0.874 l_Pl (kink width)
-M_KK = 1.0 / XI                  # KK mass scale
-M_SIGMA = math.sqrt(2.0 * ALPHA) # sigma mass = √(2α)
 
-# Key structural constants
-I4 = Fraction(4, 3)
-Q_TOP = 2
-N_HOPF = 9
-S_KINK = 2.0 * math.sqrt(2.0) / 3.0
-E_KINK = 36.0 * PI               # = 4/β = 113.10 M_Pl (kink surface tension)
+# Import shared DFC constants from dfc_core
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from dfc_core import (ALPHA, BETA, PHI_0, XI, M_SIGMA, S_KINK, I4 as I4_float,
+                       Q_TOP, N_HOPF)
+
+# =============================================================================
+# DFC PARAMETERS — imported from dfc_core.py
+# To test alternatives: import dfc_core; dfc_core.ALPHA = ...; dfc_core.recompute()
+# =============================================================================
+
+M_KK = 1.0 / XI                  # KK mass scale
+I4 = Fraction(4, 3)              # exact rational form for display
+E_KINK = 36.0 * PI               # = 4/beta = 113.10 M_Pl (kink surface tension)
 
 # Worldvolume mode content
 N_GAUGE = 12    # 8 SU(3) gluons + 3 W + 1 B = 12 gauge bosons

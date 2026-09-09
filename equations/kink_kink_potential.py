@@ -45,6 +45,12 @@ References:
 
 import numpy as np
 import sys
+import os
+
+# Import shared DFC constants and functions
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from dfc_core import (ALPHA, BETA, PHI_0, XI, M_SIGMA, C_SUBSTRATE as C,
+                       V, dVdphi as dV, kink_profile)
 
 PLOT = '--plot' in sys.argv
 if PLOT:
@@ -54,32 +60,17 @@ if PLOT:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# DFC substrate parameters (all derived, zero SM inputs)
+# DFC substrate parameters — imported from dfc_core.py
+# To test alternatives: import dfc_core; dfc_core.ALPHA = ...; dfc_core.recompute()
 # ═══════════════════════════════════════════════════════════════════════════════
 
-ALPHA = 18.0**(1.0/3.0)       # α = ∛18 (Tier 2a)
-BETA = 1.0 / (9.0 * np.pi)   # β = 1/(9π) (Tier 2a)
-C = 1.0                       # substrate propagation speed
-
-PHI_0 = np.sqrt(ALPHA / BETA)              # vacuum amplitude
-XI = np.sqrt(2.0 / ALPHA)                  # kink half-width
-M_SIGMA = np.sqrt(2.0 * ALPHA)             # scalar mass (inverse screening length)
-E_KINK_BPS = (4.0/3.0) * PHI_0**2 / XI    # BPS kink energy
-
-
-def V(phi):
-    """Substrate potential V(φ) = -α/2 φ² + β/4 φ⁴"""
-    return -ALPHA / 2.0 * phi**2 + BETA / 4.0 * phi**4
-
-
-def dV(phi):
-    """V'(φ) = -αφ + βφ³"""
-    return -ALPHA * phi + BETA * phi**3
+# BPS kink energy (uses the dimensional formula with phi_0 and xi)
+E_KINK_BPS = (4.0/3.0) * PHI_0**2 / XI
 
 
 def kink_exact(x, x0=0.0, sign=1.0):
-    """Exact kink solution: sign × φ₀ tanh((x-x0)/ξ)"""
-    return sign * PHI_0 * np.tanh((x - x0) / XI)
+    """Exact kink solution: sign * phi_0 tanh((x-x0)/xi)"""
+    return kink_profile(x, x0=x0, sign=sign)
 
 
 # ═══════════════════════════════════════════════════════════════════════════════

@@ -33,27 +33,21 @@ Cycle: 536
 import math
 import numpy as np
 from scipy import integrate, optimize
+import os, sys
 
 PI = math.pi
 
+# Import shared DFC constants from dfc_core
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from dfc_core import (ALPHA, BETA, PHI_0, XI, M_SIGMA, S_KINK, I4, Q_TOP,
+                       G_EFF_SQ, N_HOPF, LAMBDA_QCD)
+
 # =============================================================================
-# DFC PARAMETERS (reference values from φ⁴)
+# DFC PARAMETERS — imported from dfc_core.py
+# To test alternatives: import dfc_core; dfc_core.ALPHA = ...; dfc_core.recompute()
 # =============================================================================
 
-ALPHA = 18.0 ** (1.0 / 3.0)
-BETA = 1.0 / (9.0 * PI)
-PHI_0 = math.sqrt(ALPHA / BETA)
-XI = math.sqrt(2.0 / ALPHA)
-M_SIGMA = math.sqrt(2.0 * ALPHA)
-E_KINK_PHI4 = 4.0 * ALPHA * PHI_0 / (3.0 * M_SIGMA)  # = 2√2 α/(3β) = 4/β
-
-# Derived quantities
-S_KINK = 2.0 * math.sqrt(2.0) / 3.0  # dimensionless kink action
-I4 = 4.0 / 3.0  # ∫ sech⁴(u) du
-Q_TOP = 2
-G_EFF_SQ = 8.0 / 27.0
-N_HOPF = 9
-LAMBDA_QCD = 304.5  # MeV
+E_KINK_PHI4 = 4.0 * ALPHA * PHI_0 / (3.0 * M_SIGMA)  # = 2*sqrt(2)*alpha^(3/2)/(3*beta)
 
 passed = 0
 failed = 0
