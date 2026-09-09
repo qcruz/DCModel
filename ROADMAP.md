@@ -9,9 +9,9 @@
 ## How This Document Works
 
 - **This is a living roadmap and todo list.** Add items as they come up. Remove items when done.
-- **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
+- **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
-- **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
+- **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
 - **Last tier worked: P5** (C543 — simulation buildout + dfc_core migration)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
@@ -126,16 +126,6 @@
 - **Internal consistency web audit** — C501: PHASE 1 DONE. 7/7 core checks PASS. 35 stale BETA/g_eff values across 31 files found. Λ_QCD spread 124.6% (scheme differences). Phase 2: fix stale values, add cross-module derived-quantity checks. See `equations/consistency_web_audit.py`
 - **Adversarial prediction hunting** — deliberately search for quantities where DFC *must* disagree with observation or SM. Not tracking known failures but proactively seeking new ones. A model that can't be wrong can't be right
 - **Parameter sensitivity / fragility analysis** — perturb α=∛18, β=1/(9π), g_eff²=8/27 by ±0.1% and measure cascade of prediction errors. Distinguish robust structural predictions from numerologically fragile ones
-- **Simulation buildout (CONTINUOUS)** — build out the simulation library and integrate results into framework docs. Each simulation should update educational/ docs, equations/README.md, and current_state.md. Priority order:
-  1. **Pöschl-Teller spectrum extraction** — perturb static kink, FFT response, verify s=2 bound states (zero mode + shape mode). Underpins dozens of derivations
-  2. **Oscillon/breather formation** — certain collision velocities produce long-lived oscillating bound states (1+1D analogue of mesons)
-  3. **Tachyonic instability → complexification** — simulate D5 real→complex transition: real kink + transverse perturbation → vortex. Numerical proof that U(1) is forced
-  4. **Multi-kink gas** — 5-10 random kink-antikink pairs, watch annihilation/scattering/thermalization. "Particle gas" from pure field dynamics
-  5. **Kink in slowly varying background** — kink accelerating in gradient = D4 gravity mechanism in miniature
-  6. **Vortex-antivortex annihilation (2+1D)** — complex field analogue
-  7. **Kibble-Zurek: quench rate → kink density** — thermal kink formation
-  8. **Kink with excited shape mode** — how internal excitation affects scattering
-  - DONE: substrate_simulation.py (spontaneous formation), complex_field_u1_simulation.py (2+1D vortex), kink_kink_potential.py (interaction), kink_antikink_annihilation.py (collision/resonance), gauge_emergence_exploration.py (gauge necessity)
 - **Module migration to dfc_core (CONTINUOUS)** — migrate equation modules from local constant declarations to `from dfc_core import *`. Makes all modules testable with alternative frameworks via `dfc_core.recompute()`. 53 modules still use local ALPHA=18**(1/3). Priority: simulation modules first, then high-visibility prediction modules. DONE: kink_kink_potential, gauge_emergence_exploration, alternative_potentials, helfrich_membrane_gravity
 - **Independent derivation paths** — for key results (α_s, sin²θ_W, m_p), find completely different derivation routes within DFC. Agreement = strong. Disagreement = hidden assumption exposed
 - **Rigorous free-parameter accounting** — count every place a value is taken from observation (even implicitly). Compare total free inputs vs total independent predictions. This is the model's actual information-theoretic score
@@ -180,6 +170,42 @@ particular concept is not.
 - **Compare D-depth assignments against alternatives** — C500: DONE. Exhaustive 6-permutation analysis added to `foundations/depth_assignment.md`. C1 (complexity ordering) + C4 (3 generations) uniquely select current assignment. Weakest link: C1 not derived from V(φ). See depth_assignment.md §Exhaustive Permutation Analysis
 - **Review mathematical rigor of key claims** — C519: DONE. See `foundations/critical_review_rigor.md`. Audited g_eff²=8/27 chain (7 steps) and 36π α_em chain (5 steps). Tier 2a assignments are HONEST. Three load-bearing assumptions identified: (1) complexification at D5 via BPS/tachyon, (2) k_Y uses SM matter content, (3) ECCC is a postulate. The n=3 gauge depth count is not derived from V(φ). No tier changes recommended
 - **Literature reframing: cohesion/conflict audit** — C524: Cluster A (gravity/geometry) DONE. 5 frameworks audited: RS (fully compatible), DFGH (M_5 gap), Sakharov (97.6% quantitative gap), analog gravity (perfect match), AdS/CFT (3 substantive conflicts — downgraded). Gravity theory integration doc created: `foundations/gravity_theory_integration.md`. Key finding: analog gravity should be exploited more aggressively; Sakharov+Helfrich is highest-priority open problem. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
+
+---
+
+## Priority 8 — Simulations & Numerical Experiments
+
+Build out the simulation library. Every simulation should produce a standalone runnable
+module in `equations/` with [PASS]/[FAIL] checks, and integrate results into framework
+docs (educational/, equations/README.md, current_state.md). Simulations are the primary
+way to demonstrate that DFC dynamics *work* — that the claimed behaviors actually emerge
+from V(φ) when you solve the field equation numerically.
+
+**Queue (ordered by impact):**
+
+- **Pöschl-Teller spectrum extraction** — perturb a static kink, evolve, FFT the time series. Verify the s=2 bound state spectrum: zero mode (ω=0, translation) + shape mode (ω=√(3α/2)). This underpins dozens of derivations (gauge coupling, mass spectrum, kink interactions). The numerical verification has never been done end-to-end in DFC
+- **Oscillon/breather formation** — at certain collision velocities, kink-antikink forms a long-lived oscillating bound state instead of annihilating. These "bions" are the 1+1D analogue of mesons (quark-antiquark bound by string). Measure lifetime, oscillation frequency, radiation leakage rate
+- **Tachyonic instability → complexification** — start with a real kink, add a tiny transverse perturbation, watch it grow exponentially (tachyonic mode ω²₀ = −α/2) and settle into a vortex configuration. This is the numerical proof that U(1) gauge symmetry is *forced* by the substrate dynamics, not assumed
+- **Multi-kink gas dynamics** — start with 5-10 random kink-antikink pairs at various positions and velocities. Evolve and observe: annihilation events, scattering, thermalization, energy equipartition. Demonstrates how a "particle gas" emerges from pure field dynamics
+- **Kink in slowly varying background** — place a kink in a gently curved potential well (spatially varying α(x)). Measure how the kink accelerates toward deeper wells. This is the D4 gravity mechanism in miniature: kinks respond to substrate compression gradients
+- **Vortex-antivortex annihilation (2+1D)** — complex field analogue of kink-antikink. Demonstrates U(1) charge conservation and radiation spectrum in 2+1D
+- **Kibble-Zurek: quench rate → kink density** — cool the system through the phase transition at different rates. Measure kink density vs quench rate. Connects to cosmological defect formation
+- **Kink with excited shape mode** — boost the internal PT shape mode of a kink before collision. Measure how internal excitation affects scattering outcome (resonance window shifts)
+- **Kink-kink repulsion dynamics** — two same-sign kinks repel. Measure the repulsive force, compare to Manton prediction. Topological exclusion = "Pauli repulsion" for identical kinks
+- **Compression-driven bifurcation** — simulate a substrate under slow uniform compression (time-dependent α(t)). Watch for spontaneous symmetry breaking, kink formation, and depth-like cascade behavior
+
+**Completed simulations:**
+- substrate_simulation.py — spontaneous kink formation from tachyonic instability (C540)
+- complex_field_u1_simulation.py — 2+1D vortex formation, charge quantization
+- kink_kink_potential.py — kink-antikink interaction: Yukawa V_int ∝ exp(−m_σ d) (C528)
+- kink_antikink_annihilation.py — collision dynamics, resonance windows, mass gap radiation (C542)
+- gauge_emergence_exploration.py — gauge field necessity from energetic argument (C531)
+
+**Integration rule:** After each new simulation, update:
+1. `equations/README.md` — add to simulation table
+2. `educational/` — create or update relevant module
+3. `current_state.md` — note new findings
+4. This list — move item to Completed
 
 ---
 
