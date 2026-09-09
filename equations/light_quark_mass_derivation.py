@@ -784,19 +784,164 @@ print()
 
 
 # =============================================================================
-# Summary (updated C510)
+# PART L: Complete quark mass chain — M0 + kappa_q + 2-loop running (C544)
+# =============================================================================
+print("\n" + "=" * 72)
+print("PART L: COMPLETE QUARK MASS CHAIN — ZERO FITTED PARAMETERS (C544)")
+print("=" * 72)
+print("  Combine M0 = exp(-(b_0+1/alpha))*v/sqrt(2) with kappa_q = 3*pi/2")
+print("  to predict ALL quark masses from DFC parameters alone.")
+print("  Two-loop QCD running from v to 2 GeV for precision.")
+print()
+
+# Two-loop QCD running (exact implicit 2-loop via Newton iteration)
+def alpha_s_2loop(a0, mu0, mu, nf):
+    """Two-loop alpha_s running using exact implicit equation."""
+    b0_nf = 11.0 - 2.0 * nf / 3.0
+    b1_nf = 102.0 - 38.0 * nf / 3.0
+    L = math.log(mu / mu0)
+    c = b1_nf / (4*PI*b0_nf)
+    rhs = 1.0/a0 + c*math.log(a0) + b0_nf/(2*PI)*L
+    # Solve 1/a + c*ln(a) = rhs via Newton
+    a = a0 / (1 + b0_nf*a0/(2*PI)*L)  # 1-loop initial guess
+    for _ in range(100):
+        f = 1.0/a + c*math.log(a) - rhs
+        fp = -1.0/a**2 + c/a
+        a = a - f/fp
+    return a
+
+def mass_run_2loop(m_high, a_high, a_low, nf):
+    """Two-loop mass running with NLO mass anomalous dimension."""
+    b0_nf = 11.0 - 2.0 * nf / 3.0
+    b1_nf = 102.0 - 38.0 * nf / 3.0
+    gamma_0 = 8.0
+    gamma_1 = 404.0/3.0 - 40.0*nf/9.0
+
+    d0 = gamma_0 / (2.0 * b0_nf)
+    J1 = gamma_1 / b0_nf - gamma_0 * b1_nf / b0_nf**2
+
+    R_LO = (a_low / a_high)**d0
+    R_NLO = R_LO * (1 + J1/(4*PI) * (a_low - a_high))
+    return m_high * R_NLO
+
+# DFC-predicted M0 at the electroweak scale v
+exponent_L = B0 + 1.0 / ALPHA
+y_v_L = math.exp(-exponent_L)
+m_v_L = y_v_L * V_HIGGS / math.sqrt(2)  # M0 at scale v
+
+print(f"  Step 1: M0(v) = exp(-(b_0 + 1/alpha)) * v/sqrt(2)")
+print(f"    b_0 + 1/alpha = {exponent_L:.6f}")
+print(f"    M0(v) = {m_v_L*1000:.4f} MeV  (at scale v = {V_HIGGS:.2f} GeV)")
+
+# Run M0 from v down to 2 GeV using two-loop QCD
+a_v_2 = alpha_s_2loop(a_MZ, M_Z, V_HIGGS, 5)
+a_mb_2 = alpha_s_2loop(a_MZ, M_Z, m_b, 5)
+a_mc_2 = alpha_s_2loop(a_mb_2, m_b, m_c, 4)
+a_2_2 = alpha_s_2loop(a_mc_2, m_c, mu_ref, 3)
+
+M0_at_2GeV = mass_run_2loop(
+    mass_run_2loop(
+        mass_run_2loop(m_v_L, a_v_2, a_mb_2, 5),
+        a_mb_2, a_mc_2, 4),
+    a_mc_2, a_2_2, 3)
+
+err_M0_2loop = (M0_at_2GeV - M0_OBS) / M0_OBS
+print(f"\n  Step 2: Two-loop QCD running v -> 2 GeV")
+print(f"    alpha_s(v) = {a_v_2:.6f} (2-loop)")
+print(f"    alpha_s(2 GeV) = {a_2_2:.5f} (2-loop)")
+print(f"    M0(2 GeV) = {M0_at_2GeV*1000:.4f} MeV")
+print(f"    Observed M0 = {M0_OBS*1000:.4f} MeV")
+print(f"    Error: {err_M0_2loop*100:+.2f}%")
+check("L1: M0 at 2 GeV within 5% (2-loop T2a)", abs(err_M0_2loop) < 0.05)
+
+# Comparison: 1-loop vs 2-loop running
+print(f"\n  Running comparison:")
+print(f"    1-loop: M0 = {M0_J*1000:.4f} MeV ({err_J*100:+.2f}%) <- T2a but fragile")
+print(f"    2-loop: M0 = {M0_at_2GeV*1000:.4f} MeV ({err_M0_2loop*100:+.2f}%) <- honest assessment")
+print(f"    NLO/LO difference: {abs(err_M0_2loop - err_J)*100:.1f} pp")
+print(f"    KEY FINDING: 1-loop T2a was a fortuitous cancellation.")
+print(f"    The 2-loop running adds ~{(M0_at_2GeV/M0_J - 1)*100:.0f}% to the mass,")
+print(f"    revealing that the formula overshoots at higher perturbative order.")
+
+# Step 3: Apply kappa_q = 3*pi/2 generation spacing
+KAPPA_Q_L = 3.0 * PI / 2.0  # = 4.7124 from center vortex [T1]
+
+# Gen-2 scale at v
+M_gen2_v = m_v_L * math.exp(KAPPA_Q_L)
+
+# Run Gen-2 from v to 2 GeV
+M_gen2_at_2GeV = mass_run_2loop(
+    mass_run_2loop(
+        mass_run_2loop(M_gen2_v, a_v_2, a_mb_2, 5),
+        a_mb_2, a_mc_2, 4),
+    a_mc_2, a_2_2, 3)
+
+# Observed Gen-2 geometric mean
+M_g2_obs = math.sqrt(1.275 * 0.0934)  # sqrt(m_c * m_s) at 2 GeV
+err_gen2 = (M_gen2_at_2GeV - M_g2_obs) / M_g2_obs
+
+print(f"\n  Step 3: Gen-2 scale = M0(v) * exp(kappa_q)")
+print(f"    kappa_q = 3*pi/2 = {KAPPA_Q_L:.6f} [T1]")
+print(f"    M_gen2(v) = {M_gen2_v*1000:.4f} MeV")
+print(f"    M_gen2(2 GeV) = {M_gen2_at_2GeV*1000:.2f} MeV")
+print(f"    Observed sqrt(m_c*m_s) = {M_g2_obs*1000:.2f} MeV")
+print(f"    Error: {err_gen2*100:+.2f}%")
+check("L2: Gen-2 scale within 5% (T2a)", abs(err_gen2) < 0.05)
+
+# Individual quark masses using isospin ratio from data
+r_cs = 1.275 / 0.0934  # m_c/m_s ratio (from PDG, input)
+m_c_pred = M_gen2_at_2GeV * math.sqrt(r_cs)
+m_s_pred = M_gen2_at_2GeV / math.sqrt(r_cs)
+err_c = (m_c_pred - 1.275) / 1.275
+err_s = (m_s_pred - 0.0934) / 0.0934
+
+print(f"\n  Step 4: Individual Gen-2 masses (isospin ratio from data)")
+print(f"    Charm: {m_c_pred*1000:.1f} MeV (obs 1275 MeV, {err_c*100:+.2f}%)")
+print(f"    Strange: {m_s_pred*1000:.1f} MeV (obs 93.4 MeV, {err_s*100:+.2f}%)")
+
+# Individual Gen-1 using isospin ratio from data
+r_ud = M_D / M_U  # m_d/m_u ratio (from PDG, input)
+m_u_pred = M0_at_2GeV / math.sqrt(r_ud)
+m_d_pred = M0_at_2GeV * math.sqrt(r_ud)
+err_u = (m_u_pred - M_U) / M_U
+err_d = (m_d_pred - M_D) / M_D
+
+print(f"    Up: {m_u_pred*1000:.3f} MeV (obs {M_U*1000:.2f} MeV, {err_u*100:+.2f}%)")
+print(f"    Down: {m_d_pred*1000:.3f} MeV (obs {M_D*1000:.2f} MeV, {err_d*100:+.2f}%)")
+
+# Summary table
+print(f"\n  COMPLETE QUARK MASS CHAIN — DFC → PDG (at 2 GeV)")
+print(f"  {'Quark':<10} {'DFC (MeV)':>10} {'PDG (MeV)':>10} {'Error':>8} {'Inputs'}")
+print(f"  {'-'*10}  {'-'*10}  {'-'*10}  {'-'*8}  {'-'*30}")
+print(f"  {'up':<10} {m_u_pred*1000:>10.3f} {M_U*1000:>10.2f} {err_u*100:>+8.2f}%  b0,alpha,v,r_ud(data)")
+print(f"  {'down':<10} {m_d_pred*1000:>10.3f} {M_D*1000:>10.2f} {err_d*100:>+8.2f}%  b0,alpha,v,r_ud(data)")
+print(f"  {'strange':<10} {m_s_pred*1000:>10.1f} {93.4:>10.1f} {err_s*100:>+8.2f}%  + kappa_q,r_cs(data)")
+print(f"  {'charm':<10} {m_c_pred*1000:>10.1f} {1275.0:>10.1f} {err_c*100:>+8.2f}%  + kappa_q,r_cs(data)")
+print()
+print(f"  DFC INPUTS: b_0=11 [T1], alpha=18^(1/3) [T2a], v=247.83 GeV [T2a],")
+print(f"              kappa_q=3*pi/2 [T1], alpha_s(M_Z)=0.11821 [T2a]")
+print(f"  DATA INPUTS: isospin ratios r_ud, r_cs (2 numbers)")
+print(f"  FREE PARAMETERS FOR SCALE: 0")
+
+check("L3: All 4 quark mass errors < 5%",
+      all(abs(e) < 0.05 for e in [err_u, err_d, err_s, err_c]))
+
+
+# =============================================================================
+# Summary (updated C544)
 # =============================================================================
 print("\n" + "=" * 72)
 print(f"  TOTAL: {n_pass}/{n_total} PASS")
 print("=" * 72)
 
-if abs(err_J) < 0.05:
-    print(f"\n  RESULT: Light quark mass scale M0 upgraded to T2a!")
-    print(f"  Formula: y(v) = exp(-(b_0 + 1/alpha)), run to 2 GeV via QCD.")
-    print(f"  M0(2 GeV) = {M0_J*1000:.2f} MeV vs observed {M0_OBS*1000:.2f} MeV ({err_J*100:+.2f}%).")
-    print(f"  Inputs: b_0 [T1], alpha [T2a], v [T2a], alpha_s [T2a]. 0 free params.")
-    print(f"  UNBLOCKS: m_pi, Delta_m(n-p), sigma_piN (all via GMOR chain).")
-else:
-    print(f"\n  RESULT: Light quark mass scale M0 = {M0_OBS*1000:.2f} MeV REMAINS T4.")
-    print(f"  Best candidate: {abs(err_J)*100:.1f}% error.")
+print(f"\n  RESULT (updated C544):")
+print(f"  Formula: y(v) = exp(-(b_0 + 1/alpha)), m(v) = y*v/sqrt(2), run to 2 GeV.")
+print(f"  1-loop: M0(2 GeV) = {M0_J*1000:.2f} MeV ({err_J*100:+.2f}%) — T2a at 1-loop")
+print(f"  2-loop: M0(2 GeV) = {M0_at_2GeV*1000:.2f} MeV ({err_M0_2loop*100:+.2f}%) — T2b at 2-loop")
+print(f"  HONEST ASSESSMENT: 1-loop T2a was a fortuitous cancellation.")
+print(f"  The NLO correction ({(M0_at_2GeV/M0_J - 1)*100:.0f}%) is large because alpha_s(2 GeV) ~ 0.3")
+print(f"  makes the perturbative expansion poorly converged at low scales.")
+print(f"  STATUS: T2b (order-dependent). The formula is structurally interesting")
+print(f"  (b_0 + 1/alpha involves only DFC parameters) but the mass at 2 GeV")
+print(f"  depends sensitively on the running order.")
 print(f"  Key identity: S_kink * delta_d = 6 EXACTLY [T1].")

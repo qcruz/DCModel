@@ -23,7 +23,6 @@
 
 ## Priority 1 — High-Impact Predictions
 
-- **Derive light quark masses (D6 Yukawa)** — M0 = exp(-(b₀+1/α))×v/√2 run to 2 GeV: +2.68% T2a (C459). Mechanism needs T1 proof. See `equations/light_quark_mass_derivation.py`
 - **Derive proton-neutron mass difference from DFC** — C467: Δm=1.289 MeV (−0.4%, T2b). C487: σ_πN=50.9 MeV (−2.2%, T2b). BLOCKED: derive C_QCD from DFC isovector matrix element. See `equations/proton_neutron_mass_difference.py`, `equations/pion_nucleon_sigma_term.py`
 - **Beyond-mean-field Walecka EOS** — BLOCKED: C479 kink-background g₂ correct sign but 14× too weak. Need loop/resonance enhancement or NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
 - **Derive V(phi) contact terms for deuteron binding** — BLOCKED: C473 central B_d=1.15 MeV (−48%). Need kink-kink overlap potential at r<1/Λ_QCD. See `equations/deuteron_tensor_ope.py`
@@ -31,6 +30,7 @@
 - **DFC prediction for W mass** — RESOLVED. Tree-level M_W = 80.10 GeV (−0.34%), one-loop corrected M_W = 80.38 GeV (+0.009%, T2a). 10/10 PASS. CDF anomaly at 80.4335 GeV, CMS at 80.360 GeV — DFC matches CMS. See `equations/ew_radiative_corrections.py`
 - **Top quark mass from Koide** — C494: INVESTIGATED, NOT VIABLE. K=2/3 fails for all quark triplets. Best: (c,b,t) pole masses gives +17.7%. Quarks have QCD corrections + CKM mixing that leptons lack. t_actual=0.688 is 2.8% below lepton value — possible QCD correction but not derived. See `equations/top_quark_koide.py`
 - **Derive pion mass from GMOR** — C537: INVESTIGATED, NJL-LIMITED. m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC = 86 MeV (−38%, T3). Gap eq (+50%), LSM (−76%), NJL with m_σ cutoff (−69%) all WORSE than standard NJL. Condensate undershoot is inherent NJL limitation (standard NJL also −41%). BLOCKED: needs beyond-NJL condensate (Dyson-Schwinger, instanton liquid, or lattice input). See `equations/pion_mass_gmor.py`
+- **Derive light quark masses (D6 Yukawa)** — C544: DOWNGRADED T2a→T2b. Formula y(v)=exp(-(b₀+1/α)) gives M0=1.998 MeV at v. 1-loop running to 2 GeV: +2.68% (fortuitous). 2-loop running: +24% (honest). NLO correction is ~21% because α_s(2 GeV)≈0.3 makes perturbative series poorly converged. The formula is structurally interesting (0 free params, only DFC constants) but the prediction is order-dependent. Needs: either derive M0 at a scale where running is controlled, or find a running-independent formulation. See `equations/light_quark_mass_derivation.py`
 
 ---
 
