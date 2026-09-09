@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review.** P7 exists to prevent the project from becoming locked into assumptions. It is a standing invitation to question, compare, reframe, and adapt.
-- **Last tier worked: P6** (C540 — equations infrastructure: dfc_core.py + README.md)
+- **Last tier worked: P5** (C543 — simulation buildout + dfc_core migration)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -126,7 +126,17 @@
 - **Internal consistency web audit** — C501: PHASE 1 DONE. 7/7 core checks PASS. 35 stale BETA/g_eff values across 31 files found. Λ_QCD spread 124.6% (scheme differences). Phase 2: fix stale values, add cross-module derived-quantity checks. See `equations/consistency_web_audit.py`
 - **Adversarial prediction hunting** — deliberately search for quantities where DFC *must* disagree with observation or SM. Not tracking known failures but proactively seeking new ones. A model that can't be wrong can't be right
 - **Parameter sensitivity / fragility analysis** — perturb α=∛18, β=1/(9π), g_eff²=8/27 by ±0.1% and measure cascade of prediction errors. Distinguish robust structural predictions from numerologically fragile ones
-- **Numerical substrate simulation** — simulate 1D field with V(φ) = −α/2 φ² + β/4 φ⁴ computationally. Do kink-antikink pairs form and bifurcate under compression? Do closure configurations emerge spontaneously?
+- **Simulation buildout (CONTINUOUS)** — build out the simulation library and integrate results into framework docs. Each simulation should update educational/ docs, equations/README.md, and current_state.md. Priority order:
+  1. **Pöschl-Teller spectrum extraction** — perturb static kink, FFT response, verify s=2 bound states (zero mode + shape mode). Underpins dozens of derivations
+  2. **Oscillon/breather formation** — certain collision velocities produce long-lived oscillating bound states (1+1D analogue of mesons)
+  3. **Tachyonic instability → complexification** — simulate D5 real→complex transition: real kink + transverse perturbation → vortex. Numerical proof that U(1) is forced
+  4. **Multi-kink gas** — 5-10 random kink-antikink pairs, watch annihilation/scattering/thermalization. "Particle gas" from pure field dynamics
+  5. **Kink in slowly varying background** — kink accelerating in gradient = D4 gravity mechanism in miniature
+  6. **Vortex-antivortex annihilation (2+1D)** — complex field analogue
+  7. **Kibble-Zurek: quench rate → kink density** — thermal kink formation
+  8. **Kink with excited shape mode** — how internal excitation affects scattering
+  - DONE: substrate_simulation.py (spontaneous formation), complex_field_u1_simulation.py (2+1D vortex), kink_kink_potential.py (interaction), kink_antikink_annihilation.py (collision/resonance), gauge_emergence_exploration.py (gauge necessity)
+- **Module migration to dfc_core (CONTINUOUS)** — migrate equation modules from local constant declarations to `from dfc_core import *`. Makes all modules testable with alternative frameworks via `dfc_core.recompute()`. 53 modules still use local ALPHA=18**(1/3). Priority: simulation modules first, then high-visibility prediction modules. DONE: kink_kink_potential, gauge_emergence_exploration, alternative_potentials, helfrich_membrane_gravity
 - **Independent derivation paths** — for key results (α_s, sin²θ_W, m_p), find completely different derivation routes within DFC. Agreement = strong. Disagreement = hidden assumption exposed
 - **Rigorous free-parameter accounting** — count every place a value is taken from observation (even implicitly). Compare total free inputs vs total independent predictions. This is the model's actual information-theoretic score
 - **Phase diagram & extreme regime predictions** — QCD deconfinement T_c, quark-gluon plasma properties, neutron star max mass, EW phase transition order. Hard targets from lattice QCD and astrophysics
