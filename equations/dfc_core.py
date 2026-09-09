@@ -57,7 +57,7 @@ C_SUBSTRATE = 1.0               # T0: substrate signals propagate at this speed
 # call recompute() to update these.
 
 PHI_0 = math.sqrt(ALPHA / BETA)         # Vacuum value: phi_0 = sqrt(alpha/beta)
-XI = 1.0 / math.sqrt(2.0 * ALPHA)       # Kink width: xi = 1/sqrt(2*alpha)
+XI = math.sqrt(2.0 / ALPHA)              # Kink width: xi = sqrt(2/alpha), so tanh(x/xi) solves the field eq.
 M_SIGMA = math.sqrt(2.0 * ALPHA)        # Sigma mass (curvature at vacuum): m_sigma = sqrt(2*alpha)
 BARRIER_HEIGHT = ALPHA**2 / (4.0 * BETA) # V(0) - V(phi_0) = alpha^2 / (4*beta)
 
@@ -200,29 +200,29 @@ def kink_profile(x, x0=0.0, sign=1.0):
     Returns:
         phi(x) — the exact static kink solution of V(phi).
     """
-    return sign * PHI_0 * np.tanh((x - x0) / (math.sqrt(2.0) * XI))
+    return sign * PHI_0 * np.tanh((x - x0) / XI)
 
 
 def kink_energy_density(x, x0=0.0):
     """Energy density of the BPS kink: epsilon(x) = (dphi/dx)^2 / 2 + V(phi).
 
-    For the exact kink, this equals (phi_0^2 / (2*xi)) * sech^4((x-x0)/(sqrt(2)*xi)).
+    For the exact kink, this equals (phi_0^2 / xi) * sech^4((x-x0)/xi) / 2.
     """
-    u = (x - x0) / (math.sqrt(2.0) * XI)
+    u = (x - x0) / XI
     return PHI_0**2 / (2.0 * XI) * np.cosh(u)**(-4)
 
 
 def poschl_teller_potential(x, x0=0.0):
     """Poschl-Teller potential for fluctuations around a kink.
 
-    V_PT(x) = -s*(s+1) * alpha / cosh^2((x-x0)/(sqrt(2)*xi))
+    V_PT(x) = -s*(s+1) * (alpha/2) / cosh^2((x-x0)/xi)
 
     This gives exactly s = 2 bound states for phi^4:
         n=0: omega = 0 (zero mode, translation)
         n=1: omega = sqrt(3*alpha/2) (shape mode)
     """
-    u = (x - x0) / (math.sqrt(2.0) * XI)
-    return -PT_S * (PT_S + 1) * ALPHA / np.cosh(u)**2
+    u = (x - x0) / XI
+    return -PT_S * (PT_S + 1) * (ALPHA / 2.0) / np.cosh(u)**2
 
 
 def bps_action(potential_func=None):
@@ -401,7 +401,7 @@ def recompute():
     global I4
 
     PHI_0 = math.sqrt(ALPHA / BETA)
-    XI = 1.0 / math.sqrt(2.0 * ALPHA)
+    XI = math.sqrt(2.0 / ALPHA)
     M_SIGMA = math.sqrt(2.0 * ALPHA)
     BARRIER_HEIGHT = ALPHA**2 / (4.0 * BETA)
     PT_OMEGA_SHAPE = math.sqrt(3.0 * ALPHA / 2.0)
@@ -444,7 +444,7 @@ if __name__ == "__main__":
 
     print("TIER 1 — EXACT CONSEQUENCES:")
     print(f"  phi_0     = sqrt(alpha/beta) = {PHI_0:.6f}")
-    print(f"  xi        = 1/sqrt(2*alpha)  = {XI:.6f}")
+    print(f"  xi        = sqrt(2/alpha)    = {XI:.6f}")
     print(f"  m_sigma   = sqrt(2*alpha)    = {M_SIGMA:.6f}")
     print(f"  S_kink    = 2*sqrt(2)/3      = {S_KINK:.6f}")
     print(f"  PT s=2: zero mode w=0, shape mode w={PT_OMEGA_SHAPE:.6f}")
@@ -477,7 +477,7 @@ if __name__ == "__main__":
     phi_kink = kink_profile(x_test)
     tc.check("kink(-inf) -> -phi_0", abs(phi_kink[0] + PHI_0) < 0.01 * PHI_0)
     tc.check("kink(+inf) -> +phi_0", abs(phi_kink[-1] - PHI_0) < 0.01 * PHI_0)
-    tc.check("kink(0) = 0 (center)", abs(phi_kink[len(phi_kink)//2]) < 0.01 * PHI_0)
+    tc.check("kink(0) = 0 (center)", abs(kink_profile(np.array([0.0]))[0]) < 0.01 * PHI_0)
 
     # BPS action
     S_numerical = bps_action()
@@ -522,7 +522,7 @@ if __name__ == "__main__":
         ("alpha",           f"{ALPHA:.6f}",       "T2a", "BPS saturation"),
         ("beta",            f"{BETA:.6f}",        "T2a", "coupling self-consistency"),
         ("phi_0",           f"{PHI_0:.6f}",       "T1",  "sqrt(alpha/beta)"),
-        ("xi",              f"{XI:.6f}",           "T1",  "1/sqrt(2*alpha)"),
+        ("xi",              f"{XI:.6f}",           "T1",  "sqrt(2/alpha)"),
         ("m_sigma",         f"{M_SIGMA:.6f}",     "T1",  "sqrt(2*alpha)"),
         ("S_kink",          f"{S_KINK:.6f}",       "T1",  "2*sqrt(2)/3"),
         ("Q_top",           f"{Q_TOP}",            "T1",  "kink topological charge"),
