@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 549 (2026-09-09)
+**Last updated:** Cycle 550 (2026-09-09)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P6** (C549 — prediction scorecard update)
+- **Last tier worked: P7** (C550 — blind spot catalog)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -162,7 +162,7 @@ particular concept is not.
 
 - **Evaluate practical relevance** — DONE C513. See `foundations/critical_review_predictions.md` Category 5. Honest answer: practical value is indirect and conditional. Main uses: experiment prioritization (absence predictions), cross-coupling constraints, parameter-space guidance. No new technology, no substrate engineering, no computational shortcuts. Value proposition is parameter reduction (25→2) analogous to Maxwell unification — useful eventually, not immediately
 - **Explore alternative frameworks** — C536: DONE (11/11 PASS). 6 qualitative DFC results (Q_top, proton stability, 3 generations, θ=0, spin-1/2, N_c=3) are ROBUST — hold for ANY symmetric double-well. 9 quantitative results (g_eff², α_em, α=∛18, etc.) require φ⁴ SPECIFICALLY. φ⁴ is unique: simplest renormalizable, PT exactly solvable (1 zero + 1 shape mode), self-consistency closes to cubic. φ⁶ has extra bound states → extra gauge sectors. sine-Gordon has no shape mode. V(φ) remains T0 postulate; RG universality may justify it. See `equations/alternative_potentials.py`
-- **Catalog what DFC cannot do** — maintain an honest list of phenomena that DFC has no account for, even in principle. This is different from P4 (known failures with partial results). This is about blind spots — things the framework does not even attempt
+- **Catalog what DFC cannot do** — C550: DONE. See `foundations/critical_review_blind_spots.md`. 18 blind spots across 4 categories: structural limitations (4), calculational gaps (5), outside scope (5), standard approaches superior (4). 8 fundamental, 6 contingent. Most important contingent gaps: flavor physics (1.1) and quantum gravity (2.3). Honest acknowledgment that lattice QCD, SMEFT, cosmological perturbation theory, and nuclear structure calculations are superior in their domains
 - **External literature comparison** — when a DFC result matches observation, check whether the same result has been derived elsewhere from different premises. If so, what does that tell us about the uniqueness (or non-uniqueness) of the DFC derivation?
 - **Audit prediction quality vs. standard approaches** — C486: DONE. See `foundations/critical_review_predictions.md`. Four categories: SM-replicated (atomic, cosmo, EW), genuine value (couplings, N_c, strong CP, generations), SM-superior (loops, flavor), unfalsifiable (D1/D2, D4 gravity). Key finding: ~10 genuine predictions of SM free parameters from 2 inputs; rest is replication
 - **Identify unfalsifiable claims** — C493: DONE. See `foundations/critical_review_predictions.md` Category 4 (expanded). 4 genuinely unfalsifiable (ontological framing), 5 currently unfalsifiable but sharpenable, 3 "danger zone" claims that could accommodate any outcome. Key action items: fix D-depth assignments, set T4 stagnation deadlines, attempt NJL gap equation
