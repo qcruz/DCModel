@@ -242,6 +242,7 @@ Recent cycles (full history: push_history.md):
 | 2026-09-09 | 549 | Step 2 (P6 — Prediction Scorecard): educational/06_predictions.md updated. M0 T2a→T2b, r_p T3→T2a, diffuseness +2.8%, κ_GL=3/2 (T1), η_B (T4). **P6 documentation. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
 | 2026-09-09 | 548 | Step 1 (P5 — BCS Gap → Λ_QCD): equations/bcs_gap_lambda_qcd.py (NEW, 7/10 PASS). NJL gap eq with sigma exchange. OGE subcritical [T1]. kappa_GL=3/2 TYPE II [T1]. Self-consistent Λ_UV=399 MeV → M_Q=Λ. Condensate/f_pi fail (cutoff too tight). **P5 exploration. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
 | 2026-09-09 | 547 | Step 1 (P4 — Nuclear Surface Diffuseness Fock): equations/sigma_mass_in_medium.py Part F (15/16 PASS). Fock exchange correction: omega Fock stiffens surface, delta_a/a = -4.9%. a = 0.555 fm (+2.8%, was +8.1%). 86% of original gap closed. **P4 improvement. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
+| 2026-09-09 | 552 | Step 1 (P1 — Proton-Neutron Δm NJL): equations/proton_neutron_mass_difference.py Part G (11/14 PASS). NJL gap eq for u,d separately. DFC C_QCD=0.87 (valence + vertex correction), overshoots GL=0.50 by 75%. Route G1 = 1.508 MeV (+17%). Sea quarks contribute 0 to isovector. **P1 progress. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
 | 2026-09-09 | 551 | Step 1 (P8 — Oscillon/Breather): equations/oscillon_breather_formation.py (NEW, 14/14 PASS). Bubble collapse forms oscillon: omega=0.75*m_sigma, Q=4313, lifetime 1373 periods, sech profile, 26% binding. Kink-antikink at v=0.15 also produces oscillons. Meson analogue demonstration (T1 structural). **P8 simulation. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
 | 2026-09-09 | 550 | Step 1 (P7 — Blind Spot Catalog): foundations/critical_review_blind_spots.md (NEW). 18 blind spots across 4 categories: structural limitations (4), calculational gaps (5), outside scope (5), standard approaches superior (4). 8 fundamental, 6 contingent. Most important contingent gaps: flavor physics and quantum gravity. Honest acknowledgment of where lattice QCD, SMEFT, cosmological perturbation theory, and nuclear structure are superior. **P7 critical review. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
 | 2026-09-09 | 546 | Step 1 (P3 — Baryon Asymmetry Magnitude): equations/baryon_asymmetry_magnitude.py (NEW, 14/15 PASS). DFC leptogenesis: M_c(D7) as RH neutrino mass, Casimir spectrum M_2/M_1=9/4, maximal CP phase. eta_B(DFC) = 1.1×10⁻⁷ vs 6.1×10⁻¹⁰ (184× overshoot, T4). Diagnostic: M_1 too high or flavor effects needed. **P3 structural gap. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
@@ -464,6 +465,13 @@ of the model over time. Cover: what physical question was addressed, what the DF
 mechanism is, what the key numerical result was, and what it connects to. Avoid jargon
 where possible; when technical terms are unavoidable, define them inline. These summaries
 accumulate into a running education — each one should teach something new about DFC.
+**Include a document update list:** End every summary with a brief list of all files
+that were created or modified in the cycle, with a one-line note of what changed in each.
+Example format:
+- `equations/new_module.py` — NEW, 14/14 PASS
+- `ROADMAP.md` — added 2 items to P3, moved oscillon to Completed in P8
+- `push_history.md` — C551 entry
+- `CLAUDE.md` — C551 entry
 
 **Cross-application sweep (end of every session):** Before the final push, review
 what was accomplished in the session and ask: does this result suggest follow-on work
