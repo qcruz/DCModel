@@ -319,16 +319,88 @@ print(f"    not structural blockers.")
 check("T2d", abs(r_p_method1/R_P_OBS - 1) < abs(r_p_old/R_P_OBS - 1),
       f"Corrected r_p ({(r_p_method1/R_P_OBS-1)*100:+.1f}%) much better than C391 ({(r_p_old/R_P_OBS-1)*100:+.1f}%)")
 
+# ---- Part G: VMD-regulated pion cloud (C545) ----
+print()
+print(f"  PART G: VMD-regulated pion cloud — DFC-consistent cutoff (C545)")
+print(f"  " + "-" * 55)
+print()
+
+# The raw LNA pion cloud uses Lambda_chi = 4*pi*f_pi as the UV cutoff.
+# This overestimates by ~2x because NLO counterterms are neglected.
+#
+# A DFC-consistent regularization: the pion-nucleon vertex already has
+# a VMD form factor from the rho meson propagator. The pion loop with
+# a VMD cutoff at m_rho gives:
+#
+#   <r^2>_pion(VMD) = (g_A^2 * hbar_c^2) / (8*pi^2*f_pi^2)
+#                      × [ln(m_rho^2 / m_pi^2) - 1]
+#
+# The -1 comes from the dipole form factor (Λ^2/(Λ^2+k^2)) regulating
+# the loop integral. This is ENTIRELY DFC-parameter controlled:
+# m_rho = sqrt(2*pi)*Lambda_QCD, f_pi from the PS integral, g_A = 4/pi.
+
+log_VMD = math.log(M_RHO**2 / M_PI**2) - 1.0
+r2_pion_VMD = prefactor * log_VMD
+
+print(f"    VMD cutoff: m_rho = sqrt(2*pi)*Lambda_QCD = {M_RHO:.1f} MeV")
+print(f"    ln(m_rho^2/m_pi^2) = {math.log(M_RHO**2/M_PI**2):.4f}")
+print(f"    ln(m_rho^2/m_pi^2) - 1 = {log_VMD:.4f}")
+print(f"    <r^2>_pion(VMD) = {r2_pion_VMD:.4f} fm^2")
+print(f"    Compare: raw LNA = {r2_pion_raw:.4f} fm^2 (reduction: {(1-r2_pion_VMD/r2_pion_raw)*100:.0f}%)")
+print(f"    Compare: empirical = {r2_pion_empirical:.2f} fm^2")
+print()
+
+# Method 5: VMD + VMD-regulated pion cloud + Foldy (empirical kappa_p)
+r2_1_p_VMD = (r2_VMD_S + r2_VMD_V + r2_pion_VMD) / 2.0
+r2_p_method5 = r2_1_p_VMD + r2_Foldy_CORRECT
+r_p_method5 = math.sqrt(r2_p_method5)
+
+# Method 6: VMD + VMD-regulated pion cloud + Foldy (SU(6) kappa_p = 2.0)
+r2_p_method6 = r2_1_p_VMD + r2_Foldy_SU6
+r_p_method6 = math.sqrt(r2_p_method6)
+
+print(f"    Method 5 (VMD pion + emp kappa_p = {KAPPA_P_OBS}):")
+print(f"      r_p = {r_p_method5:.4f} fm ({(r_p_method5/R_P_OBS-1)*100:+.2f}%)")
+print(f"    Method 6 (VMD pion + SU(6) kappa_p = {KAPPA_P_SU6}):")
+print(f"      r_p = {r_p_method6:.4f} fm ({(r_p_method6/R_P_OBS-1)*100:+.2f}%)")
+print()
+
+# Method 6 is the fully DFC-only prediction: m_rho, f_pi, g_A, kappa_p
+# all from DFC (m_pi still empirical input — not yet derived to T2a)
+print(f"    Method 6 is the BEST DFC-ONLY prediction:")
+print(f"      Inputs: m_rho [DFC T3], f_pi [DFC T3], g_A = 4/pi [DFC T1],")
+print(f"              kappa_p = 2 [SU(6) T3], m_pi [empirical input]")
+print(f"      Free parameters: 0 (m_pi is not fitted, it's an input)")
+print()
+
+check("T2e", abs(r_p_method5/R_P_OBS - 1) < 0.05,
+      f"VMD-regulated + emp kappa: r_p = {r_p_method5:.4f} fm ({(r_p_method5/R_P_OBS-1)*100:+.2f}%)")
+check("T2f", abs(r_p_method6/R_P_OBS - 1) < 0.05,
+      f"VMD-regulated + SU(6) kappa: r_p = {r_p_method6:.4f} fm ({(r_p_method6/R_P_OBS-1)*100:+.2f}%)")
+
+# Component budget for Method 6
+print()
+print(f"    Component budget (Method 6, DFC-only):")
+print(f"      <r^2>_VMD,V     = {r2_VMD_V:.4f} fm^2  ({r2_VMD_V/r2_p_method6*100:.1f}%)")
+print(f"      <r^2>_VMD,S     = {r2_VMD_S:.4f} fm^2  ({r2_VMD_S/r2_p_method6*100:.1f}%)")
+print(f"      <r^2>_pion(VMD) = {r2_pion_VMD:.4f} fm^2  ({r2_pion_VMD/r2_p_method6*100:.1f}%)")
+print(f"      <r^2>_Dirac     = {r2_1_p_VMD:.4f} fm^2")
+print(f"      <r^2>_Foldy     = {r2_Foldy_SU6:+.4f} fm^2  ({r2_Foldy_SU6/r2_p_method6*100:.1f}%)")
+print(f"      <r^2>_total     = {r2_p_method6:.4f} fm^2")
+print(f"      <r^2>_obs       = {R2_P_OBS:.4f} fm^2")
+print()
+
 # #############################################################################
 print()
 print("=" * 76)
 print("SUMMARY")
 print("=" * 76)
 print()
-print(f"  Proton charge radius: SIGN BUG FOUND AND CORRECTED")
-print(f"    C391 (wrong sign):  r_p = {r_p_old:.4f} fm ({(r_p_old/R_P_OBS-1)*100:+.1f}%)")
-print(f"    Corrected (emp kp): r_p = {r_p_method1:.4f} fm ({(r_p_method1/R_P_OBS-1)*100:+.1f}%)")
-print(f"    DFC-only (SU(6)):   r_p = {r_p_method3:.4f} fm ({(r_p_method3/R_P_OBS-1)*100:+.1f}%)")
-print(f"    Observed:           r_p = {R_P_OBS} fm")
+print(f"  Proton charge radius: SIGN BUG FOUND (C476) + VMD PION CLOUD (C545)")
+print(f"    C391 (wrong sign):      r_p = {r_p_old:.4f} fm ({(r_p_old/R_P_OBS-1)*100:+.1f}%)")
+print(f"    Raw LNA + emp kp:       r_p = {r_p_method1:.4f} fm ({(r_p_method1/R_P_OBS-1)*100:+.1f}%)")
+print(f"    VMD pion + emp kp:      r_p = {r_p_method5:.4f} fm ({(r_p_method5/R_P_OBS-1)*100:+.2f}%)")
+print(f"    VMD pion + SU(6) kp:    r_p = {r_p_method6:.4f} fm ({(r_p_method6/R_P_OBS-1)*100:+.2f}%)")
+print(f"    Observed:               r_p = {R_P_OBS} fm")
 print()
 print(f"  {pass_count}/{total_tests} PASS, {fail_count}/{total_tests} FAIL")
