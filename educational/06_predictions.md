@@ -121,16 +121,16 @@ The model predicts the electron's anomalous magnetic moment through the QED pert
 - **Note:** The error traces entirely to the +0.14% offset in α_em(0). Higher-loop QED does not improve agreement — the 4-loop result (−0.14%) is farther than the 1-loop Schwinger term (+0.013%) because the α offset accumulates.
 
 ### Light quark mass scale
-The model predicts the geometric mean of the up and down quark masses from a Yukawa coupling suppressed by both the asymptotic freedom coefficient and the substrate self-coupling. The Yukawa at the electroweak scale is exponentially suppressed by the sum of the one-loop beta function coefficient and the inverse substrate coupling. Standard QCD mass running then gives the mass at the PDG reference scale of two gigaelectronvolts.
+The model predicts the geometric mean of the up and down quark masses from a Yukawa coupling suppressed by both the asymptotic freedom coefficient and the substrate self-coupling. The Yukawa at the electroweak scale is exponentially suppressed by the sum of the one-loop beta function coefficient and the inverse substrate coupling.
 
 - **Formula:** y(v) = exp(−(b₀ + 1/α)), then M0 = y × v/√2 run to 2 GeV
-- **Predicted:** M0 = 3.261 MeV
+- **1-loop running:** M0 = 3.261 MeV (+2.68%)
+- **2-loop running:** M0 = 3.937 MeV (+24%)
 - **Observed:** M0 = √(m_u × m_d) = 3.176 MeV
-- **Error:** +2.68%
-- **Tier:** 2a
-- **Free parameters used:** 0 (b₀ = 11 [T1], α = 18^(1/3) [T2a], v = 247.83 GeV [T2a], α_s for running [T2a])
+- **Tier:** 2b (DOWNGRADED from T2a — the 1-loop +2.68% was a fortuitous cancellation between the formula's overshoot and 1-loop's undershoot of QCD running; honest 2-loop result is +24%)
+- **Free parameters used:** 0 (b₀ = 11 [T1], α = 18^(1/3) [T2a], v = 247.83 GeV [T2a])
 - **How to test:** Lattice QCD improvements to light quark masses; FLAG working group averages.
-- **Significance:** Unblocks pion mass (GMOR), proton-neutron mass difference, pion-nucleon sigma term.
+- **Significance:** Structurally interesting (0 free params, only DFC constants) but prediction is order-dependent in the running. Needs either a running-independent formulation or a derivation at a scale where perturbation theory converges better.
 
 ---
 
@@ -206,6 +206,16 @@ The zeta-regularized zero-point energy of a Y-junction string with three equal-t
 - **Uniqueness:** E₀ = (N_c − 3)/24, zero only for N_c = 3
 - **Status:** T1 (exact)
 - **Significance:** Fourth N_c = 3 selection criterion (after I₄ = C₂ = 4/3, b₀ = N_c² + Q_top, and m_N/m_ρ = √(N_c/Q_top))
+
+### Dual superconductor type (confinement mechanism)
+DFC predicts that the QCD vacuum is a Type II dual superconductor — the dual Ginzburg-Landau parameter κ = m_σ/Λ_QCD = 3/2 exceeds the critical value 1/√2, meaning color-electric flux tubes (dual Abrikosov vortices) are stable rather than spreading. This is the structural reason for confinement.
+
+- **Predicted:** κ_GL = m_σ/Λ_QCD = (3/2)Λ/Λ = 3/2 (exactly)
+- **Critical boundary:** κ = 1/√2 ≈ 0.707
+- **Result:** κ = 1.5 > 0.707 → Type II (stable flux tubes)
+- **Tier:** T1 (algebraic ratio of DFC mass parameters)
+- **Free parameters:** 0
+- **Significance:** Connects confinement to the BCS/NJL framework — the same mathematics that describes superconductivity explains why quarks cannot be isolated.
 
 ### Yang-Mills mass gap lower bound
 The model produces a lower bound on the lightest glueball mass from the confinement chain.
@@ -327,14 +337,14 @@ An earlier attempt predicted charm and strange masses ~15% low. This was correct
 ### Deuteron binding energy
 The central-force (sigma + omega) calculation gives B_d = 1.14 MeV (−49%). However, with two-pion exchange (2PE) using DFC-derived g_A = 4/π and Pagels-Stokar f_pi = 89.63 MeV, DFC produces deuteron binding: B_cal = 6.39 MeV (+187%, overbinds ~3×). The best calibrated match occurs at f_pi ~ 92 MeV — the observed value, which lies within DFC's predicted range [89.6, 96.9]. DFC correctly identifies 2PE as the binding mechanism but quantitative agreement requires either a tighter f_pi derivation or contact terms from V(φ).
 
-### Proton charge radius (CORRECTED)
-An earlier calculation gave r_p = 0.701 fm (−17%), but this was traced to a sign error in the Foldy term. The Sachs form factor decomposition gives a *positive* Foldy contribution for the proton (not negative as originally coded). With the corrected sign:
+### Proton charge radius (UPGRADED)
+An earlier calculation gave r_p = 0.701 fm (−17%), traced to a sign error in the Foldy term. With the corrected sign and VMD-regulated pion cloud using DFC's own rho meson mass as the natural cutoff:
 
-- **Corrected (emp κ_p):** r_p = 0.854 fm (+1.5%)
-- **DFC-only (SU(6) κ_p = 2):** r_p = 0.862 fm (+2.5%)
+- **VMD pion cloud + emp κ_p = 1.793:** r_p = 0.800 fm (−4.9%)
+- **VMD pion cloud + SU(6) κ_p = 2 (fully DFC):** r_p = 0.809 fm (−3.8%)
 - **Observed:** r_p = 0.841 fm
-- **Tier:** T3 (uses empirical κ_p; deriving κ_p from DFC and regularizing pion cloud would upgrade)
-- **Reclassified:** P4 Known Failure → P2 Tier Upgrade candidate
+- **Tier:** T2a (VMD-regulated pion cloud with DFC m_ρ cutoff, SU(6) κ_p, 0 free params)
+- **Note:** The pion cloud regularization uses ln(m_ρ²/m_π²) − 1 as the effective log factor, where m_ρ = √(2π)Λ_QCD is entirely DFC-parameter controlled. Remaining gap: derive κ_p from DFC magnetic moments.
 
 ### Gravitational coupling (Planck mass)
 The model derives Newton's gravitational constant from V(φ) with zero free parameters. The substrate's vacuum energy is negative — V(φ₀) = −α²/(4β) — which creates an exponentially decaying energy profile along the substrate's compression coordinate (an emergent anti-de Sitter geometry). The kink acts as a domain wall within this profile, and gravity is automatically localized to the wall's worldvolume — a mathematical consequence of exponential warp-factor confinement (the Randall-Sundrum result, used here as a theorem about zero modes on exponential profiles). The gravitational coupling equals one over the AdS curvature scale.
@@ -348,14 +358,15 @@ The model derives Newton's gravitational constant from V(φ) with zero free para
 - **Note:** The thick-wall correction (self-gravitating kink BVP) gives κ = 2.04 — a factor 4.1× overshoot. The classical kink bending rigidity (Helfrich membrane analysis) gives κ_class = 4.64 M_Pl² — 9.3× overshoot before backreaction. Backreaction reduces this from 9.3× to 4.1×. The gravity gap is an *excess*, not a deficit — the kink is too stiff, not too soft. The thin-wall result (−0.57%) likely captures the correct answer through a different (algebraic, not BVP) pathway.
 
 ### Nuclear surface diffuseness
-The model predicts nuclear surface diffuseness — the width of the transition region between the nuclear interior and the vacuum — from the sigma meson's Compton wavelength. In vacuum, a = ℏc/m_σ = 0.432 fm, which is 20% below the observed 0.54 fm. Including in-medium chiral condensate reduction (Hellmann-Feynman theorem, model-independent) reduces the effective sigma mass at the nuclear surface to m*_σ ≈ 342 MeV, giving a = 0.577 fm.
+The model predicts nuclear surface diffuseness — the width of the transition region between the nuclear interior and the vacuum — from the sigma meson's Compton wavelength. In vacuum, a = ℏc/m_σ = 0.432 fm, which is 20% below the observed 0.54 fm. Including in-medium chiral condensate reduction (Hellmann-Feynman theorem) and Fock exchange corrections brings the prediction close to observation.
 
 - **Vacuum prediction:** a = 0.432 fm (−20%)
-- **In-medium corrected:** a = 0.577 fm (+7%)
+- **Hartree (mean-field):** a = 0.584 fm (+8.1%)
+- **Hartree-Fock corrected:** a = 0.555 fm (+2.8%)
 - **Observed:** a = 0.54 fm
-- **Tier:** T3 (condensate reduction T1; mean-field approximation T3)
-- **Free parameters:** 0 (m_σ = 3Λ/2, σ_πN from DFC Skyrmion)
-- **Gap closure:** 65% of original gap closed by chiral dynamics
+- **Tier:** T3 (condensate reduction T1; Walecka MF T3; Fock correction T3)
+- **Free parameters:** 0 (m_σ = 3Λ/2, σ_πN from DFC Skyrmion, g_σ = π√(3π))
+- **Gap closure:** 86% of original gap closed (vacuum → Hartree → Fock)
 
 ### Inflationary spectral index n_s
 The model predicts the spectral index of primordial density perturbations from slow-roll on V(φ).
@@ -444,6 +455,7 @@ Three phases of prediction tests plus cosmological predictions have been compute
 | t_0 (age of universe) | 13.780 Gyr | 13.797 Gyr | −0.12% | T3 |
 | m_DM (dark matter mass) | 35.6 keV | >5.2 keV | WDM | T4 |
 | λ_fs (free-streaming) | 1.0 kpc | — | safe | T4 |
+| η_B (baryon asymmetry) | 1.1×10⁻⁷ | 6.1×10⁻¹⁰ | 184× | T4 |
 
 ---
 
@@ -504,9 +516,9 @@ The clearest tests:
 | m_τ (dimple) | 212 MeV | 8.4× wrong | — | **RETRACTED** |
 | m_ν ratio (corrected) | 5.8248 = 5.33^(1+1/(6π)) | +0.010% | T3 | Structural account (C204) |
 | m_ν ratio (uncorrected) | 5.33 | −8.3% | T2b | Without color correction |
-| M0 = √(m_u·m_d) | 3.261 MeV | +2.68% | T2a | Confirmed (C459) |
+| M0 = √(m_u·m_d) 1-loop | 3.261 MeV | +2.68% | T2b | Downgraded: 2-loop +24% |
 | m_c, m_s (old route) | ~15% low | 15% | — | Superseded by κ_q = πN_c/2 |
-| r_p (proton charge radius) | 0.854 fm | +1.5% | T3 | Corrected (was −17% sign bug) |
+| r_p (proton charge radius) | 0.809 fm | −3.8% | T2a | VMD pion cloud + SU(6) κ_p |
 | m_π (pion mass, DFC+lattice) | 136.9 MeV | −1.9% | T2a | With lattice condensate |
 | Δm(n−p) (mass difference) | 1.289 MeV | −0.4% | T2b | GL coefficient external |
 | Σ (proton spin, refined) | 0.320 | −3.2% (0.3σ) | T3 | I₀/I₁ at DFC R_B = √3·ξ |
@@ -517,8 +529,10 @@ The clearest tests:
 | μ_p/μ_n ratio | −1.4598 | +0.022% | T2a | −3/2 + g_A/32 identity (C509) |
 | n_s (spectral index) | 0.9667 | +0.4σ Planck | T2a | Slow-roll V(φ), N_e=60 |
 | Surface diffuseness (vacuum) | 0.432 fm | −20% | T3 | a = ℏc/m_σ |
-| Surface diffuseness (in-medium) | 0.577 fm | +7% | T3 | Chiral condensate reduction |
+| Surface diffuseness (HF) | 0.555 fm | +2.8% | T3 | Hartree-Fock corrected |
 | κ_class (bending rigidity) | 4.64 M_Pl² | 9.3× overshoot | T2a | Helfrich kink profile (C534) |
+| κ_GL (dual GL parameter) | 3/2 | Type II (T1) | T1 | Confinement = dual Meissner |
+| η_B (baryon asymmetry) | 1.1×10⁻⁷ | 184× overshoot | T4 | DFC leptogenesis (C546) |
 
 ---
 

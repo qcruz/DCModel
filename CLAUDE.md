@@ -239,6 +239,7 @@ Key bottleneck: α_em(0) gap: structural identity A−B = ln(1/α_em(0)) (Tier 4
   α=∛18 TIER 2a (Cycle 172): derived from β[T2a]+S_kink×α_D5=1[T1]+BPS saturation[T1].
 
 Recent cycles (full history: push_history.md):
+| 2026-09-09 | 549 | Step 2 (P6 — Prediction Scorecard): educational/06_predictions.md updated. M0 T2a→T2b, r_p T3→T2a, diffuseness +2.8%, κ_GL=3/2 (T1), η_B (T4). **P6 documentation. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
 | 2026-09-09 | 548 | Step 1 (P5 — BCS Gap → Λ_QCD): equations/bcs_gap_lambda_qcd.py (NEW, 7/10 PASS). NJL gap eq with sigma exchange. OGE subcritical [T1]. kappa_GL=3/2 TYPE II [T1]. Self-consistent Λ_UV=399 MeV → M_Q=Λ. Condensate/f_pi fail (cutoff too tight). **P5 exploration. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
 | 2026-09-09 | 547 | Step 1 (P4 — Nuclear Surface Diffuseness Fock): equations/sigma_mass_in_medium.py Part F (15/16 PASS). Fock exchange correction: omega Fock stiffens surface, delta_a/a = -4.9%. a = 0.555 fm (+2.8%, was +8.1%). 86% of original gap closed. **P4 improvement. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
 | 2026-09-09 | 546 | Step 1 (P3 — Baryon Asymmetry Magnitude): equations/baryon_asymmetry_magnitude.py (NEW, 14/15 PASS). DFC leptogenesis: M_c(D7) as RH neutrino mass, Casimir spectrum M_2/M_1=9/4, maximal CP phase. eta_B(DFC) = 1.1×10⁻⁷ vs 6.1×10⁻¹⁰ (184× overshoot, T4). Diagnostic: M_1 too high or flavor effects needed. **P3 structural gap. Model ~80%. Clay ~99%. CPC ~60%.** | 87% | 73% | ~80% |
