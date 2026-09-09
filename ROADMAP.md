@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 542 (2026-09-08)
+**Last updated:** Cycle 543 (2026-09-08)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P5** (C543 — simulation buildout + dfc_core migration)
+- **Last tier worked: P8** (C543 — PT spectrum extraction 19/19 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -183,7 +183,6 @@ from V(φ) when you solve the field equation numerically.
 
 **Queue (ordered by impact):**
 
-- **Pöschl-Teller spectrum extraction** — perturb a static kink, evolve, FFT the time series. Verify the s=2 bound state spectrum: zero mode (ω=0, translation) + shape mode (ω=√(3α/2)). This underpins dozens of derivations (gauge coupling, mass spectrum, kink interactions). The numerical verification has never been done end-to-end in DFC
 - **Oscillon/breather formation** — at certain collision velocities, kink-antikink forms a long-lived oscillating bound state instead of annihilating. These "bions" are the 1+1D analogue of mesons (quark-antiquark bound by string). Measure lifetime, oscillation frequency, radiation leakage rate
 - **Tachyonic instability → complexification** — start with a real kink, add a tiny transverse perturbation, watch it grow exponentially (tachyonic mode ω²₀ = −α/2) and settle into a vortex configuration. This is the numerical proof that U(1) gauge symmetry is *forced* by the substrate dynamics, not assumed
 - **Multi-kink gas dynamics** — start with 5-10 random kink-antikink pairs at various positions and velocities. Evolve and observe: annihilation events, scattering, thermalization, energy equipartition. Demonstrates how a "particle gas" emerges from pure field dynamics
@@ -200,6 +199,7 @@ from V(φ) when you solve the field equation numerically.
 - kink_kink_potential.py — kink-antikink interaction: Yukawa V_int ∝ exp(−m_σ d) (C528)
 - kink_antikink_annihilation.py — collision dynamics, resonance windows, mass gap radiation (C542)
 - gauge_emergence_exploration.py — gauge field necessity from energetic argument (C531)
+- poschl_teller_spectrum.py — PT s=2 spectrum: 2 bound states, shape mode 0.0005%, mass gap, eigenfunctions (C543)
 
 **Integration rule:** After each new simulation, update:
 1. `equations/README.md` — add to simulation table
