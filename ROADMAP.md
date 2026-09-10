@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 565 (2026-09-10)
+**Last updated:** Cycle 566 (2026-09-10)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P6** (C565 — ROADMAP comprehensive review: removed resolved, consolidated duplicates, added continuous review item)
+- **Last tier worked: P7** (C566 — Free parameter audit: 15 T2a predictions, 5/6 PASS, 4 DFC geometric params, Ratio 3.0)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -157,10 +157,10 @@ approaches do better, question foundational assumptions, and adapt the model whe
 evidence warrants it. Mathematical verifiability is the standard; attachment to any
 particular concept is not.
 
-- **Rigorous free-parameter audit** — count every observational input across all equation modules. Compute true prediction-to-parameter ratio. Document where "0 free params" claims rely on implicit inputs
 - **Literature reframing: cohesion/conflict audit** — C524: Cluster A DONE. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
 - **Set T4 stagnation deadlines** — C493: items stuck at T4 for 100+ cycles should be honestly flagged as likely unresolvable within current framework. Review α_em(0) identity, Casimir=α, D4 gravity overshoot
 - **Adversarial prediction hunting** — deliberately search for quantities where DFC *must* disagree with observation. A model that can't be wrong can't be right
+- **Rigorous free-parameter audit** — C566: 15 T2a predictions audited, 5/6 PASS. 4 DFC geometric params, Ratio 3.0 (generous). Key finding: g_eff²=8/27 is only truly 0-param result. See `equations/free_parameter_audit.py`. Follow-up: derive Δ(1/α)=9.136 from DFC to upgrade Tier 2b→2a
 
 **Completed (removed from P7):**
 - ~~Evaluate practical relevance~~ — C513 DONE. See `foundations/critical_review_predictions.md`
@@ -265,3 +265,4 @@ items when done; remove checked items after 2 cycles.
 - [ ] Stellar census module → add to prediction scorecard
 - [ ] C508: thick-wall κ=2.04 → update `educational/28_gravity_gap.md`
 - [ ] C564: analog gravity dispersion → add to prediction scorecard (exponential onset prediction)
+- [ ] C566: free parameter audit → update `foundations/critical_review_predictions.md` with ratio findings
