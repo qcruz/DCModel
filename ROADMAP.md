@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 555 (2026-09-09)
+**Last updated:** Cycle 556 (2026-09-09)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P4** (C555 — lithium problem mechanism analysis)
+- **Last tier worked: P5** (C556 — quantum Hall coupling quantization)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -98,11 +98,6 @@
 
 ## Priority 5 — Exploratory
 
-- **Literature reframing: Helfrich membrane → gravity** — C534: DONE (14/14 PASS). SURPRISE: classical kink bending rigidity κ_class = 4.64 M_Pl² OVERSHOOTS M_Pl²/2 by 9.3×. Prior narrative (Sakharov 2.36%, need 97.6% more) was incomplete — omitted classical term. Peliti-Leibler = Sakharov for codim-1 (T1). Self-avoiding → no crumpling (T1). Problem is REDUCING κ, not increasing it. C508 BVP also overshoots (4.1×, backreaction helps). Gap: derive reduction mechanism. See `equations/helfrich_membrane_gravity.py`
-- **Literature reframing: AdS/CFT dictionary** — C517: DONE (32/32 PASS). Full translation table written. Zero mode = T_muv (Delta=4, T1). Central charge c=0.19 (low-rank dual). Viscosity eta/s=0.94 with 't Hooft correction (QGP ~0.12 — lambda=8/9 too small for strong-coupling limit). RT entropy inherits kappa gap. See `equations/adscft_topo_insulator_dfc.py` Part A
-- **Literature reframing: topological insulator classification** — C517: DONE (32/32 PASS). Depth path AI→BDI→AIII identified. D5(AI): trivial in d=1 (no protected fermions — photon from Goldstone instead). D6(BDI): Z in d=1 (JR zero mode topologically protected — SAME as SSH!). D7(AIII): Z in d=1 (quarks protected by chiral index). Predicts fermion/boson split across depths. See `equations/adscft_topo_insulator_dfc.py` Part B
-- **Literature reframing: BCS gap → Λ_QCD** — C548: DONE (7/10 PASS). NJL gap eq with sigma-exchange coupling G=g_qqs²/m_σ². OGE subcritical (gamma=0.06<<1, T1). kappa_GL=3/2 TYPE II dual superconductor (T1). Self-consistent Λ_UV=399 MeV gives M_Q=Λ_QCD. FAILURES: condensate −47%, f_pi −45% (cutoff too tight). Remaining: derive Λ_UV from DFC substrate. See `equations/bcs_gap_lambda_qcd.py`
-- **Literature reframing: quantum Hall → coupling quantization** — compute Chern number of kink fluctuation operator in D5 background. If gauge coupling = topological invariant, it's exact (no perturbative corrections). Fractional QHE: e/3 quasiparticles ↔ quark charges, filling 1/3 ↔ SU(3). See `foundations/literature_reframing.md` §D3
 - **Literature reframing: analog gravity dispersive corrections** — derive DFC dispersion relation near kink (ω ~ 1/ξ). Subluminal vs superluminal determines Hawking radiation robustness. Acoustic horizon → Planck-scale GR corrections testable form. See `foundations/literature_reframing.md` §A4
 - **Literature reframing: SSH/polyacetylene → fermion zero modes** — map full SSH toolkit (fractional charge, topological protection indices, bulk-boundary) to DFC. Quark e/3 charge from domain wall fractionalization? See `foundations/literature_reframing.md` §B3
 - **Literature reframing: Skyrme e_sk from V(φ)** — derive Skyrme stabilization coefficient from substrate self-interaction at D6. Independent proton mass route vs current Regge. See `foundations/literature_reframing.md` §B2
@@ -134,6 +129,11 @@
 - **AdS/CFT dual of DFC bulk** — C511: central charge c = 19.4. What 4D theory does the D4 AdS describe? Is it the substrate dynamics itself?
 - **Analog system comparison** — identify condensed matter systems with double-well potentials and kink solutions (polyacetylene, ferroelectrics, superfluid ³He). Do they exhibit emergent gauge-like behaviors at domain boundaries?
 - **Prove y(v) = exp(-(b₀+1/α)) from kink overlap** — C510: PT zero-mode overlap sech²×sech² computed. Effective separation d_eff = 7.9 kink widths (6.9 l_Pl). Self-consistent equation d = (E + ln(4(2d+1)))/2 reproduces to 1.4%. BOTTLENECK: derive D5-D7 depth separation from compression dynamics. See `equations/light_quark_mass_derivation.py` Part K
+- **Literature reframing: Helfrich membrane → gravity** — C534: DONE (14/14 PASS). Classical κ_class = 4.64 M_Pl² OVERSHOOTS 9.3×. Gap: derive reduction mechanism. See `equations/helfrich_membrane_gravity.py`
+- **Literature reframing: AdS/CFT dictionary** — C517: DONE (32/32 PASS). See `equations/adscft_topo_insulator_dfc.py` Part A
+- **Literature reframing: topological insulator classification** — C517: DONE (32/32 PASS). See `equations/adscft_topo_insulator_dfc.py` Part B
+- **Literature reframing: BCS gap → Λ_QCD** — C548: DONE (7/10 PASS). Gap: derive Λ_UV from substrate. See `equations/bcs_gap_lambda_qcd.py`
+- **Literature reframing: quantum Hall → coupling quantization** — C556: DONE (13/13 PASS). Gauge GROUP topological (Chern), COUPLING algebraic (BPS). See `equations/quantum_hall_coupling_quantization.py`
 
 ---
 
