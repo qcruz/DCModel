@@ -455,6 +455,8 @@ Three phases of prediction tests plus cosmological predictions have been compute
 | t_0 (age of universe) | 13.780 Gyr | 13.797 Gyr | −0.12% | T3 |
 | m_DM (dark matter mass) | 35.6 keV | >5.2 keV | WDM | T4 |
 | λ_fs (free-streaming) | 1.0 kpc | — | safe | T4 |
+| DM direct detection σ_SI | ~10⁻¹¹⁴ cm² | <10⁻⁴⁶ cm² | undetectable | T3 |
+| DM production T_RH | 3.2×10¹⁷ GeV | — | too high | T4 |
 | η_B (baryon asymmetry) | 1.1×10⁻⁷ | 6.1×10⁻¹⁰ | 184× | T4 |
 
 ---
@@ -520,7 +522,8 @@ The clearest tests:
 | m_c, m_s (old route) | ~15% low | 15% | — | Superseded by κ_q = πN_c/2 |
 | r_p (proton charge radius) | 0.809 fm | −3.8% | T2a | VMD pion cloud + SU(6) κ_p |
 | m_π (pion mass, DFC+lattice) | 136.9 MeV | −1.9% | T2a | With lattice condensate |
-| Δm(n−p) (mass difference) | 1.289 MeV | −0.4% | T2b | GL coefficient external |
+| Δm(n−p) (Cottingham) | 1.289 MeV | −0.4% | T2b | GL coefficient external |
+| Δm(n−p) (NJL route) | 1.508 MeV | +17% | T2b | NJL C_QCD=0.87 vs GL=0.50 (C552) |
 | Σ (proton spin, refined) | 0.320 | −3.2% (0.3σ) | T3 | I₀/I₁ at DFC R_B = √3·ξ |
 | g_A (axial coupling) | 4/π = 1.2732 | −0.19% | T2a | From V(φ) kink Yukawa |
 | κ (gravitational coupling) | 0.4972 | −0.57% | T1 | RS2 from V(φ₀) < 0 (C508) |
@@ -533,6 +536,8 @@ The clearest tests:
 | κ_class (bending rigidity) | 4.64 M_Pl² | 9.3× overshoot | T2a | Helfrich kink profile (C534) |
 | κ_GL (dual GL parameter) | 3/2 | Type II (T1) | T1 | Confinement = dual Meissner |
 | η_B (baryon asymmetry) | 1.1×10⁻⁷ | 184× overshoot | T4 | DFC leptogenesis (C546) |
+| Li-7/H (BBN) | 4.7×10⁻¹⁰ | 1.6×10⁻¹⁰ | +194% | T4 | Same as std BBN; 6 mechanisms ruled out (C555) |
+| JR Chern number C₁ | 1 | — | exact | T1 | Gauge group topological (C556) |
 
 ---
 

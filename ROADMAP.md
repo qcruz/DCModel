@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 556 (2026-09-09)
+**Last updated:** Cycle 557 (2026-09-09)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P5** (C556 — quantum Hall coupling quantization)
+- **Last tier worked: P6** (C557 — prediction scorecard update)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -139,7 +139,7 @@
 
 ## Priority 6 — Documentation
 
-- **Update prediction scorecard** — `educational/06_predictions.md`. C549: updated M0 T2a→T2b (2-loop), r_p T3→T2a (VMD pion cloud), diffuseness +7%→+2.8% (Fock), added η_B (T4), κ_GL=3/2 (T1). Remaining: quarkonium to hadron spectroscopy module
+- **Update prediction scorecard** — `educational/06_predictions.md`. C557: added Δm NJL route (+17%, T2b), DM direct detection (10⁻¹¹⁴ cm², T3), DM production T_RH (T4), Li-7 6-mechanism ruling (T4), JR Chern number (T1). Remaining: quarkonium to hadron spectroscopy module
 - **Create new educational modules** — continual check. Remaining:
   - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|²
   - **Electroweak precision tests module** — collect M_W, M_Z, G_F, sin²θ_W, Γ_Z results
