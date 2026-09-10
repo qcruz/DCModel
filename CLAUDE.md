@@ -204,6 +204,7 @@ Key milestones: α_em(0) gap remains T4 open (structural identity A−B = ln(1/�
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-09 | 555 | P4: bbn_predictions.py Part H — 6 Li-7 mechanisms ruled out, DFC shift +0.009% vs needed 66% | 87% | 73% | ~80% |
 | 2026-09-09 | 554 | P3: dark_matter_relic_abundance.py NEW (14/15) — grav freeze-in T_RH=3e17 too high, KZ 10⁷× over | 87% | 73% | ~80% |
 | 2026-09-09 | 553 | P2: CLAUDE.md comprehensive cleanup — 6 stale sections updated | 87% | 73% | ~80% |
 | 2026-09-09 | 552 | P1: proton_neutron_mass_difference.py Part G — NJL isovector charge, C_QCD=0.87 (+75% vs GL) | 87% | 73% | ~80% |

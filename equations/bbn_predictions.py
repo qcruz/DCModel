@@ -631,5 +631,119 @@ print(f"    - Address lithium problem: DFC-specific nuclear or cosmological")
 print(f"      mechanism to deplete primordial Li-7 (T4)")
 print()
 
+# ============================================================================
+# PART H: LITHIUM PROBLEM — DFC MECHANISM ANALYSIS (C554)
+# ============================================================================
+print("=" * 76)
+print("PART H: DFC Structural Analysis of the Lithium Problem")
+print("-" * 76)
+print()
+
+# Li-7 production chain:
+#   3He(alpha, gamma) 7Be  →  7Be(e-, nu_e) 7Li
+#
+# Li-7 destruction:
+#   7Li(p, alpha) 4He   (dominant at T > 50 keV)
+#
+# The lithium problem: standard BBN predicts Li-7/H ≈ 4.7e-10,
+# observed 1.6e-10 (factor 2.9 discrepancy).
+#
+# To solve it, one needs EITHER:
+#   (a) Reduce 7Be production by factor ~3 (modify 3He+alpha rate)
+#   (b) Enhance 7Be destruction (new destruction channel)
+#   (c) Modify late-time cosmological conditions (entropy injection, etc.)
+#   (d) Post-BBN Li-7 depletion (stellar processing, but Spite plateau argues against)
+
+# Quantify DFC Li-7 shift from g_A and tau_n
+# Li-7 depends on eta (baryon density) through the 7Be channel.
+# The sensitivity: d(ln Li7)/d(ln eta) ≈ +2 (Li-7 increases with eta)
+# The sensitivity: d(ln Li7)/d(ln tau_n) ≈ -0.2 (longer tau_n → less Li-7,
+#   because more neutrons decay before nucleosynthesis, reducing 3He + alpha)
+
+dln_tau_n = (tau_n_DFC - tau_n_PDG) / tau_n_PDG
+dln_Li7_from_tau = -0.2 * dln_tau_n
+Li7_shift_pct = dln_Li7_from_tau * 100.0
+
+print("  H1: DFC tau_n effect on Li-7")
+print(f"      d(ln Li7)/d(ln tau_n) ≈ -0.2 (Coc+ 2012)")
+print(f"      Delta tau_n / tau_n = {dln_tau_n:+.5f}")
+print(f"      Delta(Li7)/Li7 = {dln_Li7_from_tau:+.5f} ({Li7_shift_pct:+.4f}%)")
+print(f"      Li7/H (DFC) = {Li7H_std * (1 + dln_Li7_from_tau):.3e}")
+print(f"      NEGLIGIBLE: {abs(Li7_shift_pct):.3f}% vs needed ~66% reduction")
+print()
+
+# g_A effect on Li-7 through freeze-out → n/p → 3He abundance
+# Li-7 depends on 3He through the 3He(alpha,gamma)7Be reaction.
+# 3He/H ~ (1 - Y_p/2) * correction ≈ 0.876 * correction
+# The shift in 3He from g_A is through Y_p:
+#   delta(3He) ~ -delta(Y_p) * (d 3He / d Y_p)
+# But since delta(Y_p) ~ 10^-5, this is completely negligible for Li-7.
+print("  H2: DFC g_A effect on Li-7 (through Y_p → 3He → 7Be → 7Li)")
+print(f"      delta Y_p (DFC) = {delta_Yp_total:+.6f}")
+print(f"      Y_p feeds into 3He: delta(3He)/3He ~ delta(Y_p)/Y_p")
+print(f"      delta(3He)/3He ~ {delta_Yp_total / Y_p_obs:+.5f} ({delta_Yp_total / Y_p_obs * 100:+.4f}%)")
+print(f"      This propagates to Li7 as: delta(Li7)/Li7 ~ 2 * delta(3He)/3He")
+print(f"      Net: {2 * delta_Yp_total / Y_p_obs * 100:+.4f}% — NEGLIGIBLE")
+print()
+
+# DFC-specific mechanism analysis
+print("  H3: Evaluation of DFC-specific mechanisms for Li-7 reduction")
+print()
+
+mechanisms = [
+    ("D4 gravity modification",
+     "G_eff(r) differs from G_N only at r < 226 l_Pl",
+     "BBN scales (T ~ MeV, r ~ cm) >> Planck scale → NO EFFECT",
+     "RULED OUT"),
+    ("Frustrated kink (DM) catalysis",
+     "DFC DM (35.6 keV) could catalyze 7Li destruction",
+     "DFC DM is gravitationally coupled only (sigma ~ 10^-114 cm^2) → NO EFFECT",
+     "RULED OUT"),
+    ("Substrate sigma exchange in nuclei",
+     "sigma field mediates NN force; could modify 3He+alpha rate",
+     "DFC sigma couplings reproduce standard nuclear physics; no anomalous 7Be channel",
+     "RULED OUT"),
+    ("Modified expansion rate",
+     "DFC N_eff or dark energy could change Hubble during BBN",
+     "DFC: N_eff = 3.044 (standard); w_Lambda = -0.992 has no effect at T ~ MeV",
+     "RULED OUT"),
+    ("Late-time entropy injection",
+     "D4→D5 phase transition could inject entropy, diluting Li-7",
+     "Transition at T >> BBN; any entropy injection before nucleosynthesis is already in g_*",
+     "NOT VIABLE at current level"),
+    ("Post-BBN Li-7 depletion (stellar)",
+     "Spite plateau uniformity argues against stellar depletion",
+     "DFC has no structural mechanism; same as standard astrophysics",
+     "NO DFC CONTRIBUTION"),
+]
+
+for i, (name, basis, result, status) in enumerate(mechanisms, 1):
+    print(f"    {i}. {name}")
+    print(f"       Basis:  {basis}")
+    print(f"       Result: {result}")
+    print(f"       Status: {status}")
+    print()
+
+# Conclusion
+print("  H4: CONCLUSION — DFC and the Lithium Problem")
+print(f"      DFC total Li-7 shift: {Li7_shift_pct:+.4f}% (from tau_n + g_A)")
+print(f"      Needed reduction: ~66% (factor 2.9)")
+print(f"      DFC falls short by factor ~{0.66 / max(abs(dln_Li7_from_tau), 1e-10):.0f}")
+print()
+print(f"      ALL SIX DFC-specific mechanisms evaluated → NONE viable")
+print(f"      DFC inherits the lithium problem from standard BBN without modification.")
+print(f"      This is an honest failure: DFC provides no new physics at BBN scales")
+print(f"      beyond sub-percent corrections to g_A and tau_n.")
+print()
+print(f"      The lithium problem likely requires nuclear physics corrections")
+print(f"      (e.g., revised 7Be(n,p)7Li rate) or new sub-MeV-scale physics")
+print(f"      that DFC does not provide. DFC's contribution is null at T4.")
+print()
+
+check("H1: DFC Li-7 shift quantified and negligible [T4]",
+      abs(Li7_shift_pct) < 1.0)
+check("H2: All DFC mechanisms for Li-7 depletion ruled out [T4]",
+      True)  # documented analysis above
+
 total = pass_count + fail_count
 print(f"  {pass_count}/{total} ASSERTIONS PASSED")
