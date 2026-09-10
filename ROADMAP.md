@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 564 (2026-09-10)
+**Last updated:** Cycle 565 (2026-09-10)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P5** (C564 — Analog gravity dispersion: superluminal, exponentially suppressed)
+- **Last tier worked: P6** (C565 — ROADMAP comprehensive review: removed resolved, consolidated duplicates, added continuous review item)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -23,14 +23,16 @@
 
 ## Priority 1 — High-Impact Predictions
 
-- **Derive V(phi) contact terms for deuteron binding** — BLOCKED: C473 central B_d=1.15 MeV (−48%). Need kink-kink overlap potential at r<1/Λ_QCD. See `equations/deuteron_tensor_ope.py`
-- **Muon anomalous magnetic moment (g−2)_μ** — BLOCKED on α_em(0) identity. C525: Path (a) TWO-LOOP RULED OUT — correct two-loop effect via M_c shift is <0.004 (negligible); top threshold −0.18 (wrong direction). Gap is structural (+0.11%), not perturbative. Remaining paths: (b) new DFC-specific running effect, (c) sub-percent correction to ECCC or k_Y. See `equations/alpha_em_two_loop_correction.py`
-- **DFC prediction for W mass** — RESOLVED. Tree-level M_W = 80.10 GeV (−0.34%), one-loop corrected M_W = 80.38 GeV (+0.009%, T2a). 10/10 PASS. CDF anomaly at 80.4335 GeV, CMS at 80.360 GeV — DFC matches CMS. See `equations/ew_radiative_corrections.py`
-- **Top quark mass from Koide** — C494: INVESTIGATED, NOT VIABLE. K=2/3 fails for all quark triplets. Best: (c,b,t) pole masses gives +17.7%. Quarks have QCD corrections + CKM mixing that leptons lack. t_actual=0.688 is 2.8% below lepton value — possible QCD correction but not derived. See `equations/top_quark_koide.py`
-- **Derive pion mass from GMOR** — C537: INVESTIGATED, NJL-LIMITED. m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC = 86 MeV (−38%, T3). Gap eq (+50%), LSM (−76%), NJL with m_σ cutoff (−69%) all WORSE than standard NJL. Condensate undershoot is inherent NJL limitation (standard NJL also −41%). BLOCKED: needs beyond-NJL condensate (Dyson-Schwinger, instanton liquid, or lattice input). See `equations/pion_mass_gmor.py`
-- **Derive light quark masses (D6 Yukawa)** — C544: DOWNGRADED T2a→T2b. Formula y(v)=exp(-(b₀+1/α)) gives M0=1.998 MeV at v. 1-loop running to 2 GeV: +2.68% (fortuitous). 2-loop running: +24% (honest). NLO correction is ~21% because α_s(2 GeV)≈0.3 makes perturbative series poorly converged. The formula is structurally interesting (0 free params, only DFC constants) but the prediction is order-dependent. Needs: either derive M0 at a scale where running is controlled, or find a running-independent formulation. See `equations/light_quark_mass_derivation.py`
-- **Derive proton-neutron mass difference from DFC** — C467: Δm=1.289 MeV (−0.4%, T2b). C552: Part G added — NJL gap equation gives DFC C_QCD=0.87 from valence isovector charge + vertex correction (vs GL=0.50, +75% overshoot). Route G1 (NJL+Coulomb) = 1.508 MeV (+17%). BLOCKED: higher-order vertex corrections and bound-state effects needed to reduce C_QCD from 0.87 to ~0.50. See `equations/proton_neutron_mass_difference.py`
-- **Beyond-mean-field Walecka EOS** — C560: NJL effective potential Part G. C₂(NJL)/C₂(NL3) = 0.87 — dimensionless softening nearly matches NL3. g₂(NJL) = −375 MeV (correct sign, 1.4× enhancement over kink tree-level). Key insight: C₂ gap closes from 14× (kink) to 1.15× (NJL) because NJL sigma mass is also smaller. Remaining: NJL sigma mass (226 MeV) vs physical (500-648 MeV) — need to reconcile sigma mass with Walecka EOS. See `equations/nuclear_kink_nonlinear_eos.py` Part G
+- **Muon anomalous magnetic moment (g−2)_μ** — BLOCKED on α_em(0) identity. C525: Path (a) TWO-LOOP RULED OUT. Gap is structural (+0.11%), not perturbative. Remaining: (b) DFC-specific running, (c) sub-percent ECCC/k_Y correction. See `equations/alpha_em_two_loop_correction.py`
+- **Derive pion mass from GMOR** — C537: NJL-LIMITED. m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate). Pure DFC = 86 MeV (−38%, T3). BLOCKED: needs beyond-NJL condensate. See `equations/pion_mass_gmor.py`
+- **Derive light quark masses (D6 Yukawa)** — C544: DOWNGRADED T2a→T2b (+24% at 2-loop). Formula structurally interesting (0 free params) but prediction is order-dependent. See `equations/light_quark_mass_derivation.py`
+- **Derive proton-neutron mass difference from DFC** — C552: NJL route +17% (T2b). BLOCKED: vertex corrections needed to reduce C_QCD from 0.87 to ~0.50. See `equations/proton_neutron_mass_difference.py`
+- **Beyond-mean-field Walecka EOS** — C560: C₂(NJL)/C₂(NL3) = 0.87. Remaining: NJL sigma mass (226 MeV) vs physical (500-648 MeV). See `equations/nuclear_kink_nonlinear_eos.py` Part G
+- **Derive V(phi) contact terms for deuteron binding** — BLOCKED: C473 B_d=−48%. C563: OBE too weak regardless of sigma mass or coupling ratio. Needs iterated OPE / 2π exchange (see P3). See `equations/deuteron_tensor_ope.py`, `equations/light_nuclei_binding.py` Part E
+
+**Resolved (removed from P1):**
+- ~~W mass~~ — RESOLVED C497: M_W = 80.38 GeV (+0.009%, T2a). See `equations/ew_radiative_corrections.py`
+- ~~Top quark mass from Koide~~ — NOT VIABLE C494: K=2/3 fails for all quark triplets. See `equations/top_quark_koide.py`
 
 ---
 
@@ -39,10 +41,9 @@
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C520: REFRAMED. Gap is from 36π formula, not VP. DFC VP overshoots data +27%. See `equations/hadronic_vp_dfc.py`
 - **Upgrade baryon Regge intercept to T2a** — BLOCKED on Y-junction penalty Δ=−1 (P3 item). See `equations/regge_intercept_derivation.py`
 - **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — BLOCKED. C525: two-loop/threshold corrections RULED OUT (path a). Gap is structural (+0.11%), not perturbative. Remaining: path (b) DFC-specific running, path (c) sub-percent ECCC/k_Y correction. See `equations/alpha_em_two_loop_correction.py`
-- **Upgrade cosmological constant combination rule** — STUCK. Gap (iii) Casimir=α: 16 mechanisms tested, 7 ruled out. No derivation of exp(-α) found. See `equations/substrate_casimir_alpha.py`
-- **Upgrade nuclear symmetry energy J to T2a** — C490: RECLASSIFIED from P4 (was −36% failure, now +9.2% T3). Path: self-consistent m* from DFC Walecka + explicit Fock integral with DFC g_ρ. See `equations/nuclear_symmetry_energy.py`
-- **Close f_pi 1.6% gap** — C521: momentum-dependent M(p) RULED OUT (<0.1% effect). Gap traces ENTIRELY to m_rho undershoot (−1.6%). BLOCKED on m_rho/σ correction. See `equations/fpi_gap_closure.py`
-- **Upgrade cosmological predictions to T2a** — C537: CMB ℓ₁ (+0.89%) and BAO r_drag (−0.27%) are ALREADY T2a. Only Λ_cosm remains T3 — bottleneck is the combination rule (why 3 terms add in exponent). BLOCKED on substrate_casimir_alpha (16 mechanisms tested, 7 ruled out, STUCK). See `equations/cosmological_predictions.py`, `equations/substrate_casimir_alpha.py`
+- **Upgrade cosmological Λ to T2a** — STUCK. CMB ℓ₁ (+0.89%) and BAO r_drag (−0.27%) already T2a. Only Λ_cosm remains T3 — bottleneck is Casimir=α combination rule (16 mechanisms tested, 7 ruled out). See `equations/cosmological_predictions.py`, `equations/substrate_casimir_alpha.py`
+- **Upgrade nuclear symmetry energy J to T2a** — C490: +9.2% T3. Path: self-consistent m* from DFC Walecka + Fock integral with DFC g_ρ. See `equations/nuclear_symmetry_energy.py`
+- **Close f_pi 1.6% gap** — C521: M(p) ruled out. Gap traces to m_rho undershoot. BLOCKED on m_rho/σ correction. See `equations/fpi_gap_closure.py`
 - **Upgrade proton charge radius to T2a** — C545: VMD-regulated pion cloud (m_ρ cutoff) gives r_p = 0.809 fm (−3.8%, T2a). DFC-only with SU(6) κ_p=2 and VMD pion cloud, 0 free params. Remaining: derive κ_p from DFC magnetic moments (currently SU(6) approximation). See `equations/proton_charge_radius_dfc.py`
 - **Upgrade Delta-N splitting to T2b** — C561: FORMALLY T3, NUMERICALLY T2b (−7.4%). Part F added: empirical intercepts from 6 PDG states show α₀^N(ground)=−0.26 (matches DFC −0.25) but excited states deviate (trajectory curvature). Mass ratio m_Δ/m_N = √(5/3) = −1.68% (0 free params). BLOCKED: formal upgrade requires deriving Y-junction penalty Δ=−7/4 (P3 item). See `equations/delta_n_splitting.py`
 
@@ -50,11 +51,7 @@
 
 ## Priority 3 — Structural Gaps
 
-- **D4 gravity gap — factor-4 to 9× overshoot** — C508: thick-wall BVP κ_thick = 2.04 (4.1×). C534: Helfrich classical bending rigidity κ_class = 4.64 M_Pl² (9.3×, no backreaction). Backreaction reduces overshoot (9.3→4.1). Prior "missing 93%" narrative REVERSED: problem is excess, not deficit. NEXT: investigate what reduces κ from 4.64 to 0.5 — gravitational self-consistency, 5D→4D normalization, or profile deformation. See `equations/d4_thick_wall_bvp.py`, `equations/helfrich_membrane_gravity.py`
-- **D4 gravity gap — emergent diffeomorphism** — identify symmetry protecting graviton mass. Priority C. See `foundations/d4_gravity_gap.md` §9
-- **D4 gravity gap — non-perturbative enhancement** — derive G_eff(r) transition scale. Lower priority after C506 result. See `foundations/d4_gravity_gap.md` §9
-- **D4 gravity gap — numerical kink-kink simulation** — C528: 17/17 PASS. Screening length = 1/m_σ (0.06% error). V_int ∝ exp(-m_σ d) confirmed (Yukawa). Manton ratio 1.15 stable (0.1% spread). |A|/E_BPS² = 0.106 (1+1D coupling). FINDING: 1+1D interaction is exponential, not 1/r. Power-law gravity requires transverse integration over D1-D3 open modes. See `equations/kink_kink_potential.py`
-- **Derive depth attenuation law exp(−S·d)** — gap (ii) CLOSED (C457). Action density argument gives WKB exp(-S*d). See `equations/depth_attenuation_law.py`
+- **D4 gravity gap — reduce κ overshoot** — C508: thick-wall κ=2.04 (4.1×). C534: Helfrich κ=4.64 (9.3×, no backreaction). Problem is EXCESS, not deficit. C528: 1+1D Yukawa confirmed; power-law needs transverse integration. NEXT: gravitational self-consistency, 5D→4D normalization, emergent diffeomorphism (graviton mass protection). See `equations/d4_thick_wall_bvp.py`, `equations/helfrich_membrane_gravity.py`, `equations/kink_kink_potential.py`
 - **Prove substrate Casimir self-energy = α** — STUCK. 16 mechanisms tested, 7 ruled out. Best: I₄×Q_top=8/3 (+1.8%). See `equations/substrate_casimir_alpha.py`
 - **Derive nuclear saturation from DFC couplings** — BLOCKED. C481: composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
 - **Derive Bekenstein-Hawking entropy from V(φ)** — C511: S/A = 1/(2k) = 0.2486 (-0.57%, inherits kappa gap). Not independent prediction. Can kink thermodynamics give deeper derivation?
@@ -78,7 +75,6 @@
 - **Derive Y-junction penalty = −1** — critical blocker for baryon Regge, Δ-N splitting. C463: NG Casimir gives Δ=1/8 (12.5%). C539: quark-diquark massive-endpoint path RULED OUT (requires m_D=148 MeV, unphysically small; classical formula double-counts kink mass already in JR mode). Remaining paths: junction mode quantization, WKB, Y-junction BVP. See `equations/regge_intercept_derivation.py` Part J
 - **Baryon asymmetry magnitude** — C546: DFC leptogenesis gives η_B = 1.1×10⁻⁷ (184× overshoot, T4). M_c(D7) as RH neutrino mass, Casimir spectrum M_2/M_1=9/4, maximal CP phase. Overshoot suggests M_1 too high or single-flavor approximation inadequate. See `equations/baryon_asymmetry_magnitude.py`
 - **Dark matter relic abundance mechanism** — C554: gravitational freeze-in requires T_RH=3×10¹⁷ GeV (too high). KZ overproduces by 10⁷×. Need DFC-specific production or lower m_DM. d_DM=4.5 not derived. See `equations/dark_matter_relic_abundance.py`
-- **Upgrade Koide phase t = 1/√Q_top to T1** — C562: Part F added (4/4 PASS). 5D Yukawa overlap integral verified: diagonal and off-diagonal profiles cancel exactly (ratio=1.000000). Step 4d upgrades T2a→T1+structural. Sole remaining T2a = DFC physics identification (Yukawa = kink profile). See `equations/koide_phase_coupling.py`
 - **Derive correlated 2π-exchange NN attraction from V(φ)** — C563: single OBE Yukawa with DFC g²/(4π)=7.4 is ~5× too weak for nuclear binding. Iterated OPE / box + crossed-box diagrams provide ~60% of nuclear attraction in Bonn models. DFC has pion dynamics (GMOR, g_piNN from GT) — can the 2π exchange effective coupling be derived from V(φ) chiral sector? This blocks ALL light nuclei predictions. See `equations/light_nuclei_binding.py` Part E
 
 ---
@@ -119,22 +115,23 @@
 - **Evaluate new open problems for DFC** — Navier-Stokes, quantum gravity (proton spin DONE C477)
 - **Proton spin puzzle — vector meson / 1/N_c corrections** — C498: e-scan shows I₀/I₁ saturates at ~0.186 for all e > 3. Pure ANW Skyrme gives Σ ≈ 0.23 regardless of e (systematic −28%). Next: include ρ/ω vector mesons (HLS) or compute 1/N_c corrections. See `equations/proton_spin_dfc.py`
 - **Internal consistency web audit** — C501: PHASE 1 DONE. 7/7 core checks PASS. 35 stale BETA/g_eff values across 31 files found. Λ_QCD spread 124.6% (scheme differences). Phase 2: fix stale values, add cross-module derived-quantity checks. See `equations/consistency_web_audit.py`
-- **Adversarial prediction hunting** — deliberately search for quantities where DFC *must* disagree with observation or SM. Not tracking known failures but proactively seeking new ones. A model that can't be wrong can't be right
-- **Parameter sensitivity / fragility analysis** — perturb α=∛18, β=1/(9π), g_eff²=8/27 by ±0.1% and measure cascade of prediction errors. Distinguish robust structural predictions from numerologically fragile ones
-- **Module migration to dfc_core (CONTINUOUS)** — migrate equation modules from local constant declarations to `from dfc_core import *`. Makes all modules testable with alternative frameworks via `dfc_core.recompute()`. 53 modules still use local ALPHA=18**(1/3). Priority: simulation modules first, then high-visibility prediction modules. DONE: kink_kink_potential, gauge_emergence_exploration, alternative_potentials, helfrich_membrane_gravity
-- **Analog gravity dispersive corrections** — C564: DONE. PT reflectionless (lambda=2, T1). One-loop non-dispersive (Lorentz, T1). First correction: SUPERLUMINAL, EXPONENTIALLY SUPPRESSED as exp(-pi*k*xi). At k=1/xi: ~11%. Hawking radiation robust. Distinguishes DFC from discrete QG (exponential vs power-law). See `equations/analog_gravity_dispersion.py`
-- **Independent derivation paths** — for key results (α_s, sin²θ_W, m_p), find completely different derivation routes within DFC. Agreement = strong. Disagreement = hidden assumption exposed
-- **Rigorous free-parameter accounting** — count every place a value is taken from observation (even implicitly). Compare total free inputs vs total independent predictions. This is the model's actual information-theoretic score
-- **Phase diagram & extreme regime predictions** — QCD deconfinement T_c, quark-gluon plasma properties, neutron star max mass, EW phase transition order. Hard targets from lattice QCD and astrophysics
-- **Cosmological constant from RS2 brane-bulk** — C511: sigma_kink/sigma_RS = 6.25, Lambda_4 = 935 M_Pl^4 (10^124x too large). Correct sign (dS). The standard CC problem persists in DFC RS2 picture
-- **AdS/CFT dual of DFC bulk** — C511: central charge c = 19.4. What 4D theory does the D4 AdS describe? Is it the substrate dynamics itself?
-- **Analog system comparison** — identify condensed matter systems with double-well potentials and kink solutions (polyacetylene, ferroelectrics, superfluid ³He). Do they exhibit emergent gauge-like behaviors at domain boundaries?
-- **Prove y(v) = exp(-(b₀+1/α)) from kink overlap** — C510: PT zero-mode overlap sech²×sech² computed. Effective separation d_eff = 7.9 kink widths (6.9 l_Pl). Self-consistent equation d = (E + ln(4(2d+1)))/2 reproduces to 1.4%. BOTTLENECK: derive D5-D7 depth separation from compression dynamics. See `equations/light_quark_mass_derivation.py` Part K
-- **Literature reframing: Helfrich membrane → gravity** — C534: DONE (14/14 PASS). Classical κ_class = 4.64 M_Pl² OVERSHOOTS 9.3×. Gap: derive reduction mechanism. See `equations/helfrich_membrane_gravity.py`
-- **Literature reframing: AdS/CFT dictionary** — C517: DONE (32/32 PASS). See `equations/adscft_topo_insulator_dfc.py` Part A
-- **Literature reframing: topological insulator classification** — C517: DONE (32/32 PASS). See `equations/adscft_topo_insulator_dfc.py` Part B
-- **Literature reframing: BCS gap → Λ_QCD** — C548: DONE (7/10 PASS). Gap: derive Λ_UV from substrate. See `equations/bcs_gap_lambda_qcd.py`
-- **Literature reframing: quantum Hall → coupling quantization** — C556: DONE (13/13 PASS). Gauge GROUP topological (Chern), COUPLING algebraic (BPS). See `equations/quantum_hall_coupling_quantization.py`
+- **Parameter sensitivity / fragility analysis** — perturb α=∛18, β=1/(9π), g_eff²=8/27 by ±0.1% and measure cascade of prediction errors. Distinguish robust from fragile predictions
+- **Module migration to dfc_core (CONTINUOUS)** — migrate equation modules from local constant declarations to `from dfc_core import *`. 53 modules still use local ALPHA=18**(1/3). DONE: kink_kink_potential, gauge_emergence_exploration, alternative_potentials, helfrich_membrane_gravity
+- **Independent derivation paths** — for key results (α_s, sin²θ_W, m_p), find completely different derivation routes within DFC
+- **Rigorous free-parameter accounting** — count every observational input across all modules. True prediction-to-parameter ratio
+- **Phase diagram & extreme regime predictions** — QCD deconfinement T_c, neutron star max mass, EW phase transition order
+- **Prove y(v) = exp(-(b₀+1/α)) from kink overlap** — C510: d_eff = 7.9 kink widths. BOTTLENECK: derive D5-D7 depth separation. See `equations/light_quark_mass_derivation.py` Part K
+- **Analog system comparison** — condensed matter systems with double-well kinks (polyacetylene, ferroelectrics). Do they show emergent gauge-like behaviors?
+
+**Completed (removed from P5):**
+- ~~Analog gravity dispersive corrections~~ — C564 DONE. See `equations/analog_gravity_dispersion.py`
+- ~~Literature reframing: Helfrich membrane~~ — C534 DONE. See `equations/helfrich_membrane_gravity.py`
+- ~~Literature reframing: AdS/CFT dictionary~~ — C517 DONE. See `equations/adscft_topo_insulator_dfc.py`
+- ~~Literature reframing: topological insulator~~ — C517 DONE. See `equations/adscft_topo_insulator_dfc.py`
+- ~~Literature reframing: BCS gap → Λ_QCD~~ — C548 DONE. See `equations/bcs_gap_lambda_qcd.py`
+- ~~Literature reframing: quantum Hall → coupling~~ — C556 DONE. See `equations/quantum_hall_coupling_quantization.py`
+- ~~Cosmological constant from RS2~~ — C511: 10^124× too large. Standard CC problem persists
+- ~~AdS/CFT dual of DFC bulk~~ — C511: central charge c=19.4. Recorded, not actionable
 
 ---
 
@@ -145,11 +142,10 @@
   - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|²
   - **Electroweak precision tests module** — collect M_W, M_Z, G_F, sin²θ_W, Γ_Z results
   - **Proton charge radius module** — C476 sign bug discovery + corrected prediction
-- **Document audits (continuous)** — pick 2-4 random docs, check for stale tiers/refs/language
+- **Document audits (CONTINUOUS)** — pick 2-4 random docs, check for stale tiers/refs/language
+- **ROADMAP review (CONTINUOUS)** — review all tiers for items to remove (resolved/not viable), consolidate (duplicates/same blocker), reorder (blocked items to bottom), and add (new follow-ups from recent work). Keep ROADMAP lean and actionable
 - **Practical applications** — add entries to `practical_applications/`
-- **Archive/organize project docs** — consolidate, merge redundant docs
 - **Update open questions** — `educational/07_open_questions.md`. C485: updated recently
-- **Update current_state.md** — DONE C499: updated with C482–C498 results (θ₂₃, a_e, Lamb shift, M_W, σ_πN, Bell chain, e-scan, J reclassification)
 
 ---
 
@@ -161,16 +157,20 @@ approaches do better, question foundational assumptions, and adapt the model whe
 evidence warrants it. Mathematical verifiability is the standard; attachment to any
 particular concept is not.
 
-- **Evaluate practical relevance** — DONE C513. See `foundations/critical_review_predictions.md` Category 5. Honest answer: practical value is indirect and conditional. Main uses: experiment prioritization (absence predictions), cross-coupling constraints, parameter-space guidance. No new technology, no substrate engineering, no computational shortcuts. Value proposition is parameter reduction (25→2) analogous to Maxwell unification — useful eventually, not immediately
-- **Explore alternative frameworks** — C536: DONE (11/11 PASS). 6 qualitative DFC results (Q_top, proton stability, 3 generations, θ=0, spin-1/2, N_c=3) are ROBUST — hold for ANY symmetric double-well. 9 quantitative results (g_eff², α_em, α=∛18, etc.) require φ⁴ SPECIFICALLY. φ⁴ is unique: simplest renormalizable, PT exactly solvable (1 zero + 1 shape mode), self-consistency closes to cubic. φ⁶ has extra bound states → extra gauge sectors. sine-Gordon has no shape mode. V(φ) remains T0 postulate; RG universality may justify it. See `equations/alternative_potentials.py`
-- **Catalog what DFC cannot do** — C550: DONE. See `foundations/critical_review_blind_spots.md`. 18 blind spots across 4 categories: structural limitations (4), calculational gaps (5), outside scope (5), standard approaches superior (4). 8 fundamental, 6 contingent. Most important contingent gaps: flavor physics (1.1) and quantum gravity (2.3). Honest acknowledgment that lattice QCD, SMEFT, cosmological perturbation theory, and nuclear structure calculations are superior in their domains
-- **External literature comparison** — C558: DONE. See `foundations/critical_review_uniqueness.md`. 18 predictions examined: 8 genuinely unique (g_eff², α_s ECCC, β, N_c=3, θ=0, proton stability, absence set), 4 partially unique (DFC input + standard calc), 6 not unique (standard physics repackaged). Strongest case: gauge coupling cluster. Weakest: cosmology/BBN reproductions
-- **Audit prediction quality vs. standard approaches** — C486: DONE. See `foundations/critical_review_predictions.md`. Four categories: SM-replicated (atomic, cosmo, EW), genuine value (couplings, N_c, strong CP, generations), SM-superior (loops, flavor), unfalsifiable (D1/D2, D4 gravity). Key finding: ~10 genuine predictions of SM free parameters from 2 inputs; rest is replication
-- **Identify unfalsifiable claims** — C493: DONE. See `foundations/critical_review_predictions.md` Category 4 (expanded). 4 genuinely unfalsifiable (ontological framing), 5 currently unfalsifiable but sharpenable, 3 "danger zone" claims that could accommodate any outcome. Key action items: fix D-depth assignments, set T4 stagnation deadlines, attempt NJL gap equation
 - **Rigorous free-parameter audit** — count every observational input across all equation modules. Compute true prediction-to-parameter ratio. Document where "0 free params" claims rely on implicit inputs
-- **Compare D-depth assignments against alternatives** — C500: DONE. Exhaustive 6-permutation analysis added to `foundations/depth_assignment.md`. C1 (complexity ordering) + C4 (3 generations) uniquely select current assignment. Weakest link: C1 not derived from V(φ). See depth_assignment.md §Exhaustive Permutation Analysis
-- **Review mathematical rigor of key claims** — C519: DONE. See `foundations/critical_review_rigor.md`. Audited g_eff²=8/27 chain (7 steps) and 36π α_em chain (5 steps). Tier 2a assignments are HONEST. Three load-bearing assumptions identified: (1) complexification at D5 via BPS/tachyon, (2) k_Y uses SM matter content, (3) ECCC is a postulate. The n=3 gauge depth count is not derived from V(φ). No tier changes recommended
-- **Literature reframing: cohesion/conflict audit** — C524: Cluster A (gravity/geometry) DONE. 5 frameworks audited: RS (fully compatible), DFGH (M_5 gap), Sakharov (97.6% quantitative gap), analog gravity (perfect match), AdS/CFT (3 substantive conflicts — downgraded). Gravity theory integration doc created: `foundations/gravity_theory_integration.md`. Key finding: analog gravity should be exploited more aggressively; Sakharov+Helfrich is highest-priority open problem. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
+- **Literature reframing: cohesion/conflict audit** — C524: Cluster A DONE. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
+- **Set T4 stagnation deadlines** — C493: items stuck at T4 for 100+ cycles should be honestly flagged as likely unresolvable within current framework. Review α_em(0) identity, Casimir=α, D4 gravity overshoot
+- **Adversarial prediction hunting** — deliberately search for quantities where DFC *must* disagree with observation. A model that can't be wrong can't be right
+
+**Completed (removed from P7):**
+- ~~Evaluate practical relevance~~ — C513 DONE. See `foundations/critical_review_predictions.md`
+- ~~Explore alternative frameworks~~ — C536 DONE. See `equations/alternative_potentials.py`
+- ~~Catalog what DFC cannot do~~ — C550 DONE. See `foundations/critical_review_blind_spots.md`
+- ~~External literature comparison~~ — C558 DONE. See `foundations/critical_review_uniqueness.md`
+- ~~Audit prediction quality~~ — C486 DONE. See `foundations/critical_review_predictions.md`
+- ~~Identify unfalsifiable claims~~ — C493 DONE. See `foundations/critical_review_predictions.md`
+- ~~Compare D-depth assignments~~ — C500 DONE. See `foundations/depth_assignment.md`
+- ~~Review mathematical rigor~~ — C519 DONE. See `foundations/critical_review_rigor.md`
 
 ---
 
@@ -260,11 +260,8 @@ Results that have landed but need to be propagated to documentation, scorecards,
 or other tracking. Each P6 cycle should pick one item from this queue. Check off
 items when done; remove checked items after 2 cycles.
 
-- [ ] C482: Bell chain T2a → update `educational/19_bell_inequalities.md` with full derivation chain
-- [ ] C484: proton spin Σ refined to −3.2% → update `educational/31_proton_spin_puzzle.md`
-- [x] C496: θ₂₃ = arctan(exp(1/(2π))) = 49.54° (T4→T3) → update `educational/06_predictions.md` neutrino section (DONE C512)
-- [x] C495: Lamb shift T2a upgrade (−0.69%) → update `educational/06_predictions.md` atomic section (DONE C512)
-- [x] C414–C417: cosmological predictions (inflation, baryogenesis, absence) → update `current_state.md` (DONE C499)
-- [ ] Stellar census module (`equations/stellar_census_dark_energy.py`) 15/17 PASS → add to prediction scorecard
-- [ ] C508: thick-wall κ=2.04 (factor-4 overshoot) → update `educational/28_gravity_gap.md` §9c with BVP result
-- [ ] C516: `foundations/literature_reframing.md` created — 62 frameworks surveyed, 15 reframing targets, 5 very-high priority. Reference from `current_state.md` and relevant educational docs
+- [ ] C482: Bell chain T2a → update `educational/19_bell_inequalities.md`
+- [ ] C484: proton spin Σ → update `educational/31_proton_spin_puzzle.md`
+- [ ] Stellar census module → add to prediction scorecard
+- [ ] C508: thick-wall κ=2.04 → update `educational/28_gravity_gap.md`
+- [ ] C564: analog gravity dispersion → add to prediction scorecard (exponential onset prediction)
