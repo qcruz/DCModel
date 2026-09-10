@@ -204,6 +204,7 @@ Key milestones: α_em(0) gap remains T4 open (structural identity A−B = ln(1/�
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-10 | 567 | P8: multi_kink_gas_dynamics.py NEW (9/9) — 4 KA pairs annihilate, pair creation from radiation, Q=0 exact, virial 1.25 | 87% | 73% | ~80% |
 | 2026-09-10 | 566 | P7: free_parameter_audit.py NEW (5/6) — 15 T2a predictions, 4 DFC geometric params, Ratio 3.0; only g_eff²=8/27 truly 0-param | 87% | 73% | ~80% |
 | 2026-09-10 | 565 | P6: ROADMAP comprehensive review — removed 12 resolved/done items, consolidated 7 duplicates, added continuous review item | 87% | 73% | ~80% |
 | 2026-09-10 | 564 | P5: analog_gravity_dispersion.py NEW (7/9) — PT reflectionless T1, superluminal exp(-πkξ), Hawking robust | 87% | 73% | ~80% |
