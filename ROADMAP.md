@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 559 (2026-09-09)
+**Last updated:** Cycle 560 (2026-09-09)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P8** (C559 — tachyonic complexification simulation)
+- **Last tier worked: P1** (C560 — NJL effective potential → Walecka couplings)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -23,7 +23,6 @@
 
 ## Priority 1 — High-Impact Predictions
 
-- **Beyond-mean-field Walecka EOS** — BLOCKED: C479 kink-background g₂ correct sign but 14× too weak. Need loop/resonance enhancement or NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
 - **Derive V(phi) contact terms for deuteron binding** — BLOCKED: C473 central B_d=1.15 MeV (−48%). Need kink-kink overlap potential at r<1/Λ_QCD. See `equations/deuteron_tensor_ope.py`
 - **Muon anomalous magnetic moment (g−2)_μ** — BLOCKED on α_em(0) identity. C525: Path (a) TWO-LOOP RULED OUT — correct two-loop effect via M_c shift is <0.004 (negligible); top threshold −0.18 (wrong direction). Gap is structural (+0.11%), not perturbative. Remaining paths: (b) new DFC-specific running effect, (c) sub-percent correction to ECCC or k_Y. See `equations/alpha_em_two_loop_correction.py`
 - **DFC prediction for W mass** — RESOLVED. Tree-level M_W = 80.10 GeV (−0.34%), one-loop corrected M_W = 80.38 GeV (+0.009%, T2a). 10/10 PASS. CDF anomaly at 80.4335 GeV, CMS at 80.360 GeV — DFC matches CMS. See `equations/ew_radiative_corrections.py`
@@ -31,6 +30,7 @@
 - **Derive pion mass from GMOR** — C537: INVESTIGATED, NJL-LIMITED. m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate + isospin). Pure DFC = 86 MeV (−38%, T3). Gap eq (+50%), LSM (−76%), NJL with m_σ cutoff (−69%) all WORSE than standard NJL. Condensate undershoot is inherent NJL limitation (standard NJL also −41%). BLOCKED: needs beyond-NJL condensate (Dyson-Schwinger, instanton liquid, or lattice input). See `equations/pion_mass_gmor.py`
 - **Derive light quark masses (D6 Yukawa)** — C544: DOWNGRADED T2a→T2b. Formula y(v)=exp(-(b₀+1/α)) gives M0=1.998 MeV at v. 1-loop running to 2 GeV: +2.68% (fortuitous). 2-loop running: +24% (honest). NLO correction is ~21% because α_s(2 GeV)≈0.3 makes perturbative series poorly converged. The formula is structurally interesting (0 free params, only DFC constants) but the prediction is order-dependent. Needs: either derive M0 at a scale where running is controlled, or find a running-independent formulation. See `equations/light_quark_mass_derivation.py`
 - **Derive proton-neutron mass difference from DFC** — C467: Δm=1.289 MeV (−0.4%, T2b). C552: Part G added — NJL gap equation gives DFC C_QCD=0.87 from valence isovector charge + vertex correction (vs GL=0.50, +75% overshoot). Route G1 (NJL+Coulomb) = 1.508 MeV (+17%). BLOCKED: higher-order vertex corrections and bound-state effects needed to reduce C_QCD from 0.87 to ~0.50. See `equations/proton_neutron_mass_difference.py`
+- **Beyond-mean-field Walecka EOS** — C560: NJL effective potential Part G. C₂(NJL)/C₂(NL3) = 0.87 — dimensionless softening nearly matches NL3. g₂(NJL) = −375 MeV (correct sign, 1.4× enhancement over kink tree-level). Key insight: C₂ gap closes from 14× (kink) to 1.15× (NJL) because NJL sigma mass is also smaller. Remaining: NJL sigma mass (226 MeV) vs physical (500-648 MeV) — need to reconcile sigma mass with Walecka EOS. See `equations/nuclear_kink_nonlinear_eos.py` Part G
 
 ---
 

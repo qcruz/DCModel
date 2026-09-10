@@ -754,6 +754,269 @@ print()
 
 
 # =============================================================================
+# Part G: NJL Effective Potential → Boguta-Bodmer Couplings (C560)
+# =============================================================================
+print("=" * 72)
+print("Part G: NJL effective potential → Boguta-Bodmer g₂, g₃ (C560)")
+print("=" * 72)
+print()
+
+# The nuclear sigma field is a COMPOSITE (qq̄) object, not a fundamental
+# substrate mode. Its self-interaction potential is given by the NJL
+# effective potential, not by tree-level V(φ).
+#
+# NJL effective potential (Klevansky 1992, Hatsuda-Kunihiro):
+#   V_eff(M) = M²/(4G) - C_loop × ∫₀^Λ dp p² √(p² + M²)
+#
+# where C_loop = N_c/(2π²) (single-flavor convention).
+#
+# Gap equation (stationary condition V'(M)=0 for M≠0):
+#   1 = 2G × C_loop × J(M, Λ)
+#   where J(M, Λ) = ∫₀^Λ dp p²/√(p² + M²)  [EXACT integral]
+#
+# Critical: use EXACT integrals everywhere for consistency (Λ/M ~ 1.3,
+# so the approximate form [Λ² - M² ln(1+Λ²/M²)] is ~33% off).
+
+N_C_NJL = 3
+
+# DFC NJL parameters (from bcs_gap_lambda_qcd.py):
+g_sigma_N_NJL = PI * math.sqrt(3 * PI)   # nucleon-sigma Yukawa = 9.645
+g_qqs_NJL = g_sigma_N_NJL / N_C_NJL     # quark level = 3.215
+m_sigma_med = 1.5 * LAMBDA_QCD           # 456.75 MeV (sigma as NJL mediator)
+G_NJL = g_qqs_NJL**2 / m_sigma_med**2   # 4-fermion coupling (MeV⁻²)
+
+# Loop prefactor: single-flavor convention, N_c colors
+C_LOOP = N_C_NJL / (2.0 * PI**2)
+
+print(f"  NJL parameters (DFC-derived):")
+print(f"    g_qqs = g_sigma_N / N_c = {g_qqs_NJL:.4f}")
+print(f"    m_sigma (mediator) = {m_sigma_med:.1f} MeV")
+print(f"    G_NJL = g_qqs²/m_sigma² = {G_NJL:.4e} MeV⁻²")
+print(f"    C_loop = N_c/(2π²) = {C_LOOP:.6f}")
+print()
+
+
+def J_exact(M_val, Lam_val, n_pts=2000):
+    """∫₀^Λ dp p²/√(p² + M²) — exact numerical integral."""
+    dp = Lam_val / n_pts
+    total = 0.0
+    for i in range(n_pts + 1):
+        p = i * dp
+        E = math.sqrt(p**2 + M_val**2)
+        f = p**2 / E
+        w = 1.0 if (i == 0 or i == n_pts) else (4.0 if i % 2 == 1 else 2.0)
+        total += w * f
+    return total * dp / 3.0
+
+
+def I_exact(M_val, Lam_val, n_pts=2000):
+    """∫₀^Λ dp p² √(p² + M²) — vacuum energy integral."""
+    dp = Lam_val / n_pts
+    total = 0.0
+    for i in range(n_pts + 1):
+        p = i * dp
+        E = math.sqrt(p**2 + M_val**2)
+        f = p**2 * E
+        w = 1.0 if (i == 0 or i == n_pts) else (4.0 if i % 2 == 1 else 2.0)
+        total += w * f
+    return total * dp / 3.0
+
+
+def V_eff_exact(M_val, G_val, Lam_val):
+    """NJL effective potential with exact integrals.
+    V(M) = M²/(4G) - C_loop × I(M, Λ)
+    Stationary condition V'=0 ↔ gap equation.
+    """
+    return M_val**2 / (4.0 * G_val) - C_LOOP * I_exact(M_val, Lam_val)
+
+
+def solve_gap_exact(G_val, Lam_val):
+    """Solve exact gap equation: 1 = 2G × C_loop × J(M, Λ) by bisection."""
+    # Check supercritical
+    J_small = J_exact(0.01, Lam_val)
+    if 2.0 * G_val * C_LOOP * J_small < 1.0:
+        return 0.0  # subcritical — no CSB
+    M_lo, M_hi = 0.01, Lam_val * 0.99
+    for _ in range(300):
+        M_mid = (M_lo + M_hi) / 2
+        gap_rhs = 2.0 * G_val * C_LOOP * J_exact(M_mid, Lam_val)
+        if gap_rhs > 1.0:
+            M_lo = M_mid
+        else:
+            M_hi = M_mid
+        if M_hi - M_lo < 0.001:
+            break
+    return (M_lo + M_hi) / 2
+
+
+# Find self-consistent Lambda_UV where M_Q = Lambda_QCD
+print(f"  Finding Lambda_UV such that M_Q = Lambda_QCD = {LAMBDA_QCD:.1f} MeV...")
+Lam_lo_sc, Lam_hi_sc = 310, 3000
+for _ in range(300):
+    Lam_mid_sc = (Lam_lo_sc + Lam_hi_sc) / 2
+    M_test = solve_gap_exact(G_NJL, Lam_mid_sc)
+    if M_test < LAMBDA_QCD:
+        Lam_lo_sc = Lam_mid_sc
+    else:
+        Lam_hi_sc = Lam_mid_sc
+    if Lam_hi_sc - Lam_lo_sc < 0.01:
+        break
+
+Lambda_UV_NJL = (Lam_lo_sc + Lam_hi_sc) / 2
+M_Q_NJL = solve_gap_exact(G_NJL, Lambda_UV_NJL)
+
+# Verify gap equation
+J_at_gap = J_exact(M_Q_NJL, Lambda_UV_NJL)
+gap_check = 2.0 * G_NJL * C_LOOP * J_at_gap
+
+print(f"  Gap equation solution (EXACT integrals):")
+print(f"    Lambda_UV = {Lambda_UV_NJL:.1f} MeV")
+print(f"    M_Q = {M_Q_NJL:.1f} MeV")
+print(f"    Lambda_UV / M_Q = {Lambda_UV_NJL / M_Q_NJL:.3f}")
+print(f"    G_NJL × Lambda_UV² = {G_NJL * Lambda_UV_NJL**2:.4f}")
+print(f"    Gap equation check: 2G C_loop J = {gap_check:.6f} (should be 1.000)")
+print()
+
+check("G1", abs(M_Q_NJL - LAMBDA_QCD) < 5,
+      f"M_Q = {M_Q_NJL:.1f} MeV ≈ Lambda_QCD = {LAMBDA_QCD:.1f} MeV")
+print()
+
+# Verify V'(M_Q) ≈ 0
+h = 0.05  # MeV step for finite differences
+V_p1 = V_eff_exact(M_Q_NJL + h, G_NJL, Lambda_UV_NJL)
+V_m1 = V_eff_exact(M_Q_NJL - h, G_NJL, Lambda_UV_NJL)
+V_0 = V_eff_exact(M_Q_NJL, G_NJL, Lambda_UV_NJL)
+V_p2 = V_eff_exact(M_Q_NJL + 2*h, G_NJL, Lambda_UV_NJL)
+V_m2 = V_eff_exact(M_Q_NJL - 2*h, G_NJL, Lambda_UV_NJL)
+
+dV1 = (V_p1 - V_m1) / (2 * h)
+dV2 = (V_p1 - 2*V_0 + V_m1) / h**2
+dV3 = (V_p2 - 2*V_p1 + 2*V_m1 - V_m2) / (2 * h**3)
+dV4 = (V_p2 - 4*V_p1 + 6*V_0 - 4*V_m1 + V_m2) / h**4
+
+# Normalize V' relative to V'' × M_Q to get a meaningful residual
+dV1_rel = abs(dV1) / (abs(dV2) * M_Q_NJL) if abs(dV2) > 0 else float('inf')
+
+print(f"  NJL effective potential derivatives at M = M_Q:")
+print(f"    V'(M_Q) = {dV1:.2f} MeV³  (relative: {dV1_rel:.2e})")
+print(f"    V''(M_Q) = {dV2:.2f} MeV²  [sigma mass² in M-space]")
+print(f"    V'''(M_Q) = {dV3:.6f} MeV  [cubic coupling in M-space]")
+print(f"    V''''(M_Q) = {dV4:.8f}  [quartic in M-space]")
+print()
+
+check("G2", dV1_rel < 0.01,
+      f"|V'(M_Q)|/|V''·M_Q| = {dV1_rel:.2e} ≈ 0 (gap solution consistent)")
+check("G3", dV2 > 0, f"V''(M_Q) = {dV2:.2f} > 0 (stable minimum)")
+print()
+
+# Sigma meson mass in the M-space (NJL prediction for 2M_Q)
+m_sigma_M = math.sqrt(abs(dV2)) if dV2 > 0 else 0
+# In NJL, the sigma mass is m_σ = 2M_Q (leading order)
+m_sigma_NJL_LO = 2 * M_Q_NJL
+print(f"  Sigma meson mass:")
+print(f"    From V''(M_Q): √V'' = {m_sigma_M:.1f} MeV (in M-space, not physical)")
+print(f"    NJL leading order: m_σ = 2M_Q = {m_sigma_NJL_LO:.1f} MeV")
+print(f"    DFC structural: m_σ = (3/2)Λ_QCD = {m_sigma_med:.1f} MeV")
+print(f"    Walecka fit: m_σ = 648 MeV")
+print()
+
+# Map M-space → Walecka σ-space
+# σ_W = N_c × δM / g_σ (Walecka convention)
+# δM = -g_σ σ_W / N_c
+# U(σ_W) ~ V_eff(M_Q - g_σ σ_W/N_c)
+# d^n U/dσ^n = V^(n)(M) × (-g_σ/N_c)^n
+
+scale = G_SIGMA / N_C_NJL  # g_σ / N_c
+
+# Physical sigma mass in Walecka space
+m_sigma_W_sq = dV2 * scale**2
+m_sigma_W = math.sqrt(abs(m_sigma_W_sq)) if m_sigma_W_sq > 0 else 0
+
+# Boguta-Bodmer couplings
+# Taylor: U = ½ U'' σ² + (1/3!) U''' σ³ + (1/4!) U'''' σ⁴
+# BB:     U = ½ m² σ² + (g₂/3) σ³ + (g₃/4) σ⁴
+# Match: g₂ = ½ U''', g₃ = (1/6) U''''
+d3U = dV3 * (-scale)**3  # U'''
+d4U = dV4 * scale**4     # U''''
+
+g2_NJL = 0.5 * d3U
+g3_NJL = (1.0/6.0) * d4U
+
+print(f"  Mapping M-space → Walecka σ-space:")
+print(f"    Scale factor: g_σ/N_c = {scale:.4f}")
+print(f"    m_σ(Walecka) = {m_sigma_W:.1f} MeV")
+print()
+print(f"  Boguta-Bodmer couplings from NJL effective potential:")
+print(f"    g₂(NJL) = {g2_NJL:.1f} MeV")
+print(f"    g₃(NJL) = {g3_NJL:.6f}")
+print()
+
+# Compare with NL3 and kink tree-level
+print(f"  Comparison:")
+print(f"    g₂(NJL):  {g2_NJL:.1f} MeV")
+print(f"    g₂(NL3):  {g2_NL3_MeV:.1f} MeV")
+print(f"    g₂(kink): {G2_PHYS:.1f} MeV")
+g2_ratio = g2_NJL / g2_NL3_MeV if abs(g2_NL3_MeV) > 1 else float('inf')
+print(f"    Ratio g₂(NJL)/g₂(NL3) = {g2_ratio:.3f}")
+if abs(G2_PHYS) > 0:
+    print(f"    Enhancement NJL/kink = {abs(g2_NJL/G2_PHYS):.1f}× (need {enhancement_needed:.0f}×)")
+print()
+
+# Dimensionless softening parameter
+C2_NJL = g2_NJL * G_SIGMA / m_sigma_W**2 if m_sigma_W > 0 else 0
+print(f"  Dimensionless softening C₂ = g₂·g_σ/m_σ²:")
+print(f"    C₂(NJL):  {C2_NJL:.6f}")
+print(f"    C₂(NL3):  {C2_NL3:.6f}")
+print(f"    C₂(kink): {C2_kink:.6f}")
+if abs(C2_NL3) > 1e-10:
+    print(f"    Ratio C₂(NJL)/C₂(NL3) = {C2_NJL/C2_NL3:.3f}")
+print()
+
+g2_sign_correct = g2_NJL < 0
+g2_magnitude_improved = abs(g2_NJL) > abs(G2_PHYS) * 1.5
+
+check("G4", g2_sign_correct,
+      f"g₂(NJL) = {g2_NJL:.1f} MeV has correct sign (negative)")
+check("G5", g2_magnitude_improved,
+      f"|g₂(NJL)| > 1.5×|g₂(kink)| (composite enhancement)")
+print()
+
+# --- Summary of Part G ---
+print(f"  PART G SUMMARY:")
+print(f"    1. NJL effective potential with EXACT integrals (no Λ>>M approximation)")
+print(f"    2. Gap equation V'(M_Q)=0 verified (relative residual {dV1_rel:.2e})")
+print(f"    3. V''(M_Q) = {dV2:.1f} → m_σ(Walecka) = {m_sigma_W:.1f} MeV")
+print(f"    4. V'''(M_Q) → g₂(NJL) = {g2_NJL:.1f} MeV (sign: {'correct ✓' if g2_NJL < 0 else 'WRONG ✗'})")
+print(f"    5. g₂(kink) = {G2_PHYS:.1f} MeV → g₂(NJL) = {g2_NJL:.1f} MeV")
+if abs(G2_PHYS) > 0:
+    enhance = abs(g2_NJL / G2_PHYS)
+    print(f"       Enhancement factor: {enhance:.1f}×")
+    if enhance > enhancement_needed * 0.8:
+        print(f"       CLOSES the magnitude gap (need {enhancement_needed:.0f}×)")
+    elif enhance > 2:
+        print(f"       PARTIAL progress (need {enhancement_needed:.0f}×, have {enhance:.0f}×)")
+    else:
+        print(f"       Insufficient (need {enhancement_needed:.0f}×)")
+print()
+
+remaining = []
+if not g2_sign_correct:
+    remaining.append("sign still wrong")
+if abs(g2_NJL / g2_NL3_MeV) < 0.5:
+    remaining.append(f"magnitude {abs(g2_ratio):.1f}× NL3 (need ~1.0×)")
+if abs(C2_NJL / C2_NL3) > 3:
+    remaining.append(f"C₂ overshoots NL3 by {abs(C2_NJL/C2_NL3):.1f}×")
+
+if remaining:
+    print(f"    REMAINING GAPS: {'; '.join(remaining)}")
+    print(f"    Next steps: adjust NJL to use m_σ(DFC)=457 MeV or m_σ(Walecka)=648 MeV")
+    print(f"    as Walecka sigma mass (currently using NJL-derived {m_sigma_W:.0f} MeV)")
+else:
+    print(f"    STATUS: P1 item PARTIALLY CLOSED — NJL couplings reasonable.")
+print()
+
+
+# =============================================================================
 print("=" * 72)
 print(f"TOTAL: {n_pass}/{n_total} PASS, {n_fail}/{n_total} FAIL")
 print("=" * 72)
