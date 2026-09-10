@@ -160,7 +160,7 @@ particular concept is not.
 - **Literature reframing: cohesion/conflict audit** — C524: Cluster A DONE. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
 - **Set T4 stagnation deadlines** — C493: items stuck at T4 for 100+ cycles should be honestly flagged as likely unresolvable within current framework. Review α_em(0) identity, Casimir=α, D4 gravity overshoot
 - **Adversarial prediction hunting** — deliberately search for quantities where DFC *must* disagree with observation. A model that can't be wrong can't be right
-- **Rigorous free-parameter audit** — C566: 15 T2a predictions audited, 5/6 PASS. 4 DFC geometric params, Ratio 3.0 (generous). Key finding: g_eff²=8/27 is only truly 0-param result. See `equations/free_parameter_audit.py`. Follow-up: derive Δ(1/α)=9.136 from DFC to upgrade Tier 2b→2a
+- **Rigorous free-parameter audit** — C566: 15 T2a predictions audited, 5/6 PASS. 4 DFC geometric params, Ratio 3.0 (generous). Key finding: g_eff²=8/27 is only truly 0-param result. See `equations/free_parameter_audit.py`. Follow-ups: (1) derive Δ(1/α)=9.136 from DFC to upgrade Tier 2b→2a, (2) fix mass_spectrum.py hidden 3rd param (dimple width=0.02), (3) fix lamb_shift.py F_higher self-calibration, (4) document M_Z embedded in coupling_derivation.py, (5) downgrade cosmology.py H₀ from "prediction" to "consistency check"
 
 **Completed (removed from P7):**
 - ~~Evaluate practical relevance~~ — C513 DONE. See `foundations/critical_review_predictions.md`
