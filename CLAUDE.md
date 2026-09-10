@@ -204,6 +204,7 @@ Key milestones: α_em(0) gap remains T4 open (structural identity A−B = ln(1/�
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-09 | 558 | P7: critical_review_uniqueness.md NEW — 8/18 predictions genuinely unique, 6 standard physics | 87% | 73% | ~80% |
 | 2026-09-09 | 557 | P6: 06_predictions.md updated — +5 entries (Δm NJL, DM σ_SI, DM T_RH, Li-7, JR Chern) | 87% | 73% | ~80% |
 | 2026-09-09 | 556 | P5: quantum_hall_coupling_quantization.py NEW (13/13) — gauge GROUP topological, COUPLING algebraic | 87% | 73% | ~80% |
 | 2026-09-09 | 555 | P4: bbn_predictions.py Part H — 6 Li-7 mechanisms ruled out, DFC shift +0.009% vs needed 66% | 87% | 73% | ~80% |
