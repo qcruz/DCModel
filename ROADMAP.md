@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 560 (2026-09-09)
+**Last updated:** Cycle 561 (2026-09-09)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P1** (C560 — NJL effective potential → Walecka couplings)
+- **Last tier worked: P2** (C561 — Delta-N splitting tier chain + empirical intercepts)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -36,7 +36,6 @@
 
 ## Priority 2 — Tier Upgrades
 
-- **Upgrade Delta-N splitting to T2b** — currently −7.4%, inherited from m_rho undershoot. See `equations/delta_n_splitting.py`
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C520: REFRAMED. Gap is from 36π formula, not VP. DFC VP overshoots data +27%. See `equations/hadronic_vp_dfc.py`
 - **Upgrade baryon Regge intercept to T2a** — BLOCKED on Y-junction penalty Δ=−1 (P3 item). See `equations/regge_intercept_derivation.py`
 - **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — BLOCKED. C525: two-loop/threshold corrections RULED OUT (path a). Gap is structural (+0.11%), not perturbative. Remaining: path (b) DFC-specific running, path (c) sub-percent ECCC/k_Y correction. See `equations/alpha_em_two_loop_correction.py`
@@ -45,6 +44,7 @@
 - **Close f_pi 1.6% gap** — C521: momentum-dependent M(p) RULED OUT (<0.1% effect). Gap traces ENTIRELY to m_rho undershoot (−1.6%). BLOCKED on m_rho/σ correction. See `equations/fpi_gap_closure.py`
 - **Upgrade cosmological predictions to T2a** — C537: CMB ℓ₁ (+0.89%) and BAO r_drag (−0.27%) are ALREADY T2a. Only Λ_cosm remains T3 — bottleneck is the combination rule (why 3 terms add in exponent). BLOCKED on substrate_casimir_alpha (16 mechanisms tested, 7 ruled out, STUCK). See `equations/cosmological_predictions.py`, `equations/substrate_casimir_alpha.py`
 - **Upgrade proton charge radius to T2a** — C545: VMD-regulated pion cloud (m_ρ cutoff) gives r_p = 0.809 fm (−3.8%, T2a). DFC-only with SU(6) κ_p=2 and VMD pion cloud, 0 free params. Remaining: derive κ_p from DFC magnetic moments (currently SU(6) approximation). See `equations/proton_charge_radius_dfc.py`
+- **Upgrade Delta-N splitting to T2b** — C561: FORMALLY T3, NUMERICALLY T2b (−7.4%). Part F added: empirical intercepts from 6 PDG states show α₀^N(ground)=−0.26 (matches DFC −0.25) but excited states deviate (trajectory curvature). Mass ratio m_Δ/m_N = √(5/3) = −1.68% (0 free params). BLOCKED: formal upgrade requires deriving Y-junction penalty Δ=−7/4 (P3 item). See `equations/delta_n_splitting.py`
 
 ---
 

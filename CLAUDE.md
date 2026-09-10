@@ -204,6 +204,7 @@ Key milestones: α_em(0) gap remains T4 open (structural identity A−B = ln(1/�
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-09 | 561 | P2: delta_n_splitting.py Part F (12/14) — empirical intercepts: N ground α₀=−0.256 matches DFC; T3→T2b BLOCKED on junction penalty | 87% | 73% | ~80% |
 | 2026-09-09 | 560 | P1: nuclear_kink_nonlinear_eos.py Part G (16/18) — NJL→Walecka: C₂(NJL)/C₂(NL3)=0.87, gap closes 14×→1.15× | 87% | 73% | ~80% |
 | 2026-09-09 | 559 | P8: tachyonic_complexification_sim.py NEW (11/11) — U(1) emerges: 10381× amplification, Δθ=π | 87% | 73% | ~80% |
 | 2026-09-09 | 558 | P7: critical_review_uniqueness.md NEW — 8/18 predictions genuinely unique, 6 standard physics | 87% | 73% | ~80% |
