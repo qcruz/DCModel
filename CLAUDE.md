@@ -204,6 +204,7 @@ Key milestones: α_em(0) gap remains T4 open (structural identity A−B = ln(1/�
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-10 | 563 | P4: light_nuclei_binding.py Part E (5/12) — NJL sigma test: no binding any m_σ, even g_ω=0; root cause = OBE too weak | 87% | 73% | ~80% |
 | 2026-09-09 | 562 | P3: koide_phase_coupling.py Part F (4/4) — 5D Yukawa overlap verified: profiles cancel exactly, step 4d T2a→T1+structural | 87% | 73% | ~80% |
 | 2026-09-09 | 561 | P2: delta_n_splitting.py Part F (12/14) — empirical intercepts: N ground α₀=−0.256 matches DFC; T3→T2b BLOCKED on junction penalty | 87% | 73% | ~80% |
 | 2026-09-09 | 560 | P1: nuclear_kink_nonlinear_eos.py Part G (16/18) — NJL→Walecka: C₂(NJL)/C₂(NL3)=0.87, gap closes 14×→1.15× | 87% | 73% | ~80% |

@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 562 (2026-09-09)
+**Last updated:** Cycle 563 (2026-09-10)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P3** (C562 — Koide phase t=1/√Q_top upgrade: 5D Yukawa overlap T1)
+- **Last tier worked: P4** (C563 — Triple-alpha/light nuclei: NJL sigma test, root cause revised)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -79,15 +79,16 @@
 - **Baryon asymmetry magnitude** — C546: DFC leptogenesis gives η_B = 1.1×10⁻⁷ (184× overshoot, T4). M_c(D7) as RH neutrino mass, Casimir spectrum M_2/M_1=9/4, maximal CP phase. Overshoot suggests M_1 too high or single-flavor approximation inadequate. See `equations/baryon_asymmetry_magnitude.py`
 - **Dark matter relic abundance mechanism** — C554: gravitational freeze-in requires T_RH=3×10¹⁷ GeV (too high). KZ overproduces by 10⁷×. Need DFC-specific production or lower m_DM. d_DM=4.5 not derived. See `equations/dark_matter_relic_abundance.py`
 - **Upgrade Koide phase t = 1/√Q_top to T1** — C562: Part F added (4/4 PASS). 5D Yukawa overlap integral verified: diagonal and off-diagonal profiles cancel exactly (ratio=1.000000). Step 4d upgrades T2a→T1+structural. Sole remaining T2a = DFC physics identification (Yukawa = kink profile). See `equations/koide_phase_coupling.py`
+- **Derive correlated 2π-exchange NN attraction from V(φ)** — C563: single OBE Yukawa with DFC g²/(4π)=7.4 is ~5× too weak for nuclear binding. Iterated OPE / box + crossed-box diagrams provide ~60% of nuclear attraction in Bonn models. DFC has pion dynamics (GMOR, g_piNN from GT) — can the 2π exchange effective coupling be derived from V(φ) chiral sector? This blocks ALL light nuclei predictions. See `equations/light_nuclei_binding.py` Part E
 
 ---
 
 ## Priority 4 — Known Failures
 
-- **Triple-alpha Q value** — BLOCKED by SEMF failure for A < 12
 - **Nucleon magnetic moment ratio** — +2.75%. C509: ratio = −3/2 + g_A/32 matches to 0.022% (g_A = 4/π from DFC). Potential T2a upgrade if 1/32 coefficient derivable from NLO ChPT. Counterterm cancellation ~75% (upper edge of expected range). BLOCKED on deriving counterterm coefficient. See `equations/nucleon_magnetic_moments.py`
 - **Nuclear surface diffuseness** — C547: Fock exchange correction reduces gap from +7% to +2.8% (86% of original 20% gap closed). Remaining +2.8% from higher-order terms (pionic fluctuations, RPA). See `equations/sigma_mass_in_medium.py` (15/16 PASS)
 - **Lithium problem** — C555: ALL 6 DFC-specific mechanisms ruled out. DFC Li-7 shift +0.009% vs needed 66% reduction (factor 7247 short). DFC inherits lithium problem from standard BBN. No new physics at BBN scales. See `equations/bbn_predictions.py` Part H
+- **Triple-alpha Q value / light nuclei binding** — C563: ROOT CAUSE REVISED. Not coupling asymmetry — OBE coupling strength itself too weak. g²/(4π)=7.4 gives V_net~few MeV at 1fm even with g_omega=0 and NJL sigma (226 MeV). No binding for any m_sigma [150-650 MeV]. Needs iterated OPE / correlated 2π exchange (~60% of nuclear attraction in Bonn models). See `equations/light_nuclei_binding.py` Part E
 
 **Resolved (removed from P4):**
 - ~~M_W = 79.67 GeV (−0.88%)~~ — RESOLVED C497: tree-level gap closed to +0.009% by standard one-loop Sirlin Δr corrections. See `equations/ew_radiative_corrections.py` (10/10 PASS, T2a)
