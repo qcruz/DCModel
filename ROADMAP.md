@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 581 (2026-09-11)
+**Last updated:** Cycle 582 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P4** (C581 — Nuclear surface diffuseness Part G: pionic RPA + tensor → a=0.537 fm (−0.5%), was +2.8%. 97% of original 20% gap closed. T2b)
+- **Last tier worked: P5** (C582 — Skyrme e_sk from V(φ): e=1/√β=√(9π)=5.317 matches ANW 5.45 to −2.4%. T3)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -113,7 +113,6 @@ respective tiers and tracked here as a collective goal.
 
 ## Priority 5 — Exploratory
 
-- **Literature reframing: Skyrme e_sk from V(φ)** — derive Skyrme stabilization coefficient from substrate self-interaction at D6. Independent proton mass route vs current Regge. See `foundations/literature_reframing.md` §B2
 - **Literature reframing: graded elastic media → mode spectrum** — import transfer matrix, WKB, impedance matching methods from GRIN optics / metamaterials for kink fluctuation spectrum. See `foundations/literature_reframing.md` §C3
 - **Literature reframing: CDT spectral dimension flow** — does DFC predict spectral dimension 4→2 at short distances (ω ~ 1/ξ)? If so, matches CDT quantum gravity result. See `foundations/literature_reframing.md` §D2
 - **Literature reframing: Griffiths/FKG → substrate ordering** — Mermin-Wagner constraints on closure behaviors at each effective dimensionality. Kosterlitz-Thouless for topological ordering at D5. See `foundations/literature_reframing.md` §D4
@@ -139,6 +138,7 @@ respective tiers and tracked here as a collective goal.
 - **Phase diagram & extreme regime predictions** — QCD deconfinement T_c, neutron star max mass, EW phase transition order
 - **Prove y(v) = exp(-(b₀+1/α)) from kink overlap** — C510: d_eff = 7.9 kink widths. BOTTLENECK: derive D5-D7 depth separation. See `equations/light_quark_mass_derivation.py` Part K
 - **Analog system comparison** — condensed matter systems with double-well kinks (polyacetylene, ferroelectrics). Do they show emergent gauge-like behaviors?
+- **Skyrme e_sk from V(φ)** — C582: e=1/√β=√(9π)=5.317 (−2.4% from ANW 5.45). Also e=m_σ/f_π=3π/2=4.71 (−13.5%). Both in lit range [4,6.5]. Skyrme M_N problem inherited (3-7× too high); DFC uses Regge for M_N. T3. NEXT: formal dimensional reduction β → e_sk. See `equations/skyrme_e_from_vphi.py`
 
 **Completed (removed from P5):**
 - ~~Analog gravity dispersive corrections~~ — C564 DONE. See `equations/analog_gravity_dispersion.py`

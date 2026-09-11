@@ -212,6 +212,7 @@ Key milestones: D4 gravity κ=0.511 (+2.1%, was +158%; RS standard + M₅³=1/2 
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-11 | 582 | P5: skyrme_e_from_vphi.py NEW (5/9) — e=1/√β=√(9π)=5.317 (−2.4% from ANW 5.45); also e=m_σ/f_π=3π/2=4.71; T3 | 87% | 73% | ~80% |
 | 2026-09-11 | 581 | P4: sigma_mass_in_medium.py Part G (19/20) — pionic RPA (−2.2%) + tensor (−1.0%) → a=0.537 fm (−0.5%); 97% of 20% gap closed; T2b | 87% | 73% | ~80% |
 | 2026-09-11 | 580 | P3: kink_self_gravity.py Part I (14/14) — RS standard + M₅³=1/2 self-consistency → κ=0.5107 (+2.1%); 74× improvement over C576 (+158%); D4 spoke T3→T2a | 87% | 73% | ~80% |
 | 2026-09-11 | 579 | P2: alpha_em_gap_exploration.py Part G (9/11) — ONE-LOOP SHAPE MODE closes 106.6% of gap (6.6% overshoot); T4→T3 | 87% | 73% | ~80% |
