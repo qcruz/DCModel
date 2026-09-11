@@ -208,6 +208,7 @@ Recent cycles (full history: push_history.md):
 | 2026-09-11 | 570 | P3: d4_thick_wall_bvp.py Part H (16/0) — graviton zero-mode reduces κ 48.7% (2.04→1.29); M₅³≈4βπ=4/9 (−9.2%) | 87% | 73% | ~80% |
 | 2026-09-11 | 569 | P2: alpha_em_gap_exploration.py Part F (6/8) — proper threshold: Casimir 5%, S³ curvature 10.3%, combined 5.3%; f=6.94 unmatched | 87% | 73% | ~80% |
 | 2026-09-11 | 568 | P1: alpha_em_gap_exploration.py NEW (5/6) — 3 viable paths (C2 topological, C3 k_Y, C5 g_eff loop), all overshoot 15-23× | 87% | 73% | ~80% |
+| 2026-09-11 | 577 | Doc: educational/33_kink_self_gravity.md NEW — how kinks attract, complete gravity chain, force hierarchy, 8 sections | 87% | 73% | ~80% |
 | 2026-09-11 | 576 | D4: kink_self_gravity.py NEW (11/11) — complete chain V(φ)→G_N; confinement + attraction from same A(y); κ=1.29 (+158%) | 87% | 73% | ~80% |
 | 2026-09-11 | 575 | P8: kink_gravity_gradient.py NEW (10/10) — a=-(3/(2α))dα/dx to 0.6%, a∝ε 1.1%, C_grav=1.49, parabolic 0.7% | 87% | 73% | ~80% |
 | 2026-09-11 | 574 | P7: literature_reframing.md Cluster B audit — KK (4/2/1), Skyrme (6/1/1), JR (8/0/1); JR strongest framework; topology > geometry pattern | 87% | 73% | ~80% |
@@ -328,7 +329,8 @@ educational/
 ├── 29_mathematical_exploration.md ← freeform math discoveries
 ├── 30_hadron_spectroscopy.md   ← meson/baryon mass predictions
 ├── 31_proton_spin_puzzle.md    ← spin crisis from Jackiw-Rebbi perspective
-└── 32_depth_bifurcation.md     ← depth bifurcation dynamics
+├── 32_depth_bifurcation.md     ← depth bifurcation dynamics
+└── 33_kink_self_gravity.md    ← how kinks attract: V(φ) → gravity
 ```
 
 Rules: plain English first, equations second; Tier-honest; 500–1500 words per module;
