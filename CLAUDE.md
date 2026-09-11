@@ -212,6 +212,7 @@ Key milestones: D4 gravity κ=0.511 (+2.1%, was +158%; RS standard + M₅³=1/2 
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-11 | 584 | P7: t4_stagnation_audit.md NEW — 10 T4 items: 4 progressing, 3 flagged stalled (top mass, ℏ, thresholds), CKM escalated to P3 | 87% | 73% | ~80% |
 | 2026-09-11 | 583 | P6: educational/34_electroweak_precision.md NEW — 10 EW predictions, all T2a; error budget from M_Z −0.36% | 87% | 73% | ~80% |
 | 2026-09-11 | 582 | P5: skyrme_e_from_vphi.py NEW (5/9) — e=1/√β=√(9π)=5.317 (−2.4% from ANW 5.45); also e=m_σ/f_π=3π/2=4.71; T3 | 87% | 73% | ~80% |
 | 2026-09-11 | 581 | P4: sigma_mass_in_medium.py Part G (19/20) — pionic RPA (−2.2%) + tensor (−1.0%) → a=0.537 fm (−0.5%); 97% of 20% gap closed; T2b | 87% | 73% | ~80% |

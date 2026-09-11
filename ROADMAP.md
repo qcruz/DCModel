@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 583 (2026-09-11)
+**Last updated:** Cycle 584 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P6** (C583 — educational/34_electroweak_precision.md NEW: 10 EW predictions collected, all T2a, error budget from M_Z −0.36%)
+- **Last tier worked: P7** (C584 — T4 stagnation audit: 10 items reviewed, 3 flagged as stalled (top mass, ℏ, thresholds), 4 progressing, CKM escalated to P3)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -81,7 +81,7 @@ respective tiers and tracked here as a collective goal.
 - **Bell: emergent relativistic locality** — show substrate connection produces no preferred frame. See `foundations/bell_hidden_variables.md`
 - **Heavy quarkonium spectrum** — C489: 5/7 PASS. Bottomonium M(1S) +3.3%, Δ(3S-1S) −18%. Charmonium splittings −7% to −16% but absolute mass +22% (α_s 25% low at m_c from 1-loop running). Path: 2-loop α_s. See `equations/quarkonium_spectrum.py`
 - **Upgrade neutrino θ₂₃ to T2a** — C496: θ₂₃ = arctan(exp(1/(2π))) = 49.54° (+0.28°, 0.35σ, T3). For T2a: prove JR excess-norm governs Yukawa perturbation formally. See `equations/neutrino_theta23_z3_mechanism.py`
-- **Derive CKM/PMNS from D6/D7 overlap** — C522: diagonal Z3 FAILS for θ₁₂ (F(1)=F(2), T1 proof). Must be off-diagonal. Best: sin(θ_C)=1/π (+43%). GST sin=√(m_d/m_s) works at -0.6% — path is through DFC quark mass ratio. BLOCKED: need formal off-diagonal BVP. See `equations/ckm_from_d6d7_overlap.py`
+- **Derive CKM/PMNS from D6/D7 overlap** — C522: diagonal Z₃ FAILS for θ₁₂ (F(1)=F(2), T1 proof). Must be off-diagonal. Best: sin(θ_C)=1/π (+43%). GST sin=√(m_d/m_s) works at −0.6% — path is through DFC quark mass ratio. BLOCKED: need formal off-diagonal BVP. **ESCALATED C584:** 170 cycles at T4, most important stalled item — blocks CP phase for baryon asymmetry and full flavor sector. See `equations/ckm_from_d6d7_overlap.py`
 - **Upgrade Lorentz emergence to T1 via analog gravity theorem** — Barcelo et al. (2001): non-dispersive medium => exact Lorentz invariance at low energy. DFC substrate is non-dispersive in vacuum (V''(phi_0)=const). Citation upgrades T3 -> T1. See `foundations/gravity_theory_integration.md`
 - **Derive Hawking temperature from V(phi)** — analog gravity gives T_H from surface gravity of effective metric horizon. Substrate profile determines all ingredients. See `foundations/gravity_theory_integration.md`
 - **Derive open→closed mode transition from coupled PDE** — C526: structural argument in place (T2a). Need formal derivation showing kink formation creates bound states for subsequent fluctuations. See `equations/depth_bifurcation_dynamics.py` Part A
@@ -175,10 +175,10 @@ approaches do better, question foundational assumptions, and adapt the model whe
 evidence warrants it. Mathematical verifiability is the standard; attachment to any
 particular concept is not.
 
-- **Set T4 stagnation deadlines** — C493: items stuck at T4 for 100+ cycles should be honestly flagged as likely unresolvable within current framework. Review α_em(0) identity, Casimir=α, D4 gravity overshoot
 - **Adversarial prediction hunting** — deliberately search for quantities where DFC *must* disagree with observation. A model that can't be wrong can't be right
 - **Literature reframing: cohesion/conflict audit Clusters C+D** — C524: Cluster A DONE. C574: Cluster B DONE. Remaining: Cluster C (condensed matter: BCS/NJL, Helfrich, graded elastic), Cluster D (new connections: topo insulator, CDT, QHE, Griffiths, Witten TFT). See `foundations/literature_reframing.md`
 - **Rigorous free-parameter audit** — C566: 15 T2a predictions audited, 5/6 PASS. 4 DFC geometric params, Ratio 3.0 (generous). Key finding: g_eff²=8/27 is only truly 0-param result. See `equations/free_parameter_audit.py`. Follow-ups: (1) derive Δ(1/α)=9.136 from DFC to upgrade Tier 2b→2a, (2) fix mass_spectrum.py hidden 3rd param (dimple width=0.02), (3) fix lamb_shift.py F_higher self-calibration, (4) document M_Z embedded in coupling_derivation.py, (5) downgrade cosmology.py H₀ from "prediction" to "consistency check"
+- **T4 stagnation deadlines (CONTINUOUS)** — C584: 10 items audited. 3 flagged STALLED (top mass 125 cyc, ℏ 203 cyc, thresholds 58 cyc). 4 PROGRESSING (η_B, DM, hadronic VP, Walecka). CKM/PMNS escalated to P3 (170 cyc, most important stalled item). See `foundations/t4_stagnation_audit.md`. Re-audit every 50 cycles
 
 **Completed (removed from P7):**
 - ~~Evaluate practical relevance~~ — C513 DONE. See `foundations/critical_review_predictions.md`
