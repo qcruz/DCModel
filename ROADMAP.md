@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 574 (2026-09-11)
+**Last updated:** Cycle 575 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P7** (C574 — Literature reframing Cluster B audit: KK, Skyrme, JR — 18/3/3 total, JR strongest framework)
+- **Last tier worked: P8** (C575 — Kink gravity gradient: a=-(3/(2α))dα/dx to 0.6%, a∝ε to 1.1%, C_grav=1.49, 10/10 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -187,7 +187,6 @@ from V(φ) when you solve the field equation numerically.
 
 **Queue (ordered by impact):**
 
-- **Kink in slowly varying background** — place a kink in a gently curved potential well (spatially varying α(x)). Measure how the kink accelerates toward deeper wells. This is the D4 gravity mechanism in miniature: kinks respond to substrate compression gradients
 - **Vortex-antivortex annihilation (2+1D)** — complex field analogue of kink-antikink. Demonstrates U(1) charge conservation and radiation spectrum in 2+1D
 - **Kibble-Zurek: quench rate → kink density** — cool the system through the phase transition at different rates. Measure kink density vs quench rate. Connects to cosmological defect formation
 - **Kink with excited shape mode** — boost the internal PT shape mode of a kink before collision. Measure how internal excitation affects scattering outcome (resonance window shifts)
@@ -204,6 +203,7 @@ from V(φ) when you solve the field equation numerically.
 - oscillon_breather_formation.py — oscillon from bubble collapse: omega=0.75*m_sigma, Q=4313, lifetime 1373 periods, sech profile (C551)
 - tachyonic_complexification_sim.py — real kink → complex vortex: γ=√(α/2) confirmed 2.9%, 10381× amplification, Δθ=π, U(1) emergence demonstrated (C559)
 - multi_kink_gas_dynamics.py — 4 KA pairs, 4 annihilate, Q=0 exact, virial 1.25, pair creation from radiation, 9/9 PASS (C567)
+- kink_gravity_gradient.py — kink in α(x) gradient: a=-(3/(2α))dα/dx matches to 0.6%, a∝ε to 1.1%, C_grav=1.49, 10/10 PASS (C575)
 
 **Integration rule:** After each new simulation, update:
 1. `equations/README.md` — add to simulation table
