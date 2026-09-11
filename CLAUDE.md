@@ -208,6 +208,7 @@ Recent cycles (full history: push_history.md):
 | 2026-09-11 | 570 | P3: d4_thick_wall_bvp.py Part H (16/0) — graviton zero-mode reduces κ 48.7% (2.04→1.29); M₅³≈4βπ=4/9 (−9.2%) | 87% | 73% | ~80% |
 | 2026-09-11 | 569 | P2: alpha_em_gap_exploration.py Part F (6/8) — proper threshold: Casimir 5%, S³ curvature 10.3%, combined 5.3%; f=6.94 unmatched | 87% | 73% | ~80% |
 | 2026-09-11 | 568 | P1: alpha_em_gap_exploration.py NEW (5/6) — 3 viable paths (C2 topological, C3 k_Y, C5 g_eff loop), all overshoot 15-23× | 87% | 73% | ~80% |
+| 2026-09-11 | 572 | P5: ssh_fractional_charge.py NEW (12/12) — SSH gives 1/2 not 1/3; quark charges from Z₃ center vortex; Kitaev table D5/D6/D7 | 87% | 73% | ~80% |
 | 2026-09-10 | 567 | P8: multi_kink_gas_dynamics.py NEW (9/9) — 4 KA pairs annihilate, pair creation from radiation, Q=0 exact, virial 1.25 | 87% | 73% | ~80% |
 | 2026-09-10 | 566 | P7: free_parameter_audit.py NEW (5/6) — 15 T2a predictions, 4 DFC geometric params, Ratio 3.0; only g_eff²=8/27 truly 0-param | 87% | 73% | ~80% |
 | 2026-09-10 | 565 | P6: ROADMAP comprehensive review — removed 12 resolved/done items, consolidated 7 duplicates, added continuous review item | 87% | 73% | ~80% |

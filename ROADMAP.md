@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 571 (2026-09-11)
+**Last updated:** Cycle 572 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P4** (C571 — Nucleon μ ratio: Δ-pole gives 0.5% of κS; NLO ChPT RULED OUT for g_A/32)
+- **Last tier worked: P5** (C572 — SSH fractional charge: SSH gives 1/2, NOT 1/3; quark charges from Z₃ center vortex; Kitaev table maps D5/D6/D7)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -97,7 +97,6 @@
 
 ## Priority 5 — Exploratory
 
-- **Literature reframing: SSH/polyacetylene → fermion zero modes** — map full SSH toolkit (fractional charge, topological protection indices, bulk-boundary) to DFC. Quark e/3 charge from domain wall fractionalization? See `foundations/literature_reframing.md` §B3
 - **Literature reframing: Skyrme e_sk from V(φ)** — derive Skyrme stabilization coefficient from substrate self-interaction at D6. Independent proton mass route vs current Regge. See `foundations/literature_reframing.md` §B2
 - **Literature reframing: graded elastic media → mode spectrum** — import transfer matrix, WKB, impedance matching methods from GRIN optics / metamaterials for kink fluctuation spectrum. See `foundations/literature_reframing.md` §C3
 - **Literature reframing: CDT spectral dimension flow** — does DFC predict spectral dimension 4→2 at short distances (ω ~ 1/ξ)? If so, matches CDT quantum gravity result. See `foundations/literature_reframing.md` §D2
@@ -132,6 +131,7 @@
 - ~~Literature reframing: topological insulator~~ — C517 DONE. See `equations/adscft_topo_insulator_dfc.py`
 - ~~Literature reframing: BCS gap → Λ_QCD~~ — C548 DONE. See `equations/bcs_gap_lambda_qcd.py`
 - ~~Literature reframing: quantum Hall → coupling~~ — C556 DONE. See `equations/quantum_hall_coupling_quantization.py`
+- ~~Literature reframing: SSH/polyacetylene → fermion zero modes~~ — C572 DONE. SSH gives 1/2 not 1/3; quark charges from Z₃ center vortex. See `equations/ssh_fractional_charge.py`
 - ~~Cosmological constant from RS2~~ — C511: 10^124× too large. Standard CC problem persists
 - ~~AdS/CFT dual of DFC bulk~~ — C511: central charge c=19.4. Recorded, not actionable
 
