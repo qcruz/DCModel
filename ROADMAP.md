@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 567 (2026-09-10)
+**Last updated:** Cycle 568 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P8** (C567 — Multi-kink gas dynamics: 9/9 PASS, 4 pairs annihilate, Q=0 exact, virial 1.25)
+- **Last tier worked: P1** (C568 — Alpha_em gap exploration: 3 viable paths, all overshoot 15-23×, need coefficient derivation)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -23,12 +23,13 @@
 
 ## Priority 1 — High-Impact Predictions
 
-- **Muon anomalous magnetic moment (g−2)_μ** — BLOCKED on α_em(0) identity. C525: Path (a) TWO-LOOP RULED OUT. Gap is structural (+0.11%), not perturbative. Remaining: (b) DFC-specific running, (c) sub-percent ECCC/k_Y correction. See `equations/alpha_em_two_loop_correction.py`
 - **Derive pion mass from GMOR** — C537: NJL-LIMITED. m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate). Pure DFC = 86 MeV (−38%, T3). BLOCKED: needs beyond-NJL condensate. See `equations/pion_mass_gmor.py`
 - **Derive light quark masses (D6 Yukawa)** — C544: DOWNGRADED T2a→T2b (+24% at 2-loop). Formula structurally interesting (0 free params) but prediction is order-dependent. See `equations/light_quark_mass_derivation.py`
 - **Derive proton-neutron mass difference from DFC** — C552: NJL route +17% (T2b). BLOCKED: vertex corrections needed to reduce C_QCD from 0.87 to ~0.50. See `equations/proton_neutron_mass_difference.py`
 - **Beyond-mean-field Walecka EOS** — C560: C₂(NJL)/C₂(NL3) = 0.87. Remaining: NJL sigma mass (226 MeV) vs physical (500-648 MeV). See `equations/nuclear_kink_nonlinear_eos.py` Part G
 - **Derive V(phi) contact terms for deuteron binding** — BLOCKED: C473 B_d=−48%. C563: OBE too weak regardless of sigma mass or coupling ratio. Needs iterated OPE / 2π exchange (see P3). See `equations/deuteron_tensor_ope.py`, `equations/light_nuclei_binding.py` Part E
+- **Derive pion mass from GMOR** — C537: NJL-LIMITED. m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate). Pure DFC = 86 MeV (−38%, T3). BLOCKED: needs beyond-NJL condensate. See `equations/pion_mass_gmor.py`
+- **Muon anomalous magnetic moment (g−2)_μ** — BLOCKED on α_em gap. C568: 3 viable paths identified (C2 topological phase space, C3 k_Y running, C5 g_eff loop). All overshoot by 15-23× — correct coefficients need derivation. C525: two-loop RULED OUT. See `equations/alpha_em_gap_exploration.py`, `equations/alpha_em_two_loop_correction.py`
 
 **Resolved (removed from P1):**
 - ~~W mass~~ — RESOLVED C497: M_W = 80.38 GeV (+0.009%, T2a). See `equations/ew_radiative_corrections.py`
@@ -40,7 +41,7 @@
 
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C520: REFRAMED. Gap is from 36π formula, not VP. DFC VP overshoots data +27%. See `equations/hadronic_vp_dfc.py`
 - **Upgrade baryon Regge intercept to T2a** — BLOCKED on Y-junction penalty Δ=−1 (P3 item). See `equations/regge_intercept_derivation.py`
-- **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — BLOCKED. C525: two-loop/threshold corrections RULED OUT (path a). Gap is structural (+0.11%), not perturbative. Remaining: path (b) DFC-specific running, path (c) sub-percent ECCC/k_Y correction. See `equations/alpha_em_two_loop_correction.py`
+- **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** — PARTIALLY UNBLOCKED. C568: 3 viable sub-percent correction paths identified (topological phase space, k_Y running, g_eff loop). All overshoot by 15-23× — need correct coefficients. C525: two-loop RULED OUT. See `equations/alpha_em_gap_exploration.py`
 - **Upgrade cosmological Λ to T2a** — STUCK. CMB ℓ₁ (+0.89%) and BAO r_drag (−0.27%) already T2a. Only Λ_cosm remains T3 — bottleneck is Casimir=α combination rule (16 mechanisms tested, 7 ruled out). See `equations/cosmological_predictions.py`, `equations/substrate_casimir_alpha.py`
 - **Upgrade nuclear symmetry energy J to T2a** — C490: +9.2% T3. Path: self-consistent m* from DFC Walecka + Fock integral with DFC g_ρ. See `equations/nuclear_symmetry_energy.py`
 - **Close f_pi 1.6% gap** — C521: M(p) ruled out. Gap traces to m_rho undershoot. BLOCKED on m_rho/σ correction. See `equations/fpi_gap_closure.py`
@@ -245,7 +246,7 @@ When a blocker is resolved, update this table and promote unblocked items in P1-
 
 | Blocker | Status | Unblocks |
 |---|---|---|
-| **Hadronic VP** δ(Δα)^NP = 0.00102 | T4 — dispersive approach needed | α_em(0) identity; muon g−2; all atomic physics T2b→T2a |
+| **α_em gap (+0.14)** — 36π overshoot | T4 → T3 (C568: 3 viable paths, coefficients needed) | α_em(0) identity; muon g−2; all atomic physics T2b→T2a |
 | **D6/D7 overlap integral** (kink-vortex BVP) | T4 — θ₂₃ resolved without BVP (C496); still needed for CKM | CKM/PMNS; baryon asymmetry magnitude |
 | **Y-junction penalty Δ = −1** | T3 — Casimir gives 12.5% | Baryon Regge intercept T2a; Δ-N splitting T2b |
 | **NJL gap equation** with DFC condensate | T4 — composite σ dynamics | Walecka EOS; nuclear saturation; pion mass (pure DFC); μ_p/μ_n sea quarks |
