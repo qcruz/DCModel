@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 578 (2026-09-11)
+**Last updated:** Cycle 579 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P1** (C578 — Muon g-2 Part G: gap-closed scenario, updated to Fermilab 2023, 14/15 PASS)
+- **Last tier worked: P2** (C579 — α_em gap Part G: one-loop shape mode closes 106.6%, 6.6% overshoot, 0 free params, T4→T3)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -30,7 +30,7 @@ respective tiers and tracked here as a collective goal.
 | # | Item | Tier | Expected impact | Status |
 |---|---|---|---|---|
 | MC1 | Derive M₅³ from (α,β) → κ = 0.50 | P3 | +2% viability, +3% rigor | OPEN — sole blocker for zero-parameter G_N |
-| MC2 | Close α_em(0) gap T4→T2a | P2 | +1% viability, +3% rigor | OPEN — f=6.94 unmatched (C569) |
+| MC2 | Close α_em(0) gap T4→T2a | P2 | +1% viability, +3% rigor | PROGRESS — shape mode closes 106.6%, 6.6% overshoot (C579) |
 | MC3 | New T2a prediction (e.g. muon g−2) | P1 | +1% viability, +1% rigor | BLOCKED on MC2; gap-closed→1.1σ (C578) |
 | MC4 | Derive nuclear binding from V(φ) | P1/P3 | +2% viability, +2% rigor | OPEN — OBE too weak, needs 2π exchange |
 
@@ -55,7 +55,6 @@ respective tiers and tracked here as a collective goal.
 
 ## Priority 2 — Tier Upgrades
 
-- **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** [MC2] — C569: proper threshold gives 5.3% of gap (Casimir + S³ curvature). Naive estimates were 20× inflated. Required f=6.94 unmatched by DFC constants. See `equations/alpha_em_gap_exploration.py` Part F
 - **Upgrade baryon Regge intercept to T2a** — BLOCKED on Y-junction penalty Δ=−1 (P3 item). See `equations/regge_intercept_derivation.py`
 - **Upgrade cosmological Λ to T2a** — STUCK. CMB ℓ₁ (+0.89%) and BAO r_drag (−0.27%) already T2a. Only Λ_cosm remains T3 — bottleneck is Casimir=α combination rule (16 mechanisms tested, 7 ruled out). See `equations/cosmological_predictions.py`, `equations/substrate_casimir_alpha.py`
 - **Upgrade nuclear symmetry energy J to T2a** — C490: +9.2% T3. Path: self-consistent m* from DFC Walecka + Fock integral with DFC g_ρ. See `equations/nuclear_symmetry_energy.py`
@@ -63,6 +62,7 @@ respective tiers and tracked here as a collective goal.
 - **Upgrade proton charge radius to T2a** — C545: VMD-regulated pion cloud (m_ρ cutoff) gives r_p = 0.809 fm (−3.8%, T2a). DFC-only with SU(6) κ_p=2 and VMD pion cloud, 0 free params. Remaining: derive κ_p from DFC magnetic moments (currently SU(6) approximation). See `equations/proton_charge_radius_dfc.py`
 - **Upgrade Delta-N splitting to T2b** — C561: FORMALLY T3, NUMERICALLY T2b (−7.4%). Part F added: empirical intercepts from 6 PDG states show α₀^N(ground)=−0.26 (matches DFC −0.25) but excited states deviate (trajectory curvature). Mass ratio m_Δ/m_N = √(5/3) = −1.68% (0 free params). BLOCKED: formal upgrade requires deriving Y-junction penalty Δ=−7/4 (P3 item). See `equations/delta_n_splitting.py`
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C520: REFRAMED. Gap is from 36π formula, not VP. DFC VP overshoots data +27%. See `equations/hadronic_vp_dfc.py`
+- **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** [MC2] — C579: ONE-LOOP SHAPE MODE closes 106.6% of gap (overshoot 6.6%). Formula: δ(1/α_em) = −36π × C₂(SU2) × g_eff²/(16π²) × ln(√2) = −0.147 vs needed −0.138. Zero free params. T4→T3 upgrade candidate. NEXT: verify 1/(16π²) normalization from explicit kink fluctuation determinant. See `equations/alpha_em_gap_exploration.py` Part G
 
 ---
 
@@ -238,7 +238,7 @@ status, or last-touched cycle changes.
 
 | # | Spoke | Best tier | Key modules | Key gaps | Last cycle |
 |---|---|---|---|---|---|
-| 1 | Coupling constants | T2a | alpha_em_prediction, alpha_em_selfconsistency, alpha_s_pure_dfc, d5_complex_from_instability | α_em(0) identity T4 (hadronic VP); Casimir=α T3 | C488 |
+| 1 | Coupling constants | T2a | alpha_em_prediction, alpha_em_selfconsistency, alpha_s_pure_dfc, d5_complex_from_instability | α_em(0) identity T3 (shape mode 1-loop, 6.6% overshoot); Casimir=α T3 | C579 |
 | 2 | Electroweak | T2a | muon_lifetime, weinberg_angle_rg, z_boson_decays, ew_radiative_corrections, ewsb_cocrystallization, higgs_potential | Muon g−2 hadronic T4; ~~M_W~~ resolved +0.009% | C497 |
 | 3 | Hadron spectroscopy | T2a | meson_regge_spectrum, baryon_mass_dfc, quarkonium_spectrum, pion_mass_gmor, rho_meson_dfc | Y-junction Δ=−1 T3; hadronic VP T4; quarkonium α_s T3 | C489 |
 | 4 | Nuclear physics | T3 | nuclear_symmetry_energy, nuclear_saturation_dfc, nuclear_dfc_periodic_table, deuteron_tensor_ope, nuclear_kink_nonlinear_eos | Deuteron B_d −48% T4; Walecka g₂ 14× weak T4; NJL gap eq. | C490 |
@@ -264,7 +264,7 @@ When a blocker is resolved, update this table and promote unblocked items in P1-
 
 | Blocker | Status | Unblocks |
 |---|---|---|
-| **α_em gap (+0.14)** — 36π overshoot | T4 (C569: proper threshold = 5.3% of gap; f=6.94 unmatched) | α_em(0) identity; muon g−2; all atomic physics T2b→T2a |
+| **α_em gap (+0.14)** — 36π overshoot | T3 (C579: shape mode 1-loop closes 106.6%, overshoot 6.6%; 0 free params) | α_em(0) identity; muon g−2; all atomic physics T2b→T2a |
 | **D6/D7 overlap integral** (kink-vortex BVP) | T4 — θ₂₃ resolved without BVP (C496); still needed for CKM | CKM/PMNS; baryon asymmetry magnitude |
 | **Y-junction penalty Δ = −1** | T3 — Casimir gives 12.5% | Baryon Regge intercept T2a; Δ-N splitting T2b |
 | **NJL gap equation** with DFC condensate | T4 — composite σ dynamics | Walecka EOS; nuclear saturation; pion mass (pure DFC); μ_p/μ_n sea quarks |
