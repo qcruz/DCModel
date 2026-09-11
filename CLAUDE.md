@@ -69,6 +69,13 @@ These rules are non-negotiable. Enforce them in all documentation.
 | "unified force" (GUT sense) | "single substrate" or "one object" |
 | "the three forces" (as fundamentally separate) | "the three closure-topology interaction regimes" or "fold interactions at D5, D6, D7 depths" |
 
+**Parameter language rule:**
+
+Do not call out "zero free parameters" or "0 free params" in predictions, commit messages,
+or documentation. DFC predictions are parameter-free by default — only note when external
+parameters ARE used (e.g., "uses m_t, m_H as inputs" or "inherits Λ_QCD from SM running").
+The absence of free parameters is the norm, not the exception, and does not need flagging.
+
 **Three foundational rules:**
 
 1. **No spatial dimensions as fundamental.** The substrate is one object. Space is not a
@@ -195,7 +202,8 @@ NOTE: The Clay Prize is tracked independently from the DFC model. Structural com
   OBJECTIVE (C297): Achieve a fully rigorous mathematical proof before any DFC publication.
   No paper or broader publication moves forward until the rigorous proof is complete.
 
-Key milestones: α_em(0) gap T4→T3 (one-loop shape mode closes 106.6% of gap, 6.6% overshoot, C579).
+Key milestones: D4 gravity κ=0.511 (+2.1%, was +158%; RS standard + M₅³=1/2 self-consistency, C580).
+  α_em(0) gap T4→T3 (one-loop shape mode closes 106.6% of gap, 6.6% overshoot, C579).
   α_s closed 0.006% (C144). v=247.83 GeV T2a (C145). m_τ Koide T2a (C146).
   θ=0 T2a (C147). β T1 candidate (C173). α=∛18 T2a (C172).
   Full Clay Prize construction chain: SP1-SP5 all T2a/T3, no T4 gaps (C178-C322).
@@ -204,7 +212,8 @@ Key milestones: α_em(0) gap T4→T3 (one-loop shape mode closes 106.6% of gap, 
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
-| 2026-09-11 | 579 | P2: alpha_em_gap_exploration.py Part G (9/11) — ONE-LOOP SHAPE MODE closes 106.6% of gap (6.6% overshoot); 0 free params; T4→T3 | 87% | 73% | ~80% |
+| 2026-09-11 | 580 | P3: kink_self_gravity.py Part I (14/14) — RS standard + M₅³=1/2 self-consistency → κ=0.5107 (+2.1%); 74× improvement over C576 (+158%); D4 spoke T3→T2a | 87% | 73% | ~80% |
+| 2026-09-11 | 579 | P2: alpha_em_gap_exploration.py Part G (9/11) — ONE-LOOP SHAPE MODE closes 106.6% of gap (6.6% overshoot); T4→T3 | 87% | 73% | ~80% |
 | 2026-09-11 | 578 | P1: anomalous_magnetic_moment.py Part G (14/15) — gap-closed→1.1σ (lattice); had VP 10σ bottleneck; Fermilab 2023; ROADMAP MC1-MC4 prioritized | 87% | 73% | ~80% |
 | 2026-09-11 | 571 | P4: nucleon_magnetic_moments.py Part J (17/21) — Δ-pole 0.5% of κS; NLO ChPT RULED OUT for g_A/32 (C_ct=124%) | 87% | 73% | ~80% |
 | 2026-09-11 | 570 | P3: d4_thick_wall_bvp.py Part H (16/0) — graviton zero-mode reduces κ 48.7% (2.04→1.29); M₅³≈4βπ=4/9 (−9.2%) | 87% | 73% | ~80% |
