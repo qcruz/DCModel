@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 573 (2026-09-11)
+**Last updated:** Cycle 574 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P6** (C573 — Prediction scorecard update: +6 summary entries, U(1) emergence, analog gravity, C₂=N_c, graviton κ, Koide upgrade)
+- **Last tier worked: P7** (C574 — Literature reframing Cluster B audit: KK, Skyrme, JR — 18/3/3 total, JR strongest framework)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -159,9 +159,9 @@ approaches do better, question foundational assumptions, and adapt the model whe
 evidence warrants it. Mathematical verifiability is the standard; attachment to any
 particular concept is not.
 
-- **Literature reframing: cohesion/conflict audit** — C524: Cluster A DONE. Remaining: Cluster B (gauge/topology), Cluster C (condensed matter), Cluster D (new connections). See `foundations/literature_reframing.md`
 - **Set T4 stagnation deadlines** — C493: items stuck at T4 for 100+ cycles should be honestly flagged as likely unresolvable within current framework. Review α_em(0) identity, Casimir=α, D4 gravity overshoot
 - **Adversarial prediction hunting** — deliberately search for quantities where DFC *must* disagree with observation. A model that can't be wrong can't be right
+- **Literature reframing: cohesion/conflict audit Clusters C+D** — C524: Cluster A DONE. C574: Cluster B DONE. Remaining: Cluster C (condensed matter: BCS/NJL, Helfrich, graded elastic), Cluster D (new connections: topo insulator, CDT, QHE, Griffiths, Witten TFT). See `foundations/literature_reframing.md`
 - **Rigorous free-parameter audit** — C566: 15 T2a predictions audited, 5/6 PASS. 4 DFC geometric params, Ratio 3.0 (generous). Key finding: g_eff²=8/27 is only truly 0-param result. See `equations/free_parameter_audit.py`. Follow-ups: (1) derive Δ(1/α)=9.136 from DFC to upgrade Tier 2b→2a, (2) fix mass_spectrum.py hidden 3rd param (dimple width=0.02), (3) fix lamb_shift.py F_higher self-calibration, (4) document M_Z embedded in coupling_derivation.py, (5) downgrade cosmology.py H₀ from "prediction" to "consistency check"
 
 **Completed (removed from P7):**
@@ -173,6 +173,7 @@ particular concept is not.
 - ~~Identify unfalsifiable claims~~ — C493 DONE. See `foundations/critical_review_predictions.md`
 - ~~Compare D-depth assignments~~ — C500 DONE. See `foundations/depth_assignment.md`
 - ~~Review mathematical rigor~~ — C519 DONE. See `foundations/critical_review_rigor.md`
+- ~~Literature reframing: cohesion/conflict audit Cluster B~~ — C574 DONE. B1 KK (4/2/1), B2 Skyrme (6/1/1), B3 JR (8/0/1). JR strongest framework. See `foundations/literature_reframing.md`
 
 ---
 

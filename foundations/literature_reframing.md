@@ -638,9 +638,9 @@ which DFC predicts is zero from the CP symmetry of S⁵).
 | Sakharov induced gravity | Audited (C524): conceptual match, 97.6% quantitative gap | Helfrich membrane rigidity | **Very high** |
 | Gordon-Unruh analog gravity | Audited (C524): perfect match, 0 conflicts | Dispersive Hawking radiation | High |
 | AdS/CFT | Audited (C524): structural only, 3 substantive conflicts | Limited quantitative use | **Downgraded** |
-| Kaluza-Klein | Language fixed (C515) | Closure topology = internal space | Medium |
-| Skyrme model | Well adapted | Derive e_sk from V(φ) | High |
-| Jackiw-Rebbi | Well adapted | Topological insulator classification | **Very high** |
+| Kaluza-Klein | Audited (C573): compatible, causal direction reversed, 1 substantive | Closure topology = internal space | Medium |
+| Skyrme model | Audited (C573): highly compatible, e_sk derivation needed, 1 substantive | Derive e_sk from V(φ) | High |
+| Jackiw-Rebbi | Audited (C573): near-perfect, 8/9 cohere, strongest framework | Topological insulator classification | **Very high** |
 | BCS/NJL | Partially adapted | BCS gap → Λ_QCD derivation | High |
 | Helfrich membranes | Not yet explored | Non-perturbative Planck mass | **Very high** |
 | Graded elastic media | Not yet explored | Mode spectrum methods | Medium |
@@ -856,3 +856,95 @@ Frameworks that treat gravity as a fundamental geometric structure and use duali
 The single most actionable result: **analog gravity has zero conflicts and should be
 exploited far more aggressively.** The single most important open problem: **Sakharov +
 Helfrich non-perturbative M_Pl derivation.**
+
+---
+
+## Cohesion/Conflict Audit — Cluster B (Gauge Theory and Topology)
+
+Same classification scheme as Cluster A: Coheres / Cosmetic conflict / Substantive conflict.
+
+### B1. Kaluza-Klein Reduction — Audit
+
+| Source assumption | DFC status | Type |
+|---|---|---|
+| A fifth spatial dimension exists with topology S¹ | DFC has no spatial extra dimension; the "circle" is the U(1) closure phase in field space | Cosmetic conflict |
+| The radius R of S¹ is a free geometric parameter | DFC determines r_U1 = 3ξ/(4β) from substrate parameters; not free | Coheres (more constrained) |
+| Fourier decomposition on S¹ gives a KK tower | Identical mathematical content; mode decomposition on a periodic coordinate | Coheres |
+| The n=0 mode of g_μ5 is a U(1) gauge field | DFC identifies this mode as the photon; gauge field = massless mode of closure winding | Coheres |
+| KK modes have mass m_n = n/R | Same formula; masses set by closure amplitude, not by geometric size | Cosmetic conflict |
+| Higher-dimensional Einstein action reduces to 4D Einstein + gauge | DFC does not start from higher-dimensional Einstein action; gauge structure emerges from closure topology | **Substantive conflict** |
+| Gauge coupling g² = 1/(M₅R) determined by geometry | DFC derives g² = 8/27 from BPS saturation; geometry relation is a consequence, not a starting point | Coheres (with reinterpretation) |
+
+**Summary:** 4 cohere, 2 cosmetic, 1 substantive. The substantive conflict is that standard KK *derives* gauge structure from gravitational structure in higher dimensions — the gauge field IS a metric component. DFC reverses this: gauge structure emerges from closure topology, and the metric is an effective description of the worldvolume. The mathematical content (Fourier decomposition on a periodic degree of freedom) is identical; the causal direction is reversed.
+
+**Residual risk:** DFC's claim that r_U1 ≈ 21ξ ≈ 21 l_Pl is consistent with unobserved KK modes but has not been verified by any independent measurement. If future observations constrain extra-dimension sizes more tightly than r < 21 l_Pl, DFC would need to address whether the closure amplitude matches.
+
+**Recent progress:** C515 fixed KK language throughout the codebase. The closure-as-internal-space identification is now systematic.
+
+---
+
+### B2. Skyrme Model and Baryon Topology — Audit
+
+| Source assumption | DFC status | Type |
+|---|---|---|
+| Pion field U(x): R³ → SU(2) is the fundamental dynamical variable | DFC: U(x) is the D6 SU(2) closure field configuration; substrate, not pion, is fundamental | Cosmetic conflict |
+| Baryon number = winding number in π₃(SU(2)) = Z | Identical; B = topological charge of the SU(2) closure wrapping | Coheres |
+| Skyrme Lagrangian has a specific quartic stabilization term (1/e²) | DFC must derive e_sk from V(φ) self-interaction at D6; currently postulated to emerge | **Substantive conflict** |
+| F_π (pion decay constant) is a measured input | DFC derives f_π = 90.63 MeV from Pagels-Stokar formula with NJL condensate (−1.6%) | Coheres |
+| Bogomolny bound E ≥ 12π²|B|F_π/e gives minimum energy | Mathematical identity; applies regardless of whether e_sk is derived or fitted | Coheres |
+| Nucleon mass = classical Skyrmion energy + rotational (1/N_c) corrections | DFC uses Regge trajectory (m_p = √(3π)Λ_QCD) as primary route; Skyrme would be independent check | Coheres (complementary) |
+| Proton spin = collective rotation of Skyrmion, not constituent quarks | Fully consistent with DFC: Σ = g_A × (I₀/I₁) = 0.320 (−3.2%, C477) | Coheres |
+| g_A from Skyrmion: collective rotation → axial current | DFC derives g_A = 4/π independently from V(φ) kink Yukawa; 4/π is structural | Coheres |
+
+**Summary:** 6 cohere, 1 cosmetic, 1 substantive. The Skyrme model is highly compatible with DFC because both treat baryons as topological solitons with spin from collective rotation. The single substantive conflict — deriving e_sk from V(φ) — is the key open problem. If DFC can derive e_sk and the resulting Skyrmion mass matches the proton mass, it provides a completely independent cross-check of m_p = √(3π)Λ_QCD.
+
+**Residual risk:** The Skyrme model is known to have quantitative limitations (e.g., the classical Skyrmion binds too tightly for nuclei, and the SU(2) hedgehog is an incomplete approximation). DFC inherits these limitations if it uses the Skyrme route. The Regge route sidesteps them.
+
+**Actionable follow-up:** Derive e_sk from substrate self-coupling at D6 (P5 item). The key identity would be e_sk² = f(α, β) where f is determined by the D6 closure potential. This is a concrete prediction target.
+
+---
+
+### B3. Jackiw-Rebbi Zero Modes — Audit
+
+| Source assumption | DFC status | Type |
+|---|---|---|
+| A Dirac fermion ψ exists as an independent field | DFC: ψ is not independent; it is the kink's own fermionic zero mode | **Substantive conflict** |
+| Scalar field φ(x) has a prescribed kink profile | DFC: φ(x) = φ₀ tanh(x/ξ) is a solution of V(φ); self-consistent, not prescribed | Coheres (stronger) |
+| Zero mode ψ₀ ∝ sech^{gφ₀ξ}(x/ξ) is normalizable | Identical mathematical content; confirmed numerically in DFC | Coheres |
+| Index theorem: number of zero modes = spectral asymmetry | Pure mathematics; applies identically to DFC kink fluctuation operator | Coheres |
+| Chern number C₁ = 1 gives exactly one zero mode per kink | Verified T1 (C556): DFC kink has C₁ = 1 | Coheres |
+| Fractional charge = ±1/2 per zero mode (SSH) | Confirmed (C572): SSH gives 1/2, not 1/3; quark charges need Z₃ center vortex | Coheres |
+| Charge fractionalization from spectral asymmetry η = −1 | Mathematical identity; same in DFC | Coheres |
+| Topological protection: zero mode robust against perturbations | DFC inherits this; Z₂ index at D6 (Kitaev class AII) protects spin-1/2 | Coheres |
+| Bulk-boundary correspondence: bulk topology → boundary modes | Central DFC principle; C₂(D7) = N_c = 3 gives three color modes (C572) | Coheres |
+
+**Summary:** 8 cohere, 0 cosmetic, 1 substantive. The Jackiw-Rebbi framework is the *most compatible* borrowed framework in Cluster B, and arguably in the entire DFC project. The single substantive conflict — DFC claims ψ is not an independent field — is actually a *strengthening* of the JR result: DFC provides the ontological context that JR lacks. In JR, the Dirac field is postulated and then shown to have a zero mode on the kink. In DFC, the zero mode IS the kink's own property, not a separate field that happens to bind.
+
+**Key clarification from C572:** SSH and center vortex are *complementary* mechanisms at different depths:
+- D6 (JR/SSH): fermion number fractionalization → spin-1/2
+- D7 (Z₃ center vortex): hypercharge quantization → charge 1/3
+
+This resolves the earlier question in B3 ("Quark e/3 charge from domain wall fractionalization?") — the answer is: not from SSH domain walls alone, but from the interplay of SSH (D6) and center vortex (D7) mechanisms.
+
+**Recent progress:** C556 proved C₁ = 1 (T1). C572 mapped the full Kitaev periodic table onto DFC depths and established C₂ = N_c = 3. The JR framework is now the most numerically verified borrowed framework in DFC.
+
+---
+
+### Cluster B Summary
+
+| Framework | Cohere | Cosmetic | Substantive | Overall assessment |
+|---|---|---|---|---|
+| B1. Kaluza-Klein | 4 | 2 | 1 | Compatible (causal direction reversed) |
+| B2. Skyrme model | 6 | 1 | 1 | Highly compatible (e_sk derivation needed) |
+| B3. Jackiw-Rebbi | 8 | 0 | 1 | Near-perfect (ψ independence is a feature, not a bug) |
+
+**Overall Cluster B finding:** Gauge/topology frameworks cohere with DFC significantly better than gravity/geometry frameworks (Cluster A). The average substantive conflict count is 1.0 per framework (vs 1.0 for Cluster A), but the *nature* of the conflicts is different:
+
+- In Cluster A, substantive conflicts are *quantitative gaps* (M₅ undetermined, Sakharov 97.6% short).
+- In Cluster B, substantive conflicts are *ontological reinterpretations* (KK causal reversal, ψ not independent, e_sk underived). These are less dangerous because they don't threaten mathematical consistency — they reflect DFC's different starting assumptions.
+
+The single most actionable result: **derive e_sk from V(φ)** — this would cross-check the proton mass through a completely independent pathway (Skyrme vs Regge).
+
+The single strongest validation: **Jackiw-Rebbi has the highest coherence of any framework audited** (8/9 assumptions cohere, with the one "conflict" being that DFC strengthens the framework rather than contradicting it).
+
+**Cross-cluster pattern:** Frameworks where the "fundamental" objects are topological (JR, Skyrme, analog gravity) cohere naturally with DFC. Frameworks where the "fundamental" objects are geometric (KK extra dimensions, AdS/CFT holographic duals, Sakharov background geometry) require reinterpretation. This pattern is consistent with DFC's core thesis: topology is primary, geometry is emergent.
