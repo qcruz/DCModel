@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 582 (2026-09-11)
+**Last updated:** Cycle 583 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P5** (C582 — Skyrme e_sk from V(φ): e=1/√β=√(9π)=5.317 matches ANW 5.45 to −2.4%. T3)
+- **Last tier worked: P6** (C583 — educational/34_electroweak_precision.md NEW: 10 EW predictions collected, all T2a, error budget from M_Z −0.36%)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -157,7 +157,7 @@ respective tiers and tracked here as a collective goal.
 
 - **Create new educational modules** — continual check. Remaining:
   - **Born rule from V(φ) module** — full derivation chain V(φ)→Schrödinger→⟨ε⟩∝|ψ|²→rate∝|ψ|²
-  - **Electroweak precision tests module** — collect M_W, M_Z, G_F, sin²θ_W, Γ_Z results
+  - ~~Electroweak precision tests module~~ — DONE C583. See `educational/34_electroweak_precision.md`
   - **Proton charge radius module** — C476 sign bug discovery + corrected prediction
 - **Document audits (CONTINUOUS)** — pick 2-4 random docs, check for stale tiers/refs/language
 - **ROADMAP review (CONTINUOUS)** — review all tiers for items to remove (resolved/not viable), consolidate (duplicates/same blocker), reorder (blocked items to bottom), and add (new follow-ups from recent work). Keep ROADMAP lean and actionable

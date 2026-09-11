@@ -212,6 +212,7 @@ Key milestones: D4 gravity κ=0.511 (+2.1%, was +158%; RS standard + M₅³=1/2 
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-11 | 583 | P6: educational/34_electroweak_precision.md NEW — 10 EW predictions, all T2a; error budget from M_Z −0.36% | 87% | 73% | ~80% |
 | 2026-09-11 | 582 | P5: skyrme_e_from_vphi.py NEW (5/9) — e=1/√β=√(9π)=5.317 (−2.4% from ANW 5.45); also e=m_σ/f_π=3π/2=4.71; T3 | 87% | 73% | ~80% |
 | 2026-09-11 | 581 | P4: sigma_mass_in_medium.py Part G (19/20) — pionic RPA (−2.2%) + tensor (−1.0%) → a=0.537 fm (−0.5%); 97% of 20% gap closed; T2b | 87% | 73% | ~80% |
 | 2026-09-11 | 580 | P3: kink_self_gravity.py Part I (14/14) — RS standard + M₅³=1/2 self-consistency → κ=0.5107 (+2.1%); 74× improvement over C576 (+158%); D4 spoke T3→T2a | 87% | 73% | ~80% |
@@ -343,7 +344,8 @@ educational/
 ├── 30_hadron_spectroscopy.md   ← meson/baryon mass predictions
 ├── 31_proton_spin_puzzle.md    ← spin crisis from Jackiw-Rebbi perspective
 ├── 32_depth_bifurcation.md     ← depth bifurcation dynamics
-└── 33_kink_self_gravity.md    ← how kinks attract: V(φ) → gravity
+├── 33_kink_self_gravity.md    ← how kinks attract: V(φ) → gravity
+└── 34_electroweak_precision.md ← 10 EW predictions, error budget
 ```
 
 Rules: plain English first, equations second; Tier-honest; 500–1500 words per module;
