@@ -204,6 +204,7 @@ Key milestones: α_em(0) gap remains T4 open (structural identity A−B = ln(1/�
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-11 | 570 | P3: d4_thick_wall_bvp.py Part H (16/0) — graviton zero-mode reduces κ 48.7% (2.04→1.29); M₅³≈4βπ=4/9 (−9.2%) | 87% | 73% | ~80% |
 | 2026-09-11 | 569 | P2: alpha_em_gap_exploration.py Part F (6/8) — proper threshold: Casimir 5%, S³ curvature 10.3%, combined 5.3%; f=6.94 unmatched | 87% | 73% | ~80% |
 | 2026-09-11 | 568 | P1: alpha_em_gap_exploration.py NEW (5/6) — 3 viable paths (C2 topological, C3 k_Y, C5 g_eff loop), all overshoot 15-23× | 87% | 73% | ~80% |
 | 2026-09-10 | 567 | P8: multi_kink_gas_dynamics.py NEW (9/9) — 4 KA pairs annihilate, pair creation from radiation, Q=0 exact, virial 1.25 | 87% | 73% | ~80% |

@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 569 (2026-09-11)
+**Last updated:** Cycle 570 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P2** (C569 — Alpha_em gap proper threshold: Casimir 5%, S³ curvature 10.3%, combined 5.3% of gap)
+- **Last tier worked: P3** (C570 — D4 gravity: graviton zero-mode reduces gap 48.7%; M₅³≈4βπ within −9.2%)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -53,7 +53,6 @@
 
 ## Priority 3 — Structural Gaps
 
-- **D4 gravity gap — reduce κ overshoot** — C508: thick-wall κ=2.04 (4.1×). C534: Helfrich κ=4.64 (9.3×, no backreaction). Problem is EXCESS, not deficit. C528: 1+1D Yukawa confirmed; power-law needs transverse integration. NEXT: gravitational self-consistency, 5D→4D normalization, emergent diffeomorphism (graviton mass protection). See `equations/d4_thick_wall_bvp.py`, `equations/helfrich_membrane_gravity.py`, `equations/kink_kink_potential.py`
 - **Prove substrate Casimir self-energy = α** — STUCK. 16 mechanisms tested, 7 ruled out. Best: I₄×Q_top=8/3 (+1.8%). See `equations/substrate_casimir_alpha.py`
 - **Derive nuclear saturation from DFC couplings** — BLOCKED. C481: composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
 - **Derive Bekenstein-Hawking entropy from V(φ)** — C511: S/A = 1/(2k) = 0.2486 (-0.57%, inherits kappa gap). Not independent prediction. Can kink thermodynamics give deeper derivation?
@@ -78,6 +77,7 @@
 - **Baryon asymmetry magnitude** — C546: DFC leptogenesis gives η_B = 1.1×10⁻⁷ (184× overshoot, T4). M_c(D7) as RH neutrino mass, Casimir spectrum M_2/M_1=9/4, maximal CP phase. Overshoot suggests M_1 too high or single-flavor approximation inadequate. See `equations/baryon_asymmetry_magnitude.py`
 - **Dark matter relic abundance mechanism** — C554: gravitational freeze-in requires T_RH=3×10¹⁷ GeV (too high). KZ overproduces by 10⁷×. Need DFC-specific production or lower m_DM. d_DM=4.5 not derived. See `equations/dark_matter_relic_abundance.py`
 - **Derive correlated 2π-exchange NN attraction from V(φ)** — C563: single OBE Yukawa with DFC g²/(4π)=7.4 is ~5× too weak for nuclear binding. Iterated OPE / box + crossed-box diagrams provide ~60% of nuclear attraction in Bonn models. DFC has pion dynamics (GMOR, g_piNN from GT) — can the 2π exchange effective coupling be derived from V(φ) chiral sector? This blocks ALL light nuclei predictions. See `equations/light_nuclei_binding.py` Part E
+- **D4 gravity gap — reduce κ overshoot** — C570: graviton zero-mode correction (∫e^{4A} vs ∫e^{2A}) reduces gap 48.7% (κ: 2.04→1.29). M₅³≈4βπ=4/9 within −9.2%. NEXT: verify graviton EOM on thick-wall background, derive M₅³ from DFC, check ψ₀≠e^A corrections. See `equations/d4_thick_wall_bvp.py` Part H
 
 ---
 
@@ -229,7 +229,7 @@ status, or last-touched cycle changes.
 | 6 | Bell / QM foundations | T2a | bell_joint_derivation, born_rule_derivation, born_rule_schrodinger, collapse_mechanism | Measurement dynamics T3; joint Born rule T3; emergent locality T3 | C482 |
 | 7 | Neutrino physics | T3 | neutrino_masses, neutrino_theta23_z3_mechanism, neutrino_casimir_depth | θ₂₃ = 49.54° (+0.35σ, T3); m₃/m₂ −8.3% T3; absolute mass scale T4 | C496 |
 | 8 | Atomic physics | T2a | atomic_structure, atomic_physics_predictions, lamb_shift, fine_structure | Lamb shift T2a (−0.69%); remaining atomic predictions inherit α_em(0) offset | C495 |
-| 9 | Gravity (D4) | T1 | d4_coupled_kink_warp, d4_thick_wall_bvp, gravity_cross_applications + 15 more | Thin-wall κ=0.497 (−0.57% T1); thick-wall κ=2.04 (4.1× overshoot); cross-spoke connections mapped C511 | C511 |
+| 9 | Gravity (D4) | T1 | d4_coupled_kink_warp, d4_thick_wall_bvp, gravity_cross_applications + 15 more | Graviton zero-mode κ=1.29 (2.6× overshoot, 48.7% improvement); M₅³≈4βπ (−9.2%); cross-spoke connections mapped C511 | C570 |
 | 10 | Flavor / masses | T2a | koide_phase_coupling, light_quark_mass_derivation, quark_mass_kappa_derivation, generation_count_proof | CKM angles T4; top quark mass T4; τ dimple route 8.4× off | C459 |
 | 11 | Proton structure | T2a | proton_spin_dfc, proton_charge_radius_dfc, nucleon_magnetic_moments, pion_nucleon_sigma_term | μ_p/μ_n sea quarks T4; charge radius pion cloud T3; pure Skyrme Σ −28% (needs HLS/1/N_c) | C498 |
 
@@ -252,7 +252,7 @@ When a blocker is resolved, update this table and promote unblocked items in P1-
 | **Y-junction penalty Δ = −1** | T3 — Casimir gives 12.5% | Baryon Regge intercept T2a; Δ-N splitting T2b |
 | **NJL gap equation** with DFC condensate | T4 — composite σ dynamics | Walecka EOS; nuclear saturation; pion mass (pure DFC); μ_p/μ_n sea quarks |
 | **2-loop α_s running** | T3 — 1-loop implemented | Quarkonium absolute masses; charmonium M(1S) +22% gap |
-| **D4 thick-wall factor-4 gap** | T3 — κ_thick=2.04 vs target 0.5 (C508) | G_N derivation; gravitational predictions; Planck scale |
+| **D4 thick-wall factor-2.6 gap** | T3 — κ_graviton=1.29 vs target 0.5 (C570, was 4.1×) | G_N derivation; gravitational predictions; Planck scale |
 
 ---
 
