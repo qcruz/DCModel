@@ -59,12 +59,12 @@ V(φ) → ξ [T1] → m_KK=1/ξ [T1] → g_eff²=8/27 [T2a] → C_match=0.795151
 - **How to test:** This zero-input prediction is a genuinely derived number; future improvements to the threshold matching will refine it.
 
 ### Tau lepton mass
-The model derives the tau lepton mass from the electron and muon masses via a mathematical pattern called the Koide formula, with a specific phase determined by the substrate topology (1/√Q_top).
+The model derives the tau lepton mass from the electron and muon masses via a mathematical pattern called the Koide formula, with a specific phase determined by the substrate topology (1/√Q_top). The phase equality (off-diagonal Yukawa / diagonal Yukawa = 1/√Q_top) follows from canonical normalization of the 5D overlap integral — the kink profile and zero-mode wavefunction cancel exactly (ratio = 1.000000), making this a structural consequence rather than a tuned relationship.
 
 - **Predicted:** m_τ = 1776.97 MeV
 - **Observed:** m_τ = 1776.86 MeV
 - **Error:** +0.006%
-- **Tier:** 2a
+- **Tier:** 2a (Yukawa overlap T1+structural; DFC physics identification T2a)
 - **Free parameters used:** 0 (uses m_e and m_μ as inputs; τ mass is a prediction)
 - **How to test:** Belle II, ATLAS, CMS precision τ mass measurements.
 
@@ -355,7 +355,7 @@ The model derives Newton's gravitational constant from V(φ) with zero free para
 - **Tier:** T1 (algebraic — the entire chain is V(φ) → negative vacuum energy → AdS curvature → RS2 localization → κ)
 - **Free parameters used:** 0
 - **How to test:** This is an internal consistency check — does DFC reproduce G_N from α and β alone? The answer is yes, to −0.57%.
-- **Note:** The thick-wall correction (self-gravitating kink BVP) gives κ = 2.04 — a factor 4.1× overshoot. The classical kink bending rigidity (Helfrich membrane analysis) gives κ_class = 4.64 M_Pl² — 9.3× overshoot before backreaction. Backreaction reduces this from 9.3× to 4.1×. The gravity gap is an *excess*, not a deficit — the kink is too stiff, not too soft. The thin-wall result (−0.57%) likely captures the correct answer through a different (algebraic, not BVP) pathway.
+- **Note:** The thick-wall correction (self-gravitating kink BVP) gives κ = 1.29 after graviton zero-mode correction (was 2.04 before). The graviton wavefunction ψ₀ ∝ e^{2A} is narrower than the naive warp e^A, replacing ∫e^{2A}dy with ∫e^{4A}dy in the G_N formula. This closed 48.7% of the thick-wall gap. The remaining overshoot (+158%) is an *excess*, not a deficit — the kink is too stiff. The thin-wall algebraic result (−0.57%) likely captures the correct answer through a different pathway.
 
 ### Nuclear surface diffuseness
 The model predicts nuclear surface diffuseness — the width of the transition region between the nuclear interior and the vacuum — from the sigma meson's Compton wavelength. In vacuum, a = ℏc/m_σ = 0.432 fm, which is 20% below the observed 0.54 fm. Including in-medium chiral condensate reduction (Hellmann-Feynman theorem) and Fock exchange corrections brings the prediction close to observation.
@@ -367,6 +367,27 @@ The model predicts nuclear surface diffuseness — the width of the transition r
 - **Tier:** T3 (condensate reduction T1; Walecka MF T3; Fock correction T3)
 - **Free parameters:** 0 (m_σ = 3Λ/2, σ_πN from DFC Skyrmion, g_σ = π√(3π))
 - **Gap closure:** 86% of original gap closed (vacuum → Hartree → Fock)
+
+### U(1) gauge emergence (structural proof)
+The real kink φ₀·tanh(x/ξ) is a saddle point in the complex field space of V(|φ|). A tiny transverse perturbation triggers tachyonic growth at rate √(α/2), amplifying the imaginary component by a factor of 10⁴. The final state is a complex vortex with |φ| = φ₀ on the vacuum manifold S¹ and phase winding Δθ = π — the kink topology has become vortex topology. U(1) gauge symmetry is not postulated; it is forced by the energetic instability of the real configuration.
+
+- **Result:** Real kink → complex vortex with U(1) phase
+- **Tier:** T1 (structural — tachyonic instability is a mathematical consequence of V(φ))
+- **Significance:** Demonstrates that gauge symmetry emerges from V(φ) dynamics, not as an input
+
+### Topological protection of N_c = 3
+The Kitaev periodic table of topological phases maps onto the DFC depth structure. At D7, the second Chern number C₂ = N_c = 3: each unit of Chern number corresponds to one color degree of freedom. Bulk-boundary correspondence ensures that the substrate bulk topology determines the number of kink boundary modes. Changing N_c would require a topological phase transition (Δ(C₂) ≠ 0), which is why the number of colors is discrete and stable.
+
+- **Result:** C₂(D7) = 3 (topologically protected)
+- **Tier:** T3 (structural mapping; quantitative derivation of C₂ from substrate dynamics pending)
+- **Significance:** Fifth N_c = 3 selection criterion (after I₄, b₀, m_N/m_ρ, Y-junction E₀ = 0)
+
+### Analog gravity: reflectionless kink
+The DFC kink's fluctuation potential is a Pöschl-Teller well with λ = 2, which is exactly reflectionless — transmission coefficient |T|² = 1 for all momenta. This means the kink introduces zero dispersive corrections at linear order. The first dispersive correction comes from nonlinear mode coupling through the tanh profile and is exponentially suppressed as exp(−πkξ). At the Planck scale (k = 1/ξ), the correction is 11%; at k = 10/ξ it is 10⁻¹⁴.
+
+- **Result:** Superluminal dispersion onset, exponentially suppressed
+- **Tier:** T1 (reflectionless) / T3 (nonlinear onset)
+- **Significance:** DFC is distinguishable from discrete quantum gravity approaches (exponential vs power-law). Hawking radiation predictions are robust.
 
 ### Inflationary spectral index n_s
 The model predicts the spectral index of primordial density perturbations from slow-roll on V(φ).
@@ -534,10 +555,16 @@ The clearest tests:
 | Surface diffuseness (vacuum) | 0.432 fm | −20% | T3 | a = ℏc/m_σ |
 | Surface diffuseness (HF) | 0.555 fm | +2.8% | T3 | Hartree-Fock corrected |
 | κ_class (bending rigidity) | 4.64 M_Pl² | 9.3× overshoot | T2a | Helfrich kink profile (C534) |
+| κ_thick (graviton zero-mode) | 1.29 | +158% vs 0.50 | T3 | ∫e^{4A}: 48.7% of gap closed (C570) |
 | κ_GL (dual GL parameter) | 3/2 | Type II (T1) | T1 | Confinement = dual Meissner |
 | η_B (baryon asymmetry) | 1.1×10⁻⁷ | 184× overshoot | T4 | DFC leptogenesis (C546) |
 | Li-7/H (BBN) | 4.7×10⁻¹⁰ | 1.6×10⁻¹⁰ | +194% | T4 | Same as std BBN; 6 mechanisms ruled out (C555) |
 | JR Chern number C₁ | 1 | — | exact | T1 | Gauge group topological (C556) |
+| U(1) tachyonic emergence | Δθ = π, 10⁴× amplif | — | T1 structural | T1 | Real kink → complex vortex (C559) |
+| PT reflectionless (analog grav) | \|T\|² = 1 all k | — | exact | T1 | Pöschl-Teller λ=2 (C564) |
+| Superluminal dispersion onset | exp(−πkξ) | — | — | T3 | Exponential vs power-law (C564) |
+| C₂(D7) = N_c = 3 | 3 | — | — | T3 | Kitaev + bulk-boundary (C572) |
+| κ thick-wall (graviton) | 1.29 | 0.50, +158% | — | T3 | Graviton zero-mode ∫e^{4A} (C570) |
 
 ---
 
