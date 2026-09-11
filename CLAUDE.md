@@ -204,6 +204,7 @@ Key milestones: α_em(0) gap remains T4 open (structural identity A−B = ln(1/�
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-11 | 578 | P1: anomalous_magnetic_moment.py Part G (14/15) — gap-closed→1.1σ (lattice); had VP 10σ bottleneck; Fermilab 2023; ROADMAP MC1-MC4 prioritized | 87% | 73% | ~80% |
 | 2026-09-11 | 571 | P4: nucleon_magnetic_moments.py Part J (17/21) — Δ-pole 0.5% of κS; NLO ChPT RULED OUT for g_A/32 (C_ct=124%) | 87% | 73% | ~80% |
 | 2026-09-11 | 570 | P3: d4_thick_wall_bvp.py Part H (16/0) — graviton zero-mode reduces κ 48.7% (2.04→1.29); M₅³≈4βπ=4/9 (−9.2%) | 87% | 73% | ~80% |
 | 2026-09-11 | 569 | P2: alpha_em_gap_exploration.py Part F (6/8) — proper threshold: Casimir 5%, S³ curvature 10.3%, combined 5.3%; f=6.94 unmatched | 87% | 73% | ~80% |

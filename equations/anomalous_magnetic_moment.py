@@ -42,7 +42,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 A_E_OBS = 0.00115965218076   # a_e = (g-2)/2
 
 # Observed muon anomalous magnetic moment
-A_MU_OBS = 0.00116592061    # a_μ = (g-2)/2, PDG 2022
+# Fermilab Run 1+2+3 combined with BNL (2023 final):
+A_MU_OBS = 0.00116592059    # a_μ = (g-2)/2, Fermilab+BNL 2023
 
 # Particle masses
 M_E_GEV   = 0.000510999     # electron mass in GeV
@@ -363,7 +364,7 @@ if __name__ == "__main__":
     err_sm_data = (a_mu_total_sm_data - A_MU_OBS) / A_MU_OBS * 100
 
     # Deviation in units of experimental uncertainty
-    a_mu_exp_unc = 41e-11  # Fermilab+BNL combined uncertainty
+    a_mu_exp_unc = 22e-11  # Fermilab Run 1+2+3 + BNL combined (2023 final)
     delta_dfc_data = (a_mu_total_dfc_data - A_MU_OBS) / a_mu_exp_unc
     delta_dfc_lattice = (a_mu_total_dfc_lattice - A_MU_OBS) / a_mu_exp_unc
     delta_sm_data = (a_mu_total_sm_data - A_MU_OBS) / a_mu_exp_unc
@@ -444,9 +445,98 @@ if __name__ == "__main__":
 
     # F6: DFC cannot resolve g-2 anomaly — α shift >> anomaly size
     anomaly_size = abs(A_MU_OBS - a_mu_total_sm_data)
-    f6_ratio = qed_shift / anomaly_size
+    f6_ratio = qed_shift / anomaly_size if anomaly_size > 0 else float('inf')
     f6_pass = f6_ratio > 10  # shift >> anomaly means DFC cannot address it via α
     tests.append(('F6', f6_pass, f'DFC α shift / g-2 anomaly = {f6_ratio:.0f}× (cannot resolve via α alone)'))
+
+    # ── Part G: GAP-CLOSED SCENARIO — what if MC2 succeeds? (C578)
+    print(f"\n{'─'*72}")
+    print("PART G — Gap-Closed Scenario: DFC with α_em(0) = 1/137.036 (C578)")
+    print(f"{'─'*72}")
+
+    # If MC2 (α_em gap closure) succeeds, DFC would predict α_em(0) = 1/137.036
+    # exactly (matching observation). What would the g-2 prediction become?
+    alpha_exact = 1.0 / 137.036  # hypothetical gap-closed DFC α
+    x_exact = alpha_exact / math.pi
+
+    a_mu_qed_exact = (C1_mu * x_exact + C2_mu * x_exact**2 + C3_mu * x_exact**3
+                      + C4_mu * x_exact**4 + C5_mu * x_exact**5)
+
+    # EW contribution is insensitive to α_em(0) — G_F and sin²θ_W are at M_Z
+    a_mu_ew_exact = a_mu_ew  # same DFC EW
+
+    # Total with data-driven and lattice hadronic
+    a_mu_exact_data = a_mu_qed_exact + a_mu_ew_exact + a_mu_had_data
+    a_mu_exact_lattice = a_mu_qed_exact + a_mu_ew_exact + a_mu_had_lattice
+
+    err_exact_data = (a_mu_exact_data - A_MU_OBS) / A_MU_OBS * 100
+    err_exact_lattice = (a_mu_exact_lattice - A_MU_OBS) / A_MU_OBS * 100
+    delta_exact_data = (a_mu_exact_data - A_MU_OBS) / a_mu_exp_unc
+    delta_exact_lattice = (a_mu_exact_lattice - A_MU_OBS) / a_mu_exp_unc
+
+    # SM reference with exact α
+    a_mu_sm_exact = (C1_mu * x_sm + C2_mu * x_sm**2 + C3_mu * x_sm**3
+                     + C4_mu * x_sm**4 + C5_mu * x_sm**5)
+    a_mu_sm_exact_total = a_mu_sm_exact + a_mu_ew_sm_ref + a_mu_had_data
+    delta_sm_exact = (a_mu_sm_exact_total - A_MU_OBS) / a_mu_exp_unc
+
+    print(f"\n  Hypothetical: MC2 closes α_em gap → α_em(0) = 1/137.036 exactly")
+    print(f"  α/π (gap-closed) = {x_exact:.10f}")
+    print(f"  α/π (current DFC) = {x_dfc:.10f}")
+    print(f"  α/π (SM)          = {x_sm:.10f}")
+    print()
+
+    # QED comparison
+    qed_shift_exact = abs(a_mu_qed_exact - a_mu_qed_sm)
+    print(f"  QED shift (gap-closed DFC vs SM): {qed_shift_exact/1e-11:+.2f} × 10⁻¹¹")
+    print(f"  QED shift (current DFC vs SM):    {(a_mu_qed_dfc - a_mu_qed_sm)/1e-11:+.1f} × 10⁻¹¹")
+    print(f"  Reduction factor: {qed_shift / qed_shift_exact:.0f}×" if qed_shift_exact > 0
+          else "  Gap-closed DFC matches SM QED exactly")
+    print()
+
+    print(f"  ── Gap-closed predictions ──")
+    print(f"\n  {'Source':<35} {'a_μ × 10¹¹':>16} {'Error':>10} {'Deviation':>10}")
+    print(f"  {'-'*35} {'-'*16} {'-'*10} {'-'*10}")
+    print(f"  {'DFC(exact α) + data-driven':<35} {a_mu_exact_data/1e-11:>16.1f} {err_exact_data:>+9.4f}% {delta_exact_data:>+9.1f}σ")
+    print(f"  {'DFC(exact α) + lattice':<35} {a_mu_exact_lattice/1e-11:>16.1f} {err_exact_lattice:>+9.4f}% {delta_exact_lattice:>+9.1f}σ")
+    print(f"  {'SM (data-driven, ref)':<35} {a_mu_sm_exact_total/1e-11:>16.1f} {'':>10} {delta_sm_exact:>+9.1f}σ")
+    print(f"  {'Observed (2023 final)':<35} {A_MU_OBS/1e-11:>16.1f}")
+    print()
+
+    # Key insight: with gap closed, DFC's ONLY distinctive contribution is EW
+    ew_diff = a_mu_ew - a_mu_ew_sm_ref
+    print(f"  With gap closed, DFC's unique contribution is EW:")
+    print(f"    a_μ(EW,DFC) − a_μ(EW,SM) = {ew_diff/1e-11:+.2f} × 10⁻¹¹")
+    print(f"    ({abs(ew_diff)/a_mu_exp_unc:.2f}σ — {'detectable' if abs(ew_diff)/a_mu_exp_unc > 0.5 else 'below sensitivity'})")
+    print()
+
+    # What WOULD make this a genuine DFC prediction?
+    print(f"  Path to genuine T2a muon g-2 prediction:")
+    print(f"    1. Close α_em gap (MC2) → removes 0.14% QED offset")
+    print(f"    2. Derive hadronic VP from DFC ρ spectral function")
+    print(f"       DFC: m_ρ = √(2π)Λ_QCD = 763 MeV (−1.6% from obs 775 MeV)")
+    print(f"       → could resolve data-driven vs lattice controversy")
+    print(f"    3. With both: DFC predicts a_μ with 0 adjustable parameters")
+    print()
+
+    # G-tests
+    # G1: gap-closed QED matches SM QED
+    g1_pass = abs(a_mu_qed_exact - a_mu_qed_sm) / abs(a_mu_qed_sm) < 1e-6
+    tests.append(('G1', g1_pass, f'Gap-closed DFC QED matches SM QED to <1 ppm'))
+
+    # G2: gap-closed total within experimental precision (with either hadronic input)
+    g2_best = min(abs(delta_exact_data), abs(delta_exact_lattice))
+    g2_pass = g2_best < 5.0  # within 5σ
+    tests.append(('G2', g2_pass, f'Gap-closed a_μ within {g2_best:.1f}σ (best hadronic)'))
+
+    # G3: DFC EW shift is sub-σ (not the bottleneck)
+    g3_pass = abs(ew_diff) / a_mu_exp_unc < 1.0
+    tests.append(('G3', g3_pass, f'DFC EW shift is {abs(ew_diff)/a_mu_exp_unc:.2f}σ (sub-dominant)'))
+
+    # G4: hadronic VP IS the bottleneck after gap closure
+    had_spread = abs(a_mu_had_vp_lattice - a_mu_had_vp_data)
+    g4_pass = had_spread / a_mu_exp_unc > 5.0
+    tests.append(('G4', g4_pass, f'Had VP spread = {had_spread/a_mu_exp_unc:.0f}σ (data vs lattice is bottleneck after MC2)'))
 
     n_pass = sum(1 for _, p, _ in tests if p)
     n_total = len(tests)
@@ -465,9 +555,17 @@ if __name__ == "__main__":
     print(f"    a_μ(DFC+data)    = {a_mu_total_dfc_data/1e-11:.1f} × 10⁻¹¹  ({delta_dfc_data:+.1f}σ, T2b)")
     print(f"    a_μ(DFC+lattice) = {a_mu_total_dfc_lattice/1e-11:.1f} × 10⁻¹¹  ({delta_dfc_lattice:+.1f}σ, T2b)")
     print(f"    Key finding: DFC shifts muon QED by {(a_mu_qed_dfc - a_mu_qed_sm)/1e-11:+.1f} × 10⁻¹¹")
-    print(f"    — 642× larger than the g-2 anomaly (~250 × 10⁻¹¹)")
-    print(f"    — 3953× larger than experimental precision ({a_mu_exp_unc/1e-11:.0f} × 10⁻¹¹)")
+    print(f"    — {abs(qed_shift/anomaly_size):.0f}× larger than the g-2 anomaly" if anomaly_size > 0
+          else "    — g-2 anomaly size ~0 with current inputs")
+    print(f"    — {f5_ratio:.0f}× larger than experimental precision ({a_mu_exp_unc/1e-11:.0f} × 10⁻¹¹)")
     print(f"    — DFC CANNOT address muon g-2 until α_em(0) is derived to ppm")
+    print()
+    print(f"  GAP-CLOSED SCENARIO (Part G):")
+    print(f"    IF MC2 succeeds (α_em gap → 0):")
+    print(f"      a_μ(DFC+data)    → {a_mu_exact_data/1e-11:.1f} × 10⁻¹¹  ({delta_exact_data:+.1f}σ)")
+    print(f"      a_μ(DFC+lattice) → {a_mu_exact_lattice/1e-11:.1f} × 10⁻¹¹  ({delta_exact_lattice:+.1f}σ)")
+    print(f"    Bottleneck shifts from α_em to hadronic VP (data vs lattice: {had_spread/a_mu_exp_unc:.0f}σ)")
+    print(f"    DFC ρ spectral function → could resolve had VP controversy")
     print()
     print(f"{'='*72}")
     print(f"TOTAL: {n_pass}/{n_total} PASS, {n_total-n_pass}/{n_total} FAIL")
