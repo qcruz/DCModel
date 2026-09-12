@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 589 (2026-09-11)
+**Last updated:** Cycle 590 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P8** (C589 — graviton_lichnerowicz_thick_wall.py NEW S7: exact zero-mode ψ₀=e^{3A/2}, κ=0.5107 (+2.14%) irreducible, 12/12 PASS)
+- **Last tier worked: P8** (C590 — kibble_zurek_kink_density.py NEW S1: KZ exponent σ=0.290 (theory 0.250, +16%), Q=0 exact, universal, 15/15 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -202,7 +202,7 @@ from V(φ) when you solve the field equation numerically.
 
 **Queue (ordered by impact):**
 
-- **Kibble-Zurek: quench rate → kink density** — cool the system through the phase transition at different rates. Measure kink density vs quench rate. Connects to cosmological defect formation
+- **Kibble-Zurek: quench rate → kink density** — C590 DONE. σ=0.290 (+16% vs KZ 0.250), universal, Q=0 exact. See `equations/kibble_zurek_kink_density.py`
 - **Kink with excited shape mode** — boost the internal PT shape mode of a kink before collision. Measure how internal excitation affects scattering outcome (resonance window shifts)
 - **Kink-kink repulsion dynamics** — two same-sign kinks repel. Measure the repulsive force, compare to Manton prediction. Topological exclusion = "Pauli repulsion" for identical kinks
 - **Compression-driven bifurcation** — simulate a substrate under slow uniform compression (time-dependent α(t)). Watch for spontaneous symmetry breaking, kink formation, and depth-like cascade behavior
@@ -220,6 +220,7 @@ from V(φ) when you solve the field equation numerically.
 - kink_gravity_gradient.py — kink in α(x) gradient: a=-(3/(2α))dα/dx matches to 0.6%, a∝ε to 1.1%, C_grav=1.49, 10/10 PASS (C575)
 - vortex_antivortex_annihilation.py — 2+1D V+AV annihilation: Q=0 exact, ω_peak=1.12m_σ, cores annihilate, 11/11 PASS (C585)
 - graviton_lichnerowicz_thick_wall.py — S7: graviton zero-mode on DFGH thick-wall: ψ₀=e^{3A/2} EXACT, κ=0.5107 (+2.14%) irreducible, volcano potential, 12/12 PASS (C589)
+- kibble_zurek_kink_density.py — S1: KZ scaling σ=0.290 (+16% vs 0.250), Q=0 exact, universal across (α,β), spacing/ξ_hat~10 (O(1)), 15/15 PASS (C590)
 
 **Integration rule:** After each new simulation, update:
 1. `equations/README.md` — add to simulation table

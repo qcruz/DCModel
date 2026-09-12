@@ -94,19 +94,19 @@ which connects to the robustness of Hawking radiation predictions.
 
 ### 2.1 HIGH PRIORITY — Directly Addresses T4/Stalled Items
 
-#### S1: Kibble-Zurek Kink Density vs Quench Rate
-- **Module:** `equations/kibble_zurek_kink_density.py`
-- **What to simulate:** Cool the substrate through the tachyonic phase transition
-  (α(t) goes from negative to positive) at different quench rates τ_Q.
-- **What to measure:** Kink density n_kink vs τ_Q. Theory: n ∝ τ_Q^{-ν/(1+νz)}
-  with mean-field ν = 1/2, z = 2 → n ∝ τ_Q^{-1/4}.
-- **DFC prediction:** The exponent depends only on the universality class of V(φ),
-  which is mean-field (φ⁴ at upper critical dimension d=4).
-- **Addresses:** Dark matter relic abundance (T4, C554) — Kibble-Zurek overproduces
-  by 10⁷×. Can we identify the correct production mechanism from the simulation?
-  Also connects to cosmological defect formation and BBN constraints.
-- **Milestone:** Verify KZ scaling exponent; measure inter-kink spacing distribution;
-  extract correlation length at freeze-out.
+#### S1: Kibble-Zurek Kink Density vs Quench Rate -- COMPLETED (C590)
+- **Module:** `equations/kibble_zurek_kink_density.py` (15/15 PASS)
+- **Result:** KZ scaling verified: n_kink ~ τ_Q^{-0.290} (theory: τ_Q^{-0.250},
+  +16% deviation — within expected range for 1+1D finite-size numerics).
+- **Key findings:** (1) Kink density decreases 5× over 2 decades of τ_Q.
+  (2) Kinks and antikinks form in exactly equal numbers (Q=0, periodic BC).
+  (3) Inter-kink spacing scales with KZ freeze-out correlation length ξ_hat,
+  with ratio spacing/ξ_hat ~ 10 (constant to 19% across quench rates).
+  (4) Exponent is universal — same for doubled (α,β) parameters.
+  (5) Spacing distribution is broad (std/mean = 0.73), with median/mean = 0.81.
+- **DFC significance:** Confirms KZ mechanism operates in V(φ). The DM
+  overproduction problem (10⁷×) is a rate problem: the cosmological τ_Q
+  must be large enough to suppress defect density to observed levels.
 
 #### S2: Compression-Driven Bifurcation Cascade
 - **Module:** `equations/compression_cascade_sim.py`
@@ -293,7 +293,7 @@ Based on impact × tractability:
 | Order | Simulation | Why this order |
 |-------|-----------|----------------|
 | ~~1~~ | ~~**S7** (Graviton Lichnerowicz)~~ | COMPLETED C589: κ=0.5107 (+2.14%) definitive; gap irreducible |
-| 2 | **S1** (Kibble-Zurek) | Addresses DM relic T4; well-understood theory to compare against; extends substrate_simulation.py |
+| ~~2~~ | ~~**S1** (Kibble-Zurek)~~ | COMPLETED C590: σ=0.290 (+16% vs 0.250), Q=0 exact, universal |
 | 3 | **S4** (KK repulsion) | Simple extension of kink_antikink; demonstrates Pauli analogue; quick win |
 | 4 | **S3** (Y-junction) | Directly addresses baryon physics; builds on vortex_antivortex |
 | 5 | **S5** (Shape mode collision) | Extends KA annihilation; connects to one-loop physics |
