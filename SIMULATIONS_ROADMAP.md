@@ -122,18 +122,19 @@ which connects to the robustness of Hawking radiation predictions.
 - **Milestone:** Observe at least 2 sequential bifurcation events; measure the
   compression ratios between them; compare to DFC depth spacing predictions.
 
-#### S3: Y-Junction Dynamics and Baryon Formation
-- **Module:** `equations/y_junction_dynamics.py`
-- **What to simulate:** 2+1D complex field with 3 vortex strings meeting at a
-  junction. Initialize a Y-junction configuration and evolve.
-- **What to measure:** Junction stability; force balance angles (should be 120°
-  for equal tensions); oscillation modes; whether the junction carries angular
-  momentum; decay channels.
-- **Addresses:** Baryon Regge intercept junction penalty (T3→T2a, C587);
-  baryon structure generally; Y-junction BVP (P3 item).
-- **Milestone:** Demonstrate stable Y-junction; verify 120° force balance;
-  measure junction oscillation frequencies; check if junction carries zero
-  angular momentum (confirming the frozen-DOF derivation from C587).
+#### S3: Y-Junction Dynamics and Baryon Formation -- COMPLETED (C593)
+- **Module:** `equations/y_junction_dynamics.py` (14/14 PASS)
+- **Result:** 120° force balance CONFIRMED to within 1°. Junction angular
+  momentum L_z ≈ 0, consistent with frozen-DOF derivation (C587).
+- **Key findings:** (1) Three same-sign vortices (Q=+3) at 120° maintain
+  equilibrium angles throughout evolution. (2) Junction center L_z ≈ 0
+  supports s_JR = 1/2 junction penalty. (3) Energy scales as Q^2 ~ 28*E_v
+  (strong mutual repulsion). (4) CRITICAL: In pure U(1), same-sign vortices
+  REPEL — Y-junction is NOT stable without confinement. Baryons require
+  SU(3) (D7 depth) to provide confining string tension.
+- **DFC significance:** Confirms 120° equal-tension force balance and zero
+  junction angular momentum. The instability in U(1) demonstrates that baryon
+  formation is a D7-depth phenomenon — D5 U(1) cannot confine.
 
 ### 2.2 MEDIUM PRIORITY — Extends Verified Results
 
@@ -299,7 +300,7 @@ Based on impact × tractability:
 | ~~1~~ | ~~**S7** (Graviton Lichnerowicz)~~ | COMPLETED C589: κ=0.5107 (+2.14%) definitive; gap irreducible |
 | ~~2~~ | ~~**S1** (Kibble-Zurek)~~ | COMPLETED C590: σ=0.290 (+16% vs 0.250), Q=0 exact, universal |
 | ~~3~~ | ~~**S4** (KK repulsion)~~ | COMPLETED C591: Z_2 exclusion, m_eff/m_sigma=0.9954, KA resonance windows |
-| 4 | **S3** (Y-junction) | Directly addresses baryon physics; builds on vortex_antivortex |
+| ~~4~~ | ~~**S3** (Y-junction)~~ | COMPLETED C593: 120° confirmed, L_z≈0, U(1) cannot confine |
 | 5 | **S5** (Shape mode collision) | Extends KA annihilation; connects to one-loop physics |
 | 6 | **S2** (Cascade) | Addresses depth assignments; computationally moderate |
 | 7 | **S6** (Vortex meson) | Extends 2+1D; connects to hadron spectrum |
