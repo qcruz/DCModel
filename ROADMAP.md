@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 591 (2026-09-11)
+**Last updated:** Cycle 592 (2026-09-12)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P8** (C591 — kink_kink_repulsion.py NEW S4: Z_2 topological exclusion, Yukawa m_eff/m_sigma=0.9954, KA resonance windows, 13/13 PASS)
+- **Last tier worked: P7** (C592 — parameter_provenance.md NEW: full input provenance for all 24 predictions, pre/post-diction audit, honest parameter counting)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -187,6 +187,7 @@ particular concept is not.
 - ~~Audit prediction quality~~ — C486 DONE. See `foundations/critical_review_predictions.md`
 - ~~Identify unfalsifiable claims~~ — C493 DONE. See `foundations/critical_review_predictions.md`
 - ~~Compare D-depth assignments~~ — C500 DONE. See `foundations/depth_assignment.md`
+- ~~Parameter provenance audit~~ — C592 DONE. Full input tracing for 24 predictions: 2 genuinely 0-param, 6 pre-dictions, 10 post-dictions, 4 fitted. See `foundations/parameter_provenance.md`
 - ~~Review mathematical rigor~~ — C519 DONE. See `foundations/critical_review_rigor.md`
 - ~~Literature reframing: cohesion/conflict audit Cluster B~~ — C574 DONE. B1 KK (4/2/1), B2 Skyrme (6/1/1), B3 JR (8/0/1). JR strongest framework. See `foundations/literature_reframing.md`
 
