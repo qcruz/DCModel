@@ -212,6 +212,7 @@ Key milestones: D4 gravity κ=0.511 (+2.1%, was +158%; RS standard + M₅³=1/2 
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-12 | 595 | P2: substrate_casimir_alpha.py Part K (35/36) — factorized path integral upgrades combination rule T3→T2b; 18 mechanisms tested, Q2 (why alpha) may be irreducible | 87% | 73% | ~80% |
 | 2026-09-12 | 594 | P1: pion_mass_gmor.py Part F-H (14/17) — beyond-NJL condensate: power-law SD closes gap -24.8%→-6.0%, m_pi 86→120 MeV (-13.8%, T2b), matched n=1.741≈4*gamma_m | 87% | 73% | ~80% |
 | 2026-09-12 | 593 | P8/S3: y_junction_dynamics.py NEW (14/14) — 120° force balance, L_z≈0 junction, U(1) instability proves D7 confinement needed | 87% | 73% | ~80% |
 | 2026-09-12 | 592 | P7: parameter_provenance.md NEW — full input audit: 2 genuinely 0-param, 6 pre-dictions, 10 post-dictions; honest parameter counting | 87% | 73% | ~80% |

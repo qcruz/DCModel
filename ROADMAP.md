@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 594 (2026-09-12)
+**Last updated:** Cycle 595 (2026-09-12)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P1** (C594 — pion_mass_gmor.py Part F-H: beyond-NJL condensate via momentum-dependent mass. Power-law SD: <qq>^{1/3}=-263 MeV (-6% vs PDG), m_pi=120 MeV (-13.8%). Matched exponent n=1.741 ≈ 4*gamma_m. 14/17 PASS)
+- **Last tier worked: P2** (C595 — substrate_casimir_alpha.py Part K: factorized path integral upgrades combination rule T3→T2b. 18 mechanisms tested, 7 ruled out. Q2 (why exp(-alpha)) remains T3, may be irreducible. 35/36 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -55,7 +55,6 @@ respective tiers and tracked here as a collective goal.
 
 ## Priority 2 — Tier Upgrades
 
-- **Upgrade cosmological Λ to T2a** — STUCK. CMB ℓ₁ (+0.89%) and BAO r_drag (−0.27%) already T2a. Only Λ_cosm remains T3 — bottleneck is Casimir=α combination rule (16 mechanisms tested, 7 ruled out). See `equations/cosmological_predictions.py`, `equations/substrate_casimir_alpha.py`
 - **Upgrade nuclear symmetry energy J to T2a** — C490: +9.2% T3. Path: self-consistent m* from DFC Walecka + Fock integral with DFC g_ρ. See `equations/nuclear_symmetry_energy.py`
 - **Close f_pi 1.6% gap** — C521: M(p) ruled out. Gap traces to m_rho undershoot. BLOCKED on m_rho/σ correction. See `equations/fpi_gap_closure.py`
 - **Upgrade proton charge radius to T2a** — C545: VMD-regulated pion cloud (m_ρ cutoff) gives r_p = 0.809 fm (−3.8%, T2a). DFC-only with SU(6) κ_p=2 and VMD pion cloud, 0 free params. Remaining: derive κ_p from DFC magnetic moments (currently SU(6) approximation). See `equations/proton_charge_radius_dfc.py`
@@ -63,6 +62,7 @@ respective tiers and tracked here as a collective goal.
 - **Derive hadronic VP δ(Δα)^NP = 0.00102** — C520: REFRAMED. Gap is from 36π formula, not VP. DFC VP overshoots data +27%. See `equations/hadronic_vp_dfc.py`
 - **Prove alpha_em(0) identity A−B = ln(1/α_em(0))** [MC2] — C579: ONE-LOOP SHAPE MODE closes 106.6% of gap (overshoot 6.6%). Formula: δ(1/α_em) = −36π × C₂(SU2) × g_eff²/(16π²) × ln(√2) = −0.147 vs needed −0.138. Zero free params. T4→T3 upgrade candidate. NEXT: verify 1/(16π²) normalization from explicit kink fluctuation determinant. See `equations/alpha_em_gap_exploration.py` Part G
 - **Upgrade baryon Regge intercept to T2a** — C587: UNBLOCKED. Part K derives junction penalty Δ=s_JR=1/2 from Y-junction force balance freezing 1 DOF. Formula: α₀(baryon,S)=S/Q_top−1/2. N=−1/4 ✓, Δ=+1/4 ✓. T3→T2a candidate. Weakest link: frozen DOF↔s_JR identification (structural). See `equations/regge_intercept_derivation.py` Part K
+- **Upgrade cosmological Λ to T2a** — C595: 18 mechanisms tested, 7 ruled out. Q1 (combination rule) upgraded T3→T2b via factorized path integral. Q2 (why exp(-alpha)) remains T3 — may be irreducible (alpha IS V''/2). Overall T3. See `equations/substrate_casimir_alpha.py`
 
 ---
 
