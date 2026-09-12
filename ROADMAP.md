@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 597 (2026-09-12)
+**Last updated:** Cycle 598 (2026-09-12)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P4** (C597 — bbn_predictions.py Part I: DFC nuclear parameter sensitivity for Li-7. Pure DFC m_pi=120 MeV makes Li-7 3.3× WORSE. Matched condensate m_pi=137 gives factor 1.019 (essentially no change). f_pi has right sign but 7× too small. Solving Li-7 needs m_pi=157 MeV (+13%), DFC goes wrong direction. 20/20 PASS)
+- **Last tier worked: P5** (C598 — graded_media_kink_spectrum.py NEW: transfer matrix confirms reflectionless (|R|<4e-11), WKB mode counting exact (n=0 at -0.05, n=1 at 0.95), impedance contrast up to 3× yet R=0 (non-perturbative). 15/15 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -101,7 +101,7 @@ respective tiers and tracked here as a collective goal.
 - **Triple-alpha Q value / light nuclei binding** — C563: ROOT CAUSE REVISED. Not coupling asymmetry — OBE coupling strength itself too weak. g²/(4π)=7.4 gives V_net~few MeV at 1fm even with g_omega=0 and NJL sigma (226 MeV). No binding for any m_sigma [150-650 MeV]. Needs iterated OPE / correlated 2π exchange (~60% of nuclear attraction in Bonn models). See `equations/light_nuclei_binding.py` Part E
 - **Nucleon magnetic moment ratio** — +2.75%. C571: NLO ChPT + Δ-pole RULED OUT for g_A/32 derivation (Δ gives 0.5% of κS, C_ct=124% unphysical). The ratio correction is driven by κS=−0.060 (sea quarks/orbital AM), not perturbative ChPT. Algebraic match −3/2+g_A/32 holds at 0.022% but derivation requires Skyrme-type sea computation. See `equations/nucleon_magnetic_moments.py` Part J
 - **Nuclear surface diffuseness** — C581: pionic RPA (−2.2%) + tensor correlations (−1.0%) close remaining +2.8% → −0.5% (97% of original 20% gap closed). Pionic/tensor magnitudes from DFT systematics scaled by DFC f_π ratio (T2b). HF-only remains T2a (+2.8%). See `equations/sigma_mass_in_medium.py` (19/20 PASS)
-- **Lithium problem** — C597: ALL 6 DFC mechanisms ruled out (C555). Nuclear parameter sensitivity (Part I): pure DFC m_π=120 MeV makes Li-7 3.3× WORSE; matched m_π=137 gives factor 1.019 (no help). Solving Li-7 needs m_π=157 MeV (+13%), DFC goes wrong direction. f_π has right sign but ~7× too small. DFC inherits lithium problem. See `equations/bbn_predictions.py` Part I
+- **Lithium problem** — ACCEPTED LIMITATION. C597: 7 mechanisms tested, all ruled out. DFC m_π goes wrong direction (needs heavier, DFC predicts lighter). No viable DFC path. See `equations/bbn_predictions.py` Parts H-I
 
 **Resolved (removed from P4):**
 - ~~M_W = 79.67 GeV (−0.88%)~~ — RESOLVED C497: tree-level gap closed to +0.009% by standard one-loop Sirlin Δr corrections. See `equations/ew_radiative_corrections.py` (10/10 PASS, T2a)
@@ -112,7 +112,6 @@ respective tiers and tracked here as a collective goal.
 
 ## Priority 5 — Exploratory
 
-- **Literature reframing: graded elastic media → mode spectrum** — import transfer matrix, WKB, impedance matching methods from GRIN optics / metamaterials for kink fluctuation spectrum. See `foundations/literature_reframing.md` §C3
 - **Literature reframing: CDT spectral dimension flow** — does DFC predict spectral dimension 4→2 at short distances (ω ~ 1/ξ)? If so, matches CDT quantum gravity result. See `foundations/literature_reframing.md` §D2
 - **Literature reframing: Griffiths/FKG → substrate ordering** — Mermin-Wagner constraints on closure behaviors at each effective dimensionality. Kosterlitz-Thouless for topological ordering at D5. See `foundations/literature_reframing.md` §D4
 - **Literature reframing: Witten TFT → substrate invariants** — Chern-Simons invariant in D7 SU(3) closure determines θ_QCD. Topological invariants classify closure types. See `foundations/literature_reframing.md` §D5
@@ -138,6 +137,8 @@ respective tiers and tracked here as a collective goal.
 - **Prove y(v) = exp(-(b₀+1/α)) from kink overlap** — C510: d_eff = 7.9 kink widths. BOTTLENECK: derive D5-D7 depth separation. See `equations/light_quark_mass_derivation.py` Part K
 - **Analog system comparison** — condensed matter systems with double-well kinks (polyacetylene, ferroelectrics). Do they show emergent gauge-like behaviors?
 - **Skyrme e_sk from V(φ)** — C582: e=1/√β=√(9π)=5.317 (−2.4% from ANW 5.45). Also e=m_σ/f_π=3π/2=4.71 (−13.5%). Both in lit range [4,6.5]. Skyrme M_N problem inherited (3-7× too high); DFC uses Regge for M_N. T3. NEXT: formal dimensional reduction β → e_sk. See `equations/skyrme_e_from_vphi.py`
+
+- **Literature reframing: graded elastic media → mode spectrum** — C598 DONE. Transfer matrix confirms reflectionless (|R|<4e-11), WKB exact, impedance non-perturbative. NEXT: apply transfer matrix to KA pair (finite separation) for meson-like transmission resonances. See `equations/graded_media_kink_spectrum.py`
 
 **Completed (removed from P5):**
 - ~~Analog gravity dispersive corrections~~ — C564 DONE. See `equations/analog_gravity_dispersion.py`
