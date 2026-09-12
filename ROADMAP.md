@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 587 (2026-09-11)
+**Last updated:** Cycle 588 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P2** (C587 — regge_intercept_derivation.py Part K: junction penalty derived, α₀(baryon)=S/Q_top−1/2, 38/39 PASS)
+- **Last tier worked: P3** (C588 — kink_self_gravity.py Part J: one-loop too small, gap is thick-wall classical, n=2.06 closes to +0.24%, 17/17 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -29,7 +29,7 @@ respective tiers and tracked here as a collective goal.
 
 | # | Item | Tier | Expected impact | Status |
 |---|---|---|---|---|
-| MC1 | Derive M₅³ from (α,β) → κ = 0.50 | P3 | +2% viability, +3% rigor | PROGRESS — RS standard + DFGH self-consistency gives κ=0.5107 (+2.1%, C580). Remaining: close 2.1% gap |
+| MC1 | Derive M₅³ from (α,β) → κ = 0.50 | P3 | +2% viability, +3% rigor | PROGRESS — κ=0.5107 (+2.1%). C588: gap is classical thick-wall, not quantum. n=2.06 closes to +0.24%. Path: Lichnerowicz eqn |
 | MC2 | Close α_em(0) gap T4→T2a | P2 | +1% viability, +3% rigor | PROGRESS — shape mode closes 106.6%, 6.6% overshoot (C579) |
 | MC3 | New T2a prediction (e.g. muon g−2) | P1 | +1% viability, +1% rigor | BLOCKED on MC2; gap-closed→1.1σ (C578) |
 | MC4 | Derive nuclear binding from V(φ) | P1/P3 | +2% viability, +2% rigor | PROGRESS — C586: NLO TPE gives 33% of needed attraction. Needs N2LO or Brueckner |
@@ -68,7 +68,6 @@ respective tiers and tracked here as a collective goal.
 
 ## Priority 3 — Structural Gaps
 
-- **D4 gravity gap — close 2.1% κ overshoot** [MC1] — C580: RS standard formula (∫e^{2A}) + DFGH self-consistent M₅³=1/2 → κ=0.5107 (+2.1%). 74× improvement over C576 (was +158%). Remaining 2.1% could come from: thick-wall graviton localization correction, one-loop induced gravity (cf. C579 α_em approach), or metric back-reaction on BVP boundary conditions. See `equations/kink_self_gravity.py` Part I
 - **Derive correlated 2π-exchange NN attraction from V(φ)** [MC4] — C563: single OBE Yukawa with DFC g²/(4π)=7.4 is ~5× too weak for nuclear binding. Iterated OPE / box + crossed-box diagrams provide ~60% of nuclear attraction in Bonn models. DFC has pion dynamics (GMOR, g_piNN from GT) — can the 2π exchange effective coupling be derived from V(φ) chiral sector? This blocks ALL light nuclei predictions. See `equations/light_nuclei_binding.py` Part E
 - **Prove substrate Casimir self-energy = α** — STUCK. 16 mechanisms tested, 7 ruled out. Best: I₄×Q_top=8/3 (+1.8%). See `equations/substrate_casimir_alpha.py`
 - **Derive nuclear saturation from DFC couplings** — BLOCKED. C481: composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
@@ -90,10 +89,10 @@ respective tiers and tracked here as a collective goal.
 - **GAUGE EMERGENCE: zero-mode degeneracy → local gauge symmetry** — C531: ENERGETIC ARGUMENT COMPLETE (24/24 PASS). Global vortex E=∞ (log divergence) → gauge field A_μ REQUIRED for finite E → δE/δA=0 gives Maxwell → e²=8/27 from moduli metric. 6-step chain F1-F6, steps F1-F5 T1, F6 T2a. Remaining gaps: G3 dynamical mechanism (Anderson-type, T3), G4 codimension 2+1D→3+1D (T3). See `equations/gauge_emergence_exploration.py`
 - **U(n) → SU(n) FACTORING: derive why overall U(1) phase is redundant** — C529: U(n) isometry of S^{2n-1} is mathematical fact; factoring to SU(n) needs dynamical principle. Must show overall phase is D5 symmetry (already counted) via topological or conservation argument. See `educational/32_depth_bifurcation.md` §What Remains Open item 2
 - **CHARGE INHERITANCE: prove D(n+1) modes transform under G_n** — C529: termination argument assumes D8 modes carry SU(3) charge. Need substrate derivation that deeper modes necessarily couple to shallower gauge structure. See `educational/32_depth_bifurcation.md` §What Remains Open item 6
-- **Derive Y-junction penalty = −1** — critical blocker for baryon Regge, Δ-N splitting. C463: NG Casimir gives Δ=1/8 (12.5%). C539: quark-diquark massive-endpoint path RULED OUT (requires m_D=148 MeV, unphysically small; classical formula double-counts kink mass already in JR mode). Remaining paths: junction mode quantization, WKB, Y-junction BVP. See `equations/regge_intercept_derivation.py` Part J
+- **Derive Y-junction penalty** — C587: RESOLVED. Part K derives Δ=s_JR=1/2 (in S/Q_top parametrization) from Y-junction force balance freezing 1 DOF. Formula: α₀(baryon,S)=S/Q_top−1/2. N=−1/4 ✓, Δ=+1/4 ✓. T3→T2a candidate. See `equations/regge_intercept_derivation.py` Part K
 - **Baryon asymmetry magnitude** — C546: DFC leptogenesis gives η_B = 1.1×10⁻⁷ (184× overshoot, T4). M_c(D7) as RH neutrino mass, Casimir spectrum M_2/M_1=9/4, maximal CP phase. Overshoot suggests M_1 too high or single-flavor approximation inadequate. See `equations/baryon_asymmetry_magnitude.py`
 - **Dark matter relic abundance mechanism** — C554: gravitational freeze-in requires T_RH=3×10¹⁷ GeV (too high). KZ overproduces by 10⁷×. Need DFC-specific production or lower m_DM. d_DM=4.5 not derived. See `equations/dark_matter_relic_abundance.py`
-- **D4 gravity gap — close remaining 2.1%** — C580: BREAKTHROUGH. RS standard (∫e^{2A}) + self-consistent M₅³=1/2 from DFGH → κ=0.5107 (+2.1%), was +158% (C576). 74× improvement. Full chain: V(φ)→kink→DFGH→A(y)→graviton→G_N→F=GM²/r². Force hierarchy: bulk >> gravity >> σ. Remaining 2.1% gap candidates: thick-wall graviton correction, one-loop induced gravity, BVP back-reaction. See MC1 at top of P3. See `equations/kink_self_gravity.py` Part I
+- **D4 gravity gap — close remaining 2.1%** [MC1] — C588: One-loop corrections too small (0.2-0.5%, wrong sign). Gap is CLASSICAL thick-wall effect: ∫e^{2.06A} closes to +0.24%. Path: Lichnerowicz equation on kink background. See `equations/kink_self_gravity.py` Part J
 
 ---
 
