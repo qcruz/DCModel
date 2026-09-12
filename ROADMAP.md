@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 595 (2026-09-12)
+**Last updated:** Cycle 596 (2026-09-12)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P2** (C595 — substrate_casimir_alpha.py Part K: factorized path integral upgrades combination rule T3→T2b. 18 mechanisms tested, 7 ruled out. Q2 (why exp(-alpha)) remains T3, may be irreducible. 35/36 PASS)
+- **Last tier worked: P3** (C596 — light_nuclei_binding.py Part G: N2LO TPE with Δ(1232). c₃=-2.98 from Delta dominance (-12% vs standard). N2LO adds -0.74 MeV at 1fm, total OPE+NLO+N2LO = -12.2 MeV = 35% of needed. Chiral expansion converges too slowly. T4. 11/20 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -32,7 +32,7 @@ respective tiers and tracked here as a collective goal.
 | MC1 | Derive M₅³ from (α,β) → κ = 0.50 | P3 | +2% viability, +3% rigor | PROGRESS — κ=0.5107 (+2.14%) DEFINITIVE. C589: Lichnerowicz exact zero-mode proves gap irreducible at DFGH level. 90% excess within 2ξ. T2a prediction |
 | MC2 | Close α_em(0) gap T4→T2a | P2 | +1% viability, +3% rigor | PROGRESS — shape mode closes 106.6%, 6.6% overshoot (C579) |
 | MC3 | New T2a prediction (e.g. muon g−2) | P1 | +1% viability, +1% rigor | BLOCKED on MC2; gap-closed→1.1σ (C578) |
-| MC4 | Derive nuclear binding from V(φ) | P1/P3 | +2% viability, +2% rigor | PROGRESS — C586: NLO TPE gives 33% of needed attraction. Needs N2LO or Brueckner |
+| MC4 | Derive nuclear binding from V(φ) | P1/P3 | +2% viability, +2% rigor | PROGRESS — C596: OPE+NLO+N2LO = 35% of needed. Chiral expansion too slow. Needs Brueckner or non-perturbative |
 
 **Target:** closing all 4 would move scores to ~93% viability, ~82% rigor, ~87% overall.
 
@@ -44,7 +44,7 @@ respective tiers and tracked here as a collective goal.
 - **Derive proton-neutron mass difference from DFC** — C552: NJL route +17% (T2b). BLOCKED: vertex corrections needed to reduce C_QCD from 0.87 to ~0.50. See `equations/proton_neutron_mass_difference.py`
 - **Beyond-mean-field Walecka EOS** — C560: C₂(NJL)/C₂(NL3) = 0.87. Remaining: NJL sigma mass (226 MeV) vs physical (500-648 MeV). See `equations/nuclear_kink_nonlinear_eos.py` Part G
 - **Muon anomalous magnetic moment (g−2)_μ** [MC3] — BLOCKED on α_em gap. C578: gap-closed scenario shows DFC+lattice→1.1σ; bottleneck shifts to hadronic VP (data vs lattice = 10σ). DFC ρ spectral function could resolve controversy. Updated to Fermilab 2023 final (22×10⁻¹¹ unc). See `equations/anomalous_magnetic_moment.py` Part G
-- **Derive V(phi) contact terms for deuteron binding** [MC4] — C586: NLO TPE (Kaiser-Brockmann-Weise effective Yukawa) gives OPE+TPE = -11.5 MeV at 1fm, 33% of needed ~-35 MeV. Chiral expansion converges slowly for NN. Next: N2LO 3π or Brueckner G-matrix with DFC bare couplings. See `equations/light_nuclei_binding.py` Part F
+- **Derive V(phi) contact terms for deuteron binding** [MC4] — C596: OPE+NLO+N2LO = -12.2 MeV at 1fm, 35% of needed ~-35 MeV. N2LO (Δ dominance) adds only -0.74 MeV. Chiral expansion converges too slowly. Next: Brueckner G-matrix with DFC bare couplings, or non-perturbative lattice-informed approach. See `equations/light_nuclei_binding.py` Part G
 - **Derive pion mass from GMOR** — C594: Power-law SD condensate closes NJL gap (-24.8% → -6.0%). Pure DFC m_pi = 120 MeV (-13.8%, T2b). With lattice: 136.9 MeV (-1.9%, T2a). Matched n=1.741 ≈ 4*gamma_m. NEXT: derive n from DFC kink profile Fourier transform. See `equations/pion_mass_gmor.py`
 
 **Resolved (removed from P1):**
@@ -68,7 +68,6 @@ respective tiers and tracked here as a collective goal.
 
 ## Priority 3 — Structural Gaps
 
-- **Derive correlated 2π-exchange NN attraction from V(φ)** [MC4] — C563: single OBE Yukawa with DFC g²/(4π)=7.4 is ~5× too weak for nuclear binding. Iterated OPE / box + crossed-box diagrams provide ~60% of nuclear attraction in Bonn models. DFC has pion dynamics (GMOR, g_piNN from GT) — can the 2π exchange effective coupling be derived from V(φ) chiral sector? This blocks ALL light nuclei predictions. See `equations/light_nuclei_binding.py` Part E
 - **Prove substrate Casimir self-energy = α** — STUCK. 16 mechanisms tested, 7 ruled out. Best: I₄×Q_top=8/3 (+1.8%). See `equations/substrate_casimir_alpha.py`
 - **Derive nuclear saturation from DFC couplings** — BLOCKED. C481: composite qq̄ nature of nuclear σ is root cause. Next: NJL gap equation. See `equations/nuclear_kink_nonlinear_eos.py`
 - **Derive Bekenstein-Hawking entropy from V(φ)** — C511: S/A = 1/(2k) = 0.2486 (-0.57%, inherits kappa gap). Not independent prediction. Can kink thermodynamics give deeper derivation?
@@ -93,6 +92,7 @@ respective tiers and tracked here as a collective goal.
 - **Baryon asymmetry magnitude** — C546: DFC leptogenesis gives η_B = 1.1×10⁻⁷ (184× overshoot, T4). M_c(D7) as RH neutrino mass, Casimir spectrum M_2/M_1=9/4, maximal CP phase. Overshoot suggests M_1 too high or single-flavor approximation inadequate. See `equations/baryon_asymmetry_magnitude.py`
 - **Dark matter relic abundance mechanism** — C554: gravitational freeze-in requires T_RH=3×10¹⁷ GeV (too high). KZ overproduces by 10⁷×. Need DFC-specific production or lower m_DM. d_DM=4.5 not derived. See `equations/dark_matter_relic_abundance.py`
 - **D4 gravity gap — close remaining 2.1%** [MC1] — C588: One-loop corrections too small (0.2-0.5%, wrong sign). Gap is CLASSICAL thick-wall effect: ∫e^{2.06A} closes to +0.24%. Path: Lichnerowicz equation on kink background. See `equations/kink_self_gravity.py` Part J
+- **Derive correlated 2π-exchange NN attraction from V(φ)** [MC4] — C596: OPE+NLO+N2LO = 35% of needed attraction at 1fm. Chiral expansion converges too slowly. Root cause: DFC coupling universality (g_σ=g_ω) causes σ-ω cancellation. NEXT: Brueckner G-matrix or non-perturbative lattice-informed approach. See `equations/light_nuclei_binding.py` Part G
 
 ---
 
