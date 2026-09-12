@@ -212,6 +212,7 @@ Key milestones: D4 gravity κ=0.511 (+2.1%, was +158%; RS standard + M₅³=1/2 
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-12 | 597 | P4: bbn_predictions.py Part I (20/20) — Li-7 nuclear sensitivity: pure DFC m_π=120 makes Li-7 3.3× worse; matched m_π=137 gives ×1.019. Solving needs m_π=157, DFC wrong direction. T4 confirmed | 87% | 73% | ~80% |
 | 2026-09-12 | 596 | P3: light_nuclei_binding.py Part G (11/20) — N2LO TPE with Δ(1232): c₃=-2.98 from Delta dominance, total 35% of needed. Chiral expansion too slow. T4 | 87% | 73% | ~80% |
 | 2026-09-12 | 595 | P2: substrate_casimir_alpha.py Part K (35/36) — factorized path integral upgrades combination rule T3→T2b; 18 mechanisms tested, Q2 (why alpha) may be irreducible | 87% | 73% | ~80% |
 | 2026-09-12 | 594 | P1: pion_mass_gmor.py Part F-H (14/17) — beyond-NJL condensate: power-law SD closes gap -24.8%→-6.0%, m_pi 86→120 MeV (-13.8%, T2b), matched n=1.741≈4*gamma_m | 87% | 73% | ~80% |
