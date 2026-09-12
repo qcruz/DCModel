@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 585 (2026-09-11)
+**Last updated:** Cycle 586 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P8** (C585 — vortex_antivortex_annihilation.py NEW: 11/11 PASS, U(1) charge conservation, radiation at ω=1.12m_σ)
+- **Last tier worked: P1** (C586 — light_nuclei_binding.py Part F: NLO TPE gives 33% of needed attraction, 8/16 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -32,7 +32,7 @@ respective tiers and tracked here as a collective goal.
 | MC1 | Derive M₅³ from (α,β) → κ = 0.50 | P3 | +2% viability, +3% rigor | PROGRESS — RS standard + DFGH self-consistency gives κ=0.5107 (+2.1%, C580). Remaining: close 2.1% gap |
 | MC2 | Close α_em(0) gap T4→T2a | P2 | +1% viability, +3% rigor | PROGRESS — shape mode closes 106.6%, 6.6% overshoot (C579) |
 | MC3 | New T2a prediction (e.g. muon g−2) | P1 | +1% viability, +1% rigor | BLOCKED on MC2; gap-closed→1.1σ (C578) |
-| MC4 | Derive nuclear binding from V(φ) | P1/P3 | +2% viability, +2% rigor | OPEN — OBE too weak, needs 2π exchange |
+| MC4 | Derive nuclear binding from V(φ) | P1/P3 | +2% viability, +2% rigor | PROGRESS — C586: NLO TPE gives 33% of needed attraction. Needs N2LO or Brueckner |
 
 **Target:** closing all 4 would move scores to ~93% viability, ~82% rigor, ~87% overall.
 
@@ -40,12 +40,12 @@ respective tiers and tracked here as a collective goal.
 
 ## Priority 1 — High-Impact Predictions
 
-- **Derive V(phi) contact terms for deuteron binding** [MC4] — BLOCKED: C473 B_d=−48%. C563: OBE too weak regardless of sigma mass or coupling ratio. Needs iterated OPE / 2π exchange (see P3). See `equations/deuteron_tensor_ope.py`, `equations/light_nuclei_binding.py` Part E
 - **Derive pion mass from GMOR** — C537: NJL-LIMITED. m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate). Pure DFC = 86 MeV (−38%, T3). BLOCKED: needs beyond-NJL condensate. See `equations/pion_mass_gmor.py`
 - **Derive light quark masses (D6 Yukawa)** — C544: DOWNGRADED T2a→T2b (+24% at 2-loop). Formula structurally interesting (0 free params) but prediction is order-dependent. See `equations/light_quark_mass_derivation.py`
 - **Derive proton-neutron mass difference from DFC** — C552: NJL route +17% (T2b). BLOCKED: vertex corrections needed to reduce C_QCD from 0.87 to ~0.50. See `equations/proton_neutron_mass_difference.py`
 - **Beyond-mean-field Walecka EOS** — C560: C₂(NJL)/C₂(NL3) = 0.87. Remaining: NJL sigma mass (226 MeV) vs physical (500-648 MeV). See `equations/nuclear_kink_nonlinear_eos.py` Part G
 - **Muon anomalous magnetic moment (g−2)_μ** [MC3] — BLOCKED on α_em gap. C578: gap-closed scenario shows DFC+lattice→1.1σ; bottleneck shifts to hadronic VP (data vs lattice = 10σ). DFC ρ spectral function could resolve controversy. Updated to Fermilab 2023 final (22×10⁻¹¹ unc). See `equations/anomalous_magnetic_moment.py` Part G
+- **Derive V(phi) contact terms for deuteron binding** [MC4] — C586: NLO TPE (Kaiser-Brockmann-Weise effective Yukawa) gives OPE+TPE = -11.5 MeV at 1fm, 33% of needed ~-35 MeV. Chiral expansion converges slowly for NN. Next: N2LO 3π or Brueckner G-matrix with DFC bare couplings. See `equations/light_nuclei_binding.py` Part F
 
 **Resolved (removed from P1):**
 - ~~W mass~~ — RESOLVED C497: M_W = 80.38 GeV (+0.009%, T2a). See `equations/ew_radiative_corrections.py`
