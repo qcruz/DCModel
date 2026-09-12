@@ -212,6 +212,7 @@ Key milestones: D4 gravity κ=0.511 (+2.1%, was +158%; RS standard + M₅³=1/2 
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-11 | 591 | P8/S4: kink_kink_repulsion.py NEW (13/13) — Z_2 topological exclusion (Pauli), Yukawa m_eff/m_sigma=0.9954, KA resonance | 87% | 73% | ~80% |
 | 2026-09-11 | 590 | P8/S1: kibble_zurek_kink_density.py NEW (15/15) — KZ exponent σ=0.290 (theory 0.250, +16%), Q=0 exact, universal | 87% | 73% | ~80% |
 | 2026-09-11 | 589 | P8/S7: graviton_lichnerowicz_thick_wall.py NEW (12/12) — exact zero-mode ψ₀=e^{3A/2}, κ=0.5107 (+2.14%) irreducible, T2a definitive | 87% | 73% | ~80% |
 | 2026-09-11 | 588 | P3: kink_self_gravity.py Part J (17/17) — one-loop too small; κ gap is classical thick-wall; n=2.06 closes to +0.24% | 87% | 73% | ~80% |
