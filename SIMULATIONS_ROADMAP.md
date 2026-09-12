@@ -174,19 +174,19 @@ which connects to the robustness of Hawking radiation predictions.
 - **Milestone:** Observe vortex-antivortex bound state; measure its frequency;
   compare to oscillon frequency from 1+1D and to DFC Regge predictions.
 
-#### S7: Graviton Zero-Mode on Thick-Wall Background
-- **Module:** `equations/graviton_lichnerowicz_thick_wall.py`
-- **What to simulate:** Solve the graviton Lichnerowicz equation
-  [-ψ'' + V_grav(y)ψ = 0] on the numerically-computed A(y) from
-  the DFGH BVP.
-- **What to measure:** Exact graviton zero-mode profile ψ₀(y);
-  normalization integral ∫|ψ₀|²dy; effective exponent n in the
-  approximation ψ₀ ≈ e^{(n/2)A}.
-- **Addresses:** D4 gravity κ gap (+2.1%, T2a). C588 showed that n ≈ 2.06
-  (instead of RS n = 2) closes the gap to +0.24%. This simulation would
-  compute n exactly, potentially closing the gap to T1.
-- **Milestone:** Compute exact ψ₀(y); extract n; compute κ_exact;
-  determine if the remaining gap is <1% (T2a→near-T1).
+#### S7: Graviton Zero-Mode on Thick-Wall Background -- COMPLETED (C589)
+- **Module:** `equations/graviton_lichnerowicz_thick_wall.py` (12/12 PASS)
+- **Result:** The graviton zero-mode ψ₀(z) = e^{(3/2)A(z)} is EXACT for
+  ANY warp factor A(y) — not an approximation. In proper distance coordinates,
+  Ψ₀(y) = constant (normalizable since A→-∞ at boundaries).
+- **Key findings:** (1) M_Pl² = M₅³ × ∫e^{2A}dy = 1.0214, giving κ = 0.5107
+  (+2.14%). (2) The e^{2A} integrand comes from 5D action: √g₅ × R₅ =
+  e^{4A} × e^{-2A}R₄. (3) 90% of the excess over thin-wall concentrated
+  within 2ξ of kink center. (4) Gap is IRREDUCIBLE at DFGH level.
+- **Conclusion:** κ = 0.5107 (+2.14%) is the definitive DFC prediction (T2a).
+  C588's n=2.06 was finding the effective exponent that approximates the
+  true ∫e^{2A} integral; the exact computation uses n=2 with the full
+  thick-wall A(y).
 
 ### 2.3 EXPLORATORY — New Structural Demonstrations
 
@@ -292,7 +292,7 @@ Based on impact × tractability:
 
 | Order | Simulation | Why this order |
 |-------|-----------|----------------|
-| 1 | **S7** (Graviton Lichnerowicz) | Directly closes κ gap (+2.1% → <1%); computationally simple (1D eigenvalue problem) |
+| ~~1~~ | ~~**S7** (Graviton Lichnerowicz)~~ | COMPLETED C589: κ=0.5107 (+2.14%) definitive; gap irreducible |
 | 2 | **S1** (Kibble-Zurek) | Addresses DM relic T4; well-understood theory to compare against; extends substrate_simulation.py |
 | 3 | **S4** (KK repulsion) | Simple extension of kink_antikink; demonstrates Pauli analogue; quick win |
 | 4 | **S3** (Y-junction) | Directly addresses baryon physics; builds on vortex_antivortex |

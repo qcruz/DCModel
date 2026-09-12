@@ -212,6 +212,7 @@ Key milestones: D4 gravity κ=0.511 (+2.1%, was +158%; RS standard + M₅³=1/2 
 Recent cycles (full history: push_history.md):
 | Date | Cycle | Summary | Viability | Rigor | Overall |
 |---|---|---|---|---|---|
+| 2026-09-11 | 589 | P8/S7: graviton_lichnerowicz_thick_wall.py NEW (12/12) — exact zero-mode ψ₀=e^{3A/2}, κ=0.5107 (+2.14%) irreducible, T2a definitive | 87% | 73% | ~80% |
 | 2026-09-11 | 588 | P3: kink_self_gravity.py Part J (17/17) — one-loop too small; κ gap is classical thick-wall; n=2.06 closes to +0.24% | 87% | 73% | ~80% |
 | 2026-09-11 | 587 | P2: regge_intercept_derivation.py Part K (38/39) — junction penalty derived: α₀(baryon)=S/Q_top−1/2, Δ=s_JR=1/2; T3→T2a candidate | 87% | 73% | ~80% |
 | 2026-09-11 | 586 | P1: light_nuclei_binding.py Part F (8/16) — NLO TPE: OPE+TPE = −11.5 MeV at 1fm, 33% of needed; chiral convergence slow | 87% | 73% | ~80% |

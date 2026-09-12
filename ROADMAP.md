@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 588 (2026-09-11)
+**Last updated:** Cycle 589 (2026-09-11)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P3** (C588 — kink_self_gravity.py Part J: one-loop too small, gap is thick-wall classical, n=2.06 closes to +0.24%, 17/17 PASS)
+- **Last tier worked: P8** (C589 — graviton_lichnerowicz_thick_wall.py NEW S7: exact zero-mode ψ₀=e^{3A/2}, κ=0.5107 (+2.14%) irreducible, 12/12 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -29,7 +29,7 @@ respective tiers and tracked here as a collective goal.
 
 | # | Item | Tier | Expected impact | Status |
 |---|---|---|---|---|
-| MC1 | Derive M₅³ from (α,β) → κ = 0.50 | P3 | +2% viability, +3% rigor | PROGRESS — κ=0.5107 (+2.1%). C588: gap is classical thick-wall, not quantum. n=2.06 closes to +0.24%. Path: Lichnerowicz eqn |
+| MC1 | Derive M₅³ from (α,β) → κ = 0.50 | P3 | +2% viability, +3% rigor | PROGRESS — κ=0.5107 (+2.14%) DEFINITIVE. C589: Lichnerowicz exact zero-mode proves gap irreducible at DFGH level. 90% excess within 2ξ. T2a prediction |
 | MC2 | Close α_em(0) gap T4→T2a | P2 | +1% viability, +3% rigor | PROGRESS — shape mode closes 106.6%, 6.6% overshoot (C579) |
 | MC3 | New T2a prediction (e.g. muon g−2) | P1 | +1% viability, +1% rigor | BLOCKED on MC2; gap-closed→1.1σ (C578) |
 | MC4 | Derive nuclear binding from V(φ) | P1/P3 | +2% viability, +2% rigor | PROGRESS — C586: NLO TPE gives 33% of needed attraction. Needs N2LO or Brueckner |
@@ -219,6 +219,7 @@ from V(φ) when you solve the field equation numerically.
 - multi_kink_gas_dynamics.py — 4 KA pairs, 4 annihilate, Q=0 exact, virial 1.25, pair creation from radiation, 9/9 PASS (C567)
 - kink_gravity_gradient.py — kink in α(x) gradient: a=-(3/(2α))dα/dx matches to 0.6%, a∝ε to 1.1%, C_grav=1.49, 10/10 PASS (C575)
 - vortex_antivortex_annihilation.py — 2+1D V+AV annihilation: Q=0 exact, ω_peak=1.12m_σ, cores annihilate, 11/11 PASS (C585)
+- graviton_lichnerowicz_thick_wall.py — S7: graviton zero-mode on DFGH thick-wall: ψ₀=e^{3A/2} EXACT, κ=0.5107 (+2.14%) irreducible, volcano potential, 12/12 PASS (C589)
 
 **Integration rule:** After each new simulation, update:
 1. `equations/README.md` — add to simulation table
