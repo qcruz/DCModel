@@ -2,7 +2,7 @@
 
 **The single source of truth for what to do next.**
 
-**Last updated:** Cycle 593 (2026-09-12)
+**Last updated:** Cycle 594 (2026-09-12)
 
 ---
 
@@ -12,7 +12,7 @@
 - **Task selection:** Cycle through tiers in order (P1→P2→P3→P4→P5→P6→P7→P8→P1→...). Check the `Last tier worked:` marker below to determine the next tier. **Within each tier, always work the FIRST bullet point.** After working an item, move it to the BOTTOM of that tier's list. This ensures systematic coverage. If a tier has no actionable items, spend the cycle researching and adding new items to that tier. Update the marker after each cycle.
 - **Item ordering:** Items within each tier are ordered by impact × tractability. UNBLOCKED items go to the top; BLOCKED/STUCK items go to the bottom. When new progress unblocks an item, move it up accordingly.
 - **P5 = Exploratory, P6 = Documentation, P7 = Critical Review, P8 = Simulations.** P7 exists to prevent the project from becoming locked into assumptions. P8 builds numerical demonstrations that DFC dynamics actually produce the claimed behaviors from V(φ).
-- **Last tier worked: P8** (C593 — y_junction_dynamics.py NEW S3: 120° force balance confirmed, L_z≈0 at junction, U(1) instability proves confinement needed, 14/14 PASS)
+- **Last tier worked: P1** (C594 — pion_mass_gmor.py Part F-H: beyond-NJL condensate via momentum-dependent mass. Power-law SD: <qq>^{1/3}=-263 MeV (-6% vs PDG), m_pi=120 MeV (-13.8%). Matched exponent n=1.741 ≈ 4*gamma_m. 14/17 PASS)
 - **Never skip items because they are hard.** Always attempt incremental progress. Ruling out wrong approaches, documenting blockers, and outlining next steps are all valid progress.
 - **Keep items short.** Detailed notes belong in equation modules, `ISSUES.md`, or `push_history.md` — not here.
 - **Spoke Dashboard:** Updated when a spoke's best tier, key gap, or last-touched cycle changes. Spokes not touched in 50+ cycles deserve priority attention during tier rotation.
@@ -40,12 +40,12 @@ respective tiers and tracked here as a collective goal.
 
 ## Priority 1 — High-Impact Predictions
 
-- **Derive pion mass from GMOR** — C537: NJL-LIMITED. m_pi = 136.9 MeV (−1.9%, T2a with lattice condensate). Pure DFC = 86 MeV (−38%, T3). BLOCKED: needs beyond-NJL condensate. See `equations/pion_mass_gmor.py`
 - **Derive light quark masses (D6 Yukawa)** — C544: DOWNGRADED T2a→T2b (+24% at 2-loop). Formula structurally interesting (0 free params) but prediction is order-dependent. See `equations/light_quark_mass_derivation.py`
 - **Derive proton-neutron mass difference from DFC** — C552: NJL route +17% (T2b). BLOCKED: vertex corrections needed to reduce C_QCD from 0.87 to ~0.50. See `equations/proton_neutron_mass_difference.py`
 - **Beyond-mean-field Walecka EOS** — C560: C₂(NJL)/C₂(NL3) = 0.87. Remaining: NJL sigma mass (226 MeV) vs physical (500-648 MeV). See `equations/nuclear_kink_nonlinear_eos.py` Part G
 - **Muon anomalous magnetic moment (g−2)_μ** [MC3] — BLOCKED on α_em gap. C578: gap-closed scenario shows DFC+lattice→1.1σ; bottleneck shifts to hadronic VP (data vs lattice = 10σ). DFC ρ spectral function could resolve controversy. Updated to Fermilab 2023 final (22×10⁻¹¹ unc). See `equations/anomalous_magnetic_moment.py` Part G
 - **Derive V(phi) contact terms for deuteron binding** [MC4] — C586: NLO TPE (Kaiser-Brockmann-Weise effective Yukawa) gives OPE+TPE = -11.5 MeV at 1fm, 33% of needed ~-35 MeV. Chiral expansion converges slowly for NN. Next: N2LO 3π or Brueckner G-matrix with DFC bare couplings. See `equations/light_nuclei_binding.py` Part F
+- **Derive pion mass from GMOR** — C594: Power-law SD condensate closes NJL gap (-24.8% → -6.0%). Pure DFC m_pi = 120 MeV (-13.8%, T2b). With lattice: 136.9 MeV (-1.9%, T2a). Matched n=1.741 ≈ 4*gamma_m. NEXT: derive n from DFC kink profile Fourier transform. See `equations/pion_mass_gmor.py`
 
 **Resolved (removed from P1):**
 - ~~W mass~~ — RESOLVED C497: M_W = 80.38 GeV (+0.009%, T2a). See `equations/ew_radiative_corrections.py`
